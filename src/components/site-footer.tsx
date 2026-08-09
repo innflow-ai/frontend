@@ -14,28 +14,27 @@ export function SiteFooter() {
             height={28}
           />
           <p>Operational workflows with visible human control.</p>
-          <small>Phase C preview · not deployed</small>
+          <small>Standalone preview · not deployed</small>
         </div>
         <div>
-          <strong>Platform</strong>
-          <a href="#platform">Overview</a>
-          <a href="#capabilities">Capabilities</a>
-          <a href="#integrations">Integrations</a>
+          <strong>Product</strong>
+          <a href="/features/workflows">Workflows</a>
+          <a href="/features/assistant">Assistant</a>
+          <a href="/features/communications">Communications · Preview</a>
+          <a href="/features/website">Website · Preview</a>
         </div>
         <div>
           <strong>Property management</strong>
-          <a href="#walkthrough">Walkthrough</a>
-          <a href="#fit">Who it fits</a>
-          <a href="#faq">Questions</a>
+          <a href="/property-management">Overview</a>
+          <a href="/integrations">Integrations</a>
+          <a href="/pricing">Buying motion</a>
+          <a href="/demo">Book a demo</a>
         </div>
         <div>
-          <strong>Contact</strong>
-          <TrackedLink
-            destination={siteConfig.demoUrl}
-            eventLabel="footer_demo"
-          >
-            Book a demo
-          </TrackedLink>
+          <strong>Legal and contact</strong>
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+          <a href="/cookies">Cookies</a>
           <a href={`mailto:${siteConfig.supportEmail}`}>
             {siteConfig.supportEmail}
           </a>
@@ -48,13 +47,9 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="shell footer-bottom">
+        <span>© {new Date().getFullYear()} Innflow. All rights reserved.</span>
         <span>
-          © {new Date().getFullYear()} Innflow. Legal entity wording pending
-          approval.
-        </span>
-        <span>
-          Privacy, terms, and cookies remain on the current approved surface
-          until migrated.
+          Approved policies are supplied through the current Termly sources.
         </span>
       </div>
     </footer>

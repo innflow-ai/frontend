@@ -1,6 +1,6 @@
 # Innflow marketing frontend
 
-Standalone Next.js App Router frontend for Innflow's property-management homepage vertical slice.
+Standalone Next.js App Router frontend for Innflow's property-management marketing site.
 
 This repository is operationally separate from the authenticated product app. It does not import product code, use Prisma, require workflow-runtime variables, deploy infrastructure, alter DNS, or change the current Framer site.
 
@@ -9,7 +9,7 @@ This repository is operationally separate from the authenticated product app. It
 - Phase A: discovery and content-truth documents complete.
 - Phase B: semantic design tokens and shared homepage primitives complete.
 - Phase C: responsive homepage vertical slice complete.
-- Phase D: not started. Supporting routes, full legacy URL inventory, redirects, preview deployment, cutover, and rollback execution remain approval-gated.
+- Phase D: code preparation complete. Supporting routes, metadata/discovery surfaces, redirects, attribution, a URL-level legacy inventory, and local release evidence are implemented. Preview deployment, DNS cutover, and rollback execution remain approval-gated.
 
 ## Local development
 
@@ -28,6 +28,8 @@ npm run lint
 npm run typecheck
 npm run test:run
 npm run build
+npm run audit:site
+npm run audit:bundle
 ```
 
 The production output is served locally with:
@@ -44,10 +46,11 @@ All cross-origin destinations are centralized in `src/config/site.ts` and may be
 - `NEXT_PUBLIC_APP_ORIGIN`
 - `NEXT_PUBLIC_SIGNUP_URL`
 - `NEXT_PUBLIC_DEMO_URL`
+- `NEXT_PUBLIC_CONTACT_URL`
 - `NEXT_PUBLIC_POSTHOG_KEY`
 - `NEXT_PUBLIC_POSTHOG_HOST`
 
-The provisional demo URL defaults to a pre-addressed email to `support@innflow.ai`. Replace it only after a scheduling or contact destination is approved.
+The demo URL defaults to the local `/demo` qualification route. Its outbound contact action defaults to `support@innflow.ai`; replace that destination only after a scheduling or contact workflow is approved.
 
 ## Deployment instructions (approval-gated)
 

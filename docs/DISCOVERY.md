@@ -56,7 +56,7 @@ The current product configuration contains Free, multiple Basic/PRO SKUs, multip
 
 ## Analytics and legal finding
 
-The app uses PostHog and includes privacy, cookie, and terms routes. The audit describes current public legal content as launch-blocking or incomplete. Phase C instruments events without loading analytics until consent and leaves legal links off the standalone surface until approved legal content is migrated.
+The app uses PostHog and the current public site serves privacy, cookie, terms, EULA, and DSAR content through Termly. The standalone site preserves those existing Termly sources. Analytics events remain local unless an approved consent-gated loader is present.
 
 ## Reference limitation
 

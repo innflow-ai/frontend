@@ -1,26 +1,12 @@
-"use client";
-
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import { TrackedLink } from "@/components/tracked-link";
 import { navigation, siteConfig } from "@/config/site";
 
 export function SiteHeader() {
-  const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    if (!open) return;
-    const close = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setOpen(false);
-    };
-    window.addEventListener("keydown", close);
-    return () => window.removeEventListener("keydown", close);
-  }, [open]);
-
   return (
     <header className="site-header">
       <div className="shell header-inner">
-        <a className="brand-link" href="#top" aria-label="Innflow home">
+        <a className="brand-link" href="/" aria-label="Innflow home">
           <Image
             src="/brand/innflow-black-full.svg"
             alt="Innflow"
@@ -53,42 +39,36 @@ export function SiteHeader() {
           >
             {siteConfig.primaryCta}
           </TrackedLink>
-          <button
-            className="menu-button"
-            type="button"
-            aria-expanded={open}
-            aria-controls="mobile-menu"
-            aria-label={open ? "Close navigation" : "Open navigation"}
-            onClick={() => setOpen((current) => !current)}
-          >
-            <span />
-            <span />
-          </button>
+          <details className="mobile-navigation">
+            <summary className="menu-button" aria-label="Open navigation">
+              <span />
+              <span />
+            </summary>
+            <div id="mobile-menu" className="mobile-menu">
+              <nav aria-label="Mobile navigation">
+                {navigation.map((item) => (
+                  <a key={item.href} href={item.href}>
+                    {item.label}
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                ))}
+                <TrackedLink
+                  destination={`${siteConfig.appOrigin}/login`}
+                  eventLabel="mobile_login"
+                >
+                  Log in
+                </TrackedLink>
+                <TrackedLink
+                  className="button button-primary"
+                  destination={siteConfig.demoUrl}
+                  eventLabel="mobile_demo"
+                >
+                  {siteConfig.primaryCta}
+                </TrackedLink>
+              </nav>
+            </div>
+          </details>
         </div>
-      </div>
-
-      <div id="mobile-menu" className="mobile-menu" hidden={!open}>
-        <nav aria-label="Mobile navigation">
-          {navigation.map((item) => (
-            <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
-              {item.label}
-              <span aria-hidden="true">↗</span>
-            </a>
-          ))}
-          <TrackedLink
-            destination={`${siteConfig.appOrigin}/login`}
-            eventLabel="mobile_login"
-          >
-            Log in
-          </TrackedLink>
-          <TrackedLink
-            className="button button-primary"
-            destination={siteConfig.demoUrl}
-            eventLabel="mobile_demo"
-          >
-            {siteConfig.primaryCta}
-          </TrackedLink>
-        </nav>
       </div>
     </header>
   );

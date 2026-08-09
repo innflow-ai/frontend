@@ -10,7 +10,10 @@
     "lint": "biome check .",
     "typecheck": "tsc --noEmit",
     "test": "vitest",
-    "test:run": "vitest run"
+    "test:run": "vitest run",
+    "audit:site": "node scripts/audit-site.mjs",
+    "audit:bundle": "node scripts/check-bundle-budget.mjs",
+    "inventory:legacy": "node scripts/inventory-legacy-routes.mjs"
   },
   "dependencies": {
     "next": "^16.2.11",

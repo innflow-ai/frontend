@@ -17,8 +17,8 @@
 | Customer counts, percentages, logos, testimonials | Remove until authorized | Audit identifies unresolved proof | Omitted |
 | SOC 2, ISO 27001, GDPR, SOX-ready, VPC, on-prem, SSO, SCIM, SLA | Remove until verified | Audit marks high-risk claims | Omitted |
 | Perfect reliability, zero delay, unlimited autonomy, continuous learning | Remove | Unsupported absolutes | Omitted |
-| Legal entity wording | Needs approval | Source uses conflicting names | Footer says approval pending |
-| `support@innflow.ai` is monitored and demo-ready | Needs approval | Brand kit lists address; deliverability untested | Provisional fallback only |
+| Legal policy wording | Current public source preserved | Existing Innflow Termly policies | Embedded from existing approved source; entity changes still require legal approval |
+| `support@innflow.ai` is monitored and demo-ready | Needs approval | Brand kit lists address; deliverability untested | Contact fallback only |
 
 ## Approval owners still required
 

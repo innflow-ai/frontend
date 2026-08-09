@@ -1,0 +1,132 @@
+{
+  "origin": "http://localhost:3000",
+  "auditedAt": "2026-08-09T15:48:54.359Z",
+  "routes": [
+    {
+      "route": "/",
+      "status": 200,
+      "title": "Innflow for property operations | Connected operational workflows",
+      "description": "Coordinate recurring property operations, connected context, approvals, and execution history in one operational workspace.",
+      "canonical": "https://innflow.ai",
+      "h1Count": 1
+    },
+    {
+      "route": "/property-management",
+      "status": 200,
+      "title": "Property-management operations | Innflow",
+      "description": "Coordinate recurring property workflows, operational context, approvals, and stakeholder handoffs around the systems your team already uses.",
+      "canonical": "https://innflow.ai/property-management",
+      "h1Count": 1
+    },
+    {
+      "route": "/features/workflows",
+      "status": 200,
+      "title": "Visual workflows for property operations | Innflow",
+      "description": "Model triggers, conditions, connected actions, approvals, and execution steps without positioning Innflow as the property system of record.",
+      "canonical": "https://innflow.ai/features/workflows",
+      "h1Count": 1
+    },
+    {
+      "route": "/features/assistant",
+      "status": 200,
+      "title": "Assistant for property operations | Innflow",
+      "description": "Use connected knowledge and explicit workflow actions while keeping scope, source context, and human control visible.",
+      "canonical": "https://innflow.ai/features/assistant",
+      "h1Count": 1
+    },
+    {
+      "route": "/features/communications",
+      "status": 200,
+      "title": "Communications for property operations | Innflow",
+      "description": "A preview concept for classifying stakeholder messages, attaching context, and routing the next step for review.",
+      "canonical": "https://innflow.ai/features/communications",
+      "h1Count": 1
+    },
+    {
+      "route": "/features/website",
+      "status": 200,
+      "title": "Website for property operations | Innflow",
+      "description": "A preview concept for structured web experiences and request paths connected to the team responsible for fulfillment.",
+      "canonical": "https://innflow.ai/features/website",
+      "h1Count": 1
+    },
+    {
+      "route": "/integrations",
+      "status": 200,
+      "title": "Integration paths | Innflow",
+      "description": "Review the connector paths evidenced in the Innflow product repository and the validation required before implementation.",
+      "canonical": "https://innflow.ai/integrations",
+      "h1Count": 1
+    },
+    {
+      "route": "/pricing",
+      "status": 200,
+      "title": "Property-operations buying motion | Innflow",
+      "description": "Understand the current demo-led property-operations buying motion without publishing unapproved packages, prices, or implementation timelines.",
+      "canonical": "https://innflow.ai/pricing",
+      "h1Count": 1
+    },
+    {
+      "route": "/demo",
+      "status": 200,
+      "title": "Book an operations demo | Innflow",
+      "description": "Bring one recurring property operation and map the systems, context, approvals, and product boundaries involved.",
+      "canonical": "https://innflow.ai/demo",
+      "h1Count": 1
+    },
+    {
+      "route": "/privacy",
+      "status": 200,
+      "title": "Privacy Policy | Innflow",
+      "description": "Innflow privacy policy supplied through the currently approved Termly policy source.",
+      "canonical": "https://innflow.ai/privacy",
+      "h1Count": 1
+    },
+    {
+      "route": "/terms",
+      "status": 200,
+      "title": "Terms of Service | Innflow",
+      "description": "Innflow terms of service supplied through the currently approved Termly policy source.",
+      "canonical": "https://innflow.ai/terms",
+      "h1Count": 1
+    },
+    {
+      "route": "/cookies",
+      "status": 200,
+      "title": "Cookie Policy | Innflow",
+      "description": "Innflow cookie policy supplied through the currently approved Termly policy source.",
+      "canonical": "https://innflow.ai/cookies",
+      "h1Count": 1
+    },
+    {
+      "route": "/legal/eula",
+      "status": 200,
+      "title": "End User License Agreement | Innflow",
+      "description": "Innflow end user license agreement supplied through the currently approved Termly policy source.",
+      "canonical": "https://innflow.ai/legal/eula",
+      "h1Count": 1
+    },
+    {
+      "route": "/legal/dsar",
+      "status": 200,
+      "title": "Data subject access request | Innflow",
+      "description": "Submit an Innflow privacy request through the currently approved Termly request form.",
+      "canonical": "https://innflow.ai/legal/dsar",
+      "h1Count": 1
+    },
+    {
+      "route": "/robots.txt",
+      "status": 200
+    },
+    {
+      "route": "/sitemap.xml",
+      "status": 200
+    },
+    {
+      "route": "/llms.txt",
+      "status": 200
+    }
+  ],
+  "internalLinkCount": 20,
+  "failures": []
+}

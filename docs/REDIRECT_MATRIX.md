@@ -1,25 +1,20 @@
-# Redirect matrix draft
+# Redirect matrix
 
-No redirects are active. This matrix is a Phase A/C planning artifact and must be expanded from a fresh Framer sitemap before cutover.
+Implemented application redirects use permanent status 308 and preserve query parameters:
 
-| Legacy route/family | Proposed destination | Status | Notes |
-| --- | --- | --- | --- |
-| `/` | `/` | Keep | Homepage replacement after approval |
-| `/property-management` and equivalent validated solution URL | `/property-management` or `/` | Decide in Phase D | Preserve only if source intent and content quality warrant it |
-| `/products/workflows` | `/features/workflows` | Proposed 301 | Build destination first |
-| `/products/ai-agent` | `/features/assistant` | Proposed 301 | Remove unsupported autonomy claims |
-| `/products/tables` | Future approved feature/context page | Unresolved | Do not redirect to an unrelated page |
-| `/products/trigger` | `/features/workflows` | Proposed 301 | Preserve relevant workflow intent |
-| `/automation` | No direct replacement | Review/remove | Audit identifies legacy Aurius content |
-| `/page-2` | No replacement | Proposed 410 | Staging/test route; confirm no links or traffic |
-| `/resources/page` | No replacement | Review | Keep only if given a real purpose |
-| `/skills/*` | Curated content destination or staged legacy | Inventory required | 319 routes; do not blanket redirect without query/backlink review |
-| Approved blog routes | `/blog/[slug]` | Preserve slug where feasible | Only after editorial review |
-| Legal routes | Approved `/privacy`, `/terms`, `/cookies` | Preserve/normalize | Legal approval required before migration |
+| Legacy route | Destination |
+| --- | --- |
+| `/contact` | `/demo` |
+| `/solution/property-management` | `/property-management` |
+| `/product/agentic-workflows` | `/features/workflows` |
+| `/product/ai-agents` | `/features/assistant` |
+| `/product/agent-os` | `/features/assistant` |
+| `/legal/privacy-policy` | `/privacy` |
+| `/legal/terms-of-service` | `/terms` |
+| `/legal/cookie-policy` | `/cookies` |
 
-## Rules
+Convenience aliases `/privacy-policy`, `/terms-of-service`, and `/cookie-policy` normalize to the same legal destinations but were not present in the captured sitemap.
 
-- Preserve path, query parameters, UTMs, and `gclid` through any redirect.
-- Use 301 only for genuine durable replacements; use 410 only after ownership and traffic review.
-- Avoid redirecting every removed URL to the homepage.
-- Test every approved redirect for loops, chains, final status, canonical, and analytics attribution.
+The complete 383-URL planning matrix is `legacy-route-inventory.csv`, with generated counts in `legacy-route-summary.json`. `hold-legacy` and `retire-410` rows are migration decisions, not active application behavior.
+
+Before cutover, owners must review traffic/backlinks, approve every retirement, test for loops/chains, and rehearse the final edge/CDN implementation. Removed URLs must not be blanket-redirected to the homepage.

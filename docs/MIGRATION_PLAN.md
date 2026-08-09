@@ -7,16 +7,24 @@
 - Framer remains live and untouched.
 - No deployment, DNS, publishing, content deletion, or Framer removal is authorized.
 
-## Phase D prerequisites
+## Code preparation completed
+
+- Minimum supporting marketing, feature, demo, integration, pricing, and legal routes.
+- Page-specific metadata, social image, structured data, sitemap, robots, manifest, and plain-text discovery.
+- Session attribution capture and CTA propagation.
+- Fresh 383-URL sitemap inventory with an explicit proposed disposition per URL.
+- Permanent redirects for direct replacements.
+- Local route, responsive, accessibility, bundle, and Lighthouse evidence.
+
+## External approvals and release prerequisites
 
 1. Approve ICP, buyer, demo motion, primary CTA destination, and public product statuses.
 2. Approve legal entity and substantive privacy, terms, and cookie content.
-3. Export a current Framer sitemap, analytics landing-page report, backlinks, and indexed URL inventory.
-4. Complete every route disposition in `REDIRECT_MATRIX.md`.
-5. Build the minimum supporting routes needed by the approved journey.
-6. Implement consent and verified cross-domain attribution/identity handoff.
-7. Create an approved social card and page-specific metadata.
-8. Validate browser accessibility, responsive layout, links, metadata, structured data, and performance on a private preview.
+3. Add analytics landing-page, backlink, and indexed-URL evidence to the current sitemap inventory.
+4. Approve every `hold-legacy` and `retire-410` disposition.
+5. Approve consent loading and verify attribution/identity receipt on the app origin.
+6. Review the generated social card and page metadata.
+7. Repeat the local quality gate on a private preview and complete manual assistive-technology/device checks.
 
 ## Preview review
 

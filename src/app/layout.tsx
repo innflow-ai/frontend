@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Figtree, Manrope } from "next/font/google";
 import type { ReactNode } from "react";
-import { PerformanceVitals } from "@/components/performance-vitals";
+import { MarketingRuntime } from "@/components/marketing-runtime";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
 
@@ -46,7 +46,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           Skip to content
         </a>
         {children}
-        <PerformanceVitals />
+        <MarketingRuntime />
       </body>
     </html>
   );

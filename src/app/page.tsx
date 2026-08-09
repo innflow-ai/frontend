@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { FeatureSection } from "@/components/feature-section";
+import { JsonLd } from "@/components/json-ld";
 import { HeroWorkflowFrame } from "@/components/product-media";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -40,10 +41,6 @@ const faqSchema = {
     acceptedAnswer: { "@type": "Answer", text: item.answer },
   })),
 };
-
-function serializeJsonLd(value: object) {
-  return JSON.stringify(value).replace(/</g, "\\u003c");
-}
 
 export default function HomePage() {
   return (
@@ -523,20 +520,9 @@ export default function HomePage() {
         </section>
       </main>
       <SiteFooter />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: serializeJsonLd(organizationSchema),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: serializeJsonLd(applicationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqSchema) }}
-      />
+      <JsonLd value={organizationSchema} />
+      <JsonLd value={applicationSchema} />
+      <JsonLd value={faqSchema} />
     </>
   );
 }

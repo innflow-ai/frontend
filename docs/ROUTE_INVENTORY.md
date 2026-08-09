@@ -1,36 +1,37 @@
 # Route inventory
 
-## Implemented in Phase C
+## Implemented public routes
 
-| Route | Rendering | Purpose | Indexability |
-| --- | --- | --- | --- |
-| `/` | Static App Router page | Property-management homepage | Index when deployed and approved |
-| `/robots.txt` | Generated metadata route | Crawler policy | Generated |
-| `/sitemap.xml` | Generated metadata route | Current standalone route inventory | Generated |
+| Route | Purpose | Status boundary |
+| --- | --- | --- |
+| `/` | Property-operations homepage | Implemented |
+| `/property-management` | ICP and operating-model overview | Implemented |
+| `/features/workflows` | Visual workflow capability | Available category |
+| `/features/assistant` | Bounded assistant capability | Available category |
+| `/features/communications` | Communication workflow concept | Preview |
+| `/features/website` | Generated-site concept | Preview |
+| `/integrations` | Connector evidence and validation boundary | Implemented |
+| `/pricing` | Demo-led buying motion without unapproved prices | Implemented |
+| `/demo` | Workflow qualification and contact handoff | Implemented |
+| `/privacy`, `/terms`, `/cookies` | Current approved Termly policy sources | Implemented |
+| `/legal/eula`, `/legal/dsar` | Current EULA and privacy-request source | Implemented |
 
-All homepage navigation uses in-page anchors except the authenticated app login and provisional demo destination. This avoids publishing empty supporting routes.
+Generated discovery assets include `/robots.txt`, `/sitemap.xml`, `/manifest.webmanifest`, `/llms.txt`, `/opengraph-image`, and `/icon.svg`.
 
-## Proposed supporting routes (Phase D, not implemented)
+## Current handoff destinations
 
-- `/property-management`
-- `/features/workflows`
-- `/features/assistant`
-- `/features/communications` (preview labeling required)
-- `/features/website` (preview labeling required)
-- `/integrations`
-- `/pricing`
-- `/demo`
-- `/privacy`
-- `/terms`
-- `/cookies`
-- `/blog` and `/blog/[slug]` only after editorial migration approval
+- Login: `https://app.innflow.ai/login`
+- Signup: `https://app.innflow.ai/signup`
+- Demo: local `/demo` qualification page
+- Contact fallback: `mailto:support@innflow.ai`
 
-## Current product/app handoff
+## Legacy inventory
 
-- Login default: `https://app.innflow.ai/login`
-- Signup default: `https://app.innflow.ai/signup`
-- Demo default: pre-addressed `support@innflow.ai` email, configurable and provisional
+The fresh live sitemap inventory captured August 9, 2026 contains 383 URLs. Every URL has an explicit proposed disposition in `legacy-route-inventory.csv`:
 
-## Legacy discovery requirement
+- keep: 4
+- redirect with 308: 8
+- hold on the legacy origin pending editorial/traffic review: 351
+- retire with 410 after approval: 20
 
-The July 18 audit found approximately 695 Framer sitemap URLs, including 319 `/skills/` detail URLs and known staging/legacy paths such as `/automation`, `/page-2`, and `/resources/page`. A fresh export and URL-level disposition is required before cutover. This Phase C inventory does not claim full legacy parity.
+The blog family is intentionally held rather than copied or blanket-redirected. Deployment and cutover still require owner approval and traffic/backlink review.

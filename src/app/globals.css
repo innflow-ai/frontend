@@ -46,7 +46,7 @@ body {
   margin: 0;
   background: var(--canvas);
   color: var(--ink);
-  font-family: var(--font-manrope), "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-figtree), "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -55,7 +55,7 @@ body {
 body,
 button,
 a {
-  font-family: var(--font-manrope), "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-figtree), "Helvetica Neue", Arial, sans-serif;
 }
 
 button,

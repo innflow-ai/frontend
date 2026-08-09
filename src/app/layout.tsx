@@ -1,15 +1,9 @@
 import type { Metadata } from "next";
-import { Figtree, Manrope } from "next/font/google";
+import { Figtree } from "next/font/google";
 import type { ReactNode } from "react";
 import { MarketingRuntime } from "@/components/marketing-runtime";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  variable: "--font-manrope",
-  display: "swap",
-});
 
 const figtree = Figtree({
   subsets: ["latin"],
@@ -40,7 +34,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${manrope.variable} ${figtree.variable}`}>
+    <html lang="en" className={figtree.variable}>
       <body>
         <a className="skip-link" href="#main-content">
           Skip to content

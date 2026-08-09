@@ -2,17 +2,18 @@
 
 ## Intent
 
-Translate Kora's calm editorial character into Innflow's approved brand while using DoorLoop only for homepage conversion sequence. No third-party copy, identity, media, or exact composition is reproduced.
+Translate the light editorial system explored in the approved SynthAI-inspired mockup into Innflow's brand while using the existing DoorLoop-informed acquisition sequence. No third-party copy, identity, people, or product claims are reproduced.
 
 ## Reference evidence
 
-The implementation used the existing August 9, 2026 captures in `output/playwright/` rather than recapturing live sites:
+The current homepage implementation uses these August 9, 2026 references:
 
-- Kora: `kora-desktop.png`, `kora-mobile.png`, and `kora-hero.png`.
+- Approved visual target: `/Users/ak/Library/CloudStorage/Dropbox/innflow_web_plan/design_concepts/07-portfolio-canvas-synthai-inspired.png`.
+- SynthAI visual assets supplied in `/Users/ak/Library/CloudStorage/Dropbox/Features _ Synth AI` for reference and the final CTA background.
 - DoorLoop: `doorloop-desktop.png`, `doorloop-mobile.png`, and `doorloop-hero.png`.
 - Existing Innflow site: `innflow-current-desktop.png`, `innflow-current-mobile.png`, and `innflow-current-hero.png`.
 
-Observed/inherited Kora evidence: Manrope-led typography, warm off-white canvas near `#FAFAF7`, near-black ink near `#292929`, restrained borders and shadows, large editorial headings, asymmetric content blocks, and selective deep-blue, green, and plum accents. The DoorLoop capture supports the conversion order: property-specific hero, platform overview, operational stories, AI, proof/differentiation, portfolio fit, integrations, objections, and final CTA.
+The approved target establishes Figtree typography, near-white section surfaces separated by pale-gray gutters, near-black actions, restrained borders and shadows, asymmetric product compositions, pastel lavender/mint/blush feature bands, an iridescent closing CTA, and a black footer. The DoorLoop capture supports the conversion order: property-specific hero, platform overview, operational stories, AI, proof/differentiation, portfolio fit, integrations, objections, and final CTA.
 
 ## Innflow token mapping
 
@@ -33,16 +34,15 @@ The brand-kit blue does not provide sufficient contrast for small white CTA text
 
 ## Typography
 
-- Display and body: Manrope through `next/font`.
-- Labels and metadata: Figtree through `next/font`.
+- Display, body, labels, and metadata: Figtree through `next/font`.
 - Heading weight stays moderate; scale and spacing create hierarchy.
 - Headings use tight tracking; body copy uses relaxed line height and a practical readable width.
 
 ## Layout rules
 
-- Maximum shell: `1280px` with `24px` desktop gutters and `16px` phone gutters.
+- Maximum homepage shell: `1400px` with `8px` section gutters; inner content retains 24–44px desktop breathing room and 18–24px phone padding.
 - Major sections use 96–128px vertical spacing; phone sections use 76px.
-- Alternating product stories use asymmetric 40/60 grids, not repeated three-card rows.
+- Product stories use asymmetric editorial copy/product compositions inside broad pastel bands.
 - Borders communicate grouping; shadows are reserved for product evidence.
 - Dark surfaces are limited to operational-control and conversion moments.
 - Approved product media is labeled and paired with illustrative UI only where no approved screenshot exists.

@@ -5,12 +5,6 @@ import { MarketingRuntime } from "@/components/marketing-runtime";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
 
-const manrope = Manrope({
-  subsets: ["latin"],
-  variable: "--font-manrope",
-  display: "swap",
-});
-
 const figtree = Figtree({
   subsets: ["latin"],
   variable: "--font-figtree",
@@ -56,7 +50,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${manrope.variable} ${figtree.variable}`}>
+    <html lang="en" className={figtree.variable}>
       <body>
         <a className="skip-link" href="#main-content">
           Skip to content

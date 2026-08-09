@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
-import { Figtree } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Figtree, Manrope } from "next/font/google";
 import type { ReactNode } from "react";
 import { MarketingRuntime } from "@/components/marketing-runtime";
 import { siteConfig } from "@/config/site";
@@ -11,12 +11,23 @@ const figtree = Figtree({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#FAFAF7" },
+    { media: "(prefers-color-scheme: dark)", color: "#070909" },
+  ],
+  colorScheme: "light",
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.marketingOrigin),
   title: "Innflow for property operations | Connected operational workflows",
   description:
     "Coordinate recurring property operations, connected context, approvals, and execution history in one operational workspace.",
   alternates: { canonical: "/" },
+  applicationName: "Innflow",
+  authors: [{ name: "Innflow" }],
+  category: "business",
   openGraph: {
     title: "Run property operations from one connected workspace",
     description:
@@ -24,11 +35,16 @@ export const metadata: Metadata = {
     type: "website",
     url: "/",
     siteName: "Innflow",
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     title: "Innflow for property operations",
     description: "Connected operational workflows with visible human control.",
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 

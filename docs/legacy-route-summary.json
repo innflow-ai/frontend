@@ -1,0 +1,11 @@
+{
+  "source": "https://innflow.ai/sitemap.xml",
+  "capturedAt": "2026-08-09T15:38:33.934Z",
+  "total": 383,
+  "counts": {
+    "hold-legacy": 351,
+    "keep": 4,
+    "redirect-308": 8,
+    "retire-410": 20
+  }
+}

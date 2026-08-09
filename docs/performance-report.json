@@ -1,0 +1,59 @@
+{
+  "origin": "http://localhost:3000",
+  "measuredAt": "2026-08-09T15:48:54.521Z",
+  "javascriptGzipBytes": 178559,
+  "cssGzipBytes": 10130,
+  "thirdPartyScripts": [],
+  "budgets": {
+    "javascriptGzipBytes": 122880,
+    "javascriptExceptionCeilingBytes": 184320,
+    "cssGzipBytes": 51200,
+    "thirdPartyScriptsBeforeConsent": 0
+  },
+  "targetMisses": [
+    "Initial JavaScript exceeds the 120 kB target; the measured App Router framework baseline is accepted up to the documented 180 kB exception ceiling"
+  ],
+  "files": [
+    {
+      "path": "/_next/static/chunks/0zyp48yq7073a.css",
+      "rawBytes": 44679,
+      "gzipBytes": 10130
+    },
+    {
+      "path": "/_next/static/chunks/12aruqaur5huj.js",
+      "rawBytes": 22139,
+      "gzipBytes": 7311
+    },
+    {
+      "path": "/_next/static/chunks/0xpvskz-ar_4u.js",
+      "rawBytes": 176570,
+      "gzipBytes": 46552
+    },
+    {
+      "path": "/_next/static/chunks/4561u0v7ysn3r.js",
+      "rawBytes": 228844,
+      "gzipBytes": 71569
+    },
+    {
+      "path": "/_next/static/chunks/turbopack-2-1ishr8q3625.js",
+      "rawBytes": 10844,
+      "gzipBytes": 4272
+    },
+    {
+      "path": "/_next/static/chunks/3fntmmi971322.js",
+      "rawBytes": 14377,
+      "gzipBytes": 3665
+    },
+    {
+      "path": "/_next/static/chunks/3pf0sat3z4mrq.js",
+      "rawBytes": 15555,
+      "gzipBytes": 5717
+    },
+    {
+      "path": "/_next/static/chunks/0cz1d0mv5g_q7.js",
+      "rawBytes": 112594,
+      "gzipBytes": 39473
+    }
+  ],
+  "failures": []
+}

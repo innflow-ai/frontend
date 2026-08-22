@@ -41,7 +41,6 @@ const featureBands = [
     body: "Connect operational records to reviewable reporting workflows without claiming to replace your accounting system.",
     href: "/features/workflows",
     action: "Explore accounting workflows",
-    tone: "lavender",
     icon: Bank,
     panel: "accounting",
   },
@@ -51,7 +50,6 @@ const featureBands = [
     body: "Bring applications, resident requests, communication, and supporting context into one governed handoff.",
     href: "/features/communications",
     action: "Explore resident workflows",
-    tone: "blush",
     icon: ChatCircleDots,
     panel: "leasing",
   },
@@ -61,7 +59,6 @@ const featureBands = [
     body: "Coordinate maintenance, inspections, vendor handoffs, and bounded assistant actions with clear review points.",
     href: "/features/assistant",
     action: "Explore operations",
-    tone: "mint",
     icon: Wrench,
     panel: "operations",
   },
@@ -313,10 +310,14 @@ export default function HomePage() {
     <div className="editorial-home">
       <EditorialHeader />
       <main id="main-content" className={styles.page}>
-        <section className={`${styles.surface} ${styles.hero}`}>
+        <section className={`${styles.surface} ${styles.dark} ${styles.hero}`}>
+          <div className={styles.heroGlow} aria-hidden="true" />
           <div className={styles.heroCopy}>
-            <EditorialLabel>Property operations</EditorialLabel>
-            <h1>Run property operations. Elevate every portfolio.</h1>
+            <EditorialLabel>AI property operations</EditorialLabel>
+            <h1>
+              Run property operations.{" "}
+              <span className="gradient-text">Elevate every portfolio.</span>
+            </h1>
             <p>
               Innflow connects recurring workflows, operating context,
               approvals, and resident-facing handoffs in one coordinated
@@ -324,14 +325,14 @@ export default function HomePage() {
             </p>
             <div className={styles.actions}>
               <TrackedLink
-                className="editorial-button editorial-button-dark"
+                className="editorial-button editorial-button-light"
                 destination={siteConfig.demoUrl}
                 eventLabel="hero_demo"
               >
                 Book a demo <ArrowRight size={15} />
               </TrackedLink>
               <a
-                className="editorial-button editorial-button-outline"
+                className="editorial-button editorial-button-ghost"
                 href="#features"
               >
                 See how it works
@@ -342,7 +343,7 @@ export default function HomePage() {
         </section>
 
         <section
-          className={`${styles.surface} ${styles.evidence}`}
+          className={`${styles.surface} ${styles.dark} ${styles.evidence}`}
           aria-label="Product evidence"
         >
           {evidence.map(([Icon, title, body]) => (
@@ -354,6 +355,73 @@ export default function HomePage() {
               </div>
             </article>
           ))}
+        </section>
+
+        <section
+          className={`${styles.surface} ${styles.integrations}`}
+          id="integrations"
+        >
+          <div>
+            <EditorialLabel>Connected ecosystem</EditorialLabel>
+            <h2>Connect the tools you already use.</h2>
+            <p>
+              These marks correspond to connector paths in the current product
+              repository, not customer endorsements.
+            </p>
+            <a href="/integrations">
+              View all integrations <ArrowRight size={14} />
+            </a>
+          </div>
+          <div className={styles.integrationGrid}>
+            {integrations.map((integration) => (
+              <span key={integration.name}>
+                <Image src={integration.asset} alt="" width={28} height={28} />
+                <strong>{integration.name}</strong>
+              </span>
+            ))}
+          </div>
+        </section>
+
+        <section
+          className={`${styles.surface} ${styles.dark} ${styles.setup}`}
+          id="why-innflow"
+        >
+          <div className={styles.setupIntro}>
+            <EditorialLabel>A smooth start</EditorialLabel>
+            <h2>From setup to success in three steps.</h2>
+          </div>
+          <ol>
+            <li>
+              <span className="gradient-text">01</span>
+              <Database size={26} />
+              <div>
+                <strong>Connect your portfolio</strong>
+                <p>
+                  Confirm the systems, records, and context the workflow needs.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span className="gradient-text">02</span>
+              <Robot size={26} />
+              <div>
+                <strong>Configure your workflows</strong>
+                <p>
+                  Define actions, exceptions, approvals, and visible ownership.
+                </p>
+              </div>
+            </li>
+            <li>
+              <span className="gradient-text">03</span>
+              <ChartLineUp size={26} />
+              <div>
+                <strong>Operate with confidence</strong>
+                <p>
+                  Review execution and expand only when the process is ready.
+                </p>
+              </div>
+            </li>
+          </ol>
         </section>
 
         <section
@@ -369,13 +437,16 @@ export default function HomePage() {
             </p>
           </div>
           <div className={styles.featureBands}>
-            {featureBands.map((feature) => {
+            {featureBands.map((feature, index) => {
               const Icon = feature.icon;
               return (
                 <article
-                  className={`${styles.featureBand} ${styles[feature.tone]}`}
+                  className={`${styles.featureBand} ${
+                    index % 2 === 1 ? styles.featureBandReverse : ""
+                  }`}
                   key={feature.title}
                 >
+                  {" "}
                   <div className={styles.featureCopy}>
                     <span className={styles.bandKicker}>
                       <Icon size={15} /> {feature.kicker}
@@ -391,48 +462,6 @@ export default function HomePage() {
               );
             })}
           </div>
-        </section>
-
-        <section
-          className={`${styles.surface} ${styles.setup}`}
-          id="why-innflow"
-        >
-          <div className={styles.setupIntro}>
-            <EditorialLabel>A smooth start</EditorialLabel>
-            <h2>From setup to success in three steps.</h2>
-          </div>
-          <ol>
-            <li>
-              <span>01</span>
-              <Database size={26} />
-              <div>
-                <strong>Connect your portfolio</strong>
-                <p>
-                  Confirm the systems, records, and context the workflow needs.
-                </p>
-              </div>
-            </li>
-            <li>
-              <span>02</span>
-              <Robot size={26} />
-              <div>
-                <strong>Configure your workflows</strong>
-                <p>
-                  Define actions, exceptions, approvals, and visible ownership.
-                </p>
-              </div>
-            </li>
-            <li>
-              <span>03</span>
-              <ChartLineUp size={26} />
-              <div>
-                <strong>Operate with confidence</strong>
-                <p>
-                  Review execution and expand only when the process is ready.
-                </p>
-              </div>
-            </li>
-          </ol>
         </section>
 
         <section
@@ -466,31 +495,6 @@ export default function HomePage() {
                 </article>
               );
             })}
-          </div>
-        </section>
-
-        <section
-          className={`${styles.surface} ${styles.integrations}`}
-          id="integrations"
-        >
-          <div>
-            <EditorialLabel>Connected ecosystem</EditorialLabel>
-            <h2>Connect the tools you already use.</h2>
-            <p>
-              These marks correspond to connector paths in the current product
-              repository, not customer endorsements.
-            </p>
-            <a href="/integrations">
-              View all integrations <ArrowRight size={14} />
-            </a>
-          </div>
-          <div className={styles.integrationGrid}>
-            {integrations.map((integration) => (
-              <span key={integration.name}>
-                <Image src={integration.asset} alt="" width={28} height={28} />
-                <strong>{integration.name}</strong>
-              </span>
-            ))}
           </div>
         </section>
 
@@ -545,14 +549,20 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className={`${styles.surface} ${styles.finalCta}`}>
+        <section
+          className={`${styles.surface} ${styles.dark} ${styles.finalCta}`}
+        >
+          <div className={styles.ctaGlow} aria-hidden="true" />
           <div>
             <EditorialLabel>One operation · one clear next step</EditorialLabel>
-            <h2>See Innflow in action. Built for your portfolio.</h2>
+            <h2>
+              See Innflow <span className="gradient-text">in action.</span>{" "}
+              Built for your portfolio.
+            </h2>
           </div>
           <div>
             <TrackedLink
-              className="editorial-button editorial-button-dark"
+              className="editorial-button editorial-button-light"
               destination={siteConfig.demoUrl}
               eventLabel="final_demo"
             >

@@ -1,0 +1,211 @@
+/* Portfolio mega menu — shared by every page that renders EditorialHeader */
+
+/* Keep static so the panel anchors to .editorial-header-inner (position: relative) */
+.menu {
+  position: static;
+}
+
+.trigger {
+  border: 0;
+  background: none;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  transition: color 160ms ease;
+}
+
+.trigger:hover,
+.open .trigger {
+  color: var(--night-ink);
+}
+
+.trigger::after {
+  content: "⌄";
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 10px;
+  transform: translateY(-1px);
+  transition: transform 160ms ease;
+}
+
+.open .trigger::after {
+  transform: translateY(-1px) rotate(180deg);
+}
+
+.panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  width: min(1060px, calc(100vw - 48px));
+  overflow: hidden;
+  border: 1px solid var(--border-quiet);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: 0 24px 60px rgba(23, 24, 23, 0.16);
+  opacity: 0;
+  transform: translateX(-50%) translateY(-6px);
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease,
+    visibility 0s linear 160ms;
+}
+
+.open .panel {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  visibility: visible;
+  pointer-events: auto;
+  transition-delay: 0s;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2px 8px;
+  padding: 16px;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border-radius: 12px;
+  padding: 12px;
+  transition: background 160ms ease;
+}
+
+.item:hover {
+  background: var(--canvas-warm);
+}
+
+.icon {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  flex: none;
+  place-items: center;
+  border-radius: 10px;
+}
+
+.tint_blue {
+  background: var(--brand-soft);
+  color: var(--brand);
+}
+
+.tint_green {
+  background: var(--green-soft);
+  color: var(--green);
+}
+
+.tint_violet {
+  background: #efecfd;
+  color: #6d5ae0;
+}
+
+.tint_orange {
+  background: var(--warning-soft);
+  color: var(--warning);
+}
+
+.tint_plum {
+  background: var(--plum-soft);
+  color: var(--plum);
+}
+
+.tint_teal {
+  background: #e2f2ef;
+  color: #22706a;
+}
+
+.itemText {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.itemTitle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--ink-strong);
+  font-size: 14px;
+  font-weight: 620;
+  line-height: 1.25;
+}
+
+.itemBody {
+  color: var(--ink-muted);
+  font-size: 12.5px;
+  line-height: 1.35;
+}
+
+.badge {
+  flex: none;
+  border: 1px solid;
+  border-radius: 999px;
+  padding: 1px 7px;
+  font-size: 10px;
+  font-weight: 640;
+  line-height: 1.4;
+}
+
+.badgePopular {
+  border-color: rgba(109, 90, 224, 0.4);
+  background: #f4f2ff;
+  color: #6d5ae0;
+}
+
+.badgeNew {
+  border-color: rgba(23, 96, 168, 0.35);
+  background: var(--brand-soft);
+  color: var(--brand);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid var(--border-quiet);
+  background: var(--canvas-warm);
+  padding: 14px 28px;
+}
+
+.footer > span {
+  color: var(--ink-muted);
+  font-size: 12.5px;
+}
+
+.footerLink {
+  color: var(--brand);
+  font-size: 13px;
+  font-weight: 640;
+  white-space: nowrap;
+  transition: color 160ms ease;
+}
+
+.footerLink:hover {
+  color: var(--brand-hover);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trigger,
+  .trigger::after,
+  .panel,
+  .item,
+  .footerLink {
+    transition: none;
+  }
+}

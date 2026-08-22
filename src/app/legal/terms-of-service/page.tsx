@@ -9,6 +9,12 @@ export const metadata = createPageMetadata({
   path: policy.path,
 });
 
-export default function TermsPage() {
-  return <LegalPolicyPage title={policy.title} source={policy.source} />;
+export default function TermsOfServicePage() {
+  return (
+    <LegalPolicyPage
+      title={policy.title}
+      policyId={policy.policyId}
+      source={policy.source}
+    />
+  );
 }

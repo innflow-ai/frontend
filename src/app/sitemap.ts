@@ -8,9 +8,10 @@ const staticRoutes = [
   "/integrations",
   "/pricing",
   "/demo",
-  "/privacy",
-  "/terms",
-  "/cookies",
+  "/legal/privacy-policy",
+  "/legal/terms-of-service",
+  "/legal/cookie-policy",
+  "/legal/acceptable-use-policy",
   "/legal/eula",
 ] as const;
 

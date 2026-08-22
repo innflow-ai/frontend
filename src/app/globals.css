@@ -2441,6 +2441,18 @@ p {
   border: 0;
 }
 
+.legal-policy-embed {
+  width: 100%;
+  min-height: 78vh;
+}
+
+.legal-policy-embed iframe {
+  display: block;
+  width: 100%;
+  min-height: 78vh;
+  border: 0;
+}
+
 .legal-dsar-frame {
   min-height: 920px;
 }
@@ -2557,6 +2569,11 @@ p {
   }
 
   .legal-policy-frame {
+    min-height: 82vh;
+  }
+
+  .legal-policy-embed,
+  .legal-policy-embed iframe {
     min-height: 82vh;
   }
 }

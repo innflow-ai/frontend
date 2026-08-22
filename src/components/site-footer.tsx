@@ -14,7 +14,6 @@ export function SiteFooter() {
             height={28}
           />
           <p>Operational workflows with visible human control.</p>
-          <small>Standalone preview · not deployed</small>
         </div>
         <div>
           <strong>Product</strong>
@@ -32,9 +31,12 @@ export function SiteFooter() {
         </div>
         <div>
           <strong>Legal and contact</strong>
-          <a href="/privacy">Privacy</a>
-          <a href="/terms">Terms</a>
-          <a href="/cookies">Cookies</a>
+          <a href="/legal/privacy-policy">Privacy</a>
+          <a href="/legal/terms-of-service">Terms</a>
+          <a href="/legal/cookie-policy">Cookies</a>
+          <a href="/legal/acceptable-use-policy">Acceptable use</a>
+          <a href="/legal/eula">EULA</a>
+          <a href="/legal/dsar">Privacy request</a>
           <a href={`mailto:${siteConfig.supportEmail}`}>
             {siteConfig.supportEmail}
           </a>
@@ -48,9 +50,7 @@ export function SiteFooter() {
       </div>
       <div className="shell footer-bottom">
         <span>© {new Date().getFullYear()} Innflow. All rights reserved.</span>
-        <span>
-          Approved policies are supplied through the current Termly sources.
-        </span>
+        <span>Property operations, connected.</span>
       </div>
     </footer>
   );

@@ -45,9 +45,12 @@ export function EditorialFooter() {
         </div>
         <div>
           <strong>Company</strong>
-          <a href="/privacy">Privacy</a>
-          <a href="/terms">Terms</a>
-          <a href="/cookies">Cookies</a>
+          <a href="/legal/privacy-policy">Privacy</a>
+          <a href="/legal/terms-of-service">Terms</a>
+          <a href="/legal/cookie-policy">Cookies</a>
+          <a href="/legal/acceptable-use-policy">Acceptable use</a>
+          <a href="/legal/eula">EULA</a>
+          <a href="/legal/dsar">Privacy request</a>
           <TrackedLink
             destination={`${siteConfig.appOrigin}/login`}
             eventLabel="footer_login"

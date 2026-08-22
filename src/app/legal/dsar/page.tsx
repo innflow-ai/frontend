@@ -7,7 +7,7 @@ const source =
 export const metadata = createPageMetadata({
   title: "Data subject access request | Innflow",
   description:
-    "Submit an Innflow privacy request through the currently approved Termly request form.",
+    "Submit a request to access, correct, or delete your personal data.",
   path: "/legal/dsar",
   noIndex: true,
 });
@@ -20,8 +20,8 @@ export default function DsarPage() {
           <span className="section-label">Privacy request</span>
           <h1>Data subject access request</h1>
           <p>
-            Use the currently approved Termly request form below. If it does not
-            load, open the form directly.
+            Use the form below to submit a privacy request. If the embedded form
+            does not load, you can open it in a new tab.
           </p>
           <a
             className="text-link"

@@ -17,9 +17,20 @@ function classify(pathname) {
     ["/product/agentic-workflows", ["redirect-308", "/features/workflows", "Closest verified product category"]],
     ["/product/ai-agents", ["redirect-308", "/features/assistant", "Closest bounded product category"]],
     ["/product/agent-os", ["redirect-308", "/features/assistant", "Closest bounded product category"]],
-    ["/legal/privacy-policy", ["redirect-308", "/privacy", "Preserve approved Termly policy"]],
-    ["/legal/terms-of-service", ["redirect-308", "/terms", "Preserve approved Termly policy"]],
-    ["/legal/cookie-policy", ["redirect-308", "/cookies", "Preserve approved Termly policy"]],
+    ["/legal/privacy-policy", ["keep", "/legal/privacy-policy", "Preserve approved Termly policy"]],
+    ["/legal/terms-of-service", ["keep", "/legal/terms-of-service", "Preserve approved Termly policy"]],
+    ["/legal/cookie-policy", ["keep", "/legal/cookie-policy", "Preserve approved Termly policy"]],
+    [
+      "/legal/acceptable-use-policy",
+      ["keep", "/legal/acceptable-use-policy", "Preserve approved Termly policy"],
+    ],
+    [
+      "/acceptable-use-policy",
+      ["redirect-308", "/legal/acceptable-use-policy", "Use the canonical legal namespace"],
+    ],
+    ["/privacy", ["redirect-308", "/legal/privacy-policy", "Use the canonical legal namespace"]],
+    ["/terms", ["redirect-308", "/legal/terms-of-service", "Use the canonical legal namespace"]],
+    ["/cookies", ["redirect-308", "/legal/cookie-policy", "Use the canonical legal namespace"]],
     ["/legal/eula", ["keep", "/legal/eula", "Preserve approved Termly policy"]],
     ["/legal/dsar", ["keep", "/legal/dsar", "Preserve approved Termly request form"]],
   ]);
@@ -41,7 +52,7 @@ function classify(pathname) {
     return ["retire-410", "", "Template, staging, or low-quality resource route excluded"];
   }
   if (path === "/legal/ccpa" || path.toLowerCase().includes("ccpa")) {
-    return ["redirect-308", "/privacy", "Privacy rights are maintained in the approved privacy policy"];
+    return ["redirect-308", "/legal/privacy-policy", "Privacy rights are maintained in the approved privacy policy"];
   }
   if (path.startsWith("/legal/")) {
     return ["hold-legacy", path, "Legal route requires owner review before cutover"];

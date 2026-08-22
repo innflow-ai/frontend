@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
   MegaMenu,
@@ -34,7 +35,40 @@ const itemVariants = {
 
 export function EditorialHeader() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [pastHomeHero, setPastHomeHero] = useState(false);
+  const pathname = usePathname();
   const reduce = useReducedMotion();
+  const isHome = pathname === "/";
+  const useLightChrome = isHome && !pastHomeHero;
+
+  // Keep the homepage header transparent over the hero, then switch to the
+  // solid navigation treatment once the hero has passed beneath it.
+  useEffect(() => {
+    if (!isHome) {
+      setPastHomeHero(false);
+      return;
+    }
+
+    let frame = 0;
+    const syncHeader = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const hero = document.getElementById("home-hero");
+        setPastHomeHero(
+          hero ? hero.getBoundingClientRect().bottom <= 70 : window.scrollY > 0,
+        );
+      });
+    };
+
+    syncHeader();
+    window.addEventListener("scroll", syncHeader, { passive: true });
+    window.addEventListener("resize", syncHeader);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", syncHeader);
+      window.removeEventListener("resize", syncHeader);
+    };
+  }, [isHome]);
 
   // Escape closes the mobile overlay.
   useEffect(() => {
@@ -68,14 +102,22 @@ export function EditorialHeader() {
 
   return (
     <>
-      <header className={styles.header}>
+      <header
+        className={`${styles.header}${isHome ? ` ${styles.homeHeader}` : ""}${
+          useLightChrome ? ` ${styles.homeTop}` : ""
+        }`}
+      >
         <div className={styles.inner}>
           <a className={styles.brand} href="/" aria-label="Innflow home">
             <Image
-              src="/brand/innflow_logo_set_B.svg"
+              src={
+                useLightChrome
+                  ? "/brand/innflow_white_logo_set_bold.svg"
+                  : "/brand/innflow_logo_set_B.svg"
+              }
               alt="Innflow"
               width={139}
-              height={28}
+              height={useLightChrome ? 29 : 28}
               priority
             />
           </a>
@@ -116,17 +158,28 @@ export function EditorialHeader() {
             </TrackedLink>
             <button
               type="button"
-              className={`${styles.hamburger}${
-                mobileOpen ? ` ${styles.hamburgerOpen}` : ""
-              }`}
+              className={styles.hamburger}
               aria-expanded={mobileOpen}
               aria-controls="editorial-mobile-overlay"
               aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
               onClick={() => setMobileOpen((open) => !open)}
             >
-              <span />
-              <span />
-              <span />
+              <Image
+                className={styles.menuIcon}
+                src={
+                  mobileOpen
+                    ? `/brand/navigation/Close_X_${
+                        useLightChrome ? "white" : "black"
+                      }.svg`
+                    : `/brand/navigation/HamburgerMenu_${
+                        useLightChrome ? "white" : "black"
+                      }.svg`
+                }
+                alt=""
+                width={mobileOpen ? 25 : 27}
+                height={mobileOpen ? 25 : 27}
+                unoptimized
+              />
             </button>
           </div>
         </div>

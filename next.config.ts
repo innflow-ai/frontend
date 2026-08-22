@@ -35,23 +35,40 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: "/legal/privacy-policy",
-        destination: "/privacy",
+        source: "/privacy",
+        destination: "/legal/privacy-policy",
         permanent: true,
       },
       {
-        source: "/legal/terms-of-service",
-        destination: "/terms",
+        source: "/terms",
+        destination: "/legal/terms-of-service",
         permanent: true,
       },
       {
-        source: "/legal/cookie-policy",
-        destination: "/cookies",
+        source: "/cookies",
+        destination: "/legal/cookie-policy",
         permanent: true,
       },
-      { source: "/privacy-policy", destination: "/privacy", permanent: true },
-      { source: "/terms-of-service", destination: "/terms", permanent: true },
-      { source: "/cookie-policy", destination: "/cookies", permanent: true },
+      {
+        source: "/privacy-policy",
+        destination: "/legal/privacy-policy",
+        permanent: true,
+      },
+      {
+        source: "/terms-of-service",
+        destination: "/legal/terms-of-service",
+        permanent: true,
+      },
+      {
+        source: "/cookie-policy",
+        destination: "/legal/cookie-policy",
+        permanent: true,
+      },
+      {
+        source: "/acceptable-use-policy",
+        destination: "/legal/acceptable-use-policy",
+        permanent: true,
+      },
     ];
   },
 };

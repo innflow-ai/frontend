@@ -1,33 +1,57 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
 import { allFeatureSlugs } from "@/content/marketing";
+import { getBlogPosts } from "@/lib/sanity";
 
-const staticRoutes = [
-  "",
-  "/property-management",
-  "/integrations",
-  "/pricing",
-  "/demo",
-  "/legal/privacy-policy",
-  "/legal/terms-of-service",
-  "/legal/cookie-policy",
-  "/legal/acceptable-use-policy",
-  "/legal/eula",
+const staticRoutes: Array<{
+  path: string;
+  changeFrequency: "daily" | "weekly" | "monthly" | "yearly";
+  priority: number;
+}> = [
+  { path: "", changeFrequency: "weekly", priority: 1 },
+  { path: "/property-management", changeFrequency: "weekly", priority: 0.9 },
+  { path: "/integrations", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/pricing", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/demo", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/blog", changeFrequency: "daily", priority: 0.8 },
+  { path: "/legal/privacy-policy", changeFrequency: "yearly", priority: 0.3 },
+  {
+    path: "/legal/terms-of-service",
+    changeFrequency: "yearly",
+    priority: 0.3,
+  },
+  { path: "/legal/cookie-policy", changeFrequency: "yearly", priority: 0.3 },
+  {
+    path: "/legal/acceptable-use-policy",
+    changeFrequency: "yearly",
+    priority: 0.3,
+  },
+  { path: "/legal/eula", changeFrequency: "yearly", priority: 0.3 },
 ] as const;
 
-export default function sitemap(): MetadataRoute.Sitemap {
+const siteLastModified = new Date("2026-08-22T00:00:00.000Z");
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const posts = await getBlogPosts();
+
   return [
-    ...staticRoutes.map((path, index) => ({
-      url: `${siteConfig.marketingOrigin}${path}`,
-      lastModified: new Date("2026-08-09T00:00:00.000Z"),
-      changeFrequency: "weekly" as const,
-      priority: index === 0 ? 1 : 0.7,
+    ...staticRoutes.map((route) => ({
+      url: `${siteConfig.marketingOrigin}${route.path}`,
+      lastModified: siteLastModified,
+      changeFrequency: route.changeFrequency,
+      priority: route.priority,
     })),
     ...allFeatureSlugs.map((slug) => ({
       url: `${siteConfig.marketingOrigin}/features/${slug}`,
-      lastModified: new Date("2026-08-09T00:00:00.000Z"),
+      lastModified: siteLastModified,
       changeFrequency: "weekly" as const,
       priority: 0.8,
+    })),
+    ...posts.map((post) => ({
+      url: `${siteConfig.marketingOrigin}/blog/${post.slug}`,
+      lastModified: new Date(post.publishedAt),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
     })),
   ];
 }

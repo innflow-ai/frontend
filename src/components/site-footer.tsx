@@ -27,7 +27,7 @@ export function SiteFooter() {
           <a href="/property-management">Overview</a>
           <a href="/integrations">Integrations</a>
           <a href="/pricing">Buying motion</a>
-          <a href="/demo">Book a demo</a>
+          <a href={siteConfig.demoUrl}>Book a demo</a>
         </div>
         <div>
           <strong>Legal and contact</strong>

@@ -11,6 +11,7 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { JsonLd } from "@/components/json-ld";
 import { MarketingPage } from "@/components/page-primitives";
 import { siteConfig } from "@/config/site";
+import { createPageMetadata } from "@/lib/metadata";
 import {
   coverImageUrl,
   formatPostDate,
@@ -37,35 +38,43 @@ export async function generateMetadata({
   const post = await getBlogPost(slug);
   if (!post) return {};
 
-  const description = post.metaDescription ?? post.excerpt ?? undefined;
+  const description =
+    post.metaDescription?.trim() ||
+    post.excerpt?.trim() ||
+    `Read ${post.title} on the Innflow property operations blog.`;
   const canonical = new URL(
     `/blog/${post.slug}`,
     siteConfig.marketingOrigin,
   ).toString();
   const coverUrl = post.coverImage
     ? coverImageUrl(post.coverImage, 1200, 630)
-    : undefined;
+    : "/opengraph-image.png";
+  const imageAlt = post.coverImage?.alt ?? post.title;
+  const title = `${post.title} | Innflow`;
+  const baseMetadata = createPageMetadata({
+    title,
+    description,
+    path: `/blog/${post.slug}`,
+  });
 
   return {
-    title: `${post.title} | Innflow blog`,
-    description,
-    alternates: { canonical },
+    ...baseMetadata,
     openGraph: {
-      title: post.title,
+      title,
       description,
       url: canonical,
       siteName: siteConfig.name,
       type: "article",
       publishedTime: post.publishedAt,
-      images: coverUrl
-        ? [{ url: coverUrl, width: 1200, height: 630 }]
-        : undefined,
+      section: humanizeCategory(post.category),
+      tags: post.tags ?? undefined,
+      images: [{ url: coverUrl, width: 1200, height: 630, alt: imageAlt }],
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
+      title,
       description,
-      images: coverUrl ? [coverUrl] : undefined,
+      images: [{ url: coverUrl, alt: imageAlt }],
     },
   };
 }

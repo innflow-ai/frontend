@@ -51,6 +51,7 @@
   border-bottom: 1px solid var(--sky-line);
   background: #fff;
   box-shadow: var(--sky-shadow-panel);
+  text-shadow: none;
 }
 
 /* Invisible bridge so the pointer can travel from trigger → panel */

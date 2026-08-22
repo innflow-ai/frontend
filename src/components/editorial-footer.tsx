@@ -61,6 +61,16 @@ export function EditorialFooter() {
       </div>
       <div className={`${styles.shell} ${styles.bottom}`}>
         <span>© {new Date().getFullYear()} Innflow. All rights reserved.</span>
+        {/* biome-ignore lint/a11y/useValidAnchor: Termly requires href="#" for its preferences trigger. */}
+        <a href="#" className="termly-display-preferences">
+          Consent Preferences
+        </a>
+        <a href="https://app.termly.io/notify/d253192a-6c11-4338-9883-67b3307aea2f">
+          Do Not Sell or Share My Personal Information
+        </a>
+        <a href="https://app.termly.io/notify/d253192a-6c11-4338-9883-67b3307aea2f">
+          Limit the Use Of My Sensitive Personal Information
+        </a>
         <span>Property operations, connected.</span>
       </div>
     </footer>

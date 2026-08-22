@@ -9,9 +9,9 @@ import { integrations } from "@/content/home";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Integration paths | Innflow",
+  title: "Property Management Software Integrations | Innflow",
   description:
-    "Review the connector paths evidenced in the Innflow product repository and the validation required before implementation.",
+    "Connect Innflow with the property management tools your team uses and coordinate data, approvals, and operational workflows across systems.",
   path: "/integrations",
 });
 

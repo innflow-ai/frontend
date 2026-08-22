@@ -14,6 +14,32 @@ import { siteConfig } from "@/config/site";
 import { allFeatureSlugs, featurePages } from "@/content/marketing";
 import { createPageMetadata } from "@/lib/metadata";
 
+const featureSeo: Record<
+  keyof typeof featurePages,
+  { title: string; description: string }
+> = {
+  workflows: {
+    title: "Visual Workflow Automation for Property Operations | Innflow",
+    description:
+      "Build visible, repeatable property operations workflows with connected context, human approvals, and execution history in Innflow.",
+  },
+  assistant: {
+    title: "AI Assistant for Property Operations | Innflow",
+    description:
+      "Give property operations teams an AI assistant that works from connected context and turns questions into reviewable next steps.",
+  },
+  communications: {
+    title: "Property Management Communications | Innflow",
+    description:
+      "Connect property management conversations to workflows, records, approvals, and operational context while keeping human review visible.",
+  },
+  website: {
+    title: "Property Management Website Workflows | Innflow",
+    description:
+      "Connect customer-facing property pages to governed workflows, operational context, and review steps with Innflow.",
+  },
+};
+
 export function generateStaticParams() {
   return allFeatureSlugs.map((slug) => ({ slug }));
 }
@@ -26,10 +52,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const content = featurePages[slug as keyof typeof featurePages];
   if (!content) return {};
+  const seo = featureSeo[slug as keyof typeof featurePages];
 
   return createPageMetadata({
-    title: `${content.eyebrow} for property operations | Innflow`,
-    description: content.description,
+    title: seo.title,
+    description: seo.description,
     path: `/features/${content.slug}`,
   });
 }

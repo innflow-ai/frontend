@@ -14,9 +14,9 @@ import { faqs, portfolioFits } from "@/content/home";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Property-management operations | Innflow",
+  title: "Property Management Workflow Automation | Innflow",
   description:
-    "Coordinate recurring property workflows, operational context, approvals, and stakeholder handoffs around the systems your team already uses.",
+    "Connect recurring property management workflows, approvals, files, and operational context around the systems your team already uses with Innflow.",
   path: "/property-management",
 });
 
@@ -102,7 +102,7 @@ export default function PropertyManagementPage() {
                 <span>{fit.status}</span>
                 <h3>{fit.title}</h3>
                 <p>{fit.body}</p>
-                <a href="/demo">Discuss this operating model →</a>
+                <a href={siteConfig.demoUrl}>Discuss this operating model →</a>
               </article>
             ))}
           </div>

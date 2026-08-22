@@ -3,16 +3,15 @@
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { PortfolioMegaMenu } from "@/components/portfolio-mega-menu";
+import { MegaMenu, productColumns, resourcesColumns } from "@/components/mega-menu";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
 
 const MotionTrackedLink = motion.create(TrackedLink);
 
 const mobileLinks = [
-  { href: "#features", label: "Features" },
+  { href: "#features", label: "Product" },
   { href: "#portfolios", label: "Portfolios" },
-  { href: "#why-innflow", label: "Why Innflow" },
   { href: "#resources", label: "Resources" },
   { href: "/pricing", label: "Pricing" },
   { href: "/blog", label: "Blog" },
@@ -67,14 +66,13 @@ export function EditorialHeader() {
           <nav aria-label="Primary navigation">
             <ul className="editorial-desktop-nav">
               <li>
-                <a href="#features">Features</a>
-              </li>
-              <PortfolioMegaMenu />
-              <li>
-                <a href="#why-innflow">Why Innflow</a>
+                <MegaMenu label="Product" columns={productColumns} />
               </li>
               <li>
-                <a href="#resources">Resources</a>
+                <MegaMenu label="Portfolios" />
+              </li>
+              <li>
+                <MegaMenu label="Resources" columns={resourcesColumns} />
               </li>
               <li>
                 <a href="/pricing">Pricing</a>
@@ -92,13 +90,12 @@ export function EditorialHeader() {
             >
               Login
             </TrackedLink>
-            <a href={`mailto:${siteConfig.supportEmail}`}>Contact</a>
             <TrackedLink
               className="editorial-button editorial-button-brand editorial-header-cta"
               destination={siteConfig.demoUrl}
               eventLabel="header_demo"
             >
-              Book a demo
+              Sign up now
             </TrackedLink>
             <button
               type="button"
@@ -160,13 +157,6 @@ export function EditorialHeader() {
               >
                 Login
               </MotionTrackedLink>
-              <motion.a
-                href={`mailto:${siteConfig.supportEmail}`}
-                variants={reduce ? undefined : itemVariants}
-                onClick={closeMobile}
-              >
-                Contact
-              </motion.a>
               <MotionTrackedLink
                 className="editorial-button editorial-button-brand editorial-mobile-cta"
                 destination={siteConfig.demoUrl}
@@ -174,7 +164,7 @@ export function EditorialHeader() {
                 variants={reduce ? undefined : itemVariants}
                 onClick={closeMobile}
               >
-                Book a demo
+                Sign up now
               </MotionTrackedLink>
             </motion.nav>
           </motion.div>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { MarketingPage } from "@/components/page-primitives";
 import { createPageMetadata } from "@/lib/metadata";
 import {
@@ -103,6 +104,9 @@ export default async function BlogIndexPage() {
     <MarketingPage>
       <section className={styles.hero}>
         <div className="shell">
+          <Breadcrumbs
+            items={[{ label: "Home", href: "/" }, { label: "Blog" }]}
+          />
           <span className="section-label">Innflow blog</span>
           <h1>Field notes on connected property operations.</h1>
           <p className={styles.heroSubline}>

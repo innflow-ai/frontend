@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { type BreadcrumbItem, Breadcrumbs } from "@/components/breadcrumbs";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { TrackedLink } from "@/components/tracked-link";
@@ -20,18 +21,21 @@ export function PageHero({
   title,
   description,
   status,
+  breadcrumbs,
   children,
 }: {
   eyebrow: string;
   title: string;
   description: string;
   status?: string;
+  breadcrumbs?: BreadcrumbItem[];
   children?: ReactNode;
 }) {
   return (
     <section className="subpage-hero">
       <div className="shell subpage-hero-grid">
         <div>
+          {breadcrumbs ? <Breadcrumbs items={breadcrumbs} /> : null}
           <div className="eyebrow-row">
             <span className="section-label">{eyebrow}</span>
             {status ? (

@@ -27,6 +27,7 @@ export default function PricingPage() {
       <PageHero
         eyebrow="Buying motion"
         title="Scope the operation before pricing the implementation."
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Pricing" }]}
         description="The application currently uses credit-based plan configuration, but property-management packaging and implementation scope are not approved for public pricing. This release therefore uses one demo-led path."
       />
       <EvidenceBlock

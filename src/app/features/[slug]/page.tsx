@@ -75,6 +75,11 @@ export default async function FeaturePage({
         title={content.title}
         description={content.description}
         status={content.status}
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Features", href: "/#features" },
+          { label: content.title },
+        ]}
       >
         <FeatureMedia type={content.media} />
       </PageHero>

@@ -21,6 +21,7 @@ export default function IntegrationsPage() {
       <PageHero
         eyebrow="Integrations"
         title="Connect the systems involved in the operation."
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Integrations" }]}
         description="The marks below correspond to connector paths in the product repository. Presence in code does not, by itself, prove production readiness, scope, or account-specific compatibility."
       />
       <EvidenceBlock

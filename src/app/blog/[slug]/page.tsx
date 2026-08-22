@@ -7,6 +7,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { JsonLd } from "@/components/json-ld";
 import { MarketingPage } from "@/components/page-primitives";
 import { siteConfig } from "@/config/site";
@@ -155,9 +156,13 @@ export default async function BlogPostPage({ params }: RouteParams) {
       <JsonLd value={articleSchema} />
       <section className={styles.hero}>
         <div className={`shell ${styles.article}`}>
-          <a className={styles.backLink} href="/blog">
-            <span aria-hidden="true">←</span> Back to blog
-          </a>
+          <Breadcrumbs
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Blog", href: "/blog" },
+              { label: post.title },
+            ]}
+          />
           <span className={styles.chip}>{humanizeCategory(post.category)}</span>
           <h1>{post.title}</h1>
           <p className={styles.meta}>

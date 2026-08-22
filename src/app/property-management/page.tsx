@@ -67,6 +67,10 @@ export default function PropertyManagementPage() {
       <PageHero
         eyebrow="Property-management operations"
         title="Coordinate recurring property work without replacing your core systems."
+        breadcrumbs={[
+          { label: "Home", href: "/" },
+          { label: "Property Management" },
+        ]}
         description="Innflow is positioned as the operational layer connecting requests, workflows, knowledge, files, tables, approvals, and execution history."
       >
         <HeroWorkflowFrame />

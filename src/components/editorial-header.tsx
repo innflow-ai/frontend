@@ -44,6 +44,9 @@ export function EditorialHeader() {
             <li>
               <a href="/pricing">Pricing</a>
             </li>
+            <li>
+              <a href="/blog">Blog</a>
+            </li>
           </ul>
         </nav>
 
@@ -70,6 +73,7 @@ export function EditorialHeader() {
               <a href="#why-innflow">Why Innflow</a>
               <a href="#resources">Resources</a>
               <a href="/pricing">Pricing</a>
+              <a href="/blog">Blog</a>
               <TrackedLink
                 destination={`${siteConfig.appOrigin}/login`}
                 eventLabel="mobile_login"

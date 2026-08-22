@@ -1,19 +1,11 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { type BreadcrumbItem, Breadcrumbs } from "@/components/breadcrumbs";
-import { SiteFooter } from "@/components/site-footer";
-import { SiteHeader } from "@/components/site-header";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
 
 export function MarketingPage({ children }: { children: ReactNode }) {
-  return (
-    <>
-      <SiteHeader />
-      <main id="main-content">{children}</main>
-      <SiteFooter />
-    </>
-  );
+  return <main id="main-content">{children}</main>;
 }
 
 export function PageHero({

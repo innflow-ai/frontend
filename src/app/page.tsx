@@ -1,7 +1,6 @@
 import {
   ArrowRight,
   Buildings,
-  CheckCircle,
   Database,
   FlowArrow,
   Headset,
@@ -13,12 +12,11 @@ import {
   Warehouse,
 } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
-import { EditorialFooter } from "@/components/editorial-footer";
-import { EditorialHeader } from "@/components/editorial-header";
 import { JsonLd } from "@/components/json-ld";
 import { Float, HeroIntro, HeroItem, Reveal } from "@/components/motion";
 import { Tag } from "@/components/tag";
 import { TrackedLink } from "@/components/tracked-link";
+import { VerifiedCheck } from "@/components/verified-check";
 import { siteConfig } from "@/config/site";
 import { faqs } from "@/content/home";
 import styles from "./page.module.css";
@@ -30,6 +28,8 @@ const avatarRow = [
   "/aeline/avatars/user-4.avif",
   "/aeline/avatars/hero-1.webp",
 ] as const;
+
+const logoSet = [1, 2, 3, 4, 5] as const;
 
 const features = [
   {
@@ -219,7 +219,6 @@ const faqSchema = {
 export default function HomePage() {
   return (
     <div className={styles.page}>
-      <EditorialHeader />
       <main id="main-content">
         <section className={styles.hero}>
           <Image
@@ -233,7 +232,9 @@ export default function HomePage() {
           <div className={styles.heroInner}>
             <HeroIntro>
               <HeroItem>
-                <Tag>AI property operations platform</Tag>
+                <Tag variant="outline" className={styles.heroTag}>
+                  AI property operations platform
+                </Tag>
               </HeroItem>
               <HeroItem>
                 <h1>Run property operations. Elevate every portfolio.</h1>
@@ -287,22 +288,34 @@ export default function HomePage() {
 
         <section className={styles.logoStrip} aria-label="Customer logos">
           <p>Powering operations at teams like</p>
-          <div className={styles.logoRow}>
-            {[1, 2, 3, 4, 5].map((i) => (
-              <Image
-                key={i}
-                src={`/aeline/logos/logo-${i}.svg`}
-                alt=""
-                width={110}
-                height={30}
-              />
-            ))}
+          <div className={styles.logoMarquee}>
+            <div className={styles.logoTrack}>
+              {[0, 1].map((copy) => (
+                <div
+                  className={styles.logoGroup}
+                  key={copy}
+                  aria-hidden={copy === 1 || undefined}
+                >
+                  {[0, 1, 2].map((round) =>
+                    logoSet.map((i) => (
+                      <Image
+                        key={`${copy}-${round}-${i}`}
+                        src={`/aeline/logos/logo-${i}.svg`}
+                        alt=""
+                        width={110}
+                        height={30}
+                      />
+                    )),
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
         <section className={styles.features} id="features">
           <Reveal className={styles.shell}>
-            <p className={styles.eyebrow}>One platform · every workflow</p>
+            <Tag>One platform · every workflow</Tag>
             <h2 className={styles.sectionTitle}>
               Everything you need to run modern property operations.
             </h2>
@@ -343,13 +356,13 @@ export default function HomePage() {
                 </Float>
               </div>
               <div className={styles.serviceCopy}>
-                <p className={styles.eyebrow}>{service.kicker}</p>
+                <Tag>{service.kicker}</Tag>
                 <h2>{service.title}</h2>
-                <p>{service.body}</p>
+                <p className={styles.serviceBody}>{service.body}</p>
                 <ul>
                   {service.points.map((point) => (
                     <li key={point}>
-                      <CheckCircle size={18} weight="fill" /> {point}
+                      <VerifiedCheck size={18} /> {point}
                     </li>
                   ))}
                 </ul>
@@ -360,7 +373,7 @@ export default function HomePage() {
 
         <section className={styles.testimonials} id="testimonials">
           <Reveal className={styles.shell}>
-            <p className={styles.eyebrow}>Testimonials</p>
+            <Tag>Testimonials</Tag>
             <h2 className={styles.sectionTitle}>
               Teams feel the difference in the first week.
             </h2>
@@ -395,7 +408,7 @@ export default function HomePage() {
 
         <section className={styles.portfolios} id="portfolios">
           <Reveal className={styles.shell}>
-            <p className={styles.eyebrow}>Built for every portfolio</p>
+            <Tag>Built for every portfolio</Tag>
             <h2 className={styles.sectionTitle}>
               One platform for every property type you manage.
             </h2>
@@ -432,7 +445,7 @@ export default function HomePage() {
 
         <section className={styles.partner}>
           <Reveal className={styles.shell}>
-            <p className={styles.eyebrow}>Always by your side</p>
+            <Tag>Always by your side</Tag>
             <h2 className={styles.sectionTitle}>A partner in your success.</h2>
           </Reveal>
           <div className={styles.shell}>
@@ -457,7 +470,7 @@ export default function HomePage() {
 
         <section className={styles.faq} id="faq">
           <Reveal className={styles.faqIntro}>
-            <p className={styles.eyebrow}>Questions? We’ve got answers.</p>
+            <Tag>Questions? We’ve got answers.</Tag>
             <h2 className={styles.sectionTitle}>
               Common questions. Clear boundaries.
             </h2>
@@ -501,7 +514,6 @@ export default function HomePage() {
           </Reveal>
         </section>
       </main>
-      <EditorialFooter />
       <JsonLd value={organizationSchema} />
       <JsonLd value={faqSchema} />
     </div>

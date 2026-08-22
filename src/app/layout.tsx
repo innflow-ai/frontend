@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
-import { Figtree, Manrope } from "next/font/google";
+import { Figtree } from "next/font/google";
 import type { ReactNode } from "react";
+import { EditorialFooter } from "@/components/editorial-footer";
+import { EditorialHeader } from "@/components/editorial-header";
 import { MarketingRuntime } from "@/components/marketing-runtime";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
@@ -55,7 +57,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <a className="skip-link" href="#main-content">
           Skip to content
         </a>
+        <EditorialHeader />
         {children}
+        <EditorialFooter />
         <MarketingRuntime />
       </body>
     </html>

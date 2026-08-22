@@ -1,12 +1,13 @@
 import Image from "next/image";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
+import styles from "./editorial-footer.module.css";
 
 export function EditorialFooter() {
   return (
-    <footer className="editorial-footer" id="resources">
-      <div className="editorial-shell editorial-footer-grid">
-        <div className="editorial-footer-brand">
+    <footer className={styles.footer} id="resources">
+      <div className={`${styles.shell} ${styles.grid}`}>
+        <div className={styles.brand}>
           <Image
             src="/brand/innflow_white_logo_set_bold.svg"
             alt="Innflow"
@@ -20,7 +21,7 @@ export function EditorialFooter() {
         </div>
         <div>
           <strong>Product</strong>
-          <a href="#features">Features</a>
+          <a href="/#features">Features</a>
           <a href="/features/workflows">Workflows</a>
           <a href="/features/assistant">Assistant</a>
           <a href="/integrations">Integrations</a>
@@ -28,18 +29,18 @@ export function EditorialFooter() {
         </div>
         <div>
           <strong>Solutions</strong>
-          <a href="#portfolios">Residential</a>
-          <a href="#portfolios">Single-Family</a>
-          <a href="#portfolios">Multifamily</a>
-          <a href="#portfolios">Commercial</a>
-          <a href="#portfolios">Community Associations</a>
-          <a href="#portfolios">Affordable Housing</a>
+          <a href="/#portfolios">Residential</a>
+          <a href="/#portfolios">Single-Family</a>
+          <a href="/#portfolios">Multifamily</a>
+          <a href="/#portfolios">Commercial</a>
+          <a href="/#portfolios">Community Associations</a>
+          <a href="/#portfolios">Affordable Housing</a>
         </div>
         <div>
           <strong>Resources</strong>
           <a href="/property-management">Property management</a>
           <a href="/integrations">Integration guide</a>
-          <a href="#faq">FAQs</a>
+          <a href="/#faq">FAQs</a>
           <a href={`mailto:${siteConfig.supportEmail}`}>Contact</a>
         </div>
         <div>
@@ -55,7 +56,7 @@ export function EditorialFooter() {
           </TrackedLink>
         </div>
       </div>
-      <div className="editorial-shell editorial-footer-bottom">
+      <div className={`${styles.shell} ${styles.bottom}`}>
         <span>© {new Date().getFullYear()} Innflow. All rights reserved.</span>
         <span>Property operations, connected.</span>
       </div>

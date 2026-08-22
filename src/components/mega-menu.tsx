@@ -197,6 +197,7 @@ export function MegaMenu({ label, columns = defaultColumns }: MegaMenuProps) {
       };
 
   return (
+    // biome-ignore lint/a11y/noStaticElementInteractions: hover intent only — keyboard access is provided by the trigger button's onFocus/onClick
     <div
       ref={rootRef}
       className={styles.wrap}

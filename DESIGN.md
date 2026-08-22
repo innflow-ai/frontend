@@ -68,3 +68,15 @@ The brand-kit blue does not provide sufficient contrast for small white CTA text
 - Do not reproduce exact page sections, grids, card geometry, navigation density, or motion sequences.
 - Do not reuse third-party screenshots as shipped media.
 - Do not infer that a repeated reference pattern is part of Innflow's identity.
+
+## Homepage night direction (2026 redesign)
+
+The homepage moved to a dark, AI-forward visual language while every other page stays on the token system above.
+
+- Dark near-black surfaces: `--night` `#06090F`, `--night-surface` `#0C111B`, `--night-border` `#1D2635`, with `--night-ink` / `--night-muted` text. Section rhythm alternates dark hero/setup/closing-CTA with light integrations, features, portfolio, partner, and FAQ surfaces.
+- Iridescent accent ramp: `--glow-blue` `#5AAAF8` → `--glow-violet` `#8B7CF6`, exposed through `.gradient-text` (large display sizes only, for contrast) and `.gradient-border` (hairlines on dark cards). Gradients are CSS-only radial/linear washes — no canvas, no JS, no animation libraries.
+- Display scale: `--display-size: clamp(56px, 7vw, 96px)` for the hero headline.
+- Product evidence renders as floating glass panels: `--night-surface` fill, `--night-border`, backdrop blur, and a soft blue/violet glow shadow.
+- Header is dark glass (blurred `--night` at 78% over the hero, white logo); footer is a `--night` surface. Both remain homepage-scoped (`editorial-*` classes in `src/app/page.module.css`); other pages keep `site-header`/`site-footer`.
+- Motion stays restrained: 160–180ms color/background/border transitions and a one-pixel hover lift; `prefers-reduced-motion` removes transitions. No scroll animation.
+- Copy honesty is unchanged: no customer names, logos, or fabricated metrics. The logo-wall slot shows product integration connectors only, labeled as such.

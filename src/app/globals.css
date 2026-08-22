@@ -2605,6 +2605,41 @@ h3 {
   }
 }
 
+/* Homepage "night" system (2026 redesign) — additive tokens only.
+   Existing tokens above remain the system for pricing, integrations,
+   features, legal, and demo pages. See DESIGN.md. */
+:root {
+  --night: #06090f;
+  --night-surface: #0c111b;
+  --night-border: #1d2635;
+  --night-ink: #f2f6fc;
+  --night-muted: #9aa7ba;
+  --glow-blue: #5aaaf8;
+  --glow-violet: #8b7cf6;
+  --display-size: clamp(56px, 7vw, 96px);
+}
+
+/* Iridescent accent text — large display sizes only (contrast). */
+.gradient-text {
+  background: linear-gradient(
+    100deg,
+    var(--glow-blue) 0%,
+    var(--glow-violet) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Gradient hairline border on dark surfaces. */
+.gradient-border {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--night-surface), var(--night-surface)) padding-box,
+    linear-gradient(135deg, rgba(90, 170, 248, 0.55), rgba(139, 124, 246, 0.55))
+    border-box;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

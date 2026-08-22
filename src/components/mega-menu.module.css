@@ -1,0 +1,209 @@
+/* Shared full-width mega menu — used by both SiteHeader and EditorialHeader.
+   Visual language follows the Aeline-transplant "sky" token set so the panel
+   reads identically on the homepage and interior pages. */
+
+.wrap {
+  position: static;
+}
+
+.trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 0;
+  transition: color 160ms ease;
+}
+
+.trigger:hover,
+.trigger[aria-expanded="true"] {
+  color: var(--sky-ink);
+}
+
+.caret {
+  display: inline-block;
+  font-size: 11px;
+  line-height: 1;
+  transform: translateY(-1px);
+  transition: transform 180ms ease;
+}
+
+.trigger[aria-expanded="true"] .caret {
+  transform: translateY(-1px) rotate(180deg);
+}
+
+/* Full-viewport-width panel, centered regardless of the nearest
+   positioning context (both headers differ). */
+.panel {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  width: 100vw;
+  margin-left: -50vw;
+  z-index: 70;
+  border-bottom: 1px solid var(--sky-line);
+  background: #fff;
+  box-shadow: var(--sky-shadow-panel);
+}
+
+/* Invisible bridge so the pointer can travel from trigger → panel */
+.panel::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: 0;
+  right: 0;
+  height: 14px;
+}
+
+.grid {
+  display: grid;
+  width: min(calc(100% - 48px), var(--sky-shell-wide));
+  grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(220px, 0.9fr);
+  gap: 12px 28px;
+  margin-inline: auto;
+  padding: 28px 0 32px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.heading {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--sky-muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.link {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 12px;
+  align-items: start;
+  border-radius: 12px;
+  padding: 10px 10px 10px 8px;
+  transition:
+    background 160ms ease,
+    color 160ms ease;
+}
+
+.link:hover {
+  background: var(--sky-soft);
+}
+
+.link strong {
+  display: block;
+  color: var(--sky-ink);
+  font-size: 14px;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+
+.link small {
+  display: block;
+  margin-top: 3px;
+  color: var(--sky-muted);
+  font-size: 12.5px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.badge {
+  display: inline-block;
+  margin-left: 8px;
+  border: 1px solid var(--sky-line);
+  border-radius: 999px;
+  padding: 1px 8px;
+  color: var(--sky-muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  vertical-align: 2px;
+}
+
+.icon {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--sky-blue-soft);
+  color: var(--sky-blue);
+}
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100%;
+  border-radius: 16px;
+  background:
+    linear-gradient(160deg, rgba(31, 126, 247, 0.1), rgba(87, 179, 242, 0.06)),
+    var(--sky-soft);
+  padding: 20px 18px;
+}
+
+.aside p {
+  margin: 0 0 16px;
+  color: var(--sky-ink);
+  font-size: 14px;
+  font-weight: 550;
+  letter-spacing: -0.02em;
+  line-height: 1.45;
+}
+
+.aside a {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  color: var(--sky-blue);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.aside a:hover {
+  color: var(--sky-blue-hover);
+}
+
+@media (max-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 24px;
+  }
+
+  .aside {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 860px) {
+  .panel {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trigger,
+  .link,
+  .caret {
+    transition: none;
+  }
+}

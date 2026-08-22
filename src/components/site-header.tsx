@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useState } from "react";
+import { MegaMenu } from "@/components/mega-menu";
 import { TrackedLink } from "@/components/tracked-link";
 import { navigation, siteConfig } from "@/config/site";
 
@@ -53,6 +54,9 @@ export function SiteHeader() {
 
         <nav className="desktop-nav" aria-label="Primary navigation">
           {navigation.map((item) => {
+            if (item.label === "Product") {
+              return <MegaMenu key={item.href} label={item.label} />;
+            }
             const active =
               pathname === item.href || pathname.startsWith(`${item.href}/`);
             return (

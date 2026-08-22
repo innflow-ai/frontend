@@ -1,0 +1,36 @@
+/* Matches the Framer "Tag 2" component, Secondary variant. */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 6px 14px;
+  border: 1px solid #2702f7;
+  border-radius: 999px;
+  background: #fff;
+  color: #000;
+  box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.07),
+    0 8px 8px rgba(0, 0, 0, 0.06),
+    0 19px 11px rgba(0, 0, 0, 0.04),
+    0 33px 13px rgba(0, 0, 0, 0.01);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+  text-transform: uppercase;
+}
+
+.icon {
+  display: inline-flex;
+  width: 16px;
+  height: 16px;
+}
+
+.icon svg {
+  display: block;
+  fill: url(#innflow-tag-icon-gradient);
+}
+
+.gradientDefs {
+  position: absolute;
+}

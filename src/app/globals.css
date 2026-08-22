@@ -288,6 +288,18 @@ p {
   background: var(--canvas-warm);
 }
 
+.button-gradient {
+  border-color: transparent;
+  background: linear-gradient(180deg, #5aaaf8 0%, #00aeff 100%);
+  color: #fff;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.12) inset;
+}
+
+.button-gradient:hover {
+  background: linear-gradient(180deg, #4b9ef7 0%, #009ef0 100%);
+  box-shadow: 0 8px 20px rgba(0, 174, 255, 0.25);
+}
+
 .play-icon {
   display: grid;
   width: 22px;

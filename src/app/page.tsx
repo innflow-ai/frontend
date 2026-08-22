@@ -17,6 +17,7 @@ import { EditorialFooter } from "@/components/editorial-footer";
 import { EditorialHeader } from "@/components/editorial-header";
 import { JsonLd } from "@/components/json-ld";
 import { Float, HeroIntro, HeroItem, Reveal } from "@/components/motion";
+import { Tag } from "@/components/tag";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
 import { faqs } from "@/content/home";
@@ -232,10 +233,7 @@ export default function HomePage() {
           <div className={styles.heroInner}>
             <HeroIntro>
               <HeroItem>
-                <p className={styles.heroEyebrow}>
-                  <Sparkle size={14} weight="fill" /> AI property operations
-                  platform
-                </p>
+                <Tag>AI property operations platform</Tag>
               </HeroItem>
               <HeroItem>
                 <h1>Run property operations. Elevate every portfolio.</h1>
@@ -252,13 +250,17 @@ export default function HomePage() {
                   <TrackedLink
                     className={styles.buttonPrimary}
                     destination={siteConfig.demoUrl}
+                    eventLabel="hero_get_started"
+                  >
+                    Get started <ArrowRight size={15} />
+                  </TrackedLink>
+                  <TrackedLink
+                    className={styles.buttonGhost}
+                    destination={siteConfig.demoUrl}
                     eventLabel="hero_demo"
                   >
-                    Book a demo <ArrowRight size={15} />
+                    Book a demo
                   </TrackedLink>
-                  <a className={styles.buttonGhost} href="#features">
-                    See how it works
-                  </a>
                 </div>
               </HeroItem>
               <HeroItem>
@@ -489,7 +491,7 @@ export default function HomePage() {
               governed, reviewable workflow.
             </p>
             <TrackedLink
-              className={styles.buttonLight}
+              className={styles.buttonPrimary}
               destination={siteConfig.demoUrl}
               eventLabel="final_demo"
             >

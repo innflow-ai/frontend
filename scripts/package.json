@@ -1,0 +1,12 @@
+{
+  "name": "innflow-web-scripts",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Standalone tooling for innflow-web maintenance/migration scripts",
+  "dependencies": {
+    "@portabletext/block-tools": "^2.0.0",
+    "@sanity/client": "^7.0.0",
+    "@sanity/schema": "^4.0.0",
+    "jsdom": "^28.0.0"
+  }
+}

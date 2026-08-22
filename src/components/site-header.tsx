@@ -8,9 +8,9 @@ export function SiteHeader() {
       <div className="shell header-inner">
         <a className="brand-link" href="/" aria-label="Innflow home">
           <Image
-            src="/brand/innflow-black-full.svg"
+            src="/brand/innflow_logo_set_B.svg"
             alt="Innflow"
-            width={116}
+            width={139}
             height={28}
             priority
           />

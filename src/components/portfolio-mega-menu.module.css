@@ -17,7 +17,7 @@
 
 .trigger:hover,
 .open .trigger {
-  color: var(--night-ink);
+  color: var(--sky-ink);
 }
 
 .trigger::after {
@@ -41,10 +41,10 @@
   flex-direction: column;
   width: min(1060px, calc(100vw - 48px));
   overflow: hidden;
-  border: 1px solid var(--border-quiet);
+  border: 1px solid var(--sky-line);
   border-radius: 16px;
-  background: var(--surface);
-  box-shadow: 0 24px 60px rgba(23, 24, 23, 0.16);
+  background: #fff;
+  box-shadow: var(--sky-shadow-panel);
   opacity: 0;
   transform: translateX(-50%) translateY(-6px);
   visibility: hidden;
@@ -80,7 +80,7 @@
 }
 
 .item:hover {
-  background: var(--canvas-warm);
+  background: var(--sky-soft);
 }
 
 .icon {
@@ -90,36 +90,20 @@
   flex: none;
   place-items: center;
   border-radius: 10px;
+  background: var(--sky-blue-soft);
+  color: var(--sky-blue);
 }
 
-.tint_blue {
-  background: var(--brand-soft);
-  color: var(--brand);
-}
-
-.tint_green {
-  background: var(--green-soft);
-  color: var(--green);
-}
-
-.tint_violet {
-  background: #efecfd;
-  color: #6d5ae0;
-}
-
-.tint_orange {
-  background: var(--warning-soft);
-  color: var(--warning);
-}
-
-.tint_plum {
-  background: var(--plum-soft);
-  color: var(--plum);
-}
-
+/* Aeline skyline chips are uniformly blue-soft; tint classes remain so the
+   item metadata in portfolio-mega-menu.tsx keeps resolving. */
+.tint_blue,
+.tint_green,
+.tint_violet,
+.tint_orange,
+.tint_plum,
 .tint_teal {
-  background: #e2f2ef;
-  color: #22706a;
+  background: var(--sky-blue-soft);
+  color: var(--sky-blue);
 }
 
 .itemText {
@@ -133,14 +117,14 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  color: var(--ink-strong);
+  color: var(--sky-ink);
   font-size: 14px;
   font-weight: 620;
   line-height: 1.25;
 }
 
 .itemBody {
-  color: var(--ink-muted);
+  color: var(--sky-muted);
   font-size: 12.5px;
   line-height: 1.35;
 }
@@ -156,15 +140,15 @@
 }
 
 .badgePopular {
-  border-color: rgba(109, 90, 224, 0.4);
-  background: #f4f2ff;
-  color: #6d5ae0;
+  border-color: rgba(23, 96, 168, 0.35);
+  background: var(--sky-blue-soft);
+  color: var(--sky-blue);
 }
 
 .badgeNew {
   border-color: rgba(23, 96, 168, 0.35);
-  background: var(--brand-soft);
-  color: var(--brand);
+  background: var(--sky-blue-soft);
+  color: var(--sky-blue);
 }
 
 .footer {
@@ -172,18 +156,20 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  border-top: 1px solid var(--border-quiet);
-  background: var(--canvas-warm);
+  border-top: 1px solid var(--sky-line);
+  background:
+    linear-gradient(160deg, rgba(23, 96, 168, 0.1), rgba(90, 170, 248, 0.06)),
+    var(--sky-soft);
   padding: 14px 28px;
 }
 
 .footer > span {
-  color: var(--ink-muted);
+  color: var(--sky-muted);
   font-size: 12.5px;
 }
 
 .footerLink {
-  color: var(--brand);
+  color: var(--sky-blue);
   font-size: 13px;
   font-weight: 640;
   white-space: nowrap;
@@ -191,7 +177,7 @@
 }
 
 .footerLink:hover {
-  color: var(--brand-hover);
+  color: var(--sky-blue-hover);
 }
 
 @media (max-width: 900px) {

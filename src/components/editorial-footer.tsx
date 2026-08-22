@@ -8,9 +8,9 @@ export function EditorialFooter() {
       <div className="editorial-shell editorial-footer-grid">
         <div className="editorial-footer-brand">
           <Image
-            src="/brand/innflow-white-full.svg"
+            src="/brand/innflow_white_logo_set_bold.svg"
             alt="Innflow"
-            width={116}
+            width={135}
             height={28}
           />
           <p>

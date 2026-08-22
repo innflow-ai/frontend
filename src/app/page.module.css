@@ -97,8 +97,11 @@
 /* Hero — photographic sky backdrop, centered */
 .hero {
   position: relative;
+  display: grid;
+  min-height: calc(100svh - 70px);
+  align-items: center;
   overflow: hidden;
-  padding: 132px 0 148px;
+  padding: 156px 0 172px;
   text-align: center;
 }
 
@@ -148,7 +151,7 @@
 
 .heroActions {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: center;
   gap: 12px;
   margin-top: 36px;
@@ -767,12 +770,23 @@
 
 @media (max-width: 720px) {
   .hero {
-    padding: 88px 0 96px;
+    min-height: calc(100svh - 70px);
+    padding: 112px 0 124px;
   }
 
   .heroActions {
-    flex-direction: column;
-    align-items: stretch;
+    width: 100%;
+    max-width: 360px;
+    margin-inline: auto;
+    gap: 10px;
+  }
+
+  .heroActions .buttonPrimary,
+  .heroActions .buttonGhost {
+    min-width: 0;
+    flex: 1 1 0;
+    padding-inline: 12px;
+    white-space: nowrap;
   }
 
   .features,

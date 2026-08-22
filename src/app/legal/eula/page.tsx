@@ -10,5 +10,11 @@ export const metadata = createPageMetadata({
 });
 
 export default function EulaPage() {
-  return <LegalPolicyPage title={policy.title} source={policy.source} />;
+  return (
+    <LegalPolicyPage
+      title={policy.title}
+      policyId={policy.policyId}
+      source={policy.source}
+    />
+  );
 }

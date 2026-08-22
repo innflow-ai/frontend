@@ -23,9 +23,11 @@ Innflow is presented as an operations platform for property-management teams coo
 - Chat: not represented as live
 
 ## Legal
-- ${siteConfig.marketingOrigin}/privacy
-- ${siteConfig.marketingOrigin}/terms
-- ${siteConfig.marketingOrigin}/cookies
+- ${siteConfig.marketingOrigin}/legal/privacy-policy
+- ${siteConfig.marketingOrigin}/legal/terms-of-service
+- ${siteConfig.marketingOrigin}/legal/cookie-policy
+- ${siteConfig.marketingOrigin}/legal/acceptable-use-policy
+- ${siteConfig.marketingOrigin}/legal/eula
 `;
 
   return new Response(body, {

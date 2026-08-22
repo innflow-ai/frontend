@@ -1,0 +1,101 @@
+.page {
+  min-height: 100vh;
+  padding: 132px max(24px, calc((100vw - 1180px) / 2)) 96px;
+  background: #f5f4f1;
+  color: #132235;
+}
+
+.intro {
+  max-width: 760px;
+  margin-bottom: 64px;
+}
+
+.intro p {
+  margin: 0 0 12px;
+  color: #1760a8;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.intro h1 {
+  margin: 0;
+  font-size: clamp(44px, 7vw, 78px);
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+.intro span {
+  display: block;
+  max-width: 640px;
+  margin-top: 24px;
+  color: #5f6975;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.section {
+  margin-top: 56px;
+}
+
+.section h2 {
+  margin: 0 0 16px;
+  font-size: 18px;
+}
+
+.lightCard,
+.darkCard,
+.compactPreview,
+.scrollFrame,
+.galleryFrame {
+  border: 1px solid rgba(19, 34, 53, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 24px 70px rgba(19, 34, 53, 0.08);
+}
+
+.lightCard {
+  padding: 40px;
+  background: #fff;
+}
+
+.compactPreview {
+  display: flex;
+  min-height: 160px;
+  align-items: center;
+  justify-content: center;
+  background: #eef5fb;
+}
+
+.darkCard {
+  padding: 48px;
+  background: #0b1725;
+}
+
+.scrollFrame {
+  overflow-x: auto;
+  padding: 24px;
+  background: #eaf0f5;
+}
+
+.galleryFrame {
+  height: 620px;
+  overflow: hidden;
+  background: #07000d;
+}
+
+@media (max-width: 680px) {
+  .page {
+    padding-top: 108px;
+  }
+
+  .lightCard,
+  .darkCard,
+  .scrollFrame {
+    padding: 20px;
+  }
+
+  .galleryFrame {
+    height: 500px;
+  }
+}

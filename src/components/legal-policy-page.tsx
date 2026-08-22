@@ -1,10 +1,13 @@
 import { MarketingPage } from "@/components/page-primitives";
+import { TermlyPolicyEmbed } from "@/components/termly-policy-embed";
 
 export function LegalPolicyPage({
   title,
+  policyId,
   source,
 }: {
   title: string;
+  policyId: string;
   source: string;
 }) {
   return (
@@ -14,8 +17,8 @@ export function LegalPolicyPage({
           <span className="section-label">Legal</span>
           <h1>{title}</h1>
           <p>
-            This page preserves Innflow’s currently approved policy source. If
-            the embedded viewer is unavailable, open the policy directly.
+            Review Innflow’s {title.toLowerCase()} below. If the embedded
+            document does not load, you can open it in a new tab.
           </p>
           <a
             className="text-link"
@@ -28,13 +31,7 @@ export function LegalPolicyPage({
         </div>
       </section>
       <section className="legal-policy-shell" aria-label={title}>
-        <iframe
-          className="legal-policy-frame"
-          src={source}
-          title={title}
-          referrerPolicy="strict-origin-when-cross-origin"
-          sandbox="allow-forms allow-popups allow-same-origin allow-scripts"
-        />
+        <TermlyPolicyEmbed policyId={policyId} />
       </section>
     </MarketingPage>
   );

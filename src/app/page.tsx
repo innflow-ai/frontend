@@ -220,7 +220,7 @@ export default function HomePage() {
   return (
     <div className={styles.page}>
       <main id="main-content">
-        <section className={styles.hero}>
+        <section className={styles.hero} id="home-hero">
           <Image
             src="/aeline/hero-sky.avif"
             alt=""

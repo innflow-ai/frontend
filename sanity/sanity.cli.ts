@@ -1,9 +1,9 @@
-import {defineCliConfig} from 'sanity/cli'
+import { defineCliConfig } from "sanity/cli";
 
 export default defineCliConfig({
   api: {
-    projectId: 'hnjg8vum',
-    dataset: 'production'
+    projectId: "hnjg8vum",
+    dataset: "production",
   },
   deployment: {
     /**
@@ -12,4 +12,4 @@ export default defineCliConfig({
      */
     autoUpdates: true,
   },
-})
+});

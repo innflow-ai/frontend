@@ -13,9 +13,11 @@ const runtime = `(() => {
     write(key, values.get(key));
   }
 
-  for (const anchor of document.querySelectorAll("a[data-marketing-event]")) {
+  // Decorate just-in-time on click instead of at parse time: rewriting hrefs
+  // before React hydrates causes hydration mismatch warnings.
+  const decorate = (anchor) => {
     const destination = anchor.dataset.marketingDestination || anchor.getAttribute("href");
-    if (!destination) continue;
+    if (!destination) return;
     try {
       const relative = destination.startsWith("/");
       const url = new URL(destination, location.origin);
@@ -25,7 +27,7 @@ const runtime = `(() => {
       }
       anchor.href = relative ? url.pathname + url.search + url.hash : url.toString();
     } catch {}
-  }
+  };
 
   const emit = (event, properties = {}) => {
     window.dispatchEvent(new CustomEvent("innflow:analytics", { detail: { event, properties } }));
@@ -33,13 +35,14 @@ const runtime = `(() => {
       if (localStorage.getItem("innflow-cookie-consent") === "analytics") window.posthog?.capture?.(event, properties);
     } catch {}
   };
-  document.addEventListener("click", (event) => {
+  const onActivate = (event) => {
     const anchor = event.target instanceof Element ? event.target.closest("a[data-marketing-event]") : null;
-    if (anchor) emit(anchor.dataset.marketingEvent, { label: anchor.dataset.marketingLabel, destination: anchor.dataset.marketingDestination });
-  });
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") document.querySelectorAll("details.mobile-navigation[open]").forEach((item) => item.removeAttribute("open"));
-  });
+    if (!anchor) return;
+    decorate(anchor);
+    emit(anchor.dataset.marketingEvent, { label: anchor.dataset.marketingLabel, destination: anchor.dataset.marketingDestination });
+  };
+  document.addEventListener("click", onActivate);
+  document.addEventListener("auxclick", onActivate);
 
   let cls = 0;
   try {

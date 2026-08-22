@@ -3,16 +3,22 @@
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { MegaMenu, productColumns, resourcesColumns } from "@/components/mega-menu";
+import {
+  MegaMenu,
+  productColumns,
+  resourcesColumns,
+} from "@/components/mega-menu";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
+import styles from "./editorial-header.module.css";
 
 const MotionTrackedLink = motion.create(TrackedLink);
 
+// Route-based so the menu works from every page (the header is app-wide).
 const mobileLinks = [
-  { href: "#features", label: "Product" },
-  { href: "#portfolios", label: "Portfolios" },
-  { href: "#resources", label: "Resources" },
+  { href: "/features/workflows", label: "Product" },
+  { href: "/property-management", label: "Property management" },
+  { href: "/integrations", label: "Integrations" },
   { href: "/pricing", label: "Pricing" },
   { href: "/blog", label: "Blog" },
 ] as const;
@@ -47,13 +53,24 @@ export function EditorialHeader() {
     };
   }, [mobileOpen]);
 
+  // Close the mobile menu when crossing into the desktop layout, so the
+  // body scroll lock never leaks out of mobile view on viewport resize.
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 981px)");
+    const onChange = (event: MediaQueryListEvent) => {
+      if (event.matches) setMobileOpen(false);
+    };
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
   const closeMobile = () => setMobileOpen(false);
 
   return (
     <>
-      <header className="editorial-header">
-        <div className="editorial-header-inner">
-          <a className="editorial-brand" href="/" aria-label="Innflow home">
+      <header className={styles.header}>
+        <div className={styles.inner}>
+          <a className={styles.brand} href="/" aria-label="Innflow home">
             <Image
               src="/brand/innflow_logo_set_B.svg"
               alt="Innflow"
@@ -64,7 +81,7 @@ export function EditorialHeader() {
           </a>
 
           <nav aria-label="Primary navigation">
-            <ul className="editorial-desktop-nav">
+            <ul className={styles.desktopNav}>
               <li>
                 <MegaMenu label="Product" columns={productColumns} />
               </li>
@@ -83,7 +100,7 @@ export function EditorialHeader() {
             </ul>
           </nav>
 
-          <div className="editorial-header-actions">
+          <div className={styles.actions}>
             <TrackedLink
               destination={`${siteConfig.appOrigin}/login`}
               eventLabel="header_login"
@@ -91,7 +108,7 @@ export function EditorialHeader() {
               Login
             </TrackedLink>
             <TrackedLink
-              className="editorial-button editorial-button-brand editorial-header-cta"
+              className={`${styles.button} ${styles.buttonBrand} ${styles.headerCta}`}
               destination={siteConfig.demoUrl}
               eventLabel="header_demo"
             >
@@ -99,8 +116,8 @@ export function EditorialHeader() {
             </TrackedLink>
             <button
               type="button"
-              className={`editorial-hamburger${
-                mobileOpen ? " editorial-hamburger-open" : ""
+              className={`${styles.hamburger}${
+                mobileOpen ? ` ${styles.hamburgerOpen}` : ""
               }`}
               aria-expanded={mobileOpen}
               aria-controls="editorial-mobile-overlay"
@@ -115,13 +132,14 @@ export function EditorialHeader() {
         </div>
       </header>
 
-      {/* Rendered outside the header so its backdrop-filter cannot become the
-          fixed overlay's containing block. */}
+      {/* Rendered outside the header so the fixed panel can cover the viewport
+          below the header without its backdrop-filter changing the containing
+          block. */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
             id="editorial-mobile-overlay"
-            className="editorial-mobile-overlay"
+            className={styles.mobileOverlay}
             initial={reduce ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -129,7 +147,7 @@ export function EditorialHeader() {
           >
             <motion.nav
               aria-label="Mobile navigation"
-              className="editorial-mobile-links"
+              className={styles.mobileLinks}
               initial={reduce ? undefined : "hidden"}
               animate="visible"
               variants={{
@@ -158,7 +176,7 @@ export function EditorialHeader() {
                 Login
               </MotionTrackedLink>
               <MotionTrackedLink
-                className="editorial-button editorial-button-brand editorial-mobile-cta"
+                className={`${styles.button} ${styles.buttonBrand} ${styles.mobileCta}`}
                 destination={siteConfig.demoUrl}
                 eventLabel="mobile_demo"
                 variants={reduce ? undefined : itemVariants}

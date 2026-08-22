@@ -4,6 +4,11 @@ export type MarketingEvent =
   | "marketing_vital_observed";
 
 type AnalyticsWindow = Window & {
+  gtag?: (
+    command: "event",
+    event: string,
+    properties?: Record<string, unknown>,
+  ) => void;
   posthog?: {
     capture: (event: string, properties?: Record<string, unknown>) => void;
   };
@@ -21,6 +26,8 @@ export function captureMarketingEvent(
 
   const consent = window.localStorage.getItem("innflow-cookie-consent");
   if (consent === "analytics") {
-    (window as AnalyticsWindow).posthog?.capture(event, properties);
+    const analyticsWindow = window as AnalyticsWindow;
+    analyticsWindow.gtag?.("event", event, properties);
+    analyticsWindow.posthog?.capture(event, properties);
   }
 }

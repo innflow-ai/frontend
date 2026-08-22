@@ -6,12 +6,16 @@ import {
   SmoothRingGallery,
   TypewriterEffect,
 } from "@/components/framer-migrated";
+import { createPageMetadata } from "@/lib/metadata";
 import styles from "./page.module.css";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = createPageMetadata({
   title: "Framer migration component lab | Innflow",
-  robots: { index: false, follow: false },
-};
+  description:
+    "Private validation surface for Innflow's migrated Framer components.",
+  path: "/component-lab/framer-migration",
+  noIndex: true,
+});
 
 export default function FramerMigrationLabPage() {
   return (

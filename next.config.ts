@@ -1,5 +1,9 @@
 import type { NextConfig } from "next";
 
+const appOrigin = (
+  process.env.NEXT_PUBLIC_APP_ORIGIN ?? "https://app.innflow.ai"
+).replace(/\/$/, "");
+
 const nextConfig: NextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
@@ -13,6 +17,11 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   async redirects() {
     return [
+      {
+        source: "/login",
+        destination: `${appOrigin}/login`,
+        permanent: false,
+      },
       { source: "/contact", destination: "/demo", permanent: true },
       {
         source: "/solution/property-management",
@@ -67,6 +76,46 @@ const nextConfig: NextConfig = {
       {
         source: "/acceptable-use-policy",
         destination: "/legal/acceptable-use-policy",
+        permanent: true,
+      },
+      {
+        source: "/eula",
+        destination: "/legal/eula",
+        permanent: true,
+      },
+      {
+        source: "/dsar",
+        destination: "/legal/dsar",
+        permanent: true,
+      },
+      {
+        source: "/blog-2-cms",
+        destination: "/blog",
+        permanent: true,
+      },
+      {
+        source: "/blog-2-cms/:slug*",
+        destination: "/blog/:slug*",
+        permanent: true,
+      },
+      {
+        source: "/blog-to-cms",
+        destination: "/blog",
+        permanent: true,
+      },
+      {
+        source: "/blog-to-cms/:slug*",
+        destination: "/blog/:slug*",
+        permanent: true,
+      },
+      {
+        source: "/blog_deprecated",
+        destination: "/blog",
+        permanent: true,
+      },
+      {
+        source: "/blog_deprecated/:slug*",
+        destination: "/blog/:slug*",
         permanent: true,
       },
     ];

@@ -15,9 +15,9 @@ import styles from "./page.module.css";
 export const revalidate = 60;
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Innflow blog | Property operations, automation, and AI workflows",
+  title: "Property Operations & Automation Blog | Innflow",
   description:
-    "Guides, comparisons, and product notes on connected property operations — automation, AI agents, integrations, and day-to-day workflows for operators.",
+    "Explore practical guides on property operations, workflow automation, AI assistants, integrations, and the systems modern teams use every day.",
   path: "/blog",
 });
 

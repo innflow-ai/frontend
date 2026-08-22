@@ -9,9 +9,9 @@ import { siteConfig } from "@/config/site";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Book an operations demo | Innflow",
+  title: "Book an Innflow Property Operations Demo",
   description:
-    "Bring one recurring property operation and map the systems, context, approvals, and product boundaries involved.",
+    "Book an Innflow demo to map a recurring property operation, the systems it touches, required approvals, and a practical next step.",
   path: "/demo",
 });
 

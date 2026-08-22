@@ -23,6 +23,7 @@ describe("captureMarketingEvent", () => {
 
   afterEach(() => {
     window.localStorage.clear();
+    Reflect.deleteProperty(window, "gtag");
     Reflect.deleteProperty(window, "posthog");
   });
 
@@ -38,13 +39,17 @@ describe("captureMarketingEvent", () => {
     expect(posthog.capture).not.toHaveBeenCalled();
   });
 
-  it("forwards events to PostHog only after analytics consent", () => {
+  it("forwards events to analytics providers only after consent", () => {
+    const gtag = vi.fn();
     const posthog = { capture: vi.fn() };
-    Object.assign(window, { posthog });
+    Object.assign(window, { gtag, posthog });
     window.localStorage.setItem("innflow-cookie-consent", "analytics");
 
     captureMarketingEvent("marketing_cta_clicked", { label: "hero_demo" });
 
+    expect(gtag).toHaveBeenCalledWith("event", "marketing_cta_clicked", {
+      label: "hero_demo",
+    });
     expect(posthog.capture).toHaveBeenCalledWith("marketing_cta_clicked", {
       label: "hero_demo",
     });

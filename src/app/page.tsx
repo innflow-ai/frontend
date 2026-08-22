@@ -12,6 +12,7 @@ import {
   Warehouse,
 } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
+import { AuthenticatedHomeRedirect } from "@/components/authenticated-home-redirect";
 import { JsonLd } from "@/components/json-ld";
 import { Float, HeroIntro, HeroItem, Reveal } from "@/components/motion";
 import { Tag } from "@/components/tag";
@@ -29,7 +30,44 @@ const avatarRow = [
   "/aeline/avatars/hero-1.webp",
 ] as const;
 
-const logoSet = [1, 2, 3, 4, 5] as const;
+const logoSet = [
+  {
+    name: "E2B",
+    src: "/brand/customer-logos/e2b.png",
+    width: 109,
+    height: 33,
+  },
+  {
+    name: "Slack",
+    src: "/brand/customer-logos/slack.png",
+    width: 116,
+    height: 33,
+  },
+  {
+    name: "Global Industrial",
+    src: "/brand/customer-logos/global-industrial.png",
+    width: 109,
+    height: 33,
+  },
+  {
+    name: "Harbor Freight",
+    src: "/brand/customer-logos/harbor-freight.png",
+    width: 111,
+    height: 33,
+  },
+  {
+    name: "Intuit",
+    src: "/brand/customer-logos/intuit.png",
+    width: 112,
+    height: 33,
+  },
+  {
+    name: "Jasper",
+    src: "/brand/customer-logos/jasper.png",
+    width: 111,
+    height: 33,
+  },
+] as const;
 
 const features = [
   {
@@ -203,7 +241,17 @@ const organizationSchema = {
   "@type": "Organization",
   name: "Innflow",
   url: siteConfig.marketingOrigin,
+  logo: `${siteConfig.marketingOrigin}/icon.png`,
   email: siteConfig.supportEmail,
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Innflow",
+  url: siteConfig.marketingOrigin,
+  description:
+    "Property operations software for connected workflows, approvals, context, and execution history.",
 };
 
 const faqSchema = {
@@ -219,6 +267,10 @@ const faqSchema = {
 export default function HomePage() {
   return (
     <div className={styles.page}>
+      <AuthenticatedHomeRedirect
+        appOrigin={siteConfig.appOrigin}
+        marketingOrigin={siteConfig.marketingOrigin}
+      />
       <main id="main-content">
         <section className={styles.hero} id="home-hero">
           <Image
@@ -277,9 +329,30 @@ export default function HomePage() {
                       />
                     ))}
                   </div>
-                  <p>
-                    Trusted by <strong>2,400+</strong> property teams
-                  </p>
+                  <div className={styles.proofCopy}>
+                    <div
+                      className={styles.ratingLine}
+                      aria-label="Rated 4.6 out of 5 stars"
+                      role="img"
+                    >
+                      <strong>4.6/5</strong>
+                      <span className={styles.stars} aria-hidden="true">
+                        <span className={styles.star}>★</span>
+                        <span className={styles.star}>★</span>
+                        <span className={styles.star}>★</span>
+                        <span className={styles.star}>★</span>
+                        <span
+                          className={`${styles.star} ${styles.partialStar}`}
+                        >
+                          ★
+                        </span>
+                      </span>
+                    </div>
+                    <p>
+                      Trusted by <strong>2,400+</strong> property management
+                      teams
+                    </p>
+                  </div>
                 </div>
               </HeroItem>
             </HeroIntro>
@@ -296,14 +369,14 @@ export default function HomePage() {
                   key={copy}
                   aria-hidden={copy === 1 || undefined}
                 >
-                  {[0, 1, 2].map((round) =>
-                    logoSet.map((i) => (
+                  {[0, 1].map((round) =>
+                    logoSet.map((logo) => (
                       <Image
-                        key={`${copy}-${round}-${i}`}
-                        src={`/aeline/logos/logo-${i}.svg`}
+                        key={`${copy}-${round}-${logo.name}`}
+                        src={logo.src}
                         alt=""
-                        width={110}
-                        height={30}
+                        width={logo.width}
+                        height={logo.height}
                       />
                     )),
                   )}
@@ -515,6 +588,7 @@ export default function HomePage() {
         </section>
       </main>
       <JsonLd value={organizationSchema} />
+      <JsonLd value={websiteSchema} />
       <JsonLd value={faqSchema} />
     </div>
   );

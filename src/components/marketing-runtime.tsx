@@ -32,7 +32,10 @@ const runtime = `(() => {
   const emit = (event, properties = {}) => {
     window.dispatchEvent(new CustomEvent("innflow:analytics", { detail: { event, properties } }));
     try {
-      if (localStorage.getItem("innflow-cookie-consent") === "analytics") window.posthog?.capture?.(event, properties);
+      if (localStorage.getItem("innflow-cookie-consent") === "analytics") {
+        window.gtag?.("event", event, properties);
+        window.posthog?.capture?.(event, properties);
+      }
     } catch {}
   };
   const onActivate = (event) => {

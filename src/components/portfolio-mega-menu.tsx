@@ -97,7 +97,7 @@ const items: Item[] = [
 ];
 
 const OPEN_DELAY_MS = 120;
-const CLOSE_DELAY_MS = 200;
+const CLOSE_DELAY_MS = 140;
 
 export function PortfolioMegaMenu() {
   const [open, setOpen] = useState(false);

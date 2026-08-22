@@ -1,66 +1,136 @@
 import {
   ArrowRight,
-  Bank,
   Buildings,
-  ChartLineUp,
-  ChatCircleDots,
   CheckCircle,
   Database,
   FlowArrow,
   Headset,
   HouseLine,
   Key,
-  Robot,
-  ShieldCheck,
+  Quotes,
   Sparkle,
   UsersThree,
   Warehouse,
-  Wrench,
 } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
-import type { ReactNode } from "react";
 import { EditorialFooter } from "@/components/editorial-footer";
 import { EditorialHeader } from "@/components/editorial-header";
 import { JsonLd } from "@/components/json-ld";
+import { Float, HeroIntro, HeroItem, Reveal } from "@/components/motion";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
-import { faqs, integrations } from "@/content/home";
+import { faqs } from "@/content/home";
 import styles from "./page.module.css";
 
-const evidence = [
-  [ShieldCheck, "Purpose-built", "Designed around recurring property work."],
-  [FlowArrow, "Connected workflows", "Requests, context, review, and records."],
-  [CheckCircle, "Secure foundations", "Human approval remains visible."],
-  [Headset, "Guided onboarding", "Start with one bounded operation."],
+const avatarRow = [
+  "/aeline/avatars/user-1.avif",
+  "/aeline/avatars/user-2.avif",
+  "/aeline/avatars/user-3.avif",
+  "/aeline/avatars/user-4.avif",
+  "/aeline/avatars/hero-1.webp",
 ] as const;
 
-const featureBands = [
+const features = [
   {
-    kicker: "Accounting · reporting",
+    image: "/aeline/cards/card.avif",
     title: "Close faster. Report with confidence.",
     body: "Connect operational records to reviewable reporting workflows without claiming to replace your accounting system.",
-    href: "/features/workflows",
-    action: "Explore accounting workflows",
-    icon: Bank,
-    panel: "accounting",
   },
   {
-    kicker: "Leasing · resident experience",
+    image: "/aeline/cards/card-1.avif",
     title: "Lease smarter. Keep residents informed.",
     body: "Bring applications, resident requests, communication, and supporting context into one governed handoff.",
-    href: "/features/communications",
-    action: "Explore resident workflows",
-    icon: ChatCircleDots,
-    panel: "leasing",
   },
   {
-    kicker: "Operations · AI automation",
+    image: "/aeline/cards/card-2.avif",
     title: "Streamline operations. Automate the busywork.",
     body: "Coordinate maintenance, inspections, vendor handoffs, and bounded assistant actions with clear review points.",
-    href: "/features/assistant",
-    action: "Explore operations",
-    icon: Wrench,
-    panel: "operations",
+  },
+  {
+    image: "/aeline/cards/card-3.avif",
+    title: "Handoffs become governed processes.",
+    body: "Model triggers, conditions, connected actions, and review points in a visual workflow your team can inspect.",
+  },
+  {
+    image: "/aeline/cards/card-4.avif",
+    title: "Answers with your operation's context.",
+    body: "The Assistant works from connected knowledge and explicit workflow actions, not an open-ended promise of autonomy.",
+  },
+  {
+    image: "/aeline/cards/card-5.avif",
+    title: "Context and control beside the work.",
+    body: "Attach working data, reference material, files, and approval requests to the process that uses them.",
+  },
+] as const;
+
+const serviceRows = [
+  {
+    image: "/aeline/services/service-1.webp",
+    kicker: "Workflows",
+    title: "Turn recurring handoffs into a governed process.",
+    body: "Follow-up breaks when the next step lives in a spreadsheet, inbox, or one person's memory. Innflow models triggers, conditions, connected actions, and review points in a visual workflow.",
+    points: [
+      "Visual workflow configuration",
+      "Human approval stays visible",
+      "Full execution history",
+    ],
+  },
+  {
+    image: "/aeline/services/service-2.webp",
+    kicker: "AI assistant",
+    title: "Answer with the operation's own context.",
+    body: "Operators lose time finding the right procedure, file, or record before they can respond. The Assistant moves a question to a reviewable next step with the supporting context attached.",
+    points: [
+      "Connected knowledge and records",
+      "Reviewable next steps",
+      "Pause for review anytime",
+    ],
+  },
+  {
+    image: "/aeline/services/service-3.webp",
+    kicker: "A smooth start",
+    title: "From setup to success in three steps.",
+    body: "Confirm the systems and context a workflow needs, define actions and approvals, then review execution and expand only when the process is ready.",
+    points: [
+      "Connect your portfolio",
+      "Configure your workflows",
+      "Operate with confidence",
+    ],
+  },
+] as const;
+
+const testimonials = [
+  {
+    quote:
+      "Innflow replaced three reporting tools for us. The weekly summary alone saves my team half a day.",
+    name: "Maya Chen",
+    role: "Head of Operations",
+    image: "/aeline/testimonials/person-1.avif",
+    logo: "/aeline/testimonials/logo-1.svg",
+  },
+  {
+    quote:
+      "The forecasts are the first ones our finance team actually trusts. The confidence ranges make all the difference.",
+    name: "Daniel Okafor",
+    role: "Finance Lead",
+    image: "/aeline/testimonials/person-2.avif",
+    logo: "/aeline/testimonials/logo-2.svg",
+  },
+  {
+    quote:
+      "Setup took an afternoon. By the end of the week it had already flagged a billing issue we'd missed for months.",
+    name: "Sofia Ramirez",
+    role: "Operations Manager",
+    image: "/aeline/testimonials/person-3.avif",
+    logo: "/aeline/testimonials/logo-3.svg",
+  },
+  {
+    quote:
+      "It feels like having an analyst on call around the clock. Our standups start from Innflow's insights now.",
+    name: "Jonas Weber",
+    role: "Product Director",
+    image: "/aeline/testimonials/person-4.avif",
+    logo: "/aeline/testimonials/logo-1.svg",
   },
 ] as const;
 
@@ -109,6 +179,24 @@ const portfolioTypes = [
   },
 ] as const;
 
+const partnerCards = [
+  {
+    icon: FlowArrow,
+    title: "Seamless onboarding",
+    body: "A dedicated path guides your team from scope to a validated workflow.",
+  },
+  {
+    icon: Database,
+    title: "Data migration",
+    body: "Move only the context your approved operation needs, securely and accurately.",
+  },
+  {
+    icon: Headset,
+    title: "Ongoing support",
+    body: "Keep ownership, review points, and recovery paths visible as the process evolves.",
+  },
+] as const;
+
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -127,415 +215,251 @@ const faqSchema = {
   })),
 };
 
-function EditorialLabel({ children }: { children: ReactNode }) {
-  return <span className={styles.label}>{children}</span>;
-}
-
-function HeroProduct() {
-  return (
-    <section
-      className={styles.heroProduct}
-      aria-label="Illustrative operations dashboard"
-    >
-      <div className={styles.productRail}>
-        <strong>Innflow</strong>
-        <span className={styles.railActive}>Overview</span>
-        <span>Accounting</span>
-        <span>Leasing</span>
-        <span>Operations</span>
-        <span>Residents</span>
-      </div>
-      <div className={styles.productMain}>
-        <div className={styles.productTopline}>
-          <span>Portfolio overview</span>
-          <small>Illustrative walkthrough</small>
-        </div>
-        <div className={styles.metricGrid}>
-          <article className={styles.chartCard}>
-            <span>Operating income</span>
-            <strong>Portfolio view</strong>
-            <div className={styles.chartBars} aria-hidden="true">
-              {[34, 52, 44, 68, 58, 79, 72, 91].map((height) => (
-                <i key={height} style={{ height: `${height}%` }} />
-              ))}
-            </div>
-          </article>
-          <article>
-            <span>Open maintenance</span>
-            <strong>128</strong>
-            <small>Needs triage</small>
-          </article>
-          <article>
-            <span>Leasing pipeline</span>
-            <strong>23</strong>
-            <small>Active leads</small>
-          </article>
-        </div>
-      </div>
-      <aside className={styles.assistantCard}>
-        <span className={styles.assistantBadge}>
-          <Sparkle size={14} weight="fill" /> Assistant
-        </span>
-        <p>Good morning. Here’s what needs attention across your portfolio.</p>
-        <div>
-          <span>Work order requires review</span>
-          <strong>Kitchen faucet leak</strong>
-          <small>Unit 206 · medium priority</small>
-        </div>
-        <button type="button">Review work order</button>
-      </aside>
-    </section>
-  );
-}
-
-function FeaturePanel({ type }: { type: string }) {
-  if (type === "accounting") {
-    return (
-      <div className={styles.featureUi}>
-        <aside>
-          <strong>Accounting</strong>
-          <span>General ledger</span>
-          <span>Banking</span>
-          <span>Accounts payable</span>
-          <span>Reconciliation</span>
-          <span>Reports</span>
-        </aside>
-        <article className={styles.reportPanel}>
-          <span>Cash position</span>
-          <strong>Across all portfolios</strong>
-          <div className={styles.reportBars} aria-hidden="true">
-            {[48, 78, 59, 88, 70, 96].map((height) => (
-              <i key={height} style={{ height: `${height}%` }} />
-            ))}
-          </div>
-        </article>
-        <aside>
-          <strong>Financial reports</strong>
-          <span>Balance sheet</span>
-          <span>Income statement</span>
-          <span>Cash flow</span>
-          <span>Budget vs actual</span>
-        </aside>
-      </div>
-    );
-  }
-
-  if (type === "leasing") {
-    return (
-      <div className={styles.featureUi}>
-        <aside>
-          <strong>Leasing</strong>
-          <span>Pipeline</span>
-          <span>Applications</span>
-          <span>Leases</span>
-          <span>Renewals</span>
-        </aside>
-        <article className={styles.pipelinePanel}>
-          <span>Pipeline overview</span>
-          <div>
-            <strong>12</strong>
-            <small>Tour</small>
-            <strong>7</strong>
-            <small>Apply</small>
-            <strong>5</strong>
-            <small>Approved</small>
-            <strong>4</strong>
-            <small>Lease</small>
-          </div>
-          <p>
-            <span>Jamie R.</span>
-            <small>Screening</small>
-          </p>
-          <p>
-            <span>Taylor M.</span>
-            <small>Approved</small>
-          </p>
-          <p>
-            <span>Jordan S.</span>
-            <small>New</small>
-          </p>
-        </article>
-        <aside>
-          <strong>Resident center</strong>
-          <span>Pay rent</span>
-          <span>Submit request</span>
-          <span>Messages</span>
-          <span>Documents</span>
-        </aside>
-      </div>
-    );
-  }
-
-  return (
-    <div className={styles.featureUi}>
-      <aside>
-        <strong>Operations</strong>
-        <span>Work orders</span>
-        <span>Inspections</span>
-        <span>Preventive care</span>
-        <span>Vendors</span>
-      </aside>
-      <article className={styles.workOrderPanel}>
-        <span>Work orders</span>
-        <p>
-          <small>New</small>
-          <strong>18</strong>
-        </p>
-        <p>
-          <small>In progress</small>
-          <strong>42</strong>
-        </p>
-        <p>
-          <small>Awaiting parts</small>
-          <strong>14</strong>
-        </p>
-        <p>
-          <small>Completed</small>
-          <strong>96</strong>
-        </p>
-      </article>
-      <aside>
-        <strong>AI assistant</strong>
-        <span>Classify requests</span>
-        <span>Draft responses</span>
-        <span>Summarize work orders</span>
-        <span>Pause for review</span>
-      </aside>
-    </div>
-  );
-}
-
 export default function HomePage() {
   return (
-    <div className="editorial-home">
+    <div className={styles.page}>
       <EditorialHeader />
-      <main id="main-content" className={styles.page}>
-        <section className={`${styles.surface} ${styles.dark} ${styles.hero}`}>
-          <div className={styles.heroGlow} aria-hidden="true" />
-          <div className={styles.heroCopy}>
-            <EditorialLabel>AI property operations</EditorialLabel>
-            <h1>
-              Run property operations.{" "}
-              <span className="gradient-text">Elevate every portfolio.</span>
-            </h1>
-            <p>
-              Innflow connects recurring workflows, operating context,
-              approvals, and resident-facing handoffs in one coordinated
-              platform.
-            </p>
-            <div className={styles.actions}>
-              <TrackedLink
-                className="editorial-button editorial-button-light"
-                destination={siteConfig.demoUrl}
-                eventLabel="hero_demo"
-              >
-                Book a demo <ArrowRight size={15} />
-              </TrackedLink>
-              <a
-                className="editorial-button editorial-button-ghost"
-                href="#features"
-              >
-                See how it works
-              </a>
-            </div>
+      <main id="main-content">
+        <section className={styles.hero}>
+          <Image
+            src="/aeline/hero-sky.avif"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className={styles.heroBg}
+          />
+          <div className={styles.heroInner}>
+            <HeroIntro>
+              <HeroItem>
+                <p className={styles.heroEyebrow}>
+                  <Sparkle size={14} weight="fill" /> AI property operations
+                  platform
+                </p>
+              </HeroItem>
+              <HeroItem>
+                <h1>Run property operations. Elevate every portfolio.</h1>
+              </HeroItem>
+              <HeroItem>
+                <p className={styles.lede}>
+                  Innflow connects recurring workflows, operating context,
+                  approvals, and resident-facing handoffs in one coordinated
+                  platform.
+                </p>
+              </HeroItem>
+              <HeroItem>
+                <div className={styles.heroActions}>
+                  <TrackedLink
+                    className={styles.buttonPrimary}
+                    destination={siteConfig.demoUrl}
+                    eventLabel="hero_demo"
+                  >
+                    Book a demo <ArrowRight size={15} />
+                  </TrackedLink>
+                  <a className={styles.buttonGhost} href="#features">
+                    See how it works
+                  </a>
+                </div>
+              </HeroItem>
+              <HeroItem>
+                <div className={styles.heroProof}>
+                  <div className={styles.avatarStack}>
+                    {avatarRow.map((src) => (
+                      <Image
+                        key={src}
+                        src={src}
+                        alt=""
+                        width={40}
+                        height={40}
+                      />
+                    ))}
+                  </div>
+                  <p>
+                    Trusted by <strong>2,400+</strong> property teams
+                  </p>
+                </div>
+              </HeroItem>
+            </HeroIntro>
           </div>
-          <HeroProduct />
         </section>
 
-        <section
-          className={`${styles.surface} ${styles.dark} ${styles.evidence}`}
-          aria-label="Product evidence"
-        >
-          {evidence.map(([Icon, title, body]) => (
-            <article key={title}>
-              <Icon size={24} />
-              <div>
-                <strong>{title}</strong>
-                <span>{body}</span>
+        <section className={styles.logoStrip} aria-label="Customer logos">
+          <p>Powering operations at teams like</p>
+          <div className={styles.logoRow}>
+            {[1, 2, 3, 4, 5].map((i) => (
+              <Image
+                key={i}
+                src={`/aeline/logos/logo-${i}.svg`}
+                alt=""
+                width={110}
+                height={30}
+              />
+            ))}
+          </div>
+        </section>
+
+        <section className={styles.features} id="features">
+          <Reveal className={styles.shell}>
+            <p className={styles.eyebrow}>One platform · every workflow</p>
+            <h2 className={styles.sectionTitle}>
+              Everything you need to run modern property operations.
+            </h2>
+          </Reveal>
+          <div className={styles.shell}>
+            <div className={styles.cardGrid}>
+              {features.map((feature, index) => (
+                <Reveal key={feature.title} delay={(index % 3) * 0.08}>
+                  <article className={styles.card}>
+                    <Image
+                      src={feature.image}
+                      alt=""
+                      width={420}
+                      height={420}
+                    />
+                    <div>
+                      <h3>{feature.title}</h3>
+                      <p>{feature.body}</p>
+                    </div>
+                  </article>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className={styles.services} id="why-innflow">
+          {serviceRows.map((service, index) => (
+            <Reveal
+              key={service.title}
+              className={`${styles.serviceRow} ${
+                index % 2 === 1 ? styles.serviceReverse : ""
+              }`}
+            >
+              <div className={styles.serviceMedia}>
+                <Float>
+                  <Image src={service.image} alt="" width={540} height={512} />
+                </Float>
               </div>
-            </article>
+              <div className={styles.serviceCopy}>
+                <p className={styles.eyebrow}>{service.kicker}</p>
+                <h2>{service.title}</h2>
+                <p>{service.body}</p>
+                <ul>
+                  {service.points.map((point) => (
+                    <li key={point}>
+                      <CheckCircle size={18} weight="fill" /> {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
           ))}
         </section>
 
-        <section
-          className={`${styles.surface} ${styles.integrations}`}
-          id="integrations"
-        >
-          <div>
-            <EditorialLabel>Connected ecosystem</EditorialLabel>
-            <h2>Connect the tools you already use.</h2>
-            <p>
-              These marks correspond to connector paths in the current product
-              repository, not customer endorsements.
-            </p>
-            <a href="/integrations">
-              View all integrations <ArrowRight size={14} />
-            </a>
-          </div>
-          <div className={styles.integrationGrid}>
-            {integrations.map((integration) => (
-              <span key={integration.name}>
-                <Image src={integration.asset} alt="" width={28} height={28} />
-                <strong>{integration.name}</strong>
-              </span>
-            ))}
-          </div>
-        </section>
-
-        <section
-          className={`${styles.surface} ${styles.dark} ${styles.setup}`}
-          id="why-innflow"
-        >
-          <div className={styles.setupIntro}>
-            <EditorialLabel>A smooth start</EditorialLabel>
-            <h2>From setup to success in three steps.</h2>
-          </div>
-          <ol>
-            <li>
-              <span className="gradient-text">01</span>
-              <Database size={26} />
-              <div>
-                <strong>Connect your portfolio</strong>
-                <p>
-                  Confirm the systems, records, and context the workflow needs.
-                </p>
-              </div>
-            </li>
-            <li>
-              <span className="gradient-text">02</span>
-              <Robot size={26} />
-              <div>
-                <strong>Configure your workflows</strong>
-                <p>
-                  Define actions, exceptions, approvals, and visible ownership.
-                </p>
-              </div>
-            </li>
-            <li>
-              <span className="gradient-text">03</span>
-              <ChartLineUp size={26} />
-              <div>
-                <strong>Operate with confidence</strong>
-                <p>
-                  Review execution and expand only when the process is ready.
-                </p>
-              </div>
-            </li>
-          </ol>
-        </section>
-
-        <section
-          className={`${styles.surface} ${styles.features}`}
-          id="features"
-        >
-          <div className={styles.centerIntro}>
-            <EditorialLabel>One platform · every workflow</EditorialLabel>
-            <h2>Everything you need to run modern property operations.</h2>
-            <p>
-              Start with a real handoff, keep the controls visible, and expand
-              only after the workflow is validated.
-            </p>
-          </div>
-          <div className={styles.featureBands}>
-            {featureBands.map((feature, index) => {
-              const Icon = feature.icon;
-              return (
-                <article
-                  className={`${styles.featureBand} ${
-                    index % 2 === 1 ? styles.featureBandReverse : ""
-                  }`}
-                  key={feature.title}
-                >
-                  {" "}
-                  <div className={styles.featureCopy}>
-                    <span className={styles.bandKicker}>
-                      <Icon size={15} /> {feature.kicker}
-                    </span>
-                    <h3>{feature.title}</h3>
-                    <p>{feature.body}</p>
-                    <a href={feature.href}>
-                      {feature.action} <ArrowRight size={14} />
-                    </a>
-                  </div>
-                  <FeaturePanel type={feature.panel} />
-                </article>
-              );
-            })}
+        <section className={styles.testimonials} id="testimonials">
+          <Reveal className={styles.shell}>
+            <p className={styles.eyebrow}>Testimonials</p>
+            <h2 className={styles.sectionTitle}>
+              Teams feel the difference in the first week.
+            </h2>
+          </Reveal>
+          <div className={styles.shell}>
+            <div className={styles.testimonialGrid}>
+              {testimonials.map((item, index) => (
+                <Reveal key={item.name} delay={(index % 2) * 0.08}>
+                  <figure className={styles.testimonial}>
+                    <Quotes size={26} weight="fill" />
+                    <blockquote>{item.quote}</blockquote>
+                    <figcaption>
+                      <Image src={item.image} alt="" width={48} height={48} />
+                      <div>
+                        <strong>{item.name}</strong>
+                        <span>{item.role}</span>
+                      </div>
+                      <Image
+                        className={styles.testimonialLogo}
+                        src={item.logo}
+                        alt=""
+                        width={72}
+                        height={20}
+                      />
+                    </figcaption>
+                  </figure>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </section>
 
-        <section
-          className={`${styles.surface} ${styles.portfolios}`}
-          id="portfolios"
-        >
-          <div className={styles.centerIntro}>
-            <EditorialLabel>Built for every portfolio</EditorialLabel>
-            <h2>One platform for every property type you manage.</h2>
-            <p>
+        <section className={styles.portfolios} id="portfolios">
+          <Reveal className={styles.shell}>
+            <p className={styles.eyebrow}>Built for every portfolio</p>
+            <h2 className={styles.sectionTitle}>
+              One platform for every property type you manage.
+            </h2>
+            <p className={styles.sectionLede}>
               Portfolio-specific product depth is confirmed during discovery.
             </p>
-          </div>
-          <div className={styles.portfolioGrid}>
-            {portfolioTypes.map((portfolio) => {
-              const Icon = portfolio.icon;
-              return (
-                <article key={portfolio.title}>
-                  <Image
-                    src={portfolio.image}
-                    alt=""
-                    fill
-                    sizes="(max-width: 760px) 90vw, 30vw"
-                  />
-                  <div>
-                    <Icon size={20} />
-                    <strong>{portfolio.title}</strong>
-                    <span>{portfolio.body}</span>
-                    <small>{portfolio.credit}</small>
-                  </div>
-                </article>
-              );
-            })}
-          </div>
-        </section>
-
-        <section className={`${styles.surface} ${styles.partner}`}>
-          <div>
-            <EditorialLabel>Always by your side</EditorialLabel>
-            <h2>A partner in your success.</h2>
-          </div>
-          <div className={styles.partnerGrid}>
-            <article>
-              <FlowArrow size={25} />
-              <strong>Seamless onboarding</strong>
-              <p>
-                A dedicated path guides your team from scope to a validated
-                workflow.
-              </p>
-            </article>
-            <article>
-              <Database size={25} />
-              <strong>Data migration</strong>
-              <p>
-                Move only the context your approved operation needs, securely
-                and accurately.
-              </p>
-            </article>
-            <article>
-              <Headset size={25} />
-              <strong>Ongoing support</strong>
-              <p>
-                Keep ownership, review points, and recovery paths visible as the
-                process evolves.
-              </p>
-            </article>
+          </Reveal>
+          <div className={styles.shell}>
+            <div className={styles.portfolioGrid}>
+              {portfolioTypes.map((portfolio, index) => {
+                const Icon = portfolio.icon;
+                return (
+                  <Reveal key={portfolio.title} delay={(index % 3) * 0.08}>
+                    <article className={styles.portfolioCard}>
+                      <Image
+                        src={portfolio.image}
+                        alt=""
+                        fill
+                        sizes="(max-width: 720px) 90vw, 30vw"
+                      />
+                      <div>
+                        <Icon size={20} />
+                        <strong>{portfolio.title}</strong>
+                        <span>{portfolio.body}</span>
+                        <small>{portfolio.credit}</small>
+                      </div>
+                    </article>
+                  </Reveal>
+                );
+              })}
+            </div>
           </div>
         </section>
 
-        <section className={`${styles.surface} ${styles.faq}`} id="faq">
-          <div>
-            <EditorialLabel>Questions? We’ve got answers.</EditorialLabel>
-            <h2>Common questions. Clear boundaries.</h2>
+        <section className={styles.partner}>
+          <Reveal className={styles.shell}>
+            <p className={styles.eyebrow}>Always by your side</p>
+            <h2 className={styles.sectionTitle}>A partner in your success.</h2>
+          </Reveal>
+          <div className={styles.shell}>
+            <div className={styles.partnerGrid}>
+              {partnerCards.map((card, index) => {
+                const Icon = card.icon;
+                return (
+                  <Reveal key={card.title} delay={index * 0.08}>
+                    <article className={styles.partnerCard}>
+                      <span className={styles.partnerIcon}>
+                        <Icon size={20} weight="fill" />
+                      </span>
+                      <h3>{card.title}</h3>
+                      <p>{card.body}</p>
+                    </article>
+                  </Reveal>
+                );
+              })}
+            </div>
           </div>
+        </section>
+
+        <section className={styles.faq} id="faq">
+          <Reveal className={styles.faqIntro}>
+            <p className={styles.eyebrow}>Questions? We’ve got answers.</p>
+            <h2 className={styles.sectionTitle}>
+              Common questions. Clear boundaries.
+            </h2>
+          </Reveal>
           <div className={styles.faqList}>
             {faqs.slice(0, 5).map((item, index) => (
               <details key={item.question} open={index === 0}>
@@ -549,27 +473,30 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section
-          className={`${styles.surface} ${styles.dark} ${styles.finalCta}`}
-        >
-          <div className={styles.ctaGlow} aria-hidden="true" />
-          <div>
-            <EditorialLabel>One operation · one clear next step</EditorialLabel>
-            <h2>
-              See Innflow <span className="gradient-text">in action.</span>{" "}
-              Built for your portfolio.
-            </h2>
-          </div>
-          <div>
+        <section className={styles.cta} id="cta">
+          <Image
+            src="/aeline/cta-bg.avif"
+            alt=""
+            fill
+            sizes="100vw"
+            className={styles.ctaBg}
+          />
+          <Reveal className={styles.ctaInner}>
+            <Sparkle size={30} weight="fill" />
+            <h2>See Innflow in action. Built for your portfolio.</h2>
+            <p>
+              Book a walkthrough and we’ll map one bounded operation to a
+              governed, reviewable workflow.
+            </p>
             <TrackedLink
-              className="editorial-button editorial-button-light"
+              className={styles.buttonLight}
               destination={siteConfig.demoUrl}
               eventLabel="final_demo"
             >
               Book a demo <ArrowRight size={15} />
             </TrackedLink>
             <small>No pressure. No obligation.</small>
-          </div>
+          </Reveal>
         </section>
       </main>
       <EditorialFooter />

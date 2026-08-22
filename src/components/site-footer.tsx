@@ -8,9 +8,9 @@ export function SiteFooter() {
       <div className="shell footer-grid">
         <div className="footer-brand">
           <Image
-            src="/brand/innflow-white-full.svg"
+            src="/brand/innflow_white_logo_set_bold.svg"
             alt="Innflow"
-            width={116}
+            width={135}
             height={28}
           />
           <p>Operational workflows with visible human control.</p>

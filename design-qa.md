@@ -1,8 +1,8 @@
 # Design QA
 
-- Source visual truth: `/Users/ak/Library/CloudStorage/Dropbox/innflow_web_plan/design_concepts/07-portfolio-canvas-synthai-inspired.png`
-- Source pixels: `725 x 2168`
-- Implementation URL: `http://localhost:3000/`
+- Source visual truth: Aeline donor site at `/Users/ak/aeline-web` (`http://localhost:3000/`); the homepage implements the "skyline" transplant documented in DESIGN.md
+- Source pixels: live donor pages (desktop + mobile)
+- Implementation URL: `http://localhost:3001/`
 - Implementation screenshot: not captured; browser automation permission is pending
 - Intended desktop viewport: `1440 x 1100`, device scale factor `1`
 - Intended mobile viewport: `390 x 844`, device scale factor `1`

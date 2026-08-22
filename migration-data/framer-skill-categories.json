@@ -1,0 +1,101 @@
+[
+  {
+    "id": "I81xz5IFP",
+    "slug": "communication",
+    "fieldData": {
+      "hyE6JHms_": {
+        "type": "string",
+        "value": "Communication",
+        "valueByLocale": {}
+      }
+    }
+  },
+  {
+    "id": "x4bnNgwM8",
+    "slug": "customer-support",
+    "fieldData": {
+      "hyE6JHms_": {
+        "type": "string",
+        "value": "Customer support",
+        "valueByLocale": {}
+      }
+    }
+  },
+  {
+    "id": "GO090anNY",
+    "slug": "finance",
+    "fieldData": {
+      "hyE6JHms_": {
+        "type": "string",
+        "value": "Finance",
+        "valueByLocale": {}
+      }
+    }
+  },
+  {
+    "id": "Mf0sAQUwr",
+    "slug": "health-care",
+    "fieldData": {
+      "hyE6JHms_": {
+        "type": "string",
+        "value": "Health care",
+        "valueByLocale": {}
+      }
+    }
+  },
+  {
+    "id": "CPnoAGjmS",
+    "slug": "human-resources",
+    "fieldData": {
+      "hyE6JHms_": {
+        "type": "string",
+        "value": "Human resources",
+        "valueByLocale": {}
+      }
+    }
+  },
+  {
+    "id": "kqEpdndgz",
+    "slug": "marketing",
+    "fieldData": {
+      "hyE6JHms_": {
+        "type": "string",
+        "value": "Marketing",
+        "valueByLocale": {}
+      }
+    }
+  },
+  {
+    "id": "MVlPlQcYz",
+    "slug": "operations",
+    "fieldData": {
+      "hyE6JHms_": {
+        "type": "string",
+        "value": "Operations",
+        "valueByLocale": {}
+      }
+    }
+  },
+  {
+    "id": "NhlWwDuTB",
+    "slug": "product",
+    "fieldData": {
+      "hyE6JHms_": {
+        "type": "string",
+        "value": "Product",
+        "valueByLocale": {}
+      }
+    }
+  },
+  {
+    "id": "OIrtKgG_8",
+    "slug": "sales-and-product",
+    "fieldData": {
+      "hyE6JHms_": {
+        "type": "string",
+        "value": "Sales and product",
+        "valueByLocale": {}
+      }
+    }
+  }
+]

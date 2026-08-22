@@ -1,97 +1,185 @@
 "use client";
 
+import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { PortfolioMegaMenu } from "@/components/portfolio-mega-menu";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
 
-export function EditorialHeader() {
-  const [scrolled, setScrolled] = useState(false);
+const MotionTrackedLink = motion.create(TrackedLink);
 
+const mobileLinks = [
+  { href: "#features", label: "Features" },
+  { href: "#portfolios", label: "Portfolios" },
+  { href: "#why-innflow", label: "Why Innflow" },
+  { href: "#resources", label: "Resources" },
+  { href: "/pricing", label: "Pricing" },
+  { href: "/blog", label: "Blog" },
+] as const;
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { type: "spring" as const, stiffness: 160, damping: 22 },
+  },
+};
+
+export function EditorialHeader() {
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const reduce = useReducedMotion();
+
+  // Escape closes the mobile overlay.
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 8);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setMobileOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
   }, []);
 
+  // Lock body scroll while the mobile overlay is open.
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
+
+  const closeMobile = () => setMobileOpen(false);
+
   return (
-    <header className={`editorial-header${scrolled ? " is-scrolled" : ""}`}>
-      <div className="editorial-shell editorial-header-inner">
-        <a className="editorial-brand" href="/" aria-label="Innflow home">
-          <Image
-            src="/brand/innflow-white-full.svg"
-            alt="Innflow"
-            width={116}
-            height={28}
-            priority
-          />
-        </a>
+    <>
+      <header className="editorial-header">
+        <div className="editorial-header-inner">
+          <a className="editorial-brand" href="/" aria-label="Innflow home">
+            <Image
+              src="/brand/innflow_logo_set_B.svg"
+              alt="Innflow"
+              width={139}
+              height={28}
+              priority
+            />
+          </a>
 
-        <nav aria-label="Primary navigation">
-          <ul className="editorial-desktop-nav">
-            <li>
-              <a href="#features">Features</a>
-            </li>
-            <PortfolioMegaMenu />
-            <li>
-              <a href="#why-innflow">Why Innflow</a>
-            </li>
-            <li>
-              <a href="#resources">Resources</a>
-            </li>
-            <li>
-              <a href="/pricing">Pricing</a>
-            </li>
-            <li>
-              <a href="/blog">Blog</a>
-            </li>
-          </ul>
-        </nav>
+          <nav aria-label="Primary navigation">
+            <ul className="editorial-desktop-nav">
+              <li>
+                <a href="#features">Features</a>
+              </li>
+              <PortfolioMegaMenu />
+              <li>
+                <a href="#why-innflow">Why Innflow</a>
+              </li>
+              <li>
+                <a href="#resources">Resources</a>
+              </li>
+              <li>
+                <a href="/pricing">Pricing</a>
+              </li>
+              <li>
+                <a href="/blog">Blog</a>
+              </li>
+            </ul>
+          </nav>
 
-        <div className="editorial-header-actions">
-          <TrackedLink
-            destination={`${siteConfig.appOrigin}/login`}
-            eventLabel="header_login"
+          <div className="editorial-header-actions">
+            <TrackedLink
+              destination={`${siteConfig.appOrigin}/login`}
+              eventLabel="header_login"
+            >
+              Login
+            </TrackedLink>
+            <a href={`mailto:${siteConfig.supportEmail}`}>Contact</a>
+            <TrackedLink
+              className="editorial-button editorial-button-brand editorial-header-cta"
+              destination={siteConfig.demoUrl}
+              eventLabel="header_demo"
+            >
+              Book a demo
+            </TrackedLink>
+            <button
+              type="button"
+              className={`editorial-hamburger${
+                mobileOpen ? " editorial-hamburger-open" : ""
+              }`}
+              aria-expanded={mobileOpen}
+              aria-controls="editorial-mobile-overlay"
+              aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
+              onClick={() => setMobileOpen((open) => !open)}
+            >
+              <span />
+              <span />
+              <span />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {/* Rendered outside the header so its backdrop-filter cannot become the
+          fixed overlay's containing block. */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            id="editorial-mobile-overlay"
+            className="editorial-mobile-overlay"
+            initial={reduce ? false : { opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: reduce ? 0 : 0.18 }}
           >
-            Login
-          </TrackedLink>
-          <a href={`mailto:${siteConfig.supportEmail}`}>Contact</a>
-          <TrackedLink
-            className="editorial-button editorial-button-light editorial-header-cta"
-            destination={siteConfig.demoUrl}
-            eventLabel="header_demo"
-          >
-            Book a demo
-          </TrackedLink>
-          <details className="editorial-mobile-nav">
-            <summary aria-label="Open navigation">Menu</summary>
-            <nav aria-label="Mobile navigation">
-              <a href="#features">Features</a>
-              <a href="#portfolios">Portfolios</a>
-              <a href="#why-innflow">Why Innflow</a>
-              <a href="#resources">Resources</a>
-              <a href="/pricing">Pricing</a>
-              <a href="/blog">Blog</a>
-              <TrackedLink
+            <motion.nav
+              aria-label="Mobile navigation"
+              className="editorial-mobile-links"
+              initial={reduce ? undefined : "hidden"}
+              animate="visible"
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: { staggerChildren: 0.06, delayChildren: 0.08 },
+                },
+              }}
+            >
+              {mobileLinks.map((link) => (
+                <motion.a
+                  key={link.href}
+                  href={link.href}
+                  variants={reduce ? undefined : itemVariants}
+                  onClick={closeMobile}
+                >
+                  {link.label}
+                </motion.a>
+              ))}
+              <MotionTrackedLink
                 destination={`${siteConfig.appOrigin}/login`}
                 eventLabel="mobile_login"
+                variants={reduce ? undefined : itemVariants}
+                onClick={closeMobile}
               >
                 Login
-              </TrackedLink>
-              <a href={`mailto:${siteConfig.supportEmail}`}>Contact</a>
-              <TrackedLink
-                className="editorial-button editorial-button-light"
+              </MotionTrackedLink>
+              <motion.a
+                href={`mailto:${siteConfig.supportEmail}`}
+                variants={reduce ? undefined : itemVariants}
+                onClick={closeMobile}
+              >
+                Contact
+              </motion.a>
+              <MotionTrackedLink
+                className="editorial-button editorial-button-brand editorial-mobile-cta"
                 destination={siteConfig.demoUrl}
                 eventLabel="mobile_demo"
+                variants={reduce ? undefined : itemVariants}
+                onClick={closeMobile}
               >
                 Book a demo
-              </TrackedLink>
-            </nav>
-          </details>
-        </div>
-      </div>
-    </header>
+              </MotionTrackedLink>
+            </motion.nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }

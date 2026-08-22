@@ -60,7 +60,7 @@ The brand-kit blue does not provide sufficient contrast for small white CTA text
 - Native `<details>` provides keyboard-accessible FAQ disclosure.
 - Mobile navigation uses an explicit button, `aria-expanded`, `aria-controls`, and Escape dismissal.
 - `prefers-reduced-motion` disables smooth scrolling and effectively removes transitions.
-- No autoplay, smooth-scroll interception, decorative canvas, or animation library is included.
+- No autoplay, smooth-scroll interception, or decorative canvas. Animation libraries are limited to the documented homepage exception (see "Homepage skyline direction" below).
 
 ## Prohibited cloning behavior
 
@@ -69,14 +69,50 @@ The brand-kit blue does not provide sufficient contrast for small white CTA text
 - Do not reuse third-party screenshots as shipped media.
 - Do not infer that a repeated reference pattern is part of Innflow's identity.
 
-## Homepage night direction (2026 redesign)
+## Homepage skyline direction (Aeline transplant, 2026-08-22)
 
-The homepage moved to a dark, AI-forward visual language while every other page stays on the token system above.
+The homepage moved to the light, photographic "skyline" visual language transplanted from the Aeline donor site (`/Users/ak/aeline-web`), while every other page stays on the token system above. This section supersedes the former "Homepage night direction" (dark, AI-forward) redesign.
 
-- Dark near-black surfaces: `--night` `#06090F`, `--night-surface` `#0C111B`, `--night-border` `#1D2635`, with `--night-ink` / `--night-muted` text. Section rhythm alternates dark hero/setup/closing-CTA with light integrations, features, portfolio, partner, and FAQ surfaces.
-- Iridescent accent ramp: `--glow-blue` `#5AAAF8` → `--glow-violet` `#8B7CF6`, exposed through `.gradient-text` (large display sizes only, for contrast) and `.gradient-border` (hairlines on dark cards). Gradients are CSS-only radial/linear washes — no canvas, no JS, no animation libraries.
-- Display scale: `--display-size: clamp(56px, 7vw, 96px)` for the hero headline.
-- Product evidence renders as floating glass panels: `--night-surface` fill, `--night-border`, backdrop blur, and a soft blue/violet glow shadow.
-- Header is dark glass (blurred `--night` at 78% over the hero, white logo); footer is a `--night` surface. Both remain homepage-scoped (`editorial-*` classes in `src/app/page.module.css`); other pages keep `site-header`/`site-footer`.
-- Motion stays restrained: 160–180ms color/background/border transitions and a one-pixel hover lift; `prefers-reduced-motion` removes transitions. No scroll animation.
-- Copy honesty is unchanged: no customer names, logos, or fabricated metrics. The logo-wall slot shows product integration connectors only, labeled as such.
+### Token layer (additive block at the end of `globals.css`; base `:root` tokens unchanged)
+
+| Semantic role | Token | Value | Source/rationale |
+| --- | --- | --- | --- |
+| Canvas | `--sky-canvas` | `#FFFFFF` | Aeline canvas |
+| Soft band | `--sky-soft` | `#F4F8FC` | Aeline alternating cool surface |
+| Hairline | `--sky-line` | `#E3ECF4` | Aeline hairline |
+| Ink | `--sky-ink` | `#0C1B2A` | Aeline navy ink |
+| Muted ink | `--sky-muted` | `#51606F` | Aeline secondary text |
+| Action blue | `--sky-blue` | `#1F7EF7` (hover `#0F68DD`) | Aeline action blue adopted verbatim as the Innflow homepage brand blue (owner decision, 2026-08-22) |
+| Accent blue | `--sky-blue-bright` | `var(--brand-kit-blue)` `#5AAAF8` | Brand-kit blue for icon/accent moments |
+| Blue tint | `--sky-blue-soft` | `#E3F0FE` | Aeline chip/tag fill |
+| Night (footer) | `--night` | `#08121F` | Remapped; footer is the only full-dark element |
+| Night support | `--night-border` / `--night-ink` / `--night-muted` | `#1B2C42` / `#F2F7FD` / `#93A5BA` | Footer palette |
+| Geometry | pill / card / image radius | `999px` / `20px` / `22px` | Aeline geometry |
+| Shells | content / header / hero / CTA | `1160` / `1240` / `940` / `760px` | Aeline shells |
+| Rhythm | `--sky-section` | `120px` | Aeline section padding (76px on phone) |
+| Shadows | `--sky-shadow-card` / `--sky-shadow-media` / `--sky-shadow-panel` | ink-tinted | Aeline ink-tinted shadows |
+
+### Section map (`src/app/page.tsx` + `page.module.css`)
+
+1. Hero — full-bleed `/aeline/hero-sky.avif` with a white gradient overlay; eyebrow pill, existing Innflow H1/lede, two pill CTAs (demo URL via `TrackedLink`), avatar-stack proof row.
+2. Customer-logo strip — `/aeline/logos/logo-1..5.svg`, grayscale to color on hover.
+3. `#features` — 3×2 card grid, `/aeline/cards/*.avif` imagery, existing Innflow feature copy.
+4. `#why-innflow` — alternating two-column rows, `Float` on `/aeline/services/*.webp`, CheckCircle checklists.
+5. Testimonials — 2×2 grid, `/aeline/testimonials/` people and logos.
+6. `#portfolios` — existing Innflow portfolio imagery/copy on Aeline card geometry.
+7. Partner — three quiet cards with blue-soft icon chips.
+8. `#faq` — native `<details>` driven by `faqs` from `src/content/home.ts`.
+9. Final CTA — full-bleed `/aeline/cta-bg.avif` with a dark overlay; white pill to the demo URL.
+10. Footer — `EditorialFooter` on the remapped night palette; `#resources` anchor unchanged.
+
+### Asset sources
+
+All transplanted media lives in `public/aeline/` (`hero-sky.avif`, `cta-bg.avif`, `cards/`, `services/`, `blog/`, `testimonials/`, `logos/`, `avatars/`). Innflow branding stays Innflow (`/brand/innflow-*.svg`); no `aeline-*.svg` wordmarks are used.
+
+### Motion allowance (amends the global "no animation libraries" rule)
+
+The homepage uses `motion` v12 (`motion/react`) via `src/components/motion.tsx`: `HeroIntro`/`HeroItem` stagger container (stagger `0.12`, delay `0.05`), `Reveal` scroll fade-rise (`viewport: { once: true, amount: 0.2 }`), and `Float` perpetual bob (5s). Springs are `stiffness: 120, damping: 20`. Every primitive bails out to static rendering under `useReducedMotion`, and CSS transitions remain 160ms color/background/lift with a `prefers-reduced-motion` reset. This allowance is homepage-scoped; other routes stay CSS-only.
+
+### Placeholder content notice (2026-08-22)
+
+Per an explicit owner decision on 2026-08-22, the homepage testimonials, customer-logo strip, and the hero "2,400+ teams" avatar-stack metric are **placeholder content** transplanted from the Aeline donor, not real Innflow customers or metrics. They must be replaced with verified proof or removed before any public launch claim audit.

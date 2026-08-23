@@ -4,7 +4,15 @@ import { parseBody } from "next-sanity/webhook";
 
 type SanityWebhookPayload = {
   _type?: string;
+  slug?: string | { current?: string };
 };
+
+function payloadSlug(payload: SanityWebhookPayload | null) {
+  if (!payload?.slug) return null;
+  return typeof payload.slug === "string"
+    ? payload.slug
+    : (payload.slug.current ?? null);
+}
 
 export async function POST(request: NextRequest) {
   const secret = process.env.SANITY_REVALIDATE_SECRET;
@@ -27,17 +35,25 @@ export async function POST(request: NextRequest) {
       return Response.json({ message: "Invalid signature." }, { status: 401 });
     }
 
-    if (body?._type !== "post") {
-      return Response.json(
-        { message: "Unsupported document type." },
-        { status: 400 },
-      );
+    if (body?._type === "post") {
+      revalidatePath("/blog");
+      revalidatePath("/blog/[slug]", "page");
+
+      return Response.json({ revalidated: true });
     }
 
-    revalidatePath("/blog");
-    revalidatePath("/blog/[slug]", "page");
+    if (body?._type === "productPage") {
+      const slug = payloadSlug(body);
+      if (slug) revalidatePath(`/products/${slug}`);
+      revalidatePath("/products/[slug]", "page");
+      revalidatePath("/sitemap.xml");
 
-    return Response.json({ revalidated: true });
+      return Response.json({ revalidated: true });
+    }
+    return Response.json(
+      { message: "Unsupported document type." },
+      { status: 400 },
+    );
   } catch (error) {
     console.error("Sanity webhook revalidation failed", error);
     return Response.json(

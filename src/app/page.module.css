@@ -8,6 +8,15 @@
   color: var(--sky-ink);
 }
 
+/* Hide only the homepage's browser chrome while preserving normal scrolling. */
+:global(html):has(.page) {
+  scrollbar-width: none;
+}
+
+:global(html):has(.page)::-webkit-scrollbar {
+  display: none;
+}
+
 .page h1,
 .page h2,
 .page h3 {
@@ -37,6 +46,7 @@
 }
 
 .buttonPrimary,
+.buttonSecondary,
 .buttonGhost,
 .buttonLight {
   display: inline-flex;
@@ -67,6 +77,35 @@
   border-color: transparent;
   background: var(--gradient-cta-hover);
   transform: translateY(-1px);
+}
+
+.buttonSecondary {
+  border-color: var(--sky-line);
+  background: #fff;
+  color: var(--sky-ink);
+  box-shadow: 0 8px 24px rgba(8, 20, 36, 0.06);
+}
+
+.buttonSecondary:hover {
+  border-color: rgba(0, 174, 255, 0.4);
+  background: var(--sky-blue-soft);
+  color: var(--sky-ink);
+  transform: translateY(-1px);
+}
+
+.sectionActions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.sectionActions .buttonPrimary,
+.sectionActions .buttonSecondary {
+  min-height: 46px;
+  padding: 11px 20px;
 }
 
 .buttonGhost {
@@ -443,6 +482,11 @@
   flex: 0 0 auto;
 }
 
+.serviceActions {
+  justify-content: flex-start;
+  margin-top: 30px;
+}
+
 /* Testimonials — 2×2 grid */
 .testimonials {
   padding: var(--sky-section) 0;
@@ -732,6 +776,11 @@
   line-height: 1.55;
 }
 
+.faqActions {
+  grid-column: 1 / -1;
+  margin-top: 6px;
+}
+
 /* Final CTA — sunny field backdrop with dark overlay */
 .cta {
   position: relative;
@@ -888,6 +937,7 @@
   .logoGroup img,
   .faqList summary span,
   .buttonPrimary,
+  .buttonSecondary,
   .buttonGhost,
   .buttonLight {
     transition: none;

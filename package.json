@@ -13,7 +13,9 @@
     "test:run": "vitest run",
     "audit:site": "node scripts/audit-site.mjs",
     "audit:bundle": "node scripts/check-bundle-budget.mjs",
-    "inventory:legacy": "node scripts/inventory-legacy-routes.mjs"
+    "inventory:legacy": "node scripts/inventory-legacy-routes.mjs",
+    "products:assets": "python3 scripts/resolve-product-assets.py --output scripts/data/product-asset-map.json",
+    "products:import": "node scripts/import-product-pages.mjs"
   },
   "dependencies": {
     "@phosphor-icons/react": "^2.1.10",

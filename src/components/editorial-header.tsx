@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
   MegaMenu,
+  portfolioColumns,
   productColumns,
   resourcesColumns,
 } from "@/components/mega-menu";
@@ -15,14 +16,13 @@ import styles from "./editorial-header.module.css";
 
 const MotionTrackedLink = motion.create(TrackedLink);
 
-// Route-based so the menu works from every page (the header is app-wide).
-const mobileLinks = [
-  { href: "/features/workflows", label: "Product" },
-  { href: "/property-management", label: "Property management" },
-  { href: "/integrations", label: "Integrations" },
-  { href: "/pricing", label: "Pricing" },
-  { href: "/blog", label: "Blog" },
-] as const;
+// Mobile and desktop intentionally consume the same navigation records so
+// labels, destinations, preview badges, and ordering cannot drift apart.
+const mobileMenuColumns = [
+  ...productColumns,
+  ...portfolioColumns,
+  ...resourcesColumns,
+];
 
 const itemVariants = {
   hidden: { opacity: 0, y: 24 },
@@ -128,7 +128,7 @@ export function EditorialHeader() {
                 <MegaMenu label="Product" columns={productColumns} />
               </li>
               <li>
-                <MegaMenu label="Portfolios" />
+                <MegaMenu label="Portfolios" columns={portfolioColumns} />
               </li>
               <li>
                 <MegaMenu label="Resources" columns={resourcesColumns} />
@@ -210,15 +210,52 @@ export function EditorialHeader() {
                 },
               }}
             >
-              {mobileLinks.map((link) => (
-                <motion.a
-                  key={link.href}
-                  href={link.href}
+              {mobileMenuColumns.map((column) => (
+                <motion.section
+                  key={column.heading}
+                  className={styles.mobileSection}
                   variants={reduce ? undefined : itemVariants}
-                  onClick={closeMobile}
                 >
-                  {link.label}
-                </motion.a>
+                  <h2>{column.heading}</h2>
+                  <div className={styles.mobileSectionLinks}>
+                    {column.links.map((link) => {
+                      const Icon = link.icon;
+                      return (
+                        <a
+                          key={link.title}
+                          href={link.href}
+                          onClick={closeMobile}
+                        >
+                          <span className={styles.mobileLinkIcon}>
+                            {link.iconSrc ? (
+                              <Image
+                                className={styles.mobileCustomIcon}
+                                src={link.iconSrc}
+                                alt=""
+                                width={25}
+                                height={25}
+                                unoptimized
+                              />
+                            ) : (
+                              <Icon size={17} weight="fill" />
+                            )}
+                          </span>
+                          <span className={styles.mobileLinkCopy}>
+                            <strong>
+                              {link.title}
+                              {link.badge ? (
+                                <span className={styles.mobileBadge}>
+                                  {link.badge}
+                                </span>
+                              ) : null}
+                            </strong>
+                            <small>{link.body}</small>
+                          </span>
+                        </a>
+                      );
+                    })}
+                  </div>
+                </motion.section>
               ))}
               <MotionTrackedLink
                 destination={`${siteConfig.appOrigin}/login`}

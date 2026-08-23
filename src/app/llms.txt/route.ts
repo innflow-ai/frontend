@@ -12,6 +12,11 @@ Canonical site: ${siteConfig.marketingOrigin}
 ## Primary pages
 - ${siteConfig.marketingOrigin}
 - ${siteConfig.marketingOrigin}/property-management
+- ${siteConfig.marketingOrigin}/products/platform
+- ${siteConfig.marketingOrigin}/products/agent-os
+- ${siteConfig.marketingOrigin}/products/ai-agents
+- ${siteConfig.marketingOrigin}/products/agentic-workflows
+- ${siteConfig.marketingOrigin}/products/databases
 - ${siteConfig.marketingOrigin}/features/workflows
 - ${siteConfig.marketingOrigin}/features/assistant
 - ${siteConfig.marketingOrigin}/features/communications
@@ -22,8 +27,8 @@ Canonical site: ${siteConfig.marketingOrigin}
 - ${siteConfig.marketingOrigin}/blog
 
 ## Product status boundaries
-- Workflows: available product category
-- Assistant: available product category with bounded claims
+- Platform, Agent OS, AI Agents, Agentic Workflows, and Databases: current product pages
+- Workflows and Assistant: existing feature pages with bounded claims
 - Communications: preview only
 - Website: preview only
 - Chat: not represented as live

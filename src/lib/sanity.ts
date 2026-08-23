@@ -1,6 +1,6 @@
 import type { PortableTextBlock } from "@portabletext/react";
 import type { SanityImageSource } from "@sanity/image-url";
-import imageUrlBuilder from "@sanity/image-url";
+import { createImageUrlBuilder } from "@sanity/image-url";
 import { createClient } from "next-sanity";
 
 export const sanityProjectId = process.env.SANITY_PROJECT_ID ?? "hnjg8vum";
@@ -17,7 +17,7 @@ export const sanityClient = createClient({
   perspective: "published",
 });
 
-const builder = imageUrlBuilder(sanityClient);
+const builder = createImageUrlBuilder(sanityClient);
 
 export function urlForImage(source: SanityImageSource) {
   return builder.image(source);

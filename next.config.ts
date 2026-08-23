@@ -12,6 +12,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "cdn.sanity.io",
       },
+      {
+        protocol: "https",
+        hostname: "framerusercontent.com",
+      },
     ],
   },
   poweredByHeader: false,
@@ -30,17 +34,27 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/product/agentic-workflows",
-        destination: "/features/workflows",
+        destination: "/products/agentic-workflows",
         permanent: true,
       },
       {
         source: "/product/ai-agents",
-        destination: "/features/assistant",
+        destination: "/products/ai-agents",
         permanent: true,
       },
       {
         source: "/product/agent-os",
-        destination: "/features/assistant",
+        destination: "/products/agent-os",
+        permanent: true,
+      },
+      {
+        source: "/product/platform",
+        destination: "/products/platform",
+        permanent: true,
+      },
+      {
+        source: "/product/databases",
+        destination: "/products/databases",
         permanent: true,
       },
       {

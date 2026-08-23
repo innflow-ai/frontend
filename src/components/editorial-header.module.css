@@ -190,11 +190,85 @@
   }
 
   .mobileLinks {
-    display: flex;
+    display: grid;
     width: min(calc(100% - 48px), 480px);
-    flex-direction: column;
-    gap: 6px;
+    gap: 28px;
     margin: 28px auto 48px;
+  }
+
+  .mobileSection h2 {
+    margin: 0 0 8px;
+    color: var(--sky-muted);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .mobileSectionLinks {
+    display: grid;
+  }
+
+  .mobileSectionLinks > a {
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 12px;
+    align-items: center;
+    border-bottom: 1px solid var(--sky-line);
+    color: var(--sky-ink);
+    padding: 13px 4px;
+  }
+
+  .mobileLinkIcon {
+    display: grid;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    border-radius: 10px;
+    background: var(--sky-blue-soft);
+    color: var(--sky-blue);
+  }
+
+  .mobileCustomIcon {
+    display: block;
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+  }
+
+  .mobileLinkCopy,
+  .mobileLinkCopy strong,
+  .mobileLinkCopy small {
+    display: block;
+  }
+
+  .mobileLinkCopy strong {
+    font-size: 17px;
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+  }
+
+  .mobileLinkCopy small {
+    margin-top: 3px;
+    color: var(--sky-muted);
+    font-size: 12.5px;
+    font-weight: 500;
+    line-height: 1.35;
+  }
+
+  .mobileBadge {
+    display: inline-block;
+    margin-left: 8px;
+    border: 1px solid var(--sky-line);
+    border-radius: 999px;
+    padding: 1px 7px;
+    color: var(--sky-muted);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    vertical-align: 2px;
   }
 
   .mobileLinks > a:not(.mobileCta) {
@@ -202,9 +276,9 @@
     border-bottom: 1px solid var(--sky-line);
     color: var(--sky-ink);
     padding: 16px 4px;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 600;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
   }
 
   .mobileCta {

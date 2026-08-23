@@ -3,9 +3,9 @@
 import {
   ArrowRight,
   Buildings,
-  ChatCircle,
+  CirclesThreePlus,
+  Database,
   FlowArrow,
-  Globe,
   House,
   type Icon,
   Newspaper,
@@ -16,50 +16,59 @@ import {
   UsersThree,
 } from "@phosphor-icons/react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import Image from "next/image";
 import { useEffect, useId, useRef, useState } from "react";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
 import styles from "./mega-menu.module.css";
 
-type MegaMenuLink = {
+export type MegaMenuLink = {
   href: string;
   icon: Icon;
+  iconSrc?: string;
   title: string;
   body: string;
   badge?: string;
 };
 
-type MegaMenuColumn = {
+export type MegaMenuColumn = {
   heading: string;
   links: MegaMenuLink[];
 };
 
 const platformLinks: MegaMenuLink[] = [
   {
-    href: "/features/workflows",
-    icon: FlowArrow,
-    title: "Workflows",
-    body: "Recurring handoffs, visible and repeatable.",
+    href: "/products/platform",
+    icon: CirclesThreePlus,
+    title: "Platform",
+    body: "The connected foundation for modern property operations.",
   },
   {
-    href: "/features/assistant",
+    href: "/products/agent-os",
     icon: Sparkle,
-    title: "Assistant",
-    body: "From an operational question to a reviewable next step.",
+    iconSrc: "/brand/navigation/mega-menu/copilot.svg",
+    title: "Agent OS",
+    body: "Govern, coordinate, and scale operational intelligence.",
   },
   {
-    href: "/features/communications",
-    icon: ChatCircle,
-    title: "Communications",
-    body: "Connect conversations to the work behind them.",
-    badge: "Preview",
+    href: "/products/ai-agents",
+    icon: Sparkle,
+    iconSrc: "/brand/navigation/mega-menu/copilot.svg",
+    title: "AI Agents",
+    body: "Purpose-built agents that move property work forward.",
   },
   {
-    href: "/features/website",
-    icon: Globe,
-    title: "Website",
-    body: "Customer-facing pages bridged to governed operations.",
-    badge: "Preview",
+    href: "/products/agentic-workflows",
+    icon: FlowArrow,
+    iconSrc: "/brand/navigation/mega-menu/agentic-workflows.svg",
+    title: "Agentic Workflows",
+    body: "Recurring work made visible, governed, and repeatable.",
+  },
+  {
+    href: "/products/databases",
+    icon: Database,
+    title: "Databases",
+    body: "Shared operational context your teams and agents can trust.",
   },
 ];
 
@@ -91,11 +100,7 @@ export const resourcesColumns: MegaMenuColumn[] = [
   },
 ];
 
-const defaultColumns: MegaMenuColumn[] = [
-  {
-    heading: "Platform",
-    links: platformLinks,
-  },
+export const portfolioColumns: MegaMenuColumn[] = [
   {
     heading: "Portfolios",
     links: [
@@ -125,10 +130,6 @@ const defaultColumns: MegaMenuColumn[] = [
       },
     ],
   },
-  {
-    heading: "Resources",
-    links: resourcesLinks,
-  },
 ];
 
 export const productColumns: MegaMenuColumn[] = [
@@ -140,10 +141,10 @@ export const productColumns: MegaMenuColumn[] = [
 
 type MegaMenuProps = {
   label: string;
-  columns?: MegaMenuColumn[];
+  columns: MegaMenuColumn[];
 };
 
-export function MegaMenu({ label, columns = defaultColumns }: MegaMenuProps) {
+export function MegaMenu({ label, columns }: MegaMenuProps) {
   const [open, setOpen] = useState(false);
   const reduce = useReducedMotion();
   const rootRef = useRef<HTMLDivElement>(null);
@@ -211,7 +212,7 @@ export function MegaMenu({ label, columns = defaultColumns }: MegaMenuProps) {
         aria-expanded={open}
         aria-haspopup="true"
         aria-controls={panelId}
-        onClick={() => (open ? closeMenu() : openMenu())}
+        onClick={openMenu}
         onFocus={openMenu}
       >
         {label}
@@ -245,7 +246,18 @@ export function MegaMenu({ label, columns = defaultColumns }: MegaMenuProps) {
                         onClick={closeMenu}
                       >
                         <span className={styles.icon}>
-                          <Icon size={16} weight="fill" />
+                          {link.iconSrc ? (
+                            <Image
+                              className={styles.customIcon}
+                              src={link.iconSrc}
+                              alt=""
+                              width={24}
+                              height={24}
+                              unoptimized
+                            />
+                          ) : (
+                            <Icon size={16} weight="fill" />
+                          )}
                         </span>
                         <span>
                           <strong>

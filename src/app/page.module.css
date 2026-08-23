@@ -776,9 +776,60 @@
   line-height: 1.55;
 }
 
-.faqActions {
-  grid-column: 1 / -1;
-  margin-top: 6px;
+.faqPolicies {
+  margin-top: 32px;
+}
+
+.faqPolicies > h4 {
+  color: var(--sky-ink);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.faqPolicyLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.faqPolicyLinks a {
+  color: var(--sky-muted);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.faqPolicyLinks a:hover {
+  color: var(--sky-ink);
+  text-decoration: underline;
+}
+
+.faqStill {
+  margin-top: 32px;
+}
+
+.faqStill h3 {
+  color: var(--sky-ink);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.faqStill p {
+  margin-top: 8px;
+  color: var(--sky-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.faqStill p a {
+  color: var(--sky-blue);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.faqStill p a:hover {
+  text-decoration: underline;
 }
 
 /* Final CTA — sunny field backdrop with dark overlay */

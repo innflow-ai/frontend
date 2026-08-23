@@ -132,6 +132,16 @@ const nextConfig: NextConfig = {
         destination: "/blog/:slug*",
         permanent: true,
       },
+      {
+        source: "/agent-skills",
+        destination: "/skills",
+        permanent: true,
+      },
+      {
+        source: "/agent-skills/:slug*",
+        destination: "/skills/:slug*",
+        permanent: true,
+      },
     ];
   },
 };

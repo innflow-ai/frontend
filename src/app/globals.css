@@ -1648,6 +1648,69 @@ p {
   line-height: 1.75;
 }
 
+.faq-page-hero {
+  border-top: none;
+  padding-top: 56px;
+}
+
+.faq-intro h1 {
+  margin-top: 20px;
+  font-size: clamp(40px, 4.1vw, 60px);
+}
+
+.faq-intro .section-label {
+  display: inline-block;
+  margin-top: 24px;
+}
+
+.faq-still,
+.faq-policies {
+  margin-top: 32px;
+}
+
+.faq-still h2,
+.faq-policies h2 {
+  color: var(--ink-strong);
+  font-size: 16px;
+  font-weight: 650;
+}
+
+.faq-still p {
+  margin-top: 8px;
+  color: var(--ink-muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.faq-policy-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.faq-policy-links a {
+  color: var(--ink-muted);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.faq-policy-links a:hover {
+  color: var(--ink-strong);
+  text-decoration: underline;
+}
+
+.faq-still a {
+  color: var(--brand);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.faq-still a:hover {
+  text-decoration: underline;
+}
+
 .final-cta-section {
   background: var(--deep);
   padding-block: 112px;

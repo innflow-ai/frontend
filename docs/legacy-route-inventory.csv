@@ -7,7 +7,7 @@
 "/contact","redirect-308","/demo","Single approved demo path"
 "/templates/changelog-template","retire-410","","Template, staging, or low-quality resource route excluded"
 "/templates/waitlist-page-template","retire-410","","Template, staging, or low-quality resource route excluded"
-"/agent-skills","retire-410","","Oversized programmatic inventory excluded from phase one"
+"/agent-skills","redirect-308","/skills","Skills library migrated to Sanity and rebuilt under /skills"
 "/solution/bpo","retire-410","","Unsupported vertical excluded from property-management release"
 "/solution/custom-ai-solutions","retire-410","","Unsupported vertical excluded from property-management release"
 "/solution/property-management","redirect-308","/property-management","Approved phase-one solution route"

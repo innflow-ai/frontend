@@ -12,6 +12,7 @@ import {
   Warehouse,
 } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
+import Link from "next/link";
 import { AuthenticatedHomeRedirect } from "@/components/authenticated-home-redirect";
 import { FeatureCard, FeatureCardGrid } from "@/components/feature-card";
 import { JsonLd } from "@/components/json-ld";
@@ -607,32 +608,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className={styles.faq} id="faq">
-          <Reveal className={styles.faqIntro}>
-            <Tag>Questions? We’ve got answers.</Tag>
-            <h2 className={styles.sectionTitle}>
-              Common questions. Clear boundaries.
-            </h2>
-          </Reveal>
-          <div className={styles.faqList}>
-            {faqs.slice(0, 5).map((item, index) => (
-              <details key={item.question} open={index === 0}>
-                <summary>
-                  {item.question}
-                  <span>+</span>
-                </summary>
-                <p>{item.answer}</p>
-              </details>
-            ))}
-          </div>
-          <SectionActions
-            className={styles.faqActions}
-            eventPrefix="faq"
-            learnHref={siteConfig.demoUrl}
-            learnLabel="Book a demo"
-          />
-        </section>
-
         <section className={styles.cta} id="cta">
           <Image
             src="/aeline/cta-bg.avif"
@@ -657,6 +632,41 @@ export default function HomePage() {
             </TrackedLink>
             <small>No pressure. No obligation.</small>
           </Reveal>
+        </section>
+
+        <section className={styles.faq} id="faq">
+          <Reveal className={styles.faqIntro}>
+            <Tag>FAQ</Tag>
+            <h2 className={styles.sectionTitle}>Frequently Asked Questions</h2>
+            <div className={styles.faqStill}>
+              <h3>Still have a question?</h3>
+              <p>
+                <a href={siteConfig.contactUrl}>Contact us!</a> We’ll be happy
+                to help you.
+              </p>
+            </div>
+            <div className={styles.faqPolicies}>
+              <h4>Policies</h4>
+              <div className={styles.faqPolicyLinks}>
+                <Link href="/legal/privacy-policy">Privacy</Link>
+                <Link href="/legal/terms-of-service">Terms</Link>
+                <Link href="/legal/cookie-policy">Cookies</Link>
+                <Link href="/legal/eula">EULA</Link>
+                <Link href="/legal/dsar">DSAR</Link>
+              </div>
+            </div>
+          </Reveal>
+          <div className={styles.faqList}>
+            {faqs.map((item, index) => (
+              <details key={item.question} open={index === 0}>
+                <summary>
+                  {item.question}
+                  <span>+</span>
+                </summary>
+                <p>{item.answer}</p>
+              </details>
+            ))}
+          </div>
         </section>
       </main>
       <JsonLd value={organizationSchema} />

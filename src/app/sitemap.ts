@@ -14,6 +14,7 @@ const staticRoutes: Array<{
   { path: "/integrations", changeFrequency: "monthly", priority: 0.8 },
   { path: "/pricing", changeFrequency: "monthly", priority: 0.8 },
   { path: "/demo", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/faq", changeFrequency: "monthly", priority: 0.7 },
   { path: "/blog", changeFrequency: "daily", priority: 0.8 },
   { path: "/legal/privacy-policy", changeFrequency: "yearly", priority: 0.3 },
   {

@@ -1,6 +1,7 @@
 import type { PortableTextBlock } from "@portabletext/react";
 import type { SanityImageSource } from "@sanity/image-url";
 import { createImageUrlBuilder } from "@sanity/image-url";
+import { unstable_cache } from "next/cache";
 import { createClient } from "next-sanity";
 
 export const sanityProjectId = process.env.SANITY_PROJECT_ID ?? "hnjg8vum";
@@ -73,6 +74,15 @@ const postsQuery = `*[_type == "post" && defined(slug.current)] | order(publishe
   ${postFields}
 }`;
 
+const latestPostsQuery = `*[
+  _type == "post" &&
+  defined(slug.current) &&
+  defined(publishedAt) &&
+  publishedAt <= now()
+] | order(publishedAt desc)[0...2] {
+  ${postFields}
+}`;
+
 const postSlugsQuery = `*[_type == "post" && defined(slug.current)].slug.current`;
 
 const postBySlugQuery = `*[_type == "post" && slug.current == $slug][0] {
@@ -84,6 +94,20 @@ const postBySlugQuery = `*[_type == "post" && slug.current == $slug][0] {
 export async function getBlogPosts(): Promise<BlogPostSummary[]> {
   try {
     return await sanityClient.fetch<BlogPostSummary[]>(postsQuery);
+  } catch {
+    return [];
+  }
+}
+
+const fetchLatestBlogPosts = unstable_cache(
+  () => sanityClient.fetch<BlogPostSummary[]>(latestPostsQuery),
+  ["latest-blog-posts"],
+  { revalidate: 60, tags: ["blog-posts"] },
+);
+
+export async function getLatestBlogPosts(): Promise<BlogPostSummary[]> {
+  try {
+    return await fetchLatestBlogPosts();
   } catch {
     return [];
   }

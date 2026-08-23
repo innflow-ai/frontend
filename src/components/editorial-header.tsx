@@ -1,11 +1,14 @@
 "use client";
 
+import { CaretDown, Newspaper } from "@phosphor-icons/react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useId, useState } from "react";
 import {
+  type LatestBlogPostNavItem,
   MegaMenu,
+  type MegaMenuColumn,
   portfolioColumns,
   productColumns,
   resourcesColumns,
@@ -17,13 +20,18 @@ import styles from "./editorial-header.module.css";
 
 const MotionTrackedLink = motion.create(TrackedLink);
 
+type MobileMenuGroup = {
+  label: string;
+  columns: MegaMenuColumn[];
+};
+
 // Mobile and desktop intentionally consume the same navigation records so
-// labels, destinations, preview badges, and ordering cannot drift apart.
-const mobileMenuColumns = [
-  ...productColumns,
-  ...solutionsColumns,
-  ...portfolioColumns,
-  ...resourcesColumns,
+// labels, destinations, preview badges, icons, and ordering cannot drift.
+const mobileMenuGroups: MobileMenuGroup[] = [
+  { label: "Product", columns: productColumns },
+  { label: "Solutions", columns: solutionsColumns },
+  { label: "Portfolios", columns: portfolioColumns },
+  { label: "Resources", columns: resourcesColumns },
 ];
 
 const itemVariants = {
@@ -35,11 +43,77 @@ const itemVariants = {
   },
 };
 
-export function EditorialHeader() {
+function MobileLatestPosts({
+  posts,
+  onSelect,
+}: {
+  posts: LatestBlogPostNavItem[];
+  onSelect: () => void;
+}) {
+  if (posts.length === 0) return null;
+
+  return (
+    <section
+      className={styles.mobileLatestPosts}
+      aria-labelledby="latest-posts-mobile"
+    >
+      <h3 id="latest-posts-mobile">Latest from Innflow</h3>
+      <div className={styles.mobileLatestPostList}>
+        {posts.map((post) => (
+          <TrackedLink
+            key={post.href}
+            className={styles.mobileLatestPost}
+            destination={post.href}
+            eventLabel="mobile_menu_latest_blog_post"
+            onClick={onSelect}
+          >
+            <span className={styles.mobileLatestPostMedia}>
+              {post.imageUrl ? (
+                <Image
+                  src={post.imageUrl}
+                  alt={post.imageAlt}
+                  width={72}
+                  height={46}
+                  sizes="72px"
+                />
+              ) : (
+                <Newspaper size={18} weight="fill" aria-hidden="true" />
+              )}
+            </span>
+            <span className={styles.mobileLatestPostCopy}>
+              <small>
+                {[post.categoryLabel, post.publishedLabel]
+                  .filter(Boolean)
+                  .join(" · ")}
+              </small>
+              <strong>{post.title}</strong>
+            </span>
+          </TrackedLink>
+        ))}
+      </div>
+      <TrackedLink
+        className={styles.mobileLatestPostsAll}
+        destination="/blog"
+        eventLabel="mobile_menu_all_blog_posts"
+        onClick={onSelect}
+      >
+        View all posts
+      </TrackedLink>
+    </section>
+  );
+}
+
+export function EditorialHeader({
+  latestBlogPosts = [],
+}: {
+  latestBlogPosts?: LatestBlogPostNavItem[];
+}) {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [openMobileGroup, setOpenMobileGroup] = useState<string | null>(null);
   const [pastHomeHero, setPastHomeHero] = useState(false);
   const pathname = usePathname();
   const reduce = useReducedMotion();
+  const mobileMenuBaseId = useId();
   const isHome = pathname === "/";
   const useLightChrome = isHome && !pastHomeHero;
 
@@ -75,7 +149,10 @@ export function EditorialHeader() {
   // Escape closes the mobile overlay.
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setMobileOpen(false);
+      if (event.key === "Escape") {
+        setMobileOpen(false);
+        setOpenMobileGroup(null);
+      }
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
@@ -94,13 +171,24 @@ export function EditorialHeader() {
   useEffect(() => {
     const mq = window.matchMedia("(min-width: 981px)");
     const onChange = (event: MediaQueryListEvent) => {
-      if (event.matches) setMobileOpen(false);
+      if (event.matches) {
+        setMobileOpen(false);
+        setOpenMobileGroup(null);
+      }
     };
     mq.addEventListener("change", onChange);
     return () => mq.removeEventListener("change", onChange);
   }, []);
 
-  const closeMobile = () => setMobileOpen(false);
+  const closeMobile = () => {
+    setMobileOpen(false);
+    setOpenMobileGroup(null);
+  };
+
+  const toggleMobile = () => {
+    if (!mobileOpen) setOpenMobileGroup(null);
+    setMobileOpen((open) => !open);
+  };
 
   return (
     <>
@@ -140,7 +228,11 @@ export function EditorialHeader() {
                 <MegaMenu label="Portfolios" columns={portfolioColumns} />
               </li>
               <li>
-                <MegaMenu label="Resources" columns={resourcesColumns} />
+                <MegaMenu
+                  label="Resources"
+                  columns={resourcesColumns}
+                  latestBlogPosts={latestBlogPosts}
+                />
               </li>
               <li>
                 <a href="/pricing">Pricing</a>
@@ -171,7 +263,7 @@ export function EditorialHeader() {
               aria-expanded={mobileOpen}
               aria-controls="editorial-mobile-overlay"
               aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
-              onClick={() => setMobileOpen((open) => !open)}
+              onClick={toggleMobile}
             >
               <Image
                 className={styles.menuIcon}
@@ -219,53 +311,120 @@ export function EditorialHeader() {
                 },
               }}
             >
-              {mobileMenuColumns.map((column) => (
-                <motion.section
-                  key={column.heading}
-                  className={styles.mobileSection}
-                  variants={reduce ? undefined : itemVariants}
-                >
-                  <h2>{column.heading}</h2>
-                  <div className={styles.mobileSectionLinks}>
-                    {column.links.map((link) => {
-                      const Icon = link.icon;
-                      return (
-                        <a
-                          key={link.title}
-                          href={link.href}
-                          onClick={closeMobile}
+              {mobileMenuGroups.map((group) => {
+                const expanded = openMobileGroup === group.label;
+                const panelId = `${mobileMenuBaseId}-${group.label.toLowerCase()}`;
+
+                return (
+                  <motion.section
+                    key={group.label}
+                    className={styles.mobileGroup}
+                    variants={reduce ? undefined : itemVariants}
+                  >
+                    <button
+                      type="button"
+                      className={styles.mobileGroupTrigger}
+                      aria-expanded={expanded}
+                      aria-controls={panelId}
+                      onClick={() =>
+                        setOpenMobileGroup(expanded ? null : group.label)
+                      }
+                    >
+                      {group.label}
+                      <CaretDown size={18} weight="bold" aria-hidden="true" />
+                    </button>
+                    <AnimatePresence initial={false}>
+                      {expanded ? (
+                        <motion.div
+                          id={panelId}
+                          className={styles.mobileGroupPanel}
+                          role="region"
+                          aria-label={`${group.label} mobile menu`}
+                          initial={reduce ? false : { height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: reduce ? 0 : 0.2 }}
                         >
-                          <span className={styles.mobileLinkIcon}>
-                            {link.iconSrc ? (
-                              <Image
-                                className={styles.mobileCustomIcon}
-                                src={link.iconSrc}
-                                alt=""
-                                width={25}
-                                height={25}
-                                unoptimized
+                          <div className={styles.mobileGroupContent}>
+                            {group.columns.map((column) => (
+                              <section
+                                key={column.heading}
+                                className={styles.mobileSection}
+                              >
+                                <h2>{column.heading}</h2>
+                                <div className={styles.mobileSectionLinks}>
+                                  {column.links.map((link) => {
+                                    const Icon = link.icon;
+                                    return (
+                                      <a
+                                        key={link.title}
+                                        href={link.href}
+                                        onClick={closeMobile}
+                                      >
+                                        <span className={styles.mobileLinkIcon}>
+                                          {link.iconSrc ? (
+                                            <Image
+                                              className={
+                                                styles.mobileCustomIcon
+                                              }
+                                              src={link.iconSrc}
+                                              alt=""
+                                              width={25}
+                                              height={25}
+                                              unoptimized
+                                            />
+                                          ) : (
+                                            <Icon size={17} weight="fill" />
+                                          )}
+                                        </span>
+                                        <span className={styles.mobileLinkCopy}>
+                                          <strong>
+                                            {link.title}
+                                            {link.badge ? (
+                                              <span
+                                                className={styles.mobileBadge}
+                                              >
+                                                {link.badge}
+                                              </span>
+                                            ) : null}
+                                          </strong>
+                                          <small>{link.body}</small>
+                                        </span>
+                                      </a>
+                                    );
+                                  })}
+                                </div>
+                              </section>
+                            ))}
+                            {group.label === "Resources" ? (
+                              <MobileLatestPosts
+                                posts={latestBlogPosts}
+                                onSelect={closeMobile}
                               />
-                            ) : (
-                              <Icon size={17} weight="fill" />
-                            )}
-                          </span>
-                          <span className={styles.mobileLinkCopy}>
-                            <strong>
-                              {link.title}
-                              {link.badge ? (
-                                <span className={styles.mobileBadge}>
-                                  {link.badge}
-                                </span>
-                              ) : null}
-                            </strong>
-                            <small>{link.body}</small>
-                          </span>
-                        </a>
-                      );
-                    })}
-                  </div>
-                </motion.section>
-              ))}
+                            ) : null}
+                          </div>
+                        </motion.div>
+                      ) : null}
+                    </AnimatePresence>
+                  </motion.section>
+                );
+              })}
+              <motion.a
+                href="/pricing"
+                className={styles.mobilePrimaryLink}
+                variants={reduce ? undefined : itemVariants}
+                onClick={closeMobile}
+              >
+                Pricing
+              </motion.a>
+              <motion.a
+                href="/blog"
+                className={styles.mobilePrimaryLink}
+                variants={reduce ? undefined : itemVariants}
+                onClick={closeMobile}
+              >
+                Blog
+              </motion.a>
               <MotionTrackedLink
                 destination={`${siteConfig.appOrigin}/login`}
                 eventLabel="mobile_login"

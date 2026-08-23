@@ -5,7 +5,14 @@ import { ConsentManagedTags } from "@/components/consent-managed-tags";
 import { EditorialFooter } from "@/components/editorial-footer";
 import { EditorialHeader } from "@/components/editorial-header";
 import { MarketingRuntime } from "@/components/marketing-runtime";
+import type { LatestBlogPostNavItem } from "@/components/mega-menu";
 import { siteConfig } from "@/config/site";
+import {
+  coverImageUrl,
+  formatPostDate,
+  getLatestBlogPosts,
+  humanizeCategory,
+} from "@/lib/sanity";
 import "./globals.css";
 
 const figtree = Figtree({
@@ -80,7 +87,21 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: ReactNode }) {
+export default async function RootLayout({
+  children,
+}: {
+  children: ReactNode;
+}) {
+  const latestPosts = await getLatestBlogPosts();
+  const latestBlogPosts: LatestBlogPostNavItem[] = latestPosts.map((post) => ({
+    title: post.title,
+    href: `/blog/${post.slug}`,
+    categoryLabel: humanizeCategory(post.category),
+    publishedLabel: formatPostDate(post.publishedAt),
+    imageUrl: post.coverImage ? coverImageUrl(post.coverImage, 320, 180) : null,
+    imageAlt: post.coverImage?.alt ?? post.title,
+  }));
+
   return (
     <html lang="en" className={figtree.variable}>
       <head>
@@ -99,7 +120,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <a className="skip-link" href="#main-content">
           Skip to content
         </a>
-        <EditorialHeader />
+        <EditorialHeader latestBlogPosts={latestBlogPosts} />
         {children}
         <EditorialFooter />
         <MarketingRuntime />

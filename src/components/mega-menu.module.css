@@ -196,6 +196,85 @@
   color: var(--sky-blue-hover);
 }
 
+.latestAside {
+  gap: 12px;
+}
+
+.latestAside .heading {
+  margin-bottom: 0;
+}
+
+.latestPostList {
+  display: grid;
+  gap: 10px;
+}
+
+.latestPostCard {
+  display: grid;
+  grid-template-columns: 88px minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+  border-radius: 10px;
+  padding: 5px;
+  transition:
+    background 160ms ease,
+    color 160ms ease;
+}
+
+.latestPostCard:hover {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.latestPostMedia {
+  display: grid;
+  width: 88px;
+  height: 50px;
+  place-items: center;
+  border-radius: 8px;
+  background: var(--sky-blue-soft);
+  color: var(--sky-blue);
+  overflow: hidden;
+}
+
+.latestPostMedia img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.latestPostCopy,
+.latestPostCopy small,
+.latestPostCopy strong {
+  display: block;
+  min-width: 0;
+}
+
+.latestPostCopy small {
+  margin-bottom: 3px;
+  color: var(--sky-muted);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.latestPostCopy strong {
+  display: -webkit-box;
+  color: var(--sky-ink);
+  font-size: 12.5px;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.aside .latestPostsAll {
+  margin-top: auto;
+}
+
 @media (max-width: 1100px) {
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -220,6 +299,7 @@
 @media (prefers-reduced-motion: reduce) {
   .trigger,
   .link,
+  .latestPostCard,
   .caret {
     transition: none;
   }

@@ -73,6 +73,11 @@
   padding: 28px 0 32px;
 }
 
+.gridWithoutAside {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px 28px;
+}
+
 .column {
   display: flex;
   flex-direction: column;
@@ -195,6 +200,10 @@
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px 24px;
+  }
+
+  .gridWithoutAside {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .aside {

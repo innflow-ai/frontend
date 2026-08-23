@@ -1,19 +1,27 @@
 "use client";
 
 import {
+  AddressBook,
   ArrowRight,
   Buildings,
+  CirclesFour,
   CirclesThreePlus,
   Database,
+  DoorOpen,
   FlowArrow,
+  GraduationCap,
   House,
   type Icon,
+  ListBullets,
+  Megaphone,
   Newspaper,
   PlugsConnected,
+  Signature,
   Sparkle,
   Storefront,
   Tag,
   UsersThree,
+  Wrench,
 } from "@phosphor-icons/react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
@@ -139,12 +147,102 @@ export const productColumns: MegaMenuColumn[] = [
   },
 ];
 
+export const solutionsColumns: MegaMenuColumn[] = [
+  {
+    heading: "Leasing AI",
+    links: [
+      {
+        href: "/products/agent-os",
+        icon: ListBullets,
+        title: "Listings",
+        body: "Keep property listings accurate and up to date.",
+      },
+      {
+        href: "/products/agent-os",
+        icon: Megaphone,
+        title: "Advertising",
+        body: "Reach qualified renters across the right channels.",
+      },
+      {
+        href: "/products/agent-os",
+        icon: Signature,
+        title: "Application & eSign",
+        body: "Self-guided tours that convert 24/7.",
+      },
+      {
+        href: "/products/databases",
+        icon: AddressBook,
+        title: "CRM",
+        body: "Capture, nurture, & convert prospects.",
+      },
+    ],
+  },
+  {
+    heading: "Assets",
+    links: [
+      {
+        href: "/property-management",
+        icon: Buildings,
+        title: "Conventional",
+        body: "Low, mid, & high-rise apartment complexes.",
+      },
+      {
+        href: "/property-management",
+        icon: GraduationCap,
+        title: "Student Housing",
+        body: "Off-campus & purpose-built student housing.",
+      },
+    ],
+  },
+  {
+    heading: "Solutions",
+    links: [
+      {
+        href: "/property-management",
+        icon: CirclesFour,
+        title: "Centralized Operations",
+        body: "Modern, AI-powered operations across leasing, admin, and maintenance.",
+      },
+      {
+        href: "/property-management",
+        icon: UsersThree,
+        title: "Owner Operators and Fee Managers",
+        body: "AI automation for property management companies.",
+      },
+      {
+        href: "/property-management",
+        icon: House,
+        title: "Owners",
+        body: "AI automation for ownership groups.",
+      },
+    ],
+  },
+  {
+    heading: "Operations",
+    links: [
+      {
+        href: "/property-management",
+        icon: Wrench,
+        title: "Maintenance & Mobile App",
+        body: "Automate repairs and manage mobile work orders from request to resolution.",
+      },
+      {
+        href: "/property-management",
+        icon: DoorOpen,
+        title: "Owner Portal",
+        body: "Find out how well your teams answer calls.",
+      },
+    ],
+  },
+];
+
 type MegaMenuProps = {
   label: string;
   columns: MegaMenuColumn[];
+  showAside?: boolean;
 };
 
-export function MegaMenu({ label, columns }: MegaMenuProps) {
+export function MegaMenu({ label, columns, showAside = true }: MegaMenuProps) {
   const [open, setOpen] = useState(false);
   const reduce = useReducedMotion();
   const rootRef = useRef<HTMLDivElement>(null);
@@ -232,7 +330,11 @@ export function MegaMenu({ label, columns }: MegaMenuProps) {
             aria-label={`${label} menu`}
             {...panelMotion}
           >
-            <div className={styles.grid}>
+            <div
+              className={`${styles.grid}${
+                showAside ? "" : ` ${styles.gridWithoutAside}`
+              }`}
+            >
               {columns.map((column) => (
                 <div key={column.heading} className={styles.column}>
                   <span className={styles.heading}>{column.heading}</span>
@@ -273,20 +375,22 @@ export function MegaMenu({ label, columns }: MegaMenuProps) {
                   })}
                 </div>
               ))}
-              <aside className={styles.aside}>
-                <span className={styles.heading}>New</span>
-                <p>
-                  Innflow Assistant turns operational questions into reviewable
-                  next steps — with human control built in.
-                </p>
-                <TrackedLink
-                  destination={siteConfig.demoUrl}
-                  eventLabel="mega_menu_demo"
-                  onClick={closeMenu}
-                >
-                  Book a demo <ArrowRight size={13} />
-                </TrackedLink>
-              </aside>
+              {showAside ? (
+                <aside className={styles.aside}>
+                  <span className={styles.heading}>New</span>
+                  <p>
+                    Innflow Assistant turns operational questions into
+                    reviewable next steps — with human control built in.
+                  </p>
+                  <TrackedLink
+                    destination={siteConfig.demoUrl}
+                    eventLabel="mega_menu_demo"
+                    onClick={closeMenu}
+                  >
+                    Book a demo <ArrowRight size={13} />
+                  </TrackedLink>
+                </aside>
+              ) : null}
             </div>
           </motion.div>
         )}

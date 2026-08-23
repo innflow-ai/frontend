@@ -9,6 +9,7 @@ import {
   portfolioColumns,
   productColumns,
   resourcesColumns,
+  solutionsColumns,
 } from "@/components/mega-menu";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
@@ -20,6 +21,7 @@ const MotionTrackedLink = motion.create(TrackedLink);
 // labels, destinations, preview badges, and ordering cannot drift apart.
 const mobileMenuColumns = [
   ...productColumns,
+  ...solutionsColumns,
   ...portfolioColumns,
   ...resourcesColumns,
 ];
@@ -126,6 +128,13 @@ export function EditorialHeader() {
             <ul className={styles.desktopNav}>
               <li>
                 <MegaMenu label="Product" columns={productColumns} />
+              </li>
+              <li>
+                <MegaMenu
+                  label="Solutions"
+                  columns={solutionsColumns}
+                  showAside={false}
+                />
               </li>
               <li>
                 <MegaMenu label="Portfolios" columns={portfolioColumns} />

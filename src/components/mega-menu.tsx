@@ -54,6 +54,16 @@ export type MegaMenuColumn = {
   links: MegaMenuLink[];
 };
 
+function withApprovedMenuIcons(links: MegaMenuLink[]): MegaMenuLink[] {
+  return links.map((link) => ({
+    ...link,
+    iconSrc: `/brand/navigation/mega-menu-items/${link.title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "")}.svg`,
+  }));
+}
+
 const platformLinks: MegaMenuLink[] = [
   {
     href: "/products/platform",
@@ -64,14 +74,12 @@ const platformLinks: MegaMenuLink[] = [
   {
     href: "/products/agent-os",
     icon: Sparkle,
-    iconSrc: "/brand/navigation/mega-menu/copilot.svg",
     title: "Agent OS",
     body: "Govern, coordinate, and scale operational intelligence.",
   },
   {
     href: "/products/ai-agents",
     icon: Sparkle,
-    iconSrc: "/brand/navigation/mega-menu/copilot.svg",
     title: "AI Agents",
     body: "Purpose-built agents that move property work forward.",
   },
@@ -87,7 +95,6 @@ const buildWithAgentsLinks: MegaMenuLink[] = [
   {
     href: "/products/agentic-workflows",
     icon: FlowArrow,
-    iconSrc: "/brand/navigation/mega-menu/agentic-workflows.svg",
     title: "Agentic Workflows",
     body: "Recurring work made visible, governed, and repeatable.",
   },
@@ -162,14 +169,14 @@ const resourcesLinks: MegaMenuLink[] = [
 export const resourcesColumns: MegaMenuColumn[] = [
   {
     heading: "Resources",
-    links: resourcesLinks,
+    links: withApprovedMenuIcons(resourcesLinks),
   },
 ];
 
 export const portfolioColumns: MegaMenuColumn[] = [
   {
     heading: "Portfolios",
-    links: [
+    links: withApprovedMenuIcons([
       {
         href: "/#portfolios",
         icon: House,
@@ -194,29 +201,29 @@ export const portfolioColumns: MegaMenuColumn[] = [
         title: "Community Associations",
         body: "HOAs, condos & townhomes.",
       },
-    ],
+    ]),
   },
 ];
 
 export const productColumns: MegaMenuColumn[] = [
   {
     heading: "Platform",
-    links: platformLinks,
+    links: withApprovedMenuIcons(platformLinks),
   },
   {
     heading: "Build With Agents",
-    links: buildWithAgentsLinks,
+    links: withApprovedMenuIcons(buildWithAgentsLinks),
   },
   {
     heading: "Capabilities",
-    links: capabilityLinks,
+    links: withApprovedMenuIcons(capabilityLinks),
   },
 ];
 
 export const solutionsColumns: MegaMenuColumn[] = [
   {
     heading: "Leasing AI",
-    links: [
+    links: withApprovedMenuIcons([
       {
         href: "/products/agent-os",
         icon: ListBullets,
@@ -241,11 +248,11 @@ export const solutionsColumns: MegaMenuColumn[] = [
         title: "CRM",
         body: "Capture, nurture, & convert prospects.",
       },
-    ],
+    ]),
   },
   {
     heading: "Assets",
-    links: [
+    links: withApprovedMenuIcons([
       {
         href: "/property-management",
         icon: Buildings,
@@ -258,11 +265,11 @@ export const solutionsColumns: MegaMenuColumn[] = [
         title: "Student Housing",
         body: "Off-campus & purpose-built student housing.",
       },
-    ],
+    ]),
   },
   {
     heading: "Solutions",
-    links: [
+    links: withApprovedMenuIcons([
       {
         href: "/property-management",
         icon: CirclesFour,
@@ -281,11 +288,11 @@ export const solutionsColumns: MegaMenuColumn[] = [
         title: "Owners",
         body: "AI automation for ownership groups.",
       },
-    ],
+    ]),
   },
   {
     heading: "Operations",
-    links: [
+    links: withApprovedMenuIcons([
       {
         href: "/property-management",
         icon: HouseLine,
@@ -316,7 +323,7 @@ export const solutionsColumns: MegaMenuColumn[] = [
         title: "Owner Portal",
         body: "Find out how well your teams answer calls.",
       },
-    ],
+    ]),
   },
 ];
 

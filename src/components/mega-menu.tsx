@@ -1,19 +1,37 @@
 "use client";
 
 import {
+  AddressBook,
+  Archive,
   ArrowRight,
+  ArrowsClockwise,
+  Browser,
   Buildings,
+  CirclesFour,
   CirclesThreePlus,
+  CreditCard,
   Database,
+  DoorOpen,
+  Files,
   FlowArrow,
+  GraduationCap,
+  Handshake,
   House,
+  HouseLine,
   type Icon,
+  ListBullets,
+  Megaphone,
   Newspaper,
   PlugsConnected,
+  PuzzlePiece,
+  Quotes,
+  Robot,
+  Signature,
   Sparkle,
   Storefront,
   Tag,
   UsersThree,
+  Wrench,
 } from "@phosphor-icons/react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
@@ -36,6 +54,16 @@ export type MegaMenuColumn = {
   links: MegaMenuLink[];
 };
 
+function withApprovedMenuIcons(links: MegaMenuLink[]): MegaMenuLink[] {
+  return links.map((link) => ({
+    ...link,
+    iconSrc: `/brand/navigation/mega-menu-items/${link.title
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "")}.svg`,
+  }));
+}
+
 const platformLinks: MegaMenuLink[] = [
   {
     href: "/products/platform",
@@ -46,29 +74,56 @@ const platformLinks: MegaMenuLink[] = [
   {
     href: "/products/agent-os",
     icon: Sparkle,
-    iconSrc: "/brand/navigation/mega-menu/copilot.svg",
     title: "Agent OS",
     body: "Govern, coordinate, and scale operational intelligence.",
   },
   {
     href: "/products/ai-agents",
     icon: Sparkle,
-    iconSrc: "/brand/navigation/mega-menu/copilot.svg",
     title: "AI Agents",
     body: "Purpose-built agents that move property work forward.",
+  },
+];
+
+const buildWithAgentsLinks: MegaMenuLink[] = [
+  {
+    href: "/products/agent-os",
+    icon: Robot,
+    title: "Copilot",
+    body: "Build workflows from a single prompt.",
   },
   {
     href: "/products/agentic-workflows",
     icon: FlowArrow,
-    iconSrc: "/brand/navigation/mega-menu/agentic-workflows.svg",
     title: "Agentic Workflows",
     body: "Recurring work made visible, governed, and repeatable.",
+  },
+  {
+    href: "/skills",
+    icon: PuzzlePiece,
+    title: "Agent Skills",
+    body: "Connect your tools and systems.",
+  },
+];
+
+const capabilityLinks: MegaMenuLink[] = [
+  {
+    href: "/features/website",
+    icon: Browser,
+    title: "AI Website Builder",
+    body: "Build conversion-ready property websites with AI.",
   },
   {
     href: "/products/databases",
     icon: Database,
     title: "Databases",
     body: "Shared operational context your teams and agents can trust.",
+  },
+  {
+    href: "/skills",
+    icon: Files,
+    title: "Templates",
+    body: "Start faster with ready-to-use workflow templates.",
   },
 ];
 
@@ -91,19 +146,37 @@ const resourcesLinks: MegaMenuLink[] = [
     title: "Blog",
     body: "Ideas for sharper, calmer operations.",
   },
+  {
+    href: "/demo",
+    icon: Handshake,
+    title: "Become an Affiliate",
+    body: "Partner with Innflow and help more property teams modernize operations.",
+  },
+  {
+    href: "/blog",
+    icon: Quotes,
+    title: "Customer Stories",
+    body: "Explore real-world success stories from Innflow customers.",
+  },
+  {
+    href: "/blog",
+    icon: Archive,
+    title: "Asset Library",
+    body: "Explore reports, guides, testimonials, podcasts, and more.",
+  },
 ];
 
 export const resourcesColumns: MegaMenuColumn[] = [
   {
     heading: "Resources",
-    links: resourcesLinks,
+    links: withApprovedMenuIcons(resourcesLinks),
   },
 ];
 
 export const portfolioColumns: MegaMenuColumn[] = [
   {
     heading: "Portfolios",
-    links: [
+    links: withApprovedMenuIcons([
       {
         href: "/#portfolios",
         icon: House,
@@ -128,23 +201,139 @@ export const portfolioColumns: MegaMenuColumn[] = [
         title: "Community Associations",
         body: "HOAs, condos & townhomes.",
       },
-    ],
+    ]),
   },
 ];
 
 export const productColumns: MegaMenuColumn[] = [
   {
-    heading: "Product",
-    links: platformLinks,
+    heading: "Platform",
+    links: withApprovedMenuIcons(platformLinks),
+  },
+  {
+    heading: "Build With Agents",
+    links: withApprovedMenuIcons(buildWithAgentsLinks),
+  },
+  {
+    heading: "Capabilities",
+    links: withApprovedMenuIcons(capabilityLinks),
+  },
+];
+
+export const solutionsColumns: MegaMenuColumn[] = [
+  {
+    heading: "Leasing AI",
+    links: withApprovedMenuIcons([
+      {
+        href: "/products/agent-os",
+        icon: ListBullets,
+        title: "Listings",
+        body: "Keep property listings accurate and up to date.",
+      },
+      {
+        href: "/products/agent-os",
+        icon: Megaphone,
+        title: "Advertising",
+        body: "Reach qualified renters across the right channels.",
+      },
+      {
+        href: "/products/agent-os",
+        icon: Signature,
+        title: "Application & eSign",
+        body: "Self-guided tours that convert 24/7.",
+      },
+      {
+        href: "/products/databases",
+        icon: AddressBook,
+        title: "CRM",
+        body: "Capture, nurture, & convert prospects.",
+      },
+    ]),
+  },
+  {
+    heading: "Assets",
+    links: withApprovedMenuIcons([
+      {
+        href: "/property-management",
+        icon: Buildings,
+        title: "Conventional",
+        body: "Low, mid, & high-rise apartment complexes.",
+      },
+      {
+        href: "/property-management",
+        icon: GraduationCap,
+        title: "Student Housing",
+        body: "Off-campus & purpose-built student housing.",
+      },
+    ]),
+  },
+  {
+    heading: "Solutions",
+    links: withApprovedMenuIcons([
+      {
+        href: "/property-management",
+        icon: CirclesFour,
+        title: "Centralized Operations",
+        body: "Modern, AI-powered operations across leasing, admin, and maintenance.",
+      },
+      {
+        href: "/property-management",
+        icon: UsersThree,
+        title: "Owner Operators and Fee Managers",
+        body: "AI automation for property management companies.",
+      },
+      {
+        href: "/property-management",
+        icon: House,
+        title: "Owners",
+        body: "AI automation for ownership groups.",
+      },
+    ]),
+  },
+  {
+    heading: "Operations",
+    links: withApprovedMenuIcons([
+      {
+        href: "/property-management",
+        icon: HouseLine,
+        title: "Move-In",
+        body: "Effortless move-ins powered by AI.",
+      },
+      {
+        href: "/property-management",
+        icon: ArrowsClockwise,
+        title: "Renewals",
+        body: "Predict, engage, and renew.",
+      },
+      {
+        href: "/property-management",
+        icon: CreditCard,
+        title: "Delinquency",
+        body: "Reduce late payments and boost cash flow.",
+      },
+      {
+        href: "/property-management",
+        icon: Wrench,
+        title: "Maintenance & Mobile App",
+        body: "Automate repairs and manage mobile work orders from request to resolution.",
+      },
+      {
+        href: "/property-management",
+        icon: DoorOpen,
+        title: "Owner Portal",
+        body: "Find out how well your teams answer calls.",
+      },
+    ]),
   },
 ];
 
 type MegaMenuProps = {
   label: string;
   columns: MegaMenuColumn[];
+  showAside?: boolean;
 };
 
-export function MegaMenu({ label, columns }: MegaMenuProps) {
+export function MegaMenu({ label, columns, showAside = true }: MegaMenuProps) {
   const [open, setOpen] = useState(false);
   const reduce = useReducedMotion();
   const rootRef = useRef<HTMLDivElement>(null);
@@ -232,7 +421,11 @@ export function MegaMenu({ label, columns }: MegaMenuProps) {
             aria-label={`${label} menu`}
             {...panelMotion}
           >
-            <div className={styles.grid}>
+            <div
+              className={`${styles.grid}${
+                showAside ? "" : ` ${styles.gridWithoutAside}`
+              }`}
+            >
               {columns.map((column) => (
                 <div key={column.heading} className={styles.column}>
                   <span className={styles.heading}>{column.heading}</span>
@@ -273,20 +466,22 @@ export function MegaMenu({ label, columns }: MegaMenuProps) {
                   })}
                 </div>
               ))}
-              <aside className={styles.aside}>
-                <span className={styles.heading}>New</span>
-                <p>
-                  Innflow Assistant turns operational questions into reviewable
-                  next steps — with human control built in.
-                </p>
-                <TrackedLink
-                  destination={siteConfig.demoUrl}
-                  eventLabel="mega_menu_demo"
-                  onClick={closeMenu}
-                >
-                  Book a demo <ArrowRight size={13} />
-                </TrackedLink>
-              </aside>
+              {showAside ? (
+                <aside className={styles.aside}>
+                  <span className={styles.heading}>New</span>
+                  <p>
+                    Innflow Assistant turns operational questions into
+                    reviewable next steps — with human control built in.
+                  </p>
+                  <TrackedLink
+                    destination={siteConfig.demoUrl}
+                    eventLabel="mega_menu_demo"
+                    onClick={closeMenu}
+                  >
+                    Book a demo <ArrowRight size={13} />
+                  </TrackedLink>
+                </aside>
+              ) : null}
             </div>
           </motion.div>
         )}

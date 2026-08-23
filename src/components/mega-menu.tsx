@@ -2,20 +2,30 @@
 
 import {
   AddressBook,
+  Archive,
   ArrowRight,
+  ArrowsClockwise,
+  Browser,
   Buildings,
   CirclesFour,
   CirclesThreePlus,
+  CreditCard,
   Database,
   DoorOpen,
+  Files,
   FlowArrow,
   GraduationCap,
+  Handshake,
   House,
+  HouseLine,
   type Icon,
   ListBullets,
   Megaphone,
   Newspaper,
   PlugsConnected,
+  PuzzlePiece,
+  Quotes,
+  Robot,
   Signature,
   Sparkle,
   Storefront,
@@ -65,6 +75,15 @@ const platformLinks: MegaMenuLink[] = [
     title: "AI Agents",
     body: "Purpose-built agents that move property work forward.",
   },
+];
+
+const buildWithAgentsLinks: MegaMenuLink[] = [
+  {
+    href: "/products/agent-os",
+    icon: Robot,
+    title: "Copilot",
+    body: "Build workflows from a single prompt.",
+  },
   {
     href: "/products/agentic-workflows",
     icon: FlowArrow,
@@ -73,10 +92,31 @@ const platformLinks: MegaMenuLink[] = [
     body: "Recurring work made visible, governed, and repeatable.",
   },
   {
+    href: "/skills",
+    icon: PuzzlePiece,
+    title: "Agent Skills",
+    body: "Connect your tools and systems.",
+  },
+];
+
+const capabilityLinks: MegaMenuLink[] = [
+  {
+    href: "/features/website",
+    icon: Browser,
+    title: "AI Website Builder",
+    body: "Build conversion-ready property websites with AI.",
+  },
+  {
     href: "/products/databases",
     icon: Database,
     title: "Databases",
     body: "Shared operational context your teams and agents can trust.",
+  },
+  {
+    href: "/skills",
+    icon: Files,
+    title: "Templates",
+    body: "Start faster with ready-to-use workflow templates.",
   },
 ];
 
@@ -98,6 +138,24 @@ const resourcesLinks: MegaMenuLink[] = [
     icon: Newspaper,
     title: "Blog",
     body: "Ideas for sharper, calmer operations.",
+  },
+  {
+    href: "/demo",
+    icon: Handshake,
+    title: "Become an Affiliate",
+    body: "Partner with Innflow and help more property teams modernize operations.",
+  },
+  {
+    href: "/blog",
+    icon: Quotes,
+    title: "Customer Stories",
+    body: "Explore real-world success stories from Innflow customers.",
+  },
+  {
+    href: "/blog",
+    icon: Archive,
+    title: "Asset Library",
+    body: "Explore reports, guides, testimonials, podcasts, and more.",
   },
 ];
 
@@ -142,8 +200,16 @@ export const portfolioColumns: MegaMenuColumn[] = [
 
 export const productColumns: MegaMenuColumn[] = [
   {
-    heading: "Product",
+    heading: "Platform",
     links: platformLinks,
+  },
+  {
+    heading: "Build With Agents",
+    links: buildWithAgentsLinks,
+  },
+  {
+    heading: "Capabilities",
+    links: capabilityLinks,
   },
 ];
 
@@ -220,6 +286,24 @@ export const solutionsColumns: MegaMenuColumn[] = [
   {
     heading: "Operations",
     links: [
+      {
+        href: "/property-management",
+        icon: HouseLine,
+        title: "Move-In",
+        body: "Effortless move-ins powered by AI.",
+      },
+      {
+        href: "/property-management",
+        icon: ArrowsClockwise,
+        title: "Renewals",
+        body: "Predict, engage, and renew.",
+      },
+      {
+        href: "/property-management",
+        icon: CreditCard,
+        title: "Delinquency",
+        body: "Reduce late payments and boost cash flow.",
+      },
       {
         href: "/property-management",
         icon: Wrench,

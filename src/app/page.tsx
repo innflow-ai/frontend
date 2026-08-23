@@ -13,6 +13,7 @@ import {
 } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import { AuthenticatedHomeRedirect } from "@/components/authenticated-home-redirect";
+import { FeatureCard, FeatureCardGrid } from "@/components/feature-card";
 import { JsonLd } from "@/components/json-ld";
 import { Float, HeroIntro, HeroItem, Reveal } from "@/components/motion";
 import { Tag } from "@/components/tag";
@@ -31,6 +32,12 @@ const avatarRow = [
 ] as const;
 
 const logoSet = [
+  {
+    name: "Renogy",
+    src: "/brand/customer-logos/renogy-gray.png",
+    width: 132,
+    height: 33,
+  },
   {
     name: "E2B",
     src: "/brand/customer-logos/e2b.png",
@@ -236,6 +243,41 @@ const partnerCards = [
   },
 ] as const;
 
+type SectionActionsProps = {
+  eventPrefix: string;
+  learnHref: string;
+  learnLabel?: string;
+  className?: string;
+};
+
+function SectionActions({
+  eventPrefix,
+  learnHref,
+  learnLabel = "Learn more",
+  className,
+}: SectionActionsProps) {
+  return (
+    <Reveal
+      className={`${styles.sectionActions}${className ? ` ${className}` : ""}`}
+    >
+      <TrackedLink
+        className={styles.buttonSecondary}
+        destination={learnHref}
+        eventLabel={`${eventPrefix}_learn_more`}
+      >
+        {learnLabel} <ArrowRight size={15} />
+      </TrackedLink>
+      <TrackedLink
+        className={styles.buttonPrimary}
+        destination={siteConfig.signupUrl}
+        eventLabel={`${eventPrefix}_get_started`}
+      >
+        Get started <ArrowRight size={15} />
+      </TrackedLink>
+    </Reveal>
+  );
+}
+
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -394,24 +436,23 @@ export default function HomePage() {
             </h2>
           </Reveal>
           <div className={styles.shell}>
-            <div className={styles.cardGrid}>
+            <FeatureCardGrid>
               {features.map((feature, index) => (
                 <Reveal key={feature.title} delay={(index % 3) * 0.08}>
-                  <article className={styles.card}>
-                    <Image
-                      src={feature.image}
-                      alt=""
-                      width={420}
-                      height={420}
-                    />
-                    <div>
-                      <h3>{feature.title}</h3>
-                      <p>{feature.body}</p>
-                    </div>
-                  </article>
+                  <FeatureCard
+                    image={feature.image}
+                    imageAlt=""
+                    title={feature.title}
+                    body={feature.body}
+                  />
                 </Reveal>
               ))}
-            </div>
+            </FeatureCardGrid>
+            <SectionActions
+              eventPrefix="features"
+              learnHref="/features/workflows"
+              learnLabel="Explore the product"
+            />
           </div>
         </section>
 
@@ -439,6 +480,17 @@ export default function HomePage() {
                     </li>
                   ))}
                 </ul>
+                <SectionActions
+                  className={styles.serviceActions}
+                  eventPrefix={`service_${index + 1}`}
+                  learnHref={
+                    index === 0
+                      ? "/features/workflows"
+                      : index === 1
+                        ? "/features/assistant"
+                        : "/property-management"
+                  }
+                />
               </div>
             </Reveal>
           ))}
@@ -476,6 +528,10 @@ export default function HomePage() {
                 </Reveal>
               ))}
             </div>
+            <SectionActions
+              eventPrefix="testimonials"
+              learnHref="/property-management"
+            />
           </div>
         </section>
 
@@ -513,6 +569,11 @@ export default function HomePage() {
                 );
               })}
             </div>
+            <SectionActions
+              eventPrefix="portfolios"
+              learnHref="/property-management"
+              learnLabel="Explore property management"
+            />
           </div>
         </section>
 
@@ -538,6 +599,11 @@ export default function HomePage() {
                 );
               })}
             </div>
+            <SectionActions
+              eventPrefix="partner"
+              learnHref={siteConfig.demoUrl}
+              learnLabel="Book a demo"
+            />
           </div>
         </section>
 
@@ -559,6 +625,12 @@ export default function HomePage() {
               </details>
             ))}
           </div>
+          <SectionActions
+            className={styles.faqActions}
+            eventPrefix="faq"
+            learnHref={siteConfig.demoUrl}
+            learnLabel="Book a demo"
+          />
         </section>
 
         <section className={styles.cta} id="cta">

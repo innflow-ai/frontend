@@ -32,7 +32,7 @@ export const siteConfig = {
 } as const;
 
 export const navigation = [
-  { label: "Product", href: "/features/workflows" },
+  { label: "Product", href: "/products/platform" },
   { label: "Property management", href: "/property-management" },
   { label: "Integrations", href: "/integrations" },
   { label: "Pricing", href: "/pricing" },

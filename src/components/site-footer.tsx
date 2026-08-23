@@ -17,10 +17,11 @@ export function SiteFooter() {
         </div>
         <div>
           <strong>Product</strong>
-          <a href="/features/workflows">Workflows</a>
-          <a href="/features/assistant">Assistant</a>
-          <a href="/features/communications">Communications · Preview</a>
-          <a href="/features/website">Website · Preview</a>
+          <a href="/products/platform">Platform</a>
+          <a href="/products/agent-os">Agent OS</a>
+          <a href="/products/ai-agents">AI Agents</a>
+          <a href="/products/agentic-workflows">Agentic Workflows</a>
+          <a href="/products/databases">Databases</a>
         </div>
         <div>
           <strong>Property management</strong>

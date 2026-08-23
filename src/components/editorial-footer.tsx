@@ -21,9 +21,11 @@ export function EditorialFooter() {
         </div>
         <div>
           <strong>Product</strong>
-          <a href="/#features">Features</a>
-          <a href="/features/workflows">Workflows</a>
-          <a href="/features/assistant">Assistant</a>
+          <a href="/products/platform">Platform</a>
+          <a href="/products/agent-os">Agent OS</a>
+          <a href="/products/ai-agents">AI Agents</a>
+          <a href="/products/agentic-workflows">Agentic Workflows</a>
+          <a href="/products/databases">Databases</a>
           <a href="/integrations">Integrations</a>
           <a href="/pricing">Pricing</a>
         </div>

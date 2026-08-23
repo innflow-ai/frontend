@@ -6,11 +6,15 @@ export function createPageMetadata({
   description,
   path,
   noIndex = false,
+  image = "/opengraph-image.png",
+  imageAlt = `${siteConfig.name} property operations platform`,
 }: {
   title: string;
   description: string;
   path: string;
   noIndex?: boolean;
+  image?: string;
+  imageAlt?: string;
 }): Metadata {
   const canonical = new URL(path, siteConfig.marketingOrigin).toString();
 
@@ -40,10 +44,10 @@ export function createPageMetadata({
       locale: "en_US",
       images: [
         {
-          url: "/opengraph-image.png",
+          url: image,
           width: 1200,
           height: 630,
-          alt: `${siteConfig.name} property operations platform`,
+          alt: imageAlt,
         },
       ],
     },
@@ -53,8 +57,8 @@ export function createPageMetadata({
       description,
       images: [
         {
-          url: "/opengraph-image.png",
-          alt: `${siteConfig.name} property operations platform`,
+          url: image,
+          alt: imageAlt,
         },
       ],
     },

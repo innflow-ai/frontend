@@ -53,4 +53,45 @@ describe("Sanity revalidation webhook", () => {
       "page",
     );
   });
+
+  it("revalidates a product page and discovery routes", async () => {
+    parseBodyMock.mockResolvedValue({
+      body: { _type: "productPage", slug: { current: "databases" } },
+      isValidSignature: true,
+    });
+
+    const response = await POST(
+      new NextRequest("https://innflow.ai/api/revalidate/sanity", {
+        method: "POST",
+      }),
+    );
+
+    expect(response.status).toBe(200);
+    expect(revalidatePathMock).toHaveBeenNthCalledWith(
+      1,
+      "/products/databases",
+    );
+    expect(revalidatePathMock).toHaveBeenNthCalledWith(
+      2,
+      "/products/[slug]",
+      "page",
+    );
+    expect(revalidatePathMock).toHaveBeenNthCalledWith(3, "/sitemap.xml");
+  });
+
+  it("rejects unsupported document types", async () => {
+    parseBodyMock.mockResolvedValue({
+      body: { _type: "author" },
+      isValidSignature: true,
+    });
+
+    const response = await POST(
+      new NextRequest("https://innflow.ai/api/revalidate/sanity", {
+        method: "POST",
+      }),
+    );
+
+    expect(response.status).toBe(400);
+    expect(revalidatePathMock).not.toHaveBeenCalled();
+  });
 });

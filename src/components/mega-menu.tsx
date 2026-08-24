@@ -54,6 +54,15 @@ export type MegaMenuColumn = {
   links: MegaMenuLink[];
 };
 
+export type LatestBlogPostNavItem = {
+  title: string;
+  href: string;
+  categoryLabel: string;
+  publishedLabel: string;
+  imageUrl: string | null;
+  imageAlt: string;
+};
+
 function withApprovedMenuIcons(links: MegaMenuLink[]): MegaMenuLink[] {
   return links.map((link) => ({
     ...link,
@@ -331,9 +340,89 @@ type MegaMenuProps = {
   label: string;
   columns: MegaMenuColumn[];
   showAside?: boolean;
+  latestBlogPosts?: LatestBlogPostNavItem[];
 };
 
-export function MegaMenu({ label, columns, showAside = true }: MegaMenuProps) {
+function LatestPostsAside({
+  posts,
+  onSelect,
+}: {
+  posts: LatestBlogPostNavItem[];
+  onSelect: () => void;
+}) {
+  return (
+    <aside className={`${styles.aside} ${styles.latestAside}`}>
+      <span className={styles.heading}>Latest</span>
+      <div className={styles.latestPostList}>
+        {posts.map((post) => (
+          <TrackedLink
+            key={post.href}
+            className={styles.latestPostCard}
+            destination={post.href}
+            eventLabel="mega_menu_latest_blog_post"
+            onClick={onSelect}
+          >
+            <span className={styles.latestPostMedia}>
+              {post.imageUrl ? (
+                <Image
+                  src={post.imageUrl}
+                  alt={post.imageAlt}
+                  width={88}
+                  height={50}
+                  sizes="88px"
+                />
+              ) : (
+                <Newspaper size={18} weight="fill" aria-hidden="true" />
+              )}
+            </span>
+            <span className={styles.latestPostCopy}>
+              <small>
+                {[post.categoryLabel, post.publishedLabel]
+                  .filter(Boolean)
+                  .join(" · ")}
+              </small>
+              <strong>{post.title}</strong>
+            </span>
+          </TrackedLink>
+        ))}
+      </div>
+      <TrackedLink
+        className={styles.latestPostsAll}
+        destination="/blog"
+        eventLabel="mega_menu_all_blog_posts"
+        onClick={onSelect}
+      >
+        View all posts <ArrowRight size={13} aria-hidden="true" />
+      </TrackedLink>
+    </aside>
+  );
+}
+
+function PromotionalAside({ onSelect }: { onSelect: () => void }) {
+  return (
+    <aside className={styles.aside}>
+      <span className={styles.heading}>New</span>
+      <p>
+        Innflow Assistant turns operational questions into reviewable next steps
+        — with human control built in.
+      </p>
+      <TrackedLink
+        destination={siteConfig.demoUrl}
+        eventLabel="mega_menu_demo"
+        onClick={onSelect}
+      >
+        Book a demo <ArrowRight size={13} />
+      </TrackedLink>
+    </aside>
+  );
+}
+
+export function MegaMenu({
+  label,
+  columns,
+  showAside = true,
+  latestBlogPosts,
+}: MegaMenuProps) {
   const [open, setOpen] = useState(false);
   const reduce = useReducedMotion();
   const rootRef = useRef<HTMLDivElement>(null);
@@ -467,20 +556,14 @@ export function MegaMenu({ label, columns, showAside = true }: MegaMenuProps) {
                 </div>
               ))}
               {showAside ? (
-                <aside className={styles.aside}>
-                  <span className={styles.heading}>New</span>
-                  <p>
-                    Innflow Assistant turns operational questions into
-                    reviewable next steps — with human control built in.
-                  </p>
-                  <TrackedLink
-                    destination={siteConfig.demoUrl}
-                    eventLabel="mega_menu_demo"
-                    onClick={closeMenu}
-                  >
-                    Book a demo <ArrowRight size={13} />
-                  </TrackedLink>
-                </aside>
+                latestBlogPosts?.length ? (
+                  <LatestPostsAside
+                    posts={latestBlogPosts}
+                    onSelect={closeMenu}
+                  />
+                ) : (
+                  <PromotionalAside onSelect={closeMenu} />
+                )
               ) : null}
             </div>
           </motion.div>

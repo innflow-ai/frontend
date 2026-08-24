@@ -36,7 +36,7 @@ describe("latest Sanity blog posts", () => {
     fetchMock.mockReset();
   });
 
-  it("requests two newest published posts and excludes future entries", async () => {
+  it("requests five newest published posts and excludes future entries", async () => {
     fetchMock.mockResolvedValue([post]);
 
     await expect(getLatestBlogPosts()).resolves.toEqual([post]);
@@ -44,7 +44,7 @@ describe("latest Sanity blog posts", () => {
 
     const query = fetchMock.mock.calls[0]?.[0] as string;
     expect(query).toContain("publishedAt <= now()");
-    expect(query).toContain("order(publishedAt desc)[0...2]");
+    expect(query).toContain("order(publishedAt desc)[0...5]");
     expect(query).toContain("defined(slug.current)");
   });
 

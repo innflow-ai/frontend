@@ -79,32 +79,32 @@ const logoSet = [
 
 const features = [
   {
-    image: "/aeline/cards/card.avif",
+    image: "/aeline/cards/card.webp",
     title: "Close faster. Report with confidence.",
     body: "Connect operational records to reviewable reporting workflows without claiming to replace your accounting system.",
   },
   {
-    image: "/aeline/cards/card-1.avif",
+    image: "/aeline/cards/card-1.webp",
     title: "Lease smarter. Keep residents informed.",
     body: "Bring applications, resident requests, communication, and supporting context into one governed handoff.",
   },
   {
-    image: "/aeline/cards/card-2.avif",
+    image: "/aeline/cards/card-2.webp",
     title: "Streamline operations. Automate the busywork.",
     body: "Coordinate maintenance, inspections, vendor handoffs, and bounded assistant actions with clear review points.",
   },
   {
-    image: "/aeline/cards/card-3.avif",
+    image: "/aeline/cards/card-3.webp",
     title: "Handoffs become governed processes.",
     body: "Model triggers, conditions, connected actions, and review points in a visual workflow your team can inspect.",
   },
   {
-    image: "/aeline/cards/card-4.avif",
+    image: "/aeline/cards/card-4.webp",
     title: "Answers with your operation's context.",
     body: "The Assistant works from connected knowledge and explicit workflow actions, not an open-ended promise of autonomy.",
   },
   {
-    image: "/aeline/cards/card-5.avif",
+    image: "/aeline/cards/card-5.webp",
     title: "Context and control beside the work.",
     body: "Attach working data, reference material, files, and approval requests to the process that uses them.",
   },
@@ -344,18 +344,11 @@ export default function HomePage() {
               <HeroItem>
                 <div className={styles.heroActions}>
                   <TrackedLink
-                    className={styles.buttonPrimary}
-                    destination={siteConfig.demoUrl}
-                    eventLabel="hero_get_started"
-                  >
-                    Get started <ArrowRight size={15} />
-                  </TrackedLink>
-                  <TrackedLink
                     className={styles.buttonGhost}
-                    destination={siteConfig.demoUrl}
-                    eventLabel="hero_demo"
+                    destination={`${siteConfig.appOrigin}/login`}
+                    eventLabel="hero_get_started_today"
                   >
-                    Book a demo
+                    Get started today!
                   </TrackedLink>
                 </div>
               </HeroItem>

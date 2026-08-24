@@ -79,7 +79,7 @@ const latestPostsQuery = `*[
   defined(slug.current) &&
   defined(publishedAt) &&
   publishedAt <= now()
-] | order(publishedAt desc)[0...2] {
+] | order(publishedAt desc)[0...5] {
   ${postFields}
 }`;
 

@@ -149,7 +149,6 @@
   height: 36px;
   place-items: center;
   border-radius: 10px;
-  background: var(--sky-blue-soft);
   color: var(--sky-blue);
 }
 

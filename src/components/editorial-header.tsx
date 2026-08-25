@@ -433,15 +433,26 @@ export function EditorialHeader({
               >
                 Login
               </MotionTrackedLink>
-              <MotionTrackedLink
-                className={`${styles.button} ${styles.buttonBrand} ${styles.mobileCta}`}
-                destination={siteConfig.demoUrl}
-                eventLabel="mobile_demo"
-                variants={reduce ? undefined : itemVariants}
-                onClick={closeMobile}
-              >
-                Sign up now
-              </MotionTrackedLink>
+              <div className={styles.mobileCtaRow}>
+                <MotionTrackedLink
+                  className={`${styles.button} ${styles.buttonBrand} ${styles.mobileCta}`}
+                  destination={siteConfig.signupUrl}
+                  eventLabel="mobile_signup"
+                  variants={reduce ? undefined : itemVariants}
+                  onClick={closeMobile}
+                >
+                  Sign Up
+                </MotionTrackedLink>
+                <MotionTrackedLink
+                  className={`${styles.button} ${styles.buttonBrand} ${styles.mobileCta}`}
+                  destination={siteConfig.demoUrl}
+                  eventLabel="mobile_demo"
+                  variants={reduce ? undefined : itemVariants}
+                  onClick={closeMobile}
+                >
+                  Book a Demo
+                </MotionTrackedLink>
+              </div>
             </motion.nav>
           </motion.div>
         )}

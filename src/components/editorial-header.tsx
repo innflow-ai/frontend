@@ -110,28 +110,27 @@ export function EditorialHeader({
 }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMobileGroup, setOpenMobileGroup] = useState<string | null>(null);
-  const [pastHomeHero, setPastHomeHero] = useState(false);
+  const [showSolidHeader, setShowSolidHeader] = useState(false);
   const pathname = usePathname();
   const reduce = useReducedMotion();
   const mobileMenuBaseId = useId();
   const isHome = pathname === "/";
-  const useLightChrome = isHome && !pastHomeHero;
+  const useLightChrome = isHome && !showSolidHeader;
+  const useDarkTransparentChrome = !isHome && !showSolidHeader;
 
-  // Keep the homepage header transparent over the hero, then switch to the
-  // solid navigation treatment once the hero has passed beneath it.
+  // Keep the homepage header transparent over the hero. Other pages begin
+  // with dark chrome on a transparent surface and gain the solid treatment
+  // as soon as the page scrolls.
   useEffect(() => {
-    if (!isHome) {
-      setPastHomeHero(false);
-      return;
-    }
-
     let frame = 0;
     const syncHeader = () => {
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
         const hero = document.getElementById("home-hero");
-        setPastHomeHero(
-          hero ? hero.getBoundingClientRect().bottom <= 70 : window.scrollY > 0,
+        setShowSolidHeader(
+          isHome && hero
+            ? hero.getBoundingClientRect().bottom <= 70
+            : window.scrollY > 0,
         );
       });
     };
@@ -195,7 +194,7 @@ export function EditorialHeader({
       <header
         className={`${styles.header}${isHome ? ` ${styles.homeHeader}` : ""}${
           useLightChrome ? ` ${styles.homeTop}` : ""
-        }`}
+        }${useDarkTransparentChrome ? ` ${styles.pageTop}` : ""}`}
       >
         <div className={styles.inner}>
           <a className={styles.brand} href="/" aria-label="Innflow home">

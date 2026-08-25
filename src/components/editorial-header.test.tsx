@@ -1,11 +1,16 @@
-import { cleanup, render, screen, within } from "@testing-library/react";
+import { act, cleanup, render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { LatestBlogPostNavItem } from "@/components/mega-menu";
 import { EditorialHeader } from "./editorial-header";
+import styles from "./editorial-header.module.css";
+
+const { mockPathname } = vi.hoisted(() => ({
+  mockPathname: { current: "/" },
+}));
 
 vi.mock("next/navigation", () => ({
-  usePathname: () => "/",
+  usePathname: () => mockPathname.current,
 }));
 
 vi.mock("motion/react", async (importOriginal) => {
@@ -36,6 +41,11 @@ describe("EditorialHeader navigation", () => {
   afterEach(() => cleanup());
 
   beforeEach(() => {
+    mockPathname.current = "/";
+    Object.defineProperty(window, "scrollY", {
+      configurable: true,
+      value: 0,
+    });
     Object.defineProperty(window, "matchMedia", {
       configurable: true,
       value: vi.fn().mockReturnValue({
@@ -103,5 +113,21 @@ describe("EditorialHeader navigation", () => {
     expect(
       document.getElementById("editorial-mobile-overlay"),
     ).not.toBeInTheDocument();
+  });
+
+  it("adds the solid surface after scrolling on non-home pages", () => {
+    mockPathname.current = "/pricing";
+    render(<EditorialHeader />);
+
+    const header = document.querySelector("header");
+    expect(header).toHaveClass(styles.pageTop);
+
+    Object.defineProperty(window, "scrollY", {
+      configurable: true,
+      value: 1,
+    });
+    act(() => window.dispatchEvent(new Event("scroll")));
+
+    expect(header).not.toHaveClass(styles.pageTop);
   });
 });

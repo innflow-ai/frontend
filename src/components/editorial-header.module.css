@@ -409,9 +409,18 @@
     letter-spacing: -0.02em;
   }
 
-  .mobileCta {
-    width: fit-content;
+  .mobileCtaRow {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
     margin-top: 28px;
+  }
+
+  .mobileCta {
+    width: 100%;
+    min-width: 0;
+    padding-inline: 16px;
   }
 }
 

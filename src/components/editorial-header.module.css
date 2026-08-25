@@ -20,13 +20,17 @@
   left: 0;
 }
 
-.homeTop {
-  --header-nav-hover: #fff;
+.homeTop,
+.pageTop {
   border-bottom-color: transparent;
   background: transparent;
   box-shadow: none;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
+}
+
+.homeTop {
+  --header-nav-hover: #fff;
 }
 
 .inner {

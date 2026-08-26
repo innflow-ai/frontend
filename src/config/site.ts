@@ -9,9 +9,7 @@ export const siteConfig = {
   appOrigin,
   signupUrl: process.env.NEXT_PUBLIC_SIGNUP_URL ?? `${appOrigin}/signup`,
   demoUrl: process.env.NEXT_PUBLIC_DEMO_URL ?? appOrigin,
-  contactUrl:
-    process.env.NEXT_PUBLIC_CONTACT_URL ??
-    "mailto:support@innflow.ai?subject=Property%20operations%20demo",
+  contactUrl: process.env.NEXT_PUBLIC_CONTACT_URL ?? "/contact",
   supportEmail: "support@innflow.ai",
   analytics: {
     termlyResourceBlockerId:

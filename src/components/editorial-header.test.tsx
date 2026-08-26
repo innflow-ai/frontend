@@ -81,6 +81,22 @@ describe("EditorialHeader navigation", () => {
     ).toHaveAttribute("href", "/blog");
   });
 
+  it("shows the sales banner in the desktop Portfolios menu", async () => {
+    const user = userEvent.setup();
+    render(<EditorialHeader />);
+
+    await user.click(screen.getByRole("button", { name: "Portfolios" }));
+
+    const banner = screen.getByRole("link", {
+      name: /Interested in our product.*Talk to sales/i,
+    });
+    expect(banner).toHaveAttribute("href", "/contact");
+    expect(within(banner).getByRole("img")).toHaveAttribute(
+      "src",
+      expect.stringContaining("ico-banner-real.png"),
+    );
+  });
+
   it("uses single-open mobile accordions and closes after navigation", async () => {
     const user = userEvent.setup();
     render(<EditorialHeader latestBlogPosts={latestBlogPosts} />);

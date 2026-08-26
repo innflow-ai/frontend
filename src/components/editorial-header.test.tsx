@@ -65,6 +65,9 @@ describe("EditorialHeader navigation", () => {
     const user = userEvent.setup();
     render(<EditorialHeader latestBlogPosts={latestBlogPosts} />);
 
+    expect(
+      screen.getByRole("link", { name: "Sign Up Now" }),
+    ).toBeInTheDocument();
     await user.click(screen.getByRole("button", { name: "Resources" }));
 
     expect(
@@ -85,6 +88,11 @@ describe("EditorialHeader navigation", () => {
     await user.click(screen.getByRole("button", { name: "Open navigation" }));
     const overlay = document.getElementById("editorial-mobile-overlay");
     expect(overlay).not.toBeNull();
+    expect(document.querySelector("header")).not.toHaveClass(styles.homeTop);
+    expect(screen.getByRole("img", { name: "Innflow" })).toHaveAttribute(
+      "src",
+      expect.stringContaining("innflow_logo_set_B.svg"),
+    );
     const mobile = within(overlay as HTMLElement);
     const product = mobile.getByRole("button", { name: "Product" });
     const resources = mobile.getByRole("button", { name: "Resources" });
@@ -93,6 +101,10 @@ describe("EditorialHeader navigation", () => {
     expect(resources).toHaveAttribute("aria-expanded", "false");
     expect(mobile.getByRole("link", { name: "Pricing" })).toBeInTheDocument();
     expect(mobile.getByRole("link", { name: "Blog" })).toBeInTheDocument();
+    expect(mobile.getByRole("link", { name: "Sign Up" })).toBeInTheDocument();
+    expect(mobile.getByRole("link", { name: "Book a Demo" })).toHaveClass(
+      styles.mobileDemoCta,
+    );
 
     await user.click(resources);
     expect(resources).toHaveAttribute("aria-expanded", "true");

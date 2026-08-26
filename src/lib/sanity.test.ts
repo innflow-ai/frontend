@@ -29,6 +29,7 @@ const post = {
   featured: false,
   coverImage: null,
   tags: ["automation"],
+  author: null,
 };
 
 describe("latest Sanity blog posts", () => {

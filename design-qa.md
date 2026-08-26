@@ -1,44 +1,51 @@
-# Design QA
+# Blog Article Redesign QA
 
-- Source visual truth: Aeline donor site at `/Users/ak/aeline-web` (`http://localhost:3000/`); the homepage implements the "skyline" transplant documented in DESIGN.md
-- Source pixels: live donor pages (desktop + mobile)
-- Implementation URL: `http://localhost:3001/`
-- Implementation screenshot: not captured; browser automation permission is pending
-- Intended desktop viewport: `1440 x 1100`, device scale factor `1`
-- Intended mobile viewport: `390 x 844`, device scale factor `1`
-- State: homepage default state; portfolio mega menu and mobile menu also require interaction checks
-- Density normalization: pending browser capture; the source is a compressed full-page concept and will be compared by matching page width and focused regions
+- Source visual truth: `/Users/ak/Library/CloudStorage/Dropbox/wix/IMG_5456.PNG`
+- Browser-rendered mobile implementation: `/Users/ak/innflow-web/output/playwright/blog-after-mobile-v2-top.png`
+- Browser-rendered desktop implementation: `/Users/ak/innflow-web/output/playwright/blog-after-desktop.png`
+- Combined comparison: `/Users/ak/innflow-web/output/playwright/blog-reference-comparison.png`
+- Route: `/blog/10-best-practices-for-ai-workflow-security`
+- State: article top, mobile navigation closed
+- Browser: Google Chrome
+- CSS viewport: 390 x 844 at device scale factor 1 for mobile; 1440 x 1000 for desktop
+- Source pixels: 1206 x 2622, normalized to 390 x 844 for mobile composition comparison
+- Implementation pixels: 390 x 844
 
 ## Full-view comparison evidence
 
-Blocked until a browser-rendered full-page implementation screenshot is captured and placed with the source visual in one comparison view.
+The normalized side-by-side comparison confirms that the mobile category, headline, byline, cover-image start, cover-image proportions, corner radius, and opening body-copy rhythm follow the reference composition. Innflow's existing header and real CMS content are intentional product-specific substitutions for the Wix header and sample article.
 
-## Focused-region comparison evidence
+No separate focused crop was needed because the combined 780 x 844 comparison keeps the category, display type, metadata, image treatment, and body typography legible at full size.
 
-Blocked until browser captures exist for the desktop hero, feature bands, portfolio gallery, integrations, final CTA, footer, and mobile layout.
+## Required fidelity surfaces
 
-## Findings
-
-- [P1] Browser-rendered visual fidelity has not been verified.
-  - Location: homepage, desktop and mobile.
-  - Evidence: the selected visual target is available and the production build passes, but no browser-rendered implementation screenshot has been authorized or captured.
-  - Impact: typography, spacing, image crops, responsive behavior, and interactive states cannot be passed from code and HTTP evidence alone.
-  - Fix: capture the desktop and mobile page plus menu states, compare against the source, and resolve all visible P0/P1/P2 differences.
+- Fonts and typography: Figtree preserves the existing Innflow brand while matching the reference's clean grotesk character. The oversized, medium-weight headline and larger long-form body copy create the intended editorial hierarchy without clipping at mobile or desktop widths.
+- Spacing and layout rhythm: The title-and-cover region is wider than the reading column, with reference-aligned mobile vertical positions and a restrained 30px transition from cover to article body.
+- Colors and visual tokens: White canvas, near-black type, neutral gray category pill, and Innflow blue links match the reference's restrained editorial palette while retaining brand tokens.
+- Image quality and asset fidelity: Real Sanity cover images remain sharp, use a 16:9 crop, and sit in a broad rounded frame. No placeholder or code-drawn imagery is used.
+- Copy and content: All article titles, dates, categories, reading times, covers, and body content remain CMS-driven. The byline now resolves from the new Sanity Author reference.
+- Responsiveness and accessibility: Mobile and desktop captures show no clipping or overflow. Existing semantic headings, time element, image alt text, focus treatment, and reduced-motion behavior remain intact.
 
 ## Comparison history
 
-- Initial pass: implementation completed; browser comparison blocked pending permission to use Playwright CLI.
+### Pass 1
 
-## Implementation checklist
+- P2: The first implementation left substantially more space between the cover image and opening paragraph than the reference.
+- Fix: Removed the hero's bottom padding and reduced mobile body top padding to 30px.
 
-- Capture desktop and mobile implementation screenshots.
-- Exercise the portfolio mega menu, mobile menu, FAQ disclosures, and primary CTA paths.
-- Check the browser console for runtime errors.
-- Compare source and implementation together at matching states.
-- Fix P0/P1/P2 differences and repeat the comparison.
+### Pass 2
+
+- Evidence: `blog-after-mobile-v2-top.png` and `blog-reference-comparison.png`.
+- Result: The image-to-body transition now follows the reference rhythm. No actionable P0, P1, or P2 differences remain.
+
+## Interactions and console
+
+- Tested mobile navigation open and close states successfully.
+- Confirmed article cover, byline, metadata, and body content render from Sanity.
+- Console checked. The existing Termly resource-blocker warning and hydration injection error remain; neither originates in or blocks the article redesign.
 
 ## Follow-up polish
 
-- Evaluate whether the full six-card portfolio row should remain at wide desktop or use a 3-by-2 editorial composition after visual comparison.
+- P3: The Innflow headline is slightly heavier than the Wix reference because the existing brand font is intentionally retained.
 
-final result: implementation checks passed; browser visual review pending
+final result: passed

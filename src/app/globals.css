@@ -51,8 +51,9 @@ body {
   margin: 0;
   background: var(--canvas);
   color: var(--ink);
-  font-family: var(--font-figtree), "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-questrial), "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
+  letter-spacing: 0.02em;
   line-height: 1.65;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -67,7 +68,7 @@ body {
 body,
 button,
 a {
-  font-family: var(--font-figtree), "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-questrial), "Helvetica Neue", Arial, sans-serif;
 }
 
 button,
@@ -100,8 +101,9 @@ h1,
 h2,
 h3 {
   color: var(--ink-strong);
+  font-family: var(--font-questrial), "Helvetica Neue", Arial, sans-serif;
   font-weight: 560;
-  letter-spacing: -0.045em;
+  letter-spacing: 0.005em;
   line-height: 1.04;
   text-wrap: balance;
 }
@@ -284,7 +286,7 @@ p {
   align-items: center;
   gap: 8px;
   color: var(--brand);
-  font-family: var(--font-figtree), sans-serif;
+  font-family: var(--font-questrial), sans-serif;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -353,7 +355,7 @@ p {
   border-bottom: 1px solid var(--border-quiet);
   padding: 0 16px;
   color: #747773;
-  font-family: var(--font-figtree), sans-serif;
+  font-family: var(--font-questrial), sans-serif;
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.03em;
@@ -453,7 +455,7 @@ p {
 .node-kicker {
   display: block;
   color: var(--brand);
-  font-family: var(--font-figtree), sans-serif;
+  font-family: var(--font-questrial), sans-serif;
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -624,7 +626,7 @@ p {
 .proof-inner > p {
   max-width: 18ch;
   color: #555854;
-  font-family: var(--font-figtree), sans-serif;
+  font-family: var(--font-questrial), sans-serif;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -698,7 +700,7 @@ p {
 
 .platform-flow li > span {
   color: var(--brand);
-  font-family: var(--font-figtree), sans-serif;
+  font-family: var(--font-questrial), sans-serif;
   font-size: 12px;
   font-weight: 700;
 }
@@ -804,7 +806,7 @@ p {
 
 .story-details dt {
   color: #555854;
-  font-family: var(--font-figtree), sans-serif;
+  font-family: var(--font-questrial), sans-serif;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -2285,7 +2287,7 @@ p {
 
 .evidence-grid > p {
   color: var(--ink-muted);
-  font-family: var(--font-figtree), sans-serif;
+  font-family: var(--font-questrial), sans-serif;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.09em;
@@ -2344,7 +2346,7 @@ p {
 
 .numbered-list span {
   color: var(--brand);
-  font-family: var(--font-figtree), sans-serif;
+  font-family: var(--font-questrial), sans-serif;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -2409,7 +2411,7 @@ p {
 .portfolio-links article > span {
   grid-row: 1 / span 3;
   color: var(--brand);
-  font-family: var(--font-figtree), sans-serif;
+  font-family: var(--font-questrial), sans-serif;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;

@@ -16,13 +16,14 @@ import {createClient} from '@sanity/client'
 import {htmlToPortableText} from '@portabletext/html'
 import {defaultSchema} from '@portabletext/html'
 import {JSDOM} from 'jsdom'
+import sharp from 'sharp'
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..')
 
 const env = readFileSync(join(ROOT, '.env.local'), 'utf8')
 const tokenMatch = env.match(/^SANITY_API_TOKEN=(.+)$/m)
 if (!tokenMatch) throw new Error('SANITY_API_TOKEN not found in .env.local')
-const token = tokenMatch[1].trim()
+const token = tokenMatch[1].trim().replace(/^['"]|['"]$/g, '')
 
 const client = createClient({
   projectId: 'hnjg8vum',
@@ -106,8 +107,12 @@ const doc = {
 if (coverImageUrl) {
   const res = await fetch(coverImageUrl)
   if (!res.ok) throw new Error(`cover fetch failed: ${res.status}`)
-  const buf = Buffer.from(await res.arrayBuffer())
-  const asset = await client.assets.upload('image', buf, {filename: `${slug}-cover.jpg`})
+  const source = Buffer.from(await res.arrayBuffer())
+  const buf = await sharp(source).webp({quality: 90}).toBuffer()
+  const asset = await client.assets.upload('image', buf, {
+    filename: `${slug}-cover.webp`,
+    contentType: 'image/webp',
+  })
   doc.coverImage = {_type: 'image', asset: {_type: 'reference', _ref: asset._id}, alt: title}
 }
 

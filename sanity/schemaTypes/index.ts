@@ -1,3 +1,4 @@
+import { authorType } from "./authorType";
 import { postType } from "./postType";
 import {
   productCapabilitiesSectionType,
@@ -14,6 +15,7 @@ import { skillCategoryType } from "./skillCategoryType";
 import { skillType } from "./skillType";
 
 export const schemaTypes = [
+  authorType,
   postType,
   skillCategoryType,
   skillType,

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Figtree } from "next/font/google";
+import { Questrial } from "next/font/google";
 import type { ReactNode } from "react";
 import { ConsentManagedTags } from "@/components/consent-managed-tags";
 import { EditorialFooter } from "@/components/editorial-footer";
@@ -15,9 +15,10 @@ import {
 } from "@/lib/sanity";
 import "./globals.css";
 
-const figtree = Figtree({
+const questrial = Questrial({
+  weight: "400",
   subsets: ["latin"],
-  variable: "--font-figtree",
+  variable: "--font-questrial",
   display: "swap",
 });
 
@@ -103,7 +104,7 @@ export default async function RootLayout({
   }));
 
   return (
-    <html lang="en" className={figtree.variable}>
+    <html lang="en" className={questrial.variable}>
       <head>
         <ConsentManagedTags />
       </head>

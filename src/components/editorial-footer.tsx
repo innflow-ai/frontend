@@ -89,7 +89,7 @@ export function EditorialFooter() {
       >
         <div className={`${styles.shell} ${styles.signupPanel}`}>
           <Image
-            src="/brand/one-suite-banner.webp"
+            src="/brand/property-operations-one-flow.webp"
             alt=""
             fill
             quality={100}

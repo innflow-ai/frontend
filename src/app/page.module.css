@@ -137,7 +137,7 @@
 .hero {
   position: relative;
   display: grid;
-  min-height: calc(100svh - 70px);
+  min-height: calc(112svh - 70px);
   align-items: center;
   overflow: hidden;
   padding: 156px 0 172px;
@@ -848,7 +848,7 @@
 
 @media (max-width: 720px) {
   .hero {
-    min-height: calc(100svh - 70px);
+    min-height: calc(132svh - 70px);
     padding: 112px 0 124px;
   }
 

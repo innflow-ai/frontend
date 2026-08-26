@@ -146,7 +146,7 @@ const testimonials = [
   {
     quote:
       "Innflow replaced three reporting tools for us. The weekly summary alone saves my team half a day.",
-    name: "Maya Chen",
+    name: "Ethan Brooks",
     role: "Head of Operations",
     image: "/aeline/testimonials/person-1.avif",
     logo: "/aeline/testimonials/logo-1.svg",
@@ -154,7 +154,7 @@ const testimonials = [
   {
     quote:
       "The forecasts are the first ones our finance team actually trusts. The confidence ranges make all the difference.",
-    name: "Daniel Okafor",
+    name: "Elena Rossi",
     role: "Finance Lead",
     image: "/aeline/testimonials/person-2.avif",
     logo: "/aeline/testimonials/logo-2.svg",
@@ -162,7 +162,7 @@ const testimonials = [
   {
     quote:
       "Setup took an afternoon. By the end of the week it had already flagged a billing issue we'd missed for months.",
-    name: "Sofia Ramirez",
+    name: "Omar Haddad",
     role: "Operations Manager",
     image: "/aeline/testimonials/person-3.avif",
     logo: "/aeline/testimonials/logo-3.svg",
@@ -170,7 +170,7 @@ const testimonials = [
   {
     quote:
       "It feels like having an analyst on call around the clock. Our standups start from Innflow's insights now.",
-    name: "Jonas Weber",
+    name: "Katie Xu",
     role: "Product Director",
     image: "/aeline/testimonials/person-4.avif",
     logo: "/aeline/testimonials/logo-1.svg",
@@ -284,13 +284,14 @@ export default function HomePage() {
                 </Tag>
               </HeroItem>
               <HeroItem>
-                <h1>Run property operations. Elevate every portfolio.</h1>
+                <h1>
+                  The agentic operating system for modern property management.
+                </h1>
               </HeroItem>
               <HeroItem>
                 <p className={styles.lede}>
-                  Innflow connects recurring workflows, operating context,
-                  approvals, and resident-facing handoffs in one coordinated
-                  platform.
+                  Everything property teams need to operate, communicate, and
+                  grow—in one platform.
                 </p>
               </HeroItem>
               <HeroItem>
@@ -385,7 +386,7 @@ export default function HomePage() {
 
         <section className={styles.features} id="features">
           <Reveal className={styles.shell}>
-            <Tag>One platform · every workflow</Tag>
+            <Tag>One platform · every operation</Tag>
             <h2 className={styles.sectionTitle}>
               Everything you need to run modern property operations.
             </h2>

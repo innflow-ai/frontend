@@ -27,7 +27,6 @@ const nextConfig: NextConfig = {
         destination: `${appOrigin}/login`,
         permanent: false,
       },
-      { source: "/contact", destination: "/demo", permanent: true },
       {
         source: "/solution/property-management",
         destination: "/property-management",

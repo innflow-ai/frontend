@@ -224,7 +224,16 @@ export function EditorialHeader({
                 />
               </li>
               <li>
-                <MegaMenu label="Portfolios" columns={portfolioColumns} />
+                <MegaMenu
+                  label="Portfolios"
+                  columns={portfolioColumns}
+                  promotionalBanner={{
+                    alt: "Interested in our product? Contact us to discuss becoming a customer and finding solutions for your needs. Talk to sales.",
+                    eventLabel: "mega_menu_portfolio_talk_to_sales",
+                    href: "/contact",
+                    src: "/brand/navigation/ico-banner-real.png",
+                  }}
+                />
               </li>
               <li>
                 <MegaMenu

@@ -284,9 +284,7 @@ export default function HomePage() {
                 </Tag>
               </HeroItem>
               <HeroItem>
-                <h1>
-                  The agentic operating system for modern property management.
-                </h1>
+                <h1>Property operations, reimagined.</h1>
               </HeroItem>
               <HeroItem>
                 <p className={styles.lede}>

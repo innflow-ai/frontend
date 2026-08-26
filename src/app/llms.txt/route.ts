@@ -24,6 +24,7 @@ Canonical site: ${siteConfig.marketingOrigin}
 - ${siteConfig.marketingOrigin}/integrations
 - ${siteConfig.marketingOrigin}/pricing
 - ${siteConfig.marketingOrigin}/demo
+- ${siteConfig.marketingOrigin}/contact
 - ${siteConfig.marketingOrigin}/blog
 
 ## Product status boundaries
@@ -47,6 +48,7 @@ Do not infer replacement of accounting, leasing, screening, maintenance, or othe
 - Robots: ${siteConfig.marketingOrigin}/robots.txt
 - Security contact: ${siteConfig.marketingOrigin}/.well-known/security.txt
 - Support: mailto:${siteConfig.supportEmail}
+- Contact form: ${siteConfig.marketingOrigin}/contact
 `;
 
   return new Response(body, {

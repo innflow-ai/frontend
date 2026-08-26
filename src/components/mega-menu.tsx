@@ -342,6 +342,12 @@ type MegaMenuProps = {
   columns: MegaMenuColumn[];
   showAside?: boolean;
   latestBlogPosts?: LatestBlogPostNavItem[];
+  promotionalBanner?: {
+    alt: string;
+    eventLabel: string;
+    href: string;
+    src: string;
+  };
 };
 
 function LatestPostsAside({
@@ -423,6 +429,7 @@ export function MegaMenu({
   columns,
   showAside = true,
   latestBlogPosts,
+  promotionalBanner,
 }: MegaMenuProps) {
   const [open, setOpen] = useState(false);
   const reduce = useReducedMotion();
@@ -516,7 +523,11 @@ export function MegaMenu({
           >
             <div
               className={`${styles.grid}${
-                showAside ? "" : ` ${styles.gridWithoutAside}`
+                promotionalBanner
+                  ? ` ${styles.gridWithBanner}`
+                  : showAside
+                    ? ""
+                    : ` ${styles.gridWithoutAside}`
               }`}
             >
               {columns.map((column) => (
@@ -559,7 +570,23 @@ export function MegaMenu({
                   })}
                 </div>
               ))}
-              {showAside ? (
+              {promotionalBanner ? (
+                <TrackedLink
+                  className={styles.promotionalBanner}
+                  destination={promotionalBanner.href}
+                  eventLabel={promotionalBanner.eventLabel}
+                  onClick={closeMenu}
+                >
+                  <Image
+                    alt={promotionalBanner.alt}
+                    className={styles.promotionalBannerImage}
+                    height={776}
+                    sizes="(max-width: 1100px) calc(100vw - 340px), 900px"
+                    src={promotionalBanner.src}
+                    width={2430}
+                  />
+                </TrackedLink>
+              ) : showAside ? (
                 latestBlogPosts?.length ? (
                   <LatestPostsAside
                     posts={latestBlogPosts}

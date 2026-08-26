@@ -60,6 +60,7 @@ const footerNavigation = [
     links: [
       { label: "Integrations", href: "/integrations" },
       { label: "Pricing", href: "/pricing" },
+      { label: "Contact us", href: "/contact" },
       { label: "Blog", href: "/blog" },
       { label: "Become an Affiliate", href: "/demo" },
       { label: "Customer Stories", href: "/blog" },
@@ -172,7 +173,9 @@ export function EditorialFooter() {
           ))}
         </div>
         <div className={`${styles.shell} ${styles.bottom}`}>
-          <span>© {new Date().getFullYear()} Innflow. All rights reserved.</span>
+          <span>
+            © {new Date().getFullYear()} Innflow. All rights reserved.
+          </span>
           <nav className={styles.legalLinks} aria-label="Legal">
             {legalLinks.map((link) => (
               <a key={link.href} href={link.href}>
@@ -190,7 +193,9 @@ export function EditorialFooter() {
               Limit the Use of My Sensitive Personal Information
             </a>
           </nav>
-          <span className={styles.tagline}>Property operations, connected.</span>
+          <span className={styles.tagline}>
+            Property operations, connected.
+          </span>
         </div>
       </footer>
     </>

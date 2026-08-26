@@ -79,6 +79,11 @@
   gap: 12px 28px;
 }
 
+.gridWithBanner {
+  grid-template-columns: minmax(220px, 0.72fr) minmax(0, 2.28fr);
+  align-items: stretch;
+}
+
 .column {
   display: flex;
   flex-direction: column;
@@ -275,6 +280,30 @@
   margin-top: auto;
 }
 
+.promotionalBanner {
+  display: block;
+  align-self: center;
+  overflow: hidden;
+  border: 1px solid rgba(0, 174, 255, 0.2);
+  border-radius: 16px;
+  background: #061321;
+  box-shadow: 0 18px 42px rgba(6, 19, 33, 0.16);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.promotionalBanner:hover {
+  box-shadow: 0 22px 52px rgba(6, 19, 33, 0.22);
+  transform: translateY(-2px);
+}
+
+.promotionalBannerImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 @media (max-width: 1100px) {
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -283,6 +312,10 @@
 
   .gridWithoutAside {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gridWithBanner {
+    grid-template-columns: minmax(210px, 0.75fr) minmax(0, 1.75fr);
   }
 
   .aside {
@@ -300,6 +333,7 @@
   .trigger,
   .link,
   .latestPostCard,
+  .promotionalBanner,
   .caret {
     transition: none;
   }

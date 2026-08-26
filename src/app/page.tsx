@@ -1,15 +1,10 @@
 import {
   ArrowRight,
-  Buildings,
   Database,
   FlowArrow,
   Headset,
-  HouseLine,
-  Key,
   Quotes,
   Sparkle,
-  UsersThree,
-  Warehouse,
 } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,6 +12,7 @@ import { AuthenticatedHomeRedirect } from "@/components/authenticated-home-redir
 import { FeatureCard, FeatureCardGrid } from "@/components/feature-card";
 import { JsonLd } from "@/components/json-ld";
 import { Float, HeroIntro, HeroItem, Reveal } from "@/components/motion";
+import { PortfolioCarousel } from "@/components/portfolio-carousel";
 import { Tag } from "@/components/tag";
 import { TrackedLink } from "@/components/tracked-link";
 import { VerifiedCheck } from "@/components/verified-check";
@@ -181,51 +177,6 @@ const testimonials = [
   },
 ] as const;
 
-const portfolioTypes = [
-  {
-    title: "Residential",
-    body: "Apartments, condos & mixed-use",
-    image: "/portfolio/residential.jpg",
-    icon: Buildings,
-    credit: "Slipscape / Unsplash",
-  },
-  {
-    title: "Single-Family",
-    body: "Build-to-rent & single-family",
-    image: "/portfolio/single-family.jpg",
-    icon: HouseLine,
-    credit: "Pixabay / Unsplash",
-  },
-  {
-    title: "Multifamily",
-    body: "Large and mid-sized communities",
-    image: "/portfolio/multifamily.jpg",
-    icon: Buildings,
-    credit: "Linus Belanger / Unsplash",
-  },
-  {
-    title: "Commercial",
-    body: "Office, retail & industrial",
-    image: "/portfolio/commercial.jpg",
-    icon: Warehouse,
-    credit: "Egor Komarov / Unsplash",
-  },
-  {
-    title: "Community Associations",
-    body: "HOAs, condos & townhomes",
-    image: "/portfolio/community-associations.jpg",
-    icon: UsersThree,
-    credit: "Aman Kumar / Unsplash",
-  },
-  {
-    title: "Affordable Housing",
-    body: "Public, LIHTC & subsidized",
-    image: "/portfolio/affordable-housing.jpg",
-    icon: Key,
-    credit: "Dima Masko / Unsplash",
-  },
-] as const;
-
 const partnerCards = [
   {
     icon: FlowArrow,
@@ -317,10 +268,11 @@ export default function HomePage() {
       <main id="main-content">
         <section className={styles.hero} id="home-hero">
           <Image
-            src="/aeline/hero-sky.avif"
+            src="/brand/grassy-city-overlook.webp"
             alt=""
             fill
             priority
+            quality={100}
             sizes="100vw"
             className={styles.heroBg}
           />
@@ -393,6 +345,15 @@ export default function HomePage() {
               </HeroItem>
             </HeroIntro>
           </div>
+          <Image
+            src="/brand/grassy-city-foreground.webp"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className={styles.heroForeground}
+            unoptimized
+          />
         </section>
 
         <section className={styles.logoStrip} aria-label="Customer logos">
@@ -540,29 +501,7 @@ export default function HomePage() {
             </p>
           </Reveal>
           <div className={styles.shell}>
-            <div className={styles.portfolioGrid}>
-              {portfolioTypes.map((portfolio, index) => {
-                const Icon = portfolio.icon;
-                return (
-                  <Reveal key={portfolio.title} delay={(index % 3) * 0.08}>
-                    <article className={styles.portfolioCard}>
-                      <Image
-                        src={portfolio.image}
-                        alt=""
-                        fill
-                        sizes="(max-width: 720px) 90vw, 30vw"
-                      />
-                      <div>
-                        <Icon size={20} />
-                        <strong>{portfolio.title}</strong>
-                        <span>{portfolio.body}</span>
-                        <small>{portfolio.credit}</small>
-                      </div>
-                    </article>
-                  </Reveal>
-                );
-              })}
-            </div>
+            <PortfolioCarousel />
             <SectionActions
               eventPrefix="portfolios"
               learnHref="/property-management"
@@ -603,10 +542,11 @@ export default function HomePage() {
 
         <section className={styles.cta} id="cta">
           <Image
-            src="/aeline/cta-bg.avif"
+            src="/aeline/cta-bg-upscaled.webp"
             alt=""
             fill
             sizes="100vw"
+            quality={90}
             className={styles.ctaBg}
           />
           <Reveal className={styles.ctaInner}>

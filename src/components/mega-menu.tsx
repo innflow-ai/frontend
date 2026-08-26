@@ -7,6 +7,7 @@ import {
   ArrowsClockwise,
   Browser,
   Buildings,
+  CaretDown,
   CirclesFour,
   CirclesThreePlus,
   CreditCard,
@@ -494,9 +495,12 @@ export function MegaMenu({
         onFocus={openMenu}
       >
         {label}
-        <span className={styles.caret} aria-hidden="true">
-          ⌄
-        </span>
+        <CaretDown
+          className={styles.caret}
+          size={14}
+          weight="bold"
+          aria-hidden="true"
+        />
       </button>
 
       {/* Full-viewport-width panel (desktop). Centered via 50%/-50vw so the

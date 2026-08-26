@@ -7,7 +7,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
-import { Breadcrumbs } from "@/components/breadcrumbs";
 import { JsonLd } from "@/components/json-ld";
 import { MarketingPage } from "@/components/page-primitives";
 import { siteConfig } from "@/config/site";
@@ -51,6 +50,7 @@ export async function generateMetadata({
     : "/opengraph-image.png";
   const imageAlt = post.coverImage?.alt ?? post.title;
   const title = `${post.title} | Innflow`;
+  const authorName = post.author?.name ?? "Ari Khan";
   const baseMetadata = createPageMetadata({
     title,
     description,
@@ -59,6 +59,7 @@ export async function generateMetadata({
 
   return {
     ...baseMetadata,
+    authors: [{ name: authorName }],
     openGraph: {
       title,
       description,
@@ -145,6 +146,7 @@ export default async function BlogPostPage({ params }: RouteParams) {
     ? coverImageUrl(post.coverImage, 1600, 900)
     : null;
   const date = formatPostDate(post.publishedAt);
+  const authorName = post.author?.name ?? "Ari Khan";
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -154,9 +156,8 @@ export default async function BlogPostPage({ params }: RouteParams) {
     datePublished: post.publishedAt,
     image: coverUrl ?? undefined,
     author: {
-      "@type": "Organization",
-      name: siteConfig.name,
-      url: siteConfig.marketingOrigin,
+      "@type": "Person",
+      name: authorName,
     },
   };
 
@@ -165,18 +166,13 @@ export default async function BlogPostPage({ params }: RouteParams) {
       <JsonLd value={articleSchema} />
       <section className={styles.hero}>
         <div className={`shell ${styles.article}`}>
-          <Breadcrumbs
-            items={[
-              { label: "Home", href: "/" },
-              { label: "Blog", href: "/blog" },
-              { label: post.title },
-            ]}
-          />
           <span className={styles.chip}>{humanizeCategory(post.category)}</span>
           <h1>{post.title}</h1>
           <p className={styles.meta}>
+            <span className={styles.author}>{authorName}</span>
+            {date ? <span aria-hidden="true">·</span> : null}
             {date ? <time dateTime={post.publishedAt}>{date}</time> : null}
-            {date && post.readTime ? <span aria-hidden="true">·</span> : null}
+            {post.readTime ? <span aria-hidden="true">·</span> : null}
             {post.readTime ? <span>{post.readTime} min read</span> : null}
           </p>
           {coverUrl ? (

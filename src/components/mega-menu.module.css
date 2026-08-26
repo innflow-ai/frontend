@@ -28,15 +28,16 @@
 }
 
 .caret {
-  display: inline-block;
-  font-size: 11px;
-  line-height: 1;
-  transform: translateY(-1px);
+  display: block;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+  transform-origin: center;
   transition: transform 180ms ease;
 }
 
 .trigger[aria-expanded="true"] .caret {
-  transform: translateY(-1px) rotate(180deg);
+  transform: rotate(180deg);
 }
 
 /* Full-viewport-width panel, centered regardless of the nearest

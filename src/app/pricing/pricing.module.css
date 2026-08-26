@@ -75,7 +75,7 @@
 
 .billingToggle button {
   position: relative;
-  min-width: 132px;
+  min-width: 152px;
   padding: 13px 22px;
   border: 0;
   border-radius: 999px;
@@ -238,25 +238,6 @@
 .creditBlock strong {
   color: var(--sky-ink);
   font-size: 22px;
-  font-variant-numeric: tabular-nums;
-}
-
-.rangeWrap {
-  margin-top: 16px;
-}
-
-.range {
-  width: 100%;
-  accent-color: var(--sky-blue);
-  cursor: pointer;
-}
-
-.rangeLabels {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 4px;
-  color: #8b9aac;
-  font-size: 9px;
   font-variant-numeric: tabular-nums;
 }
 

@@ -22,7 +22,7 @@
 .page h3 {
   color: var(--sky-ink);
   font-weight: 600;
-  letter-spacing: -0.045em;
+  letter-spacing: 0.005em;
   line-height: 1.05;
 }
 
@@ -144,22 +144,34 @@
   text-align: center;
 }
 
+.hero::after {
+  position: absolute;
+  z-index: 4;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: clamp(72px, 8vw, 112px);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.6) 64%,
+    #fff 100%
+  );
+  backdrop-filter: blur(5px);
+  content: "";
+  mask-image: linear-gradient(180deg, transparent 0%, #000 48%);
+  pointer-events: none;
+}
+
 .heroBg {
   z-index: 0;
   object-fit: cover;
 }
 
-.hero::after {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.55) 0%,
-    rgba(255, 255, 255, 0.1) 45%,
-    rgba(255, 255, 255, 0.75) 100%
-  );
-  content: "";
+.heroForeground {
+  z-index: 3;
+  object-fit: cover;
+  pointer-events: none;
 }
 
 .heroInner {
@@ -582,87 +594,6 @@
   margin-inline: auto;
 }
 
-.portfolioGrid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 20px;
-  margin-top: 64px;
-}
-
-.portfolioCard {
-  position: relative;
-  min-height: 340px;
-  height: 100%;
-  overflow: hidden;
-  border: 1px solid var(--sky-line);
-  border-radius: var(--sky-radius-card);
-  background: var(--night);
-  transition:
-    border-color 160ms ease,
-    transform 160ms ease,
-    box-shadow 160ms ease;
-}
-
-.portfolioCard:hover {
-  border-color: rgba(23, 96, 168, 0.4);
-  box-shadow: var(--sky-shadow-card);
-  transform: translateY(-3px);
-}
-
-.portfolioCard::after {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(8, 18, 31, 0.05) 28%,
-    rgba(8, 18, 31, 0.88) 100%
-  );
-  content: "";
-}
-
-.portfolioCard img {
-  object-fit: cover;
-  transition: transform 300ms ease;
-}
-
-.portfolioCard:hover img {
-  transform: scale(1.035);
-}
-
-.portfolioCard > div {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 6px;
-  color: #fff;
-  padding: 22px;
-}
-
-.portfolioCard svg {
-  color: var(--sky-blue-bright);
-}
-
-.portfolioCard strong {
-  font-size: 19px;
-  line-height: 1.05;
-}
-
-.portfolioCard div span {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 11px;
-  line-height: 1.35;
-}
-
-.portfolioCard small {
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 8px;
-}
-
 /* Partner — three quiet cards */
 .partner {
   padding: var(--sky-section) 0;
@@ -892,8 +823,7 @@
 }
 
 @media (max-width: 980px) {
-  .cardGrid,
-  .portfolioGrid {
+  .cardGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -920,6 +850,11 @@
   .hero {
     min-height: calc(100svh - 70px);
     padding: 112px 0 124px;
+  }
+
+  .heroBg,
+  .heroForeground {
+    object-position: right center;
   }
 
   .heroActions {
@@ -958,13 +893,8 @@
 
   .cardGrid,
   .testimonialGrid,
-  .portfolioGrid,
   .partnerGrid {
     grid-template-columns: 1fr;
-  }
-
-  .portfolioCard {
-    min-height: 360px;
   }
 
   .serviceRow {
@@ -982,8 +912,6 @@
   }
 
   .card,
-  .portfolioCard,
-  .portfolioCard img,
   .partnerCard,
   .logoGroup img,
   .faqList summary span,

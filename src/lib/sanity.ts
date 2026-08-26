@@ -41,6 +41,14 @@ export function coverImageUrl(
   );
 }
 
+export type BlogAuthor = {
+  name: string;
+  slug: string | null;
+  role: string | null;
+  bio: string | null;
+  image: (SanityImageSource & { alt?: string }) | null;
+};
+
 export type BlogPostSummary = {
   title: string;
   slug: string;
@@ -51,6 +59,7 @@ export type BlogPostSummary = {
   featured: boolean;
   coverImage: (SanityImageSource & { alt?: string }) | null;
   tags: string[] | null;
+  author: BlogAuthor | null;
 };
 
 export type BlogPost = BlogPostSummary & {
@@ -67,7 +76,14 @@ const postFields = `
   readTime,
   "featured": coalesce(featured, false),
   coverImage,
-  tags
+  tags,
+  "author": author->{
+    name,
+    "slug": slug.current,
+    role,
+    bio,
+    image
+  }
 `;
 
 const postsQuery = `*[_type == "post" && defined(slug.current)] | order(publishedAt desc) {

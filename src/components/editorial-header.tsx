@@ -115,8 +115,8 @@ export function EditorialHeader({
   const reduce = useReducedMotion();
   const mobileMenuBaseId = useId();
   const isHome = pathname === "/";
-  const useLightChrome = isHome && !showSolidHeader;
-  const useDarkTransparentChrome = !isHome && !showSolidHeader;
+  const useLightChrome = isHome && !showSolidHeader && !mobileOpen;
+  const useDarkTransparentChrome = !isHome && !showSolidHeader && !mobileOpen;
 
   // Keep the homepage header transparent over the hero. Other pages begin
   // with dark chrome on a transparent surface and gain the solid treatment
@@ -254,7 +254,7 @@ export function EditorialHeader({
               destination={siteConfig.demoUrl}
               eventLabel="header_demo"
             >
-              Sign up now
+              Sign Up Now
             </TrackedLink>
             <button
               type="button"
@@ -443,7 +443,7 @@ export function EditorialHeader({
                   Sign Up
                 </MotionTrackedLink>
                 <MotionTrackedLink
-                  className={`${styles.button} ${styles.buttonBrand} ${styles.mobileCta}`}
+                  className={`${styles.button} ${styles.mobileCta} ${styles.mobileDemoCta}`}
                   destination={siteConfig.demoUrl}
                   eventLabel="mobile_demo"
                   variants={reduce ? undefined : itemVariants}

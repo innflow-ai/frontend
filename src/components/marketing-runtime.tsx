@@ -52,11 +52,11 @@ const runtime = `(() => {
     new PerformanceObserver((list) => {
       const entries = list.getEntries();
       const last = entries[entries.length - 1];
-      if (last) emit("marketing_vital_observed", { metric: "LCP", value: last.startTime });
+      if (last) emit("marketing_vital_observed", { metric: "LCP", value: last.startTime, path: location.pathname });
     }).observe({ type: "largest-contentful-paint", buffered: true });
     new PerformanceObserver((list) => {
       for (const entry of list.getEntries()) if (!entry.hadRecentInput) cls += entry.value;
-      emit("marketing_vital_observed", { metric: "CLS", value: cls });
+      emit("marketing_vital_observed", { metric: "CLS", value: cls, path: location.pathname });
     }).observe({ type: "layout-shift", buffered: true });
   } catch {}
 })();`;

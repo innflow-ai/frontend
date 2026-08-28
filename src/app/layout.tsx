@@ -6,6 +6,7 @@ import { EditorialFooter } from "@/components/editorial-footer";
 import { EditorialHeader } from "@/components/editorial-header";
 import { MarketingRuntime } from "@/components/marketing-runtime";
 import type { LatestBlogPostNavItem } from "@/components/mega-menu";
+import { PostHogObservability } from "@/components/posthog-observability";
 import { siteConfig } from "@/config/site";
 import {
   coverImageUrl,
@@ -125,6 +126,7 @@ export default async function RootLayout({
         {children}
         <EditorialFooter />
         <MarketingRuntime />
+        <PostHogObservability />
       </body>
     </html>
   );

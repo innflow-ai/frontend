@@ -17,7 +17,7 @@ const { free, pro, business, enterprise } = pricingCatalog.plans;
 
 const comparisonRows = [
   ["Month-to-month price", "$0", "$19.99", "$199.99", "Custom"],
-  ["12-month commitment price", "$0", "$16.99", "$169.99", "Custom"],
+  ["Annual plan price", "$0", "$16.99", "$169.99", "Custom"],
   [
     "Monthly credits",
     free.monthlyCredits,
@@ -85,9 +85,9 @@ const faqs = [
       "Credits measure usage across supported workflow and AI actions. The amount used depends on the action and model involved, so the best plan is based on both run volume and workflow complexity.",
   },
   {
-    question: "How does the 12-month commitment work?",
+    question: "How does annual pricing work?",
     answer:
-      "The 12-month commitment option is billed monthly at the lower committed rate: $16.99 for Pro or $169.99 for Business. Month-to-month billing remains available at the standard rate.",
+      "The annual plan is billed monthly at the lower annual rate: $16.99 for Pro or $169.99 for Business. Monthly billing remains available at the standard rate.",
   },
   {
     question: "Can I change plans later?",

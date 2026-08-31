@@ -69,7 +69,7 @@ function PaidPlanCard({
         <h2>{name}</h2>
         <p className={styles.billingNote}>
           {billing === "commitment"
-            ? "12-month commitment, billed monthly"
+            ? "Annual plan, billed monthly"
             : "Month to month"}
         </p>
         <div className={styles.priceLine} aria-live="polite">
@@ -120,7 +120,7 @@ export function PricingConfigurator() {
           onClick={() => setBilling("commitment")}
           type="button"
         >
-          12-month commitment
+          Annually
           <span>Save 15%</span>
         </button>
         <button

@@ -9,6 +9,10 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { AuthenticatedHomeRedirect } from "@/components/authenticated-home-redirect";
+import {
+  BlogCarousel,
+  type BlogCarouselPost,
+} from "@/components/blog-carousel";
 import { FeatureCard, FeatureCardGrid } from "@/components/feature-card";
 import { JsonLd } from "@/components/json-ld";
 import { Float, HeroIntro, HeroItem, Reveal } from "@/components/motion";
@@ -18,6 +22,12 @@ import { TrackedLink } from "@/components/tracked-link";
 import { VerifiedCheck } from "@/components/verified-check";
 import { siteConfig } from "@/config/site";
 import { faqs } from "@/content/home";
+import {
+  coverImageUrl,
+  formatPostDate,
+  getLatestBlogPosts,
+  humanizeCategory,
+} from "@/lib/sanity";
 import styles from "./page.module.css";
 
 const avatarRow = [
@@ -258,7 +268,21 @@ const faqSchema = {
   })),
 };
 
-export default function HomePage() {
+export default async function HomePage() {
+  const latestPosts = await getLatestBlogPosts();
+  const carouselPosts: BlogCarouselPost[] = latestPosts.map((post) => ({
+    category: humanizeCategory(post.category),
+    coverImageAlt: post.coverImage?.alt ?? post.title,
+    coverImageUrl: post.coverImage
+      ? coverImageUrl(post.coverImage, 800, 450)
+      : null,
+    date: formatPostDate(post.publishedAt),
+    excerpt: post.excerpt,
+    readTime: post.readTime,
+    slug: post.slug,
+    title: post.title,
+  }));
+
   return (
     <div className={styles.page}>
       <AuthenticatedHomeRedirect
@@ -538,6 +562,29 @@ export default function HomePage() {
             />
           </div>
         </section>
+
+        {carouselPosts.length > 0 ? (
+          <section className={styles.blog} id="latest-posts">
+            <Reveal className={styles.shell}>
+              <Tag>Latest from innflow</Tag>
+              <div className={styles.blogHeading}>
+                <h2 className={styles.sectionTitle}>
+                  Practical ideas for better property operations.
+                </h2>
+                <TrackedLink
+                  className={styles.blogAll}
+                  destination="/blog"
+                  eventLabel="homepage_view_all_blog_posts"
+                >
+                  View all posts <ArrowRight aria-hidden="true" size={15} />
+                </TrackedLink>
+              </div>
+            </Reveal>
+            <div className={styles.shell}>
+              <BlogCarousel posts={carouselPosts} />
+            </div>
+          </section>
+        ) : null}
 
         <section className={styles.cta} id="cta">
           <Image

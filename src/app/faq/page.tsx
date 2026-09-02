@@ -9,7 +9,7 @@ import { createPageMetadata } from "@/lib/metadata";
 export const metadata = createPageMetadata({
   title: "Frequently Asked Questions | Innflow",
   description:
-    "Answers to common questions about innflow: how the agentic AI platform works, who uses it, integrations, maintenance requests, and policies.",
+    "Answers to common questions about innflow: how agents and workflows work, human review, memory, deployment, security, PMS integrations, and policies.",
   path: "/faq",
 });
 

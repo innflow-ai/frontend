@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/breadcrumbs";
-import { MarketingPage } from "@/components/page-primitives";
+import { JsonLd } from "@/components/json-ld";
+import { FaqList, MarketingPage } from "@/components/page-primitives";
 import { SkillsLibrary } from "@/components/skills-library";
+import { getProductFaqs } from "@/content/product-faqs";
 import { createPageMetadata } from "@/lib/metadata";
 import { getSkillCategories, getSkills } from "@/lib/skills";
 import styles from "./page.module.css";
@@ -20,6 +22,16 @@ export default async function SkillsIndexPage() {
     getSkills(),
     getSkillCategories(),
   ]);
+  const faqs = getProductFaqs("skills");
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  };
 
   return (
     <MarketingPage>
@@ -48,6 +60,20 @@ export default async function SkillsIndexPage() {
           )}
         </div>
       </section>
+      <section className={`section faq-section ${styles.faq}`} id="faq">
+        <div className="shell faq-layout">
+          <div className="faq-intro">
+            <span className="section-label">FAQ</span>
+            <h2>Questions about agent skills.</h2>
+            <p>
+              What a skill is, how review works, and how skills use the systems
+              you already run.
+            </p>
+          </div>
+          <FaqList items={faqs} />
+        </div>
+      </section>
+      <JsonLd value={faqSchema} />
     </MarketingPage>
   );
 }

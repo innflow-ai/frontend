@@ -1,5 +1,6 @@
 import { defineQuery } from "next-sanity";
 import { cache } from "react";
+import { applyVerifiedProductCopy } from "@/content/product-copy";
 import { sanityClient } from "@/lib/sanity";
 import framerProducts from "../../scripts/data/product-pages-framer.json";
 
@@ -327,7 +328,8 @@ const fallbackProducts = new Map(
 );
 
 export function getFallbackProductPage(slug: string) {
-  return fallbackProducts.get(slug as ProductSlug) ?? null;
+  const page = fallbackProducts.get(slug as ProductSlug) ?? null;
+  return page ? applyVerifiedProductCopy(page) : null;
 }
 
 export const getProductPage = cache(
@@ -337,7 +339,8 @@ export const getProductPage = cache(
         productPageQuery,
         { slug },
       );
-      return product ?? getFallbackProductPage(slug);
+      if (product) return applyVerifiedProductCopy(product);
+      return getFallbackProductPage(slug);
     } catch {
       return getFallbackProductPage(slug);
     }

@@ -656,6 +656,35 @@
   line-height: 1.6;
 }
 
+/* Blog — recent Sanity posts in a swipeable editorial rail */
+.blog {
+  border-top: 1px solid var(--sky-line);
+  background: var(--sky-soft);
+  padding: var(--sky-section) 0;
+}
+
+.blogHeading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.blogAll {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 7px;
+  color: var(--sky-ink);
+  font-size: 14px;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.blogAll:hover {
+  color: var(--sky-blue);
+}
+
 /* FAQ — native details, hairline rhythm */
 .faq {
   display: grid;
@@ -841,6 +870,12 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .blogHeading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+  }
+
   .faq {
     grid-template-columns: 1fr;
   }
@@ -891,7 +926,8 @@
   .features,
   .testimonials,
   .portfolios,
-  .partner {
+  .partner,
+  .blog {
     padding-block: 76px;
   }
 

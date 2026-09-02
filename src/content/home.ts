@@ -161,62 +161,57 @@ export const faqs = [
   {
     question: "What is innflow?",
     answer:
-      "innflow is an agentic AI platform designed to improve operating efficiency in housing, helping operators respond instantly to leads and residents around the clock.",
+      "innflow is property operations software with AI agents and visual workflows. It helps housing teams capture a request, attach the right context, route the next step, and keep a visible record — around the systems they already use.",
   },
   {
     question: "How does innflow work?",
     answer:
-      "innflow uses agentic conversational AI to handle messages, calls, and tasks automatically — integrating with your existing systems to deliver fast, personalized responses 24/7 while steering complicated workflows.",
+      "You model a recurring operation as a workflow: trigger, conditions, connected actions, and review points. Agents can use tools and knowledge inside that flow. Communications and Website remain preview concepts until they are approved as generally available.",
   },
   {
     question: "Who uses innflow?",
     answer:
-      "innflow is built for multifamily operators, owners, property managers, fee managers, and owner/operators looking to streamline communication, increase efficiency, and improve the bottom line.",
+      "innflow is built for multifamily operators, owners, property managers, fee managers, and owner-operators who need shared process visibility across units, residents, and vendors.",
   },
   {
-    question: "What problems does innflow solve?",
+    question: "Does innflow replace our property-management system?",
     answer:
-      "innflow eliminates missed leads, reduces manual workload, improves resident experiences, and allows teams to focus on higher-value work instead of repetitive communication tasks.",
-  },
-  {
-    question: "Is innflow a chatbot?",
-    answer:
-      "innflow is more than just another chatbot. It is an agentic AI platform that can schedule tours, answer complex questions, follow up with prospects, and handle maintenance or scheduling requests automatically.",
-  },
-  {
-    question: "How does innflow measure performance?",
-    answer:
-      "innflow provides detailed analytics on response times, conversion rates, and customer satisfaction so teams can measure impact.",
-  },
-  {
-    question: "Can innflow handle both calls and texts?",
-    answer:
-      "Yes. innflow is omnichannel, supporting voice, SMS, email, and web chat to create a unified communication experience.",
-  },
-  {
-    question: "Is innflow customizable for different properties or portfolios?",
-    answer:
-      "Absolutely. innflow can be tailored for specific properties, communities, and brands — maintaining consistent voice, tone, and messaging across your portfolio.",
-  },
-  {
-    question: "How does innflow improve lead-to-lease conversion?",
-    answer:
-      "By responding instantly to inquiries and nurturing leads 24/7, innflow increases tour bookings and shortens leasing cycles.",
-  },
-  {
-    question: "Does innflow support maintenance requests?",
-    answer:
-      "Yes. innflow can collect and categorize maintenance requests automatically, ensuring they are routed to the correct team without manual intervention.",
+      "No. innflow coordinates operational work around the existing system of record. Leases, units, and accounting stay in your PMS.",
   },
   {
     question: "Can innflow integrate with property management software (PMS)?",
     answer:
-      "Yes. innflow integrates with your existing property management software so leasing, maintenance, and resident records stay in sync — without replacing the system your team already uses.",
+      "Connector paths exist in the product. Presence in the directory does not, by itself, prove production readiness, scopes, or account-specific compatibility. Each implementation still needs permissions, data contracts, and review.",
   },
   {
-    question: "How does innflow help property management teams?",
+    question: "Does innflow handle leasing and maintenance work?",
     answer:
-      "innflow automates leasing communication, schedules tours, follows up with leads, and answers resident questions instantly — reducing response times and improving conversion.",
+      "Workflows can collect, classify, and route leasing follow-up or maintenance intake so the right owner sees the next step. Outbound messages and any live chat or voice path stay behind human review unless you explicitly configure otherwise — Communications is a preview, not a general-availability channel list.",
+  },
+  {
+    question: "Is innflow a chatbot?",
+    answer:
+      "No. innflow is an agent platform with visual workflows. Agents use tools, follow explicit steps, and can pause for approval. Chat is not listed as a live homepage capability.",
+  },
+  {
+    question: "How do humans stay in the loop?",
+    answer:
+      "Place an approval before consequential handoffs. Agents prepare the action and attach context; a person reviews, edits, or rejects it. Exact review boundaries are set per workflow.",
+  },
+  {
+    question: "How do agents use memory and context?",
+    answer:
+      "Agents retrieve the files, tables, knowledge, and records you attach to the task. Accuracy depends on that governed context — not on agents quietly rewriting themselves after every run.",
+  },
+  {
+    question: "How is innflow deployed?",
+    answer:
+      "Start in the innflow workspace with one operation and the systems it touches. Custom or private deployment is scoped with the innflow team. This site does not promise setup time, VPC, or on-prem by default.",
+  },
+  {
+    question: "How does innflow handle security?",
+    answer:
+      "Access follows workspace permissions, connected-account scopes, and workflow approvals. Certification, encryption, and residency claims are confirmed per implementation rather than published as blanket coverage.",
   },
   {
     question: "Where can I read innflow’s policies?",

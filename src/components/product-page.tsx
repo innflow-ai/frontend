@@ -1,7 +1,10 @@
 import Image from "next/image";
 import { FeatureCard, FeatureCardGrid } from "@/components/feature-card";
+import { JsonLd } from "@/components/json-ld";
+import { FaqList } from "@/components/page-primitives";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
+import { getProductFaqs } from "@/content/product-faqs";
 import type {
   ProductCapabilitiesSection,
   ProductCta,
@@ -108,6 +111,16 @@ export function ProductPage({ product }: { product: ProductPageData }) {
     (section): section is ProductDetailSection =>
       section._type === "productDetailSection",
   );
+  const faqs = getProductFaqs(product.slug);
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    })),
+  };
 
   return (
     <main id="main-content" className={styles.page}>
@@ -194,6 +207,26 @@ export function ProductPage({ product }: { product: ProductPageData }) {
         </section>
       ) : null}
 
+      {faqs.length ? (
+        <section
+          className={styles.faq}
+          id="faq"
+          aria-label="Frequently asked questions"
+        >
+          <div className={`${styles.shell} ${styles.faqInner}`}>
+            <div className={styles.faqIntro}>
+              <span className={styles.eyebrow}>FAQ</span>
+              <h2>Questions about {product.title}.</h2>
+              <p>
+                Direct answers on agents, memory, human review, deployment, and
+                security — scoped to what innflow actually runs today.
+              </p>
+            </div>
+            <FaqList items={faqs} />
+          </div>
+        </section>
+      ) : null}
+
       {product.sections.map((section) => {
         if (section._type !== "productFinalCtaSection") return null;
         return (
@@ -212,6 +245,7 @@ export function ProductPage({ product }: { product: ProductPageData }) {
           </section>
         );
       })}
+      {faqs.length ? <JsonLd value={faqSchema} /> : null}
     </main>
   );
 }

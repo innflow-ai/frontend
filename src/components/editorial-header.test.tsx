@@ -70,6 +70,7 @@ describe("EditorialHeader navigation", () => {
     expect(
       screen.getByRole("link", { name: "Sign Up Now" }),
     ).toBeInTheDocument();
+    expect(document.querySelector(`.${styles.articleFade}`)).toBeNull();
     await user.click(screen.getByRole("button", { name: "Resources" }));
 
     expect(
@@ -78,6 +79,12 @@ describe("EditorialHeader navigation", () => {
     expect(
       screen.getByRole("link", { name: /A calmer approach to property work/ }),
     ).toHaveAttribute("href", "/blog/calmer-property-work");
+    expect(
+      screen.getByRole("img", { name: "Automation dashboard" }),
+    ).toHaveAttribute("width", "720");
+    expect(
+      screen.getByRole("img", { name: "Automation dashboard" }),
+    ).toHaveAttribute("height", "512");
     expect(
       screen.getByRole("link", { name: /View all posts/ }),
     ).toHaveAttribute("href", "/blog");
@@ -156,6 +163,9 @@ describe("EditorialHeader navigation", () => {
       expect.stringContaining("innflow_white_logo_set_bold.svg"),
     );
     expect(header).toHaveClass(styles.blogArticle);
+    const fade = document.querySelector(`.${styles.articleFade}`);
+    expect(fade).toBeInTheDocument();
+    expect(fade).not.toHaveClass(styles.articleFadePinned);
 
     Object.defineProperty(window, "scrollY", {
       configurable: true,
@@ -163,6 +173,7 @@ describe("EditorialHeader navigation", () => {
     });
     act(() => window.dispatchEvent(new Event("scroll")));
     expect(header).toHaveClass(styles.headerHidden);
+    expect(fade).toHaveClass(styles.articleFadePinned);
   });
 
   it("adds the solid surface after scrolling on non-home pages", () => {

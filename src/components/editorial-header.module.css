@@ -19,6 +19,30 @@
   transform: translateY(-100%);
 }
 
+/* Sits under the article header rather than inside it: backdrop-filter on
+   the bar would clip a hanging ::after. Translate with the same 220ms ease
+   as the header so the fade rides the bar's bottom edge to the viewport top. */
+.articleFade {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 30;
+  height: 28px;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgb(5 5 5 / 70%) 0%,
+    rgb(5 5 5 / 0%) 100%
+  );
+  transform: translateY(70px);
+  transition: transform 220ms ease;
+}
+
+.articleFadePinned {
+  transform: translateY(0);
+}
+
 .blogArticle {
   border-bottom-color: transparent;
   background: rgb(5 5 5 / 72%);
@@ -475,6 +499,8 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .header,
+  .articleFade,
   .button,
   .desktopNav a,
   .mobileGroupTrigger svg,

@@ -107,7 +107,7 @@ export default async function RootLayout({
     href: `/blog/${post.slug}`,
     categoryLabel: humanizeCategory(post.category),
     publishedLabel: formatPostDate(post.publishedAt),
-    imageUrl: post.coverImage ? coverImageUrl(post.coverImage, 320, 180) : null,
+    imageUrl: post.coverImage ? coverImageUrl(post.coverImage, 720, 512) : null,
     imageAlt: post.coverImage?.alt ?? post.title,
   }));
 

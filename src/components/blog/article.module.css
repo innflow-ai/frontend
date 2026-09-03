@@ -22,19 +22,6 @@
   padding: 96px 0 0;
 }
 
-.page::before {
-  position: fixed;
-  top: 70px;
-  right: 0;
-  left: 0;
-  z-index: 30;
-  display: block;
-  height: 28px;
-  pointer-events: none;
-  background: linear-gradient(180deg, rgb(5 5 5 / 70%) 0%, rgb(5 5 5 / 0%) 100%);
-  content: "";
-}
-
 .shell {
   width: min(calc(100% - 48px), 1080px);
   margin-inline: auto;
@@ -746,8 +733,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .page::before,
-  .page::after,
   .search button,
   .ctaButton {
     transition: none;

@@ -350,6 +350,10 @@ type MegaMenuProps = {
   };
 };
 
+const MEGA_MENU_LATEST_POST_COUNT = 2;
+const MEGA_MENU_COVER_WIDTH = 720;
+const MEGA_MENU_COVER_HEIGHT = 512;
+
 function LatestPostsAside({
   posts,
   onSelect,
@@ -357,11 +361,13 @@ function LatestPostsAside({
   posts: LatestBlogPostNavItem[];
   onSelect: () => void;
 }) {
+  const visiblePosts = posts.slice(0, MEGA_MENU_LATEST_POST_COUNT);
+
   return (
     <aside className={`${styles.aside} ${styles.latestAside}`}>
       <span className={styles.heading}>Latest</span>
       <div className={styles.latestPostList}>
-        {posts.map((post) => (
+        {visiblePosts.map((post) => (
           <TrackedLink
             key={post.href}
             className={styles.latestPostCard}
@@ -374,12 +380,12 @@ function LatestPostsAside({
                 <Image
                   src={post.imageUrl}
                   alt={post.imageAlt}
-                  width={88}
-                  height={50}
-                  sizes="88px"
+                  width={MEGA_MENU_COVER_WIDTH}
+                  height={MEGA_MENU_COVER_HEIGHT}
+                  sizes="(max-width: 1100px) 42vw, 360px"
                 />
               ) : (
-                <Newspaper size={18} weight="fill" aria-hidden="true" />
+                <Newspaper size={28} weight="fill" aria-hidden="true" />
               )}
             </span>
             <span className={styles.latestPostCopy}>
@@ -526,7 +532,9 @@ export function MegaMenu({
                 promotionalBanner
                   ? ` ${styles.gridWithBanner}`
                   : showAside
-                    ? ""
+                    ? columns.length === 1
+                      ? ` ${styles.gridSingleWithAside}`
+                      : ""
                     : ` ${styles.gridWithoutAside}`
               }`}
             >

@@ -119,14 +119,17 @@ export function EditorialHeader({
   const mobileMenuBaseId = useId();
   const isHome = pathname === "/";
   const isBlogArticle = /^\/blog\/.+/.test(pathname);
+  // Articles sit on a dark canvas, so they keep the homepage's white chrome
+  // while still using the transparent surface every non-home page starts with.
   const useLightChrome =
-    ((isHome && !showSolidHeader) || isBlogArticle) && !mobileOpen;
+    (isHome || isBlogArticle) && !showSolidHeader && !mobileOpen;
   const useDarkTransparentChrome =
     !isHome && !isBlogArticle && !showSolidHeader && !mobileOpen;
 
   // Keep the homepage header transparent over the hero. Other pages begin
   // with dark chrome on a transparent surface and gain the solid treatment
-  // as soon as the page scrolls.
+  // as soon as the page scrolls. Blog articles stay transparent (white chrome)
+  // instead of picking up the solid white bar.
   useEffect(() => {
     let frame = 0;
     const syncHeader = () => {
@@ -226,7 +229,7 @@ export function EditorialHeader({
         className={`${styles.header}${isHome ? ` ${styles.homeHeader}` : ""}${
           useLightChrome ? ` ${styles.homeTop}` : ""
         }${useDarkTransparentChrome ? ` ${styles.pageTop}` : ""}${
-          isBlogArticle ? ` ${styles.blogArticle}` : ""
+          mobileOpen ? ` ${styles.menuOpen}` : ""
         }${headerHidden ? ` ${styles.headerHidden}` : ""}`}
       >
         <div className={styles.inner}>
@@ -286,14 +289,12 @@ export function EditorialHeader({
 
           <div className={styles.actions}>
             <ThemeSwitcher compact />
-            <GoogleSignInButton eventLabel="header_login" />
-            <TrackedLink
+            <GoogleSignInButton
               className={`${styles.button} ${styles.buttonBrand} ${styles.headerCta}`}
-              destination={siteConfig.demoUrl}
-              eventLabel="header_demo"
-            >
-              Sign Up Now
-            </TrackedLink>
+              eventLabel="header_login"
+              label="Continue with Google"
+              variant="brand"
+            />
             <button
               type="button"
               className={styles.hamburger}

@@ -16,12 +16,14 @@ type GoogleSignInButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   label?: string;
   eventLabel?: string;
   iconSize?: number;
+  variant?: "inline" | "brand";
 };
 
 export function GoogleSignInButton({
   label = "Sign in with Google",
   eventLabel = "google_sign_in",
   iconSize = 16,
+  variant = "inline",
   className,
   onClick,
   ...props
@@ -51,7 +53,7 @@ export function GoogleSignInButton({
       <button
         {...props}
         type="button"
-        className={`${styles.signInButton}${className ? ` ${className}` : ""}`}
+        className={`${styles.signInButton}${variant === "brand" ? ` ${styles.brandButton}` : ""}${className ? ` ${className}` : ""}`}
         data-marketing-event="marketing_cta_clicked"
         data-marketing-label={eventLabel}
         data-marketing-destination={siteConfig.googleAuthUrl}

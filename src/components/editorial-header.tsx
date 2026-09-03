@@ -326,6 +326,15 @@ export function EditorialHeader({
           </div>
         </div>
       </header>
+      {isBlogArticle ? (
+        <div
+          className={`${styles.articleFade}${
+            headerHidden ? ` ${styles.articleFadePinned}` : ""
+          }`}
+          data-article-fade=""
+          aria-hidden="true"
+        />
+      ) : null}
 
       {/* Rendered outside the header so the fixed panel can cover the viewport
           below the header without its backdrop-filter changing the containing

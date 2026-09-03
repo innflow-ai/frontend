@@ -1,25 +1,33 @@
-import {
-  PortableText,
-  type PortableTextComponents,
-  type PortableTextTypeComponentProps,
-} from "@portabletext/react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import type { ReactNode } from "react";
+import styles from "@/components/blog/article.module.css";
+import { BlogAuthorBio } from "@/components/blog/author-bio";
+import { BlogContinueLearning } from "@/components/blog/continue-learning";
+import { BlogListenPlayer } from "@/components/blog/listen-player";
+import { BlogPortableBody } from "@/components/blog/portable-body";
+import { BlogRelatedPosts } from "@/components/blog/related-posts";
+import { BlogSearch } from "@/components/blog/search";
+import { BlogShareBar } from "@/components/blog/share-bar";
+import { BlogTaxonomy } from "@/components/blog/taxonomy";
+import { Breadcrumbs } from "@/components/breadcrumbs";
 import { JsonLd } from "@/components/json-ld";
 import { MarketingPage } from "@/components/page-primitives";
 import { siteConfig } from "@/config/site";
+import {
+  industriesForPost,
+  type LoosePortableBlock,
+  portableTextToPlain,
+} from "@/lib/blog";
 import { createPageMetadata } from "@/lib/metadata";
 import {
   coverImageUrl,
-  formatPostDate,
+  formatPostDateShort,
   getBlogPost,
   getBlogSlugs,
+  getRelatedBlogPosts,
   humanizeCategory,
-  urlForImage,
 } from "@/lib/sanity";
-import styles from "./page.module.css";
 
 export const revalidate = 60;
 
@@ -80,73 +88,26 @@ export async function generateMetadata({
   };
 }
 
-type BodyImageValue = {
-  alt?: string;
-  asset?: { _ref?: string };
-};
-
-function BodyImage({ value }: PortableTextTypeComponentProps<BodyImageValue>) {
-  if (!value?.asset?._ref) return null;
-  const src = urlForImage(value).width(1200).auto("format").url();
-  return (
-    <figure className={styles.bodyImage}>
-      <Image
-        src={src}
-        alt={value.alt ?? ""}
-        width={1200}
-        height={675}
-        sizes="(max-width: 760px) 92vw, 760px"
-      />
-      {value.alt ? <figcaption>{value.alt}</figcaption> : null}
-    </figure>
-  );
-}
-
-const portableTextComponents: PortableTextComponents = {
-  types: {
-    image: BodyImage,
-  },
-  block: {
-    h2: ({ children }: { children?: ReactNode }) => <h2>{children}</h2>,
-    h3: ({ children }: { children?: ReactNode }) => <h3>{children}</h3>,
-    blockquote: ({ children }: { children?: ReactNode }) => (
-      <blockquote>{children}</blockquote>
-    ),
-  },
-  marks: {
-    code: ({ children }: { children?: ReactNode }) => <code>{children}</code>,
-    link: ({
-      children,
-      value,
-    }: {
-      children?: ReactNode;
-      value?: { href?: string };
-    }) => {
-      const href = value?.href ?? "#";
-      const isExternal = /^https?:\/\//.test(href);
-      return (
-        <a
-          href={href}
-          target={isExternal ? "_blank" : undefined}
-          rel={isExternal ? "noreferrer noopener" : undefined}
-        >
-          {children}
-        </a>
-      );
-    },
-  },
-};
-
 export default async function BlogPostPage({ params }: RouteParams) {
   const { slug } = await params;
   const post = await getBlogPost(slug);
   if (!post) notFound();
 
+  const related = await getRelatedBlogPosts(post.slug, post.category);
   const coverUrl = post.coverImage
     ? coverImageUrl(post.coverImage, 1600, 900)
     : null;
-  const date = formatPostDate(post.publishedAt);
+  const date = formatPostDateShort(post.publishedAt);
   const authorName = post.author?.name ?? "Ari Khan";
+  const authorRole = post.author?.role;
+  const canonical = new URL(
+    `/blog/${post.slug}`,
+    siteConfig.marketingOrigin,
+  ).toString();
+  const listenText = portableTextToPlain(
+    (post.body ?? []) as LoosePortableBlock[],
+  );
+  const industries = industriesForPost(post.industries);
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -161,53 +122,92 @@ export default async function BlogPostPage({ params }: RouteParams) {
     },
   };
 
+  const cover = coverUrl ? (
+    <div className={styles.cover}>
+      <Image
+        src={coverUrl}
+        alt={post.coverImage?.alt ?? post.title}
+        width={1600}
+        height={900}
+        sizes="(max-width: 760px) 100vw, 1080px"
+        priority
+      />
+    </div>
+  ) : null;
+  const author = post.author ?? {
+    name: authorName,
+    slug: null,
+    role: null,
+    bio: null,
+    image: null,
+  };
+
   return (
     <MarketingPage>
       <JsonLd value={articleSchema} />
-      <section className={styles.hero}>
-        <div className={`shell ${styles.article}`}>
-          <span className={styles.chip}>{humanizeCategory(post.category)}</span>
-          <h1>{post.title}</h1>
-          <p className={styles.meta}>
-            <span className={styles.author}>{authorName}</span>
-            {date ? <span aria-hidden="true">·</span> : null}
-            {date ? <time dateTime={post.publishedAt}>{date}</time> : null}
-            {post.readTime ? <span aria-hidden="true">·</span> : null}
-            {post.readTime ? <span>{post.readTime} min read</span> : null}
-          </p>
-          {coverUrl ? (
-            <div className={styles.cover}>
-              <Image
-                src={coverUrl}
-                alt={post.coverImage?.alt ?? post.title}
-                width={1600}
-                height={900}
-                sizes="(max-width: 760px) 92vw, 760px"
-                priority
+      <article className={styles.page}>
+        <div className={styles.shell}>
+          <BlogSearch id={`blog-search-${post.slug}`} />
+          <Breadcrumbs
+            variant="article"
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Blog", href: "/blog" },
+              { label: post.title },
+            ]}
+          />
+          {cover}
+          <div className={styles.measure}>
+            <p className={styles.kicker}>
+              <a href={`/blog?category=${encodeURIComponent(post.category)}`}>
+                {humanizeCategory(post.category)}
+              </a>
+              {date ? (
+                <span aria-hidden="true" className={styles.kickerDot}>
+                  •
+                </span>
+              ) : null}
+              {date ? <time dateTime={post.publishedAt}>{date}</time> : null}
+              {post.readTime ? (
+                <span aria-hidden="true" className={styles.kickerDot}>
+                  •
+                </span>
+              ) : null}
+              {post.readTime ? <span>{post.readTime} min read</span> : null}
+            </p>
+            <h1 className={styles.title}>{post.title}</h1>
+            <p className={styles.byline}>
+              By <a href="#author-bio">{authorName}</a>
+              {authorRole ? `, ${authorRole}` : ""}
+            </p>
+            <BlogListenPlayer text={listenText} audioUrl={post.audioUrl} />
+            <hr className={styles.heroRule} />
+            <BlogShareBar url={canonical} title={post.title} />
+            <BlogTaxonomy
+              category={post.category}
+              industries={industries}
+              tags={post.tags ?? []}
+            />
+          </div>
+          {post.body ? (
+            <div className={styles.body}>
+              <BlogPortableBody
+                blocks={post.body as unknown as LoosePortableBlock[]}
               />
             </div>
           ) : null}
+          <BlogAuthorBio author={author} />
+          <BlogContinueLearning nextPost={related[0] ?? null} />
         </div>
-      </section>
-      {post.body ? (
-        <div className={`shell ${styles.body}`}>
-          <PortableText value={post.body} components={portableTextComponents} />
+        <div className={styles.shell}>
+          <BlogRelatedPosts posts={related.slice(0, 3)} />
+          <div className={styles.footerNav}>
+            <a className={styles.backLink} href="/blog">
+              ← Back to blog
+            </a>
+          </div>
         </div>
-      ) : null}
-      {post.tags && post.tags.length > 0 ? (
-        <div className={`shell ${styles.tags}`}>
-          {post.tags.map((tag) => (
-            <span key={tag} className={styles.tag}>
-              {tag}
-            </span>
-          ))}
-        </div>
-      ) : null}
-      <div className={`shell ${styles.footerNav}`}>
-        <a className={styles.backLink} href="/blog">
-          <span aria-hidden="true">←</span> Back to blog
-        </a>
-      </div>
+      </article>
     </MarketingPage>
   );
 }

@@ -11,7 +11,19 @@
   transition:
     background-color 220ms ease,
     border-color 220ms ease,
-    box-shadow 220ms ease;
+    box-shadow 220ms ease,
+    transform 220ms ease;
+}
+
+.headerHidden {
+  transform: translateY(-100%);
+}
+
+.blogArticle {
+  border-bottom-color: transparent;
+  background: rgb(5 5 5 / 72%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
 .homeHeader {
@@ -82,7 +94,9 @@
 }
 
 .homeTop .desktopNav,
-.homeTop .actions {
+.homeTop .actions,
+.blogArticle .desktopNav,
+.blogArticle .actions {
   color: rgba(255, 255, 255, 0.9);
   text-shadow: 0 1px 10px rgba(8, 20, 36, 0.35);
 }
@@ -172,7 +186,8 @@
   .inner > nav,
   .desktopNav,
   .actions > a,
-  .headerCta {
+  .headerCta,
+  .actions > button:not(.hamburger) {
     display: none;
   }
 

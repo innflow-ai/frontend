@@ -17,7 +17,11 @@ vi.mock("@sanity/image-url", () => ({
   createImageUrlBuilder: () => ({ image: vi.fn() }),
 }));
 
-import { getLatestBlogPosts } from "./sanity";
+import {
+  formatPostDateShort,
+  getLatestBlogPosts,
+  humanizeCategory,
+} from "./sanity";
 
 const post = {
   title: "Newest post",
@@ -60,5 +64,14 @@ describe("latest Sanity blog posts", () => {
   it("returns an empty list when Sanity is unavailable", async () => {
     fetchMock.mockRejectedValue(new Error("Sanity unavailable"));
     await expect(getLatestBlogPosts()).resolves.toEqual([]);
+  });
+
+  it("formats short article dates without a year", () => {
+    expect(formatPostDateShort("2026-05-21T12:00:00.000Z")).toBe("May 21");
+  });
+
+  it("keeps AI uppercase when humanizing categories", () => {
+    expect(humanizeCategory("ai")).toBe("AI");
+    expect(humanizeCategory("ai-agent")).toBe("AI Agent");
   });
 });

@@ -5,8 +5,9 @@ import type { LatestBlogPostNavItem } from "@/components/mega-menu";
 import { EditorialHeader } from "./editorial-header";
 import styles from "./editorial-header.module.css";
 
-const { mockPathname } = vi.hoisted(() => ({
+const { mockPathname, motionFlags } = vi.hoisted(() => ({
   mockPathname: { current: "/" },
+  motionFlags: { reduce: true },
 }));
 
 vi.mock("next/navigation", () => ({
@@ -15,7 +16,7 @@ vi.mock("next/navigation", () => ({
 
 vi.mock("motion/react", async (importOriginal) => {
   const actual = await importOriginal<typeof import("motion/react")>();
-  return { ...actual, useReducedMotion: () => true };
+  return { ...actual, useReducedMotion: () => motionFlags.reduce };
 });
 
 const latestBlogPosts: LatestBlogPostNavItem[] = [
@@ -42,6 +43,7 @@ describe("EditorialHeader navigation", () => {
 
   beforeEach(() => {
     mockPathname.current = "/";
+    motionFlags.reduce = true;
     Object.defineProperty(window, "scrollY", {
       configurable: true,
       value: 0,
@@ -141,6 +143,26 @@ describe("EditorialHeader navigation", () => {
     expect(
       document.getElementById("editorial-mobile-overlay"),
     ).not.toBeInTheDocument();
+  });
+
+  it("uses the white logo on blog articles and hides the nav after scrolling down", () => {
+    motionFlags.reduce = false;
+    mockPathname.current = "/blog/ai-needs-humanity";
+    render(<EditorialHeader />);
+
+    const header = document.querySelector("header");
+    expect(screen.getByRole("img", { name: "Innflow" })).toHaveAttribute(
+      "src",
+      expect.stringContaining("innflow_white_logo_set_bold.svg"),
+    );
+    expect(header).toHaveClass(styles.blogArticle);
+
+    Object.defineProperty(window, "scrollY", {
+      configurable: true,
+      value: 240,
+    });
+    act(() => window.dispatchEvent(new Event("scroll")));
+    expect(header).toHaveClass(styles.headerHidden);
   });
 
   it("adds the solid surface after scrolling on non-home pages", () => {

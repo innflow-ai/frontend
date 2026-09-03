@@ -47,6 +47,23 @@ html {
   color-scheme: light;
 }
 
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --canvas: #070909;
+  --canvas-warm: #101418;
+  --surface: #121515;
+  --surface-soft: #1a1f24;
+  --ink: #f2f7fd;
+  --ink-strong: #ffffff;
+  --ink-muted: #93a5ba;
+  --border: #1b2c42;
+  --border-quiet: #162233;
+}
+
+html[data-blog-article] {
+  color-scheme: dark;
+}
+
 body {
   margin: 0;
   background: var(--canvas);
@@ -58,6 +75,11 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html[data-blog-article] body {
+  background: #050505;
+  color: #f7f8fa;
 }
 
 ::selection {

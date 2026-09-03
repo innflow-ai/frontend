@@ -17,6 +17,34 @@
   line-height: 1.7;
 }
 
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.filter,
+.filterActive {
+  display: inline-flex;
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.filter {
+  background: var(--surface-soft);
+  color: var(--ink);
+}
+
+.filterActive {
+  background: var(--brand);
+  color: #0c1b2a;
+}
+
 .listing {
   padding: 64px 0 128px;
 }

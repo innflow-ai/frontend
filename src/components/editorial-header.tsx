@@ -5,6 +5,7 @@ import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useState } from "react";
+import { ThemeSwitcher } from "@/components/blog/theme-switcher";
 import {
   type LatestBlogPostNavItem,
   MegaMenu,
@@ -111,12 +112,16 @@ export function EditorialHeader({
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMobileGroup, setOpenMobileGroup] = useState<string | null>(null);
   const [showSolidHeader, setShowSolidHeader] = useState(false);
+  const [headerHidden, setHeaderHidden] = useState(false);
   const pathname = usePathname();
   const reduce = useReducedMotion();
   const mobileMenuBaseId = useId();
   const isHome = pathname === "/";
-  const useLightChrome = isHome && !showSolidHeader && !mobileOpen;
-  const useDarkTransparentChrome = !isHome && !showSolidHeader && !mobileOpen;
+  const isBlogArticle = /^\/blog\/.+/.test(pathname);
+  const useLightChrome =
+    ((isHome && !showSolidHeader) || isBlogArticle) && !mobileOpen;
+  const useDarkTransparentChrome =
+    !isHome && !isBlogArticle && !showSolidHeader && !mobileOpen;
 
   // Keep the homepage header transparent over the hero. Other pages begin
   // with dark chrome on a transparent surface and gain the solid treatment
@@ -128,9 +133,11 @@ export function EditorialHeader({
       frame = requestAnimationFrame(() => {
         const hero = document.getElementById("home-hero");
         setShowSolidHeader(
-          isHome && hero
-            ? hero.getBoundingClientRect().bottom <= 70
-            : window.scrollY > 0,
+          isBlogArticle
+            ? false
+            : isHome && hero
+              ? hero.getBoundingClientRect().bottom <= 70
+              : window.scrollY > 0,
         );
       });
     };
@@ -143,7 +150,30 @@ export function EditorialHeader({
       window.removeEventListener("scroll", syncHeader);
       window.removeEventListener("resize", syncHeader);
     };
-  }, [isHome]);
+  }, [isHome, isBlogArticle]);
+
+  useEffect(() => {
+    if (!isBlogArticle || reduce) {
+      setHeaderHidden(false);
+      return;
+    }
+
+    let last = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (mobileOpen || y < 72) {
+        setHeaderHidden(false);
+        last = y;
+        return;
+      }
+      if (y > last + 6) setHeaderHidden(true);
+      else if (y < last - 6) setHeaderHidden(false);
+      last = y;
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [isBlogArticle, mobileOpen, reduce]);
 
   // Escape closes the mobile overlay.
   useEffect(() => {
@@ -194,7 +224,9 @@ export function EditorialHeader({
       <header
         className={`${styles.header}${isHome ? ` ${styles.homeHeader}` : ""}${
           useLightChrome ? ` ${styles.homeTop}` : ""
-        }${useDarkTransparentChrome ? ` ${styles.pageTop}` : ""}`}
+        }${useDarkTransparentChrome ? ` ${styles.pageTop}` : ""}${
+          isBlogArticle ? ` ${styles.blogArticle}` : ""
+        }${headerHidden ? ` ${styles.headerHidden}` : ""}`}
       >
         <div className={styles.inner}>
           <a className={styles.brand} href="/" aria-label="Innflow home">
@@ -252,6 +284,7 @@ export function EditorialHeader({
           </nav>
 
           <div className={styles.actions}>
+            <ThemeSwitcher compact />
             <TrackedLink
               destination={`${siteConfig.appOrigin}/login`}
               eventLabel="header_login"

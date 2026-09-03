@@ -6,6 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useId, useState } from "react";
 import { ThemeSwitcher } from "@/components/blog/theme-switcher";
+import { GoogleSignInButton } from "@/components/google-sign-in";
 import {
   type LatestBlogPostNavItem,
   MegaMenu,
@@ -285,12 +286,7 @@ export function EditorialHeader({
 
           <div className={styles.actions}>
             <ThemeSwitcher compact />
-            <TrackedLink
-              destination={`${siteConfig.appOrigin}/login`}
-              eventLabel="header_login"
-            >
-              Login
-            </TrackedLink>
+            <GoogleSignInButton eventLabel="header_login" />
             <TrackedLink
               className={`${styles.button} ${styles.buttonBrand} ${styles.headerCta}`}
               destination={siteConfig.demoUrl}
@@ -475,14 +471,13 @@ export function EditorialHeader({
               >
                 Blog
               </motion.a>
-              <MotionTrackedLink
-                destination={`${siteConfig.appOrigin}/login`}
-                eventLabel="mobile_login"
-                variants={reduce ? undefined : itemVariants}
-                onClick={closeMobile}
-              >
-                Login
-              </MotionTrackedLink>
+              <motion.div variants={reduce ? undefined : itemVariants}>
+                <GoogleSignInButton
+                  className={styles.mobilePrimaryLink}
+                  eventLabel="mobile_login"
+                  iconSize={20}
+                />
+              </motion.div>
               <div className={styles.mobileCtaRow}>
                 <MotionTrackedLink
                   className={`${styles.button} ${styles.buttonBrand} ${styles.mobileCta}`}

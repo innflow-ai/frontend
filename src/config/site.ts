@@ -8,6 +8,8 @@ export const siteConfig = {
     process.env.NEXT_PUBLIC_MARKETING_ORIGIN ?? "https://innflow.ai",
   appOrigin,
   signupUrl: process.env.NEXT_PUBLIC_SIGNUP_URL ?? `${appOrigin}/signup`,
+  googleAuthUrl:
+    process.env.NEXT_PUBLIC_GOOGLE_AUTH_URL ?? `${appOrigin}/auth/google`,
   demoUrl: process.env.NEXT_PUBLIC_DEMO_URL ?? appOrigin,
   contactUrl: process.env.NEXT_PUBLIC_CONTACT_URL ?? "/contact",
   supportEmail: "support@innflow.ai",

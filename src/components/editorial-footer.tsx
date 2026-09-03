@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { GoogleSignInButton } from "@/components/google-sign-in";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
 import styles from "./editorial-footer.module.css";
@@ -153,12 +154,7 @@ export function EditorialFooter() {
               >
                 Book a demo
               </TrackedLink>
-              <TrackedLink
-                destination={`${siteConfig.appOrigin}/login`}
-                eventLabel="footer_login"
-              >
-                Log in
-              </TrackedLink>
+              <GoogleSignInButton eventLabel="footer_login" label="Log in" />
             </div>
           </div>
           {footerNavigation.map((column) => (

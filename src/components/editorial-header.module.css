@@ -456,6 +456,17 @@
     line-height: 1.15;
   }
 
+  .mobileLinks button.mobilePrimaryLink {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 20px 0;
+    color: var(--sky-ink);
+    font-size: 22px;
+    font-weight: 450;
+    letter-spacing: -0.035em;
+    line-height: 1.15;
+  }
+
   .mobileCtaRow {
     display: grid;
     width: 100%;

@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { BlogSearch } from "@/components/blog/search";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { MarketingPage } from "@/components/page-primitives";
+import { BLOG_CATEGORIES, matchesBlogQuery } from "@/lib/blog";
 import { createPageMetadata } from "@/lib/metadata";
 import {
   type BlogPostSummary,
@@ -93,17 +95,37 @@ function FeaturedPost({ post }: { post: BlogPostSummary }) {
   );
 }
 
-export default async function BlogIndexPage() {
+export default async function BlogIndexPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ q?: string; category?: string; industry?: string }>;
+}) {
+  const { q = "", category = "", industry = "" } = await searchParams;
   const posts = await getBlogPosts();
-  const featured = posts.find((post) => post.featured) ?? posts[0];
+  const filtered = posts.filter((post) => {
+    const matchesQuery = matchesBlogQuery(
+      [post.title, post.excerpt, post.category, ...(post.tags ?? [])],
+      q,
+    );
+    const matchesCategory = category ? post.category === category : true;
+    const matchesIndustry = industry
+      ? (post.industries ?? ["General"]).includes(industry)
+      : true;
+    return matchesQuery && matchesCategory && matchesIndustry;
+  });
+  const featured =
+    q || category || industry
+      ? undefined
+      : (filtered.find((post) => post.featured) ?? filtered[0]);
   const rest = featured
-    ? posts.filter((post) => post.slug !== featured.slug)
-    : [];
+    ? filtered.filter((post) => post.slug !== featured.slug)
+    : filtered;
 
   return (
     <MarketingPage>
       <section className={styles.hero}>
         <div className="shell">
+          <BlogSearch defaultValue={q} tone="light" />
           <Breadcrumbs
             items={[{ label: "Home", href: "/" }, { label: "Blog" }]}
           />
@@ -114,11 +136,35 @@ export default async function BlogIndexPage() {
             integrations, and the recurring workflows property teams run every
             day.
           </p>
+          <ul className={styles.filters}>
+            <li>
+              <a
+                className={!category ? styles.filterActive : styles.filter}
+                href="/blog"
+              >
+                All
+              </a>
+            </li>
+            {BLOG_CATEGORIES.map((item) => (
+              <li key={item.value}>
+                <a
+                  className={
+                    category === item.value
+                      ? styles.filterActive
+                      : styles.filter
+                  }
+                  href={`/blog?category=${item.value}`}
+                >
+                  {item.title}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
       <section className={styles.listing}>
         <div className="shell">
-          {posts.length === 0 ? (
+          {filtered.length === 0 ? (
             <div className={styles.empty}>
               <p>
                 No posts yet. New writing on property operations is on the way.

@@ -14,6 +14,10 @@
   padding: 72px 0;
 }
 
+:global(html[data-blog-article]) .signupSection {
+  background: #050505;
+}
+
 .signupPanel {
   position: relative;
   min-height: 430px;

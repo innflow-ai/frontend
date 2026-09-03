@@ -41,6 +41,7 @@ export const postType = defineType({
           { title: "Maintenance", value: "maintenance" },
           { title: "Property Management", value: "property-management" },
           { title: "Software", value: "software" },
+          { title: "Thought Leadership", value: "thought-leadership" },
         ],
       },
       validation: (rule) => rule.required(),
@@ -119,6 +120,21 @@ export const postType = defineType({
       options: { layout: "tags" },
     }),
     defineField({
+      name: "industries",
+      title: "Industries",
+      type: "array",
+      of: [{ type: "string" }],
+      options: { layout: "tags" },
+      initialValue: ["General"],
+    }),
+    defineField({
+      name: "audioUrl",
+      title: "Audio URL",
+      type: "url",
+      description:
+        "Optional hosted narration. The site falls back to on-device speech for every post.",
+    }),
+    defineField({
       name: "featured",
       title: "Featured",
       type: "boolean",
@@ -136,6 +152,8 @@ export const postType = defineType({
             { title: "H2", value: "h2" },
             { title: "H3", value: "h3" },
             { title: "Quote", value: "blockquote" },
+            { title: "Featured paragraph", value: "featured" },
+            { title: "Pull quote", value: "pullQuote" },
           ],
           lists: [
             { title: "Bullet", value: "bullet" },
@@ -154,13 +172,53 @@ export const postType = defineType({
                 title: "Link",
                 fields: [{ name: "href", type: "url", title: "URL" }],
               },
+              {
+                name: "footnote",
+                type: "object",
+                title: "Footnote",
+                fields: [{ name: "text", type: "text", title: "Note" }],
+              },
             ],
           },
         },
         {
           type: "image",
           options: { hotspot: true },
-          fields: [{ name: "alt", type: "string", title: "Alt Text" }],
+          fields: [
+            { name: "alt", type: "string", title: "Alt Text" },
+            {
+              name: "presentation",
+              title: "Presentation",
+              type: "string",
+              initialValue: "default",
+              options: {
+                list: [
+                  { title: "Default", value: "default" },
+                  { title: "Diagram (white card)", value: "diagram" },
+                  { title: "Asset / CTA card", value: "assetCta" },
+                ],
+                layout: "radio",
+              },
+            },
+            { name: "ctaTitle", type: "string", title: "CTA title" },
+            { name: "ctaLabel", type: "string", title: "CTA label" },
+            { name: "ctaHref", type: "url", title: "CTA URL" },
+          ],
+        },
+        {
+          type: "object",
+          name: "ctaButton",
+          title: "In-article CTA",
+          fields: [
+            { name: "label", type: "string", title: "Label" },
+            { name: "href", type: "url", title: "URL" },
+          ],
+          preview: {
+            select: { title: "label" },
+            prepare: ({ title }: { title?: string }) => ({
+              title: title || "In-article CTA",
+            }),
+          },
         },
       ],
       validation: (rule) => rule.required(),

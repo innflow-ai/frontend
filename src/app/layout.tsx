@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Questrial } from "next/font/google";
+import { Figtree, Questrial } from "next/font/google";
 import type { ReactNode } from "react";
 import { ConsentManagedTags } from "@/components/consent-managed-tags";
 import { EditorialFooter } from "@/components/editorial-footer";
@@ -20,6 +20,13 @@ const questrial = Questrial({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-questrial",
+  display: "swap",
+});
+
+const figtree = Figtree({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-figtree",
   display: "swap",
 });
 
@@ -105,8 +112,13 @@ export default async function RootLayout({
   }));
 
   return (
-    <html lang="en" className={questrial.variable}>
+    <html lang="en" className={`${questrial.variable} ${figtree.variable}`}>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var t=localStorage.getItem("innflow-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t;}catch(e){}`,
+          }}
+        />
         <ConsentManagedTags />
       </head>
       <body>

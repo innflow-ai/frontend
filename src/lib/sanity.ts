@@ -59,12 +59,14 @@ export type BlogPostSummary = {
   featured: boolean;
   coverImage: (SanityImageSource & { alt?: string }) | null;
   tags: string[] | null;
+  industries: string[] | null;
   author: BlogAuthor | null;
 };
 
 export type BlogPost = BlogPostSummary & {
   metaDescription: string | null;
   body: PortableTextBlock[] | null;
+  audioUrl: string | null;
 };
 
 const postFields = `
@@ -77,6 +79,7 @@ const postFields = `
   "featured": coalesce(featured, false),
   coverImage,
   tags,
+  industries,
   "author": author->{
     name,
     "slug": slug.current,
@@ -104,7 +107,29 @@ const postSlugsQuery = `*[_type == "post" && defined(slug.current)].slug.current
 const postBySlugQuery = `*[_type == "post" && slug.current == $slug][0] {
   ${postFields},
   metaDescription,
+  audioUrl,
   body
+}`;
+
+const relatedPostsQuery = `*[
+  _type == "post" &&
+  defined(slug.current) &&
+  slug.current != $slug &&
+  category == $category &&
+  defined(publishedAt) &&
+  publishedAt <= now()
+] | order(publishedAt desc)[0...3] {
+  ${postFields}
+}`;
+
+const relatedFallbackQuery = `*[
+  _type == "post" &&
+  defined(slug.current) &&
+  slug.current != $slug &&
+  defined(publishedAt) &&
+  publishedAt <= now()
+] | order(publishedAt desc)[0...3] {
+  ${postFields}
 }`;
 
 export async function getBlogPosts(): Promise<BlogPostSummary[]> {
@@ -147,12 +172,40 @@ export async function getBlogPost(slug: string): Promise<BlogPost | null> {
   }
 }
 
+export async function getRelatedBlogPosts(
+  slug: string,
+  category: string,
+): Promise<BlogPostSummary[]> {
+  try {
+    const sameCategory = await sanityClient.fetch<BlogPostSummary[]>(
+      relatedPostsQuery,
+      { slug, category },
+    );
+    if (sameCategory.length >= 3) return sameCategory;
+
+    const fallback = await sanityClient.fetch<BlogPostSummary[]>(
+      relatedFallbackQuery,
+      { slug },
+    );
+    const seen = new Set(sameCategory.map((post) => post.slug));
+    return [
+      ...sameCategory,
+      ...fallback.filter((post) => !seen.has(post.slug)),
+    ].slice(0, 3);
+  } catch {
+    return [];
+  }
+}
+
 // Categories are stored as slugs (e.g. "property-management"); humanize for display.
 export function humanizeCategory(category: string | null | undefined): string {
   if (!category) return "Blog";
   return category
     .split("-")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .map((word) => {
+      if (word.toLowerCase() === "ai") return "AI";
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
     .join(" ");
 }
 
@@ -164,6 +217,19 @@ export function formatPostDate(publishedAt: string | null | undefined): string {
     month: "long",
     day: "numeric",
     year: "numeric",
+    timeZone: "UTC",
+  }).format(date);
+}
+
+export function formatPostDateShort(
+  publishedAt: string | null | undefined,
+): string {
+  if (!publishedAt) return "";
+  const date = new Date(publishedAt);
+  if (Number.isNaN(date.getTime())) return "";
+  return new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    day: "numeric",
     timeZone: "UTC",
   }).format(date);
 }

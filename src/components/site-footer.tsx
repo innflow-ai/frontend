@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { TrackedLink } from "@/components/tracked-link";
+import { GoogleSignInButton } from "@/components/google-sign-in";
 import { siteConfig } from "@/config/site";
 
 export function SiteFooter() {
@@ -41,12 +41,7 @@ export function SiteFooter() {
           <a href={`mailto:${siteConfig.supportEmail}`}>
             {siteConfig.supportEmail}
           </a>
-          <TrackedLink
-            destination={`${siteConfig.appOrigin}/login`}
-            eventLabel="footer_login"
-          >
-            Log in
-          </TrackedLink>
+          <GoogleSignInButton eventLabel="footer_login" label="Log in" />
         </div>
       </div>
       <div className="shell footer-bottom">

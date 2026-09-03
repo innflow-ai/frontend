@@ -1,0 +1,158 @@
+.signInButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+  border: 0;
+  background: none;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  transition: opacity 160ms ease;
+}
+
+.signInButton:hover {
+  opacity: 0.75;
+}
+
+.signInButton.brandButton {
+  min-height: 42px;
+  border-radius: var(--sky-radius-pill);
+  background: var(--gradient-cta);
+  padding: 10px 18px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 650;
+  line-height: 1;
+  transition:
+    transform 160ms ease,
+    background 160ms ease;
+}
+
+.signInButton.brandButton:hover {
+  background: var(--gradient-cta-hover);
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(4, 10, 18, 0.55);
+  backdrop-filter: blur(4px);
+}
+
+.sheetPositioner {
+  position: fixed;
+  inset: 0;
+  z-index: 2001;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.sheet {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  border-radius: 22px 22px 0 0;
+  background: #101418;
+  color: #fff;
+  padding: 36px 24px calc(28px + env(safe-area-inset-bottom));
+  text-align: center;
+  pointer-events: auto;
+  box-shadow: 0 -12px 48px rgba(0, 0, 0, 0.45);
+}
+
+.handle {
+  width: 40px;
+  height: 4px;
+  margin: -20px auto 20px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.dismiss {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.75);
+  cursor: pointer;
+  transition: background 160ms ease;
+}
+
+.dismiss:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.sheetLogo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.sheetTitle {
+  margin: 0 0 8px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 650;
+  line-height: 1.3;
+}
+
+.sheetSubtitle {
+  margin: 0 0 24px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.continueButton {
+  display: flex;
+  width: 100%;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 999px;
+  background: #fff;
+  color: #0b0e12;
+  font-size: 15px;
+  font-weight: 650;
+  text-decoration: none;
+  transition:
+    transform 160ms ease,
+    background 160ms ease;
+}
+
+.continueButton:hover {
+  background: #eef1f4;
+  transform: translateY(-1px);
+}
+
+@media (min-width: 640px) {
+  .sheetPositioner {
+    align-items: center;
+  }
+
+  .sheet {
+    max-width: 400px;
+    border-radius: 22px;
+    padding: 40px 28px 28px;
+  }
+
+  .handle {
+    display: none;
+  }
+}

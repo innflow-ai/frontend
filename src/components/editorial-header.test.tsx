@@ -68,8 +68,11 @@ describe("EditorialHeader navigation", () => {
     render(<EditorialHeader latestBlogPosts={latestBlogPosts} />);
 
     expect(
-      screen.getByRole("link", { name: "Sign Up Now" }),
+      screen.getByRole("button", { name: "Continue with Google" }),
     ).toBeInTheDocument();
+    expect(
+      screen.queryByRole("link", { name: "Sign Up Now" }),
+    ).not.toBeInTheDocument();
     expect(document.querySelector(`.${styles.articleFade}`)).toBeNull();
     await user.click(screen.getByRole("button", { name: "Resources" }));
 
@@ -114,6 +117,7 @@ describe("EditorialHeader navigation", () => {
     const overlay = document.getElementById("editorial-mobile-overlay");
     expect(overlay).not.toBeNull();
     expect(document.querySelector("header")).not.toHaveClass(styles.homeTop);
+    expect(document.querySelector("header")).toHaveClass(styles.menuOpen);
     expect(screen.getByRole("img", { name: "Innflow" })).toHaveAttribute(
       "src",
       expect.stringContaining("innflow_logo_set_B.svg"),
@@ -152,7 +156,7 @@ describe("EditorialHeader navigation", () => {
     ).not.toBeInTheDocument();
   });
 
-  it("uses the white logo on blog articles and hides the nav after scrolling down", () => {
+  it("uses transparent white chrome on blog articles and hides the nav after scrolling down", () => {
     motionFlags.reduce = false;
     mockPathname.current = "/blog/ai-needs-humanity";
     render(<EditorialHeader />);
@@ -162,7 +166,8 @@ describe("EditorialHeader navigation", () => {
       "src",
       expect.stringContaining("innflow_white_logo_set_bold.svg"),
     );
-    expect(header).toHaveClass(styles.blogArticle);
+    expect(header).toHaveClass(styles.homeTop);
+    expect(header).not.toHaveClass(styles.pageTop);
     const fade = document.querySelector(`.${styles.articleFade}`);
     expect(fade).toBeInTheDocument();
     expect(fade).not.toHaveClass(styles.articleFadePinned);
@@ -173,6 +178,7 @@ describe("EditorialHeader navigation", () => {
     });
     act(() => window.dispatchEvent(new Event("scroll")));
     expect(header).toHaveClass(styles.headerHidden);
+    expect(header).toHaveClass(styles.homeTop);
     expect(fade).toHaveClass(styles.articleFadePinned);
   });
 
@@ -190,5 +196,43 @@ describe("EditorialHeader navigation", () => {
     act(() => window.dispatchEvent(new Event("scroll")));
 
     expect(header).not.toHaveClass(styles.pageTop);
+  });
+
+  it("uses an opaque light bar and dark chrome when the mobile menu opens on a blog article", async () => {
+    const user = userEvent.setup();
+    mockPathname.current = "/blog/ai-needs-humanity";
+    render(<EditorialHeader />);
+
+    expect(screen.getByRole("img", { name: "Innflow" })).toHaveAttribute(
+      "src",
+      expect.stringContaining("innflow_white_logo_set_bold.svg"),
+    );
+
+    await user.click(screen.getByRole("button", { name: "Open navigation" }));
+    const header = document.querySelector("header");
+    expect(header).toHaveClass(styles.menuOpen);
+    expect(header).not.toHaveClass(styles.homeTop);
+    expect(screen.getByRole("img", { name: "Innflow" })).toHaveAttribute(
+      "src",
+      expect.stringContaining("innflow_logo_set_B.svg"),
+    );
+    expect(
+      screen
+        .getByRole("button", { name: "Close navigation" })
+        .querySelector("img"),
+    ).toHaveAttribute("src", expect.stringContaining("Close_X_black.svg"));
+  });
+
+  it("keeps the blog index on the transparent dark-chrome default", () => {
+    mockPathname.current = "/blog";
+    render(<EditorialHeader />);
+
+    const header = document.querySelector("header");
+    expect(header).toHaveClass(styles.pageTop);
+    expect(header).not.toHaveClass(styles.homeTop);
+    expect(screen.getByRole("img", { name: "Innflow" })).toHaveAttribute(
+      "src",
+      expect.stringContaining("innflow_logo_set_B.svg"),
+    );
   });
 });

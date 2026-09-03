@@ -43,13 +43,6 @@
   transform: translateY(0);
 }
 
-.blogArticle {
-  border-bottom-color: transparent;
-  background: rgb(5 5 5 / 72%);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-}
-
 .homeHeader {
   position: fixed;
   right: 0;
@@ -67,6 +60,19 @@
 
 .homeTop {
   --header-nav-hover: #fff;
+}
+
+/* Mobile overlay is a white sheet. Pin an opaque light bar over it so the
+   dark logo / close icon stay visible on dark canvases (blog articles).
+   color-scheme: light stops html[data-blog-article] from painting this strip
+   as a dark surface; backdrop-filter is off so the page cannot show through. */
+.menuOpen {
+  border-bottom-color: var(--sky-line);
+  background: #fff;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  color-scheme: light;
 }
 
 .inner {
@@ -101,7 +107,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 18px;
+  gap: 12px;
   color: var(--sky-muted);
   font-size: 14px;
   font-weight: 600;
@@ -118,9 +124,7 @@
 }
 
 .homeTop .desktopNav,
-.homeTop .actions,
-.blogArticle .desktopNav,
-.blogArticle .actions {
+.homeTop .actions {
   color: rgba(255, 255, 255, 0.9);
   text-shadow: 0 1px 10px rgba(8, 20, 36, 0.35);
 }
@@ -450,6 +454,17 @@
     border-bottom: 0;
     color: var(--sky-ink);
     padding: 20px 0;
+    font-size: 22px;
+    font-weight: 450;
+    letter-spacing: -0.035em;
+    line-height: 1.15;
+  }
+
+  .mobileLinks button.mobilePrimaryLink {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 20px 0;
+    color: var(--sky-ink);
     font-size: 22px;
     font-weight: 450;
     letter-spacing: -0.035em;

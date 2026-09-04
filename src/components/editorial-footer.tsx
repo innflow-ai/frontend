@@ -57,6 +57,14 @@ const footerNavigation = [
     ],
   },
   {
+    heading: "Comparisons",
+    links: [
+      { label: "Innflow vs Zapier", href: "/blog/innflow-vs-zapier" },
+      { label: "Innflow vs n8n", href: "/blog/innflow-vs-n8n" },
+      { label: "Innflow vs Make", href: "/blog/innflow-vs-make" },
+    ],
+  },
+  {
     heading: "Resources",
     links: [
       { label: "Integrations", href: "/integrations" },

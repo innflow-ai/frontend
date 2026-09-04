@@ -31,6 +31,12 @@ export function SiteFooter() {
           <a href={siteConfig.demoUrl}>Book a demo</a>
         </div>
         <div>
+          <strong>Comparisons</strong>
+          <a href="/blog/innflow-vs-zapier">Innflow vs Zapier</a>
+          <a href="/blog/innflow-vs-n8n">Innflow vs n8n</a>
+          <a href="/blog/innflow-vs-make">Innflow vs Make</a>
+        </div>
+        <div>
           <strong>Legal and contact</strong>
           <a href="/legal/privacy-policy">Privacy</a>
           <a href="/legal/terms-of-service">Terms</a>

@@ -11,8 +11,13 @@ export default function manifest(): MetadataRoute.Manifest {
     display: "standalone",
     orientation: "any",
     background_color: "#fafaf7",
-    theme_color: "#1760a8",
+    theme_color: "#00AEFF",
     icons: [
+      {
+        src: "/icon.svg",
+        sizes: "any",
+        type: "image/svg+xml",
+      },
       {
         src: "/icon.png",
         sizes: "64x64",
@@ -22,6 +27,12 @@ export default function manifest(): MetadataRoute.Manifest {
         src: "/apple-icon.png",
         sizes: "180x180",
         type: "image/png",
+      },
+      {
+        src: "/brand/innflow-app-icon.png",
+        sizes: "512x512",
+        type: "image/png",
+        purpose: "any",
       },
     ],
   };

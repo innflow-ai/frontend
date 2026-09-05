@@ -319,11 +319,18 @@ export default async function HomePage() {
               <HeroItem>
                 <div className={styles.heroActions}>
                   <TrackedLink
-                    className={styles.buttonGhost}
-                    destination={`${siteConfig.appOrigin}/login`}
-                    eventLabel="hero_get_started_today"
+                    className={styles.buttonPrimary}
+                    destination={siteConfig.signupUrl}
+                    eventLabel="hero_get_started"
                   >
-                    Get started today!
+                    Get started <ArrowRight size={15} />
+                  </TrackedLink>
+                  <TrackedLink
+                    className={styles.buttonGhost}
+                    destination={siteConfig.demoUrl}
+                    eventLabel="hero_book_demo"
+                  >
+                    Book a demo
                   </TrackedLink>
                 </div>
               </HeroItem>
@@ -468,6 +475,13 @@ export default async function HomePage() {
                         ? "/features/assistant"
                         : "/property-management"
                   }
+                  learnLabel={
+                    index === 0
+                      ? "Explore workflows"
+                      : index === 1
+                        ? "Meet the AI assistant"
+                        : "Explore property management"
+                  }
                 />
               </div>
             </Reveal>
@@ -509,6 +523,7 @@ export default async function HomePage() {
             <SectionActions
               eventPrefix="testimonials"
               learnHref="/property-management"
+              learnLabel="Explore property management"
             />
           </div>
         </section>

@@ -5,6 +5,7 @@ import { FaqList, FinalCta, MarketingPage } from "@/components/page-primitives";
 import { siteConfig } from "@/config/site";
 import { faqs } from "@/content/home";
 import { createPageMetadata } from "@/lib/metadata";
+import styles from "./page.module.css";
 
 export const metadata = createPageMetadata({
   title: "Frequently Asked Questions | Innflow",
@@ -26,14 +27,19 @@ export default function FaqPage() {
 
   return (
     <MarketingPage>
-      <section className="section faq-section faq-page-hero">
-        <div className="shell faq-layout">
-          <div className="faq-intro">
+      <section className={`section faq-section ${styles.hero}`}>
+        <div className={`shell ${styles.layout}`}>
+          <div className={`faq-intro ${styles.intro}`}>
             <Breadcrumbs
               items={[{ label: "Home", href: "/" }, { label: "FAQ" }]}
             />
             <span className="section-label">FAQ</span>
             <h1>Frequently Asked Questions</h1>
+          </div>
+          <div className={styles.questions}>
+            <FaqList items={faqs} />
+          </div>
+          <aside className={styles.support} aria-label="More help and policies">
             <div className="faq-still">
               <h2>Still have a question?</h2>
               <p>
@@ -51,8 +57,7 @@ export default function FaqPage() {
                 <Link href="/legal/dsar">DSAR</Link>
               </div>
             </div>
-          </div>
-          <FaqList items={faqs} />
+          </aside>
         </div>
       </section>
       <FinalCta title="Bring one recurring property operation to the demo." />

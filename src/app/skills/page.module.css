@@ -40,6 +40,7 @@
 }
 
 .filterChip {
+  min-height: 44px;
   border: 1px solid var(--border);
   border-radius: 999px;
   background: var(--surface);
@@ -62,17 +63,18 @@
 .filterChip[data-active="true"] {
   border-color: var(--brand);
   background: var(--brand-soft);
-  color: var(--brand);
+  color: var(--ink);
 }
 
 .search {
+  min-height: 44px;
   min-width: 220px;
   border: 1px solid var(--border);
   border-radius: 999px;
   background: var(--surface);
   padding: 8px 16px;
   color: var(--ink);
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .search::placeholder {
@@ -205,6 +207,21 @@
 
   .search {
     width: 100%;
+    order: -1;
+  }
+
+  .chips {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-block: 4px 8px;
+    scrollbar-width: thin;
+  }
+
+  .filterChip {
+    flex-shrink: 0;
   }
 
   .grid {

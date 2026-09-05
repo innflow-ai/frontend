@@ -1,0 +1,106 @@
+[
+  {
+    "original": "self-learning/hub.png",
+    "rebranded": "self-learning/hub-innflow.png",
+    "size": [
+      2048,
+      768
+    ]
+  },
+  {
+    "original": "analytics-and-observability/fleet.png",
+    "rebranded": "analytics-and-observability/fleet-innflow.png",
+    "size": [
+      2048,
+      768
+    ]
+  },
+  {
+    "original": "analytics-and-observability/logs.png",
+    "rebranded": "analytics-and-observability/logs-innflow.png",
+    "size": [
+      2048,
+      768
+    ]
+  },
+  {
+    "original": "analytics-and-observability/metrics.png",
+    "rebranded": "analytics-and-observability/metrics-innflow.png",
+    "size": [
+      2048,
+      768
+    ]
+  },
+  {
+    "original": "analytics-and-observability/traces.png",
+    "rebranded": "analytics-and-observability/traces-innflow.png",
+    "size": [
+      2048,
+      768
+    ]
+  },
+  {
+    "original": "evaluations/datasets.png",
+    "rebranded": "evaluations/datasets-innflow.png",
+    "size": [
+      2048,
+      768
+    ]
+  },
+  {
+    "original": "integrations/custom.png",
+    "rebranded": "integrations/custom-innflow.png",
+    "size": [
+      2048,
+      768
+    ]
+  },
+  {
+    "original": "integrations/permissions.png",
+    "rebranded": "integrations/permissions-innflow.png",
+    "size": [
+      2048,
+      768
+    ]
+  },
+  {
+    "original": "security-and-compliance/deployment.png",
+    "rebranded": "security-and-compliance/deployment-innflow.png",
+    "size": [
+      2048,
+      768
+    ]
+  },
+  {
+    "original": "deployment-options/migration.jpg",
+    "rebranded": "deployment-options/migration-innflow.png",
+    "size": [
+      2048,
+      768
+    ]
+  },
+  {
+    "original": "deployment-options/on-premise.jpg",
+    "rebranded": "deployment-options/on-premise-innflow.png",
+    "size": [
+      2048,
+      768
+    ]
+  },
+  {
+    "original": "deployment-options/private.jpg",
+    "rebranded": "deployment-options/private-innflow.png",
+    "size": [
+      2048,
+      768
+    ]
+  },
+  {
+    "original": "deployment-options/support.jpg",
+    "rebranded": "deployment-options/support-innflow.png",
+    "size": [
+      2048,
+      768
+    ]
+  }
+]

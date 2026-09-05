@@ -105,7 +105,7 @@ export default async function FeaturePage({
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Features", href: "/#features" },
-          { label: content.title },
+          { label: content.eyebrow },
         ]}
       >
         <FeatureMedia type={content.media} />

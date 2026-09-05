@@ -35,6 +35,7 @@ export function SkillsLibrary({ skills, categories }: SkillsLibraryProps) {
             type="button"
             className={styles.filterChip}
             data-active={activeCategory === "all"}
+            aria-pressed={activeCategory === "all"}
             onClick={() => setActiveCategory("all")}
           >
             All
@@ -45,6 +46,7 @@ export function SkillsLibrary({ skills, categories }: SkillsLibraryProps) {
               type="button"
               className={styles.filterChip}
               data-active={activeCategory === category.slug}
+              aria-pressed={activeCategory === category.slug}
               onClick={() => setActiveCategory(category.slug)}
             >
               {category.title}

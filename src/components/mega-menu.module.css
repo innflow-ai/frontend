@@ -49,6 +49,8 @@
   width: 100vw;
   margin-left: -50vw;
   z-index: 70;
+  max-height: calc(100dvh - 71px);
+  overflow-y: auto;
   border-bottom: 1px solid var(--sky-line);
   background: #fff;
   box-shadow: var(--sky-shadow-panel);

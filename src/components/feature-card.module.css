@@ -10,7 +10,7 @@
   overflow: hidden;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  background: #fff;
+  background: var(--surface);
   transition:
     border-color 160ms ease,
     transform 160ms ease,

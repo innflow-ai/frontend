@@ -4,8 +4,7 @@ import { CaretDown, Newspaper } from "@phosphor-icons/react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useEffect, useId, useState } from "react";
-import { ThemeSwitcher } from "@/components/blog/theme-switcher";
+import { useEffect, useId, useRef, useState } from "react";
 import { GoogleSignInButton } from "@/components/google-sign-in";
 import {
   type LatestBlogPostNavItem,
@@ -117,31 +116,31 @@ export function EditorialHeader({
   const pathname = usePathname();
   const reduce = useReducedMotion();
   const mobileMenuBaseId = useId();
+  const mobileToggleRef = useRef<HTMLButtonElement>(null);
   const isHome = pathname === "/";
   const isBlogArticle = /^\/blog\/.+/.test(pathname);
-  // Articles sit on a dark canvas, so they keep the homepage's white chrome
-  // while still using the transparent surface every non-home page starts with.
+  // Articles start with white chrome over their dark canvas. Once scrolled,
+  // all subpages use the selected theme's opaque surface and matching chrome.
   const useLightChrome =
     (isHome || isBlogArticle) && !showSolidHeader && !mobileOpen;
   const useDarkTransparentChrome =
     !isHome && !isBlogArticle && !showSolidHeader && !mobileOpen;
 
-  // Keep the homepage header transparent over the hero. Other pages begin
-  // with dark chrome on a transparent surface and gain the solid treatment
-  // as soon as the page scrolls. Blog articles stay transparent (white chrome)
-  // instead of picking up the solid white bar.
+  // Preserve the homepage's hero threshold. Subpages become opaque on the
+  // first scroll pixel, independently of the direction-based hide animation.
+  // Do not defer that fallback to a cancellable animation frame.
   useEffect(() => {
     let frame = 0;
     const syncHeader = () => {
+      if (pathname !== "/") {
+        setShowSolidHeader(window.scrollY > 0);
+        return;
+      }
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
         const hero = document.getElementById("home-hero");
         setShowSolidHeader(
-          isBlogArticle
-            ? false
-            : isHome && hero
-              ? hero.getBoundingClientRect().bottom <= 70
-              : window.scrollY > 0,
+          hero ? hero.getBoundingClientRect().bottom <= 70 : window.scrollY > 0,
         );
       });
     };
@@ -154,7 +153,7 @@ export function EditorialHeader({
       window.removeEventListener("scroll", syncHeader);
       window.removeEventListener("resize", syncHeader);
     };
-  }, [isHome, isBlogArticle]);
+  }, [pathname]);
 
   useEffect(() => {
     if (!isBlogArticle || reduce) {
@@ -182,20 +181,55 @@ export function EditorialHeader({
   // Escape closes the mobile overlay.
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
+      if (event.key === "Escape" && !document.querySelector("dialog[open]")) {
         setMobileOpen(false);
         setOpenMobileGroup(null);
+        if (mobileOpen) mobileToggleRef.current?.focus();
       }
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
-  }, []);
+  }, [mobileOpen]);
 
   // Lock body scroll while the mobile overlay is open.
   useEffect(() => {
-    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    if (!mobileOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const background = Array.from(
+      document.querySelectorAll<HTMLElement>("main, footer"),
+    );
+    const previousInert = background.map((element) => element.inert);
+    for (const element of background) element.inert = true;
+
+    const containFocus = (event: KeyboardEvent) => {
+      if (event.key !== "Tab" || document.querySelector("dialog[open]")) return;
+      const focusable = Array.from(
+        document.querySelectorAll<HTMLElement>(
+          "header a[href], header button, #editorial-mobile-overlay a[href], #editorial-mobile-overlay button",
+        ),
+      ).filter(
+        (element) =>
+          element.getClientRects().length > 0 &&
+          !element.hasAttribute("disabled"),
+      );
+      const first = focusable[0];
+      const last = focusable.at(-1);
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last?.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first?.focus();
+      }
+    };
+    document.addEventListener("keydown", containFocus);
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = previousOverflow;
+      background.forEach((element, index) => {
+        element.inert = previousInert[index];
+      });
+      document.removeEventListener("keydown", containFocus);
     };
   }, [mobileOpen]);
 
@@ -250,7 +284,11 @@ export function EditorialHeader({
           <nav aria-label="Primary navigation">
             <ul className={styles.desktopNav}>
               <li>
-                <MegaMenu label="Product" columns={productColumns} />
+                <MegaMenu
+                  label="Product"
+                  columns={productColumns}
+                  showAside={false}
+                />
               </li>
               <li>
                 <MegaMenu
@@ -288,20 +326,14 @@ export function EditorialHeader({
           </nav>
 
           <div className={styles.actions}>
-            <ThemeSwitcher compact />
             <GoogleSignInButton
               className={`${styles.button} ${styles.headerCta}`}
-              eventLabel="header_login"
-              label="Log in"
+              eventLabel="header_continue_google"
+              label="Continue with Google"
+              variant="brand"
             />
-            <TrackedLink
-              className={`${styles.button} ${styles.buttonBrand} ${styles.headerCta}`}
-              destination={siteConfig.signupUrl}
-              eventLabel="header_get_started"
-            >
-              Get started
-            </TrackedLink>
             <button
+              ref={mobileToggleRef}
               type="button"
               className={styles.hamburger}
               aria-expanded={mobileOpen}
@@ -330,13 +362,16 @@ export function EditorialHeader({
         </div>
       </header>
       {isBlogArticle ? (
-        <div
-          className={`${styles.articleFade}${
-            headerHidden ? ` ${styles.articleFadePinned}` : ""
-          }`}
-          data-article-fade=""
-          aria-hidden="true"
-        />
+        <>
+          <div
+            className={`${styles.articleFade}${
+              headerHidden ? ` ${styles.articleFadePinned}` : ""
+            }`}
+            data-article-fade=""
+            aria-hidden="true"
+          />
+          <div className={styles.articleBottomFade} aria-hidden="true" />
+        </>
       ) : null}
 
       {/* Rendered outside the header so the fixed panel can cover the viewport
@@ -478,23 +513,14 @@ export function EditorialHeader({
               >
                 Blog
               </motion.a>
-              <motion.div variants={reduce ? undefined : itemVariants}>
+              <div className={styles.mobileCtaRow}>
                 <GoogleSignInButton
-                  className={styles.mobilePrimaryLink}
-                  eventLabel="mobile_login"
+                  className={`${styles.button} ${styles.mobileCta}`}
+                  eventLabel="mobile_continue_google"
+                  label="Continue with Google"
+                  variant="brand"
                   iconSize={20}
                 />
-              </motion.div>
-              <div className={styles.mobileCtaRow}>
-                <MotionTrackedLink
-                  className={`${styles.button} ${styles.buttonBrand} ${styles.mobileCta}`}
-                  destination={siteConfig.signupUrl}
-                  eventLabel="mobile_signup"
-                  variants={reduce ? undefined : itemVariants}
-                  onClick={closeMobile}
-                >
-                  Sign Up
-                </MotionTrackedLink>
                 <MotionTrackedLink
                   className={`${styles.button} ${styles.mobileCta} ${styles.mobileDemoCta}`}
                   destination={siteConfig.demoUrl}

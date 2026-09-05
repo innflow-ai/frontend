@@ -6,9 +6,9 @@
 
 .hero {
   position: relative;
-  min-height: 880px;
+  min-height: 760px;
   overflow: hidden;
-  padding: 150px 24px 112px;
+  padding: 88px 24px 96px;
 }
 
 .heroImage {
@@ -39,8 +39,8 @@
 
 .heroGrid {
   display: grid;
-  grid-template-columns: minmax(0, 0.88fr) minmax(520px, 1.12fr);
-  gap: clamp(48px, 7vw, 104px);
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  gap: clamp(32px, 5vw, 72px);
   align-items: center;
 }
 
@@ -58,10 +58,11 @@
 .hero h1 {
   margin: 28px 0 0;
   color: #fff;
-  font-size: clamp(56px, 6.4vw, 88px);
+  font-size: clamp(44px, 5.2vw, 72px);
   font-weight: 600;
-  letter-spacing: 0.005em;
-  line-height: 0.98;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+  text-wrap: balance;
   text-shadow: 0 8px 40px rgba(4, 15, 27, 0.4);
 }
 
@@ -178,6 +179,13 @@
   font-weight: 700;
 }
 
+.field small {
+  color: var(--sky-muted);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
 .field input,
 .field select,
 .field textarea {
@@ -187,7 +195,7 @@
   color: var(--sky-ink);
   background: #fff;
   font: inherit;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
   outline: none;
   transition:
@@ -343,7 +351,7 @@
 
 @media (max-width: 1020px) {
   .hero {
-    padding-top: 128px;
+    padding-top: 72px;
   }
 
   .heroGrid {
@@ -361,11 +369,11 @@
 
 @media (max-width: 720px) {
   .hero {
-    padding: 108px 16px 72px;
+    padding: 56px 20px 64px;
   }
 
   .hero h1 {
-    font-size: clamp(48px, 15vw, 68px);
+    font-size: clamp(40px, 10.5vw, 56px);
   }
 
   .form {

@@ -112,14 +112,19 @@ export default async function RootLayout({
   }));
 
   return (
-    <html lang="en" className={`${questrial.variable} ${figtree.variable}`}>
+    // The head script applies a saved theme before first paint. Only this
+    // root attribute is intentionally different from the static HTML.
+    <html
+      lang="en"
+      className={`${questrial.variable} ${figtree.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         <script
           dangerouslySetInnerHTML={{
             __html: `try{var t=localStorage.getItem("innflow-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t;}catch(e){}`,
           }}
         />
-        <ConsentManagedTags />
       </head>
       <body>
         <noscript>
@@ -138,6 +143,7 @@ export default async function RootLayout({
         {children}
         <EditorialFooter />
         <MarketingRuntime />
+        <ConsentManagedTags />
         <PostHogObservability />
       </body>
     </html>

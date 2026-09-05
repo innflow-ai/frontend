@@ -39,7 +39,13 @@ function CtaLink({
   );
 }
 
-function Capabilities({ section }: { section: ProductCapabilitiesSection }) {
+function Capabilities({
+  section,
+  anchors,
+}: {
+  section: ProductCapabilitiesSection;
+  anchors?: string[];
+}) {
   return (
     <section
       className={`${styles.capabilities} ${
@@ -50,17 +56,47 @@ function Capabilities({ section }: { section: ProductCapabilitiesSection }) {
       aria-label="Product capabilities"
     >
       <div className={styles.shell}>
-        <FeatureCardGrid className={styles.capabilityGrid}>
-          {section.cards.map((card) => (
-            <FeatureCard
-              key={card._key}
-              image={card.image.url}
-              imageAlt={card.image.alt}
-              title={card.title}
-              body={card.body}
-            />
-          ))}
-        </FeatureCardGrid>
+        {anchors ? (
+          <div
+            className={`${styles.agentCapabilityGrid} ${section.presentation === "five-feature" ? styles.agentPrimaryGrid : styles.agentSupportingGrid}`}
+          >
+            {section.cards.map((card, index) => (
+              <a
+                key={card._key}
+                className={styles.agentCapability}
+                href={`#${card.anchor ?? anchors[index] ?? "product-details"}`}
+              >
+                <div className={styles.agentCapabilityCopy}>
+                  <h3>{card.title}</h3>
+                  <p>{card.body}</p>
+                  <span className={styles.agentCapabilityLink}>
+                    Explore capability <span aria-hidden="true">↗</span>
+                  </span>
+                </div>
+                <div className={styles.agentCapabilityMedia}>
+                  <Image
+                    src={card.image.url}
+                    alt={card.image.alt}
+                    fill
+                    sizes="(max-width: 720px) 100vw, (max-width: 980px) 50vw, 66vw"
+                  />
+                </div>
+              </a>
+            ))}
+          </div>
+        ) : (
+          <FeatureCardGrid className={styles.capabilityGrid}>
+            {section.cards.map((card) => (
+              <FeatureCard
+                key={card._key}
+                image={card.image.url}
+                imageAlt={card.image.alt}
+                title={card.title}
+                body={card.body}
+              />
+            ))}
+          </FeatureCardGrid>
+        )}
       </div>
     </section>
   );
@@ -107,6 +143,8 @@ function ProductDetail({ section }: { section: ProductDetailSection }) {
 }
 
 export function ProductPage({ product }: { product: ProductPageData }) {
+  const isAgentOs =
+    product.slug === "agent-os" || product.slug === "agent-studio";
   const details = product.sections.filter(
     (section): section is ProductDetailSection =>
       section._type === "productDetailSection",
@@ -123,11 +161,16 @@ export function ProductPage({ product }: { product: ProductPageData }) {
   };
 
   return (
-    <main id="main-content" className={styles.page}>
+    <main
+      id="main-content"
+      className={`${styles.page}${isAgentOs ? ` ${styles.agentOs}` : ""}${product.slug === "agent-studio" ? ` ${styles.agentStudio}` : ""}`}
+    >
       <section className={styles.hero}>
         <div className={`${styles.shell} ${styles.heroInner}`}>
           <div className={styles.heroCopy}>
-            <span className={styles.eyebrow}>{product.category}</span>
+            <span className={styles.eyebrow}>
+              {isAgentOs ? product.title : product.category}
+            </span>
             <h1>{product.hero.title}</h1>
             <p>{product.hero.body}</p>
             <div className={styles.ctaRow}>
@@ -142,8 +185,12 @@ export function ProductPage({ product }: { product: ProductPageData }) {
               src={product.hero.image.url}
               alt={product.hero.image.alt}
               fill
-              priority
-              sizes="(max-width: 900px) calc(100vw - 48px), 50vw"
+              preload
+              sizes={
+                isAgentOs
+                  ? "(max-width: 720px) 240px, 320px"
+                  : "(max-width: 900px) calc(100vw - 48px), 50vw"
+              }
               placeholder={product.hero.image.lqip ? "blur" : "empty"}
               blurDataURL={product.hero.image.lqip}
             />
@@ -167,14 +214,30 @@ export function ProductPage({ product }: { product: ProductPageData }) {
         }
 
         if (section._type === "productCapabilitiesSection") {
-          return <Capabilities key={section._key} section={section} />;
+          return (
+            <Capabilities
+              key={section._key}
+              section={section}
+              anchors={
+                isAgentOs
+                  ? details
+                      .slice(section.presentation === "five-feature" ? 0 : 5)
+                      .map((detail) => detail.anchor)
+                  : undefined
+              }
+            />
+          );
         }
 
         return null;
       })}
 
       {details.length ? (
-        <section className={styles.detailsSection} aria-label="Product details">
+        <section
+          id="product-details"
+          className={styles.detailsSection}
+          aria-label="Product details"
+        >
           <div className={styles.mobileToc}>
             <details>
               <summary>On this page</summary>

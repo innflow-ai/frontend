@@ -20,6 +20,7 @@ export type BlogCarouselPost = {
 export function BlogCarousel({ posts }: { posts: BlogCarouselPost[] }) {
   const trackRef = useRef<HTMLUListElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(1);
   const [canScrollBack, setCanScrollBack] = useState(false);
   const [canScrollForward, setCanScrollForward] = useState(posts.length > 1);
 
@@ -31,6 +32,9 @@ export function BlogCarousel({ posts }: { posts: BlogCarouselPost[] }) {
     const gap = Number.parseFloat(getComputedStyle(track).columnGap) || 0;
     const step = firstSlide.getBoundingClientRect().width + gap;
     const maxScroll = track.scrollWidth - track.clientWidth;
+    setVisibleCount(
+      Math.max(1, Math.floor((track.clientWidth + gap + 1) / step)),
+    );
 
     setActiveIndex(
       Math.min(posts.length - 1, Math.round(track.scrollLeft / step)),
@@ -54,7 +58,7 @@ export function BlogCarousel({ posts }: { posts: BlogCarouselPost[] }) {
     };
   }, [updatePosition]);
 
-  const scroll = (direction: -1 | 1) => {
+  const scroll = (direction: -1 | 1, keyboard: boolean) => {
     const track = trackRef.current;
     const firstSlide = track?.firstElementChild as HTMLElement | null;
     if (!track || !firstSlide) return;
@@ -62,7 +66,11 @@ export function BlogCarousel({ posts }: { posts: BlogCarouselPost[] }) {
     const gap = Number.parseFloat(getComputedStyle(track).columnGap) || 0;
     track.scrollBy({
       left: direction * (firstSlide.getBoundingClientRect().width + gap),
-      behavior: "smooth",
+      behavior:
+        keyboard ||
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "instant"
+          : "smooth",
     });
   };
 
@@ -74,15 +82,18 @@ export function BlogCarousel({ posts }: { posts: BlogCarouselPost[] }) {
     >
       <div className={styles.controls}>
         <span className={styles.status} aria-live="polite">
-          {String(activeIndex + 1).padStart(2, "0")} /{" "}
-          {String(posts.length).padStart(2, "0")}
+          {String(activeIndex + 1).padStart(2, "0")}
+          {visibleCount > 1
+            ? `–${String(Math.min(posts.length, activeIndex + visibleCount)).padStart(2, "0")}`
+            : ""}{" "}
+          / {String(posts.length).padStart(2, "0")}
         </span>
         <div className={styles.buttons}>
           <button
             aria-label="Show previous blog post"
             className={styles.button}
             disabled={!canScrollBack}
-            onClick={() => scroll(-1)}
+            onClick={(event) => scroll(-1, event.detail === 0)}
             type="button"
           >
             <ArrowLeft aria-hidden="true" size={18} />
@@ -91,7 +102,7 @@ export function BlogCarousel({ posts }: { posts: BlogCarouselPost[] }) {
             aria-label="Show next blog post"
             className={styles.button}
             disabled={!canScrollForward}
-            onClick={() => scroll(1)}
+            onClick={(event) => scroll(1, event.detail === 0)}
             type="button"
           >
             <ArrowRight aria-hidden="true" size={18} />

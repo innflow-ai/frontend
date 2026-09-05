@@ -10,9 +10,8 @@ function readTheme(): Theme {
   if (typeof document === "undefined") return "light";
   const current = document.documentElement.dataset.theme;
   if (current === "dark" || current === "light") return current;
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
+  // Match the site's actual default; OS preference alone does not change CSS.
+  return "light";
 }
 
 export function ThemeSwitcher({ compact = false }: { compact?: boolean }) {

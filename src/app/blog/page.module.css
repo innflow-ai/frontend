@@ -26,9 +26,16 @@
   list-style: none;
 }
 
+.searchSlot {
+  max-width: 620px;
+  margin-top: 28px;
+}
+
 .filter,
 .filterActive {
   display: inline-flex;
+  min-height: 44px;
+  align-items: center;
   border-radius: 999px;
   padding: 7px 12px;
   font-size: 13px;
@@ -223,6 +230,17 @@
 }
 
 @media (max-width: 720px) {
+  .filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scrollbar-width: thin;
+  }
+
+  .filters li {
+    flex-shrink: 0;
+  }
+
   .hero {
     padding: 64px 0 48px;
   }

@@ -21,7 +21,7 @@
 
 .heroInner {
   display: grid;
-  min-height: 610px;
+  min-height: 480px;
   align-items: center;
   grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
   gap: clamp(40px, 6vw, 96px);
@@ -45,8 +45,11 @@
 
 .hero h1 {
   max-width: 780px;
-  font-size: clamp(50px, 6.2vw, 92px);
-  line-height: 0.94;
+  font-size: clamp(44px, 4.6vw, 68px);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+  overflow-wrap: anywhere;
 }
 
 .heroCopy > p {
@@ -443,7 +446,7 @@
   }
 
   .hero h1 {
-    font-size: clamp(45px, 14vw, 64px);
+    font-size: clamp(38px, 10vw, 54px);
   }
 
   .heroMedia {
@@ -491,4 +494,428 @@
   .cta {
     transition: none;
   }
+}
+
+/* Platform editorial pages: centered hero, mosaic, then a reading column. */
+.agentOs .hero {
+  padding: 84px 0 56px;
+  background:
+    radial-gradient(ellipse at 24% 0%, #d8eaff, transparent 68%),
+    linear-gradient(180deg, #edf5ff, #fff);
+  text-align: center;
+}
+
+.agentOs .heroInner {
+  display: flex;
+  min-height: 0;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.agentOs .heroCopy {
+  width: 100%;
+  max-width: 860px;
+}
+
+.agentOs .hero h1 {
+  max-width: 820px;
+  margin-inline: auto;
+  font-size: clamp(42px, 4.8vw, 68px);
+}
+
+.agentOs .heroCopy > p {
+  max-width: 700px;
+  margin: 24px auto 0;
+  font-size: 18px;
+}
+
+.agentOs .hero .ctaRow {
+  justify-content: center;
+  margin-top: 28px;
+}
+
+.agentOs .heroMedia {
+  width: 320px;
+  max-width: 70%;
+  aspect-ratio: 1;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.agentOs .heroMedia img {
+  object-fit: contain;
+}
+
+.agentOs .intro {
+  padding: 64px 24px 48px;
+}
+
+.agentOs .intro h2 {
+  max-width: 740px;
+  margin-inline: auto;
+  font-size: clamp(34px, 3.8vw, 52px);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+}
+
+.agentOs .capabilities {
+  padding-bottom: 24px;
+  background: #fff;
+}
+
+.agentOs .capabilitiesSupporting {
+  padding-top: 0;
+}
+
+.agentCapabilityGrid {
+  display: grid;
+  gap: 24px;
+}
+
+.agentPrimaryGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(380px, auto));
+}
+
+.agentPrimaryGrid > :nth-child(1) {
+  grid-column: 1 / 3;
+}
+
+.agentPrimaryGrid > :nth-child(2) {
+  grid-column: 3;
+  grid-row: 1 / 3;
+}
+
+.agentPrimaryGrid > :nth-child(3) {
+  grid-column: 1;
+  grid-row: 2 / 4;
+}
+
+.agentPrimaryGrid > :nth-child(4) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.agentPrimaryGrid > :nth-child(5) {
+  grid-column: 2 / 4;
+  grid-row: 3;
+}
+
+.agentSupportingGrid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.agentSupportingGrid > :first-child {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  align-items: center;
+}
+
+.agentCapability {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  background: #fff;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.agentCapability:hover {
+  border-color: #8abbeb;
+  box-shadow: 0 8px 28px rgb(12 27 42 / 8%);
+}
+
+.agentCapabilityCopy {
+  padding: 28px;
+}
+
+.agentCapabilityCopy h3 {
+  color: var(--sky-ink);
+  font-size: 23px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.agentCapabilityCopy p {
+  margin-top: 12px;
+  color: var(--sky-muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.agentCapabilityLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  color: #0863b5;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.agentCapabilityMedia {
+  position: relative;
+  flex: 1;
+  min-height: 220px;
+  overflow: hidden;
+  border-radius: 20px 20px 0 0;
+  background: #eef4fa;
+}
+
+.agentCapabilityMedia img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.agentSupportingGrid .agentCapabilityMedia {
+  min-height: 300px;
+}
+
+.agentSupportingGrid > :first-child .agentCapabilityMedia {
+  align-self: stretch;
+  border-radius: 20px 0 0 20px;
+}
+
+.agentOs .detailsSection {
+  background: #fff;
+  padding: 88px 0;
+}
+
+.agentOs .detailsLayout {
+  width: min(calc(100% - 48px), 1280px);
+  grid-template-columns: 210px minmax(0, 1fr);
+  gap: 64px;
+}
+
+.agentOs .detailList {
+  gap: 80px;
+}
+
+.agentOs .detail {
+  border: 0;
+  border-radius: 0;
+  background: #fff;
+  color: var(--sky-ink);
+}
+
+.agentOs .detailInner {
+  display: block;
+  min-height: 0;
+  padding: 0;
+}
+
+.agentOs .detailCopy h2 {
+  max-width: 820px;
+  color: var(--sky-ink);
+  font-size: clamp(32px, 3.3vw, 46px);
+  line-height: 1.14;
+  letter-spacing: -0.025em;
+}
+
+.agentOs .detailCopy > p {
+  margin-top: 20px;
+  color: var(--sky-muted);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.agentOs .detailCopy ul {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.agentOs .detailMedia {
+  aspect-ratio: 16 / 10;
+  margin-top: 32px;
+  border-radius: 22px;
+}
+
+.agentOs .detailMedia img {
+  object-fit: contain;
+}
+
+.agentStudio .hero {
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 60%), #fff),
+    #eff6fc url("/brand/agent-studio/hero-background.jpg") center top / cover
+    no-repeat;
+}
+
+.agentStudio .shell,
+.agentStudio .detailsLayout {
+  max-width: 1200px;
+}
+
+.agentStudio .hero h1 {
+  max-width: 760px;
+  font-size: clamp(42px, 3.8vw, 56px);
+}
+
+.agentStudio .agentPrimaryGrid {
+  grid-template-rows: repeat(3, minmax(460px, auto));
+}
+
+.agentStudio .agentSupportingGrid > :first-child {
+  display: flex;
+}
+
+.agentStudio .agentSupportingGrid > :first-child .agentCapabilityMedia {
+  align-self: auto;
+  border-radius: 20px 20px 0 0;
+}
+
+.agentStudio .detailMedia {
+  aspect-ratio: 8 / 3;
+}
+
+@media (max-width: 980px) {
+  .agentStudio .agentPrimaryGrid {
+    grid-template-rows: none;
+  }
+
+  .agentOs .detailsLayout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (max-width: 980px) {
+  .agentPrimaryGrid,
+  .agentSupportingGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+  }
+
+  .agentPrimaryGrid > :nth-child(n),
+  .agentSupportingGrid > :first-child {
+    grid-column: auto;
+    grid-row: auto;
+    display: flex;
+  }
+
+  .agentPrimaryGrid > :last-child,
+  .agentSupportingGrid > :first-child {
+    grid-column: 1 / -1;
+  }
+
+  .agentSupportingGrid > :first-child .agentCapabilityMedia {
+    align-self: auto;
+    border-radius: 20px 20px 0 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .agentOs .hero {
+    padding: 56px 0 32px;
+  }
+
+  .agentOs .heroInner {
+    gap: 32px;
+  }
+
+  .agentOs .hero h1 {
+    font-size: clamp(38px, 10vw, 50px);
+  }
+
+  .agentOs .heroCopy > p {
+    font-size: 17px;
+  }
+
+  .agentOs .heroMedia {
+    width: 240px;
+  }
+
+  .agentOs .intro {
+    padding: 48px 20px 32px;
+  }
+
+  .agentPrimaryGrid,
+  .agentSupportingGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .agentCapabilityCopy {
+    padding: 24px;
+  }
+
+  .agentCapabilityMedia,
+  .agentSupportingGrid .agentCapabilityMedia {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+    flex: none;
+  }
+
+  .agentOs .detailsSection {
+    padding: 56px 0;
+  }
+
+  .agentOs .detailsLayout {
+    width: calc(100% - 40px);
+  }
+
+  .agentOs .detailCopy ul {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .agentOs .detailList {
+    gap: 56px;
+  }
+}
+
+:global(html[data-theme="dark"]) .page {
+  --sky-ink: #edf5ff;
+  --sky-muted: #b7c6d8;
+  --brand-hover: #78c4ff;
+}
+
+:global(html[data-theme="dark"]) .page .hero {
+  background:
+    radial-gradient(ellipse at 25% 0%, #163653, transparent 75%), #0c1826;
+}
+
+:global(html[data-theme="dark"]) .page .capabilities,
+:global(html[data-theme="dark"]) .page .detailsSection,
+:global(html[data-theme="dark"]) .page .faq {
+  background: var(--canvas);
+}
+
+:global(html[data-theme="dark"]) .page .detailLight,
+:global(html[data-theme="dark"]) .agentOs .detail,
+:global(html[data-theme="dark"]) .agentCapability,
+:global(html[data-theme="dark"]) .mobileToc details {
+  background: var(--surface);
+}
+
+:global(html[data-theme="dark"]) .agentCapabilityLink {
+  color: #78c4ff;
+}
+
+:global(html[data-theme="dark"]) .page .ctaPrimary {
+  color: #0c1826;
+  background: #edf5ff;
+}
+
+:global(html[data-theme="dark"]) .page .ctaSecondary {
+  color: #edf5ff;
+  background: #192b3f;
+  border-color: #40546b;
+}
+
+:global(html[data-theme="dark"]) .page .heroMedia,
+:global(html[data-theme="dark"]) .page .detailMedia,
+:global(html[data-theme="dark"]) .agentCapabilityMedia {
+  background: #15283c;
+}
+
+:global(html[data-theme="dark"]) .agentOs .heroMedia {
+  background: transparent;
 }

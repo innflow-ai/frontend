@@ -58,7 +58,7 @@ export default function DemoPage() {
             destination={siteConfig.contactUrl}
             eventLabel="demo_page_email"
           >
-            Email {siteConfig.supportEmail}
+            Contact our team
             <span aria-hidden="true">↗</span>
           </TrackedLink>
         </div>

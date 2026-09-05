@@ -44,7 +44,7 @@ export default function ContactPage() {
           alt=""
           className={styles.heroImage}
           fill
-          priority
+          preload
           quality={100}
           sizes="100vw"
           src="/brand/grassy-city-overlook.webp"

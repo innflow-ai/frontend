@@ -63,6 +63,52 @@ describe("EditorialHeader navigation", () => {
     vi.stubGlobal("cancelAnimationFrame", vi.fn());
   });
 
+  it("organizes all seven platform pages under Product on desktop and mobile", async () => {
+    const user = userEvent.setup();
+    render(<EditorialHeader />);
+    expect(
+      screen.queryByRole("button", { name: "Platform" }),
+    ).not.toBeInTheDocument();
+    const pages = [
+      ["Agentic Automation", "agentic-automation"],
+      ["Self Learning", "self-learning"],
+      ["Evaluations", "evaluations"],
+      ["Analytics and Observability", "analytics-and-observability"],
+      ["Integrations", "integrations"],
+      ["Deployment Options", "deployment-options"],
+      ["Security and Compliance", "security-and-compliance"],
+    ];
+    await user.click(screen.getByRole("button", { name: "Product" }));
+    const desktop = within(
+      screen.getByRole("region", { name: "Product menu" }),
+    );
+    for (const [title, slug] of pages) {
+      expect(
+        desktop.getByRole("link", { name: new RegExp(`^${title}`) }),
+      ).toHaveAttribute("href", `/platform/${slug}`);
+    }
+    await user.keyboard("{Escape}");
+    expect(
+      screen.queryByRole("region", { name: "Product menu" }),
+    ).not.toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "Open navigation" }));
+    const mobile = within(
+      document.getElementById("editorial-mobile-overlay") as HTMLElement,
+    );
+    await user.click(mobile.getByRole("button", { name: "Product" }));
+    for (const [title, slug] of pages) {
+      expect(
+        mobile.getByRole("link", { name: new RegExp(`^${title}`) }),
+      ).toHaveAttribute("href", `/platform/${slug}`);
+    }
+    await user.click(
+      mobile.getByRole("link", { name: /^Security and Compliance/ }),
+    );
+    expect(
+      document.getElementById("editorial-mobile-overlay"),
+    ).not.toBeInTheDocument();
+  });
+
   it("renders the two latest posts in the desktop Resources menu", async () => {
     const user = userEvent.setup();
     render(<EditorialHeader latestBlogPosts={latestBlogPosts} />);
@@ -71,9 +117,16 @@ describe("EditorialHeader navigation", () => {
       screen.getByRole("button", { name: "Continue with Google" }),
     ).toBeInTheDocument();
     expect(
+      screen.queryByRole("button", { name: "Log in" }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole("link", { name: "Get started" }),
+    ).not.toBeInTheDocument();
+    expect(
       screen.queryByRole("link", { name: "Sign Up Now" }),
     ).not.toBeInTheDocument();
     expect(document.querySelector(`.${styles.articleFade}`)).toBeNull();
+    expect(document.querySelector(`.${styles.articleBottomFade}`)).toBeNull();
     await user.click(screen.getByRole("button", { name: "Resources" }));
 
     expect(
@@ -130,7 +183,15 @@ describe("EditorialHeader navigation", () => {
     expect(resources).toHaveAttribute("aria-expanded", "false");
     expect(mobile.getByRole("link", { name: "Pricing" })).toBeInTheDocument();
     expect(mobile.getByRole("link", { name: "Blog" })).toBeInTheDocument();
-    expect(mobile.getByRole("link", { name: "Sign Up" })).toBeInTheDocument();
+    expect(
+      mobile.getByRole("button", { name: "Continue with Google" }),
+    ).toHaveClass(styles.mobileCta);
+    expect(
+      mobile.queryByRole("link", { name: "Sign Up" }),
+    ).not.toBeInTheDocument();
+    expect(
+      mobile.queryByRole("button", { name: "Sign in with Google" }),
+    ).not.toBeInTheDocument();
     expect(mobile.getByRole("link", { name: "Book a Demo" })).toHaveClass(
       styles.mobileDemoCta,
     );
@@ -156,7 +217,7 @@ describe("EditorialHeader navigation", () => {
     ).not.toBeInTheDocument();
   });
 
-  it("uses transparent white chrome on blog articles and hides the nav after scrolling down", () => {
+  it("makes article chrome solid before hiding and keeps it solid when revealed", () => {
     motionFlags.reduce = false;
     mockPathname.current = "/blog/ai-needs-humanity";
     render(<EditorialHeader />);
@@ -170,6 +231,9 @@ describe("EditorialHeader navigation", () => {
     expect(header).not.toHaveClass(styles.pageTop);
     const fade = document.querySelector(`.${styles.articleFade}`);
     expect(fade).toBeInTheDocument();
+    expect(
+      document.querySelector(`.${styles.articleBottomFade}`),
+    ).toHaveAttribute("aria-hidden", "true");
     expect(fade).not.toHaveClass(styles.articleFadePinned);
 
     Object.defineProperty(window, "scrollY", {
@@ -178,8 +242,48 @@ describe("EditorialHeader navigation", () => {
     });
     act(() => window.dispatchEvent(new Event("scroll")));
     expect(header).toHaveClass(styles.headerHidden);
-    expect(header).toHaveClass(styles.homeTop);
+    expect(header).not.toHaveClass(styles.homeTop);
     expect(fade).toHaveClass(styles.articleFadePinned);
+
+    Object.defineProperty(window, "scrollY", {
+      configurable: true,
+      value: 180,
+    });
+    act(() => window.dispatchEvent(new Event("scroll")));
+    expect(header).not.toHaveClass(styles.headerHidden);
+    expect(header).not.toHaveClass(styles.homeTop);
+    expect(fade).not.toHaveClass(styles.articleFadePinned);
+
+    Object.defineProperty(window, "scrollY", { configurable: true, value: 0 });
+    act(() => window.dispatchEvent(new Event("scroll")));
+    expect(header).toHaveClass(styles.homeTop);
+    expect(header).not.toHaveClass(styles.headerHidden);
+  });
+
+  it("makes articles solid on the first scroll pixel even when animation frames are delayed", () => {
+    mockPathname.current = "/blog/ai-needs-humanity";
+    // Reduced motion disables hiding, but must not disable the solid fallback.
+    vi.stubGlobal(
+      "requestAnimationFrame",
+      vi.fn(() => 1),
+    );
+    render(<EditorialHeader />);
+    const header = document.querySelector("header");
+    expect(header).toHaveClass(styles.homeTop);
+    Object.defineProperty(window, "scrollY", { configurable: true, value: 1 });
+    act(() => window.dispatchEvent(new Event("scroll")));
+    expect(header).not.toHaveClass(styles.homeTop);
+    expect(header).not.toHaveClass(styles.headerHidden);
+  });
+
+  it("initializes the solid surface on a restored subpage scroll position", () => {
+    mockPathname.current = "/blog/ai-needs-humanity";
+    Object.defineProperty(window, "scrollY", {
+      configurable: true,
+      value: 240,
+    });
+    render(<EditorialHeader />);
+    expect(document.querySelector("header")).not.toHaveClass(styles.homeTop);
   });
 
   it("adds the solid surface after scrolling on non-home pages", () => {

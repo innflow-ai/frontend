@@ -295,7 +295,7 @@ export default async function HomePage() {
             src="/brand/grassy-city-overlook.webp"
             alt=""
             fill
-            priority
+            preload
             quality={100}
             sizes="100vw"
             className={styles.heroBg}
@@ -379,7 +379,7 @@ export default async function HomePage() {
             src="/brand/grassy-city-foreground.webp"
             alt=""
             fill
-            priority
+            loading="eager"
             sizes="100vw"
             className={styles.heroForeground}
             unoptimized
@@ -607,7 +607,7 @@ export default async function HomePage() {
             alt=""
             fill
             sizes="100vw"
-            quality={90}
+            quality={75}
             className={styles.ctaBg}
           />
           <Reveal className={styles.ctaInner}>

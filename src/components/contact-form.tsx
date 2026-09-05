@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowRight } from "@phosphor-icons/react";
-import type { FormEvent } from "react";
+import { type FormEvent, useId } from "react";
 import styles from "@/app/contact/contact.module.css";
 import { siteConfig } from "@/config/site";
 
@@ -26,9 +26,11 @@ export function buildContactMailto(values: ContactFormValues) {
 }
 
 export function ContactForm() {
+  const messageHintId = useId();
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const form = event.currentTarget;
+    if (!form.reportValidity()) return;
     const data = new FormData(form);
     const values: ContactFormValues = {
       name: String(data.get("name") ?? "").trim(),
@@ -37,11 +39,34 @@ export function ContactForm() {
       message: String(data.get("message") ?? "").trim(),
     };
 
+    const nameField = form.elements.namedItem("name") as HTMLInputElement;
+    const messageField = form.elements.namedItem(
+      "message",
+    ) as HTMLTextAreaElement;
+    nameField.setCustomValidity(values.name ? "" : "Please enter your name.");
+    messageField.setCustomValidity(
+      values.message.length >= 20
+        ? ""
+        : "Please include at least 20 characters of message text.",
+    );
+    if (!form.reportValidity()) return;
+
     window.location.assign(buildContactMailto(values));
   }
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
+    <form
+      className={styles.form}
+      onSubmit={handleSubmit}
+      onInput={(event) => {
+        const field = event.target;
+        if (
+          field instanceof HTMLInputElement ||
+          field instanceof HTMLTextAreaElement
+        )
+          field.setCustomValidity("");
+      }}
+    >
       <div className={styles.formHeading}>
         <span>Send a message</span>
         <h2>What can we help with?</h2>
@@ -91,9 +116,11 @@ export function ContactForm() {
         </select>
       </label>
 
-      <label className={styles.field}>
-        <span>Message</span>
+      <div className={styles.field}>
+        <label htmlFor={`${messageHintId}-field`}>Message</label>
         <textarea
+          id={`${messageHintId}-field`}
+          aria-describedby={messageHintId}
           maxLength={3000}
           minLength={20}
           name="message"
@@ -101,7 +128,11 @@ export function ContactForm() {
           required
           rows={7}
         />
-      </label>
+        <small id={messageHintId}>
+          20–3,000 characters. Please don’t include passwords or sensitive
+          resident information.
+        </small>
+      </div>
 
       <div className={styles.formFooter}>
         <p>
@@ -109,7 +140,7 @@ export function ContactForm() {
           before sending.
         </p>
         <button type="submit">
-          Send message <ArrowRight aria-hidden="true" size={17} />
+          Review in email <ArrowRight aria-hidden="true" size={17} />
         </button>
       </div>
     </form>

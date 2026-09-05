@@ -8,8 +8,9 @@ const footerNavigation = [
   {
     heading: "Product",
     links: [
-      { label: "Platform", href: "/products/platform" },
+      { label: "Platform", href: "/platform" },
       { label: "Agent OS", href: "/products/agent-os" },
+      { label: "Agent Studio", href: "/products/agent-studio" },
       { label: "AI Agents", href: "/products/ai-agents" },
       { label: "Copilot", href: "/products/agent-os" },
       {

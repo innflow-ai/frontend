@@ -55,6 +55,7 @@ const portfolioTypes = [
 export function PortfolioCarousel() {
   const trackRef = useRef<HTMLUListElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(1);
   const [canScrollBack, setCanScrollBack] = useState(false);
   const [canScrollForward, setCanScrollForward] = useState(true);
 
@@ -66,6 +67,9 @@ export function PortfolioCarousel() {
     const gap = Number.parseFloat(getComputedStyle(track).columnGap) || 0;
     const step = firstSlide.getBoundingClientRect().width + gap;
     const maxScroll = track.scrollWidth - track.clientWidth;
+    setVisibleCount(
+      Math.max(1, Math.floor((track.clientWidth + gap + 1) / step)),
+    );
 
     setActiveIndex(
       Math.min(portfolioTypes.length - 1, Math.round(track.scrollLeft / step)),
@@ -89,7 +93,7 @@ export function PortfolioCarousel() {
     };
   }, [updatePosition]);
 
-  const scroll = (direction: -1 | 1) => {
+  const scroll = (direction: -1 | 1, keyboard: boolean) => {
     const track = trackRef.current;
     const firstSlide = track?.firstElementChild as HTMLElement | null;
     if (!track || !firstSlide) return;
@@ -97,7 +101,11 @@ export function PortfolioCarousel() {
     const gap = Number.parseFloat(getComputedStyle(track).columnGap) || 0;
     track.scrollBy({
       left: direction * (firstSlide.getBoundingClientRect().width + gap),
-      behavior: "smooth",
+      behavior:
+        keyboard ||
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches
+          ? "instant"
+          : "smooth",
     });
   };
 
@@ -109,8 +117,11 @@ export function PortfolioCarousel() {
     >
       <div className={styles.controls}>
         <span className={styles.status} aria-live="polite">
-          {String(activeIndex + 1).padStart(2, "0")} /{" "}
-          {String(portfolioTypes.length).padStart(2, "0")}
+          {String(activeIndex + 1).padStart(2, "0")}
+          {visibleCount > 1
+            ? `–${String(Math.min(portfolioTypes.length, activeIndex + visibleCount)).padStart(2, "0")}`
+            : ""}{" "}
+          / {String(portfolioTypes.length).padStart(2, "0")}
         </span>
         <div className={styles.buttons}>
           <button
@@ -118,7 +129,7 @@ export function PortfolioCarousel() {
             type="button"
             aria-label="Show previous property type"
             disabled={!canScrollBack}
-            onClick={() => scroll(-1)}
+            onClick={(event) => scroll(-1, event.detail === 0)}
           >
             <ArrowLeft size={18} aria-hidden="true" />
           </button>
@@ -127,7 +138,7 @@ export function PortfolioCarousel() {
             type="button"
             aria-label="Show next property type"
             disabled={!canScrollForward}
-            onClick={() => scroll(1)}
+            onClick={(event) => scroll(1, event.detail === 0)}
           >
             <ArrowRight size={18} aria-hidden="true" />
           </button>

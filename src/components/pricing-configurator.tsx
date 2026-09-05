@@ -62,21 +62,25 @@ function PaidPlanCard({
     billing === "commitment" ? commitmentMonthlyPrice : monthlyPrice;
 
   return (
-    <article className={`${styles.planCard} ${styles[accent]}`}>
-      <span className={styles.badge}>{badge}</span>
+    <article
+      id={`plan-${name.toLowerCase()}`}
+      className={`${styles.planCard} ${styles[accent]}`}
+    >
       <div className={styles.planHeader}>
-        <p className={styles.planEyebrow}>{name}</p>
-        <h2>{name}</h2>
+        <div className={styles.planTitleRow}>
+          <h2>{name}</h2>
+          <span className={styles.badge}>{badge}</span>
+        </div>
+        <p className={styles.planDescription}>{description}</p>
+        <div className={styles.priceLine} aria-live="polite" aria-atomic="true">
+          <strong>{displayPrice(price)}</strong>
+          <span>/ month</span>
+        </div>
         <p className={styles.billingNote}>
           {billing === "commitment"
             ? "Annual plan, billed monthly"
             : "Month to month"}
         </p>
-        <div className={styles.priceLine} aria-live="polite">
-          <strong>{displayPrice(price)}</strong>
-          <span>/ month</span>
-        </div>
-        <p className={styles.planDescription}>{description}</p>
       </div>
 
       <div className={styles.creditBlock}>
@@ -86,6 +90,7 @@ function PaidPlanCard({
       </div>
 
       <TrackedLink
+        aria-label={`Get started with ${name}`}
         className={styles.planCta}
         destination={siteConfig.signupUrl}
         eventLabel={`pricing_${name.toLowerCase()}_signup`}
@@ -120,7 +125,7 @@ export function PricingConfigurator() {
           onClick={() => setBilling("commitment")}
           type="button"
         >
-          Annually
+          Annual plan
           <span>Save 15%</span>
         </button>
         <button
@@ -133,19 +138,33 @@ export function PricingConfigurator() {
         </button>
       </fieldset>
 
+      <p className={styles.billingExplanation}>
+        {billing === "commitment"
+          ? "Save 15% with an annual plan. Payments are made monthly."
+          : "Monthly pricing, with no annual commitment."}
+        <span>All prices in USD.</span>
+      </p>
+      <nav className={styles.planJumpNav} aria-label="Jump to a plan">
+        <a href="#plan-free">Free</a>
+        <a href="#plan-pro">Pro</a>
+        <a href="#plan-business">Business</a>
+      </nav>
+
       <div className={styles.planGrid}>
-        <article className={`${styles.planCard} ${styles.free}`}>
+        <article id="plan-free" className={`${styles.planCard} ${styles.free}`}>
           <div className={styles.planHeader}>
-            <p className={styles.planEyebrow}>Free</p>
-            <h2>Free</h2>
+            <div className={styles.planTitleRow}>
+              <h2>Free</h2>
+            </div>
+            <p className={styles.planDescription}>
+              Explore Innflow and build your first workflows with a focused
+              monthly credit allowance.
+            </p>
             <div className={styles.priceLine}>
               <strong>$0</strong>
               <span>/ month</span>
             </div>
-            <p className={styles.planDescription}>
-              For individuals exploring Innflow with a focused monthly credit
-              allowance.
-            </p>
+            <p className={styles.billingNote}>No paid plan required</p>
           </div>
           <div className={styles.creditBlock}>
             <p>
@@ -153,6 +172,7 @@ export function PricingConfigurator() {
             </p>
           </div>
           <TrackedLink
+            aria-label="Get started with Free"
             className={styles.planCta}
             destination={siteConfig.signupUrl}
             eventLabel="pricing_free_signup"
@@ -179,7 +199,7 @@ export function PricingConfigurator() {
           accent="blue"
           badge="Most popular"
           billing={billing}
-          description="For solo operators and growing teams scaling complex workflows across their operation."
+          description="For individual operators and growing teams putting recurring workflows into action."
           features={PRO_FEATURES}
           name="Pro"
           monthlyCredits={pro.monthlyCredits}
@@ -191,7 +211,7 @@ export function PricingConfigurator() {
           accent="gold"
           badge="Best value"
           billing={billing}
-          description="For teams running automation at scale with higher capacity and advanced AI capabilities."
+          description="For teams running higher-volume automation with more capacity and advanced AI capabilities."
           features={BUSINESS_FEATURES}
           name="Business"
           monthlyCredits={business.monthlyCredits}
@@ -199,6 +219,9 @@ export function PricingConfigurator() {
           commitmentMonthlyPrice={business.commitmentMonthlyPrice}
         />
       </div>
+      <a className={styles.compareLink} href="#compare-plans">
+        Compare all features <span aria-hidden="true">↓</span>
+      </a>
     </>
   );
 }

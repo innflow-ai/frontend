@@ -74,8 +74,17 @@
 }
 
 .searchLight {
+  --blog-ink: var(--ink);
+  --blog-muted: var(--ink-muted);
+  --blog-accent: var(--surface-soft);
+  --blog-accent-ink: var(--ink);
   border-color: var(--border);
   background: #fff;
+}
+
+.search:focus-within {
+  outline: 3px solid var(--brand-kit-blue);
+  outline-offset: 3px;
 }
 
 .searchLight input {

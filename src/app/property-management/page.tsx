@@ -67,6 +67,8 @@ export default function PropertyManagementPage() {
       <PageHero
         eyebrow="Property-management operations"
         title="Coordinate recurring property work without replacing your core systems."
+        secondaryHref="#property-workflow"
+        mediaId="property-workflow"
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Property Management" },

@@ -125,7 +125,6 @@ export default async function BlogIndexPage({
     <MarketingPage>
       <section className={styles.hero}>
         <div className="shell">
-          <BlogSearch defaultValue={q} tone="light" />
           <Breadcrumbs
             items={[{ label: "Home", href: "/" }, { label: "Blog" }]}
           />
@@ -136,6 +135,9 @@ export default async function BlogIndexPage({
             integrations, and the recurring workflows property teams run every
             day.
           </p>
+          <div className={styles.searchSlot}>
+            <BlogSearch defaultValue={q} tone="light" />
+          </div>
           <ul className={styles.filters}>
             <li>
               <a

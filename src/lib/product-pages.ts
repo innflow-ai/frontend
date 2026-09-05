@@ -1,5 +1,6 @@
 import { defineQuery } from "next-sanity";
 import { cache } from "react";
+import { agentStudioPage } from "@/content/agent-studio";
 import { applyVerifiedProductCopy } from "@/content/product-copy";
 import { sanityClient } from "@/lib/sanity";
 import framerProducts from "../../scripts/data/product-pages-framer.json";
@@ -7,6 +8,7 @@ import framerProducts from "../../scripts/data/product-pages-framer.json";
 export const productSlugs = [
   "platform",
   "agent-os",
+  "agent-studio",
   "ai-agents",
   "agentic-workflows",
   "databases",
@@ -29,6 +31,7 @@ export type ProductCta = {
 
 export type ProductFeatureCard = {
   _key: string;
+  anchor?: string;
   title: string;
   body: string;
   image: ProductImage;
@@ -328,6 +331,7 @@ const fallbackProducts = new Map(
 );
 
 export function getFallbackProductPage(slug: string) {
+  if (slug === "agent-studio") return agentStudioPage;
   const page = fallbackProducts.get(slug as ProductSlug) ?? null;
   return page ? applyVerifiedProductCopy(page) : null;
 }

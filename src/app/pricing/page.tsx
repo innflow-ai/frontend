@@ -14,10 +14,28 @@ export const metadata = createPageMetadata({
 });
 
 const { free, pro, business, enterprise } = pricingCatalog.plans;
+const price = (value: number) =>
+  new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 2,
+  }).format(value);
 
 const comparisonRows = [
-  ["Month-to-month price", "$0", "$19.99", "$199.99", "Custom"],
-  ["Annual plan price", "$0", "$16.99", "$169.99", "Custom"],
+  [
+    "Monthly plan · per month",
+    "$0",
+    price(pro.monthlyPrice),
+    price(business.monthlyPrice),
+    "Custom",
+  ],
+  [
+    "Annual plan · per month",
+    "$0",
+    price(pro.commitmentMonthlyPrice),
+    price(business.commitmentMonthlyPrice),
+    "Custom",
+  ],
   [
     "Monthly credits",
     free.monthlyCredits,
@@ -114,11 +132,11 @@ export default function PricingPage() {
           <div className={styles.heroCopy}>
             <Tag variant="outline">Pricing</Tag>
             <h1>
-              Pricing, <em>tailored to your needs.</em>
+              Start small. <em>Grow with your workflows.</em>
             </h1>
             <p className={styles.lede}>
-              Flexible plans built to scale—from an individual operator
-              exploring automation to teams running high-volume workflows.
+              From your first automation to your whole operation. Choose the
+              capacity your team needs today.
             </p>
           </div>
           <PricingConfigurator />
@@ -145,20 +163,33 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className={styles.section}>
+      <section className={styles.section} id="compare-plans">
         <div className={styles.sectionInner}>
           <div className={styles.sectionHeading}>
             <div>
               <span className="section-label">Comparison</span>
-              <h2>Compare plans.</h2>
+              <h2 id="comparison-heading">Find your fit.</h2>
             </div>
             <p>
               Start with the capacity you need today, then move through the
               published plans as workflow volume grows.
             </p>
           </div>
-          <div className={styles.tableWrap}>
+          <p className={styles.tableHint}>
+            Scroll across to compare all four plans.
+          </p>
+          {/* Keyboard users need to focus this region to scroll the comparison. */}
+          <section
+            className={styles.tableWrap}
+            aria-labelledby="comparison-heading"
+            // biome-ignore lint/a11y/noNoninteractiveTabindex: keyboard access to horizontal scrolling
+            tabIndex={0}
+          >
             <table className={styles.comparisonTable}>
+              <caption className={styles.visuallyHidden}>
+                Innflow plan prices and included capacity. Annual plans are
+                billed monthly. Prices are in USD.
+              </caption>
               <thead>
                 <tr>
                   <th scope="col">Feature</th>
@@ -180,7 +211,7 @@ export default function PricingPage() {
               <tbody>
                 {comparisonRows.map(([feature, ...values]) => (
                   <tr key={feature}>
-                    <td>{feature}</td>
+                    <th scope="row">{feature}</th>
                     {comparisonPlanKeys.map((planKey) => (
                       <td key={`${feature}-${planKey}`}>
                         {values[comparisonPlanIndex[planKey]]}
@@ -190,7 +221,7 @@ export default function PricingPage() {
                 ))}
               </tbody>
             </table>
-          </div>
+          </section>
         </div>
       </section>
 

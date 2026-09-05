@@ -39,6 +39,7 @@ import Image from "next/image";
 import { useEffect, useId, useRef, useState } from "react";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
+import { platformPages } from "@/content/platform";
 import styles from "./mega-menu.module.css";
 
 export type MegaMenuLink = {
@@ -67,16 +68,18 @@ export type LatestBlogPostNavItem = {
 function withApprovedMenuIcons(links: MegaMenuLink[]): MegaMenuLink[] {
   return links.map((link) => ({
     ...link,
-    iconSrc: `/brand/navigation/mega-menu-items/${link.title
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/(^-|-$)/g, "")}.svg`,
+    iconSrc:
+      link.iconSrc ??
+      `/brand/navigation/mega-menu-items/${link.title
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-|-$)/g, "")}.svg`,
   }));
 }
 
 const platformLinks: MegaMenuLink[] = [
   {
-    href: "/products/platform",
+    href: "/platform",
     icon: CirclesThreePlus,
     title: "Platform",
     body: "The connected foundation for modern property operations.",
@@ -86,6 +89,13 @@ const platformLinks: MegaMenuLink[] = [
     icon: Sparkle,
     title: "Agent OS",
     body: "Govern, coordinate, and scale operational intelligence.",
+  },
+  {
+    href: "/products/agent-studio",
+    icon: Wrench,
+    iconSrc: "/brand/navigation/mega-menu-items/agentic-workflows.svg",
+    title: "Agent Studio",
+    body: "Build, test, and refine agents in one visual workspace.",
   },
   {
     href: "/products/ai-agents",
@@ -217,16 +227,30 @@ export const portfolioColumns: MegaMenuColumn[] = [
 
 export const productColumns: MegaMenuColumn[] = [
   {
-    heading: "Platform",
+    heading: "Products",
     links: withApprovedMenuIcons(platformLinks),
   },
   {
     heading: "Build With Agents",
-    links: withApprovedMenuIcons(buildWithAgentsLinks),
+    links: withApprovedMenuIcons([...buildWithAgentsLinks, ...capabilityLinks]),
   },
   {
-    heading: "Capabilities",
-    links: withApprovedMenuIcons(capabilityLinks),
+    heading: "Automation and intelligence",
+    links: platformPages.slice(0, 4).map((page) => ({
+      href: `/platform/${page.slug}`,
+      icon: FlowArrow,
+      title: page.title,
+      body: page.description,
+    })),
+  },
+  {
+    heading: "Connections and governance",
+    links: platformPages.slice(4).map((page) => ({
+      href: `/platform/${page.slug}`,
+      icon: PlugsConnected,
+      title: page.title,
+      body: page.description,
+    })),
   },
 ];
 
@@ -440,6 +464,7 @@ export function MegaMenu({
   const [open, setOpen] = useState(false);
   const reduce = useReducedMotion();
   const rootRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const panelId = useId();
 
@@ -467,11 +492,16 @@ export function MegaMenu({
   // Escape closes the panel.
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setOpen(false);
+      if (event.key === "Escape" && open) {
+        if (rootRef.current?.contains(document.activeElement)) {
+          triggerRef.current?.focus();
+        }
+        setOpen(false);
+      }
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
-  }, []);
+  }, [open]);
 
   // Close when focus leaves the trigger + panel.
   const onBlur = (event: React.FocusEvent<HTMLElement>) => {
@@ -499,13 +529,15 @@ export function MegaMenu({
       onBlur={onBlur}
     >
       <button
+        ref={triggerRef}
         type="button"
         className={styles.trigger}
         aria-expanded={open}
         aria-haspopup="true"
         aria-controls={panelId}
-        onClick={openMenu}
-        onFocus={openMenu}
+        onClick={(event) =>
+          event.detail === 0 && open ? closeMenu() : openMenu()
+        }
       >
         {label}
         <CaretDown

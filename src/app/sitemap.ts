@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
 import { allFeatureSlugs } from "@/content/marketing";
+import { platformPages } from "@/content/platform";
 import { productSlugs } from "@/lib/product-pages";
 import { getBlogPosts } from "@/lib/sanity";
 
@@ -11,6 +12,7 @@ const staticRoutes: Array<{
 }> = [
   { path: "", changeFrequency: "weekly", priority: 1 },
   { path: "/property-management", changeFrequency: "weekly", priority: 0.9 },
+  { path: "/platform", changeFrequency: "monthly", priority: 0.9 },
   { path: "/integrations", changeFrequency: "monthly", priority: 0.8 },
   { path: "/pricing", changeFrequency: "monthly", priority: 0.8 },
   { path: "/demo", changeFrequency: "monthly", priority: 0.8 },
@@ -43,6 +45,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: siteLastModified,
       changeFrequency: route.changeFrequency,
       priority: route.priority,
+    })),
+    ...platformPages.map((page) => ({
+      url: `${siteConfig.marketingOrigin}/platform/${page.slug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
     })),
     ...allFeatureSlugs.map((slug) => ({
       url: `${siteConfig.marketingOrigin}/features/${slug}`,

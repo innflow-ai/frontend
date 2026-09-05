@@ -14,6 +14,8 @@ export function PageHero({
   description,
   status,
   breadcrumbs,
+  secondaryHref = "/property-management",
+  mediaId,
   children,
 }: {
   eyebrow: string;
@@ -21,6 +23,8 @@ export function PageHero({
   description: string;
   status?: string;
   breadcrumbs?: BreadcrumbItem[];
+  secondaryHref?: string;
+  mediaId?: string;
   children?: ReactNode;
 }) {
   return (
@@ -49,14 +53,16 @@ export function PageHero({
               {siteConfig.primaryCta}
               <span aria-hidden="true">↗</span>
             </TrackedLink>
-            <a className="button button-secondary" href="/property-management">
+            <a className="button button-secondary" href={secondaryHref}>
               See the property workflow
             </a>
           </div>
         </div>
       </div>
       {children ? (
-        <div className="shell subpage-hero-media">{children}</div>
+        <div id={mediaId} className="shell subpage-hero-media">
+          {children}
+        </div>
       ) : null}
     </section>
   );

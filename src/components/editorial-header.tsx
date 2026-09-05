@@ -290,11 +290,17 @@ export function EditorialHeader({
           <div className={styles.actions}>
             <ThemeSwitcher compact />
             <GoogleSignInButton
-              className={`${styles.button} ${styles.buttonBrand} ${styles.headerCta}`}
+              className={`${styles.button} ${styles.headerCta}`}
               eventLabel="header_login"
-              label="Continue with Google"
-              variant="brand"
+              label="Log in"
             />
+            <TrackedLink
+              className={`${styles.button} ${styles.buttonBrand} ${styles.headerCta}`}
+              destination={siteConfig.signupUrl}
+              eventLabel="header_get_started"
+            >
+              Get started
+            </TrackedLink>
             <button
               type="button"
               className={styles.hamburger}

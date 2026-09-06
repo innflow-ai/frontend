@@ -14,7 +14,15 @@ function readTheme(): Theme {
   return "light";
 }
 
-export function ThemeSwitcher({ compact = false }: { compact?: boolean }) {
+export function ThemeSwitcher({
+  compact = false,
+  className,
+  showLabel = false,
+}: {
+  compact?: boolean;
+  className?: string;
+  showLabel?: boolean;
+}) {
   const [theme, setTheme] = useState<Theme>("light");
 
   useEffect(() => {
@@ -26,7 +34,9 @@ export function ThemeSwitcher({ compact = false }: { compact?: boolean }) {
   return (
     <button
       type="button"
-      className={compact ? styles.themeToggleCompact : styles.themeToggle}
+      className={
+        className ?? (compact ? styles.themeToggleCompact : styles.themeToggle)
+      }
       aria-label={`Switch to ${next} mode`}
       onClick={() => {
         document.documentElement.dataset.theme = next;
@@ -43,6 +53,7 @@ export function ThemeSwitcher({ compact = false }: { compact?: boolean }) {
       ) : (
         <Moon size={18} weight="bold" aria-hidden="true" />
       )}
+      {showLabel && <span>{next === "dark" ? "Dark mode" : "Light mode"}</span>}
     </button>
   );
 }

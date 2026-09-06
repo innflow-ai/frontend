@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ThemeSwitcher } from "@/components/blog/theme-switcher";
 import { GoogleSignInButton } from "@/components/google-sign-in";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
@@ -165,6 +166,7 @@ export function EditorialFooter() {
               </TrackedLink>
               <GoogleSignInButton eventLabel="footer_login" label="Log in" />
             </div>
+            <ThemeSwitcher className={styles.themeToggle} showLabel />
           </div>
           {footerNavigation.map((column) => (
             <div key={column.heading}>

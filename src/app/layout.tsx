@@ -7,6 +7,7 @@ import { EditorialHeader } from "@/components/editorial-header";
 import { MarketingRuntime } from "@/components/marketing-runtime";
 import type { LatestBlogPostNavItem } from "@/components/mega-menu";
 import { PostHogObservability } from "@/components/posthog-observability";
+import { RuneyChrome } from "@/components/runey-chrome";
 import { siteConfig } from "@/config/site";
 import {
   coverImageUrl,
@@ -139,9 +140,13 @@ export default async function RootLayout({
         <a className="skip-link" href="#main-content">
           Skip to content
         </a>
-        <EditorialHeader latestBlogPosts={latestBlogPosts} />
+        <RuneyChrome slot="header">
+          <EditorialHeader latestBlogPosts={latestBlogPosts} />
+        </RuneyChrome>
         {children}
-        <EditorialFooter />
+        <RuneyChrome slot="footer">
+          <EditorialFooter />
+        </RuneyChrome>
         <MarketingRuntime />
         <ConsentManagedTags />
         <PostHogObservability />

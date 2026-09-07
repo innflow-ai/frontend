@@ -1,0 +1,34 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "creator": {
+    "@type": "Person",
+    "name": "Judah Estrada"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Judah Estrada"
+  },
+  "creditText": "Judah Estrada",
+  "copyrightNotice": "Judah Estrada",
+  "license": "https://unsplash.com/license",
+  "acquireLicensePage": "https://unsplash.com/photos/a-birds-eye-view-of-a-city-with-lots-of-houses-SeSuXYtCtyQ",
+  "contentLocation": {
+    "@type": "Place",
+    "name": "Dallas, TX, USA"
+  },
+  "contentUrl": "https://images.unsplash.com/photo-1650222360656-8a3061cb004f?auto=format&fit=crop&q=60&crop=entropy&cs=srgb&fm=jpg&ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzg4NzQ3MDE4fA&ixlib=rb-4.1.0",
+  "thumbnail": {
+    "@type": "ImageObject",
+    "url": "https://images.unsplash.com/photo-1650222360656-8a3061cb004f?auto=format&fit=crop&q=60&crop=entropy&cs=tinysrgb&fm=jpg&ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzg4NzQ3MDE4fA&ixlib=rb-4.1.0&w=200"
+  },
+  "datePublished": "2022-04-17T19:08:10.000Z",
+  "description": "a bird's eye view of a city with lots of houses",
+  "name": "a bird's eye view of a city with lots of houses",
+  "width": "3000px",
+  "height": "4000px",
+  "isAccessibleForFree": true,
+  "isFamilyFriendly": true,
+  "caption": "a bird's eye view of a city with lots of houses",
+  "representativeOfPage": true
+}

@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "creator": {
+    "@type": "Person",
+    "name": "Idean Azad"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Idean Azad"
+  },
+  "creditText": "Idean Azad",
+  "copyrightNotice": "Idean Azad",
+  "license": "https://unsplash.com/license",
+  "acquireLicensePage": "https://unsplash.com/photos/a-blue-two-story-house-with-black-shutters-PN3017vLx64",
+  "contentUrl": "https://images.unsplash.com/photo-1768768736208-b8f0e498e174?auto=format&fit=crop&q=60&crop=entropy&cs=srgb&fm=jpg&ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzg4NzM5MDE3fA&ixlib=rb-4.1.0",
+  "thumbnail": {
+    "@type": "ImageObject",
+    "url": "https://images.unsplash.com/photo-1768768736208-b8f0e498e174?auto=format&fit=crop&q=60&crop=entropy&cs=tinysrgb&fm=jpg&ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzg4NzM5MDE3fA&ixlib=rb-4.1.0&w=200"
+  },
+  "datePublished": "2026-01-18T20:39:40.000Z",
+  "description": "A blue two-story house with black shutters",
+  "name": "A blue two-story house with black shutters",
+  "width": "3888px",
+  "height": "5184px",
+  "isAccessibleForFree": true,
+  "isFamilyFriendly": true,
+  "caption": "A blue two-story house with black shutters",
+  "representativeOfPage": true
+}

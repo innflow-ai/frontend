@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import Image from "next/image";
 import { siteConfig } from "@/config/site";
 import { faqs } from "@/content/home";
+import { BlueRibbon, HomepageMedia } from "./homepage-media";
 import { JsonLd } from "./json-ld";
 import styles from "./runey-landing.module.css";
 import { RuneyHeroArtwork, RuneyWorkspace } from "./runey-workspace";
@@ -82,7 +83,10 @@ const features = [
 
 export function RuneyLanding({ property = false }: { property?: boolean }) {
   return (
-    <main id="main-content" className={`${styles.page} ${poppins.className}`}>
+    <main
+      id="main-content"
+      className={`${styles.page} ${property ? poppins.className : styles.blueHome}`}
+    >
       <section className={styles.hero} id="home-hero">
         <div className={styles.shell}>
           <div className={styles.heroCopy}>
@@ -102,9 +106,9 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
               )}
             </h1>
             <p>
-              Connect your workflows, knowledge, and approvals. Give your team a
-              clear next step, and keep your property operations organized in
-              one place.
+              {property
+                ? "Connect your workflows, knowledge, and approvals. Give your team a clear next step, and keep your property operations organized in one place."
+                : "Connect workflows, knowledge, and approvals. Keep your property operations moving in one place."}
             </p>
             <div className={styles.actions}>
               <TrackedLink
@@ -117,20 +121,26 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
               <a className={styles.secondaryButton} href="#features">
                 See features
               </a>
-              <TrackedLink
-                className={styles.textButton}
-                destination="/demo"
-                eventLabel="hero_request_demo"
-              >
-                Request demo
-              </TrackedLink>
+              {property && (
+                <TrackedLink
+                  className={styles.textButton}
+                  destination="/demo"
+                  eventLabel="hero_request_demo"
+                >
+                  Request demo
+                </TrackedLink>
+              )}
             </div>
           </div>
         </div>
         <div className={styles.heroShowcase}>
-          <RuneyHeroArtwork />
+          {property ? <RuneyHeroArtwork /> : <BlueRibbon />}
           <div className={styles.shell}>
-            <RuneyWorkspace interactive />
+            {property ? (
+              <RuneyWorkspace interactive />
+            ) : (
+              <HomepageMedia interactive />
+            )}
           </div>
         </div>
         <div className={`${styles.shell} ${styles.benefits}`}>
@@ -178,6 +188,7 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
               src={`/brand/runey/team-${i + 1}.webp`}
               alt=""
               fill
+              unoptimized={!property}
               sizes="(max-width: 640px) 75vw, 27vw"
             />
             <h2>{title}</h2>
@@ -220,7 +231,11 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
                   Explore {feature.label.toLowerCase()} <ArrowRight size={14} />
                 </a>
               </div>
-              <RuneyWorkspace initialView={feature.view} />
+              {property ? (
+                <RuneyWorkspace initialView={feature.view} />
+              ) : (
+                <HomepageMedia view={feature.view} />
+              )}
             </article>
           ))}
         </div>
@@ -323,7 +338,11 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
           </div>
         </div>
         <div className={styles.ctaPreview}>
-          <RuneyWorkspace initialView="Approvals" />
+          {property ? (
+            <RuneyWorkspace initialView="Approvals" />
+          ) : (
+            <HomepageMedia closing />
+          )}
         </div>
       </section>
       <JsonLd

@@ -21,7 +21,7 @@ import styles from "./runey-landing.module.css";
 const views = ["Workflows", "Assistant", "Knowledge", "Approvals"] as const;
 type View = (typeof views)[number];
 
-export function RuneyHeroArtwork() {
+export function RuneyHeroArtwork({ home = false }: { home?: boolean }) {
   const video = useRef<HTMLVideoElement>(null);
   const [paused, setPaused] = useState(false);
   const [reduced, setReduced] = useState(true);
@@ -46,9 +46,20 @@ export function RuneyHeroArtwork() {
         loop
         playsInline
         preload="none"
-        poster="/brand/runey/glass-green-yellow.webp"
+        poster={
+          home
+            ? "/brand/runey/home-hero-poster.webp"
+            : "/brand/runey/glass-green-yellow.webp"
+        }
       >
-        <source src="/brand/runey/hero-motion.mp4" type="video/mp4" />
+        <source
+          src={
+            home
+              ? "/brand/runey/home-hero-motion.mp4"
+              : "/brand/runey/hero-motion.mp4"
+          }
+          type="video/mp4"
+        />
       </video>
       {!reduced && (
         <button

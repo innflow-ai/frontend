@@ -4,6 +4,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { type ReactNode, useRef, useState } from "react";
 import { siteConfig } from "@/config/site";
+import { GoogleSignInButton } from "./google-sign-in";
 import {
   MegaMenu,
   productColumns,
@@ -11,7 +12,6 @@ import {
   solutionsColumns,
 } from "./mega-menu";
 import styles from "./runey-landing.module.css";
-import { TrackedLink } from "./tracked-link";
 
 const homepageGroups = [
   { label: "Product", columns: productColumns.slice(0, 2) },
@@ -145,13 +145,11 @@ export function RuneyChrome({
           <a className={styles.login} href={siteConfig.appOrigin}>
             Log in
           </a>
-          <TrackedLink
+          <GoogleSignInButton
             className={styles.primaryButton}
-            destination={siteConfig.signupUrl}
-            eventLabel="header_get_started"
-          >
-            Get started
-          </TrackedLink>
+            label="Continue with Google"
+            eventLabel="header_continue_google"
+          />
           <button
             ref={toggle}
             type="button"

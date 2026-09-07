@@ -3,7 +3,7 @@ import { Poppins } from "next/font/google";
 import Image from "next/image";
 import { siteConfig } from "@/config/site";
 import { faqs } from "@/content/home";
-import { BlueRibbon, HomepageMedia } from "./homepage-media";
+import { HomepageMedia } from "./homepage-media";
 import { JsonLd } from "./json-ld";
 import styles from "./runey-landing.module.css";
 import { RuneyHeroArtwork, RuneyWorkspace } from "./runey-workspace";
@@ -134,7 +134,7 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
           </div>
         </div>
         <div className={styles.heroShowcase}>
-          {property ? <RuneyHeroArtwork /> : <BlueRibbon />}
+          <RuneyHeroArtwork home={!property} />
           <div className={styles.shell}>
             {property ? (
               <RuneyWorkspace interactive />

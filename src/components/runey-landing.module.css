@@ -1757,3 +1757,35 @@
   display: block;
   padding: 10px 0;
 }
+
+.restoredImageGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  padding-block: 48px;
+}
+
+.restoredImage {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.restoredImage img {
+  object-fit: contain;
+}
+
+@media (max-width: 980px) {
+  .restoredImageGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 640px) {
+  .restoredImageGrid {
+    grid-template-columns: minmax(0, 1fr);
+    padding-block: 32px;
+  }
+}

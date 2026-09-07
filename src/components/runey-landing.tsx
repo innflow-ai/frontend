@@ -165,37 +165,57 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
           ))}
         </div>
       </section>
-      <section
-        className={styles.audienceRail}
-        aria-label="Built around your property work"
-      >
-        {[
-          "Workflows for property teams",
-          "Context for every handoff",
-          "Approvals for clearer decisions",
-          "Operations for your growing portfolio",
-        ].map((title, i) => (
-          <a
-            href={
-              i === 3
-                ? "/property-management"
-                : `#${features[i === 2 ? 3 : i].id}`
-            }
-            className={styles.audienceCard}
-            key={title}
-          >
-            <Image
-              src={`/brand/runey/team-${i + 1}.webp`}
-              alt=""
-              fill
-              unoptimized={!property}
-              sizes="(max-width: 640px) 75vw, 27vw"
-            />
-            <h2>{title}</h2>
-            <ArrowRight size={19} />
-          </a>
-        ))}
-      </section>
+      {!property ? (
+        <section
+          className={`${styles.shell} ${styles.restoredImageGrid}`}
+          aria-label="Property operations at a glance"
+        >
+          {["card", "card-1", "card-2", "card-3", "card-4", "card-5"].map(
+            (image) => (
+              <div className={styles.restoredImage} key={image}>
+                <Image
+                  src={`/aeline/cards/${image}.webp`}
+                  alt=""
+                  fill
+                  sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 980px) 46vw, 30vw"
+                />
+              </div>
+            ),
+          )}
+        </section>
+      ) : (
+        <section
+          className={styles.audienceRail}
+          aria-label="Built around your property work"
+        >
+          {[
+            "Workflows for property teams",
+            "Context for every handoff",
+            "Approvals for clearer decisions",
+            "Operations for your growing portfolio",
+          ].map((title, i) => (
+            <a
+              href={
+                i === 3
+                  ? "/property-management"
+                  : `#${features[i === 2 ? 3 : i].id}`
+              }
+              className={styles.audienceCard}
+              key={title}
+            >
+              <Image
+                src={`/brand/runey/team-${i + 1}.webp`}
+                alt=""
+                fill
+                unoptimized={!property}
+                sizes="(max-width: 640px) 75vw, 27vw"
+              />
+              <h2>{title}</h2>
+              <ArrowRight size={19} />
+            </a>
+          ))}
+        </section>
+      )}
       <section className={styles.features} id="features">
         <div className={styles.sectionHeading}>
           <span>Features</span>

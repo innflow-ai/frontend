@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "creator": {
+    "@type": "Person",
+    "name": "Compagnons"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Compagnons"
+  },
+  "creditText": "Compagnons",
+  "copyrightNotice": "Compagnons",
+  "license": "https://unsplash.com/license",
+  "acquireLicensePage": "https://unsplash.com/photos/an-aerial-view-of-a-neighborhood-with-many-houses-fqB1WnaWo5s",
+  "contentUrl": "https://images.unsplash.com/photo-1637119106020-dd3255d5fa6d?auto=format&fit=crop&q=60&crop=entropy&cs=srgb&fm=jpg&ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzg4NzEwOTY1fA&ixlib=rb-4.1.0",
+  "thumbnail": {
+    "@type": "ImageObject",
+    "url": "https://images.unsplash.com/photo-1637119106020-dd3255d5fa6d?auto=format&fit=crop&q=60&crop=entropy&cs=tinysrgb&fm=jpg&ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzg4NzEwOTY1fA&ixlib=rb-4.1.0&w=200"
+  },
+  "datePublished": "2021-11-17T03:18:58.000Z",
+  "description": "an aerial view of a neighborhood with many houses",
+  "name": "an aerial view of a neighborhood with many houses",
+  "width": "5184px",
+  "height": "3456px",
+  "isAccessibleForFree": true,
+  "isFamilyFriendly": true,
+  "caption": "an aerial view of a neighborhood with many houses",
+  "representativeOfPage": true
+}

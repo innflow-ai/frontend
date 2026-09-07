@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from "@testing-library/react";
+import { cleanup, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { RuneyChrome } from "./runey-chrome";
@@ -31,6 +31,50 @@ describe("Runey landing interactions", () => {
     ).not.toBeInTheDocument();
     await user.click(screen.getByRole("button", { name: "Approvals" }));
     expect(screen.getByText("Awaiting review")).toBeVisible();
+  });
+
+  it("opens compact homepage menus and dismisses with Escape and outside click", async () => {
+    const user = userEvent.setup();
+    render(
+      <RuneyChrome slot="header">
+        <div>Existing header</div>
+      </RuneyChrome>,
+    );
+    const product = screen.getByRole("button", { name: "Product" });
+    product.focus();
+    await user.keyboard("{Enter}");
+    expect(product).toHaveAttribute("aria-expanded", "true");
+    await waitFor(() =>
+      expect(
+        screen.getByRole("region", { name: "Product menu" }),
+      ).toBeVisible(),
+    );
+    await user.keyboard("{Escape}");
+    expect(product).toHaveAttribute("aria-expanded", "false");
+    expect(product).toHaveFocus();
+    await user.click(screen.getByRole("button", { name: "Platform" }));
+    expect(screen.getByRole("button", { name: "Platform" })).toHaveAttribute(
+      "aria-expanded",
+      "true",
+    );
+    await user.click(document.body);
+    expect(screen.getByRole("button", { name: "Platform" })).toHaveAttribute(
+      "aria-expanded",
+      "false",
+    );
+  });
+
+  it("keeps the property page navigation as direct links", () => {
+    route.pathname = "/property-management";
+    render(
+      <RuneyChrome slot="header">
+        <div>Existing header</div>
+      </RuneyChrome>,
+    );
+    expect(screen.getByRole("link", { name: "Product" })).toBeVisible();
+    expect(
+      screen.queryByRole("button", { name: "Product" }),
+    ).not.toBeInTheDocument();
   });
 
   it("opens mobile navigation and closes it after selecting a destination", async () => {

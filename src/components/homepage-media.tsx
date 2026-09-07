@@ -9,6 +9,7 @@ import {
   homepageViews,
 } from "@/content/homepage-media";
 import styles from "./runey-landing.module.css";
+import { RuneyWorkspace } from "./runey-workspace";
 
 export function BlueRibbon() {
   return (
@@ -96,7 +97,14 @@ export function HomepageMedia({
           ))}
         </fieldset>
       )}
-      <GlassMediaFrame {...media} />
+      {media.src ? (
+        <GlassMediaFrame {...media} />
+      ) : (
+        <RuneyWorkspace
+          key={closing ? "Approvals" : interactive ? selected : view}
+          initialView={closing ? "Approvals" : interactive ? selected : view}
+        />
+      )}
     </div>
   );
 }

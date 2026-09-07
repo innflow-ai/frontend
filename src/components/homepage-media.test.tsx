@@ -6,9 +6,14 @@ import { GlassMediaFrame, HomepageMedia } from "./homepage-media";
 afterEach(cleanup);
 
 describe("homepage media", () => {
-  it("keeps empty frames blank while allowing keyboard selection", async () => {
+  it("shows product previews until recordings are ready and supports keyboard selection", async () => {
     const user = userEvent.setup();
     const { container } = render(<HomepageMedia interactive />);
+    expect(
+      screen.getByRole("region", {
+        name: "Illustrative Innflow workflows preview",
+      }),
+    ).toBeVisible();
     const assistant = screen.getByRole("button", { name: "Assistant" });
     assistant.focus();
     await user.keyboard("{Enter}");
@@ -18,7 +23,16 @@ describe("homepage media", () => {
       "false",
     );
     expect(container.querySelector("video")).toBeNull();
-    expect(screen.queryByText(/illustrative|loading/i)).not.toBeInTheDocument();
+    expect(
+      screen.getByRole("region", {
+        name: "Illustrative Innflow assistant preview",
+      }),
+    ).toBeVisible();
+    expect(
+      screen.queryByRole("region", {
+        name: "Illustrative Innflow workflows preview",
+      }),
+    ).not.toBeInTheDocument();
   });
 
   it("adds controlled playback only when a recording is supplied", () => {

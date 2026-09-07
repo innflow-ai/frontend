@@ -43,6 +43,7 @@
 }
 
 .sheetPositioner {
+  box-sizing: border-box;
   position: fixed;
   inset: 0;
   width: 100%;
@@ -65,8 +66,10 @@
 }
 
 .sheet {
+  box-sizing: border-box;
   position: relative;
   width: 100%;
+  min-width: 0;
   max-width: 480px;
   max-height: 100%;
   overflow-y: auto;
@@ -130,9 +133,12 @@
 }
 
 .continueButton {
+  box-sizing: border-box;
   display: flex;
   width: 100%;
+  min-width: 0;
   min-height: 52px;
+  padding: 14px 16px;
   align-items: center;
   justify-content: center;
   gap: 10px;
@@ -141,10 +147,24 @@
   color: #0b0e12;
   font-size: 15px;
   font-weight: 650;
+  line-height: 24px;
+  text-align: center;
   text-decoration: none;
   transition:
     transform 160ms ease,
     background 160ms ease;
+}
+
+.continueButton > img {
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.continueButton:focus-visible {
+  outline: 3px solid #8ab4f8;
+  outline-offset: 4px;
 }
 
 .continueButton:hover {

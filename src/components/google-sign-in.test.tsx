@@ -38,7 +38,7 @@ afterEach(() => {
 });
 
 describe("Google sign-in dialog", () => {
-  it("sends Google sign-in through the app login page with landing attribution", async () => {
+  it("starts Google OAuth through the app entry route with landing attribution", async () => {
     render(<GoogleSignInButton label="Log in" />);
     await userEvent.click(screen.getByRole("button", { name: "Log in" }));
 
@@ -47,18 +47,18 @@ describe("Google sign-in dialog", () => {
     });
     expect(continuation).toHaveAttribute(
       "href",
-      "https://app.innflow.ai/login",
+      "https://app.innflow.ai/auth/google",
     );
     expect(continuation).toHaveAttribute(
       "data-marketing-destination",
-      "https://app.innflow.ai/login",
+      "https://app.innflow.ai/auth/google",
     );
     expect(
       appendAttribution(
         continuation.getAttribute("href") as string,
         new URLSearchParams({ landing_page: "/" }),
       ),
-    ).toBe("https://app.innflow.ai/login?landing_page=%2F");
+    ).toBe("https://app.innflow.ai/auth/google?landing_page=%2F");
   });
 
   it("opens a modal and restores an existing scroll lock on dismissal", async () => {

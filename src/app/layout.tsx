@@ -140,7 +140,7 @@ export default async function RootLayout({
         <a className="skip-link" href="#main-content">
           Skip to content
         </a>
-        <RuneyChrome slot="header">
+        <RuneyChrome slot="header" latestBlogPosts={latestBlogPosts}>
           <EditorialHeader latestBlogPosts={latestBlogPosts} />
         </RuneyChrome>
         {children}

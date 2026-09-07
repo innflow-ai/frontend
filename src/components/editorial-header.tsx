@@ -4,7 +4,7 @@ import { CaretDown, Newspaper } from "@phosphor-icons/react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useEffect, useId, useRef, useState } from "react";
+import { type ReactNode, useEffect, useId, useRef, useState } from "react";
 import { GoogleSignInButton } from "@/components/google-sign-in";
 import {
   type LatestBlogPostNavItem,
@@ -106,8 +106,10 @@ function MobileLatestPosts({
 
 export function EditorialHeader({
   latestBlogPosts = [],
+  desktopHeader,
 }: {
   latestBlogPosts?: LatestBlogPostNavItem[];
+  desktopHeader?: ReactNode;
 }) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openMobileGroup, setOpenMobileGroup] = useState<string | null>(null);
@@ -122,9 +124,16 @@ export function EditorialHeader({
   // Articles start with white chrome over their dark canvas. Once scrolled,
   // all subpages use the selected theme's opaque surface and matching chrome.
   const useLightChrome =
-    (isHome || isBlogArticle) && !showSolidHeader && !mobileOpen;
+    !desktopHeader &&
+    (isHome || isBlogArticle) &&
+    !showSolidHeader &&
+    !mobileOpen;
   const useDarkTransparentChrome =
-    !isHome && !isBlogArticle && !showSolidHeader && !mobileOpen;
+    !desktopHeader &&
+    !isHome &&
+    !isBlogArticle &&
+    !showSolidHeader &&
+    !mobileOpen;
 
   // Preserve the homepage's hero threshold. Subpages become opaque on the
   // first scroll pixel, independently of the direction-based hide animation.
@@ -236,7 +245,7 @@ export function EditorialHeader({
   // Close the mobile menu when crossing into the desktop layout, so the
   // body scroll lock never leaks out of mobile view on viewport resize.
   useEffect(() => {
-    const mq = window.matchMedia("(min-width: 981px)");
+    const mq = window.matchMedia("(min-width: 1181px)");
     const onChange = (event: MediaQueryListEvent) => {
       if (event.matches) {
         setMobileOpen(false);
@@ -259,8 +268,11 @@ export function EditorialHeader({
 
   return (
     <>
+      {desktopHeader ? (
+        <div className={styles.desktopReplacement}>{desktopHeader}</div>
+      ) : null}
       <header
-        className={`${styles.header}${isHome ? ` ${styles.homeHeader}` : ""}${
+        className={`${styles.header}${desktopHeader ? ` ${styles.mobileOnly}` : ""}${isHome && !desktopHeader ? ` ${styles.homeHeader}` : ""}${
           useLightChrome ? ` ${styles.homeTop}` : ""
         }${useDarkTransparentChrome ? ` ${styles.pageTop}` : ""}${
           mobileOpen ? ` ${styles.menuOpen}` : ""
@@ -281,57 +293,61 @@ export function EditorialHeader({
             />
           </a>
 
-          <nav aria-label="Primary navigation">
-            <ul className={styles.desktopNav}>
-              <li>
-                <MegaMenu
-                  label="Product"
-                  columns={productColumns}
-                  showAside={false}
-                />
-              </li>
-              <li>
-                <MegaMenu
-                  label="Solutions"
-                  columns={solutionsColumns}
-                  showAside={false}
-                />
-              </li>
-              <li>
-                <MegaMenu
-                  label="Portfolios"
-                  columns={portfolioColumns}
-                  promotionalBanner={{
-                    alt: "Interested in our product? Contact us to discuss becoming a customer and finding solutions for your needs. Talk to sales.",
-                    eventLabel: "mega_menu_portfolio_talk_to_sales",
-                    href: "/contact",
-                    src: "/brand/navigation/ico-banner-real.png",
-                  }}
-                />
-              </li>
-              <li>
-                <MegaMenu
-                  label="Resources"
-                  columns={resourcesColumns}
-                  latestBlogPosts={latestBlogPosts}
-                />
-              </li>
-              <li>
-                <a href="/pricing">Pricing</a>
-              </li>
-              <li>
-                <a href="/blog">Blog</a>
-              </li>
-            </ul>
-          </nav>
+          {!desktopHeader && (
+            <nav aria-label="Primary navigation">
+              <ul className={styles.desktopNav}>
+                <li>
+                  <MegaMenu
+                    label="Product"
+                    columns={productColumns}
+                    showAside={false}
+                  />
+                </li>
+                <li>
+                  <MegaMenu
+                    label="Solutions"
+                    columns={solutionsColumns}
+                    showAside={false}
+                  />
+                </li>
+                <li>
+                  <MegaMenu
+                    label="Portfolios"
+                    columns={portfolioColumns}
+                    promotionalBanner={{
+                      alt: "Interested in our product? Contact us to discuss becoming a customer and finding solutions for your needs. Talk to sales.",
+                      eventLabel: "mega_menu_portfolio_talk_to_sales",
+                      href: "/contact",
+                      src: "/brand/navigation/ico-banner-real.png",
+                    }}
+                  />
+                </li>
+                <li>
+                  <MegaMenu
+                    label="Resources"
+                    columns={resourcesColumns}
+                    latestBlogPosts={latestBlogPosts}
+                  />
+                </li>
+                <li>
+                  <a href="/pricing">Pricing</a>
+                </li>
+                <li>
+                  <a href="/blog">Blog</a>
+                </li>
+              </ul>
+            </nav>
+          )}
 
           <div className={styles.actions}>
-            <GoogleSignInButton
-              className={`${styles.button} ${styles.headerCta}`}
-              eventLabel="header_continue_google"
-              label="Continue with Google"
-              variant="brand"
-            />
+            {!desktopHeader && (
+              <GoogleSignInButton
+                className={`${styles.button} ${styles.headerCta}`}
+                eventLabel="header_continue_google"
+                label="Continue with Google"
+                variant="brand"
+              />
+            )}
             <button
               ref={mobileToggleRef}
               type="button"

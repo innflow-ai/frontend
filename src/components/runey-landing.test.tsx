@@ -1,13 +1,35 @@
-import { cleanup, render, screen, waitFor } from "@testing-library/react";
+import {
+  cleanup,
+  render,
+  screen,
+  waitFor,
+  within,
+} from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { footerNavigation, legalLinks } from "@/config/footer-navigation";
 import { RuneyChrome } from "./runey-chrome";
 import { RuneyWorkspace } from "./runey-workspace";
 
 const route = vi.hoisted(() => ({ pathname: "/" }));
 vi.mock("next/navigation", () => ({ usePathname: () => route.pathname }));
+vi.mock("motion/react", async (importOriginal) => {
+  const actual = await importOriginal<typeof import("motion/react")>();
+  return { ...actual, useReducedMotion: () => true };
+});
+beforeEach(() => {
+  vi.stubGlobal(
+    "matchMedia",
+    vi.fn().mockReturnValue({
+      matches: false,
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
+    }),
+  );
+});
 afterEach(() => {
   cleanup();
+  vi.unstubAllGlobals();
   route.pathname = "/";
 });
 
@@ -89,16 +111,84 @@ describe("Runey landing interactions", () => {
       name: "Mobile navigation",
     });
     expect(navigation).toBeVisible();
+    expect(document.body.style.overflow).toBe("hidden");
+    for (const name of ["Product", "Solutions", "Portfolios", "Resources"]) {
+      expect(within(navigation).getByRole("button", { name })).toBeVisible();
+    }
+    await user.click(
+      within(navigation).getByRole("button", { name: "Product" }),
+    );
+    expect(
+      within(navigation).getByRole("link", { name: /Agent OS/ }),
+    ).toBeVisible();
     const link = navigation.querySelector("a");
     expect(link).not.toBeNull();
     if (link) {
       link.addEventListener("click", (event) => event.preventDefault());
       await user.click(link);
     }
-    expect(
-      screen.queryByRole("navigation", { name: "Mobile navigation" }),
-    ).not.toBeInTheDocument();
+    await waitFor(() =>
+      expect(
+        screen.queryByRole("navigation", { name: "Mobile navigation" }),
+      ).not.toBeInTheDocument(),
+    );
+    expect(document.body.style.overflow).toBe("");
   });
+
+  it.each(["/", "/property-management"])(
+    "preserves previous and current footer links on %s",
+    (pathname) => {
+      route.pathname = pathname;
+      render(
+        <RuneyChrome slot="footer">
+          <div>Existing footer</div>
+        </RuneyChrome>,
+      );
+      const footer = screen.getByRole("contentinfo");
+      for (const column of footerNavigation) {
+        for (const link of column.links) {
+          expect(
+            within(footer)
+              .getAllByRole("link", { name: link.label })
+              .some((a) => a.getAttribute("href") === link.href),
+          ).toBe(true);
+        }
+      }
+      for (const label of [
+        "Features",
+        "Skills library",
+        "FAQ",
+        "Request a demo",
+        "Get started",
+      ]) {
+        expect(within(footer).getByRole("link", { name: label })).toBeVisible();
+      }
+      const legal = within(footer).getByRole("navigation", { name: "Legal" });
+      for (const link of legalLinks) {
+        expect(
+          within(legal).getByRole("link", { name: link.label }),
+        ).toHaveAttribute("href", link.href);
+      }
+      expect(
+        within(legal).getByRole("link", { name: "Consent Preferences" }),
+      ).toHaveClass("termly-display-preferences");
+      expect(
+        within(legal).getByRole("link", {
+          name: "Do Not Sell or Share My Personal Information",
+        }),
+      ).toBeVisible();
+      expect(
+        within(legal).getByRole("link", {
+          name: "Limit the Use of My Sensitive Personal Information",
+        }),
+      ).toBeVisible();
+      expect(
+        within(footer).getByText(
+          `© ${new Date().getFullYear()} Innflow. All rights reserved.`,
+        ),
+      ).toBeVisible();
+    },
+  );
 
   it("retains the existing chrome on other routes", () => {
     route.pathname = "/pricing";

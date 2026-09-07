@@ -2,10 +2,14 @@
 
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { type ReactNode, useRef, useState } from "react";
+import { type ReactNode, useState } from "react";
+import { footerNavigation } from "@/config/footer-navigation";
 import { siteConfig } from "@/config/site";
+import { EditorialHeader } from "./editorial-header";
+import { FooterLegalLinks } from "./footer-legal-links";
 import { GoogleSignInButton } from "./google-sign-in";
 import {
+  type LatestBlogPostNavItem,
   MegaMenu,
   productColumns,
   resourcesColumns,
@@ -31,14 +35,14 @@ const links = [
 export function RuneyChrome({
   slot,
   children,
+  latestBlogPosts = [],
 }: {
   slot: "header" | "footer";
   children: ReactNode;
+  latestBlogPosts?: LatestBlogPostNavItem[];
 }) {
   const pathname = usePathname();
-  const [open, setOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
-  const toggle = useRef<HTMLButtonElement>(null);
   if (pathname !== "/" && pathname !== "/property-management") return children;
   if (slot === "footer")
     return (
@@ -61,13 +65,25 @@ export function RuneyChrome({
               Property operations in one place.
             </p>
           </div>
-          <div>
-            <h2>Product</h2>
-            <a href="/#features">Features</a>
-            <a href="/platform">Platform</a>
-            <a href="/integrations">Integrations</a>
-            <a href="/pricing">Pricing</a>
-          </div>
+          {footerNavigation.map((column) => (
+            <div key={column.heading}>
+              <h2>{column.heading}</h2>
+              {column.heading === "Product" && (
+                <a href="/#features">Features</a>
+              )}
+              {column.links.map((link) => (
+                <a key={link.label} href={link.href}>
+                  {link.label}
+                </a>
+              ))}
+              {column.heading === "Product" && (
+                <>
+                  <a href="/integrations">Integrations</a>
+                  <a href="/pricing">Pricing</a>
+                </>
+              )}
+            </div>
+          ))}
           <div>
             <h2>Explore</h2>
             <a href="/property-management">Property management</a>
@@ -84,12 +100,12 @@ export function RuneyChrome({
           </div>
         </div>
         <div className={styles.footerBottom}>
-          <span>© {new Date().getFullYear()} Innflow</span>
-          <div>
-            <a href="/legal/privacy-policy">Privacy</a>
-            <a href="/legal/terms-of-service">Terms</a>
-            <a href="/legal/cookie-policy">Cookies</a>
-          </div>
+          <span>
+            © {new Date().getFullYear()} Innflow. All rights reserved.
+          </span>
+          <nav className={styles.footerLegal} aria-label="Legal">
+            <FooterLegalLinks />
+          </nav>
         </div>
         <div className={styles.wordmark} aria-hidden="true">
           innflow
@@ -97,120 +113,66 @@ export function RuneyChrome({
       </footer>
     );
   return (
-    <header
-      className={`${styles.header} ${pathname === "/" ? styles.blueChrome : ""}`}
-    >
-      <div className={styles.headerInner}>
-        <a href="/" aria-label="Innflow home">
-          <Image
-            src="/brand/innflow_logo_set_B.svg"
-            alt="Innflow"
-            width={122}
-            height={26}
-            preload
-          />
-        </a>
-        <nav className={styles.desktopNav} aria-label="Primary navigation">
-          {links.map((link) => {
-            const group =
-              pathname === "/"
-                ? homepageGroups.find((group) => group.label === link.label)
-                : undefined;
-            return group ? (
-              <MegaMenu
-                key={link.label}
-                label={link.label}
-                columns={group.columns}
-                compact
-                showAside={false}
-                expanded={activeMenu === link.label}
-                onExpandedChange={(expanded) =>
-                  setActiveMenu((current) =>
-                    expanded
-                      ? link.label
-                      : current === link.label
-                        ? null
-                        : current,
-                  )
-                }
-              />
-            ) : (
-              <a href={link.href} key={link.label}>
-                {link.label}
-              </a>
-            );
-          })}
-        </nav>
-        <div className={styles.headerActions}>
-          <a className={styles.login} href={siteConfig.appOrigin}>
-            Log in
-          </a>
-          <GoogleSignInButton
-            className={styles.primaryButton}
-            label="Continue with Google"
-            eventLabel="header_continue_google"
-          />
-          <button
-            ref={toggle}
-            type="button"
-            className={styles.menuToggle}
-            aria-label={open ? "Close navigation" : "Open navigation"}
-            aria-expanded={open}
-            aria-controls="runey-mobile-menu"
-            onClick={() => setOpen(!open)}
-          >
-            {open ? "×" : "☰"}
-          </button>
-        </div>
-      </div>
-      {open && (
-        <nav
-          id="runey-mobile-menu"
-          className={styles.mobileNav}
-          aria-label="Mobile navigation"
-          onKeyDown={(event) => {
-            if (event.key === "Escape") {
-              setOpen(false);
-              toggle.current?.focus();
-            }
-          }}
+    <EditorialHeader
+      latestBlogPosts={latestBlogPosts}
+      desktopHeader={
+        <header
+          className={`${styles.header} ${pathname === "/" ? styles.blueChrome : ""}`}
         >
-          {links.map((link) => {
-            const group =
-              pathname === "/"
-                ? homepageGroups.find((group) => group.label === link.label)
-                : undefined;
-            return group ? (
-              <details key={link.label} className={styles.mobileMenuGroup}>
-                <summary>{link.label}</summary>
-                {group.columns.map((column) => (
-                  <div key={column.heading}>
-                    <strong>{column.heading}</strong>
-                    {column.links.map((item) => (
-                      <a
-                        key={item.title}
-                        href={item.href}
-                        onClick={() => setOpen(false)}
-                      >
-                        {item.title}
-                      </a>
-                    ))}
-                  </div>
-                ))}
-              </details>
-            ) : (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={() => setOpen(false)}
-              >
-                {link.label}
+          <div className={styles.headerInner}>
+            <a href="/" aria-label="Innflow home">
+              <Image
+                src="/brand/innflow_logo_set_B.svg"
+                alt="Innflow"
+                width={122}
+                height={26}
+                preload
+              />
+            </a>
+            <nav className={styles.desktopNav} aria-label="Primary navigation">
+              {links.map((link) => {
+                const group =
+                  pathname === "/"
+                    ? homepageGroups.find((group) => group.label === link.label)
+                    : undefined;
+                return group ? (
+                  <MegaMenu
+                    key={link.label}
+                    label={link.label}
+                    columns={group.columns}
+                    compact
+                    showAside={false}
+                    expanded={activeMenu === link.label}
+                    onExpandedChange={(expanded) =>
+                      setActiveMenu((current) =>
+                        expanded
+                          ? link.label
+                          : current === link.label
+                            ? null
+                            : current,
+                      )
+                    }
+                  />
+                ) : (
+                  <a href={link.href} key={link.label}>
+                    {link.label}
+                  </a>
+                );
+              })}
+            </nav>
+            <div className={styles.headerActions}>
+              <a className={styles.login} href={siteConfig.appOrigin}>
+                Log in
               </a>
-            );
-          })}
-          <a href={siteConfig.appOrigin}>Log in</a>
-        </nav>
-      )}
-    </header>
+              <GoogleSignInButton
+                className={styles.primaryButton}
+                label="Continue with Google"
+                eventLabel="header_continue_google"
+              />
+            </div>
+          </div>
+        </header>
+      }
+    />
   );
 }

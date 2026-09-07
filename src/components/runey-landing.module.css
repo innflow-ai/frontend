@@ -51,7 +51,7 @@
   align-items: center;
   gap: 28px;
 }
-.headerInner :where(a) img {
+.headerInner > :where(a) > img {
   display: block;
   filter: brightness(0);
 }
@@ -909,15 +909,26 @@
 }
 .footerBottom {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
   font-size: 11px;
   color: #989d91;
   padding: 40px 0 20px;
 }
-.footerBottom > div {
+.footerLegal {
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  gap: 8px 24px;
+}
+
+.footerLegal a {
+  overflow-wrap: anywhere;
+}
+
+.footerGrid > div {
+  min-width: 0;
 }
 .wordmark {
   font-size: clamp(100px, 21vw, 285px);
@@ -962,7 +973,7 @@
   .headerInner {
     min-height: 66px;
   }
-  .headerInner :where(a) img {
+  .headerInner > :where(a) > img {
     width: 102px;
     height: auto;
   }

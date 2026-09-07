@@ -14,7 +14,7 @@ export type HomepageRecording = {
 };
 
 // Add public video paths (for example /product/workflows.mp4) here when ready.
-// Empty sources intentionally render blank glass, without placeholder UI.
+// Empty sources show the code-built product preview until a recording is ready.
 export const homepageMedia: {
   hero: Record<HomepageView, HomepageRecording>;
   features: Record<HomepageView, HomepageRecording>;

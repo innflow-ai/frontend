@@ -23,7 +23,6 @@ type View = (typeof views)[number];
 
 export function RuneyHeroArtwork({ home = false }: { home?: boolean }) {
   const video = useRef<HTMLVideoElement>(null);
-  const [paused, setPaused] = useState(false);
   const [reduced, setReduced] = useState(true);
   useEffect(() => {
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -33,9 +32,9 @@ export function RuneyHeroArtwork({ home = false }: { home?: boolean }) {
     return () => preference.removeEventListener("change", sync);
   }, []);
   useEffect(() => {
-    if (paused || reduced) video.current?.pause();
-    else void video.current?.play().catch(() => setPaused(true));
-  }, [paused, reduced]);
+    if (reduced) video.current?.pause();
+    else void video.current?.play().catch(() => {});
+  }, [reduced]);
   return (
     <div className={styles.heroArtwork}>
       <video
@@ -61,15 +60,6 @@ export function RuneyHeroArtwork({ home = false }: { home?: boolean }) {
           type="video/mp4"
         />
       </video>
-      {!reduced && (
-        <button
-          className={styles.motionToggle}
-          type="button"
-          onClick={() => setPaused(!paused)}
-        >
-          {paused ? "Play motion" : "Pause motion"}
-        </button>
-      )}
     </div>
   );
 }

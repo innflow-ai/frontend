@@ -1308,28 +1308,8 @@
   .heroArtwork {
     background: url("/brand/runey/glass-green-yellow.webp") center / cover;
   }
-}
-
-.motionToggle {
-  position: absolute;
-  top: 115px;
-  right: max(20px, calc((100vw - 1200px) / 2));
-  pointer-events: auto;
-  border: 1px solid #e3e7da;
-  background: #ffffffeb;
-  color: #626b55;
-  border-radius: 20px;
-  padding: 8px 12px;
-  font:
-    10px var(--font-figtree),
-    sans-serif;
-  cursor: pointer;
-}
-@media (max-width: 760px) {
-  .motionToggle {
-    top: 26px;
-    padding: 6px 9px;
-    font-size: 9px;
+  .blueHome .heroArtwork {
+    background-image: url("/brand/runey/home-hero-poster.webp");
   }
 }
 
@@ -1393,6 +1373,110 @@
 .blueHome .previewTabs button[aria-pressed="true"] {
   color: #164d99;
   border-color: #2468cb;
+}
+.blueHome .workspace {
+  background: #f0f6fd;
+  border-color: #dce8f5;
+  box-shadow:
+    0 15px 45px rgb(40 85 135 / 8%),
+    0 2px 5px rgb(40 85 135 / 4%);
+}
+.blueHome .workspaceRail {
+  background: #e4effb;
+  color: #567aa4;
+}
+.blueHome .railLogo {
+  background: #f8fbff;
+  color: #315d91;
+}
+.blueHome .railBottom {
+  background: #ccdef5;
+  color: #315d91;
+}
+.blueHome :is(.workspaceBar, .workspaceBottom) {
+  background: #fbfdff;
+  border-color: #e8eff8;
+  color: #6c8098;
+}
+.blueHome
+  :is(
+    .previewLabel,
+    .sourceChips span,
+    .promptPreview,
+    .searchPreview,
+    .approvalCard,
+    .documentRow
+  ) {
+  border-color: #dce7f4;
+}
+.blueHome
+  :is(
+    .workspaceEyebrow,
+    .workspaceStatus,
+    .previewLabel,
+    .canvasNote,
+    .connector span,
+    .flowNode small,
+    .documentRow small
+  ) {
+  color: #6a809b;
+}
+.blueHome
+  :is(.flowCanvas, .assistantCanvas, .knowledgeCanvas, .approvalCanvas) {
+  background-color: #f5f9ff;
+  border-color: #e5edf8;
+}
+.blueHome .flowCanvas {
+  background-image: radial-gradient(#d1dff0 1px, transparent 1px);
+}
+.blueHome .flowNode {
+  border-color: #dce7f4;
+  box-shadow: 0 4px 8px rgb(40 85 135 / 3%);
+}
+.blueHome .reviewNode {
+  border-color: #abc8ec;
+}
+.blueHome :is(.nodeIcon, .documentIcon, .question) {
+  background: #e7f0fd;
+  color: #416fa6;
+}
+.blueHome
+  :is(
+    .nodeCheck,
+    .answer,
+    .answerAction,
+    .approvalPill,
+    .documentRow > svg,
+    .promptPreview span
+  ) {
+  color: #527fb5;
+}
+.blueHome .connector {
+  background: #bfd3ed;
+}
+.blueHome :is(.workspaceStatus, .canvasNote) > span {
+  background: #80ace2;
+}
+.blueHome :is(.flowNode strong, .answer strong, .documentRow strong) {
+  color: #293d56;
+}
+.blueHome :is(.sourceChips span, .promptPreview, .searchPreview) {
+  color: #647b97;
+}
+.blueHome .divider {
+  color: #c4d5e9;
+}
+.blueHome .approvalPill {
+  background: #eaf2fd;
+}
+.blueHome .approvalCard :where(dl) > div {
+  border-color: #e8eff8;
+}
+.blueHome .approvalCard dt {
+  color: #6a809b;
+}
+.blueHome :is(.approvalCard dd, .approvalExample) {
+  color: #52759f;
 }
 .glassFrame {
   position: relative;

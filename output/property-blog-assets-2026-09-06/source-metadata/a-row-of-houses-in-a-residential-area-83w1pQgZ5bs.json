@@ -1,0 +1,34 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "creator": {
+    "@type": "Person",
+    "name": "Max"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Max"
+  },
+  "creditText": "Max",
+  "copyrightNotice": "Max",
+  "license": "https://unsplash.com/license",
+  "acquireLicensePage": "https://unsplash.com/photos/a-row-of-houses-in-a-residential-area-83w1pQgZ5bs",
+  "contentLocation": {
+    "@type": "Place",
+    "name": "London, UK"
+  },
+  "contentUrl": "https://images.unsplash.com/photo-1650549442309-1696720ff7d7?auto=format&fit=crop&q=60&crop=entropy&cs=srgb&fm=jpg&ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzg4NzQ3MDI0fA&ixlib=rb-4.1.0",
+  "thumbnail": {
+    "@type": "ImageObject",
+    "url": "https://images.unsplash.com/photo-1650549442309-1696720ff7d7?auto=format&fit=crop&q=60&crop=entropy&cs=tinysrgb&fm=jpg&ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzg4NzQ3MDI0fA&ixlib=rb-4.1.0&w=200"
+  },
+  "datePublished": "2022-04-21T13:58:40.000Z",
+  "description": "a row of houses in a residential area",
+  "name": "a row of houses in a residential area",
+  "width": "3024px",
+  "height": "4032px",
+  "isAccessibleForFree": true,
+  "isFamilyFriendly": true,
+  "caption": "a row of houses in a residential area",
+  "representativeOfPage": true
+}

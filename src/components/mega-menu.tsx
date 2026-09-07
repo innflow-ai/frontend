@@ -36,7 +36,7 @@ import {
 } from "@phosphor-icons/react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
-import { useEffect, useId, useRef, useState } from "react";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
 import { platformPages } from "@/content/platform";
@@ -365,6 +365,9 @@ export const solutionsColumns: MegaMenuColumn[] = [
 ];
 
 type MegaMenuProps = {
+  compact?: boolean;
+  expanded?: boolean;
+  onExpandedChange?: (expanded: boolean) => void;
   label: string;
   columns: MegaMenuColumn[];
   showAside?: boolean;
@@ -458,13 +461,24 @@ function PromotionalAside({ onSelect }: { onSelect: () => void }) {
 }
 
 export function MegaMenu({
+  compact = false,
+  expanded,
+  onExpandedChange,
   label,
   columns,
   showAside = true,
   latestBlogPosts,
   promotionalBanner,
 }: MegaMenuProps) {
-  const [open, setOpen] = useState(false);
+  const [internalOpen, setInternalOpen] = useState(false);
+  const open = expanded ?? internalOpen;
+  const setOpen = useCallback(
+    (value: boolean) => {
+      setInternalOpen(value);
+      onExpandedChange?.(value);
+    },
+    [onExpandedChange],
+  );
   const reduce = useReducedMotion();
   const rootRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
@@ -504,7 +518,16 @@ export function MegaMenu({
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
-  }, [open]);
+  }, [open, setOpen]);
+
+  useEffect(() => {
+    if (!compact || !open) return;
+    const dismiss = (event: PointerEvent) => {
+      if (!rootRef.current?.contains(event.target as Node)) setOpen(false);
+    };
+    document.addEventListener("pointerdown", dismiss);
+    return () => document.removeEventListener("pointerdown", dismiss);
+  });
 
   // Close when focus leaves the trigger + panel.
   const onBlur = (event: React.FocusEvent<HTMLElement>) => {
@@ -526,7 +549,7 @@ export function MegaMenu({
     // biome-ignore lint/a11y/noStaticElementInteractions: hover intent only — keyboard access is provided by the trigger button's onFocus/onClick
     <div
       ref={rootRef}
-      className={styles.wrap}
+      className={`${styles.wrap} ${compact ? styles.compact : ""}`}
       onMouseEnter={openMenu}
       onMouseLeave={scheduleClose}
       onBlur={onBlur}

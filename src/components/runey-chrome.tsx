@@ -5,7 +5,20 @@ import { usePathname } from "next/navigation";
 import { type ReactNode, useRef, useState } from "react";
 import { siteConfig } from "@/config/site";
 import { GoogleSignInButton } from "./google-sign-in";
+import {
+  MegaMenu,
+  productColumns,
+  resourcesColumns,
+  solutionsColumns,
+} from "./mega-menu";
 import styles from "./runey-landing.module.css";
+
+const homepageGroups = [
+  { label: "Product", columns: productColumns.slice(0, 2) },
+  { label: "Solutions", columns: solutionsColumns },
+  { label: "Platform", columns: productColumns.slice(2) },
+  { label: "Resources", columns: resourcesColumns },
+];
 
 const links = [
   { label: "Product", href: "/#features" },
@@ -24,11 +37,14 @@ export function RuneyChrome({
 }) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const toggle = useRef<HTMLButtonElement>(null);
   if (pathname !== "/" && pathname !== "/property-management") return children;
   if (slot === "footer")
     return (
-      <footer className={styles.footer}>
+      <footer
+        className={`${styles.footer} ${pathname === "/" ? styles.blueChrome : ""}`}
+      >
         <div className={styles.footerGrid}>
           <div>
             <a href="/" aria-label="Innflow home">
@@ -81,7 +97,9 @@ export function RuneyChrome({
       </footer>
     );
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${pathname === "/" ? styles.blueChrome : ""}`}
+    >
       <div className={styles.headerInner}>
         <a href="/" aria-label="Innflow home">
           <Image
@@ -93,11 +111,35 @@ export function RuneyChrome({
           />
         </a>
         <nav className={styles.desktopNav} aria-label="Primary navigation">
-          {links.map((link) => (
-            <a href={link.href} key={link.label}>
-              {link.label}
-            </a>
-          ))}
+          {links.map((link) => {
+            const group =
+              pathname === "/"
+                ? homepageGroups.find((group) => group.label === link.label)
+                : undefined;
+            return group ? (
+              <MegaMenu
+                key={link.label}
+                label={link.label}
+                columns={group.columns}
+                compact
+                showAside={false}
+                expanded={activeMenu === link.label}
+                onExpandedChange={(expanded) =>
+                  setActiveMenu((current) =>
+                    expanded
+                      ? link.label
+                      : current === link.label
+                        ? null
+                        : current,
+                  )
+                }
+              />
+            ) : (
+              <a href={link.href} key={link.label}>
+                {link.label}
+              </a>
+            );
+          })}
         </nav>
         <div className={styles.headerActions}>
           <a className={styles.login} href={siteConfig.appOrigin}>
@@ -133,11 +175,39 @@ export function RuneyChrome({
             }
           }}
         >
-          {links.map((link) => (
-            <a key={link.label} href={link.href} onClick={() => setOpen(false)}>
-              {link.label}
-            </a>
-          ))}
+          {links.map((link) => {
+            const group =
+              pathname === "/"
+                ? homepageGroups.find((group) => group.label === link.label)
+                : undefined;
+            return group ? (
+              <details key={link.label} className={styles.mobileMenuGroup}>
+                <summary>{link.label}</summary>
+                {group.columns.map((column) => (
+                  <div key={column.heading}>
+                    <strong>{column.heading}</strong>
+                    {column.links.map((item) => (
+                      <a
+                        key={item.title}
+                        href={item.href}
+                        onClick={() => setOpen(false)}
+                      >
+                        {item.title}
+                      </a>
+                    ))}
+                  </div>
+                ))}
+              </details>
+            ) : (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={() => setOpen(false)}
+              >
+                {link.label}
+              </a>
+            );
+          })}
           <a href={siteConfig.appOrigin}>Log in</a>
         </nav>
       )}

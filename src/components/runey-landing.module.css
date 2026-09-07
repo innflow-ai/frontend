@@ -1332,3 +1332,333 @@
     font-size: 9px;
   }
 }
+
+/* Homepage-only blue glass treatment; the property landing stays unchanged. */
+.blueHome {
+  font-family: var(--font-figtree), sans-serif;
+  color: #191d24;
+}
+.blueHome p {
+  color: #626b78;
+}
+.blueHome :is(a, button, summary):focus-visible,
+.blueChrome :is(a, button):focus-visible {
+  outline-color: #2468cb;
+}
+.blueHome .hero {
+  padding-top: 44px;
+}
+.blueHome .heroCopy {
+  max-width: 700px;
+}
+.blueHome .heroCopy h1 {
+  font-size: clamp(40px, 5.2vw, 68px);
+  letter-spacing: -0.055em;
+  line-height: 1.04;
+}
+.blueHome .heroCopy > p {
+  max-width: 535px;
+  font-size: 17px;
+  line-height: 1.55;
+  margin-top: 22px;
+}
+.blueHome .actions {
+  margin-top: 28px;
+}
+.blueHome .heroShowcase {
+  margin-top: 44px;
+  padding-top: 16px;
+}
+.blueRibbon {
+  position: absolute;
+  inset: -145px 0 auto;
+  height: clamp(380px, 48vw, 690px);
+  pointer-events: none;
+}
+.blueRibbon img {
+  object-fit: cover;
+  object-position: center;
+}
+.blueHome .previewTabs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  padding: 0 12px 20px;
+}
+.blueHome .previewTabs button {
+  min-height: 44px;
+  font-size: 14px;
+  color: #576575;
+}
+.blueHome .previewTabs button[aria-pressed="true"] {
+  color: #164d99;
+  border-color: #2468cb;
+}
+.glassFrame {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  width: 100%;
+  padding: 12px;
+  overflow: hidden;
+  border: 1px solid rgb(185 208 233 / 65%);
+  border-radius: 22px;
+  background: rgb(255 255 255 / 65%);
+  backdrop-filter: blur(18px);
+  box-shadow:
+    inset 0 1px 2px #fff,
+    0 16px 45px rgb(26 65 105 / 8%),
+    0 2px 6px rgb(26 65 105 / 5%);
+}
+.glassInterior {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: rgb(246 250 255 / 70%);
+  border: 1px solid rgb(255 255 255 / 90%);
+}
+.recording {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #f6faff;
+}
+.blueHome .benefits {
+  padding-block: 44px 64px;
+}
+.blueHome .benefits p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+.blueHome .audienceRail {
+  width: 112%;
+  max-width: none;
+  margin-left: -6%;
+  gap: 16px;
+  margin-bottom: 72px;
+}
+.blueHome .audienceCard {
+  height: 340px;
+  border-radius: 12px;
+}
+.blueHome .audienceCard img {
+  z-index: 0;
+}
+.blueHome .audienceCard h2 {
+  font-family: var(--font-figtree), sans-serif;
+  font-size: 22px;
+}
+.blueHome .features {
+  background: #f7f8fa;
+  padding-block: 72px;
+}
+.blueHome .sectionHeading h2 {
+  letter-spacing: -0.04em;
+}
+.blueHome .sectionHeading p {
+  font-size: 14px;
+}
+.blueHome .featureStack {
+  gap: 24px;
+}
+.blueHome .featureCard {
+  padding: 20px;
+  border-radius: 18px;
+  border-color: #edf0f4;
+}
+.blueHome .featureCopy {
+  padding: 6px 4px 22px;
+}
+.blueHome .featureCopy > span {
+  color: #576575;
+  font-size: 12px;
+}
+.blueHome .featureCopy h2 {
+  font-size: clamp(24px, 2.2vw, 30px);
+}
+.blueHome .featureCopy > p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+.blueHome .featureCopy ul {
+  margin: 16px 0 12px;
+  gap: 8px 20px;
+}
+.blueHome .featureCopy li {
+  font-size: 13px;
+  color: #596677;
+}
+.blueHome .featureCopy li svg {
+  color: #4776ad;
+}
+.blueHome .featureLink,
+.blueHome .moreLink {
+  color: #245a9a;
+  font-size: 13px;
+}
+.blueHome .featureCard .glassFrame {
+  box-shadow: inset 0 1px 2px #fff;
+  background: #f2f7fd;
+}
+.blueHome .secondaryButton {
+  background: #f7f9fc;
+  border-color: #e8edf4;
+}
+.blueHome .secondaryButton:hover {
+  background: #edf3fb;
+}
+.blueHome .pricing,
+.blueHome .finalCta {
+  background: #f1f6fc;
+}
+.blueHome .processGrid > div > span {
+  color: #4174ac;
+}
+.blueHome .faqList details {
+  border-color: #e8edf3;
+}
+.blueHome .faqList summary {
+  color: #364152;
+  font-size: 15px;
+}
+.blueHome .faqList summary > span {
+  color: #56789f;
+}
+.blueHome .faqList p,
+.blueHome .ctaCopy p {
+  font-size: 14px;
+}
+.blueHome .finalCta {
+  min-height: 0;
+}
+.blueHome .ctaPreview {
+  position: relative;
+  width: 100%;
+  left: auto;
+  top: auto;
+  bottom: auto;
+  transform: none;
+}
+.blueChrome .wordmark {
+  color: #edf1f6;
+}
+.blueChrome .footerGrid p,
+.blueChrome a,
+.blueChrome .footerBottom {
+  color: #657183;
+}
+.blueChrome .primaryButton {
+  color: #fff;
+}
+@media (max-width: 760px) {
+  .blueHome .hero {
+    padding-top: 36px;
+  }
+  .blueHome .heroCopy h1 {
+    font-size: clamp(34px, 8.5vw, 55px);
+  }
+  .blueHome .heroCopy > p {
+    font-size: 16px;
+  }
+  .blueHome .heroShowcase {
+    margin-top: 32px;
+  }
+  .blueRibbon {
+    inset-block-start: -35px;
+    height: 300px;
+  }
+  .blueHome .previewTabs {
+    gap: 4px;
+    padding: 0 0 12px;
+  }
+  .blueHome .previewTabs button {
+    font-size: 12px;
+  }
+  .glassFrame {
+    padding: 7px;
+    border-radius: 15px;
+  }
+  .glassInterior,
+  .recording {
+    border-radius: 9px;
+  }
+  .blueHome .benefits {
+    padding-block: 32px 44px;
+  }
+  .blueHome .audienceRail {
+    width: 100%;
+    margin-left: 0;
+    padding-inline: 18px;
+    margin-bottom: 48px;
+  }
+  .blueHome .audienceCard {
+    flex-basis: 76vw;
+    width: 76vw;
+    height: 320px;
+  }
+  .blueHome .features {
+    padding-block: 48px;
+  }
+  .blueHome .featureCard {
+    padding: 10px;
+  }
+  .blueHome .featureCopy {
+    padding: 10px 6px 18px;
+  }
+  .blueHome .featureCopy li {
+    font-size: 12px;
+  }
+  .blueHome .finalCta {
+    padding: 44px 18px;
+  }
+  .blueHome .ctaPreview {
+    margin-top: 32px;
+  }
+}
+
+@media (min-width: 761px) {
+  .blueHome .audienceCard:first-child h2 {
+    left: calc(6vw + 23px);
+  }
+  .blueHome .audienceCard:last-child h2 {
+    right: calc(6vw + 37px);
+  }
+  .blueHome .audienceCard:last-child > svg {
+    right: calc(6vw + 18px);
+  }
+}
+@media (max-width: 760px) {
+  .blueRibbon img {
+    object-position: 80% center;
+  }
+}
+.blueHome .previewTabs button {
+  background: rgb(255 255 255 / 80%);
+  border-radius: 6px 6px 0 0;
+}
+.mobileMenuGroup {
+  border-bottom: 1px solid #e8edf4;
+}
+.mobileMenuGroup summary {
+  cursor: pointer;
+  padding: 14px 0;
+  color: #364152;
+}
+.mobileMenuGroup > div {
+  padding: 8px 12px 16px;
+}
+.mobileMenuGroup strong {
+  display: block;
+  color: #657183;
+  font-size: 12px;
+  padding-block: 8px;
+}
+.blueChrome .mobileNav {
+  max-height: calc(100dvh - 66px);
+  overflow-y: auto;
+}
+.blueChrome .mobileMenuGroup a {
+  display: block;
+  padding: 10px 0;
+}

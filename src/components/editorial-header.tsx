@@ -16,10 +16,7 @@ import {
   solutionsColumns,
 } from "@/components/mega-menu";
 import { TrackedLink } from "@/components/tracked-link";
-import { siteConfig } from "@/config/site";
 import styles from "./editorial-header.module.css";
-
-const MotionTrackedLink = motion.create(TrackedLink);
 
 type MobileMenuGroup = {
   label: string;
@@ -340,14 +337,12 @@ export function EditorialHeader({
           )}
 
           <div className={styles.actions}>
-            {!desktopHeader && (
-              <GoogleSignInButton
-                className={`${styles.button} ${styles.headerCta}`}
-                eventLabel="header_continue_google"
-                label="Continue with Google"
-                variant="brand"
-              />
-            )}
+            <GoogleSignInButton
+              className={`${styles.button} ${styles.headerCta}`}
+              eventLabel="header_continue_google"
+              label="Continue with Google"
+              variant="brand"
+            />
             <button
               ref={mobileToggleRef}
               type="button"
@@ -537,15 +532,6 @@ export function EditorialHeader({
                   variant="brand"
                   iconSize={20}
                 />
-                <MotionTrackedLink
-                  className={`${styles.button} ${styles.mobileCta} ${styles.mobileDemoCta}`}
-                  destination={siteConfig.demoUrl}
-                  eventLabel="mobile_demo"
-                  variants={reduce ? undefined : itemVariants}
-                  onClick={closeMobile}
-                >
-                  Book a Demo
-                </MotionTrackedLink>
               </div>
             </motion.nav>
           </motion.div>

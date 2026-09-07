@@ -93,7 +93,6 @@ const platformLinks: MegaMenuLink[] = [
   {
     href: "/products/agent-studio",
     icon: Wrench,
-    iconSrc: "/brand/navigation/mega-menu-items/agentic-workflows.svg",
     title: "Agent Studio",
     body: "Build, test, and refine agents in one visual workspace.",
   },
@@ -236,21 +235,25 @@ export const productColumns: MegaMenuColumn[] = [
   },
   {
     heading: "Automation and intelligence",
-    links: platformPages.slice(0, 4).map((page) => ({
-      href: `/platform/${page.slug}`,
-      icon: FlowArrow,
-      title: page.title,
-      body: page.description,
-    })),
+    links: withApprovedMenuIcons(
+      platformPages.slice(0, 4).map((page) => ({
+        href: `/platform/${page.slug}`,
+        icon: FlowArrow,
+        title: page.title,
+        body: page.description,
+      })),
+    ),
   },
   {
     heading: "Connections and governance",
-    links: platformPages.slice(4).map((page) => ({
-      href: `/platform/${page.slug}`,
-      icon: PlugsConnected,
-      title: page.title,
-      body: page.description,
-    })),
+    links: withApprovedMenuIcons(
+      platformPages.slice(4).map((page) => ({
+        href: `/platform/${page.slug}`,
+        icon: PlugsConnected,
+        title: page.title,
+        body: page.description,
+      })),
+    ),
   },
 ];
 

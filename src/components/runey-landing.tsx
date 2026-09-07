@@ -128,7 +128,7 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
           </div>
         </div>
         <div className={styles.heroShowcase}>
-          <RuneyHeroArtwork />
+          <RuneyHeroArtwork home={!property} />
           <div className={styles.shell}>
             <RuneyWorkspace interactive />
           </div>

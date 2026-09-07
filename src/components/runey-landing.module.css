@@ -120,6 +120,12 @@
 .header .primaryButton {
   min-height: 36px;
   padding: 8px 18px;
+  color: #fff;
+  background: linear-gradient(#494b47, #242522);
+  border: 1px solid #545650;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
 }
 .menuToggle {
   display: none;
@@ -968,6 +974,14 @@
     display: block;
   }
   .headerActions {
+    gap: 8px;
+  }
+  .header .primaryButton {
+    padding: 8px 10px;
+    gap: 6px;
+    font-size: 11px;
+  }
+  .headerInner {
     gap: 8px;
   }
   .hero {

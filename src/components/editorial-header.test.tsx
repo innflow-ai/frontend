@@ -192,9 +192,9 @@ describe("EditorialHeader navigation", () => {
     expect(
       mobile.queryByRole("button", { name: "Sign in with Google" }),
     ).not.toBeInTheDocument();
-    expect(mobile.getByRole("link", { name: "Book a Demo" })).toHaveClass(
-      styles.mobileDemoCta,
-    );
+    expect(
+      mobile.queryByRole("link", { name: "Book a Demo" }),
+    ).not.toBeInTheDocument();
 
     await user.click(resources);
     expect(resources).toHaveAttribute("aria-expanded", "true");

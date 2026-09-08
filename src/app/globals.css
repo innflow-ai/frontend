@@ -61,7 +61,7 @@ html[data-theme="dark"] {
 }
 
 html[data-blog-article] {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
@@ -78,8 +78,8 @@ body {
 }
 
 html[data-blog-article] body {
-  background: #050505;
-  color: #f7f8fa;
+  background: #fffcf4;
+  color: #121111;
 }
 
 ::selection {

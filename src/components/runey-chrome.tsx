@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { type ReactNode, useState } from "react";
+import { type ReactNode, useEffect, useState } from "react";
 import { footerNavigation } from "@/config/footer-navigation";
 import { siteConfig } from "@/config/site";
 import { EditorialHeader } from "./editorial-header";
@@ -43,6 +43,20 @@ export function RuneyChrome({
 }) {
   const pathname = usePathname();
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
+  // biome-ignore lint/correctness/useExhaustiveDependencies: Recheck restored scroll position on navigation.
+  useEffect(() => {
+    const syncScroll = () => setScrolled(window.scrollY > 0);
+    syncScroll();
+    window.addEventListener("scroll", syncScroll, { passive: true });
+    return () => window.removeEventListener("scroll", syncScroll);
+  }, [pathname]);
+  if (
+    pathname === "/homepage-baselane" ||
+    pathname === "/BL" ||
+    pathname.startsWith("/BL/")
+  )
+    return null;
   if (pathname !== "/" && pathname !== "/property-management") return children;
   if (slot === "footer")
     return (
@@ -117,7 +131,7 @@ export function RuneyChrome({
       latestBlogPosts={latestBlogPosts}
       desktopHeader={
         <header
-          className={`${styles.header} ${pathname === "/" ? styles.blueChrome : ""}`}
+          className={`${styles.header}${pathname === "/" ? ` ${styles.homeHeader}` : ""}${!scrolled ? ` ${styles.headerTop}${pathname === "/" ? ` ${styles.headerLight}` : ""}` : ""}`}
         >
           <div className={styles.headerInner}>
             <a href="/" aria-label="Innflow home">

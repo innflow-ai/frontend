@@ -1,0 +1,402 @@
+.page {
+  background: #fffcf4;
+  color: #0b2633;
+}
+.hero,
+.split {
+  max-width: 1440px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 90px;
+  padding: 90px 32px;
+  margin: auto;
+}
+.hero {
+  padding-top: 160px;
+  padding-bottom: 60px;
+}
+.hero h1 {
+  font-size: clamp(44px, 4.8vw, 66px);
+  line-height: 1.05;
+}
+.page .hero p,
+.page .split p {
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 28px 0;
+}
+.photo {
+  width: 100%;
+  height: auto;
+  border-radius: 24px;
+  object-fit: contain;
+}
+.actions {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.page .button,
+.page .outline {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50px;
+  padding: 12px 24px;
+  border: 1px solid #242522;
+  border-radius: 99px;
+  font-size: 16px;
+  text-align: center;
+}
+.page .button {
+  background: linear-gradient(#494b47, #242522);
+  color: white;
+}
+.band {
+  max-width: 1440px;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  gap: 24px;
+  padding: 32px;
+  font-size: 17px;
+  border-bottom: 1px solid #d5ddd9;
+}
+.band span::before {
+  content: "✓";
+  color: #2485b8;
+  margin-right: 12px;
+}
+.section {
+  max-width: 1440px;
+  margin: auto;
+  padding: 85px 32px;
+  text-align: center;
+  scroll-margin-top: 120px;
+}
+.section > h2 {
+  max-width: 900px;
+  margin: auto !important;
+}
+.page .lead {
+  font-size: 20px;
+  line-height: 1.5;
+  max-width: 760px;
+  margin: 24px auto 40px;
+}
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+.categories a {
+  flex: 0 1 280px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  border-radius: 20px;
+  background: #e9f3f8;
+  text-align: left;
+}
+.categories h3 {
+  font-size: 21px;
+  flex: 1;
+}
+.categories a > span {
+  font-size: 14px;
+}
+.page .note {
+  font-size: 13px !important;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 50px;
+  text-align: left;
+}
+.cards article {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #d1ddd9;
+  border-radius: 20px;
+  padding: 28px;
+}
+.page .cards h3 {
+  font-size: 28px;
+  line-height: 1.15;
+}
+.page .cards p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 24px 0;
+}
+.page .reviewButton {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  margin-top: auto;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.values {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 36px;
+}
+.values h3 {
+  font-size: 25px;
+}
+.page .values p {
+  font-size: 17px;
+  margin: 14px 0;
+}
+.tabs {
+  display: flex;
+  gap: 12px;
+  border-bottom: 1px solid #b5cbd7;
+  margin: 40px 0 0;
+  overflow-x: auto;
+}
+.tabs button {
+  flex: 1;
+  padding: 20px;
+  border: 0;
+  border-bottom: 3px solid transparent;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 17px;
+  cursor: pointer;
+  min-width: 160px;
+}
+.tabs button[aria-selected="true"] {
+  border-color: #177ead;
+  background: #e8f3f9;
+}
+.panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  padding: 48px;
+  background: #e8f3f9;
+  text-align: left;
+  border-radius: 0 0 24px 24px;
+}
+.page .panel h3 {
+  font-size: 30px;
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+.page .panel p,
+.panel li {
+  font-size: 18px;
+  line-height: 1.5;
+}
+.panel ul {
+  padding-left: 22px;
+  margin: 24px 0;
+}
+.panel li {
+  margin: 14px 0;
+}
+.checks {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-bottom: 32px;
+}
+.page .checks h4 {
+  font-size: 19px;
+  margin: 0 0 16px;
+  font-weight: 400;
+}
+.page .checks p {
+  font-size: 16px;
+}
+.audiences {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  text-align: left;
+  margin-top: 50px;
+}
+.page .audiences h3 {
+  font-size: 30px;
+  margin: 26px 0;
+}
+.page .audiences p {
+  font-size: 20px;
+  line-height: 1.5;
+}
+.tableWrap {
+  overflow-x: auto;
+  margin-top: 50px;
+}
+.tableWrap table {
+  border-collapse: collapse;
+  min-width: 700px;
+  width: 100%;
+  text-align: left;
+}
+.tableWrap :is(th, td) {
+  padding: 24px;
+  border-bottom: 1px solid #c4d3db;
+  font-size: 16px;
+  font-weight: 400;
+}
+.tableWrap thead {
+  background: #0b2633;
+  color: white;
+}
+.tableWrap tbody tr:nth-child(even) {
+  background: #e8f3f9;
+}
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 36px;
+  margin: 50px 0;
+}
+.page .steps span {
+  display: grid;
+  place-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #dceef8;
+  margin: 0 auto 24px;
+  font-size: 20px;
+}
+.page .steps h3 {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+.page .steps p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+.faq {
+  max-width: 1000px;
+  margin: auto;
+  padding: 70px 32px 100px;
+}
+.faq > h2 {
+  text-align: center;
+  margin-bottom: 48px !important;
+}
+.faq details {
+  border-bottom: 1px solid #becfd8;
+  padding-bottom: 0;
+}
+.faq summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 26px 0;
+  list-style: none;
+}
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+.faq details[open] {
+  padding-bottom: 26px;
+}
+.page .faq p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+.page .faq a {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.faq details[open] summary span {
+  transform: rotate(45deg);
+}
+.page :is(a, button, summary):focus-visible {
+  outline: 3px solid #2785b5;
+  outline-offset: 4px;
+}
+@media (max-width: 1000px) {
+  .hero,
+  .split {
+    gap: 40px;
+  }
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+  .panel {
+    gap: 40px;
+    padding: 32px;
+  }
+  .steps {
+    gap: 20px;
+  }
+}
+@media (max-width: 700px) {
+  .hero,
+  .split {
+    grid-template-columns: 1fr;
+    padding: 60px 24px;
+    gap: 32px;
+  }
+  .hero {
+    padding-top: 130px;
+  }
+  .page .hero p,
+  .page .split p {
+    font-size: 18px;
+  }
+  .band {
+    flex-direction: column;
+    padding: 24px;
+  }
+  .section {
+    padding: 60px 24px;
+  }
+  .cards,
+  .panel,
+  .audiences,
+  .steps {
+    grid-template-columns: 1fr;
+  }
+  .cards {
+    gap: 20px;
+  }
+  .categories a {
+    flex-basis: 100%;
+  }
+  .page .lead {
+    font-size: 18px;
+  }
+  .panel {
+    padding: 28px;
+  }
+  .checks {
+    grid-template-columns: 1fr;
+  }
+  .tabs button {
+    font-size: 15px;
+  }
+  .values {
+    gap: 24px;
+  }
+  .faq {
+    padding: 60px 24px 80px;
+  }
+  .faq summary {
+    font-size: 18px;
+  }
+}

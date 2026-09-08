@@ -359,13 +359,13 @@
 
 /* Optional contained panel for the homepage's light navigation. */
 .compact .trigger {
-  color: #657183;
+  color: var(--runey-nav-color, #657183);
   font-weight: 400;
   min-height: 44px;
 }
 .compact .trigger:hover,
 .compact .trigger[aria-expanded="true"] {
-  color: #245a9a;
+  color: var(--header-nav-hover, #245a9a);
 }
 .compact .panel {
   width: min(900px, calc(100vw - 48px));

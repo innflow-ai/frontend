@@ -1,0 +1,815 @@
+@font-face {
+  font-family: "Baselane Preview Helvetica";
+  src: url("/brand/baselane-inspired/helvetica-now-regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Baselane Preview Helvetica";
+  src: url("/brand/baselane-inspired/helvetica-now-medium.woff2")
+    format("woff2");
+  font-weight: 500 800;
+  font-display: swap;
+}
+.page {
+  --ink: #0b2633;
+  --paper: #fffcf4;
+  background: var(--paper);
+  color: #121111;
+  font-family: "Baselane Preview Helvetica", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.3;
+  overflow: clip;
+  color-scheme: light;
+}
+.page * {
+  box-sizing: border-box;
+}
+.page :is(h1, h2, h3, p) {
+  margin: 0;
+}
+.page :is(h1, h2, h3) {
+  font-family: inherit;
+  font-weight: 400;
+  color: inherit;
+  letter-spacing: -0.035em;
+}
+.page a {
+  color: inherit;
+  text-decoration: none;
+}
+.page button {
+  font: inherit;
+  cursor: pointer;
+}
+.page :is(a, button):focus-visible {
+  outline: 2px solid #327fc4;
+  outline-offset: 5px;
+}
+.page h2 {
+  font-size: clamp(32px, 3.7vw, 48px);
+  line-height: 1.1;
+}
+.shell {
+  width: min(1360px, calc(100% - 40px));
+  margin-inline: auto;
+}
+.header {
+  position: fixed;
+  z-index: 90;
+  inset: 16px max(40px, calc((100vw - 1320px) / 2)) auto;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 10px 12px 10px 32px;
+  border-radius: 45px;
+  color: var(--ink);
+  isolation: isolate;
+}
+.header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgb(255 252 244 / 60%);
+  backdrop-filter: blur(15px);
+  border-radius: inherit;
+  box-shadow: 0 4px 10px #0000001a;
+}
+.logo {
+  flex-shrink: 0;
+  display: flex;
+}
+.logo img {
+  filter: brightness(0);
+  width: 95px;
+  height: auto;
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(22px, 2.8vw, 40px);
+}
+.menuGroup {
+  position: relative;
+}
+.menuGroup > button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  border: 0;
+  background: none;
+  padding: 8px 0;
+  color: inherit;
+}
+.menuGroup > button[aria-expanded="true"] svg {
+  transform: rotate(180deg);
+}
+.dropdown {
+  max-height: min(650px, 70vh);
+  overflow-y: auto;
+  position: absolute;
+  top: calc(100% + 18px);
+  left: -30px;
+  min-width: 190px;
+  padding: 14px 0;
+  border-radius: 20px;
+  background: rgb(255 252 244 / 60%);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 4px 10px #0003;
+}
+.dropdown a {
+  display: block;
+  padding: 10px 30px;
+  white-space: nowrap;
+}
+.dropdown a:hover {
+  background: rgb(255 255 255 / 35%);
+}
+.headerActions {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+.login,
+.darkButton,
+.blueButton,
+.lightButton,
+.outlineButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  white-space: nowrap;
+  min-height: 42px;
+  border: 1px solid transparent;
+  transition:
+    background 0.18s,
+    transform 0.18s;
+}
+.page .darkButton {
+  background: var(--ink);
+  color: var(--paper);
+}
+.page .blueButton {
+  background: #c4e3f6;
+  color: var(--ink);
+}
+.page .lightButton {
+  background: var(--paper);
+  color: var(--ink);
+}
+.page :is(.login, .outlineButton) {
+  border-color: var(--ink);
+}
+.page :is(.darkButton, .blueButton, .lightButton, .outlineButton):hover {
+  transform: translateY(-1px);
+  filter: brightness(1.06);
+}
+.menuToggle,
+.mobileLogin {
+  display: none;
+}
+.hero {
+  position: relative;
+  min-height: 810px;
+  height: min(960px, 70vw);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  padding: 126px 24px 48px;
+  color: var(--ink);
+}
+.heroPhoto {
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+.heroCopy,
+.heroBottom {
+  position: relative;
+  z-index: 1;
+}
+.eyebrow {
+  display: inline-block;
+  border: 1px solid #577481;
+  border-radius: 72px;
+  padding: 6px 16px;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+}
+.hero h1 {
+  font-size: clamp(46px, 5.5vw, 76px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.045em;
+  margin: 28px 0 30px;
+}
+.heroCopy > p {
+  font-size: 20px;
+  line-height: 1.3;
+}
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.heroBottom > p {
+  color: white;
+  font-size: 13px;
+  margin-top: 28px;
+  text-shadow: 0 1px 8px #16343c;
+}
+.trustBar {
+  background: var(--ink);
+  color: #e2ebec;
+  min-height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px max(20px, calc((100vw - 1360px) / 2));
+}
+.intro {
+  padding-block: 96px 108px;
+  text-align: center;
+}
+.intro > p {
+  font-size: 20px;
+}
+.pillars {
+  margin-top: 48px;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+.pillars > div {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+}
+.pillars strong {
+  font-size: clamp(30px, 3.4vw, 48px);
+  font-weight: 400;
+  letter-spacing: -0.05em;
+}
+.pillars span {
+  font-size: 15px;
+}
+.products > h2,
+.capabilities > h2 {
+  text-align: center;
+}
+.storyNav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 30px 0 48px;
+}
+.storyNav a {
+  border: 1px solid var(--ink);
+  padding: 10px 18px;
+  border-radius: 30px;
+}
+.storyNav a:hover {
+  background: #e7f1f8;
+}
+.story {
+  scroll-margin-top: 105px;
+  background:
+    var(--ink) url("/brand/baselane-inspired/workflows-desktop.webp") center /
+    cover;
+  color: var(--paper);
+  border-radius: 20px;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 1.2fr 1.5fr 0.6fr;
+  gap: 20px;
+  min-height: 520px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+.knowledgeStory {
+  background-image: url("/brand/baselane-inspired/knowledge-desktop.webp");
+}
+.storyCopy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-right: 20px;
+  text-shadow: 0 1px 12px #0006;
+}
+.storyTag {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  border: 1px solid #ffffff80;
+  border-radius: 20px;
+  padding: 5px 10px;
+  margin-bottom: auto;
+}
+.story h3 {
+  font-size: clamp(23px, 2.1vw, 30px);
+  line-height: 1.12;
+  margin-top: 80px;
+}
+.storyCopy > p {
+  font-size: 16px;
+  margin-top: 24px;
+  max-width: 320px;
+}
+.storyCopy > a {
+  margin-top: 28px;
+  text-shadow: none;
+  font-size: 15px;
+}
+.page .productPreview {
+  align-self: center;
+  min-width: 0;
+  font-family: "Baselane Preview Helvetica", Arial, sans-serif;
+}
+.productPreview [class] {
+  font-family: inherit;
+}
+.productPreview > div > section {
+  padding: 8px;
+  background: rgb(244 249 255 / 72%);
+  backdrop-filter: blur(25px);
+  border-color: #ffffff60;
+  box-shadow: none;
+  gap: 0;
+}
+.productPreview aside {
+  display: none;
+}
+.productPreview h3 {
+  font-size: 19px;
+  margin-top: 0;
+}
+.productPreview :is(h3, strong) {
+  color: #18344a;
+}
+.productPreview p {
+  color: #627183;
+}
+.storyNote {
+  background: rgb(245 249 252 / 67%);
+  backdrop-filter: blur(30px);
+  border-radius: 8px;
+  padding: 22px;
+  color: #21323e;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 18px;
+}
+.storyNote span {
+  font-size: 13px;
+}
+.capabilities {
+  padding-top: 72px;
+  padding-bottom: 96px;
+}
+.capabilityGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 55px;
+  text-align: center;
+}
+.capabilityGrid > div {
+  border-top: 1px solid #34454b;
+  padding: 22px 8px 0;
+}
+.capabilityGrid h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-size: 21px;
+  letter-spacing: -0.02em;
+}
+.capabilityGrid p {
+  margin-top: 20px;
+}
+.support {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  gap: 48px;
+  padding-block: 20px 96px;
+}
+.supportRow {
+  display: grid;
+  grid-template-columns: 1fr 1.8fr;
+  gap: 30px;
+  border-top: 1px solid #34454b;
+  padding: 24px 0;
+}
+.supportRow h3 {
+  font-size: 21px;
+}
+.closing {
+  padding: 80px 20px 120px;
+  background:
+    #bcd7ea url("/brand/baselane-inspired/closing-desktop.webp") center bottom /
+    cover;
+  text-align: center;
+}
+.closing p {
+  font-size: 20px;
+  margin: 25px 0 28px;
+}
+.mobileBreak {
+  display: none;
+}
+.footer {
+  padding: 72px max(40px, calc((100vw - 1320px) / 2)) 30px;
+  background: var(--ink);
+  color: #aec0c7;
+}
+.footerGrid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+}
+.footerLogo img {
+  filter: brightness(0) invert(1);
+}
+.footerGrid h3 {
+  font-size: 18px;
+  color: #edf3f4;
+  border-bottom: 1px solid #738690;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.footerGrid a {
+  display: block;
+  margin-bottom: 14px;
+}
+.footerGrid a:hover {
+  color: white;
+}
+.footerGrid p {
+  margin: 24px 0;
+}
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-top: 50px;
+  font-size: 13px;
+}
+.footerBottom > div {
+  display: flex;
+  gap: 20px;
+}
+@media (max-width: 1100px) {
+  .header {
+    gap: 16px;
+    padding-left: 24px;
+  }
+  .nav {
+    gap: 20px;
+  }
+  .headerActions {
+    gap: 14px;
+  }
+  .story {
+    grid-template-columns: 1fr 1.35fr;
+  }
+  .storyNote {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    font-size: 16px;
+  }
+  .storyNote p {
+    max-width: 70%;
+  }
+  .story h3 {
+    margin-top: 65px;
+  }
+  .productPreview h3 {
+    margin-top: 0;
+  }
+}
+@media (max-width: 850px) {
+  .header {
+    inset-inline: 20px;
+    padding: 8px 14px;
+    min-height: 48px;
+  }
+  .header .darkButton {
+    font-size: 13px;
+    min-height: 34px;
+    padding: 6px 14px;
+  }
+  .headerActions {
+    gap: 14px;
+  }
+  .login {
+    display: none;
+  }
+  .menuToggle {
+    display: flex;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--ink);
+  }
+  .nav {
+    display: none;
+  }
+  .nav.open {
+    position: absolute;
+    display: flex;
+    top: 64px;
+    left: 0;
+    right: 0;
+    max-height: calc(100dvh - 100px);
+    overflow-y: auto;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 20px;
+    gap: 0;
+    border-radius: 22px;
+    background: var(--paper);
+    box-shadow: 0 8px 25px #0002;
+  }
+  .open > a,
+  .menuGroup > button {
+    padding: 20px 0;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .open > a,
+  .menuGroup {
+    border-bottom: 1px solid #d8dcda;
+  }
+  .mobileLogin {
+    display: block;
+  }
+  .dropdown {
+    position: static;
+    background: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    padding: 0 0 12px;
+  }
+  .dropdown a {
+    padding: 10px 14px;
+  }
+  .hero {
+    padding-top: 120px;
+    min-height: 750px;
+    height: 90svh;
+    max-height: 950px;
+  }
+  .hero h1 {
+    font-size: 44px;
+  }
+  .pillars {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px 45px;
+  }
+  .story {
+    grid-template-columns: 1fr;
+    padding-top: 230px;
+    background-image: url("/brand/baselane-inspired/workflows-mobile.webp");
+    background-position: center top;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+  }
+  .knowledgeStory {
+    background-image: url("/brand/baselane-inspired/knowledge-mobile.webp");
+  }
+  .storyTag {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  .story {
+    position: relative;
+  }
+  .story h3 {
+    margin-top: 24px;
+    font-size: 27px;
+  }
+  .productPreview h3 {
+    margin-top: 0;
+    font-size: 18px;
+  }
+  .storyCopy {
+    padding: 0;
+    text-shadow: none;
+  }
+  .storyCopy > p {
+    max-width: none;
+  }
+  .storyNote {
+    grid-column: auto;
+    padding: 25px;
+  }
+  .capabilityGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .support {
+    gap: 30px;
+  }
+  .supportRow {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .footerGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 520px) {
+  .hero {
+    min-height: 740px;
+    padding: 115px 20px 40px;
+  }
+  .hero h1 {
+    font-size: 36px;
+    margin: 24px 0 22px;
+  }
+  .heroCopy > p {
+    font-size: 19px;
+  }
+  .heroPhoto {
+    object-position: 52% center;
+  }
+  .eyebrow {
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+  .desktopBreak {
+    display: none;
+  }
+  .actions {
+    gap: 20px;
+  }
+  .trustBar {
+    justify-content: center;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+  }
+  .trustBar span:last-child {
+    display: none;
+  }
+  .intro {
+    padding-block: 64px;
+  }
+  .intro > p {
+    font-size: 18px;
+  }
+  .pillars {
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+    margin-top: 32px;
+  }
+  .pillars > div {
+    width: 270px;
+    justify-content: space-between;
+  }
+  .pillars strong {
+    font-size: 34px;
+  }
+  .pillars span {
+    width: 88px;
+  }
+  .storyNav {
+    margin-bottom: 35px;
+  }
+  .story {
+    padding: 225px 20px 20px;
+  }
+  .productPreview > div > section {
+    padding: 0;
+  }
+  .productPreview strong {
+    font-size: 12px;
+  }
+  .storyNote {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+  }
+  .storyNote p {
+    max-width: none;
+  }
+  .capabilities {
+    padding-block: 40px 64px;
+  }
+  .capabilityGrid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    margin-top: 35px;
+  }
+  .capabilityGrid p {
+    margin-top: 15px;
+  }
+  .support {
+    display: block;
+    text-align: center;
+    padding-bottom: 65px;
+  }
+  .support h2 {
+    margin-bottom: 35px;
+  }
+  .supportRow {
+    padding-block: 25px;
+  }
+  .closing {
+    padding: 65px 20px 100px;
+    background-image: url("/brand/baselane-inspired/closing-mobile.webp");
+  }
+  .closing p {
+    font-size: 18px;
+  }
+  .mobileBreak {
+    display: block;
+  }
+  .footer {
+    padding: 48px 24px 30px;
+  }
+  .footerGrid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .footerBottom {
+    flex-direction: column;
+  }
+  .footerBottom > div {
+    flex-wrap: wrap;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .page * {
+    transition: none;
+    scroll-behavior: auto;
+  }
+}
+
+.page .footerSubheading {
+  margin-top: 32px;
+}
+.referenceLinks {
+  margin-top: 45px;
+  padding-top: 24px;
+  border-top: 1px solid #536b77;
+}
+.referenceLinks summary {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  font-size: 16px;
+}
+.referenceLinks summary::-webkit-details-marker {
+  display: none;
+}
+.page .referenceLinks p {
+  margin: 20px 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.referenceGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 28px;
+}
+.page .referenceGrid h3 {
+  font-size: 17px;
+  margin: 0 0 20px;
+}
+.referenceGrid a {
+  display: block;
+  margin: 14px 0;
+  font-size: 14px;
+}
+.referenceLinks :is(a, summary):focus-visible {
+  outline: 2px solid #9bd5ff;
+  outline-offset: 4px;
+}
+@media (max-width: 700px) {
+  .referenceGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

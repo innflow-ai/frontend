@@ -1,0 +1,79 @@
+[
+  {
+    "file": "public/brand/baselane-inspired/savings/hero.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6a3259c871b376f8e96c8cc8_saving-accounts-hero.webp",
+    "downloadFile": "pages/40-blue-landlord-banking-apy/6a3259c871b376f8e96c8cc8_saving-accounts-hero--3fef9405.webp",
+    "sourceRow": 41,
+    "sha256": "3fef9405298331934d27570c99ec56cc927383b422c85fcfffc8b7c9c958db0f"
+  },
+  {
+    "file": "public/brand/baselane-inspired/savings/account.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6a325d5788a3a5e19634ada0_account-image.webp",
+    "downloadFile": "pages/40-blue-landlord-banking-apy/6a325d5788a3a5e19634ada0_account-image--e8f7549e.webp",
+    "sourceRow": 41,
+    "sha256": "e8f7549ea6355e82aa6f63e57e0b1ca8c276e9c171c3b83c15d5fadb542b4486"
+  },
+  {
+    "file": "public/brand/baselane-inspired/savings/account-card.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6a325d57a7441a14f8f9af9e_accound-card.webp",
+    "downloadFile": "pages/40-blue-landlord-banking-apy/6a325d57a7441a14f8f9af9e_accound-card--bcfdb5ce.webp",
+    "sourceRow": 41,
+    "sha256": "bcfdb5ce6e88c4c8e2d156290f084bd46d2a95b39cd22222fccd413a97aaf25e"
+  },
+  {
+    "file": "public/brand/baselane-inspired/savings/balances.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6a325d584e29ba9e1842f436_balances-image.webp",
+    "downloadFile": "pages/40-blue-landlord-banking-apy/6a325d584e29ba9e1842f436_balances-image--a1be5392.webp",
+    "sourceRow": 41,
+    "sha256": "a1be53925d74063e0c531fd3880d4047a92034a4054f8b670afcd3a6b860b3c0"
+  },
+  {
+    "file": "public/brand/baselane-inspired/savings/balances-card.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6a325d57a646dcabcaacd4a6_f8bd83cc52207e84536690c300c9b63e_balances-card.webp",
+    "downloadFile": "pages/40-blue-landlord-banking-apy/6a325d57a646dcabcaacd4a6_f8bd83cc52207e84536690c300c9b63e_balances-card--59b4eaab.webp",
+    "sourceRow": 41,
+    "sha256": "59b4eaab276160be5c8ad552310f7b017faf3a709cbbe1d4199d9035554d7b1a"
+  },
+  {
+    "file": "public/brand/baselane-inspired/savings/rent.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6a325d57c1647842a91e7521_collect-rent-image.webp",
+    "downloadFile": "pages/40-blue-landlord-banking-apy/6a325d57c1647842a91e7521_collect-rent-image--4784b5d4.webp",
+    "sourceRow": 41,
+    "sha256": "4784b5d4495c5ae5a23bbcb58dbfd7228819eec0d5ba02e86d92e00529fe1ae1"
+  },
+  {
+    "file": "public/brand/baselane-inspired/savings/rent-card.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6a325d57f1b128b59d81188a_collect-rent-card.webp",
+    "downloadFile": "pages/40-blue-landlord-banking-apy/6a325d57f1b128b59d81188a_collect-rent-card--9f590a7f.webp",
+    "sourceRow": 41,
+    "sha256": "9f590a7f0e13e6e9b90ada1cfc292cbba0f3a19f5e4e673a1d7a3ea935049aad"
+  },
+  {
+    "file": "public/brand/baselane-inspired/savings/roof.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69a02969667516564dc1acce_pricing-hero-desktop%402x.webp",
+    "downloadFile": "pages/40-blue-landlord-banking-apy/69a02969667516564dc1acce_pricing-hero-desktop-2x--146152c0.webp",
+    "sourceRow": 41,
+    "sha256": "146152c0414ad766675a0c295d50428f5737f952ae8c9f37b81e3bebb11b4e54"
+  },
+  {
+    "file": "public/brand/baselane-inspired/savings/roof-mobile.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69a02b00afcd0bd2cbb5e6f3_pricing-hero-bg-mobile%402x.webp",
+    "downloadFile": "pages/40-blue-landlord-banking-apy/69a02b00afcd0bd2cbb5e6f3_pricing-hero-bg-mobile-2x--0838508a.webp",
+    "sourceRow": 41,
+    "sha256": "0838508a84f3cca9b5bee4c7aded57f12a9e875a210eeea50d102be82389cf5a"
+  },
+  {
+    "file": "public/brand/baselane-inspired/savings/closing.webp",
+    "source": "https://static.baselane.com/assets/images/cta/69a80caf3d2e8a462297e484_92dc776e0cd7a8f424b06ed9860828da_cta-image.webp",
+    "downloadFile": "pages/40-blue-landlord-banking-apy/69a80caf3d2e8a462297e484_92dc776e0cd7a8f424b06ed9860828da_cta-image--6b78ac87.webp",
+    "sourceRow": 41,
+    "sha256": "6b78ac87616dbacc6be094482466cda40339accebd02d85aa3bfc0396dd425bb"
+  },
+  {
+    "file": "public/brand/baselane-inspired/savings/closing-mobile.webp",
+    "source": "https://static.baselane.com/assets/images/cta/69a80caf3d2e8a462297e48b_d003ac8efe354c27f6d4d29613ee379e_cta-bg-mobile.webp",
+    "downloadFile": "pages/40-blue-landlord-banking-apy/69a80caf3d2e8a462297e48b_d003ac8efe354c27f6d4d29613ee379e_cta-bg-mobile--04089d2f.webp",
+    "sourceRow": 41,
+    "sha256": "04089d2fd6ca28e36fb82f3bc0ce9f767d872116102203994bd504ab616c32bd"
+  }
+]

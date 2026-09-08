@@ -1,0 +1,364 @@
+.page {
+  background: #fffcf4;
+  color: #0b2633;
+}
+.hero {
+  min-height: 680px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 150px 32px 80px;
+}
+.hero picture img,
+.closing picture img {
+  object-fit: cover;
+  z-index: 0;
+}
+.heroCopy {
+  position: relative;
+  z-index: 1;
+  width: 47%;
+  max-width: 680px;
+}
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+}
+.page .hero h1 {
+  font-size: clamp(44px, 4.8vw, 68px);
+  line-height: 1.06;
+  margin-top: 20px;
+}
+.page .heroCopy p {
+  font-size: 22px;
+  line-height: 1.4;
+  margin: 32px 0;
+}
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.page .button,
+.page .outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  border-radius: 99px;
+  padding: 12px 24px;
+  font-size: 16px;
+  text-align: center;
+}
+.page .button {
+  color: white;
+  background: linear-gradient(#494b47, #242522);
+  border: 1px solid #242522;
+}
+.page .outline {
+  border: 1px solid #0b2633;
+}
+.band {
+  background: #0b2633;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 32px;
+  font-size: 16px;
+}
+.page .band a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.section {
+  max-width: 1500px;
+  margin: auto;
+  padding: 100px 32px 40px;
+  text-align: center;
+  scroll-margin-top: 110px;
+}
+.videoDeck {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 64px 0 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 8px 0 20px;
+  scrollbar-width: thin;
+}
+.videoCard {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+  background: #0b2633;
+  color: white;
+  scroll-snap-align: center;
+}
+.videoCard.active {
+  flex: 1.4;
+}
+.poster,
+.videoCard video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  position: relative;
+  background: #0b2633;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  color: white;
+  object-fit: cover;
+}
+.page .poster img {
+  object-fit: cover;
+}
+.play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #0b2633b3;
+  font-size: 22px;
+}
+.videoName {
+  padding: 20px 10px 24px;
+}
+.page .videoName h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+}
+.page .videoName a {
+  font-size: 12px;
+}
+.page .note,
+.page .lead {
+  max-width: 760px;
+  line-height: 1.5;
+  margin: 24px auto;
+  font-size: 17px;
+}
+.reviews {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  text-align: left;
+  margin-top: 50px;
+}
+.reviews article {
+  border: 1px solid #d9ddd7;
+  border-radius: 20px;
+  padding: 32px;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: #f6f5ee;
+}
+.page .reviews h3 {
+  font-size: 28px;
+  line-height: 1.15;
+  margin: 26px 0;
+}
+.page .reviews p {
+  font-size: 16px;
+  margin-top: auto;
+}
+.page .reviews a {
+  font-size: 13px;
+  margin-top: 16px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 32px 0;
+}
+.controls button {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #0b2633;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  font-size: 24px;
+  cursor: pointer;
+}
+.controls button:hover {
+  background: #e4eff7;
+}
+.caseSection {
+  max-width: 1440px;
+  padding: 100px 32px 60px;
+  margin: auto;
+  scroll-margin-top: 110px;
+}
+.case {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.casePhoto {
+  position: relative;
+  min-height: 540px;
+  border-radius: 24px;
+  overflow: hidden;
+}
+.page .casePhoto > img {
+  object-fit: cover;
+}
+.caseBadge {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 24px;
+  background: #fffcf4ec;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.caseBadge strong {
+  font-size: 24px;
+  font-weight: 400;
+}
+.caseBadge span {
+  font-size: 14px;
+}
+.page .caseCopy h2 {
+  margin: 24px 0;
+}
+.page .caseCopy p {
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 24px 0 36px;
+}
+.closing {
+  position: relative;
+  min-height: 460px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 100px 24px;
+}
+.closing > div {
+  position: relative;
+  z-index: 1;
+  max-width: 740px;
+}
+.page .closing p {
+  font-size: 20px;
+  margin: 24px 0 32px;
+}
+.closing .actions {
+  justify-content: center;
+}
+.page :is(a, button):focus-visible {
+  outline: 3px solid #2683bf;
+  outline-offset: 4px;
+}
+@media (max-width: 1000px) {
+  .heroCopy {
+    width: 50%;
+  }
+  .hero {
+    min-height: 620px;
+  }
+  .videoCard {
+    flex: 0 0 23%;
+  }
+  .videoCard.active {
+    flex: 0 0 30%;
+  }
+  .case {
+    gap: 40px;
+  }
+  .reviews {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 700px) {
+  .hero {
+    min-height: 740px;
+    align-items: flex-start;
+    padding: 130px 24px 40px;
+  }
+  .heroCopy {
+    width: 100%;
+    max-width: none;
+  }
+  .page .hero h1 {
+    font-size: 42px;
+  }
+  .page .heroCopy p {
+    font-size: 18px;
+    margin: 24px 0;
+  }
+  .hero picture img {
+    top: auto !important;
+    height: auto !important;
+    object-fit: cover;
+    object-position: center;
+  }
+  .band {
+    flex-direction: column;
+    padding: 24px;
+    gap: 12px;
+  }
+  .section {
+    padding: 70px 24px 20px;
+  }
+  .videoDeck {
+    margin-top: 36px;
+  }
+  .videoCard,
+  .videoCard.active {
+    flex: 0 0 82%;
+  }
+  .reviews {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .reviews article {
+    min-height: 230px;
+    padding: 28px;
+  }
+  .caseSection {
+    padding: 70px 24px 40px;
+  }
+  .case {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .casePhoto {
+    min-height: 400px;
+  }
+  .page .caseCopy h2 {
+    font-size: 36px;
+  }
+  .closing {
+    min-height: 500px;
+  }
+  .page .button,
+  .page .outline {
+    padding: 12px 20px;
+  }
+  .actions {
+    gap: 14px;
+  }
+}

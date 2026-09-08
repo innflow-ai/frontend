@@ -1,0 +1,511 @@
+{
+  "date": "2026-09-08",
+  "inventoryRows": 45,
+  "yellow": 17,
+  "blue": 28,
+  "localPages": 37,
+  "externalLinks": 8,
+  "routeResults": [
+    {
+      "row": 2,
+      "url": "http://localhost:3000/BL/BL-home",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-home"
+    },
+    {
+      "row": 3,
+      "url": "http://localhost:3000/BL/BL-rent-collection-2",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-rent-collection-2"
+    },
+    {
+      "row": 4,
+      "url": "http://localhost:3000/BL/BL-long-term-rentals",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-long-term-rentals"
+    },
+    {
+      "row": 5,
+      "url": "http://localhost:3000/BL/BL-mid-term-rentals",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-mid-term-rentals"
+    },
+    {
+      "row": 6,
+      "url": "http://localhost:3000/BL/BL-multi-property-investors",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-multi-property-investors"
+    },
+    {
+      "row": 7,
+      "url": "http://localhost:3000/BL/BL-renters",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-renters"
+    },
+    {
+      "row": 8,
+      "url": "http://localhost:3000/BL/BL-short-term-rentals",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-short-term-rentals"
+    },
+    {
+      "row": 9,
+      "url": "http://localhost:3000/BL/BL-help-center",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-help-center"
+    },
+    {
+      "row": 10,
+      "url": "http://localhost:3000/BL/BL-demo",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-demo"
+    },
+    {
+      "row": 11,
+      "url": "http://localhost:3000/BL/BL-product-updates",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-product-updates"
+    },
+    {
+      "row": 12,
+      "url": "http://localhost:3000/BL/BL-resources",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-resources"
+    },
+    {
+      "row": 13,
+      "url": "http://localhost:3000/BL/BL-webinars",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-webinars"
+    },
+    {
+      "row": 14,
+      "url": "http://localhost:3000/BL/BL-landlord-accounting",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-landlord-accounting"
+    },
+    {
+      "row": 15,
+      "url": "http://localhost:3000/BL/BL-landlord-banking",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-landlord-banking"
+    },
+    {
+      "row": 16,
+      "url": "http://localhost:3000/BL/BL-landlord-insurance",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-landlord-insurance"
+    },
+    {
+      "row": 17,
+      "url": "http://localhost:3000/BL/BL-pricing",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-pricing"
+    },
+    {
+      "row": 18,
+      "url": "http://localhost:3000/BL/BL-tax-preparation",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-tax-preparation"
+    },
+    {
+      "row": 19,
+      "url": "https://apps.apple.com/us/app/baselane/id6755168931",
+      "curlExit": 0,
+      "response": "200\nhttps://apps.apple.com/us/app/baselane/id6755168931",
+      "error": null
+    },
+    {
+      "row": 20,
+      "url": "https://play.google.com/store/apps/details?id=com.baselane.landlord",
+      "curlExit": 0,
+      "response": "200\nhttps://play.google.com/store/apps/details?id=com.baselane.landlord",
+      "error": null
+    },
+    {
+      "row": 21,
+      "url": "https://thread.bank/program-banks/",
+      "curlExit": 0,
+      "response": "200\nhttps://thread.bank/program-banks/",
+      "error": null
+    },
+    {
+      "row": 22,
+      "url": "https://thread.bank/sweep-disclosure/",
+      "curlExit": 0,
+      "response": "200\nhttps://thread.bank/sweep-disclosure/",
+      "error": null
+    },
+    {
+      "row": 23,
+      "url": "http://localhost:3000/BL/BL-advisor-partner-program",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-advisor-partner-program"
+    },
+    {
+      "row": 24,
+      "url": "http://localhost:3000/BL/BL-about",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-about"
+    },
+    {
+      "row": 25,
+      "url": "http://localhost:3000/BL/BL-careers",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-careers"
+    },
+    {
+      "row": 26,
+      "url": "http://localhost:3000/BL/BL-in-the-news",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-in-the-news"
+    },
+    {
+      "row": 27,
+      "url": "http://localhost:3000/BL/BL-landlord-referral",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-landlord-referral"
+    },
+    {
+      "row": 28,
+      "url": "http://localhost:3000/BL/BL-legal-agreements",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-legal-agreements"
+    },
+    {
+      "row": 29,
+      "url": "http://localhost:3000/BL/BL-partner-with-us",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-partner-with-us"
+    },
+    {
+      "row": 30,
+      "url": "http://localhost:3000/BL/BL-security",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-security"
+    },
+    {
+      "row": 31,
+      "url": "http://localhost:3000/BL/BL-privacy-policy",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-privacy-policy"
+    },
+    {
+      "row": 32,
+      "url": "http://localhost:3000/BL/BL-terms-of-use",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-terms-of-use"
+    },
+    {
+      "row": 33,
+      "url": "http://localhost:3000/BL/BL-real-estate-investing",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-real-estate-investing"
+    },
+    {
+      "row": 34,
+      "url": "http://localhost:3000/BL/BL-free-rental-forms-and-templates-for-landlords",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-free-rental-forms-and-templates-for-landlords"
+    },
+    {
+      "row": 35,
+      "url": "http://localhost:3000/BL/BL-how-much-should-i-charge-for-rent",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-how-much-should-i-charge-for-rent"
+    },
+    {
+      "row": 36,
+      "url": "http://localhost:3000/BL/BL-lease-agreement",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-lease-agreement"
+    },
+    {
+      "row": 37,
+      "url": "https://www.facebook.com/baselanehq",
+      "curlExit": 0,
+      "response": "200\nhttps://www.facebook.com/baselanehq",
+      "error": null
+    },
+    {
+      "row": 38,
+      "url": "https://www.instagram.com/baselanehq/",
+      "curlExit": 0,
+      "response": "200\nhttps://www.instagram.com/baselanehq/",
+      "error": null
+    },
+    {
+      "row": 39,
+      "url": "https://www.linkedin.com/company/baselane",
+      "curlExit": 0,
+      "response": "999\nhttps://www.linkedin.com/company/baselane",
+      "error": null
+    },
+    {
+      "row": 40,
+      "url": "https://www.youtube.com/@baselane",
+      "curlExit": 0,
+      "response": "200\nhttps://www.youtube.com/@baselane",
+      "error": null
+    },
+    {
+      "row": 41,
+      "url": "http://localhost:3000/BL/BL-landlord-banking-apy",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-landlord-banking-apy"
+    },
+    {
+      "row": 42,
+      "url": "http://localhost:3000/BL/BL-our-customers",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-our-customers"
+    },
+    {
+      "row": 43,
+      "url": "http://localhost:3000/BL/BL-rent-collection",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-rent-collection"
+    },
+    {
+      "row": 44,
+      "url": "http://localhost:3000/BL/BL-rental-property-loans",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-rental-property-loans"
+    },
+    {
+      "row": 45,
+      "url": "http://localhost:3000/BL/BL-security-deposit-account",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-security-deposit-account"
+    },
+    {
+      "row": 46,
+      "url": "http://localhost:3000/BL/BL-tenant-screening-service",
+      "status": 200,
+      "finalUrl": "http://localhost:3000/BL/BL-tenant-screening-service"
+    }
+  ],
+  "internalLinkAudit": {
+    "internalLinks": [
+      {
+        "url": "/BL/BL-about",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-advisor-partner-program",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-careers",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-demo",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-free-rental-forms-and-templates-for-landlords",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-help-center",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-home",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-how-much-should-i-charge-for-rent",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-in-the-news",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-landlord-accounting",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-landlord-banking",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-landlord-banking-apy",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-landlord-insurance",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-landlord-referral",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-lease-agreement",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-legal-agreements",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-long-term-rentals",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-mid-term-rentals",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-multi-property-investors",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-our-customers",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-partner-with-us",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-pricing",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-privacy-policy",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-product-updates",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-real-estate-investing",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-rent-collection",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-rent-collection-2",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-rental-property-loans",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-renters",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-resources",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-security",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-security-deposit-account",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-short-term-rentals",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-tax-preparation",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-tenant-screening-service",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-terms-of-use",
+        "status": 200
+      },
+      {
+        "url": "/BL/BL-webinars",
+        "status": 200
+      },
+      {
+        "url": "/blog",
+        "status": 200
+      },
+      {
+        "url": "/contact",
+        "status": 200
+      },
+      {
+        "url": "/demo",
+        "status": 200
+      },
+      {
+        "url": "/faq",
+        "status": 200
+      },
+      {
+        "url": "/integrations",
+        "status": 200
+      },
+      {
+        "url": "/legal/acceptable-use-policy",
+        "status": 200
+      },
+      {
+        "url": "/legal/cookie-policy",
+        "status": 200
+      },
+      {
+        "url": "/legal/dsar",
+        "status": 200
+      },
+      {
+        "url": "/legal/eula",
+        "status": 200
+      },
+      {
+        "url": "/legal/privacy-policy",
+        "status": 200
+      },
+      {
+        "url": "/platform",
+        "status": 200
+      },
+      {
+        "url": "/platform/security-and-compliance",
+        "status": 200
+      },
+      {
+        "url": "/products/agentic-workflows",
+        "status": 200
+      },
+      {
+        "url": "/products/ai-agents",
+        "status": 200
+      },
+      {
+        "url": "/property-management",
+        "status": 200
+      }
+    ],
+    "imageSources": 187,
+    "missingImageFiles": []
+  },
+  "assetManifestFiles": 19,
+  "assetRecordsChecked": 206,
+  "assetErrors": [],
+  "tests": {
+    "files": 23,
+    "passed": 111
+  },
+  "productionBuild": "passed",
+  "publication": "local commits only"
+}

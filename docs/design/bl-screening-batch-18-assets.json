@@ -1,0 +1,65 @@
+[
+  {
+    "file": "public/brand/baselane-inspired/screening/hero.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6884acf931f43bcafdecf1d2_2109c7536ee9302a090c2651d3dd9630_hero-tenant-screening.webp",
+    "downloadFile": "pages/45-blue-tenant-management--tenant-screening-service/6884acf931f43bcafdecf1d2_2109c7536ee9302a090c2651d3dd9630_hero-tenant-screening--fa6b82e4.webp",
+    "sourceRow": 46,
+    "sha256": "fa6b82e4450361e2c29ffa4f258aa649cbae59e86645b1df4b3c8110c2347c1d"
+  },
+  {
+    "file": "public/brand/baselane-inspired/screening/application.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6893978f7ef66f2cc5aa722c_37df2f56c2d83339081edc7697a8bda5_thumb-applicant-overview.webp",
+    "downloadFile": "pages/45-blue-tenant-management--tenant-screening-service/6893978f7ef66f2cc5aa722c_37df2f56c2d83339081edc7697a8bda5_thumb-applicant-overview--c8ecda03.webp",
+    "sourceRow": 46,
+    "sha256": "c8ecda03dbb3964569a70b280f44840e5a286babe4285494a2aa30fcfc35e222"
+  },
+  {
+    "file": "public/brand/baselane-inspired/screening/report.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6893979a7ef66f2cc5aa722d_c31fafcb31df990c5350215b9022d7f3_thumb-tenant-report.webp",
+    "downloadFile": "pages/45-blue-tenant-management--tenant-screening-service/6893979a7ef66f2cc5aa722d_c31fafcb31df990c5350215b9022d7f3_thumb-tenant-report--3c11ff8e.webp",
+    "sourceRow": 46,
+    "sha256": "3c11ff8eea75a9547b4f1b86fdac34a516c1695f4e6f96f475f72bbeea8002d5"
+  },
+  {
+    "file": "public/brand/baselane-inspired/screening/screen.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/689397b57ef66f2cc5aa722e_c640a6e4b6a894202bdb135a6cf32ac9_thumb-screen-tenants.webp",
+    "downloadFile": "pages/45-blue-tenant-management--tenant-screening-service/689397b57ef66f2cc5aa722e_c640a6e4b6a894202bdb135a6cf32ac9_thumb-screen-tenants--7b1a169c.webp",
+    "sourceRow": 46,
+    "sha256": "7b1a169c4562f39a012ce2da8ec07ab84e7bf64dc757bf11f1209993f70585a2"
+  },
+  {
+    "file": "public/brand/baselane-inspired/screening/lease.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/689397ba7ef66f2cc5aa722f_d7f444e1980722ccd84d4a16558e91d0_thumb-sign-leases.webp",
+    "downloadFile": "pages/45-blue-tenant-management--tenant-screening-service/689397ba7ef66f2cc5aa722f_d7f444e1980722ccd84d4a16558e91d0_thumb-sign-leases--87058cd1.webp",
+    "sourceRow": 46,
+    "sha256": "87058cd1d56c79b8890472e74e94e5839b2eae41850f54e2bcf5dddcf888395f"
+  },
+  {
+    "file": "public/brand/baselane-inspired/screening/rent.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6893995b2c1878cba6536e4c_thumb-collect-rent.webp",
+    "downloadFile": "pages/45-blue-tenant-management--tenant-screening-service/6893995b2c1878cba6536e4c_thumb-collect-rent--794056a1.webp",
+    "sourceRow": 46,
+    "sha256": "794056a113e99af14434358337fe97ace0f03b35b5959c1968b6abe618ace1de"
+  },
+  {
+    "file": "public/brand/baselane-inspired/screening/banking.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6893995b46c3ce06815b8c40_thumb-organize-and-grow-your-money.webp",
+    "downloadFile": "pages/45-blue-tenant-management--tenant-screening-service/6893995b46c3ce06815b8c40_thumb-organize-and-grow-your-money--d6ff4ae7.webp",
+    "sourceRow": 46,
+    "sha256": "d6ff4ae70ca2c982a64efd27a8e644cf9bdbcc5a9d523d28dd162a8a5638dce5"
+  },
+  {
+    "file": "public/brand/baselane-inspired/screening/owner.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6856ea68a0d362bc6e9a8430_e958347cc99ff7e2e31f8ac3ccd78247_first-owner-image.webp",
+    "downloadFile": "pages/45-blue-tenant-management--tenant-screening-service/6856ea68a0d362bc6e9a8430_e958347cc99ff7e2e31f8ac3ccd78247_first-owner-image--90b709f4.webp",
+    "sourceRow": 46,
+    "sha256": "90b709f4307d4b2d2d57a41aa3379c4c246cf54d2c72f414ed521e72a1c06787"
+  },
+  {
+    "file": "public/brand/baselane-inspired/screening/resident.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6856ea68a0d362bc6e9a8432_40b6c607fe37628d51c1979a8e63b8e6_second-owner-image.webp",
+    "downloadFile": "pages/45-blue-tenant-management--tenant-screening-service/6856ea68a0d362bc6e9a8432_40b6c607fe37628d51c1979a8e63b8e6_second-owner-image--256c6378.webp",
+    "sourceRow": 46,
+    "sha256": "256c6378703511c561681c1481bbd0420cb5890f4f8b5780cf98b5cab79d0111"
+  }
+]

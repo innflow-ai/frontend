@@ -1,0 +1,32 @@
+[
+  {
+    "file": "public/brand/baselane-inspired/company/about-desktop.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6a466f54b6cc4bfd481acfe5_about-hero-image.webp",
+    "downloadFile": "pages/23-blue-about/6a466f54b6cc4bfd481acfe5_about-hero-image--626e3735.webp",
+    "sourceRow": 24
+  },
+  {
+    "file": "public/brand/baselane-inspired/company/about-mobile.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6a476a7530ea93728684de46_hero-about-image.webp",
+    "downloadFile": "pages/23-blue-about/6a476a7530ea93728684de46_hero-about-image--4f7b3c2d.webp",
+    "sourceRow": 24
+  },
+  {
+    "file": "public/brand/baselane-inspired/company/careers-desktop.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6a47b786e8280236fdde6510_careers-hero-image.webp",
+    "downloadFile": "pages/24-blue-careers/6a47b786e8280236fdde6510_careers-hero-image--d8e47261.webp",
+    "sourceRow": 25
+  },
+  {
+    "file": "public/brand/baselane-inspired/company/careers-mobile.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6a47b78c937ade60bbf54b10_careers-hero-image-mobile.webp",
+    "downloadFile": "pages/24-blue-careers/6a47b78c937ade60bbf54b10_careers-hero-image-mobile--70d93e3e.webp",
+    "sourceRow": 25
+  },
+  {
+    "file": "public/brand/baselane-inspired/company/property.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6a4673dc70f4c5e81d106d4b_banking-features-image.webp",
+    "downloadFile": "pages/23-blue-about/6a4673dc70f4c5e81d106d4b_banking-features-image--29480d4f.webp",
+    "sourceRow": 24
+  }
+]

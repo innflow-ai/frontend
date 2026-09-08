@@ -131,7 +131,10 @@ export function BlogPortableBody({ blocks }: { blocks: LoosePortableBlock[] }) {
         const text = blockPlainText(value as LoosePortableBlock);
         inReferences = isReferencesHeading(text);
         return (
-          <h2 className={inReferences ? styles.referencesHeading : undefined}>
+          <h2
+            id={`section-${value._key}`}
+            className={inReferences ? styles.referencesHeading : undefined}
+          >
             {children}
           </h2>
         );

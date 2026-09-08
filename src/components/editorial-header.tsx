@@ -120,42 +120,21 @@ export function EditorialHeader({
   const isBlogArticle = /^\/blog\/.+/.test(pathname);
   // Articles start with white chrome over their dark canvas. Once scrolled,
   // all subpages use the selected theme's opaque surface and matching chrome.
-  const useLightChrome =
-    !desktopHeader &&
-    (isHome || isBlogArticle) &&
-    !showSolidHeader &&
-    !mobileOpen;
+  const useLightChrome = isHome && !showSolidHeader && !mobileOpen;
   const useDarkTransparentChrome =
-    !desktopHeader &&
-    !isHome &&
-    !isBlogArticle &&
-    !showSolidHeader &&
-    !mobileOpen;
+    !isHome && !isBlogArticle && !showSolidHeader && !mobileOpen;
 
-  // Preserve the homepage's hero threshold. Subpages become opaque on the
-  // first scroll pixel, independently of the direction-based hide animation.
-  // Do not defer that fallback to a cancellable animation frame.
+  // Become opaque on the first scroll pixel, including within the home hero.
+  // biome-ignore lint/correctness/useExhaustiveDependencies: Recheck restored scroll position on navigation.
   useEffect(() => {
-    let frame = 0;
     const syncHeader = () => {
-      if (pathname !== "/") {
-        setShowSolidHeader(window.scrollY > 0);
-        return;
-      }
-      cancelAnimationFrame(frame);
-      frame = requestAnimationFrame(() => {
-        const hero = document.getElementById("home-hero");
-        setShowSolidHeader(
-          hero ? hero.getBoundingClientRect().bottom <= 70 : window.scrollY > 0,
-        );
-      });
+      setShowSolidHeader(window.scrollY > 0);
     };
 
     syncHeader();
     window.addEventListener("scroll", syncHeader, { passive: true });
     window.addEventListener("resize", syncHeader);
     return () => {
-      cancelAnimationFrame(frame);
       window.removeEventListener("scroll", syncHeader);
       window.removeEventListener("resize", syncHeader);
     };
@@ -269,7 +248,7 @@ export function EditorialHeader({
         <div className={styles.desktopReplacement}>{desktopHeader}</div>
       ) : null}
       <header
-        className={`${styles.header}${desktopHeader ? ` ${styles.mobileOnly}` : ""}${isHome && !desktopHeader ? ` ${styles.homeHeader}` : ""}${
+        className={`${styles.header}${isBlogArticle ? ` ${styles.articleHeader}` : ""}${desktopHeader ? ` ${styles.mobileOnly}` : ""}${isHome ? ` ${styles.homeHeader}` : ""}${
           useLightChrome ? ` ${styles.homeTop}` : ""
         }${useDarkTransparentChrome ? ` ${styles.pageTop}` : ""}${
           mobileOpen ? ` ${styles.menuOpen}` : ""
@@ -372,19 +351,6 @@ export function EditorialHeader({
           </div>
         </div>
       </header>
-      {isBlogArticle ? (
-        <>
-          <div
-            className={`${styles.articleFade}${
-              headerHidden ? ` ${styles.articleFadePinned}` : ""
-            }`}
-            data-article-fade=""
-            aria-hidden="true"
-          />
-          <div className={styles.articleBottomFade} aria-hidden="true" />
-        </>
-      ) : null}
-
       {/* Rendered outside the header so the fixed panel can cover the viewport
           below the header without its backdrop-filter changing the containing
           block. */}

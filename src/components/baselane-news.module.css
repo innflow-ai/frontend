@@ -1,0 +1,207 @@
+.page {
+  background: #fffcf4;
+  color: #0b2633;
+  padding-bottom: 80px;
+}
+.intro {
+  max-width: 960px;
+  margin: auto;
+  padding: 170px 32px 64px;
+  text-align: center;
+}
+.intro h1 {
+  font-size: clamp(42px, 5vw, 64px);
+  line-height: 1.08;
+}
+.page .intro p {
+  font-size: 20px;
+  line-height: 1.5;
+  max-width: 720px;
+  margin: 24px auto 0;
+}
+.press,
+.features {
+  max-width: 1440px;
+  margin: auto;
+  padding: 0 32px;
+}
+.track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  padding-bottom: 12px;
+}
+.card {
+  flex: 0 0 calc((100% - 48px) / 3);
+  scroll-snap-align: start;
+  min-width: 0;
+  border: 1px solid #e3e4dc;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.logo {
+  height: 136px;
+  background: #f1eee3;
+  display: grid;
+  place-items: center;
+  padding: 28px;
+}
+.logo img {
+  width: auto;
+  max-width: 100%;
+  height: 38px;
+  object-fit: contain;
+}
+.body {
+  padding: 30px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+.page .body h2 {
+  font-size: 26px;
+  line-height: 1.2;
+}
+.page .body p {
+  line-height: 1.5;
+  font-size: 18px;
+}
+.page .body a,
+.page .copy a {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+.page .body a {
+  margin-top: auto;
+  padding-top: 12px;
+}
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 28px 0 100px;
+}
+.controls button {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #0b2633;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  font-size: 24px;
+  cursor: pointer;
+}
+.controls button:hover {
+  background: #e8f2f8;
+}
+.page :is(a, button, section):focus-visible {
+  outline: 3px solid #2585bd;
+  outline-offset: 4px;
+}
+.page .features > h2 {
+  text-align: center;
+  margin-bottom: 60px !important;
+}
+.feature {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 100px;
+  margin-bottom: 100px;
+}
+.visual {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #e8f2f8;
+  aspect-ratio: 1.16;
+}
+.photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.overlay {
+  position: absolute;
+  right: 4%;
+  bottom: 4%;
+  width: 46%;
+  height: auto;
+  max-height: 80%;
+  object-fit: contain;
+}
+.copy span {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+}
+.page .copy h3 {
+  font-size: clamp(32px, 3.3vw, 44px);
+  line-height: 1.12;
+  margin-top: 20px;
+}
+.page .copy p {
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 24px 0;
+}
+.closing {
+  max-width: 800px;
+  margin: 40px auto 0;
+  padding: 0 24px;
+  text-align: center;
+}
+.page .closing p {
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 30px 0;
+}
+.closing img {
+  object-fit: contain;
+}
+@media (max-width: 900px) {
+  .feature {
+    gap: 40px;
+  }
+  .body {
+    padding: 24px;
+  }
+  .card {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+}
+@media (max-width: 700px) {
+  .intro {
+    padding: 130px 24px 40px;
+  }
+  .press,
+  .features {
+    padding: 0 24px;
+  }
+  .card {
+    flex-basis: 90%;
+  }
+  .feature {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 70px;
+  }
+  .controls {
+    margin-bottom: 64px;
+  }
+  .page .features > h2 {
+    margin-bottom: 36px !important;
+  }
+  .page .intro p,
+  .page .copy p {
+    font-size: 18px;
+  }
+  .page {
+    padding-bottom: 60px;
+  }
+}

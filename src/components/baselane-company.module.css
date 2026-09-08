@@ -1,0 +1,510 @@
+.page {
+  padding-top: 115px;
+}
+.hero {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1376px;
+  border-radius: 24px;
+  overflow: hidden;
+  min-height: 355px;
+  padding: 50px 35px;
+  color: white;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+.hero img,
+.property img,
+.panorama img,
+.closing img {
+  object-fit: cover;
+}
+.hero:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #0b3a572a;
+}
+.hero > div {
+  position: relative;
+  z-index: 1;
+  max-width: 1050px;
+}
+.hero h1 {
+  font-size: 58px;
+  line-height: 1.03;
+}
+.hero p {
+  font-size: 20px;
+  line-height: 1.35;
+  max-width: 840px;
+  margin: 32px auto !important;
+}
+.actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.page .button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 22px;
+  min-height: 48px;
+  border-radius: 7px;
+  background: linear-gradient(#494b47, #242522);
+  color: white;
+  font-size: 15px;
+}
+.outline {
+  padding: 13px 20px;
+  border: 1px solid;
+  border-radius: 30px;
+}
+.careerHero {
+  color: #112630;
+}
+.careerHero:after {
+  background: transparent;
+}
+.careerHero h1 {
+  max-width: 950px;
+}
+.facts {
+  max-width: 1320px;
+  margin: 65px auto 90px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+}
+.facts > div {
+  padding: 18px;
+  border-right: 1px solid #223b43;
+}
+.facts > div:last-child {
+  border: 0;
+}
+.facts h2 {
+  font-size: 38px !important;
+}
+.facts p {
+  font-size: 14px;
+  margin-top: 18px !important;
+}
+.split {
+  max-width: 1420px;
+  padding: 0 28px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 70px;
+  margin: 90px auto;
+}
+.statement h2 {
+  font-size: 43px !important;
+  line-height: 1.15;
+}
+.statement p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 25px 0 !important;
+  max-width: 560px;
+}
+.statement a {
+  display: inline-block;
+  border-bottom: 1px solid;
+}
+.label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  margin-bottom: 20px;
+}
+.workspace {
+  background: linear-gradient(125deg, #ddeef8, #f6faf9);
+  border: 1px solid #cbdfeb;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px #1c5d7910;
+  min-height: 480px;
+}
+.workspaceBar {
+  padding: 22px 26px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #bed3df;
+  align-items: center;
+}
+.workspaceBar strong {
+  font-size: 25px;
+  letter-spacing: -0.06em;
+}
+.workspaceBar span {
+  font-size: 12px;
+}
+.workspaceBody {
+  padding: 30px;
+}
+.workspaceBody h3 {
+  font-size: 30px;
+  margin-bottom: 25px !important;
+}
+.request {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #ffffffd9;
+  border: 1px solid #d5e3eb;
+  border-radius: 9px;
+  padding: 16px 12px;
+}
+.request > span {
+  font-size: 12px;
+  color: #42789b;
+}
+.request strong {
+  font-size: 14px;
+  font-weight: 500;
+}
+.request p {
+  font-size: 11px;
+  margin-top: 6px !important;
+  color: #566c7a;
+}
+.request > b {
+  font-size: 10px;
+  font-weight: 400;
+  color: #2b6387;
+  background: #e3f1f7;
+  padding: 5px;
+  border-radius: 4px;
+  margin-left: auto;
+}
+.connector {
+  color: #6090ab;
+  text-align: center;
+  padding: 9px;
+}
+.property {
+  height: 560px;
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+}
+.context {
+  position: absolute;
+  left: 12%;
+  top: 17%;
+  width: 76%;
+  background: #f3f9f8e8;
+  backdrop-filter: blur(15px);
+  padding: 28px;
+  border: 1px solid #ffffff80;
+  border-radius: 15px;
+  box-shadow: 0 15px 40px #16374e30;
+}
+.context h3 {
+  font-size: 27px;
+  margin-bottom: 25px !important;
+}
+.context p {
+  padding: 14px 0;
+  border-top: 1px solid #c9dce4;
+  font-size: 15px;
+}
+.context b {
+  float: right;
+  color: #2378a5;
+}
+.values > h2 {
+  font-size: 42px !important;
+}
+.values > p {
+  line-height: 1.5;
+  margin: 24px 0 38px !important;
+}
+.values details {
+  border-top: 1px solid #7a8b8d;
+  padding: 19px 0;
+}
+.values summary {
+  cursor: pointer;
+  font-size: 19px;
+  line-height: 1.4;
+}
+.values details p {
+  line-height: 1.5;
+  font-size: 15px;
+  margin-top: 18px !important;
+}
+.pillars {
+  text-align: center;
+  max-width: 1250px;
+  padding: 0 28px;
+  margin: 80px auto;
+}
+.pillars > div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 40px 0;
+}
+.pillars > div > a {
+  text-align: left;
+  min-height: 380px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(150deg, #bbd8ed, #ecf3f5);
+  border-radius: 20px;
+}
+.pillars a > span {
+  font-size: 90px;
+  letter-spacing: -0.05em;
+  color: #48769555;
+}
+.pillars h3 {
+  font-size: 34px;
+  margin-top: 25px !important;
+}
+.pillars p {
+  font-size: 17px;
+  line-height: 1.5;
+  margin: 18px 0 !important;
+}
+.pillars b {
+  margin-top: auto;
+  font-weight: 400;
+  font-size: 14px;
+}
+.linkBand {
+  text-align: center;
+  padding: 45px 24px 75px;
+}
+.linkBand h2 {
+  font-size: 30px !important;
+}
+.linkBand > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 45px;
+  margin-top: 35px;
+  font-size: 23px;
+}
+.closing {
+  height: 370px;
+  position: relative;
+  padding: 55px 6%;
+  scroll-margin-top: 100px;
+}
+.closing > div {
+  position: relative;
+  max-width: 630px;
+}
+.closing h2 {
+  font-size: 44px !important;
+}
+.closing p {
+  font-size: 18px;
+  line-height: 1.4;
+  margin: 25px 0 !important;
+}
+.careerIntro {
+  max-width: 1280px;
+  padding: 0 28px;
+  margin: 80px auto;
+  text-align: center;
+}
+.careerIntro > p {
+  margin: 25px 0 40px !important;
+}
+.panorama {
+  position: relative;
+  height: 300px;
+  border-radius: 22px;
+  overflow: hidden;
+}
+.questions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+  margin-top: 45px;
+  text-align: left;
+}
+.questions h3 {
+  font-size: 27px;
+  margin-bottom: 22px !important;
+}
+.questions p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+.page :is(a, summary):focus-visible {
+  outline: 3px solid #2389bc;
+  outline-offset: 5px;
+}
+@media (max-width: 1000px) {
+  .hero {
+    margin: 0 24px;
+  }
+  .hero h1 {
+    font-size: 48px;
+  }
+  .split {
+    gap: 35px;
+  }
+  .request {
+    flex-wrap: wrap;
+  }
+  .request > b {
+    display: none;
+  }
+  .statement h2,
+  .values > h2 {
+    font-size: 36px !important;
+  }
+  .facts h2 {
+    font-size: 29px !important;
+  }
+}
+@media (max-width: 700px) {
+  .page {
+    padding-top: 108px;
+  }
+  .hero {
+    margin: 0 20px;
+    padding: 40px 24px;
+    min-height: 445px;
+    border-radius: 18px;
+  }
+  .hero h1 {
+    font-size: 40px;
+  }
+  .hero p {
+    font-size: 17px;
+    margin: 24px 0 !important;
+  }
+  .careerHero {
+    min-height: 410px;
+  }
+  .actions {
+    gap: 15px;
+  }
+  .facts {
+    grid-template-columns: 1fr 1fr;
+    margin: 40px 20px;
+  }
+  .facts > div {
+    padding: 22px 10px;
+  }
+  .facts > div:nth-child(2) {
+    border: 0;
+  }
+  .facts h2 {
+    font-size: 28px !important;
+  }
+  .facts p {
+    font-size: 12px;
+  }
+  .split {
+    grid-template-columns: 1fr;
+    padding: 0 24px;
+    gap: 32px;
+    margin: 60px auto;
+  }
+  .statement h2 {
+    font-size: 34px !important;
+  }
+  .statement p {
+    font-size: 17px;
+  }
+  .workspace {
+    min-height: 440px;
+  }
+  .workspaceBody {
+    padding: 22px;
+  }
+  .workspaceBar {
+    padding: 20px;
+  }
+  .workspaceBar span {
+    font-size: 10px;
+  }
+  .request {
+    gap: 8px;
+    padding: 14px 10px;
+  }
+  .request strong {
+    font-size: 13px;
+  }
+  .request p {
+    font-size: 10px;
+  }
+  .property {
+    height: 400px;
+  }
+  .context {
+    left: 8%;
+    width: 84%;
+    top: 12%;
+    padding: 23px;
+  }
+  .values > h2 {
+    font-size: 34px !important;
+  }
+  .pillars {
+    padding: 0 24px;
+    margin: 60px auto;
+  }
+  .pillars > h2 {
+    font-size: 35px !important;
+  }
+  .pillars > div {
+    grid-template-columns: 1fr;
+  }
+  .pillars > div > a {
+    min-height: 320px;
+  }
+  .linkBand {
+    padding: 25px 24px 55px;
+  }
+  .linkBand > div {
+    gap: 25px;
+    font-size: 19px;
+  }
+  .closing {
+    height: 420px;
+    padding: 45px 24px;
+  }
+  .closing img {
+    object-position: 65% center;
+  }
+  .closing h2 {
+    font-size: 36px !important;
+  }
+  .closing p {
+    max-width: 310px;
+    font-size: 16px;
+  }
+  .careerIntro {
+    padding: 0 24px;
+    margin: 60px auto;
+  }
+  .careerIntro h2 {
+    font-size: 34px !important;
+  }
+  .panorama {
+    height: 220px;
+  }
+  .questions {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .questions h3 {
+    font-size: 25px;
+    margin-bottom: 15px !important;
+  }
+}

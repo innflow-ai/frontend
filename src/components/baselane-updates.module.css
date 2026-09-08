@@ -1,0 +1,268 @@
+.hero {
+  max-width: 1240px;
+  margin: auto;
+  padding: 130px 24px 60px;
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 55px;
+  align-items: center;
+}
+.hero small {
+  font-size: 12px;
+  color: #58656a;
+}
+.hero h1 {
+  font-size: 60px;
+  line-height: 1.08;
+  margin: 28px 0 !important;
+}
+.hero p {
+  font-size: 22px;
+  line-height: 1.3;
+}
+.hero span {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  margin-top: 22px;
+  color: #536d7c;
+}
+.heroImage {
+  position: relative;
+  aspect-ratio: 1.95;
+  overflow: hidden;
+  border-radius: 22px;
+}
+.heroImage img {
+  object-fit: cover;
+}
+.layout {
+  max-width: 1240px;
+  margin: auto;
+  padding: 0 24px 80px;
+  display: grid;
+  grid-template-columns: 245px 1fr;
+  gap: 75px;
+  align-items: start;
+}
+.sidebar {
+  position: sticky;
+  top: 115px;
+}
+.sidebar h2 {
+  font-size: 20px !important;
+  line-height: 1.15 !important;
+}
+.primary {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 25px;
+  background: linear-gradient(#494b47, #242522);
+  font-size: 14px;
+}
+.sidebar .primary,
+.closing .primary {
+  color: white;
+  margin-top: 20px;
+}
+.share {
+  margin: 35px 0;
+}
+.share small,
+.sidebar nav > small {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+}
+.share button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: 0;
+  padding: 16px 0;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+.share > span {
+  display: block;
+  font-size: 12px;
+  color: #3c647b;
+}
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-height: 40vh;
+  overflow-y: auto;
+}
+.sidebar nav > small {
+  margin-bottom: 15px;
+}
+.sidebar nav a {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid #d0d4d0;
+  padding: 20px 0;
+}
+.entries article {
+  scroll-margin-top: 115px;
+  padding-bottom: 65px;
+  margin-bottom: 55px;
+  border-bottom: 1px solid #b7c3c6;
+}
+.entries article:last-child {
+  margin-bottom: 0;
+}
+.entries h2 {
+  font-size: 42px !important;
+  line-height: 1.1 !important;
+  margin-bottom: 32px !important;
+}
+.entries h3 {
+  font-size: 30px;
+  margin: 32px 0 24px !important;
+}
+.entries p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 26px 0 !important;
+}
+.entryImage {
+  position: relative;
+  aspect-ratio: 1.85;
+  border-radius: 18px;
+  overflow: hidden;
+}
+.entryImage img {
+  object-fit: cover;
+}
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 25px;
+}
+.entries .links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  text-decoration: underline !important;
+}
+.closing {
+  position: relative;
+  isolation: isolate;
+  min-height: 330px;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  padding: 65px 24px;
+}
+.closing > img {
+  object-fit: cover;
+  z-index: -1;
+}
+.closing p {
+  margin-top: 24px !important;
+  font-size: 20px;
+}
+.closing .primary {
+  margin-top: 25px;
+}
+.sidebar a:focus-visible,
+.share button:focus-visible,
+.links a:focus-visible {
+  outline: 3px solid #3b85a5;
+  outline-offset: 4px;
+}
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 210px 1fr;
+    gap: 40px;
+  }
+  .hero h1 {
+    font-size: 48px;
+  }
+  .entries h2 {
+    font-size: 36px !important;
+  }
+}
+@media (max-width: 700px) {
+  .hero {
+    display: flex;
+    flex-direction: column-reverse;
+    padding: 110px 24px 40px;
+    gap: 35px;
+  }
+  .heroImage {
+    width: 100%;
+  }
+  .hero h1 {
+    font-size: 44px;
+  }
+  .hero p {
+    font-size: 20px;
+  }
+  .layout {
+    display: block;
+    padding-inline: 24px;
+  }
+  .sidebar {
+    position: static;
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #aebbbf;
+    margin-bottom: 45px;
+  }
+  .sidebar h2 {
+    font-size: 22px !important;
+  }
+  .share {
+    margin: 28px 0;
+  }
+  .share button {
+    margin: auto;
+  }
+  .sidebar nav {
+    max-height: 220px;
+    text-align: left;
+    background: #eef4f6;
+    border-radius: 12px;
+    padding: 20px;
+  }
+  .sidebar nav a {
+    font-size: 11px;
+  }
+  .entries h2 {
+    font-size: 34px !important;
+  }
+  .entries h3 {
+    font-size: 27px;
+  }
+  .entries p {
+    font-size: 17px;
+  }
+  .entryImage {
+    aspect-ratio: 1.5;
+  }
+  .closing {
+    min-height: 390px;
+  }
+  .closing h2 {
+    font-size: 36px !important;
+  }
+  .closing > img {
+    object-position: center;
+  }
+  .entries article {
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+  }
+}

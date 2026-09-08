@@ -1,0 +1,494 @@
+.hero {
+  height: 650px;
+  position: relative;
+  background: #0b2633;
+  color: white;
+}
+.hero img,
+.salesCard img,
+.webinarCard img,
+.ocean img {
+  object-fit: cover;
+}
+.heroCopy {
+  position: relative;
+  z-index: 1;
+  padding: 170px 6% 40px;
+  max-width: 670px;
+}
+.heroCopy h1 {
+  font-size: 64px;
+  line-height: 1.03;
+  margin: 20px 0 !important;
+}
+.heroCopy p {
+  max-width: 420px;
+  line-height: 1.5;
+  margin-bottom: 28px !important;
+}
+.heroCopy > span,
+.statement > span {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+}
+.demo .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 22px;
+  border-radius: 7px;
+  background: linear-gradient(#494b47, #242522);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+}
+.intro {
+  text-align: center;
+  padding: 78px 20px 42px;
+}
+.intro p {
+  max-width: 570px;
+  margin: 20px auto 0 !important;
+  line-height: 1.5;
+}
+.demoCards {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 20px;
+  max-width: 1280px;
+  margin: auto;
+  padding: 0 28px;
+}
+.salesCard,
+.webinarCard {
+  min-height: 420px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.eyebrow {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  z-index: 2;
+}
+.webinarCard {
+  color: white;
+}
+.webinarCard:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 20%, #0b2633e8);
+}
+.cardCopy {
+  position: absolute;
+  z-index: 2;
+  bottom: 28px;
+  left: 28px;
+  right: 28px;
+}
+.cardCopy h2 {
+  font-size: 30px !important;
+  max-width: 320px;
+}
+.cardCopy p {
+  max-width: 340px;
+  line-height: 1.4;
+  margin: 14px 0 22px !important;
+}
+.salesCard .cardCopy {
+  max-width: 300px;
+}
+.workflow {
+  position: absolute;
+  top: 67px;
+  right: 20px;
+  width: 245px;
+  display: grid;
+  gap: 7px;
+  padding: 18px;
+  border: 1px solid #ffffffa0;
+  border-radius: 14px;
+  background: #eff8ffed;
+  box-shadow: 0 12px 35px #1c3c5720;
+  transform: rotate(3deg);
+}
+.workflow small {
+  font-size: 9px;
+  letter-spacing: 0.04em;
+}
+.workflow strong {
+  font-size: 12px;
+  background: white;
+  padding: 10px;
+  border: 1px solid #d6e6f1;
+  border-radius: 6px;
+}
+.workflow > span {
+  text-align: center;
+  color: #3d739a;
+}
+.workflow b {
+  float: right;
+  color: #36728d;
+}
+.statement {
+  text-align: center;
+  padding: 100px 24px;
+}
+.statement h2 {
+  margin: 22px 0 !important;
+}
+.statement p {
+  max-width: 610px;
+  line-height: 1.6;
+  margin: 0 auto 24px !important;
+}
+.statement a {
+  border-bottom: 1px solid;
+}
+.ocean {
+  height: 620px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 60px 6%;
+}
+.ocean > div {
+  position: relative;
+  z-index: 1;
+  max-width: 500px;
+}
+.ocean p {
+  margin: 24px 0 !important;
+}
+.help {
+  background: #f5f6f6;
+}
+.helpHero {
+  padding: 155px 24px 65px;
+  text-align: center;
+  background:
+    linear-gradient(#1c526c30, #184f7890),
+    url("/brand/baselane-inspired/demo/book-desktop.webp") center 42% / cover;
+  color: white;
+}
+.helpHero h1 {
+  font-size: 48px;
+  margin-bottom: 28px !important;
+}
+.search {
+  max-width: 620px;
+  margin: auto;
+  display: flex;
+  background: white;
+  color: #233944;
+  align-items: center;
+  border-radius: 6px;
+  padding: 0 18px;
+  box-shadow: 0 8px 30px #152a4420;
+}
+.search > span {
+  font-size: 30px;
+}
+.search input {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  padding: 20px 14px;
+  font: inherit;
+  color: #182b39;
+  min-width: 0;
+}
+.search:focus-within {
+  outline: 3px solid #89c8f9;
+  outline-offset: 3px;
+}
+.search input:focus {
+  outline: none;
+}
+.helpSection,
+.results {
+  max-width: 1120px;
+  margin: auto;
+  padding: 42px 28px;
+}
+.helpSection > h2 {
+  font-size: 26px !important;
+  text-align: center;
+  margin-bottom: 26px !important;
+}
+.contactGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.contactGrid > a,
+.topicGrid details,
+.resource {
+  background: white;
+  border: 1px solid #e1e5e9;
+  border-radius: 6px;
+}
+.contactGrid > a {
+  text-align: center;
+  padding: 32px 24px;
+}
+.contactGrid > a > span,
+.resource > span,
+.topicIcon {
+  font-size: 30px;
+  color: #2774a5;
+}
+.contactGrid h3,
+.resource h3 {
+  font-size: 20px;
+  font-weight: 600 !important;
+  margin: 14px 0 !important;
+}
+.contactGrid p,
+.resource p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #53636c;
+}
+.topicGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+.topicGrid summary {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 28px;
+  cursor: pointer;
+  font-size: 19px;
+  font-weight: 600;
+  list-style: none;
+}
+.topicGrid summary::-webkit-details-marker {
+  display: none;
+}
+.chevron {
+  margin-left: auto;
+}
+.topicGrid details[open] .chevron {
+  transform: rotate(180deg);
+}
+.topicGrid details > div {
+  display: grid;
+  gap: 20px;
+  padding: 0 28px 28px 76px;
+  font-size: 15px;
+}
+.resource {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 24px 32px;
+}
+.resource > span:last-child {
+  margin-left: auto;
+}
+.helpSection:last-child {
+  padding-bottom: 85px;
+}
+.resultHeading {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+}
+.resultHeading h2 {
+  font-size: 30px !important;
+}
+.resultHeading button {
+  font: inherit;
+  padding: 10px 18px;
+  background: white;
+  border: 1px solid #cedae1;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.results {
+  min-height: 500px;
+}
+.results > p {
+  margin: 24px 0 !important;
+}
+.resultLink {
+  display: block;
+  padding: 18px 0;
+  border-bottom: 1px solid #dbe3e8;
+}
+.results details {
+  padding: 20px 0;
+  border-bottom: 1px solid #dbe3e8;
+}
+.results summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.results details p {
+  line-height: 1.7;
+  margin-top: 16px !important;
+}
+.demo a:focus-visible,
+.help a:focus-visible,
+.help summary:focus-visible,
+.help button:focus-visible {
+  outline: 3px solid #318bc5;
+  outline-offset: 5px;
+}
+@media (max-width: 1000px) {
+  .workflow {
+    width: 190px;
+    right: 14px;
+    top: 65px;
+  }
+  .salesCard .cardCopy {
+    max-width: 270px;
+  }
+  .salesCard {
+    min-height: 530px;
+  }
+  .heroCopy {
+    max-width: 560px;
+  }
+  .heroCopy h1 {
+    font-size: 56px;
+  }
+}
+@media (max-width: 700px) {
+  .hero {
+    height: auto;
+    padding-top: 320px;
+  }
+  .hero picture {
+    position: absolute;
+    inset: 0 0 auto;
+    height: 320px;
+  }
+  .heroCopy {
+    padding: 34px 24px 42px;
+  }
+  .heroCopy h1 {
+    font-size: 42px;
+  }
+  .intro {
+    padding: 50px 24px 30px;
+  }
+  .intro h2 {
+    font-size: 34px !important;
+  }
+  .demoCards {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+    gap: 24px;
+  }
+  .salesCard {
+    min-height: 590px;
+  }
+  .webinarCard {
+    min-height: 420px;
+  }
+  .workflow {
+    top: 65px;
+    right: 30px;
+    width: 240px;
+    transform: rotate(2deg);
+  }
+  .cardCopy {
+    left: 24px;
+    right: 24px;
+    bottom: 24px;
+  }
+  .salesCard .cardCopy {
+    max-width: none;
+  }
+  .cardCopy h2 {
+    font-size: 30px !important;
+  }
+  .statement {
+    padding: 65px 24px;
+  }
+  .statement h2 {
+    font-size: 36px !important;
+  }
+  .ocean {
+    height: 570px;
+    padding: 40px 24px;
+    align-items: flex-start;
+  }
+  .ocean img {
+    object-position: 60% center;
+  }
+  .ocean h2 {
+    font-size: 38px !important;
+  }
+  .helpHero {
+    padding: 140px 20px 50px;
+    background-position: center;
+  }
+  .helpHero h1 {
+    font-size: 36px;
+  }
+  .contactGrid,
+  .topicGrid {
+    grid-template-columns: 1fr;
+  }
+  .helpSection,
+  .results {
+    padding: 30px 20px;
+  }
+  .topicGrid summary {
+    padding: 24px 20px;
+    font-size: 18px;
+    gap: 16px;
+  }
+  .topicGrid details > div {
+    padding-left: 65px;
+  }
+  .resource {
+    padding: 22px;
+    gap: 16px;
+  }
+  .resource > span:last-child {
+    display: none;
+  }
+  .resultHeading {
+    align-items: flex-start;
+  }
+  .resultHeading h2 {
+    font-size: 25px !important;
+  }
+}
+@media (min-width: 701px) {
+  .hero:after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #0b2633dc, transparent 72%);
+  }
+  .heroCopy {
+    z-index: 2;
+  }
+}
+.salesCard:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, #f1f7fc 0%, #f1f7fcdd 29%, transparent 70%);
+}
+.workflow {
+  z-index: 2;
+}
+.webinarCard:after {
+  background: linear-gradient(180deg, #0b26336b, transparent 30%, #0b2633eb);
+}

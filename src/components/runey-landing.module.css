@@ -41,6 +41,26 @@
   font-family: var(--font-figtree), sans-serif;
   backdrop-filter: blur(14px);
   border-bottom: 1px solid #f5f5f3;
+  transition:
+    background-color 220ms ease,
+    color 220ms ease,
+    border-color 220ms ease;
+}
+.homeHeader {
+  position: fixed;
+  right: 0;
+  left: 0;
+}
+.headerTop {
+  background: transparent;
+  border-bottom-color: transparent;
+  backdrop-filter: none;
+}
+.headerLight {
+  color: #fff;
+  --header-nav-hover: #fff;
+  --runey-logo-filter: brightness(0) invert(1);
+  --runey-nav-color: #fff;
 }
 .headerInner {
   width: min(1200px, calc(100% - 64px));
@@ -53,7 +73,7 @@
 }
 .headerInner > :where(a) > img {
   display: block;
-  filter: brightness(0);
+  filter: var(--runey-logo-filter, brightness(0));
 }
 .desktopNav,
 .headerActions {
@@ -63,13 +83,13 @@
 }
 .desktopNav a,
 .login {
-  color: #71736d;
+  color: var(--runey-nav-color, #71736d);
   text-decoration: none;
   font-size: 14px;
 }
 .desktopNav a:hover,
 .login:hover {
-  color: #111;
+  color: var(--runey-nav-color, #111);
 }
 .headerActions {
   gap: 24px;

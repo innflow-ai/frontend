@@ -1,0 +1,98 @@
+[
+  {
+    "file": "public/brand/baselane-inspired/rent-collection/hero-desktop.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69a7f7e8d53ad0bf61940d32_rent-hero-desktop%402x.webp",
+    "downloadFile": "pages/02-yellow-rent-collection-2/69a7f7e8d53ad0bf61940d32_rent-hero-desktop-2x--e5f1fcf8.webp",
+    "sourceRow": 3
+  },
+  {
+    "file": "public/brand/baselane-inspired/rent-collection/hero-mobile.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69a7f9197f69d71c927b58aa_rent-hero-mobile%402x.webp",
+    "downloadFile": "pages/02-yellow-rent-collection-2/69a7f9197f69d71c927b58aa_rent-hero-mobile-2x--271b4a7e.webp",
+    "sourceRow": 3
+  },
+  {
+    "file": "public/brand/baselane-inspired/rent-collection/solutions-automation-bg-desktop.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69a7f7e6be0a1e7e2d4722a3_rent-solutions-automation-bg-desktop%402x.webp",
+    "downloadFile": "pages/02-yellow-rent-collection-2/69a7f7e6be0a1e7e2d4722a3_rent-solutions-automation-bg-desktop-2x--5a323dd9.webp",
+    "sourceRow": 3
+  },
+  {
+    "file": "public/brand/baselane-inspired/rent-collection/solutions-automation-bg-mobile.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69a7f919f865000becc24aff_rent-solutions-automation-bg-mobile%402x.webp",
+    "downloadFile": "pages/02-yellow-rent-collection-2/69a7f919f865000becc24aff_rent-solutions-automation-bg-mobile-2x--79739e50.webp",
+    "sourceRow": 3
+  },
+  {
+    "file": "public/brand/baselane-inspired/rent-collection/solutions-deposits-bg-desktop.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69a7f7e7ec757180cd8cb498_rent-solutions-deposits-bg-desktop%402x.webp",
+    "downloadFile": "pages/02-yellow-rent-collection-2/69a7f7e7ec757180cd8cb498_rent-solutions-deposits-bg-desktop-2x--28bb8c83.webp",
+    "sourceRow": 3
+  },
+  {
+    "file": "public/brand/baselane-inspired/rent-collection/solutions-deposits-bg-mobile.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69a7f91909ea2f4d19fdee35_rent-solutions-deposits-bg-mobile%402x.webp",
+    "downloadFile": "pages/02-yellow-rent-collection-2/69a7f91909ea2f4d19fdee35_rent-solutions-deposits-bg-mobile-2x--72fc99ff.webp",
+    "sourceRow": 3
+  },
+  {
+    "file": "public/brand/baselane-inspired/rent-collection/solutions-tenant-bg-desktop.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69a7f7e8ed058e9bbf630dde_rent-solutions-tenant-bg-desktop%402x.webp",
+    "downloadFile": "pages/02-yellow-rent-collection-2/69a7f7e8ed058e9bbf630dde_rent-solutions-tenant-bg-desktop-2x--78bf1356.webp",
+    "sourceRow": 3
+  },
+  {
+    "file": "public/brand/baselane-inspired/rent-collection/solutions-tenant-bg-mobile.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69a7f91938c4c7c9fcc62a52_rent-solutions-tenant-bg-mobile%402x.webp",
+    "downloadFile": "pages/02-yellow-rent-collection-2/69a7f91938c4c7c9fcc62a52_rent-solutions-tenant-bg-mobile-2x--3da58f92.webp",
+    "sourceRow": 3
+  },
+  {
+    "file": "public/brand/baselane-inspired/accounting/hero-desktop.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69a8a073a142daa3f522a390_8293af7fa0f997b69b0b3262789b5404_bookkeeping-hero-desktop%402x.webp",
+    "downloadFile": "pages/13-yellow-landlord-accounting/69a8a073a142daa3f522a390_8293af7fa0f997b69b0b3262789b5404_bookkeeping-hero-desktop-2x--17f14988.webp",
+    "sourceRow": 14
+  },
+  {
+    "file": "public/brand/baselane-inspired/accounting/hero-mobile.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69aa83a3bded37beed56c228_bookkeeping-hero-mobile%402x.webp",
+    "downloadFile": "pages/13-yellow-landlord-accounting/69aa83a3bded37beed56c228_bookkeeping-hero-mobile-2x--42d94c5f.webp",
+    "sourceRow": 14
+  },
+  {
+    "file": "public/brand/baselane-inspired/accounting/solutions-automation-bg-desktop.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69a8a06a189fb631bce0976e_bookkeeping-solutions-automation-bg-desktop%402x.webp",
+    "downloadFile": "pages/13-yellow-landlord-accounting/69a8a06a189fb631bce0976e_bookkeeping-solutions-automation-bg-desktop-2x--d7523245.webp",
+    "sourceRow": 14
+  },
+  {
+    "file": "public/brand/baselane-inspired/accounting/solutions-automation-bg-mobile.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69a6c364a2c1807244742814_bookkeeping-solutions-automation-bg-mobile%402x.webp",
+    "downloadFile": "pages/13-yellow-landlord-accounting/69a6c364a2c1807244742814_bookkeeping-solutions-automation-bg-mobile-2x--70390783.webp",
+    "sourceRow": 14
+  },
+  {
+    "file": "public/brand/baselane-inspired/accounting/solutions-reporting-bg-desktop.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69a8a07311f132cc86cc317b_bookkeeping-solutions-reporting-bg-desktop%402x.webp",
+    "downloadFile": "pages/13-yellow-landlord-accounting/69a8a07311f132cc86cc317b_bookkeeping-solutions-reporting-bg-desktop-2x--761f951e.webp",
+    "sourceRow": 14
+  },
+  {
+    "file": "public/brand/baselane-inspired/accounting/solutions-reporting-bg-mobile.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69a6c3656d34be6af37c275d_bookkeeping-solutions-reporting-bg-mobile%402x.webp",
+    "downloadFile": "pages/13-yellow-landlord-accounting/69a6c3656d34be6af37c275d_bookkeeping-solutions-reporting-bg-mobile-2x--b55923d6.webp",
+    "sourceRow": 14
+  },
+  {
+    "file": "public/brand/baselane-inspired/accounting/solutions-tax-bg-desktop.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69a8a05f0f2c18ccc5fa8191_bookkeeping-solutions-tax-bg-desktop%402x.webp",
+    "downloadFile": "pages/13-yellow-landlord-accounting/69a8a05f0f2c18ccc5fa8191_bookkeeping-solutions-tax-bg-desktop-2x--469ecf3d.webp",
+    "sourceRow": 14
+  },
+  {
+    "file": "public/brand/baselane-inspired/accounting/solutions-tax-bg-mobile.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69a6c36467b5edd56544f19e_bookkeeping-solutions-tax-bg-mobile%402x.webp",
+    "downloadFile": "pages/13-yellow-landlord-accounting/69a6c36467b5edd56544f19e_bookkeeping-solutions-tax-bg-mobile-2x--1c119571.webp",
+    "sourceRow": 14
+  }
+]

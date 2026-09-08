@@ -1,0 +1,38 @@
+[
+  {
+    "file": "public/brand/baselane-inspired/demo/hero-desktop.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69a01985f05fab5e9f13e3ba_demo-hero-desktop%402x.webp",
+    "downloadFile": "pages/09-yellow-demo/69a01985f05fab5e9f13e3ba_demo-hero-desktop-2x--21bacdf3.webp",
+    "sourceRow": 10
+  },
+  {
+    "file": "public/brand/baselane-inspired/demo/hero-mobile.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69a0199622db6944119df029_demo-hero-mobile%402x.webp",
+    "downloadFile": "pages/09-yellow-demo/69a0199622db6944119df029_demo-hero-mobile-2x--06fabbe1.webp",
+    "sourceRow": 10
+  },
+  {
+    "file": "public/brand/baselane-inspired/demo/book-desktop.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69a0121a6b0e54b918ee726b_demo-book-bg-desktop%402x.webp",
+    "downloadFile": "pages/09-yellow-demo/69a0121a6b0e54b918ee726b_demo-book-bg-desktop-2x--5937c328.webp",
+    "sourceRow": 10
+  },
+  {
+    "file": "public/brand/baselane-inspired/demo/book-mobile.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69a0125e4f1b4558d44e86f5_demo-book-bg-mobile%402x.webp",
+    "downloadFile": "pages/09-yellow-demo/69a0125e4f1b4558d44e86f5_demo-book-bg-mobile-2x--2eedd44d.webp",
+    "sourceRow": 10
+  },
+  {
+    "file": "public/brand/baselane-inspired/demo/webinar-desktop.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69a01248d0145e30ff210ebc_demo-webinar-desktop%402x.webp",
+    "downloadFile": "pages/09-yellow-demo/69a01248d0145e30ff210ebc_demo-webinar-desktop-2x--4db140b9.webp",
+    "sourceRow": 10
+  },
+  {
+    "file": "public/brand/baselane-inspired/demo/webinar-mobile.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69a54c5cc51482c990ed6873_demo-webinar-bg-mobile%402x.webp",
+    "downloadFile": "pages/09-yellow-demo/69a54c5cc51482c990ed6873_demo-webinar-bg-mobile-2x--b6a75a31.webp",
+    "sourceRow": 10
+  }
+]

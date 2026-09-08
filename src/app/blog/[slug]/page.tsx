@@ -7,14 +7,14 @@ import { BlogContinueLearning } from "@/components/blog/continue-learning";
 import { BlogListenPlayer } from "@/components/blog/listen-player";
 import { BlogPortableBody } from "@/components/blog/portable-body";
 import { BlogRelatedPosts } from "@/components/blog/related-posts";
-import { BlogSearch } from "@/components/blog/search";
 import { BlogShareBar } from "@/components/blog/share-bar";
 import { BlogTaxonomy } from "@/components/blog/taxonomy";
-import { Breadcrumbs } from "@/components/breadcrumbs";
+import { GoogleSignInButton } from "@/components/google-sign-in";
 import { JsonLd } from "@/components/json-ld";
 import { MarketingPage } from "@/components/page-primitives";
 import { siteConfig } from "@/config/site";
 import {
+  blockPlainText,
   industriesForPost,
   type LoosePortableBlock,
   portableTextToPlain,
@@ -27,6 +27,7 @@ import {
   getBlogSlugs,
   getRelatedBlogPosts,
   humanizeCategory,
+  urlForImage,
 } from "@/lib/sanity";
 
 export const revalidate = 60;
@@ -122,18 +123,15 @@ export default async function BlogPostPage({ params }: RouteParams) {
     },
   };
 
-  const cover = coverUrl ? (
-    <div className={styles.cover}>
-      <Image
-        src={coverUrl}
-        alt={post.coverImage?.alt ?? post.title}
-        width={1600}
-        height={900}
-        sizes="(max-width: 760px) 100vw, 1080px"
-        priority
-      />
-    </div>
-  ) : null;
+  const headings = ((post.body ?? []) as LoosePortableBlock[])
+    .filter((block) => block._type === "block" && block.style === "h2")
+    .map((block) => ({
+      id: `section-${block._key}`,
+      title: blockPlainText(block),
+    }));
+  const authorPhoto = post.author?.image
+    ? urlForImage(post.author.image).width(80).height(80).url()
+    : null;
   const author = post.author ?? {
     name: authorName,
     slug: null,
@@ -147,57 +145,85 @@ export default async function BlogPostPage({ params }: RouteParams) {
       <JsonLd value={articleSchema} />
       <article className={styles.page}>
         <div className={styles.shell}>
-          <BlogSearch id={`blog-search-${post.slug}`} />
-          <Breadcrumbs
-            variant="article"
-            items={[
-              { label: "Home", href: "/" },
-              { label: "Blog", href: "/blog" },
-              { label: post.title },
-            ]}
-          />
-          {cover}
-          <div className={styles.measure}>
-            <p className={styles.kicker}>
-              <a href={`/blog?category=${encodeURIComponent(post.category)}`}>
-                {humanizeCategory(post.category)}
-              </a>
-              {date ? (
-                <span aria-hidden="true" className={styles.kickerDot}>
-                  •
-                </span>
-              ) : null}
-              {date ? <time dateTime={post.publishedAt}>{date}</time> : null}
-              {post.readTime ? (
-                <span aria-hidden="true" className={styles.kickerDot}>
-                  •
-                </span>
-              ) : null}
-              {post.readTime ? <span>{post.readTime} min read</span> : null}
-            </p>
-            <h1 className={styles.title}>{post.title}</h1>
-            <p className={styles.byline}>
-              By <a href="#author-bio">{authorName}</a>
-              {authorRole ? `, ${authorRole}` : ""}
-            </p>
-            <BlogListenPlayer text={listenText} audioUrl={post.audioUrl} />
-            <hr className={styles.heroRule} />
-            <BlogShareBar url={canonical} title={post.title} />
-            <BlogTaxonomy
-              category={post.category}
-              industries={industries}
-              tags={post.tags ?? []}
-            />
-          </div>
-          {post.body ? (
-            <div className={styles.body}>
-              <BlogPortableBody
-                blocks={post.body as unknown as LoosePortableBlock[]}
+          <header className={styles.articleHero}>
+            {coverUrl ? (
+              <Image
+                src={coverUrl}
+                alt={post.coverImage?.alt ?? post.title}
+                fill
+                sizes="(max-width: 760px) calc(100vw - 40px), 1136px"
+                priority
+                className={styles.heroImage}
               />
+            ) : null}
+            <div className={styles.heroCopy}>
+              <p className={styles.kicker}>
+                {date ? (
+                  <time dateTime={post.publishedAt}>Published: {date}</time>
+                ) : null}
+                {date && post.readTime ? (
+                  <span aria-hidden="true">▪</span>
+                ) : null}
+                {post.readTime ? <span>{post.readTime} min read</span> : null}
+              </p>
+              <h1 className={styles.title}>{post.title}</h1>
             </div>
-          ) : null}
-          <BlogAuthorBio author={author} />
-          <BlogContinueLearning nextPost={related[0] ?? null} />
+            <a className={styles.heroAuthor} href="#author-bio">
+              <span className={styles.heroAuthorName}>
+                {authorPhoto ? (
+                  <Image src={authorPhoto} alt="" width={36} height={36} />
+                ) : (
+                  <span className={styles.heroAuthorInitial}>
+                    {authorName.slice(0, 1)}
+                  </span>
+                )}
+                {authorName}
+              </span>
+              <span>{authorRole || humanizeCategory(post.category)}</span>
+            </a>
+          </header>
+          <div className={styles.articleColumns}>
+            <aside className={styles.articleAside} aria-label="Article tools">
+              <div className={styles.asideCta}>
+                <p>Bring your property operations together with Innflow</p>
+                <GoogleSignInButton
+                  label="Get started"
+                  eventLabel="blog_sidebar_get_started"
+                  className={styles.ctaButton}
+                />
+              </div>
+              <BlogShareBar url={canonical} title={post.title} />
+              {headings.length > 0 ? (
+                <nav className={styles.toc} aria-label="In this article">
+                  <p className={styles.metaLabel}>In this article:</p>
+                  {headings.map((heading) => (
+                    <a key={heading.id} href={`#${heading.id}`}>
+                      {heading.title}
+                    </a>
+                  ))}
+                </nav>
+              ) : null}
+            </aside>
+            <div className={styles.articleMain}>
+              {post.body ? (
+                <div className={styles.body}>
+                  <BlogPortableBody
+                    blocks={post.body as unknown as LoosePortableBlock[]}
+                  />
+                </div>
+              ) : null}
+              <div className={styles.articleExtras}>
+                <BlogListenPlayer text={listenText} audioUrl={post.audioUrl} />
+                <BlogTaxonomy
+                  category={post.category}
+                  industries={industries}
+                  tags={post.tags ?? []}
+                />
+              </div>
+              <BlogAuthorBio author={author} />
+              <BlogContinueLearning nextPost={related[0] ?? null} />
+            </div>
+          </div>
         </div>
         <div className={styles.shell}>
           <BlogRelatedPosts posts={related.slice(0, 3)} />

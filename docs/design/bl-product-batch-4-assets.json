@@ -1,0 +1,74 @@
+[
+  {
+    "file": "public/brand/baselane-inspired/tax-preparation/hero-desktop.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69a581b5af8225f7ba59544a_tax-prep-hero-desktop%402x.webp",
+    "downloadFile": "pages/17-yellow-tax-preparation/69a581b5af8225f7ba59544a_tax-prep-hero-desktop-2x--55b439dc.webp",
+    "sourceRow": 18
+  },
+  {
+    "file": "public/brand/baselane-inspired/tax-preparation/hero-mobile.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69a581b5c3b5f9480ed7086f_tax-prep-hero-mobile%402x.webp",
+    "downloadFile": "pages/17-yellow-tax-preparation/69a581b5c3b5f9480ed7086f_tax-prep-hero-mobile-2x--a4c7f140.webp",
+    "sourceRow": 18
+  },
+  {
+    "file": "public/brand/baselane-inspired/tax-preparation/solutions-packages-bg-desktop.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69a6baa3cda070403227b14d_tax-prep-solutions-packages-bg-desktop%402x.webp",
+    "downloadFile": "pages/17-yellow-tax-preparation/69a6baa3cda070403227b14d_tax-prep-solutions-packages-bg-desktop-2x--a3f2a8e1.webp",
+    "sourceRow": 18
+  },
+  {
+    "file": "public/brand/baselane-inspired/tax-preparation/solutions-packages-bg-mobile.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69a6bc7127d97cac42501cfe_tax-prep-solutions-packages-bg-mobile%402x.webp",
+    "downloadFile": "pages/17-yellow-tax-preparation/69a6bc7127d97cac42501cfe_tax-prep-solutions-packages-bg-mobile-2x--aac6ea13.webp",
+    "sourceRow": 18
+  },
+  {
+    "file": "public/brand/baselane-inspired/tax-preparation/solutions-documents-bg-desktop.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69a6baa3a41263e0521f1f02_tax-prep-solutions-documents-bg-desktop%402x.webp",
+    "downloadFile": "pages/17-yellow-tax-preparation/69a6baa3a41263e0521f1f02_tax-prep-solutions-documents-bg-desktop-2x--78608d87.webp",
+    "sourceRow": 18
+  },
+  {
+    "file": "public/brand/baselane-inspired/tax-preparation/solutions-documents-bg-mobile.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69a6bc710015c88dd4430b29_tax-prep-solutions-documents-bg-mobile%402x.webp",
+    "downloadFile": "pages/17-yellow-tax-preparation/69a6bc710015c88dd4430b29_tax-prep-solutions-documents-bg-mobile-2x--e948d484.webp",
+    "sourceRow": 18
+  },
+  {
+    "file": "public/brand/baselane-inspired/tax-preparation/solutions-automation-bg-desktop.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69a6baa276c4db6f2e6b3240_tax-prep-solutions-automation-bg-desktop%402x.webp",
+    "downloadFile": "pages/17-yellow-tax-preparation/69a6baa276c4db6f2e6b3240_tax-prep-solutions-automation-bg-desktop-2x--7d9b9a68.webp",
+    "sourceRow": 18
+  },
+  {
+    "file": "public/brand/baselane-inspired/tax-preparation/solutions-automation-bg-mobile.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69a6bc71919694f53fb7b14f_tax-prep-solutions-automation-bg-mobile%402x.webp",
+    "downloadFile": "pages/17-yellow-tax-preparation/69a6bc71919694f53fb7b14f_tax-prep-solutions-automation-bg-mobile-2x--8ab9a590.webp",
+    "sourceRow": 18
+  },
+  {
+    "file": "public/brand/baselane-inspired/insurance/hero.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6a1fdcebad0e35796b5dfbc6_landlord-insurance-hero-image.webp",
+    "downloadFile": "pages/15-yellow-landlord-insurance/6a1fdcebad0e35796b5dfbc6_landlord-insurance-hero-image--5012d220.webp",
+    "sourceRow": 16
+  },
+  {
+    "file": "public/brand/baselane-inspired/insurance/time.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6a1fdb216df76cc85448cd49_save-time.webp",
+    "downloadFile": "pages/15-yellow-landlord-insurance/6a1fdb216df76cc85448cd49_save-time--69b37fa7.webp",
+    "sourceRow": 16
+  },
+  {
+    "file": "public/brand/baselane-inspired/insurance/money.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6a1fdb21e697e71acd3c94c0_save-money.webp",
+    "downloadFile": "pages/15-yellow-landlord-insurance/6a1fdb21e697e71acd3c94c0_save-money--84fc9813.webp",
+    "sourceRow": 16
+  },
+  {
+    "file": "public/brand/baselane-inspired/insurance/peace.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6a1fdb21c8ea76f1b552b0ee_gain-peace-of-mind.webp",
+    "downloadFile": "pages/15-yellow-landlord-insurance/6a1fdb21c8ea76f1b552b0ee_gain-peace-of-mind--6331581a.webp",
+    "sourceRow": 16
+  }
+]

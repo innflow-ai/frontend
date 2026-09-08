@@ -1,0 +1,50 @@
+[
+  {
+    "file": "public/brand/baselane-inspired/partners/referral-hero.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6a3a7d2321519c3d684e5b97_referal-hero-image.webp",
+    "downloadFile": "pages/26-blue-landlord-referral/6a3a7d2321519c3d684e5b97_referal-hero-image--3f362b0d.webp",
+    "sourceRow": 27
+  },
+  {
+    "file": "public/brand/baselane-inspired/partners/partner-hero.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6a3bb6a32a4db10dd02a9278_partner-with-us-hero.webp",
+    "downloadFile": "pages/28-blue-partner-with-us/6a3bb6a32a4db10dd02a9278_partner-with-us-hero--bf60343b.webp",
+    "sourceRow": 29
+  },
+  {
+    "file": "public/brand/baselane-inspired/partners/agents.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69e2293a52beedf597342820_rents-step-1.webp",
+    "downloadFile": "pages/28-blue-partner-with-us/69e2293a52beedf597342820_rents-step-1--d74d0ed8.webp",
+    "sourceRow": 29
+  },
+  {
+    "file": "public/brand/baselane-inspired/partners/creators.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69a823cd24cf34088398044a_ltr-solutions-tax-bg.webp",
+    "downloadFile": "pages/28-blue-partner-with-us/69a823cd24cf34088398044a_ltr-solutions-tax-bg--8b0f1e04.webp",
+    "sourceRow": 29
+  },
+  {
+    "file": "public/brand/baselane-inspired/partners/operators.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/69e0c71ff2b10382af76c642_lease-agreement-image.webp",
+    "downloadFile": "pages/28-blue-partner-with-us/69e0c71ff2b10382af76c642_lease-agreement-image--5a16182f.webp",
+    "sourceRow": 29
+  },
+  {
+    "file": "public/brand/baselane-inspired/partners/join.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6a3bb9c9e06398afb11bd5ed_affitiate-program-image.webp",
+    "downloadFile": "pages/28-blue-partner-with-us/6a3bb9c9e06398afb11bd5ed_affitiate-program-image--ea0e5a76.webp",
+    "sourceRow": 29
+  },
+  {
+    "file": "public/brand/baselane-inspired/partners/closing-desktop.webp",
+    "source": "https://static.baselane.com/assets/images/cta/69a80caf3d2e8a462297e484_92dc776e0cd7a8f424b06ed9860828da_cta-image.webp",
+    "downloadFile": "pages/28-blue-partner-with-us/69a80caf3d2e8a462297e484_92dc776e0cd7a8f424b06ed9860828da_cta-image--6b78ac87.webp",
+    "sourceRow": 29
+  },
+  {
+    "file": "public/brand/baselane-inspired/partners/closing-mobile.webp",
+    "source": "https://static.baselane.com/assets/images/cta/69a80caf3d2e8a462297e48b_d003ac8efe354c27f6d4d29613ee379e_cta-bg-mobile.webp",
+    "downloadFile": "pages/28-blue-partner-with-us/69a80caf3d2e8a462297e48b_d003ac8efe354c27f6d4d29613ee379e_cta-bg-mobile--04089d2f.webp",
+    "sourceRow": 29
+  }
+]

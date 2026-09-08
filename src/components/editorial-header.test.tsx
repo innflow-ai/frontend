@@ -217,7 +217,7 @@ describe("EditorialHeader navigation", () => {
     ).not.toBeInTheDocument();
   });
 
-  it("makes article chrome solid before hiding and keeps it solid when revealed", () => {
+  it("keeps article chrome light before hiding and when revealed", () => {
     motionFlags.reduce = false;
     mockPathname.current = "/blog/ai-needs-humanity";
     render(<EditorialHeader />);
@@ -225,17 +225,14 @@ describe("EditorialHeader navigation", () => {
     const header = document.querySelector("header");
     expect(screen.getByRole("img", { name: "Innflow" })).toHaveAttribute(
       "src",
-      expect.stringContaining("innflow_white_logo_set_bold.svg"),
+      expect.stringContaining("innflow_logo_set_B.svg"),
     );
-    expect(header).toHaveClass(styles.homeTop);
+    expect(header).not.toHaveClass(styles.homeTop);
     expect(header).not.toHaveClass(styles.pageTop);
-    const fade = document.querySelector(`.${styles.articleFade}`);
-    expect(fade).toBeInTheDocument();
+    expect(header).toHaveClass(styles.articleHeader);
     expect(
-      document.querySelector(`.${styles.articleBottomFade}`),
-    ).toHaveAttribute("aria-hidden", "true");
-    expect(fade).not.toHaveClass(styles.articleFadePinned);
-
+      document.querySelector(`.${styles.articleFade}`),
+    ).not.toBeInTheDocument();
     Object.defineProperty(window, "scrollY", {
       configurable: true,
       value: 240,
@@ -243,7 +240,6 @@ describe("EditorialHeader navigation", () => {
     act(() => window.dispatchEvent(new Event("scroll")));
     expect(header).toHaveClass(styles.headerHidden);
     expect(header).not.toHaveClass(styles.homeTop);
-    expect(fade).toHaveClass(styles.articleFadePinned);
 
     Object.defineProperty(window, "scrollY", {
       configurable: true,
@@ -252,15 +248,14 @@ describe("EditorialHeader navigation", () => {
     act(() => window.dispatchEvent(new Event("scroll")));
     expect(header).not.toHaveClass(styles.headerHidden);
     expect(header).not.toHaveClass(styles.homeTop);
-    expect(fade).not.toHaveClass(styles.articleFadePinned);
 
     Object.defineProperty(window, "scrollY", { configurable: true, value: 0 });
     act(() => window.dispatchEvent(new Event("scroll")));
-    expect(header).toHaveClass(styles.homeTop);
+    expect(header).not.toHaveClass(styles.homeTop);
     expect(header).not.toHaveClass(styles.headerHidden);
   });
 
-  it("makes articles solid on the first scroll pixel even when animation frames are delayed", () => {
+  it("keeps articles light even when animation frames are delayed", () => {
     mockPathname.current = "/blog/ai-needs-humanity";
     // Reduced motion disables hiding, but must not disable the solid fallback.
     vi.stubGlobal(
@@ -269,7 +264,7 @@ describe("EditorialHeader navigation", () => {
     );
     render(<EditorialHeader />);
     const header = document.querySelector("header");
-    expect(header).toHaveClass(styles.homeTop);
+    expect(header).not.toHaveClass(styles.homeTop);
     Object.defineProperty(window, "scrollY", { configurable: true, value: 1 });
     act(() => window.dispatchEvent(new Event("scroll")));
     expect(header).not.toHaveClass(styles.homeTop);
@@ -309,7 +304,7 @@ describe("EditorialHeader navigation", () => {
 
     expect(screen.getByRole("img", { name: "Innflow" })).toHaveAttribute(
       "src",
-      expect.stringContaining("innflow_white_logo_set_bold.svg"),
+      expect.stringContaining("innflow_logo_set_B.svg"),
     );
 
     await user.click(screen.getByRole("button", { name: "Open navigation" }));

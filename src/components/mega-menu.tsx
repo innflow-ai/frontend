@@ -349,7 +349,7 @@ export const solutionsColumns: MegaMenuColumn[] = [
         body: "Reduce late payments and boost cash flow.",
       },
       {
-        href: "/property-management",
+        href: "/BL/BL-multi-property-investors",
         icon: Wrench,
         title: "Maintenance & Mobile App",
         body: "Automate repairs and manage mobile work orders from request to resolution.",

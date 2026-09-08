@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { BaselaneLegalPolicy } from "@/components/baselane-legal";
 export const metadata: Metadata = {
-  title: "Privacy Policy | Innflow",
+  title: "Privacy Policy | innflow",
   robots: { index: false, follow: false },
   alternates: { canonical: "/BL/BL-privacy-policy" },
 };

@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { BaselaneLoans } from "@/components/baselane-loans";
 export const metadata: Metadata = {
-  title: "Property financing resources | Innflow",
+  title: "Financing preparation | innflow",
+  description:
+    "Connect project records, document requests, and lender follow-ups in one innflow workflow.",
   robots: { index: false, follow: false },
   alternates: { canonical: "/BL/BL-rental-property-loans" },
 };

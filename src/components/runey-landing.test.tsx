@@ -159,7 +159,7 @@ describe("Runey landing interactions", () => {
         "Skills library",
         "FAQ",
         "Request a demo",
-        "Get started",
+        "Continue with Google",
       ]) {
         expect(within(footer).getByRole("link", { name: label })).toBeVisible();
       }

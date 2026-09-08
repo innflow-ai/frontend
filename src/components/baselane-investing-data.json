@@ -1,282 +1,86 @@
 [
   {
-    "title": "Average rent statistics",
-    "category": "Rental market trends",
-    "href": "https://www.baselane.com/resources/average-rent-statistics",
-    "image": "/brand/baselane-inspired/investing/01.jpg",
-    "description": "Explore this topic in Baselane\u2019s rental market trends library."
+    "category": "Property operations",
+    "title": "Coordinate a growing portfolio",
+    "href": "/BL/BL-multi-property-investors",
+    "description": "Keep each property\u2019s records, requests, and team handoffs connected.",
+    "image": "/brand/baselane-inspired/hero.webp"
   },
   {
-    "title": "Rental property ROI statistics",
-    "category": "Real Estate Investing",
-    "href": "https://www.baselane.com/resources/rental-property-roi-statistics",
-    "image": "/brand/baselane-inspired/investing/02.jpg",
-    "description": "Explore this topic in Baselane\u2019s real estate investing library."
+    "category": "Property operations",
+    "title": "Build a rhythm for recurring rental work",
+    "href": "/BL/BL-rent-collection",
+    "description": "Give recurring requests a clear owner and a repeatable path forward.",
+    "image": "/brand/baselane-inspired/renters/closing-desktop.webp"
   },
   {
-    "title": "Renter statistics and market trends",
-    "category": "Rental market trends",
-    "href": "https://www.baselane.com/resources/renter-statistics",
-    "image": "/brand/baselane-inspired/investing/03.jpg",
-    "description": "Explore this topic in Baselane\u2019s rental market trends library."
+    "category": "Property operations",
+    "title": "Keep resident conversations in context",
+    "href": "/BL/BL-renters",
+    "description": "Connect resident questions with the information your team needs to respond.",
+    "image": "/brand/baselane-inspired/partners/closing-desktop.webp"
   },
   {
-    "title": "Rental vacancy rate statistics",
-    "category": "Rental market trends",
-    "href": "https://www.baselane.com/resources/rental-vacancy-rate-statistics",
-    "image": "/brand/baselane-inspired/investing/04.jpg",
-    "description": "Explore this topic in Baselane\u2019s rental market trends library."
+    "category": "Records & reviews",
+    "title": "Prepare documents for a professional review",
+    "href": "/BL/BL-tax-preparation",
+    "description": "Gather the supporting files and resolve open questions before the handoff.",
+    "image": "/brand/baselane-inspired/insurance/time.webp"
   },
   {
-    "title": "Rental application fraud statistics",
-    "category": "Property Management",
-    "href": "https://www.baselane.com/resources/rental-application-fraud-statistics",
-    "image": "/brand/baselane-inspired/investing/05.jpg",
-    "description": "Explore this topic in Baselane\u2019s property management library."
+    "category": "Records & reviews",
+    "title": "Connect your property records",
+    "href": "/BL/BL-landlord-accounting",
+    "description": "Keep documents and team decisions close to the work they support.",
+    "image": "/brand/baselane-inspired/accounting/solutions-reporting-bg-desktop.webp"
   },
   {
-    "title": "Banking options for Illinois landlords",
-    "category": "Real estate banking",
-    "href": "https://www.baselane.com/resources/banks-landlords-illinois",
-    "image": "/brand/baselane-inspired/investing/06.jpg",
-    "description": "Explore this topic in Baselane\u2019s real estate banking library."
+    "category": "Records & reviews",
+    "title": "Organize lease paperwork",
+    "href": "/BL/BL-lease-agreement",
+    "description": "Bring property details and review tasks into a consistent lease-document process.",
+    "image": "/brand/baselane-inspired/forms/forms-hero.webp"
   },
   {
-    "title": "Banking options for Pennsylvania landlords",
-    "category": "Real estate banking",
-    "href": "https://www.baselane.com/resources/banks-landlords-pennsylvania",
-    "image": "/brand/baselane-inspired/investing/07.jpg",
-    "description": "Explore this topic in Baselane\u2019s real estate banking library."
+    "category": "Planning tools",
+    "title": "Compare the rents in your research",
+    "href": "/BL/BL-how-much-should-i-charge-for-rent",
+    "description": "Summarize comparable rents you enter and keep your research assumptions visible.",
+    "image": "/brand/baselane-inspired/library/articles-hero.webp"
   },
   {
-    "title": "Banking options for Florida landlords",
-    "category": "Real estate banking",
-    "href": "https://www.baselane.com/resources/banks-landlords-florida",
-    "image": "/brand/baselane-inspired/investing/08.jpg",
-    "description": "Explore this topic in Baselane\u2019s real estate banking library."
+    "category": "Planning tools",
+    "title": "Prepare a property review brief",
+    "href": "/BL/BL-landlord-insurance",
+    "description": "Create a brief and checklist for the next conversation with your team or adviser.",
+    "image": "/brand/baselane-inspired/insurance/time.webp"
   },
   {
-    "title": "Banking options for Texas landlords",
-    "category": "Real estate banking",
-    "href": "https://www.baselane.com/resources/banks-landlords-texas",
-    "image": "/brand/baselane-inspired/investing/09.jpg",
-    "description": "Explore this topic in Baselane\u2019s real estate banking library."
+    "category": "Planning tools",
+    "title": "Plan the work around your reserves",
+    "href": "/BL/BL-landlord-banking-apy",
+    "description": "Connect reserve records, review points, and follow-up tasks.",
+    "image": "/brand/baselane-inspired/savings/hero.webp"
   },
   {
-    "title": "Banking options for California landlords",
-    "category": "Real estate banking",
-    "href": "https://www.baselane.com/resources/banks-landlords-california",
-    "image": "/brand/baselane-inspired/investing/10.jpg",
-    "description": "Explore this topic in Baselane\u2019s real estate banking library."
+    "category": "Team workflows",
+    "title": "Connect your advisor handoffs",
+    "href": "/BL/BL-advisor-partner-program",
+    "description": "Keep client records and open questions together before the next meeting.",
+    "image": "/brand/baselane-inspired/advisors/investors.webp"
   },
   {
-    "title": "Alternatives to Avail",
-    "category": "Software Comparisons",
-    "href": "https://www.baselane.com/resources/avail-alternatives",
-    "image": "/brand/baselane-inspired/investing/11.jpg",
-    "description": "Explore this topic in Baselane\u2019s software comparisons library."
+    "category": "Team workflows",
+    "title": "Coordinate screening follow-ups",
+    "href": "/BL/BL-tenant-screening-service",
+    "description": "Plan the review steps around your chosen screening provider.",
+    "image": "/brand/baselane-inspired/loans/property.webp"
   },
   {
-    "title": "Tenant screening in numbers",
-    "category": "Property Management",
-    "href": "https://www.baselane.com/resources/tenant-screening-statistics",
-    "image": "/brand/baselane-inspired/investing/12.webp",
-    "description": "Explore this topic in Baselane\u2019s property management library."
-  },
-  {
-    "title": "A look at independent landlords",
-    "category": "Real Estate Investing",
-    "href": "https://www.baselane.com/resources/mom-pop-landlord-statistics",
-    "image": "/brand/baselane-inspired/investing/13.webp",
-    "description": "Explore this topic in Baselane\u2019s real estate investing library."
-  },
-  {
-    "title": "Landlord statistics",
-    "category": "Real Estate Investing",
-    "href": "https://www.baselane.com/resources/landlord-statistics",
-    "image": "/brand/baselane-inspired/investing/14.webp",
-    "description": "Explore this topic in Baselane\u2019s real estate investing library."
-  },
-  {
-    "title": "Rental property financial statements",
-    "category": "Bookkeeping",
-    "href": "https://www.baselane.com/resources/rental-property-investor-financial-statement",
-    "image": "/brand/baselane-inspired/investing/15.jpg",
-    "description": "Explore this topic in Baselane\u2019s bookkeeping library."
-  },
-  {
-    "title": "Airbnb income and QBI",
-    "category": "Bookkeeping",
-    "href": "https://www.baselane.com/resources/airbnb-qbi-short-term-rental-rules",
-    "image": "/brand/baselane-inspired/investing/16.webp",
-    "description": "Explore this topic in Baselane\u2019s bookkeeping library."
-  },
-  {
-    "title": "Pass-through tax deductions",
-    "category": "Bookkeeping",
-    "href": "https://www.baselane.com/resources/pass-through-tax-deduction-landlords",
-    "image": "/brand/baselane-inspired/investing/17.webp",
-    "description": "Explore this topic in Baselane\u2019s bookkeeping library."
-  },
-  {
-    "title": "Understanding depreciation recapture",
-    "category": "Bookkeeping",
-    "href": "https://www.baselane.com/resources/depreciation-recapture-tax-rate-rental-property",
-    "image": "/brand/baselane-inspired/investing/18.webp",
-    "description": "Explore this topic in Baselane\u2019s bookkeeping library."
-  },
-  {
-    "title": "A guide to Florida real estate",
-    "category": "Real Estate Investing",
-    "href": "https://www.baselane.com/resources/florida-real-estate-investing",
-    "image": "/brand/baselane-inspired/investing/19.jpg",
-    "description": "Explore this topic in Baselane\u2019s real estate investing library."
-  },
-  {
-    "title": "A guide to Indiana real estate",
-    "category": "Real Estate Investing",
-    "href": "https://www.baselane.com/resources/indiana-real-estate-investing",
-    "image": "/brand/baselane-inspired/investing/20.jpg",
-    "description": "Explore this topic in Baselane\u2019s real estate investing library."
-  },
-  {
-    "title": "Accounting software for property investors",
-    "category": "Bookkeeping",
-    "href": "https://www.baselane.com/resources/best-real-estate-investment-accounting-software",
-    "image": "/brand/baselane-inspired/investing/21.jpg",
-    "description": "Explore this topic in Baselane\u2019s bookkeeping library."
-  },
-  {
-    "title": "Buying a second home",
-    "category": "Real Estate Investing",
-    "href": "https://www.baselane.com/resources/buying-second-home-costs-taxes-financing",
-    "image": "/brand/baselane-inspired/investing/22.webp",
-    "description": "Explore this topic in Baselane\u2019s real estate investing library."
-  },
-  {
-    "title": "Understanding rental property ROI",
-    "category": "Real Estate Investing",
-    "href": "https://www.baselane.com/resources/return-on-investment-rental-property",
-    "image": "/brand/baselane-inspired/investing/23.webp",
-    "description": "Explore this topic in Baselane\u2019s real estate investing library."
-  },
-  {
-    "title": "Understanding real estate cash flow",
-    "category": "Real Estate Investing",
-    "href": "https://www.baselane.com/resources/real-estate-cash-flow-maximize-income",
-    "image": "/brand/baselane-inspired/investing/24.webp",
-    "description": "Explore this topic in Baselane\u2019s real estate investing library."
-  },
-  {
-    "title": "Rental property mortgage terms",
-    "category": "Loans",
-    "href": "https://www.baselane.com/resources/standard-length-of-mortgage-on-rental-property",
-    "image": "/brand/baselane-inspired/investing/25.webp",
-    "description": "Explore this topic in Baselane\u2019s loans library."
-  },
-  {
-    "title": "Airbnb and long-term rental strategies",
-    "category": "Rental market trends",
-    "href": "https://www.baselane.com/resources/airbnb-vs-renting-out",
-    "image": "/brand/baselane-inspired/investing/26.webp",
-    "description": "Explore this topic in Baselane\u2019s rental market trends library."
-  },
-  {
-    "title": "Financing short-term rentals",
-    "category": "Loans",
-    "href": "https://www.baselane.com/resources/short-term-rental-financing",
-    "image": "/brand/baselane-inspired/investing/27.webp",
-    "description": "Explore this topic in Baselane\u2019s loans library."
-  },
-  {
-    "title": "U.S. rental market trends",
-    "category": "Rental market trends",
-    "href": "https://www.baselane.com/resources/rental-market-trends",
-    "image": "/brand/baselane-inspired/investing/28.webp",
-    "description": "Explore this topic in Baselane\u2019s rental market trends library."
-  },
-  {
-    "title": "Airbnb loans and mortgage rules",
-    "category": "Loans",
-    "href": "https://www.baselane.com/resources/airbnb-loans-mortgage-rules-rental-property",
-    "image": "/brand/baselane-inspired/investing/29.webp",
-    "description": "Explore this topic in Baselane\u2019s loans library."
-  },
-  {
-    "title": "Baselane\u2019s investor sentiment survey",
-    "category": "Real Estate Investing",
-    "href": "https://www.baselane.com/resources/real-estate-investor-survey-2024",
-    "image": "/brand/baselane-inspired/investing/30.webp",
-    "description": "Explore this topic in Baselane\u2019s real estate investing library."
-  },
-  {
-    "title": "Alternatives to QuickBooks",
-    "category": "Software Comparisons",
-    "href": "https://www.baselane.com/resources/quickbooks-alternative",
-    "image": "/brand/baselane-inspired/investing/31.webp",
-    "description": "Explore this topic in Baselane\u2019s software comparisons library."
-  },
-  {
-    "title": "Managing properties across states",
-    "category": "Real Estate Investing",
-    "href": "https://www.baselane.com/resources/landlord-insights-managing-properties-in-multiple-states",
-    "image": "/brand/baselane-inspired/investing/32.webp",
-    "description": "Explore this topic in Baselane\u2019s real estate investing library."
-  },
-  {
-    "title": "Banking options for property investors",
-    "category": "Real estate banking",
-    "href": "https://www.baselane.com/resources/best-banks-for-real-estate-investors",
-    "image": "/brand/baselane-inspired/investing/33.webp",
-    "description": "Explore this topic in Baselane\u2019s real estate banking library."
-  },
-  {
-    "title": "Landlord insurance in Florida",
-    "category": "Real Estate Investing",
-    "href": "https://www.baselane.com/resources/how-to-choose-the-best-landlord-insurance-in-florida",
-    "image": "/brand/baselane-inspired/investing/34.webp",
-    "description": "Explore this topic in Baselane\u2019s real estate investing library."
-  },
-  {
-    "title": "Student-friendly cities and real estate",
-    "category": "Rental market trends",
-    "href": "https://www.baselane.com/resources/what-are-the-best-student-friendly-cities-in-the-united-stateswhat-are-the-best-student-friendly-cities-in-the-united-states",
-    "image": "/brand/baselane-inspired/investing/35.webp",
-    "description": "Explore this topic in Baselane\u2019s rental market trends library."
-  },
-  {
-    "title": "Florida cities for remote professionals",
-    "category": "Rental market trends",
-    "href": "https://www.baselane.com/resources/best-5-cities-in-florida-for-remote-working-professionals",
-    "image": "/brand/baselane-inspired/investing/36.webp",
-    "description": "Explore this topic in Baselane\u2019s rental market trends library."
-  },
-  {
-    "title": "Florida cities and Airbnb investment",
-    "category": "Rental market trends",
-    "href": "https://www.baselane.com/resources/5-most-profitable-cities-in-florida-for-airbnb-investment",
-    "image": "/brand/baselane-inspired/investing/37.webp",
-    "description": "Explore this topic in Baselane\u2019s rental market trends library."
-  },
-  {
-    "title": "Exploring Florida rental markets",
-    "category": "Rental market trends",
-    "href": "https://www.baselane.com/resources/most-profitable-cities-in-florida-for-real-estate-investment",
-    "image": "/brand/baselane-inspired/investing/38.webp",
-    "description": "Explore this topic in Baselane\u2019s rental market trends library."
-  },
-  {
-    "title": "An introduction to the BRRRR method",
-    "category": "Real Estate Investing",
-    "href": "https://www.baselane.com/resources/brrrr-method-for-real-estate",
-    "image": "/brand/baselane-inspired/investing/39.webp",
-    "description": "Explore this topic in Baselane\u2019s real estate investing library."
-  },
-  {
-    "title": "Exploring Indiana rental markets",
-    "category": "Real Estate Investing",
-    "href": "https://www.baselane.com/resources/most-profitable-cities-in-indiana-for-real-estate-investment",
-    "image": "/brand/baselane-inspired/investing/40.webp",
-    "description": "Explore this topic in Baselane\u2019s real estate investing library."
+    "category": "Team workflows",
+    "title": "Prepare your next property project",
+    "href": "/BL/BL-rental-property-loans",
+    "description": "Gather project details and track document requests for lender conversations.",
+    "image": "/brand/baselane-inspired/loans/hero.webp"
   }
 ]

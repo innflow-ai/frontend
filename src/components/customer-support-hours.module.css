@@ -1,0 +1,23 @@
+.hours {
+  margin-top: 18px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.hours strong {
+  display: block;
+  margin-bottom: 10px;
+  color: inherit;
+  font-size: 13px;
+}
+
+.hours dl {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.hours dt,
+.hours dd {
+  margin: 0;
+}

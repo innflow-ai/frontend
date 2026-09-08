@@ -1,0 +1,42 @@
+.content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+:global(a):has(> .content),
+.button {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  min-height: 44px;
+  padding: 12px 22px !important;
+  border: 1px solid #0b2633 !important;
+  border-radius: 999px !important;
+  background: #0b2633 !important;
+  color: #fff !important;
+  text-decoration: none;
+  white-space: nowrap;
+  font-weight: 500;
+  transition:
+    background 160ms ease,
+    box-shadow 160ms ease;
+}
+
+:global(a):has(> .content):hover,
+.button:hover {
+  background: #163b4d !important;
+  box-shadow: 0 4px 12px #0b263326;
+}
+
+@media (max-width: 850px) {
+  :global(header) :global(a):has(> .content),
+  :global(header) .button {
+    min-height: 36px;
+    padding: 8px 12px !important;
+    font-size: 12px;
+  }
+}

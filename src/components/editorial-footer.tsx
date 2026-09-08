@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ThemeSwitcher } from "@/components/blog/theme-switcher";
+import { CustomerSupportHours } from "@/components/customer-support-hours";
 import { GoogleSignInButton } from "@/components/google-sign-in";
 import { TrackedLink } from "@/components/tracked-link";
 import { footerNavigation } from "@/config/footer-navigation";
@@ -30,31 +31,14 @@ export function EditorialFooter() {
               Bring your property operations into one flow.
             </h2>
             <p className={styles.signupCopy}>
-              Start with your work email and create an Innflow account for your
-              team.
+              Continue with your Google account to get started with Innflow.
             </p>
-            <form
-              className={styles.signupForm}
-              action={siteConfig.signupUrl}
-              method="get"
-            >
-              <label
-                className={styles.visuallyHidden}
-                htmlFor="footer-signup-email"
-              >
-                Work email
-              </label>
-              <input
-                id="footer-signup-email"
-                name="email"
-                type="email"
-                inputMode="email"
-                autoComplete="email"
-                placeholder="Work email address"
-                required
+            <div className={styles.signupForm}>
+              <GoogleSignInButton
+                label="Continue with Google"
+                eventLabel="footer_signup_google"
               />
-              <button type="submit">Get started</button>
-            </form>
+            </div>
             <p className={styles.signupNote}>No credit card required.</p>
           </div>
         </div>
@@ -82,6 +66,7 @@ export function EditorialFooter() {
               <GoogleSignInButton eventLabel="footer_login" label="Log in" />
             </div>
             <ThemeSwitcher className={styles.themeToggle} showLabel />
+            <CustomerSupportHours />
           </div>
           {footerNavigation.map((column) => (
             <div key={column.heading}>

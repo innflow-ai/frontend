@@ -10,6 +10,7 @@ import {
   useState,
 } from "react";
 import { siteConfig } from "@/config/site";
+import ctaStyles from "./google-cta.module.css";
 import styles from "./google-sign-in.module.css";
 
 type GoogleSignInButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -20,7 +21,7 @@ type GoogleSignInButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 };
 
 export function GoogleSignInButton({
-  label = "Sign in with Google",
+  label = "Continue with Google",
   eventLabel = "google_sign_in",
   iconSize = 16,
   variant = "inline",
@@ -54,7 +55,7 @@ export function GoogleSignInButton({
       <button
         {...props}
         type="button"
-        className={`${styles.signInButton}${variant === "brand" ? ` ${styles.brandButton}` : ""}${className ? ` ${className}` : ""}`}
+        className={`${styles.signInButton} ${ctaStyles.button}${variant === "brand" ? ` ${styles.brandButton}` : ""}${className ? ` ${className}` : ""}`}
         data-marketing-event="marketing_cta_clicked"
         data-marketing-label={eventLabel}
         data-marketing-destination={siteConfig.googleAuthUrl}
@@ -131,7 +132,7 @@ export function GoogleSignInButton({
             One tap with your Google account. No password needed.
           </p>
           <a
-            className={styles.continueButton}
+            className={`${styles.continueButton} ${ctaStyles.button}`}
             href={siteConfig.googleAuthUrl}
             data-marketing-event="marketing_cta_clicked"
             data-marketing-label={`${eventLabel}_continue`}

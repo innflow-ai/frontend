@@ -38,7 +38,7 @@ export function BaselaneDemo() {
             <h1>
               See how
               <br />
-              Innflow works.
+              innflow works.
             </h1>
             <p>
               Explore how your team can bring recurring work, property context,
@@ -58,7 +58,7 @@ export function BaselaneDemo() {
         </section>
         <section
           className={styles.demoCards}
-          aria-label="Ways to explore Innflow"
+          aria-label="Ways to explore innflow"
         >
           <article className={styles.salesCard}>
             <Photo name="book" />
@@ -86,15 +86,15 @@ export function BaselaneDemo() {
           </article>
           <article className={styles.webinarCard}>
             <Photo name="webinar" />
-            <span className={styles.eyebrow}>ON-DEMAND LEARNING</span>
+            <span className={styles.eyebrow}>EXPLORE INNFLOW</span>
             <div className={styles.cardCopy}>
               <h2>Get a closer look.</h2>
               <p>
-                Explore our reference library of property-investing
-                masterclasses, published by Baselane.
+                Explore self-guided topics on recurring tasks, property records,
+                and the handoffs your team handles every day.
               </p>
               <a className={styles.button} href="/BL/BL-webinars">
-                Browse masterclasses ↗
+                Explore workflow topics →
               </a>
             </div>
           </article>

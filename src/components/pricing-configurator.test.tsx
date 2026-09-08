@@ -36,7 +36,7 @@ describe("PricingConfigurator", () => {
     expect(screen.getByText("$169.99")).toBeInTheDocument();
     expect(screen.getAllByText("Annual plan, billed monthly")).toHaveLength(2);
     expect(
-      screen.getByRole("link", { name: "Get started with Pro" }),
+      screen.getByRole("link", { name: "Continue with Google for Pro" }),
     ).toHaveAttribute("data-marketing-label", "pricing_pro_signup");
   });
 });

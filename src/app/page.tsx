@@ -16,6 +16,7 @@ import {
   type BlogCarouselPost,
 } from "@/components/blog-carousel";
 import { FeatureCard, FeatureCardGrid } from "@/components/feature-card";
+import { GoogleCtaContent } from "@/components/google-cta-content";
 import { JsonLd } from "@/components/json-ld";
 import { Float, HeroIntro, HeroItem, Reveal } from "@/components/motion";
 import { PortfolioCarousel } from "@/components/portfolio-carousel";
@@ -233,10 +234,10 @@ function SectionActions({
       </TrackedLink>
       <TrackedLink
         className={styles.buttonPrimary}
-        destination={siteConfig.signupUrl}
+        destination={siteConfig.googleAuthUrl}
         eventLabel={`${eventPrefix}_get_started`}
       >
-        Get started <ArrowRight size={15} />
+        <GoogleCtaContent />
       </TrackedLink>
     </Reveal>
   );
@@ -322,10 +323,10 @@ export default async function HomePage() {
                 <div className={styles.heroActions}>
                   <TrackedLink
                     className={styles.buttonPrimary}
-                    destination={siteConfig.signupUrl}
+                    destination={siteConfig.googleAuthUrl}
                     eventLabel="hero_get_started"
                   >
-                    Get started <ArrowRight size={15} />
+                    <GoogleCtaContent />
                   </TrackedLink>
                   <TrackedLink
                     className={styles.buttonGhost}

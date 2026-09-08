@@ -6,6 +6,8 @@ import {
   ShieldCheck,
 } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
+import { GoogleCtaContent } from "@/components/google-cta-content";
+import { siteConfig } from "@/config/site";
 import { BaselaneHomepage } from "./baselane-homepage";
 import {
   type ProductPageKind,
@@ -38,9 +40,8 @@ function Scene({
 function Actions() {
   return (
     <div className={styles.actions}>
-      <a href="https://app.innflow.ai/login" className={styles.google}>
-        <Image src="/brand/google-g.svg" alt="" width={18} height={18} />
-        Continue with Google
+      <a href={siteConfig.googleAuthUrl} className={styles.google}>
+        <GoogleCtaContent />
       </a>
       <a href="/demo" className={styles.demo}>
         See demo <ArrowRight size={18} />

@@ -1,19 +1,20 @@
 "use client";
+
 import { ArrowLeft, ArrowRight, MagnifyingGlass } from "@phosphor-icons/react";
 import Image from "next/image";
 import { useRef, useState } from "react";
+import { GoogleCtaContent } from "@/components/google-cta-content";
+import { siteConfig } from "@/config/site";
 import { BaselaneHomepage } from "./baselane-homepage";
 import items from "./baselane-investing-data.json";
 import styles from "./baselane-library.module.css";
 
 const categories = [
-  "Real Estate Investing",
-  "Rental market trends",
-  "Real estate banking",
-  "Property Management",
-  "Bookkeeping",
-  "Loans",
-  "Software Comparisons",
+  "All investor resources",
+  "Property operations",
+  "Records & reviews",
+  "Planning tools",
+  "Team workflows",
 ];
 export function BaselaneInvesting() {
   const [search, setSearch] = useState("");
@@ -40,7 +41,7 @@ export function BaselaneInvesting() {
             aria-label="Investing categories"
           >
             <a className={styles.allLink} href="/BL/BL-resources">
-              All articles
+              All resources
             </a>
             {categories.map((cat) => (
               <button
@@ -78,7 +79,7 @@ export function BaselaneInvesting() {
             <input
               type="search"
               placeholder="Search..."
-              aria-label="Search investing articles"
+              aria-label="Search investor resources"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
@@ -88,8 +89,8 @@ export function BaselaneInvesting() {
       <section className={`${styles.collections} ${styles.investing}`}>
         <h1>{category}</h1>
         <p className={styles.attribution}>
-          Selected reading from Baselane. Links open the original publisher’s
-          pages.
+          Practical tools and workflow guides from innflow, built around the
+          day-to-day work of running a property portfolio.
         </p>
         <p className={styles.results} role="status">
           {filtered.length} {filtered.length === 1 ? "resource" : "resources"}
@@ -109,7 +110,7 @@ export function BaselaneInvesting() {
               <div className={styles.cardCopy}>
                 <h2>{i.title}</h2>
                 <p>{i.description}</p>
-                <span>View on Baselane ↗</span>
+                <span>Explore with innflow →</span>
               </div>
             </a>
           ))}
@@ -145,11 +146,10 @@ export function BaselaneInvesting() {
         </picture>
         <div>
           <h2>More room for what comes next.</h2>
-          <p>Connect your property operations with Innflow.</p>
+          <p>Connect your property operations with innflow.</p>
           <div className={styles.actions}>
-            <a className={styles.google} href="https://app.innflow.ai/login">
-              <Image src="/brand/google-g.svg" alt="" width={18} height={18} />
-              Continue with Google
+            <a className={styles.google} href={siteConfig.googleAuthUrl}>
+              <GoogleCtaContent />
             </a>
             <a href="/demo">
               See demo <ArrowRight size={18} />

@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { GoogleCtaContent } from "@/components/google-cta-content";
+import { siteConfig } from "@/config/site";
 import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-lease.module.css";
 import shared from "./baselane-partners.module.css";
@@ -23,12 +25,12 @@ const steps = [
 ];
 const faqs = [
   [
-    "What does this Innflow page provide?",
-    "A way to explore lease-related workflows and find the original Baselane lease resource. It does not generate or sign a lease.",
+    "How does innflow support lease workflows?",
+    "innflow connects property information, document requests, and human review around your lease process. Your chosen document provider handles preparation and signing.",
   ],
   [
-    "Where can I find the referenced lease tool?",
-    "Use the Baselane resource link on this page. The publisher manages its account requirements, documents, and signing process.",
+    "Can I use my existing lease tools?",
+    "Keep your chosen document and signing tools. Book a demo to discuss how your team can coordinate the tasks and review steps around them.",
   ],
   [
     "How can I organize the supporting information?",
@@ -44,13 +46,13 @@ const faqs = [
   ],
   [
     "Where can I find other forms?",
-    "The rental forms page links to Baselane's collections of notices, administration forms, checklists, and spreadsheets.",
+    "The document checklist library provides preparation worksheets for recurring property paperwork and reviews.",
   ],
 ];
 function Action() {
   return (
-    <a className={shared.button} href="https://app.innflow.ai/login">
-      Continue with Google
+    <a className={shared.button} href={siteConfig.googleAuthUrl}>
+      <GoogleCtaContent />
     </a>
   );
 }
@@ -69,23 +71,23 @@ export function BaselaneLease() {
               <Action />
               <a
                 className={styles.sourceLink}
-                href="https://www.baselane.com/lease-agreement"
+                href="/BL/BL-demo"
                 target="_blank"
                 rel="noreferrer"
               >
-                Explore Baselane's lease resource ↗
+                Explore innflow workflows →
               </a>
             </div>
             <figure>
               <Image
                 className={shared.photo}
                 src="/brand/baselane-inspired/forms/lease-hero.webp"
-                alt="Baselane illustration of signing lease paperwork"
+                alt="Illustration of signing lease paperwork"
                 width={1100}
                 height={970}
                 priority
               />
-              <figcaption>Lease resource illustration · Baselane</figcaption>
+              <figcaption>Illustrative lease-document workflow</figcaption>
             </figure>
           </section>
         </div>
@@ -105,7 +107,7 @@ export function BaselaneLease() {
               [
                 "03",
                 "Find useful resources",
-                "Explore the original publisher's lease tools and document collections.",
+                "Keep supporting records and outstanding questions ready for the next review.",
               ],
             ].map(([n, title, text]) => (
               <article key={title}>
@@ -129,18 +131,18 @@ export function BaselaneLease() {
               </div>
             ))}
             <a className={shared.button} href="/BL/BL-demo">
-              Explore the Innflow demo
+              Explore the innflow demo
             </a>
           </div>
           <figure>
             <Image
               className={shared.photo}
               src="/brand/baselane-inspired/forms/lease-steps.webp"
-              alt="Baselane illustration of a person reviewing a lease document"
+              alt="Illustration of a person reviewing a lease document"
               width={1100}
               height={970}
             />
-            <figcaption>Lease resource illustration · Baselane</figcaption>
+            <figcaption>Illustrative lease-document workflow</figcaption>
           </figure>
         </section>
         <section className={styles.tinted}>
@@ -195,13 +197,13 @@ export function BaselaneLease() {
         </section>
         <section className={`${shared.closing} ${styles.dark}`}>
           <div>
-            <h2>Find the right starting document.</h2>
+            <h2>Prepare for the next document review.</h2>
             <p>Browse the forms and checklists in the resource library.</p>
             <a
               className={shared.button}
               href="/BL/BL-free-rental-forms-and-templates-for-landlords"
             >
-              Browse rental forms
+              Browse document checklists
             </a>
           </div>
         </section>

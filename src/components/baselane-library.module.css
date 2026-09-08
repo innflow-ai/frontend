@@ -552,3 +552,14 @@
     font-size: 25px;
   }
 }
+
+/* Keep link text readable regardless of the shared shell stylesheet order. */
+.featured .featureLinks a,
+.featured .heroCard a {
+  color: white;
+}
+@media (max-width: 700px) {
+  .featured .heroCard a {
+    color: #0b2633;
+  }
+}

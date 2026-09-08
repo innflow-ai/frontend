@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { type ReactNode, useEffect, useState } from "react";
+import { CustomerSupportHours } from "@/components/customer-support-hours";
+import { GoogleCtaContent } from "@/components/google-cta-content";
 import { footerNavigation } from "@/config/footer-navigation";
 import { siteConfig } from "@/config/site";
 import { EditorialHeader } from "./editorial-header";
@@ -109,8 +111,11 @@ export function RuneyChrome({
             <h2>Get in touch</h2>
             <a href="/contact">Contact us</a>
             <a href="/demo">Request a demo</a>
-            <a href={siteConfig.signupUrl}>Get started</a>
+            <a href={siteConfig.googleAuthUrl}>
+              <GoogleCtaContent />
+            </a>
             <a href={siteConfig.appOrigin}>Log in</a>
+            <CustomerSupportHours />
           </div>
         </div>
         <div className={styles.footerBottom}>

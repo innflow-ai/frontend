@@ -5,7 +5,7 @@ import { useState } from "react";
 import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-loans.module.css";
 
-const source = "https://www.baselane.com/rental-property-loans";
+const source = "/BL/BL-demo";
 const types = [
   {
     name: "Conventional loan",
@@ -88,35 +88,33 @@ export function BaselaneLoans() {
       <div className={styles.page}>
         <section className={styles.hero}>
           <div>
-            <h1>Explore funding for your next property.</h1>
+            <h1>Get your next property project ready.</h1>
             <p>
-              Review Baselane’s rental-financing resources, then bring your
-              questions and project details to the provider.
+              Bring project records, document requests, and lender follow-ups
+              into one innflow workflow. Keep your team ready for the next
+              conversation.
             </p>
             <div className={styles.actions}>
               <a className={styles.button} href={source}>
-                View lender resources ↗
+                Explore innflow →
               </a>
               <a className={styles.outline} href="#loan-details">
                 Compare loan types
               </a>
             </div>
           </div>
-          <Photo
-            name="hero"
-            alt="A rental property in Baselane’s financing collection"
-            hero
-          />
+          <Photo name="hero" alt="A residential property" hero />
         </section>
         <div className={styles.band}>
-          <span>Property finance resources</span>
+          <span>Financing preparation</span>
           <span>Four loan categories</span>
           <span>Questions for your lender</span>
         </div>
         <section className={styles.section}>
           <h2>Resources for different property plans.</h2>
           <p className={styles.lead}>
-            Explore the categories in Baselane’s original collection.
+            Organize the documents and handoffs around the project you have in
+            mind.
           </p>
           <div className={styles.categories}>
             {[
@@ -128,7 +126,7 @@ export function BaselaneLoans() {
               "FHA",
               "HELOC",
             ].map((name, index) => (
-              <a href={source} key={name}>
+              <a href="#loan-details" key={name}>
                 <span aria-hidden="true">
                   {String(index + 1).padStart(2, "0")}
                 </span>
@@ -140,20 +138,24 @@ export function BaselaneLoans() {
         </section>
         <section className={styles.split}>
           <div>
-            <h2>Check the provider’s coverage.</h2>
+            <h2>Keep every property in context.</h2>
             <p>
-              Use the original lender resource to confirm availability for your
-              property’s location.
+              Connect each property’s location, project scope, and open
+              requests. Give your team a clear record to share with its chosen
+              lender.
             </p>
             <a className={styles.button} href={source}>
-              Review availability ↗
+              See the workspace →
             </a>
             <p className={styles.note}>
-              Map supplied by Baselane; it does not describe Innflow lending
-              coverage.
+              innflow coordinates preparation and follow-up. Your lender handles
+              applications, eligibility, and financing.
             </p>
           </div>
-          <Photo name="map" alt="Baselane lender coverage map" />
+          <Photo
+            name="values"
+            alt="Residential properties across a neighborhood"
+          />
         </section>
         <section className={styles.section}>
           <h2>Explore the loan categories.</h2>
@@ -194,7 +196,7 @@ export function BaselaneLoans() {
               everyone a shared starting point.
             </p>
             <a className={styles.outline} href="/BL/BL-demo">
-              Explore Innflow →
+              Explore innflow →
             </a>
           </div>
         </section>
@@ -298,8 +300,8 @@ export function BaselaneLoans() {
                   </p>
                 </section>
               </div>
-              <a className={styles.button} href={`${source}#${current.anchor}`}>
-                Read the original details ↗
+              <a className={styles.button} href={source}>
+                Plan your workflow →
               </a>
             </div>
           </div>
@@ -399,7 +401,7 @@ export function BaselaneLoans() {
             ))}
           </div>
           <a className={styles.button} href={source}>
-            Open the lender resource ↗
+            Explore financing workflows →
           </a>
         </section>
         <section className={styles.faq}>
@@ -415,7 +417,7 @@ export function BaselaneLoans() {
                 specific property and application. This page does not assess
                 eligibility or offer financing.
               </p>
-              <a href={source}>Review Baselane’s lender resources ↗</a>
+              <a href={source}>Discuss your workflow with innflow →</a>
             </details>
           ))}
         </section>

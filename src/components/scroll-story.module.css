@@ -1,0 +1,83 @@
+.story {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 40px;
+}
+.nav {
+  position: sticky;
+  top: 110px;
+  align-self: start;
+  display: grid;
+  gap: 28px;
+}
+.nav a {
+  display: grid;
+  gap: 14px;
+  padding: 8px 0;
+  font-size: 13px;
+  color: #627078;
+  text-decoration: none;
+}
+.nav a[aria-current="step"] {
+  color: #0b2633;
+}
+.rail {
+  height: 3px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: #0b26331a;
+}
+.rail > span {
+  display: block;
+  height: 100%;
+  background: #0b2633;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+.stage {
+  display: grid;
+  gap: 28px;
+}
+.panel {
+  min-width: 0;
+  scroll-margin-top: 110px;
+}
+.story[data-enhanced="true"] .track {
+  height: calc(var(--story-count) * 85svh + 100svh - 150px);
+}
+.story[data-enhanced="true"] .stage {
+  position: sticky;
+  top: 110px;
+  height: calc(100svh - 150px);
+  min-height: 450px;
+  gap: 0;
+}
+.story[data-enhanced="true"] .panel {
+  grid-area: 1 / 1;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  transition:
+    opacity 250ms ease,
+    transform 250ms ease,
+    visibility 250ms;
+}
+.story[data-enhanced="true"] .panel[data-active="true"] {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+.story[data-enhanced="true"] .panel > * {
+  height: 100%;
+}
+@media (max-width: 850px) {
+  .story {
+    display: block;
+  }
+  .nav {
+    position: static;
+    margin-bottom: 28px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+}

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { BaselaneProductPage } from "@/components/baselane-product-page";
 export const metadata: Metadata = {
-  title: "Property document preparation | Innflow",
+  title: "Property document preparation | innflow",
   robots: { index: false, follow: false },
   alternates: { canonical: "/BL/BL-tax-preparation" },
 };

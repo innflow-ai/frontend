@@ -1,48 +1,27 @@
 "use client";
+
 import { ArrowLeft, ArrowRight, MagnifyingGlass } from "@phosphor-icons/react";
 import Image from "next/image";
 import { useRef, useState } from "react";
+import { GoogleCtaContent } from "@/components/google-cta-content";
+import { siteConfig } from "@/config/site";
 import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-library.module.css";
 import data from "./baselane-library-data.json";
 
 type Item = (typeof data.articles)[number];
 const articleCategories = [
-  "All articles",
-  "Baselane News",
-  "Bookkeeping",
-  "Insurance",
-  "Loans",
-  "Property Management",
-  "Real estate banking",
-  "Real Estate Investing",
-  "Rental market trends",
-  "Rent Collection",
-  "Software Comparisons",
-  "Taxes & Reporting",
+  "All resources",
+  "Property operations",
+  "Records & reviews",
+  "Planning tools",
+  "Team workflows",
 ];
 const webinarCategories = [
-  "All masterclasses",
-  "Tax Preparation",
-  "Rental Payments",
-  "Bookkeeping",
-  "Real Estate Investing",
+  "All topics",
+  "Property operations",
+  "Records & reviews",
 ];
-const categoryPaths: Record<string, string> = {
-  "Baselane News": "baselane-news",
-  Bookkeeping: "bookkeeping",
-  Insurance: "insurance",
-  Loans: "financing",
-  "Property Management": "property-management",
-  "Real estate banking": "real-estate-banking",
-  "Real Estate Investing": "real-estate-investing",
-  "Rental market trends": "trends",
-  "Rent Collection": "rent-collection",
-  "Software Comparisons": "compare",
-  "Taxes & Reporting": "taxes",
-  "Tax Preparation": "tax-preparation",
-  "Rental Payments": "rental-payments",
-};
 function Cards({ title, items }: { title: string; items: Item[] }) {
   const [page, setPage] = useState(0);
   const [expanded, setExpanded] = useState(false);
@@ -61,13 +40,13 @@ function Cards({ title, items }: { title: string; items: Item[] }) {
                 sizes="(max-width:700px) 100vw, 33vw"
               />
               {!item.href.includes("/webinars/") && (
-                <small>BASELANE RESOURCE</small>
+                <small>INNFLOW RESOURCE</small>
               )}
             </div>
             <div className={styles.cardCopy}>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
-              <span>View on Baselane ↗</span>
+              <span>Explore with innflow →</span>
             </div>
           </a>
         ))}
@@ -126,44 +105,23 @@ export function BaselaneLibrary({ kind }: { kind: "articles" | "webinars" }) {
         .toLowerCase()
         .includes(search.trim().toLowerCase()),
   );
-  const featured = isWebinar
-    ? [
-        [
-          "REAL ESTATE MASTERCLASS",
-          data.webinars[0].title,
-          data.webinars[0].href,
-        ],
-        [
-          "BOOKKEEPING MASTERCLASS",
-          data.webinars[5].title,
-          data.webinars[5].href,
-        ],
-        ["TAX PREP MASTERCLASS", data.webinars[1].title, data.webinars[1].href],
-      ]
-    : [
-        [
-          "GUIDE",
-          "Airbnb vs. long-term rental investment strategies",
-          "https://www.baselane.com/resources/airbnb-vs-renting-out",
-        ],
-        [
-          "ARTICLE",
-          "Best banks for real estate investors",
-          "https://www.baselane.com/resources/best-banks-for-real-estate-investors",
-        ],
-        [
-          "RESOURCE",
-          "Rental property tax write-offs",
-          "https://www.baselane.com/resources/rental-property-tax-write-offs",
-        ],
-      ];
+  const featured = items
+    .slice(0, 3)
+    .map((item) => [item.category, item.title, item.href]);
   return (
     <BaselaneHomepage>
       <section className={styles.featured}>
-        <h1>Featured {isWebinar ? "masterclasses" : "articles"}</h1>
+        <h1>
+          {isWebinar
+            ? "Learn how innflow works"
+            : "Resources for connected property work"}
+        </h1>
         <p className={styles.attribution}>
-          Selected {isWebinar ? "sessions" : "reading"} from Baselane. Links
-          open the original publisher’s pages.
+          Explore{" "}
+          {isWebinar
+            ? "self-guided workflow topics"
+            : "practical tools and workflow guides"}{" "}
+          for your property team. Start with the process you want to improve.
         </p>
         <div className={styles.featureGrid}>
           <article
@@ -178,34 +136,28 @@ export function BaselaneLibrary({ kind }: { kind: "articles" | "webinars" }) {
             />
             <div>
               <small>
-                {isWebinar ? "BASELANE TRAINING" : "FEATURED ARTICLE"}
+                {isWebinar ? "WORKFLOW WALKTHROUGH" : "FEATURED RESOURCE"}
               </small>
               <h2>
                 {isWebinar
-                  ? "New customer onboarding training"
-                  : "U.S. rental market trends and conditions"}
+                  ? "Start with your team’s real work"
+                  : "One place for your property operations"}
               </h2>
               {!isWebinar && (
                 <p>
-                  Explore Baselane’s overview of the rental market and the
-                  trends affecting property owners.
+                  See how innflow connects recurring tasks, property context,
+                  and human review in one workspace.
                 </p>
               )}
-              <a
-                href={
-                  isWebinar
-                    ? "https://baselane.zoom.us/webinar/register/WN_w0yvoGYeQFqah-HrDmfTuA"
-                    : "https://www.baselane.com/resources/rental-market-trends"
-                }
-              >
-                {isWebinar ? "View registration" : "Read now"}{" "}
+              <a href={isWebinar ? "/BL/BL-demo" : "/BL/BL-home"}>
+                {isWebinar ? "Book a demo" : "Explore innflow"}{" "}
                 <ArrowRight size={16} />
               </a>
             </div>
           </article>
           <div className={styles.featureLinks}>
             {featured.map(([label, title, href]) => (
-              <a href={href} key={label}>
+              <a href={href} key={href}>
                 <small>{label}</small>
                 <h2>{title}</h2>
                 <span>
@@ -256,7 +208,7 @@ export function BaselaneLibrary({ kind }: { kind: "articles" | "webinars" }) {
               <input
                 type="search"
                 placeholder="Search..."
-                aria-label="Search articles"
+                aria-label="Search resources"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
@@ -296,21 +248,19 @@ export function BaselaneLibrary({ kind }: { kind: "articles" | "webinars" }) {
               </div>
             )}
             {!all && (
-              <a
-                className={styles.fullCollection}
-                href={`https://www.baselane.com/${isWebinar ? "webinar" : "category"}/${categoryPaths[category]}`}
-              >
-                Browse this topic on Baselane <ArrowRight size={16} />
+              <a className={styles.fullCollection} href="/blog">
+                Read the innflow blog <ArrowRight size={16} />
               </a>
             )}
           </>
         ) : isWebinar ? (
-          <Cards title="Latest masterclasses" items={items} />
+          <Cards title="Explore workflow topics" items={items} />
         ) : (
           [
-            "Rental market trends",
-            "Real estate banking",
-            "Latest articles",
+            "Property operations",
+            "Records & reviews",
+            "Planning tools",
+            "Team workflows",
           ].map((title) => (
             <Cards
               key={title}
@@ -335,11 +285,10 @@ export function BaselaneLibrary({ kind }: { kind: "articles" | "webinars" }) {
         </picture>
         <div>
           <h2>More room for what comes next.</h2>
-          <p>Connect your property operations with Innflow.</p>
+          <p>Connect your property operations with innflow.</p>
           <div className={styles.actions}>
-            <a href="https://app.innflow.ai/login" className={styles.google}>
-              <Image src="/brand/google-g.svg" alt="" width={18} height={18} />
-              Continue with Google
+            <a href={siteConfig.googleAuthUrl} className={styles.google}>
+              <GoogleCtaContent />
             </a>
             <a href="/demo">
               See demo <ArrowRight size={18} />

@@ -52,7 +52,7 @@ export const productContent = {
     ],
     faqs: [
       [
-        "How can Innflow help with tax preparation?",
+        "How can innflow help with tax preparation?",
         "Use connected knowledge and workflows to coordinate document gathering, team questions, and review steps before handing information to your tax professional.",
       ],
       [
@@ -132,8 +132,8 @@ export const productContent = {
     ],
     faqs: [
       [
-        "How does Innflow help with recurring property work?",
-        "Innflow connects workflows, knowledge, and approval steps so your team can coordinate repeatable tasks with the information they need.",
+        "How does innflow help with recurring property work?",
+        "innflow connects workflows, knowledge, and approval steps so your team can coordinate repeatable tasks with the information they need.",
       ],
       [
         "Can I organize work across several properties?",
@@ -210,8 +210,8 @@ export const productContent = {
     ],
     faqs: [
       [
-        "How can Innflow help organize property records?",
-        "Innflow connects knowledge and workflows so your team can keep supporting information close to the questions, requests, and decisions it belongs to.",
+        "How can innflow help organize property records?",
+        "innflow connects knowledge and workflows so your team can keep supporting information close to the questions, requests, and decisions it belongs to.",
       ],
       [
         "Can a team share context across properties?",

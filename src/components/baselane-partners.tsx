@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { GoogleCtaContent } from "@/components/google-cta-content";
 import { siteConfig } from "@/config/site";
 import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-partners.module.css";
@@ -30,7 +31,7 @@ const topics = [
   [
     "01",
     "Introductions",
-    "Connect us with teams whose work could benefit from Innflow.",
+    "Connect us with teams whose work could benefit from innflow.",
   ],
   [
     "02",
@@ -61,7 +62,7 @@ const topics = [
 const referralSteps = [
   [
     "Copy the page link",
-    "Use the share control to copy Innflow's public homepage URL. You can also select and copy the address shown below it.",
+    "Use the share control to copy innflow's public homepage URL. You can also select and copy the address shown below it.",
   ],
   [
     "Add a personal introduction",
@@ -73,7 +74,7 @@ const referralSteps = [
   ],
   [
     "Start a conversation",
-    "Have a larger team or a collaboration in mind? Visit our partner page to contact Innflow. This public share link does not track referrals or offer a cash reward.",
+    "Have a larger team or a collaboration in mind? Visit our partner page to contact innflow. This public share link does not track referrals or offer a cash reward.",
   ],
 ];
 const partnerSteps = [
@@ -116,7 +117,7 @@ function Workflow() {
     <div
       className={styles.workflow}
       role="img"
-      aria-label="Illustrative Innflow workflow: a new request is reviewed, assigned, approved, and shared with the team."
+      aria-label="Illustrative innflow workflow: a new request is reviewed, assigned, approved, and shared with the team."
     >
       <div className={styles.workflowTop}>
         <span>innflow</span>
@@ -150,13 +151,13 @@ function Workflow() {
 export function BaselanePartners({ referral = false }: { referral?: boolean }) {
   const [shareStatus, setShareStatus] = useState("");
   const shareUrl = `${siteConfig.marketingOrigin.replace(/\/$/, "")}/BL/BL-home`;
-  const inquiry = `mailto:${siteConfig.supportEmail}?subject=${encodeURIComponent("Partner with Innflow")}`;
+  const inquiry = `mailto:${siteConfig.supportEmail}?subject=${encodeURIComponent("Partner with innflow")}`;
   async function copyLink() {
     try {
       await navigator.clipboard.writeText(shareUrl);
       setShareStatus("Link copied. Ready to share.");
     } catch {
-      setShareStatus("Copy the address below to share Innflow.");
+      setShareStatus("Copy the address below to share innflow.");
     }
   }
   const action = referral ? (
@@ -180,8 +181,8 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
             </h1>
             <p>
               {referral
-                ? "Know someone juggling property tasks, information, and follow-ups? Introduce them to a more connected way to work with Innflow."
-                : "Bring your experience, your community, and an idea. Let's explore how Innflow can help the people you work with."}
+                ? "Know someone juggling property tasks, information, and follow-ups? Introduce them to a more connected way to work with innflow."
+                : "Bring your experience, your community, and an idea. Let's explore how innflow can help the people you work with."}
             </p>
             {action}
             {referral ? (
@@ -249,7 +250,7 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
                 workflow.
               </p>
               <a className={styles.textLink} href="/BL/BL-demo">
-                Explore Innflow →
+                Explore innflow →
               </a>
               <div className={styles.demo}>
                 <Workflow />
@@ -319,8 +320,8 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
           <div>
             <h2>
               {referral
-                ? "Know someone who could use Innflow?"
-                : "Bring your next idea to Innflow."}
+                ? "Know someone who could use innflow?"
+                : "Bring your next idea to innflow."}
             </h2>
             <p>
               {referral
@@ -328,15 +329,12 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
                 : "Introduce yourself and the collaboration you have in mind."}
             </p>
             {referral ? (
-              <a
-                className={styles.button}
-                href={`${siteConfig.appOrigin}/login`}
-              >
-                Continue with Google
+              <a className={styles.button} href={siteConfig.googleAuthUrl}>
+                <GoogleCtaContent />
               </a>
             ) : (
               <a className={styles.button} href={inquiry}>
-                Contact Innflow
+                Contact innflow
               </a>
             )}
             {referral && (

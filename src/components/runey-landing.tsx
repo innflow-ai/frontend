@@ -1,6 +1,7 @@
 import { ArrowRight, CheckCircle } from "@phosphor-icons/react/dist/ssr";
 import { Poppins } from "next/font/google";
 import Image from "next/image";
+import { GoogleCtaContent } from "@/components/google-cta-content";
 import { siteConfig } from "@/config/site";
 import { faqs } from "@/content/home";
 import { HomepageMedia } from "./homepage-media";
@@ -113,10 +114,10 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
             <div className={styles.actions}>
               <TrackedLink
                 className={styles.primaryButton}
-                destination={siteConfig.signupUrl}
+                destination={siteConfig.googleAuthUrl}
                 eventLabel="hero_get_started"
               >
-                Get started <ArrowRight size={17} />
+                <GoogleCtaContent />
               </TrackedLink>
               <a className={styles.secondaryButton} href="#features">
                 See features
@@ -346,11 +347,11 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
           </p>
           <div className={styles.actions}>
             <TrackedLink
-              destination={siteConfig.signupUrl}
+              destination={siteConfig.googleAuthUrl}
               eventLabel="landing_final_get_started"
               className={styles.primaryButton}
             >
-              Get started <ArrowRight size={17} />
+              <GoogleCtaContent />
             </TrackedLink>
             <a href="/demo" className={styles.textButton}>
               Request demo

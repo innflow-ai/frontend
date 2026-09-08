@@ -1,103 +1,86 @@
 import Image from "next/image";
+import { GoogleCtaContent } from "@/components/google-cta-content";
 import { siteConfig } from "@/config/site";
 import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-savings.module.css";
 
-const source = "https://www.baselane.com/landlord-banking-apy";
+const source = "/BL/BL-demo";
 const steps = [
   {
     image: "account",
     card: "account-card",
-    title: "Explore the account",
-    text: "Start with the provider’s account information and requirements.",
+    title: "Gather your records",
+    text: "Connect the account documents and property details your team needs to review.",
   },
   {
     image: "balances",
     card: "balances-card",
-    title: "Review the balance tiers",
-    text: "Compare the balance bands with the amount you plan to keep available.",
+    title: "Set the review points",
+    text: "Give recurring reserve reviews an owner, a checklist, and the right context.",
   },
   {
     image: "rent",
     card: "rent-card",
-    title: "Check bonus conditions",
-    text: "Read the qualification rules before including a bonus in your plans.",
+    title: "Coordinate the next step",
+    text: "Turn review decisions into assigned tasks and keep the supporting notes attached.",
   },
 ];
 const features = [
   {
-    title: "Banking",
+    title: "Property context",
     items: [
-      "Account opening",
-      "Business entities",
-      "Deposit requirements",
-      "Monthly fees",
-      "Property accounts",
-      "Virtual accounts",
-      "Savings interest",
-      "Digital wallets",
-      "Mobile access",
-    ],
-  },
-  {
-    title: "Rent collection",
-    items: [
-      "Recurring payments",
-      "Deposits",
-      "Payment timing",
-      "Late fees",
-      "Payment history",
-      "Invoices",
-      "Reminders",
-      "Payment limits",
-      "Resident access",
-      "Payment methods",
-      "Autopay",
-    ],
-  },
-  {
-    title: "Accounting",
-    items: [
-      "Bank connections",
-      "Transaction imports",
       "Property records",
-      "Categories",
-      "Statements",
-      "Cash flow",
-      "Data updates",
-      "Search",
-      "Reports",
-      "CSV exports",
-      "Tax preparation",
+      "Supporting documents",
+      "Team notes",
+      "Connected knowledge",
+    ],
+  },
+  {
+    title: "Review workflows",
+    items: [
+      "Recurring tasks",
+      "Clear ownership",
+      "Review steps",
+      "Human approvals",
+    ],
+  },
+  {
+    title: "Shared follow-through",
+    items: [
+      "Open questions",
+      "Assigned actions",
+      "Decision context",
+      "Visible progress",
     ],
   },
 ];
 const fees = [
   {
-    title: "Banking",
+    title: "Preparation",
     items: [
-      "Opening",
-      "Maintenance",
-      "Minimums",
-      "Inactivity",
-      "ATMs",
-      "Overdrafts",
+      "Gather documents",
+      "Confirm property details",
+      "List open questions",
     ],
   },
-  { title: "Sending", items: ["ACH", "Wires", "Checks", "Checkbooks"] },
   {
-    title: "Receiving",
-    items: ["Wires", "Mobile deposits", "Debit", "Credit"],
+    title: "Review",
+    items: [
+      "Assign an owner",
+      "Connect supporting records",
+      "Record decisions",
+    ],
   },
   {
-    title: "Resident payments",
+    title: "Follow-up",
+    items: ["Share next steps", "Track progress", "Resolve missing details"],
+  },
+  {
+    title: "Recurring work",
     items: [
-      "ACH",
-      "Debit",
-      "Credit",
-      "Split payments",
-      "Rent reporting",
-      "Screening",
+      "Plan the next review",
+      "Update the checklist",
+      "Keep context current",
     ],
   },
 ];
@@ -108,13 +91,14 @@ export function BaselaneSavings() {
       <div className={styles.page}>
         <section className={styles.hero}>
           <div>
-            <h1>A clearer view of your property savings.</h1>
+            <h1>Keep property reserves connected to the plan.</h1>
             <p>
-              Explore Baselane’s savings resources, then keep the decisions and
-              documents connected with Innflow.
+              Bring reserve plans, supporting records, and follow-up tasks into
+              innflow. Keep the context behind each property decision within
+              reach.
             </p>
             <a className={styles.button} href={source}>
-              Explore savings resources ↗
+              Explore innflow →
             </a>
           </div>
           <Image
@@ -147,7 +131,7 @@ export function BaselaneSavings() {
                     src={`/brand/baselane-inspired/savings/${step.card}.webp`}
                     width={840}
                     height={566}
-                    alt={`Baselane ${step.title.toLowerCase()} illustration`}
+                    alt="Illustrative property records"
                   />
                 </div>
                 <h3>{step.title}</h3>
@@ -156,58 +140,66 @@ export function BaselaneSavings() {
             ))}
           </div>
           <p className={styles.note}>
-            Product illustrations supplied by Baselane.
+            Illustrative records show how property context supports a review.
           </p>
         </section>
         <section className={styles.section} id="balance-tiers">
-          <h2>See where your balance fits.</h2>
+          <h2>Build a repeatable reserve review.</h2>
           <p>
-            Use the original provider’s terms to check the rate and conditions
-            for each band.
+            Make the purpose, supporting information, and next action clear
+            before a decision moves forward.
           </p>
           <div className={styles.tableWrap}>
             <table>
-              <caption>
-                Baselane balance bands — current rates available from the
-                provider
-              </caption>
+              <caption>Example reserve review checklist</caption>
               <thead>
                 <tr>
-                  <th scope="col">Balance</th>
-                  <th scope="col">Savings rate</th>
-                  <th scope="col">Bonus eligibility</th>
+                  <th scope="col">Review area</th>
+                  <th scope="col">Supporting records</th>
+                  <th scope="col">Team handoff</th>
                 </tr>
               </thead>
               <tbody>
                 {[
-                  "Below $10,000",
-                  "$10,000–$24,999",
-                  "$25,000–$49,999",
-                  "$50,000 and above",
-                ].map((band) => (
-                  <tr key={band}>
-                    <th scope="row">{band}</th>
-                    <td>
-                      <a href={source}>View current APY ↗</a>
-                    </td>
-                    <td>
-                      <a href={source}>Check conditions ↗</a>
-                    </td>
+                  [
+                    "Operating reserves",
+                    "Current account records",
+                    "Review with the responsible owner",
+                  ],
+                  [
+                    "Upcoming repairs",
+                    "Work requests and estimates",
+                    "Confirm scope before approval",
+                  ],
+                  [
+                    "Planned improvements",
+                    "Project notes and proposals",
+                    "Assign the next review",
+                  ],
+                  [
+                    "Annual review",
+                    "Prior decisions and open questions",
+                    "Agree on the follow-up actions",
+                  ],
+                ].map(([area, records, handoff]) => (
+                  <tr key={area}>
+                    <th scope="row">{area}</th>
+                    <td>{records}</td>
+                    <td>{handoff}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
           <p className={styles.note}>
-            This resource does not offer an Innflow savings account or quote a
-            rate. Review the provider’s current disclosures before opening an
-            account.
+            Keep your existing bank accounts. innflow supports the records,
+            review steps, and follow-ups around your reserve planning.
           </p>
         </section>
         <section className={styles.features}>
           <div className={styles.featureInner}>
             <h2>Look at the whole picture.</h2>
-            <p>Topics to review in Baselane’s product information.</p>
+            <p>Connect the work around your property plans.</p>
             <div className={styles.featureGrid}>
               {features.map((group) => (
                 <article key={group.title}>
@@ -224,15 +216,15 @@ export function BaselaneSavings() {
               ))}
             </div>
             <a className={styles.button} href={source}>
-              Read the provider’s details ↗
+              See how innflow fits →
             </a>
           </div>
         </section>
         <section className={styles.section} id="fee-review">
-          <h2>Make room for every cost.</h2>
+          <h2>Give every follow-up an owner.</h2>
           <p>
-            A fee review is part of the decision. Confirm amounts, exceptions,
-            and conditions directly with the provider.
+            Organize the recurring tasks that keep your property plans current,
+            from collecting records to closing out a review.
           </p>
           <div className={styles.fees}>
             {fees.map((group) => (
@@ -245,7 +237,7 @@ export function BaselaneSavings() {
                     </li>
                   ))}
                 </ul>
-                <a href={source}>Review {group.title.toLowerCase()} fees ↗</a>
+                <a href={source}>Explore {group.title.toLowerCase()} →</a>
               </article>
             ))}
           </div>
@@ -264,7 +256,7 @@ export function BaselaneSavings() {
               ],
               [
                 "Coordinate",
-                "Connect the follow-up work in Innflow, with an owner and a clear next action.",
+                "Connect the follow-up work in innflow, with an owner and a clear next action.",
               ],
             ].map(([title, text]) => (
               <article key={title}>
@@ -281,10 +273,10 @@ export function BaselaneSavings() {
           </p>
           <div className={styles.actions}>
             <a className={styles.outline} href="/BL/BL-demo">
-              See Innflow →
+              See innflow →
             </a>
-            <a className={styles.button} href={`${siteConfig.appOrigin}/login`}>
-              Continue with Google
+            <a className={styles.button} href={siteConfig.googleAuthUrl}>
+              <GoogleCtaContent />
             </a>
           </div>
         </section>

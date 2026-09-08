@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { BaselaneBanking } from "@/components/baselane-banking";
 export const metadata: Metadata = {
-  title: "Property operations | Innflow",
-  description: "An alternate Innflow design for connected property operations.",
+  title: "Property operations | innflow",
+  description:
+    "Connect recurring property work, knowledge, and human approvals in one innflow workspace.",
   robots: { index: false, follow: false },
   alternates: { canonical: "/BL/BL-landlord-banking" },
 };

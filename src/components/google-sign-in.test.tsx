@@ -78,7 +78,7 @@ describe("Google sign-in dialog", () => {
   it("handles native Escape cancellation and unlocks a previously scrolling page", async () => {
     render(<GoogleSignInButton />);
     await userEvent.click(
-      screen.getByRole("button", { name: "Sign in with Google" }),
+      screen.getByRole("button", { name: "Continue with Google" }),
     );
     fireEvent(
       screen.getByRole("dialog"),
@@ -92,7 +92,7 @@ describe("Google sign-in dialog", () => {
     document.body.style.overflow = "clip";
     const { unmount } = render(<GoogleSignInButton />);
     await userEvent.click(
-      screen.getByRole("button", { name: "Sign in with Google" }),
+      screen.getByRole("button", { name: "Continue with Google" }),
     );
     expect(document.body.style.overflow).toBe("hidden");
     unmount();
@@ -102,7 +102,7 @@ describe("Google sign-in dialog", () => {
   it("honors a prevented trigger click", async () => {
     render(<GoogleSignInButton onClick={(event) => event.preventDefault()} />);
     await userEvent.click(
-      screen.getByRole("button", { name: "Sign in with Google" }),
+      screen.getByRole("button", { name: "Continue with Google" }),
     );
     expect(screen.queryByRole("dialog")).toBeNull();
   });

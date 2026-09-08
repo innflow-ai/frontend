@@ -1,6 +1,8 @@
 "use client";
+
 import Image from "next/image";
 import { useState } from "react";
+import { GoogleCtaContent } from "@/components/google-cta-content";
 import { pricingCatalog } from "@/config/pricing";
 import { siteConfig } from "@/config/site";
 import { BaselaneHomepage } from "./baselane-homepage";
@@ -37,7 +39,7 @@ const groups = [
 ] as const;
 const questions = [
   [
-    "What are Innflow credits?",
+    "What are innflow credits?",
     "Credits measure usage across supported workflow and AI actions. Usage depends on the action and model involved, so consider both run volume and workflow complexity.",
   ],
   [
@@ -131,11 +133,8 @@ export function BaselanePricing() {
                     ? "More capacity for connected operations"
                     : "The essentials to get started"}
                 </p>
-                <a
-                  className={styles.button}
-                  href="https://app.innflow.ai/login"
-                >
-                  Continue with Google ↗
+                <a className={styles.button} href={siteConfig.googleAuthUrl}>
+                  <GoogleCtaContent />
                 </a>
                 <span className={styles.eyebrow}>INCLUDED CAPACITY</span>
                 <ul>
@@ -217,7 +216,7 @@ export function BaselanePricing() {
                 >
                   <table>
                     <caption className={styles.srOnly}>
-                      {group.title} by Innflow plan
+                      {group.title} by innflow plan
                     </caption>
                     <thead>
                       <tr>

@@ -7,6 +7,7 @@ import {
   Users,
 } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
+import { GoogleCtaContent } from "@/components/google-cta-content";
 import { siteConfig } from "@/config/site";
 import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-multi-property.module.css";
@@ -110,12 +111,8 @@ export function BaselaneMultiProperty({
               "Connected workflows and knowledge for multi-property teams who want more control and room to grow."}
           </p>
           <div className={styles.actions}>
-            <a
-              className={styles.googleButton}
-              href={`${siteConfig.appOrigin}/login`}
-            >
-              <Image src="/brand/google-g.svg" alt="" width={18} height={18} />
-              Continue with Google
+            <a className={styles.googleButton} href={siteConfig.googleAuthUrl}>
+              <GoogleCtaContent />
             </a>
             <a className={styles.outline} href="/demo">
               See demo <ArrowRight size={18} />
@@ -261,7 +258,7 @@ export function BaselaneMultiProperty({
               flow.
             </p>
             <a className={styles.button} href="/demo">
-              Explore Innflow <ArrowRight size={18} />
+              Explore innflow <ArrowRight size={18} />
             </a>
           </div>
         </section>
@@ -285,7 +282,7 @@ export function BaselaneMultiProperty({
               </h3>
               <p>
                 {content?.resourceText ??
-                  "Explore the workflows, knowledge, and approvals behind Innflow."}
+                  "Explore the workflows, knowledge, and approvals behind innflow."}
               </p>
               <a className={styles.button} href="/demo">
                 Book a demo <ArrowRight size={18} />
@@ -362,12 +359,8 @@ export function BaselaneMultiProperty({
           </h2>
           <p>Bring your team and your next steps into one flow.</p>
           <div className={styles.actions}>
-            <a
-              className={styles.googleButton}
-              href={`${siteConfig.appOrigin}/login`}
-            >
-              <Image src="/brand/google-g.svg" alt="" width={18} height={18} />
-              Continue with Google
+            <a className={styles.googleButton} href={siteConfig.googleAuthUrl}>
+              <GoogleCtaContent />
             </a>
             <a className={styles.outline} href="/demo">
               See demo <ArrowRight size={18} />

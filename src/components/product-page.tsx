@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { FeatureCard, FeatureCardGrid } from "@/components/feature-card";
+import { GoogleCtaContent } from "@/components/google-cta-content";
 import { JsonLd } from "@/components/json-ld";
 import { FaqList } from "@/components/page-primitives";
 import { TrackedLink } from "@/components/tracked-link";
@@ -14,7 +15,7 @@ import type {
 import styles from "./product-page.module.css";
 
 function ctaDestination(cta: ProductCta) {
-  if (cta.destination === "signup") return siteConfig.signupUrl;
+  if (cta.destination === "signup") return siteConfig.googleAuthUrl;
   if (cta.destination === "contact") return siteConfig.contactUrl;
   return siteConfig.demoUrl;
 }
@@ -34,7 +35,7 @@ function CtaLink({
       destination={destination}
       eventLabel={`product_${cta.destination}`}
     >
-      {cta.label}
+      {cta.destination === "signup" ? <GoogleCtaContent /> : cta.label}
     </TrackedLink>
   );
 }

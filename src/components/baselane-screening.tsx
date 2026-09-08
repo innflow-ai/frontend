@@ -2,19 +2,12 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { GoogleCtaContent } from "@/components/google-cta-content";
 import { siteConfig } from "@/config/site";
 import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-screening.module.css";
 
-const source =
-  "https://www.baselane.com/tenant-management/tenant-screening-service";
-const sample =
-  "https://cdn.prod.website-files.com/68302b3f2baf68e6d1ecf558/68aca1e1af437f35d7b83764_Sample%20Tenant%20Screening%20Report.pdf";
-const addons = [
-  ["Criminal report", 5],
-  ["Eviction report", 10],
-  ["Income verification", 10],
-] as const;
+const source = "/BL/BL-demo";
 const topics = [
   "Rental application",
   "Identity verification",
@@ -25,36 +18,28 @@ const topics = [
 ];
 const faqs = [
   [
-    "Does this page perform tenant screening?",
-    "No. This page presents a screening resource and workflow reference. Open the provider's website to review and request its service.",
+    "How does innflow support screening workflows?",
+    "Coordinate the tasks around your chosen screening provider: document requests, team review, and the next handoff. Keep supporting context connected to the work.",
   ],
   [
-    "Where can I see a sample?",
-    "The sample-report link opens the PDF published by Baselane. It is an example, not a report about an applicant.",
+    "Does innflow generate screening reports?",
+    "Your screening provider handles report requests and applicant verification. innflow helps your team organize the surrounding process.",
   ],
   [
-    "What does the pricing selector do?",
-    "It adds the displayed optional report fees to the illustrated base price. It does not place an order or charge anyone.",
+    "What does the checklist do?",
+    "Select the steps your team wants to discuss. The checklist stays on this page and helps you prepare for a workflow demo.",
   ],
   [
-    "Are these Innflow prices?",
-    "No. The example uses the pricing shown on Baselane's reference page. Confirm current pricing and availability with the provider before proceeding.",
+    "Can my team review the next action?",
+    "Use human review points to keep consequential decisions with the responsible person and the supporting information close at hand.",
   ],
   [
-    "Can I enter applicant information here?",
-    "This page has no applicant intake form. Use the selected provider's authorized process for any applicant information.",
+    "Where do applicants submit information?",
+    "Use your chosen provider’s authorized intake process. This page does not collect applicant information.",
   ],
   [
-    "How can Innflow fit into the process?",
-    "Explore Innflow to organize the tasks, information, and follow-ups surrounding your team's work.",
-  ],
-  [
-    "Can I review related document workflows?",
-    "The lease and rental-workflow cards below link to the related Innflow design previews.",
-  ],
-  [
-    "Where do I find the provider's full terms?",
-    "Follow the original screening-page link to review the provider's descriptions, requirements, and terms.",
+    "How do I get started?",
+    "Book a demo to discuss your current screening process, the tools you use, and the handoffs you want to improve.",
   ],
 ];
 function Photo({
@@ -79,12 +64,7 @@ function Photo({
 }
 export function BaselaneScreening() {
   const [selected, setSelected] = useState<boolean[]>([false, false, false]);
-  const total =
-    24.99 +
-    addons.reduce(
-      (sum, item, index) => sum + (selected[index] ? item[1] : 0),
-      0,
-    );
+  const completed = selected.filter(Boolean).length;
   return (
     <BaselaneHomepage>
       <div className={styles.page}>
@@ -92,51 +72,51 @@ export function BaselaneScreening() {
           <section className={styles.hero}>
             <div>
               <h1>
-                <span>Tenant screening.</span>
+                <span>Screening workflows.</span>
                 <br />
-                See the complete picture.
+                Keep the next step clear.
               </h1>
               <p>
-                Explore a screening resource, understand the report options, and
-                connect the next steps in your workflow.
+                Keep document requests, review tasks, and team handoffs
+                connected in innflow, alongside your chosen screening provider.
               </p>
               <a className={styles.button} href="#screening-overview">
-                Explore the resource
+                Explore the workflow
               </a>
             </div>
             <Photo
               name="hero"
-              alt="Baselane screening illustration with report types"
+              alt="Illustrative screening workflow records"
               priority
             />
           </section>
           <div className={styles.band}>
-            <span>Report examples</span>
-            <span>Provider pricing illustration</span>
+            <span>Connected records</span>
+            <span>Human review</span>
             <span>Connected workflow resources</span>
           </div>
           <p className={styles.attribution}>
-            Screening services and product illustrations shown here are from
-            Baselane.
+            Your provider handles screening. innflow helps your team coordinate
+            the work around each request.
           </p>
         </div>
         <section className={styles.section} id="screening-overview">
           <h2>Start with the information behind the report.</h2>
           <p className={styles.lead}>
-            Review the source service and its sample before deciding what fits
-            your process.
+            Connect the property context, assign a reviewer, and keep the
+            follow-up visible from the start.
           </p>
           <div className={styles.actions}>
             <a className={styles.button} href={source}>
-              View Baselane screening ↗
+              See innflow in action →
             </a>
             <a
               className={styles.outline}
-              href={sample}
+              href="/BL/BL-lease-agreement"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Download sample report ↗
+              Explore lease workflows →
             </a>
           </div>
           <div className={styles.three}>
@@ -160,15 +140,15 @@ export function BaselaneScreening() {
         <section className={styles.section}>
           <h2>Compare the details that matter.</h2>
           <p className={styles.lead}>
-            Use the source page to review coverage and ask questions about the
-            service.
+            Use a shared checklist to clarify what your team needs from its
+            provider and who is responsible for the next action.
           </p>
           <div className={styles.tableWrap}>
             <table>
               <thead>
                 <tr>
                   <th scope="col">Review area</th>
-                  <th scope="col">Source offering</th>
+                  <th scope="col">Information to gather</th>
                   <th scope="col">Questions to review</th>
                 </tr>
               </thead>
@@ -223,7 +203,9 @@ export function BaselaneScreening() {
         </section>
         <section className={styles.section}>
           <h2>Explore the report sections.</h2>
-          <p className={styles.lead}>Illustrations from Baselane’s product.</p>
+          <p className={styles.lead}>
+            Keep each review area connected to the supporting records.
+          </p>
           {[0, 1].map((group) => (
             <div
               className={`${styles.split} ${group ? styles.reverse : ""}`}
@@ -233,15 +215,17 @@ export function BaselaneScreening() {
                 name={group ? "report" : "application"}
                 alt={
                   group
-                    ? "Baselane sample tenant report"
-                    : "Baselane applicant overview"
+                    ? "Illustrative tenant report layout"
+                    : "Illustrative applicant record layout"
                 }
               />
               <div className={styles.topicList}>
                 {topics.slice(group * 3, group * 3 + 3).map((topic) => (
                   <div key={topic}>
                     <h3>{topic}</h3>
-                    <a href={sample}>Review in the sample PDF ↗</a>
+                    <a href="/BL/BL-lease-agreement">
+                      Connect the next handoff →
+                    </a>
                   </div>
                 ))}
               </div>
@@ -252,27 +236,29 @@ export function BaselaneScreening() {
           className={`${styles.section} ${styles.pricing}`}
           id="report-options"
         >
-          <h2>Explore the report options.</h2>
+          <h2>Plan the handoffs around screening.</h2>
           <p className={styles.lead}>
-            Baselane pricing illustration. Confirm the current fees on the
-            provider’s website.
+            Select the steps you want to connect with innflow.
           </p>
           <div className={styles.priceGrid}>
             <article>
-              <span>BASE REPORT</span>
-              <strong>$24.99</strong>
+              <span>YOUR STARTING POINT</span>
+              <h3>A process your team can follow</h3>
               <ul>
-                <li>Rental application</li>
-                <li>Identity verification</li>
-                <li>Credit report</li>
+                <li>Property and request context</li>
+                <li>A responsible reviewer</li>
+                <li>A clear next action</li>
               </ul>
             </article>
             <article>
-              <span>OPTIONAL REPORTS</span>
-              {addons.map(([label, price], index) => (
+              <span>WORKFLOW CHECKLIST</span>
+              {[
+                "Gather supporting documents",
+                "Assign a review step",
+                "Coordinate the follow-up",
+              ].map((label, index) => (
                 <label key={label}>
                   <span>{label}</span>
-                  <span>${price}</span>
                   <input
                     type="checkbox"
                     checked={selected[index]}
@@ -287,14 +273,15 @@ export function BaselaneScreening() {
                 </label>
               ))}
               <div className={styles.total} aria-live="polite">
-                <span>Illustrated total</span>
-                <strong>${total.toFixed(2)}</strong>
+                <span>Steps selected</span>
+                <strong>{completed} / 3</strong>
               </div>
               <a className={styles.button} href={source}>
-                Review provider pricing ↗
+                Discuss your workflow →
               </a>
               <p className={styles.note}>
-                No report is ordered and no payment is taken here.
+                Use this checklist to prepare for a demo. Your selections stay
+                on this page.
               </p>
             </article>
           </div>
@@ -303,15 +290,12 @@ export function BaselaneScreening() {
           <h2>Keep the next steps connected.</h2>
           <div className={styles.three}>
             {[
-              ["screen", "Review the resource", source],
+              ["screen", "Plan your screening workflow", source],
               ["lease", "Explore lease workflows", "/BL/BL-lease-agreement"],
               ["rent", "Explore rental workflows", "/BL/BL-rent-collection"],
             ].map(([image, title, href], index) => (
               <article key={image}>
-                <Photo
-                  name={image}
-                  alt={`Baselane ${image} product illustration`}
-                />
+                <Photo name={image} alt={`Illustrative ${image} workflow`} />
                 <span className={styles.number}>{index + 1}</span>
                 <h3>{title}</h3>
                 <a className={styles.outline} href={href}>
@@ -321,14 +305,11 @@ export function BaselaneScreening() {
             ))}
           </div>
           <div className={styles.productBand}>
-            <Photo
-              name="banking"
-              alt="Baselane banking and bookkeeping illustration"
-            />
+            <Photo name="banking" alt="Illustrative property records" />
             <div>
               <h3>Bring context into the wider workflow.</h3>
               <a className={styles.button} href="/BL/BL-demo">
-                Explore Innflow →
+                Explore innflow →
               </a>
             </div>
           </div>
@@ -379,9 +360,9 @@ export function BaselaneScreening() {
         </section>
         <section className={styles.closing}>
           <h2>Make the next step clear.</h2>
-          <p>Explore how Innflow can connect your team’s work.</p>
-          <a className={styles.button} href={`${siteConfig.appOrigin}/login`}>
-            Continue with Google
+          <p>Explore how innflow can connect your team’s work.</p>
+          <a className={styles.button} href={siteConfig.googleAuthUrl}>
+            <GoogleCtaContent />
           </a>
         </section>
       </div>

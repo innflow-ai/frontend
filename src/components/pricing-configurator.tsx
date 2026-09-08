@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import styles from "@/app/pricing/pricing.module.css";
+import { GoogleCtaContent } from "@/components/google-cta-content";
 import { TrackedLink } from "@/components/tracked-link";
 import { pricingCatalog } from "@/config/pricing";
 import { siteConfig } from "@/config/site";
@@ -90,12 +91,12 @@ function PaidPlanCard({
       </div>
 
       <TrackedLink
-        aria-label={`Get started with ${name}`}
+        aria-label={`Continue with Google for ${name}`}
         className={styles.planCta}
-        destination={siteConfig.signupUrl}
+        destination={siteConfig.googleAuthUrl}
         eventLabel={`pricing_${name.toLowerCase()}_signup`}
       >
-        Get started <span aria-hidden="true">↗</span>
+        <GoogleCtaContent />
       </TrackedLink>
 
       <ul className={styles.featureList}>
@@ -172,12 +173,12 @@ export function PricingConfigurator() {
             </p>
           </div>
           <TrackedLink
-            aria-label="Get started with Free"
+            aria-label="Continue with Google for Free"
             className={styles.planCta}
-            destination={siteConfig.signupUrl}
+            destination={siteConfig.googleAuthUrl}
             eventLabel="pricing_free_signup"
           >
-            Get started <span aria-hidden="true">↗</span>
+            <GoogleCtaContent />
           </TrackedLink>
           <ul className={styles.featureList}>
             {[

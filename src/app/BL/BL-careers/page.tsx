@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { BaselaneCompany } from "@/components/baselane-company";
 export const metadata: Metadata = {
-  title: "Careers at Innflow",
+  title: "Careers at innflow",
   robots: { index: false, follow: false },
   alternates: { canonical: "/BL/BL-careers" },
 };

@@ -1,0 +1,265 @@
+{
+  "origin": "http://localhost:3105",
+  "pages": 37,
+  "report": [
+    {
+      "route": "/BL/BL-about",
+      "status": 200,
+      "title": "About innflow",
+      "heading": "Property operations, connected by innflow.",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-advisor-partner-program",
+      "status": 200,
+      "title": "Advisor partnerships | innflow",
+      "heading": "Bring clarity to every client conversation.",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-careers",
+      "status": 200,
+      "title": "Careers at innflow",
+      "heading": "Build what comes next for property operations.",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-demo",
+      "status": 200,
+      "title": "See how innflow works",
+      "heading": "See howinnflow works.",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-free-rental-forms-and-templates-for-landlords",
+      "status": 200,
+      "title": "Document preparation worksheets | innflow",
+      "heading": "Prepare your paperwork. Keep the context.",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-help-center",
+      "status": 200,
+      "title": "innflow help center",
+      "heading": "How can we help?",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-home",
+      "status": 200,
+      "title": "A clearer day in property operations | innflow",
+      "heading": "Operations that give you your day back.",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-how-much-should-i-charge-for-rent",
+      "status": 200,
+      "title": "Rent comparison calculator | innflow",
+      "heading": "How do your comparable rents stack up?",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-in-the-news",
+      "status": 200,
+      "title": "Industry coverage | innflow",
+      "heading": "Industry coverage and perspectives",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-landlord-accounting",
+      "status": 200,
+      "title": "Connected property records | innflow",
+      "heading": "Keep the details behind every decision together.",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-landlord-banking",
+      "status": 200,
+      "title": "Property operations | innflow",
+      "heading": "Built for life withmore than one property.",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-landlord-banking-apy",
+      "status": 200,
+      "title": "Property reserve planning | innflow",
+      "heading": "Keep property reserves connected to the plan.",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-landlord-insurance",
+      "status": 200,
+      "title": "Property review preparation | innflow",
+      "heading": "A clearer start to your insurance review.",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-landlord-referral",
+      "status": 200,
+      "title": "Share innflow",
+      "heading": "Good work is worth sharing.",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-lease-agreement",
+      "status": 200,
+      "title": "Lease document workflows | innflow",
+      "heading": "Lease paperwork. Connected context.",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-legal-agreements",
+      "status": 200,
+      "title": "Legal agreements | innflow",
+      "heading": "Legal agreements",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-long-term-rentals",
+      "status": 200,
+      "title": "Long-term rental operations | innflow",
+      "heading": "Clarity across every rental property.",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-mid-term-rentals",
+      "status": 200,
+      "title": "Mid-term rental operations | innflow",
+      "heading": "A clearer view of every stay.",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-multi-property-investors",
+      "status": 200,
+      "title": "Multi-property operations | innflow",
+      "heading": "Property clarity thatgrows with your portfolio.",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-our-customers",
+      "status": 200,
+      "title": "Who we help | innflow",
+      "heading": "Your people. Your properties. One connected flow.",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-partner-with-us",
+      "status": 200,
+      "title": "Partner with innflow",
+      "heading": "Partner and build something useful.",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-pricing",
+      "status": 200,
+      "title": "Plans and pricing | innflow",
+      "heading": "Clearer work.Room to grow.",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-privacy-policy",
+      "status": 200,
+      "title": "Privacy Policy | innflow",
+      "heading": "Privacy Policy",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-product-updates",
+      "status": 200,
+      "title": "Product highlights | innflow",
+      "heading": "Product updates",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-real-estate-investing",
+      "status": 200,
+      "title": "Real estate investing resources | innflow",
+      "heading": "All investor resources",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-rent-collection",
+      "status": 200,
+      "title": "Recurring rental workflows | innflow",
+      "heading": "Keep rental work moving, every month.",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-rent-collection-2",
+      "status": 200,
+      "title": "Recurring rental workflows | innflow",
+      "heading": "Keep rental work moving, every month.",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-rental-property-loans",
+      "status": 200,
+      "title": "Financing preparation | innflow",
+      "heading": "Get your next property project ready.",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-renters",
+      "status": 200,
+      "title": "Connected resident experiences | innflow",
+      "heading": "More clarity.Less back and forth.",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-resources",
+      "status": 200,
+      "title": "Resource library | innflow",
+      "heading": "Resources for connected property work",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-security",
+      "status": 200,
+      "title": "Security and governance | innflow",
+      "heading": "Build trust into the way work gets done.",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-security-deposit-account",
+      "status": 200,
+      "title": "Deposit workflows | innflow",
+      "heading": "Bring clarity to deposit-related work.",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-short-term-rentals",
+      "status": 200,
+      "title": "Short-term rental operations | innflow",
+      "heading": "A clearer day behind every stay.",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-tax-preparation",
+      "status": 200,
+      "title": "Property document preparation | innflow",
+      "heading": "Bring a little order to tax season.",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-tenant-screening-service",
+      "status": 200,
+      "title": "Screening workflows | innflow",
+      "heading": "Screening workflows.Keep the next step clear.",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-terms-of-use",
+      "status": 200,
+      "title": "Terms of Service | innflow",
+      "heading": "Terms of Service",
+      "problems": []
+    },
+    {
+      "route": "/BL/BL-webinars",
+      "status": 200,
+      "title": "Workflow learning | innflow",
+      "heading": "Learn how innflow works",
+      "problems": []
+    }
+  ]
+}

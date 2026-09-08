@@ -29,29 +29,26 @@ function FormGroup({ group }: { group: (typeof formGroups)[number] }) {
       >
         {group.items.map(([title, slug]) => (
           <article key={slug}>
-            <div className={styles.cardTop}>BASELANE RESOURCE</div>
+            <div className={styles.cardTop}>INNFLOW PREPARATION WORKSHEET</div>
             <div className={styles.cardBody}>
               <h3>{title}</h3>
               <p>{group.description}</p>
               <a
-                href={`https://get.baselane.com/templates/${slug}`}
+                href={`data:text/plain;charset=utf-8,${encodeURIComponent([`innflow — ${title}`, "", group.description, "", "Property:", "Prepared by:", "Review date:", "", "Purpose of this document:", "Supporting records and source links:", "Questions for the reviewer:", "Document provider or adviser:", "Responsible owner:", "Next action and due date:", "Review outcome:", "", "Preparation worksheet only. Have the final document reviewed for your property and circumstances."].join("\n"))}`}
+                download={`innflow-${slug}-preparation.txt`}
                 target="_blank"
                 rel="noreferrer"
-                aria-label={`Open ${title.toLowerCase()} on Baselane`}
+                aria-label={`Download ${title.toLowerCase()} preparation worksheet`}
               >
-                Get template ↗
+                Download worksheet ↓
               </a>
             </div>
           </article>
         ))}
       </section>
       <div className={styles.controls}>
-        <a
-          href={`https://www.baselane.com/rental-form/${group.slug}`}
-          target="_blank"
-          rel="noreferrer"
-        >
-          View collection on Baselane ↗
+        <a href="/BL/BL-lease-agreement" target="_blank" rel="noreferrer">
+          Explore document workflows →
         </a>
         <div>
           <button
@@ -79,10 +76,10 @@ export function BaselaneForms() {
       <div className={`${shared.page} ${styles.page}`}>
         <section className={shared.hero}>
           <div className={shared.heroCopy}>
-            <h1>Rental paperwork, all within reach.</h1>
+            <h1>Prepare your paperwork. Keep the context.</h1>
             <p>
-              Browse forms, notices, and checklists from Baselane's resource
-              library.
+              Use innflow preparation worksheets to organize property details,
+              supporting records, and questions before a document review.
             </p>
           </div>
           <Image
@@ -102,8 +99,9 @@ export function BaselaneForms() {
           ))}
         </nav>
         <div className={styles.publisher}>
-          Resources published by Baselane. Template links open the publisher's
-          download page, which may request your details.
+          Download an editable text worksheet for the task at hand. These
+          planning documents help you prepare; your document provider or adviser
+          should prepare and review final agreements and notices.
         </div>
         {formGroups.map((group) => (
           <FormGroup key={group.slug} group={group} />

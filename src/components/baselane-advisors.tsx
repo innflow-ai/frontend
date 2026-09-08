@@ -5,33 +5,7 @@ import { siteConfig } from "@/config/site";
 import styles from "./baselane-advisors.module.css";
 import { BaselaneHomepage } from "./baselane-homepage";
 
-const source = "https://get.baselane.com/advisor-partner-program";
-const stories = [
-  {
-    image: "nick",
-    name: "Nick Aiola",
-    role: "Founder & CEO, aiola cpa",
-    theme: "Less year-end cleanup",
-    detail:
-      "Nick describes how organized client records reduced the preparation work his firm faced at tax time.",
-  },
-  {
-    image: "lawrence",
-    name: "Lawrence Courtien",
-    role: "Partner, Vestora AI",
-    theme: "More room for advice",
-    detail:
-      "Lawrence describes using Baselane to reduce repetitive bookkeeping work and spend more time on client strategy.",
-  },
-  {
-    image: "phillip",
-    name: "Phillip Munoz",
-    role: "Real estate investor",
-    theme: "A connected financial picture",
-    detail:
-      "Phillip describes keeping property accounts separate and staying current with bookkeeping throughout the year.",
-  },
-];
+const source = "#advisor-inquiry";
 const topics = [
   [
     "Property context",
@@ -63,20 +37,20 @@ export function BaselaneAdvisors() {
             </p>
             <h1>Bring clarity to every client conversation.</h1>
             <p>
-              Explore a connected way to coordinate property work with Innflow,
-              and discover Baselane’s advisor-program resources.
+              Coordinate client records, document requests, and review steps in
+              innflow. Spend less time chasing context before you give advice.
             </p>
             <div className={styles.actions}>
               <a className={styles.button} href="#advisor-inquiry">
                 Start a conversation
               </a>
               <a className={styles.outline} href="#program-details">
-                Explore the program →
+                Explore the workflow →
               </a>
             </div>
             <p className={styles.note}>
-              The banking product illustration and partner stories below belong
-              to Baselane.
+              Build a shared process around your client’s property work, with
+              clear ownership from the first request to the final review.
             </p>
           </div>
           <Image
@@ -84,7 +58,7 @@ export function BaselaneAdvisors() {
             width={1164}
             height={792}
             priority
-            alt="Baselane property account illustration above an advisor conversation"
+            alt="An advisor discussing property records"
           />
         </section>
         <div className={styles.band}>
@@ -101,32 +75,25 @@ export function BaselaneAdvisors() {
           ))}
         </div>
         <section className={styles.section}>
-          <p className={styles.eyebrow}>
-            Perspectives from Baselane’s advisor community
-          </p>
-          <div className={styles.stories}>
-            {stories.map((story) => (
-              <article key={story.name}>
-                <div className={styles.portrait}>
-                  <Image
-                    src={`/brand/baselane-inspired/advisors/${story.image}.webp`}
-                    fill
-                    sizes="(max-width:700px) 90vw, 30vw"
-                    alt={story.name}
-                  />
-                  <div className={styles.identity}>
-                    <span>{story.name}</span>
-                    <small>{story.role}</small>
-                  </div>
-                  <h3>{story.theme}</h3>
-                </div>
-                <details>
-                  <summary>
-                    Read the perspective <span aria-hidden="true">+</span>
-                  </summary>
-                  <p>{story.detail}</p>
-                  <a href={source}>Read Baselane’s story ↗</a>
-                </details>
+          <p className={styles.eyebrow}>Built around your advisory work</p>
+          <div className={styles.benefits}>
+            {[
+              [
+                "Accountants",
+                "Gather property records and resolve open questions before the year-end handoff.",
+              ],
+              [
+                "Bookkeepers",
+                "Keep missing documents, team responses, and review tasks in one shared process.",
+              ],
+              [
+                "Property advisors",
+                "Connect meeting notes to owners and next actions, so the advice keeps moving.",
+              ],
+            ].map(([title, text]) => (
+              <article key={title}>
+                <h3>{title}</h3>
+                <p>{text}</p>
               </article>
             ))}
           </div>
@@ -153,7 +120,7 @@ export function BaselaneAdvisors() {
               src="/brand/baselane-inspired/advisors/benefits.webp"
               width={1160}
               height={1000}
-              alt="Baselane cash-flow illustration beside a professional on a call"
+              alt="A professional discussing client records on a call"
             />
           </div>
         </section>
@@ -182,20 +149,18 @@ export function BaselaneAdvisors() {
           </div>
         </section>
         <section className={styles.section} id="program-details">
-          <h2>Explore Baselane’s advisor program.</h2>
+          <h2>A clear handoff at every stage.</h2>
           <p>
-            The original program has three partner tiers. Use this overview to
-            find the details to review with Baselane.
+            Use innflow to connect the people and supporting records around each
+            client engagement.
           </p>
           <div className={styles.tableWrap}>
             <table>
-              <caption>
-                Baselane program overview — provider terms apply
-              </caption>
+              <caption>Example client coordination workflow</caption>
               <thead>
                 <tr>
-                  <th scope="col">Program topic</th>
-                  {["Bronze", "Silver", "Gold"].map((tier) => (
+                  <th scope="col">Work to coordinate</th>
+                  {["Prepare", "Review", "Follow through"].map((tier) => (
                     <th scope="col" key={tier}>
                       <span className={styles.tier}>{tier}</span>
                     </th>
@@ -204,27 +169,41 @@ export function BaselaneAdvisors() {
               </thead>
               <tbody>
                 {[
-                  "Balance requirements",
-                  "Referral rewards",
-                  "Banking rewards",
-                  "Advisor badge",
-                  "Directory access",
-                  "Client subscription",
-                  "Client onboarding",
-                  "Co-marketing",
-                  "Featured listing",
-                ].map((topic) => (
+                  [
+                    "Property records",
+                    "Gather source files",
+                    "Confirm missing details",
+                    "Share the prepared record",
+                  ],
+                  [
+                    "Document requests",
+                    "List required items",
+                    "Check what is ready",
+                    "Assign outstanding items",
+                  ],
+                  [
+                    "Open questions",
+                    "Collect team questions",
+                    "Resolve with the adviser",
+                    "Record the response",
+                  ],
+                  [
+                    "Client decisions",
+                    "Attach supporting context",
+                    "Include the responsible person",
+                    "Assign the agreed action",
+                  ],
+                  [
+                    "Team handoffs",
+                    "Identify the next owner",
+                    "Confirm the review outcome",
+                    "Track the next step",
+                  ],
+                ].map(([topic, ...steps]) => (
                   <tr key={topic}>
                     <th scope="row">{topic}</th>
-                    {["Bronze", "Silver", "Gold"].map((tier) => (
-                      <td key={tier}>
-                        <a
-                          href={`${source}#benefits-module`}
-                          aria-label={`Review ${tier} ${topic.toLowerCase()}`}
-                        >
-                          View terms ↗
-                        </a>
-                      </td>
+                    {steps.map((step) => (
+                      <td key={step}>{step}</td>
                     ))}
                   </tr>
                 ))}
@@ -232,9 +211,8 @@ export function BaselaneAdvisors() {
             </table>
           </div>
           <p className={styles.note}>
-            This is a Baselane resource, not an Innflow reward offer or
-            enrollment. Confirm eligibility, benefits, and payment conditions
-            with the program provider.
+            Tell us how your firm works with property teams. We can discuss
+            workflow fit, required connections, and the next steps together.
           </p>
         </section>
         <section className={styles.section}>
@@ -250,17 +228,17 @@ export function BaselaneAdvisors() {
               <div className={styles.accordion}>
                 {[
                   [
-                    "Explore the provider",
-                    "Read the original partner program and contact Baselane for enrollment.",
+                    "Map your process",
+                    "Talk through the document requests and handoffs your firm handles most often.",
                     source,
                   ],
                   [
                     "Learn together",
-                    "Browse the masterclass collection for conversations about property work.",
+                    "Explore self-guided workflow topics for the property work your team handles.",
                     "/BL/BL-webinars",
                   ],
                   [
-                    "Talk to Innflow",
+                    "Talk to innflow",
                     "Describe the client workflow you want to connect.",
                     "#advisor-inquiry",
                   ],
@@ -281,7 +259,7 @@ export function BaselaneAdvisors() {
         <section className={styles.inquiry} id="advisor-inquiry">
           <h2>Start with the work you want to improve.</h2>
           <p>
-            Prepare an Innflow partnership inquiry. You can review the draft
+            Prepare an innflow partnership inquiry. You can review the draft
             before opening your email app; nothing is submitted here.
           </p>
           <form

@@ -53,7 +53,7 @@ export const rentalContent = {
     ],
     resourceTitle: "Explore the work behind a better stay.",
     resourceText:
-      "See how Innflow connects workflows and knowledge for your short-term rental team.",
+      "See how innflow connects workflows and knowledge for your short-term rental team.",
     storyTitle: "From preparation to the next arrival.",
     stories: [
       "Coordinate every turnover.",
@@ -116,7 +116,7 @@ export const rentalContent = {
     ],
     resourceTitle: "See a connected rental operation in action.",
     resourceText:
-      "Explore how Innflow brings the work behind long-term rentals into one flow.",
+      "Explore how innflow brings the work behind long-term rentals into one flow.",
     storyTitle: "Built around the life of a lease.",
     stories: [
       "Move-ins with a clear plan.",

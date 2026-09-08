@@ -87,7 +87,7 @@ export function BaselaneSecurity() {
             <h1>Build trust into the way work gets done.</h1>
             <p>
               Explore access, data handling, and operational governance with
-              Innflow. Bring your security requirements into the conversation
+              innflow. Bring your security requirements into the conversation
               from the start.
             </p>
           </div>
@@ -142,7 +142,7 @@ export function BaselaneSecurity() {
               <section className={styles.policies}>
                 <h2>Understand the terms behind the work.</h2>
                 <p>
-                  Review Innflow’s published policies and bring your questions
+                  Review innflow’s published policies and bring your questions
                   to the team.
                 </p>
                 <div>

@@ -2,260 +2,170 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { GoogleCtaContent } from "@/components/google-cta-content";
 import { siteConfig } from "@/config/site";
 import styles from "./baselane-customers.module.css";
 import { BaselaneHomepage } from "./baselane-homepage";
 
-const root = "/brand/baselane-inspired/customers";
-const source = "https://www.baselane.com/our-customers";
-const videos = [
-  ["melanie", "Melanie", "melanie-pellew-v1", "mel_invests"],
-  ["sarah", "Sarah", "sarah-weaver-v1", "sarahdweaver"],
-  ["rob", "Rob", "robuilt-v1", "robuilt"],
-  ["andrew", "Andrew", "andrew-choi-v1", "millennialmoneyveteran"],
-  ["caroline", "Caroline", "caroline-baird-v1", "thebairdsinvest"],
+const workflows = [
+  [
+    "Maintenance coordination",
+    "Connect the request, property details, and assigned owner before the next handoff.",
+    "/property-management",
+  ],
+  [
+    "Resident follow-up",
+    "Keep questions and supporting context together so your team can prepare a useful response.",
+    "/BL/BL-renters",
+  ],
+  [
+    "Document preparation",
+    "Gather missing records and track the review steps before sharing a prepared package.",
+    "/BL/BL-tax-preparation",
+  ],
+  [
+    "Recurring property work",
+    "Give routine tasks a consistent path with visible ownership and human review.",
+    "/BL/BL-rent-collection",
+  ],
+  [
+    "Portfolio context",
+    "Keep each property’s records close to its requests, decisions, and next actions.",
+    "/BL/BL-multi-property-investors",
+  ],
+  [
+    "Advisor handoffs",
+    "Bring open questions and supporting documents into the same client conversation.",
+    "/BL/BL-advisor-partner-program",
+  ],
 ];
-const reviews = [
-  ["AJ Sibley", "Finding a banking platform"],
-  ["Brian FitzGerald", "Preparing for tax time"],
-  ["Adam", "Simplifying bookkeeping"],
-  ["Bryan Atkins", "Understanding cash movement"],
-  ["Perry", "A different banking experience"],
-  ["Kelsie", "Making more time"],
-  ["Chris Peahl", "Changing banks"],
-  ["Marco Cruz Santos", "Organizing property accounts"],
-  ["Alex Spino", "Tracking expenses"],
-  ["Crystal Burton", "Easier everyday work"],
-  ["Jason Wallace", "Connecting rental finances"],
-  ["Earl Co", "Reducing fees"],
-];
-const cases = [
+const scenarios = [
   [
-    "john-chaney",
-    "John Chaney",
-    "8",
-    "Less manual reconciliation",
-    "A story about bookkeeping and accounting costs.",
-    "https://cdn.prod.website-files.com/67d7c19efde3196be25abb1f/69ce932d601d0598c5387e31_JOHN%20CHANEY.pdf",
+    "A new maintenance request",
+    "From request to assigned work",
+    "A resident reports an issue. Bring the property record and relevant procedure alongside the request, assign the next step, and include a review where a decision is needed.",
+    "/property-management",
   ],
   [
-    "santosh-sekar",
-    "Santosh Sekar",
-    "35",
-    "Fewer trips to the branch",
-    "A story about accounts across multiple businesses.",
-    "https://cdn.prod.website-files.com/67d7c19efde3196be25abb1f/69825514050c7cf4e35e733b_Case%20Study%20%E2%80%93%20Santosh%20Sekar%20%E2%80%93%20Final.pdf",
+    "A document review",
+    "Prepare a handoff your advisor can follow",
+    "Start with the property checklist. Gather supporting records, give missing items an owner, and keep the team’s review notes with the prepared information.",
+    "/BL/BL-tax-preparation",
   ],
   [
-    "melissa-cote",
-    "Melissa Cote",
-    "11",
-    "Bringing financial tools together",
-    "A story about replacing disconnected software.",
-    "https://cdn.prod.website-files.com/67d7c19efde3196be25abb1f/69a9f526214e6b18787cfa4c_0f6310904d362f3d79da5815207aed67_Case%20study%20-%20MELISSA%20COTE.pdf",
+    "A growing portfolio",
+    "Keep context as the work expands",
+    "Organize requests around the right property. Give recurring processes consistent steps so your team can follow progress across the portfolio.",
+    "/BL/BL-multi-property-investors",
   ],
   [
-    "phillip-munoz",
-    "Phillip Munoz",
-    "11",
-    "More time for the rental business",
-    "A story about expenses and tax preparation.",
-    "https://cdn.prod.website-files.com/67d7c19efde3196be25abb1f/69a9f55ac991fd02143821fc_3b052f4817d2f19164ee4243c38dc35e_Case%20study%20-%20PHIL%20MUNOZ.pdf",
+    "A recurring resident question",
+    "Start with the information you already have",
+    "Connect your procedures and working records to the question. Use that context to prepare a response and let the responsible person review the next action.",
+    "/BL/BL-renters",
   ],
 ];
 
 export function BaselaneCustomers() {
-  const [selected, setSelected] = useState(2);
-  const [playing, setPlaying] = useState(false);
-  const [reviewPage, setReviewPage] = useState(0);
   const [caseIndex, setCaseIndex] = useState(0);
-  const story = cases[caseIndex];
+  const story = scenarios[caseIndex];
   return (
     <BaselaneHomepage>
       <div className={styles.page}>
         <section className={styles.hero}>
-          <picture>
-            <source
-              media="(max-width:700px)"
-              srcSet={`${root}/hero-mobile.webp`}
-            />
-            <Image
-              src={`${root}/hero.webp`}
-              alt="Baselane investor photography and customer review cards"
-              fill
-              priority
-              sizes="100vw"
-            />
-          </picture>
+          <Image
+            src="/brand/baselane-inspired/hero.webp"
+            alt="A person kayaking on clear water"
+            fill
+            priority
+            sizes="100vw"
+          />
           <div className={styles.heroCopy}>
-            <span className={styles.eyebrow}>BASELANE CUSTOMER STORIES</span>
-            <h1>Perspectives from property investors</h1>
+            <span className={styles.eyebrow}>BUILT FOR PROPERTY TEAMS</span>
+            <h1>Your people. Your properties. One connected flow.</h1>
             <p>
-              Explore the experiences behind the reference design, in the
-              investors’ own words.
+              innflow brings workflows, knowledge, and approvals together for
+              the people keeping property operations moving.
             </p>
             <div className={styles.actions}>
-              <a className={styles.button} href="#investor-videos">
-                Watch their stories
+              <a className={styles.button} href="#team-workflows">
+                Explore team workflows
               </a>
-              <a className={styles.outline} href="#case-studies">
-                Read case studies →
+              <a className={styles.outline} href="/BL/BL-demo">
+                Book a demo →
               </a>
             </div>
           </div>
         </section>
         <div className={styles.band}>
-          <span>Stories and imagery published by Baselane</span>
-          <a href={source}>Visit the original collection ↗</a>
+          <span>Clear ownership. Shared context. Visible progress.</span>
+          <a href="/BL/BL-multi-property-investors">
+            Explore portfolio operations →
+          </a>
         </div>
-        <section className={styles.section} id="investor-videos">
-          <h2>Meet the investors</h2>
-          <div className={styles.videoDeck}>
-            {videos.map(([id, name, file, instagram], index) => (
-              <article
-                key={id}
-                className={`${styles.videoCard} ${selected === index ? styles.active : ""}`}
-              >
-                {selected === index && playing ? (
-                  // biome-ignore lint/a11y/useMediaCaption: The original publisher supplies no caption tracks; the original source remains linked below.
-                  <video
-                    key={file}
-                    controls
-                    playsInline
-                    preload="metadata"
-                    poster={`${root}/${id}.png`}
-                    aria-label={`${name}'s Baselane story`}
-                  >
-                    <source src={`${root}/${file}.mp4`} type="video/mp4" />
-                    Your browser cannot play this video.{" "}
-                    <a href={`https://static.baselane.com/videos/${file}.mp4`}>
-                      Open the video
-                    </a>
-                    .
-                  </video>
-                ) : (
-                  <button
-                    className={styles.poster}
-                    type="button"
-                    onClick={() => {
-                      setSelected(index);
-                      setPlaying(true);
-                    }}
-                    aria-label={`Open ${name}'s video`}
-                  >
-                    <Image
-                      src={`${root}/${id}.png`}
-                      alt=""
-                      fill
-                      sizes="(max-width:700px) 80vw, 22vw"
-                    />
-                    <span className={styles.play} aria-hidden="true">
-                      ▶
-                    </span>
-                  </button>
-                )}
-                <div className={styles.videoName}>
-                  <h3>{name}</h3>
-                  <a
-                    href={`https://www.instagram.com/${instagram}/`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Investor profile ↗
-                  </a>
-                </div>
+        <section className={styles.section} id="team-workflows">
+          <h2>Built around the work on your team’s desk.</h2>
+          <p className={styles.lead}>
+            Start with a recurring process. Connect the information behind it
+            and make the next handoff clear.
+          </p>
+          <div className={styles.reviews}>
+            {workflows.map(([title, text, href]) => (
+              <article key={title}>
+                <span className={styles.eyebrow}>WORKFLOW</span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+                <a href={href}>Explore the workflow →</a>
               </article>
             ))}
-          </div>
-          <p className={styles.note}>
-            Select a story, then use the video’s playback controls. These are
-            Baselane customer experiences. The original videos do not supply
-            separate caption tracks.
-          </p>
-        </section>
-        <section className={styles.section}>
-          <h2>What investors talk about</h2>
-          <p className={styles.lead}>
-            Themes from Baselane’s published reviews. Open the original
-            collection to read the full comments.
-          </p>
-          <div className={styles.reviews} aria-live="polite">
-            {reviews
-              .slice(reviewPage * 6, reviewPage * 6 + 6)
-              .map(([name, topic]) => (
-                <article key={name}>
-                  <span className={styles.eyebrow}>REVIEW HIGHLIGHT</span>
-                  <h3>{topic}</h3>
-                  <p>{name}</p>
-                  <a href={source}>Read on Baselane ↗</a>
-                </article>
-              ))}
-          </div>
-          <div className={styles.controls}>
-            <button
-              type="button"
-              aria-label="Previous reviews"
-              onClick={() => setReviewPage(1 - reviewPage)}
-            >
-              ←
-            </button>
-            <span aria-live="polite">{reviewPage + 1} / 2</span>
-            <button
-              type="button"
-              aria-label="Next reviews"
-              onClick={() => setReviewPage(1 - reviewPage)}
-            >
-              →
-            </button>
           </div>
         </section>
         <section
           className={styles.caseSection}
           id="case-studies"
-          aria-label="Customer case studies"
+          aria-label="Example property workflows"
         >
           <div className={styles.case} aria-live="polite">
             <div className={styles.casePhoto}>
               <Image
-                src={`${root}/${story[0]}.webp`}
-                alt={story[1]}
+                src="/brand/baselane-inspired/loans/property.webp"
+                alt="A property owner reviewing information on a phone"
                 fill
                 sizes="(max-width:700px) 100vw, 50vw"
               />
               <div className={styles.caseBadge}>
-                <strong>{story[1]}</strong>
-                <span>{story[2]} properties in the source story</span>
+                <strong>{story[0]}</strong>
+                <span>Illustrative workflow</span>
               </div>
             </div>
             <div className={styles.caseCopy}>
-              <span className={styles.eyebrow}>
-                BASELANE CUSTOMER CASE STUDY
-              </span>
-              <h2>{story[3]}</h2>
-              <p>{story[4]}</p>
-              <a
-                className={styles.button}
-                href={story[5]}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Read {story[1]}’s story (PDF) ↗
+              <span className={styles.eyebrow}>HOW THE WORK CONNECTS</span>
+              <h2>{story[1]}</h2>
+              <p>{story[2]}</p>
+              <a className={styles.button} href={story[3]}>
+                Explore with innflow →
               </a>
             </div>
           </div>
           <div className={styles.controls}>
             <button
               type="button"
-              aria-label="Previous case study"
-              onClick={() => setCaseIndex((caseIndex + 3) % 4)}
+              aria-label="Previous workflow"
+              onClick={() =>
+                setCaseIndex(
+                  (caseIndex + scenarios.length - 1) % scenarios.length,
+                )
+              }
             >
               ←
             </button>
-            <span aria-live="polite">{caseIndex + 1} / 4</span>
+            <span aria-live="polite">
+              {caseIndex + 1} / {scenarios.length}
+            </span>
             <button
               type="button"
-              aria-label="Next case study"
-              onClick={() => setCaseIndex((caseIndex + 1) % 4)}
+              aria-label="Next workflow"
+              onClick={() => setCaseIndex((caseIndex + 1) % scenarios.length)}
             >
               →
             </button>
@@ -276,16 +186,13 @@ export function BaselaneCustomers() {
           </picture>
           <div>
             <h2>Make room for your next idea.</h2>
-            <p>Explore a more connected way to work with Innflow.</p>
+            <p>Bring your team’s recurring work into one connected flow.</p>
             <div className={styles.actions}>
               <a className={styles.outline} href="/BL/BL-demo">
-                Explore Innflow →
+                Explore innflow →
               </a>
-              <a
-                className={styles.button}
-                href={`${siteConfig.appOrigin}/login`}
-              >
-                Continue with Google
+              <a className={styles.button} href={siteConfig.googleAuthUrl}>
+                <GoogleCtaContent />
               </a>
             </div>
           </div>

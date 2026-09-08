@@ -15,7 +15,7 @@ const sections = [
     ],
   },
   {
-    title: "Using Innflow",
+    title: "Using innflow",
     links: [
       ["End User License Agreement", legalPolicies.eula.path],
       ["Acceptable Use Policy", legalPolicies.acceptableUse.path],

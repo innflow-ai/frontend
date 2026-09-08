@@ -1,49 +1,52 @@
 "use client";
+
 import { ArrowRight, Copy } from "@phosphor-icons/react";
 import Image from "next/image";
 import { useState } from "react";
+import { GoogleCtaContent } from "@/components/google-cta-content";
+import { siteConfig } from "@/config/site";
 import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-updates.module.css";
 
 const entries = [
   {
     id: "resource-libraries",
-    label: "RESOURCE LIBRARIES",
-    title: "A new home for articles and masterclasses.",
-    text: "The alternate resource pages bring featured reading, topic filters, and masterclasses into a shared library layout. Search the article collection, browse by category, or explore a complete row of cards.",
+    label: "RESOURCES",
+    title: "Find a starting point for your next workflow.",
+    text: "Explore innflow resources by topic, from property operations and document reviews to planning tools and team handoffs.",
     image: "/brand/baselane-inspired/library/articles-hero.webp",
-    heading: "Find a useful starting point",
+    heading: "Start with the work you handle every day",
     detail:
-      "The reference articles and sessions retain their original publisher attribution. Each card leads to the relevant Baselane resource, while navigation and the surrounding experience use Innflow’s visual system.",
+      "Search the resource library or explore a self-guided workflow topic. Bring a real example to a demo so we can discuss the people, information, and review steps it needs.",
     links: [
       ["Resource library", "/BL/BL-resources"],
-      ["Masterclasses", "/BL/BL-webinars"],
+      ["Workflow learning", "/BL/BL-webinars"],
     ],
   },
   {
     id: "preparation-pages",
-    label: "PROPERTY PREPARATION",
-    title: "Clearer preparation for your next property review.",
-    text: "Two new alternate pages explore document preparation and property review. Their layouts bring supporting information, checklists, and human review into focus.",
+    label: "PREPARATION",
+    title: "Prepare a property review brief.",
+    text: "Gather property details and open questions before your next conversation with an adviser or team member.",
     image: "/brand/baselane-inspired/insurance/time.webp",
-    heading: "A brief you can keep",
+    heading: "Keep the brief with the supporting records",
     detail:
-      "The property review form prepares a local text brief from the details you enter. Download it with a six-part checklist for your next conversation. It does not submit an insurance application or issue a quote.",
+      "Create a downloadable brief from the details you enter and use the checklist to prepare the next review. You choose when and with whom to share it.",
     links: [
-      ["Property review", "/BL/BL-landlord-insurance"],
+      ["Prepare a brief", "/BL/BL-landlord-insurance"],
       ["Document preparation", "/BL/BL-tax-preparation"],
     ],
   },
   {
     id: "connected-records",
-    label: "CONNECTED RECORDS",
-    title: "Recurring work and records, in one visual language.",
-    text: "The rent collection and accounting reference layouts now have Innflow adaptations, with property photographs, section navigation, illustrative workflow panels, and expandable FAQs.",
+    label: "RECORDS",
+    title: "Keep context beside the next action.",
+    text: "Explore how recurring rental work and property records fit together, from the initial request to team review.",
     image:
       "/brand/baselane-inspired/accounting/solutions-reporting-bg-desktop.webp",
-    heading: "Context beside the next step",
+    heading: "Make the handoff easier to follow",
     detail:
-      "The panels show example property records, document checklists, and team handoffs. They illustrate the page design; they are not live account balances, payment controls, or financial reports.",
+      "Connect supporting information with the person responsible for the next step. Shared context helps the team continue the work without starting the conversation again.",
     links: [
       ["Recurring work", "/BL/BL-rent-collection-2"],
       ["Property records", "/BL/BL-landlord-accounting"],
@@ -51,31 +54,31 @@ const entries = [
   },
   {
     id: "rental-audiences",
-    label: "RENTAL AUDIENCES",
-    title: "A distinct page for each rental perspective.",
-    text: "Long-term, mid-term, and short-term rental pages share a consistent layout while keeping their own photography and content. A separate renter page uses a family hero, feature rows, and a four-step sequence.",
+    label: "RENTAL OPERATIONS",
+    title: "A workflow for the way you rent.",
+    text: "Long-term, mid-term, and short-term rentals each bring a different rhythm of requests, turnovers, and follow-ups.",
     image: "/brand/baselane-inspired/renters/closing-desktop.webp",
-    heading: "Designed for different screens",
+    heading: "Bring the right context into each process",
     detail:
-      "The alternate pages use supplied phone crops where available, responsive layouts, and keyboard-accessible navigation. Each layout was checked in Chrome at desktop and phone widths.",
+      "Explore workflows for your rental model and keep resident requests connected to the people and property information behind the response.",
     links: [
       ["Long-term rentals", "/BL/BL-long-term-rentals"],
       ["Mid-term rentals", "/BL/BL-mid-term-rentals"],
       ["Short-term rentals", "/BL/BL-short-term-rentals"],
-      ["Renters", "/BL/BL-renters"],
+      ["Resident experiences", "/BL/BL-renters"],
     ],
   },
   {
     id: "design-foundation",
-    label: "DESIGN FOUNDATION",
-    title: "The beginning of the BL page collection.",
-    text: "The alternate homepage, landlord operations page, and multi-property page established the shared navigation, text-only Innflow wordmark, photographic sections, and dark primary actions used throughout the collection.",
+    label: "PLATFORM",
+    title: "Bring property operations into one flow.",
+    text: "innflow brings workflows, knowledge, and approvals together around the work your team needs to move forward.",
     image: "/brand/baselane-inspired/hero.webp",
-    heading: "A separate place to explore",
+    heading: "Connected work. People in control.",
     detail:
-      "These alternate routes keep the existing homepage intact. This journal records local design work; a committed preview is not a production launch. The remaining inventory continues to be built and reviewed in batches.",
+      "Start with one recurring process. Connect the tools and context it needs, make review points visible, and keep ownership clear as the work changes hands.",
     links: [
-      ["Alternate homepage", "/BL/BL-home"],
+      ["Explore innflow", "/BL/BL-home"],
       ["Landlord operations", "/BL/BL-landlord-banking"],
       ["Multi-property investors", "/BL/BL-multi-property-investors"],
     ],
@@ -95,10 +98,13 @@ export function BaselaneUpdates() {
     <BaselaneHomepage>
       <section className={styles.hero}>
         <div>
-          <small>UPDATED: SEPTEMBER 8, 2026</small>
+          <small>EXPLORE INNFLOW</small>
           <h1>Product updates</h1>
-          <p>Follow the Innflow design preview as it takes shape.</p>
-          <span>LOCAL PREVIEW JOURNAL</span>
+          <p>
+            Explore the tools and workflows that bring property operations
+            together.
+          </p>
+          <span>PRODUCT HIGHLIGHTS</span>
         </div>
         <div className={styles.heroImage}>
           <Image
@@ -112,9 +118,9 @@ export function BaselaneUpdates() {
       </section>
       <div className={styles.layout}>
         <aside className={styles.sidebar}>
-          <h2>Explore connected property operations with Innflow.</h2>
-          <a className={styles.primary} href="https://app.innflow.ai/login">
-            Continue with Google
+          <h2>Explore connected property operations with innflow.</h2>
+          <a className={styles.primary} href={siteConfig.googleAuthUrl}>
+            <GoogleCtaContent />
           </a>
           <div className={styles.share}>
             <small>SHARE</small>

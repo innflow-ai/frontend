@@ -1,6 +1,6 @@
 export const formGroups = [
   {
-    title: "Rental forms",
+    title: "Rental administration",
     slug: "rental-forms",
     description: "Documents for recurring rental administration.",
     items: [
@@ -13,9 +13,10 @@ export const formGroups = [
     ],
   },
   {
-    title: "Legal notices",
+    title: "Notice preparation",
     slug: "legal-notices",
-    description: "Notice templates to review for your circumstances.",
+    description:
+      "Gather the facts and review questions for your chosen document professional.",
     items: [
       ["Property entry notification", "notice-of-entry"],
       ["Notice of a rent change", "rent-increase-letter"],
@@ -29,7 +30,7 @@ export const formGroups = [
     ],
   },
   {
-    title: "General notices",
+    title: "Tenancy handoffs",
     slug: "general-notices-for-landlords",
     description: "Correspondence for the end of a tenancy.",
     items: [
@@ -39,7 +40,7 @@ export const formGroups = [
     ],
   },
   {
-    title: "Checklists and spreadsheets",
+    title: "Operations planning",
     slug: "templates-and-other-resources",
     description: "Planning resources for your property operations.",
     items: [

@@ -12,22 +12,24 @@ import {
 } from "@phosphor-icons/react";
 import Image from "next/image";
 import { type ReactNode, useEffect, useRef, useState } from "react";
+import { CustomerSupportHours } from "@/components/customer-support-hours";
+import { GoogleCtaContent } from "@/components/google-cta-content";
 import { siteConfig } from "@/config/site";
 import styles from "./baselane-homepage.module.css";
 import previewStyles from "./runey-landing.module.css";
 import { RuneyWorkspace } from "./runey-workspace";
 import { TrackedLink } from "./tracked-link";
 
-const menus = [
+const footerMenus = [
   {
-    label: "Why Innflow",
+    label: "Why innflow",
     links: [
-      ["About Innflow", "/BL/BL-about"],
+      ["About innflow", "/BL/BL-about"],
       ["Careers", "/BL/BL-careers"],
       ["Industry coverage", "/BL/BL-in-the-news"],
-      ["Investor stories", "/BL/BL-our-customers"],
+      ["Who we help", "/BL/BL-our-customers"],
       ["Security", "/BL/BL-security"],
-      ["Share Innflow", "/BL/BL-landlord-referral"],
+      ["Share innflow", "/BL/BL-landlord-referral"],
       ["Partnerships", "/BL/BL-partner-with-us"],
       ["Advisor partnerships", "/BL/BL-advisor-partner-program"],
       ["Workflows", "/products/agentic-workflows"],
@@ -48,9 +50,9 @@ const menus = [
       ["Property review preparation", "/BL/BL-landlord-insurance"],
       ["Document preparation", "/BL/BL-tax-preparation"],
       ["Deposit workflows", "/BL/BL-security-deposit-account"],
-      ["Screening resources", "/BL/BL-tenant-screening-service"],
-      ["Savings resources", "/BL/BL-landlord-banking-apy"],
-      ["Financing resources", "/BL/BL-rental-property-loans"],
+      ["Screening workflows", "/BL/BL-tenant-screening-service"],
+      ["Reserve planning", "/BL/BL-landlord-banking-apy"],
+      ["Financing preparation", "/BL/BL-rental-property-loans"],
       ["Property management", "/property-management"],
       ["Connected operations", "/platform"],
       ["Integrations", "/integrations"],
@@ -60,17 +62,48 @@ const menus = [
     label: "Resources",
     links: [
       ["Resource library", "/BL/BL-resources"],
-      ["Rental forms", "/BL/BL-free-rental-forms-and-templates-for-landlords"],
+      [
+        "Document checklists",
+        "/BL/BL-free-rental-forms-and-templates-for-landlords",
+      ],
       ["Rent comparison", "/BL/BL-how-much-should-i-charge-for-rent"],
       ["Lease workflows", "/BL/BL-lease-agreement"],
-      ["Masterclasses", "/BL/BL-webinars"],
-      ["Investing guides", "/BL/BL-real-estate-investing"],
+      ["Workflow learning", "/BL/BL-webinars"],
+      ["Investor resources", "/BL/BL-real-estate-investing"],
       ["Product updates", "/BL/BL-product-updates"],
       ["Blog", "/blog"],
       ["Help center", "/BL/BL-help-center"],
       ["Legal agreements", "/BL/BL-legal-agreements"],
       ["FAQ", "/faq"],
       ["Contact", "/contact"],
+    ],
+  },
+];
+const menus = [
+  {
+    label: "Why innflow",
+    links: [
+      ["About innflow", "/BL/BL-about"],
+      ["Who we help", "/BL/BL-our-customers"],
+      ["Multi-property investors", "/BL/BL-multi-property-investors"],
+      ["Security", "/BL/BL-security"],
+    ],
+  },
+  {
+    label: "Solutions",
+    links: [
+      ["Overview", "/BL/BL-home"],
+      ["Landlord operations", "/BL/BL-landlord-banking"],
+      ["Rental workflows", "/BL/BL-rent-collection"],
+      ["Connected property records", "/BL/BL-landlord-accounting"],
+    ],
+  },
+  {
+    label: "Resources",
+    links: [
+      ["Blog", "/blog"],
+      ["Help center", "/contact"],
+      ["Resource library", "/BL/BL-resources"],
     ],
   },
 ];
@@ -102,6 +135,11 @@ export function BaselaneHomepage({ children }: { children?: ReactNode }) {
   const [mobile, setMobile] = useState(false);
   const header = useRef<HTMLElement>(null);
   const toggle = useRef<HTMLButtonElement>(null);
+  const hoverClose = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const cancelHoverClose = () => {
+    if (hoverClose.current) clearTimeout(hoverClose.current);
+    hoverClose.current = null;
+  };
   useEffect(() => {
     const close = (event: PointerEvent) => {
       if (!header.current?.contains(event.target as Node)) {
@@ -127,21 +165,23 @@ export function BaselaneHomepage({ children }: { children?: ReactNode }) {
     };
     document.addEventListener("keydown", handleEscape);
     return () => {
+      if (hoverClose.current) clearTimeout(hoverClose.current);
       document.removeEventListener("pointerdown", close);
       document.removeEventListener("keydown", handleEscape);
     };
   }, []);
   const closeMenus = () => {
+    cancelHoverClose();
     setMenu(null);
     setMobile(false);
   };
   return (
     <div className={styles.page}>
       <header ref={header} className={styles.header}>
-        <a href="/BL/BL-home" className={styles.logo} aria-label="Innflow home">
+        <a href="/BL/BL-home" className={styles.logo} aria-label="innflow home">
           <Image
             src="/brand/innflow-wordmark.svg"
-            alt="Innflow"
+            alt="innflow"
             width={95}
             height={28}
             preload
@@ -153,14 +193,48 @@ export function BaselaneHomepage({ children }: { children?: ReactNode }) {
           className={`${styles.nav} ${mobile ? styles.open : ""}`}
         >
           {menus.map((group) => (
-            <div className={styles.menuGroup} key={group.label}>
+            // biome-ignore lint/a11y/useSemanticElements: This groups navigation disclosures, not form fields.
+            <div
+              className={styles.menuGroup}
+              key={group.label}
+              role="group"
+              aria-label={group.label}
+              onPointerEnter={(event) => {
+                if (
+                  event.pointerType !== "mouse" ||
+                  !window.matchMedia("(min-width: 851px) and (hover: hover)")
+                    .matches
+                )
+                  return;
+                cancelHoverClose();
+                setMenu(group.label);
+              }}
+              onPointerLeave={(event) => {
+                if (event.pointerType !== "mouse" || mobile) return;
+                cancelHoverClose();
+                hoverClose.current = setTimeout(() => {
+                  setMenu((current) =>
+                    current === group.label ? null : current,
+                  );
+                }, 180);
+              }}
+              onBlur={(event) => {
+                if (!event.currentTarget.contains(event.relatedTarget)) {
+                  cancelHoverClose();
+                  setMenu((current) =>
+                    current === group.label ? null : current,
+                  );
+                }
+              }}
+            >
               <button
                 type="button"
                 aria-expanded={menu === group.label}
                 aria-controls={`baselane-${group.label.replaceAll(" ", "-")}`}
-                onClick={() =>
-                  setMenu(menu === group.label ? null : group.label)
-                }
+                onClick={() => {
+                  cancelHoverClose();
+                  setMenu(menu === group.label ? null : group.label);
+                }}
               >
                 {group.label}
                 <CaretDown size={13} />
@@ -194,10 +268,10 @@ export function BaselaneHomepage({ children }: { children?: ReactNode }) {
           </a>
           <TrackedLink
             className={styles.darkButton}
-            destination={siteConfig.signupUrl}
+            destination={siteConfig.googleAuthUrl}
             eventLabel="baselane_header_signup"
           >
-            Sign up
+            <GoogleCtaContent />
           </TrackedLink>
           <button
             ref={toggle}
@@ -238,17 +312,17 @@ export function BaselaneHomepage({ children }: { children?: ReactNode }) {
                 <p>
                   Bring your workflows, knowledge, and approvals together.
                   <br className={styles.desktopBreak} /> Keep your property
-                  operations moving with Innflow.
+                  operations moving with innflow.
                 </p>
               </div>
               <div className={styles.heroBottom}>
                 <div className={styles.actions}>
                   <TrackedLink
-                    destination={siteConfig.signupUrl}
+                    destination={siteConfig.googleAuthUrl}
                     eventLabel="baselane_hero_signup"
                     className={styles.blueButton}
                   >
-                    Get started
+                    <GoogleCtaContent />
                   </TrackedLink>
                   <a className={styles.darkButton} href="/BL/BL-demo">
                     See demo <ArrowRight size={19} />
@@ -403,10 +477,10 @@ export function BaselaneHomepage({ children }: { children?: ReactNode }) {
                 </a>
                 <TrackedLink
                   className={styles.darkButton}
-                  destination={siteConfig.signupUrl}
+                  destination={siteConfig.googleAuthUrl}
                   eventLabel="baselane_closing_signup"
                 >
-                  Get started
+                  <GoogleCtaContent />
                 </TrackedLink>
               </div>
             </section>
@@ -418,14 +492,14 @@ export function BaselaneHomepage({ children }: { children?: ReactNode }) {
           <div>
             <a
               href="/BL/BL-home"
-              aria-label="Innflow home"
+              aria-label="innflow home"
               className={styles.footerLogo}
             >
               <Image
                 src="/brand/innflow-wordmark.svg"
                 width={105}
                 height={30}
-                alt="Innflow"
+                alt="innflow"
               />
             </a>
             <p>
@@ -436,8 +510,9 @@ export function BaselaneHomepage({ children }: { children?: ReactNode }) {
             <a href={`mailto:${siteConfig.supportEmail}`}>
               {siteConfig.supportEmail}
             </a>
+            <CustomerSupportHours />
           </div>
-          {menus.map((group) => (
+          {footerMenus.map((group) => (
             <div key={group.label}>
               <h3>{group.label}</h3>
               {group.links.map(([label, href]) => (
@@ -457,46 +532,13 @@ export function BaselaneHomepage({ children }: { children?: ReactNode }) {
             <a href="/BL/BL-demo">Book a demo</a>
             <a href="/BL/BL-pricing">Pricing</a>
             <a href={`${siteConfig.appOrigin}/login`}>Log in</a>
-            <a href={siteConfig.signupUrl}>Sign up</a>
+            <a href={siteConfig.googleAuthUrl}>
+              <GoogleCtaContent />
+            </a>
           </div>
         </div>
-        <details className={styles.referenceLinks}>
-          <summary>
-            Baselane reference links <span aria-hidden="true">+</span>
-          </summary>
-          <p>
-            Original publisher destinations for the resources featured in this
-            collection.
-          </p>
-          <div className={styles.referenceGrid}>
-            <div>
-              <h3>Baselane apps</h3>
-              <a href="https://apps.apple.com/us/app/baselane/id6755168931">
-                Apple App Store ↗
-              </a>
-              <a href="https://play.google.com/store/apps/details?id=com.baselane.landlord">
-                Google Play ↗
-              </a>
-            </div>
-            <div>
-              <h3>Baselane social channels</h3>
-              <a href="https://www.facebook.com/baselanehq">Facebook ↗</a>
-              <a href="https://www.instagram.com/baselanehq/">Instagram ↗</a>
-              <a href="https://www.linkedin.com/company/baselane">LinkedIn ↗</a>
-              <a href="https://www.youtube.com/@baselane">YouTube ↗</a>
-            </div>
-            <div>
-              <h3>Thread Bank disclosures</h3>
-              <p>Banking disclosures referenced by Baselane.</p>
-              <a href="https://thread.bank/program-banks/">Program banks ↗</a>
-              <a href="https://thread.bank/sweep-disclosure/">
-                Sweep disclosure ↗
-              </a>
-            </div>
-          </div>
-        </details>
         <div className={styles.footerBottom}>
-          <span>© {new Date().getFullYear()} Innflow</span>
+          <span>© {new Date().getFullYear()} innflow</span>
           <div>
             <a href="/BL/BL-privacy-policy">Privacy Policy</a>
             <a href="/BL/BL-terms-of-use">Terms of Service</a>

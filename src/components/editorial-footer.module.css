@@ -83,7 +83,7 @@
 
 .signupForm {
   display: flex;
-  width: min(100%, 500px);
+  width: fit-content;
   gap: 8px;
   margin-top: 28px;
   padding: 6px;

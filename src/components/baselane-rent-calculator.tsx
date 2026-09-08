@@ -2,12 +2,13 @@
 
 import Image from "next/image";
 import { type FormEvent, useRef, useState } from "react";
+import { GoogleCtaContent } from "@/components/google-cta-content";
 import { siteConfig } from "@/config/site";
 import { summarizeRents } from "@/lib/rent-comparison";
 import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-rent-calculator.module.css";
 
-const source = "https://www.baselane.com/how-much-should-i-charge-for-rent";
+const source = "/BL/BL-demo";
 const money = (n: number) =>
   new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -137,7 +138,7 @@ export function BaselaneRentCalculator() {
               </button>
             </form>
             <a className={styles.sourceLink} href={source}>
-              Use Baselane’s address-based lookup ↗
+              Connect your research workflow with innflow →
             </a>
           </div>
           <picture>
@@ -148,7 +149,7 @@ export function BaselaneRentCalculator() {
             <Image
               className={styles.heroImage}
               src="/brand/baselane-inspired/rent-calculator/hero.webp"
-              alt="Baselane example rent report over property photography; illustrative values, not your calculated results"
+              alt="Example rent report over property photography; illustrative values, not your calculated results"
               width={1120}
               height={956}
               priority
@@ -198,9 +199,9 @@ export function BaselaneRentCalculator() {
         )}
         <div className={styles.articleLayout}>
           <aside>
-            <h2>Bring the next step into Innflow.</h2>
-            <a className={styles.button} href={`${siteConfig.appOrigin}/login`}>
-              Continue with Google
+            <h2>Bring the next step into innflow.</h2>
+            <a className={styles.button} href={siteConfig.googleAuthUrl}>
+              <GoogleCtaContent />
             </a>
             <button className={styles.copy} type="button" onClick={copyLink}>
               Copy page link ↗
@@ -241,11 +242,11 @@ export function BaselaneRentCalculator() {
               <h2>Check local requirements</h2>
               <p>
                 Review the rules that apply to the property before making a
-                pricing decision. The original guide links to
-                jurisdiction-specific resources.
+                pricing decision. Keep the official sources and your adviser’s
+                review notes alongside the property record.
               </p>
-              <a href={`${source}#research-rent-control-laws`}>
-                Open the source guide’s legal resources ↗
+              <a href="/BL/BL-lease-agreement">
+                Explore document review workflows →
               </a>
             </section>
             <section id="operating-costs">
@@ -281,7 +282,7 @@ export function BaselaneRentCalculator() {
                 or property circumstances change.
               </p>
               <a href={source}>
-                Read Baselane’s complete rental-pricing guide ↗
+                Bring your research into an innflow workflow →
               </a>
             </section>
           </article>

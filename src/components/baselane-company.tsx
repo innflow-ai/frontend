@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { GoogleCtaContent } from "@/components/google-cta-content";
 import { siteConfig } from "@/config/site";
 import styles from "./baselane-company.module.css";
 import { BaselaneHomepage } from "./baselane-homepage";
@@ -90,22 +91,23 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
             <h1>
               {careers
                 ? "Build what comes next for property operations."
-                : "Property operations, connected by Innflow."}
+                : "Property operations, connected by innflow."}
             </h1>
             <p>
               {careers
                 ? "Bring your curiosity to the work behind every property."
-                : "Connect everyday requests, property context, and team handoffs. Innflow brings recurring work into a clearer flow, with people in control of the next step."}
+                : "Connect everyday requests, property context, and team handoffs. innflow brings recurring work into a clearer flow, with people in control of the next step."}
             </p>
             <div className={styles.actions}>
               <a
                 className={styles.button}
-                href={
-                  careers ? "#career-inquiries" : "https://app.innflow.ai/login"
-                }
+                href={careers ? "#career-inquiries" : siteConfig.googleAuthUrl}
               >
-                {careers ? "Explore working together" : "Continue with Google"}{" "}
-                ↗
+                {careers ? (
+                  <>Explore working together ↗</>
+                ) : (
+                  <GoogleCtaContent />
+                )}
               </a>
               {!careers && (
                 <a className={styles.outline} href="/BL/BL-demo">
@@ -118,7 +120,7 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
         {!careers && (
           <section
             className={styles.facts}
-            aria-label="The foundations of Innflow"
+            aria-label="The foundations of innflow"
           >
             {[
               ["Context", "Records close to the work"],
@@ -146,7 +148,7 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
             <p>
               {careers
                 ? "The next request rarely arrives with every detail in place. We’re interested in the practical work of connecting context, decisions, and follow-through."
-                : "A request starts in one place. Its context lives in another. Innflow brings those pieces together so your team can focus on the decision and the next action."}
+                : "A request starts in one place. Its context lives in another. innflow brings those pieces together so your team can focus on the decision and the next action."}
             </p>
             <a href="/BL/BL-demo">Explore the product →</a>
           </div>
@@ -171,7 +173,7 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
             <div className={styles.questions}>
               {[
                 [
-                  "What is Innflow?",
+                  "What is innflow?",
                   "A platform for connecting recurring work, property context, and human review.",
                 ],
                 [
@@ -280,7 +282,7 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
           </section>
         )}
         <section className={styles.linkBand}>
-          <h2>Get to know Innflow.</h2>
+          <h2>Get to know innflow.</h2>
           <div>
             <a href="/BL/BL-about">Our approach</a>
             <a href="/BL/BL-resources">Resources</a>

@@ -93,7 +93,7 @@ export function BaselaneRenters() {
               context.
             </h2>
             <p>
-              Innflow connects the work that helps your property team move
+              innflow connects the work that helps your property team move
               forward.
             </p>
           </div>
@@ -198,7 +198,7 @@ export function BaselaneRenters() {
         <div>
           <h2>More room for what matters.</h2>
           <a className={styles.darkButton} href="/demo">
-            See Innflow in action <ArrowRight size={18} />
+            See innflow in action <ArrowRight size={18} />
           </a>
         </div>
       </section>

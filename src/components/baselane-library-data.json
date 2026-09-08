@@ -1,174 +1,132 @@
 {
   "articles": [
     {
-      "title": "Average rent statistics for 2026",
-      "category": "Rental market trends",
-      "href": "https://www.baselane.com/resources/average-rent-statistics",
-      "image": "/brand/baselane-inspired/library/average-rent-statistics.jpg",
-      "description": "A look at national rents, regional differences, and rental costs."
+      "category": "Property operations",
+      "title": "Coordinate a growing portfolio",
+      "href": "/BL/BL-multi-property-investors",
+      "description": "Keep each property\u2019s records, requests, and team handoffs connected.",
+      "image": "/brand/baselane-inspired/hero.webp"
     },
     {
-      "title": "The rental market through renter statistics",
-      "category": "Rental market trends",
-      "href": "https://www.baselane.com/resources/renter-statistics",
-      "image": "/brand/baselane-inspired/library/renter-statistics.jpg",
-      "description": "Explore renter demographics, affordability, and market trends."
+      "category": "Property operations",
+      "title": "Build a rhythm for recurring rental work",
+      "href": "/BL/BL-rent-collection",
+      "description": "Give recurring requests a clear owner and a repeatable path forward.",
+      "image": "/brand/baselane-inspired/renters/closing-desktop.webp"
     },
     {
-      "title": "Rental vacancy rates and investment strategy",
-      "category": "Rental market trends",
-      "href": "https://www.baselane.com/resources/rental-vacancy-rate-statistics",
-      "image": "/brand/baselane-inspired/library/rental-vacancy-rate-statistics.jpg",
-      "description": "A guide to vacancy data across national and regional markets."
+      "category": "Property operations",
+      "title": "Keep resident conversations in context",
+      "href": "/BL/BL-renters",
+      "description": "Connect resident questions with the information your team needs to respond.",
+      "image": "/brand/baselane-inspired/partners/closing-desktop.webp"
     },
     {
-      "title": "Late rent payment statistics",
-      "category": "Rental market trends",
-      "href": "https://www.baselane.com/resources/late-rent-payment-statistics",
-      "image": "/brand/baselane-inspired/library/late-rent-payment-statistics.webp",
-      "description": "Explore on-time payments, late fees, and payment trends."
+      "category": "Records & reviews",
+      "title": "Prepare documents for a professional review",
+      "href": "/BL/BL-tax-preparation",
+      "description": "Gather the supporting files and resolve open questions before the handoff.",
+      "image": "/brand/baselane-inspired/insurance/time.webp"
     },
     {
-      "title": "Rent collection in numbers",
-      "category": "Rental market trends",
-      "href": "https://www.baselane.com/resources/rent-collection-statistics",
-      "image": "/brand/baselane-inspired/library/rent-collection-statistics.webp",
-      "description": "A look at payment methods, rental costs, and technology adoption."
+      "category": "Records & reviews",
+      "title": "Connect your property records",
+      "href": "/BL/BL-landlord-accounting",
+      "description": "Keep documents and team decisions close to the work they support.",
+      "image": "/brand/baselane-inspired/accounting/solutions-reporting-bg-desktop.webp"
     },
     {
-      "title": "The One Big Beautiful Bill Act and real estate",
-      "category": "Rental market trends",
-      "href": "https://www.baselane.com/resources/one-big-beautiful-bill-real-estate-investors",
-      "image": "/brand/baselane-inspired/library/one-big-beautiful-bill-real-estate-investors.webp",
-      "description": "Baselane\u2019s overview of the legislation for property investors."
+      "category": "Records & reviews",
+      "title": "Organize lease paperwork",
+      "href": "/BL/BL-lease-agreement",
+      "description": "Bring property details and review tasks into a consistent lease-document process.",
+      "image": "/brand/baselane-inspired/forms/forms-hero.webp"
     },
     {
-      "title": "U.S. Bank alternatives for property owners",
-      "category": "Real estate banking",
-      "href": "https://www.baselane.com/resources/us-bank-alternatives",
-      "image": "/brand/baselane-inspired/library/us-bank-alternatives.jpg",
-      "description": "Explore banking options in Baselane\u2019s comparison guide."
+      "category": "Planning tools",
+      "title": "Compare the rents in your research",
+      "href": "/BL/BL-how-much-should-i-charge-for-rent",
+      "description": "Summarize comparable rents you enter and keep your research assumptions visible.",
+      "image": "/brand/baselane-inspired/library/articles-hero.webp"
     },
     {
-      "title": "Citibank alternatives for property owners",
-      "category": "Real estate banking",
-      "href": "https://www.baselane.com/resources/citibank-alternatives",
-      "image": "/brand/baselane-inspired/library/citibank-alternatives.jpg",
-      "description": "Compare the banking features discussed in this guide."
+      "category": "Planning tools",
+      "title": "Prepare a property review brief",
+      "href": "/BL/BL-landlord-insurance",
+      "description": "Create a brief and checklist for the next conversation with your team or adviser.",
+      "image": "/brand/baselane-inspired/insurance/time.webp"
     },
     {
-      "title": "Capital One alternatives for property owners",
-      "category": "Real estate banking",
-      "href": "https://www.baselane.com/resources/capital-one-alternatives",
-      "image": "/brand/baselane-inspired/library/capital-one-alternatives.jpg",
-      "description": "A roundup of alternatives for managing rental finances."
+      "category": "Planning tools",
+      "title": "Plan the work around your reserves",
+      "href": "/BL/BL-landlord-banking-apy",
+      "description": "Connect reserve records, review points, and follow-up tasks.",
+      "image": "/brand/baselane-inspired/savings/hero.webp"
     },
     {
-      "title": "Wells Fargo alternatives for property owners",
-      "category": "Real estate banking",
-      "href": "https://www.baselane.com/resources/wells-fargo-alternatives",
-      "image": "/brand/baselane-inspired/library/wells-fargo-alternatives.jpg",
-      "description": "Review the options covered in Baselane\u2019s banking comparison."
+      "category": "Team workflows",
+      "title": "Connect your advisor handoffs",
+      "href": "/BL/BL-advisor-partner-program",
+      "description": "Keep client records and open questions together before the next meeting.",
+      "image": "/brand/baselane-inspired/advisors/investors.webp"
     },
     {
-      "title": "Bank of America alternatives for property owners",
-      "category": "Real estate banking",
-      "href": "https://www.baselane.com/resources/bank-of-america-alternatives",
-      "image": "/brand/baselane-inspired/library/bank-of-america-alternatives.jpg",
-      "description": "Explore account options and features for rental operations."
+      "category": "Team workflows",
+      "title": "Coordinate screening follow-ups",
+      "href": "/BL/BL-tenant-screening-service",
+      "description": "Plan the review steps around your chosen screening provider.",
+      "image": "/brand/baselane-inspired/loans/property.webp"
     },
     {
-      "title": "Banking options for Illinois landlords",
-      "category": "Real estate banking",
-      "href": "https://www.baselane.com/resources/banks-landlords-illinois",
-      "image": "/brand/baselane-inspired/library/banks-landlords-illinois.jpg",
-      "description": "A guide to account options for property owners in Illinois."
-    },
-    {
-      "title": "A closer look at self-managing landlords",
-      "category": "Latest articles",
-      "href": "https://www.baselane.com/resources/self-managing-landlord-statistics",
-      "image": "/brand/baselane-inspired/library/self-managing-landlord-statistics.jpg",
-      "description": "Explore the data behind independent property ownership."
-    },
-    {
-      "title": "Real estate C-Corp bank accounts",
-      "category": "Latest articles",
-      "href": "https://www.baselane.com/resources/c-corp-bank-account",
-      "image": "/brand/baselane-inspired/library/c-corp-bank-account.webp",
-      "description": "An introduction to accounts for real estate corporations."
-    },
-    {
-      "title": "Moving from short-term to long-term rentals",
-      "category": "Latest articles",
-      "href": "https://www.baselane.com/resources/str-to-ltr-transition",
-      "image": "/brand/baselane-inspired/library/str-to-ltr-transition.webp",
-      "description": "Explore the transition between short-term and long-term rentals."
-    },
-    {
-      "title": "Cash management for short-term rental co-hosts",
-      "category": "Latest articles",
-      "href": "https://www.baselane.com/resources/str-idle-cash-strategies",
-      "image": "/brand/baselane-inspired/library/str-idle-cash-strategies.webp",
-      "description": "An article on cash management for larger co-host portfolios."
-    },
-    {
-      "title": "Corporate bank accounts for LLCs",
-      "category": "Latest articles",
-      "href": "https://www.baselane.com/resources/free-corporate-bank-account-real-estate",
-      "image": "/brand/baselane-inspired/library/free-corporate-bank-account-real-estate.webp",
-      "description": "A guide to corporate accounts, setup, and documentation."
-    },
-    {
-      "title": "Digital bank account setup",
-      "category": "Latest articles",
-      "href": "https://www.baselane.com/resources/digital-bank-account-setup",
-      "image": "/brand/baselane-inspired/library/digital-bank-account-setup.webp",
-      "description": "Explore the documents and steps involved in online account setup."
+      "category": "Team workflows",
+      "title": "Prepare your next property project",
+      "href": "/BL/BL-rental-property-loans",
+      "description": "Gather project details and track document requests for lender conversations.",
+      "image": "/brand/baselane-inspired/loans/hero.webp"
     }
   ],
   "webinars": [
     {
-      "title": "The new rules of winning on Airbnb in 2026",
-      "category": "Real Estate Investing",
-      "href": "https://www.baselane.com/webinars/hostcamp",
-      "image": "/brand/baselane-inspired/library/hostcamp.png",
-      "description": "Explore this session and its availability on Baselane."
+      "category": "Property operations",
+      "title": "Start with one portfolio workflow",
+      "href": "/BL/BL-multi-property-investors",
+      "description": "Keep each property\u2019s records, requests, and team handoffs connected.",
+      "image": "/brand/baselane-inspired/hero.webp"
     },
     {
-      "title": "ETS: Making every dollar count",
-      "category": "Tax Preparation",
-      "href": "https://www.baselane.com/webinars/ets-making-every-dollar-count",
-      "image": "/brand/baselane-inspired/library/ets-making-every-dollar-count.png",
-      "description": "Explore this session and its availability on Baselane."
+      "category": "Property operations",
+      "title": "Map a recurring rental process",
+      "href": "/BL/BL-rent-collection",
+      "description": "Give recurring requests a clear owner and a repeatable path forward.",
+      "image": "/brand/baselane-inspired/renters/closing-desktop.webp"
     },
     {
-      "title": "Anderson: From one property to twenty",
-      "category": "Real Estate Investing",
-      "href": "https://www.baselane.com/webinars/anderson-1-property-to-20",
-      "image": "/brand/baselane-inspired/library/anderson-1-property-to-20.png",
-      "description": "Explore this session and its availability on Baselane."
+      "category": "Property operations",
+      "title": "Connect resident context",
+      "href": "/BL/BL-renters",
+      "description": "Connect resident questions with the information your team needs to respond.",
+      "image": "/brand/baselane-inspired/partners/closing-desktop.webp"
     },
     {
-      "title": "Thach Nguyen: Exploring an ADU strategy",
-      "category": "Real Estate Investing",
-      "href": "https://www.baselane.com/webinars/thach-nguyen-adu-strategy",
-      "image": "/brand/baselane-inspired/library/thach-nguyen-adu-strategy.webp",
-      "description": "Explore this session and its availability on Baselane."
+      "category": "Records & reviews",
+      "title": "Prepare a document handoff",
+      "href": "/BL/BL-tax-preparation",
+      "description": "Gather the supporting files and resolve open questions before the handoff.",
+      "image": "/brand/baselane-inspired/insurance/time.webp"
     },
     {
-      "title": "Zachary Kepes: Finding and funding deals",
-      "category": "Real Estate Investing",
-      "href": "https://www.baselane.com/webinars/zachary-kepes-how-to-find-and-fund-deals",
-      "image": "/brand/baselane-inspired/library/zachary-kepes-how-to-find-and-fund-deals.webp",
-      "description": "Explore this session and its availability on Baselane."
+      "category": "Records & reviews",
+      "title": "Bring records into the workflow",
+      "href": "/BL/BL-landlord-accounting",
+      "description": "Keep documents and team decisions close to the work they support.",
+      "image": "/brand/baselane-inspired/accounting/solutions-reporting-bg-desktop.webp"
     },
     {
-      "title": "Zachary Kepes: The self-management masterclass",
-      "category": "Bookkeeping",
-      "href": "https://www.baselane.com/webinars/zachary-kepes-1m-dollar-self-management-masterclass",
-      "image": "/brand/baselane-inspired/library/zachary-kepes-1m-dollar-self-management-masterclass.webp",
-      "description": "Explore this session and its availability on Baselane."
+      "category": "Records & reviews",
+      "title": "Plan a lease review",
+      "href": "/BL/BL-lease-agreement",
+      "description": "Bring property details and review tasks into a consistent lease-document process.",
+      "image": "/brand/baselane-inspired/forms/forms-hero.webp"
     }
   ],
   "articleHero": "/brand/baselane-inspired/library/articles-hero.webp",

@@ -1,12 +1,10 @@
 import Image from "next/image";
+import { GoogleCtaContent } from "@/components/google-cta-content";
+import { siteConfig } from "@/config/site";
 import styles from "./baselane-deposits.module.css";
 import { BaselaneHomepage } from "./baselane-homepage";
 import shared from "./baselane-partners.module.css";
 
-const states =
-  "Alabama,Alaska,Arizona,Arkansas,California,Colorado,Connecticut,Delaware,Florida,Georgia,Hawaii,Idaho,Illinois,Indiana,Iowa,Kansas,Kentucky,Louisiana,Maine,Maryland,Massachusetts,Michigan,Minnesota,Mississippi,Missouri,Montana,Nebraska,Nevada,New Hampshire,New Jersey,New Mexico,New York,North Carolina,North Dakota,Ohio,Oklahoma,Oregon,Pennsylvania,Rhode Island,South Carolina,South Dakota,Tennessee,Texas,Utah,Vermont,Virginia,Washington,West Virginia,Wisconsin,Wyoming".split(
-    ",",
-  );
 const benefits = [
   {
     title: "Clarity for property owners",
@@ -67,7 +65,7 @@ const features = [
 ];
 const faqs = [
   [
-    "How can Innflow help with deposit-related work?",
+    "How can innflow help with deposit-related work?",
     "Use property context, supporting documents, and workflows to coordinate your team's review and follow-up tasks.",
   ],
   [
@@ -91,12 +89,12 @@ const faqs = [
     "Yes. Define the point where a person needs to review the context and approve the next step.",
   ],
   [
-    "Where do the state guides lead?",
-    "The links above open Baselane's published state guides. They are external resources from that publisher; check current official requirements for your situation.",
+    "Where should I keep local requirements?",
+    "Keep current official requirements and your adviser’s notes with the property record. The related innflow pages help organize supporting documents and follow-up tasks.",
   ],
   [
     "Where can I explore a workflow?",
-    "Open the Innflow demo page to see the workspace and discuss the process your team would like to connect.",
+    "Open the innflow demo page to see the workspace and discuss the process your team would like to connect.",
   ],
 ];
 function Photo({
@@ -121,8 +119,8 @@ function Photo({
 }
 function GoogleAction() {
   return (
-    <a className={shared.button} href="https://app.innflow.ai/login">
-      Continue with Google
+    <a className={shared.button} href={siteConfig.googleAuthUrl}>
+      <GoogleCtaContent />
     </a>
   );
 }
@@ -266,34 +264,12 @@ export function BaselaneDeposits() {
           </div>
         </section>
         <section className={shared.section}>
-          <h2>Explore state deposit guides.</h2>
+          <h2>Keep the requirements with the property.</h2>
           <p className={shared.centerCopy}>
-            External reading published by Baselane. Confirm current requirements
-            with official state sources and your adviser.
+            Use innflow to connect source documents, review notes, and the
+            person responsible for each follow-up. Confirm applicable
+            requirements with your adviser.
           </p>
-          <nav
-            className={styles.states}
-            aria-label="Baselane state security deposit guides"
-          >
-            {states.map((state) => (
-              <a
-                key={state}
-                href={`https://www.baselane.com/security-deposit-account/${state.toLowerCase().replaceAll(" ", "-")}`}
-                target="_blank"
-                rel="noreferrer"
-              >
-                {state}
-                <span className={styles.srOnly}>
-                  {" "}
-                  — Baselane, opens a new tab
-                </span>
-              </a>
-            ))}
-          </nav>
-        </section>
-        <section className={shared.section}>
-          <h2>Additional resources</h2>
-          <p className={shared.centerCopy}>Selected reading from Baselane.</p>
           <div className={styles.resources}>
             <article>
               <Photo
@@ -301,31 +277,27 @@ export function BaselaneDeposits() {
                 alt="Two windows on the side of a white house"
               />
               <div className={styles.resourceCopy}>
-                <h3>Collecting and managing deposits</h3>
+                <h3>Prepare a deposit-document handoff</h3>
                 <a
                   className={shared.button}
-                  href="https://www.baselane.com/resources/a-landlords-guide-to-collecting-and-managing-security-deposits"
-                  target="_blank"
-                  rel="noreferrer"
+                  href="/BL/BL-free-rental-forms-and-templates-for-landlords"
                 >
-                  Read on Baselane ↗
+                  Explore preparation worksheets →
                 </a>
               </div>
             </article>
             <div>
               {[
-                ["How much is a deposit?", "how-much-is-security-deposit"],
-                ["Reviewing deposit deductions", "security-deposit-deductions"],
-                ["Deposit accounting", "security-deposit-accounting"],
-              ].map(([title, slug]) => (
-                <a
-                  key={slug}
-                  href={`https://www.baselane.com/resources/${slug}`}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <small>BASELANE ARTICLE</small>
-                  <h3>{title} ↗</h3>
+                [
+                  "Keep supporting records together",
+                  "/BL/BL-landlord-accounting",
+                ],
+                ["Connect the lease review", "/BL/BL-lease-agreement"],
+                ["Coordinate resident follow-up", "/BL/BL-renters"],
+              ].map(([title, href]) => (
+                <a key={href} href={href}>
+                  <small>INNFLOW WORKFLOW</small>
+                  <h3>{title} →</h3>
                 </a>
               ))}
             </div>

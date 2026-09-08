@@ -7,10 +7,10 @@ import styles from "./baselane-support.module.css";
 
 const topics = [
   {
-    title: "Getting started with Innflow",
+    title: "Getting started with innflow",
     icon: "↗",
     links: [
-      ["How Innflow works", "/platform"],
+      ["How innflow works", "/platform"],
       ["Explore a demo", "/BL/BL-demo"],
       ["Frequently asked questions", "/faq"],
     ],
@@ -61,7 +61,7 @@ export function BaselaneHelp() {
             <span aria-hidden="true">⌕</span>
             <input
               type="search"
-              aria-label="Search Innflow help"
+              aria-label="Search innflow help"
               placeholder="Search questions and topics"
               value={query}
               onChange={(event) => setQuery(event.target.value)}
@@ -152,10 +152,10 @@ export function BaselaneHelp() {
               <a className={styles.resource} href="/BL/BL-webinars">
                 <span>▷</span>
                 <div>
-                  <h3>Masterclasses</h3>
+                  <h3>Workflow learning</h3>
                   <p>
-                    Browse property-investing sessions from our Baselane
-                    reference library.
+                    Explore innflow workflow topics for property teams, from
+                    recurring requests to document reviews.
                   </p>
                 </div>
                 <span>→</span>

@@ -10,43 +10,22 @@ const coverage = [
     "forbes",
     "Forbes",
     "A changing rental market",
-    "Perspectives on evolving investor priorities.",
+    "Independent perspectives on evolving investor priorities.",
     "https://www.forbes.com/councils/forbesbusinesscouncil/2023/09/21/guide-to-rental-property-investing-trends-and-developments/?streamIndex=0",
-  ],
-  [
-    "marketers",
-    "MarketersMEDIA",
-    "Housing constraints and financial tools",
-    "Coverage of Baselane's approach to landlord finances.",
-    "https://news.marketersmedia.com/adapting-to-a-constrained-housing-market-through-financial-innovations/89103558",
   ],
   [
     "financial-brand",
     "The Financial Brand",
     "The shift toward digital rent payments",
-    "A look at technology in rental transactions.",
+    "Industry reading on technology in rental transactions.",
     "https://thefinancialbrand.com/news/payments-trends/how-chase-plans-to-revolutionize-rent-payments-with-a-digital-solution-155501",
   ],
   [
     "nasdaq",
     "Nasdaq",
     "Understanding deposit accounts",
-    "An introduction to holding rental deposits.",
+    "Background reading on organizing rental deposits.",
     "https://www.nasdaq.com/articles/how-to-open-a-security-deposit-account-to-hold-rental-deposits",
-  ],
-  [
-    "business-insider",
-    "Business Insider",
-    "Companies shaping property technology",
-    "Baselane in a 2023 proptech company roundup.",
-    "https://www.businessinsider.com/top-proptech-companies-startups-2023-3",
-  ],
-  [
-    "unit",
-    "Unit",
-    "Inside a rental finance platform",
-    "A partner case study about Baselane.",
-    "https://www.unit.co/case-study/baselane",
   ],
 ];
 const root = "/brand/baselane-inspired/news";
@@ -69,8 +48,9 @@ export function BaselaneNews() {
         <header className={styles.intro}>
           <h1>Industry coverage and perspectives</h1>
           <p>
-            Explore media coverage collected by Baselane, our design reference.
-            These articles cover Baselane and the wider property market.
+            Explore independent reporting on the property market and the tools
+            around it, alongside practical ways to connect your work with
+            innflow.
           </p>
         </header>
         <div className={styles.press}>
@@ -119,7 +99,7 @@ export function BaselaneNews() {
           </div>
         </div>
         <section className={styles.features}>
-          <h2>A closer look at property finance</h2>
+          <h2>A closer look at connected property work</h2>
           <article className={styles.feature}>
             <div className={styles.visual}>
               <Image
@@ -132,19 +112,20 @@ export function BaselaneNews() {
               <Image
                 className={styles.overlay}
                 src={`${root}/account.webp`}
-                alt="Baselane virtual account interface"
+                alt="Illustrative property account records"
                 width={600}
                 height={652}
               />
             </div>
             <div className={styles.copy}>
-              <span>BASELANE PRODUCT NEWS</span>
-              <h3>Banking designed around rental properties</h3>
+              <span>EXPLORE INNFLOW</span>
+              <h3>Operations organized around your properties</h3>
               <p>
-                Explore the banking product featured in the original coverage.
+                Bring recurring requests, team ownership, and property context
+                into one connected flow.
               </p>
-              <a href="https://www.baselane.com/landlord-banking">
-                Explore Baselane banking →
+              <a href="/BL/BL-landlord-banking">
+                Explore property operations →
               </a>
             </div>
           </article>
@@ -160,19 +141,20 @@ export function BaselaneNews() {
               <Image
                 className={styles.overlay}
                 src={`${root}/oversight.webp`}
-                alt="Baselane property transaction interface"
+                alt="Illustrative property activity records"
                 width={640}
                 height={751}
               />
             </div>
             <div className={styles.copy}>
-              <span>BASELANE PRODUCT NEWS</span>
-              <h3>One view of rental finances</h3>
+              <span>EXPLORE INNFLOW</span>
+              <h3>Keep the records behind the work together</h3>
               <p>
-                Read about the bookkeeping tools behind the source platform.
+                Connect supporting documents and review notes to the requests
+                and decisions they belong to.
               </p>
-              <a href="https://www.baselane.com/landlord-accounting">
-                Explore Baselane bookkeeping →
+              <a href="/BL/BL-landlord-accounting">
+                Explore connected records →
               </a>
             </div>
           </article>
@@ -180,17 +162,10 @@ export function BaselaneNews() {
         <section className={styles.closing}>
           <h2>More perspectives on property technology</h2>
           <p>
-            Read the original publisher coverage for its context and publication
-            date.
+            Visit the innflow blog for ideas on workflows, AI agents, and the
+            day-to-day work of running a property operation.
           </p>
-          <a href={coverage[4][4]} target="_blank" rel="noopener noreferrer">
-            <Image
-              src={`${root}/business-insider.svg`}
-              alt="Read Business Insider coverage"
-              width={150}
-              height={48}
-            />
-          </a>
+          <a href="/blog">Read the innflow blog →</a>
         </section>
       </div>
     </BaselaneHomepage>

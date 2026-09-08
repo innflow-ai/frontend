@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./baselane-banking.module.css";
 import { BaselaneHomepage } from "./baselane-homepage";
+import { ScrollStory } from "./scroll-story";
 
 const sections = [
   {
@@ -78,12 +79,12 @@ const features = [
 ];
 const faqs = [
   [
-    "What is this page?",
-    "This is an alternate Innflow design exploring a property-focused layout. The banking imagery is a visual reference; it does not represent an Innflow banking offering.",
+    "What can my team coordinate with innflow?",
+    "Use innflow to connect recurring tasks, property records, and approval steps. Keep your existing banking and property-management systems while your team coordinates the work around them.",
   ],
   [
-    "How does Innflow support property operations?",
-    "Innflow brings workflows, knowledge, and approvals into a connected workspace so teams can organize recurring property work.",
+    "How does innflow support property operations?",
+    "innflow brings workflows, knowledge, and approvals into a connected workspace so teams can organize recurring property work.",
   ],
   [
     "Can my team review actions before they happen?",
@@ -91,7 +92,7 @@ const faqs = [
   ],
   [
     "Where can I see the product?",
-    "Book a demo to explore Innflow's workflows and discuss the needs of your property operation.",
+    "Book a demo to explore innflow's workflows and discuss the needs of your property operation.",
   ],
 ];
 function Scene({
@@ -134,11 +135,9 @@ export function BaselaneBanking() {
             details. More room to move forward.
           </p>
           <a className={styles.button} href="/demo">
-            Explore Innflow <span>↗</span>
+            Explore innflow <span>↗</span>
           </a>
-          <small>
-            Design preview · Banking imagery shown for illustration.
-          </small>
+          <small>Connected context. Clear ownership. Human review.</small>
         </div>
       </section>
       <section className={styles.solutions}>
@@ -146,18 +145,12 @@ export function BaselaneBanking() {
           Give every next step
           <br />a clear sense of direction.
         </h2>
-        <div className={styles.solutionLayout}>
-          <nav className={styles.sectionNav} aria-label="On this page">
-            {sections.map((section) => (
-              <a key={section.id} href={`#${section.id}`}>
-                {section.label}
-                <span>↗</span>
-              </a>
-            ))}
-          </nav>
-          <div className={styles.cards}>
-            {sections.map((section) => (
-              <section key={section.id} id={section.id} className={styles.card}>
+        <ScrollStory
+          steps={sections.map((section) => ({
+            id: section.id,
+            label: section.label,
+            content: (
+              <section className={styles.card}>
                 <Scene name={`solutions-${section.image}-bg`} />
                 <span className={styles.cardLabel}>{section.label}</span>
                 <div className={styles.cardCopy}>
@@ -191,9 +184,9 @@ export function BaselaneBanking() {
                   </div>
                 </div>
               </section>
-            ))}
-          </div>
-        </div>
+            ),
+          }))}
+        />
       </section>
       <section className={styles.features}>
         <h2>
@@ -286,7 +279,7 @@ export function BaselaneBanking() {
           </h2>
           <p>Bring your property operations into one flow.</p>
           <a href="/demo" className={styles.button}>
-            See Innflow in action <span>↗</span>
+            See innflow in action <span>↗</span>
           </a>
         </div>
       </section>

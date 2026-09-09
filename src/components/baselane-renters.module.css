@@ -47,6 +47,8 @@
 .hero .darkButton,
 .closing .darkButton {
   display: inline-flex;
+  font-family: var(--font-button, var(--font-sans));
+  line-height: 1.25;
   align-items: center;
   justify-content: center;
   gap: 12px;

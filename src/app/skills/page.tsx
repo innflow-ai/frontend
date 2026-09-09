@@ -40,12 +40,11 @@ export default async function SkillsIndexPage() {
           <Breadcrumbs
             items={[{ label: "Home", href: "/" }, { label: "Skills" }]}
           />
-          <span className="section-label">Agent skills library</span>
-          <h1>Ready-made skills your agents can run today.</h1>
+          <h1>Start with a skill. Make it your own.</h1>
           <p className={styles.heroSubline}>
-            A library of reusable agent skills across communication, finance,
-            HR, marketing, operations, and more. Pick a skill, point it at your
-            systems, and let your agents do the repetitive work.
+            Find a starting point for the work your team repeats. Explore skills
+            for communication, finance, marketing, and property operations, then
+            adapt the tools and review steps to your process.
           </p>
         </div>
       </section>

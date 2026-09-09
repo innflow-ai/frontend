@@ -4,8 +4,14 @@ import { type BreadcrumbItem, Breadcrumbs } from "@/components/breadcrumbs";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
 
+import experience from "./product-experience.module.css";
+
 export function MarketingPage({ children }: { children: ReactNode }) {
-  return <main id="main-content">{children}</main>;
+  return (
+    <main id="main-content" className={experience.page}>
+      {children}
+    </main>
+  );
 }
 
 export function PageHero({
@@ -32,15 +38,12 @@ export function PageHero({
       <div className="shell subpage-hero-grid">
         <div>
           {breadcrumbs ? <Breadcrumbs items={breadcrumbs} /> : null}
-          <div className="eyebrow-row">
-            <span className="section-label">{eyebrow}</span>
-            {status ? (
-              <span className={`status-label status-${status.toLowerCase()}`}>
-                {status}
-              </span>
-            ) : null}
-          </div>
           <h1>{title}</h1>
+          {status ? (
+            <span className={`status-label status-${status.toLowerCase()}`}>
+              {status}
+            </span>
+          ) : null}
         </div>
         <div className="subpage-hero-copy">
           <p>{description}</p>
@@ -165,32 +168,6 @@ export function FaqList({
         </details>
       ))}
     </div>
-  );
-}
-
-export function FinalCta({
-  title = "Start with one operation worth making repeatable.",
-  body = "Bring one workflow and the systems it touches. We’ll separate what is available, what requires configuration, and what remains a preview.",
-}: {
-  title?: string;
-  body?: string;
-}) {
-  return (
-    <section className="final-cta-section">
-      <div className="shell final-cta">
-        <span className="section-label label-dark">One clear next step</span>
-        <h2>{title}</h2>
-        <p>{body}</p>
-        <TrackedLink
-          className="button button-light"
-          destination={siteConfig.demoUrl}
-          eventLabel="supporting_page_final_demo"
-        >
-          {siteConfig.primaryCta}
-          <span aria-hidden="true">↗</span>
-        </TrackedLink>
-      </div>
-    </section>
   );
 }
 

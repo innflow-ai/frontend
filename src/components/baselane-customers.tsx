@@ -81,7 +81,6 @@ export function BaselaneCustomers() {
             sizes="100vw"
           />
           <div className={styles.heroCopy}>
-            <span className={styles.eyebrow}>BUILT FOR PROPERTY TEAMS</span>
             <h1>Your people. Your properties. One connected flow.</h1>
             <p>
               innflow brings workflows, knowledge, and approvals together for
@@ -91,7 +90,7 @@ export function BaselaneCustomers() {
               <a className={styles.button} href="#team-workflows">
                 Explore team workflows
               </a>
-              <a className={styles.outline} href="/BL/BL-demo">
+              <a className={styles.outline} href={siteConfig.demoUrl}>
                 Book a demo →
               </a>
             </div>
@@ -188,7 +187,7 @@ export function BaselaneCustomers() {
             <h2>Make room for your next idea.</h2>
             <p>Bring your team’s recurring work into one connected flow.</p>
             <div className={styles.actions}>
-              <a className={styles.outline} href="/BL/BL-demo">
+              <a className={styles.outline} href={siteConfig.demoUrl}>
                 Explore innflow →
               </a>
               <a className={styles.button} href={siteConfig.googleAuthUrl}>

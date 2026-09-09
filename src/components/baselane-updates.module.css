@@ -55,6 +55,8 @@
 }
 .primary {
   display: inline-flex;
+  font-family: var(--font-button, var(--font-sans));
+  line-height: 1.25;
   gap: 10px;
   align-items: center;
   justify-content: center;

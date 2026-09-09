@@ -5,6 +5,7 @@ import { useState } from "react";
 import { GoogleCtaContent } from "@/components/google-cta-content";
 import { pricingCatalog } from "@/config/pricing";
 import { siteConfig } from "@/config/site";
+import { faqs as homepageFaqs } from "@/content/home";
 import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-pricing.module.css";
 
@@ -58,6 +59,7 @@ const questions = [
     "What is included with Enterprise?",
     "Enterprise plans are scoped around custom credit volume, rate limits, seats, security requirements, deployment needs, onboarding, and service levels.",
   ],
+  ...homepageFaqs.map(({ question, answer }) => [question, answer]),
 ];
 export function BaselanePricing() {
   const [annual, setAnnual] = useState(false);
@@ -291,7 +293,7 @@ export function BaselanePricing() {
               what’s next.
             </h2>
             <p>Connect the work behind your properties.</p>
-            <a className={styles.button} href="/BL/BL-demo">
+            <a className={styles.button} href={siteConfig.demoUrl}>
               Explore a demo ↗
             </a>
           </div>
@@ -339,21 +341,6 @@ export function BaselanePricing() {
                 <p>{answer}</p>
               </details>
             ))}
-          </div>
-        </section>
-        <section className={styles.closing}>
-          <Image
-            src="/brand/baselane-inspired/renters/closing-desktop.webp"
-            alt=""
-            fill
-            sizes="100vw"
-          />
-          <div>
-            <h2>Own more of your time.</h2>
-            <p>Give everyday work a clearer path forward.</p>
-            <a className={styles.button} href="/BL/BL-demo">
-              See a demo →
-            </a>
           </div>
         </section>
       </div>

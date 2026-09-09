@@ -5,6 +5,7 @@ import {
   HouseLine,
 } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
+import { siteConfig } from "@/config/site";
 import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-renters.module.css";
 
@@ -71,7 +72,7 @@ export function BaselaneRenters() {
             Help your team create a more connected resident experience, with
             requests, property knowledge, and next steps in one flow.
           </p>
-          <a className={styles.darkButton} href="/demo">
+          <a className={styles.darkButton} href={siteConfig.demoUrl}>
             Explore resident workflows <ArrowRight size={18} />
           </a>
         </div>
@@ -197,7 +198,7 @@ export function BaselaneRenters() {
         <Photo name="closing" responsive />
         <div>
           <h2>More room for what matters.</h2>
-          <a className={styles.darkButton} href="/demo">
+          <a className={styles.darkButton} href={siteConfig.demoUrl}>
             See innflow in action <ArrowRight size={18} />
           </a>
         </div>

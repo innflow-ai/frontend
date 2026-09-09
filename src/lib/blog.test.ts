@@ -5,6 +5,7 @@ import {
   industriesForPost,
   injectInArticleCtas,
   isReferencesHeading,
+  italicizeOpeningSentence,
   type LoosePortableBlock,
   matchesBlogQuery,
   portableTextToPlain,
@@ -18,6 +19,56 @@ function paragraph(key: string, text: string): LoosePortableBlock {
     children: [{ _type: "span", text }],
   };
 }
+
+describe("italicizeOpeningSentence", () => {
+  it("splits the opening sentence across marked spans without losing links or changing source content", () => {
+    const blocks: LoosePortableBlock[] = [
+      {
+        ...paragraph("intro", ""),
+        markDefs: [{ _key: "link", _type: "link", href: "/demo" }],
+        children: [
+          { _key: "a", _type: "span", text: "Connect ", marks: ["strong"] },
+          {
+            _key: "b",
+            _type: "span",
+            text: "your team. Keep moving.",
+            marks: ["link"],
+          },
+        ],
+      },
+      paragraph("second", "Another paragraph."),
+    ];
+    const original = structuredClone(blocks);
+    const result = italicizeOpeningSentence(blocks);
+    expect(result[0].children).toEqual([
+      { _key: "a", _type: "span", text: "Connect ", marks: ["strong", "em"] },
+      { _key: "b", _type: "span", text: "your team.", marks: ["link", "em"] },
+      {
+        _key: "b-after-intro",
+        _type: "span",
+        text: " Keep moving.",
+        marks: ["link"],
+      },
+    ]);
+    expect(result[0].markDefs).toEqual(blocks[0].markDefs);
+    expect(result[1]).toBe(blocks[1]);
+    expect(blocks).toEqual(original);
+    expect(portableTextToPlain(result)).toBe(portableTextToPlain(blocks));
+  });
+
+  it("skips headings, lists and empty paragraphs, and handles an unpunctuated introduction", () => {
+    const blocks = [
+      { ...paragraph("heading", "Title"), style: "h2" },
+      { ...paragraph("list", "List item"), listItem: "bullet" },
+      paragraph("empty", ""),
+      paragraph("intro", "A clear next step"),
+    ];
+    const result = italicizeOpeningSentence(blocks);
+    expect(result.slice(0, 3)).toEqual(blocks.slice(0, 3));
+    expect(result[3].children?.[0].marks).toEqual(["em"]);
+    expect(italicizeOpeningSentence([])).toEqual([]);
+  });
+});
 
 describe("injectInArticleCtas", () => {
   it("inserts a CTA after every third paragraph and features the next one", () => {

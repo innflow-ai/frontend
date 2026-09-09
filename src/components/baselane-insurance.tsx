@@ -104,7 +104,6 @@ export function BaselaneInsurance() {
           </div>
         </div>
         <div className={styles.heroCopy} id="property-brief">
-          <span className={styles.eyebrow}>PROPERTY REVIEW, WITH INNFLOW</span>
           <h1>A clearer start to your insurance review.</h1>
           <p>
             Gather the essentials for your rental property and prepare a brief

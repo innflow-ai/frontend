@@ -146,6 +146,8 @@
 }
 .contact a {
   display: inline-flex;
+  font-family: var(--font-button, var(--font-sans));
+  line-height: 1.25;
   padding: 14px 22px;
   min-height: 48px;
   align-items: center;

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { MarketingPage } from "@/components/page-primitives";
 import { PlatformDirectory } from "@/components/platform-directory";
@@ -21,7 +20,6 @@ export function PlatformFeaturePage({ page }: { page: PlatformDetail }) {
           />
           <div className={styles.heroGrid}>
             <div>
-              <span className="section-label">{page.title}</span>
               <h1>{page.headline}</h1>
               <p>{page.description}</p>
               <div className={styles.actions}>
@@ -132,23 +130,6 @@ export function PlatformFeaturePage({ page }: { page: PlatformDetail }) {
           ))}
         </div>
       </div>
-      <section className={styles.cta}>
-        <div className="shell">
-          <span className="section-label">Your next workflow</span>
-          <h2>
-            {page.slug === "self-learning"
-              ? "Make the next task better than the last."
-              : "Start with one operation worth improving."}
-          </h2>
-          <p>
-            Bring your process, your tools, and the people who know the work.
-            Let’s explore what comes next.
-          </p>
-          <Link className="button button-primary" href="/contact">
-            Talk to our team <span aria-hidden="true">↗</span>
-          </Link>
-        </div>
-      </section>
       <PlatformDirectory currentSlug={page.slug} />
     </MarketingPage>
   );

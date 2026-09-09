@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { JsonLd } from "@/components/json-ld";
-import { FaqList, FinalCta, MarketingPage } from "@/components/page-primitives";
+import { FaqList, MarketingPage } from "@/components/page-primitives";
 import { siteConfig } from "@/config/site";
 import { faqs } from "@/content/home";
 import { createPageMetadata } from "@/lib/metadata";
@@ -33,7 +33,6 @@ export default function FaqPage() {
             <Breadcrumbs
               items={[{ label: "Home", href: "/" }, { label: "FAQ" }]}
             />
-            <span className="section-label">FAQ</span>
             <h1>Frequently Asked Questions</h1>
           </div>
           <div className={styles.questions}>
@@ -60,7 +59,6 @@ export default function FaqPage() {
           </aside>
         </div>
       </section>
-      <FinalCta title="Bring one recurring property operation to the demo." />
       <JsonLd value={faqSchema} />
     </MarketingPage>
   );

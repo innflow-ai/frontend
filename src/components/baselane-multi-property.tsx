@@ -114,7 +114,7 @@ export function BaselaneMultiProperty({
             <a className={styles.googleButton} href={siteConfig.googleAuthUrl}>
               <GoogleCtaContent />
             </a>
-            <a className={styles.outline} href="/demo">
+            <a className={styles.outline} href={siteConfig.demoUrl}>
               See demo <ArrowRight size={18} />
             </a>
           </div>
@@ -257,7 +257,7 @@ export function BaselaneMultiProperty({
               Bring your properties, your team, and your next steps into one
               flow.
             </p>
-            <a className={styles.button} href="/demo">
+            <a className={styles.button} href={siteConfig.demoUrl}>
               Explore innflow <ArrowRight size={18} />
             </a>
           </div>
@@ -284,7 +284,7 @@ export function BaselaneMultiProperty({
                 {content?.resourceText ??
                   "Explore the workflows, knowledge, and approvals behind innflow."}
               </p>
-              <a className={styles.button} href="/demo">
+              <a className={styles.button} href={siteConfig.demoUrl}>
                 Book a demo <ArrowRight size={18} />
               </a>
             </div>
@@ -294,7 +294,7 @@ export function BaselaneMultiProperty({
               [
                 "PRODUCT TOUR",
                 "Find the right starting point for your team.",
-                "/demo",
+                siteConfig.demoUrl,
               ],
               [
                 "ARTICLES",
@@ -362,7 +362,7 @@ export function BaselaneMultiProperty({
             <a className={styles.googleButton} href={siteConfig.googleAuthUrl}>
               <GoogleCtaContent />
             </a>
-            <a className={styles.outline} href="/demo">
+            <a className={styles.outline} href={siteConfig.demoUrl}>
               See demo <ArrowRight size={18} />
             </a>
           </div>

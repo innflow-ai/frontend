@@ -44,7 +44,7 @@ export function BaselaneDemo() {
               Explore how your team can bring recurring work, property context,
               and human approvals into one flow.
             </p>
-            <a className={styles.button} href={siteConfig.contactUrl}>
+            <a className={styles.button} href={siteConfig.demoUrl}>
               Book a demo ↗
             </a>
           </div>
@@ -79,7 +79,7 @@ export function BaselaneDemo() {
                 Bring a recurring workflow. We’ll start with the handoffs that
                 matter to your team.
               </p>
-              <a className={styles.button} href={siteConfig.contactUrl}>
+              <a className={styles.button} href={siteConfig.demoUrl}>
                 Book a demo ↗
               </a>
             </div>

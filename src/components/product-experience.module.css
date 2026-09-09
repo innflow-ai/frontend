@@ -1,0 +1,96 @@
+.page {
+  --canvas: #fffbf4;
+  --canvas-warm: #f1f7fb;
+  --surface: #fff;
+  --surface-soft: #e7f1f7;
+  --ink: #0b2633;
+  --ink-strong: #0b2633;
+  --radius-md: 24px;
+  --ink-muted: #425b68;
+  --brand: #123b50;
+  --brand-hover: #0b2633;
+  --brand-soft: #d9edfb;
+  --border: #c9dbe5;
+  --border-quiet: #dbe6eb;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  color-scheme: light;
+  overflow: clip;
+}
+.page :is(h1, h2, h3) {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+.page h1 {
+  font-size: clamp(40px, 5.4vw, 76px);
+  line-height: 1.04;
+}
+.page h2 {
+  font-size: clamp(30px, 3.4vw, 48px);
+  line-height: 1.12;
+}
+.page h3 {
+  line-height: 1.2;
+}
+.page p {
+  line-height: 1.65;
+}
+.page > section:first-child {
+  padding-top: 160px;
+  padding-bottom: 88px;
+  background: linear-gradient(150deg, #d8ecfa, #eef6fb 65%, #fffbf4);
+  border-bottom: 0;
+}
+.page :global(.shell) {
+  width: min(1320px, calc(100% - 80px));
+}
+.page :global(.button) {
+  min-height: 48px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-family: var(--font-button, var(--font-sans));
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+}
+.page :global(.button-primary) {
+  background: #0b2633;
+  color: #fff;
+  border-color: #0b2633;
+}
+.page :global(.button-secondary) {
+  background: transparent;
+  color: #0b2633;
+  border-color: #7993a0;
+}
+.page :global(.section-label) {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #425b68;
+}
+.page :global(.quiet-section) {
+  background: #e7f1f7;
+}
+.page :global(.control-card-grid) > article {
+  border-radius: 24px;
+  background: #fff;
+}
+.page :global(.integration-card) {
+  border-radius: 20px;
+}
+.page :global(.faq-list) details {
+  border-color: #c9dbe5;
+}
+@media (max-width: 760px) {
+  .page > section:first-child {
+    padding-top: 128px;
+    padding-bottom: 56px;
+  }
+  .page :global(.shell) {
+    width: calc(100% - 40px);
+  }
+}

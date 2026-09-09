@@ -11,6 +11,7 @@ import {
   collectFootnotes,
   injectInArticleCtas,
   isReferencesHeading,
+  italicizeOpeningSentence,
   type LoosePortableBlock,
 } from "@/lib/blog";
 import { urlForImage } from "@/lib/sanity";
@@ -117,7 +118,7 @@ function FootnoteMark({
 }
 
 export function BlogPortableBody({ blocks }: { blocks: LoosePortableBlock[] }) {
-  const decorated = injectInArticleCtas(blocks);
+  const decorated = injectInArticleCtas(italicizeOpeningSentence(blocks));
   const footnotes = collectFootnotes(decorated);
   let inReferences = false;
 

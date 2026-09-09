@@ -11,7 +11,7 @@ const topics = [
     icon: "↗",
     links: [
       ["How innflow works", "/platform"],
-      ["Explore a demo", "/BL/BL-demo"],
+      ["Explore a demo", siteConfig.demoUrl],
       ["Frequently asked questions", "/faq"],
     ],
   },

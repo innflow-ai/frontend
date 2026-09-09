@@ -1,13 +1,15 @@
 import type { Metadata, Viewport } from "next";
-import { Figtree, Questrial } from "next/font/google";
+import { Figtree } from "next/font/google";
 import type { ReactNode } from "react";
 import { ConsentManagedTags } from "@/components/consent-managed-tags";
-import { EditorialFooter } from "@/components/editorial-footer";
-import { EditorialHeader } from "@/components/editorial-header";
 import { MarketingRuntime } from "@/components/marketing-runtime";
 import type { LatestBlogPostNavItem } from "@/components/mega-menu";
+import { NavigationBlogPostsProvider } from "@/components/navigation-blog-posts";
 import { PostHogObservability } from "@/components/posthog-observability";
-import { RuneyChrome } from "@/components/runey-chrome";
+import { SiteCta } from "@/components/site-cta";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
+import { SmoothScroll } from "@/components/smooth-scroll";
 import { siteConfig } from "@/config/site";
 import {
   coverImageUrl,
@@ -16,13 +18,7 @@ import {
   humanizeCategory,
 } from "@/lib/sanity";
 import "./globals.css";
-
-const questrial = Questrial({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-questrial",
-  display: "swap",
-});
+import "lenis/dist/lenis.css";
 
 const figtree = Figtree({
   subsets: ["latin"],
@@ -117,7 +113,8 @@ export default async function RootLayout({
     // root attribute is intentionally different from the static HTML.
     <html
       lang="en"
-      className={`${questrial.variable} ${figtree.variable}`}
+      data-scroll-behavior="smooth"
+      className={figtree.variable}
       suppressHydrationWarning
     >
       <head>
@@ -128,6 +125,7 @@ export default async function RootLayout({
         />
       </head>
       <body>
+        <SmoothScroll />
         <noscript>
           <iframe
             src={`https://www.googletagmanager.com/ns.html?id=${siteConfig.analytics.googleTagManagerId}`}
@@ -140,13 +138,12 @@ export default async function RootLayout({
         <a className="skip-link" href="#main-content">
           Skip to content
         </a>
-        <RuneyChrome slot="header" latestBlogPosts={latestBlogPosts}>
-          <EditorialHeader latestBlogPosts={latestBlogPosts} />
-        </RuneyChrome>
-        {children}
-        <RuneyChrome slot="footer">
-          <EditorialFooter />
-        </RuneyChrome>
+        <NavigationBlogPostsProvider posts={latestBlogPosts}>
+          <SiteHeader />
+          {children}
+          <SiteCta />
+          <SiteFooter />
+        </NavigationBlogPostsProvider>
         <MarketingRuntime />
         <ConsentManagedTags />
         <PostHogObservability />

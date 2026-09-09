@@ -614,12 +614,12 @@
 
   .headerCta,
   .mobileCta {
-    --gradient-cta: linear-gradient(#494b47, #242522);
-    --gradient-cta-hover: linear-gradient(#555751, #2d2e2a);
+    --gradient-cta: var(--button-primary);
+    --gradient-cta-hover: var(--button-primary-hover);
     box-shadow:
       inset 0 1px 2px #ffffff70,
       0 3px 7px #0002;
-    border: 1px solid #545650;
+    border: 1px solid var(--button-primary);
     text-shadow: none;
   }
 
@@ -637,15 +637,15 @@
   margin: 16px auto 0;
   border: 0;
   border-radius: 999px;
-  background: #fffcf4;
+  background: #fffbf4;
   box-shadow: 0 3px 12px #002b3814;
 }
 .articleHeader .inner {
   min-height: 64px;
 }
 .articleHeader .headerCta {
-  --gradient-cta: #002b38;
-  --gradient-cta-hover: #004355;
+  --gradient-cta: var(--button-primary);
+  --gradient-cta-hover: var(--button-primary-hover);
 }
 @media (max-width: 760px) {
   .articleHeader {

@@ -1,5 +1,4 @@
 import { PricingConfigurator } from "@/components/pricing-configurator";
-import { Tag } from "@/components/tag";
 import { TrackedLink } from "@/components/tracked-link";
 import { pricingCatalog } from "@/config/pricing";
 import { siteConfig } from "@/config/site";
@@ -130,7 +129,6 @@ export default function PricingPage() {
       <section className={styles.hero}>
         <div className={styles.heroInner}>
           <div className={styles.heroCopy}>
-            <Tag variant="outline">Pricing</Tag>
             <h1>
               Start small. <em>Grow with your workflows.</em>
             </h1>

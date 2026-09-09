@@ -9,7 +9,7 @@
 }
 
 .page {
-  --blog-bg: #fffcf4;
+  --blog-bg: #fffbf4;
   --blog-ink: #121111;
   --blog-muted: #63635f;
   --blog-accent: #00303e;
@@ -56,6 +56,10 @@
 
 .search input::placeholder {
   color: var(--blog-muted);
+}
+
+.search input:focus::placeholder {
+  opacity: 0;
 }
 
 .search button {
@@ -794,9 +798,9 @@
   z-index: -1;
   background: linear-gradient(
     90deg,
-    rgb(255 252 244 / 98%),
-    rgb(255 252 244 / 94%) 60%,
-    rgb(255 252 244 / 12%)
+    rgb(255 251 244 / 98%),
+    rgb(255 251 244 / 94%) 60%,
+    rgb(255 251 244 / 12%)
   );
 }
 .heroCopy {
@@ -819,35 +823,7 @@
 }
 .heroAuthor {
   align-self: flex-end;
-  display: grid;
-  gap: 10px;
-  width: 290px;
   margin-top: 36px;
-  padding: 20px;
-  border-radius: 8px;
-  background: #eeede7;
-  color: #121111;
-  font-size: 15px;
-  line-height: 1.2;
-  text-decoration: none;
-}
-.heroAuthorName {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 22px;
-}
-.heroAuthorName img,
-.heroAuthorInitial {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-.heroAuthorInitial {
-  display: grid;
-  place-items: center;
-  background: #d3ded7;
 }
 .articleColumns {
   display: grid;
@@ -947,6 +923,10 @@
 .bodyLink,
 .referenceLink {
   font-style: normal;
+}
+
+.body em a {
+  font-style: inherit;
 }
 .body ul {
   list-style-type: square;
@@ -1051,9 +1031,9 @@
   .articleHero::before {
     background: linear-gradient(
       180deg,
-      rgb(255 252 244 / 97%) 0%,
-      rgb(255 252 244 / 95%) 65%,
-      rgb(255 252 244 / 35%) 100%
+      rgb(255 251 244 / 97%) 0%,
+      rgb(255 251 244 / 95%) 65%,
+      rgb(255 251 244 / 35%) 100%
     );
   }
 }

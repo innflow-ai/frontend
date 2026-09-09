@@ -17,7 +17,6 @@ export default function DsarPage() {
     <MarketingPage>
       <section className="legal-hero">
         <div className="shell">
-          <span className="section-label">Privacy request</span>
           <h1>Data subject access request</h1>
           <p>
             Use the form below to submit a privacy request. If the embedded form

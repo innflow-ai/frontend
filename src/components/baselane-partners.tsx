@@ -249,12 +249,12 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
                 requests, context, and approvals can come together in one
                 workflow.
               </p>
-              <a className={styles.textLink} href="/BL/BL-demo">
+              <a className={styles.textLink} href={siteConfig.demoUrl}>
                 Explore innflow →
               </a>
               <div className={styles.demo}>
                 <Workflow />
-                <a className={styles.demoLink} href="/BL/BL-demo">
+                <a className={styles.demoLink} href={siteConfig.demoUrl}>
                   Open the demo page <span aria-hidden="true">↗</span>
                 </a>
               </div>

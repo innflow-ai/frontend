@@ -105,6 +105,8 @@
 }
 .page .button {
   display: inline-flex;
+  font-family: var(--font-button, var(--font-sans));
+  line-height: 1.25;
   align-items: center;
   justify-content: center;
   align-self: flex-start;
@@ -167,6 +169,8 @@
   font: inherit;
   white-space: nowrap;
   cursor: pointer;
+  font-family: var(--font-button, var(--font-sans));
+  line-height: 1.25;
 }
 .comparison {
   max-width: 1280px;

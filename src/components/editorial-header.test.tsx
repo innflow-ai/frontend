@@ -2,8 +2,11 @@ import { act, cleanup, render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import type { LatestBlogPostNavItem } from "@/components/mega-menu";
+import { BaselaneHomepage } from "./baselane-homepage";
 import { EditorialHeader } from "./editorial-header";
 import styles from "./editorial-header.module.css";
+import { NavigationBlogPostsProvider } from "./navigation-blog-posts";
+import { SiteHeader } from "./site-header";
 
 const { mockPathname, motionFlags } = vi.hoisted(() => ({
   mockPathname: { current: "/" },
@@ -39,6 +42,77 @@ const latestBlogPosts: LatestBlogPostNavItem[] = [
 ];
 
 describe("EditorialHeader navigation", () => {
+  it("shows up to four linked blog previews in BL Resources", async () => {
+    const user = userEvent.setup();
+    const posts = Array.from({ length: 5 }, (_, index) => ({
+      ...latestBlogPosts[0],
+      title: `Post ${index + 1}`,
+      href: `/blog/post-${index + 1}`,
+    }));
+    render(
+      <NavigationBlogPostsProvider posts={posts}>
+        <>
+          <SiteHeader />
+          <BaselaneHomepage>
+            <p>BL content</p>
+          </BaselaneHomepage>
+        </>
+      </NavigationBlogPostsProvider>,
+    );
+    await user.click(screen.getByRole("button", { name: "Resources" }));
+    const previews = screen.getByRole("region", {
+      name: "Latest from Innflow",
+    });
+    expect(within(previews).getAllByRole("img")).toHaveLength(4);
+    expect(
+      within(previews).getByRole("link", { name: /Post 1/ }),
+    ).toHaveAttribute("href", "/blog/post-1");
+    expect(within(previews).queryByText("Post 5")).not.toBeInTheDocument();
+    expect(
+      within(previews).getByRole("link", { name: "View all posts" }),
+    ).toHaveAttribute("href", "/blog");
+  });
+
+  it("shares the homepage accordion with BL and restores scrolling on Escape", async () => {
+    const user = userEvent.setup();
+    render(
+      <>
+        <SiteHeader />
+        <BaselaneHomepage>
+          <p>BL page content</p>
+        </BaselaneHomepage>
+      </>,
+    );
+    await user.click(screen.getByRole("button", { name: "Open navigation" }));
+    const navigation = screen.getByRole("navigation", {
+      name: "Mobile navigation",
+    });
+    expect(document.body.style.overflow).toBe("hidden");
+    expect(
+      within(navigation).getByRole("link", { name: "Pricing" }),
+    ).toHaveAttribute("href", "/BL/BL-pricing");
+    expect(
+      within(navigation).getByRole("link", { name: "Log in" }),
+    ).toHaveAttribute("href", "https://app.innflow.ai/login");
+    await user.click(
+      within(navigation).getByRole("button", { name: "Product" }),
+    );
+    expect(
+      within(navigation).getByRole("region", { name: "Product mobile menu" }),
+    ).toBeInTheDocument();
+    await user.keyboard("{Escape}");
+    expect(
+      screen.getByRole("button", { name: "Open navigation" }),
+    ).toHaveFocus();
+    expect(document.body.style.overflow).toBe("");
+    await user.click(screen.getByRole("button", { name: "Open navigation" }));
+    expect(
+      within(
+        screen.getByRole("navigation", { name: "Mobile navigation" }),
+      ).getByRole("button", { name: "Product" }),
+    ).toHaveAttribute("aria-expanded", "false");
+  });
+
   afterEach(() => cleanup());
 
   beforeEach(() => {

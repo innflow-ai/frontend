@@ -13,7 +13,7 @@ import { MarketingPage } from "@/components/page-primitives";
 import { siteConfig } from "@/config/site";
 import { createPageMetadata } from "@/lib/metadata";
 import { urlForImage } from "@/lib/sanity";
-import { getSkillBySlug, getSkillSlugs, skillColorValue } from "@/lib/skills";
+import { getSkillBySlug, getSkillSlugs } from "@/lib/skills";
 import styles from "./page.module.css";
 
 export const revalidate = 60;
@@ -113,7 +113,6 @@ export default async function SkillDetailPage({ params }: RouteParams) {
   const skill = await getSkillBySlug(slug);
   if (!skill) notFound();
 
-  const accent = skillColorValue(skill.color, skill.cardColor);
   const canonical = new URL(
     `/skills/${skill.slug}`,
     siteConfig.marketingOrigin,
@@ -165,16 +164,6 @@ export default async function SkillDetailPage({ params }: RouteParams) {
               { label: skill.name },
             ]}
           />
-          <div className={styles.heroMeta}>
-            <span
-              className={styles.dot}
-              style={{ backgroundColor: accent }}
-              aria-hidden="true"
-            />
-            {skill.category ? (
-              <span className={styles.chip}>{skill.category.title}</span>
-            ) : null}
-          </div>
           <h1>{skill.name}</h1>
           {skill.shortDescription ? (
             <p className={styles.lede}>{skill.shortDescription}</p>
@@ -211,7 +200,7 @@ export default async function SkillDetailPage({ params }: RouteParams) {
             systems and workflows.
           </p>
           <div className="cta-row">
-            <a className="button button-primary" href="/demo">
+            <a className="button button-primary" href={siteConfig.demoUrl}>
               Book a demo
             </a>
             <a className="button button-secondary" href="/pricing">

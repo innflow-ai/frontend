@@ -151,7 +151,7 @@ export function BaselaneInvesting() {
             <a className={styles.google} href={siteConfig.googleAuthUrl}>
               <GoogleCtaContent />
             </a>
-            <a href="/demo">
+            <a href={siteConfig.demoUrl}>
               See demo <ArrowRight size={18} />
             </a>
           </div>

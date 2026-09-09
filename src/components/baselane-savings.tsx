@@ -4,23 +4,20 @@ import { siteConfig } from "@/config/site";
 import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-savings.module.css";
 
-const source = "/BL/BL-demo";
+const source = siteConfig.demoUrl;
 const steps = [
   {
     image: "account",
-    card: "account-card",
     title: "Gather your records",
     text: "Connect the account documents and property details your team needs to review.",
   },
   {
     image: "balances",
-    card: "balances-card",
     title: "Set the review points",
     text: "Give recurring reserve reviews an owner, a checklist, and the right context.",
   },
   {
     image: "rent",
-    card: "rent-card",
     title: "Coordinate the next step",
     text: "Turn review decisions into assigned tasks and keep the supporting notes attached.",
   },
@@ -126,13 +123,6 @@ export function BaselaneSavings() {
                     sizes="(max-width: 700px) 90vw, 30vw"
                     alt=""
                   />
-                  <Image
-                    className={styles.overlay}
-                    src={`/brand/baselane-inspired/savings/${step.card}.webp`}
-                    width={840}
-                    height={566}
-                    alt="Illustrative property records"
-                  />
                 </div>
                 <h3>{step.title}</h3>
                 <p>{step.text}</p>
@@ -140,7 +130,7 @@ export function BaselaneSavings() {
             ))}
           </div>
           <p className={styles.note}>
-            Illustrative records show how property context supports a review.
+            Keep supporting records connected to each step of the review.
           </p>
         </section>
         <section className={styles.section} id="balance-tiers">
@@ -272,7 +262,7 @@ export function BaselaneSavings() {
             Keep property decisions connected to the people carrying them out.
           </p>
           <div className={styles.actions}>
-            <a className={styles.outline} href="/BL/BL-demo">
+            <a className={styles.outline} href={siteConfig.demoUrl}>
               See innflow →
             </a>
             <a className={styles.button} href={siteConfig.googleAuthUrl}>

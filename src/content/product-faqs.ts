@@ -28,12 +28,12 @@ const sharedFaqs: ProductFaq[] = [
   {
     question: "How is innflow deployed?",
     answer:
-      "Teams start in the innflow workspace, connect the systems involved in one operation, and expand from there. Private or custom deployment is scoped with the innflow team — this site does not promise a specific timeline or hosting model.",
+      "Teams start in the innflow workspace, connect the systems involved in one operation, and expand from there. Talk with our team about the setup, timing, and hosting requirements for a private or custom deployment.",
   },
   {
     question: "How does innflow handle security?",
     answer:
-      "Access follows workspace permissions, connected-account scopes, and the approval points you place in a workflow. Public certification, VPC, and compliance claims are confirmed per implementation rather than advertised as blanket coverage.",
+      "Access follows workspace permissions, connected-account scopes, and the approval points you place in a workflow. Our team can help you review the security documentation and hosting requirements for your proposed setup.",
   },
 ];
 
@@ -47,12 +47,12 @@ const productFaqMap: Record<ProductFaqSlug, ProductFaq[]> = {
     {
       question: "What can AI agents do here?",
       answer:
-        "Agents use connected tools, knowledge, and workflow logic to move a defined task forward. They are not an open-ended chatbot and they are not promised unlimited autonomy.",
+        "Agents use connected tools, knowledge, and workflow logic to move a defined task forward. Your team defines the task, the tools it can use, and the points that need review.",
     },
     {
       question: "How do agents use memory and context?",
       answer:
-        "Agents retrieve the files, tables, knowledge, and records you attach to the workflow. Context is scoped to the task; innflow does not treat every run as unsupervised training.",
+        "Agents retrieve the files, tables, knowledge, and records you attach to the workflow. Keep the source information current and choose what each task can access.",
     },
     ...sharedFaqs,
   ],
@@ -60,7 +60,7 @@ const productFaqMap: Record<ProductFaqSlug, ProductFaq[]> = {
     {
       question: "What is Agent OS?",
       answer:
-        "Agent OS is the execution layer behind innflow agents: graph-based workflows, reusable skills, tools, triggers, and review points in one system. It is how work is planned, run, and inspected — not a black box.",
+        "Agent OS is the execution layer behind innflow agents: graph-based workflows, reusable skills, tools, triggers, and review points in one system. It is how work is planned, run, and inspected.",
     },
     {
       question: "How does graph-based execution work?",
@@ -70,7 +70,7 @@ const productFaqMap: Record<ProductFaqSlug, ProductFaq[]> = {
     {
       question: "What memory does an agent keep?",
       answer:
-        "Agents can use short-lived task context plus the knowledge, files, and records you connect. Persistent memory is the operational data you choose to store — not an unverified claim that accuracy improves automatically.",
+        "Agents can use short-lived task context plus the knowledge, files, and records you connect. You choose the operational information to retain and review how it is used.",
     },
     {
       question: "Can we choose the model?",
@@ -89,12 +89,12 @@ const productFaqMap: Record<ProductFaqSlug, ProductFaq[]> = {
     {
       question: "What is an innflow AI agent?",
       answer:
-        "An innflow agent is a governed worker: it uses tools, follows a workflow, and can pause for a person. It is more than a chatbot, and it is not a promise that any problem is solved in seconds.",
+        "An innflow agent is a governed worker: it uses tools, follows a workflow, and can pause for a person. Give it a focused task, the supporting context, and clear review points.",
     },
     {
       question: "Do agents learn on their own?",
       answer:
-        "No autonomous-learning claim is made. Agents improve when you add better context, skills, and review — not because they quietly rewrite themselves after every run.",
+        "Review results, add feedback, and update the context or skills. Test those changes so your team can decide whether the next run is better.",
     },
     {
       question: "Can agents act without a person in the loop?",
@@ -104,7 +104,7 @@ const productFaqMap: Record<ProductFaqSlug, ProductFaq[]> = {
     {
       question: "How do agents use tools and memory?",
       answer:
-        "An agent runs with the integrations, skills, files, and knowledge you attach. Memory is that connected context, retrieved for the current task, not an unbounded personal history.",
+        "An agent runs with the integrations, skills, files, and knowledge you attach. Memory is that connected context, retrieved for the current task, with access defined by your workspace.",
     },
     ...sharedFaqs.filter((item) =>
       [
@@ -122,7 +122,7 @@ const productFaqMap: Record<ProductFaqSlug, ProductFaq[]> = {
     {
       question: "Are retries and recovery automatic?",
       answer:
-        "Recovery has to be designed for each workflow. innflow does not promise a universal retry policy or flawless execution.",
+        "Plan how your team will handle exceptions, retries, and unfinished work. Include an owner and a review path when setting up the workflow.",
     },
     {
       question: "What should we automate first?",

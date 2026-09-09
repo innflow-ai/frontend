@@ -1,6 +1,6 @@
 .page {
   color: #0b2633;
-  background: #fffcf4;
+  background: #fffbf4;
 }
 .dark {
   background: #102430;
@@ -49,6 +49,8 @@
   font-size: 16px;
   border: 1px solid #242522;
   cursor: pointer;
+  font-family: var(--font-button, var(--font-sans));
+  line-height: 1.25;
 }
 .page .button {
   background: linear-gradient(#494b47, #242522);
@@ -193,7 +195,7 @@
 .priceGrid article {
   padding: 40px;
   border-radius: 20px;
-  background: #fffcf4;
+  background: #fffbf4;
 }
 .priceGrid article > span {
   font-size: 14px;
@@ -249,7 +251,7 @@
   border-radius: 24px;
   padding: 40px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 60px;
   align-items: center;
   text-align: left;

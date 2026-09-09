@@ -47,3 +47,10 @@
     grid-template-columns: 1fr;
   }
 }
+
+.card {
+  border-radius: 24px;
+  background: #fff;
+  border: 1px solid #d1e3ee;
+  box-shadow: none;
+}

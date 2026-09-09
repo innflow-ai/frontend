@@ -177,7 +177,7 @@ export function BaselaneUpdates() {
         <div>
           <h2>More room for what comes next.</h2>
           <p>Bring your property operations into one flow.</p>
-          <a className={styles.primary} href="/demo">
+          <a className={styles.primary} href={siteConfig.demoUrl}>
             See demo
             <ArrowRight size={18} />
           </a>

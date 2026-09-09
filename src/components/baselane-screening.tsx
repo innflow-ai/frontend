@@ -7,7 +7,7 @@ import { siteConfig } from "@/config/site";
 import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-screening.module.css";
 
-const source = "/BL/BL-demo";
+const source = siteConfig.demoUrl;
 const topics = [
   "Rental application",
   "Identity verification",
@@ -305,10 +305,9 @@ export function BaselaneScreening() {
             ))}
           </div>
           <div className={styles.productBand}>
-            <Photo name="banking" alt="Illustrative property records" />
             <div>
               <h3>Bring context into the wider workflow.</h3>
-              <a className={styles.button} href="/BL/BL-demo">
+              <a className={styles.button} href={siteConfig.demoUrl}>
                 Explore innflow →
               </a>
             </div>

@@ -306,11 +306,6 @@ export default async function HomePage() {
           <div className={styles.heroInner}>
             <HeroIntro>
               <HeroItem>
-                <Tag variant="outline" className={styles.heroTag}>
-                  AI property operations platform
-                </Tag>
-              </HeroItem>
-              <HeroItem>
                 <h1>Property operations, reimagined.</h1>
               </HeroItem>
               <HeroItem>

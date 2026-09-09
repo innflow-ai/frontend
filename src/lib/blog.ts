@@ -26,6 +26,7 @@ export type BlogCtaBlock = {
 };
 
 type PortableChild = {
+  _key?: string;
   _type?: string;
   text?: string;
   marks?: string[];
@@ -61,6 +62,47 @@ export function isNormalParagraph(block: LoosePortableBlock | undefined) {
     block?._type === "block" &&
     (block.style === "normal" || !block.style) &&
     !block.listItem
+  );
+}
+
+/** Emphasize the opening sentence without changing the stored article or marks. */
+export function italicizeOpeningSentence(
+  blocks: LoosePortableBlock[],
+): LoosePortableBlock[] {
+  const index = blocks.findIndex(
+    (block) => isNormalParagraph(block) && blockPlainText(block).trim(),
+  );
+  if (index === -1) return blocks;
+  const paragraph = blocks[index];
+  const text = blockPlainText(paragraph);
+  const sentence = new Intl.Segmenter("en", { granularity: "sentence" })
+    .segment(text)
+    [Symbol.iterator]()
+    .next().value?.segment;
+  let remaining = (sentence ?? text).trimEnd().length;
+  const children = paragraph.children?.flatMap((child, childIndex) => {
+    const value = child.text ?? "";
+    if (!remaining || !value) return [child];
+    const split = Math.min(remaining, value.length);
+    remaining -= split;
+    const emphasized = {
+      ...child,
+      text: value.slice(0, split),
+      marks: [...new Set([...(child.marks ?? []), "em"])],
+    };
+    return split === value.length
+      ? [emphasized]
+      : [
+          emphasized,
+          {
+            ...child,
+            _key: `${child._key ?? childIndex}-after-intro`,
+            text: value.slice(split),
+          },
+        ];
+  });
+  return blocks.map((block, blockIndex) =>
+    blockIndex === index ? { ...block, children } : block,
   );
 }
 

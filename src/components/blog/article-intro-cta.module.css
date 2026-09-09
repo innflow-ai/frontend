@@ -1,0 +1,73 @@
+.banner {
+  padding: 36px 24px 40px;
+  margin-bottom: 40px;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #a6cde8 url("/brand/blog/apartment-sky-cta.png") center / cover;
+  text-align: center;
+  color: #0b2033;
+}
+
+.banner h2 {
+  margin: 0;
+  color: inherit;
+  font-size: clamp(28px, 3vw, 40px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.banner p {
+  margin: 20px auto;
+  max-width: 480px;
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.demo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 12px 20px;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  color: inherit;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.demo:hover {
+  background: rgb(255 255 255 / 25%);
+}
+
+.actions a:focus-visible {
+  outline: 2px solid #0b2033;
+  outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+  .banner {
+    padding: 28px 18px 36px;
+    background-image:
+      linear-gradient(#a6cde866, #a6cde866),
+      url("/brand/blog/apartment-sky-cta.png");
+  }
+
+  .banner p {
+    font-size: 16px;
+  }
+
+  .actions {
+    gap: 12px;
+  }
+}

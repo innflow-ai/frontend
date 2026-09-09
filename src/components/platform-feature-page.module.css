@@ -338,3 +338,35 @@
     transform: none;
   }
 }
+
+/* BL surfaces and typography shared with the product family. */
+.hero h1 {
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+.heroArt {
+  background: #d9edfb;
+  border-radius: 28px;
+}
+.card {
+  border-radius: 24px;
+  background: #e7f1f7;
+  border: 1px solid #d1e3ee;
+  box-shadow: none;
+}
+.detail {
+  padding: 36px;
+  border-radius: 28px;
+  background: #e7f1f7;
+}
+.detail img {
+  border-radius: 20px;
+}
+.sectionNav {
+  top: 120px;
+}
+@media (max-width: 760px) {
+  .detail {
+    padding: 24px;
+  }
+}

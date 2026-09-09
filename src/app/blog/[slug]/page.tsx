@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import styles from "@/components/blog/article.module.css";
+import { BlogArticleIntroCta } from "@/components/blog/article-intro-cta";
 import { BlogAuthorBio } from "@/components/blog/author-bio";
+import { BlogAuthorCard } from "@/components/blog/author-card";
 import { BlogContinueLearning } from "@/components/blog/continue-learning";
 import { BlogListenPlayer } from "@/components/blog/listen-player";
 import { BlogPortableBody } from "@/components/blog/portable-body";
@@ -27,7 +29,6 @@ import {
   getBlogSlugs,
   getRelatedBlogPosts,
   humanizeCategory,
-  urlForImage,
 } from "@/lib/sanity";
 
 export const revalidate = 60;
@@ -100,7 +101,6 @@ export default async function BlogPostPage({ params }: RouteParams) {
     : null;
   const date = formatPostDateShort(post.publishedAt);
   const authorName = post.author?.name ?? "Ari Khan";
-  const authorRole = post.author?.role;
   const canonical = new URL(
     `/blog/${post.slug}`,
     siteConfig.marketingOrigin,
@@ -129,9 +129,6 @@ export default async function BlogPostPage({ params }: RouteParams) {
       id: `section-${block._key}`,
       title: blockPlainText(block),
     }));
-  const authorPhoto = post.author?.image
-    ? urlForImage(post.author.image).width(80).height(80).url()
-    : null;
   const author = post.author ?? {
     name: authorName,
     slug: null,
@@ -168,19 +165,7 @@ export default async function BlogPostPage({ params }: RouteParams) {
               </p>
               <h1 className={styles.title}>{post.title}</h1>
             </div>
-            <a className={styles.heroAuthor} href="#author-bio">
-              <span className={styles.heroAuthorName}>
-                {authorPhoto ? (
-                  <Image src={authorPhoto} alt="" width={36} height={36} />
-                ) : (
-                  <span className={styles.heroAuthorInitial}>
-                    {authorName.slice(0, 1)}
-                  </span>
-                )}
-                {authorName}
-              </span>
-              <span>{authorRole || humanizeCategory(post.category)}</span>
-            </a>
+            <BlogAuthorCard author={author} className={styles.heroAuthor} />
           </header>
           <div className={styles.articleColumns}>
             <aside className={styles.articleAside} aria-label="Article tools">
@@ -205,6 +190,7 @@ export default async function BlogPostPage({ params }: RouteParams) {
               ) : null}
             </aside>
             <div className={styles.articleMain}>
+              <BlogArticleIntroCta />
               {post.body ? (
                 <div className={styles.body}>
                   <BlogPortableBody

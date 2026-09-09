@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { MarketingPage, PageHero } from "@/components/page-primitives";
 import { PlatformDirectory } from "@/components/platform-directory";
+import { RuneyWorkspace } from "@/components/runey-workspace";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -15,18 +15,13 @@ export default function PlatformPage() {
     <MarketingPage>
       <PageHero
         eyebrow="Platform"
-        title="The foundation for connected property operations."
-        description="Explore the building blocks behind agent workflows, from automation and learning to integrations and governance."
+        title="Your operation, connected."
+        description="Bring your team, tools, and knowledge into one flow. Give everyday property work a clear path, with room for people to review what matters."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Platform" }]}
-      />
+      >
+        <RuneyWorkspace />
+      </PageHero>
       <PlatformDirectory />
-      <section className="section">
-        <div className="shell">
-          <Link className="button button-secondary" href="/products/platform">
-            View the platform overview <span aria-hidden="true">↗</span>
-          </Link>
-        </div>
-      </section>
     </MarketingPage>
   );
 }

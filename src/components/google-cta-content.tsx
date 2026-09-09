@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./google-cta.module.css";
 
-export function GoogleCtaContent() {
+export function GoogleCtaContent({ mobileLabel }: { mobileLabel?: string }) {
   return (
     <span className={styles.content}>
       <Image
@@ -12,7 +12,14 @@ export function GoogleCtaContent() {
         height={18}
         style={{ flexShrink: 0 }}
       />
-      Continue with Google
+      {mobileLabel ? (
+        <>
+          <span className={styles.desktopLabel}>Continue with Google</span>
+          <span className={styles.mobileLabel}>{mobileLabel}</span>
+        </>
+      ) : (
+        "Continue with Google"
+      )}
     </span>
   );
 }

@@ -43,7 +43,7 @@ function Actions() {
       <a href={siteConfig.googleAuthUrl} className={styles.google}>
         <GoogleCtaContent />
       </a>
-      <a href="/demo" className={styles.demo}>
+      <a href={siteConfig.demoUrl} className={styles.demo}>
         See demo <ArrowRight size={18} />
       </a>
     </div>
@@ -64,7 +64,6 @@ export function BaselaneProductPage({
       <section className={styles.hero}>
         <Scene root={root} name="hero" priority />
         <div className={styles.heroCopy}>
-          <span className={styles.eyebrow}>CONNECTED PROPERTY OPERATIONS</span>
           <h1>{data.title}</h1>
           <p>{data.description}</p>
           <Actions />

@@ -1,6 +1,6 @@
 .page {
   color: #0b2633;
-  background: #fffcf4;
+  background: #fffbf4;
 }
 .hero {
   max-width: 1456px;
@@ -28,13 +28,14 @@
 .page .button,
 .page .outline {
   display: inline-flex;
+  font-family: var(--font-button, var(--font-sans));
+  line-height: 1.25;
   align-items: center;
   justify-content: center;
   padding: 16px 26px;
   border-radius: 99px;
   font-size: 16px;
   text-align: center;
-  line-height: 1.2;
   min-height: 48px;
 }
 .page .button {
@@ -160,7 +161,7 @@
 }
 .featureGrid article {
   text-align: left;
-  background: rgb(255 252 244 / 94%);
+  background: rgb(255 251 244 / 94%);
   backdrop-filter: blur(10px);
   padding: 36px;
   border-radius: 24px;

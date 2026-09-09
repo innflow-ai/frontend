@@ -2,12 +2,13 @@ import { readdir, writeFile, access, mkdir } from "node:fs/promises";
 import { JSDOM } from "jsdom";
 
 const origin = process.env.BL_AUDIT_ORIGIN || "http://localhost:3000";
-const routes = (await readdir("src/app/BL")).filter((name) => name.startsWith("BL-"));
+const routes = (await readdir("src/app", { withFileTypes: true })).filter((entry) => entry.isDirectory()).map((entry) => entry.name);
 await mkdir("output/playwright/bl-copy", { recursive: true });
 const report = [];
 const texts = [];
 for (const name of routes) {
-  const route = `/BL/${name}`;
+  try { await access(`src/app/${name}/page.tsx`); } catch { continue; }
+  const route = `/${name}`;
   const response = await fetch(`${origin}${route}`, { signal: AbortSignal.timeout(30000) });
   const dom = new JSDOM(await response.text());
   const document = dom.window.document;
@@ -31,8 +32,6 @@ for (const name of routes) {
     if (/baselane|baseline/i.test(img.alt)) problems.push("Competitor name in image description");
   }
   if (brokenImages.length) problems.push(`Missing images: ${brokenImages.join(", ")}`);
-  const robots = document.querySelector('meta[name="robots"]')?.content;
-  if (!robots?.includes("noindex")) problems.push("Missing preview noindex");
   report.push({ route, status: response.status, title: document.title, heading: document.querySelector("h1")?.textContent.trim(), problems });
   texts.push(`${route}\n${main?.textContent.replace(/\s+/g, " ").trim()}\n`);
   dom.window.close();

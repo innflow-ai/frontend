@@ -149,7 +149,7 @@ export function BaselaneLibrary({ kind }: { kind: "articles" | "webinars" }) {
                   and human review in one workspace.
                 </p>
               )}
-              <a href={isWebinar ? siteConfig.demoUrl : "/BL/BL-home"}>
+              <a href={isWebinar ? siteConfig.demoUrl : "/"}>
                 {isWebinar ? "Book a demo" : "Explore innflow"}{" "}
                 <ArrowRight size={16} />
               </a>

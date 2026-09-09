@@ -47,7 +47,7 @@ function FormGroup({ group }: { group: (typeof formGroups)[number] }) {
         ))}
       </section>
       <div className={styles.controls}>
-        <a href="/BL/BL-lease-agreement" target="_blank" rel="noreferrer">
+        <a href="/lease-agreement" target="_blank" rel="noreferrer">
           Explore document workflows →
         </a>
         <div>
@@ -124,7 +124,7 @@ export function BaselaneForms() {
             <p>
               Keep supporting information close to the work your team is doing.
             </p>
-            <a className={shared.button} href="/BL/BL-lease-agreement">
+            <a className={shared.button} href="/lease-agreement">
               Explore lease workflows
             </a>
           </div>

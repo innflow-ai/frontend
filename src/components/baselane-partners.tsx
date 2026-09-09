@@ -150,7 +150,7 @@ function Workflow() {
 }
 export function BaselanePartners({ referral = false }: { referral?: boolean }) {
   const [shareStatus, setShareStatus] = useState("");
-  const shareUrl = `${siteConfig.marketingOrigin.replace(/\/$/, "")}/BL/BL-home`;
+  const shareUrl = `${siteConfig.marketingOrigin.replace(/\/$/, "")}/`;
   const inquiry = `mailto:${siteConfig.supportEmail}?subject=${encodeURIComponent("Partner with innflow")}`;
   async function copyLink() {
     try {
@@ -338,7 +338,7 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
               </a>
             )}
             {referral && (
-              <a className={styles.textLink} href="/BL/BL-partner-with-us">
+              <a className={styles.textLink} href="/partner-with-us">
                 Explore partnerships →
               </a>
             )}

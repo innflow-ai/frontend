@@ -55,7 +55,7 @@ export function SiteCta() {
             </fieldset>
             <small id="membership-signup-status">
               Email signup is coming soon.{" "}
-              <a href="/BL/BL-privacy-policy">Privacy policy</a>
+              <a href="/legal/privacy-policy">Privacy policy</a>
             </small>
           </form>
         </section>

@@ -276,7 +276,7 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
                 </a>
               ))}
             </div>
-            <a className={styles.button} href="/BL/BL-careers">
+            <a className={styles.button} href="/careers">
               Explore working with us ↗
             </a>
           </section>
@@ -284,10 +284,10 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
         <section className={styles.linkBand}>
           <h2>Get to know innflow.</h2>
           <div>
-            <a href="/BL/BL-about">Our approach</a>
-            <a href="/BL/BL-resources">Resources</a>
-            <a href="/BL/BL-help-center">Help center</a>
-            <a href="/BL/BL-legal-agreements">Policies</a>
+            <a href="/about">Our approach</a>
+            <a href="/resources">Resources</a>
+            <a href="/help-center">Help center</a>
+            <a href="/legal-agreements">Policies</a>
           </div>
         </section>
         {careers ? (

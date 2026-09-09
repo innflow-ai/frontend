@@ -197,25 +197,25 @@ export const portfolioColumns: MegaMenuColumn[] = [
     heading: "Portfolios",
     links: withApprovedMenuIcons([
       {
-        href: "/#portfolios",
+        href: "/multi-property-investors",
         icon: House,
         title: "Residential",
         body: "Apartments, condos & mixed-use.",
       },
       {
-        href: "/#portfolios",
+        href: "/multi-property-investors",
         icon: Buildings,
         title: "Multifamily",
         body: "Large and mid-sized communities.",
       },
       {
-        href: "/#portfolios",
+        href: "/multi-property-investors",
         icon: Storefront,
         title: "Commercial",
         body: "Office, retail & industrial.",
       },
       {
-        href: "/#portfolios",
+        href: "/multi-property-investors",
         icon: UsersThree,
         title: "Community Associations",
         body: "HOAs, condos & townhomes.",
@@ -248,7 +248,7 @@ export const productColumns: MegaMenuColumn[] = [
     heading: "Connections and governance",
     links: withApprovedMenuIcons([
       {
-        href: "/BL/BL-connections",
+        href: "/connections",
         icon: PlugsConnected,
         iconSrc: "/brand/navigation/mega-menu-items/integrations.svg",
         title: "Connections",
@@ -356,7 +356,7 @@ export const solutionsColumns: MegaMenuColumn[] = [
         body: "Reduce late payments and boost cash flow.",
       },
       {
-        href: "/BL/BL-multi-property-investors",
+        href: "/multi-property-investors",
         icon: Wrench,
         title: "Maintenance & Mobile App",
         body: "Automate repairs and manage mobile work orders from request to resolution.",

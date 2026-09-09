@@ -53,12 +53,6 @@ export function RuneyChrome({
     window.addEventListener("scroll", syncScroll, { passive: true });
     return () => window.removeEventListener("scroll", syncScroll);
   }, [pathname]);
-  if (
-    pathname === "/homepage-baselane" ||
-    pathname === "/BL" ||
-    pathname.startsWith("/BL/")
-  )
-    return null;
   if (pathname !== "/" && pathname !== "/property-management") return children;
   if (slot === "footer")
     return (

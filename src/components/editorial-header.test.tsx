@@ -90,7 +90,7 @@ describe("EditorialHeader navigation", () => {
     expect(document.body.style.overflow).toBe("hidden");
     expect(
       within(navigation).getByRole("link", { name: "Pricing" }),
-    ).toHaveAttribute("href", "/BL/BL-pricing");
+    ).toHaveAttribute("href", "/pricing");
     expect(
       within(navigation).getByRole("link", { name: "Log in" }),
     ).toHaveAttribute("href", "https://app.innflow.ai/login");

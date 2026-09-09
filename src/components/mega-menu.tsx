@@ -86,6 +86,18 @@ const platformLinks: MegaMenuLink[] = [
   },
   {
     href: "/products/agent-os",
+    icon: Robot,
+    title: "Copilot",
+    body: "Build workflows from a single prompt.",
+  },
+  {
+    href: "/products/agentic-workflows",
+    icon: FlowArrow,
+    title: "Agentic Workflows",
+    body: "Recurring work made visible, governed, and repeatable.",
+  },
+  {
+    href: "/products/agent-os",
     icon: Sparkle,
     title: "Agent OS",
     body: "Govern, coordinate, and scale operational intelligence.",
@@ -105,18 +117,6 @@ const platformLinks: MegaMenuLink[] = [
 ];
 
 const buildWithAgentsLinks: MegaMenuLink[] = [
-  {
-    href: "/products/agent-os",
-    icon: Robot,
-    title: "Copilot",
-    body: "Build workflows from a single prompt.",
-  },
-  {
-    href: "/products/agentic-workflows",
-    icon: FlowArrow,
-    title: "Agentic Workflows",
-    body: "Recurring work made visible, governed, and repeatable.",
-  },
   {
     href: "/skills",
     icon: PuzzlePiece,
@@ -166,7 +166,7 @@ const resourcesLinks: MegaMenuLink[] = [
     body: "Ideas for sharper, calmer operations.",
   },
   {
-    href: "/demo",
+    href: siteConfig.demoUrl,
     icon: Handshake,
     title: "Become an Affiliate",
     body: "Partner with Innflow and help more property teams modernize operations.",
@@ -246,14 +246,21 @@ export const productColumns: MegaMenuColumn[] = [
   },
   {
     heading: "Connections and governance",
-    links: withApprovedMenuIcons(
-      platformPages.slice(4).map((page) => ({
+    links: withApprovedMenuIcons([
+      {
+        href: "/BL/BL-connections",
+        icon: PlugsConnected,
+        iconSrc: "/brand/navigation/mega-menu-items/integrations.svg",
+        title: "Connections",
+        body: "Browse every BL page in one place.",
+      },
+      ...platformPages.slice(4).map((page) => ({
         href: `/platform/${page.slug}`,
         icon: PlugsConnected,
         title: page.title,
         body: page.description,
       })),
-    ),
+    ]),
   },
 ];
 

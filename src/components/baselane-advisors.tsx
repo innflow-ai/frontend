@@ -32,9 +32,6 @@ export function BaselaneAdvisors() {
       <div className={styles.page}>
         <section className={styles.hero}>
           <div>
-            <p className={styles.eyebrow}>
-              For accountants, bookkeepers & property advisors
-            </p>
             <h1>Bring clarity to every client conversation.</h1>
             <p>
               Coordinate client records, document requests, and review steps in

@@ -8,7 +8,7 @@ import { summarizeRents } from "@/lib/rent-comparison";
 import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-rent-calculator.module.css";
 
-const source = "/BL/BL-demo";
+const source = siteConfig.demoUrl;
 const money = (n: number) =>
   new Intl.NumberFormat("en-US", {
     style: "currency",

@@ -871,51 +871,117 @@
   }
 }
 
-:global(html[data-theme="dark"]) .page {
-  --sky-ink: #edf5ff;
-  --sky-muted: #b7c6d8;
-  --brand-hover: #78c4ff;
+/* Shared BL product language; keep each product's media and section structure. */
+.page .hero {
+  background: linear-gradient(150deg, #d8ecfa, #eef6fb 65%, #fffbf4);
+  padding-top: 160px;
 }
-
-:global(html[data-theme="dark"]) .page .hero {
-  background:
-    radial-gradient(ellipse at 25% 0%, #163653, transparent 75%), #0c1826;
+.page .hero h1 {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: clamp(40px, 5.4vw, 76px);
+  letter-spacing: -0.035em;
+  line-height: 1.04;
 }
-
-:global(html[data-theme="dark"]) .page .capabilities,
-:global(html[data-theme="dark"]) .page .detailsSection,
-:global(html[data-theme="dark"]) .page .faq {
-  background: var(--canvas);
+.page .heroCopy > p {
+  color: #425b68;
+  font-size: 19px;
+  line-height: 1.65;
 }
-
-:global(html[data-theme="dark"]) .page .detailLight,
-:global(html[data-theme="dark"]) .agentOs .detail,
-:global(html[data-theme="dark"]) .agentCapability,
-:global(html[data-theme="dark"]) .mobileToc details {
-  background: var(--surface);
+.page .cta {
+  border-radius: 999px;
+  font-weight: 400;
+  padding: 14px 24px;
+  min-height: 48px;
 }
-
-:global(html[data-theme="dark"]) .agentCapabilityLink {
-  color: #78c4ff;
+.page .ctaPrimary {
+  background: #0b2633;
+  color: white;
 }
-
-:global(html[data-theme="dark"]) .page .ctaPrimary {
-  color: #0c1826;
-  background: #edf5ff;
-}
-
-:global(html[data-theme="dark"]) .page .ctaSecondary {
-  color: #edf5ff;
-  background: #192b3f;
-  border-color: #40546b;
-}
-
-:global(html[data-theme="dark"]) .page .heroMedia,
-:global(html[data-theme="dark"]) .page .detailMedia,
-:global(html[data-theme="dark"]) .agentCapabilityMedia {
-  background: #15283c;
-}
-
-:global(html[data-theme="dark"]) .agentOs .heroMedia {
+.page .ctaSecondary {
   background: transparent;
+  color: #0b2633;
+  border: 1px solid #7993a0;
+}
+.page .heroMedia {
+  border-radius: 28px;
+}
+.page .intro {
+  background: #fffbf4;
+}
+.page .detail {
+  border-radius: 28px;
+  overflow: clip;
+}
+.page .detailLight {
+  background: #e7f1f7;
+  color: #0b2633;
+}
+.page .detailDark {
+  background: #0b2633;
+  color: #fff;
+}
+.page .detailDark :is(h2, p, li, span) {
+  color: inherit;
+}
+.page .detailMedia {
+  border-radius: 22px;
+}
+.page .eyebrow,
+.page .detailEyebrow {
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+.page .faq {
+  background: #fffbf4;
+}
+@media (max-width: 760px) {
+  .page .hero {
+    padding-top: 128px;
+  }
+}
+
+.page .heroMedia {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 900px;
+  aspect-ratio: auto;
+  background: transparent;
+  overflow: visible;
+}
+.page .agentCapabilityMedia {
+  aspect-ratio: auto;
+  min-height: 0;
+  background: transparent;
+}
+.page .detailMedia {
+  aspect-ratio: auto;
+  background: transparent;
+  display: flex;
+  align-items: center;
+}
+.page .detailMedia :is(span, small) {
+  color: #0b2633;
+}
+.storyCard {
+  background: #fff;
+  border: 1px solid #c6dce8;
+  border-radius: 24px;
+  overflow: hidden;
+}
+.storyCard > div:last-child {
+  padding: 24px;
+}
+.storyCard h3 {
+  font-size: 24px;
+}
+.storyCard p {
+  margin-top: 14px;
+  color: #425b68;
+  font-size: 16px;
+}
+
+.page .heroMedia {
+  text-align: left;
 }

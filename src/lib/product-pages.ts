@@ -331,7 +331,7 @@ const fallbackProducts = new Map(
 );
 
 export function getFallbackProductPage(slug: string) {
-  if (slug === "agent-studio") return agentStudioPage;
+  if (slug === "agent-studio") return applyVerifiedProductCopy(agentStudioPage);
   const page = fallbackProducts.get(slug as ProductSlug) ?? null;
   return page ? applyVerifiedProductCopy(page) : null;
 }

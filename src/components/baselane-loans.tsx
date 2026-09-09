@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { siteConfig } from "@/config/site";
 import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-loans.module.css";
 
-const source = "/BL/BL-demo";
+const source = siteConfig.demoUrl;
 const types = [
   {
     name: "Conventional loan",
@@ -195,7 +196,7 @@ export function BaselaneLoans() {
               before starting a conversation. A clear project record gives
               everyone a shared starting point.
             </p>
-            <a className={styles.outline} href="/BL/BL-demo">
+            <a className={styles.outline} href={siteConfig.demoUrl}>
               Explore innflow →
             </a>
           </div>

@@ -128,7 +128,6 @@ export default async function BlogIndexPage({
           <Breadcrumbs
             items={[{ label: "Home", href: "/" }, { label: "Blog" }]}
           />
-          <span className="section-label">Innflow blog</span>
           <h1>Field notes on connected property operations.</h1>
           <p className={styles.heroSubline}>
             Guides, comparisons, and product notes on automation, AI agents,

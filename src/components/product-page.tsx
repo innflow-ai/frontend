@@ -1,11 +1,11 @@
-import Image from "next/image";
-import { FeatureCard, FeatureCardGrid } from "@/components/feature-card";
+import { FeatureCardGrid } from "@/components/feature-card";
 import { GoogleCtaContent } from "@/components/google-cta-content";
 import { JsonLd } from "@/components/json-ld";
 import { FaqList } from "@/components/page-primitives";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
 import { getProductFaqs } from "@/content/product-faqs";
+import { productStoryCopy } from "@/content/product-story-copy";
 import type {
   ProductCapabilitiesSection,
   ProductCta,
@@ -13,8 +13,12 @@ import type {
   ProductPage as ProductPageData,
 } from "@/lib/product-pages";
 import styles from "./product-page.module.css";
+import { RuneyWorkspace } from "./runey-workspace";
+import { WorkflowIllustration } from "./workflow-illustration";
 
 function ctaDestination(cta: ProductCta) {
+  if (/\b(?:book|request|see|schedule)\b.*\bdemo\b/i.test(cta.label))
+    return siteConfig.demoUrl;
   if (cta.destination === "signup") return siteConfig.googleAuthUrl;
   if (cta.destination === "contact") return siteConfig.contactUrl;
   return siteConfig.demoUrl;
@@ -75,11 +79,14 @@ function Capabilities({
                   </span>
                 </div>
                 <div className={styles.agentCapabilityMedia}>
-                  <Image
-                    src={card.image.url}
-                    alt={card.image.alt}
-                    fill
-                    sizes="(max-width: 720px) 100vw, (max-width: 980px) 50vw, 66vw"
+                  <WorkflowIllustration
+                    label={card.title}
+                    steps={
+                      Object.values(productStoryCopy).find(
+                        (story) => story.title === card.title,
+                      )?.points
+                    }
+                    compact
                   />
                 </div>
               </a>
@@ -88,13 +95,21 @@ function Capabilities({
         ) : (
           <FeatureCardGrid className={styles.capabilityGrid}>
             {section.cards.map((card) => (
-              <FeatureCard
-                key={card._key}
-                image={card.image.url}
-                imageAlt={card.image.alt}
-                title={card.title}
-                body={card.body}
-              />
+              <article key={card._key} className={styles.storyCard}>
+                <WorkflowIllustration
+                  label={card.title}
+                  steps={
+                    Object.values(productStoryCopy).find(
+                      (story) => story.title === card.title,
+                    )?.points
+                  }
+                  compact
+                />
+                <div>
+                  <h3>{card.title}</h3>
+                  <p>{card.body}</p>
+                </div>
+              </article>
             ))}
           </FeatureCardGrid>
         )}
@@ -129,19 +144,17 @@ function ProductDetail({ section }: { section: ProductDetailSection }) {
           ) : null}
         </div>
         <div className={styles.detailMedia}>
-          <Image
-            src={section.image.url}
-            alt={section.image.alt}
-            fill
-            sizes="(max-width: 900px) calc(100vw - 48px), 50vw"
-            placeholder={section.image.lqip ? "blur" : "empty"}
-            blurDataURL={section.image.lqip}
+          <WorkflowIllustration
+            label={section.tocLabel}
+            steps={section.points}
           />
         </div>
       </div>
     </article>
   );
 }
+
+import experience from "./product-experience.module.css";
 
 export function ProductPage({ product }: { product: ProductPageData }) {
   const isAgentOs =
@@ -164,14 +177,11 @@ export function ProductPage({ product }: { product: ProductPageData }) {
   return (
     <main
       id="main-content"
-      className={`${styles.page}${isAgentOs ? ` ${styles.agentOs}` : ""}${product.slug === "agent-studio" ? ` ${styles.agentStudio}` : ""}`}
+      className={`${experience.page} ${styles.page}${isAgentOs ? ` ${styles.agentOs}` : ""}${product.slug === "agent-studio" ? ` ${styles.agentStudio}` : ""}`}
     >
       <section className={styles.hero}>
         <div className={`${styles.shell} ${styles.heroInner}`}>
           <div className={styles.heroCopy}>
-            <span className={styles.eyebrow}>
-              {isAgentOs ? product.title : product.category}
-            </span>
             <h1>{product.hero.title}</h1>
             <p>{product.hero.body}</p>
             <div className={styles.ctaRow}>
@@ -182,18 +192,14 @@ export function ProductPage({ product }: { product: ProductPageData }) {
             </div>
           </div>
           <div className={styles.heroMedia}>
-            <Image
-              src={product.hero.image.url}
-              alt={product.hero.image.alt}
-              fill
-              preload
-              sizes={
-                isAgentOs
-                  ? "(max-width: 720px) 240px, 320px"
-                  : "(max-width: 900px) calc(100vw - 48px), 50vw"
+            <RuneyWorkspace
+              initialView={
+                product.slug === "databases"
+                  ? "Knowledge"
+                  : product.slug === "ai-agents"
+                    ? "Assistant"
+                    : "Workflows"
               }
-              placeholder={product.hero.image.lqip ? "blur" : "empty"}
-              blurDataURL={product.hero.image.lqip}
             />
           </div>
         </div>
@@ -283,7 +289,7 @@ export function ProductPage({ product }: { product: ProductPageData }) {
               <h2>Questions about {product.title}.</h2>
               <p>
                 Direct answers on agents, memory, human review, deployment, and
-                security — scoped to what innflow actually runs today.
+                security, and fitting innflow into your operation.
               </p>
             </div>
             <FaqList items={faqs} />
@@ -291,24 +297,6 @@ export function ProductPage({ product }: { product: ProductPageData }) {
         </section>
       ) : null}
 
-      {product.sections.map((section) => {
-        if (section._type !== "productFinalCtaSection") return null;
-        return (
-          <section className={styles.finalCta} key={section._key}>
-            <div className={styles.finalCtaInner}>
-              {section.eyebrow ? <span>{section.eyebrow}</span> : null}
-              <h2>{section.heading}</h2>
-              <p>{section.body}</p>
-              <div className={styles.ctaRow}>
-                <CtaLink cta={section.primaryCta} />
-                {section.secondaryCta ? (
-                  <CtaLink cta={section.secondaryCta} tone="secondary" />
-                ) : null}
-              </div>
-            </div>
-          </section>
-        );
-      })}
       {faqs.length ? <JsonLd value={faqSchema} /> : null}
     </main>
   );

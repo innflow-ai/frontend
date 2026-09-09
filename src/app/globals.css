@@ -1,9 +1,49 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Innflow Helvetica";
+  src: url("/brand/baselane-inspired/helvetica-now-regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Innflow Helvetica";
+  src: url("/brand/baselane-inspired/helvetica-now-medium.woff2")
+    format("woff2");
+  font-weight: 500 800;
+  font-display: swap;
+}
+
+/* Button labels use the same glyphs with cap-height-centered metrics. */
+@font-face {
+  font-family: "Innflow Button Helvetica";
+  src: url("/brand/baselane-inspired/helvetica-now-regular.woff2")
+    format("woff2");
+  font-weight: 400;
+  font-display: swap;
+  ascent-override: 85%;
+  descent-override: 15%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: "Innflow Button Helvetica";
+  src: url("/brand/baselane-inspired/helvetica-now-medium.woff2")
+    format("woff2");
+  font-weight: 500 800;
+  font-display: swap;
+  ascent-override: 85%;
+  descent-override: 15%;
+  line-gap-override: 0%;
+}
+
 :root {
-  /* Brand kit v1 (Paper) — cool sky palette replaces the warm editorial set. */
-  --canvas: #ffffff;
-  --canvas-warm: #f4f8fc;
+  --font-sans: "Innflow Helvetica", Arial, sans-serif;
+  /* Compatibility for components that still reference the previous default. */
+  --font-questrial: var(--font-sans);
+  /* Warm page backgrounds with the existing sky accent palette. */
+  --canvas: #fffbf4;
+  --canvas-warm: #fffbf4;
   --surface: #ffffff;
   --surface-soft: #eef4fa;
   --ink: #0c1b2a;
@@ -47,6 +87,10 @@ html {
   color-scheme: light;
 }
 
+html.lenis {
+  scroll-behavior: auto;
+}
+
 html[data-theme="dark"] {
   color-scheme: dark;
   --canvas: #070909;
@@ -68,7 +112,7 @@ body {
   margin: 0;
   background: var(--canvas);
   color: var(--ink);
-  font-family: var(--font-questrial), "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-sans);
   font-size: 16px;
   letter-spacing: 0.02em;
   line-height: 1.65;
@@ -78,7 +122,7 @@ body {
 }
 
 html[data-blog-article] body {
-  background: #fffcf4;
+  background: #fffbf4;
   color: #121111;
 }
 
@@ -89,8 +133,11 @@ html[data-blog-article] body {
 
 body,
 button,
+input,
+select,
+textarea,
 a {
-  font-family: var(--font-questrial), "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-sans);
 }
 
 button,
@@ -123,7 +170,7 @@ h1,
 h2,
 h3 {
   color: var(--ink-strong);
-  font-family: var(--font-questrial), "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-sans);
   font-weight: 560;
   letter-spacing: 0.005em;
   line-height: 1.04;
@@ -308,7 +355,7 @@ p {
   align-items: center;
   gap: 8px;
   color: var(--brand);
-  font-family: var(--font-questrial), sans-serif;
+  font-family: var(--font-sans);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -377,7 +424,7 @@ p {
   border-bottom: 1px solid var(--border-quiet);
   padding: 0 16px;
   color: #747773;
-  font-family: var(--font-questrial), sans-serif;
+  font-family: var(--font-sans);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.03em;
@@ -477,7 +524,7 @@ p {
 .node-kicker {
   display: block;
   color: var(--brand);
-  font-family: var(--font-questrial), sans-serif;
+  font-family: var(--font-sans);
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -648,7 +695,7 @@ p {
 .proof-inner > p {
   max-width: 18ch;
   color: #555854;
-  font-family: var(--font-questrial), sans-serif;
+  font-family: var(--font-sans);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -722,7 +769,7 @@ p {
 
 .platform-flow li > span {
   color: var(--brand);
-  font-family: var(--font-questrial), sans-serif;
+  font-family: var(--font-sans);
   font-size: 12px;
   font-weight: 700;
 }
@@ -828,7 +875,7 @@ p {
 
 .story-details dt {
   color: #555854;
-  font-family: var(--font-questrial), sans-serif;
+  font-family: var(--font-sans);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -2309,7 +2356,7 @@ p {
 
 .evidence-grid > p {
   color: var(--ink-muted);
-  font-family: var(--font-questrial), sans-serif;
+  font-family: var(--font-sans);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.09em;
@@ -2368,7 +2415,7 @@ p {
 
 .numbered-list span {
   color: var(--brand);
-  font-family: var(--font-questrial), sans-serif;
+  font-family: var(--font-sans);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -2433,7 +2480,7 @@ p {
 .portfolio-links article > span {
   grid-row: 1 / span 3;
   color: var(--brand);
-  font-family: var(--font-questrial), sans-serif;
+  font-family: var(--font-sans);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -2669,7 +2716,7 @@ p {
    Existing tokens above remain the system for pricing, integrations,
    features, legal, and demo pages. See DESIGN.md. */
 :root {
-  --sky-canvas: #ffffff;
+  --sky-canvas: #fffbf4;
   --sky-soft: #f4f8fc;
   --sky-line: #e3ecf4;
   --sky-ink: #0c1b2a;
@@ -2679,8 +2726,10 @@ p {
   --sky-blue-hover: #0095db;
   --sky-blue-bright: var(--brand-kit-blue);
   --sky-blue-soft: #e3f0fe;
-  --gradient-cta: linear-gradient(180deg, #5aaaf8 0%, #00aeff 100%);
-  --gradient-cta-hover: linear-gradient(180deg, #4b9ef7 0%, #009ef0 100%);
+  --button-primary: #012232;
+  --button-primary-hover: #013247;
+  --gradient-cta: var(--button-primary);
+  --gradient-cta-hover: var(--button-primary-hover);
   --sky-radius-pill: 999px;
   --sky-radius-card: 20px;
   --sky-radius-image: 22px;

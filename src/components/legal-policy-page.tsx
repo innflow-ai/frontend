@@ -14,7 +14,6 @@ export function LegalPolicyPage({
     <MarketingPage>
       <section className="legal-hero">
         <div className="shell">
-          <span className="section-label">Legal</span>
           <h1>{title}</h1>
           <p>
             Review Innflow’s {title.toLowerCase()} below. If the embedded

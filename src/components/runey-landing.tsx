@@ -125,7 +125,7 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
               {property && (
                 <TrackedLink
                   className={styles.textButton}
-                  destination="/demo"
+                  destination={siteConfig.demoUrl}
                   eventLabel="hero_request_demo"
                 >
                   Request demo
@@ -353,7 +353,7 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
             >
               <GoogleCtaContent />
             </TrackedLink>
-            <a href="/demo" className={styles.textButton}>
+            <a href={siteConfig.demoUrl} className={styles.textButton}>
               Request demo
             </a>
           </div>

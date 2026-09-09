@@ -109,12 +109,10 @@ export function EditorialHeader({
   desktopHeader?: ReactNode;
 }) {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [openMobileGroup, setOpenMobileGroup] = useState<string | null>(null);
   const [showSolidHeader, setShowSolidHeader] = useState(false);
   const [headerHidden, setHeaderHidden] = useState(false);
   const pathname = usePathname();
   const reduce = useReducedMotion();
-  const mobileMenuBaseId = useId();
   const mobileToggleRef = useRef<HTMLButtonElement>(null);
   const isHome = pathname === "/";
   const isBlogArticle = /^\/blog\/.+/.test(pathname);
@@ -168,7 +166,6 @@ export function EditorialHeader({
     const onKey = (event: KeyboardEvent) => {
       if (event.key === "Escape" && !document.querySelector("dialog[open]")) {
         setMobileOpen(false);
-        setOpenMobileGroup(null);
         if (mobileOpen) mobileToggleRef.current?.focus();
       }
     };
@@ -225,7 +222,6 @@ export function EditorialHeader({
     const onChange = (event: MediaQueryListEvent) => {
       if (event.matches) {
         setMobileOpen(false);
-        setOpenMobileGroup(null);
       }
     };
     mq.addEventListener("change", onChange);
@@ -234,11 +230,9 @@ export function EditorialHeader({
 
   const closeMobile = () => {
     setMobileOpen(false);
-    setOpenMobileGroup(null);
   };
 
   const toggleMobile = () => {
-    if (!mobileOpen) setOpenMobileGroup(null);
     setMobileOpen((open) => !open);
   };
 
@@ -354,155 +348,199 @@ export function EditorialHeader({
       {/* Rendered outside the header so the fixed panel can cover the viewport
           below the header without its backdrop-filter changing the containing
           block. */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            id="editorial-mobile-overlay"
-            className={styles.mobileOverlay}
-            initial={reduce ? false : { opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: reduce ? 0 : 0.18 }}
-          >
-            <motion.nav
-              aria-label="Mobile navigation"
-              className={styles.mobileLinks}
-              initial={reduce ? undefined : "hidden"}
-              animate="visible"
-              variants={{
-                hidden: {},
-                visible: {
-                  transition: { staggerChildren: 0.06, delayChildren: 0.08 },
-                },
-              }}
-            >
-              {mobileMenuGroups.map((group) => {
-                const expanded = openMobileGroup === group.label;
-                const panelId = `${mobileMenuBaseId}-${group.label.toLowerCase()}`;
-
-                return (
-                  <motion.section
-                    key={group.label}
-                    className={styles.mobileGroup}
-                    variants={reduce ? undefined : itemVariants}
-                  >
-                    <button
-                      type="button"
-                      className={styles.mobileGroupTrigger}
-                      aria-expanded={expanded}
-                      aria-controls={panelId}
-                      onClick={() =>
-                        setOpenMobileGroup(expanded ? null : group.label)
-                      }
-                    >
-                      {group.label}
-                      <CaretDown size={18} weight="bold" aria-hidden="true" />
-                    </button>
-                    <AnimatePresence initial={false}>
-                      {expanded ? (
-                        <motion.div
-                          id={panelId}
-                          className={styles.mobileGroupPanel}
-                          role="region"
-                          aria-label={`${group.label} mobile menu`}
-                          initial={reduce ? false : { height: 0, opacity: 0 }}
-                          animate={{ height: "auto", opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: reduce ? 0 : 0.2 }}
-                        >
-                          <div className={styles.mobileGroupContent}>
-                            {group.columns.map((column) => (
-                              <section
-                                key={column.heading}
-                                className={styles.mobileSection}
-                              >
-                                <h2>{column.heading}</h2>
-                                <div className={styles.mobileSectionLinks}>
-                                  {column.links.map((link) => {
-                                    const Icon = link.icon;
-                                    return (
-                                      <a
-                                        key={link.title}
-                                        href={link.href}
-                                        onClick={closeMobile}
-                                      >
-                                        <span className={styles.mobileLinkIcon}>
-                                          {link.iconSrc ? (
-                                            <Image
-                                              className={
-                                                styles.mobileCustomIcon
-                                              }
-                                              src={link.iconSrc}
-                                              alt=""
-                                              width={25}
-                                              height={25}
-                                              unoptimized
-                                            />
-                                          ) : (
-                                            <Icon size={17} weight="fill" />
-                                          )}
-                                        </span>
-                                        <span className={styles.mobileLinkCopy}>
-                                          <strong>
-                                            {link.title}
-                                            {link.badge ? (
-                                              <span
-                                                className={styles.mobileBadge}
-                                              >
-                                                {link.badge}
-                                              </span>
-                                            ) : null}
-                                          </strong>
-                                          <small>{link.body}</small>
-                                        </span>
-                                      </a>
-                                    );
-                                  })}
-                                </div>
-                              </section>
-                            ))}
-                            {group.label === "Resources" ? (
-                              <MobileLatestPosts
-                                posts={latestBlogPosts}
-                                onSelect={closeMobile}
-                              />
-                            ) : null}
-                          </div>
-                        </motion.div>
-                      ) : null}
-                    </AnimatePresence>
-                  </motion.section>
-                );
-              })}
-              <motion.a
-                href="/pricing"
-                className={styles.mobilePrimaryLink}
-                variants={reduce ? undefined : itemVariants}
-                onClick={closeMobile}
-              >
-                Pricing
-              </motion.a>
-              <motion.a
-                href="/blog"
-                className={styles.mobilePrimaryLink}
-                variants={reduce ? undefined : itemVariants}
-                onClick={closeMobile}
-              >
-                Blog
-              </motion.a>
-              <div className={styles.mobileCtaRow}>
-                <GoogleSignInButton
-                  className={`${styles.button} ${styles.mobileCta}`}
-                  eventLabel="mobile_continue_google"
-                  label="Continue with Google"
-                  variant="brand"
-                  iconSize={20}
-                />
-              </div>
-            </motion.nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <MobileNavigation
+        open={mobileOpen}
+        onClose={closeMobile}
+        latestBlogPosts={latestBlogPosts}
+      />
     </>
+  );
+}
+
+/** Shared homepage and BL mobile navigation. */
+export function MobileNavigation({
+  open,
+  onClose: closeMobile,
+  latestBlogPosts = [],
+  id = "editorial-mobile-overlay",
+  className = "",
+  pricingHref = "/pricing",
+  iconOverrides = {},
+  loginHref,
+}: {
+  open: boolean;
+  onClose: () => void;
+  latestBlogPosts?: LatestBlogPostNavItem[];
+  id?: string;
+  className?: string;
+  pricingHref?: string;
+  iconOverrides?: Readonly<Record<string, string>>;
+  loginHref?: string;
+}) {
+  const reduce = useReducedMotion();
+  const mobileMenuBaseId = useId();
+  const [openMobileGroup, setOpenMobileGroup] = useState<string | null>(null);
+  useEffect(() => {
+    if (!open) setOpenMobileGroup(null);
+  }, [open]);
+  return (
+    <AnimatePresence>
+      {open && (
+        <motion.div
+          id={id}
+          className={`${styles.mobileOverlay} ${className}`}
+          initial={reduce ? false : { opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: reduce ? 0 : 0.18 }}
+        >
+          <motion.nav
+            aria-label="Mobile navigation"
+            className={styles.mobileLinks}
+            initial={reduce ? undefined : "hidden"}
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: {
+                transition: { staggerChildren: 0.06, delayChildren: 0.08 },
+              },
+            }}
+          >
+            {mobileMenuGroups.map((group) => {
+              const expanded = openMobileGroup === group.label;
+              const panelId = `${mobileMenuBaseId}-${group.label.toLowerCase()}`;
+
+              return (
+                <motion.section
+                  key={group.label}
+                  className={styles.mobileGroup}
+                  variants={reduce ? undefined : itemVariants}
+                >
+                  <button
+                    type="button"
+                    className={styles.mobileGroupTrigger}
+                    aria-expanded={expanded}
+                    aria-controls={panelId}
+                    onClick={() =>
+                      setOpenMobileGroup(expanded ? null : group.label)
+                    }
+                  >
+                    {group.label}
+                    <CaretDown size={18} weight="bold" aria-hidden="true" />
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {expanded ? (
+                      <motion.div
+                        id={panelId}
+                        className={styles.mobileGroupPanel}
+                        role="region"
+                        aria-label={`${group.label} mobile menu`}
+                        initial={reduce ? false : { height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: reduce ? 0 : 0.2 }}
+                      >
+                        <div className={styles.mobileGroupContent}>
+                          {group.columns.map((column) => (
+                            <section
+                              key={column.heading}
+                              className={styles.mobileSection}
+                            >
+                              <h2>{column.heading}</h2>
+                              <div className={styles.mobileSectionLinks}>
+                                {column.links.map((link) => {
+                                  const Icon = link.icon;
+                                  const iconSrc =
+                                    iconOverrides[link.title] ?? link.iconSrc;
+                                  return (
+                                    <a
+                                      key={link.title}
+                                      href={link.href}
+                                      onClick={closeMobile}
+                                    >
+                                      <span className={styles.mobileLinkIcon}>
+                                        {iconSrc ? (
+                                          <Image
+                                            className={styles.mobileCustomIcon}
+                                            src={iconSrc}
+                                            alt=""
+                                            width={25}
+                                            height={25}
+                                            unoptimized
+                                          />
+                                        ) : (
+                                          <Icon size={17} weight="fill" />
+                                        )}
+                                      </span>
+                                      <span className={styles.mobileLinkCopy}>
+                                        <strong>
+                                          {link.title}
+                                          {link.badge ? (
+                                            <span
+                                              className={styles.mobileBadge}
+                                            >
+                                              {link.badge}
+                                            </span>
+                                          ) : null}
+                                        </strong>
+                                        <small>{link.body}</small>
+                                      </span>
+                                    </a>
+                                  );
+                                })}
+                              </div>
+                            </section>
+                          ))}
+                          {group.label === "Resources" ? (
+                            <MobileLatestPosts
+                              posts={latestBlogPosts}
+                              onSelect={closeMobile}
+                            />
+                          ) : null}
+                        </div>
+                      </motion.div>
+                    ) : null}
+                  </AnimatePresence>
+                </motion.section>
+              );
+            })}
+            <motion.a
+              href={pricingHref}
+              className={styles.mobilePrimaryLink}
+              variants={reduce ? undefined : itemVariants}
+              onClick={closeMobile}
+            >
+              Pricing
+            </motion.a>
+            <motion.a
+              href="/blog"
+              className={styles.mobilePrimaryLink}
+              variants={reduce ? undefined : itemVariants}
+              onClick={closeMobile}
+            >
+              Blog
+            </motion.a>
+            {loginHref ? (
+              <a
+                href={loginHref}
+                className={styles.mobilePrimaryLink}
+                onClick={closeMobile}
+              >
+                Log in
+              </a>
+            ) : null}
+            <div className={styles.mobileCtaRow}>
+              <GoogleSignInButton
+                className={`${styles.button} ${styles.mobileCta}`}
+                eventLabel="mobile_continue_google"
+                label="Continue with Google"
+                variant="brand"
+                iconSize={20}
+              />
+            </div>
+          </motion.nav>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }

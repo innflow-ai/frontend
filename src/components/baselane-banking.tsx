@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { siteConfig } from "@/config/site";
 import styles from "./baselane-banking.module.css";
 import { BaselaneHomepage } from "./baselane-homepage";
 import { ScrollStory } from "./scroll-story";
@@ -106,10 +107,18 @@ function Scene({
     <picture className={styles.scene}>
       <source
         media="(max-width: 700px)"
-        srcSet={`/brand/baselane-inspired/banking/${name}-mobile.webp`}
+        srcSet={
+          name === "hero"
+            ? "/brand/blog/apartment-sky-cta.png"
+            : `/brand/baselane-inspired/banking/${name}-mobile.webp`
+        }
       />
       <Image
-        src={`/brand/baselane-inspired/banking/${name}-desktop.webp`}
+        src={
+          name === "hero"
+            ? "/brand/blog/apartment-sky-cta.png"
+            : `/brand/baselane-inspired/banking/${name}-desktop.webp`
+        }
         alt=""
         fill
         sizes="100vw"
@@ -124,7 +133,6 @@ export function BaselaneBanking() {
       <section className={styles.hero}>
         <Scene name="hero" priority />
         <div className={styles.heroCopy}>
-          <span className={styles.eyebrow}>PROPERTY OPERATIONS</span>
           <h1>
             Built for life with
             <br />
@@ -134,7 +142,7 @@ export function BaselaneBanking() {
             Bring the moving parts of your portfolio together. Less chasing
             details. More room to move forward.
           </p>
-          <a className={styles.button} href="/demo">
+          <a className={styles.button} href={siteConfig.demoUrl}>
             Explore innflow <span>↗</span>
           </a>
           <small>Connected context. Clear ownership. Human review.</small>
@@ -220,7 +228,7 @@ export function BaselaneBanking() {
             <br />
             One connected flow.
           </h2>
-          <a href="/demo" className={styles.button}>
+          <a href={siteConfig.demoUrl} className={styles.button}>
             See what's possible <span>↗</span>
           </a>
         </div>
@@ -278,7 +286,7 @@ export function BaselaneBanking() {
             what comes next.
           </h2>
           <p>Bring your property operations into one flow.</p>
-          <a href="/demo" className={styles.button}>
+          <a href={siteConfig.demoUrl} className={styles.button}>
             See innflow in action <span>↗</span>
           </a>
         </div>

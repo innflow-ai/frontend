@@ -49,7 +49,7 @@
 
 .filterActive {
   background: var(--brand);
-  color: #0c1b2a;
+  color: #fff;
 }
 
 .listing {

@@ -182,7 +182,7 @@ export const agentStudioPage: ProductPage = {
       eyebrow: "Agent Studio",
       heading: "Build your next workflow with innflow",
       body: "Bring one process. Explore how agents, connected tools, and human review can work together for your team.",
-      primaryCta: { label: "Book a demo", destination: "contact" },
+      primaryCta: { label: "Book a demo", destination: "demo" },
       secondaryCta: { label: "Get started", destination: "signup" },
     },
   ],

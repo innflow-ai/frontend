@@ -1,5 +1,5 @@
 .page {
-  background: #fffcf4;
+  background: #fffbf4;
   color: #0b2633;
 }
 .hero,
@@ -40,6 +40,8 @@
 .page .button,
 .page .outline {
   display: inline-flex;
+  font-family: var(--font-button, var(--font-sans));
+  line-height: 1.25;
   justify-content: center;
   align-items: center;
   min-height: 50px;

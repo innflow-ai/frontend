@@ -2,17 +2,13 @@
 
 import {
   ArrowRight,
-  CaretDown,
   CheckCircle,
   Database,
   FlowArrow,
-  List,
   ShieldCheck,
-  X,
 } from "@phosphor-icons/react";
 import Image from "next/image";
-import { type ReactNode, useEffect, useRef, useState } from "react";
-import { CustomerSupportHours } from "@/components/customer-support-hours";
+import type { ReactNode } from "react";
 import { GoogleCtaContent } from "@/components/google-cta-content";
 import { siteConfig } from "@/config/site";
 import styles from "./baselane-homepage.module.css";
@@ -20,93 +16,6 @@ import previewStyles from "./runey-landing.module.css";
 import { RuneyWorkspace } from "./runey-workspace";
 import { TrackedLink } from "./tracked-link";
 
-const footerMenus = [
-  {
-    label: "Why innflow",
-    links: [
-      ["About innflow", "/BL/BL-about"],
-      ["Careers", "/BL/BL-careers"],
-      ["Industry coverage", "/BL/BL-in-the-news"],
-      ["Who we help", "/BL/BL-our-customers"],
-      ["Security", "/BL/BL-security"],
-      ["Share innflow", "/BL/BL-landlord-referral"],
-      ["Partnerships", "/BL/BL-partner-with-us"],
-      ["Advisor partnerships", "/BL/BL-advisor-partner-program"],
-      ["Workflows", "/products/agentic-workflows"],
-      ["AI assistant", "/products/ai-agents"],
-      ["Knowledge", "/platform"],
-      ["Approvals", "/platform/security-and-compliance"],
-    ],
-  },
-  {
-    label: "Solutions",
-    links: [
-      ["Overview", "/BL/BL-home"],
-      ["Multi-property investors", "/BL/BL-multi-property-investors"],
-      ["Landlord operations", "/BL/BL-landlord-banking"],
-      ["Rental workflows", "/BL/BL-rent-collection"],
-      ["Rental workflows overview", "/BL/BL-rent-collection-2"],
-      ["Connected property records", "/BL/BL-landlord-accounting"],
-      ["Property review preparation", "/BL/BL-landlord-insurance"],
-      ["Document preparation", "/BL/BL-tax-preparation"],
-      ["Deposit workflows", "/BL/BL-security-deposit-account"],
-      ["Screening workflows", "/BL/BL-tenant-screening-service"],
-      ["Reserve planning", "/BL/BL-landlord-banking-apy"],
-      ["Financing preparation", "/BL/BL-rental-property-loans"],
-      ["Property management", "/property-management"],
-      ["Connected operations", "/platform"],
-      ["Integrations", "/integrations"],
-    ],
-  },
-  {
-    label: "Resources",
-    links: [
-      ["Resource library", "/BL/BL-resources"],
-      [
-        "Document checklists",
-        "/BL/BL-free-rental-forms-and-templates-for-landlords",
-      ],
-      ["Rent comparison", "/BL/BL-how-much-should-i-charge-for-rent"],
-      ["Lease workflows", "/BL/BL-lease-agreement"],
-      ["Workflow learning", "/BL/BL-webinars"],
-      ["Investor resources", "/BL/BL-real-estate-investing"],
-      ["Product updates", "/BL/BL-product-updates"],
-      ["Blog", "/blog"],
-      ["Help center", "/BL/BL-help-center"],
-      ["Legal agreements", "/BL/BL-legal-agreements"],
-      ["FAQ", "/faq"],
-      ["Contact", "/contact"],
-    ],
-  },
-];
-const menus = [
-  {
-    label: "Why innflow",
-    links: [
-      ["About innflow", "/BL/BL-about"],
-      ["Who we help", "/BL/BL-our-customers"],
-      ["Multi-property investors", "/BL/BL-multi-property-investors"],
-      ["Security", "/BL/BL-security"],
-    ],
-  },
-  {
-    label: "Solutions",
-    links: [
-      ["Overview", "/BL/BL-home"],
-      ["Landlord operations", "/BL/BL-landlord-banking"],
-      ["Rental workflows", "/BL/BL-rent-collection"],
-      ["Connected property records", "/BL/BL-landlord-accounting"],
-    ],
-  },
-  {
-    label: "Resources",
-    links: [
-      ["Blog", "/blog"],
-      ["Help center", "/contact"],
-      ["Resource library", "/BL/BL-resources"],
-    ],
-  },
-];
 const capabilities = [
   {
     icon: Database,
@@ -131,164 +40,8 @@ const capabilities = [
 ];
 
 export function BaselaneHomepage({ children }: { children?: ReactNode }) {
-  const [menu, setMenu] = useState<string | null>(null);
-  const [mobile, setMobile] = useState(false);
-  const header = useRef<HTMLElement>(null);
-  const toggle = useRef<HTMLButtonElement>(null);
-  const hoverClose = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const cancelHoverClose = () => {
-    if (hoverClose.current) clearTimeout(hoverClose.current);
-    hoverClose.current = null;
-  };
-  useEffect(() => {
-    const close = (event: PointerEvent) => {
-      if (!header.current?.contains(event.target as Node)) {
-        setMenu(null);
-        setMobile(false);
-      }
-    };
-    document.addEventListener("pointerdown", close);
-    const handleEscape = (event: KeyboardEvent) => {
-      if (
-        event.key !== "Escape" ||
-        !header.current?.contains(event.target as Node)
-      )
-        return;
-      const trigger = header.current.querySelector<HTMLButtonElement>(
-        'button[aria-expanded="true"]',
-      );
-      if (toggle.current?.getAttribute("aria-expanded") === "true")
-        toggle.current.focus();
-      else trigger?.focus();
-      setMenu(null);
-      setMobile(false);
-    };
-    document.addEventListener("keydown", handleEscape);
-    return () => {
-      if (hoverClose.current) clearTimeout(hoverClose.current);
-      document.removeEventListener("pointerdown", close);
-      document.removeEventListener("keydown", handleEscape);
-    };
-  }, []);
-  const closeMenus = () => {
-    cancelHoverClose();
-    setMenu(null);
-    setMobile(false);
-  };
   return (
     <div className={styles.page}>
-      <header ref={header} className={styles.header}>
-        <a href="/BL/BL-home" className={styles.logo} aria-label="innflow home">
-          <Image
-            src="/brand/innflow-wordmark.svg"
-            alt="innflow"
-            width={95}
-            height={28}
-            preload
-          />
-        </a>
-        <nav
-          id="baselane-preview-nav"
-          aria-label="Primary navigation"
-          className={`${styles.nav} ${mobile ? styles.open : ""}`}
-        >
-          {menus.map((group) => (
-            // biome-ignore lint/a11y/useSemanticElements: This groups navigation disclosures, not form fields.
-            <div
-              className={styles.menuGroup}
-              key={group.label}
-              role="group"
-              aria-label={group.label}
-              onPointerEnter={(event) => {
-                if (
-                  event.pointerType !== "mouse" ||
-                  !window.matchMedia("(min-width: 851px) and (hover: hover)")
-                    .matches
-                )
-                  return;
-                cancelHoverClose();
-                setMenu(group.label);
-              }}
-              onPointerLeave={(event) => {
-                if (event.pointerType !== "mouse" || mobile) return;
-                cancelHoverClose();
-                hoverClose.current = setTimeout(() => {
-                  setMenu((current) =>
-                    current === group.label ? null : current,
-                  );
-                }, 180);
-              }}
-              onBlur={(event) => {
-                if (!event.currentTarget.contains(event.relatedTarget)) {
-                  cancelHoverClose();
-                  setMenu((current) =>
-                    current === group.label ? null : current,
-                  );
-                }
-              }}
-            >
-              <button
-                type="button"
-                aria-expanded={menu === group.label}
-                aria-controls={`baselane-${group.label.replaceAll(" ", "-")}`}
-                onClick={() => {
-                  cancelHoverClose();
-                  setMenu(menu === group.label ? null : group.label);
-                }}
-              >
-                {group.label}
-                <CaretDown size={13} />
-              </button>
-              {menu === group.label && (
-                <div
-                  id={`baselane-${group.label.replaceAll(" ", "-")}`}
-                  className={styles.dropdown}
-                >
-                  {group.links.map(([label, href]) => (
-                    <a key={label} href={href} onClick={closeMenus}>
-                      {label}
-                    </a>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-          <a href="/BL/BL-pricing">Pricing</a>
-          <a href="/BL/BL-demo">Demo</a>
-          <a
-            className={styles.mobileLogin}
-            href={`${siteConfig.appOrigin}/login`}
-          >
-            Log in
-          </a>
-        </nav>
-        <div className={styles.headerActions}>
-          <a className={styles.login} href={`${siteConfig.appOrigin}/login`}>
-            Log in
-          </a>
-          <TrackedLink
-            className={styles.darkButton}
-            destination={siteConfig.googleAuthUrl}
-            eventLabel="baselane_header_signup"
-          >
-            <GoogleCtaContent />
-          </TrackedLink>
-          <button
-            ref={toggle}
-            type="button"
-            className={styles.menuToggle}
-            aria-label={mobile ? "Close navigation" : "Open navigation"}
-            aria-expanded={mobile}
-            aria-controls="baselane-preview-nav"
-            onClick={() => {
-              setMobile(!mobile);
-              setMenu(null);
-            }}
-          >
-            {mobile ? <X size={22} /> : <List size={22} />}
-          </button>
-        </div>
-      </header>
       <main id="main-content">
         {children ?? (
           <>
@@ -302,9 +55,6 @@ export function BaselaneHomepage({ children }: { children?: ReactNode }) {
                 className={styles.heroPhoto}
               />
               <div className={styles.heroCopy}>
-                <span className={styles.eyebrow}>
-                  PROPERTY OPERATIONS, CONNECTED
-                </span>
                 <h1>
                   Operations that give
                   <br className={styles.desktopBreak} /> you your day back.
@@ -324,7 +74,7 @@ export function BaselaneHomepage({ children }: { children?: ReactNode }) {
                   >
                     <GoogleCtaContent />
                   </TrackedLink>
-                  <a className={styles.darkButton} href="/BL/BL-demo">
+                  <a className={styles.darkButton} href={siteConfig.demoUrl}>
                     See demo <ArrowRight size={19} />
                   </a>
                 </div>
@@ -465,87 +215,9 @@ export function BaselaneHomepage({ children }: { children?: ReactNode }) {
                 ))}
               </div>
             </section>
-            <section className={styles.closing}>
-              <h2>
-                A clearer day starts
-                <br className={styles.mobileBreak} /> with a connected flow.
-              </h2>
-              <p>Bring your team, context, and next steps together.</p>
-              <div className={styles.actions}>
-                <a className={styles.outlineButton} href="/BL/BL-demo">
-                  See demo <ArrowRight size={18} />
-                </a>
-                <TrackedLink
-                  className={styles.darkButton}
-                  destination={siteConfig.googleAuthUrl}
-                  eventLabel="baselane_closing_signup"
-                >
-                  <GoogleCtaContent />
-                </TrackedLink>
-              </div>
-            </section>
           </>
         )}
       </main>
-      <footer className={styles.footer}>
-        <div className={styles.footerGrid}>
-          <div>
-            <a
-              href="/BL/BL-home"
-              aria-label="innflow home"
-              className={styles.footerLogo}
-            >
-              <Image
-                src="/brand/innflow-wordmark.svg"
-                width={105}
-                height={30}
-                alt="innflow"
-              />
-            </a>
-            <p>
-              Property operations.
-              <br />
-              Connected in one place.
-            </p>
-            <a href={`mailto:${siteConfig.supportEmail}`}>
-              {siteConfig.supportEmail}
-            </a>
-            <CustomerSupportHours />
-          </div>
-          {footerMenus.map((group) => (
-            <div key={group.label}>
-              <h3>{group.label}</h3>
-              {group.links.map(([label, href]) => (
-                <a href={href} key={label}>
-                  {label}
-                </a>
-              ))}
-            </div>
-          ))}
-          <div>
-            <h3>Property teams</h3>
-            <a href="/BL/BL-long-term-rentals">Long-term rentals</a>
-            <a href="/BL/BL-mid-term-rentals">Mid-term rentals</a>
-            <a href="/BL/BL-short-term-rentals">Short-term rentals</a>
-            <a href="/BL/BL-renters">Resident experiences</a>
-            <h3 className={styles.footerSubheading}>Get started</h3>
-            <a href="/BL/BL-demo">Book a demo</a>
-            <a href="/BL/BL-pricing">Pricing</a>
-            <a href={`${siteConfig.appOrigin}/login`}>Log in</a>
-            <a href={siteConfig.googleAuthUrl}>
-              <GoogleCtaContent />
-            </a>
-          </div>
-        </div>
-        <div className={styles.footerBottom}>
-          <span>© {new Date().getFullYear()} innflow</span>
-          <div>
-            <a href="/BL/BL-privacy-policy">Privacy Policy</a>
-            <a href="/BL/BL-terms-of-use">Terms of Service</a>
-            <a href="/legal/cookie-policy">Cookies</a>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }

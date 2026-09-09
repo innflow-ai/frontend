@@ -110,7 +110,7 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
                 )}
               </a>
               {!careers && (
-                <a className={styles.outline} href="/BL/BL-demo">
+                <a className={styles.outline} href={siteConfig.demoUrl}>
                   See demo →
                 </a>
               )}
@@ -150,7 +150,7 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
                 ? "The next request rarely arrives with every detail in place. We’re interested in the practical work of connecting context, decisions, and follow-through."
                 : "A request starts in one place. Its context lives in another. innflow brings those pieces together so your team can focus on the decision and the next action."}
             </p>
-            <a href="/BL/BL-demo">Explore the product →</a>
+            <a href={siteConfig.demoUrl}>Explore the product →</a>
           </div>
           <Workspace />
         </section>
@@ -290,35 +290,26 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
             <a href="/BL/BL-legal-agreements">Policies</a>
           </div>
         </section>
-        <section
-          className={styles.closing}
-          id={careers ? "career-inquiries" : undefined}
-        >
-          <Image
-            src="/brand/baselane-inspired/renters/closing-desktop.webp"
-            alt=""
-            fill
-            sizes="100vw"
-          />
-          <div>
-            <h2>
-              {careers
-                ? "Let’s talk about what we could build."
-                : "Own more of your time."}
-            </h2>
-            <p>
-              {careers
-                ? "Share your experience and interests with the team. Contact us to ask about current opportunities."
-                : "Give everyday work a clearer path forward."}
-            </p>
-            <a
-              className={styles.button}
-              href={careers ? careerUrl : "/BL/BL-demo"}
-            >
-              {careers ? "Introduce yourself" : "See a demo"} ↗
-            </a>
-          </div>
-        </section>
+        {careers ? (
+          <section className={styles.closing} id="career-inquiries">
+            <Image
+              src="/brand/baselane-inspired/renters/closing-desktop.webp"
+              alt=""
+              fill
+              sizes="100vw"
+            />
+            <div>
+              <h2>Let’s talk about what we could build.</h2>
+              <p>
+                Share your experience and interests with the team. Contact us to
+                ask about current opportunities.
+              </p>
+              <a className={styles.button} href={careerUrl}>
+                Introduce yourself ↗
+              </a>
+            </div>
+          </section>
+        ) : null}
       </div>
     </BaselaneHomepage>
   );

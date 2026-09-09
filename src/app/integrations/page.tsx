@@ -1,7 +1,5 @@
 import Image from "next/image";
 import {
-  EvidenceBlock,
-  FinalCta,
   MarketingPage,
   PageHero,
 } from "@/components/page-primitives";
@@ -20,26 +18,18 @@ export default function IntegrationsPage() {
     <MarketingPage>
       <PageHero
         eyebrow="Integrations"
-        title="Connect the systems involved in the operation."
+        title="Keep your tools. Connect the work."
         breadcrumbs={[{ label: "Home", href: "/" }, { label: "Integrations" }]}
-        description="The marks below correspond to connector paths in the product repository. Presence in code does not, by itself, prove production readiness, scope, or account-specific compatibility."
-      />
-      <EvidenceBlock
-        items={[
-          "Approved integration marks",
-          "Product connector routes",
-          "API and custom implementation path",
-          "No customer endorsement implied",
-        ]}
+        description="Bring the tools your team relies on into the same workflow. We’ll help you check the connections, access, and setup your operation needs."
       />
       <section className="section">
         <div className="shell integration-directory">
           <div className="section-intro compact-intro">
             <span className="section-label">Connector directory</span>
-            <h2>Evidence first, readiness second.</h2>
+            <h2>Find your next connection.</h2>
             <p>
-              Each implementation still requires account prerequisites, scopes,
-              data contracts, error handling, and security review.
+              Explore the tools below, then talk with us about your accounts and
+              the information you want to connect.
             </p>
           </div>
           <div className="integration-grid integration-grid-large">
@@ -62,12 +52,10 @@ export default function IntegrationsPage() {
         <div className="shell statement-grid">
           <span className="section-label">Before implementation</span>
           <h2>
-            Confirm permissions, data direction, retry behavior, ownership, and
-            the system of record for every connection.
+            Choose what to share, who can act, and where the next step belongs.
           </h2>
         </div>
       </section>
-      <FinalCta title="Map one operation and the systems it touches." />
     </MarketingPage>
   );
 }

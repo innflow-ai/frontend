@@ -2,9 +2,7 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/json-ld";
 import {
   ControlsGrid,
-  EvidenceBlock,
   FaqList,
-  FinalCta,
   MarketingPage,
   OperatingSteps,
   PageHero,
@@ -110,7 +108,6 @@ export default async function FeaturePage({
       >
         <FeatureMedia type={content.media} />
       </PageHero>
-      <EvidenceBlock items={content.evidence} />
       <section className="section">
         <div className="shell statement-grid">
           <span className="section-label">The operational problem</span>
@@ -118,8 +115,8 @@ export default async function FeaturePage({
         </div>
       </section>
       <OperatingSteps
-        title="A bounded path from input to visible work."
-        intro="The exact systems, permissions, exceptions, and recovery behavior are confirmed during workflow discovery."
+        title="From the first request to the next step."
+        intro="Bring your tools and your current process. Together, we’ll shape the handoffs and review points around your team."
         steps={content.operatingModel}
       />
       <ControlsGrid
@@ -129,13 +126,12 @@ export default async function FeaturePage({
       <section className="section faq-section">
         <div className="shell faq-layout">
           <div className="faq-intro">
-            <span className="section-label">Feature boundaries</span>
-            <h2>What this page does—and does not—promise.</h2>
+            <span className="section-label">Your questions</span>
+            <h2>A clearer picture before you begin.</h2>
           </div>
           <FaqList items={content.faq} />
         </div>
       </section>
-      <FinalCta />
       <JsonLd value={breadcrumbSchema} />
     </MarketingPage>
   );

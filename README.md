@@ -40,17 +40,16 @@ npm run start
 
 ## Configuration
 
-All cross-origin destinations are centralized in `src/config/site.ts` and may be overridden with:
+Destinations are centralized in `src/config/site.ts`. These environment variables configure the app, contact, and analytics settings:
 
 - `NEXT_PUBLIC_MARKETING_ORIGIN`
 - `NEXT_PUBLIC_APP_ORIGIN`
 - `NEXT_PUBLIC_SIGNUP_URL`
-- `NEXT_PUBLIC_DEMO_URL`
 - `NEXT_PUBLIC_CONTACT_URL`
 - `NEXT_PUBLIC_POSTHOG_KEY`
 - `NEXT_PUBLIC_POSTHOG_HOST`
 
-The demo URL defaults to the local `/demo` qualification route. Its outbound contact action defaults to `support@innflow.ai`; replace that destination only after a scheduling or contact workflow is approved.
+Demo calls to action use `siteConfig.demoUrl`, currently the approved Cal.com booking link. The legacy `/demo` and `/BL/BL-demo` routes redirect there as well. Qualification is deferred to a future Innflow flow.
 
 ## Deployment instructions (approval-gated)
 

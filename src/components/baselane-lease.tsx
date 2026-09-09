@@ -71,7 +71,7 @@ export function BaselaneLease() {
               <Action />
               <a
                 className={styles.sourceLink}
-                href="/BL/BL-demo"
+                href={siteConfig.demoUrl}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -130,7 +130,7 @@ export function BaselaneLease() {
                 <p>{text}</p>
               </div>
             ))}
-            <a className={shared.button} href="/BL/BL-demo">
+            <a className={shared.button} href={siteConfig.demoUrl}>
               Explore the innflow demo
             </a>
           </div>

@@ -106,7 +106,7 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #fffcf4;
+  background: #fffbf4;
   color: #0b2633;
   display: grid;
   place-items: center;
@@ -333,6 +333,8 @@
 }
 .actions a {
   display: inline-flex;
+  font-family: var(--font-button, var(--font-sans));
+  line-height: 1.25;
   gap: 10px;
   align-items: center;
   border: 1px solid #193d4e;

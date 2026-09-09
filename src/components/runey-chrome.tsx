@@ -110,7 +110,7 @@ export function RuneyChrome({
           <div>
             <h2>Get in touch</h2>
             <a href="/contact">Contact us</a>
-            <a href="/demo">Request a demo</a>
+            <a href={siteConfig.demoUrl}>Request a demo</a>
             <a href={siteConfig.googleAuthUrl}>
               <GoogleCtaContent />
             </a>

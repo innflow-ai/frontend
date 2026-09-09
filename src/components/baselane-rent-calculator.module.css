@@ -1,5 +1,5 @@
 .page {
-  background: #fffcf4;
+  background: #fffbf4;
   color: #0b2633;
 }
 .hero {
@@ -86,6 +86,8 @@
   font: inherit;
   font-size: 16px;
   cursor: pointer;
+  font-family: var(--font-button, var(--font-sans));
+  line-height: 1.25;
 }
 .page .button {
   background: linear-gradient(#494b47, #242522);

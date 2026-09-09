@@ -6,7 +6,6 @@ import {
 import Image from "next/image";
 import { ContactForm } from "@/components/contact-form";
 import { HeroIntro, HeroItem, Reveal } from "@/components/motion";
-import { Tag } from "@/components/tag";
 import { siteConfig } from "@/config/site";
 import { createPageMetadata } from "@/lib/metadata";
 import styles from "./contact.module.css";
@@ -54,11 +53,6 @@ export default function ContactPage() {
           <HeroIntro>
             <div className={styles.heroGrid}>
               <div className={styles.heroCopy}>
-                <HeroItem>
-                  <Tag className={styles.heroTag} variant="outline">
-                    Contact
-                  </Tag>
-                </HeroItem>
                 <HeroItem>
                   <h1>Let’s talk about the work.</h1>
                 </HeroItem>

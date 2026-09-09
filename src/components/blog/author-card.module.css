@@ -1,0 +1,87 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 296px;
+  max-width: 100%;
+  padding: 20px;
+  border: 1px solid rgb(153 151 143 / 45%);
+  border-radius: 12px;
+  background: rgb(255 251 244 / 72%);
+  box-shadow:
+    inset 0 1px 2px rgb(255 255 255 / 55%),
+    0 24px 48px -12px rgb(0 0 0 / 28%);
+  color: #012232;
+  text-decoration: none;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+@supports (backdrop-filter: blur(27px)) or
+  (-webkit-backdrop-filter: blur(27px)) {
+  .card {
+    background: rgb(215 211 203 / 35%);
+    -webkit-backdrop-filter: blur(27px) saturate(125%);
+    backdrop-filter: blur(27px) saturate(125%);
+  }
+}
+
+.card:hover {
+  border-color: rgb(255 255 255 / 75%);
+  box-shadow:
+    inset 0 1px 2px rgb(255 255 255 / 65%),
+    0 24px 48px -12px rgb(0 0 0 / 32%);
+}
+
+.card:focus-visible {
+  outline: 2px solid #012232;
+  outline-offset: 4px;
+}
+
+.identity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.portrait,
+.initials {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.portrait {
+  object-fit: cover;
+}
+
+.initials {
+  display: grid;
+  place-items: center;
+  background: rgb(190 190 178 / 70%);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.name {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 26px;
+}
+
+.role {
+  overflow-wrap: anywhere;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
+}

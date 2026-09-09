@@ -109,13 +109,6 @@ export function BaselaneNews() {
                 width={1160}
                 height={1000}
               />
-              <Image
-                className={styles.overlay}
-                src={`${root}/account.webp`}
-                alt="Illustrative property account records"
-                width={600}
-                height={652}
-              />
             </div>
             <div className={styles.copy}>
               <span>EXPLORE INNFLOW</span>
@@ -137,13 +130,6 @@ export function BaselaneNews() {
                 alt="A plumbing professional at work"
                 width={740}
                 height={648}
-              />
-              <Image
-                className={styles.overlay}
-                src={`${root}/oversight.webp`}
-                alt="Illustrative property activity records"
-                width={640}
-                height={751}
               />
             </div>
             <div className={styles.copy}>

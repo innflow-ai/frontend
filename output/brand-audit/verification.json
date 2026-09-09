@@ -1,0 +1,20 @@
+{
+  "verifiedAt": "2026-09-09T20:59:11.608Z",
+  "routes": [
+    "/BL/BL-in-the-news",
+    "/BL/BL-landlord-banking-apy",
+    "/BL/BL-landlord-banking",
+    "/BL/BL-tenant-screening-service"
+  ],
+  "removedAssets": [
+    "screening/banking.webp",
+    "savings/account-card.webp",
+    "savings/balances-card.webp",
+    "savings/rent-card.webp",
+    "news/account.webp",
+    "news/oversight.webp",
+    "banking/hero-desktop.webp",
+    "banking/hero-mobile.webp"
+  ],
+  "passed": true
+}

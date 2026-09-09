@@ -71,7 +71,7 @@ export function BaselaneProductPage({
       </section>
       {data.band && showBand && (
         <div className={styles.band}>
-          <a href="/BL/BL-short-term-rentals">
+          <a href="/short-term-rentals">
             Explore short-term rental workflows <ArrowRight size={16} />
           </a>
           <span>Property context</span>

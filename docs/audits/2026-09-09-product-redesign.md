@@ -1,6 +1,6 @@
 # Product and platform redesign
 
-The local site now shares the BL navigation, photo CTA, and footer through the root layout. The existing public homepage content remains at `/`; this change does not publish or replace that homepage with BL Home.
+The local site shares the redesigned navigation, photo CTA, and footer through the root layout. The redesigned homepage is now the main page at `/`. Pages formerly under the BL preview prefix use clean public paths, with permanent redirects from the old addresses. These changes are local and unpublished.
 
 ## Requested pages
 

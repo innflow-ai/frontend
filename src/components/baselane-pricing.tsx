@@ -306,22 +306,22 @@ export function BaselanePricing() {
               [
                 "Long-term rentals",
                 "Keep recurring work moving.",
-                "/BL/BL-long-term-rentals",
+                "/long-term-rentals",
               ],
               [
                 "Mid-term rentals",
                 "Give each handoff a clear next step.",
-                "/BL/BL-mid-term-rentals",
+                "/mid-term-rentals",
               ],
               [
                 "Short-term rentals",
                 "Connect fast-moving operations.",
-                "/BL/BL-short-term-rentals",
+                "/short-term-rentals",
               ],
               [
                 "Multi-property teams",
                 "Keep property context close.",
-                "/BL/BL-multi-property-investors",
+                "/multi-property-investors",
               ],
             ].map(([title, text, href]) => (
               <a key={href} href={href}>

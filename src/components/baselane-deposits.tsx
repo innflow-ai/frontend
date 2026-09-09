@@ -210,19 +210,19 @@ export function BaselaneDeposits() {
                 "hero",
                 "Tax preparation",
                 "Coordinate the records and review steps for your adviser.",
-                "/BL/BL-tax-preparation",
+                "/tax-preparation",
               ],
               [
                 "tenants",
                 "Resident context",
                 "Keep requests and useful information connected.",
-                "/BL/BL-renters",
+                "/renters",
               ],
               [
                 "owners",
                 "Property operations",
                 "Give recurring work a clear path through your team.",
-                "/BL/BL-landlord-banking",
+                "/landlord-banking",
               ],
             ].map(([image, title, text, href]) => (
               <article key={title}>
@@ -280,7 +280,7 @@ export function BaselaneDeposits() {
                 <h3>Prepare a deposit-document handoff</h3>
                 <a
                   className={shared.button}
-                  href="/BL/BL-free-rental-forms-and-templates-for-landlords"
+                  href="/free-rental-forms-and-templates-for-landlords"
                 >
                   Explore preparation worksheets →
                 </a>
@@ -288,12 +288,9 @@ export function BaselaneDeposits() {
             </article>
             <div>
               {[
-                [
-                  "Keep supporting records together",
-                  "/BL/BL-landlord-accounting",
-                ],
-                ["Connect the lease review", "/BL/BL-lease-agreement"],
-                ["Coordinate resident follow-up", "/BL/BL-renters"],
+                ["Keep supporting records together", "/landlord-accounting"],
+                ["Connect the lease review", "/lease-agreement"],
+                ["Coordinate resident follow-up", "/renters"],
               ].map(([title, href]) => (
                 <a key={href} href={href}>
                   <small>INNFLOW WORKFLOW</small>

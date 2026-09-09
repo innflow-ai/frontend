@@ -16,27 +16,27 @@ const workflows = [
   [
     "Resident follow-up",
     "Keep questions and supporting context together so your team can prepare a useful response.",
-    "/BL/BL-renters",
+    "/renters",
   ],
   [
     "Document preparation",
     "Gather missing records and track the review steps before sharing a prepared package.",
-    "/BL/BL-tax-preparation",
+    "/tax-preparation",
   ],
   [
     "Recurring property work",
     "Give routine tasks a consistent path with visible ownership and human review.",
-    "/BL/BL-rent-collection",
+    "/rent-collection",
   ],
   [
     "Portfolio context",
     "Keep each property’s records close to its requests, decisions, and next actions.",
-    "/BL/BL-multi-property-investors",
+    "/multi-property-investors",
   ],
   [
     "Advisor handoffs",
     "Bring open questions and supporting documents into the same client conversation.",
-    "/BL/BL-advisor-partner-program",
+    "/advisor-partner-program",
   ],
 ];
 const scenarios = [
@@ -50,19 +50,19 @@ const scenarios = [
     "A document review",
     "Prepare a handoff your advisor can follow",
     "Start with the property checklist. Gather supporting records, give missing items an owner, and keep the team’s review notes with the prepared information.",
-    "/BL/BL-tax-preparation",
+    "/tax-preparation",
   ],
   [
     "A growing portfolio",
     "Keep context as the work expands",
     "Organize requests around the right property. Give recurring processes consistent steps so your team can follow progress across the portfolio.",
-    "/BL/BL-multi-property-investors",
+    "/multi-property-investors",
   ],
   [
     "A recurring resident question",
     "Start with the information you already have",
     "Connect your procedures and working records to the question. Use that context to prepare a response and let the responsible person review the next action.",
-    "/BL/BL-renters",
+    "/renters",
   ],
 ];
 
@@ -98,9 +98,7 @@ export function BaselaneCustomers() {
         </section>
         <div className={styles.band}>
           <span>Clear ownership. Shared context. Visible progress.</span>
-          <a href="/BL/BL-multi-property-investors">
-            Explore portfolio operations →
-          </a>
+          <a href="/multi-property-investors">Explore portfolio operations →</a>
         </div>
         <section className={styles.section} id="team-workflows">
           <h2>Built around the work on your team’s desk.</h2>

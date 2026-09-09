@@ -201,7 +201,7 @@ export function BaselaneLease() {
             <p>Browse the forms and checklists in the resource library.</p>
             <a
               className={shared.button}
-              href="/BL/BL-free-rental-forms-and-templates-for-landlords"
+              href="/free-rental-forms-and-templates-for-landlords"
             >
               Browse document checklists
             </a>

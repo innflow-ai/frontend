@@ -232,7 +232,7 @@ export function BaselaneAdvisors() {
                   [
                     "Learn together",
                     "Explore self-guided workflow topics for the property work your team handles.",
-                    "/BL/BL-webinars",
+                    "/webinars",
                   ],
                   [
                     "Talk to innflow",

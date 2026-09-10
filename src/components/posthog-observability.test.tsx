@@ -1,6 +1,18 @@
 import { act, render, waitFor } from "@testing-library/react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { PostHogObservability } from "@/components/posthog-observability";
+import {
+  dropThirdPartyExceptions,
+  PostHogObservability,
+} from "@/components/posthog-observability";
+
+function exceptionEvent(filename: string | undefined) {
+  return {
+    event: "$exception",
+    properties: {
+      $exception_list: [{ stacktrace: { frames: [{ filename }] } }],
+    },
+  } as unknown as Parameters<typeof dropThirdPartyExceptions>[0];
+}
 
 const posthog = vi.hoisted(() => ({
   __loaded: false,
@@ -93,5 +105,39 @@ describe("PostHogObservability", () => {
     );
     expect(posthog.capture).toHaveBeenCalledWith("$pageview");
     expect(posthog.startSessionRecording).toHaveBeenCalledOnce();
+  });
+});
+
+describe("dropThirdPartyExceptions", () => {
+  it("drops an exception with no site-owned frame", () => {
+    expect(
+      dropThirdPartyExceptions(
+        exceptionEvent("https://connect.facebook.net/bridge.js"),
+      ),
+    ).toBeNull();
+  });
+
+  it("keeps an exception raised by a same-origin script", () => {
+    const event = exceptionEvent(
+      `${window.location.origin}/_next/static/chunk.js`,
+    );
+    expect(dropThirdPartyExceptions(event)).toBe(event);
+  });
+
+  it("keeps an exception raised by a root-relative script", () => {
+    const event = exceptionEvent("/_next/static/chunk.js");
+    expect(dropThirdPartyExceptions(event)).toBe(event);
+  });
+
+  it("drops an exception with no resolvable filename", () => {
+    expect(dropThirdPartyExceptions(exceptionEvent(undefined))).toBeNull();
+  });
+
+  it("keeps events that are not exceptions", () => {
+    const event = {
+      event: "$pageview",
+      properties: {},
+    } as unknown as Parameters<typeof dropThirdPartyExceptions>[0];
+    expect(dropThirdPartyExceptions(event)).toBe(event);
   });
 });

@@ -1,10 +1,50 @@
 "use client";
 
-import type { PostHog } from "posthog-js";
+import type { BeforeSendFn, CaptureResult, PostHog } from "posthog-js";
 import { useEffect } from "react";
 import { siteConfig } from "@/config/site";
 
 const consentStorageKey = "innflow-cookie-consent";
+
+function isSiteOwnedScript(filename: unknown): boolean {
+  if (typeof filename !== "string" || filename.length === 0) {
+    return false;
+  }
+  // The site serves its own scripts from this origin, so a site-owned frame is
+  // either an absolute URL on this origin or a root-relative path.
+  return (
+    filename.startsWith(`${window.location.origin}/`) ||
+    (filename.startsWith("/") && !filename.startsWith("//"))
+  );
+}
+
+function hasSiteOwnedFrame(event: CaptureResult): boolean {
+  const exceptions = event.properties?.$exception_list;
+  if (!Array.isArray(exceptions)) {
+    return false;
+  }
+
+  return exceptions.some((exception) => {
+    const frames = (exception as { stacktrace?: { frames?: unknown } })
+      ?.stacktrace?.frames;
+    return (
+      Array.isArray(frames) &&
+      frames.some((frame) =>
+        isSiteOwnedScript((frame as { filename?: unknown })?.filename),
+      )
+    );
+  });
+}
+
+// Drops exceptions that no site-owned script raised. Third-party scripts, such
+// as the in-app browser bridge that Facebook injects, throw errors on our pages
+// that are not our bug, so we do not capture them.
+export const dropThirdPartyExceptions: BeforeSendFn = (event) => {
+  if (event?.event === "$exception" && !hasSiteOwnedFrame(event)) {
+    return null;
+  }
+  return event;
+};
 
 type TermlyConsentState = {
   analytics?: boolean;
@@ -46,6 +86,7 @@ async function getPostHogClient() {
           ui_host: "https://us.posthog.com",
           defaults: "2026-05-30",
           capture_exceptions: true,
+          before_send: dropThirdPartyExceptions,
           capture_performance: {
             web_vitals: true,
           },

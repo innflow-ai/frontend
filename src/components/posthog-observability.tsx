@@ -101,7 +101,6 @@ async function getPostHogClient() {
           ui_host: "https://us.posthog.com",
           defaults: "2026-05-30",
           capture_exceptions: true,
-          before_send: dropThirdPartyExceptions,
           capture_performance: {
             web_vitals: true,
           },
@@ -110,6 +109,7 @@ async function getPostHogClient() {
           },
           person_profiles: "identified_only",
           before_send: (event) => {
+            if (!dropThirdPartyExceptions(event)) return null;
             // PostHog's separately evaluated flag must not overwrite our rendered assignment.
             const variant = posthog.get_property(`$feature/${EXPERIENCE_KEY}`);
             if (

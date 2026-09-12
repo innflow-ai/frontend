@@ -4,6 +4,7 @@ import {
   dropThirdPartyExceptions,
   PostHogObservability,
 } from "@/components/posthog-observability";
+import { EXPERIENCE_KEY } from "@/lib/marketing-experience";
 
 function exceptionEvent(filename: string | undefined) {
   return {
@@ -19,6 +20,7 @@ const posthog = vi.hoisted(() => ({
   capture: vi.fn(),
   has_opted_out_capturing: vi.fn(() => false),
   init: vi.fn(),
+  get_property: vi.fn(),
   opt_in_capturing: vi.fn(),
   opt_out_capturing: vi.fn(),
   startSessionRecording: vi.fn(),
@@ -82,6 +84,25 @@ describe("PostHogObservability", () => {
     act(() => handlers.get("consent")?.({ categories: ["analytics"] }));
 
     await waitFor(() => expect(posthog.init).toHaveBeenCalledOnce());
+    const beforeSend = posthog.init.mock.calls[0][1].before_send;
+    posthog.get_property.mockImplementation((key: string) =>
+      key === "experiment_version" ? EXPERIENCE_KEY : "new",
+    );
+    expect(
+      beforeSend(exceptionEvent("https://connect.facebook.net/bridge.js")),
+    ).toBeNull();
+    const siteException = exceptionEvent("/_next/static/chunk.js");
+    expect(beforeSend(siteException)).toBe(siteException);
+    expect(siteException?.properties).toMatchObject({
+      [`$feature/${EXPERIENCE_KEY}`]: "new",
+      experiment_version: EXPERIENCE_KEY,
+    });
+    const pageview = { event: "$pageview", properties: {} };
+    expect(beforeSend(pageview)).toBe(pageview);
+    expect(pageview.properties).toMatchObject({
+      [`$feature/${EXPERIENCE_KEY}`]: "new",
+      experiment_version: EXPERIENCE_KEY,
+    });
     expect(posthog.startSessionRecording).not.toHaveBeenCalled();
     expect(window.localStorage.getItem("innflow-cookie-consent")).toBe(
       "analytics",

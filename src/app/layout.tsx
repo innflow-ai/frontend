@@ -1,7 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Figtree } from "next/font/google";
+import { Host_Grotesk } from "next/font/google";
 import type { ReactNode } from "react";
 import { ConsentManagedTags } from "@/components/consent-managed-tags";
+import { EditorialFooter } from "@/components/editorial-footer";
+import { EditorialHeader } from "@/components/editorial-header";
+import { MarketingExperienceRuntime } from "@/components/marketing-experience-runtime";
 import { MarketingRuntime } from "@/components/marketing-runtime";
 import type { LatestBlogPostNavItem } from "@/components/mega-menu";
 import { NavigationBlogPostsProvider } from "@/components/navigation-blog-posts";
@@ -11,19 +14,19 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { siteConfig } from "@/config/site";
+import { getMarketingExperience } from "@/lib/marketing-experience-server";
 import {
-  coverImageUrl,
   formatPostDate,
   getLatestBlogPosts,
   humanizeCategory,
+  urlForImage,
 } from "@/lib/sanity";
 import "./globals.css";
 import "lenis/dist/lenis.css";
 
-const figtree = Figtree({
+const hostGrotesk = Host_Grotesk({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-figtree",
+  variable: "--font-host-grotesk",
   display: "swap",
 });
 
@@ -98,13 +101,20 @@ export default async function RootLayout({
 }: {
   children: ReactNode;
 }) {
+  const experience = await getMarketingExperience();
   const latestPosts = await getLatestBlogPosts();
   const latestBlogPosts: LatestBlogPostNavItem[] = latestPosts.map((post) => ({
     title: post.title,
     href: `/blog/${post.slug}`,
     categoryLabel: humanizeCategory(post.category),
     publishedLabel: formatPostDate(post.publishedAt),
-    imageUrl: post.coverImage ? coverImageUrl(post.coverImage, 720, 512) : null,
+    imageUrl: post.coverImage
+      ? urlForImage(post.coverImage)
+          .ignoreImageParams()
+          .width(720)
+          .auto("format")
+          .url()
+      : null,
     imageAlt: post.coverImage?.alt ?? post.title,
   }));
 
@@ -114,7 +124,7 @@ export default async function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={figtree.variable}
+      className={hostGrotesk.variable}
       suppressHydrationWarning
     >
       <head>
@@ -124,7 +134,7 @@ export default async function RootLayout({
           }}
         />
       </head>
-      <body>
+      <body data-marketing-experience={experience.variant ?? undefined}>
         <SmoothScroll />
         <noscript>
           <iframe
@@ -139,14 +149,25 @@ export default async function RootLayout({
           Skip to content
         </a>
         <NavigationBlogPostsProvider posts={latestBlogPosts}>
-          <SiteHeader />
+          {experience.variant === "control" ? (
+            <EditorialHeader latestBlogPosts={latestBlogPosts} />
+          ) : (
+            <SiteHeader />
+          )}
           {children}
-          <SiteCta />
-          <SiteFooter />
+          {experience.variant === "control" ? (
+            <EditorialFooter />
+          ) : (
+            <>
+              <SiteCta />
+              <SiteFooter />
+            </>
+          )}
         </NavigationBlogPostsProvider>
         <MarketingRuntime />
         <ConsentManagedTags />
-        <PostHogObservability />
+        <PostHogObservability experience={experience} />
+        {experience.variant && <MarketingExperienceRuntime />}
       </body>
     </html>
   );

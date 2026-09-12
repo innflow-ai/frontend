@@ -1,44 +1,10 @@
 @import "tailwindcss";
-
-@font-face {
-  font-family: "Innflow Helvetica";
-  src: url("/brand/baselane-inspired/helvetica-now-regular.woff2")
-    format("woff2");
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Innflow Helvetica";
-  src: url("/brand/baselane-inspired/helvetica-now-medium.woff2")
-    format("woff2");
-  font-weight: 500 800;
-  font-display: swap;
-}
-
-/* Button labels use the same glyphs with cap-height-centered metrics. */
-@font-face {
-  font-family: "Innflow Button Helvetica";
-  src: url("/brand/baselane-inspired/helvetica-now-regular.woff2")
-    format("woff2");
-  font-weight: 400;
-  font-display: swap;
-  ascent-override: 85%;
-  descent-override: 15%;
-  line-gap-override: 0%;
-}
-@font-face {
-  font-family: "Innflow Button Helvetica";
-  src: url("/brand/baselane-inspired/helvetica-now-medium.woff2")
-    format("woff2");
-  font-weight: 500 800;
-  font-display: swap;
-  ascent-override: 85%;
-  descent-override: 15%;
-  line-gap-override: 0%;
-}
+@import "./termly-consent.css";
 
 :root {
-  --font-sans: "Innflow Helvetica", Arial, sans-serif;
+  --font-sans: var(--font-host-grotesk), Arial, sans-serif;
+  --font-button: var(--font-sans);
+  --font-figtree: var(--font-sans);
   /* Compatibility for components that still reference the previous default. */
   --font-questrial: var(--font-sans);
   /* Warm page backgrounds with the existing sky accent palette. */

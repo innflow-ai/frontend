@@ -11,9 +11,9 @@ import Image from "next/image";
 import type { ReactNode } from "react";
 import { GoogleCtaContent } from "@/components/google-cta-content";
 import { siteConfig } from "@/config/site";
-import styles from "./baselane-homepage.module.css";
 import previewStyles from "./runey-landing.module.css";
 import { RuneyWorkspace } from "./runey-workspace";
+import styles from "./site-shell.module.css";
 import { TrackedLink } from "./tracked-link";
 
 const capabilities = [

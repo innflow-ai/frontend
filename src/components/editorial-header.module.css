@@ -127,6 +127,10 @@
   align-items: center;
 }
 
+.lightWordmark {
+  filter: brightness(0) invert(1);
+}
+
 .desktopNav {
   display: flex;
   align-items: center;
@@ -448,7 +452,7 @@
   .mobileLatestPostMedia img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   .mobileLatestPostCopy,

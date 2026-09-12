@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { siteConfig } from "@/config/site";
-import styles from "./baselane-homepage.module.css";
 import { CustomerSupportHours } from "./customer-support-hours";
 import { FooterLegalLinks } from "./footer-legal-links";
 import { GoogleCtaContent } from "./google-cta-content";
+import styles from "./site-shell.module.css";
 
 const footerMenus = [
   {

@@ -1,6 +1,6 @@
 .page {
-  color: #0b2633;
-  background: #fffbf4;
+  color: var(--bl-navy);
+  background: var(--bl-cream);
 }
 .dark {
   background: #102430;
@@ -18,7 +18,7 @@
 }
 .page .hero h1 {
   font-size: clamp(42px, 5vw, 72px);
-  font-weight: 600 !important;
+  font-weight: 500 !important;
   line-height: 1;
   letter-spacing: -0.04em;
   text-transform: uppercase;
@@ -53,7 +53,7 @@
   line-height: 1.25;
 }
 .page .button {
-  background: linear-gradient(#494b47, #242522);
+  background: var(--button-primary);
   color: #fff;
 }
 .page .outline {
@@ -151,7 +151,7 @@
   font-weight: 400;
 }
 .tableWrap thead th {
-  background: #0b2633;
+  background: var(--bl-navy);
   color: #fff;
 }
 .tableWrap td:nth-child(2) {
@@ -195,7 +195,7 @@
 .priceGrid article {
   padding: 40px;
   border-radius: 20px;
-  background: #fffbf4;
+  background: var(--bl-cream);
 }
 .priceGrid article > span {
   font-size: 14px;
@@ -329,7 +329,7 @@
 .page .closing h2 {
   text-transform: uppercase;
   font-size: clamp(38px, 5vw, 64px);
-  font-weight: 600 !important;
+  font-weight: 500 !important;
 }
 .page .closing p {
   font-size: 20px;
@@ -438,4 +438,10 @@
   .closing {
     padding: 80px 24px;
   }
+}
+
+/* Primary actions follow the shared BL brand reference. */
+.page .button:hover {
+  background: var(--button-primary-hover);
+  filter: none;
 }

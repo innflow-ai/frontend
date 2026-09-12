@@ -1,0 +1,62 @@
+[
+  {
+    "page": "Storage",
+    "verified_at": "2026-09-12T14:26:53.496121+00:00",
+    "reference_frame": "3:183",
+    "reference_count": 5,
+    "checks": [
+      "Compared full reference board with complete editable sheet",
+      "Main compositions and controls represented in Baselane styling",
+      "All reference nodes exist and mapped artwork is visible in correct sheet"
+    ],
+    "scope": "Editable draft image replicas with illustrative content and source-derived photography; not production publication or full landing-page assembly."
+  },
+  {
+    "page": "Websites",
+    "verified_at": "2026-09-12T14:26:53.496121+00:00",
+    "reference_frame": "3:190",
+    "reference_count": 5,
+    "checks": [
+      "Compared full reference board with complete editable sheet",
+      "Main compositions and controls represented in Baselane styling",
+      "All reference nodes exist and mapped artwork is visible in correct sheet"
+    ],
+    "scope": "Editable draft image replicas with illustrative content and source-derived photography; not production publication or full landing-page assembly."
+  },
+  {
+    "page": "Work Orders",
+    "verified_at": "2026-09-12T14:26:53.496121+00:00",
+    "reference_frame": "3:197",
+    "reference_count": 6,
+    "checks": [
+      "Compared full reference board with complete editable sheet",
+      "Main compositions and controls represented in Baselane styling",
+      "All reference nodes exist and mapped artwork is visible in correct sheet"
+    ],
+    "scope": "Editable draft image replicas with illustrative content and source-derived photography; not production publication or full landing-page assembly."
+  },
+  {
+    "page": "Workflows",
+    "verified_at": "2026-09-12T14:26:53.496121+00:00",
+    "reference_frame": "3:205",
+    "reference_count": 4,
+    "checks": [
+      "Compared full reference board with complete editable sheet",
+      "Main compositions and controls represented in Baselane styling",
+      "All reference nodes exist and mapped artwork is visible in correct sheet"
+    ],
+    "scope": "Editable draft image replicas with illustrative content and source-derived photography; not production publication or full landing-page assembly."
+  },
+  {
+    "page": "Home Page",
+    "verified_at": "2026-09-12T14:26:53.496121+00:00",
+    "reference_frame": "3:211",
+    "reference_count": 10,
+    "checks": [
+      "Compared full reference board with complete editable sheet",
+      "Main compositions and controls represented in Baselane styling",
+      "All reference nodes exist and mapped artwork is visible in correct sheet"
+    ],
+    "scope": "Editable draft image replicas with illustrative content and source-derived photography; not production publication or full landing-page assembly."
+  }
+]

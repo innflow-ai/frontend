@@ -1,0 +1,11 @@
+{
+  "tool": "built-in imagegen",
+  "asset": {
+    "reference": "3:198",
+    "photo_node": "53:197",
+    "path": "/Users/ak/innflow-web/output/doorloop-baselane/work-orders-photo-clean-v1.png",
+    "image_hash": "c62f94ce3136a12d4276e501e485f96cb8af40f8"
+  },
+  "verified_at": "2026-09-12T13:29:16.071237+00:00",
+  "verification": "Removed embedded task/request cards, plates and glow from technician photo. Preserved native53:198/53:211; moved task x88 to68 to clear technician in cleaned framing. Screenshot53:196 verified full ladder, face and clean overlay edges. Source-derived draft photo; no rights-clearance claim."
+}

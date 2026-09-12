@@ -1,0 +1,41 @@
+[
+  {
+    "page": "Accounting",
+    "verified_at": "2026-09-12T13:44:12.794823+00:00",
+    "reference_frame": "3:3",
+    "reference_count": 6,
+    "checks": [
+      "Full reference board compared with full editable sheet screenshot",
+      "Composition coverage and main controls preserved in Baselane adaptation",
+      "No obvious clipping or misplaced components in full-sheet views",
+      "Every mapped reference exists and artwork is visible within correct sheet"
+    ],
+    "scope": "Editable draft image replicas; illustrative content and source-derived photographs remain drafts. Does not verify full landing-page assembly or production readiness."
+  },
+  {
+    "page": "Listing & Advertising",
+    "verified_at": "2026-09-12T13:44:12.794823+00:00",
+    "reference_frame": "3:11",
+    "reference_count": 6,
+    "checks": [
+      "Full reference board compared with full editable sheet screenshot",
+      "Composition coverage and main controls preserved in Baselane adaptation",
+      "No obvious clipping or misplaced components in full-sheet views",
+      "Every mapped reference exists and artwork is visible within correct sheet"
+    ],
+    "scope": "Editable draft image replicas; illustrative content and source-derived photographs remain drafts. Does not verify full landing-page assembly or production readiness."
+  },
+  {
+    "page": "Bookkeeping",
+    "verified_at": "2026-09-12T13:44:12.794823+00:00",
+    "reference_frame": "3:19",
+    "reference_count": 5,
+    "checks": [
+      "Full reference board compared with full editable sheet screenshot",
+      "Composition coverage and main controls preserved in Baselane adaptation",
+      "No obvious clipping or misplaced components in full-sheet views",
+      "Every mapped reference exists and artwork is visible within correct sheet"
+    ],
+    "scope": "Editable draft image replicas; illustrative content and source-derived photographs remain drafts. Does not verify full landing-page assembly or production readiness."
+  }
+]

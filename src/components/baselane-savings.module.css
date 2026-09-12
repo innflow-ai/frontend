@@ -1,6 +1,6 @@
 .page {
-  color: #0b2633;
-  background: #fffbf4;
+  color: var(--bl-navy);
+  background: var(--bl-cream);
 }
 .hero {
   max-width: 1456px;
@@ -39,12 +39,12 @@
   min-height: 48px;
 }
 .page .button {
-  background: linear-gradient(180deg, #494b47, #242522);
+  background: var(--button-primary);
   color: white;
-  border: 1px solid #494b47;
+  border: 1px solid var(--button-primary);
 }
 .page .outline {
-  border: 1px solid #0b2633;
+  border: 1px solid var(--bl-navy);
 }
 .page a:focus-visible {
   outline: 3px solid #177ead;
@@ -193,7 +193,7 @@
   margin-top: 60px;
 }
 .fees article {
-  border-top: 1px solid #0b2633;
+  border-top: 1px solid var(--bl-navy);
   padding-top: 30px;
 }
 .page .fees h3 {
@@ -231,7 +231,7 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 30px;
-  border-top: 1px solid #0b2633;
+  border-top: 1px solid var(--bl-navy);
   padding: 25px 0;
 }
 .page .support h3 {
@@ -333,4 +333,10 @@
     background-image: url("/brand/baselane-inspired/savings/closing-mobile.webp");
     padding: 65px 24px 140px;
   }
+}
+
+/* Primary actions follow the shared BL brand reference. */
+.page .button:hover {
+  background: var(--button-primary-hover);
+  filter: none;
 }

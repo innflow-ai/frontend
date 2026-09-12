@@ -64,7 +64,7 @@
   align-items: center;
   gap: 10px;
   padding: 12px 22px;
-  background: #0b2633;
+  background: var(--bl-navy);
   color: white;
   border-radius: 30px;
   font-size: 16px;
@@ -74,7 +74,7 @@
   background: linear-gradient(90deg, #e8f2f6d9, transparent);
 }
 .webinarHero > div {
-  color: #0b2633;
+  color: var(--bl-navy);
 }
 .heroCard.webinarHero a {
   color: white;
@@ -106,8 +106,8 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #fffbf4;
-  color: #0b2633;
+  background: var(--bl-cream);
+  color: var(--bl-navy);
   display: grid;
   place-items: center;
 }
@@ -137,7 +137,7 @@
   border-radius: 25px;
   padding: 11px 18px;
   cursor: pointer;
-  color: #0b2633;
+  color: var(--bl-navy);
   font: inherit;
   font-size: 15px;
 }
@@ -291,7 +291,7 @@
   margin: 20px 0 !important;
 }
 .empty button {
-  background: #0b2633;
+  background: var(--bl-navy);
   color: white;
   border: 0;
   border-radius: 24px;
@@ -343,7 +343,7 @@
   font-size: 15px;
 }
 .actions .google {
-  background: linear-gradient(#494b47, #242522);
+  background: var(--button-primary);
   color: white;
 }
 .srOnly {
@@ -429,7 +429,7 @@
   .heroCard a,
   .heroCard.webinarHero a {
     background: #e5f0f4;
-    color: #0b2633;
+    color: var(--bl-navy);
     margin-top: 20px;
   }
   .featureLinks {
@@ -562,6 +562,12 @@
 }
 @media (max-width: 700px) {
   .featured .heroCard a {
-    color: #0b2633;
+    color: var(--bl-navy);
   }
+}
+
+/* Primary actions follow the shared BL brand reference. */
+.actions .google:hover {
+  background: var(--button-primary-hover);
+  filter: none;
 }

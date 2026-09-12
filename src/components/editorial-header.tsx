@@ -6,6 +6,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { type ReactNode, useEffect, useId, useRef, useState } from "react";
 import { GoogleSignInButton } from "@/components/google-sign-in";
+import { LoginMenu } from "@/components/login-menu";
 import {
   type LatestBlogPostNavItem,
   MegaMenu,
@@ -72,6 +73,7 @@ function MobileLatestPosts({
                   alt={post.imageAlt}
                   width={72}
                   height={46}
+                  quality={100}
                   sizes="72px"
                 />
               ) : (
@@ -518,13 +520,15 @@ export function MobileNavigation({
               Blog
             </motion.a>
             {loginHref ? (
-              <a
+              <LoginMenu
                 href={loginHref}
-                className={styles.mobilePrimaryLink}
-                onClick={closeMobile}
-              >
-                Log in
-              </a>
+                mobile
+                open={openMobileGroup === "Log in"}
+                onOpenChange={(open) =>
+                  setOpenMobileGroup(open ? "Log in" : null)
+                }
+                onSelect={closeMobile}
+              />
             ) : null}
             <div className={styles.mobileCtaRow}>
               <GoogleSignInButton

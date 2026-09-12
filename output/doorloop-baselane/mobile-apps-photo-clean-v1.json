@@ -1,0 +1,29 @@
+{
+  "tool": "built-in imagegen",
+  "prompt_summary": "Restore hands holding phone photograph. Remove all floating icons, blurry blue tiles, calculator graphics, plates/glows and phone UI. Preserve hands, sweater sleeves, device angle and placement, blank off-white display, wall/window, lighting and perspective. Full-bleed 440:585 portrait.",
+  "asset": {
+    "reference": "3:41",
+    "photo_node": "54:3",
+    "path": "/Users/ak/innflow-web/output/doorloop-baselane/mobile-apps-photo-clean-v1.png",
+    "image_hash": "c11aca163a033a74ab536cae5b9b1d11e902a2be"
+  },
+  "verification": "Hero 3:41: built-in imagegen removed source floating icons, blurry blue tiles, glow and original phone UI while preserving handheld-device photograph. Applied clean blank-display asset c11aca163a033a74ab536cae5b9b1d11e902a2be to 54:3. Preserved native banking/calculator cards. Adjusted native screen 54:4 to134.4x308 and transform [[.9968,-.287,246],[.07975,.958,88]], removed extra outline; close-up verified photo cleanup and editable screen. Device perspective remains an affine approximation for final visual review, not a true four-corner warp. Reference-derived draft image.",
+  "screen_fit_followup": {
+    "node": "54:4",
+    "fills": [],
+    "effects": [],
+    "transform": [
+      [
+        0.9968,
+        -0.287,
+        248
+      ],
+      [
+        0.07975,
+        0.958,
+        98
+      ]
+    ],
+    "verified": "Physical photographic bezel and display preserved without covering surface; editable native interface sits within display; GLASS distortion removed."
+  }
+}

@@ -1,6 +1,6 @@
 .page {
-  background: #fffbf4;
-  color: #0b2633;
+  background: var(--bl-cream);
+  color: var(--bl-navy);
   padding-bottom: 80px;
 }
 .intro {
@@ -90,7 +90,7 @@
 .controls button {
   width: 48px;
   height: 48px;
-  border: 1px solid #0b2633;
+  border: 1px solid var(--bl-navy);
   border-radius: 50%;
   background: transparent;
   color: inherit;

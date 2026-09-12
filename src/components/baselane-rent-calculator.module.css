@@ -1,6 +1,6 @@
 .page {
-  background: #fffbf4;
-  color: #0b2633;
+  background: var(--bl-cream);
+  color: var(--bl-navy);
 }
 .hero {
   max-width: 1440px;
@@ -40,7 +40,7 @@
 }
 .form :is(input, select, textarea) {
   width: 100%;
-  border: 1px solid #0b2633;
+  border: 1px solid var(--bl-navy);
   background: transparent;
   border-radius: 28px;
   padding: 14px 20px;
@@ -90,7 +90,7 @@
   line-height: 1.25;
 }
 .page .button {
-  background: linear-gradient(#494b47, #242522);
+  background: var(--button-primary);
   color: #fff;
 }
 .page .outline {
@@ -266,4 +266,10 @@
   .page .article h2 {
     font-size: 32px;
   }
+}
+
+/* Primary actions follow the shared BL brand reference. */
+.page .button:hover {
+  background: var(--button-primary-hover);
+  filter: none;
 }

@@ -295,27 +295,6 @@ export function BaselaneInsurance() {
           ))}
         </div>
       </section>
-      <section className={styles.closing}>
-        <picture>
-          <source
-            media="(max-width:700px)"
-            srcSet="/brand/baselane-inspired/renters/closing-mobile.webp"
-          />
-          <Image
-            src="/brand/baselane-inspired/renters/closing-desktop.webp"
-            alt=""
-            fill
-            sizes="100vw"
-          />
-        </picture>
-        <div>
-          <h2>Ready for a clearer starting point?</h2>
-          <p>Prepare the essentials for your next property review.</p>
-          <a className={styles.primary} href="#property-brief">
-            Prepare property brief
-          </a>
-        </div>
-      </section>
     </BaselaneHomepage>
   );
 }

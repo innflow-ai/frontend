@@ -1,7 +1,7 @@
 .hero {
   height: 650px;
   position: relative;
-  background: #0b2633;
+  background: var(--bl-navy);
   color: white;
 }
 .hero img,
@@ -40,10 +40,10 @@
   min-height: 48px;
   padding: 12px 22px;
   border-radius: 7px;
-  background: linear-gradient(#494b47, #242522);
+  background: var(--button-primary);
   color: #fff;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 500;
 }
 .intro {
   text-align: center;
@@ -249,7 +249,7 @@
 .contactGrid h3,
 .resource h3 {
   font-size: 20px;
-  font-weight: 600 !important;
+  font-weight: 500 !important;
   margin: 14px 0 !important;
 }
 .contactGrid p,
@@ -271,7 +271,7 @@
   padding: 28px;
   cursor: pointer;
   font-size: 19px;
-  font-weight: 600;
+  font-weight: 500;
   list-style: none;
 }
 .topicGrid summary::-webkit-details-marker {
@@ -335,7 +335,7 @@
 }
 .results summary {
   cursor: pointer;
-  font-weight: 600;
+  font-weight: 500;
 }
 .results details p {
   line-height: 1.7;
@@ -493,4 +493,10 @@
 }
 .webinarCard:after {
   background: linear-gradient(180deg, #0b26336b, transparent 30%, #0b2633eb);
+}
+
+/* Primary actions follow the shared BL brand reference. */
+.demo .button:hover {
+  background: var(--button-primary-hover);
+  filter: none;
 }

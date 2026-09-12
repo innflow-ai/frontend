@@ -1,12 +1,20 @@
 .page {
+  /* Figma brand reference: tfYKXFc84NPNPIgmIAhe3b / 115:401. */
+  --bl-navy: #012232;
+  --bl-cream: #fffbf4;
+  --bl-green: #cbffd6;
+  --font-sans: var(--font-host-grotesk), Arial, sans-serif;
+  --ink-strong: var(--bl-navy);
   --font-button: var(--font-sans);
-  --ink: #0b2633;
-  --paper: #fffbf4;
+  --ink: var(--bl-navy);
+  --paper: var(--bl-cream);
   background: var(--paper);
-  color: #121111;
+  color: var(--bl-navy);
   font-family: var(--font-sans);
   font-size: 16px;
-  line-height: 1.3;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.35;
   overflow: clip;
   color-scheme: light;
 }
@@ -116,7 +124,7 @@
   margin: 0 0 8px;
   padding: 0 10px;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 500;
   opacity: 0.65;
 }
 .dropdown a {
@@ -187,14 +195,16 @@
 .outlineButton {
   display: inline-flex;
   font-family: var(--font-button, var(--font-sans));
-  line-height: 1.25;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.35;
   align-items: center;
   justify-content: center;
   gap: 8px;
   padding: 10px 18px;
   border-radius: 999px;
   white-space: nowrap;
-  min-height: 42px;
+  min-height: 48px;
   border: 1px solid transparent;
   transition:
     background 0.18s,
@@ -213,8 +223,8 @@
   color: var(--paper);
 }
 .page .blueButton {
-  background: #c4e3f6;
-  color: var(--ink);
+  background: var(--button-primary);
+  color: #fff;
 }
 .page .lightButton {
   background: var(--paper);
@@ -222,10 +232,12 @@
 }
 .page :is(.login, .outlineButton) {
   border-color: var(--ink);
+  background: var(--paper);
 }
 .page :is(.darkButton, .blueButton, .lightButton, .outlineButton):hover {
   transform: translateY(-1px);
-  filter: brightness(1.06);
+  background: var(--bl-green);
+  color: var(--bl-navy);
 }
 .menuToggle,
 .mobileLogin {
@@ -337,7 +349,7 @@
   border-radius: 30px;
 }
 .storyNav a:hover {
-  background: #e7f1f8;
+  background: var(--bl-green);
 }
 .story {
   scroll-margin-top: 105px;
@@ -484,7 +496,7 @@
   padding: 88px 28px 112px;
   border: 2px solid rgb(1 34 50 / 65%);
   border-radius: 28px;
-  background: #0b2633;
+  background: var(--bl-navy);
   color: #012232;
   text-align: center;
   box-shadow: 0 0 0 1px rgb(255 255 255 / 12%);
@@ -583,7 +595,7 @@
   border: 0;
   border-radius: 999px;
   background: #012232;
-  color: #fffbf4;
+  color: var(--bl-cream);
 }
 .membershipInputRow :disabled {
   cursor: not-allowed;
@@ -1099,7 +1111,7 @@
   .mobileMenu nav button {
     font-size: 22px;
     line-height: 1.15;
-    font-weight: 450;
+    font-weight: 500;
   }
 
   .mobileMenu nav > div > a {
@@ -1110,13 +1122,19 @@
 @media (min-width: 1181px) {
   .dropdownWithPosts {
     grid-template-columns: 200px minmax(0, 1fr);
-    gap: 28px;
+    gap: 36px;
+    padding: 30px;
+  }
+
+  .dropdownWithPosts .dropdownColumn > a {
+    gap: 12px;
+    padding-block: 14px;
   }
 
   .menuBlogSection {
     min-width: 0;
     border-left: 1px solid rgb(1 34 50 / 12%);
-    padding-left: 28px;
+    padding-left: 36px;
   }
 
   .menuBlogHeading {
@@ -1124,7 +1142,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 16px;
-    padding-bottom: 18px;
+    padding-bottom: 24px;
   }
 
   .page .menuBlogHeading h3 {
@@ -1142,7 +1160,7 @@
   .menuBlogGrid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 18px;
+    gap: 28px;
   }
 
   .dropdown .menuBlogCard {
@@ -1150,9 +1168,9 @@
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
-    gap: 10px;
+    gap: 14px;
     min-width: 0;
-    padding: 0;
+    padding: 8px;
     border-radius: 12px;
   }
 
@@ -1209,4 +1227,27 @@
 /* Fixed navigation must not be clipped by the page shell. */
 .chromeScope {
   overflow: visible;
+}
+
+.page :is(.darkButton, .blueButton):hover {
+  background: var(--button-primary-hover);
+  color: #fff;
+}
+
+.mageIcon {
+  display: inline-block;
+  flex-shrink: 0;
+  background: currentColor;
+  mask: var(--mage-icon) center / contain no-repeat;
+}
+
+.membershipSuccess {
+  margin-top: 20px;
+  padding: 20px 24px;
+  border: 1px solid var(--bl-navy);
+  border-radius: 16px;
+  background: var(--bl-green);
+  color: var(--bl-navy);
+  font-size: 16px;
+  line-height: 1.5;
 }

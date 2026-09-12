@@ -151,7 +151,7 @@
   padding: 14px 22px;
   min-height: 48px;
   align-items: center;
-  background: linear-gradient(#494b47, #242522);
+  background: var(--button-primary);
   color: white !important;
   border-radius: 7px;
   white-space: nowrap;
@@ -277,4 +277,10 @@
   .contact a {
     margin-top: 25px;
   }
+}
+
+/* Primary actions follow the shared BL brand reference. */
+.contact a:hover {
+  background: var(--button-primary-hover);
+  filter: none;
 }

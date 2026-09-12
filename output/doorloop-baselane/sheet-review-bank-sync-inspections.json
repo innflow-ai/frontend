@@ -1,0 +1,26 @@
+[
+  {
+    "page": "Bank Sync",
+    "verified_at": "2026-09-12T13:51:10.083993+00:00",
+    "reference_frame": "3:26",
+    "reference_count": 5,
+    "checks": [
+      "Compared full reference board and editable sheet screenshots",
+      "Five mapped artworks visible within correct sheet",
+      "No obvious sheet clipping or missing compositions"
+    ],
+    "scope": "Editable draft image replicas; not production publication or complete landing-page assembly."
+  },
+  {
+    "page": "Inspections",
+    "verified_at": "2026-09-12T13:51:10.083993+00:00",
+    "reference_frame": "3:33",
+    "reference_count": 5,
+    "checks": [
+      "Compared full reference board and editable sheet screenshots",
+      "Five mapped artworks visible within correct sheet",
+      "No obvious sheet clipping or missing compositions"
+    ],
+    "scope": "Editable draft image replicas; not production publication or complete landing-page assembly."
+  }
+]

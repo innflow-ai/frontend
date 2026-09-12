@@ -1,0 +1,11 @@
+{
+  "tool": "built-in imagegen",
+  "prompt_summary": "Remove baked UI, text, logos, glow and backplates; reconstruct obscured photo, preserve people, clothing, poses, scene and camera perspective; full-bleed portrait with no added graphics.",
+  "asset": {
+    "reference": "3:20",
+    "photo_node": "47:35",
+    "path": "/Users/ak/innflow-web/output/doorloop-baselane/bookkeeping-photo-clean-v1.png",
+    "image_hash": "35672328b9ee181d1442aaafda959303863b7006"
+  },
+  "verification": "Removed source income/profit cards and glow; restored full window/desk composition in 47:35. Preserved native chart overlays 48:18/48:30; original foreground ellipse 115:185 hidden and replaced by native hair silhouette 183:2/183:3 with matched photo fill. Close-up verified head-over-chart layering."
+}

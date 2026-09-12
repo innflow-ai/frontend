@@ -425,17 +425,17 @@
 
   .mobileLatestPostList {
     display: grid;
-    gap: 8px;
+    gap: 16px;
   }
 
   .mobileLatestPost {
     display: grid;
     grid-template-columns: 72px minmax(0, 1fr);
-    gap: 12px;
+    gap: 16px;
     align-items: center;
     border-radius: 10px;
     background: var(--sky-soft);
-    padding: 8px;
+    padding: 12px;
   }
 
   .mobileLatestPostMedia {

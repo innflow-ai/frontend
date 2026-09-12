@@ -1,14 +1,7 @@
 "use client";
 
-import {
-  ArrowRight,
-  CheckCircle,
-  Database,
-  FlowArrow,
-  ShieldCheck,
-} from "@phosphor-icons/react";
 import Image from "next/image";
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { GoogleCtaContent } from "@/components/google-cta-content";
 import { siteConfig } from "@/config/site";
 import previewStyles from "./runey-landing.module.css";
@@ -18,26 +11,42 @@ import { TrackedLink } from "./tracked-link";
 
 const capabilities = [
   {
-    icon: Database,
+    icon: "database",
     title: "Connected context",
     text: "Keep property records, files, and procedures beside the work they support.",
   },
   {
-    icon: FlowArrow,
+    icon: "exchange",
     title: "Workflow automation",
     text: "Give recurring requests a clear path, from the first trigger to the next action.",
   },
   {
-    icon: ShieldCheck,
+    icon: "shield-check",
     title: "Human approvals",
     text: "Review the details before consequential work moves forward.",
   },
   {
-    icon: CheckCircle,
+    icon: "check-circle",
     title: "Visible execution",
     text: "Follow each step, inspect the context, and see where a handoff needs attention.",
   },
 ];
+
+function MageIcon({ name, size }: { name: string; size: number }) {
+  return (
+    <span
+      aria-hidden="true"
+      className={styles.mageIcon}
+      style={
+        {
+          "--mage-icon": `url("/brand/mage/${name}.svg")`,
+          width: size,
+          height: size,
+        } as CSSProperties
+      }
+    />
+  );
+}
 
 export function BaselaneHomepage({ children }: { children?: ReactNode }) {
   return (
@@ -75,7 +84,7 @@ export function BaselaneHomepage({ children }: { children?: ReactNode }) {
                     <GoogleCtaContent />
                   </TrackedLink>
                   <a className={styles.darkButton} href={siteConfig.demoUrl}>
-                    See demo <ArrowRight size={19} />
+                    See demo <MageIcon name="arrow-right" size={19} />
                   </a>
                 </div>
                 <p>One place for your team, context, and next steps.</p>
@@ -161,7 +170,8 @@ export function BaselaneHomepage({ children }: { children?: ReactNode }) {
                     <h3>{story.title}</h3>
                     <p>{story.copy}</p>
                     <a className={styles.lightButton} href={story.href}>
-                      Explore {story.id} <ArrowRight size={16} />
+                      Explore {story.id}{" "}
+                      <MageIcon name="arrow-right" size={16} />
                     </a>
                   </div>
                   <div
@@ -179,10 +189,10 @@ export function BaselaneHomepage({ children }: { children?: ReactNode }) {
             <section className={`${styles.shell} ${styles.capabilities}`}>
               <h2>Clarity where it counts.</h2>
               <div className={styles.capabilityGrid}>
-                {capabilities.map(({ icon: Icon, title, text }) => (
+                {capabilities.map(({ icon, title, text }) => (
                   <div key={title}>
                     <h3>
-                      <Icon size={21} />
+                      <MageIcon name={icon} size={24} />
                       {title}
                     </h3>
                     <p>{text}</p>

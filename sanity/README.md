@@ -1,3 +1,9 @@
+# Innflow Content Studio
+
+## Content entry guides
+
+- [Adding and selecting testimonials](./TESTIMONIALS.md): field meanings, image guidance, quote formatting, and page placement.
+
 # Sanity Clean Content Studio
 
 Congratulations, you have now installed the Sanity Content Studio, an open-source real-time content editing environment connected to the Sanity backend.

@@ -167,22 +167,6 @@ export function BaselaneUpdates() {
           ))}
         </div>
       </div>
-      <section className={styles.closing}>
-        <Image
-          src="/brand/baselane-inspired/renters/closing-desktop.webp"
-          alt=""
-          fill
-          sizes="100vw"
-        />
-        <div>
-          <h2>More room for what comes next.</h2>
-          <p>Bring your property operations into one flow.</p>
-          <a className={styles.primary} href={siteConfig.demoUrl}>
-            See demo
-            <ArrowRight size={18} />
-          </a>
-        </div>
-      </section>
     </BaselaneHomepage>
   );
 }

@@ -11,6 +11,7 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { GoogleCtaContent } from "@/components/google-cta-content";
+import { LoginMenu } from "@/components/login-menu";
 import {
   portfolioColumns as originalPortfolioColumns,
   productColumns,
@@ -281,6 +282,7 @@ export function SiteHeader() {
                                     alt={post.imageAlt}
                                     width={720}
                                     height={512}
+                                    quality={100}
                                     sizes="(min-width: 1380px) 230px, 250px"
                                   />
                                 ) : (
@@ -328,9 +330,17 @@ export function SiteHeader() {
           </a>
         </nav>
         <div className={styles.headerActions}>
-          <a className={styles.login} href={`${siteConfig.appOrigin}/login`}>
-            Log in
-          </a>
+          <LoginMenu
+            href={`${siteConfig.appOrigin}/login`}
+            open={menu === "Log in"}
+            onOpenChange={(open) => {
+              cancelHoverClose();
+              setMenu((current) =>
+                open ? "Log in" : current === "Log in" ? null : current,
+              );
+            }}
+            onSelect={closeMenus}
+          />
           <TrackedLink
             className={styles.darkButton}
             destination={siteConfig.googleAuthUrl}

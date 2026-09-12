@@ -12,6 +12,7 @@ import type {
   ProductDetailSection,
   ProductPage as ProductPageData,
 } from "@/lib/product-pages";
+import { PageTestimonials } from "./page-testimonials";
 import styles from "./product-page.module.css";
 import { RuneyWorkspace } from "./runey-workspace";
 import { WorkflowIllustration } from "./workflow-illustration";
@@ -277,6 +278,7 @@ export function ProductPage({ product }: { product: ProductPageData }) {
         </section>
       ) : null}
 
+      <PageTestimonials pagePath={`/products/${product.slug}`} />
       {faqs.length ? (
         <section
           className={styles.faq}

@@ -111,7 +111,8 @@ export default async function RootLayout({
     imageUrl: post.coverImage
       ? urlForImage(post.coverImage)
           .ignoreImageParams()
-          .width(720)
+          .width(1440)
+          .quality(100)
           .auto("format")
           .url()
       : null,

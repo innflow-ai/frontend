@@ -13,7 +13,6 @@ import {
   CreditCard,
   Database,
   DoorOpen,
-  Files,
   FlowArrow,
   GraduationCap,
   Handshake,
@@ -26,11 +25,9 @@ import {
   PlugsConnected,
   PuzzlePiece,
   Quotes,
-  Robot,
   Signature,
   Sparkle,
   Storefront,
-  Tag,
   UsersThree,
   Wrench,
 } from "@phosphor-icons/react";
@@ -85,12 +82,6 @@ const platformLinks: MegaMenuLink[] = [
     body: "The connected foundation for modern property operations.",
   },
   {
-    href: "/products/agent-os",
-    icon: Robot,
-    title: "Copilot",
-    body: "Build workflows from a single prompt.",
-  },
-  {
     href: "/products/agentic-workflows",
     icon: FlowArrow,
     title: "Agentic Workflows",
@@ -103,12 +94,6 @@ const platformLinks: MegaMenuLink[] = [
     body: "Govern, coordinate, and scale operational intelligence.",
   },
   {
-    href: "/products/agent-studio",
-    icon: Wrench,
-    title: "Agent Studio",
-    body: "Build, test, and refine agents in one visual workspace.",
-  },
-  {
     href: "/products/ai-agents",
     icon: Sparkle,
     title: "AI Agents",
@@ -118,10 +103,16 @@ const platformLinks: MegaMenuLink[] = [
 
 const buildWithAgentsLinks: MegaMenuLink[] = [
   {
+    href: "/products/agent-studio",
+    icon: Wrench,
+    title: "Agent Studio",
+    body: "Build, test, and refine agents in one visual workspace.",
+  },
+  {
     href: "/skills",
     icon: PuzzlePiece,
     title: "Agent Skills",
-    body: "Connect your tools and systems.",
+    body: "Start with reusable skills for the work your team repeats.",
   },
 ];
 
@@ -138,26 +129,15 @@ const capabilityLinks: MegaMenuLink[] = [
     title: "Databases",
     body: "Shared operational context your teams and agents can trust.",
   },
-  {
-    href: "/skills",
-    icon: Files,
-    title: "Templates",
-    body: "Start faster with ready-to-use workflow templates.",
-  },
 ];
 
 const resourcesLinks: MegaMenuLink[] = [
   {
-    href: "/integrations",
+    href: "/connections",
     icon: PlugsConnected,
-    title: "Integrations",
-    body: "Connect the tools your team already runs on.",
-  },
-  {
-    href: "/pricing",
-    icon: Tag,
-    title: "Pricing",
-    body: "Straightforward packaging for operations teams.",
+    iconSrc: "/brand/navigation/mega-menu-items/integrations.svg",
+    title: "Page Directory",
+    body: "Browse all Innflow pages by topic.",
   },
   {
     href: "/blog",
@@ -166,21 +146,23 @@ const resourcesLinks: MegaMenuLink[] = [
     body: "Ideas for sharper, calmer operations.",
   },
   {
-    href: siteConfig.demoUrl,
+    href: "/partner-with-us",
     icon: Handshake,
-    title: "Become an Affiliate",
+    iconSrc: "/brand/navigation/mega-menu-items/become-an-affiliate.svg",
+    title: "Partnerships",
     body: "Partner with Innflow and help more property teams modernize operations.",
   },
   {
-    href: "/blog",
+    href: "/our-customers",
     icon: Quotes,
     title: "Customer Stories",
     body: "Explore real-world success stories from Innflow customers.",
   },
   {
-    href: "/blog",
+    href: "/resources",
     icon: Archive,
-    title: "Asset Library",
+    iconSrc: "/brand/navigation/mega-menu-items/asset-library.svg",
+    title: "Resource Library",
     body: "Explore reports, guides, testimonials, podcasts, and more.",
   },
 ];
@@ -220,17 +202,29 @@ export const portfolioColumns: MegaMenuColumn[] = [
         title: "Community Associations",
         body: "HOAs, condos & townhomes.",
       },
+      {
+        href: "/property-management",
+        icon: Buildings,
+        title: "Conventional",
+        body: "Low, mid, & high-rise apartment complexes.",
+      },
+      {
+        href: "/property-management",
+        icon: GraduationCap,
+        title: "Student Housing",
+        body: "Off-campus & purpose-built student housing.",
+      },
     ]),
   },
 ];
 
 export const productColumns: MegaMenuColumn[] = [
   {
-    heading: "Products",
+    heading: "Platform and agents",
     links: withApprovedMenuIcons(platformLinks),
   },
   {
-    heading: "Build With Agents",
+    heading: "Build and customize",
     links: withApprovedMenuIcons([...buildWithAgentsLinks, ...capabilityLinks]),
   },
   {
@@ -248,25 +242,59 @@ export const productColumns: MegaMenuColumn[] = [
     heading: "Connections and governance",
     links: withApprovedMenuIcons([
       {
-        href: "/connections",
+        href: "/integrations",
         icon: PlugsConnected,
-        iconSrc: "/brand/navigation/mega-menu-items/integrations.svg",
-        title: "Connections",
-        body: "Browse every BL page in one place.",
+        title: "Integrations",
+        body: "Explore connections for the tools your team already uses.",
       },
-      ...platformPages.slice(4).map((page) => ({
-        href: `/platform/${page.slug}`,
-        icon: PlugsConnected,
-        title: page.title,
-        body: page.description,
-      })),
+      ...platformPages
+        .filter((page) =>
+          ["deployment-options", "security-and-compliance"].includes(page.slug),
+        )
+        .map((page) => ({
+          href: `/platform/${page.slug}`,
+          icon: PlugsConnected,
+          title: page.title,
+          body: page.description,
+        })),
     ]),
   },
 ];
 
 export const solutionsColumns: MegaMenuColumn[] = [
   {
-    heading: "Leasing AI",
+    heading: "Operations",
+    links: withApprovedMenuIcons([
+      {
+        href: "/property-management",
+        icon: CirclesFour,
+        title: "Centralized Operations",
+        body: "Modern, AI-powered operations across leasing, admin, and maintenance.",
+      },
+      {
+        href: "/rent-collection",
+        icon: CreditCard,
+        iconSrc: "/brand/navigation/bl-stroke/23-credit-card.svg",
+        title: "Rent Collection",
+        body: "Keep recurring rental workflows and resident context connected.",
+      },
+      {
+        href: "/property-management",
+        icon: CreditCard,
+        iconSrc: "/brand/navigation/bl-stroke/delinquency-alarm.svg",
+        title: "Delinquency",
+        body: "Reduce late payments and boost cash flow.",
+      },
+      {
+        href: "/property-management",
+        icon: DoorOpen,
+        title: "Owner Portal",
+        body: "Keep owners connected to property information and team updates.",
+      },
+    ]),
+  },
+  {
+    heading: "Leasing",
     links: withApprovedMenuIcons([
       {
         href: "/products/agent-os",
@@ -284,7 +312,7 @@ export const solutionsColumns: MegaMenuColumn[] = [
         href: "/products/agent-os",
         icon: Signature,
         title: "Application & eSign",
-        body: "Self-guided tours that convert 24/7.",
+        body: "Coordinate rental applications and document signing.",
       },
       {
         href: "/products/databases",
@@ -292,51 +320,6 @@ export const solutionsColumns: MegaMenuColumn[] = [
         title: "CRM",
         body: "Capture, nurture, & convert prospects.",
       },
-    ]),
-  },
-  {
-    heading: "Assets",
-    links: withApprovedMenuIcons([
-      {
-        href: "/property-management",
-        icon: Buildings,
-        title: "Conventional",
-        body: "Low, mid, & high-rise apartment complexes.",
-      },
-      {
-        href: "/property-management",
-        icon: GraduationCap,
-        title: "Student Housing",
-        body: "Off-campus & purpose-built student housing.",
-      },
-    ]),
-  },
-  {
-    heading: "Solutions",
-    links: withApprovedMenuIcons([
-      {
-        href: "/property-management",
-        icon: CirclesFour,
-        title: "Centralized Operations",
-        body: "Modern, AI-powered operations across leasing, admin, and maintenance.",
-      },
-      {
-        href: "/property-management",
-        icon: UsersThree,
-        title: "Owner Operators and Fee Managers",
-        body: "AI automation for property management companies.",
-      },
-      {
-        href: "/property-management",
-        icon: House,
-        title: "Owners",
-        body: "AI automation for ownership groups.",
-      },
-    ]),
-  },
-  {
-    heading: "Operations",
-    links: withApprovedMenuIcons([
       {
         href: "/property-management",
         icon: HouseLine,
@@ -349,23 +332,29 @@ export const solutionsColumns: MegaMenuColumn[] = [
         title: "Renewals",
         body: "Predict, engage, and renew.",
       },
+    ]),
+  },
+  {
+    heading: "By team",
+    links: withApprovedMenuIcons([
       {
         href: "/property-management",
-        icon: CreditCard,
-        title: "Delinquency",
-        body: "Reduce late payments and boost cash flow.",
-      },
-      {
-        href: "/multi-property-investors",
-        icon: Wrench,
-        title: "Maintenance & Mobile App",
-        body: "Automate repairs and manage mobile work orders from request to resolution.",
+        icon: UsersThree,
+        title: "Owner Operators and Fee Managers",
+        body: "AI automation for property management companies.",
       },
       {
         href: "/property-management",
-        icon: DoorOpen,
-        title: "Owner Portal",
-        body: "Find out how well your teams answer calls.",
+        icon: House,
+        title: "Owners",
+        body: "AI automation for ownership groups.",
+      },
+      {
+        href: "/property-management",
+        icon: UsersThree,
+        iconSrc: "/brand/navigation/bl-stroke/leasing-teams.svg",
+        title: "Leasing Teams",
+        body: "Coordinate prospect follow-up, applications, and resident handoffs.",
       },
     ]),
   },
@@ -419,6 +408,7 @@ function LatestPostsAside({
                   alt={post.imageAlt}
                   width={MEGA_MENU_COVER_WIDTH}
                   height={MEGA_MENU_COVER_HEIGHT}
+                  quality={100}
                   sizes="(max-width: 1100px) 42vw, 360px"
                 />
               ) : (

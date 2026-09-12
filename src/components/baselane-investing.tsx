@@ -3,8 +3,6 @@
 import { ArrowLeft, ArrowRight, MagnifyingGlass } from "@phosphor-icons/react";
 import Image from "next/image";
 import { useRef, useState } from "react";
-import { GoogleCtaContent } from "@/components/google-cta-content";
-import { siteConfig } from "@/config/site";
 import { BaselaneHomepage } from "./baselane-homepage";
 import items from "./baselane-investing-data.json";
 import styles from "./baselane-library.module.css";
@@ -130,32 +128,6 @@ export function BaselaneInvesting() {
             </button>
           </div>
         )}
-      </section>
-      <section className={styles.closing}>
-        <picture>
-          <source
-            media="(max-width:700px)"
-            srcSet="/brand/baselane-inspired/renters/closing-mobile.webp"
-          />
-          <Image
-            src="/brand/baselane-inspired/renters/closing-desktop.webp"
-            alt=""
-            fill
-            sizes="100vw"
-          />
-        </picture>
-        <div>
-          <h2>More room for what comes next.</h2>
-          <p>Connect your property operations with innflow.</p>
-          <div className={styles.actions}>
-            <a className={styles.google} href={siteConfig.googleAuthUrl}>
-              <GoogleCtaContent />
-            </a>
-            <a href={siteConfig.demoUrl}>
-              See demo <ArrowRight size={18} />
-            </a>
-          </div>
-        </div>
       </section>
     </BaselaneHomepage>
   );

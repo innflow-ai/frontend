@@ -1,0 +1,11 @@
+{
+  "tool": "built-in imagegen",
+  "prompt_summary": "Remove baked UI, text, logos, glow and backplates; reconstruct obscured photo, preserve people, clothing, poses, scene and camera perspective; full-bleed portrait with no added graphics.",
+  "asset": {
+    "reference": "3:12",
+    "photo_node": "45:349",
+    "path": "/Users/ak/innflow-web/output/doorloop-baselane/listing-photo-clean-v1.png",
+    "image_hash": "41fa25d92895609941d887571065bdb03142e767"
+  },
+  "verification": "Removed source Unit Status and syndication UI, glow and translucent backplates. Applied clean full-scene photo to 45:349; preserved native overlays 141:478 and 141:507. Close-up verified all three people remain visible and no duplicate baked card edges remain."
+}

@@ -122,6 +122,7 @@
 }
 
 .formCard {
+  scroll-margin-top: 112px;
   padding: 12px;
   border: 1px solid rgba(255, 255, 255, 0.48);
   border-radius: 32px;
@@ -138,8 +139,7 @@
   background: rgba(255, 255, 255, 0.96);
 }
 
-.formHeading > span,
-.eyebrow {
+.formHeading > span {
   display: inline-flex;
   align-items: center;
   gap: 7px;
@@ -275,78 +275,69 @@
   transform: translateY(-2px);
 }
 
-.routing {
-  padding: 112px 24px;
-  background: var(--sky-soft);
+.support {
+  padding: 72px 24px;
 }
 
-.routingInner {
-  width: min(100%, var(--sky-shell-wide));
-  margin: 0 auto;
-}
-
-.routingHeading {
+.supportInner {
   display: grid;
   justify-items: center;
-  max-width: 680px;
-  margin: 0 auto;
+  gap: 50px;
+  width: min(100%, 1136px);
+  margin-inline: auto;
+}
+
+.supportHeading {
+  display: grid;
+  justify-items: center;
+  gap: 20px;
   text-align: center;
 }
 
-.routingHeading h2 {
-  margin: 14px 0 0;
-  color: var(--sky-ink);
-  font-size: clamp(42px, 5vw, 68px);
-  letter-spacing: -0.045em;
+.support .supportHeading h2 {
+  font-size: clamp(32px, 3.5vw, 40px);
+  line-height: 1.2;
 }
 
-.routingHeading > p {
-  margin: 18px 0 0;
-  color: var(--sky-muted);
-  font-size: 17px;
-  line-height: 1.6;
+.supportHeading p {
+  max-width: 360px;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
-.steps {
+.audiences {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-  margin-top: 52px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 50px;
+  width: min(100%, 990px);
 }
 
-.step {
-  min-height: 248px;
-  padding: 30px;
-  border: 1px solid var(--sky-line);
-  border-radius: 22px;
-  background: #fff;
-  box-shadow: 0 18px 46px rgba(12, 27, 42, 0.06);
-}
-
-.step > span {
+.audience {
   display: grid;
-  width: 42px;
-  height: 42px;
-  place-items: center;
-  border-radius: 50%;
-  color: #fff;
-  background: var(--gradient-cta);
-  font-size: 12px;
-  font-weight: 700;
+  justify-items: center;
+  text-align: center;
 }
 
-.step h3 {
-  margin: 28px 0 0;
-  color: var(--sky-ink);
-  font-size: 23px;
-  letter-spacing: -0.025em;
+.audience img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 470 / 324;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 32px;
 }
 
-.step p {
-  margin: 12px 0 0;
-  color: var(--sky-muted);
-  font-size: 14px;
-  line-height: 1.6;
+.support .audience h3 {
+  font-size: 22px;
+  line-height: 1.25;
+}
+
+.support .audience p {
+  max-width: 350px;
+  margin-top: 12px;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 @media (max-width: 1020px) {
@@ -363,6 +354,7 @@
   }
 
   .formCard {
+    scroll-margin-top: 112px;
     max-width: 680px;
   }
 }
@@ -381,7 +373,7 @@
   }
 
   .fieldGrid,
-  .steps {
+  .audiences {
     grid-template-columns: 1fr;
   }
 
@@ -402,11 +394,20 @@
     max-width: 100%;
   }
 
-  .routing {
-    padding: 82px 16px;
+  .support {
+    padding: 56px 20px;
   }
 
-  .step {
-    min-height: 0;
+  .supportInner,
+  .audiences {
+    gap: 36px;
+  }
+
+  .audiences {
+    max-width: 470px;
+  }
+
+  .audience img {
+    margin-bottom: 24px;
   }
 }

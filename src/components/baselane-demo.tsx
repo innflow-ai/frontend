@@ -93,7 +93,7 @@ export function BaselaneDemo() {
                 Explore self-guided topics on recurring tasks, property records,
                 and the handoffs your team handles every day.
               </p>
-              <a className={styles.button} href="/BL/BL-webinars">
+              <a className={styles.button} href="/webinars">
                 Explore workflow topics →
               </a>
             </div>
@@ -111,9 +111,7 @@ export function BaselaneDemo() {
             a real example, and we can discuss the context, people, and
             approvals it needs.
           </p>
-          <a href="/BL/BL-multi-property-investors">
-            Explore property operations →
-          </a>
+          <a href="/multi-property-investors">Explore property operations →</a>
         </section>
         <section className={styles.ocean}>
           <Image

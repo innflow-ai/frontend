@@ -117,14 +117,17 @@ export function BaselaneHomepage({ children }: { children?: ReactNode }) {
                 </div>
               </div>
             </section>
-            <section className={`${styles.shell} ${styles.products}`}>
+            <section
+              id="features"
+              className={`${styles.shell} ${styles.products}`}
+            >
               <h2>Operations organized. Mind clear.</h2>
               <nav
                 aria-label="Explore product stories"
                 className={styles.storyNav}
               >
-                <a href="#baselane-workflows">Workflows</a>
-                <a href="#baselane-knowledge">Knowledge</a>
+                <a href="#workflows">Workflows</a>
+                <a href="#knowledge">Knowledge</a>
               </nav>
               {[
                 {
@@ -150,7 +153,7 @@ export function BaselaneHomepage({ children }: { children?: ReactNode }) {
               ].map((story) => (
                 <article
                   key={story.id}
-                  id={`baselane-${story.id}`}
+                  id={story.id}
                   className={`${styles.story} ${story.id === "knowledge" ? styles.knowledgeStory : ""}`}
                 >
                   <div className={styles.storyCopy}>

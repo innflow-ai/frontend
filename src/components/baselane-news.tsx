@@ -117,9 +117,7 @@ export function BaselaneNews() {
                 Bring recurring requests, team ownership, and property context
                 into one connected flow.
               </p>
-              <a href="/BL/BL-landlord-banking">
-                Explore property operations →
-              </a>
+              <a href="/landlord-banking">Explore property operations →</a>
             </div>
           </article>
           <article className={styles.feature}>
@@ -139,9 +137,7 @@ export function BaselaneNews() {
                 Connect supporting documents and review notes to the requests
                 and decisions they belong to.
               </p>
-              <a href="/BL/BL-landlord-accounting">
-                Explore connected records →
-              </a>
+              <a href="/landlord-accounting">Explore connected records →</a>
             </div>
           </article>
         </section>

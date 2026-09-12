@@ -19,8 +19,8 @@ const entries = [
     detail:
       "Search the resource library or explore a self-guided workflow topic. Bring a real example to a demo so we can discuss the people, information, and review steps it needs.",
     links: [
-      ["Resource library", "/BL/BL-resources"],
-      ["Workflow learning", "/BL/BL-webinars"],
+      ["Resource library", "/resources"],
+      ["Workflow learning", "/webinars"],
     ],
   },
   {
@@ -33,8 +33,8 @@ const entries = [
     detail:
       "Create a downloadable brief from the details you enter and use the checklist to prepare the next review. You choose when and with whom to share it.",
     links: [
-      ["Prepare a brief", "/BL/BL-landlord-insurance"],
-      ["Document preparation", "/BL/BL-tax-preparation"],
+      ["Prepare a brief", "/landlord-insurance"],
+      ["Document preparation", "/tax-preparation"],
     ],
   },
   {
@@ -48,8 +48,8 @@ const entries = [
     detail:
       "Connect supporting information with the person responsible for the next step. Shared context helps the team continue the work without starting the conversation again.",
     links: [
-      ["Recurring work", "/BL/BL-rent-collection-2"],
-      ["Property records", "/BL/BL-landlord-accounting"],
+      ["Recurring work", "/rent-collection-2"],
+      ["Property records", "/landlord-accounting"],
     ],
   },
   {
@@ -62,10 +62,10 @@ const entries = [
     detail:
       "Explore workflows for your rental model and keep resident requests connected to the people and property information behind the response.",
     links: [
-      ["Long-term rentals", "/BL/BL-long-term-rentals"],
-      ["Mid-term rentals", "/BL/BL-mid-term-rentals"],
-      ["Short-term rentals", "/BL/BL-short-term-rentals"],
-      ["Resident experiences", "/BL/BL-renters"],
+      ["Long-term rentals", "/long-term-rentals"],
+      ["Mid-term rentals", "/mid-term-rentals"],
+      ["Short-term rentals", "/short-term-rentals"],
+      ["Resident experiences", "/renters"],
     ],
   },
   {
@@ -78,9 +78,9 @@ const entries = [
     detail:
       "Start with one recurring process. Connect the tools and context it needs, make review points visible, and keep ownership clear as the work changes hands.",
     links: [
-      ["Explore innflow", "/BL/BL-home"],
-      ["Landlord operations", "/BL/BL-landlord-banking"],
-      ["Multi-property investors", "/BL/BL-multi-property-investors"],
+      ["Explore innflow", "/"],
+      ["Landlord operations", "/landlord-banking"],
+      ["Multi-property investors", "/multi-property-investors"],
     ],
   },
 ];

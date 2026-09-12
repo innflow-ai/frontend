@@ -146,9 +146,9 @@ export function BaselaneSecurity() {
                   to the team.
                 </p>
                 <div>
-                  <a href="/BL/BL-privacy-policy">Privacy Policy ↗</a>
-                  <a href="/BL/BL-terms-of-use">Terms of Service ↗</a>
-                  <a href="/BL/BL-legal-agreements">All agreements ↗</a>
+                  <a href="/legal/privacy-policy">Privacy Policy ↗</a>
+                  <a href="/legal/terms-of-service">Terms of Service ↗</a>
+                  <a href="/legal-agreements">All agreements ↗</a>
                 </div>
               </section>
             )}

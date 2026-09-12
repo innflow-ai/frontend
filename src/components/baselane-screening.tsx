@@ -112,7 +112,7 @@ export function BaselaneScreening() {
             </a>
             <a
               className={styles.outline}
-              href="/BL/BL-lease-agreement"
+              href="/lease-agreement"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -223,9 +223,7 @@ export function BaselaneScreening() {
                 {topics.slice(group * 3, group * 3 + 3).map((topic) => (
                   <div key={topic}>
                     <h3>{topic}</h3>
-                    <a href="/BL/BL-lease-agreement">
-                      Connect the next handoff →
-                    </a>
+                    <a href="/lease-agreement">Connect the next handoff →</a>
                   </div>
                 ))}
               </div>
@@ -291,8 +289,8 @@ export function BaselaneScreening() {
           <div className={styles.three}>
             {[
               ["screen", "Plan your screening workflow", source],
-              ["lease", "Explore lease workflows", "/BL/BL-lease-agreement"],
-              ["rent", "Explore rental workflows", "/BL/BL-rent-collection"],
+              ["lease", "Explore lease workflows", "/lease-agreement"],
+              ["rent", "Explore rental workflows", "/rent-collection"],
             ].map(([image, title, href], index) => (
               <article key={image}>
                 <Photo name={image} alt={`Illustrative ${image} workflow`} />

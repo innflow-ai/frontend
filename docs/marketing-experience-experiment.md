@@ -12,7 +12,7 @@ The website assigns `control` (original) or `new` on the first non-prefetch mark
 
 `src/lib/marketing-experience.ts` owns the public route manifest. Home, pricing, and demo have variant-specific behavior. Control demo redirects to Cal.com; new demo renders the existing demo component. The original header/footer surround control; the current header/CTA/footer surround new. Other content is shared, including pages available only under `/BL/`. Equivalent `/BL/` URLs redirect to public URLs while preserving search and hash. Legal aliases always use the canonical shared policy documents. New portfolio links use the shared property-management page because the new homepage has no portfolios anchor.
 
-All experiment documents are dynamic and marked private/no-store. Full-document navigation keeps page and shell consistent and applies mode changes on the next navigation. Mode `off` retains the pre-experiment site; it is different from forcing the fully original experience with `control`.
+All experiment documents are dynamic and marked private/no-store. Full-document navigation keeps page and shell consistent and applies mode changes on the next navigation. Mode `off` uses the default Baselane homepage and pricing on the public URLs. The original pages remain available through the explicit `control` variant.
 
 ## Consent and account attribution
 

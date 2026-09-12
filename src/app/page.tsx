@@ -1,5 +1,6 @@
-// Temporary homepage rollback: the new design remains in
-// src/components/runey-landing.tsx (RuneyLanding) for continued development.
+// Baselane is the default homepage; the original remains available to the
+// explicit control arm of the marketing experiment.
+
 import {
   ArrowRight,
   Database,
@@ -8,6 +9,7 @@ import {
   Quotes,
   Sparkle,
 } from "@phosphor-icons/react/dist/ssr";
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { AuthenticatedHomeRedirect } from "@/components/authenticated-home-redirect";
@@ -35,6 +37,13 @@ import {
   humanizeCategory,
 } from "@/lib/sanity";
 import styles from "./page.module.css";
+
+export const metadata: Metadata = {
+  title: "A clearer day in property operations | Innflow",
+  description:
+    "Connect property workflows, knowledge, and approvals in one Innflow workspace.",
+  alternates: { canonical: "/" },
+};
 
 const avatarRow = [
   "/aeline/avatars/user-1.avif",
@@ -276,7 +285,7 @@ const faqSchema = {
 
 export default async function HomePage() {
   const experience = await getMarketingExperience();
-  if (experience.variant === "new")
+  if (experience.variant !== "control")
     return (
       <>
         <AuthenticatedHomeRedirect

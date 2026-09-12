@@ -54,7 +54,7 @@ export function BaselaneRentCalculator() {
   async function copyLink() {
     try {
       await navigator.clipboard.writeText(
-        `${siteConfig.marketingOrigin}/BL/BL-how-much-should-i-charge-for-rent`,
+        `${siteConfig.marketingOrigin}/how-much-should-i-charge-for-rent`,
       );
       setCopied("Link copied.");
     } catch {
@@ -245,9 +245,7 @@ export function BaselaneRentCalculator() {
                 pricing decision. Keep the official sources and your adviser’s
                 review notes alongside the property record.
               </p>
-              <a href="/BL/BL-lease-agreement">
-                Explore document review workflows →
-              </a>
+              <a href="/lease-agreement">Explore document review workflows →</a>
             </section>
             <section id="operating-costs">
               <h2>Account for expenses</h2>

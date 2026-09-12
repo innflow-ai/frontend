@@ -126,7 +126,7 @@ const faqs = [
 ] as const;
 
 export default async function PricingPage() {
-  if ((await getMarketingExperience()).variant === "new")
+  if ((await getMarketingExperience()).variant !== "control")
     return <BaselanePricing />;
   return (
     <main className={styles.page} id="main-content">

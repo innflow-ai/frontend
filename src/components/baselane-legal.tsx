@@ -3,8 +3,8 @@ import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-legal.module.css";
 import { TermlyPolicyEmbed } from "./termly-policy-embed";
 
-const privacyRoute = "/BL/BL-privacy-policy";
-const termsRoute = "/BL/BL-terms-of-use";
+const privacyRoute = "/legal/privacy-policy";
+const termsRoute = "/legal/terms-of-service";
 const sections = [
   {
     title: "General agreements",
@@ -67,7 +67,7 @@ export function BaselaneLegalPolicy({ type }: { type: "privacy" | "terms" }) {
         </header>
         <article className={styles.document}>
           <nav aria-label="Legal navigation" className={styles.documentNav}>
-            <a href="/BL/BL-legal-agreements">← All agreements</a>
+            <a href="/legal-agreements">← All agreements</a>
             <a href={type === "privacy" ? termsRoute : privacyRoute}>
               {type === "privacy" ? "Terms of Service" : "Privacy Policy"} →
             </a>
@@ -85,7 +85,7 @@ export function BaselaneLegalPolicy({ type }: { type: "privacy" | "terms" }) {
             <TermlyPolicyEmbed policyId={policy.policyId} />
           </section>
           <div className={styles.documentEnd}>
-            <a href="/BL/BL-legal-agreements">View all legal agreements →</a>
+            <a href="/legal-agreements">View all legal agreements →</a>
             <a href="/legal/dsar">Privacy requests →</a>
           </div>
         </article>

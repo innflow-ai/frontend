@@ -40,7 +40,7 @@ export function BaselaneInvesting() {
             ref={tabs}
             aria-label="Investing categories"
           >
-            <a className={styles.allLink} href="/BL/BL-resources">
+            <a className={styles.allLink} href="/resources">
               All resources
             </a>
             {categories.map((cat) => (

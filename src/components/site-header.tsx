@@ -159,7 +159,7 @@ export function SiteHeader() {
   return (
     <div className={`${styles.page} ${styles.chromeScope}`}>
       <header ref={header} className={styles.header}>
-        <a href="/BL/BL-home" className={styles.logo} aria-label="innflow home">
+        <a href="/" className={styles.logo} aria-label="innflow home">
           <Image
             src="/brand/innflow-wordmark.svg"
             alt="innflow"
@@ -318,7 +318,7 @@ export function SiteHeader() {
               )}
             </div>
           ))}
-          <a href="/BL/BL-pricing">Pricing</a>
+          <a href="/pricing">Pricing</a>
           <a href="/blog">Blog</a>
           <a
             className={styles.mobileLogin}
@@ -362,7 +362,7 @@ export function SiteHeader() {
         iconOverrides={blMenuIcons}
         id="baselane-mobile-overlay"
         className={styles.mobileMenu}
-        pricingHref="/BL/BL-pricing"
+        pricingHref="/pricing"
         loginHref={`${siteConfig.appOrigin}/login`}
       />
     </div>

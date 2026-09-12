@@ -111,7 +111,7 @@ export function SiteCta() {
             <small>
               By signing up, you agree to receive marketing emails from Innflow.
               Unsubscribe anytime.{" "}
-              <a href="/BL/BL-privacy-policy">Privacy policy</a>
+              <a href="/legal/privacy-policy">Privacy policy</a>
             </small>
             <small
               id="membership-signup-status"

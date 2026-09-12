@@ -155,7 +155,7 @@ export function BaselaneMultiProperty({
               {content?.panoramaText ??
                 "Keep the details connected as your operation grows. Give every request a home, every handoff an owner, and every decision the context it needs."}
             </p>
-            <a href="/BL/BL-landlord-banking">
+            <a href="/landlord-banking">
               Explore property operations <ArrowRight size={18} />
             </a>
           </div>

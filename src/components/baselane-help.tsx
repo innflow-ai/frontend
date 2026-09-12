@@ -19,18 +19,18 @@ const topics = [
     title: "Property operations",
     icon: "⌂",
     links: [
-      ["Multi-property workflows", "/BL/BL-multi-property-investors"],
-      ["Recurring work", "/BL/BL-rent-collection-2"],
-      ["Property records", "/BL/BL-landlord-accounting"],
+      ["Multi-property workflows", "/multi-property-investors"],
+      ["Recurring work", "/rent-collection-2"],
+      ["Property records", "/landlord-accounting"],
     ],
   },
   {
     title: "Residents and requests",
     icon: "☺",
     links: [
-      ["Renter experience", "/BL/BL-renters"],
-      ["Long-term rentals", "/BL/BL-long-term-rentals"],
-      ["Short-term rentals", "/BL/BL-short-term-rentals"],
+      ["Renter experience", "/renters"],
+      ["Long-term rentals", "/long-term-rentals"],
+      ["Short-term rentals", "/short-term-rentals"],
     ],
   },
   {
@@ -149,7 +149,7 @@ export function BaselaneHelp() {
             </section>
             <section className={styles.helpSection}>
               <h2>Popular resources</h2>
-              <a className={styles.resource} href="/BL/BL-webinars">
+              <a className={styles.resource} href="/webinars">
                 <span>▷</span>
                 <div>
                   <h3>Workflow learning</h3>

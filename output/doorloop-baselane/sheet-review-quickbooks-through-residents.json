@@ -1,0 +1,80 @@
+[
+  {
+    "page": "QuickBooks Online Integration",
+    "verified_at": "2026-09-12T14:18:35.560467+00:00",
+    "reference_frame": "3:139",
+    "reference_count": 5,
+    "checks": [
+      "Compared full reference board with complete editable sheet",
+      "Main compositions and controls represented in Baselane styling",
+      "No obvious sheet clipping or missing compositions",
+      "Every reference exists and mapped artwork is visible within correct sheet"
+    ],
+    "scope": "Editable draft image replicas with illustrative content and source-derived photography; not production publication or full landing-page assembly."
+  },
+  {
+    "page": "Reports",
+    "verified_at": "2026-09-12T14:18:35.560467+00:00",
+    "reference_frame": "3:146",
+    "reference_count": 6,
+    "checks": [
+      "Compared full reference board with complete editable sheet",
+      "Main compositions and controls represented in Baselane styling",
+      "No obvious sheet clipping or missing compositions",
+      "Every reference exists and mapped artwork is visible within correct sheet"
+    ],
+    "scope": "Editable draft image replicas with illustrative content and source-derived photography; not production publication or full landing-page assembly."
+  },
+  {
+    "page": "Rental Applications",
+    "verified_at": "2026-09-12T14:18:35.560467+00:00",
+    "reference_frame": "3:154",
+    "reference_count": 5,
+    "checks": [
+      "Compared full reference board with complete editable sheet",
+      "Main compositions and controls represented in Baselane styling",
+      "No obvious sheet clipping or missing compositions",
+      "Every reference exists and mapped artwork is visible within correct sheet"
+    ],
+    "scope": "Editable draft image replicas with illustrative content and source-derived photography; not production publication or full landing-page assembly."
+  },
+  {
+    "page": "Tenant Screening",
+    "verified_at": "2026-09-12T14:18:35.560467+00:00",
+    "reference_frame": "3:161",
+    "reference_count": 5,
+    "checks": [
+      "Compared full reference board with complete editable sheet",
+      "Main compositions and controls represented in Baselane styling",
+      "No obvious sheet clipping or missing compositions",
+      "Every reference exists and mapped artwork is visible within correct sheet"
+    ],
+    "scope": "Editable draft image replicas with illustrative content and source-derived photography; not production publication or full landing-page assembly."
+  },
+  {
+    "page": "Tenant Management Software",
+    "verified_at": "2026-09-12T14:18:35.560467+00:00",
+    "reference_frame": "3:168",
+    "reference_count": 6,
+    "checks": [
+      "Compared full reference board with complete editable sheet",
+      "Main compositions and controls represented in Baselane styling",
+      "No obvious sheet clipping or missing compositions",
+      "Every reference exists and mapped artwork is visible within correct sheet"
+    ],
+    "scope": "Editable draft image replicas with illustrative content and source-derived photography; not production publication or full landing-page assembly."
+  },
+  {
+    "page": "Residents",
+    "verified_at": "2026-09-12T14:18:35.560467+00:00",
+    "reference_frame": "3:176",
+    "reference_count": 5,
+    "checks": [
+      "Compared full reference board with complete editable sheet",
+      "Main compositions and controls represented in Baselane styling",
+      "No obvious sheet clipping or missing compositions",
+      "Every reference exists and mapped artwork is visible within correct sheet"
+    ],
+    "scope": "Editable draft image replicas with illustrative content and source-derived photography; not production publication or full landing-page assembly."
+  }
+]

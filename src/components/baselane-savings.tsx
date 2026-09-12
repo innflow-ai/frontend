@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { GoogleCtaContent } from "@/components/google-cta-content";
 import { siteConfig } from "@/config/site";
 import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-savings.module.css";
@@ -254,20 +253,6 @@ export function BaselaneSavings() {
                 <p>{text}</p>
               </article>
             ))}
-          </div>
-        </section>
-        <section className={styles.closing}>
-          <h2>Bring the work together.</h2>
-          <p>
-            Keep property decisions connected to the people carrying them out.
-          </p>
-          <div className={styles.actions}>
-            <a className={styles.outline} href={siteConfig.demoUrl}>
-              See innflow →
-            </a>
-            <a className={styles.button} href={siteConfig.googleAuthUrl}>
-              <GoogleCtaContent />
-            </a>
           </div>
         </section>
       </div>

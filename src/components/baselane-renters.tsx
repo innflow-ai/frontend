@@ -194,15 +194,6 @@ export function BaselaneRenters() {
           ))}
         </ol>
       </section>
-      <section className={styles.closing}>
-        <Photo name="closing" responsive />
-        <div>
-          <h2>More room for what matters.</h2>
-          <a className={styles.darkButton} href={siteConfig.demoUrl}>
-            See innflow in action <ArrowRight size={18} />
-          </a>
-        </div>
-      </section>
     </BaselaneHomepage>
   );
 }

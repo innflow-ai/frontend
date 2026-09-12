@@ -1,6 +1,6 @@
 .page {
-  background: #fffbf4;
-  color: #0b2633;
+  background: var(--bl-cream);
+  color: var(--bl-navy);
 }
 .hero,
 .split {
@@ -52,7 +52,7 @@
   text-align: center;
 }
 .page .button {
-  background: linear-gradient(#494b47, #242522);
+  background: var(--button-primary);
   color: white;
 }
 .band {
@@ -257,7 +257,7 @@
   font-weight: 400;
 }
 .tableWrap thead {
-  background: #0b2633;
+  background: var(--bl-navy);
   color: white;
 }
 .tableWrap tbody tr:nth-child(even) {
@@ -401,4 +401,10 @@
   .faq summary {
     font-size: 18px;
   }
+}
+
+/* Primary actions follow the shared BL brand reference. */
+.page .button:hover {
+  background: var(--button-primary-hover);
+  filter: none;
 }

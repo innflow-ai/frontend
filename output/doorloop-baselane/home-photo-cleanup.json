@@ -1,0 +1,20 @@
+{
+  "tool": "built-in imagegen",
+  "residential_prompt": "Remove the bright neon lime looping graphic. Reconstruct underlying sky and architecture. Preserve full original portrait framing, buildings, path, landscaping, camera perspective and sunny lighting. No crop, zoom, text, logos or new graphics.",
+  "multifamily_prompt": "Remove only the bright blue curved graphic across upper-right sky and buildings. Reconstruct sky and facades respecting existing architecture, window grids and perspective. Preserve complete 464:838 portrait composition, left glass facade, right towers, lower red building and golden light. No crop, zoom, text, logos or graphics.",
+  "assets": [
+    {
+      "reference": "3:220",
+      "photo_node": "44:160",
+      "path": "/Users/ak/innflow-web/output/doorloop-baselane/home-residential-clean-v1.png",
+      "image_hash": "58224f0d469b5e0afea83989bb64a54525253914"
+    },
+    {
+      "reference": "3:221",
+      "photo_node": "44:166",
+      "path": "/Users/ak/innflow-web/output/doorloop-baselane/home-multifamily-clean-v1.png",
+      "image_hash": "8163fbbb7862f70b9388837be12def36647e8dc0"
+    }
+  ],
+  "verification": "Both existing Figma panel screenshots inspected after fill replacement; full framing visible; cream arcs editable separately."
+}

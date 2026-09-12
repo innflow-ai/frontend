@@ -91,8 +91,14 @@ describe("EditorialHeader navigation", () => {
     expect(
       within(navigation).getByRole("link", { name: "Pricing" }),
     ).toHaveAttribute("href", "/pricing");
+    await user.click(
+      within(navigation).getByRole("button", { name: "Log in" }),
+    );
     expect(
-      within(navigation).getByRole("link", { name: "Log in" }),
+      within(navigation).getByRole("link", { name: "Landlord login" }),
+    ).toHaveAttribute("href", "https://app.innflow.ai/login");
+    expect(
+      within(navigation).getByRole("link", { name: "Tenant login Beta" }),
     ).toHaveAttribute("href", "https://app.innflow.ai/login");
     await user.click(
       within(navigation).getByRole("button", { name: "Product" }),
@@ -137,7 +143,7 @@ describe("EditorialHeader navigation", () => {
     vi.stubGlobal("cancelAnimationFrame", vi.fn());
   });
 
-  it("organizes all seven platform pages under Product on desktop and mobile", async () => {
+  it("groups platform capabilities and the integration directory under Product on desktop and mobile", async () => {
     const user = userEvent.setup();
     render(<EditorialHeader />);
     expect(
@@ -159,7 +165,10 @@ describe("EditorialHeader navigation", () => {
     for (const [title, slug] of pages) {
       expect(
         desktop.getByRole("link", { name: new RegExp(`^${title}`) }),
-      ).toHaveAttribute("href", `/platform/${slug}`);
+      ).toHaveAttribute(
+        "href",
+        slug === "integrations" ? "/integrations" : `/platform/${slug}`,
+      );
     }
     await user.keyboard("{Escape}");
     expect(
@@ -173,7 +182,10 @@ describe("EditorialHeader navigation", () => {
     for (const [title, slug] of pages) {
       expect(
         mobile.getByRole("link", { name: new RegExp(`^${title}`) }),
-      ).toHaveAttribute("href", `/platform/${slug}`);
+      ).toHaveAttribute(
+        "href",
+        slug === "integrations" ? "/integrations" : `/platform/${slug}`,
+      );
     }
     await user.click(
       mobile.getByRole("link", { name: /^Security and Compliance/ }),

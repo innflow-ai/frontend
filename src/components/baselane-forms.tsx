@@ -106,29 +106,6 @@ export function BaselaneForms() {
         {formGroups.map((group) => (
           <FormGroup key={group.slug} group={group} />
         ))}
-        <section className={`${shared.closing} ${shared.photoClosing}`}>
-          <picture>
-            <source
-              media="(max-width:700px)"
-              srcSet="/brand/baselane-inspired/partners/closing-mobile.webp"
-            />
-            <Image
-              src="/brand/baselane-inspired/partners/closing-desktop.webp"
-              alt=""
-              fill
-              sizes="100vw"
-            />
-          </picture>
-          <div>
-            <h2>Bring the paperwork into the workflow.</h2>
-            <p>
-              Keep supporting information close to the work your team is doing.
-            </p>
-            <a className={shared.button} href="/lease-agreement">
-              Explore lease workflows
-            </a>
-          </div>
-        </section>
       </div>
     </BaselaneHomepage>
   );

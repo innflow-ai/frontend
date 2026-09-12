@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { GoogleCtaContent } from "@/components/google-cta-content";
 import { siteConfig } from "@/config/site";
 import styles from "./baselane-customers.module.css";
 import { BaselaneHomepage } from "./baselane-homepage";
@@ -166,32 +165,6 @@ export function BaselaneCustomers() {
             >
               →
             </button>
-          </div>
-        </section>
-        <section className={styles.closing}>
-          <picture>
-            <source
-              media="(max-width:700px)"
-              srcSet="/brand/baselane-inspired/partners/closing-mobile.webp"
-            />
-            <Image
-              src="/brand/baselane-inspired/partners/closing-desktop.webp"
-              alt=""
-              fill
-              sizes="100vw"
-            />
-          </picture>
-          <div>
-            <h2>Make room for your next idea.</h2>
-            <p>Bring your team’s recurring work into one connected flow.</p>
-            <div className={styles.actions}>
-              <a className={styles.outline} href={siteConfig.demoUrl}>
-                Explore innflow →
-              </a>
-              <a className={styles.button} href={siteConfig.googleAuthUrl}>
-                <GoogleCtaContent />
-              </a>
-            </div>
           </div>
         </section>
       </div>

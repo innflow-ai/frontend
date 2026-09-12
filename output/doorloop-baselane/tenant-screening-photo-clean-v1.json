@@ -1,0 +1,11 @@
+{
+  "tool": "built-in imagegen",
+  "asset": {
+    "reference": "3:162",
+    "photo_node": "51:3",
+    "path": "/Users/ak/innflow-web/output/doorloop-baselane/tenant-screening-photo-clean-v1.png",
+    "image_hash": "67be56b975febd9a2f85a960b84c2f2fc7b1d426"
+  },
+  "verified_at": "2026-09-12T13:04:59.018120+00:00",
+  "verification": "Removed embedded screening cards, plates and blue glow. Preserved native score, criminal records and income cards51:4/10/13. Moved score panel y103 to38 to clear head in restored portrait. Final screenshot51:2 verified faces visible and clean overlay edges."
+}

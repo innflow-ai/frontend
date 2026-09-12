@@ -101,7 +101,7 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
             <div className={styles.actions}>
               <a
                 className={styles.button}
-                href={careers ? "#career-inquiries" : siteConfig.googleAuthUrl}
+                href={careers ? careerUrl : siteConfig.googleAuthUrl}
               >
                 {careers ? (
                   <>Explore working together ↗</>
@@ -290,26 +290,6 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
             <a href="/legal-agreements">Policies</a>
           </div>
         </section>
-        {careers ? (
-          <section className={styles.closing} id="career-inquiries">
-            <Image
-              src="/brand/baselane-inspired/renters/closing-desktop.webp"
-              alt=""
-              fill
-              sizes="100vw"
-            />
-            <div>
-              <h2>Let’s talk about what we could build.</h2>
-              <p>
-                Share your experience and interests with the team. Contact us to
-                ask about current opportunities.
-              </p>
-              <a className={styles.button} href={careerUrl}>
-                Introduce yourself ↗
-              </a>
-            </div>
-          </section>
-        ) : null}
       </div>
     </BaselaneHomepage>
   );

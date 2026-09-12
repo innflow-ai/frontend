@@ -1,0 +1,11 @@
+{
+  "tool": "built-in imagegen",
+  "prompt_summary": "Restore man at laptop by sunlit window; remove funnel/reports UI, text/icons/plates/glows and white torso patches. Preserve man, side-profile pose, shirt, hands, laptop, glass/table and warm backlight. Full390:570 portrait with window above and table below, no crop or added graphics.",
+  "asset": {
+    "reference": "3:86",
+    "photo_node": "34:169",
+    "path": "/Users/ak/innflow-web/output/doorloop-baselane/owners-photo-clean-v1.png",
+    "image_hash": "8ff0db487d287ded269ab1e38e69f9444ef67ab2"
+  },
+  "verification": "Hero3:86: removed baked funnel/report cards, plates/glow and white torso patches with built-in imagegen. Applied clean image8ff0db487d287ded269ab1e38e69f9444ef67ab2 to existing34:169, preserving390x570 scene and native34:170/34:172 overlays. Screenshot verified clean torso/table, visible profile and in-cell bounds. Reference-derived draft photo, not replacement-actor or rights-clearance claim."
+}

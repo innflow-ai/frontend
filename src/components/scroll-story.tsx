@@ -23,7 +23,21 @@ export function storyPosition(
   return { position, active: Math.min(count - 1, Math.floor(position)) };
 }
 
-export function ScrollStory({ steps }: { steps: ScrollStoryStep[] }) {
+export function ScrollStory({
+  steps,
+  fallback,
+  after,
+  navFooter,
+  navClassName,
+  layout = "slides",
+}: {
+  steps: ScrollStoryStep[];
+  fallback?: ReactNode;
+  after?: ReactNode;
+  navFooter?: ReactNode;
+  navClassName?: string;
+  layout?: "slides" | "stacked";
+}) {
   const track = useRef<HTMLDivElement>(null);
   const stage = useRef<HTMLDivElement>(null);
   const bars = useRef<(HTMLSpanElement | null)[]>([]);
@@ -33,12 +47,35 @@ export function ScrollStory({ steps }: { steps: ScrollStoryStep[] }) {
   useEffect(() => {
     if (!steps.length) return;
     const media = window.matchMedia(
-      "(min-width: 851px) and (min-height: 650px) and (prefers-reduced-motion: no-preference)",
+      layout === "stacked"
+        ? "(min-width: 851px)"
+        : "(min-width: 851px) and (min-height: 650px) and (prefers-reduced-motion: no-preference)",
     );
     let frame = 0;
     const update = () => {
       frame = 0;
       if (!media.matches || !track.current || !stage.current) return;
+      if (layout === "stacked") {
+        const panels = Array.from(stage.current.children);
+        const bounds = panels.map((panel) => panel.getBoundingClientRect());
+        const readingLine = 110;
+        setActive(
+          Math.max(
+            0,
+            bounds.findLastIndex((rect) => rect.top <= readingLine),
+          ),
+        );
+        bars.current.forEach((bar, index) => {
+          const rect = bounds[index];
+          const end = bounds[index + 1]?.top ?? rect.bottom;
+          const progress = Math.max(
+            0,
+            Math.min(1, (readingLine - rect.top) / Math.max(1, end - rect.top)),
+          );
+          bar?.style.setProperty("transform", `scaleX(${progress})`);
+        });
+        return;
+      }
       const rect = track.current.getBoundingClientRect();
       const top = Number.parseFloat(getComputedStyle(stage.current).top) || 110;
       const travel = rect.height - stage.current.offsetHeight;
@@ -67,7 +104,8 @@ export function ScrollStory({ steps }: { steps: ScrollStoryStep[] }) {
     window.addEventListener("scroll", schedule, { passive: true });
     window.addEventListener("resize", schedule);
     const observer = new ResizeObserver(schedule);
-    if (track.current) observer.observe(track.current);
+    // Reconnect after the desktop stage replaces a supplied mobile fallback.
+    if (enhanced && track.current) observer.observe(track.current);
     return () => {
       cancelAnimationFrame(frame);
       observer.disconnect();
@@ -75,13 +113,17 @@ export function ScrollStory({ steps }: { steps: ScrollStoryStep[] }) {
       window.removeEventListener("scroll", schedule);
       window.removeEventListener("resize", schedule);
     };
-  }, [steps.length]);
+  }, [steps.length, enhanced, layout]);
 
   if (!steps.length) return null;
+  if (!enhanced && fallback !== undefined) return fallback;
 
   return (
-    <div className={styles.story} data-enhanced={enhanced}>
-      <nav className={styles.nav} aria-label="Explore features">
+    <div className={styles.story} data-enhanced={enhanced} data-layout={layout}>
+      <nav
+        className={`${styles.nav} ${navClassName ?? ""}`}
+        aria-label="Explore features"
+      >
         {steps.map((step, index) => (
           <a
             key={step.id}
@@ -90,14 +132,24 @@ export function ScrollStory({ steps }: { steps: ScrollStoryStep[] }) {
             onClick={(event) => {
               if (!enhanced || !track.current || !stage.current) return;
               event.preventDefault();
+              // This timeline owns the destination; avoid the global anchor scroller.
+              event.stopPropagation();
               const rect = track.current.getBoundingClientRect();
               const top =
                 Number.parseFloat(getComputedStyle(stage.current).top) || 110;
               const segment =
                 (rect.height - stage.current.offsetHeight) / steps.length;
+              const destination =
+                layout === "stacked"
+                  ? stage.current.children[index].getBoundingClientRect().top -
+                    110
+                  : rect.top - top + segment * index;
               window.scrollTo({
-                top: window.scrollY + rect.top - top + segment * index + 1,
-                behavior: "smooth",
+                top: window.scrollY + destination + 1,
+                behavior: window.matchMedia("(prefers-reduced-motion: reduce)")
+                  .matches
+                  ? "instant"
+                  : "smooth",
               });
             }}
           >
@@ -111,6 +163,7 @@ export function ScrollStory({ steps }: { steps: ScrollStoryStep[] }) {
             </span>
           </a>
         ))}
+        {navFooter}
       </nav>
       <div
         ref={track}
@@ -124,14 +177,15 @@ export function ScrollStory({ steps }: { steps: ScrollStoryStep[] }) {
               key={step.id}
               className={styles.panel}
               data-active={index === active}
-              aria-hidden={enhanced && index !== active}
-              inert={enhanced && index !== active}
+              aria-hidden={layout === "slides" && enhanced && index !== active}
+              inert={layout === "slides" && enhanced && index !== active}
             >
               {step.content}
             </div>
           ))}
         </div>
       </div>
+      {after && <div className={styles.after}>{after}</div>}
     </div>
   );
 }

@@ -271,6 +271,24 @@ export const productPageType = defineType({
     }),
     defineField({ name: "seo", type: "productSeo" }),
     defineField({
+      name: "testimonials",
+      title: "Testimonials",
+      description:
+        "Select shared testimonials and drag them into display order. Leave empty to hide the section.",
+      type: "array",
+      of: [
+        defineArrayMember({ type: "reference", to: [{ type: "testimonial" }] }),
+      ],
+      validation: (rule) =>
+        rule
+          .unique()
+          .custom((value) =>
+            !value || value.length <= 12
+              ? true
+              : "Select up to twelve testimonials.",
+          ),
+    }),
+    defineField({
       name: "hero",
       type: "object",
       fields: [

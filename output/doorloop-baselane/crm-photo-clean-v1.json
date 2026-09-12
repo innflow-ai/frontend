@@ -1,0 +1,11 @@
+{
+  "tool": "built-in imagegen",
+  "prompt_summary": "Restore four colleagues in glass-walled conference room; remove upload/prospect UI, text/icons, plates/glows/margins. Preserve people, poses, laptop, papers, glass seam, overhead lights, windows, cool daylight and perspective. Full390:520 portrait with empty room upper40percent, no crop or zoom.",
+  "asset": {
+    "reference": "3:56",
+    "photo_node": "52:46",
+    "path": "/Users/ak/innflow-web/output/doorloop-baselane/crm-photo-clean-v1.png",
+    "image_hash": "267a33d4f1812b905f35e9e88bebbd87e29ed69c"
+  },
+  "verification": "Hero 3:56: built-in imagegen removed baked upload/prospect cards, translucent plates and blue glow; retained complete four-person meeting scene. Applied clean photo267a33d4f1812b905f35e9e88bebbd87e29ed69c to52:46 at390x520. Native upload52:47 and four-tile summary127:2 unchanged. Screenshot verified all four participants, clean card edges and in-cell bounds. Reference-derived draft photo; no replacement-actor or rights-clearance claim."
+}

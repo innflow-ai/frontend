@@ -2,6 +2,7 @@ import Image from "next/image";
 import { siteConfig } from "@/config/site";
 import styles from "./baselane-banking.module.css";
 import { BaselaneHomepage } from "./baselane-homepage";
+import { PageTestimonials } from "./page-testimonials";
 import { ScrollStory } from "./scroll-story";
 
 const sections = [
@@ -254,6 +255,7 @@ export function BaselaneBanking() {
           ))}
         </div>
       </section>
+      <PageTestimonials pagePath="/landlord-banking" />
       <section className={styles.faq}>
         <h2>
           A few things
@@ -270,25 +272,6 @@ export function BaselaneBanking() {
               <p>{answer}</p>
             </details>
           ))}
-        </div>
-      </section>
-      <section className={styles.closing}>
-        <Image
-          src="/brand/baselane-inspired/closing-desktop.webp"
-          alt=""
-          fill
-          sizes="100vw"
-        />
-        <div>
-          <h2>
-            Make room for
-            <br />
-            what comes next.
-          </h2>
-          <p>Bring your property operations into one flow.</p>
-          <a href={siteConfig.demoUrl} className={styles.button}>
-            See innflow in action <span>↗</span>
-          </a>
         </div>
       </section>
     </BaselaneHomepage>

@@ -1,0 +1,11 @@
+{
+  "tool": "built-in imagegen",
+  "asset": {
+    "reference": "3:169",
+    "photo_node": "56:22",
+    "path": "/Users/ak/innflow-web/output/doorloop-baselane/tenant-management-photo-clean-v1.png",
+    "image_hash": "c9b6cb8f291851c612346e230bbd66487a8814d3"
+  },
+  "verified_at": "2026-09-12T13:12:21.103282+00:00",
+  "verification": "Removed baked balance/chat cards, translucent plates and glow from move-in photo. Preserved native56:23/56:28 overlays. Screenshot56:21 verified clean card edges, face and packing scene."
+}

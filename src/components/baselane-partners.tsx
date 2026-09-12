@@ -300,50 +300,20 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
             <Photo name="join" alt="A man smiling while looking at his phone" />
           )}
         </section>
-        <section
-          className={`${styles.closing} ${referral ? "" : styles.photoClosing}`}
-        >
-          {!referral && (
-            <picture>
-              <source
-                media="(max-width:700px)"
-                srcSet="/brand/baselane-inspired/partners/closing-mobile.webp"
-              />
-              <Image
-                src="/brand/baselane-inspired/partners/closing-desktop.webp"
-                alt=""
-                fill
-                sizes="100vw"
-              />
-            </picture>
-          )}
-          <div>
-            <h2>
-              {referral
-                ? "Know someone who could use innflow?"
-                : "Bring your next idea to innflow."}
-            </h2>
-            <p>
-              {referral
-                ? "Share a starting point for clearer, more connected work."
-                : "Introduce yourself and the collaboration you have in mind."}
-            </p>
-            {referral ? (
+        {referral && (
+          <section className={styles.closing}>
+            <div>
+              <h2>Know someone who could use innflow?</h2>
+              <p>Share a starting point for clearer, more connected work.</p>
               <a className={styles.button} href={siteConfig.googleAuthUrl}>
                 <GoogleCtaContent />
               </a>
-            ) : (
-              <a className={styles.button} href={inquiry}>
-                Contact innflow
-              </a>
-            )}
-            {referral && (
               <a className={styles.textLink} href="/partner-with-us">
                 Explore partnerships →
               </a>
-            )}
-          </div>
-        </section>
+            </div>
+          </section>
+        )}
       </div>
     </BaselaneHomepage>
   );

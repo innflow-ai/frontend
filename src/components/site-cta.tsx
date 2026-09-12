@@ -13,7 +13,7 @@ export function SiteCta() {
 
   async function subscribe(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    if (signupState === "pending") return;
+    if (signupState === "pending" || signupState === "success") return;
     const form = event.currentTarget;
     const data = new FormData(form);
     setSignupState("pending");
@@ -33,7 +33,9 @@ export function SiteCta() {
         throw new Error(result.error || "Signup failed. Please try again.");
       }
       setSignupState("success");
-      setSignupMessage("You’re on the list. Thanks for signing up!");
+      setSignupMessage(
+        "You’re on the list. Look out for Innflow updates and member offers in your inbox.",
+      );
       form.reset();
     } catch (error) {
       setSignupState("error");
@@ -74,52 +76,63 @@ export function SiteCta() {
             aria-busy={signupState === "pending"}
           >
             <h3 id="membership-signup-heading">
-              A little more, just for members.
+              {signupState === "success"
+                ? "Welcome to the Innflow family!"
+                : "A little more, just for members."}
             </h3>
-            <p>Get Innflow updates and member offers by email.</p>
-            <div hidden aria-hidden="true">
-              <label htmlFor="membership-website">Website</label>
-              <input
-                id="membership-website"
-                name="website"
-                tabIndex={-1}
-                autoComplete="off"
-              />
-            </div>
-            <fieldset
-              disabled={signupState === "pending"}
-              className={styles.membershipFields}
-            >
-              <label htmlFor="membership-email">Email address</label>
-              <div className={styles.membershipInputRow}>
-                <input
-                  id="membership-email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  inputMode="email"
-                  placeholder="Enter your email"
-                  required
-                  maxLength={254}
-                />
-                <button type="submit">
-                  {signupState === "pending" ? "Signing up…" : "Sign up now"}{" "}
-                  <ArrowRight size={18} aria-hidden="true" />
-                </button>
-              </div>
-            </fieldset>
-            <small>
-              By signing up, you agree to receive marketing emails from Innflow.
-              Unsubscribe anytime.{" "}
-              <a href="/legal/privacy-policy">Privacy policy</a>
-            </small>
-            <small
+            {signupState !== "success" && (
+              <>
+                <p>Get Innflow updates and member offers by email.</p>
+                <div hidden aria-hidden="true">
+                  <label htmlFor="membership-website">Website</label>
+                  <input
+                    id="membership-website"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                </div>
+                <fieldset
+                  disabled={signupState === "pending"}
+                  className={styles.membershipFields}
+                >
+                  <label htmlFor="membership-email">Email address</label>
+                  <div className={styles.membershipInputRow}>
+                    <input
+                      id="membership-email"
+                      name="email"
+                      type="email"
+                      autoComplete="email"
+                      inputMode="email"
+                      placeholder="Enter your email"
+                      required
+                      maxLength={254}
+                    />
+                    <button type="submit">
+                      {signupState === "pending"
+                        ? "Signing up…"
+                        : "Sign up now"}{" "}
+                      <ArrowRight size={18} aria-hidden="true" />
+                    </button>
+                  </div>
+                </fieldset>
+                <small>
+                  By signing up, you agree to receive marketing emails from
+                  Innflow. Unsubscribe anytime.{" "}
+                  <a href="/legal/privacy-policy">Privacy policy</a>
+                </small>
+              </>
+            )}
+            <div
+              className={
+                signupState === "success" ? styles.membershipSuccess : undefined
+              }
               id="membership-signup-status"
               role="status"
               aria-live="polite"
             >
               {signupMessage}
-            </small>
+            </div>
           </form>
         </section>
       </div>

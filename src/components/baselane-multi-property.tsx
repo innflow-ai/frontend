@@ -349,25 +349,6 @@ export function BaselaneMultiProperty({
           ))}
         </div>
       </section>
-      <section className={styles.closing}>
-        <Photo root={assetRoot} name="closing" responsive />
-        <div>
-          <h2>
-            More room for life.
-            <br />
-            More clarity for your properties.
-          </h2>
-          <p>Bring your team and your next steps into one flow.</p>
-          <div className={styles.actions}>
-            <a className={styles.googleButton} href={siteConfig.googleAuthUrl}>
-              <GoogleCtaContent />
-            </a>
-            <a className={styles.outline} href={siteConfig.demoUrl}>
-              See demo <ArrowRight size={18} />
-            </a>
-          </div>
-        </div>
-      </section>
     </BaselaneHomepage>
   );
 }

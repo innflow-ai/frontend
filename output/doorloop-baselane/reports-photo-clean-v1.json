@@ -1,0 +1,12 @@
+{
+  "tool": "built-in imagegen",
+  "asset": {
+    "reference": "3:147",
+    "photo_node": "59:3",
+    "path": "/Users/ak/innflow-web/output/doorloop-baselane/reports-photo-clean-v1.png",
+    "image_hash": "b79576de73bd28e934733cec96c642e7a0a54fd5"
+  },
+  "verified_at": "2026-09-12T12:57:57.788482+00:00",
+  "prompt_summary": "Restore full workspace portrait without floating growth/favorites UI or blue glow; preserve physical laptop charts.",
+  "verification": "59:2 screenshot verified; native overlays59:4/59:8 and corrected59:7."
+}

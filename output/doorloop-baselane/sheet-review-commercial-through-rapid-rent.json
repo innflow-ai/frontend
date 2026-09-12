@@ -1,0 +1,80 @@
+[
+  {
+    "page": "Portfolio Commercial",
+    "verified_at": "2026-09-12T14:12:21.491986+00:00",
+    "reference_frame": "3:92",
+    "reference_count": 6,
+    "checks": [
+      "Full reference board compared with full editable sheet",
+      "Main compositions and controls represented in Baselane styling",
+      "No obvious sheet clipping or missing compositions",
+      "All references exist and mapped artwork is visible in correct sheet"
+    ],
+    "scope": "Editable draft image replicas with illustrative content and source-derived photography; not production publication or full landing-page assembly."
+  },
+  {
+    "page": "Portfolio Community Associations",
+    "verified_at": "2026-09-12T14:12:21.491986+00:00",
+    "reference_frame": "3:100",
+    "reference_count": 6,
+    "checks": [
+      "Full reference board compared with full editable sheet",
+      "Main compositions and controls represented in Baselane styling",
+      "No obvious sheet clipping or missing compositions",
+      "All references exist and mapped artwork is visible in correct sheet"
+    ],
+    "scope": "Editable draft image replicas with illustrative content and source-derived photography; not production publication or full landing-page assembly."
+  },
+  {
+    "page": "Portfolio Multifamily",
+    "verified_at": "2026-09-12T14:12:21.491986+00:00",
+    "reference_frame": "3:108",
+    "reference_count": 6,
+    "checks": [
+      "Full reference board compared with full editable sheet",
+      "Main compositions and controls represented in Baselane styling",
+      "No obvious sheet clipping or missing compositions",
+      "All references exist and mapped artwork is visible in correct sheet"
+    ],
+    "scope": "Editable draft image replicas with illustrative content and source-derived photography; not production publication or full landing-page assembly."
+  },
+  {
+    "page": "Portfolio Residential",
+    "verified_at": "2026-09-12T14:12:21.491986+00:00",
+    "reference_frame": "3:116",
+    "reference_count": 6,
+    "checks": [
+      "Full reference board compared with full editable sheet",
+      "Main compositions and controls represented in Baselane styling",
+      "No obvious sheet clipping or missing compositions",
+      "All references exist and mapped artwork is visible in correct sheet"
+    ],
+    "scope": "Editable draft image replicas with illustrative content and source-derived photography; not production publication or full landing-page assembly."
+  },
+  {
+    "page": "Portfolio Single Family",
+    "verified_at": "2026-09-12T14:12:21.491986+00:00",
+    "reference_frame": "3:124",
+    "reference_count": 6,
+    "checks": [
+      "Full reference board compared with full editable sheet",
+      "Main compositions and controls represented in Baselane styling",
+      "No obvious sheet clipping or missing compositions",
+      "All references exist and mapped artwork is visible in correct sheet"
+    ],
+    "scope": "Editable draft image replicas with illustrative content and source-derived photography; not production publication or full landing-page assembly."
+  },
+  {
+    "page": "Rapid Rent",
+    "verified_at": "2026-09-12T14:12:21.491986+00:00",
+    "reference_frame": "3:132",
+    "reference_count": 5,
+    "checks": [
+      "Full reference board compared with full editable sheet",
+      "Main compositions and controls represented in Baselane styling",
+      "No obvious sheet clipping or missing compositions",
+      "All references exist and mapped artwork is visible in correct sheet"
+    ],
+    "scope": "Editable draft image replicas with illustrative content and source-derived photography; not production publication or full landing-page assembly."
+  }
+]

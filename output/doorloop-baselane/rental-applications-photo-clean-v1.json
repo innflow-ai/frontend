@@ -1,0 +1,11 @@
+{
+  "tool": "built-in imagegen",
+  "asset": {
+    "reference": "3:155",
+    "photo_node": "51:17",
+    "path": "/Users/ak/innflow-web/output/doorloop-baselane/rental-applications-photo-clean-v1.png",
+    "image_hash": "f6a9ebbe68529ac77f1e97405f395cc1bb188deb"
+  },
+  "verified_at": "2026-09-12T13:04:59.018120+00:00",
+  "verification": "Removed embedded status cards, backplates/glow and physical monitor UI from photo. Preserved native status cards51:18/21/24; cleared glass/fill on152:60, adjusted perspective and rescaled0.88 to fit native rental form within monitor bezel. Final screenshot51:16 verified."
+}

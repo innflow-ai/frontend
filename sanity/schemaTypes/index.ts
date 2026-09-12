@@ -13,12 +13,16 @@ import {
 } from "./productPageType";
 import { skillCategoryType } from "./skillCategoryType";
 import { skillType } from "./skillType";
+import { testimonialPlacementType } from "./testimonialPlacementType";
+import { testimonialType } from "./testimonialType";
 
 export const schemaTypes = [
   authorType,
   postType,
   skillCategoryType,
   skillType,
+  testimonialType,
+  testimonialPlacementType,
   productImageType,
   productCtaType,
   productFeatureCardType,

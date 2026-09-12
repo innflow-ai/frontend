@@ -45,15 +45,16 @@
   gap: 28px;
   align-items: center;
   justify-content: center;
-  background: #b9dfff;
+  background: var(--button-primary);
   border-radius: 999px;
   padding: 16px 26px;
   font-size: 15px;
-  color: #0b2633;
+  color: #fff;
+  min-height: 48px;
   text-decoration: none;
 }
 .button:hover {
-  background: #9cd0fa;
+  background: var(--button-primary-hover);
 }
 .hero small {
   display: block;

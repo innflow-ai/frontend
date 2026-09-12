@@ -1,11 +1,8 @@
-import {
-  ArrowRight,
-  EnvelopeSimple,
-  Path,
-} from "@phosphor-icons/react/dist/ssr";
+import { ArrowRight, EnvelopeSimple } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import { ContactForm } from "@/components/contact-form";
 import { HeroIntro, HeroItem, Reveal } from "@/components/motion";
+import shellStyles from "@/components/site-shell.module.css";
 import { siteConfig } from "@/config/site";
 import { createPageMetadata } from "@/lib/metadata";
 import styles from "./contact.module.css";
@@ -17,21 +14,18 @@ export const metadata = createPageMetadata({
   path: "/contact",
 });
 
-const routingSteps = [
+const contactAudiences = [
   {
-    number: "01",
-    title: "Share the context",
-    body: "Tell us what you’re working on, where the process is getting stuck, or what you need from our team.",
+    image: "/brand/contact/new-to-innflow.png",
+    alt: "A woman working on a laptop at home",
+    title: "New to innflow",
+    body: "Tell us about your properties, your team, and the work you want to simplify. We’ll help you explore where innflow fits and how to get started.",
   },
   {
-    number: "02",
-    title: "We route the inquiry",
-    body: "Your topic helps the right person review the request without sending you through unnecessary handoffs.",
-  },
-  {
-    number: "03",
-    title: "Continue with a person",
-    body: "A member of the innflow team can follow up with the next useful step and any context they need.",
+    image: "/brand/contact/existing-customers.png",
+    alt: "A man holding a tablet in a bright office",
+    title: "Already using innflow",
+    body: "Have a product question or need a hand with your workspace? Share what you’re working on so our team can help you take the next step.",
   },
 ] as const;
 
@@ -80,7 +74,7 @@ export default function ContactPage() {
                 </HeroItem>
               </div>
               <HeroItem>
-                <div className={styles.formCard}>
+                <div className={styles.formCard} id="contact-form">
                   <ContactForm />
                 </div>
               </HeroItem>
@@ -89,32 +83,38 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className={styles.routing} aria-labelledby="routing-heading">
-        <div className={styles.routingInner}>
-          <Reveal className={styles.routingHeading}>
-            <span className={styles.eyebrow}>
-              <Path aria-hidden="true" size={17} />
-              Clear routing
-            </span>
-            <h2 id="routing-heading">One message. A clear next step.</h2>
+      <section
+        className={`${shellStyles.page} ${styles.support}`}
+        aria-labelledby="support-heading"
+      >
+        <div className={styles.supportInner}>
+          <Reveal className={styles.supportHeading}>
+            <h2 id="support-heading">A conversation for every stage.</h2>
             <p>
-              A little structure gives each inquiry enough context to reach the
-              right person without unnecessary back-and-forth.
+              From your first question to your next step, we’re here to help.
             </p>
           </Reveal>
-          <div className={styles.steps}>
-            {routingSteps.map((step, index) => (
-              <Reveal
-                className={styles.step}
-                delay={index * 0.08}
-                key={step.number}
-              >
-                <span>{step.number}</span>
-                <h3>{step.title}</h3>
-                <p>{step.body}</p>
+          <div className={styles.audiences}>
+            {contactAudiences.map((audience, index) => (
+              <Reveal delay={index * 0.08} key={audience.title}>
+                <article className={styles.audience}>
+                  <Image
+                    src={audience.image}
+                    alt={audience.alt}
+                    width={470}
+                    height={324}
+                    sizes="(max-width: 720px) calc(100vw - 40px), (max-width: 1100px) calc((100vw - 90px) / 2), 470px"
+                  />
+                  <h3>{audience.title}</h3>
+                  <p>{audience.body}</p>
+                </article>
               </Reveal>
             ))}
           </div>
+          <a className={shellStyles.darkButton} href="#contact-form">
+            Start a conversation
+            <ArrowRight aria-hidden="true" size={18} />
+          </a>
         </div>
       </section>
     </main>

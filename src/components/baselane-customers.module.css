@@ -1,6 +1,6 @@
 .page {
-  background: #fffbf4;
-  color: #0b2633;
+  background: var(--bl-cream);
+  color: var(--bl-navy);
 }
 .hero {
   min-height: 680px;
@@ -55,14 +55,14 @@
 }
 .page .button {
   color: white;
-  background: linear-gradient(#494b47, #242522);
-  border: 1px solid #242522;
+  background: var(--button-primary);
+  border: 1px solid var(--button-primary);
 }
 .page .outline {
-  border: 1px solid #0b2633;
+  border: 1px solid var(--bl-navy);
 }
 .band {
-  background: #0b2633;
+  background: var(--bl-navy);
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -97,7 +97,7 @@
   position: relative;
   overflow: hidden;
   border-radius: 22px;
-  background: #0b2633;
+  background: var(--bl-navy);
   color: white;
   scroll-snap-align: center;
 }
@@ -110,7 +110,7 @@
   width: 100%;
   aspect-ratio: 9 / 16;
   position: relative;
-  background: #0b2633;
+  background: var(--bl-navy);
   border: 0;
   padding: 0;
   cursor: pointer;
@@ -192,7 +192,7 @@
 .controls button {
   width: 48px;
   height: 48px;
-  border: 1px solid #0b2633;
+  border: 1px solid var(--bl-navy);
   border-radius: 50%;
   background: transparent;
   color: inherit;
@@ -228,7 +228,7 @@
   bottom: 24px;
   left: 24px;
   right: 24px;
-  background: #fffbf4ec;
+  background: var(--bl-cream) ec;
   border-radius: 16px;
   padding: 24px;
   display: flex;
@@ -363,4 +363,10 @@
   .actions {
     gap: 14px;
   }
+}
+
+/* Primary actions follow the shared BL brand reference. */
+.page .button:hover {
+  background: var(--button-primary-hover);
+  filter: none;
 }

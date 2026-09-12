@@ -167,7 +167,7 @@
   list-style: none;
   font-size: 20px;
 }
-summary::-webkit-details-marker {
+.page summary::-webkit-details-marker {
   display: none;
 }
 .split {

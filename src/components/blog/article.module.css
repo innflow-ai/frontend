@@ -752,23 +752,9 @@
   }
 }
 
-@font-face {
-  font-family: "Innflow Article Helvetica";
-  src: url("/brand/baselane-inspired/helvetica-now-regular.woff2")
-    format("woff2");
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Innflow Article Helvetica";
-  src: url("/brand/baselane-inspired/helvetica-now-medium.woff2")
-    format("woff2");
-  font-weight: 500 800;
-  font-display: swap;
-}
 .page {
   padding-top: 40px;
-  font-family: "Innflow Article Helvetica", Arial, sans-serif;
+  font-family: var(--font-sans);
   letter-spacing: -0.02em;
   color-scheme: light;
 }

@@ -3,6 +3,17 @@
 import type { PostHog } from "posthog-js";
 import { useEffect } from "react";
 import { siteConfig } from "@/config/site";
+import {
+  EXPERIENCE_KEY,
+  type ExperienceVariant,
+  experienceProperties,
+  isVariant,
+} from "@/lib/marketing-experience";
+import {
+  captureExperience,
+  clearExperience,
+  mirrorExperienceConsent,
+} from "@/lib/marketing-experience-client";
 
 const consentStorageKey = "innflow-cookie-consent";
 
@@ -40,6 +51,10 @@ async function getPostHogClient() {
 
   if (!postHogClientPromise) {
     postHogClientPromise = import("posthog-js").then(({ default: posthog }) => {
+      if (!analyticsGranted) {
+        postHogClientPromise = null;
+        return posthog;
+      }
       if (!posthog.__loaded) {
         posthog.init(posthogKey, {
           api_host: siteConfig.analytics.posthogHost,
@@ -53,6 +68,17 @@ async function getPostHogClient() {
             maskAllInputs: true,
           },
           person_profiles: "identified_only",
+          before_send: (event) => {
+            // PostHog's separately evaluated flag must not overwrite our rendered assignment.
+            const variant = posthog.get_property(`$feature/${EXPERIENCE_KEY}`);
+            if (
+              event &&
+              posthog.get_property("experiment_version") === EXPERIENCE_KEY &&
+              isVariant(variant)
+            )
+              Object.assign(event.properties, experienceProperties(variant));
+            return event;
+          },
         });
       }
 
@@ -75,22 +101,37 @@ function storeConsent(granted: boolean) {
   }
 }
 
-function applyAnalyticsConsent(granted: boolean) {
+let analyticsGranted = false;
+let consentRevision = 0;
+function applyAnalyticsConsent(
+  granted: boolean,
+  experience?: { variant: ExperienceVariant | null; measure: boolean },
+) {
+  analyticsGranted = granted;
+  const revision = ++consentRevision;
+  if (experience?.variant) mirrorExperienceConsent(granted);
   storeConsent(granted);
 
   if (granted) {
-    void getPostHogClient().then((posthog) => {
-      if (posthog.has_opted_out_capturing()) {
-        posthog.opt_in_capturing();
-        posthog.capture("$pageview");
-        posthog.startSessionRecording();
-      }
-    });
+    void getPostHogClient()
+      .then(async (posthog) => {
+        if (revision !== consentRevision) return;
+        if (posthog.has_opted_out_capturing()) {
+          posthog.opt_in_capturing();
+          posthog.capture("$pageview");
+          posthog.startSessionRecording();
+        }
+        if (experience?.measure && experience.variant)
+          await captureExperience(posthog, experience.variant);
+        else if (experience) clearExperience(posthog);
+      })
+      .catch(() => {});
     return;
   }
 
   if (postHogClientPromise) {
     void postHogClientPromise.then((posthog) => {
+      if (experience) clearExperience(posthog);
       posthog.stopSessionRecording();
       posthog.opt_out_capturing();
     });
@@ -105,7 +146,11 @@ function termlyAnalyticsConsent(termly: TermlyClient) {
   }
 }
 
-export function PostHogObservability() {
+export function PostHogObservability({
+  experience,
+}: {
+  experience?: { variant: ExperienceVariant | null; measure: boolean };
+} = {}) {
   useEffect(() => {
     if (!siteConfig.analytics.posthogKey) return;
 
@@ -118,12 +163,15 @@ export function PostHogObservability() {
 
       termlyAttached = true;
       termly.on("initialized", () => {
-        applyAnalyticsConsent(termlyAnalyticsConsent(termly));
+        applyAnalyticsConsent(termlyAnalyticsConsent(termly), experience);
       });
       termly.on("consent", (data) => {
-        applyAnalyticsConsent(data.categories?.includes("analytics") === true);
+        applyAnalyticsConsent(
+          data.categories?.includes("analytics") === true,
+          experience,
+        );
       });
-      applyAnalyticsConsent(termlyAnalyticsConsent(termly));
+      applyAnalyticsConsent(termlyAnalyticsConsent(termly), experience);
       return true;
     };
 
@@ -137,7 +185,7 @@ export function PostHogObservability() {
     }, 100);
 
     return () => window.clearInterval(interval);
-  }, []);
+  }, [experience]);
 
   return null;
 }

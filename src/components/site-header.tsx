@@ -12,17 +12,25 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { GoogleCtaContent } from "@/components/google-cta-content";
 import {
-  portfolioColumns,
+  portfolioColumns as originalPortfolioColumns,
   productColumns,
   resourcesColumns,
   solutionsColumns,
 } from "@/components/mega-menu";
 import { siteConfig } from "@/config/site";
-import styles from "./baselane-homepage.module.css";
 import { blMenuIcons } from "./bl-menu-icons";
 import { MobileNavigation } from "./editorial-header";
 import { useNavigationBlogPosts } from "./navigation-blog-posts";
+import styles from "./site-shell.module.css";
 import { TrackedLink } from "./tracked-link";
+
+const portfolioColumns = originalPortfolioColumns.map((column) => ({
+  ...column,
+  links: column.links.map((link) => ({
+    ...link,
+    href: link.href === "/#portfolios" ? "/property-management" : link.href,
+  })),
+}));
 
 const menus = [
   { label: "Product", columns: productColumns },
@@ -329,7 +337,7 @@ export function SiteHeader() {
             eventLabel="baselane_header_signup"
             aria-label="Continue with Google"
           >
-            <GoogleCtaContent mobileLabel="Continue" />
+            <GoogleCtaContent />
           </TrackedLink>
           <button
             ref={toggle}

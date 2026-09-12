@@ -1,0 +1,158 @@
+.section {
+  padding: 40px 0;
+  border-top: 1px solid var(--sky-line, #e5e7eb);
+}
+
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.heading p {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sky-muted, #64748b);
+}
+
+.heading button {
+  border: 1px solid var(--sky-line, #e5e7eb);
+  border-radius: 999px;
+  padding: 5px 12px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.viewport {
+  --fade-width: clamp(40px, 9vw, 144px);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 var(--fade-width),
+    #000 calc(100% - var(--fade-width)),
+    transparent
+  );
+}
+
+.viewport::before,
+.viewport::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  width: var(--fade-width);
+  z-index: 1;
+  pointer-events: none;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.viewport::before {
+  left: 0;
+  mask-image: linear-gradient(to right, #000, transparent);
+}
+
+.viewport::after {
+  right: 0;
+  mask-image: linear-gradient(to left, #000, transparent);
+}
+
+.track {
+  display: flex;
+  width: max-content;
+  animation: scroll 120s linear infinite;
+}
+
+.group {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 40px;
+  padding: 8px 40px 8px 0;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 208px;
+  height: 64px;
+  flex-shrink: 0;
+  border-radius: 8px;
+}
+
+.badge img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 54px;
+  object-fit: contain;
+}
+
+.viewport:hover .track,
+.viewport:focus-within .track,
+.viewport[data-paused="true"] .track {
+  animation-play-state: paused;
+}
+
+/* Keep every keyboard-focused link visible without a moving transform. */
+.viewport:focus-within {
+  overflow-x: auto;
+  mask-image: none;
+}
+
+.viewport:focus-within .track {
+  animation: none;
+}
+
+.viewport:focus-within::before,
+.viewport:focus-within::after {
+  display: none;
+}
+
+.badge:focus-visible,
+.heading button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+@keyframes scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+    width: auto;
+  }
+  .viewport {
+    mask-image: none;
+  }
+  .viewport::before,
+  .viewport::after,
+  .heading button {
+    display: none;
+  }
+  .group {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding: 8px 24px;
+    gap: 24px;
+  }
+  .group[aria-hidden="true"] {
+    display: none;
+  }
+}

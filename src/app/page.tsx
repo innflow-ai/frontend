@@ -11,6 +11,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { AuthenticatedHomeRedirect } from "@/components/authenticated-home-redirect";
+import { BaselaneHomepage } from "@/components/baselane-homepage";
 import {
   BlogCarousel,
   type BlogCarouselPost,
@@ -18,6 +19,7 @@ import {
 import { FeatureCard, FeatureCardGrid } from "@/components/feature-card";
 import { GoogleCtaContent } from "@/components/google-cta-content";
 import { JsonLd } from "@/components/json-ld";
+import { LaunchDirectoryMarquee } from "@/components/launch-directory-marquee";
 import { Float, HeroIntro, HeroItem, Reveal } from "@/components/motion";
 import { PortfolioCarousel } from "@/components/portfolio-carousel";
 import { Tag } from "@/components/tag";
@@ -25,6 +27,7 @@ import { TrackedLink } from "@/components/tracked-link";
 import { VerifiedCheck } from "@/components/verified-check";
 import { siteConfig } from "@/config/site";
 import { faqs } from "@/content/home";
+import { getMarketingExperience } from "@/lib/marketing-experience-server";
 import {
   coverImageUrl,
   formatPostDate,
@@ -272,6 +275,17 @@ const faqSchema = {
 };
 
 export default async function HomePage() {
+  const experience = await getMarketingExperience();
+  if (experience.variant === "new")
+    return (
+      <>
+        <AuthenticatedHomeRedirect
+          appOrigin={siteConfig.appOrigin}
+          marketingOrigin={siteConfig.marketingOrigin}
+        />
+        <BaselaneHomepage />
+      </>
+    );
   const latestPosts = await getLatestBlogPosts();
   const carouselPosts: BlogCarouselPost[] = latestPosts.map((post) => ({
     category: humanizeCategory(post.category),
@@ -598,6 +612,8 @@ export default async function HomePage() {
             </div>
           </section>
         ) : null}
+
+        <LaunchDirectoryMarquee />
 
         <section className={styles.cta} id="cta">
           <Image

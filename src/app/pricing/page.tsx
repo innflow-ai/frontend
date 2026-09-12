@@ -1,7 +1,9 @@
+import { BaselanePricing } from "@/components/baselane-pricing";
 import { PricingConfigurator } from "@/components/pricing-configurator";
 import { TrackedLink } from "@/components/tracked-link";
 import { pricingCatalog } from "@/config/pricing";
 import { siteConfig } from "@/config/site";
+import { getMarketingExperience } from "@/lib/marketing-experience-server";
 import { createPageMetadata } from "@/lib/metadata";
 import styles from "./pricing.module.css";
 
@@ -123,7 +125,9 @@ const faqs = [
   },
 ] as const;
 
-export default function PricingPage() {
+export default async function PricingPage() {
+  if ((await getMarketingExperience()).variant === "new")
+    return <BaselanePricing />;
   return (
     <main className={styles.page} id="main-content">
       <section className={styles.hero}>

@@ -1,0 +1,26 @@
+{
+  "pages": 33,
+  "sectionPhotos": 132,
+  "uniqueSourcePhotos": 132,
+  "liveFigmaPhotoMismatches": 0,
+  "resolvedArtworkSubstitutions": 13,
+  "remainingSubstitutions": 0,
+  "browserViewports": [
+    1440,
+    768,
+    390
+  ],
+  "pageViewportChecks": 99,
+  "sectionImageChecks": 396,
+  "failures": 0,
+  "focusedTestsPassed": 35,
+  "typecheck": "passed",
+  "changedComponentLint": "passed",
+  "operationsNavigation": {
+    "forward": "Supporting Files",
+    "reverse": "Resident Requests",
+    "stackedPanels": 4
+  },
+  "temporaryFigmaExportsRemaining": 0,
+  "state": "local worktree; no deployment or CMS publication"
+}

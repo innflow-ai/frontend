@@ -1,0 +1,93 @@
+[
+  {
+    "page": "workflows",
+    "figmaNode": "157:5660",
+    "requestedComposition": "Workflow canvas and trigger configuration",
+    "usedComposition": "Lease renewals workflow",
+    "usedNode": "157:5623"
+  },
+  {
+    "page": "workflows",
+    "figmaNode": "157:5744",
+    "requestedComposition": "Baselane / Workflow activity \u2014 Drawer over status list",
+    "usedComposition": "Campaign delivery log",
+    "usedNode": "81:1380"
+  },
+  {
+    "page": "rapid-rent",
+    "figmaNode": "117:3285",
+    "requestedComposition": "Auto-pay overlay",
+    "usedComposition": "Payments transaction table",
+    "usedNode": "113:3064"
+  },
+  {
+    "page": "rapid-rent",
+    "figmaNode": "117:3292",
+    "requestedComposition": "Rent and payment notifications",
+    "usedComposition": "Expiring tenant announcement",
+    "usedNode": "81:1350"
+  },
+  {
+    "page": "rapid-rent",
+    "figmaNode": "117:3322",
+    "requestedComposition": "Supported payment methods",
+    "usedComposition": "Payment method selection",
+    "usedNode": "101:2597"
+  },
+  {
+    "page": "operations",
+    "figmaNode": "93:1887",
+    "requestedComposition": "Owners \u00b7 Vendors \u00b7 Prospects layered directories",
+    "usedComposition": "Vendor directory and actions",
+    "usedNode": "152:5566"
+  },
+  {
+    "page": "quickbooks",
+    "figmaNode": "119:3650",
+    "requestedComposition": "General settings and QuickBooks",
+    "usedComposition": "05 \u00b7 QuickBooks connection \u00b7 Editable artwork",
+    "usedNode": "57:604"
+  },
+  {
+    "page": "quickbooks",
+    "figmaNode": "119:3718",
+    "requestedComposition": "QuickBooks sync configuration",
+    "usedComposition": "Bank Sync filters",
+    "usedNode": "62:1017"
+  },
+  {
+    "page": "mobile-apps",
+    "figmaNode": "76:1194",
+    "requestedComposition": "Your portfolio",
+    "usedComposition": "Portal navigation and dashboard",
+    "usedNode": "136:4956"
+  },
+  {
+    "page": "mobile-apps",
+    "figmaNode": "76:1212",
+    "requestedComposition": "Responsive dashboard views",
+    "usedComposition": "Baselane / Operations \u2014 Layered portfolio dashboard",
+    "usedNode": "165:6770"
+  },
+  {
+    "page": "mobile-apps",
+    "figmaNode": "76:1283",
+    "requestedComposition": "Menu and home views",
+    "usedComposition": "Portal navigation and dashboard",
+    "usedNode": "136:4956"
+  },
+  {
+    "page": "listing-and-advertising",
+    "figmaNode": "49:296",
+    "requestedComposition": "Innflow / Listing & Advertising / 01 \u00b7 Hero channels & status",
+    "usedComposition": "Listing channels \u00b7 raised Zillow selection",
+    "usedNode": "89:1790"
+  },
+  {
+    "page": "accounting",
+    "figmaNode": "23:187",
+    "requestedComposition": "Accounting / 06 \u00b7 Expense capture",
+    "usedComposition": "Upload files",
+    "usedNode": "140:5042"
+  }
+]

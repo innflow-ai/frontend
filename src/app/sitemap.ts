@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
+import { featurePageDesigns } from "@/content/feature-pages";
 import { allFeatureSlugs } from "@/content/marketing";
 import { platformPages } from "@/content/platform";
 import { productSlugs } from "@/lib/product-pages";
@@ -120,6 +121,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "weekly" as const,
       priority: 0.9,
     })),
+    ...featurePageDesigns
+      .filter(
+        (page) =>
+          !staticRoutes.some((route) => route.path === page.path) &&
+          !page.path.startsWith("/products/") &&
+          !page.path.startsWith("/features/"),
+      )
+      .map((page) => ({
+        url: `${siteConfig.marketingOrigin}${page.path}`,
+        changeFrequency: "monthly" as const,
+        priority: 0.8,
+      })),
     ...posts.map((post) => ({
       url: `${siteConfig.marketingOrigin}/blog/${post.slug}`,
       lastModified: new Date(post.publishedAt),

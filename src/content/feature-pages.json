@@ -1,0 +1,4235 @@
+[
+  {
+    "key": "mobile-home",
+    "name": "Mobile Home",
+    "path": "/mobile-home",
+    "figmaNode": "165:5875",
+    "title": "Keep your mobile home community connected.",
+    "description": "Bring property context, resident accounts, requests, and conversations into a clearer daily workflow for your team.",
+    "intro": "Stay close to the details across your community.",
+    "hero": "/brand/feature-pages/mobile-home/portfolio-mobile-home-hero.webp",
+    "heroFocus": 75,
+    "heroArtwork": [
+      {
+        "id": "165:6713",
+        "x": 880,
+        "y": 280,
+        "width": 228.4615478515625,
+        "height": 180,
+        "name": "Home dashboard \u00b7 Financial and operations overview",
+        "src": "/brand/feature-pages/artwork/165-6713.svg"
+      }
+    ],
+    "panels": [
+      {
+        "id": "community-overview",
+        "label": "Community Overview",
+        "title": "Start with a shared community view.",
+        "text": "Keep relevant property information together, giving your team a useful starting point for everyday community work.",
+        "image": "/brand/feature-pages/mobile-home/portfolio-mobile-home-hero.webp",
+        "artwork": [
+          {
+            "id": "165:6770",
+            "x": 48,
+            "y": 62,
+            "width": 232.1568603515625,
+            "height": 185,
+            "name": "Baselane / Operations \u2014 Layered portfolio dashboard",
+            "src": "/brand/feature-pages/artwork/165-6770.svg"
+          }
+        ]
+      },
+      {
+        "id": "resident-accounts",
+        "label": "Resident Accounts",
+        "title": "Keep account details within reach.",
+        "text": "Bring resident account and payment context close to the work, so your team can follow up with the relevant information.",
+        "image": "/brand/feature-pages/mobile-home/portfolio-mobile-home-hero.webp",
+        "artwork": [
+          {
+            "id": "165:6824",
+            "x": 48,
+            "y": 62,
+            "width": 336.3636474609375,
+            "height": 185,
+            "name": "Resident portal",
+            "src": "/brand/feature-pages/artwork/165-6824.svg"
+          }
+        ]
+      },
+      {
+        "id": "maintenance-requests",
+        "label": "Maintenance Requests",
+        "title": "Give each request a clear path.",
+        "text": "Review maintenance requests and their status together, helping your team coordinate the next step across the community.",
+        "image": "/brand/feature-pages/mobile-home/portfolio-mobile-home-hero.webp",
+        "artwork": [
+          {
+            "id": "165:6861",
+            "x": 48,
+            "y": 62,
+            "width": 288.7804870605469,
+            "height": 185,
+            "name": "Tenant request dashboard",
+            "src": "/brand/feature-pages/artwork/165-6861.svg"
+          }
+        ]
+      },
+      {
+        "id": "resident-messaging",
+        "label": "Resident Messaging",
+        "title": "Keep conversations connected.",
+        "text": "Bring resident messages into a shared view, with useful context for the team responding to questions and updates.",
+        "image": "/brand/feature-pages/mobile-home/portfolio-mobile-home-hero.webp",
+        "artwork": [
+          {
+            "id": "165:6898",
+            "x": 48,
+            "y": 62,
+            "width": 294.1025695800781,
+            "height": 185,
+            "name": "Inbox and conversation",
+            "src": "/brand/feature-pages/artwork/165-6898.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "Community visibility",
+        "Keep property information close to daily decisions."
+      ],
+      [
+        "Connected records",
+        "Bring resident account context into the next conversation."
+      ],
+      [
+        "Clear follow-up",
+        "Coordinate requests and responses across your team."
+      ]
+    ],
+    "faqs": [
+      [
+        "How can Innflow support a mobile home community?",
+        "Start with the property, resident account and request workflows your team needs. Review the available setup options with Innflow for your community."
+      ],
+      [
+        "Can we keep resident account information together?",
+        "Use the available account views to keep useful resident details close to the work. Confirm how your community\u2019s account structure can be represented during setup."
+      ],
+      [
+        "How can we coordinate maintenance requests?",
+        "Keep incoming requests, status and follow-up context visible to the people involved, then confirm the workflow options that fit your team."
+      ],
+      [
+        "What should we review before getting started?",
+        "Review your community\u2019s property structure, resident records and team responsibilities with Innflow to confirm the right configuration."
+      ]
+    ]
+  },
+  {
+    "key": "rental-applications",
+    "name": "Rental Applications",
+    "path": "/rental-applications",
+    "figmaNode": "126:3867",
+    "title": "Give every application a clear next step.",
+    "description": "Bring application documents, showing details, and review status into a connected workflow for your property team.",
+    "intro": "Keep the application process moving with context.",
+    "hero": "/brand/feature-pages/rental-applications/rental-applications-hero.webp",
+    "heroFocus": 76,
+    "heroArtwork": [
+      {
+        "id": "128:4205",
+        "x": 950,
+        "y": 270,
+        "width": 261.81817626953125,
+        "height": 180,
+        "name": "Application management",
+        "src": "/brand/feature-pages/artwork/128-4205.svg"
+      }
+    ],
+    "panels": [
+      {
+        "id": "document-templates",
+        "label": "Document Templates",
+        "title": "Start with the documents you need.",
+        "text": "Keep reusable application documents within reach, giving your team a consistent starting point for the next applicant.",
+        "image": "/brand/feature-pages/rental-applications/rental-applications-hero.webp",
+        "artwork": [
+          {
+            "id": "128:4274",
+            "x": 48,
+            "y": 62,
+            "width": 259,
+            "height": 185,
+            "name": "Document templates",
+            "src": "/brand/feature-pages/artwork/128-4274.svg"
+          }
+        ]
+      },
+      {
+        "id": "application-fees",
+        "label": "Application Fees",
+        "title": "Make the fee step easier to follow.",
+        "text": "Keep application fee details close to the workflow, so your team can review the relevant options before moving ahead.",
+        "image": "/brand/feature-pages/rental-applications/rental-applications-hero.webp",
+        "artwork": [
+          {
+            "id": "128:4329",
+            "x": 48,
+            "y": 62,
+            "width": 337.45928955078125,
+            "height": 185,
+            "name": "Application fee selection",
+            "src": "/brand/feature-pages/artwork/128-4329.svg"
+          }
+        ]
+      },
+      {
+        "id": "showing-calendar",
+        "label": "Showing Calendar",
+        "title": "Keep showings connected to the process.",
+        "text": "Bring scheduled visits into view alongside application work, with a shared reference for the next appointment.",
+        "image": "/brand/feature-pages/rental-applications/rental-applications-hero.webp",
+        "artwork": [
+          {
+            "id": "128:4345",
+            "x": 48,
+            "y": 62,
+            "width": 241.6326446533203,
+            "height": 185,
+            "name": "Weekly showings calendar \u00b7 Baselane",
+            "src": "/brand/feature-pages/artwork/128-4345.svg"
+          }
+        ]
+      },
+      {
+        "id": "application-review",
+        "label": "Application Review",
+        "title": "See where each application stands.",
+        "text": "Review application status and supporting details together, so your team can identify the next follow-up.",
+        "image": "/brand/feature-pages/rental-applications/rental-applications-hero.webp",
+        "artwork": [
+          {
+            "id": "128:4424",
+            "x": 48,
+            "y": 62,
+            "width": 269.0909118652344,
+            "height": 185,
+            "name": "Application management",
+            "src": "/brand/feature-pages/artwork/128-4424.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "Consistent intake",
+        "Give your team a familiar starting point for each application."
+      ],
+      [
+        "Shared context",
+        "Keep documents and appointment details close to the work."
+      ],
+      [
+        "Clear follow-through",
+        "Make the next review or follow-up easier to identify."
+      ]
+    ],
+    "faqs": [
+      [
+        "How does the application workflow fit together?",
+        "Start with the information and documents your team needs, then keep the relevant appointments and review status connected as the application progresses."
+      ],
+      [
+        "Can we reuse application documents?",
+        "Keep the documents used by your team organized as a starting point for new applications. Confirm the available template and document options with Innflow."
+      ],
+      [
+        "Can showing details stay close to application work?",
+        "A shared showing calendar gives your team a reference for scheduled visits. Confirm how appointments connect to your application workflow during setup."
+      ],
+      [
+        "What should we review before getting started?",
+        "Review your required information, document templates, fee configuration and team responsibilities. Confirm the supported options with Innflow before setting up your process."
+      ]
+    ]
+  },
+  {
+    "key": "crm",
+    "name": "CRM",
+    "path": "/crm",
+    "figmaNode": "84:1296",
+    "title": "Know the person. Keep the next step clear.",
+    "description": "Connect prospect details, property interest, and team follow-up in a clear workflow from first inquiry onward.",
+    "intro": "Give every prospect a clear path forward.",
+    "hero": "/brand/feature-pages/crm/crm-hero.webp",
+    "heroFocus": 73,
+    "heroArtwork": [
+      {
+        "id": "85:1442",
+        "x": 930,
+        "y": 280,
+        "width": 279.9999694824219,
+        "height": 224.44442749023438,
+        "name": "Prospect details \u00b7 four-tile hero overlay",
+        "src": "/brand/feature-pages/artwork/85-1442.svg"
+      }
+    ],
+    "panels": [
+      {
+        "id": "prospect-overview",
+        "label": "Prospect Overview",
+        "title": "See the people behind the pipeline.",
+        "text": "Bring prospects into a shared view, so your team can find the right person and understand where the conversation stands.",
+        "image": "/brand/feature-pages/crm/crm-hero.webp",
+        "artwork": [
+          {
+            "id": "85:1463",
+            "x": 48,
+            "y": 62,
+            "width": 297.8049011230469,
+            "height": 185,
+            "name": "Prospects",
+            "src": "/brand/feature-pages/artwork/85-1463.svg"
+          }
+        ]
+      },
+      {
+        "id": "prospect-context",
+        "label": "Prospect Context",
+        "title": "Keep useful details together.",
+        "text": "Keep property interest, timing, notes, and ownership close to the prospect, making the next conversation easier to pick up.",
+        "image": "/brand/feature-pages/crm/crm-hero.webp",
+        "artwork": [
+          {
+            "id": "85:1523",
+            "x": 48,
+            "y": 62,
+            "width": 292.10528564453125,
+            "height": 185.00001525878906,
+            "name": "Prospect profile details",
+            "src": "/brand/feature-pages/artwork/85-1523.svg"
+          }
+        ]
+      },
+      {
+        "id": "team-follow-up",
+        "label": "Team Follow-Up",
+        "title": "Turn follow-up into a clear next step.",
+        "text": "Give a task its subject, owner, and supporting details so the next action has a place in your team's workflow.",
+        "image": "/brand/feature-pages/crm/crm-hero.webp",
+        "artwork": [
+          {
+            "id": "85:1566",
+            "x": 48,
+            "y": 62,
+            "width": 246.66665649414062,
+            "height": 185,
+            "name": "New CRM task",
+            "src": "/brand/feature-pages/artwork/85-1566.svg"
+          }
+        ]
+      },
+      {
+        "id": "lead-sources",
+        "label": "Lead Sources",
+        "title": "Connect interest with its source.",
+        "text": "Keep the context of where interest began alongside your leasing workflow, from listing channels to the next prospect conversation.",
+        "image": "/brand/feature-pages/crm/crm-hero.webp",
+        "artwork": [
+          {
+            "id": "85:1598",
+            "x": 48,
+            "y": 62,
+            "width": 287.77777099609375,
+            "height": 185,
+            "name": "Listing channels \u00b7 raised Zillow selection",
+            "src": "/brand/feature-pages/artwork/85-1598.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "Shared context",
+        "Keep prospect information useful to the next teammate."
+      ],
+      [
+        "Clear ownership",
+        "Make the person responsible for follow-up easy to find."
+      ],
+      [
+        "Useful supporting files",
+        "Keep relevant documents near the work they support."
+      ]
+    ],
+    "faqs": [
+      [
+        "What belongs in a property CRM?",
+        "A useful prospect record brings together contact details, property interest, timing, notes, and the next action. Keep the information relevant to your team's leasing workflow."
+      ],
+      [
+        "How can a CRM support team handoffs?",
+        "Clear ownership and concise notes help the next teammate understand the conversation and follow-up. Keep the prospect's context connected to the task."
+      ],
+      [
+        "Can we keep supporting files with a task?",
+        "Supporting files give the next person context for their work. Ask the Innflow team about attachment options and permissions for your setup."
+      ],
+      [
+        "Which lead sources can connect to Innflow?",
+        "Confirm supported listing channels and integrations with the Innflow team. Available connections depend on your setup."
+      ]
+    ]
+  },
+  {
+    "key": "bookkeeping",
+    "name": "Bookkeeping",
+    "path": "/bookkeeping",
+    "figmaNode": "54:331",
+    "title": "Keep your books connected to the work.",
+    "description": "Bring property records, supporting details, and review steps together for a clearer view of your bookkeeping.",
+    "intro": "Less searching. More useful context.",
+    "hero": "/brand/feature-pages/bookkeeping/bookkeeping-hero.webp",
+    "heroFocus": 77,
+    "heroArtwork": [
+      {
+        "id": "57:571",
+        "x": 1000,
+        "y": 250,
+        "width": 410,
+        "height": 260.9090881347656,
+        "name": "Accounting / 01 \u00b7 Transactions and profit summary",
+        "src": "/brand/feature-pages/artwork/57-571.svg"
+      }
+    ],
+    "panels": [
+      {
+        "id": "accounting-connections",
+        "label": "Accounting Connections",
+        "title": "Keep the supporting details together.",
+        "text": "Give your team a shared place to organize records and review the information behind the next accounting step.",
+        "image": "/brand/feature-pages/bookkeeping/bookkeeping-01-accounting-connections.webp",
+        "artwork": [
+          {
+            "id": "57:604",
+            "x": 455,
+            "y": 65,
+            "width": 369,
+            "height": 256.9821472167969,
+            "name": "05 \u00b7 QuickBooks connection \u00b7 Editable artwork",
+            "src": "/brand/feature-pages/artwork/57-604.svg"
+          }
+        ]
+      },
+      {
+        "id": "account-categories",
+        "label": "Account Categories",
+        "title": "Give every record a clear place.",
+        "text": "Keep account categories and property context easy to follow, so information is easier to find when it is needed.",
+        "image": "/brand/feature-pages/bookkeeping/bookkeeping-02-account-categories.webp",
+        "artwork": [
+          {
+            "id": "57:676",
+            "x": 455,
+            "y": 65,
+            "width": 369,
+            "height": 258.3000183105469,
+            "name": "03 \u00b7 Chart of accounts \u00b7 Editable",
+            "src": "/brand/feature-pages/artwork/57-676.svg"
+          }
+        ]
+      },
+      {
+        "id": "income-expenses",
+        "label": "Income & Expenses",
+        "title": "See the activity behind the numbers.",
+        "text": "Bring income and expense context into a shared view, with the details your team needs for a focused review.",
+        "image": "/brand/feature-pages/bookkeeping/bookkeeping-03-income-and-expenses.webp",
+        "artwork": [
+          {
+            "id": "57:742",
+            "x": 455,
+            "y": 65,
+            "width": 369,
+            "height": 243.80357360839844,
+            "name": "Accounting / 02 \u00b7 Income and expenses",
+            "src": "/brand/feature-pages/artwork/57-742.svg"
+          }
+        ]
+      },
+      {
+        "id": "bank-connections",
+        "label": "Bank Connections",
+        "title": "Keep account context close.",
+        "text": "Organize the information behind connected accounts and keep supporting records within reach.",
+        "image": "/brand/feature-pages/bookkeeping/bookkeeping-04-bank-connections.webp",
+        "artwork": [
+          {
+            "id": "57:757",
+            "x": 455,
+            "y": 65,
+            "width": 369,
+            "height": 263.5714416503906,
+            "name": "Accounting / 03 \u00b7 Bank connections",
+            "src": "/brand/feature-pages/artwork/57-757.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "Property-level organization",
+        "Keep each record connected to the property it belongs to."
+      ],
+      [
+        "Shared review context",
+        "Bring supporting details into the conversation before the next step."
+      ],
+      [
+        "Clear handoffs",
+        "Keep ownership visible as work moves between your team and advisors."
+      ]
+    ],
+    "faqs": [
+      [
+        "How does Innflow support bookkeeping work?",
+        "Connect property records, supporting information, and team review steps in a shared workspace."
+      ],
+      [
+        "Can I organize records by property?",
+        "Keep the property context alongside records and supporting details so your team can follow the work."
+      ],
+      [
+        "Does the workspace replace my accountant?",
+        "It is designed to help organize work and information. Discuss accounting requirements and professional advice with your accountant."
+      ],
+      [
+        "Which accounting integrations are available?",
+        "Confirm the accounting tools and integrations available for your workflow with our team."
+      ]
+    ]
+  },
+  {
+    "key": "reports",
+    "name": "Reports",
+    "path": "/reports",
+    "figmaNode": "121:3532",
+    "title": "Turn property data into a clearer picture.",
+    "description": "Find the report you need, focus on the relevant details, and give your team useful context for the next decision.",
+    "intro": "See the details behind your property performance.",
+    "hero": "/brand/feature-pages/reports/reports-hero.webp",
+    "heroFocus": 74,
+    "heroArtwork": [
+      {
+        "id": "123:3786",
+        "x": 950,
+        "y": 270,
+        "width": 242.6086883544922,
+        "height": 180,
+        "name": "04 \u00b7 Profit and loss report \u00b7 Editable artwork",
+        "src": "/brand/feature-pages/artwork/123-3786.svg"
+      }
+    ],
+    "panels": [
+      {
+        "id": "report-library",
+        "label": "Report Library",
+        "title": "Start with the right report.",
+        "text": "Keep useful financial reports within reach, so your team can find a starting point for each review.",
+        "image": "/brand/feature-pages/reports/reports-hero.webp",
+        "artwork": [
+          {
+            "id": "123:3850",
+            "x": 48,
+            "y": 62,
+            "width": 253.2008819580078,
+            "height": 185,
+            "name": "Baselane / Owner report library",
+            "src": "/brand/feature-pages/artwork/123-3850.svg"
+          }
+        ]
+      },
+      {
+        "id": "report-filters",
+        "label": "Report Filters",
+        "title": "Focus on the details that matter.",
+        "text": "Bring the relevant property and reporting period into view, with filters that help narrow the conversation.",
+        "image": "/brand/feature-pages/reports/reports-hero.webp",
+        "artwork": [
+          {
+            "id": "123:3871",
+            "x": 48,
+            "y": 62,
+            "width": 254.65586853027344,
+            "height": 185,
+            "name": "Profit and loss \u2014 Filtered report",
+            "src": "/brand/feature-pages/artwork/123-3871.svg"
+          }
+        ]
+      },
+      {
+        "id": "transaction-insights",
+        "label": "Transaction Insights",
+        "title": "Connect the totals to their context.",
+        "text": "Review transaction details alongside the report, giving your team a clearer path from a number to its next question.",
+        "image": "/brand/feature-pages/reports/reports-hero.webp",
+        "artwork": [
+          {
+            "id": "123:3940",
+            "x": 48,
+            "y": 62,
+            "width": 237.49591064453125,
+            "height": 185,
+            "name": "Transaction details with insights",
+            "src": "/brand/feature-pages/artwork/123-3940.svg"
+          }
+        ]
+      },
+      {
+        "id": "report-exports",
+        "label": "Report Exports",
+        "title": "Carry the report into the next step.",
+        "text": "Prepare a useful report for the people involved, with export controls that keep the handoff straightforward.",
+        "image": "/brand/feature-pages/reports/reports-hero.webp",
+        "artwork": [
+          {
+            "id": "123:4032",
+            "x": 48,
+            "y": 62,
+            "width": 255.69105529785156,
+            "height": 185,
+            "name": "Transaction report export",
+            "src": "/brand/feature-pages/artwork/123-4032.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "A clear starting point",
+        "Find the relevant report before diving into the details."
+      ],
+      [
+        "Focused reviews",
+        "Keep the property and reporting period in view."
+      ],
+      [
+        "Useful handoffs",
+        "Bring financial context into the next team conversation."
+      ]
+    ],
+    "faqs": [
+      [
+        "Which reports can my team work with?",
+        "Start with the financial and property reports relevant to your workflow. Confirm the available report types with the Innflow team."
+      ],
+      [
+        "Can we focus a report on a particular property?",
+        "Use the available report filters to choose the context for your review. Check which property and date options apply to the report you need."
+      ],
+      [
+        "How do transaction details help with a review?",
+        "Transaction details provide context for the totals you are reviewing. Keep the relevant records close by when investigating a change or preparing a follow-up."
+      ],
+      [
+        "Can we share reports with the people involved?",
+        "Review the available export and sharing options with your team, and confirm the format and access needed before handing over a report."
+      ]
+    ]
+  },
+  {
+    "key": "community-associations",
+    "name": "Community Associations",
+    "path": "/community-associations",
+    "figmaNode": "103:2352",
+    "title": "Keep your community connected.",
+    "description": "Bring dues, conversations, requests, and shared documents into a clearer workflow for your association team.",
+    "intro": "A clear place for everyday community work.",
+    "hero": "/brand/feature-pages/community-associations/community-associations-hero.webp",
+    "heroFocus": 75,
+    "heroArtwork": [
+      {
+        "id": "105:2508",
+        "x": 950,
+        "y": 270,
+        "width": 299.9999694824219,
+        "height": 137.77777099609375,
+        "name": "Email campaign progress overlay",
+        "src": "/brand/feature-pages/artwork/105-2508.svg"
+      }
+    ],
+    "panels": [
+      {
+        "id": "association-dues",
+        "label": "Association Dues",
+        "title": "Keep dues information in view.",
+        "text": "Bring payment context and outstanding balances into a shared view, helping your team understand where follow-up is needed.",
+        "image": "/brand/feature-pages/community-associations/community-associations-hero.webp",
+        "artwork": [
+          {
+            "id": "105:2523",
+            "x": 48,
+            "y": 62,
+            "width": 314.69073486328125,
+            "height": 185,
+            "name": "Community dues cards",
+            "src": "/brand/feature-pages/artwork/105-2523.svg"
+          }
+        ]
+      },
+      {
+        "id": "community-messages",
+        "label": "Community Messages",
+        "title": "Keep community conversations connected.",
+        "text": "Give messages and their context a clear home, so the next teammate can understand the conversation and pick up the next step.",
+        "image": "/brand/feature-pages/community-associations/community-associations-hero.webp",
+        "artwork": [
+          {
+            "id": "105:2548",
+            "x": 48,
+            "y": 62,
+            "width": 294.1025695800781,
+            "height": 185,
+            "name": "Inbox and conversation",
+            "src": "/brand/feature-pages/artwork/105-2548.svg"
+          }
+        ]
+      },
+      {
+        "id": "resident-requests",
+        "label": "Resident Requests",
+        "title": "Give requests a clear path forward.",
+        "text": "Keep resident requests, priorities, and useful details together, with a shared view of the work that needs attention.",
+        "image": "/brand/feature-pages/community-associations/community-associations-hero.webp",
+        "artwork": [
+          {
+            "id": "105:2581",
+            "x": 48,
+            "y": 62,
+            "width": 288.7804870605469,
+            "height": 185,
+            "name": "Tenant request dashboard",
+            "src": "/brand/feature-pages/artwork/105-2581.svg"
+          }
+        ]
+      },
+      {
+        "id": "shared-documents",
+        "label": "Shared Documents",
+        "title": "Make useful documents easy to find.",
+        "text": "Keep community guidelines and supporting files organized, bringing the relevant information closer to your team's everyday work.",
+        "image": "/brand/feature-pages/community-associations/community-associations-hero.webp",
+        "artwork": [
+          {
+            "id": "105:2618",
+            "x": 48,
+            "y": 62,
+            "width": 307.8553161621094,
+            "height": 185,
+            "name": "Tenant file library",
+            "src": "/brand/feature-pages/artwork/105-2618.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "Community context",
+        "Keep relevant details connected to the people and property."
+      ],
+      [
+        "Clear follow-up",
+        "Help your team see the next useful action."
+      ],
+      [
+        "Shared information",
+        "Give teammates a useful place to find supporting documents."
+      ]
+    ],
+    "faqs": [
+      [
+        "How can Innflow fit a community association?",
+        "Start with the everyday information your team needs to connect, from community conversations to requests and documents. Review your association's requirements with the Innflow team."
+      ],
+      [
+        "Can we keep dues and balances organized?",
+        "Ask the Innflow team which dues, payment, and accounting options are available for your association's setup."
+      ],
+      [
+        "How can residents' requests stay connected to the team?",
+        "Keep the request, supporting context, and next step together so the responsible teammate can pick up the work."
+      ],
+      [
+        "Where should we keep community documents?",
+        "Use clear file names and descriptions to make guidelines and supporting documents easy to find. Confirm access and sharing options with the Innflow team."
+      ]
+    ]
+  },
+  {
+    "key": "leasing",
+    "name": "Leasing",
+    "path": "/leasing",
+    "figmaNode": "88:1491",
+    "title": "Give every lease a clear beginning.",
+    "description": "Bring applications, supporting information, and property presentation into a connected leasing workflow.",
+    "intro": "From first interest to the next leasing step.",
+    "hero": "/brand/feature-pages/leasing/leasing-hero.webp",
+    "heroFocus": 79,
+    "heroArtwork": [
+      {
+        "id": "89:1725",
+        "x": 970,
+        "y": 290,
+        "width": 280,
+        "height": 168.60214233398438,
+        "name": "Ready for lease overlay",
+        "src": "/brand/feature-pages/artwork/89-1725.svg"
+      }
+    ],
+    "panels": [
+      {
+        "id": "rental-applications",
+        "label": "Rental Applications",
+        "title": "Give applicants a clear place to start.",
+        "text": "Keep the application journey focused, with the relevant details and a clear next step for each applicant.",
+        "image": "/brand/feature-pages/leasing/leasing-hero.webp",
+        "artwork": [
+          {
+            "id": "89:1731",
+            "x": 48,
+            "y": 62,
+            "width": 296,
+            "height": 185,
+            "name": "Rental application \u00b7 raised applicant choices",
+            "src": "/brand/feature-pages/artwork/89-1731.svg"
+          }
+        ]
+      },
+      {
+        "id": "applicant-information",
+        "label": "Applicant Information",
+        "title": "Keep supporting information in view.",
+        "text": "Bring the information behind an application into a clear review workflow, with context available to the people responsible.",
+        "image": "/brand/feature-pages/leasing/leasing-hero.webp",
+        "artwork": [
+          {
+            "id": "89:1758",
+            "x": 48,
+            "y": 62,
+            "width": 287.77777099609375,
+            "height": 185,
+            "name": "Screening reports \u00b7 three staggered cards",
+            "src": "/brand/feature-pages/artwork/89-1758.svg"
+          }
+        ]
+      },
+      {
+        "id": "listing-channels",
+        "label": "Listing Channels",
+        "title": "Connect your listing workflow.",
+        "text": "Keep property availability and listing-channel context close to the leasing work that follows each inquiry.",
+        "image": "/brand/feature-pages/leasing/leasing-hero.webp",
+        "artwork": [
+          {
+            "id": "89:1790",
+            "x": 48,
+            "y": 62,
+            "width": 287.77777099609375,
+            "height": 185,
+            "name": "Listing channels \u00b7 raised Zillow selection",
+            "src": "/brand/feature-pages/artwork/89-1790.svg"
+          }
+        ]
+      },
+      {
+        "id": "property-websites",
+        "label": "Property Websites",
+        "title": "Give each property a useful introduction.",
+        "text": "Bring the property story, key details, and application path into a clear website experience for prospective residents.",
+        "image": "/brand/feature-pages/leasing/leasing-hero.webp",
+        "artwork": [
+          {
+            "id": "89:1823",
+            "x": 48,
+            "y": 62,
+            "width": 296,
+            "height": 185,
+            "name": "Property website \u00b7 raised template selector",
+            "src": "/brand/feature-pages/artwork/89-1823.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "Property context",
+        "Keep the relevant unit and property details close at hand."
+      ],
+      [
+        "Clear next steps",
+        "Help your team understand where each application stands."
+      ],
+      [
+        "Connected handoffs",
+        "Bring useful context forward as leasing work changes hands."
+      ]
+    ],
+    "faqs": [
+      [
+        "How does Innflow support a leasing workflow?",
+        "Connect the application, property context, and next action so your team has a clear place to pick up the work. Ask the Innflow team which leasing features fit your setup."
+      ],
+      [
+        "What should applicants have ready?",
+        "The information required depends on your application process. Give applicants clear instructions about the details and supporting documents they need."
+      ],
+      [
+        "Which listing channels are available?",
+        "Confirm available listing integrations and how they connect with your workflow with the Innflow team."
+      ],
+      [
+        "Can a property website connect to the application journey?",
+        "A clear property website helps prospective residents understand the property and find the next step. Ask the team about the website and application options available for your setup."
+      ]
+    ]
+  },
+  {
+    "key": "residential",
+    "name": "Residential",
+    "path": "/residential",
+    "figmaNode": "110:2715",
+    "title": "Keep residential property work connected.",
+    "description": "Bring financial context, resident conversations, payments, and application details into a shared workflow for your team.",
+    "intro": "Useful context for the homes you manage.",
+    "hero": "/brand/feature-pages/residential/residential-hero.webp",
+    "heroFocus": 78,
+    "heroArtwork": [
+      {
+        "id": "110:3520",
+        "x": 950,
+        "y": 270,
+        "width": 314.28570556640625,
+        "height": 200,
+        "name": "Accounting / 01 \u00b7 Transactions and profit summary",
+        "src": "/brand/feature-pages/artwork/110-3520.svg"
+      }
+    ],
+    "panels": [
+      {
+        "id": "income-and-expenses",
+        "label": "Income And Expenses",
+        "title": "Keep the financial picture close.",
+        "text": "Bring income and expense information into view, so your team can connect the numbers with the property work behind them.",
+        "image": "/brand/feature-pages/residential/residential-hero.webp",
+        "artwork": [
+          {
+            "id": "110:3552",
+            "x": 48,
+            "y": 62,
+            "width": 280,
+            "height": 185,
+            "name": "Accounting / 02 \u00b7 Income and expenses",
+            "src": "/brand/feature-pages/artwork/110-3552.svg"
+          }
+        ]
+      },
+      {
+        "id": "resident-messages",
+        "label": "Resident Messages",
+        "title": "Keep conversations connected to the home.",
+        "text": "Give resident messages a clear place alongside useful context, helping the next teammate understand the conversation and follow up.",
+        "image": "/brand/feature-pages/residential/residential-hero.webp",
+        "artwork": [
+          {
+            "id": "110:3567",
+            "x": 48,
+            "y": 62,
+            "width": 294.1025695800781,
+            "height": 185,
+            "name": "Inbox and conversation",
+            "src": "/brand/feature-pages/artwork/110-3567.svg"
+          }
+        ]
+      },
+      {
+        "id": "payment-details",
+        "label": "Payment Details",
+        "title": "Give payment details a clear home.",
+        "text": "Keep the relevant payment information and next action within reach, supporting clearer conversations with residents and your team.",
+        "image": "/brand/feature-pages/residential/residential-hero.webp",
+        "artwork": [
+          {
+            "id": "110:3600",
+            "x": 48,
+            "y": 62,
+            "width": 297.0882263183594,
+            "height": 185,
+            "name": "Payment method selection",
+            "src": "/brand/feature-pages/artwork/110-3600.svg"
+          }
+        ]
+      },
+      {
+        "id": "applicant-information",
+        "label": "Applicant Information",
+        "title": "Organize the information behind an application.",
+        "text": "Keep supporting applicant information in a clear review workflow, with useful context available to the responsible team.",
+        "image": "/brand/feature-pages/residential/residential-hero.webp",
+        "artwork": [
+          {
+            "id": "110:3620",
+            "x": 48,
+            "y": 62,
+            "width": 287.77777099609375,
+            "height": 185,
+            "name": "Screening reports \u00b7 three staggered cards",
+            "src": "/brand/feature-pages/artwork/110-3620.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "Home and resident context",
+        "Keep the relevant property and people connected to the work."
+      ],
+      [
+        "Clear next steps",
+        "Help teammates understand where to pick up."
+      ],
+      [
+        "Shared understanding",
+        "Carry useful details forward through team handoffs."
+      ]
+    ],
+    "faqs": [
+      [
+        "How can Innflow fit a residential portfolio?",
+        "Start with the resident conversations, property information, and financial context your team needs to connect. Review your workflow with the Innflow team."
+      ],
+      [
+        "Can resident conversations stay connected to property work?",
+        "Keeping messages alongside relevant context helps your team follow the conversation. Confirm available messaging channels and access options for your setup."
+      ],
+      [
+        "Which payment and financial views are available?",
+        "Ask the Innflow team about the payment methods, income and expense views, and connected systems available for your portfolio."
+      ],
+      [
+        "How can we organize application information?",
+        "Keep the applicant, relevant property, supporting information, and next step together. Confirm available application and review options with the team."
+      ]
+    ]
+  },
+  {
+    "key": "affordable-housing",
+    "name": "Affordable Housing",
+    "path": "/affordable-housing",
+    "figmaNode": "94:1826",
+    "title": "Keep housing work connected.",
+    "description": "Bring resident payments, useful information, and everyday requests into a clearer workflow for your affordable housing team.",
+    "intro": "Make the everyday work easier to follow.",
+    "hero": "/brand/feature-pages/affordable-housing/affordable-housing-hero.webp",
+    "heroFocus": 78,
+    "heroArtwork": [
+      {
+        "id": "95:2071",
+        "x": 950,
+        "y": 280,
+        "width": 279.9999694824219,
+        "height": 174.3589630126953,
+        "name": "Payment method selection",
+        "src": "/brand/feature-pages/artwork/95-2071.svg"
+      }
+    ],
+    "panels": [
+      {
+        "id": "resident-payments",
+        "label": "Resident Payments",
+        "title": "Give payments a clear place in the workflow.",
+        "text": "Keep payment details and the next step easy to find, with a resident experience that fits the work your team supports.",
+        "image": "/brand/feature-pages/affordable-housing/affordable-housing-hero.webp",
+        "artwork": [
+          {
+            "id": "95:2091",
+            "x": 48,
+            "y": 62,
+            "width": 297.0882263183594,
+            "height": 185,
+            "name": "Payment method selection",
+            "src": "/brand/feature-pages/artwork/95-2091.svg"
+          }
+        ]
+      },
+      {
+        "id": "resident-portal",
+        "label": "Resident Portal",
+        "title": "Keep useful information within reach.",
+        "text": "Bring relevant account information and resident actions into a clear portal experience, connected to the property context.",
+        "image": "/brand/feature-pages/affordable-housing/affordable-housing-hero.webp",
+        "artwork": [
+          {
+            "id": "95:2111",
+            "x": 48,
+            "y": 62,
+            "width": 336.3636474609375,
+            "height": 185,
+            "name": "Resident portal",
+            "src": "/brand/feature-pages/artwork/95-2111.svg"
+          }
+        ]
+      },
+      {
+        "id": "applicant-information",
+        "label": "Applicant Information",
+        "title": "Organize the information behind an application.",
+        "text": "Keep supporting information available to the responsible team, with a clear place to review the details and plan the next step.",
+        "image": "/brand/feature-pages/affordable-housing/affordable-housing-hero.webp",
+        "artwork": [
+          {
+            "id": "95:2148",
+            "x": 48,
+            "y": 62,
+            "width": 287.77777099609375,
+            "height": 185,
+            "name": "Screening reports \u00b7 three staggered cards",
+            "src": "/brand/feature-pages/artwork/95-2148.svg"
+          }
+        ]
+      },
+      {
+        "id": "resident-requests",
+        "label": "Resident Requests",
+        "title": "Help each request find its next step.",
+        "text": "Keep resident requests, priorities, and supporting context visible, so your team can pick up the work with a shared understanding.",
+        "image": "/brand/feature-pages/affordable-housing/affordable-housing-hero.webp",
+        "artwork": [
+          {
+            "id": "95:2180",
+            "x": 48,
+            "y": 62,
+            "width": 288.7804870605469,
+            "height": 185,
+            "name": "Tenant request dashboard",
+            "src": "/brand/feature-pages/artwork/95-2180.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "Resident context",
+        "Keep useful information connected to the household and property."
+      ],
+      [
+        "Clear ownership",
+        "Give follow-up a responsible person and a next step."
+      ],
+      [
+        "Shared information",
+        "Bring the relevant details forward during team handoffs."
+      ]
+    ],
+    "faqs": [
+      [
+        "How can Innflow fit an affordable housing team?",
+        "Start with the everyday work your team needs to connect, including resident information, requests, and payment context. Review your specific workflow with the Innflow team."
+      ],
+      [
+        "Does this include specialized housing-program workflows?",
+        "Discuss your program-specific requirements with the Innflow team to confirm the available features and the systems your organization will continue to use."
+      ],
+      [
+        "How can residents find their next step?",
+        "A clear resident experience puts relevant information and actions within reach. Ask the team which portal and payment options are available for your setup."
+      ],
+      [
+        "How can we organize resident requests?",
+        "Keep the request, priority, responsible person, and supporting details together. This gives the team a clear starting point for follow-up."
+      ]
+    ]
+  },
+  {
+    "key": "inspections",
+    "name": "Inspections",
+    "path": "/inspections",
+    "figmaNode": "66:813",
+    "title": "Keep every inspection moving forward.",
+    "description": "Bring property condition, supporting photos, and team follow-ups into one clear inspection workflow.",
+    "intro": "From the first check to the next action.",
+    "hero": "/brand/feature-pages/inspections/inspections-hero.webp",
+    "heroFocus": 76,
+    "heroArtwork": [
+      {
+        "id": "70:1325",
+        "x": 870,
+        "y": 210,
+        "width": 172.52037048339844,
+        "height": 300,
+        "name": "Exterior",
+        "src": "/brand/feature-pages/artwork/70-1325.svg"
+      }
+    ],
+    "panels": [
+      {
+        "id": "condition-assessments",
+        "label": "Condition Assessments",
+        "title": "Capture the details where they happen.",
+        "text": "Keep condition notes and supporting photographs connected to the property, so the next review starts with useful context.",
+        "image": "/brand/feature-pages/inspections/inspections-hero.webp",
+        "artwork": [
+          {
+            "id": "70:1163",
+            "x": 455,
+            "y": 65,
+            "width": 131.11549377441406,
+            "height": 228,
+            "name": "Exterior",
+            "src": "/brand/feature-pages/artwork/70-1163.svg"
+          }
+        ]
+      },
+      {
+        "id": "inspection-reports",
+        "label": "Inspection Reports",
+        "title": "Make the findings easier to review.",
+        "text": "Bring inspection details into an organized report, with the information your team needs to follow the findings.",
+        "image": "/brand/feature-pages/inspections/inspections-hero.webp",
+        "artwork": [
+          {
+            "id": "70:1186",
+            "x": 400,
+            "y": 65,
+            "width": 312.0000305175781,
+            "height": 208.00001525878906,
+            "name": "02 \u00b7 Inspection PDF report",
+            "src": "/brand/feature-pages/artwork/70-1186.svg"
+          }
+        ]
+      },
+      {
+        "id": "work-order-follow-ups",
+        "label": "Work-Order Follow-Ups",
+        "title": "Turn findings into clear follow-ups.",
+        "text": "Keep the issues found during an inspection close to the work they require, with clear ownership for the next step.",
+        "image": "/brand/feature-pages/inspections/inspections-hero.webp",
+        "artwork": [
+          {
+            "id": "70:1220",
+            "x": 400,
+            "y": 65,
+            "width": 312,
+            "height": 192.50833129882812,
+            "name": "Inspection features and work orders",
+            "src": "/brand/feature-pages/artwork/70-1220.svg"
+          }
+        ]
+      },
+      {
+        "id": "inspection-progress",
+        "label": "Inspection Progress",
+        "title": "See which inspections need attention.",
+        "text": "Keep a shared view of inspection progress and the next review, so your team can follow the work across properties.",
+        "image": "/brand/feature-pages/inspections/inspections-hero.webp",
+        "artwork": [
+          {
+            "id": "70:1264",
+            "x": 400,
+            "y": 65,
+            "width": 312,
+            "height": 184.27500915527344,
+            "name": "Inspection list with AI start",
+            "src": "/brand/feature-pages/artwork/70-1264.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "Connected photographs",
+        "Keep visual evidence alongside the property and inspection context."
+      ],
+      [
+        "Clear ownership",
+        "Give each finding a person responsible for the next action."
+      ],
+      [
+        "Review-ready context",
+        "Keep notes and supporting information together for handoffs."
+      ]
+    ],
+    "faqs": [
+      [
+        "How does Innflow support inspection workflows?",
+        "Connect property condition notes, supporting information, and team follow-up steps in one workflow."
+      ],
+      [
+        "Can I keep photographs with inspection notes?",
+        "Keep the supporting evidence and property context together so the team can review a finding with the right information."
+      ],
+      [
+        "How are inspection findings followed up?",
+        "Keep ownership and the next action visible, with inspection context available as work moves to the next person."
+      ],
+      [
+        "Which inspection tools are available?",
+        "Explore the product with our team to confirm the inspection, reporting, and mobile workflows available for your needs."
+      ]
+    ]
+  },
+  {
+    "key": "work-orders",
+    "name": "Work Orders",
+    "path": "/work-orders",
+    "figmaNode": "150:5236",
+    "title": "Give maintenance work a clearer path.",
+    "description": "Connect incoming requests, inspection details, workflow steps, and vendors so your team can coordinate the work ahead.",
+    "intro": "Keep the next maintenance step in view.",
+    "hero": "/brand/feature-pages/work-orders/work-orders-hero.webp",
+    "heroFocus": 77,
+    "heroArtwork": [
+      {
+        "id": "152:5454",
+        "x": 880,
+        "y": 270,
+        "width": 280,
+        "height": 157.27659606933594,
+        "name": "Tenant request count overlay",
+        "src": "/brand/feature-pages/artwork/152-5454.svg"
+      }
+    ],
+    "panels": [
+      {
+        "id": "request-overview",
+        "label": "Request Overview",
+        "title": "Start with a shared view of requests.",
+        "text": "Keep incoming maintenance requests and their status together, giving your team a clear reference for the work that needs attention.",
+        "image": "/brand/feature-pages/work-orders/work-orders-hero.webp",
+        "artwork": [
+          {
+            "id": "152:5457",
+            "x": 48,
+            "y": 62,
+            "width": 288.7804870605469,
+            "height": 185,
+            "name": "Tenant request dashboard",
+            "src": "/brand/feature-pages/artwork/152-5457.svg"
+          }
+        ]
+      },
+      {
+        "id": "inspection-follow-up",
+        "label": "Inspection Follow-Up",
+        "title": "Carry inspection context forward.",
+        "text": "Bring inspection findings close to the work order, so the details behind a maintenance task stay available as the work moves ahead.",
+        "image": "/brand/feature-pages/work-orders/work-orders-hero.webp",
+        "artwork": [
+          {
+            "id": "152:5494",
+            "x": 48,
+            "y": 62,
+            "width": 299.8311767578125,
+            "height": 185,
+            "name": "Inspection features and work orders",
+            "src": "/brand/feature-pages/artwork/152-5494.svg"
+          }
+        ]
+      },
+      {
+        "id": "workflow-steps",
+        "label": "Workflow Steps",
+        "title": "Make the next step easier to follow.",
+        "text": "Connect relevant triggers and actions in the workflow, with a visible path for the steps your team configures.",
+        "image": "/brand/feature-pages/work-orders/work-orders-hero.webp",
+        "artwork": [
+          {
+            "id": "152:5537",
+            "x": 48,
+            "y": 62,
+            "width": 296,
+            "height": 185,
+            "name": "Automation trigger and actions",
+            "src": "/brand/feature-pages/artwork/152-5537.svg"
+          }
+        ]
+      },
+      {
+        "id": "vendor-coordination",
+        "label": "Vendor Coordination",
+        "title": "Keep the right contacts close.",
+        "text": "Bring vendor details and available actions into the workflow, helping your team coordinate the next maintenance handoff.",
+        "image": "/brand/feature-pages/work-orders/work-orders-hero.webp",
+        "artwork": [
+          {
+            "id": "152:5566",
+            "x": 48,
+            "y": 62,
+            "width": 303.66162109375,
+            "height": 185,
+            "name": "Vendor directory and actions",
+            "src": "/brand/feature-pages/artwork/152-5566.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "Shared visibility",
+        "Keep requests and their current status in view."
+      ],
+      [
+        "Connected context",
+        "Carry useful inspection details into maintenance follow-up."
+      ],
+      [
+        "Clear coordination",
+        "Keep workflow steps and vendor contacts close to the task."
+      ]
+    ],
+    "faqs": [
+      [
+        "How does the work order workflow fit together?",
+        "Start with the incoming request, keep relevant inspection details close, and coordinate the next workflow step with the people involved."
+      ],
+      [
+        "Can inspection findings support maintenance follow-up?",
+        "Keep the relevant inspection findings alongside the task so the team has context for its follow-up. Confirm the available connections during setup."
+      ],
+      [
+        "Can we configure steps in a maintenance workflow?",
+        "Review the available triggers and actions with Innflow, then map the steps your team needs for its maintenance process."
+      ],
+      [
+        "How do vendors fit into the workflow?",
+        "A vendor directory gives your team a reference for contact details and available actions. Confirm assignment and communication options before configuring the handoff."
+      ]
+    ]
+  },
+  {
+    "key": "tenant-screening",
+    "name": "Tenant Screening",
+    "path": "/tenant-screening-service",
+    "figmaNode": "129:4164",
+    "title": "Bring clarity to your screening workflow.",
+    "description": "Keep screening reports and supporting details connected, so your team can review the information and coordinate the next step.",
+    "intro": "Give every review the context it needs.",
+    "hero": "/brand/feature-pages/tenant-screening/tenant-screening-hero.webp",
+    "heroFocus": 76,
+    "heroArtwork": [
+      {
+        "id": "131:4464",
+        "x": 950,
+        "y": 270,
+        "width": 280,
+        "height": 180,
+        "name": "Screening reports \u00b7 three staggered cards",
+        "src": "/brand/feature-pages/artwork/131-4464.svg"
+      }
+    ],
+    "panels": [
+      {
+        "id": "screening-overview",
+        "label": "Screening Overview",
+        "title": "Keep the review in view.",
+        "text": "Bring the available screening reports together, with a clear starting point for reviewing the information in each application.",
+        "image": "/brand/feature-pages/tenant-screening/tenant-screening-hero.webp",
+        "artwork": [
+          {
+            "id": "131:4496",
+            "x": 48,
+            "y": 62,
+            "width": 287.77777099609375,
+            "height": 185,
+            "name": "Screening reports \u00b7 three staggered cards",
+            "src": "/brand/feature-pages/artwork/131-4496.svg"
+          }
+        ]
+      },
+      {
+        "id": "credit-details",
+        "label": "Credit Details",
+        "title": "Look beyond the summary.",
+        "text": "Keep credit report details close to the overview, so your team can examine the context behind the information presented.",
+        "image": "/brand/feature-pages/tenant-screening/tenant-screening-hero.webp",
+        "artwork": [
+          {
+            "id": "131:4528",
+            "x": 48,
+            "y": 62,
+            "width": 246.66665649414062,
+            "height": 185,
+            "name": "Credit history \u00b7 floating credit score",
+            "src": "/brand/feature-pages/artwork/131-4528.svg"
+          }
+        ]
+      },
+      {
+        "id": "income-verification",
+        "label": "Income Verification",
+        "title": "Organize income information.",
+        "text": "Bring income verification details into the review, with a shared reference for the information and any follow-up needed.",
+        "image": "/brand/feature-pages/tenant-screening/tenant-screening-hero.webp",
+        "artwork": [
+          {
+            "id": "131:4572",
+            "x": 48,
+            "y": 62,
+            "width": 210.22727966308594,
+            "height": 185,
+            "name": "Income verification report",
+            "src": "/brand/feature-pages/artwork/131-4572.svg"
+          }
+        ]
+      },
+      {
+        "id": "background-reports",
+        "label": "Background Reports",
+        "title": "Keep supporting reports connected.",
+        "text": "Review the available background report details alongside the application, keeping the relevant records within reach.",
+        "image": "/brand/feature-pages/tenant-screening/tenant-screening-hero.webp",
+        "artwork": [
+          {
+            "id": "131:4612",
+            "x": 48,
+            "y": 62,
+            "width": 246.66665649414062,
+            "height": 185,
+            "name": "Criminal report \u00b7 layered report pages",
+            "src": "/brand/feature-pages/artwork/131-4612.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "Organized information",
+        "Keep report details connected to the application being reviewed."
+      ],
+      [
+        "Shared review context",
+        "Give your team a consistent reference for follow-up questions."
+      ],
+      [
+        "Clear next steps",
+        "Coordinate the review and identify what information is needed next."
+      ]
+    ],
+    "faqs": [
+      [
+        "What information can we review during screening?",
+        "The workflow brings screening reports and supporting application details into view. Confirm the available report types and provider options with Innflow."
+      ],
+      [
+        "Can we review details behind a report summary?",
+        "Use the available report detail views to understand the information presented. Confirm the depth and source of the reports included in your setup."
+      ],
+      [
+        "How does income information fit into the workflow?",
+        "Keep the available income verification details with the application, so your team can identify missing information and coordinate follow-up."
+      ],
+      [
+        "What should we confirm before setting up screening?",
+        "Confirm the available reports, provider setup, access controls and review responsibilities with your team before using the workflow."
+      ]
+    ]
+  },
+  {
+    "key": "websites",
+    "name": "Websites",
+    "path": "/features/website",
+    "figmaNode": "143:5020",
+    "title": "Give your properties a place online.",
+    "description": "Bring website templates, property listings, and resident access into a clearer starting point for your online presence.",
+    "intro": "Connect the website to the work behind it.",
+    "hero": "/brand/feature-pages/websites/websites-hero.webp",
+    "heroFocus": 80,
+    "heroArtwork": [
+      {
+        "id": "146:5241",
+        "x": 880,
+        "y": 270,
+        "width": 280,
+        "height": 175,
+        "name": "Property website \u00b7 raised template selector",
+        "src": "/brand/feature-pages/artwork/146-5241.svg"
+      }
+    ],
+    "panels": [
+      {
+        "id": "website-builder",
+        "label": "Website Builder",
+        "title": "Start with a website that fits.",
+        "text": "Bring your property content into the website editor, with a clear starting point for shaping the visitor experience.",
+        "image": "/brand/feature-pages/websites/websites-hero.webp",
+        "artwork": [
+          {
+            "id": "146:5284",
+            "x": 48,
+            "y": 62,
+            "width": 320,
+            "height": 185,
+            "name": "Listing editor \u00b7 fields and property photographs",
+            "src": "/brand/feature-pages/artwork/146-5284.svg"
+          }
+        ]
+      },
+      {
+        "id": "template-gallery",
+        "label": "Template Gallery",
+        "title": "Choose a useful foundation.",
+        "text": "Explore the available templates and select a direction that suits the properties and information you want to present.",
+        "image": "/brand/feature-pages/websites/websites-hero.webp",
+        "artwork": [
+          {
+            "id": "146:5311",
+            "x": 48,
+            "y": 62,
+            "width": 211.42855834960938,
+            "height": 185,
+            "name": "Template gallery",
+            "src": "/brand/feature-pages/artwork/146-5311.svg"
+          }
+        ]
+      },
+      {
+        "id": "resident-access",
+        "label": "Resident Access",
+        "title": "Keep resident access close by.",
+        "text": "Connect the public-facing experience with a familiar place for residents to find their account details and everyday tasks.",
+        "image": "/brand/feature-pages/websites/websites-hero.webp",
+        "artwork": [
+          {
+            "id": "146:5380",
+            "x": 48,
+            "y": 62,
+            "width": 336.3636474609375,
+            "height": 185,
+            "name": "Resident portal",
+            "src": "/brand/feature-pages/artwork/146-5380.svg"
+          }
+        ]
+      },
+      {
+        "id": "property-listings",
+        "label": "Property Listings",
+        "title": "Put available properties in view.",
+        "text": "Keep relevant rental listings together, giving visitors a clearer path to the properties they want to explore.",
+        "image": "/brand/feature-pages/websites/websites-hero.webp",
+        "artwork": [
+          {
+            "id": "146:5417",
+            "x": 48,
+            "y": 62,
+            "width": 269.0909118652344,
+            "height": 185,
+            "name": "Listings",
+            "src": "/brand/feature-pages/artwork/146-5417.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "A clear first impression",
+        "Give visitors a useful introduction to your properties."
+      ],
+      [
+        "Connected content",
+        "Keep website content and property details in step."
+      ],
+      [
+        "Familiar access",
+        "Give residents a clear path to their everyday portal."
+      ]
+    ],
+    "faqs": [
+      [
+        "Where do we start when building a property website?",
+        "Start with your property content and a template direction, then review the editing and setup options available with Innflow."
+      ],
+      [
+        "Can we choose a different website template?",
+        "Use the template gallery to explore the available directions. Confirm customization and switching options before choosing your setup."
+      ],
+      [
+        "How do listings fit into the website?",
+        "A listing view gives visitors a place to explore available properties. Confirm which property details and updates can connect to your website."
+      ],
+      [
+        "Can residents access their portal from the website?",
+        "Plan a clear path from your website to the resident portal. Confirm the access and navigation options available for your property."
+      ]
+    ]
+  },
+  {
+    "key": "student-housing",
+    "name": "Student Housing",
+    "path": "/student-housing",
+    "figmaNode": "169:6357",
+    "title": "Keep student housing work connected.",
+    "description": "Bring applications, leases, resident requests, and conversations into a shared workflow for your housing team.",
+    "intro": "Stay close to the details from application onward.",
+    "hero": "/brand/feature-pages/student-housing/portfolio-student-housing-hero.webp",
+    "heroFocus": 50,
+    "heroArtwork": [
+      {
+        "id": "169:7216",
+        "x": 1050,
+        "y": 280,
+        "width": 280,
+        "height": 168.60214233398438,
+        "name": "Ready for lease overlay",
+        "src": "/brand/feature-pages/artwork/169-7216.svg"
+      }
+    ],
+    "panels": [
+      {
+        "id": "application-review",
+        "label": "Application Review",
+        "title": "Keep applications moving with context.",
+        "text": "Review application status and supporting details together, giving your team a clear starting point for follow-up.",
+        "image": "/brand/feature-pages/student-housing/portfolio-student-housing-hero.webp",
+        "artwork": [
+          {
+            "id": "169:7222",
+            "x": 48,
+            "y": 62,
+            "width": 269.0909118652344,
+            "height": 185,
+            "name": "Application management",
+            "src": "/brand/feature-pages/artwork/169-7222.svg"
+          }
+        ]
+      },
+      {
+        "id": "lease-overview",
+        "label": "Lease Overview",
+        "title": "Keep lease details within reach.",
+        "text": "Bring lease information and relevant actions into view, so the team can find the context behind the next conversation.",
+        "image": "/brand/feature-pages/student-housing/portfolio-student-housing-hero.webp",
+        "artwork": [
+          {
+            "id": "169:7291",
+            "x": 48,
+            "y": 62,
+            "width": 275.3488464355469,
+            "height": 185,
+            "name": "Lease overview",
+            "src": "/brand/feature-pages/artwork/169-7291.svg"
+          }
+        ]
+      },
+      {
+        "id": "resident-requests",
+        "label": "Resident Requests",
+        "title": "Give requests a clear path.",
+        "text": "Keep incoming resident requests and their status connected, helping your team coordinate responses across the property.",
+        "image": "/brand/feature-pages/student-housing/portfolio-student-housing-hero.webp",
+        "artwork": [
+          {
+            "id": "169:7328",
+            "x": 48,
+            "y": 62,
+            "width": 288.7804870605469,
+            "height": 185,
+            "name": "Tenant request dashboard",
+            "src": "/brand/feature-pages/artwork/169-7328.svg"
+          }
+        ]
+      },
+      {
+        "id": "resident-messaging",
+        "label": "Resident Messaging",
+        "title": "Keep the conversation in view.",
+        "text": "Bring resident messages into a shared reference, with useful context for the people responding to questions and updates.",
+        "image": "/brand/feature-pages/student-housing/portfolio-student-housing-hero.webp",
+        "artwork": [
+          {
+            "id": "169:7365",
+            "x": 48,
+            "y": 62,
+            "width": 294.1025695800781,
+            "height": 185,
+            "name": "Inbox and conversation",
+            "src": "/brand/feature-pages/artwork/169-7365.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "Connected intake",
+        "Keep application details close to the next review."
+      ],
+      [
+        "Shared context",
+        "Bring lease information into everyday housing work."
+      ],
+      [
+        "Clear follow-up",
+        "Coordinate resident requests and conversations as a team."
+      ]
+    ],
+    "faqs": [
+      [
+        "How can Innflow fit a student housing portfolio?",
+        "Review your application, lease and resident workflows with Innflow to confirm the available configuration for your housing team."
+      ],
+      [
+        "Can we keep application and lease context together?",
+        "Use the available application and lease views to follow relevant records. Confirm how your housing structure and leasing process can be represented."
+      ],
+      [
+        "How can we coordinate resident requests?",
+        "Keep requests and their status visible to the people involved, with a shared reference for the next response or handoff."
+      ],
+      [
+        "What should we confirm before getting started?",
+        "Review your property structure, leasing periods, resident records and team responsibilities with Innflow before choosing your setup."
+      ]
+    ]
+  },
+  {
+    "key": "residents",
+    "name": "Residents",
+    "path": "/residents",
+    "figmaNode": "135:4605",
+    "title": "Make everyday resident tasks feel simpler.",
+    "description": "Give residents a clearer place for requests, payment details, and conversations with their property team.",
+    "intro": "Keep the everyday essentials close to home.",
+    "hero": "/brand/feature-pages/residents/residents-hero.webp",
+    "heroFocus": 76,
+    "heroArtwork": [
+      {
+        "id": "136:4845",
+        "x": 880,
+        "y": 270,
+        "width": 280,
+        "height": 154,
+        "name": "Resident portal",
+        "src": "/brand/feature-pages/artwork/136-4845.svg"
+      }
+    ],
+    "panels": [
+      {
+        "id": "resident-requests",
+        "label": "Resident Requests",
+        "title": "Give requests a clear place to start.",
+        "text": "Keep resident requests and their status connected, with a shared reference for the property team handling the next step.",
+        "image": "/brand/feature-pages/residents/residents-hero.webp",
+        "artwork": [
+          {
+            "id": "136:4882",
+            "x": 48,
+            "y": 62,
+            "width": 288.7804870605469,
+            "height": 185,
+            "name": "Tenant request dashboard",
+            "src": "/brand/feature-pages/artwork/136-4882.svg"
+          }
+        ]
+      },
+      {
+        "id": "payment-details",
+        "label": "Payment Details",
+        "title": "Put payment context within reach.",
+        "text": "Bring useful account and payment details into the resident experience, making everyday questions easier to follow.",
+        "image": "/brand/feature-pages/residents/residents-hero.webp",
+        "artwork": [
+          {
+            "id": "136:4919",
+            "x": 48,
+            "y": 62,
+            "width": 336.3636474609375,
+            "height": 185,
+            "name": "Resident portal",
+            "src": "/brand/feature-pages/artwork/136-4919.svg"
+          }
+        ]
+      },
+      {
+        "id": "portal-navigation",
+        "label": "Portal Navigation",
+        "title": "Make the next task easier to find.",
+        "text": "Keep the main areas of the resident portal together, with a familiar path to the information and tasks residents need.",
+        "image": "/brand/feature-pages/residents/residents-hero.webp",
+        "artwork": [
+          {
+            "id": "136:4956",
+            "x": 48,
+            "y": 62,
+            "width": 316.4473571777344,
+            "height": 185,
+            "name": "Portal navigation and dashboard",
+            "src": "/brand/feature-pages/artwork/136-4956.svg"
+          }
+        ]
+      },
+      {
+        "id": "resident-messaging",
+        "label": "Resident Messaging",
+        "title": "Keep the conversation going.",
+        "text": "Bring resident messages into a shared conversation, so the property team can respond with the relevant context.",
+        "image": "/brand/feature-pages/residents/residents-hero.webp",
+        "artwork": [
+          {
+            "id": "136:4999",
+            "x": 48,
+            "y": 62,
+            "width": 294.1025695800781,
+            "height": 185,
+            "name": "Inbox and conversation",
+            "src": "/brand/feature-pages/artwork/136-4999.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "Everyday clarity",
+        "Give residents a clear starting point for common tasks."
+      ],
+      [
+        "Connected details",
+        "Keep requests and account information close to the conversation."
+      ],
+      [
+        "Useful follow-up",
+        "Help the property team stay in step with resident questions."
+      ]
+    ],
+    "faqs": [
+      [
+        "What can residents find in the portal?",
+        "The resident experience brings common requests, account details and conversations together. Confirm which portal options are available for your property."
+      ],
+      [
+        "How can residents follow a request?",
+        "Keep request details and status connected so residents and the property team have a shared reference for follow-up. Available updates depend on your setup."
+      ],
+      [
+        "Where can residents find payment information?",
+        "The portal provides a place for the account and payment information available to residents. Confirm the supported payment options with your property team."
+      ],
+      [
+        "How does messaging fit into the experience?",
+        "Resident messaging gives the property team a place to follow conversations and respond with context. Confirm the communication channels included in your setup."
+      ]
+    ]
+  },
+  {
+    "key": "commercial",
+    "name": "Commercial",
+    "path": "/commercial",
+    "figmaNode": "100:2198",
+    "title": "Keep commercial property work connected.",
+    "description": "Bring financial context, lease activity, shared charges, and payment details into a clearer workflow for your commercial portfolio.",
+    "intro": "A shared view of the work behind each property.",
+    "hero": "/brand/feature-pages/commercial/commercial-hero.webp",
+    "heroFocus": 79,
+    "heroArtwork": [
+      {
+        "id": "101:2472",
+        "x": 950,
+        "y": 270,
+        "width": 300,
+        "height": 176.78570556640625,
+        "name": "Multiple account summaries",
+        "src": "/brand/feature-pages/artwork/101-2472.svg"
+      }
+    ],
+    "panels": [
+      {
+        "id": "financial-reports",
+        "label": "Financial Reports",
+        "title": "Keep reports close to the work.",
+        "text": "Bring financial summaries and supporting transactions into view, helping your team understand the details behind property activity.",
+        "image": "/brand/feature-pages/commercial/commercial-hero.webp",
+        "artwork": [
+          {
+            "id": "101:2505",
+            "x": 48,
+            "y": 62,
+            "width": 265.6410217285156,
+            "height": 185,
+            "name": "Accounting / 04 \u00b7 Profit and loss report",
+            "src": "/brand/feature-pages/artwork/101-2505.svg"
+          }
+        ]
+      },
+      {
+        "id": "lease-activity",
+        "label": "Lease Activity",
+        "title": "Give lease activity a clear next step.",
+        "text": "Keep renewal activity and property context visible, so your team can understand what needs attention and where to follow up.",
+        "image": "/brand/feature-pages/commercial/commercial-hero.webp",
+        "artwork": [
+          {
+            "id": "101:2542",
+            "x": 48,
+            "y": 62,
+            "width": 281.9047546386719,
+            "height": 185,
+            "name": "Lease renewals",
+            "src": "/brand/feature-pages/artwork/101-2542.svg"
+          }
+        ]
+      },
+      {
+        "id": "shared-charges",
+        "label": "Shared Charges",
+        "title": "Keep shared charges organized.",
+        "text": "Bring the context behind property charges together, with useful descriptions that help your team review and explain the details.",
+        "image": "/brand/feature-pages/commercial/commercial-hero.webp",
+        "artwork": [
+          {
+            "id": "101:2575",
+            "x": 48,
+            "y": 62,
+            "width": 296,
+            "height": 185,
+            "name": "Shared property charges",
+            "src": "/brand/feature-pages/artwork/101-2575.svg"
+          }
+        ]
+      },
+      {
+        "id": "payment-details",
+        "label": "Payment Details",
+        "title": "Connect payment details to the property.",
+        "text": "Keep the relevant payment information and next action close to the workflow, supporting clearer conversations with tenants and your team.",
+        "image": "/brand/feature-pages/commercial/commercial-hero.webp",
+        "artwork": [
+          {
+            "id": "101:2597",
+            "x": 48,
+            "y": 62,
+            "width": 297.0882263183594,
+            "height": 185,
+            "name": "Payment method selection",
+            "src": "/brand/feature-pages/artwork/101-2597.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "Property context",
+        "Keep the relevant building and tenant details close."
+      ],
+      [
+        "Clear follow-up",
+        "Give lease and payment conversations a useful next step."
+      ],
+      [
+        "Shared understanding",
+        "Help your team pick up the work with the context they need."
+      ]
+    ],
+    "faqs": [
+      [
+        "How can Innflow fit a commercial portfolio?",
+        "Start with the property information, lease activity, and financial context your team needs to connect. Review your portfolio's specific workflow with the Innflow team."
+      ],
+      [
+        "Can we keep lease renewals organized?",
+        "A shared activity view helps your team see the property, current step, and follow-up. Confirm available lease workflows with the Innflow team."
+      ],
+      [
+        "How are shared property charges handled?",
+        "Keep charge descriptions and supporting details clear. Ask the team which allocation and accounting options fit your commercial-property setup."
+      ],
+      [
+        "Which reports and payment options are available?",
+        "Confirm available reports, payment methods, and connected systems with the Innflow team based on your portfolio requirements."
+      ]
+    ]
+  },
+  {
+    "key": "bank-sync",
+    "name": "Bank Sync",
+    "path": "/bank-sync",
+    "figmaNode": "60:545",
+    "title": "Keep account activity in clear view.",
+    "description": "Bring account records, transaction context, and review steps together, so your team can follow the details behind the balance.",
+    "intro": "Connected records. Clearer reviews.",
+    "hero": "/brand/feature-pages/bank-sync/bank-sync-hero.webp",
+    "heroFocus": 54,
+    "heroArtwork": [
+      {
+        "id": "62:866",
+        "x": 1040,
+        "y": 250,
+        "width": 390,
+        "height": 278.5714416503906,
+        "name": "Accounting / 03 \u00b7 Bank connections",
+        "src": "/brand/feature-pages/artwork/62-866.svg"
+      }
+    ],
+    "panels": [
+      {
+        "id": "reconciliation",
+        "label": "Reconciliation",
+        "title": "Make the next review easier.",
+        "text": "Keep transactions and supporting details together, with a shared view of the records your team needs to check.",
+        "image": "/brand/feature-pages/bank-sync/bank-sync-01-reconciliation.webp",
+        "artwork": [
+          {
+            "id": "62:888",
+            "x": 455,
+            "y": 65,
+            "width": 390,
+            "height": 257.6785888671875,
+            "name": "Bank reconciliation",
+            "src": "/brand/feature-pages/artwork/62-888.svg"
+          }
+        ]
+      },
+      {
+        "id": "account-balances",
+        "label": "Account Balances",
+        "title": "See accounts in their property context.",
+        "text": "Keep account summaries and related records organized, so your team can follow the details behind each balance.",
+        "image": "/brand/feature-pages/bank-sync/bank-sync-02-account-balances.webp",
+        "artwork": [
+          {
+            "id": "62:983",
+            "x": 455,
+            "y": 65,
+            "width": 390,
+            "height": 229.82144165039062,
+            "name": "Multiple account summaries",
+            "src": "/brand/feature-pages/artwork/62-983.svg"
+          }
+        ]
+      },
+      {
+        "id": "transaction-filters",
+        "label": "Transaction Filters",
+        "title": "Find the records that matter now.",
+        "text": "Focus the review on relevant transactions and keep the supporting context close to the next action.",
+        "image": "/brand/feature-pages/bank-sync/bank-sync-03-transaction-filters.webp",
+        "artwork": [
+          {
+            "id": "62:1017",
+            "x": 48,
+            "y": 55,
+            "width": 257.29730224609375,
+            "height": 170,
+            "name": "Bank Sync filters",
+            "src": "/brand/feature-pages/artwork/62-1017.svg"
+          }
+        ]
+      },
+      {
+        "id": "bank-connections",
+        "label": "Bank Connections",
+        "title": "Keep your connections organized.",
+        "text": "Give account connections a clear place in your workflow, with the information your team needs to follow up.",
+        "image": "/brand/feature-pages/bank-sync/bank-sync-04-bank-connections.webp",
+        "artwork": [
+          {
+            "id": "62:1107",
+            "x": 48,
+            "y": 55,
+            "width": 238,
+            "height": 170,
+            "name": "Accounting / 03 \u00b7 Bank connections",
+            "src": "/brand/feature-pages/artwork/62-1107.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "Property context",
+        "Keep the property behind an account visible during review."
+      ],
+      [
+        "Focused follow-ups",
+        "Give unresolved records a clear owner and next action."
+      ],
+      [
+        "Shared visibility",
+        "Bring the relevant information into the same team conversation."
+      ]
+    ],
+    "faqs": [
+      [
+        "How can Innflow support account reviews?",
+        "Organize account records, supporting details, and team review steps in one connected workflow."
+      ],
+      [
+        "Which banks can I connect?",
+        "Confirm supported institutions and connection availability with our team before setting up your workflow."
+      ],
+      [
+        "Can the team review transaction details?",
+        "Keep the information and ownership for a review visible as records move through the workflow."
+      ],
+      [
+        "How often does account information update?",
+        "Update timing depends on the available integration and institution. Confirm the supported behavior for your setup with our team."
+      ]
+    ]
+  },
+  {
+    "key": "single-family",
+    "name": "Single Family",
+    "path": "/single-family",
+    "figmaNode": "112:2856",
+    "title": "Keep every home connected to the work.",
+    "description": "Bring payments, resident requests, and application details into a clearer workflow across your single-family portfolio.",
+    "intro": "A shared view of the work behind each home.",
+    "hero": "/brand/feature-pages/single-family/single-family-hero.webp",
+    "heroFocus": 80,
+    "heroArtwork": [
+      {
+        "id": "113:3061",
+        "x": 950,
+        "y": 270,
+        "width": 280,
+        "height": 157.27659606933594,
+        "name": "Tenant request count overlay",
+        "src": "/brand/feature-pages/artwork/113-3061.svg"
+      }
+    ],
+    "panels": [
+      {
+        "id": "payment-activity",
+        "label": "Payment Activity",
+        "title": "Keep payment activity in perspective.",
+        "text": "Bring charges and payment records into a clear view, helping your team understand the property context and next step.",
+        "image": "/brand/feature-pages/single-family/single-family-hero.webp",
+        "artwork": [
+          {
+            "id": "113:3064",
+            "x": 48,
+            "y": 62,
+            "width": 315.2882385253906,
+            "height": 185.00001525878906,
+            "name": "Payments transaction table",
+            "src": "/brand/feature-pages/artwork/113-3064.svg"
+          }
+        ]
+      },
+      {
+        "id": "resident-requests",
+        "label": "Resident Requests",
+        "title": "Give each request a clear place to move.",
+        "text": "Keep resident requests and priorities visible, so your team can find the relevant details and pick up the work.",
+        "image": "/brand/feature-pages/single-family/single-family-hero.webp",
+        "artwork": [
+          {
+            "id": "113:3127",
+            "x": 48,
+            "y": 62,
+            "width": 288.7804870605469,
+            "height": 185,
+            "name": "Tenant request dashboard",
+            "src": "/brand/feature-pages/artwork/113-3127.svg"
+          }
+        ]
+      },
+      {
+        "id": "rental-applications",
+        "label": "Rental Applications",
+        "title": "Keep applications connected to the home.",
+        "text": "Bring applicants and their current status into a shared view, with useful context for the next leasing conversation.",
+        "image": "/brand/feature-pages/single-family/single-family-hero.webp",
+        "artwork": [
+          {
+            "id": "113:3164",
+            "x": 48,
+            "y": 62,
+            "width": 269.0909118652344,
+            "height": 185,
+            "name": "Application management",
+            "src": "/brand/feature-pages/artwork/113-3164.svg"
+          }
+        ]
+      },
+      {
+        "id": "applicant-information",
+        "label": "Applicant Information",
+        "title": "Organize supporting applicant information.",
+        "text": "Give the responsible team a clear place to review the information behind an application and plan the next step.",
+        "image": "/brand/feature-pages/single-family/single-family-hero.webp",
+        "artwork": [
+          {
+            "id": "113:3233",
+            "x": 48,
+            "y": 62,
+            "width": 287.77777099609375,
+            "height": 185,
+            "name": "Screening reports \u00b7 three staggered cards",
+            "src": "/brand/feature-pages/artwork/113-3233.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "Home-by-home context",
+        "Keep relevant residents and records connected to each property."
+      ],
+      [
+        "Clear priorities",
+        "Help your team identify what needs attention next."
+      ],
+      [
+        "Connected handoffs",
+        "Bring useful details forward as work changes hands."
+      ]
+    ],
+    "faqs": [
+      [
+        "How can Innflow fit a single-family portfolio?",
+        "Start with the resident, property, and payment information your team needs to connect. Review your portfolio's workflow with the Innflow team."
+      ],
+      [
+        "Can we organize requests across different homes?",
+        "A shared request view helps your team connect each issue to the relevant home and next action. Confirm available request features for your setup."
+      ],
+      [
+        "How can payment records support follow-up?",
+        "Keep payment records and the relevant property context close together, giving your team useful information for the next conversation."
+      ],
+      [
+        "Which application options are available?",
+        "Ask the Innflow team about available application, supporting-document, and review workflows for your portfolio."
+      ]
+    ]
+  },
+  {
+    "key": "communication-tools",
+    "name": "Communication Tools",
+    "path": "/communication-tools",
+    "figmaNode": "80:1151",
+    "title": "Keep every conversation connected.",
+    "description": "Bring resident messages, property updates, and team follow-through into one clear communication workflow.",
+    "intro": "Clear messages. Shared context. A next step.",
+    "hero": "/brand/feature-pages/communication-tools/communication-tools-hero.webp",
+    "heroFocus": 80,
+    "heroArtwork": [
+      {
+        "id": "81:1300",
+        "x": 970,
+        "y": 290,
+        "width": 349.9999694824219,
+        "height": 160.74073791503906,
+        "name": "Email campaign progress overlay",
+        "src": "/brand/feature-pages/artwork/81-1300.svg"
+      }
+    ],
+    "panels": [
+      {
+        "id": "resident-conversations",
+        "label": "Resident Conversations",
+        "title": "Pick up the conversation with context.",
+        "text": "Keep the relevant resident conversation close to the property details, so your team can understand what comes next.",
+        "image": "/brand/feature-pages/communication-tools/communication-tools-hero.webp",
+        "artwork": [
+          {
+            "id": "81:1316",
+            "x": 455,
+            "y": 48,
+            "width": 349.74359130859375,
+            "height": 220.00001525878906,
+            "name": "Inbox and conversation",
+            "src": "/brand/feature-pages/artwork/81-1316.svg"
+          }
+        ]
+      },
+      {
+        "id": "property-updates",
+        "label": "Property Updates",
+        "title": "Give property updates a clear home.",
+        "text": "Bring timely announcements and useful information together, with a clear message for the people who need it.",
+        "image": "/brand/feature-pages/communication-tools/communication-tools-hero.webp",
+        "artwork": [
+          {
+            "id": "81:1350",
+            "x": 455,
+            "y": 48,
+            "width": 354.83868408203125,
+            "height": 219.99998474121094,
+            "name": "Expiring tenant announcement",
+            "src": "/brand/feature-pages/artwork/81-1350.svg"
+          }
+        ]
+      },
+      {
+        "id": "message-preparation",
+        "label": "Message Preparation",
+        "title": "Prepare a message worth opening.",
+        "text": "Keep the audience, subject, and message together as your team prepares the next property communication.",
+        "image": "/brand/feature-pages/communication-tools/communication-tools-hero.webp",
+        "artwork": [
+          {
+            "id": "81:1357",
+            "x": 455,
+            "y": 48,
+            "width": 315.8974609375,
+            "height": 220.00001525878906,
+            "name": "Campaign message editor",
+            "src": "/brand/feature-pages/artwork/81-1357.svg"
+          }
+        ]
+      },
+      {
+        "id": "communication-history",
+        "label": "Communication History",
+        "title": "Keep the communication trail in view.",
+        "text": "Review the messages behind a property workflow, helping your team understand what was shared and where to follow up.",
+        "image": "/brand/feature-pages/communication-tools/communication-tools-hero.webp",
+        "artwork": [
+          {
+            "id": "81:1380",
+            "x": 455,
+            "y": 48,
+            "width": 368.6486511230469,
+            "height": 220,
+            "name": "Campaign delivery log",
+            "src": "/brand/feature-pages/artwork/81-1380.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "Resident context",
+        "Keep the person and property connected to the conversation."
+      ],
+      [
+        "Clear messages",
+        "Give each update a useful subject and a focused next step."
+      ],
+      [
+        "Team continuity",
+        "Help the next teammate pick up with the context they need."
+      ]
+    ],
+    "faqs": [
+      [
+        "How does communication fit into property work?",
+        "Property conversations work best with the relevant resident details, updates, and next steps close at hand. This keeps a message connected to the work it supports."
+      ],
+      [
+        "Can my team prepare resident announcements?",
+        "Prepare each update around a clear audience, useful subject, and the action residents need to take. Ask the Innflow team about the announcement options available for your workflow."
+      ],
+      [
+        "Where can we review previous communications?",
+        "Use your communication history to understand what was shared and where a follow-up is needed. The records available depend on your connected workflow."
+      ],
+      [
+        "Which messaging channels are supported?",
+        "Ask the Innflow team which messaging channels and integrations are available for your setup, including the permissions your team will need."
+      ]
+    ]
+  },
+  {
+    "key": "tenant-management",
+    "name": "Tenant Management Software",
+    "path": "/tenant-management",
+    "figmaNode": "132:4409",
+    "title": "Keep tenant work connected.",
+    "description": "Bring requests, payments, conversations, and files into a clearer daily workflow for your property team.",
+    "intro": "Stay close to the details of every tenancy.",
+    "hero": "/brand/feature-pages/tenant-management/tenant-management-software-hero.webp",
+    "heroFocus": 73,
+    "heroArtwork": [
+      {
+        "id": "132:5258",
+        "x": 880,
+        "y": 270,
+        "width": 280,
+        "height": 154,
+        "name": "Resident portal",
+        "src": "/brand/feature-pages/artwork/132-5258.svg"
+      }
+    ],
+    "panels": [
+      {
+        "id": "tenant-requests",
+        "label": "Tenant Requests",
+        "title": "Give each request a clear path.",
+        "text": "Keep incoming tenant requests and their status in view, so your team can follow the work and coordinate the next response.",
+        "image": "/brand/feature-pages/tenant-management/tenant-management-software-hero.webp",
+        "artwork": [
+          {
+            "id": "132:5295",
+            "x": 48,
+            "y": 62,
+            "width": 288.7804870605469,
+            "height": 185,
+            "name": "Tenant request dashboard",
+            "src": "/brand/feature-pages/artwork/132-5295.svg"
+          }
+        ]
+      },
+      {
+        "id": "resident-portal",
+        "label": "Resident Portal",
+        "title": "Keep everyday details within reach.",
+        "text": "Bring resident payment context and useful account details together, with a shared reference for day-to-day questions.",
+        "image": "/brand/feature-pages/tenant-management/tenant-management-software-hero.webp",
+        "artwork": [
+          {
+            "id": "132:5332",
+            "x": 48,
+            "y": 62,
+            "width": 336.3636474609375,
+            "height": 185,
+            "name": "Resident portal",
+            "src": "/brand/feature-pages/artwork/132-5332.svg"
+          }
+        ]
+      },
+      {
+        "id": "tenant-messaging",
+        "label": "Tenant Messaging",
+        "title": "Keep the conversation connected.",
+        "text": "Review tenant messages alongside the work they relate to, helping your team pick up the conversation with context.",
+        "image": "/brand/feature-pages/tenant-management/tenant-management-software-hero.webp",
+        "artwork": [
+          {
+            "id": "132:5369",
+            "x": 48,
+            "y": 62,
+            "width": 294.1025695800781,
+            "height": 185,
+            "name": "Inbox and conversation",
+            "src": "/brand/feature-pages/artwork/132-5369.svg"
+          }
+        ]
+      },
+      {
+        "id": "tenant-files",
+        "label": "Tenant Files",
+        "title": "Find the file behind the question.",
+        "text": "Keep relevant tenant and property files organized, so the documents your team needs are easier to find.",
+        "image": "/brand/feature-pages/tenant-management/tenant-management-software-hero.webp",
+        "artwork": [
+          {
+            "id": "132:5402",
+            "x": 48,
+            "y": 62,
+            "width": 307.8553161621094,
+            "height": 185,
+            "name": "Tenant file library",
+            "src": "/brand/feature-pages/artwork/132-5402.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "Shared visibility",
+        "Keep requests and conversations accessible to the people involved."
+      ],
+      [
+        "Useful context",
+        "Bring account details and supporting files close to daily work."
+      ],
+      [
+        "Clear follow-up",
+        "Make the next response or handoff easier to coordinate."
+      ]
+    ],
+    "faqs": [
+      [
+        "What does tenant management bring together?",
+        "The workflow connects everyday tenant requests, resident account context, conversations and files. Confirm which options fit your team with Innflow."
+      ],
+      [
+        "How can our team keep track of tenant requests?",
+        "Use the request overview to review incoming work and its status, then coordinate the next response with the people involved."
+      ],
+      [
+        "Can tenant messages stay connected to daily work?",
+        "A shared conversation view gives your team a place to review messages and their context. Confirm the supported communication channels during setup."
+      ],
+      [
+        "How should we organize tenant files?",
+        "Keep relevant documents grouped around the tenant or property they relate to. Confirm available file organization and access options with your team."
+      ]
+    ]
+  },
+  {
+    "key": "storage",
+    "name": "Storage",
+    "path": "/files-and-documents",
+    "figmaNode": "138:4801",
+    "title": "Keep property files close to the work.",
+    "description": "Bring uploads, search, and file details into an organized library that helps your team find what they need.",
+    "intro": "Give every file a useful place in the workflow.",
+    "hero": "/brand/feature-pages/storage/storage-hero.webp",
+    "heroFocus": 77,
+    "heroArtwork": [
+      {
+        "id": "140:4999",
+        "x": 880,
+        "y": 270,
+        "width": 280,
+        "height": 168.26087951660156,
+        "name": "Tenant file library",
+        "src": "/brand/feature-pages/artwork/140-4999.svg"
+      }
+    ],
+    "panels": [
+      {
+        "id": "file-uploads",
+        "label": "File Uploads",
+        "title": "Bring the right files into view.",
+        "text": "Add the documents your team needs to a shared library, keeping the upload step close to everyday property work.",
+        "image": "/brand/feature-pages/storage/storage-hero.webp",
+        "artwork": [
+          {
+            "id": "140:5042",
+            "x": 48,
+            "y": 62,
+            "width": 272.875,
+            "height": 185,
+            "name": "Upload files",
+            "src": "/brand/feature-pages/artwork/140-5042.svg"
+          }
+        ]
+      },
+      {
+        "id": "file-filters",
+        "label": "File Filters",
+        "title": "Narrow the list with context.",
+        "text": "Use the available filters to focus the file library, so your team can spend less time scanning unrelated records.",
+        "image": "/brand/feature-pages/storage/storage-hero.webp",
+        "artwork": [
+          {
+            "id": "140:5064",
+            "x": 48,
+            "y": 62,
+            "width": 258.5152893066406,
+            "height": 185,
+            "name": "Baselane / File list with filter drawer",
+            "src": "/brand/feature-pages/artwork/140-5064.svg"
+          }
+        ]
+      },
+      {
+        "id": "library-search",
+        "label": "Library Search",
+        "title": "Find a clearer starting point.",
+        "text": "Search the file library for relevant documents, with useful details beside the results to guide the next step.",
+        "image": "/brand/feature-pages/storage/storage-hero.webp",
+        "artwork": [
+          {
+            "id": "140:5116",
+            "x": 48,
+            "y": 62,
+            "width": 280.8035888671875,
+            "height": 185,
+            "name": "Searchable file library",
+            "src": "/brand/feature-pages/artwork/140-5116.svg"
+          }
+        ]
+      },
+      {
+        "id": "file-details",
+        "label": "File Details",
+        "title": "Keep the details with the document.",
+        "text": "Review file information alongside the library, giving your team context for the document they are working with.",
+        "image": "/brand/feature-pages/storage/storage-hero.webp",
+        "artwork": [
+          {
+            "id": "140:5166",
+            "x": 48,
+            "y": 62,
+            "width": 307.8553161621094,
+            "height": 185,
+            "name": "Tenant file library",
+            "src": "/brand/feature-pages/artwork/140-5166.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "Organized records",
+        "Keep the files your team uses in a familiar shared library."
+      ],
+      [
+        "Focused lookup",
+        "Use search and filters to narrow the next document hunt."
+      ],
+      [
+        "Useful context",
+        "Keep file details close to the work they support."
+      ]
+    ],
+    "faqs": [
+      [
+        "What can we organize in the file library?",
+        "Use the library for the property documents your team needs in its daily workflow. Confirm supported file types and storage options with Innflow."
+      ],
+      [
+        "How can we find a particular document?",
+        "Start with the library search and available filters, then review the file details to identify the document you need."
+      ],
+      [
+        "Can we keep file information with the document?",
+        "The file detail view provides context alongside the library. Confirm which metadata and organization options are available for your team."
+      ],
+      [
+        "What should we review before adding our files?",
+        "Agree on a useful naming and organization approach, then confirm supported uploads, storage limits and access options with Innflow."
+      ]
+    ]
+  },
+  {
+    "key": "multifamily",
+    "name": "Multifamily",
+    "path": "/multifamily",
+    "figmaNode": "107:2514",
+    "title": "Keep multifamily work moving together.",
+    "description": "Connect applications, financial context, and leasing documents across the homes and people your team supports.",
+    "intro": "A clearer path through everyday multifamily work.",
+    "hero": "/brand/feature-pages/multifamily/multifamily-hero.webp",
+    "heroFocus": 72,
+    "heroArtwork": [
+      {
+        "id": "109:2678",
+        "x": 950,
+        "y": 270,
+        "width": 280,
+        "height": 168.60214233398438,
+        "name": "Ready for lease overlay",
+        "src": "/brand/feature-pages/artwork/109-2678.svg"
+      }
+    ],
+    "panels": [
+      {
+        "id": "rental-applications",
+        "label": "Rental Applications",
+        "title": "Give each application a clear next step.",
+        "text": "Keep applicants and their current status in a shared view, so your team can find the right record and pick up the work.",
+        "image": "/brand/feature-pages/multifamily/multifamily-hero.webp",
+        "artwork": [
+          {
+            "id": "109:2684",
+            "x": 48,
+            "y": 62,
+            "width": 269.0909118652344,
+            "height": 185,
+            "name": "Application management",
+            "src": "/brand/feature-pages/artwork/109-2684.svg"
+          }
+        ]
+      },
+      {
+        "id": "income-and-expenses",
+        "label": "Income And Expenses",
+        "title": "Keep financial context close.",
+        "text": "Bring income and expense information into view, helping your team connect the daily details with the broader property picture.",
+        "image": "/brand/feature-pages/multifamily/multifamily-hero.webp",
+        "artwork": [
+          {
+            "id": "109:2753",
+            "x": 48,
+            "y": 62,
+            "width": 280,
+            "height": 185,
+            "name": "Accounting / 02 \u00b7 Income and expenses",
+            "src": "/brand/feature-pages/artwork/109-2753.svg"
+          }
+        ]
+      },
+      {
+        "id": "applicant-information",
+        "label": "Applicant Information",
+        "title": "Organize supporting applicant information.",
+        "text": "Give the responsible team a clear place to review the information behind an application and plan the next step.",
+        "image": "/brand/feature-pages/multifamily/multifamily-hero.webp",
+        "artwork": [
+          {
+            "id": "109:2768",
+            "x": 48,
+            "y": 62,
+            "width": 287.77777099609375,
+            "height": 185,
+            "name": "Screening reports \u00b7 three staggered cards",
+            "src": "/brand/feature-pages/artwork/109-2768.svg"
+          }
+        ]
+      },
+      {
+        "id": "leasing-documents",
+        "label": "Leasing Documents",
+        "title": "Keep the document journey clear.",
+        "text": "Bring document selection and the next leasing action together, with a workflow your team can follow from preparation onward.",
+        "image": "/brand/feature-pages/multifamily/multifamily-hero.webp",
+        "artwork": [
+          {
+            "id": "109:2800",
+            "x": 48,
+            "y": 62,
+            "width": 211.42855834960938,
+            "height": 185,
+            "name": "Electronic signature request",
+            "src": "/brand/feature-pages/artwork/109-2800.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "Property context",
+        "Keep each application connected to its relevant home."
+      ],
+      [
+        "Shared visibility",
+        "Help teammates understand the current step in the work."
+      ],
+      [
+        "Clear handoffs",
+        "Bring useful details forward as responsibilities change."
+      ]
+    ],
+    "faqs": [
+      [
+        "How can Innflow fit a multifamily team?",
+        "Start with the application, property, and financial information your team needs to connect. Review your portfolio's workflow with the Innflow team."
+      ],
+      [
+        "Can we keep applications organized across properties?",
+        "A shared view helps your team connect an applicant, the relevant property, and the next step. Confirm available application features for your setup."
+      ],
+      [
+        "Which financial views are available?",
+        "Ask the Innflow team about available income, expense, and reporting views, including the data connections your portfolio needs."
+      ],
+      [
+        "Can leasing documents follow a shared workflow?",
+        "Keep document preparation and follow-up clear for everyone involved. Confirm available document and signature options with the Innflow team."
+      ]
+    ]
+  },
+  {
+    "key": "showings",
+    "name": "Showings",
+    "path": "/showings",
+    "figmaNode": "171:6548",
+    "title": "Keep every showing connected to the next step.",
+    "description": "Bring scheduled visits, property details, and prospect conversations into a clearer shared workflow.",
+    "intro": "Keep the details around each visit in view.",
+    "hero": "/brand/feature-pages/showings/showings-hero.webp",
+    "heroFocus": 79,
+    "heroArtwork": [
+      {
+        "id": "171:7343",
+        "x": 870,
+        "y": 430,
+        "width": 208.97959899902344,
+        "height": 160,
+        "name": "Weekly showings calendar \u00b7 Baselane",
+        "src": "/brand/feature-pages/artwork/171-7343.svg"
+      }
+    ],
+    "panels": [
+      {
+        "id": "showing-calendar",
+        "label": "Showing Calendar",
+        "title": "See the visits ahead.",
+        "text": "Keep scheduled showings in a shared calendar, giving your team a useful reference for the appointments coming up.",
+        "image": "/brand/feature-pages/showings/showings-hero.webp",
+        "artwork": [
+          {
+            "id": "171:7422",
+            "x": 48,
+            "y": 62,
+            "width": 241.6326446533203,
+            "height": 185,
+            "name": "Weekly showings calendar \u00b7 Baselane",
+            "src": "/brand/feature-pages/artwork/171-7422.svg"
+          }
+        ]
+      },
+      {
+        "id": "property-context",
+        "label": "Property Context",
+        "title": "Keep the property close to the visit.",
+        "text": "Bring relevant listing details into view so the team has a clear reference for the property being shown.",
+        "image": "/brand/feature-pages/showings/showings-hero.webp",
+        "artwork": [
+          {
+            "id": "171:7501",
+            "x": 48,
+            "y": 62,
+            "width": 269.0909118652344,
+            "height": 185,
+            "name": "Listings",
+            "src": "/brand/feature-pages/artwork/171-7501.svg"
+          }
+        ]
+      },
+      {
+        "id": "prospect-details",
+        "label": "Prospect Details",
+        "title": "Bring prospect context along.",
+        "text": "Keep useful prospect information close to the showing, so the next conversation starts with the relevant details.",
+        "image": "/brand/feature-pages/showings/showings-hero.webp",
+        "artwork": [
+          {
+            "id": "171:7532",
+            "x": 48,
+            "y": 62,
+            "width": 292.1052551269531,
+            "height": 185,
+            "name": "Prospect profile details",
+            "src": "/brand/feature-pages/artwork/85-1523.svg"
+          }
+        ]
+      },
+      {
+        "id": "showing-follow-up",
+        "label": "Showing Follow-Up",
+        "title": "Keep follow-up connected.",
+        "text": "Review messages and coordinate the next response, keeping the conversation around the visit in view.",
+        "image": "/brand/feature-pages/showings/showings-hero.webp",
+        "artwork": [
+          {
+            "id": "171:7574",
+            "x": 48,
+            "y": 62,
+            "width": 294.1025695800781,
+            "height": 185,
+            "name": "Inbox and conversation",
+            "src": "/brand/feature-pages/artwork/171-7574.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "Shared schedules",
+        "Give the team a clear reference for upcoming visits."
+      ],
+      [
+        "Relevant context",
+        "Keep property and prospect details close to each appointment."
+      ],
+      [
+        "Clear follow-up",
+        "Carry the conversation forward after the showing."
+      ]
+    ],
+    "faqs": [
+      [
+        "How can we keep showings organized?",
+        "Start with a shared view of scheduled visits, then keep the relevant property and prospect details close to each appointment."
+      ],
+      [
+        "Can we connect property details to a showing?",
+        "Keep the listing information your team needs available alongside the visit. Confirm the supported scheduling and property connections with Innflow."
+      ],
+      [
+        "How can the team prepare for a prospect conversation?",
+        "Review the available prospect details and previous messages before the appointment, then coordinate the next follow-up with the team."
+      ],
+      [
+        "What should we confirm before setting up showings?",
+        "Review your scheduling process, property information and team responsibilities with Innflow to confirm available calendar and communication options."
+      ]
+    ]
+  },
+  {
+    "key": "workflows",
+    "name": "Workflows",
+    "path": "/products/agentic-workflows",
+    "figmaNode": "155:5413",
+    "title": "Give recurring work a clear next step.",
+    "description": "Connect triggers, actions, and activity in a workflow your property team can follow.",
+    "intro": "Build a clearer path through everyday processes.",
+    "hero": "/brand/feature-pages/workflows/workflows-hero.webp",
+    "heroFocus": 58,
+    "heroArtwork": [
+      {
+        "id": "157:5594",
+        "x": 850,
+        "y": 460,
+        "width": 240,
+        "height": 150,
+        "name": "Automation trigger and actions",
+        "src": "/brand/feature-pages/artwork/157-5594.svg"
+      }
+    ],
+    "panels": [
+      {
+        "id": "workflow-builder",
+        "label": "Workflow Builder",
+        "title": "Map the steps that move work forward.",
+        "text": "Bring the steps of a recurring process into view, giving your team a shared reference for the workflow it configures.",
+        "image": "/brand/feature-pages/workflows/workflows-hero.webp",
+        "artwork": [
+          {
+            "id": "157:5623",
+            "x": 48,
+            "y": 62,
+            "width": 223.39622497558594,
+            "height": 185,
+            "name": "Lease renewals workflow",
+            "src": "/brand/feature-pages/artwork/157-5623.svg"
+          }
+        ]
+      },
+      {
+        "id": "triggers-and-conditions",
+        "label": "Triggers And Conditions",
+        "title": "Make the starting point clear.",
+        "text": "Review the available triggers and conditions, then connect them to the actions your process needs.",
+        "image": "/brand/feature-pages/workflows/workflows-hero.webp",
+        "artwork": [
+          {
+            "id": "157:5660",
+            "x": 48,
+            "y": 62,
+            "width": 223.39622497558594,
+            "height": 185,
+            "name": "Workflow canvas and trigger configuration",
+            "src": "/brand/feature-pages/artwork/157-5623.svg"
+          }
+        ]
+      },
+      {
+        "id": "activity-overview",
+        "label": "Activity Overview",
+        "title": "Keep workflow activity in view.",
+        "text": "Bring activity summaries together so your team can review the workflow and identify where to look more closely.",
+        "image": "/brand/feature-pages/workflows/workflows-hero.webp",
+        "artwork": [
+          {
+            "id": "157:5715",
+            "x": 48,
+            "y": 62,
+            "width": 326.134033203125,
+            "height": 185,
+            "name": "Workflow impact cards",
+            "src": "/brand/feature-pages/artwork/157-5715.svg"
+          }
+        ]
+      },
+      {
+        "id": "workflow-history",
+        "label": "Workflow History",
+        "title": "Follow the steps behind the status.",
+        "text": "Review workflow history alongside individual actions, keeping useful context available for follow-up.",
+        "image": "/brand/feature-pages/workflows/workflows-hero.webp",
+        "artwork": [
+          {
+            "id": "157:5744",
+            "x": 48,
+            "y": 62,
+            "width": 368.6486511230469,
+            "height": 220,
+            "name": "Baselane / Workflow activity \u2014 Drawer over status list",
+            "src": "/brand/feature-pages/artwork/81-1380.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "Repeatable steps",
+        "Give recurring processes a familiar structure."
+      ],
+      [
+        "Shared understanding",
+        "Keep the configured triggers and actions visible to your team."
+      ],
+      [
+        "Useful follow-up",
+        "Use activity details to guide the next review."
+      ]
+    ],
+    "faqs": [
+      [
+        "Where should we start with a workflow?",
+        "Choose a recurring process, identify its starting point and map the steps your team needs. Confirm supported workflow options with Innflow."
+      ],
+      [
+        "Can we configure triggers and conditions?",
+        "Review the available triggers and conditions during setup, then choose the ones that match your process."
+      ],
+      [
+        "How can we review workflow activity?",
+        "Use the activity overview and history to follow the information available for each workflow. Confirm the included activity details with Innflow."
+      ],
+      [
+        "What should we review before enabling a workflow?",
+        "Check the configured starting point, conditions, actions and team responsibilities, then review the workflow with the people involved."
+      ]
+    ]
+  },
+  {
+    "key": "owners",
+    "name": "Owners",
+    "path": "/owners",
+    "figmaNode": "97:1981",
+    "title": "Keep owners close to the bigger picture.",
+    "description": "Bring reports, property activity, and portfolio context together for clearer conversations between owners and your team.",
+    "intro": "Useful context for every owner conversation.",
+    "hero": "/brand/feature-pages/owners/owners-hero.webp",
+    "heroFocus": 76,
+    "heroArtwork": [
+      {
+        "id": "98:2223",
+        "x": 950,
+        "y": 260,
+        "width": 330,
+        "height": 210,
+        "name": "Accounting / 01 \u00b7 Transactions and profit summary",
+        "src": "/brand/feature-pages/artwork/110-3520.svg"
+      }
+    ],
+    "panels": [
+      {
+        "id": "owner-reports",
+        "label": "Owner Reports",
+        "title": "Give useful reports a clear home.",
+        "text": "Keep the reports behind owner conversations organized, with a clear place to find the information that matters.",
+        "image": "/brand/feature-pages/owners/owners-hero.webp",
+        "artwork": [
+          {
+            "id": "98:2255",
+            "x": 48,
+            "y": 62,
+            "width": 253.2008819580078,
+            "height": 185,
+            "name": "Baselane / Owner report library",
+            "src": "/brand/feature-pages/artwork/123-3850.svg"
+          }
+        ]
+      },
+      {
+        "id": "property-requests",
+        "label": "Property Requests",
+        "title": "Connect owners with property activity.",
+        "text": "Bring relevant request context into view, helping your team explain what needs attention and the next step in the work.",
+        "image": "/brand/feature-pages/owners/owners-hero.webp",
+        "artwork": [
+          {
+            "id": "98:2276",
+            "x": 48,
+            "y": 62,
+            "width": 288.7804870605469,
+            "height": 185,
+            "name": "Tenant request dashboard",
+            "src": "/brand/feature-pages/artwork/132-5295.svg"
+          }
+        ]
+      },
+      {
+        "id": "financial-context",
+        "label": "Financial Context",
+        "title": "Keep the numbers connected to their context.",
+        "text": "Bring financial summaries and supporting transactions together, giving your team a clearer starting point for review.",
+        "image": "/brand/feature-pages/owners/owners-hero.webp",
+        "artwork": [
+          {
+            "id": "98:2313",
+            "x": 48,
+            "y": 62,
+            "width": 249.3478240966797,
+            "height": 185,
+            "name": "04 \u00b7 Profit and loss report \u00b7 Editable artwork",
+            "src": "/brand/feature-pages/artwork/123-3786.svg"
+          }
+        ]
+      },
+      {
+        "id": "portfolio-overview",
+        "label": "Portfolio Overview",
+        "title": "Bring the portfolio into perspective.",
+        "text": "Keep key property activity and portfolio information close, so owner conversations begin with a shared view of the work.",
+        "image": "/brand/feature-pages/owners/owners-hero.webp",
+        "artwork": [
+          {
+            "id": "98:2377",
+            "x": 48,
+            "y": 62,
+            "width": 232.1568603515625,
+            "height": 185,
+            "name": "Baselane / Operations \u2014 Layered portfolio dashboard",
+            "src": "/brand/feature-pages/artwork/165-6770.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "Shared understanding",
+        "Bring relevant property context into owner conversations."
+      ],
+      [
+        "Useful reports",
+        "Keep supporting information organized and easy to find."
+      ],
+      [
+        "Clear follow-up",
+        "Give each conversation a useful next step."
+      ]
+    ],
+    "faqs": [
+      [
+        "What information is useful for owners?",
+        "Owners benefit from clear property context, relevant reports, and an understanding of current activity. Choose the information that supports your team's owner conversations."
+      ],
+      [
+        "Can owners access reports directly?",
+        "Ask the Innflow team about owner access, available reports, and permissions for your setup."
+      ],
+      [
+        "How can we explain property requests to an owner?",
+        "Keep the request, priority, and next step clear, with the supporting information your team needs for the conversation."
+      ],
+      [
+        "Which portfolio and financial views are available?",
+        "Confirm the reports, data connections, and portfolio views available for your setup with the Innflow team."
+      ]
+    ]
+  },
+  {
+    "key": "rapid-rent",
+    "name": "Rapid Rent",
+    "path": "/rapid-rent",
+    "figmaNode": "115:3069",
+    "title": "Keep rent payments moving clearly.",
+    "description": "Bring reminders, payment details, and transaction history into a connected rent-collection workflow for your team.",
+    "intro": "A clearer path from reminder to payment record.",
+    "hero": "/brand/feature-pages/rapid-rent/rapid-rent-hero.webp",
+    "heroFocus": 76,
+    "heroArtwork": [
+      {
+        "id": "117:3285",
+        "x": 950,
+        "y": 270,
+        "width": 315.2882385253906,
+        "height": 185.00001525878906,
+        "name": "Auto-pay overlay",
+        "src": "/brand/feature-pages/artwork/113-3064.svg"
+      }
+    ],
+    "panels": [
+      {
+        "id": "rent-notifications",
+        "label": "Rent Notifications",
+        "title": "Give rent reminders a clear place.",
+        "text": "Keep notification settings and timing organized, so the team can understand the communication around each rent cycle.",
+        "image": "/brand/feature-pages/rapid-rent/rapid-rent-hero.webp",
+        "artwork": [
+          {
+            "id": "117:3292",
+            "x": 48,
+            "y": 62,
+            "width": 354.83868408203125,
+            "height": 219.99998474121094,
+            "name": "Rent and payment notifications",
+            "src": "/brand/feature-pages/artwork/81-1350.svg"
+          }
+        ]
+      },
+      {
+        "id": "payment-options",
+        "label": "Payment Options",
+        "title": "Keep payment options in perspective.",
+        "text": "Bring payment options and transaction context into view, helping your team explain the next step to residents.",
+        "image": "/brand/feature-pages/rapid-rent/rapid-rent-hero.webp",
+        "artwork": [
+          {
+            "id": "117:3322",
+            "x": 48,
+            "y": 62,
+            "width": 297.0882263183594,
+            "height": 185,
+            "name": "Supported payment methods",
+            "src": "/brand/feature-pages/artwork/101-2597.svg"
+          }
+        ]
+      },
+      {
+        "id": "payment-methods",
+        "label": "Payment Methods",
+        "title": "Make the payment step easier to follow.",
+        "text": "Keep the selected payment method and relevant details clear, with a focused path through the payment workflow.",
+        "image": "/brand/feature-pages/rapid-rent/rapid-rent-hero.webp",
+        "artwork": [
+          {
+            "id": "117:3405",
+            "x": 48,
+            "y": 62,
+            "width": 297.0882263183594,
+            "height": 185,
+            "name": "Payment method selection",
+            "src": "/brand/feature-pages/artwork/101-2597.svg"
+          }
+        ]
+      },
+      {
+        "id": "payment-history",
+        "label": "Payment History",
+        "title": "Keep the payment trail in view.",
+        "text": "Bring charges, payments, and balances into a shared record, giving your team useful context for review and follow-up.",
+        "image": "/brand/feature-pages/rapid-rent/rapid-rent-hero.webp",
+        "artwork": [
+          {
+            "id": "117:3425",
+            "x": 48,
+            "y": 62,
+            "width": 315.2882385253906,
+            "height": 185.00001525878906,
+            "name": "Payments transaction table",
+            "src": "/brand/feature-pages/artwork/113-3064.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "Clear timing",
+        "Keep the rent cycle and next action easy to understand."
+      ],
+      [
+        "Resident context",
+        "Connect payment conversations to the relevant home."
+      ],
+      [
+        "Useful records",
+        "Keep supporting payment details close to the work."
+      ]
+    ],
+    "faqs": [
+      [
+        "How does Rapid Rent fit a collection workflow?",
+        "Connect the reminder, payment details, and transaction record so your team has a clear place to follow the work. Review available features with the Innflow team."
+      ],
+      [
+        "Which payment methods are available?",
+        "Confirm supported payment methods, processing details, and account requirements with the Innflow team for your setup."
+      ],
+      [
+        "Can we configure rent reminders?",
+        "Ask the team about available notification settings, timing, and communication channels for your rent-collection workflow."
+      ],
+      [
+        "Where can we review payment activity?",
+        "A payment history brings charges, payments, and balances together for review. Confirm the records and connected systems available for your setup."
+      ]
+    ]
+  },
+  {
+    "key": "home-page",
+    "name": "Home Page",
+    "path": "/property-management",
+    "figmaNode": "160:5641",
+    "title": "Property operations. Connected in one place.",
+    "description": "Bring your properties, leases, requests, and recurring work into a clearer shared workflow with Innflow.",
+    "intro": "Keep the whole picture close to the next step.",
+    "hero": "/brand/feature-pages/home-page/home-page-hero.webp",
+    "heroFocus": 72,
+    "heroArtwork": [
+      {
+        "id": "162:5871",
+        "x": 880,
+        "y": 280,
+        "width": 228.4615478515625,
+        "height": 180,
+        "name": "Home dashboard \u00b7 Financial and operations overview",
+        "src": "/brand/feature-pages/artwork/165-6713.svg"
+      }
+    ],
+    "panels": [
+      {
+        "id": "portfolio-overview",
+        "label": "Portfolio Overview",
+        "title": "See the context across your properties.",
+        "text": "Bring useful property and financial details into a shared overview, giving your team a starting point for the day ahead.",
+        "image": "/brand/feature-pages/home-page/home-page-hero.webp",
+        "artwork": [
+          {
+            "id": "162:5928",
+            "x": 48,
+            "y": 62,
+            "width": 234.80767822265625,
+            "height": 185,
+            "name": "Home dashboard \u00b7 Financial and operations overview",
+            "src": "/brand/feature-pages/artwork/165-6713.svg"
+          }
+        ]
+      },
+      {
+        "id": "lease-context",
+        "label": "Lease Context",
+        "title": "Keep lease details close to the work.",
+        "text": "Review leases and relevant actions together, so the information behind the next conversation stays within reach.",
+        "image": "/brand/feature-pages/home-page/home-page-hero.webp",
+        "artwork": [
+          {
+            "id": "162:5985",
+            "x": 48,
+            "y": 62,
+            "width": 275.3488464355469,
+            "height": 185,
+            "name": "Lease overview",
+            "src": "/brand/feature-pages/artwork/169-7291.svg"
+          }
+        ]
+      },
+      {
+        "id": "resident-requests",
+        "label": "Resident Requests",
+        "title": "Give resident requests a clear path.",
+        "text": "Keep incoming requests and their status in view, helping your team coordinate responses and follow the work.",
+        "image": "/brand/feature-pages/home-page/home-page-hero.webp",
+        "artwork": [
+          {
+            "id": "162:6022",
+            "x": 48,
+            "y": 62,
+            "width": 288.7804870605469,
+            "height": 185,
+            "name": "Tenant request dashboard",
+            "src": "/brand/feature-pages/artwork/132-5295.svg"
+          }
+        ]
+      },
+      {
+        "id": "recurring-work",
+        "label": "Recurring Work",
+        "title": "Make recurring steps easier to follow.",
+        "text": "Bring recurring processes into a visible workflow, with a shared reference for the steps your team configures.",
+        "image": "/brand/feature-pages/home-page/home-page-hero.webp",
+        "artwork": [
+          {
+            "id": "162:6059",
+            "x": 48,
+            "y": 62,
+            "width": 223.39622497558594,
+            "height": 185,
+            "name": "Lease renewals workflow",
+            "src": "/brand/feature-pages/artwork/157-5623.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "Shared visibility",
+        "Keep useful property information available to your team."
+      ],
+      [
+        "Connected context",
+        "Bring the details behind daily work into view."
+      ],
+      [
+        "Clear next steps",
+        "Coordinate follow-up across requests and recurring processes."
+      ]
+    ],
+    "faqs": [
+      [
+        "What does Innflow bring together?",
+        "Innflow connects property information and daily team workflows, including lease context, resident requests and recurring processes. Explore the areas that fit your team."
+      ],
+      [
+        "Where should our team begin?",
+        "Start with the property workflow you want to improve, then review the relevant setup and available options with Innflow."
+      ],
+      [
+        "Can we use a shared view of property work?",
+        "Shared overviews help your team keep relevant details and status in view. Confirm the access and workflow options that fit your responsibilities."
+      ],
+      [
+        "How do we explore the right features for our portfolio?",
+        "Review the product and portfolio pages, then connect with Innflow to discuss the workflows, property context and setup your team needs."
+      ]
+    ]
+  },
+  {
+    "key": "self-storage",
+    "name": "Self Storage",
+    "path": "/self-storage",
+    "figmaNode": "167:6102",
+    "title": "Keep self storage operations connected.",
+    "description": "Bring facility context, payment records, files, and recurring work into a clearer daily workflow for your team.",
+    "intro": "Keep the details behind your facilities in view.",
+    "hero": "/brand/feature-pages/self-storage/portfolio-self-storage-hero.webp",
+    "heroFocus": 63,
+    "heroArtwork": [
+      {
+        "id": "167:6933",
+        "x": 880,
+        "y": 350,
+        "width": 188.2353057861328,
+        "height": 150,
+        "name": "Baselane / Operations \u2014 Layered portfolio dashboard",
+        "src": "/brand/feature-pages/artwork/165-6770.svg"
+      }
+    ],
+    "panels": [
+      {
+        "id": "facility-overview",
+        "label": "Facility Overview",
+        "title": "Start with a shared facility view.",
+        "text": "Bring relevant property and financial context together, giving your team a useful starting point for its daily review.",
+        "image": "/brand/feature-pages/self-storage/portfolio-self-storage-hero.webp",
+        "artwork": [
+          {
+            "id": "167:6987",
+            "x": 48,
+            "y": 62,
+            "width": 234.80767822265625,
+            "height": 185,
+            "name": "Home dashboard \u00b7 Financial and operations overview",
+            "src": "/brand/feature-pages/artwork/165-6713.svg"
+          }
+        ]
+      },
+      {
+        "id": "payment-records",
+        "label": "Payment Records",
+        "title": "Keep payment history close by.",
+        "text": "Review payment records and their details in one place, with a shared reference for account follow-up.",
+        "image": "/brand/feature-pages/self-storage/portfolio-self-storage-hero.webp",
+        "artwork": [
+          {
+            "id": "167:7044",
+            "x": 48,
+            "y": 62,
+            "width": 315.2882385253906,
+            "height": 185.00001525878906,
+            "name": "Payments transaction table",
+            "src": "/brand/feature-pages/artwork/113-3064.svg"
+          }
+        ]
+      },
+      {
+        "id": "property-files",
+        "label": "Property Files",
+        "title": "Find the file behind the task.",
+        "text": "Keep useful property and customer documents organized, so the information supporting daily work stays within reach.",
+        "image": "/brand/feature-pages/self-storage/portfolio-self-storage-hero.webp",
+        "artwork": [
+          {
+            "id": "167:7107",
+            "x": 48,
+            "y": 62,
+            "width": 307.8553161621094,
+            "height": 185,
+            "name": "Tenant file library",
+            "src": "/brand/feature-pages/artwork/140-5166.svg"
+          }
+        ]
+      },
+      {
+        "id": "recurring-tasks",
+        "label": "Recurring Tasks",
+        "title": "Give recurring work a clear path.",
+        "text": "Connect the steps your team repeats, with a visible workflow for the triggers and actions it configures.",
+        "image": "/brand/feature-pages/self-storage/portfolio-self-storage-hero.webp",
+        "artwork": [
+          {
+            "id": "167:7150",
+            "x": 48,
+            "y": 62,
+            "width": 296,
+            "height": 185,
+            "name": "Automation trigger and actions",
+            "src": "/brand/feature-pages/artwork/157-5594.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "Facility visibility",
+        "Keep useful property context close to daily work."
+      ],
+      [
+        "Organized records",
+        "Bring payment history and files into the next review."
+      ],
+      [
+        "Clear follow-through",
+        "Give recurring tasks a familiar sequence of steps."
+      ]
+    ],
+    "faqs": [
+      [
+        "How can Innflow fit a self storage portfolio?",
+        "Review your facility structure, account records and recurring workflows with Innflow to confirm the available setup options."
+      ],
+      [
+        "Can we keep payment records in view?",
+        "Use the available transaction views to review payment history and details. Confirm the account and payment configuration that fits your facilities."
+      ],
+      [
+        "How can we organize supporting documents?",
+        "Keep relevant facility and customer documents in an organized library. Confirm supported uploads and access options during setup."
+      ],
+      [
+        "What should we confirm before getting started?",
+        "Review the facility and unit structure, customer records, billing needs and team responsibilities with Innflow before choosing your configuration."
+      ]
+    ]
+  },
+  {
+    "key": "operations",
+    "name": "Operations",
+    "path": "/operations",
+    "figmaNode": "91:1640",
+    "title": "Keep property work moving together.",
+    "description": "Bring requests, portfolio context, contacts, and supporting files into one connected rhythm for your team.",
+    "intro": "A clearer view of everyday property work.",
+    "hero": "/brand/feature-pages/operations/operations-hero.webp",
+    "heroFocus": 80,
+    "heroArtwork": [
+      {
+        "id": "93:1790",
+        "x": 950,
+        "y": 280,
+        "width": 280,
+        "height": 157.27659606933594,
+        "name": "Tenant request count overlay",
+        "src": "/brand/feature-pages/artwork/113-3061.svg"
+      }
+    ],
+    "panels": [
+      {
+        "id": "resident-requests",
+        "label": "Resident Requests",
+        "title": "Give every request a place to move.",
+        "text": "Keep incoming requests and their priority in view, so your team can understand what needs attention and where to pick up.",
+        "image": "/brand/feature-pages/operations/operations-hero.webp",
+        "artwork": [
+          {
+            "id": "93:1794",
+            "x": 48,
+            "y": 62,
+            "width": 288.7804870605469,
+            "height": 185,
+            "name": "Tenant request dashboard",
+            "src": "/brand/feature-pages/artwork/132-5295.svg"
+          }
+        ]
+      },
+      {
+        "id": "portfolio-overview",
+        "label": "Portfolio Overview",
+        "title": "Keep the wider picture close.",
+        "text": "Bring key property activity into a shared overview, helping your team connect the daily details with the broader portfolio.",
+        "image": "/brand/feature-pages/operations/operations-hero.webp",
+        "artwork": [
+          {
+            "id": "93:1832",
+            "x": 48,
+            "y": 62,
+            "width": 232.1568603515625,
+            "height": 185,
+            "name": "Baselane / Operations \u2014 Layered portfolio dashboard",
+            "src": "/brand/feature-pages/artwork/165-6770.svg"
+          }
+        ]
+      },
+      {
+        "id": "contact-directory",
+        "label": "Contact Directory",
+        "title": "Find the people behind the work.",
+        "text": "Keep useful contact details for owners, vendors, and prospects organized, with a clear place to find the right person.",
+        "image": "/brand/feature-pages/operations/operations-hero.webp",
+        "artwork": [
+          {
+            "id": "93:1887",
+            "x": 48,
+            "y": 62,
+            "width": 303.66162109375,
+            "height": 185,
+            "name": "Owners \u00b7 Vendors \u00b7 Prospects layered directories",
+            "src": "/brand/feature-pages/artwork/152-5566.svg"
+          }
+        ]
+      },
+      {
+        "id": "supporting-files",
+        "label": "Supporting Files",
+        "title": "Keep files with their context.",
+        "text": "Bring supporting documents into the workflow with useful descriptions and associations, so the next teammate can find what matters.",
+        "image": "/brand/feature-pages/operations/operations-hero.webp",
+        "artwork": [
+          {
+            "id": "93:1948",
+            "x": 48,
+            "y": 62,
+            "width": 272.875,
+            "height": 185,
+            "name": "Upload files",
+            "src": "/brand/feature-pages/artwork/140-5042.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "Clear priorities",
+        "Help your team identify the next useful action."
+      ],
+      [
+        "Shared context",
+        "Connect the relevant property and people to the work."
+      ],
+      [
+        "Connected handoffs",
+        "Keep useful details available as responsibilities change."
+      ]
+    ],
+    "faqs": [
+      [
+        "What belongs in a property operations workflow?",
+        "A useful workflow connects the request, property, responsible person, and next action. Supporting contacts and files help your team carry that context forward."
+      ],
+      [
+        "How can we keep resident requests organized?",
+        "Keep each request's subject, priority, and current status clear. Ask the Innflow team about the request options available for your setup."
+      ],
+      [
+        "Can we organize owners and vendors in one place?",
+        "A shared contact directory gives your team a useful place to find people connected to the portfolio. Confirm available contact types and permissions with the Innflow team."
+      ],
+      [
+        "How should we organize supporting files?",
+        "Use clear file names and descriptions, and connect documents to the relevant work. Ask the team about available associations, storage options, and access permissions."
+      ]
+    ]
+  },
+  {
+    "key": "quickbooks",
+    "name": "QuickBooks Online Integration",
+    "path": "/quickbooks-online-integration",
+    "figmaNode": "118:3281",
+    "title": "Connect property work with QuickBooks.",
+    "description": "Bring integration settings, account context, and the next accounting step into a clearer workflow for your team.",
+    "intro": "Keep the connection and its context in view.",
+    "hero": "/brand/feature-pages/quickbooks/quickbooks-online-integration-hero.webp",
+    "heroFocus": 65,
+    "heroArtwork": [
+      {
+        "id": "119:3579",
+        "x": 950,
+        "y": 270,
+        "width": 287.1794738769531,
+        "height": 199.99998474121094,
+        "name": "05 \u00b7 QuickBooks connection \u00b7 Editable artwork",
+        "src": "/brand/feature-pages/artwork/57-604.svg"
+      }
+    ],
+    "panels": [
+      {
+        "id": "integration-settings",
+        "label": "Integration Settings",
+        "title": "Give the integration a clear home.",
+        "text": "Keep the relevant connection settings within reach, so your team can find where the accounting workflow is configured.",
+        "image": "/brand/feature-pages/quickbooks/quickbooks-online-integration-hero.webp",
+        "artwork": [
+          {
+            "id": "119:3650",
+            "x": 48,
+            "y": 62,
+            "width": 369,
+            "height": 256.9821472167969,
+            "name": "General settings and QuickBooks",
+            "src": "/brand/feature-pages/artwork/57-604.svg"
+          }
+        ]
+      },
+      {
+        "id": "sync-controls",
+        "label": "Sync Controls",
+        "title": "Keep sync setup easy to follow.",
+        "text": "Bring connection status and configuration details together, giving your team a clear place to review the next setup step.",
+        "image": "/brand/feature-pages/quickbooks/quickbooks-online-integration-hero.webp",
+        "artwork": [
+          {
+            "id": "119:3718",
+            "x": 48,
+            "y": 62,
+            "width": 257.29730224609375,
+            "height": 170,
+            "name": "QuickBooks sync configuration",
+            "src": "/brand/feature-pages/artwork/62-1017.svg"
+          }
+        ]
+      },
+      {
+        "id": "account-organization",
+        "label": "Account Organization",
+        "title": "Keep account context organized.",
+        "text": "Bring useful account categories and bookkeeping context into view, supporting a clearer handoff between property work and accounting.",
+        "image": "/brand/feature-pages/quickbooks/quickbooks-online-integration-hero.webp",
+        "artwork": [
+          {
+            "id": "119:3734",
+            "x": 48,
+            "y": 62,
+            "width": 264.28570556640625,
+            "height": 185,
+            "name": "03 \u00b7 Chart of accounts \u00b7 Editable",
+            "src": "/brand/feature-pages/artwork/57-676.svg"
+          }
+        ]
+      },
+      {
+        "id": "bank-connections",
+        "label": "Bank Connections",
+        "title": "Connect the relevant financial context.",
+        "text": "Keep bank-connection details close to your accounting workflow, with a clear place to review the accounts involved.",
+        "image": "/brand/feature-pages/quickbooks/quickbooks-online-integration-hero.webp",
+        "artwork": [
+          {
+            "id": "119:3800",
+            "x": 48,
+            "y": 62,
+            "width": 259,
+            "height": 185,
+            "name": "Accounting / 03 \u00b7 Bank connections",
+            "src": "/brand/feature-pages/artwork/62-1107.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "Clear setup",
+        "Give your team a useful place to find connection settings."
+      ],
+      [
+        "Shared understanding",
+        "Keep the account context available to the people involved."
+      ],
+      [
+        "Useful handoffs",
+        "Carry relevant property details into accounting conversations."
+      ]
+    ],
+    "faqs": [
+      [
+        "How can QuickBooks fit into our property workflow?",
+        "Review the accounting information your team needs to connect, then confirm the available integration options with the Innflow team."
+      ],
+      [
+        "Which information can sync with QuickBooks Online?",
+        "Ask the Innflow team to confirm supported records, sync direction, and timing for your setup."
+      ],
+      [
+        "What should we review before connecting accounts?",
+        "Confirm the company account, access permissions, and the accounting workflow your team intends to use. Review the available setup options with the team."
+      ],
+      [
+        "Can we keep our existing account organization?",
+        "Discuss your existing chart of accounts and bookkeeping process with the Innflow team to confirm how the connection can fit your setup."
+      ]
+    ]
+  },
+  {
+    "key": "mobile-apps",
+    "name": "Mobile Apps",
+    "path": "/mobile-apps",
+    "figmaNode": "74:1003",
+    "title": "Property work, wherever you are.",
+    "description": "Bring your team\u2019s property context, supporting files, and next steps into the flow of your day.",
+    "intro": "From your desk to the next property.",
+    "hero": "/brand/feature-pages/mobile-apps/mobile-apps-hero.webp",
+    "heroFocus": 65,
+    "heroArtwork": [
+      {
+        "id": "76:1194",
+        "x": 1000,
+        "y": 220,
+        "width": 316.4473571777344,
+        "height": 185,
+        "name": "Your portfolio",
+        "src": "/brand/feature-pages/artwork/136-4956.svg"
+      }
+    ],
+    "panels": [
+      {
+        "id": "across-devices",
+        "label": "Across Devices",
+        "title": "Carry the context between devices.",
+        "text": "Keep the relevant property information and team activity close as your work moves between the desk and the field.",
+        "image": "/brand/feature-pages/mobile-apps/mobile-apps-hero.webp",
+        "artwork": [
+          {
+            "id": "76:1212",
+            "x": 455,
+            "y": 55,
+            "width": 232.1568603515625,
+            "height": 185,
+            "name": "Responsive dashboard views",
+            "src": "/brand/feature-pages/artwork/165-6770.svg"
+          }
+        ]
+      },
+      {
+        "id": "file-capture",
+        "label": "File Capture",
+        "title": "Keep files with the work they support.",
+        "text": "Bring supporting files and descriptions into the property workflow, so the next person can find what they need.",
+        "image": "/brand/feature-pages/mobile-apps/mobile-apps-hero.webp",
+        "artwork": [
+          {
+            "id": "76:1260",
+            "x": 480,
+            "y": 55,
+            "width": 390,
+            "height": 264.4067687988281,
+            "name": "Upload files",
+            "src": "/brand/feature-pages/artwork/140-5042.svg"
+          }
+        ]
+      },
+      {
+        "id": "mobile-navigation",
+        "label": "Mobile Navigation",
+        "title": "Find a clear route to the next task.",
+        "text": "Keep frequently used views and property context organized, with a clear place to pick up your work.",
+        "image": "/brand/feature-pages/mobile-apps/mobile-apps-hero.webp",
+        "artwork": [
+          {
+            "id": "76:1283",
+            "x": 480,
+            "y": 55,
+            "width": 316.4473571777344,
+            "height": 185,
+            "name": "Menu and home views",
+            "src": "/brand/feature-pages/artwork/136-4956.svg"
+          }
+        ]
+      },
+      {
+        "id": "field-inspections",
+        "label": "Field Inspections",
+        "title": "Keep field notes connected.",
+        "text": "Bring condition notes and supporting information back into the shared property context as inspections move forward.",
+        "image": "/brand/feature-pages/mobile-apps/mobile-apps-hero.webp",
+        "artwork": [
+          {
+            "id": "76:1314",
+            "x": 480,
+            "y": 55,
+            "width": 155.26834106445312,
+            "height": 270,
+            "name": "Exterior",
+            "src": "/brand/feature-pages/artwork/70-1163.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "Property context",
+        "Keep the relevant property close to the task in hand."
+      ],
+      [
+        "Useful supporting files",
+        "Give the next person the details behind a request."
+      ],
+      [
+        "Connected handoffs",
+        "Carry ownership and the next step between field and office."
+      ]
+    ],
+    "faqs": [
+      [
+        "How can I use Innflow away from my desk?",
+        "Explore the available device experiences with our team and confirm which workflows fit your day-to-day work."
+      ],
+      [
+        "Can I keep supporting files with a property?",
+        "Organize files and supporting context alongside the property work they relate to."
+      ],
+      [
+        "Can field work stay connected to the team?",
+        "Keep property details and follow-up ownership visible as work moves between the field and the office."
+      ],
+      [
+        "Which mobile devices and features are supported?",
+        "Confirm supported devices, app availability, and feature access with our team before planning your rollout."
+      ]
+    ]
+  },
+  {
+    "key": "listing-and-advertising",
+    "name": "Listing & Advertising",
+    "path": "/listing-and-advertising",
+    "figmaNode": "45:168",
+    "title": "Give your next listing a clear path.",
+    "description": "Bring property details, listing updates, and applicant follow-ups into one connected flow.",
+    "intro": "From first impression to the next step.",
+    "hero": "/brand/feature-pages/listing-and-advertising/listing-and-advertising-hero.webp",
+    "heroFocus": 75,
+    "heroArtwork": [
+      {
+        "id": "49:296",
+        "x": 1050,
+        "y": 260,
+        "width": 287.77777099609375,
+        "height": 185,
+        "name": "Innflow / Listing & Advertising / 01 \u00b7 Hero channels & status",
+        "src": "/brand/feature-pages/artwork/89-1790.svg"
+      }
+    ],
+    "panels": [
+      {
+        "id": "applications",
+        "label": "Applications",
+        "title": "Keep every application moving.",
+        "text": "Bring applicant details and supporting information together, with a clear next step for your team.",
+        "image": "/brand/feature-pages/listing-and-advertising/listing-and-advertising-01-applications.webp",
+        "artwork": [
+          {
+            "id": "49:322",
+            "x": 620,
+            "y": 65,
+            "width": 410,
+            "height": 256.25,
+            "name": "Rental application \u00b7 raised applicant choices",
+            "src": "/brand/feature-pages/artwork/89-1731.svg"
+          }
+        ]
+      },
+      {
+        "id": "listing-channels",
+        "label": "Listing Channels",
+        "title": "Keep your listing details connected.",
+        "text": "Organize the information behind each listing and make channel updates easier for your team to review.",
+        "image": "/brand/feature-pages/listing-and-advertising/listing-and-advertising-02-channels.webp",
+        "artwork": [
+          {
+            "id": "49:349",
+            "x": 620,
+            "y": 65,
+            "width": 410,
+            "height": 263.5714416503906,
+            "name": "Listing channels \u00b7 raised Zillow selection",
+            "src": "/brand/feature-pages/artwork/89-1790.svg"
+          }
+        ]
+      },
+      {
+        "id": "property-websites",
+        "label": "Property Websites",
+        "title": "Give each property a place to shine.",
+        "text": "Bring photos, property information, and the next action into a clear, consistent presentation.",
+        "image": "/brand/feature-pages/listing-and-advertising/listing-and-advertising-03-websites.webp",
+        "artwork": [
+          {
+            "id": "49:383",
+            "x": 620,
+            "y": 65,
+            "width": 410,
+            "height": 256.25,
+            "name": "Property website \u00b7 raised template selector",
+            "src": "/brand/feature-pages/artwork/146-5241.svg"
+          }
+        ]
+      },
+      {
+        "id": "listing-updates",
+        "label": "Listing Updates",
+        "title": "Make updates easier to follow.",
+        "text": "Keep descriptions, photographs, and review steps together as the details of a listing change.",
+        "image": "/brand/feature-pages/listing-and-advertising/listing-and-advertising-04-updates.webp",
+        "artwork": [
+          {
+            "id": "49:427",
+            "x": 620,
+            "y": 65,
+            "width": 410,
+            "height": 237.03125,
+            "name": "Listing editor \u00b7 fields and property photographs",
+            "src": "/brand/feature-pages/artwork/146-5284.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "Consistent property details",
+        "Keep the source information close to every listing update."
+      ],
+      [
+        "Clear review steps",
+        "Give changes an owner and a clear path to review."
+      ],
+      [
+        "Connected follow-ups",
+        "Carry the property context into the next conversation."
+      ]
+    ],
+    "faqs": [
+      [
+        "How can Innflow support listing workflows?",
+        "Keep property information, supporting assets, and team review steps connected as you prepare a listing."
+      ],
+      [
+        "Can I organize information for multiple properties?",
+        "Use property context to keep listing details and supporting information together."
+      ],
+      [
+        "Can the team review changes before the next step?",
+        "Keep ownership and review steps visible as information moves between people."
+      ],
+      [
+        "Which publishing channels are available?",
+        "Confirm available publishing channels and integrations with our team before planning your workflow."
+      ]
+    ]
+  },
+  {
+    "key": "accounting",
+    "name": "Accounting",
+    "path": "/landlord-accounting",
+    "figmaNode": "21:41",
+    "title": "Keep your property finances in focus.",
+    "description": "Bring income, expenses, and supporting records together\u2014so your team can see the details and keep the work moving.",
+    "intro": "A clearer view of the numbers.",
+    "hero": "/brand/feature-pages/accounting/accounting-hero.webp",
+    "heroFocus": 72,
+    "heroArtwork": [
+      {
+        "id": "accounting-transactions",
+        "name": "transactions",
+        "src": "/brand/feature-pages/accounting/transactions.svg",
+        "x": 1052.1338029281235,
+        "y": 142.13380292812357,
+        "width": 399.39839414375285,
+        "height": 277.4933941437529
+      },
+      {
+        "id": "accounting-profit",
+        "name": "profit",
+        "src": "/brand/feature-pages/accounting/profit.svg",
+        "x": 1449.037593495935,
+        "y": 95.03759349593496,
+        "width": 400.05781300813004,
+        "height": 282.92481300813006
+      }
+    ],
+    "panels": [
+      {
+        "id": "income-expenses",
+        "label": "Income & Expenses",
+        "title": "See what comes in. Know what goes out.",
+        "text": "Bring income and expenses into one clear view, with the property context your team needs to review each detail.",
+        "image": "/brand/feature-pages/accounting/accounting-01-income-and-expenses.webp",
+        "artwork": [
+          {
+            "id": "23:111",
+            "x": 455,
+            "y": 55,
+            "width": 322.5600280761719,
+            "height": 213.12001037597656,
+            "name": "Accounting / 02 \u00b7 Income and expenses",
+            "src": "/brand/feature-pages/artwork/109-2753.svg"
+          }
+        ]
+      },
+      {
+        "id": "connected-accounts",
+        "label": "Connected Accounts",
+        "title": "Keep account activity connected.",
+        "text": "Follow the records behind your balances and keep the next review step close to the information it depends on.",
+        "image": "/brand/feature-pages/accounting/accounting-02-connected-accounts.webp",
+        "artwork": [
+          {
+            "id": "23:127",
+            "x": 455,
+            "y": 55,
+            "width": 322.5600280761719,
+            "height": 230.40000915527344,
+            "name": "Accounting / 03 \u00b7 Bank connections",
+            "src": "/brand/feature-pages/artwork/62-1107.svg"
+          }
+        ]
+      },
+      {
+        "id": "financial-reports",
+        "label": "Financial Reports",
+        "title": "Turn records into a clearer picture.",
+        "text": "Give your team a shared view of income and expenses, with supporting details organized for a more focused review.",
+        "image": "/brand/feature-pages/accounting/accounting-03-financial-reports.webp",
+        "artwork": [
+          {
+            "id": "23:149",
+            "x": 391.333251953125,
+            "y": 51,
+            "width": 348.36480712890625,
+            "height": 242.61122131347656,
+            "name": "Accounting / 04 \u00b7 Profit and loss report",
+            "src": "/brand/feature-pages/artwork/101-2505.svg"
+          }
+        ]
+      },
+      {
+        "id": "expense-capture",
+        "label": "Expense Capture",
+        "title": "Keep the receipt with the record.",
+        "text": "Bring receipts and supporting documents into the workflow, so important details stay within reach.",
+        "image": "/brand/feature-pages/accounting/accounting-04-expense-capture.webp",
+        "artwork": [
+          {
+            "id": "23:187",
+            "x": 438.333251953125,
+            "y": 35,
+            "width": 272.875,
+            "height": 185,
+            "name": "Accounting / 06 \u00b7 Expense capture",
+            "src": "/brand/feature-pages/artwork/140-5042.svg"
+          }
+        ]
+      }
+    ],
+    "features": [
+      [
+        "Property-level context",
+        "Keep records tied to the property and process behind them."
+      ],
+      [
+        "Clear review steps",
+        "Make ownership and the next action easy to follow."
+      ],
+      [
+        "Organized handoffs",
+        "Keep supporting details ready when the work changes hands."
+      ]
+    ],
+    "faqs": [
+      [
+        "How does Innflow support accounting workflows?",
+        "Keep property records, supporting documents, and review steps connected in one workspace."
+      ],
+      [
+        "Can I keep records organized by property?",
+        "Organize supporting information around each property so your team can follow the context behind the work."
+      ],
+      [
+        "Can my team review the next step?",
+        "Keep ownership and review steps visible as information moves between people."
+      ],
+      [
+        "Where can I explore the available features?",
+        "Explore the product with our team to confirm the workflows and integrations available for your needs."
+      ]
+    ]
+  }
+]

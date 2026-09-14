@@ -53,6 +53,54 @@ html {
   color-scheme: light;
 }
 
+/* Keep the viewport scrollbar quiet without hiding the scroll affordance. */
+html {
+  --page-scrollbar-thumb: #31505e;
+  --page-scrollbar-hover: #012232;
+  scrollbar-width: thin;
+  scrollbar-color: var(--page-scrollbar-thumb) transparent;
+}
+
+html[data-theme="dark"] {
+  --page-scrollbar-thumb: #78909b;
+  --page-scrollbar-hover: #a1b5bf;
+}
+
+/* Explicit site themes win; otherwise follow the device preference. */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]):not([data-theme="dark"]) {
+    --page-scrollbar-thumb: #78909b;
+    --page-scrollbar-hover: #a1b5bf;
+  }
+}
+
+/* Pixel sizing in Chromium/Safari; Firefox uses the thin fallback above. */
+@supports selector(::-webkit-scrollbar) {
+  html {
+    scrollbar-width: auto;
+    scrollbar-color: auto;
+  }
+
+  html::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  html::-webkit-scrollbar-track,
+  html::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  html::-webkit-scrollbar-thumb {
+    background: var(--page-scrollbar-thumb);
+    border-radius: 999px;
+  }
+
+  html::-webkit-scrollbar-thumb:hover {
+    background: var(--page-scrollbar-hover);
+  }
+}
+
 html.lenis {
   scroll-behavior: auto;
 }

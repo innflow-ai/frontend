@@ -79,6 +79,13 @@ export function FigmaFeaturePage({
           alt=""
           fill
           sizes="(max-width: 850px) 100vw, 75vw"
+          className={styles.panelImage}
+          style={
+            {
+              "--panel-focus": `${item.imageFocus}% center`,
+              objectPosition: "var(--responsive-panel-focus, 50% center)",
+            } as CSSProperties
+          }
         />
       </div>
       <span className={base.label}>{item.label}</span>

@@ -1,0 +1,4358 @@
+[
+  {
+    "page": "mobile-home",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/mobile-home/mobile-home-01-community-overview.webp",
+        "actual": "/brand/feature-pages/mobile-home/mobile-home-01-community-overview.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "community-overview",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/mobile-home/mobile-home-02-resident-accounts.webp",
+        "actual": "/brand/feature-pages/mobile-home/mobile-home-02-resident-accounts.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-accounts",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/mobile-home/mobile-home-03-maintenance-requests.webp",
+        "actual": "/brand/feature-pages/mobile-home/mobile-home-03-maintenance-requests.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "maintenance-requests",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/mobile-home/mobile-home-04-resident-messaging.webp",
+        "actual": "/brand/feature-pages/mobile-home/mobile-home-04-resident-messaging.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-messaging",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "mobile-home",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/mobile-home/mobile-home-01-community-overview.webp",
+        "actual": "/brand/feature-pages/mobile-home/mobile-home-01-community-overview.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "community-overview",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/mobile-home/mobile-home-02-resident-accounts.webp",
+        "actual": "/brand/feature-pages/mobile-home/mobile-home-02-resident-accounts.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-accounts",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/mobile-home/mobile-home-03-maintenance-requests.webp",
+        "actual": "/brand/feature-pages/mobile-home/mobile-home-03-maintenance-requests.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "maintenance-requests",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/mobile-home/mobile-home-04-resident-messaging.webp",
+        "actual": "/brand/feature-pages/mobile-home/mobile-home-04-resident-messaging.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-messaging",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "mobile-home",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/mobile-home/mobile-home-01-community-overview.webp",
+        "actual": "/brand/feature-pages/mobile-home/mobile-home-01-community-overview.webp",
+        "loaded": true,
+        "position": "80% 50%",
+        "artworkMatches": true,
+        "section": "community-overview",
+        "expectedPosition": "80% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/mobile-home/mobile-home-02-resident-accounts.webp",
+        "actual": "/brand/feature-pages/mobile-home/mobile-home-02-resident-accounts.webp",
+        "loaded": true,
+        "position": "55% 50%",
+        "artworkMatches": true,
+        "section": "resident-accounts",
+        "expectedPosition": "55% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/mobile-home/mobile-home-03-maintenance-requests.webp",
+        "actual": "/brand/feature-pages/mobile-home/mobile-home-03-maintenance-requests.webp",
+        "loaded": true,
+        "position": "55% 50%",
+        "artworkMatches": true,
+        "section": "maintenance-requests",
+        "expectedPosition": "55% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/mobile-home/mobile-home-04-resident-messaging.webp",
+        "actual": "/brand/feature-pages/mobile-home/mobile-home-04-resident-messaging.webp",
+        "loaded": true,
+        "position": "65% 50%",
+        "artworkMatches": true,
+        "section": "resident-messaging",
+        "expectedPosition": "65% 50%"
+      }
+    ]
+  },
+  {
+    "page": "rental-applications",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/rental-applications/rental-applications-01-document-templates.webp",
+        "actual": "/brand/feature-pages/rental-applications/rental-applications-01-document-templates.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "document-templates",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/rental-applications/rental-applications-02-application-fees.webp",
+        "actual": "/brand/feature-pages/rental-applications/rental-applications-02-application-fees.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "application-fees",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/rental-applications/rental-applications-03-showing-calendar.webp",
+        "actual": "/brand/feature-pages/rental-applications/rental-applications-03-showing-calendar.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "showing-calendar",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/rental-applications/rental-applications-04-application-review.webp",
+        "actual": "/brand/feature-pages/rental-applications/rental-applications-04-application-review.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "application-review",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "rental-applications",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/rental-applications/rental-applications-01-document-templates.webp",
+        "actual": "/brand/feature-pages/rental-applications/rental-applications-01-document-templates.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "document-templates",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/rental-applications/rental-applications-02-application-fees.webp",
+        "actual": "/brand/feature-pages/rental-applications/rental-applications-02-application-fees.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "application-fees",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/rental-applications/rental-applications-03-showing-calendar.webp",
+        "actual": "/brand/feature-pages/rental-applications/rental-applications-03-showing-calendar.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "showing-calendar",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/rental-applications/rental-applications-04-application-review.webp",
+        "actual": "/brand/feature-pages/rental-applications/rental-applications-04-application-review.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "application-review",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "rental-applications",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/rental-applications/rental-applications-01-document-templates.webp",
+        "actual": "/brand/feature-pages/rental-applications/rental-applications-01-document-templates.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "document-templates",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/rental-applications/rental-applications-02-application-fees.webp",
+        "actual": "/brand/feature-pages/rental-applications/rental-applications-02-application-fees.webp",
+        "loaded": true,
+        "position": "65% 50%",
+        "artworkMatches": true,
+        "section": "application-fees",
+        "expectedPosition": "65% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/rental-applications/rental-applications-03-showing-calendar.webp",
+        "actual": "/brand/feature-pages/rental-applications/rental-applications-03-showing-calendar.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "showing-calendar",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/rental-applications/rental-applications-04-application-review.webp",
+        "actual": "/brand/feature-pages/rental-applications/rental-applications-04-application-review.webp",
+        "loaded": true,
+        "position": "55% 50%",
+        "artworkMatches": true,
+        "section": "application-review",
+        "expectedPosition": "55% 50%"
+      }
+    ]
+  },
+  {
+    "page": "crm",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/crm/crm-01-prospect-overview.webp",
+        "actual": "/brand/feature-pages/crm/crm-01-prospect-overview.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "prospect-overview",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/crm/crm-02-prospect-context.webp",
+        "actual": "/brand/feature-pages/crm/crm-02-prospect-context.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "prospect-context",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/crm/crm-03-team-follow-up.webp",
+        "actual": "/brand/feature-pages/crm/crm-03-team-follow-up.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "team-follow-up",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/crm/crm-04-lead-sources.webp",
+        "actual": "/brand/feature-pages/crm/crm-04-lead-sources.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "lead-sources",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "crm",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/crm/crm-01-prospect-overview.webp",
+        "actual": "/brand/feature-pages/crm/crm-01-prospect-overview.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "prospect-overview",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/crm/crm-02-prospect-context.webp",
+        "actual": "/brand/feature-pages/crm/crm-02-prospect-context.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "prospect-context",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/crm/crm-03-team-follow-up.webp",
+        "actual": "/brand/feature-pages/crm/crm-03-team-follow-up.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "team-follow-up",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/crm/crm-04-lead-sources.webp",
+        "actual": "/brand/feature-pages/crm/crm-04-lead-sources.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "lead-sources",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "crm",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/crm/crm-01-prospect-overview.webp",
+        "actual": "/brand/feature-pages/crm/crm-01-prospect-overview.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "prospect-overview",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/crm/crm-02-prospect-context.webp",
+        "actual": "/brand/feature-pages/crm/crm-02-prospect-context.webp",
+        "loaded": true,
+        "position": "60% 50%",
+        "artworkMatches": true,
+        "section": "prospect-context",
+        "expectedPosition": "60% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/crm/crm-03-team-follow-up.webp",
+        "actual": "/brand/feature-pages/crm/crm-03-team-follow-up.webp",
+        "loaded": true,
+        "position": "80% 50%",
+        "artworkMatches": true,
+        "section": "team-follow-up",
+        "expectedPosition": "80% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/crm/crm-04-lead-sources.webp",
+        "actual": "/brand/feature-pages/crm/crm-04-lead-sources.webp",
+        "loaded": true,
+        "position": "60% 50%",
+        "artworkMatches": true,
+        "section": "lead-sources",
+        "expectedPosition": "60% 50%"
+      }
+    ]
+  },
+  {
+    "page": "bookkeeping",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/bookkeeping/bookkeeping-01-accounting-connections-a7a72202.webp",
+        "actual": "/brand/feature-pages/bookkeeping/bookkeeping-01-accounting-connections-a7a72202.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "accounting-connections",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/bookkeeping/bookkeeping-02-account-categories-f4a1ec96.webp",
+        "actual": "/brand/feature-pages/bookkeeping/bookkeeping-02-account-categories-f4a1ec96.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "account-categories",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/bookkeeping/bookkeeping-03-income-and-expenses-76dec311.webp",
+        "actual": "/brand/feature-pages/bookkeeping/bookkeeping-03-income-and-expenses-76dec311.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "income-expenses",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/bookkeeping/bookkeeping-04-bank-connections-1dfc3a94.webp",
+        "actual": "/brand/feature-pages/bookkeeping/bookkeeping-04-bank-connections-1dfc3a94.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "bank-connections",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "bookkeeping",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/bookkeeping/bookkeeping-01-accounting-connections-a7a72202.webp",
+        "actual": "/brand/feature-pages/bookkeeping/bookkeeping-01-accounting-connections-a7a72202.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "accounting-connections",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/bookkeeping/bookkeeping-02-account-categories-f4a1ec96.webp",
+        "actual": "/brand/feature-pages/bookkeeping/bookkeeping-02-account-categories-f4a1ec96.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "account-categories",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/bookkeeping/bookkeeping-03-income-and-expenses-76dec311.webp",
+        "actual": "/brand/feature-pages/bookkeeping/bookkeeping-03-income-and-expenses-76dec311.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "income-expenses",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/bookkeeping/bookkeeping-04-bank-connections-1dfc3a94.webp",
+        "actual": "/brand/feature-pages/bookkeeping/bookkeeping-04-bank-connections-1dfc3a94.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "bank-connections",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "bookkeeping",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/bookkeeping/bookkeeping-01-accounting-connections-a7a72202.webp",
+        "actual": "/brand/feature-pages/bookkeeping/bookkeeping-01-accounting-connections-a7a72202.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "accounting-connections",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/bookkeeping/bookkeeping-02-account-categories-f4a1ec96.webp",
+        "actual": "/brand/feature-pages/bookkeeping/bookkeeping-02-account-categories-f4a1ec96.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "account-categories",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/bookkeeping/bookkeeping-03-income-and-expenses-76dec311.webp",
+        "actual": "/brand/feature-pages/bookkeeping/bookkeeping-03-income-and-expenses-76dec311.webp",
+        "loaded": true,
+        "position": "55% 50%",
+        "artworkMatches": true,
+        "section": "income-expenses",
+        "expectedPosition": "55% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/bookkeeping/bookkeeping-04-bank-connections-1dfc3a94.webp",
+        "actual": "/brand/feature-pages/bookkeeping/bookkeeping-04-bank-connections-1dfc3a94.webp",
+        "loaded": true,
+        "position": "70% 50%",
+        "artworkMatches": true,
+        "section": "bank-connections",
+        "expectedPosition": "70% 50%"
+      }
+    ]
+  },
+  {
+    "page": "reports",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/reports/reports-01-report-library.webp",
+        "actual": "/brand/feature-pages/reports/reports-01-report-library.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "report-library",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/reports/reports-02-report-filters.webp",
+        "actual": "/brand/feature-pages/reports/reports-02-report-filters.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "report-filters",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/reports/reports-03-transaction-insights.webp",
+        "actual": "/brand/feature-pages/reports/reports-03-transaction-insights.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "transaction-insights",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/reports/reports-04-report-exports.webp",
+        "actual": "/brand/feature-pages/reports/reports-04-report-exports.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "report-exports",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "reports",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/reports/reports-01-report-library.webp",
+        "actual": "/brand/feature-pages/reports/reports-01-report-library.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "report-library",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/reports/reports-02-report-filters.webp",
+        "actual": "/brand/feature-pages/reports/reports-02-report-filters.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "report-filters",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/reports/reports-03-transaction-insights.webp",
+        "actual": "/brand/feature-pages/reports/reports-03-transaction-insights.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "transaction-insights",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/reports/reports-04-report-exports.webp",
+        "actual": "/brand/feature-pages/reports/reports-04-report-exports.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "report-exports",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "reports",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/reports/reports-01-report-library.webp",
+        "actual": "/brand/feature-pages/reports/reports-01-report-library.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "report-library",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/reports/reports-02-report-filters.webp",
+        "actual": "/brand/feature-pages/reports/reports-02-report-filters.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "report-filters",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/reports/reports-03-transaction-insights.webp",
+        "actual": "/brand/feature-pages/reports/reports-03-transaction-insights.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "transaction-insights",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/reports/reports-04-report-exports.webp",
+        "actual": "/brand/feature-pages/reports/reports-04-report-exports.webp",
+        "loaded": true,
+        "position": "65% 50%",
+        "artworkMatches": true,
+        "section": "report-exports",
+        "expectedPosition": "65% 50%"
+      }
+    ]
+  },
+  {
+    "page": "community-associations",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/community-associations/community-associations-01-association-dues.webp",
+        "actual": "/brand/feature-pages/community-associations/community-associations-01-association-dues.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "association-dues",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/community-associations/community-associations-02-community-messages.webp",
+        "actual": "/brand/feature-pages/community-associations/community-associations-02-community-messages.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "community-messages",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/community-associations/community-associations-03-resident-requests.webp",
+        "actual": "/brand/feature-pages/community-associations/community-associations-03-resident-requests.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-requests",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/community-associations/community-associations-04-shared-documents.webp",
+        "actual": "/brand/feature-pages/community-associations/community-associations-04-shared-documents.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "shared-documents",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "community-associations",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/community-associations/community-associations-01-association-dues.webp",
+        "actual": "/brand/feature-pages/community-associations/community-associations-01-association-dues.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "association-dues",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/community-associations/community-associations-02-community-messages.webp",
+        "actual": "/brand/feature-pages/community-associations/community-associations-02-community-messages.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "community-messages",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/community-associations/community-associations-03-resident-requests.webp",
+        "actual": "/brand/feature-pages/community-associations/community-associations-03-resident-requests.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-requests",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/community-associations/community-associations-04-shared-documents.webp",
+        "actual": "/brand/feature-pages/community-associations/community-associations-04-shared-documents.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "shared-documents",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "community-associations",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/community-associations/community-associations-01-association-dues.webp",
+        "actual": "/brand/feature-pages/community-associations/community-associations-01-association-dues.webp",
+        "loaded": true,
+        "position": "55% 50%",
+        "artworkMatches": true,
+        "section": "association-dues",
+        "expectedPosition": "55% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/community-associations/community-associations-02-community-messages.webp",
+        "actual": "/brand/feature-pages/community-associations/community-associations-02-community-messages.webp",
+        "loaded": true,
+        "position": "55% 50%",
+        "artworkMatches": true,
+        "section": "community-messages",
+        "expectedPosition": "55% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/community-associations/community-associations-03-resident-requests.webp",
+        "actual": "/brand/feature-pages/community-associations/community-associations-03-resident-requests.webp",
+        "loaded": true,
+        "position": "70% 50%",
+        "artworkMatches": true,
+        "section": "resident-requests",
+        "expectedPosition": "70% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/community-associations/community-associations-04-shared-documents.webp",
+        "actual": "/brand/feature-pages/community-associations/community-associations-04-shared-documents.webp",
+        "loaded": true,
+        "position": "60% 50%",
+        "artworkMatches": true,
+        "section": "shared-documents",
+        "expectedPosition": "60% 50%"
+      }
+    ]
+  },
+  {
+    "page": "leasing",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/leasing/leasing-01-rental-applications.webp",
+        "actual": "/brand/feature-pages/leasing/leasing-01-rental-applications.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "rental-applications",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/leasing/leasing-02-applicant-information.webp",
+        "actual": "/brand/feature-pages/leasing/leasing-02-applicant-information.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "applicant-information",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/leasing/leasing-03-listing-channels.webp",
+        "actual": "/brand/feature-pages/leasing/leasing-03-listing-channels.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "listing-channels",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/leasing/leasing-04-property-websites.webp",
+        "actual": "/brand/feature-pages/leasing/leasing-04-property-websites.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "property-websites",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "leasing",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/leasing/leasing-01-rental-applications.webp",
+        "actual": "/brand/feature-pages/leasing/leasing-01-rental-applications.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "rental-applications",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/leasing/leasing-02-applicant-information.webp",
+        "actual": "/brand/feature-pages/leasing/leasing-02-applicant-information.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "applicant-information",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/leasing/leasing-03-listing-channels.webp",
+        "actual": "/brand/feature-pages/leasing/leasing-03-listing-channels.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "listing-channels",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/leasing/leasing-04-property-websites.webp",
+        "actual": "/brand/feature-pages/leasing/leasing-04-property-websites.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "property-websites",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "leasing",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/leasing/leasing-01-rental-applications.webp",
+        "actual": "/brand/feature-pages/leasing/leasing-01-rental-applications.webp",
+        "loaded": true,
+        "position": "55% 50%",
+        "artworkMatches": true,
+        "section": "rental-applications",
+        "expectedPosition": "55% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/leasing/leasing-02-applicant-information.webp",
+        "actual": "/brand/feature-pages/leasing/leasing-02-applicant-information.webp",
+        "loaded": true,
+        "position": "65% 50%",
+        "artworkMatches": true,
+        "section": "applicant-information",
+        "expectedPosition": "65% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/leasing/leasing-03-listing-channels.webp",
+        "actual": "/brand/feature-pages/leasing/leasing-03-listing-channels.webp",
+        "loaded": true,
+        "position": "70% 50%",
+        "artworkMatches": true,
+        "section": "listing-channels",
+        "expectedPosition": "70% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/leasing/leasing-04-property-websites.webp",
+        "actual": "/brand/feature-pages/leasing/leasing-04-property-websites.webp",
+        "loaded": true,
+        "position": "65% 50%",
+        "artworkMatches": true,
+        "section": "property-websites",
+        "expectedPosition": "65% 50%"
+      }
+    ]
+  },
+  {
+    "page": "residential",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/residential/residential-01-income-and-expenses.webp",
+        "actual": "/brand/feature-pages/residential/residential-01-income-and-expenses.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "income-and-expenses",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/residential/residential-02-resident-messages.webp",
+        "actual": "/brand/feature-pages/residential/residential-02-resident-messages.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-messages",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/residential/residential-03-payment-details.webp",
+        "actual": "/brand/feature-pages/residential/residential-03-payment-details.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "payment-details",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/residential/residential-04-applicant-information.webp",
+        "actual": "/brand/feature-pages/residential/residential-04-applicant-information.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "applicant-information",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "residential",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/residential/residential-01-income-and-expenses.webp",
+        "actual": "/brand/feature-pages/residential/residential-01-income-and-expenses.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "income-and-expenses",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/residential/residential-02-resident-messages.webp",
+        "actual": "/brand/feature-pages/residential/residential-02-resident-messages.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-messages",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/residential/residential-03-payment-details.webp",
+        "actual": "/brand/feature-pages/residential/residential-03-payment-details.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "payment-details",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/residential/residential-04-applicant-information.webp",
+        "actual": "/brand/feature-pages/residential/residential-04-applicant-information.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "applicant-information",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "residential",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/residential/residential-01-income-and-expenses.webp",
+        "actual": "/brand/feature-pages/residential/residential-01-income-and-expenses.webp",
+        "loaded": true,
+        "position": "60% 50%",
+        "artworkMatches": true,
+        "section": "income-and-expenses",
+        "expectedPosition": "60% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/residential/residential-02-resident-messages.webp",
+        "actual": "/brand/feature-pages/residential/residential-02-resident-messages.webp",
+        "loaded": true,
+        "position": "65% 50%",
+        "artworkMatches": true,
+        "section": "resident-messages",
+        "expectedPosition": "65% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/residential/residential-03-payment-details.webp",
+        "actual": "/brand/feature-pages/residential/residential-03-payment-details.webp",
+        "loaded": true,
+        "position": "60% 50%",
+        "artworkMatches": true,
+        "section": "payment-details",
+        "expectedPosition": "60% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/residential/residential-04-applicant-information.webp",
+        "actual": "/brand/feature-pages/residential/residential-04-applicant-information.webp",
+        "loaded": true,
+        "position": "65% 50%",
+        "artworkMatches": true,
+        "section": "applicant-information",
+        "expectedPosition": "65% 50%"
+      }
+    ]
+  },
+  {
+    "page": "affordable-housing",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/affordable-housing/affordable-housing-01-resident-payments.webp",
+        "actual": "/brand/feature-pages/affordable-housing/affordable-housing-01-resident-payments.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-payments",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/affordable-housing/affordable-housing-02-resident-portal.webp",
+        "actual": "/brand/feature-pages/affordable-housing/affordable-housing-02-resident-portal.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-portal",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/affordable-housing/affordable-housing-03-applicant-information.webp",
+        "actual": "/brand/feature-pages/affordable-housing/affordable-housing-03-applicant-information.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "applicant-information",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/affordable-housing/affordable-housing-04-resident-requests.webp",
+        "actual": "/brand/feature-pages/affordable-housing/affordable-housing-04-resident-requests.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-requests",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "affordable-housing",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/affordable-housing/affordable-housing-01-resident-payments.webp",
+        "actual": "/brand/feature-pages/affordable-housing/affordable-housing-01-resident-payments.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-payments",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/affordable-housing/affordable-housing-02-resident-portal.webp",
+        "actual": "/brand/feature-pages/affordable-housing/affordable-housing-02-resident-portal.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-portal",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/affordable-housing/affordable-housing-03-applicant-information.webp",
+        "actual": "/brand/feature-pages/affordable-housing/affordable-housing-03-applicant-information.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "applicant-information",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/affordable-housing/affordable-housing-04-resident-requests.webp",
+        "actual": "/brand/feature-pages/affordable-housing/affordable-housing-04-resident-requests.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-requests",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "affordable-housing",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/affordable-housing/affordable-housing-01-resident-payments.webp",
+        "actual": "/brand/feature-pages/affordable-housing/affordable-housing-01-resident-payments.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-payments",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/affordable-housing/affordable-housing-02-resident-portal.webp",
+        "actual": "/brand/feature-pages/affordable-housing/affordable-housing-02-resident-portal.webp",
+        "loaded": true,
+        "position": "55% 50%",
+        "artworkMatches": true,
+        "section": "resident-portal",
+        "expectedPosition": "55% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/affordable-housing/affordable-housing-03-applicant-information.webp",
+        "actual": "/brand/feature-pages/affordable-housing/affordable-housing-03-applicant-information.webp",
+        "loaded": true,
+        "position": "60% 50%",
+        "artworkMatches": true,
+        "section": "applicant-information",
+        "expectedPosition": "60% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/affordable-housing/affordable-housing-04-resident-requests.webp",
+        "actual": "/brand/feature-pages/affordable-housing/affordable-housing-04-resident-requests.webp",
+        "loaded": true,
+        "position": "60% 50%",
+        "artworkMatches": true,
+        "section": "resident-requests",
+        "expectedPosition": "60% 50%"
+      }
+    ]
+  },
+  {
+    "page": "inspections",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/inspections/inspections-01-condition-assessments.webp",
+        "actual": "/brand/feature-pages/inspections/inspections-01-condition-assessments.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "condition-assessments",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/inspections/inspections-02-inspection-reports.webp",
+        "actual": "/brand/feature-pages/inspections/inspections-02-inspection-reports.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "inspection-reports",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/inspections/inspections-03-work-order-follow-ups.webp",
+        "actual": "/brand/feature-pages/inspections/inspections-03-work-order-follow-ups.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "work-order-follow-ups",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/inspections/inspections-04-inspection-progress.webp",
+        "actual": "/brand/feature-pages/inspections/inspections-04-inspection-progress.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "inspection-progress",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "inspections",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/inspections/inspections-01-condition-assessments.webp",
+        "actual": "/brand/feature-pages/inspections/inspections-01-condition-assessments.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "condition-assessments",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/inspections/inspections-02-inspection-reports.webp",
+        "actual": "/brand/feature-pages/inspections/inspections-02-inspection-reports.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "inspection-reports",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/inspections/inspections-03-work-order-follow-ups.webp",
+        "actual": "/brand/feature-pages/inspections/inspections-03-work-order-follow-ups.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "work-order-follow-ups",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/inspections/inspections-04-inspection-progress.webp",
+        "actual": "/brand/feature-pages/inspections/inspections-04-inspection-progress.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "inspection-progress",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "inspections",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/inspections/inspections-01-condition-assessments.webp",
+        "actual": "/brand/feature-pages/inspections/inspections-01-condition-assessments.webp",
+        "loaded": true,
+        "position": "60% 50%",
+        "artworkMatches": true,
+        "section": "condition-assessments",
+        "expectedPosition": "60% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/inspections/inspections-02-inspection-reports.webp",
+        "actual": "/brand/feature-pages/inspections/inspections-02-inspection-reports.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "inspection-reports",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/inspections/inspections-03-work-order-follow-ups.webp",
+        "actual": "/brand/feature-pages/inspections/inspections-03-work-order-follow-ups.webp",
+        "loaded": true,
+        "position": "65% 50%",
+        "artworkMatches": true,
+        "section": "work-order-follow-ups",
+        "expectedPosition": "65% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/inspections/inspections-04-inspection-progress.webp",
+        "actual": "/brand/feature-pages/inspections/inspections-04-inspection-progress.webp",
+        "loaded": true,
+        "position": "70% 50%",
+        "artworkMatches": true,
+        "section": "inspection-progress",
+        "expectedPosition": "70% 50%"
+      }
+    ]
+  },
+  {
+    "page": "work-orders",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/work-orders/work-orders-01-request-overview.webp",
+        "actual": "/brand/feature-pages/work-orders/work-orders-01-request-overview.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "request-overview",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/work-orders/work-orders-02-inspection-follow-up.webp",
+        "actual": "/brand/feature-pages/work-orders/work-orders-02-inspection-follow-up.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "inspection-follow-up",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/work-orders/work-orders-03-workflow-steps.webp",
+        "actual": "/brand/feature-pages/work-orders/work-orders-03-workflow-steps.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "workflow-steps",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/work-orders/work-orders-04-vendor-coordination.webp",
+        "actual": "/brand/feature-pages/work-orders/work-orders-04-vendor-coordination.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "vendor-coordination",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "work-orders",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/work-orders/work-orders-01-request-overview.webp",
+        "actual": "/brand/feature-pages/work-orders/work-orders-01-request-overview.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "request-overview",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/work-orders/work-orders-02-inspection-follow-up.webp",
+        "actual": "/brand/feature-pages/work-orders/work-orders-02-inspection-follow-up.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "inspection-follow-up",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/work-orders/work-orders-03-workflow-steps.webp",
+        "actual": "/brand/feature-pages/work-orders/work-orders-03-workflow-steps.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "workflow-steps",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/work-orders/work-orders-04-vendor-coordination.webp",
+        "actual": "/brand/feature-pages/work-orders/work-orders-04-vendor-coordination.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "vendor-coordination",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "work-orders",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/work-orders/work-orders-01-request-overview.webp",
+        "actual": "/brand/feature-pages/work-orders/work-orders-01-request-overview.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "request-overview",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/work-orders/work-orders-02-inspection-follow-up.webp",
+        "actual": "/brand/feature-pages/work-orders/work-orders-02-inspection-follow-up.webp",
+        "loaded": true,
+        "position": "60% 50%",
+        "artworkMatches": true,
+        "section": "inspection-follow-up",
+        "expectedPosition": "60% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/work-orders/work-orders-03-workflow-steps.webp",
+        "actual": "/brand/feature-pages/work-orders/work-orders-03-workflow-steps.webp",
+        "loaded": true,
+        "position": "65% 50%",
+        "artworkMatches": true,
+        "section": "workflow-steps",
+        "expectedPosition": "65% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/work-orders/work-orders-04-vendor-coordination.webp",
+        "actual": "/brand/feature-pages/work-orders/work-orders-04-vendor-coordination.webp",
+        "loaded": true,
+        "position": "70% 50%",
+        "artworkMatches": true,
+        "section": "vendor-coordination",
+        "expectedPosition": "70% 50%"
+      }
+    ]
+  },
+  {
+    "page": "tenant-screening",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/tenant-screening/tenant-screening-01-screening-overview.webp",
+        "actual": "/brand/feature-pages/tenant-screening/tenant-screening-01-screening-overview.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "screening-overview",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/tenant-screening/tenant-screening-02-credit-details.webp",
+        "actual": "/brand/feature-pages/tenant-screening/tenant-screening-02-credit-details.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "credit-details",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/tenant-screening/tenant-screening-03-income-verification.webp",
+        "actual": "/brand/feature-pages/tenant-screening/tenant-screening-03-income-verification.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "income-verification",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/tenant-screening/tenant-screening-04-background-reports.webp",
+        "actual": "/brand/feature-pages/tenant-screening/tenant-screening-04-background-reports.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "background-reports",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "tenant-screening",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/tenant-screening/tenant-screening-01-screening-overview.webp",
+        "actual": "/brand/feature-pages/tenant-screening/tenant-screening-01-screening-overview.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "screening-overview",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/tenant-screening/tenant-screening-02-credit-details.webp",
+        "actual": "/brand/feature-pages/tenant-screening/tenant-screening-02-credit-details.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "credit-details",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/tenant-screening/tenant-screening-03-income-verification.webp",
+        "actual": "/brand/feature-pages/tenant-screening/tenant-screening-03-income-verification.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "income-verification",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/tenant-screening/tenant-screening-04-background-reports.webp",
+        "actual": "/brand/feature-pages/tenant-screening/tenant-screening-04-background-reports.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "background-reports",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "tenant-screening",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/tenant-screening/tenant-screening-01-screening-overview.webp",
+        "actual": "/brand/feature-pages/tenant-screening/tenant-screening-01-screening-overview.webp",
+        "loaded": true,
+        "position": "65% 50%",
+        "artworkMatches": true,
+        "section": "screening-overview",
+        "expectedPosition": "65% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/tenant-screening/tenant-screening-02-credit-details.webp",
+        "actual": "/brand/feature-pages/tenant-screening/tenant-screening-02-credit-details.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "credit-details",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/tenant-screening/tenant-screening-03-income-verification.webp",
+        "actual": "/brand/feature-pages/tenant-screening/tenant-screening-03-income-verification.webp",
+        "loaded": true,
+        "position": "60% 50%",
+        "artworkMatches": true,
+        "section": "income-verification",
+        "expectedPosition": "60% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/tenant-screening/tenant-screening-04-background-reports.webp",
+        "actual": "/brand/feature-pages/tenant-screening/tenant-screening-04-background-reports.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "background-reports",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "websites",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/websites/websites-01-website-builder.webp",
+        "actual": "/brand/feature-pages/websites/websites-01-website-builder.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "website-builder",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/websites/websites-02-template-gallery.webp",
+        "actual": "/brand/feature-pages/websites/websites-02-template-gallery.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "template-gallery",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/websites/websites-03-resident-access.webp",
+        "actual": "/brand/feature-pages/websites/websites-03-resident-access.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-access",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/websites/websites-04-property-listings.webp",
+        "actual": "/brand/feature-pages/websites/websites-04-property-listings.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "property-listings",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "websites",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/websites/websites-01-website-builder.webp",
+        "actual": "/brand/feature-pages/websites/websites-01-website-builder.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "website-builder",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/websites/websites-02-template-gallery.webp",
+        "actual": "/brand/feature-pages/websites/websites-02-template-gallery.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "template-gallery",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/websites/websites-03-resident-access.webp",
+        "actual": "/brand/feature-pages/websites/websites-03-resident-access.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-access",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/websites/websites-04-property-listings.webp",
+        "actual": "/brand/feature-pages/websites/websites-04-property-listings.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "property-listings",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "websites",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/websites/websites-01-website-builder.webp",
+        "actual": "/brand/feature-pages/websites/websites-01-website-builder.webp",
+        "loaded": true,
+        "position": "65% 50%",
+        "artworkMatches": true,
+        "section": "website-builder",
+        "expectedPosition": "65% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/websites/websites-02-template-gallery.webp",
+        "actual": "/brand/feature-pages/websites/websites-02-template-gallery.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "template-gallery",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/websites/websites-03-resident-access.webp",
+        "actual": "/brand/feature-pages/websites/websites-03-resident-access.webp",
+        "loaded": true,
+        "position": "65% 50%",
+        "artworkMatches": true,
+        "section": "resident-access",
+        "expectedPosition": "65% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/websites/websites-04-property-listings.webp",
+        "actual": "/brand/feature-pages/websites/websites-04-property-listings.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "property-listings",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "student-housing",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/student-housing/student-housing-01-application-review.webp",
+        "actual": "/brand/feature-pages/student-housing/student-housing-01-application-review.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "application-review",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/student-housing/student-housing-02-lease-overview.webp",
+        "actual": "/brand/feature-pages/student-housing/student-housing-02-lease-overview.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "lease-overview",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/student-housing/student-housing-03-resident-requests.webp",
+        "actual": "/brand/feature-pages/student-housing/student-housing-03-resident-requests.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-requests",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/student-housing/student-housing-04-resident-messaging.webp",
+        "actual": "/brand/feature-pages/student-housing/student-housing-04-resident-messaging.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-messaging",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "student-housing",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/student-housing/student-housing-01-application-review.webp",
+        "actual": "/brand/feature-pages/student-housing/student-housing-01-application-review.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "application-review",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/student-housing/student-housing-02-lease-overview.webp",
+        "actual": "/brand/feature-pages/student-housing/student-housing-02-lease-overview.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "lease-overview",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/student-housing/student-housing-03-resident-requests.webp",
+        "actual": "/brand/feature-pages/student-housing/student-housing-03-resident-requests.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-requests",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/student-housing/student-housing-04-resident-messaging.webp",
+        "actual": "/brand/feature-pages/student-housing/student-housing-04-resident-messaging.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-messaging",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "student-housing",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/student-housing/student-housing-01-application-review.webp",
+        "actual": "/brand/feature-pages/student-housing/student-housing-01-application-review.webp",
+        "loaded": true,
+        "position": "60% 50%",
+        "artworkMatches": true,
+        "section": "application-review",
+        "expectedPosition": "60% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/student-housing/student-housing-02-lease-overview.webp",
+        "actual": "/brand/feature-pages/student-housing/student-housing-02-lease-overview.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "lease-overview",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/student-housing/student-housing-03-resident-requests.webp",
+        "actual": "/brand/feature-pages/student-housing/student-housing-03-resident-requests.webp",
+        "loaded": true,
+        "position": "60% 50%",
+        "artworkMatches": true,
+        "section": "resident-requests",
+        "expectedPosition": "60% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/student-housing/student-housing-04-resident-messaging.webp",
+        "actual": "/brand/feature-pages/student-housing/student-housing-04-resident-messaging.webp",
+        "loaded": true,
+        "position": "65% 50%",
+        "artworkMatches": true,
+        "section": "resident-messaging",
+        "expectedPosition": "65% 50%"
+      }
+    ]
+  },
+  {
+    "page": "residents",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/residents/residents-01-resident-requests.webp",
+        "actual": "/brand/feature-pages/residents/residents-01-resident-requests.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-requests",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/residents/residents-02-payment-details.webp",
+        "actual": "/brand/feature-pages/residents/residents-02-payment-details.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "payment-details",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/residents/residents-03-portal-navigation.webp",
+        "actual": "/brand/feature-pages/residents/residents-03-portal-navigation.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "portal-navigation",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/residents/residents-04-resident-messaging.webp",
+        "actual": "/brand/feature-pages/residents/residents-04-resident-messaging.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-messaging",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "residents",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/residents/residents-01-resident-requests.webp",
+        "actual": "/brand/feature-pages/residents/residents-01-resident-requests.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-requests",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/residents/residents-02-payment-details.webp",
+        "actual": "/brand/feature-pages/residents/residents-02-payment-details.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "payment-details",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/residents/residents-03-portal-navigation.webp",
+        "actual": "/brand/feature-pages/residents/residents-03-portal-navigation.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "portal-navigation",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/residents/residents-04-resident-messaging.webp",
+        "actual": "/brand/feature-pages/residents/residents-04-resident-messaging.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-messaging",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "residents",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/residents/residents-01-resident-requests.webp",
+        "actual": "/brand/feature-pages/residents/residents-01-resident-requests.webp",
+        "loaded": true,
+        "position": "65% 50%",
+        "artworkMatches": true,
+        "section": "resident-requests",
+        "expectedPosition": "65% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/residents/residents-02-payment-details.webp",
+        "actual": "/brand/feature-pages/residents/residents-02-payment-details.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "payment-details",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/residents/residents-03-portal-navigation.webp",
+        "actual": "/brand/feature-pages/residents/residents-03-portal-navigation.webp",
+        "loaded": true,
+        "position": "60% 50%",
+        "artworkMatches": true,
+        "section": "portal-navigation",
+        "expectedPosition": "60% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/residents/residents-04-resident-messaging.webp",
+        "actual": "/brand/feature-pages/residents/residents-04-resident-messaging.webp",
+        "loaded": true,
+        "position": "85% 50%",
+        "artworkMatches": true,
+        "section": "resident-messaging",
+        "expectedPosition": "85% 50%"
+      }
+    ]
+  },
+  {
+    "page": "commercial",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/commercial/commercial-01-financial-reports.webp",
+        "actual": "/brand/feature-pages/commercial/commercial-01-financial-reports.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "financial-reports",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/commercial/commercial-02-lease-activity.webp",
+        "actual": "/brand/feature-pages/commercial/commercial-02-lease-activity.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "lease-activity",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/commercial/commercial-03-shared-charges.webp",
+        "actual": "/brand/feature-pages/commercial/commercial-03-shared-charges.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "shared-charges",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/commercial/commercial-04-payment-details.webp",
+        "actual": "/brand/feature-pages/commercial/commercial-04-payment-details.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "payment-details",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "commercial",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/commercial/commercial-01-financial-reports.webp",
+        "actual": "/brand/feature-pages/commercial/commercial-01-financial-reports.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "financial-reports",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/commercial/commercial-02-lease-activity.webp",
+        "actual": "/brand/feature-pages/commercial/commercial-02-lease-activity.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "lease-activity",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/commercial/commercial-03-shared-charges.webp",
+        "actual": "/brand/feature-pages/commercial/commercial-03-shared-charges.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "shared-charges",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/commercial/commercial-04-payment-details.webp",
+        "actual": "/brand/feature-pages/commercial/commercial-04-payment-details.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "payment-details",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "commercial",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/commercial/commercial-01-financial-reports.webp",
+        "actual": "/brand/feature-pages/commercial/commercial-01-financial-reports.webp",
+        "loaded": true,
+        "position": "75% 50%",
+        "artworkMatches": true,
+        "section": "financial-reports",
+        "expectedPosition": "75% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/commercial/commercial-02-lease-activity.webp",
+        "actual": "/brand/feature-pages/commercial/commercial-02-lease-activity.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "lease-activity",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/commercial/commercial-03-shared-charges.webp",
+        "actual": "/brand/feature-pages/commercial/commercial-03-shared-charges.webp",
+        "loaded": true,
+        "position": "65% 50%",
+        "artworkMatches": true,
+        "section": "shared-charges",
+        "expectedPosition": "65% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/commercial/commercial-04-payment-details.webp",
+        "actual": "/brand/feature-pages/commercial/commercial-04-payment-details.webp",
+        "loaded": true,
+        "position": "65% 50%",
+        "artworkMatches": true,
+        "section": "payment-details",
+        "expectedPosition": "65% 50%"
+      }
+    ]
+  },
+  {
+    "page": "bank-sync",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/bank-sync/bank-sync-01-reconciliation-07c4e516.webp",
+        "actual": "/brand/feature-pages/bank-sync/bank-sync-01-reconciliation-07c4e516.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "reconciliation",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/bank-sync/bank-sync-02-account-balances-298af365.webp",
+        "actual": "/brand/feature-pages/bank-sync/bank-sync-02-account-balances-298af365.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "account-balances",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/bank-sync/bank-sync-03-transaction-filters-26f151fc.webp",
+        "actual": "/brand/feature-pages/bank-sync/bank-sync-03-transaction-filters-26f151fc.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "transaction-filters",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/bank-sync/bank-sync-04-bank-connections-b72d23d2.webp",
+        "actual": "/brand/feature-pages/bank-sync/bank-sync-04-bank-connections-b72d23d2.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "bank-connections",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "bank-sync",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/bank-sync/bank-sync-01-reconciliation-07c4e516.webp",
+        "actual": "/brand/feature-pages/bank-sync/bank-sync-01-reconciliation-07c4e516.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "reconciliation",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/bank-sync/bank-sync-02-account-balances-298af365.webp",
+        "actual": "/brand/feature-pages/bank-sync/bank-sync-02-account-balances-298af365.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "account-balances",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/bank-sync/bank-sync-03-transaction-filters-26f151fc.webp",
+        "actual": "/brand/feature-pages/bank-sync/bank-sync-03-transaction-filters-26f151fc.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "transaction-filters",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/bank-sync/bank-sync-04-bank-connections-b72d23d2.webp",
+        "actual": "/brand/feature-pages/bank-sync/bank-sync-04-bank-connections-b72d23d2.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "bank-connections",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "bank-sync",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/bank-sync/bank-sync-01-reconciliation-07c4e516.webp",
+        "actual": "/brand/feature-pages/bank-sync/bank-sync-01-reconciliation-07c4e516.webp",
+        "loaded": true,
+        "position": "60% 50%",
+        "artworkMatches": true,
+        "section": "reconciliation",
+        "expectedPosition": "60% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/bank-sync/bank-sync-02-account-balances-298af365.webp",
+        "actual": "/brand/feature-pages/bank-sync/bank-sync-02-account-balances-298af365.webp",
+        "loaded": true,
+        "position": "65% 50%",
+        "artworkMatches": true,
+        "section": "account-balances",
+        "expectedPosition": "65% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/bank-sync/bank-sync-03-transaction-filters-26f151fc.webp",
+        "actual": "/brand/feature-pages/bank-sync/bank-sync-03-transaction-filters-26f151fc.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "transaction-filters",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/bank-sync/bank-sync-04-bank-connections-b72d23d2.webp",
+        "actual": "/brand/feature-pages/bank-sync/bank-sync-04-bank-connections-b72d23d2.webp",
+        "loaded": true,
+        "position": "60% 50%",
+        "artworkMatches": true,
+        "section": "bank-connections",
+        "expectedPosition": "60% 50%"
+      }
+    ]
+  },
+  {
+    "page": "single-family",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/single-family/single-family-01-payment-activity.webp",
+        "actual": "/brand/feature-pages/single-family/single-family-01-payment-activity.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "payment-activity",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/single-family/single-family-02-resident-requests.webp",
+        "actual": "/brand/feature-pages/single-family/single-family-02-resident-requests.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-requests",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/single-family/single-family-03-rental-applications.webp",
+        "actual": "/brand/feature-pages/single-family/single-family-03-rental-applications.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "rental-applications",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/single-family/single-family-04-applicant-information.webp",
+        "actual": "/brand/feature-pages/single-family/single-family-04-applicant-information.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "applicant-information",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "single-family",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/single-family/single-family-01-payment-activity.webp",
+        "actual": "/brand/feature-pages/single-family/single-family-01-payment-activity.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "payment-activity",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/single-family/single-family-02-resident-requests.webp",
+        "actual": "/brand/feature-pages/single-family/single-family-02-resident-requests.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-requests",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/single-family/single-family-03-rental-applications.webp",
+        "actual": "/brand/feature-pages/single-family/single-family-03-rental-applications.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "rental-applications",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/single-family/single-family-04-applicant-information.webp",
+        "actual": "/brand/feature-pages/single-family/single-family-04-applicant-information.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "applicant-information",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "single-family",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/single-family/single-family-01-payment-activity.webp",
+        "actual": "/brand/feature-pages/single-family/single-family-01-payment-activity.webp",
+        "loaded": true,
+        "position": "60% 50%",
+        "artworkMatches": true,
+        "section": "payment-activity",
+        "expectedPosition": "60% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/single-family/single-family-02-resident-requests.webp",
+        "actual": "/brand/feature-pages/single-family/single-family-02-resident-requests.webp",
+        "loaded": true,
+        "position": "60% 50%",
+        "artworkMatches": true,
+        "section": "resident-requests",
+        "expectedPosition": "60% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/single-family/single-family-03-rental-applications.webp",
+        "actual": "/brand/feature-pages/single-family/single-family-03-rental-applications.webp",
+        "loaded": true,
+        "position": "65% 50%",
+        "artworkMatches": true,
+        "section": "rental-applications",
+        "expectedPosition": "65% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/single-family/single-family-04-applicant-information.webp",
+        "actual": "/brand/feature-pages/single-family/single-family-04-applicant-information.webp",
+        "loaded": true,
+        "position": "65% 50%",
+        "artworkMatches": true,
+        "section": "applicant-information",
+        "expectedPosition": "65% 50%"
+      }
+    ]
+  },
+  {
+    "page": "communication-tools",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/communication-tools/communication-tools-01-resident-conversations.webp",
+        "actual": "/brand/feature-pages/communication-tools/communication-tools-01-resident-conversations.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-conversations",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/communication-tools/communication-tools-02-property-updates.webp",
+        "actual": "/brand/feature-pages/communication-tools/communication-tools-02-property-updates.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "property-updates",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/communication-tools/communication-tools-03-message-preparation.webp",
+        "actual": "/brand/feature-pages/communication-tools/communication-tools-03-message-preparation.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "message-preparation",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/communication-tools/communication-tools-04-communication-history.webp",
+        "actual": "/brand/feature-pages/communication-tools/communication-tools-04-communication-history.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "communication-history",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "communication-tools",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/communication-tools/communication-tools-01-resident-conversations.webp",
+        "actual": "/brand/feature-pages/communication-tools/communication-tools-01-resident-conversations.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-conversations",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/communication-tools/communication-tools-02-property-updates.webp",
+        "actual": "/brand/feature-pages/communication-tools/communication-tools-02-property-updates.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "property-updates",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/communication-tools/communication-tools-03-message-preparation.webp",
+        "actual": "/brand/feature-pages/communication-tools/communication-tools-03-message-preparation.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "message-preparation",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/communication-tools/communication-tools-04-communication-history.webp",
+        "actual": "/brand/feature-pages/communication-tools/communication-tools-04-communication-history.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "communication-history",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "communication-tools",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/communication-tools/communication-tools-01-resident-conversations.webp",
+        "actual": "/brand/feature-pages/communication-tools/communication-tools-01-resident-conversations.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-conversations",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/communication-tools/communication-tools-02-property-updates.webp",
+        "actual": "/brand/feature-pages/communication-tools/communication-tools-02-property-updates.webp",
+        "loaded": true,
+        "position": "70% 50%",
+        "artworkMatches": true,
+        "section": "property-updates",
+        "expectedPosition": "70% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/communication-tools/communication-tools-03-message-preparation.webp",
+        "actual": "/brand/feature-pages/communication-tools/communication-tools-03-message-preparation.webp",
+        "loaded": true,
+        "position": "65% 50%",
+        "artworkMatches": true,
+        "section": "message-preparation",
+        "expectedPosition": "65% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/communication-tools/communication-tools-04-communication-history.webp",
+        "actual": "/brand/feature-pages/communication-tools/communication-tools-04-communication-history.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "communication-history",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "tenant-management",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/tenant-management/tenant-management-01-tenant-requests.webp",
+        "actual": "/brand/feature-pages/tenant-management/tenant-management-01-tenant-requests.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "tenant-requests",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/tenant-management/tenant-management-02-resident-portal.webp",
+        "actual": "/brand/feature-pages/tenant-management/tenant-management-02-resident-portal.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-portal",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/tenant-management/tenant-management-03-tenant-messaging.webp",
+        "actual": "/brand/feature-pages/tenant-management/tenant-management-03-tenant-messaging.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "tenant-messaging",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/tenant-management/tenant-management-04-tenant-files.webp",
+        "actual": "/brand/feature-pages/tenant-management/tenant-management-04-tenant-files.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "tenant-files",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "tenant-management",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/tenant-management/tenant-management-01-tenant-requests.webp",
+        "actual": "/brand/feature-pages/tenant-management/tenant-management-01-tenant-requests.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "tenant-requests",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/tenant-management/tenant-management-02-resident-portal.webp",
+        "actual": "/brand/feature-pages/tenant-management/tenant-management-02-resident-portal.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-portal",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/tenant-management/tenant-management-03-tenant-messaging.webp",
+        "actual": "/brand/feature-pages/tenant-management/tenant-management-03-tenant-messaging.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "tenant-messaging",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/tenant-management/tenant-management-04-tenant-files.webp",
+        "actual": "/brand/feature-pages/tenant-management/tenant-management-04-tenant-files.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "tenant-files",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "tenant-management",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/tenant-management/tenant-management-01-tenant-requests.webp",
+        "actual": "/brand/feature-pages/tenant-management/tenant-management-01-tenant-requests.webp",
+        "loaded": true,
+        "position": "60% 50%",
+        "artworkMatches": true,
+        "section": "tenant-requests",
+        "expectedPosition": "60% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/tenant-management/tenant-management-02-resident-portal.webp",
+        "actual": "/brand/feature-pages/tenant-management/tenant-management-02-resident-portal.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-portal",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/tenant-management/tenant-management-03-tenant-messaging.webp",
+        "actual": "/brand/feature-pages/tenant-management/tenant-management-03-tenant-messaging.webp",
+        "loaded": true,
+        "position": "60% 50%",
+        "artworkMatches": true,
+        "section": "tenant-messaging",
+        "expectedPosition": "60% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/tenant-management/tenant-management-04-tenant-files.webp",
+        "actual": "/brand/feature-pages/tenant-management/tenant-management-04-tenant-files.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "tenant-files",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "storage",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/storage/storage-01-file-uploads.webp",
+        "actual": "/brand/feature-pages/storage/storage-01-file-uploads.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "file-uploads",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/storage/storage-02-file-filters.webp",
+        "actual": "/brand/feature-pages/storage/storage-02-file-filters.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "file-filters",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/storage/storage-03-library-search.webp",
+        "actual": "/brand/feature-pages/storage/storage-03-library-search.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "library-search",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/storage/storage-04-file-details.webp",
+        "actual": "/brand/feature-pages/storage/storage-04-file-details.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "file-details",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "storage",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/storage/storage-01-file-uploads.webp",
+        "actual": "/brand/feature-pages/storage/storage-01-file-uploads.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "file-uploads",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/storage/storage-02-file-filters.webp",
+        "actual": "/brand/feature-pages/storage/storage-02-file-filters.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "file-filters",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/storage/storage-03-library-search.webp",
+        "actual": "/brand/feature-pages/storage/storage-03-library-search.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "library-search",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/storage/storage-04-file-details.webp",
+        "actual": "/brand/feature-pages/storage/storage-04-file-details.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "file-details",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "storage",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/storage/storage-01-file-uploads.webp",
+        "actual": "/brand/feature-pages/storage/storage-01-file-uploads.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "file-uploads",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/storage/storage-02-file-filters.webp",
+        "actual": "/brand/feature-pages/storage/storage-02-file-filters.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "file-filters",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/storage/storage-03-library-search.webp",
+        "actual": "/brand/feature-pages/storage/storage-03-library-search.webp",
+        "loaded": true,
+        "position": "75% 50%",
+        "artworkMatches": true,
+        "section": "library-search",
+        "expectedPosition": "75% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/storage/storage-04-file-details.webp",
+        "actual": "/brand/feature-pages/storage/storage-04-file-details.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "file-details",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "multifamily",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/multifamily/multifamily-01-rental-applications.webp",
+        "actual": "/brand/feature-pages/multifamily/multifamily-01-rental-applications.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "rental-applications",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/multifamily/multifamily-02-income-and-expenses.webp",
+        "actual": "/brand/feature-pages/multifamily/multifamily-02-income-and-expenses.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "income-and-expenses",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/multifamily/multifamily-03-applicant-information.webp",
+        "actual": "/brand/feature-pages/multifamily/multifamily-03-applicant-information.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "applicant-information",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/multifamily/multifamily-04-leasing-documents.webp",
+        "actual": "/brand/feature-pages/multifamily/multifamily-04-leasing-documents.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "leasing-documents",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "multifamily",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/multifamily/multifamily-01-rental-applications.webp",
+        "actual": "/brand/feature-pages/multifamily/multifamily-01-rental-applications.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "rental-applications",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/multifamily/multifamily-02-income-and-expenses.webp",
+        "actual": "/brand/feature-pages/multifamily/multifamily-02-income-and-expenses.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "income-and-expenses",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/multifamily/multifamily-03-applicant-information.webp",
+        "actual": "/brand/feature-pages/multifamily/multifamily-03-applicant-information.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "applicant-information",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/multifamily/multifamily-04-leasing-documents.webp",
+        "actual": "/brand/feature-pages/multifamily/multifamily-04-leasing-documents.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "leasing-documents",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "multifamily",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/multifamily/multifamily-01-rental-applications.webp",
+        "actual": "/brand/feature-pages/multifamily/multifamily-01-rental-applications.webp",
+        "loaded": true,
+        "position": "60% 50%",
+        "artworkMatches": true,
+        "section": "rental-applications",
+        "expectedPosition": "60% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/multifamily/multifamily-02-income-and-expenses.webp",
+        "actual": "/brand/feature-pages/multifamily/multifamily-02-income-and-expenses.webp",
+        "loaded": true,
+        "position": "65% 50%",
+        "artworkMatches": true,
+        "section": "income-and-expenses",
+        "expectedPosition": "65% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/multifamily/multifamily-03-applicant-information.webp",
+        "actual": "/brand/feature-pages/multifamily/multifamily-03-applicant-information.webp",
+        "loaded": true,
+        "position": "60% 50%",
+        "artworkMatches": true,
+        "section": "applicant-information",
+        "expectedPosition": "60% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/multifamily/multifamily-04-leasing-documents.webp",
+        "actual": "/brand/feature-pages/multifamily/multifamily-04-leasing-documents.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "leasing-documents",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "showings",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/showings/showings-01-showing-calendar.webp",
+        "actual": "/brand/feature-pages/showings/showings-01-showing-calendar.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "showing-calendar",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/showings/showings-02-property-context.webp",
+        "actual": "/brand/feature-pages/showings/showings-02-property-context.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "property-context",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/showings/showings-03-prospect-details.webp",
+        "actual": "/brand/feature-pages/showings/showings-03-prospect-details.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "prospect-details",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/showings/showings-04-showing-follow-up.webp",
+        "actual": "/brand/feature-pages/showings/showings-04-showing-follow-up.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "showing-follow-up",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "showings",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/showings/showings-01-showing-calendar.webp",
+        "actual": "/brand/feature-pages/showings/showings-01-showing-calendar.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "showing-calendar",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/showings/showings-02-property-context.webp",
+        "actual": "/brand/feature-pages/showings/showings-02-property-context.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "property-context",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/showings/showings-03-prospect-details.webp",
+        "actual": "/brand/feature-pages/showings/showings-03-prospect-details.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "prospect-details",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/showings/showings-04-showing-follow-up.webp",
+        "actual": "/brand/feature-pages/showings/showings-04-showing-follow-up.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "showing-follow-up",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "showings",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/showings/showings-01-showing-calendar.webp",
+        "actual": "/brand/feature-pages/showings/showings-01-showing-calendar.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "showing-calendar",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/showings/showings-02-property-context.webp",
+        "actual": "/brand/feature-pages/showings/showings-02-property-context.webp",
+        "loaded": true,
+        "position": "65% 50%",
+        "artworkMatches": true,
+        "section": "property-context",
+        "expectedPosition": "65% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/showings/showings-03-prospect-details.webp",
+        "actual": "/brand/feature-pages/showings/showings-03-prospect-details.webp",
+        "loaded": true,
+        "position": "65% 50%",
+        "artworkMatches": true,
+        "section": "prospect-details",
+        "expectedPosition": "65% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/showings/showings-04-showing-follow-up.webp",
+        "actual": "/brand/feature-pages/showings/showings-04-showing-follow-up.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "showing-follow-up",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "workflows",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/workflows/workflows-01-workflow-builder.webp",
+        "actual": "/brand/feature-pages/workflows/workflows-01-workflow-builder.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "workflow-builder",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/workflows/workflows-02-triggers-and-conditions.webp",
+        "actual": "/brand/feature-pages/workflows/workflows-02-triggers-and-conditions.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "triggers-and-conditions",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/workflows/workflows-03-activity-overview.webp",
+        "actual": "/brand/feature-pages/workflows/workflows-03-activity-overview.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "activity-overview",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/workflows/workflows-04-workflow-history.webp",
+        "actual": "/brand/feature-pages/workflows/workflows-04-workflow-history.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "workflow-history",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "workflows",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/workflows/workflows-01-workflow-builder.webp",
+        "actual": "/brand/feature-pages/workflows/workflows-01-workflow-builder.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "workflow-builder",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/workflows/workflows-02-triggers-and-conditions.webp",
+        "actual": "/brand/feature-pages/workflows/workflows-02-triggers-and-conditions.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "triggers-and-conditions",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/workflows/workflows-03-activity-overview.webp",
+        "actual": "/brand/feature-pages/workflows/workflows-03-activity-overview.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "activity-overview",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/workflows/workflows-04-workflow-history.webp",
+        "actual": "/brand/feature-pages/workflows/workflows-04-workflow-history.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "workflow-history",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "workflows",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/workflows/workflows-01-workflow-builder.webp",
+        "actual": "/brand/feature-pages/workflows/workflows-01-workflow-builder.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "workflow-builder",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/workflows/workflows-02-triggers-and-conditions.webp",
+        "actual": "/brand/feature-pages/workflows/workflows-02-triggers-and-conditions.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "triggers-and-conditions",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/workflows/workflows-03-activity-overview.webp",
+        "actual": "/brand/feature-pages/workflows/workflows-03-activity-overview.webp",
+        "loaded": true,
+        "position": "55% 50%",
+        "artworkMatches": true,
+        "section": "activity-overview",
+        "expectedPosition": "55% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/workflows/workflows-04-workflow-history.webp",
+        "actual": "/brand/feature-pages/workflows/workflows-04-workflow-history.webp",
+        "loaded": true,
+        "position": "60% 50%",
+        "artworkMatches": true,
+        "section": "workflow-history",
+        "expectedPosition": "60% 50%"
+      }
+    ]
+  },
+  {
+    "page": "owners",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/owners/owners-01-owner-reports.webp",
+        "actual": "/brand/feature-pages/owners/owners-01-owner-reports.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "owner-reports",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/owners/owners-02-property-requests.webp",
+        "actual": "/brand/feature-pages/owners/owners-02-property-requests.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "property-requests",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/owners/owners-03-financial-context.webp",
+        "actual": "/brand/feature-pages/owners/owners-03-financial-context.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "financial-context",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/owners/owners-04-portfolio-overview.webp",
+        "actual": "/brand/feature-pages/owners/owners-04-portfolio-overview.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "portfolio-overview",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "owners",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/owners/owners-01-owner-reports.webp",
+        "actual": "/brand/feature-pages/owners/owners-01-owner-reports.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "owner-reports",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/owners/owners-02-property-requests.webp",
+        "actual": "/brand/feature-pages/owners/owners-02-property-requests.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "property-requests",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/owners/owners-03-financial-context.webp",
+        "actual": "/brand/feature-pages/owners/owners-03-financial-context.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "financial-context",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/owners/owners-04-portfolio-overview.webp",
+        "actual": "/brand/feature-pages/owners/owners-04-portfolio-overview.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "portfolio-overview",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "owners",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/owners/owners-01-owner-reports.webp",
+        "actual": "/brand/feature-pages/owners/owners-01-owner-reports.webp",
+        "loaded": true,
+        "position": "65% 50%",
+        "artworkMatches": true,
+        "section": "owner-reports",
+        "expectedPosition": "65% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/owners/owners-02-property-requests.webp",
+        "actual": "/brand/feature-pages/owners/owners-02-property-requests.webp",
+        "loaded": true,
+        "position": "60% 50%",
+        "artworkMatches": true,
+        "section": "property-requests",
+        "expectedPosition": "60% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/owners/owners-03-financial-context.webp",
+        "actual": "/brand/feature-pages/owners/owners-03-financial-context.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "financial-context",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/owners/owners-04-portfolio-overview.webp",
+        "actual": "/brand/feature-pages/owners/owners-04-portfolio-overview.webp",
+        "loaded": true,
+        "position": "60% 50%",
+        "artworkMatches": true,
+        "section": "portfolio-overview",
+        "expectedPosition": "60% 50%"
+      }
+    ]
+  },
+  {
+    "page": "rapid-rent",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/rapid-rent/rapid-rent-01-rent-notifications.webp",
+        "actual": "/brand/feature-pages/rapid-rent/rapid-rent-01-rent-notifications.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "rent-notifications",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/rapid-rent/rapid-rent-02-payment-options.webp",
+        "actual": "/brand/feature-pages/rapid-rent/rapid-rent-02-payment-options.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "payment-options",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/rapid-rent/rapid-rent-03-payment-methods.webp",
+        "actual": "/brand/feature-pages/rapid-rent/rapid-rent-03-payment-methods.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "payment-methods",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/rapid-rent/rapid-rent-04-payment-history.webp",
+        "actual": "/brand/feature-pages/rapid-rent/rapid-rent-04-payment-history.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "payment-history",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "rapid-rent",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/rapid-rent/rapid-rent-01-rent-notifications.webp",
+        "actual": "/brand/feature-pages/rapid-rent/rapid-rent-01-rent-notifications.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "rent-notifications",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/rapid-rent/rapid-rent-02-payment-options.webp",
+        "actual": "/brand/feature-pages/rapid-rent/rapid-rent-02-payment-options.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "payment-options",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/rapid-rent/rapid-rent-03-payment-methods.webp",
+        "actual": "/brand/feature-pages/rapid-rent/rapid-rent-03-payment-methods.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "payment-methods",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/rapid-rent/rapid-rent-04-payment-history.webp",
+        "actual": "/brand/feature-pages/rapid-rent/rapid-rent-04-payment-history.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "payment-history",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "rapid-rent",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/rapid-rent/rapid-rent-01-rent-notifications.webp",
+        "actual": "/brand/feature-pages/rapid-rent/rapid-rent-01-rent-notifications.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "rent-notifications",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/rapid-rent/rapid-rent-02-payment-options.webp",
+        "actual": "/brand/feature-pages/rapid-rent/rapid-rent-02-payment-options.webp",
+        "loaded": true,
+        "position": "65% 50%",
+        "artworkMatches": true,
+        "section": "payment-options",
+        "expectedPosition": "65% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/rapid-rent/rapid-rent-03-payment-methods.webp",
+        "actual": "/brand/feature-pages/rapid-rent/rapid-rent-03-payment-methods.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "payment-methods",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/rapid-rent/rapid-rent-04-payment-history.webp",
+        "actual": "/brand/feature-pages/rapid-rent/rapid-rent-04-payment-history.webp",
+        "loaded": true,
+        "position": "55% 50%",
+        "artworkMatches": true,
+        "section": "payment-history",
+        "expectedPosition": "55% 50%"
+      }
+    ]
+  },
+  {
+    "page": "home-page",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/home-page/home-page-01-portfolio-overview.webp",
+        "actual": "/brand/feature-pages/home-page/home-page-01-portfolio-overview.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "portfolio-overview",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/home-page/home-page-02-lease-context.webp",
+        "actual": "/brand/feature-pages/home-page/home-page-02-lease-context.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "lease-context",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/home-page/home-page-03-resident-requests.webp",
+        "actual": "/brand/feature-pages/home-page/home-page-03-resident-requests.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-requests",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/home-page/home-page-04-recurring-work.webp",
+        "actual": "/brand/feature-pages/home-page/home-page-04-recurring-work.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "recurring-work",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "home-page",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/home-page/home-page-01-portfolio-overview.webp",
+        "actual": "/brand/feature-pages/home-page/home-page-01-portfolio-overview.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "portfolio-overview",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/home-page/home-page-02-lease-context.webp",
+        "actual": "/brand/feature-pages/home-page/home-page-02-lease-context.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "lease-context",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/home-page/home-page-03-resident-requests.webp",
+        "actual": "/brand/feature-pages/home-page/home-page-03-resident-requests.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-requests",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/home-page/home-page-04-recurring-work.webp",
+        "actual": "/brand/feature-pages/home-page/home-page-04-recurring-work.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "recurring-work",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "home-page",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/home-page/home-page-01-portfolio-overview.webp",
+        "actual": "/brand/feature-pages/home-page/home-page-01-portfolio-overview.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "portfolio-overview",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/home-page/home-page-02-lease-context.webp",
+        "actual": "/brand/feature-pages/home-page/home-page-02-lease-context.webp",
+        "loaded": true,
+        "position": "60% 50%",
+        "artworkMatches": true,
+        "section": "lease-context",
+        "expectedPosition": "60% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/home-page/home-page-03-resident-requests.webp",
+        "actual": "/brand/feature-pages/home-page/home-page-03-resident-requests.webp",
+        "loaded": true,
+        "position": "70% 50%",
+        "artworkMatches": true,
+        "section": "resident-requests",
+        "expectedPosition": "70% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/home-page/home-page-04-recurring-work.webp",
+        "actual": "/brand/feature-pages/home-page/home-page-04-recurring-work.webp",
+        "loaded": true,
+        "position": "60% 50%",
+        "artworkMatches": true,
+        "section": "recurring-work",
+        "expectedPosition": "60% 50%"
+      }
+    ]
+  },
+  {
+    "page": "self-storage",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/self-storage/self-storage-01-facility-overview.webp",
+        "actual": "/brand/feature-pages/self-storage/self-storage-01-facility-overview.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "facility-overview",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/self-storage/self-storage-02-payment-records.webp",
+        "actual": "/brand/feature-pages/self-storage/self-storage-02-payment-records.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "payment-records",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/self-storage/self-storage-03-property-files.webp",
+        "actual": "/brand/feature-pages/self-storage/self-storage-03-property-files.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "property-files",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/self-storage/self-storage-04-recurring-tasks.webp",
+        "actual": "/brand/feature-pages/self-storage/self-storage-04-recurring-tasks.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "recurring-tasks",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "self-storage",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/self-storage/self-storage-01-facility-overview.webp",
+        "actual": "/brand/feature-pages/self-storage/self-storage-01-facility-overview.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "facility-overview",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/self-storage/self-storage-02-payment-records.webp",
+        "actual": "/brand/feature-pages/self-storage/self-storage-02-payment-records.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "payment-records",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/self-storage/self-storage-03-property-files.webp",
+        "actual": "/brand/feature-pages/self-storage/self-storage-03-property-files.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "property-files",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/self-storage/self-storage-04-recurring-tasks.webp",
+        "actual": "/brand/feature-pages/self-storage/self-storage-04-recurring-tasks.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "recurring-tasks",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "self-storage",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/self-storage/self-storage-01-facility-overview.webp",
+        "actual": "/brand/feature-pages/self-storage/self-storage-01-facility-overview.webp",
+        "loaded": true,
+        "position": "70% 50%",
+        "artworkMatches": true,
+        "section": "facility-overview",
+        "expectedPosition": "70% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/self-storage/self-storage-02-payment-records.webp",
+        "actual": "/brand/feature-pages/self-storage/self-storage-02-payment-records.webp",
+        "loaded": true,
+        "position": "65% 50%",
+        "artworkMatches": true,
+        "section": "payment-records",
+        "expectedPosition": "65% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/self-storage/self-storage-03-property-files.webp",
+        "actual": "/brand/feature-pages/self-storage/self-storage-03-property-files.webp",
+        "loaded": true,
+        "position": "65% 50%",
+        "artworkMatches": true,
+        "section": "property-files",
+        "expectedPosition": "65% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/self-storage/self-storage-04-recurring-tasks.webp",
+        "actual": "/brand/feature-pages/self-storage/self-storage-04-recurring-tasks.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "recurring-tasks",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "operations",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/operations/operations-01-resident-requests.webp",
+        "actual": "/brand/feature-pages/operations/operations-01-resident-requests.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-requests",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/operations/operations-02-portfolio-overview.webp",
+        "actual": "/brand/feature-pages/operations/operations-02-portfolio-overview.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "portfolio-overview",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/operations/operations-03-contact-directory.webp",
+        "actual": "/brand/feature-pages/operations/operations-03-contact-directory.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "contact-directory",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/operations/operations-04-supporting-files.webp",
+        "actual": "/brand/feature-pages/operations/operations-04-supporting-files.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "supporting-files",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "operations",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/operations/operations-01-resident-requests.webp",
+        "actual": "/brand/feature-pages/operations/operations-01-resident-requests.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "resident-requests",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/operations/operations-02-portfolio-overview.webp",
+        "actual": "/brand/feature-pages/operations/operations-02-portfolio-overview.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "portfolio-overview",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/operations/operations-03-contact-directory.webp",
+        "actual": "/brand/feature-pages/operations/operations-03-contact-directory.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "contact-directory",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/operations/operations-04-supporting-files.webp",
+        "actual": "/brand/feature-pages/operations/operations-04-supporting-files.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "supporting-files",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "operations",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/operations/operations-01-resident-requests.webp",
+        "actual": "/brand/feature-pages/operations/operations-01-resident-requests.webp",
+        "loaded": true,
+        "position": "65% 50%",
+        "artworkMatches": true,
+        "section": "resident-requests",
+        "expectedPosition": "65% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/operations/operations-02-portfolio-overview.webp",
+        "actual": "/brand/feature-pages/operations/operations-02-portfolio-overview.webp",
+        "loaded": true,
+        "position": "55% 50%",
+        "artworkMatches": true,
+        "section": "portfolio-overview",
+        "expectedPosition": "55% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/operations/operations-03-contact-directory.webp",
+        "actual": "/brand/feature-pages/operations/operations-03-contact-directory.webp",
+        "loaded": true,
+        "position": "65% 50%",
+        "artworkMatches": true,
+        "section": "contact-directory",
+        "expectedPosition": "65% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/operations/operations-04-supporting-files.webp",
+        "actual": "/brand/feature-pages/operations/operations-04-supporting-files.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "supporting-files",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "quickbooks",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/quickbooks/quickbooks-01-integration-settings.webp",
+        "actual": "/brand/feature-pages/quickbooks/quickbooks-01-integration-settings.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "integration-settings",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/quickbooks/quickbooks-02-sync-controls.webp",
+        "actual": "/brand/feature-pages/quickbooks/quickbooks-02-sync-controls.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "sync-controls",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/quickbooks/quickbooks-03-account-organization.webp",
+        "actual": "/brand/feature-pages/quickbooks/quickbooks-03-account-organization.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "account-organization",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/quickbooks/quickbooks-04-bank-connections.webp",
+        "actual": "/brand/feature-pages/quickbooks/quickbooks-04-bank-connections.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "bank-connections",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "quickbooks",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/quickbooks/quickbooks-01-integration-settings.webp",
+        "actual": "/brand/feature-pages/quickbooks/quickbooks-01-integration-settings.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "integration-settings",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/quickbooks/quickbooks-02-sync-controls.webp",
+        "actual": "/brand/feature-pages/quickbooks/quickbooks-02-sync-controls.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "sync-controls",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/quickbooks/quickbooks-03-account-organization.webp",
+        "actual": "/brand/feature-pages/quickbooks/quickbooks-03-account-organization.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "account-organization",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/quickbooks/quickbooks-04-bank-connections.webp",
+        "actual": "/brand/feature-pages/quickbooks/quickbooks-04-bank-connections.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "bank-connections",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "quickbooks",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/quickbooks/quickbooks-01-integration-settings.webp",
+        "actual": "/brand/feature-pages/quickbooks/quickbooks-01-integration-settings.webp",
+        "loaded": true,
+        "position": "60% 50%",
+        "artworkMatches": true,
+        "section": "integration-settings",
+        "expectedPosition": "60% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/quickbooks/quickbooks-02-sync-controls.webp",
+        "actual": "/brand/feature-pages/quickbooks/quickbooks-02-sync-controls.webp",
+        "loaded": true,
+        "position": "55% 50%",
+        "artworkMatches": true,
+        "section": "sync-controls",
+        "expectedPosition": "55% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/quickbooks/quickbooks-03-account-organization.webp",
+        "actual": "/brand/feature-pages/quickbooks/quickbooks-03-account-organization.webp",
+        "loaded": true,
+        "position": "60% 50%",
+        "artworkMatches": true,
+        "section": "account-organization",
+        "expectedPosition": "60% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/quickbooks/quickbooks-04-bank-connections.webp",
+        "actual": "/brand/feature-pages/quickbooks/quickbooks-04-bank-connections.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "bank-connections",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "mobile-apps",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/mobile-apps/mobile-apps-01-across-devices.webp",
+        "actual": "/brand/feature-pages/mobile-apps/mobile-apps-01-across-devices.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "across-devices",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/mobile-apps/mobile-apps-02-file-capture.webp",
+        "actual": "/brand/feature-pages/mobile-apps/mobile-apps-02-file-capture.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "file-capture",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/mobile-apps/mobile-apps-03-mobile-navigation.webp",
+        "actual": "/brand/feature-pages/mobile-apps/mobile-apps-03-mobile-navigation.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "mobile-navigation",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/mobile-apps/mobile-apps-04-field-inspections.webp",
+        "actual": "/brand/feature-pages/mobile-apps/mobile-apps-04-field-inspections.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "field-inspections",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "mobile-apps",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/mobile-apps/mobile-apps-01-across-devices.webp",
+        "actual": "/brand/feature-pages/mobile-apps/mobile-apps-01-across-devices.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "across-devices",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/mobile-apps/mobile-apps-02-file-capture.webp",
+        "actual": "/brand/feature-pages/mobile-apps/mobile-apps-02-file-capture.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "file-capture",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/mobile-apps/mobile-apps-03-mobile-navigation.webp",
+        "actual": "/brand/feature-pages/mobile-apps/mobile-apps-03-mobile-navigation.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "mobile-navigation",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/mobile-apps/mobile-apps-04-field-inspections.webp",
+        "actual": "/brand/feature-pages/mobile-apps/mobile-apps-04-field-inspections.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "field-inspections",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "mobile-apps",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/mobile-apps/mobile-apps-01-across-devices.webp",
+        "actual": "/brand/feature-pages/mobile-apps/mobile-apps-01-across-devices.webp",
+        "loaded": true,
+        "position": "70% 50%",
+        "artworkMatches": true,
+        "section": "across-devices",
+        "expectedPosition": "70% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/mobile-apps/mobile-apps-02-file-capture.webp",
+        "actual": "/brand/feature-pages/mobile-apps/mobile-apps-02-file-capture.webp",
+        "loaded": true,
+        "position": "65% 50%",
+        "artworkMatches": true,
+        "section": "file-capture",
+        "expectedPosition": "65% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/mobile-apps/mobile-apps-03-mobile-navigation.webp",
+        "actual": "/brand/feature-pages/mobile-apps/mobile-apps-03-mobile-navigation.webp",
+        "loaded": true,
+        "position": "70% 50%",
+        "artworkMatches": true,
+        "section": "mobile-navigation",
+        "expectedPosition": "70% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/mobile-apps/mobile-apps-04-field-inspections.webp",
+        "actual": "/brand/feature-pages/mobile-apps/mobile-apps-04-field-inspections.webp",
+        "loaded": true,
+        "position": "70% 50%",
+        "artworkMatches": true,
+        "section": "field-inspections",
+        "expectedPosition": "70% 50%"
+      }
+    ]
+  },
+  {
+    "page": "listing-and-advertising",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/listing-and-advertising/listing-and-advertising-01-applications-6c16572c.webp",
+        "actual": "/brand/feature-pages/listing-and-advertising/listing-and-advertising-01-applications-6c16572c.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "applications",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/listing-and-advertising/listing-and-advertising-02-channels-cc2a4261.webp",
+        "actual": "/brand/feature-pages/listing-and-advertising/listing-and-advertising-02-channels-cc2a4261.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "listing-channels",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/listing-and-advertising/listing-and-advertising-03-websites-a6a1b59c.webp",
+        "actual": "/brand/feature-pages/listing-and-advertising/listing-and-advertising-03-websites-a6a1b59c.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "property-websites",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/listing-and-advertising/listing-and-advertising-04-updates-78fc6857.webp",
+        "actual": "/brand/feature-pages/listing-and-advertising/listing-and-advertising-04-updates-78fc6857.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "listing-updates",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "listing-and-advertising",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/listing-and-advertising/listing-and-advertising-01-applications-6c16572c.webp",
+        "actual": "/brand/feature-pages/listing-and-advertising/listing-and-advertising-01-applications-6c16572c.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "applications",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/listing-and-advertising/listing-and-advertising-02-channels-cc2a4261.webp",
+        "actual": "/brand/feature-pages/listing-and-advertising/listing-and-advertising-02-channels-cc2a4261.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "listing-channels",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/listing-and-advertising/listing-and-advertising-03-websites-a6a1b59c.webp",
+        "actual": "/brand/feature-pages/listing-and-advertising/listing-and-advertising-03-websites-a6a1b59c.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "property-websites",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/listing-and-advertising/listing-and-advertising-04-updates-78fc6857.webp",
+        "actual": "/brand/feature-pages/listing-and-advertising/listing-and-advertising-04-updates-78fc6857.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "listing-updates",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "listing-and-advertising",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/listing-and-advertising/listing-and-advertising-01-applications-6c16572c.webp",
+        "actual": "/brand/feature-pages/listing-and-advertising/listing-and-advertising-01-applications-6c16572c.webp",
+        "loaded": true,
+        "position": "65% 50%",
+        "artworkMatches": true,
+        "section": "applications",
+        "expectedPosition": "65% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/listing-and-advertising/listing-and-advertising-02-channels-cc2a4261.webp",
+        "actual": "/brand/feature-pages/listing-and-advertising/listing-and-advertising-02-channels-cc2a4261.webp",
+        "loaded": true,
+        "position": "60% 50%",
+        "artworkMatches": true,
+        "section": "listing-channels",
+        "expectedPosition": "60% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/listing-and-advertising/listing-and-advertising-03-websites-a6a1b59c.webp",
+        "actual": "/brand/feature-pages/listing-and-advertising/listing-and-advertising-03-websites-a6a1b59c.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "property-websites",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/listing-and-advertising/listing-and-advertising-04-updates-78fc6857.webp",
+        "actual": "/brand/feature-pages/listing-and-advertising/listing-and-advertising-04-updates-78fc6857.webp",
+        "loaded": true,
+        "position": "60% 50%",
+        "artworkMatches": true,
+        "section": "listing-updates",
+        "expectedPosition": "60% 50%"
+      }
+    ]
+  },
+  {
+    "page": "accounting",
+    "width": 1440,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/accounting/accounting-01-income-and-expenses-d478d72d.webp",
+        "actual": "/brand/feature-pages/accounting/accounting-01-income-and-expenses-d478d72d.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "income-expenses",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/accounting/accounting-02-connected-accounts-f041e74a.webp",
+        "actual": "/brand/feature-pages/accounting/accounting-02-connected-accounts-f041e74a.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "connected-accounts",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/accounting/accounting-03-financial-reports-0dbc7eca.webp",
+        "actual": "/brand/feature-pages/accounting/accounting-03-financial-reports-0dbc7eca.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "financial-reports",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/accounting/accounting-04-expense-capture-0ee8a0aa.webp",
+        "actual": "/brand/feature-pages/accounting/accounting-04-expense-capture-0ee8a0aa.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "expense-capture",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "accounting",
+    "width": 768,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/accounting/accounting-01-income-and-expenses-d478d72d.webp",
+        "actual": "/brand/feature-pages/accounting/accounting-01-income-and-expenses-d478d72d.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "income-expenses",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/accounting/accounting-02-connected-accounts-f041e74a.webp",
+        "actual": "/brand/feature-pages/accounting/accounting-02-connected-accounts-f041e74a.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "connected-accounts",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/accounting/accounting-03-financial-reports-0dbc7eca.webp",
+        "actual": "/brand/feature-pages/accounting/accounting-03-financial-reports-0dbc7eca.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "financial-reports",
+        "expectedPosition": "50% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/accounting/accounting-04-expense-capture-0ee8a0aa.webp",
+        "actual": "/brand/feature-pages/accounting/accounting-04-expense-capture-0ee8a0aa.webp",
+        "loaded": true,
+        "position": "50% 50%",
+        "artworkMatches": true,
+        "section": "expense-capture",
+        "expectedPosition": "50% 50%"
+      }
+    ]
+  },
+  {
+    "page": "accounting",
+    "width": 390,
+    "status": 200,
+    "overflow": false,
+    "checks": [
+      {
+        "expected": "/brand/feature-pages/accounting/accounting-01-income-and-expenses-d478d72d.webp",
+        "actual": "/brand/feature-pages/accounting/accounting-01-income-and-expenses-d478d72d.webp",
+        "loaded": true,
+        "position": "70% 50%",
+        "artworkMatches": true,
+        "section": "income-expenses",
+        "expectedPosition": "70% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/accounting/accounting-02-connected-accounts-f041e74a.webp",
+        "actual": "/brand/feature-pages/accounting/accounting-02-connected-accounts-f041e74a.webp",
+        "loaded": true,
+        "position": "80% 50%",
+        "artworkMatches": true,
+        "section": "connected-accounts",
+        "expectedPosition": "80% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/accounting/accounting-03-financial-reports-0dbc7eca.webp",
+        "actual": "/brand/feature-pages/accounting/accounting-03-financial-reports-0dbc7eca.webp",
+        "loaded": true,
+        "position": "55% 50%",
+        "artworkMatches": true,
+        "section": "financial-reports",
+        "expectedPosition": "55% 50%"
+      },
+      {
+        "expected": "/brand/feature-pages/accounting/accounting-04-expense-capture-0ee8a0aa.webp",
+        "actual": "/brand/feature-pages/accounting/accounting-04-expense-capture-0ee8a0aa.webp",
+        "loaded": true,
+        "position": "80% 50%",
+        "artworkMatches": true,
+        "section": "expense-capture",
+        "expectedPosition": "80% 50%"
+      }
+    ]
+  }
+]

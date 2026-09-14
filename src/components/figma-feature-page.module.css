@@ -81,6 +81,9 @@
   }
 }
 @media (max-width: 700px) {
+  .page .panelImage {
+    --responsive-panel-focus: var(--panel-focus, 50% center);
+  }
   .heroVisual {
     height: var(--hero-image-height);
   }

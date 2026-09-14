@@ -3,91 +3,182 @@
     "page": "workflows",
     "figmaNode": "157:5660",
     "requestedComposition": "Workflow canvas and trigger configuration",
-    "usedComposition": "Lease renewals workflow",
-    "usedNode": "157:5623"
+    "usedComposition": "Workflow canvas and trigger configuration",
+    "usedNode": "157:5660",
+    "previousSubstitution": {
+      "composition": "Lease renewals workflow",
+      "node": "157:5623"
+    },
+    "status": "resolved",
+    "asset": "/brand/feature-pages/artwork/157-5660-figma.svg",
+    "sha256": "710c4ab25a58cb1ba2ded2bef0ccc1be08db7679d02a11701d7a071e52cfa1f5"
   },
   {
     "page": "workflows",
     "figmaNode": "157:5744",
     "requestedComposition": "Baselane / Workflow activity \u2014 Drawer over status list",
-    "usedComposition": "Campaign delivery log",
-    "usedNode": "81:1380"
+    "usedComposition": "Baselane / Workflow activity \u2014 Drawer over status list",
+    "usedNode": "157:5744",
+    "previousSubstitution": {
+      "composition": "Campaign delivery log",
+      "node": "81:1380"
+    },
+    "status": "resolved",
+    "asset": "/brand/feature-pages/artwork/157-5744-figma.svg",
+    "sha256": "4a2988c1cb2fd51083f14fe8abd060b826fa1b7bb3f77c8242599d65f101c52f"
   },
   {
     "page": "rapid-rent",
     "figmaNode": "117:3285",
     "requestedComposition": "Auto-pay overlay",
-    "usedComposition": "Payments transaction table",
-    "usedNode": "113:3064"
+    "usedComposition": "Auto-pay overlay",
+    "usedNode": "117:3285",
+    "previousSubstitution": {
+      "composition": "Payments transaction table",
+      "node": "113:3064"
+    },
+    "status": "resolved",
+    "asset": "/brand/feature-pages/artwork/117-3285-figma.svg",
+    "sha256": "cb07be0f03c6069539b7afc1c4c80c7de425b77d8b73c73b5235cf97ef867a4a"
   },
   {
     "page": "rapid-rent",
     "figmaNode": "117:3292",
     "requestedComposition": "Rent and payment notifications",
-    "usedComposition": "Expiring tenant announcement",
-    "usedNode": "81:1350"
+    "usedComposition": "Rent and payment notifications",
+    "usedNode": "117:3292",
+    "previousSubstitution": {
+      "composition": "Expiring tenant announcement",
+      "node": "81:1350"
+    },
+    "status": "resolved",
+    "asset": "/brand/feature-pages/artwork/117-3292-figma.svg",
+    "sha256": "3ceaead277547273bc3c97ecb31ff249db75f24a800a839c653fc3c779b900a7"
   },
   {
     "page": "rapid-rent",
     "figmaNode": "117:3322",
     "requestedComposition": "Supported payment methods",
-    "usedComposition": "Payment method selection",
-    "usedNode": "101:2597"
+    "usedComposition": "Supported payment methods",
+    "usedNode": "117:3322",
+    "previousSubstitution": {
+      "composition": "Payment method selection",
+      "node": "101:2597"
+    },
+    "status": "resolved",
+    "asset": "/brand/feature-pages/artwork/117-3322-figma.svg",
+    "sha256": "657f2901737165adafe25fd9c5707167c3ccb6b26d0feec06135978707e45d79"
   },
   {
     "page": "operations",
     "figmaNode": "93:1887",
     "requestedComposition": "Owners \u00b7 Vendors \u00b7 Prospects layered directories",
-    "usedComposition": "Vendor directory and actions",
-    "usedNode": "152:5566"
+    "usedComposition": "Owners \u00b7 Vendors \u00b7 Prospects layered directories",
+    "usedNode": "93:1887",
+    "previousSubstitution": {
+      "composition": "Vendor directory and actions",
+      "node": "152:5566"
+    },
+    "status": "resolved",
+    "asset": "/brand/feature-pages/artwork/93-1887-figma.svg",
+    "sha256": "270a8aaba1d9a197718975a81d59e50e6040244a37fa3189c3a08a7642fa5ffe"
   },
   {
     "page": "quickbooks",
     "figmaNode": "119:3650",
     "requestedComposition": "General settings and QuickBooks",
-    "usedComposition": "05 \u00b7 QuickBooks connection \u00b7 Editable artwork",
-    "usedNode": "57:604"
+    "usedComposition": "General settings and QuickBooks",
+    "usedNode": "119:3650",
+    "previousSubstitution": {
+      "composition": "05 \u00b7 QuickBooks connection \u00b7 Editable artwork",
+      "node": "57:604"
+    },
+    "status": "resolved",
+    "asset": "/brand/feature-pages/artwork/119-3650-figma.svg",
+    "sha256": "3861d27879a9a1317f9c19e514e44ca3c982f5138d7352a5291a558431227350"
   },
   {
     "page": "quickbooks",
     "figmaNode": "119:3718",
     "requestedComposition": "QuickBooks sync configuration",
-    "usedComposition": "Bank Sync filters",
-    "usedNode": "62:1017"
+    "usedComposition": "QuickBooks sync configuration",
+    "usedNode": "119:3718",
+    "previousSubstitution": {
+      "composition": "Bank Sync filters",
+      "node": "62:1017"
+    },
+    "status": "resolved",
+    "asset": "/brand/feature-pages/artwork/119-3718-figma.svg",
+    "sha256": "b4de8c7c5b43b466e1ea7c8f9d79214cfa8355c4d022bc984b48f7755bf24ef8"
   },
   {
     "page": "mobile-apps",
     "figmaNode": "76:1194",
     "requestedComposition": "Your portfolio",
-    "usedComposition": "Portal navigation and dashboard",
-    "usedNode": "136:4956"
+    "usedComposition": "Your portfolio",
+    "usedNode": "76:1194",
+    "previousSubstitution": {
+      "composition": "Portal navigation and dashboard",
+      "node": "136:4956"
+    },
+    "status": "resolved",
+    "asset": "/brand/feature-pages/artwork/76-1194-figma.svg",
+    "sha256": "20bef332a4eebb7580eafd26e8fdee8041d7c1fba9498241b731dd132913fece"
   },
   {
     "page": "mobile-apps",
     "figmaNode": "76:1212",
     "requestedComposition": "Responsive dashboard views",
-    "usedComposition": "Baselane / Operations \u2014 Layered portfolio dashboard",
-    "usedNode": "165:6770"
+    "usedComposition": "Responsive dashboard views",
+    "usedNode": "76:1212",
+    "previousSubstitution": {
+      "composition": "Baselane / Operations \u2014 Layered portfolio dashboard",
+      "node": "165:6770"
+    },
+    "status": "resolved",
+    "asset": "/brand/feature-pages/artwork/76-1212-figma.svg",
+    "sha256": "07a5c66810caad7869b362cb3a7faeaf4894caa037258c6f5524ff6690348f7e"
   },
   {
     "page": "mobile-apps",
     "figmaNode": "76:1283",
     "requestedComposition": "Menu and home views",
-    "usedComposition": "Portal navigation and dashboard",
-    "usedNode": "136:4956"
+    "usedComposition": "Menu and home views",
+    "usedNode": "76:1283",
+    "previousSubstitution": {
+      "composition": "Portal navigation and dashboard",
+      "node": "136:4956"
+    },
+    "status": "resolved",
+    "asset": "/brand/feature-pages/artwork/76-1283-figma.svg",
+    "sha256": "c44a87908a957c77dfc5f387d868ba31993a4a64e6dfdfa1d80e4d2b4258f182"
   },
   {
     "page": "listing-and-advertising",
     "figmaNode": "49:296",
     "requestedComposition": "Innflow / Listing & Advertising / 01 \u00b7 Hero channels & status",
-    "usedComposition": "Listing channels \u00b7 raised Zillow selection",
-    "usedNode": "89:1790"
+    "usedComposition": "Innflow / Listing & Advertising / 01 \u00b7 Hero channels & status",
+    "usedNode": "49:296",
+    "previousSubstitution": {
+      "composition": "Listing channels \u00b7 raised Zillow selection",
+      "node": "89:1790"
+    },
+    "status": "resolved",
+    "asset": "/brand/feature-pages/artwork/49-296-figma.svg",
+    "sha256": "14f3898ae7fceeda49d1947524ac623d9b543a441e82855e108132d9754029cd"
   },
   {
     "page": "accounting",
     "figmaNode": "23:187",
     "requestedComposition": "Accounting / 06 \u00b7 Expense capture",
-    "usedComposition": "Upload files",
-    "usedNode": "140:5042"
+    "usedComposition": "Accounting / 06 \u00b7 Expense capture",
+    "usedNode": "23:187",
+    "previousSubstitution": {
+      "composition": "Upload files",
+      "node": "140:5042"
+    },
+    "status": "resolved",
+    "asset": "/brand/feature-pages/artwork/23-187-figma.svg",
+    "sha256": "219b12de826953564936267546a16641c7937c4831b0723c15142e04ab21232a"
   }
 ]

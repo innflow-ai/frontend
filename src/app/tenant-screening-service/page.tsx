@@ -1,11 +1,14 @@
-import type { Metadata } from "next";
-import { BaselaneScreening } from "@/components/baselane-screening";
-export const metadata: Metadata = {
-  title: "Screening workflows | innflow",
-  description:
-    "Coordinate document requests, review tasks, and team handoffs around your chosen screening provider with innflow.",
-  alternates: { canonical: "/tenant-screening-service" },
-};
+import { FigmaFeaturePage } from "@/components/figma-feature-page";
+import { getFeaturePageDesign } from "@/content/feature-pages";
+import { createPageMetadata } from "@/lib/metadata";
+
+const page = getFeaturePageDesign("tenant-screening");
+export const metadata = createPageMetadata({
+  title: `${page.name} | Innflow`,
+  description: page.description,
+  path: page.path,
+});
+
 export default function Page() {
-  return <BaselaneScreening />;
+  return <FigmaFeaturePage page={page} />;
 }

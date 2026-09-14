@@ -62,9 +62,29 @@ export type LatestBlogPostNavItem = {
   imageAlt: string;
 };
 
+const featureDestinations: Record<string, string> = {
+  Residential: "/residential",
+  Multifamily: "/multifamily",
+  Commercial: "/commercial",
+  "Community Associations": "/community-associations",
+  Conventional: "/multifamily",
+  "Student Housing": "/student-housing",
+  "Centralized Operations": "/operations",
+  "Owner Portal": "/owners",
+  Owners: "/owners",
+  Listings: "/listing-and-advertising",
+  Advertising: "/listing-and-advertising",
+  "Application & eSign": "/rental-applications",
+  CRM: "/crm",
+  "Move-In": "/leasing",
+  Renewals: "/leasing",
+  Delinquency: "/rapid-rent",
+};
+
 function withApprovedMenuIcons(links: MegaMenuLink[]): MegaMenuLink[] {
   return links.map((link) => ({
     ...link,
+    href: featureDestinations[link.title] ?? link.href,
     iconSrc:
       link.iconSrc ??
       `/brand/navigation/mega-menu-items/${link.title
@@ -117,6 +137,13 @@ const buildWithAgentsLinks: MegaMenuLink[] = [
 ];
 
 const capabilityLinks: MegaMenuLink[] = [
+  {
+    href: "/files-and-documents",
+    icon: Archive,
+    title: "Files & Documents",
+    body: "Keep property files close to the work.",
+    iconSrc: "/brand/navigation/bl-stroke/09-file-records.svg",
+  },
   {
     href: "/features/website",
     icon: Browser,
@@ -174,7 +201,7 @@ export const resourcesColumns: MegaMenuColumn[] = [
   },
 ];
 
-export const portfolioColumns: MegaMenuColumn[] = [
+const corePortfolioColumns: MegaMenuColumn[] = [
   {
     heading: "Portfolios",
     links: withApprovedMenuIcons([
@@ -261,7 +288,7 @@ export const productColumns: MegaMenuColumn[] = [
   },
 ];
 
-export const solutionsColumns: MegaMenuColumn[] = [
+const coreSolutionsColumns: MegaMenuColumn[] = [
   {
     heading: "Operations",
     links: withApprovedMenuIcons([
@@ -359,6 +386,166 @@ export const solutionsColumns: MegaMenuColumn[] = [
     ]),
   },
 ];
+
+function featureLink(
+  title: string,
+  href: string,
+  body: string,
+  iconFile: string,
+): MegaMenuLink {
+  return {
+    title,
+    href,
+    body,
+    icon: CirclesFour,
+    iconSrc: `/brand/navigation/bl-stroke/${iconFile}.svg`,
+  };
+}
+
+export const solutionsColumns: MegaMenuColumn[] = [
+  ...coreSolutionsColumns.map((column) => ({
+    ...column,
+    links: [
+      ...column.links,
+      ...(column.heading === "Operations"
+        ? [
+            featureLink(
+              "Inspections",
+              "/inspections",
+              "Connect condition reports and follow-up work.",
+              "10-checklist-note",
+            ),
+            featureLink(
+              "Work Orders",
+              "/work-orders",
+              "Keep maintenance requests and handoffs moving.",
+              "19-wrench",
+            ),
+            featureLink(
+              "Communication Tools",
+              "/communication-tools",
+              "Keep conversations close to property context.",
+              "02-inbox",
+            ),
+            featureLink(
+              "Mobile Apps",
+              "/mobile-apps",
+              "Stay connected to property work on the go.",
+              "01-laptop",
+            ),
+            featureLink(
+              "Tenant Management",
+              "/tenant-management",
+              "Connect tenant records, requests, and files.",
+              "13-contact-book",
+            ),
+          ]
+        : column.heading === "Leasing"
+          ? [
+              featureLink(
+                "Leasing Overview",
+                "/leasing",
+                "Follow the journey from inquiry to lease.",
+                "18-key",
+              ),
+              featureLink(
+                "Showings",
+                "/showings",
+                "Keep scheduled visits and follow-up connected.",
+                "22-calendar-check",
+              ),
+              featureLink(
+                "Tenant Screening",
+                "/tenant-screening-service",
+                "Bring supporting information into the review.",
+                "32-user-check",
+              ),
+            ]
+          : [
+              featureLink(
+                "Resident Portal",
+                "/residents",
+                "A clear place for everyday resident tasks.",
+                "20-user-square",
+              ),
+            ]),
+    ],
+  })),
+  {
+    heading: "Finance",
+    links: [
+      featureLink(
+        "Accounting",
+        "/landlord-accounting",
+        "Keep property finances in focus.",
+        "09-file-records",
+      ),
+      featureLink(
+        "Bookkeeping",
+        "/bookkeeping",
+        "Organize records and review steps.",
+        "30-book-text",
+      ),
+      featureLink(
+        "Bank Sync",
+        "/bank-sync",
+        "Connect account activity and context.",
+        "35-link",
+      ),
+      featureLink(
+        "Reports",
+        "/reports",
+        "Turn property records into a clearer picture.",
+        "16-dashboard-3",
+      ),
+      featureLink(
+        "QuickBooks",
+        "/quickbooks-online-integration",
+        "Explore connected bookkeeping workflows.",
+        "06-settings",
+      ),
+      featureLink(
+        "Rapid Rent",
+        "/rapid-rent",
+        "Keep rent payment workflows connected.",
+        "23-credit-card",
+      ),
+    ],
+  },
+];
+
+export const portfolioColumns: MegaMenuColumn[] = corePortfolioColumns.map(
+  (column) => ({
+    ...column,
+    links: [
+      ...column.links,
+      featureLink(
+        "Single Family",
+        "/single-family",
+        "Keep work connected across individual homes.",
+        "24-home",
+      ),
+      featureLink(
+        "Affordable Housing",
+        "/affordable-housing",
+        "Connect housing teams and resident context.",
+        "15-building-tree",
+      ),
+      featureLink(
+        "Mobile Home",
+        "/mobile-home",
+        "Coordinate everyday community operations.",
+        "21-home-plus",
+      ),
+      featureLink(
+        "Self Storage",
+        "/self-storage",
+        "Keep storage-facility work organized.",
+        "33-archive-drawer",
+      ),
+    ],
+  }),
+);
 
 type MegaMenuProps = {
   compact?: boolean;

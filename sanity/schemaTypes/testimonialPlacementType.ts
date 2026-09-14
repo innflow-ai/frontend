@@ -1,4 +1,5 @@
 import { defineArrayMember, defineField, defineType } from "sanity";
+import { featurePageRoutes } from "../../src/content/feature-page-routes";
 
 export const testimonialPlacementType = defineType({
   name: "testimonialPlacement",
@@ -13,7 +14,7 @@ export const testimonialPlacementType = defineType({
         list: [
           { title: "Rent collection", value: "/rent-collection" },
           { title: "Landlord banking", value: "/landlord-banking" },
-          { title: "Landlord accounting", value: "/landlord-accounting" },
+          ...featurePageRoutes,
           { title: "Tax preparation", value: "/tax-preparation" },
         ],
       },

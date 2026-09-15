@@ -16,7 +16,7 @@ import {
   productContent,
 } from "./baselane-product-content";
 import styles from "./baselane-product-page.module.css";
-import { PageTestimonials } from "./page-testimonials";
+import { FeatureTestimonials } from "./page-testimonials";
 import { ProductHeadspaceCta } from "./product-headspace-cta";
 import { ScrollStory } from "./scroll-story";
 
@@ -213,9 +213,7 @@ export async function BaselaneProductPage({
           )}
         </section>
         <ProductHeadspaceCta />
-        <PageTestimonials
-          pagePath={kind === "accounting" ? "/landlord-accounting" : `/${kind}`}
-        />
+        <FeatureTestimonials />
         <section className={styles.faq}>
           <h2>{cmsFaqs.heading || "FAQs"}</h2>
           <div>

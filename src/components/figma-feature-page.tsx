@@ -14,7 +14,7 @@ import styles from "./figma-feature-page.module.css";
 import googleStyles from "./google-cta.module.css";
 import { GoogleCtaContent } from "./google-cta-content";
 import { ListingHeroArtwork } from "./listing-hero-artwork";
-import { PageTestimonials } from "./page-testimonials";
+import { FeatureTestimonials } from "./page-testimonials";
 import { ProductHeadspaceCta } from "./product-headspace-cta";
 import { ScrollStory } from "./scroll-story";
 
@@ -199,7 +199,7 @@ export async function FigmaFeaturePage({
           />
         </section>
         <ProductHeadspaceCta />
-        {testimonials ?? <PageTestimonials pagePath={page.path} />}
+        {testimonials ?? <FeatureTestimonials />}
         <section className={base.faq}>
           <h2>{cmsFaqs.heading || "FAQs"}</h2>
           <div>

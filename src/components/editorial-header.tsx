@@ -11,6 +11,7 @@ import {
   type LatestBlogPostNavItem,
   MegaMenu,
   type MegaMenuColumn,
+  menuBrowseLinks,
   portfolioColumns,
   productColumns,
   resourcesColumns,
@@ -456,21 +457,28 @@ export function MobileNavigation({
                                       key={link.title}
                                       href={link.href}
                                       onClick={closeMobile}
+                                      data-browse-all={
+                                        link.browseAll || undefined
+                                      }
                                     >
-                                      <span className={styles.mobileLinkIcon}>
-                                        {iconSrc ? (
-                                          <Image
-                                            className={styles.mobileCustomIcon}
-                                            src={iconSrc}
-                                            alt=""
-                                            width={25}
-                                            height={25}
-                                            unoptimized
-                                          />
-                                        ) : (
-                                          <Icon size={17} weight="fill" />
-                                        )}
-                                      </span>
+                                      {!link.hideIcon && (
+                                        <span className={styles.mobileLinkIcon}>
+                                          {iconSrc ? (
+                                            <Image
+                                              className={
+                                                styles.mobileCustomIcon
+                                              }
+                                              src={iconSrc}
+                                              alt=""
+                                              width={25}
+                                              height={25}
+                                              unoptimized
+                                            />
+                                          ) : (
+                                            <Icon size={17} weight="fill" />
+                                          )}
+                                        </span>
+                                      )}
                                       <span className={styles.mobileLinkCopy}>
                                         <strong>
                                           {link.title}
@@ -490,6 +498,16 @@ export function MobileNavigation({
                               </div>
                             </section>
                           ))}
+                          {menuBrowseLinks[group.label] && (
+                            <a
+                              className={styles.browseAll}
+                              data-browse-all
+                              href={menuBrowseLinks[group.label]?.href}
+                              onClick={closeMobile}
+                            >
+                              <span>{menuBrowseLinks[group.label]?.title}</span>
+                            </a>
+                          )}
                           {group.label === "Resources" ? (
                             <MobileLatestPosts
                               posts={latestBlogPosts}

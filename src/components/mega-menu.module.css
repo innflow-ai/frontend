@@ -410,3 +410,27 @@
     display: block;
   }
 }
+
+.link[data-browse-all]:is(:hover, :focus-visible) {
+  background: transparent;
+}
+
+.link[data-browse-all]:is(:hover, :focus-visible) strong {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.browseAll {
+  grid-column: 1 / -1;
+  justify-self: start;
+  margin-top: 8px;
+  padding: 10px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.browseAll:is(:hover, :focus-visible) {
+  background: transparent;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}

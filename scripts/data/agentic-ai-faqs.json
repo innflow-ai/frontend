@@ -1,0 +1,46 @@
+{
+  "title": "Agentic AI Solutions",
+  "sourceUrl": "https://www.figma.com/design/JkJnW5Q1AIVAqgoV2AqAyb/-CMS_Template-?node-id=273-9878",
+  "faqs": [
+    {
+      "sourceNodeId": "274:9587",
+      "question": "How do AI agents work?",
+      "answer": "AI agents are intelligent software programs that perform tasks autonomously based on predefined rules and machine learning algorithms. They can handle repetitive tasks, process large volumes of data, and provide actionable insights to support business process automation. With the right setup, AI agents learn and adapt over time, becoming more effective and delivering greater value.\n\nIn practice, agents run a continuous perceive–decide–act–learn loop: they take in text, audio, or images, plan the next step, execute through connected tools, and fold the outcome back into their model. By tapping APIs, databases, and enterprise apps, this closed loop enables dependable AI agent orchestration across an end-to-end workflow, steadily improving accuracy, speed, and auditability."
+    },
+    {
+      "sourceNodeId": "274:9622",
+      "question": "How to build an AI agent?",
+      "answer": "Building AI agents with Innflow involves a streamlined process that ensures robust performance and alignment with business goals.\n\nStep-by-Step Guide to Building AI Agents:\n\nIdentify business needs: Determine specific tasks or processes that can benefit from automation.\n\nChoose the right AI tools: Leverage Innflow's platform, which offers all necessary tools in one place.\n\nDevelop and customize: Use pre-built templates or develop custom AI Agents for your unique requirements.\n\nDeploy and monitor: Implement AI agents across relevant business systems and track their performance.\n\nRefine and optimize: Continuously analyze performance data to fine-tune AI behaviors and maximize efficiency."
+    },
+    {
+      "sourceNodeId": "274:9632",
+      "question": "Should I buy AI agents or build them?",
+      "answer": "If your process is standard, starting from a template is fastest. If it’s differentiating, build with an AI agent builder and keep the logic in-house. Many customers blend both: buy the basics, build the edge."
+    },
+    {
+      "sourceNodeId": "274:9634",
+      "question": "What is the layer in my architecture?",
+      "answer": "Think of the AI agent layer as the reasoning and execution tier above your systems (CRM, ERP, ticketing). It plans tasks, calls tools, writes back to systems, and documents decisions, turning messy, multistep work into reliable AI automation."
+    },
+    {
+      "sourceNodeId": "274:9646",
+      "question": "What is agent memory?",
+      "answer": "Agent memory is the context layer that lets ai agents carry state across steps and, when needed, across sessions. Instead of treating every task as a one off chat, memory helps an agent remember what it has already done, what data it saw, and what preferences or constraints it should follow, so decisions stay consistent across an end to end workflow. In Innflow’s framing, memory sits alongside tools, integrations, and triggers as a core building block, and it is also described as short and long term context that should respect retention and privacy controls."
+    },
+    {
+      "sourceNodeId": "274:9648",
+      "question": "What is agentic RAG?",
+      "answer": "Agentic RAG, Retrieval Augmented Generation in an agent context, means the agent does not rely on the model’s internal knowledge alone. It retrieves the most relevant information from your databases or knowledge sources, injects that context into the reasoning step, and then uses tools to execute actions based on grounded data. Innflow explicitly positions this as connecting ai agents to existing databases to produce more accurate, context rich outputs, and as “agentic” because retrieval becomes part of the perceive decide act learn loop, not a standalone search step."
+    },
+    {
+      "sourceNodeId": "274:9650",
+      "question": "What does human in the loop mean in practice?",
+      "answer": "Human in the loop means you design checkpoints where a person can approve, correct, or override an agent’s work before it becomes final or before sensitive actions happen. In practice, you gate risky steps like sending external emails, updating customer records, or approving financial actions, while letting low risk steps run autonomously to keep speed high. Innflow also frames this as tuning autonomy levels and human handoffs to match your risk profile, so you get both execution speed and quality assurance."
+    },
+    {
+      "sourceNodeId": "274:9654",
+      "question": "How do integrations and triggers work together?",
+      "answer": "Triggers define when an agent should start and what input data is passed into the workflow, in Innflow’s docs this becomes the task query that all nodes can access. Integrations, via integration connectors, are the tools the agent uses inside workflow steps to take action in external systems, for example sending an email, creating a record, or fetching data from apps like Gmail, Salesforce, Airtable, or Slack. Put simply, triggers start the run, integrations do the work, and the agent can combine both with memory to keep execution consistent across multi step workflows."
+    }
+  ]
+}

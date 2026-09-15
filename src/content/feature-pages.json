@@ -4099,19 +4099,9 @@
     "title": "Give your next listing a clear path.",
     "description": "Bring property details, listing updates, and applicant follow-ups into one connected flow.",
     "intro": "From first impression to the next step.",
-    "hero": "/brand/feature-pages/listing-and-advertising/listing-and-advertising-hero.webp",
-    "heroFocus": 75,
-    "heroArtwork": [
-      {
-        "id": "49:296",
-        "x": 1050,
-        "y": 260,
-        "width": 300,
-        "height": 300,
-        "name": "Innflow / Listing & Advertising / 01 \u00b7 Hero channels & status",
-        "src": "/brand/feature-pages/artwork/49-296-figma.svg"
-      }
-    ],
+    "hero": "/brand/feature-pages/listing-and-advertising/listing-and-advertising-hero.png",
+    "heroFocus": 65,
+    "heroArtwork": [],
     "panels": [
       {
         "id": "applications",

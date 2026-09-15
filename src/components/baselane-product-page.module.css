@@ -13,7 +13,7 @@
   display: flex;
   align-items: center;
   padding: 140px max(24px, calc((100vw - 1360px) / 2)) 80px;
-  background: #e9f1f6;
+  background: var(--canvas-warm);
 }
 .heroCopy {
   position: relative;

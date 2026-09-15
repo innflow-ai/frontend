@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { GoogleCtaContent } from "@/components/google-cta-content";
 import { siteConfig } from "@/config/site";
+import { getPageFaqTuples } from "@/lib/faqs";
 import styles from "./baselane-deposits.module.css";
 import { BaselaneHomepage } from "./baselane-homepage";
 import shared from "./baselane-partners.module.css";
@@ -124,7 +125,8 @@ function GoogleAction() {
     </a>
   );
 }
-export function BaselaneDeposits() {
+export async function BaselaneDeposits() {
+  const cmsFaqs = await getPageFaqTuples("/security-deposit-account", faqs);
   return (
     <BaselaneHomepage>
       <div className={`${shared.page} ${styles.page}`}>
@@ -301,17 +303,17 @@ export function BaselaneDeposits() {
           </div>
         </section>
         <section className={styles.start}>
-          <h2>FAQs</h2>
+          <h2>{cmsFaqs.heading || "FAQs"}</h2>
           <div className={shared.accordion}>
-            {faqs.map(([title, text]) => (
-              <details key={title}>
+            {cmsFaqs.items.map(([title, text, faqId]) => (
+              <details key={faqId}>
                 <summary>
                   {title}
                   <span className={shared.plus} aria-hidden="true">
                     +
                   </span>
                 </summary>
-                <p>{text}</p>
+                <p style={{ whiteSpace: "pre-line" }}>{text}</p>
               </details>
             ))}
           </div>

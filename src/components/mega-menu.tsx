@@ -14,7 +14,6 @@ import {
   Database,
   DoorOpen,
   FlowArrow,
-  GraduationCap,
   Handshake,
   House,
   HouseLine,
@@ -43,6 +42,8 @@ export type MegaMenuLink = {
   href: string;
   icon: Icon;
   iconSrc?: string;
+  hideIcon?: boolean;
+  browseAll?: boolean;
   title: string;
   body: string;
   badge?: string;
@@ -100,6 +101,12 @@ const platformLinks: MegaMenuLink[] = [
     icon: CirclesThreePlus,
     title: "Platform",
     body: "The connected foundation for modern property operations.",
+  },
+  {
+    href: "/integrations",
+    icon: PlugsConnected,
+    title: "Integrations",
+    body: "Explore integrations and planned connections for your team's tools.",
   },
   {
     href: "/products/agentic-workflows",
@@ -160,11 +167,11 @@ const capabilityLinks: MegaMenuLink[] = [
 
 const resourcesLinks: MegaMenuLink[] = [
   {
-    href: "/connections",
-    icon: PlugsConnected,
-    iconSrc: "/brand/navigation/mega-menu-items/integrations.svg",
-    title: "Page Directory",
-    body: "Browse all Innflow pages by topic.",
+    href: "https://docs.innflow.ai",
+    icon: ListBullets,
+    iconSrc: "/brand/navigation/bl-stroke/09-file-records.svg",
+    title: "Docs",
+    body: "Guides and documentation for building with Innflow.",
   },
   {
     href: "/blog",
@@ -207,12 +214,6 @@ const corePortfolioColumns: MegaMenuColumn[] = [
     links: withApprovedMenuIcons([
       {
         href: "/multi-property-investors",
-        icon: House,
-        title: "Residential",
-        body: "Apartments, condos & mixed-use.",
-      },
-      {
-        href: "/multi-property-investors",
         icon: Buildings,
         title: "Multifamily",
         body: "Large and mid-sized communities.",
@@ -229,23 +230,11 @@ const corePortfolioColumns: MegaMenuColumn[] = [
         title: "Community Associations",
         body: "HOAs, condos & townhomes.",
       },
-      {
-        href: "/property-management",
-        icon: Buildings,
-        title: "Conventional",
-        body: "Low, mid, & high-rise apartment complexes.",
-      },
-      {
-        href: "/property-management",
-        icon: GraduationCap,
-        title: "Student Housing",
-        body: "Off-campus & purpose-built student housing.",
-      },
     ]),
   },
 ];
 
-export const productColumns: MegaMenuColumn[] = [
+export const allProductColumns: MegaMenuColumn[] = [
   {
     heading: "Platform and agents",
     links: withApprovedMenuIcons(platformLinks),
@@ -268,12 +257,6 @@ export const productColumns: MegaMenuColumn[] = [
   {
     heading: "Connections and governance",
     links: withApprovedMenuIcons([
-      {
-        href: "/integrations",
-        icon: PlugsConnected,
-        title: "Integrations",
-        body: "Explore connections for the tools your team already uses.",
-      },
       ...platformPages
         .filter((page) =>
           ["deployment-options", "security-and-compliance"].includes(page.slug),
@@ -402,7 +385,7 @@ function featureLink(
   };
 }
 
-export const solutionsColumns: MegaMenuColumn[] = [
+export const allSolutionsColumns: MegaMenuColumn[] = [
   ...coreSolutionsColumns.map((column) => ({
     ...column,
     links: [
@@ -514,6 +497,53 @@ export const solutionsColumns: MegaMenuColumn[] = [
   },
 ];
 
+export function directorySectionId(heading: string) {
+  return heading.toLowerCase().replaceAll(" ", "-");
+}
+
+function featuredColumns(
+  columns: MegaMenuColumn[],
+  selections: Record<string, string[]>,
+): MegaMenuColumn[] {
+  return columns.map((column) => ({
+    ...column,
+    links: [
+      ...(selections[column.heading]
+        ? column.links.filter((link) =>
+            selections[column.heading].includes(link.title),
+          )
+        : column.links.slice(0, 4)),
+    ],
+  }));
+}
+
+export const menuBrowseLinks: Partial<
+  Record<string, { href: string; title: string }>
+> = {
+  Product: { href: "/products", title: "Browse all products" },
+  Solutions: { href: "/solutions", title: "Browse all solutions" },
+};
+
+export const productColumns = featuredColumns(allProductColumns, {
+  "Platform and agents": ["Platform", "Integrations", "AI Agents"],
+  "Build and customize": ["Agent Studio", "Agent Skills"],
+  "Automation and intelligence": [
+    "Agentic Automation",
+    "Analytics and Observability",
+  ],
+  "Connections and governance": [
+    "Deployment Options",
+    "Security and Compliance",
+  ],
+});
+
+export const solutionsColumns = featuredColumns(allSolutionsColumns, {
+  Operations: ["Centralized Operations", "Rent Collection", "Work Orders"],
+  Leasing: ["Advertising", "Application & eSign", "CRM"],
+  "By team": ["Owner Operators and Fee Managers", "Leasing Teams"],
+  Finance: ["Accounting", "Reports"],
+});
+
 export const portfolioColumns: MegaMenuColumn[] = corePortfolioColumns.map(
   (column) => ({
     ...column,
@@ -525,24 +555,14 @@ export const portfolioColumns: MegaMenuColumn[] = corePortfolioColumns.map(
         "Keep work connected across individual homes.",
         "24-home",
       ),
-      featureLink(
-        "Affordable Housing",
-        "/affordable-housing",
-        "Connect housing teams and resident context.",
-        "15-building-tree",
-      ),
-      featureLink(
-        "Mobile Home",
-        "/mobile-home",
-        "Coordinate everyday community operations.",
-        "21-home-plus",
-      ),
-      featureLink(
-        "Self Storage",
-        "/self-storage",
-        "Keep storage-facility work organized.",
-        "33-archive-drawer",
-      ),
+      {
+        href: "/connections#property-types",
+        icon: ArrowRight,
+        title: "Browse all property types",
+        hideIcon: true,
+        browseAll: true,
+        body: "Browse every portfolio type in our page directory.",
+      },
     ],
   }),
 );
@@ -790,22 +810,25 @@ export function MegaMenu({
                         key={link.title}
                         href={link.href}
                         className={styles.link}
+                        data-browse-all={link.browseAll || undefined}
                         onClick={closeMenu}
                       >
-                        <span className={styles.icon}>
-                          {link.iconSrc ? (
-                            <Image
-                              className={styles.customIcon}
-                              src={link.iconSrc}
-                              alt=""
-                              width={24}
-                              height={24}
-                              unoptimized
-                            />
-                          ) : (
-                            <Icon size={16} weight="fill" />
-                          )}
-                        </span>
+                        {!link.hideIcon && (
+                          <span className={styles.icon}>
+                            {link.iconSrc ? (
+                              <Image
+                                className={styles.customIcon}
+                                src={link.iconSrc}
+                                alt=""
+                                width={24}
+                                height={24}
+                                unoptimized
+                              />
+                            ) : (
+                              <Icon size={16} weight="fill" />
+                            )}
+                          </span>
+                        )}
                         <span>
                           <strong>
                             {link.title}
@@ -820,6 +843,16 @@ export function MegaMenu({
                   })}
                 </div>
               ))}
+              {menuBrowseLinks[label] && (
+                <a
+                  className={styles.browseAll}
+                  data-browse-all
+                  href={menuBrowseLinks[label].href}
+                  onClick={closeMenu}
+                >
+                  <span>{menuBrowseLinks[label].title}</span>
+                </a>
+              )}
               {promotionalBanner ? (
                 <TrackedLink
                   className={styles.promotionalBanner}

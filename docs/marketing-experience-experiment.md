@@ -1,6 +1,16 @@
-# Marketing experience v1
+# Marketing experience v1 — retired layout experiment
 
-Status: implemented locally; production routing remains off. No production deployment or real registration was performed by this task.
+As of September 14, 2026, the source uses the Baselane-inspired homepage, pricing, demo, header, CTA, and footer unconditionally. The old page implementations no longer load their separate styles. Other routes continue to use their existing shared global stylesheet and component CSS modules.
+
+`src/config/experiments.ts` disables the old layout experiment in code. Environment modes, signed cookies, and development preview parameters cannot enroll visitors or restore the original layout. The root no longer mounts the full-document navigation interceptor. Legacy aliases still redirect to their canonical public routes. Old attribution is cleared when the handoff endpoint is called; no new experiment exposures or attribution are issued.
+
+Signed assignment, consent, PostHog exposure, attribution, and verification utilities are retained with their tests. Future wording or asset experiments should use a new experiment key, scope variant rendering to the relevant component, and preserve the shared layout and CSS. Do not re-enable the retired v1 experiment for those tests.
+
+This is a local source change; production deployment and the external PostHog/app configuration have not been changed or verified by this task.
+
+## Historical v1 implementation and launch notes
+
+The remainder is an archive of the original two-layout experiment. Its launch and rollback instructions do not apply to the current site.
 
 - [PostHog draft experiment 463449](https://us.posthog.com/project/342660/experiments/463449)
 - [Monitoring dashboard 2088271](https://us.posthog.com/project/342660/dashboard/2088271)

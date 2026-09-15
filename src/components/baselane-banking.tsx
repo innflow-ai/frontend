@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { siteConfig } from "@/config/site";
+import { getPageFaqTuples } from "@/lib/faqs";
 import styles from "./baselane-banking.module.css";
 import { BaselaneHomepage } from "./baselane-homepage";
 import { PageTestimonials } from "./page-testimonials";
@@ -128,7 +129,8 @@ function Scene({
     </picture>
   );
 }
-export function BaselaneBanking() {
+export async function BaselaneBanking() {
+  const cmsFaqs = await getPageFaqTuples("/landlord-banking", faqs);
   return (
     <BaselaneHomepage>
       <section className={styles.hero}>
@@ -258,18 +260,22 @@ export function BaselaneBanking() {
       <PageTestimonials pagePath="/landlord-banking" />
       <section className={styles.faq}>
         <h2>
-          A few things
-          <br />
-          you might be wondering.
+          {cmsFaqs.heading || (
+            <>
+              A few things
+              <br />
+              you might be wondering.
+            </>
+          )}
         </h2>
         <div>
-          {faqs.map(([question, answer]) => (
-            <details key={question}>
+          {cmsFaqs.items.map(([question, answer, faqId]) => (
+            <details key={faqId}>
               <summary>
                 {question}
                 <span>+</span>
               </summary>
-              <p>{answer}</p>
+              <p style={{ whiteSpace: "pre-line" }}>{answer}</p>
             </details>
           ))}
         </div>

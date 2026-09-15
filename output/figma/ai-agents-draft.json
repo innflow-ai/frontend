@@ -1,0 +1,14 @@
+{
+  "fileKey": "JkJnW5Q1AIVAqgoV2AqAyb",
+  "sourceFrame": "267:9476",
+  "draftFrame": "273:9476",
+  "reviewNote": "275:9484",
+  "size": [1440, 21185],
+  "position": [17313, 7852],
+  "preserved": "Hero, 10 overview cards, 10 feature sections, sidebar, CTA, complete FAQ, footer",
+  "textLayers": 242,
+  "fonts": ["Host Grotesk", "Roboto Mono"],
+  "artworkStatus": "Source UI images retained as draft references with editable image fills; not newly illustrated native Innflow UI",
+  "contentStatus": "Source capability copy retained for layout review, with separate note requiring verification before publication",
+  "publication": "Figma draft only"
+}

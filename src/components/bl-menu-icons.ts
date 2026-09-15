@@ -26,7 +26,7 @@ export const blMenuIcons: Record<string, string> = {
   Multifamily: "/brand/navigation/bl-stroke/25-building-b.svg",
   Commercial: "/brand/navigation/bl-stroke/26-shop.svg",
   "Community Associations": "/brand/navigation/bl-stroke/27-users.svg",
-  "Page Directory": "/brand/navigation/bl-stroke/35-link.svg",
+  Docs: "/brand/navigation/bl-stroke/09-file-records.svg",
   Integrations: "/brand/navigation/bl-stroke/28-share.svg",
   Pricing: "/brand/navigation/bl-stroke/29-tag.svg",
   Blog: "/brand/navigation/bl-stroke/30-book-text.svg",

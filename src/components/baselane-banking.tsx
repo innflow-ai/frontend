@@ -3,7 +3,8 @@ import { siteConfig } from "@/config/site";
 import { getPageFaqTuples } from "@/lib/faqs";
 import styles from "./baselane-banking.module.css";
 import { BaselaneHomepage } from "./baselane-homepage";
-import { PageTestimonials } from "./page-testimonials";
+import { FeatureTestimonials } from "./page-testimonials";
+import { ProductHeadspaceCta } from "./product-headspace-cta";
 import { ScrollStory } from "./scroll-story";
 
 const sections = [
@@ -257,7 +258,8 @@ export async function BaselaneBanking() {
           ))}
         </div>
       </section>
-      <PageTestimonials pagePath="/landlord-banking" />
+      <ProductHeadspaceCta />
+      <FeatureTestimonials />
       <section className={styles.faq}>
         <h2>
           {cmsFaqs.heading || (

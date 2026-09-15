@@ -13,7 +13,7 @@ import type {
   ProductDetailSection,
   ProductPage as ProductPageData,
 } from "@/lib/product-pages";
-import { PageTestimonials } from "./page-testimonials";
+import { FeatureTestimonials } from "./page-testimonials";
 import { ProductHeadspaceCta } from "./product-headspace-cta";
 import styles from "./product-page.module.css";
 import { RuneyWorkspace } from "./runey-workspace";
@@ -284,7 +284,7 @@ export async function ProductPage({ product }: { product: ProductPageData }) {
       ) : null}
 
       <ProductHeadspaceCta />
-      <PageTestimonials pagePath={`/products/${product.slug}`} />
+      <FeatureTestimonials />
       {faqs.length ? (
         <section
           className={styles.faq}

@@ -70,3 +70,15 @@ Some of the canonical behavior is currently conditional on `kind === "rent-colle
 ## Review before finishing
 
 Compare the new page with Rent collection at desktop, tablet, and mobile widths. Confirm section order, image focal points, readable overlays, compact text, generous spacing, sidebar progression, mobile overflow, CTA destinations, testimonial selection, and FAQ content. Keep changes scoped to the requested page and shared improvements it actually needs.
+
+## Shared feature testimonials
+
+All feature and product templates use `FeatureTestimonials` immediately after
+`ProductHeadspaceCta` and before FAQs. This shared section reads the first four
+valid records, in order, and the heading from the existing `/rent-collection`
+Page testimonials selection. Edit that one CMS selection to update this section
+across feature pages; do not duplicate testimonial records or page placements.
+This shared selection supersedes page-specific testimonial selection for these
+templates. Existing page-specific CMS records remain available for other uses.
+The heading is CMS-authored; any audience count must remain supported by the
+team's source material.

@@ -19,6 +19,11 @@ import {
 } from "@/components/mega-menu";
 import { TrackedLink } from "@/components/tracked-link";
 import styles from "./editorial-header.module.css";
+import {
+  useNavigationAppUpdate,
+  useNavigationTestimonial,
+} from "./navigation-blog-posts";
+import { TestimonialCard } from "./testimonial-cards";
 
 type MobileMenuGroup = {
   label: string;
@@ -46,18 +51,20 @@ const itemVariants = {
 function MobileLatestPosts({
   posts,
   onSelect,
+  heading = "Latest from Innflow",
+  showAll = true,
 }: {
   posts: LatestBlogPostNavItem[];
   onSelect: () => void;
+  heading?: string;
+  showAll?: boolean;
 }) {
+  const headingId = useId();
   if (posts.length === 0) return null;
 
   return (
-    <section
-      className={styles.mobileLatestPosts}
-      aria-labelledby="latest-posts-mobile"
-    >
-      <h3 id="latest-posts-mobile">Latest from Innflow</h3>
+    <section className={styles.mobileLatestPosts} aria-labelledby={headingId}>
+      <h3 id={headingId}>{heading}</h3>
       <div className={styles.mobileLatestPostList}>
         {posts.map((post) => (
           <TrackedLink
@@ -92,14 +99,16 @@ function MobileLatestPosts({
           </TrackedLink>
         ))}
       </div>
-      <TrackedLink
-        className={styles.mobileLatestPostsAll}
-        destination="/blog"
-        eventLabel="mobile_menu_all_blog_posts"
-        onClick={onSelect}
-      >
-        View all posts
-      </TrackedLink>
+      {showAll && (
+        <TrackedLink
+          className={styles.mobileLatestPostsAll}
+          destination="/blog"
+          eventLabel="mobile_menu_all_blog_posts"
+          onClick={onSelect}
+        >
+          View all posts
+        </TrackedLink>
+      )}
     </section>
   );
 }
@@ -379,6 +388,8 @@ export function MobileNavigation({
 }) {
   const reduce = useReducedMotion();
   const mobileMenuBaseId = useId();
+  const latestUpdate = useNavigationAppUpdate();
+  const testimonial = useNavigationTestimonial();
   const [openMobileGroup, setOpenMobileGroup] = useState<string | null>(null);
   useEffect(() => {
     if (!open) setOpenMobileGroup(null);
@@ -507,6 +518,23 @@ export function MobileNavigation({
                             >
                               <span>{menuBrowseLinks[group.label]?.title}</span>
                             </a>
+                          )}
+                          {group.label === "Solutions" && testimonial && (
+                            <section
+                              className={styles.mobileLatestPosts}
+                              aria-label="Customer testimonial"
+                            >
+                              <h3>In their own words</h3>
+                              <TestimonialCard item={testimonial} />
+                            </section>
+                          )}
+                          {group.label === "Product" && latestUpdate && (
+                            <MobileLatestPosts
+                              posts={[latestUpdate]}
+                              onSelect={closeMobile}
+                              heading="Company updates"
+                              showAll={false}
+                            />
                           )}
                           {group.label === "Resources" ? (
                             <MobileLatestPosts

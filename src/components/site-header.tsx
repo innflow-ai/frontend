@@ -22,8 +22,13 @@ import {
 import { siteConfig } from "@/config/site";
 import { blMenuIcons } from "./bl-menu-icons";
 import { MobileNavigation } from "./editorial-header";
-import { useNavigationBlogPosts } from "./navigation-blog-posts";
+import {
+  useNavigationAppUpdate,
+  useNavigationBlogPosts,
+  useNavigationTestimonial,
+} from "./navigation-blog-posts";
 import styles from "./site-shell.module.css";
+import { TestimonialCard } from "./testimonial-cards";
 import { TrackedLink } from "./tracked-link";
 
 const portfolioColumns = originalPortfolioColumns.map((column) => ({
@@ -42,6 +47,8 @@ const menus = [
 ];
 export function SiteHeader() {
   const latestBlogPosts = useNavigationBlogPosts();
+  const latestUpdate = useNavigationAppUpdate();
+  const testimonial = useNavigationTestimonial();
   const [menu, setMenu] = useState<string | null>(null);
   const [mobile, setMobile] = useState(false);
   const pathname = usePathname();
@@ -228,7 +235,7 @@ export function SiteHeader() {
               {menu === group.label && (
                 <div
                   id={`baselane-${group.label.replaceAll(" ", "-")}`}
-                  className={`${styles.dropdown}${group.label === "Portfolios" ? ` ${styles.dropdownWithBanner}` : ""}${group.label === "Resources" && latestBlogPosts.length ? ` ${styles.dropdownWithPosts}` : ""}`}
+                  className={`${styles.dropdown}${group.label === "Portfolios" ? ` ${styles.dropdownWithBanner}` : ""}${group.label === "Resources" && latestBlogPosts.length ? ` ${styles.dropdownWithPosts}` : ""}${(group.label === "Product" && latestUpdate) || (group.label === "Solutions" && testimonial) ? ` ${styles.dropdownWithUpdate}` : ""}`}
                 >
                   {group.columns.map((column) => (
                     <div className={styles.dropdownColumn} key={column.heading}>
@@ -260,6 +267,51 @@ export function SiteHeader() {
                       ))}
                     </div>
                   ))}
+                  {group.label === "Solutions" && testimonial && (
+                    <section
+                      className={styles.menuUpdateSection}
+                      aria-label="Customer testimonial"
+                    >
+                      <h3>In their own words</h3>
+                      <TestimonialCard item={testimonial} />
+                    </section>
+                  )}
+                  {group.label === "Product" && latestUpdate && (
+                    <section
+                      className={styles.menuUpdateSection}
+                      aria-label="Company updates"
+                    >
+                      <h3>Company updates</h3>
+                      <TrackedLink
+                        destination={latestUpdate.href}
+                        eventLabel="product_menu_latest_update"
+                        className={styles.menuBlogCard}
+                        onClick={closeMenus}
+                      >
+                        <span className={styles.menuBlogMedia}>
+                          {latestUpdate.imageUrl ? (
+                            <Image
+                              src={latestUpdate.imageUrl}
+                              alt={latestUpdate.imageAlt}
+                              width={720}
+                              height={389}
+                              sizes="300px"
+                            />
+                          ) : (
+                            <Newspaper size={28} aria-hidden="true" />
+                          )}
+                        </span>
+                        <span className={styles.menuBlogMeta}>
+                          {latestUpdate.publishedLabel}
+                        </span>
+                        <strong>{latestUpdate.title}</strong>
+                        <span>
+                          {latestUpdate.actionLabel}{" "}
+                          <ArrowRight size={14} aria-hidden="true" />
+                        </span>
+                      </TrackedLink>
+                    </section>
+                  )}
                   {menuBrowseLinks[group.label] && (
                     <a
                       className={styles.browseAll}

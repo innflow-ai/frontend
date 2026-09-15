@@ -55,6 +55,7 @@ export type MegaMenuColumn = {
 };
 
 export type LatestBlogPostNavItem = {
+  actionLabel?: string;
   title: string;
   href: string;
   categoryLabel: string;

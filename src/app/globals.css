@@ -53,10 +53,13 @@ html {
   color-scheme: light;
 }
 
-/* Keep the viewport scrollbar quiet without hiding the scroll affordance. */
+/* Shared scrollbar treatment for the viewport and every nested scroll area. */
 html {
   --page-scrollbar-thumb: #31505e;
   --page-scrollbar-hover: #012232;
+}
+
+* {
   scrollbar-width: thin;
   scrollbar-color: var(--page-scrollbar-thumb) transparent;
 }
@@ -76,27 +79,27 @@ html[data-theme="dark"] {
 
 /* Pixel sizing in Chromium/Safari; Firefox uses the thin fallback above. */
 @supports selector(::-webkit-scrollbar) {
-  html {
+  * {
     scrollbar-width: auto;
     scrollbar-color: auto;
   }
 
-  html::-webkit-scrollbar {
+  *::-webkit-scrollbar {
     width: 5px;
     height: 5px;
   }
 
-  html::-webkit-scrollbar-track,
-  html::-webkit-scrollbar-corner {
+  *::-webkit-scrollbar-track,
+  *::-webkit-scrollbar-corner {
     background: transparent;
   }
 
-  html::-webkit-scrollbar-thumb {
+  *::-webkit-scrollbar-thumb {
     background: var(--page-scrollbar-thumb);
     border-radius: 999px;
   }
 
-  html::-webkit-scrollbar-thumb:hover {
+  *::-webkit-scrollbar-thumb:hover {
     background: var(--page-scrollbar-hover);
   }
 }

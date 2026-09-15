@@ -19,8 +19,6 @@
   overflow-x: auto;
   padding: 4px max(24px, calc((100vw - 1136px) / 2)) 20px;
   scroll-snap-type: x mandatory;
-  scrollbar-width: thin;
-  scrollbar-color: #617078 transparent;
 }
 .card {
   position: relative;
@@ -113,7 +111,6 @@
   display: flex;
   flex-direction: column;
   gap: 28px;
-  scrollbar-width: thin;
 }
 .details[hidden] {
   display: none;

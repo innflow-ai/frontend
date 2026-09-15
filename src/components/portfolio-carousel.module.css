@@ -64,17 +64,6 @@
   overscroll-behavior-inline: contain;
   scroll-behavior: smooth;
   scroll-snap-type: inline mandatory;
-  scrollbar-color: rgba(7, 22, 39, 0.22) transparent;
-  scrollbar-width: thin;
-}
-
-.track::-webkit-scrollbar {
-  height: 5px;
-}
-
-.track::-webkit-scrollbar-thumb {
-  border-radius: 999px;
-  background: rgba(7, 22, 39, 0.22);
 }
 
 .slide {

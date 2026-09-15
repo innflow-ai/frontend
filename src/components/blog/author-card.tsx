@@ -16,8 +16,9 @@ export function BlogAuthorCard({
 }: BlogAuthorCardProps) {
   const photo = author.image
     ? urlForImage(author.image)
-        .width(150)
-        .height(150)
+        .width(300)
+        .height(300)
+        .quality(100)
         // biome-ignore lint/suspicious/noFocusedTests: `fit` is the image-url crop API, not a test
         .fit("crop")
         .url()
@@ -44,6 +45,7 @@ export function BlogAuthorCard({
             width={50}
             height={50}
             sizes="50px"
+            quality={100}
           />
         ) : (
           <span className={styles.initials} aria-hidden="true">

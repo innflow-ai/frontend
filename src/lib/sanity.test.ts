@@ -19,6 +19,7 @@ vi.mock("@sanity/image-url", () => ({
 
 import {
   formatPostDateShort,
+  getLatestAppUpdate,
   getLatestBlogPosts,
   humanizeCategory,
 } from "./sanity";
@@ -73,5 +74,27 @@ describe("latest Sanity blog posts", () => {
   it("keeps AI uppercase when humanizing categories", () => {
     expect(humanizeCategory("ai")).toBe("AI");
     expect(humanizeCategory("ai-agent")).toBe("AI Agent");
+  });
+});
+
+describe("latest company update", () => {
+  beforeEach(() => {
+    fetchMock.mockReset();
+  });
+
+  it("selects one dated app update rather than a blog post", async () => {
+    fetchMock.mockResolvedValue({ title: "Introducing Copilot Actions" });
+    await expect(getLatestAppUpdate()).resolves.toEqual({
+      title: "Introducing Copilot Actions",
+    });
+    const query = fetchMock.mock.calls[0]?.[0] as string;
+    expect(query).toContain('_type == "appUpdate"');
+    expect(query).toContain("publishedAt <= now()");
+    expect(query).toContain("order(publishedAt desc)[0]");
+  });
+
+  it("keeps navigation available if the updates query fails", async () => {
+    fetchMock.mockRejectedValue(new Error("Sanity unavailable"));
+    await expect(getLatestAppUpdate()).resolves.toBeNull();
   });
 });

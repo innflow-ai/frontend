@@ -5,7 +5,7 @@ import { useId, useState } from "react";
 import type { Testimonial } from "@/lib/testimonials";
 import styles from "./testimonial-cards.module.css";
 
-function TestimonialCard({ item }: { item: Testimonial }) {
+export function TestimonialCard({ item }: { item: Testimonial }) {
   const [pinned, setPinned] = useState(false);
   const [hovered, setHovered] = useState(false);
   const id = useId();

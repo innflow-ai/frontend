@@ -80,7 +80,10 @@ const postFields = `
   coverImage,
   tags,
   industries,
-  "author": author->{
+  "author": coalesce(
+    author->,
+    *[_type == "author" && _id == "author.ari-khan"][0]
+  ){
     name,
     "slug": slug.current,
     role,
@@ -151,6 +154,33 @@ export async function getLatestBlogPosts(): Promise<BlogPostSummary[]> {
     return await fetchLatestBlogPosts();
   } catch {
     return [];
+  }
+}
+
+export type AppUpdate = {
+  title: string;
+  publishedAt: string;
+  image: (SanityImageSource & { alt?: string }) | null;
+  button: { href: string; label: string } | null;
+  footerText: string | null;
+};
+
+const fetchLatestAppUpdate = unstable_cache(
+  () =>
+    sanityClient.fetch<AppUpdate | null>(`*[
+      _type == "appUpdate" && defined(publishedAt) && publishedAt <= now()
+    ] | order(publishedAt desc)[0] {
+      title, publishedAt, image, button, footerText
+    }`),
+  ["latest-app-update"],
+  { revalidate: 60, tags: ["app-updates"] },
+);
+
+export async function getLatestAppUpdate(): Promise<AppUpdate | null> {
+  try {
+    return await fetchLatestAppUpdate();
+  } catch {
+    return null;
   }
 }
 

@@ -89,7 +89,6 @@
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   padding: 8px 0 20px;
-  scrollbar-width: thin;
 }
 .videoCard {
   flex: 1;

@@ -143,16 +143,21 @@ export default async function BlogPostPage({ params }: RouteParams) {
       <article className={styles.page}>
         <div className={styles.shell}>
           <header className={styles.articleHero}>
-            {coverUrl ? (
-              <Image
-                src={coverUrl}
-                alt={post.coverImage?.alt ?? post.title}
-                fill
-                sizes="(max-width: 760px) calc(100vw - 40px), 1136px"
-                priority
-                className={styles.heroImage}
-              />
-            ) : null}
+            <div
+              className={coverUrl ? styles.heroMedia : styles.heroMediaFallback}
+            >
+              {coverUrl ? (
+                <Image
+                  src={coverUrl}
+                  alt={post.coverImage?.alt ?? post.title}
+                  fill
+                  sizes="(max-width: 760px) calc(100vw - 40px), 1136px"
+                  priority
+                  className={styles.heroImage}
+                />
+              ) : null}
+              <BlogAuthorCard author={author} className={styles.heroAuthor} />
+            </div>
             <div className={styles.heroCopy}>
               <p className={styles.kicker}>
                 {date ? (
@@ -164,8 +169,15 @@ export default async function BlogPostPage({ params }: RouteParams) {
                 {post.readTime ? <span>{post.readTime} min read</span> : null}
               </p>
               <h1 className={styles.title}>{post.title}</h1>
+              <div className={styles.articleExtras}>
+                <BlogListenPlayer text={listenText} audioUrl={post.audioUrl} />
+                <BlogTaxonomy
+                  category={post.category}
+                  industries={industries}
+                  tags={post.tags ?? []}
+                />
+              </div>
             </div>
-            <BlogAuthorCard author={author} className={styles.heroAuthor} />
           </header>
           <div className={styles.articleColumns}>
             <aside className={styles.articleAside} aria-label="Article tools">
@@ -198,14 +210,6 @@ export default async function BlogPostPage({ params }: RouteParams) {
                   />
                 </div>
               ) : null}
-              <div className={styles.articleExtras}>
-                <BlogListenPlayer text={listenText} audioUrl={post.audioUrl} />
-                <BlogTaxonomy
-                  category={post.category}
-                  industries={industries}
-                  tags={post.tags ?? []}
-                />
-              </div>
               <BlogAuthorBio author={author} />
               <BlogContinueLearning nextPost={related[0] ?? null} />
             </div>

@@ -29,7 +29,6 @@
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   margin-top: 40px;
-  scrollbar-width: thin;
   padding-bottom: 12px;
 }
 .track article {

@@ -75,9 +75,7 @@ export const getPageTestimonials = cache(async (pagePath: string) => {
     );
     return {
       heading: selection?.heading || "In their own words.",
-      previewNote: previewDrafts
-        ? "In their own words."
-        : undefined,
+      previewNote: previewDrafts ? "In their own words." : undefined,
       testimonials: (selection?.testimonials || [])
         .map(normalizeTestimonial)
         .filter((item): item is Testimonial => item !== null),
@@ -89,5 +87,22 @@ export const getPageTestimonials = cache(async (pagePath: string) => {
       error instanceof Error ? error.message : "Unknown error",
     );
     return { heading: "In their own words.", testimonials: [] };
+  }
+});
+
+// Reuse the selected published record; its portrait and quotes remain CMS-owned.
+export const getNavigationTestimonial = cache(async () => {
+  try {
+    const item = await sanityClient.fetch<RawTestimonial | null>(
+      `*[_type == "testimonial" && _id == $id][0]{
+        _id, name, role, propertyCount, portrait, avatar,
+        firstQuote, secondQuote, frontStyle, statistic
+      }`,
+      { id: "testimonial-meera-shah" },
+      { perspective: "published" },
+    );
+    return normalizeTestimonial(item);
+  } catch {
+    return null;
   }
 });

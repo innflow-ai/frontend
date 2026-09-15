@@ -13,11 +13,13 @@ import { SmoothScroll } from "@/components/smooth-scroll";
 import { siteConfig } from "@/config/site";
 import {
   formatPostDate,
+  getLatestAppUpdate,
   getLatestBlogPosts,
   humanizeCategory,
   urlForImage,
 } from "@/lib/sanity";
 import "./globals.css";
+import { getNavigationTestimonial } from "@/lib/testimonials";
 import "lenis/dist/lenis.css";
 
 const hostGrotesk = Host_Grotesk({
@@ -98,7 +100,25 @@ export default async function RootLayout({
   children: ReactNode;
 }) {
   const experience = { variant: null, measure: false } as const;
-  const latestPosts = await getLatestBlogPosts();
+  const [latestPosts, appUpdate, navigationTestimonial] = await Promise.all([
+    getLatestBlogPosts(),
+    getLatestAppUpdate(),
+    getNavigationTestimonial(),
+  ]);
+  const latestUpdate: LatestBlogPostNavItem | null = appUpdate
+    ? {
+        title: appUpdate.title,
+        actionLabel: appUpdate.button?.label ?? "Explore update",
+        href: new URL(appUpdate.button?.href || "/home", siteConfig.appOrigin)
+          .href,
+        categoryLabel: "Company updates",
+        publishedLabel: formatPostDate(appUpdate.publishedAt),
+        imageUrl: appUpdate.image
+          ? urlForImage(appUpdate.image).width(720).auto("format").url()
+          : null,
+        imageAlt: appUpdate.image?.alt ?? appUpdate.title,
+      }
+    : null;
   const latestBlogPosts: LatestBlogPostNavItem[] = latestPosts.map((post) => ({
     title: post.title,
     href: `/blog/${post.slug}`,
@@ -145,7 +165,11 @@ export default async function RootLayout({
         <a className="skip-link" href="#main-content">
           Skip to content
         </a>
-        <NavigationBlogPostsProvider posts={latestBlogPosts}>
+        <NavigationBlogPostsProvider
+          posts={latestBlogPosts}
+          latestUpdate={latestUpdate}
+          testimonial={navigationTestimonial}
+        >
           <SiteHeader />
           {children}
           <SiteCta />

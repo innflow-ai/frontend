@@ -3,6 +3,7 @@ import { siteConfig } from "@/config/site";
 import { featurePageDesigns } from "@/content/feature-pages";
 import { allFeatureSlugs } from "@/content/marketing";
 import { platformPages } from "@/content/platform";
+import { getIntegrations } from "@/lib/integrations";
 import { productSlugs } from "@/lib/product-pages";
 import { getBlogPosts } from "@/lib/sanity";
 
@@ -14,6 +15,8 @@ const staticRoutes: Array<{
   { path: "", changeFrequency: "weekly", priority: 1 },
   { path: "/property-management", changeFrequency: "weekly", priority: 0.9 },
   { path: "/platform", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/products", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/solutions", changeFrequency: "monthly", priority: 0.8 },
   { path: "/integrations", changeFrequency: "monthly", priority: 0.8 },
   { path: "/pricing", changeFrequency: "monthly", priority: 0.8 },
   { path: "/demo", changeFrequency: "monthly", priority: 0.8 },
@@ -95,9 +98,18 @@ const staticRoutes: Array<{
 const siteLastModified = new Date("2026-08-22T00:00:00.000Z");
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const posts = await getBlogPosts();
+  const [posts, integrations] = await Promise.all([
+    getBlogPosts(),
+    getIntegrations(),
+  ]);
 
   return [
+    ...integrations.map((item) => ({
+      url: `${siteConfig.marketingOrigin}/integrations/${item.slug}`,
+      lastModified: new Date(item._updatedAt),
+      changeFrequency: "weekly" as const,
+      priority: 0.6,
+    })),
     ...staticRoutes.map((route) => ({
       url: `${siteConfig.marketingOrigin}${route.path}`,
       lastModified: siteLastModified,

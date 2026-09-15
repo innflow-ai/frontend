@@ -2,9 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Host_Grotesk } from "next/font/google";
 import type { ReactNode } from "react";
 import { ConsentManagedTags } from "@/components/consent-managed-tags";
-import { EditorialFooter } from "@/components/editorial-footer";
-import { EditorialHeader } from "@/components/editorial-header";
-import { MarketingExperienceRuntime } from "@/components/marketing-experience-runtime";
 import { MarketingRuntime } from "@/components/marketing-runtime";
 import type { LatestBlogPostNavItem } from "@/components/mega-menu";
 import { NavigationBlogPostsProvider } from "@/components/navigation-blog-posts";
@@ -14,7 +11,6 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { siteConfig } from "@/config/site";
-import { getMarketingExperience } from "@/lib/marketing-experience-server";
 import {
   formatPostDate,
   getLatestBlogPosts,
@@ -101,7 +97,7 @@ export default async function RootLayout({
 }: {
   children: ReactNode;
 }) {
-  const experience = await getMarketingExperience();
+  const experience = { variant: null, measure: false } as const;
   const latestPosts = await getLatestBlogPosts();
   const latestBlogPosts: LatestBlogPostNavItem[] = latestPosts.map((post) => ({
     title: post.title,
@@ -135,7 +131,7 @@ export default async function RootLayout({
           }}
         />
       </head>
-      <body data-marketing-experience={experience.variant ?? undefined}>
+      <body>
         <SmoothScroll />
         <noscript>
           <iframe
@@ -150,25 +146,14 @@ export default async function RootLayout({
           Skip to content
         </a>
         <NavigationBlogPostsProvider posts={latestBlogPosts}>
-          {experience.variant === "control" ? (
-            <EditorialHeader latestBlogPosts={latestBlogPosts} />
-          ) : (
-            <SiteHeader />
-          )}
+          <SiteHeader />
           {children}
-          {experience.variant === "control" ? (
-            <EditorialFooter />
-          ) : (
-            <>
-              <SiteCta />
-              <SiteFooter />
-            </>
-          )}
+          <SiteCta />
+          <SiteFooter />
         </NavigationBlogPostsProvider>
         <MarketingRuntime />
         <ConsentManagedTags />
         <PostHogObservability experience={experience} />
-        {experience.variant && <MarketingExperienceRuntime />}
       </body>
     </html>
   );

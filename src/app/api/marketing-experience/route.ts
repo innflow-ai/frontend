@@ -26,7 +26,10 @@ export async function POST(request: NextRequest) {
     path: "/",
     domain: cookieDomain(request.nextUrl.hostname),
   };
-  if (request.cookies.get(CONSENT_COOKIE)?.value !== "granted") {
+  if (
+    experienceMode(process.env.MARKETING_EXPERIENCE_MODE) === "off" ||
+    request.cookies.get(CONSENT_COOKIE)?.value !== "granted"
+  ) {
     response.cookies.set(ATTRIBUTION_COOKIE, "", { ...options, maxAge: 0 });
     return response;
   }

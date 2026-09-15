@@ -10,6 +10,7 @@ import {
 import { FeatureMedia } from "@/components/product-media";
 import { siteConfig } from "@/config/site";
 import { allFeatureSlugs, featurePages } from "@/content/marketing";
+import { getPageFaqs } from "@/lib/faqs";
 import { createPageMetadata } from "@/lib/metadata";
 
 const featureSeo: Record<
@@ -68,6 +69,10 @@ export default async function FeaturePage({
   const content = featurePages[slug as keyof typeof featurePages];
   if (!content) notFound();
 
+  const { items: faqs, heading: faqHeading } = await getPageFaqs(
+    `/features/${content.slug}`,
+    content.faq,
+  );
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -127,9 +132,9 @@ export default async function FeaturePage({
         <div className="shell faq-layout">
           <div className="faq-intro">
             <span className="section-label">Your questions</span>
-            <h2>A clearer picture before you begin.</h2>
+            <h2>{faqHeading || "A clearer picture before you begin."}</h2>
           </div>
-          <FaqList items={content.faq} />
+          <FaqList items={faqs} />
         </div>
       </section>
       <JsonLd value={breadcrumbSchema} />

@@ -4,6 +4,7 @@ import { JsonLd } from "@/components/json-ld";
 import { FaqList, MarketingPage } from "@/components/page-primitives";
 import { SkillsLibrary } from "@/components/skills-library";
 import { getProductFaqs } from "@/content/product-faqs";
+import { getPageFaqs } from "@/lib/faqs";
 import { createPageMetadata } from "@/lib/metadata";
 import { getSkillCategories, getSkills } from "@/lib/skills";
 import styles from "./page.module.css";
@@ -22,7 +23,10 @@ export default async function SkillsIndexPage() {
     getSkills(),
     getSkillCategories(),
   ]);
-  const faqs = getProductFaqs("skills");
+  const { items: faqs, heading: faqHeading } = await getPageFaqs(
+    "/skills",
+    getProductFaqs("skills"),
+  );
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -63,7 +67,7 @@ export default async function SkillsIndexPage() {
         <div className="shell faq-layout">
           <div className="faq-intro">
             <span className="section-label">FAQ</span>
-            <h2>Questions about agent skills.</h2>
+            <h2>{faqHeading || "Questions about agent skills."}</h2>
             <p>
               What a skill is, how review works, and how skills use the systems
               you already run.

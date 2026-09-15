@@ -1,3 +1,5 @@
+import { MARKETING_LAYOUT_EXPERIMENT_ENABLED } from "@/config/experiments";
+
 export const EXPERIENCE_KEY = "marketing-experience-v1";
 export const EXPERIENCE_COOKIE = "innflow-experience";
 export const ATTRIBUTION_COOKIE = "innflow-experiment-attribution";
@@ -13,6 +15,7 @@ export function isVariant(value: unknown): value is ExperienceVariant {
 }
 
 export function experienceMode(value: unknown): ExperienceMode {
+  if (!MARKETING_LAYOUT_EXPERIMENT_ENABLED) return "off";
   return value === "experiment" || isVariant(value) ? value : "off";
 }
 

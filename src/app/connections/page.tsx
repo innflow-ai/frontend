@@ -13,6 +13,8 @@ const groups = [
   {
     heading: "Get started",
     links: [
+      { href: "/products", label: "Browse all products" },
+      { href: "/solutions", label: "Browse all solutions" },
       {
         href: "/",
         label: "BL Home",
@@ -78,6 +80,21 @@ const groups = [
         href: "/rental-property-loans",
         label: "Financing preparation",
       },
+    ],
+  },
+  {
+    heading: "Property types",
+    links: [
+      { href: "/multifamily", label: "Multifamily" },
+      { href: "/single-family", label: "Single Family" },
+      { href: "/commercial", label: "Commercial" },
+      { href: "/community-associations", label: "Community Associations" },
+      { href: "/student-housing", label: "Student Housing" },
+      { href: "/affordable-housing", label: "Affordable Housing" },
+      { href: "/residential", label: "Residential" },
+      { href: "/multifamily", label: "Conventional" },
+      { href: "/mobile-home", label: "Mobile Home" },
+      { href: "/self-storage", label: "Self Storage" },
     ],
   },
   {
@@ -203,7 +220,11 @@ export default function ConnectionsPage() {
         </header>
         <nav className={styles.groups} aria-label="BL page directory">
           {groups.map((group) => (
-            <section key={group.heading} className={styles.group}>
+            <section
+              id={group.heading.toLowerCase().replaceAll(" ", "-")}
+              key={group.heading}
+              className={styles.group}
+            >
               <h2>{group.heading}</h2>
               <ul>
                 {group.links.map((link) => (

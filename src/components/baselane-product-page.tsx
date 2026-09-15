@@ -9,6 +9,7 @@ import Image from "next/image";
 import googleCtaStyles from "@/components/google-cta.module.css";
 import { GoogleCtaContent } from "@/components/google-cta-content";
 import { siteConfig } from "@/config/site";
+import { getPageFaqTuples } from "@/lib/faqs";
 import { BaselaneHomepage } from "./baselane-homepage";
 import {
   type ProductPageKind,
@@ -16,6 +17,7 @@ import {
 } from "./baselane-product-content";
 import styles from "./baselane-product-page.module.css";
 import { PageTestimonials } from "./page-testimonials";
+import { ProductHeadspaceCta } from "./product-headspace-cta";
 import { ScrollStory } from "./scroll-story";
 
 function Scene({
@@ -52,7 +54,7 @@ function Actions() {
     </div>
   );
 }
-export function BaselaneProductPage({
+export async function BaselaneProductPage({
   kind,
   showBand = true,
 }: {
@@ -60,6 +62,10 @@ export function BaselaneProductPage({
   showBand?: boolean;
 }) {
   const data = productContent[kind];
+  const cmsFaqs = await getPageFaqTuples(
+    kind === "accounting" ? "/landlord-accounting" : `/${kind}`,
+    data.faqs,
+  );
   const root = `/brand/baselane-inspired/${kind}/`;
   const icons = [FlowArrow, CheckCircle, Files, ShieldCheck];
   const renderPanel = (
@@ -206,40 +212,20 @@ export function BaselaneProductPage({
             staticSolutions
           )}
         </section>
-        <section className={styles.ocean}>
-          <Image
-            src="/brand/baselane-inspired/hero.webp"
-            alt=""
-            fill
-            sizes="100vw"
-          />
-          <div>
-            <span className={styles.eyebrow}>A LITTLE MORE HEADSPACE</span>
-            <h2>
-              Make room for the life
-              <br />
-              around your properties.
-            </h2>
-            <p>
-              Bring your team, your information, and your next steps into one
-              flow.
-            </p>
-            <Actions />
-          </div>
-        </section>
+        <ProductHeadspaceCta />
         <PageTestimonials
           pagePath={kind === "accounting" ? "/landlord-accounting" : `/${kind}`}
         />
         <section className={styles.faq}>
-          <h2>FAQs</h2>
+          <h2>{cmsFaqs.heading || "FAQs"}</h2>
           <div>
-            {data.faqs.map(([question, answer]) => (
-              <details key={question}>
+            {cmsFaqs.items.map(([question, answer, faqId]) => (
+              <details key={faqId}>
                 <summary>
                   {question}
                   <span>+</span>
                 </summary>
-                <p>{answer}</p>
+                <p style={{ whiteSpace: "pre-line" }}>{answer}</p>
               </details>
             ))}
           </div>

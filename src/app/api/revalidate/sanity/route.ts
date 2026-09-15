@@ -1,4 +1,4 @@
-import { revalidatePath } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 import type { NextRequest } from "next/server";
 import { parseBody } from "next-sanity/webhook";
 
@@ -35,10 +35,25 @@ export async function POST(request: NextRequest) {
       return Response.json({ message: "Invalid signature." }, { status: 401 });
     }
 
+    if (body?._type && ["faq", "faqSet", "faqPlacement"].includes(body._type)) {
+      revalidateTag("faqs", { expire: 0 });
+      return Response.json({ revalidated: true });
+    }
+
     if (body?._type === "post") {
       revalidatePath("/blog");
       revalidatePath("/blog/[slug]", "page");
 
+      return Response.json({ revalidated: true });
+    }
+
+    if (
+      body?._type === "integration" ||
+      body?._type === "integrationCategory"
+    ) {
+      revalidatePath("/integrations");
+      revalidatePath("/integrations/[slug]", "page");
+      revalidatePath("/sitemap.xml");
       return Response.json({ revalidated: true });
     }
 

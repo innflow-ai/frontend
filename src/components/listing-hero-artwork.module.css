@@ -1,0 +1,84 @@
+.artwork {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: var(--canvas-warm);
+}
+
+.canvas {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  aspect-ratio: 2017 / 940;
+}
+
+.canvas > * {
+  position: absolute;
+}
+
+.porch {
+  left: 0;
+  top: 30.851%;
+  width: 100%;
+  height: 69.149%;
+  /* Preserve the supplied edge strokes; its cream fade is already baked in. */
+  object-fit: fill;
+}
+
+.channels,
+.status {
+  background: linear-gradient(135deg, #ffffff26, #ffffff05 55%, #ffffff14);
+  -webkit-backdrop-filter: blur(6px) saturate(1.2);
+  backdrop-filter: blur(6px) saturate(1.2);
+  box-shadow:
+    inset 0 1px 1px #ffffff99,
+    inset 0 -1px 1px #ffffff33,
+    0 6px 20px #01223212;
+}
+
+.channels {
+  left: 75.458%;
+  top: 14.574%;
+  width: 23.424%;
+  height: auto;
+  border-radius: 13px;
+}
+
+.couple {
+  left: 39.514%;
+  top: 0;
+  width: 43.991%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.status {
+  left: 68.821%;
+  top: 51.298%;
+  width: 22.936%;
+  height: auto;
+  border-radius: 14px;
+}
+
+@media (max-width: 700px) {
+  .canvas {
+    width: calc(var(--hero-image-height) * 2.14574);
+    height: var(--hero-image-height);
+    right: auto;
+    left: 60%;
+    transform: translateX(-60%);
+  }
+
+  .channels {
+    left: 37%;
+    top: 18%;
+    width: 23.424%;
+  }
+
+  .status {
+    left: 43%;
+    top: 58%;
+    width: 26%;
+  }
+}

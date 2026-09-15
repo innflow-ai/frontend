@@ -3,7 +3,8 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { JsonLd } from "@/components/json-ld";
 import { FaqList, MarketingPage } from "@/components/page-primitives";
 import { siteConfig } from "@/config/site";
-import { faqs } from "@/content/home";
+import { faqs as fallbackFaqs } from "@/content/home";
+import { getPageFaqs } from "@/lib/faqs";
 import { createPageMetadata } from "@/lib/metadata";
 import styles from "./page.module.css";
 
@@ -14,7 +15,11 @@ export const metadata = createPageMetadata({
   path: "/faq",
 });
 
-export default function FaqPage() {
+export default async function FaqPage() {
+  const { items: faqs, heading: faqHeading } = await getPageFaqs(
+    "/faq",
+    fallbackFaqs,
+  );
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -33,7 +38,7 @@ export default function FaqPage() {
             <Breadcrumbs
               items={[{ label: "Home", href: "/" }, { label: "FAQ" }]}
             />
-            <h1>Frequently Asked Questions</h1>
+            <h1>{faqHeading || "Frequently Asked Questions"}</h1>
           </div>
           <div className={styles.questions}>
             <FaqList items={faqs} />

@@ -6,12 +6,16 @@ import type {
   FeatureArtwork,
   FeaturePageContent,
 } from "@/content/feature-pages";
+import { getPageFaqTuples } from "@/lib/faqs";
 import { BaselaneHomepage } from "./baselane-homepage";
 import base from "./baselane-product-page.module.css";
+import { Breadcrumbs } from "./breadcrumbs";
 import styles from "./figma-feature-page.module.css";
 import googleStyles from "./google-cta.module.css";
 import { GoogleCtaContent } from "./google-cta-content";
+import { ListingHeroArtwork } from "./listing-hero-artwork";
 import { PageTestimonials } from "./page-testimonials";
+import { ProductHeadspaceCta } from "./product-headspace-cta";
 import { ScrollStory } from "./scroll-story";
 
 function Artwork({
@@ -44,13 +48,14 @@ function Artwork({
   ));
 }
 
-export function FigmaFeaturePage({
+export async function FigmaFeaturePage({
   page,
   testimonials,
 }: {
   page: FeaturePageContent;
   testimonials?: ReactNode;
 }) {
+  const cmsFaqs = await getPageFaqTuples(page.path, page.faqs);
   const features = (
     <div id="additional-features" className={base.features}>
       {page.features.map(([title, text]) => (
@@ -124,35 +129,44 @@ export function FigmaFeaturePage({
   return (
     <BaselaneHomepage>
       <div
-        className={`${base.rentCollection} ${styles.page} ${page.key === "accounting" ? styles.accounting : ""}`}
+        className={`${base.rentCollection} ${styles.page} ${page.key === "accounting" ? styles.accounting : ""} ${page.key === "listing-and-advertising" ? styles.listing : ""}`}
       >
         <section className={`${base.hero} ${styles.hero}`}>
           <div
             className={styles.heroVisual}
             style={{ "--hero-focus": `${page.heroFocus}%` } as CSSProperties}
           >
-            <div className={styles.heroCanvas}>
-              <Image
-                src={page.hero}
-                alt=""
-                fill
-                sizes="100vw"
-                preload
-                className={styles.heroPhoto}
-              />
-              <Artwork items={page.heroArtwork} hero />
-              {page.key === "accounting" && (
+            {page.key === "listing-and-advertising" ? (
+              <ListingHeroArtwork />
+            ) : (
+              <div className={styles.heroCanvas}>
                 <Image
-                  src="/brand/feature-pages/accounting/foreground.png"
+                  src={page.hero}
                   alt=""
-                  width={622}
-                  height={558}
-                  className={styles.foreground}
+                  fill
+                  sizes="100vw"
+                  preload
+                  className={styles.heroPhoto}
                 />
-              )}
-            </div>
+                <Artwork items={page.heroArtwork} hero />
+                {page.key === "accounting" && (
+                  <Image
+                    src="/brand/feature-pages/accounting/foreground.png"
+                    alt=""
+                    width={622}
+                    height={558}
+                    className={styles.foreground}
+                  />
+                )}
+              </div>
+            )}
           </div>
-          <div className={base.heroCopy}>
+          <div className={`${base.heroCopy} ${styles.heroCopy}`}>
+            <div className={styles.breadcrumbs}>
+              <Breadcrumbs
+                items={[{ label: "Home", href: "/" }, { label: page.name }]}
+              />
+            </div>
             <h1>{page.title}</h1>
             <p>{page.description}</p>
             <a
@@ -184,17 +198,18 @@ export function FigmaFeaturePage({
             navFooter={footerLink}
           />
         </section>
+        <ProductHeadspaceCta />
         {testimonials ?? <PageTestimonials pagePath={page.path} />}
         <section className={base.faq}>
-          <h2>FAQs</h2>
+          <h2>{cmsFaqs.heading || "FAQs"}</h2>
           <div>
-            {page.faqs.map(([question, answer]) => (
-              <details key={question}>
+            {cmsFaqs.items.map(([question, answer, faqId]) => (
+              <details key={faqId}>
                 <summary>
                   {question}
                   <span>+</span>
                 </summary>
-                <p>{answer}</p>
+                <p style={{ whiteSpace: "pre-line" }}>{answer}</p>
               </details>
             ))}
           </div>

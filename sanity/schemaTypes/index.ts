@@ -1,4 +1,6 @@
 import { authorType } from "./authorType";
+import { faqPlacementType, faqSetType, faqType } from "./faqType";
+import { integrationCategoryType, integrationType } from "./integrationType";
 import { postType } from "./postType";
 import {
   productCapabilitiesSectionType,
@@ -17,6 +19,11 @@ import { testimonialPlacementType } from "./testimonialPlacementType";
 import { testimonialType } from "./testimonialType";
 
 export const schemaTypes = [
+  faqType,
+  faqSetType,
+  faqPlacementType,
+  integrationType,
+  integrationCategoryType,
   authorType,
   postType,
   skillCategoryType,

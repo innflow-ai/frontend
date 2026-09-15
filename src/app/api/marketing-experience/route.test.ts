@@ -15,6 +15,10 @@ import {
 import { POST } from "./route";
 
 const secret = "test-secret-for-experience-at-least-32-characters";
+// Exercise the retained handoff protocol without enabling the retired rollout.
+vi.mock("@/config/experiments", () => ({
+  MARKETING_LAYOUT_EXPERIMENT_ENABLED: true,
+}));
 afterEach(() => vi.unstubAllEnvs());
 
 describe("consented signup handoff", () => {

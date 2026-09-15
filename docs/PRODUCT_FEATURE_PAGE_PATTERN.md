@@ -7,11 +7,12 @@ The user designated `/rent-collection` as the default design pattern for all fut
 1. **Full-width photographic hero.** A single H1 states the main benefit, followed by concise supporting copy, the shared Continue with Google button, and the terms/privacy disclaimer. Use the cream button variant shown on Rent collection and the navbar's responsive button sizing. Keep the image edge-to-edge across the viewport and at the top of the hero.
 2. **Benefit-led introduction and feature story.** A short H2 introduces the feature. Use typically four primary feature sections, with the count adjusted to the feature. Each contains a small category label, a concise benefit heading, supporting copy, and a relevant product visual. Adjust the subjects to the page rather than copying Rent collection's wording.
 3. **Three to six supporting points.** A clearly defined, compact feature grid follows the main sections. These are supporting benefits for the page as a whole, not three to six additional subsections inside every panel.
-4. **Shared CMS testimonials.** Place selected testimonial cards immediately above FAQs, with a centered section heading. Reuse Sanity references and the shared card interaction. Do not bring back the former “See the work in a new light” process-card section alongside testimonials.
-5. **Feature-specific FAQs.**
-6. **Shared site footer.**
+4. **Shared post-feature CTA.** Use `ProductHeadspaceCta` after the feature scroll and supporting points, before testimonials. It uses the beach-and-hammock photograph and copy from CMS Template node `3:273`, with the shared Google signup and demo destinations. Keep this placement in both desktop and mobile flow.
+5. **Shared CMS testimonials.** Place selected testimonial cards immediately above FAQs, with a centered section heading. Reuse Sanity references and the shared card interaction. Do not bring back the former “See the work in a new light” process-card section alongside testimonials.
+6. **Feature-specific FAQs.**
+7. **Shared site footer.**
 
-The user refined the pattern after the initial Rent collection review: use typically four sections, then three to six supporting points. The current route's three panels are not the required count for future pages. A lifestyle CTA is an optional variation when requested, not a mandatory step in this sequence. This update does not remove it from existing pages.
+The user refined the pattern after the initial Rent collection review: use typically four sections, then three to six supporting points. The current route's three panels are not the required count for future pages. The shared lifestyle CTA is now part of the product and feature page sequence, as requested on September 14, 2026.
 
 The extra promotional band is off on the canonical Rent collection route. Do not add it by default to a new page.
 

@@ -154,17 +154,17 @@ export function ControlsGrid({
 export function FaqList({
   items,
 }: {
-  items: readonly { question: string; answer: string }[];
+  items: readonly { id?: string; question: string; answer: string }[];
 }) {
   return (
     <div className="faq-list">
       {items.map((item, index) => (
-        <details key={item.question} open={index === 0}>
+        <details key={item.id || item.question} open={index === 0}>
           <summary>
             <span>{item.question}</span>
             <i aria-hidden="true">+</i>
           </summary>
-          <p>{item.answer}</p>
+          <p style={{ whiteSpace: "pre-line" }}>{item.answer}</p>
         </details>
       ))}
     </div>

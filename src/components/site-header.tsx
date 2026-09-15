@@ -13,6 +13,7 @@ import { useEffect, useRef, useState } from "react";
 import { GoogleCtaContent } from "@/components/google-cta-content";
 import { LoginMenu } from "@/components/login-menu";
 import {
+  menuBrowseLinks,
   portfolioColumns as originalPortfolioColumns,
   productColumns,
   resourcesColumns,
@@ -159,7 +160,10 @@ export function SiteHeader() {
   };
   return (
     <div className={`${styles.page} ${styles.chromeScope}`}>
-      <header ref={header} className={styles.header}>
+      <header
+        ref={header}
+        className={`${styles.header}${mobile ? ` ${styles.mobileOpen}` : ""}`}
+      >
         <a href="/" className={styles.logo} aria-label="innflow home">
           <Image
             src="/brand/innflow-wordmark.svg"
@@ -234,25 +238,38 @@ export function SiteHeader() {
                           key={link.title}
                           href={link.href}
                           onClick={closeMenus}
+                          data-browse-all={link.browseAll || undefined}
                         >
-                          <Image
-                            className={styles.menuItemIcon}
-                            src={
-                              blMenuIcons[link.title] ??
-                              link.iconSrc ??
-                              "/brand/navigation/bl-stroke/01-laptop.svg"
-                            }
-                            alt=""
-                            width={28}
-                            height={28}
-                            unoptimized
-                          />
+                          {!link.hideIcon && (
+                            <Image
+                              className={styles.menuItemIcon}
+                              src={
+                                blMenuIcons[link.title] ??
+                                link.iconSrc ??
+                                "/brand/navigation/bl-stroke/01-laptop.svg"
+                              }
+                              alt=""
+                              width={28}
+                              height={28}
+                              unoptimized
+                            />
+                          )}
                           <span>{link.title}</span>
                           {link.badge ? <small>{link.badge}</small> : null}
                         </a>
                       ))}
                     </div>
                   ))}
+                  {menuBrowseLinks[group.label] && (
+                    <a
+                      className={styles.browseAll}
+                      data-browse-all
+                      href={menuBrowseLinks[group.label]?.href}
+                      onClick={closeMenus}
+                    >
+                      <span>{menuBrowseLinks[group.label]?.title}</span>
+                    </a>
+                  )}
                   {group.label === "Resources" &&
                     latestBlogPosts.length > 0 && (
                       <section

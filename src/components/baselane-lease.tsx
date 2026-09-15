@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { GoogleCtaContent } from "@/components/google-cta-content";
 import { siteConfig } from "@/config/site";
+import { getPageFaqTuples } from "@/lib/faqs";
 import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-lease.module.css";
 import shared from "./baselane-partners.module.css";
@@ -56,7 +57,8 @@ function Action() {
     </a>
   );
 }
-export function BaselaneLease() {
+export async function BaselaneLease() {
+  const cmsFaqs = await getPageFaqTuples("/lease-agreement", faqs);
   return (
     <BaselaneHomepage>
       <div className={`${shared.page} ${styles.page}`}>
@@ -180,17 +182,17 @@ export function BaselaneLease() {
           </div>
         </section>
         <section className={styles.why}>
-          <h2>Frequently asked questions</h2>
+          <h2>{cmsFaqs.heading || "Frequently asked questions"}</h2>
           <div className={shared.accordion}>
-            {faqs.map(([title, text], i) => (
-              <details key={title} open={i === 0}>
+            {cmsFaqs.items.map(([title, text, faqId], i) => (
+              <details key={faqId} open={i === 0}>
                 <summary>
                   {title}
                   <span className={shared.plus} aria-hidden="true">
                     +
                   </span>
                 </summary>
-                <p>{text}</p>
+                <p style={{ whiteSpace: "pre-line" }}>{text}</p>
               </details>
             ))}
           </div>

@@ -1,61 +1,42 @@
-import Image from "next/image";
-import {
-  MarketingPage,
-  PageHero,
-} from "@/components/page-primitives";
-import { integrations } from "@/content/home";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { IntegrationDirectory } from "@/components/integration-directory";
+import styles from "@/components/integrations.module.css";
+import { MarketingPage } from "@/components/page-primitives";
+import { getIntegrations } from "@/lib/integrations";
 import { createPageMetadata } from "@/lib/metadata";
-
+export const revalidate = 60;
 export const metadata = createPageMetadata({
-  title: "Property Management Software Integrations | Innflow",
+  title: "Integrations & Roadmap | Innflow",
   description:
-    "Connect Innflow with the property management tools your team uses and coordinate data, approvals, and operational workflows across systems.",
+    "Explore Innflow integrations and planned connections. Find the tools your team uses and see what’s available or on the roadmap.",
   path: "/integrations",
 });
-
-export default function IntegrationsPage() {
+export default async function IntegrationsPage() {
+  const items = await getIntegrations();
   return (
     <MarketingPage>
-      <PageHero
-        eyebrow="Integrations"
-        title="Keep your tools. Connect the work."
-        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Integrations" }]}
-        description="Bring the tools your team relies on into the same workflow. We’ll help you check the connections, access, and setup your operation needs."
-      />
-      <section className="section">
-        <div className="shell integration-directory">
-          <div className="section-intro compact-intro">
-            <span className="section-label">Connector directory</span>
-            <h2>Find your next connection.</h2>
-            <p>
-              Explore the tools below, then talk with us about your accounts and
-              the information you want to connect.
-            </p>
-          </div>
-          <div className="integration-grid integration-grid-large">
-            {integrations.map((integration) => (
-              <article className="integration-card" key={integration.name}>
-                <Image src={integration.asset} alt="" width={40} height={40} />
-                <strong>{integration.name}</strong>
-                <small>{integration.status}</small>
-              </article>
-            ))}
-            <article className="integration-card api-card">
-              <span className="api-mark">API</span>
-              <strong>Custom path</strong>
-              <small>Scoping and implementation required</small>
-            </article>
+      <header className={styles.hero}>
+        <div className="shell">
+          <Breadcrumbs
+            items={[{ label: "Home", href: "/" }, { label: "Integrations" }]}
+          />
+          <span className={styles.eyebrow}>The integration directory</span>
+          <h1>
+            Your tools.
+            <br />
+            <span>One connected workflow.</span>
+          </h1>
+          <p>
+            Explore connections for the tools your team already uses, and the
+            ones we’re planning next.
+          </p>
+          <div className={styles.heroNote}>
+            <span aria-hidden="true">◎</span> Every integration includes its
+            current availability.
           </div>
         </div>
-      </section>
-      <section className="section quiet-section">
-        <div className="shell statement-grid">
-          <span className="section-label">Before implementation</span>
-          <h2>
-            Choose what to share, who can act, and where the next step belongs.
-          </h2>
-        </div>
-      </section>
+      </header>
+      <IntegrationDirectory items={items} />
     </MarketingPage>
   );
 }

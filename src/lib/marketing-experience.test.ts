@@ -14,6 +14,10 @@ import {
 import { readExperience, signExperience } from "./marketing-experience-signing";
 
 const secret = "test-secret-for-experience-at-least-32-characters";
+// Exercise the retained infrastructure independently of its retired rollout.
+vi.mock("@/config/experiments", () => ({
+  MARKETING_LAYOUT_EXPERIMENT_ENABLED: true,
+}));
 const assignment = (variant: "control" | "new" = "new") => ({
   key: EXPERIENCE_KEY as typeof EXPERIENCE_KEY,
   variant,

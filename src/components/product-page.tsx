@@ -6,6 +6,7 @@ import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
 import { getProductFaqs } from "@/content/product-faqs";
 import { productStoryCopy } from "@/content/product-story-copy";
+import { getPageFaqs } from "@/lib/faqs";
 import type {
   ProductCapabilitiesSection,
   ProductCta,
@@ -13,6 +14,7 @@ import type {
   ProductPage as ProductPageData,
 } from "@/lib/product-pages";
 import { PageTestimonials } from "./page-testimonials";
+import { ProductHeadspaceCta } from "./product-headspace-cta";
 import styles from "./product-page.module.css";
 import { RuneyWorkspace } from "./runey-workspace";
 import { WorkflowIllustration } from "./workflow-illustration";
@@ -157,14 +159,17 @@ function ProductDetail({ section }: { section: ProductDetailSection }) {
 
 import experience from "./product-experience.module.css";
 
-export function ProductPage({ product }: { product: ProductPageData }) {
+export async function ProductPage({ product }: { product: ProductPageData }) {
   const isAgentOs =
     product.slug === "agent-os" || product.slug === "agent-studio";
   const details = product.sections.filter(
     (section): section is ProductDetailSection =>
       section._type === "productDetailSection",
   );
-  const faqs = getProductFaqs(product.slug);
+  const { items: faqs, heading: faqHeading } = await getPageFaqs(
+    `/products/${product.slug}`,
+    getProductFaqs(product.slug),
+  );
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -278,6 +283,7 @@ export function ProductPage({ product }: { product: ProductPageData }) {
         </section>
       ) : null}
 
+      <ProductHeadspaceCta />
       <PageTestimonials pagePath={`/products/${product.slug}`} />
       {faqs.length ? (
         <section
@@ -288,7 +294,7 @@ export function ProductPage({ product }: { product: ProductPageData }) {
           <div className={`${styles.shell} ${styles.faqInner}`}>
             <div className={styles.faqIntro}>
               <span className={styles.eyebrow}>FAQ</span>
-              <h2>Questions about {product.title}.</h2>
+              <h2>{faqHeading || `Questions about ${product.title}.`}</h2>
               <p>
                 Direct answers on agents, memory, human review, deployment, and
                 security, and fitting innflow into your operation.

@@ -1,5 +1,6 @@
 import { randomInt } from "node:crypto";
 import { type NextRequest, NextResponse } from "next/server";
+import { MARKETING_LAYOUT_EXPERIMENT_ENABLED } from "@/config/experiments";
 import {
   EXPERIENCE_COOKIE,
   EXPERIENCE_HEADER,
@@ -23,8 +24,9 @@ export function proxy(request: NextRequest) {
   const mode = experienceMode(process.env.MARKETING_EXPERIENCE_MODE);
   const secret = process.env.MARKETING_EXPERIENCE_SECRET ?? "";
   const previewAllowed =
-    process.env.NODE_ENV === "development" ||
-    process.env.VERCEL_ENV === "preview";
+    MARKETING_LAYOUT_EXPERIMENT_ENABLED &&
+    (process.env.NODE_ENV === "development" ||
+      process.env.VERCEL_ENV === "preview");
   const preview = previewAllowed
     ? request.nextUrl.searchParams.get("experience")
     : null;
@@ -88,7 +90,7 @@ export function proxy(request: NextRequest) {
   const url = request.nextUrl.clone();
   url.pathname = publicPath;
   const response =
-    active && publicPath !== request.nextUrl.pathname
+    publicPath !== request.nextUrl.pathname
       ? NextResponse.redirect(url, 307)
       : NextResponse.next({ request: { headers: requestHeaders } });
   if (active) {

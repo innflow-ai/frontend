@@ -600,23 +600,13 @@
 .membershipInputRow :disabled {
   cursor: not-allowed;
 }
-.page .membershipSignup small {
-  display: block;
-  margin-top: 14px;
-  color: #344e5b;
-  font-size: 13px;
-  line-height: 1.5;
-}
-.page .membershipSignup small a {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
 @media (max-width: 600px) {
   .membershipSignup {
     padding: 22px 18px;
   }
   .membershipInputRow input {
     padding-inline: 8px;
+    font-size: 16px;
   }
   .membershipInputRow button {
     padding-inline: 12px;
@@ -627,15 +617,11 @@
   .membershipSignup {
     padding-inline: 12px;
   }
-  .membershipInputRow input,
   .membershipInputRow button {
-    font-size: 12px;
+    font-size: 14px;
   }
   .membershipInputRow button {
     padding-inline: 10px;
-  }
-  .membershipInputRow button > :where(svg) {
-    display: none;
   }
 }
 .mobileBreak {
@@ -978,6 +964,9 @@
   }
   .page .closing p {
     font-size: 18px;
+  }
+  .page .closing .membershipSignup p {
+    font-size: 14px;
   }
   .mobileBreak {
     display: block;

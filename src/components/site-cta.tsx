@@ -1,5 +1,4 @@
 "use client";
-import { ArrowRight } from "@phosphor-icons/react";
 import { type FormEvent, useState } from "react";
 import { siteConfig } from "@/config/site";
 import { GoogleCtaContent } from "./google-cta-content";
@@ -57,9 +56,6 @@ export function SiteCta() {
           </h2>
           <p>Bring your team, context, and next steps together.</p>
           <div className={styles.actions}>
-            <a className={styles.outlineButton} href={siteConfig.demoUrl}>
-              See demo <ArrowRight size={18} />
-            </a>
             <TrackedLink
               className={styles.darkButton}
               destination={siteConfig.googleAuthUrl}
@@ -109,18 +105,10 @@ export function SiteCta() {
                       maxLength={254}
                     />
                     <button type="submit">
-                      {signupState === "pending"
-                        ? "Signing up…"
-                        : "Sign up now"}{" "}
-                      <ArrowRight size={18} aria-hidden="true" />
+                      {signupState === "pending" ? "Signing up…" : "Sign up"}
                     </button>
                   </div>
                 </fieldset>
-                <small>
-                  By signing up, you agree to receive marketing emails from
-                  Innflow. Unsubscribe anytime.{" "}
-                  <a href="/legal/privacy-policy">Privacy policy</a>
-                </small>
               </>
             )}
             <div

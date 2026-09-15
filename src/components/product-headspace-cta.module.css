@@ -11,7 +11,18 @@
 .image {
   z-index: -2;
   object-fit: cover;
-  object-position: center;
+  object-position: right center;
+}
+
+.image,
+.section::before {
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    #000 12%,
+    #000 88%,
+    transparent
+  );
 }
 
 .content {
@@ -82,10 +93,6 @@
     inset: 0;
     z-index: -1;
     background: linear-gradient(#e7f4fbe6, #e7f4fbbf 55%, transparent 80%);
-  }
-
-  .image {
-    object-position: 72% center;
   }
 
   .content h2 {

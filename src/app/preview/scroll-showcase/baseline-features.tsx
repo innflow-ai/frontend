@@ -158,27 +158,6 @@ function BaselineFeature({ feature }: { feature: Feature }) {
       <div className={styles.grid} data-reverse={feature.reverse}>
         <div className={styles.copy}>
           <header className={styles.heading}>
-            <div className={styles.category}>
-              <span className={styles.categoryIcon} aria-hidden="true">
-                <Image
-                  src={asset("imgIcon.svg")}
-                  alt=""
-                  width={24}
-                  height={24}
-                />
-                <Image
-                  className={styles.categoryGlyph}
-                  src={asset(feature.glyph)}
-                  alt=""
-                  width={17}
-                  height={17}
-                />
-              </span>
-              <span>{feature.label}</span>
-              {feature.badge && (
-                <span className={styles.badge}>{feature.badge}</span>
-              )}
-            </div>
             <h2 id={`${feature.id}-baseline-heading`}>{feature.title}</h2>
           </header>
           <div className={styles.rows}>

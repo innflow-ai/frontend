@@ -2,7 +2,9 @@
 .page {
   --preview-ink: #071a31;
   --preview-muted: #5d6d7b;
-  background: #fcfbf8;
+  background: #f5f3ee;
+  margin-inline: 24px;
+  border-radius: 40px;
   color: var(--preview-ink);
   font-family: var(--font-host-grotesk), sans-serif;
 }
@@ -20,10 +22,9 @@
   outline-offset: 5px;
 }
 .intro {
-  padding: 150px 24px 64px;
+  padding: 135px 24px 32px;
   text-align: center;
 }
-.intro > p,
 .outro > p {
   font-size: 11px;
   letter-spacing: 0.16em;
@@ -32,13 +33,14 @@
 }
 .intro h1 {
   font-weight: 500;
-  font-size: clamp(36px, 4.5vw, 64px);
+  font-size: clamp(40px, 4.5vw, 72px);
   letter-spacing: -0.045em;
-  line-height: 1.06;
-  margin: 0 0 20px;
+  line-height: 1.1;
+  margin: 0 0 24px;
 }
 .intro > span {
-  font-size: 16px;
+  font-size: 18px;
+  line-height: 26px;
   color: var(--preview-muted);
 }
 .scrollTrack {
@@ -46,16 +48,62 @@
   height: 500svh;
   position: relative;
 }
+.oauthActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+.oauthActions a,
+.oauthActions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 50px;
+  padding: 6px 18px 6px 6px;
+  border: 0;
+  border-radius: 12px;
+  background: #071a31;
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+}
+.oauthActions img {
+  object-fit: contain;
+  width: 38px;
+  height: 38px;
+  padding: 7px;
+  border-radius: 9px;
+  background: white;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+.oauthActions button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.oauthPending {
+  display: block;
+  margin-top: 18px;
+  line-height: 18px;
+  color: var(--preview-muted);
+  font-size: 12px;
+}
 .sticky {
   height: 100svh;
   position: sticky;
   top: 0;
-  padding: 96px 24px 24px;
+  padding: 16px;
+  display: grid;
+  place-items: start center;
 }
 .stage {
-  height: 100%;
+  width: calc(69% + var(--expansion, 0) * 31%);
+  height: calc(78% + var(--expansion, 0) * 22%);
   min-height: 510px;
-  max-width: 1600px;
+  max-width: none;
   margin: 0 auto;
   border-radius: 40px;
   position: relative;
@@ -63,7 +111,12 @@
   overflow: clip;
   display: grid;
   place-items: center;
-  transform: scale(calc(1 - var(--contraction) * 0.06));
+}
+
+:global(header[data-showcase-hidden="true"]) {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 .gradient {
   position: absolute;
@@ -676,6 +729,13 @@
   }
 }
 @media (max-width: 800px) {
+  .page {
+    margin-inline: 12px;
+    border-radius: 28px;
+  }
+  .intro {
+    padding: 72px 16px 24px;
+  }
   .sticky {
     padding: 82px 12px 12px;
   }
@@ -757,7 +817,20 @@
 }
 @media (max-width: 480px) {
   .intro {
-    padding: 130px 20px 48px;
+    padding: 56px 12px 24px;
+  }
+  .intro h1 {
+    font-size: clamp(32px, 9vw, 40px);
+  }
+  .intro > span {
+    font-size: 16px;
+  }
+  .oauthActions {
+    margin-top: 28px;
+  }
+  .oauthActions a,
+  .oauthActions button {
+    font-size: 14px;
   }
   .showcase {
     width: calc(100% - 24px);
@@ -881,4 +954,23 @@
 
 .exitAnchor {
   scroll-margin-top: 110px;
+}
+
+/* Small/short viewports keep every control reachable without a pinned crop. */
+@media (max-width: 800px), (max-height: 650px), (prefers-reduced-motion: reduce) {
+  .scrollTrack {
+    height: auto;
+  }
+  .sticky {
+    position: relative;
+    height: auto;
+    min-height: 0;
+    padding: 16px 12px;
+  }
+  .stage {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    padding: 64px 0 24px;
+  }
 }

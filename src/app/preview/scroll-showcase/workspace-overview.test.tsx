@@ -18,6 +18,9 @@ afterEach(cleanup);
 describe("Workspace overview", () => {
   it("starts with Connect expanded and exposes all four cards", () => {
     render(<WorkspaceOverview />);
+    expect(
+      screen.queryByText("Support infrastructure"),
+    ).not.toBeInTheDocument();
     for (const [index, card] of workspaceCards.entries()) {
       expect(screen.getByRole("button", { name: card.title })).toHaveAttribute(
         "aria-expanded",

@@ -30,14 +30,6 @@
   align-items: center;
   text-align: center;
 }
-.eyebrow {
-  margin: 0 0 16px;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
 .heading h2 {
   margin: 0;
   font-family: var(--font-manrope), sans-serif;
@@ -221,6 +213,10 @@
 .artwork img {
   object-fit: cover;
 }
+.artwork .connectForeground {
+  object-fit: contain;
+  object-position: center bottom;
+}
 .inactiveArt {
   opacity: 1;
   transition: opacity 400ms ease;
@@ -272,7 +268,7 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 760px) {
   .section {
     padding: 12px;
   }
@@ -298,7 +294,7 @@
     transition: height 400ms ease;
   }
   .card[data-active="true"] {
-    height: 523px;
+    height: 600px;
   }
   .cardSurface {
     border-radius: 32px;

@@ -29,47 +29,8 @@
   flex-direction: column;
   justify-content: space-between;
 }
-.category {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font:
-    500 16px / 1 var(--font-manrope),
-    sans-serif;
-  letter-spacing: -0.3125px;
-}
-.categoryIcon {
-  width: 24px;
-  height: 24px;
-  position: relative;
-  flex-shrink: 0;
-}
-.categoryIcon > img {
-  display: block;
-  width: 24px;
-  height: 24px;
-}
-.categoryIcon > .categoryGlyph {
-  position: absolute;
-  width: 17px;
-  height: 17px;
-  top: 3.5px;
-  left: 3.5px;
-  object-fit: contain;
-}
-.badge {
-  padding: 4px 12px;
-  margin-left: 8px;
-  border-radius: 8px;
-  background: #071a310d;
-  color: #3d464e;
-  font:
-    500 14px / 19.6px var(--font-geist),
-    sans-serif;
-  letter-spacing: normal;
-}
 .heading h2 {
-  margin: 16px 0 0;
+  margin: 0;
   font:
     500 48px / 1.1 var(--font-source-serif-4),
     Georgia,
@@ -106,12 +67,6 @@
 }
 .row[data-active="true"] h3 button {
   opacity: 1;
-}
-.row h3 img {
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-  object-fit: contain;
 }
 .description {
   display: flex;
@@ -161,6 +116,12 @@
   background: #e4e6e9;
 }
 .visual img {
+  object-fit: contain;
+}
+.row h3 img {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
   object-fit: contain;
 }
 .imageFrame {
@@ -265,6 +226,10 @@
     font-size: 40px;
     letter-spacing: -1.2px;
   }
+  .pending {
+    inset: 8% 6%;
+    padding: 20px;
+  }
   .section[data-channels="true"] .heading {
     padding-bottom: 32px;
   }
@@ -279,6 +244,16 @@
   .visual,
   .section[data-channels="true"] .visual {
     border-radius: 32px;
+  }
+  .pending {
+    padding: 16px;
+  }
+  .pending h3 {
+    margin: 8px 0;
+    font-size: 20px;
+  }
+  .pending p {
+    font-size: 14px;
   }
 }
 @media (prefers-reduced-motion: reduce) {

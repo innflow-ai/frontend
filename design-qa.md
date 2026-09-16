@@ -238,3 +238,34 @@ Chrome desktop and 390 CSS-pixel phone layout checks passed without document ove
 - Production build and TypeScript pass; 111 tests in 23 files pass; scoped Biome passes. All 206 manifest asset records match their hashes. Desktop navigation and 390px expanded footer reviewed without document overflow.
 - External links match inventory exactly; seven respond HTTP 200, LinkedIn returns HTTP 999 to automated requests. This remote limitation is recorded without claiming its destination was successfully loaded.
 - Full inventory map, evidence, adaptation boundaries, and publication state recorded in `docs/design/bl-inventory-delivery.md` and machine-readable `bl-inventory-audit.json`. No push or deployment.
+
+## Scroll-showcase hero and announcement — 2026-09-16
+
+Final result: passed
+
+### Scope and comparison evidence
+
+- Route: `http://localhost:3000/preview/scroll-showcase`. Exact-route header styling; public homepage content and existing navigation destinations are unchanged by this pass.
+- Source: `/Users/ak/Library/CloudStorage/Dropbox/Screenshots/Screenshot 2026-09-16 at 11.09.48 AM.png` (1819 × 747 pixels).
+- Implementation captures: `output/playwright/preview-hero-announcement-desktop.png` (1819 × 747), `output/playwright/preview-hero-announcement-mobile.png` (390 × 844), and `output/playwright/preview-hero-expanded-desktop.png` (1440 × 1000).
+- Reference and implementation desktop captures were opened together at matching dimensions, initial scroll position, default scheduling state, and announcement visible. Screenshot pixels matched CSS viewport pixels; no density rescaling. Native scrollbars differ slightly in width. No mobile reference was supplied; phone checks validate responsive adaptation rather than pixel fidelity.
+- Comparison history: prior preview had a floating-only header, no announcement or rounded enclosing surface, a one-line headline and an excessive signup-to-demo gap. The revised capture matches the reference composition: 40px announcement, 70px flat navigation, inset cream panel at y=110, heading box at y=245 and demo near y=627. Final fresh-load capture confirmed the same composition.
+- Full supplied hero crop was compared, with focused inspection of navigation, headline, OAuth controls and demo entrance. Expanded demo and following overview were also inspected to verify the enclosing surface did not break sticky scrolling.
+
+### Fidelity surfaces
+
+- Fonts: retained Innflow Host Grotesk, confirmed in rendered computed style. Headline is two lines at 72px desktop; mobile scales down. Reference font identity was not inferred from the screenshot.
+- Spacing/layout: 24px desktop outer inset, 40px radius, tighter caption-to-demo spacing; mobile inset 12px. No clipping/overlap or horizontal overflow observed at 1819, 1440, 390 and 320px widths. Short 600px-high viewport correctly uses the compact non-pinned fallback.
+- Colors/surfaces: blue announcement, warm cream enclosing panel, dark signup controls and white provider-icon tiles. Disabled Microsoft state intentionally remains visibly muted instead of copying the reference's enabled state.
+- Images/icons: preserved existing supplied gradient, native demo content and provider assets; Phosphor megaphone/close icons in the announcement. No new generated imagery or replacement artwork.
+- Copy/content: retained Innflow headline and instruction. Announcement draft reads “Explore the new Innflow experience”; Learn more targets the existing workspace overview. Existing Calendly reference copy inside the prototype demos remains a known pre-publication adaptation task, not an Innflow claim approved by this pass.
+
+### Interaction and validation
+
+- Announcement dismisses, removes its 40px reserved space and returns focus to the home link. Learn more reaches the workspace overview.
+- Navigation is flat at the top, floating after scrolling, hidden/inert in the expanded showcase, and restored after Skip showcase. Mobile menu opens; Escape returns focus to its trigger. Existing controls remain keyboard-accessible.
+- Google destination preserved; Microsoft remains disabled pending a supplied URL. No authentication submitted.
+- All 22 focused tests across six suites passed; TypeScript, scoped Biome and diff-whitespace checks passed. Independent read-only review found no actionable regressions in route isolation or sticky/header state handling.
+- Existing broader navigation suite has a stale “Self Learning” expectation (11/12 passing), unrelated to this pass's unchanged menu data; it was not rewritten.
+- Earlier HMR logs contained a stale category-markup hydration mismatch. No new console errors appeared after the final fresh reload.
+- No remaining actionable P0/P1/P2 findings in this scoped hero/announcement adaptation. Responsive viewport override was reset. No staging, commit, push or deployment performed by this task; concurrent user/agent staging was preserved.

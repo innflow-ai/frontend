@@ -2,12 +2,12 @@ import { Geist, Manrope, Source_Serif_4 } from "next/font/google";
 import { createPageMetadata } from "@/lib/metadata";
 import { getPageTestimonials } from "@/lib/testimonials";
 import { BaselineFeatures } from "./baseline-features";
-import baselineStyles from "./baseline-shell.module.css";
 import {
   BaselineClosing,
   BaselineConnectedInfrastructure,
   BaselineCustomerStories,
 } from "./baseline-lower-sections";
+import baselineStyles from "./baseline-shell.module.css";
 import styles from "./homepage.module.css";
 import { ScrollShowcase } from "./scroll-showcase";
 import { WorkspaceOverview } from "./workspace-overview";

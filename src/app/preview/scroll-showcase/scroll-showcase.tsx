@@ -2,6 +2,12 @@
 
 import Image from "next/image";
 import { type CSSProperties, useEffect, useRef, useState } from "react";
+import { siteConfig } from "@/config/site";
+import {
+  chapterScrollProgress,
+  hideShowcaseNavigation,
+  showcaseMotion,
+} from "./scroll-showcase-motion";
 import styles from "./showcase.module.css";
 
 const assets = "/preview/scroll-showcase";
@@ -189,35 +195,80 @@ export function ScrollShowcase() {
   const [active, setActive] = useState(0);
   const [reduced, setReduced] = useState(false);
   const [progress, setProgress] = useState(0);
+  const motion = showcaseMotion(progress);
 
   useEffect(() => {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const syncPreference = () => setReduced(media.matches);
-    syncPreference();
+    const compact = window.matchMedia(
+      "(max-width: 800px), (max-height: 650px)",
+    );
+    const header = document
+      .getElementById("baselane-preview-nav")
+      ?.closest("header");
+    const previousInert = header?.inert ?? false;
+    const previousHidden = header?.getAttribute("aria-hidden");
+    const restoreHeader = () => {
+      header?.removeAttribute("data-showcase-hidden");
+      if (header) {
+        header.inert = previousInert;
+        if (previousHidden === null || previousHidden === undefined)
+          header.removeAttribute("aria-hidden");
+        else header.setAttribute("aria-hidden", previousHidden);
+      }
+    };
+    const syncPreference = () => {
+      setReduced(media.matches || compact.matches);
+      requestUpdate();
+    };
     media.addEventListener("change", syncPreference);
+    compact.addEventListener("change", syncPreference);
     let frame = 0;
     const update = () => {
       frame = 0;
       const element = section.current;
-      if (!element || media.matches) return;
+      if (!element || media.matches || compact.matches) {
+        restoreHeader();
+        return;
+      }
       const top = element.getBoundingClientRect().top;
       const range = element.offsetHeight - window.innerHeight;
-      const next = Math.max(0, Math.min(1, -top / range));
+      const next = Math.max(0, Math.min(1, -top / Math.max(1, range)));
       setProgress(next);
-      // Four equal scroll chapters, followed by a short contraction/release.
-      setActive(Math.min(3, Math.floor(next / 0.23)));
+      const state = showcaseMotion(next);
+      setActive(state.chapter);
+      if (
+        header &&
+        hideShowcaseNavigation(
+          next,
+          (
+            document.getElementById("workspace-overview") ?? exit.current
+          )?.getBoundingClientRect().top ??
+            element.getBoundingClientRect().bottom,
+          window.innerHeight,
+        ) &&
+        !header.contains(document.activeElement)
+      ) {
+        header.setAttribute("data-showcase-hidden", "true");
+        header.inert = true;
+        header.setAttribute("aria-hidden", "true");
+      } else restoreHeader();
     };
     const requestUpdate = () => {
       if (!frame) frame = requestAnimationFrame(update);
     };
+    syncPreference();
     update();
     window.addEventListener("scroll", requestUpdate, { passive: true });
     window.addEventListener("resize", requestUpdate);
+    document.addEventListener("focusin", requestUpdate);
     return () => {
       cancelAnimationFrame(frame);
       window.removeEventListener("scroll", requestUpdate);
       window.removeEventListener("resize", requestUpdate);
       media.removeEventListener("change", syncPreference);
+      compact.removeEventListener("change", syncPreference);
+      document.removeEventListener("focusin", requestUpdate);
+      restoreHeader();
     };
   }, []);
 
@@ -228,18 +279,47 @@ export function ScrollShowcase() {
     const range = section.current.offsetHeight - window.innerHeight;
     // Instant native jump avoids racing the site's Lenis wheel controller.
     window.scrollTo({
-      top: start + range * (index * 0.23 + 0.035),
+      top: start + range * chapterScrollProgress(index),
       behavior: "instant",
     });
   }
 
-  const contraction = reduced ? 0 : Math.max(0, (progress - 0.92) / 0.08);
   return (
     <div className={styles.page}>
       <header className={styles.intro}>
-        <p>HOMEPAGE MOTION STUDY</p>
-        <h1>One flow. Four possibilities.</h1>
+        <h1>
+          One flow.
+          <br />
+          Four possibilities.
+        </h1>
         <span>Scroll to explore, or choose a tab.</span>
+        <div className={styles.oauthActions}>
+          <a href={siteConfig.googleAuthUrl}>
+            <Image
+              src="/preview/homepage/baseline-lower/card-google.png"
+              alt=""
+              width={24}
+              height={24}
+            />
+            Continue with Google
+          </a>
+          <button
+            type="button"
+            disabled
+            aria-describedby="hero-microsoft-pending"
+          >
+            <Image
+              src="/preview/homepage/baseline-lower/card-microsoft.png"
+              alt=""
+              width={24}
+              height={24}
+            />
+            Continue with Microsoft
+          </button>
+        </div>
+        <small id="hero-microsoft-pending" className={styles.oauthPending}>
+          Microsoft sign-in link pending
+        </small>
       </header>
       <section
         ref={section}
@@ -253,7 +333,7 @@ export function ScrollShowcase() {
             style={
               {
                 "--chapter": active,
-                "--contraction": contraction,
+                "--expansion": reduced ? 1 : motion.expansion,
               } as CSSProperties
             }
           >
@@ -361,17 +441,6 @@ export function ScrollShowcase() {
                   </section>
                 ))}
               </div>
-            </div>
-            <div className={styles.scrollCue} aria-hidden="true">
-              <span>{String(active + 1).padStart(2, "0")} / 04</span>
-              <div>
-                <i
-                  style={{
-                    transform: `scaleX(${reduced ? (active + 1) / 4 : Math.min(1, progress / 0.92)})`,
-                  }}
-                />
-              </div>
-              <span>Scroll to explore ↓</span>
             </div>
           </div>
         </div>

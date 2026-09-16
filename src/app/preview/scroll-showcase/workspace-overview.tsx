@@ -108,10 +108,8 @@ export function WorkspaceOverview() {
         />
         <div className={styles.content}>
           <header className={styles.heading}>
-            <p className={styles.eyebrow}>Support infrastructure</p>
             <h2 id="workspace-heading">
-              One workspace.{" "}
-              <br />
+              One workspace. <br />
               Every conversation.
             </h2>
             <p className={styles.introduction}>
@@ -223,6 +221,7 @@ export function WorkspaceOverview() {
                       />
                       {card.id === "connect" ? (
                         <Image
+                          className={styles.connectForeground}
                           src={`${assets}/connect-foreground.png`}
                           alt=""
                           fill

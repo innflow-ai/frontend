@@ -1,0 +1,102 @@
+{
+  "figmaFile": "JkJnW5Q1AIVAqgoV2AqAyb",
+  "baselineNode": "350:11085",
+  "expandedNodes": [
+    "385:9888",
+    "385:9992",
+    "385:10096"
+  ],
+  "recording": "Screen Recording 2026-09-15 at 8.29.13 PM.mov",
+  "motion": {
+    "trigger": "Mouse/pen hover; accessible click and keyboard alternatives",
+    "durationMs": 400,
+    "timingEvidence": "Approximation inside 250–500ms settling range sampled from recording; no Figma motion tracks returned",
+    "autoplay": false
+  },
+  "assets": [
+    {
+      "name": "section-background.png",
+      "node": "350:11085",
+      "file": "af82e.png"
+    },
+    {
+      "name": "connect-background.png",
+      "node": "350:11085",
+      "file": "fc93e.png"
+    },
+    {
+      "name": "connect-foreground.png",
+      "node": "350:11085",
+      "file": "f6303.png"
+    },
+    {
+      "name": "assist-inactive.png",
+      "node": "350:11085",
+      "file": "bc590.png"
+    },
+    {
+      "name": "automate-inactive.png",
+      "node": "350:11085",
+      "file": "cae28.png"
+    },
+    {
+      "name": "learn-inactive.png",
+      "node": "350:11085",
+      "file": "f7870.png"
+    },
+    {
+      "name": "bridge.svg",
+      "node": "350:11085",
+      "file": "265a5.svg"
+    },
+    {
+      "name": "step-1-background.svg",
+      "node": "350:11085",
+      "file": "bca87.svg"
+    },
+    {
+      "name": "step-1-icon.svg",
+      "node": "350:11085",
+      "file": "d2064.svg"
+    },
+    {
+      "name": "step-2-background.svg",
+      "node": "350:11085",
+      "file": "1b3f9.svg"
+    },
+    {
+      "name": "step-2-icon.svg",
+      "node": "350:11085",
+      "file": "84850.svg"
+    },
+    {
+      "name": "step-3-background.svg",
+      "node": "350:11085",
+      "file": "17bff.svg"
+    },
+    {
+      "name": "step-3-icon.svg",
+      "node": "350:11085",
+      "file": "62e66.svg"
+    },
+    {
+      "name": "assist-background.png",
+      "node": "385:9888",
+      "file": "b7f0d.png"
+    },
+    {
+      "name": "automate-background.png",
+      "node": "385:9992",
+      "file": "71bf0.png"
+    },
+    {
+      "name": "learn-background.png",
+      "node": "385:10096",
+      "file": "240b1.png"
+    }
+  ],
+  "additionalAsset": {
+    "name": "connect-inactive.png",
+    "source": "Supplied Calendly scrape / imgi_146_book-inactive.png"
+  }
+}

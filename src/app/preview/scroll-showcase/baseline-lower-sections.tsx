@@ -6,7 +6,7 @@ import { type CSSProperties, useState } from "react";
 import { siteConfig } from "@/config/site";
 import type { Testimonial } from "@/lib/testimonials";
 import styles from "./baseline-lower-sections.module.css";
-import { integrationNames } from "./homepage-content";
+import { integrationIcons, integrationNames } from "./homepage-content";
 
 const assets = "/preview/homepage";
 const lower = `${assets}/baseline-lower`;
@@ -32,7 +32,6 @@ export function BaselineCustomerStories({
       data-source-node="350:11559"
     >
       <header className={styles.heading}>
-        <p className={styles.eyebrow}>Customer stories</p>
         <h2 id="baseline-stories-heading">{heading}</h2>
       </header>
       <div className={styles.storyStage}>
@@ -117,7 +116,6 @@ export function BaselineConnectedInfrastructure() {
       data-source-node="350:11630"
     >
       <header className={styles.heading}>
-        <p className={styles.eyebrow}>Connected infrastructure</p>
         <h2 id="baseline-infrastructure-heading">
           Build on the tools
           <br />
@@ -130,12 +128,12 @@ export function BaselineConnectedInfrastructure() {
       </header>
       <div className={styles.integrations}>
         {[integrationNames.slice(0, 9), integrationNames.slice(9)].map(
-          (row, r) => (
+          (row) => (
             <div className={styles.integrationRow} key={row[0]}>
-              {row.map((name, i) => (
+              {row.map((name) => (
                 <div className={styles.integrationTile} key={name}>
                   <Image
-                    src={`${assets}/integration-imgImage${r * 9 + i || ""}.png`}
+                    src={integrationIcons[name]}
                     alt={name}
                     width={64}
                     height={64}
@@ -208,7 +206,6 @@ export function BaselineClosing() {
       data-source-node="350:11820"
     >
       <header className={styles.heading}>
-        <p className={styles.eyebrow}>Get started</p>
         <h2 id="baseline-closing-heading">
           Start fast.
           <br />

@@ -25,6 +25,11 @@ describe("baseline feature continuation", () => {
   it("preserves the four reference sections without comparison or sequence additions", () => {
     render(<BaselineFeatures />);
     expect(screen.getAllByRole("heading", { level: 2 })).toHaveLength(4);
+    for (const feature of baselineFeatures) {
+      expect(
+        screen.queryByText(feature.label, { exact: true }),
+      ).not.toBeInTheDocument();
+    }
     expect(
       screen.getByRole("button", { name: "Use Ari, Plain’s agent" }),
     ).toBeInTheDocument();

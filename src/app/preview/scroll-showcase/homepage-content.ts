@@ -371,6 +371,29 @@ export const integrationNames = [
   "Zapier",
 ] as const;
 
+export const integrationIcons: Record<
+  (typeof integrationNames)[number],
+  string
+> = {
+  Zoom: "/preview/homepage/integrations/zoom.svg",
+  "Google Calendar": "/preview/homepage/integrations/google-calendar.svg",
+  Gmail: "/preview/homepage/integrations/gmail.svg",
+  "Google Meet": "/preview/homepage/integrations/google-meet.svg",
+  Salesforce: "/preview/homepage/integrations/salesforce.svg",
+  Slack: "/preview/homepage/integrations/slack.svg",
+  "Microsoft Teams": "/preview/homepage/integrations/microsoft-teams.svg",
+  Outlook: "/preview/homepage/integrations/microsoft-outlook.svg",
+  Chrome: "/preview/homepage/integrations/chrome.svg",
+  OpenAI: "/preview/homepage/integrations/openai.svg",
+  Claude: "/preview/homepage/integrations/claude-ai-icon.svg",
+  HubSpot: "/preview/homepage/integrations/hubspot.svg",
+  Greenhouse: "/preview/homepage/integrations/greenhouse.svg",
+  LinkedIn: "/preview/homepage/integrations/linkedin.svg",
+  Stripe: "/preview/homepage/integrations/stripe.svg",
+  PayPal: "/preview/homepage/integrations/paypal.svg",
+  Zapier: "/preview/homepage/integrations/zapier.svg",
+};
+
 export const infrastructureCards = [
   {
     label: "Channels",

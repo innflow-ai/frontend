@@ -43,6 +43,7 @@ it("uses only supplied CMS attribution and does not fabricate a metric", () => {
     screen.getByRole("heading", { name: "Approved heading" }),
   ).toBeVisible();
   expect(screen.getByText("Approved Person")).toBeVisible();
+  expect(screen.queryByText("Customer stories")).toBeNull();
   expect(screen.getByText("“Actual supplied feedback.”")).toBeVisible();
   expect(screen.queryByText(/75 hours/)).toBeNull();
   expect(screen.queryByRole("heading", { level: 3 })).toBeNull();
@@ -67,6 +68,10 @@ it("uses supplied statistics and keeps alternate stories selectable", () => {
 });
 it("matches the baseline two-card infrastructure without extra focus controls", () => {
   render(<BaselineConnectedInfrastructure />);
+  expect(screen.queryByText("Connected infrastructure")).toBeNull();
+  expect(screen.getByRole("heading", { level: 2 })).toHaveTextContent(
+    "Build on the toolsyou already use",
+  );
   expect(screen.getAllByRole("heading", { level: 3 })).toHaveLength(2);
   expect(
     screen.getByRole("heading", { name: "Support channels" }),
@@ -78,6 +83,10 @@ it("matches the baseline two-card infrastructure without extra focus controls", 
 });
 it("offers all four closing scenes manually, including wraparound navigation", () => {
   render(<BaselineClosing />);
+  expect(screen.queryByText("Get started")).toBeNull();
+  expect(screen.getByRole("heading", { level: 2 })).toHaveTextContent(
+    "Start fast.Scale fearlessly.",
+  );
   expect(
     screen.getByRole("button", { name: "Request resolved" }),
   ).toHaveAttribute("aria-pressed", "true");

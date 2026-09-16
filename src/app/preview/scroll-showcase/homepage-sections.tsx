@@ -19,6 +19,7 @@ import {
   type FeatureState,
   features,
   infrastructureCards,
+  integrationIcons,
   integrationNames,
 } from "./homepage-content";
 
@@ -399,7 +400,7 @@ export function ConnectedInfrastructure() {
         ))}
       </fieldset>
       <div className={styles.integrationGrid}>
-        {integrationNames.map((name, i) => (
+        {integrationNames.map((name) => (
           <div
             key={name}
             className={styles.integrationTile}
@@ -407,7 +408,7 @@ export function ConnectedInfrastructure() {
             data-muted={focus > 0 && name !== focusStates[focus]}
           >
             <Image
-              src={`${assetRoot}/integration-imgImage${i || ""}.png`}
+              src={integrationIcons[name]}
               alt={name}
               width={56}
               height={56}

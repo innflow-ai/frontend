@@ -4,6 +4,7 @@ import {
   ArrowRight,
   CaretDown,
   List,
+  Megaphone,
   Newspaper,
   X,
 } from "@phosphor-icons/react";
@@ -27,6 +28,7 @@ import {
   useNavigationBlogPosts,
   useNavigationTestimonial,
 } from "./navigation-blog-posts";
+import previewStyles from "./site-header-preview.module.css";
 import styles from "./site-shell.module.css";
 import { TestimonialCard } from "./testimonial-cards";
 import { TrackedLink } from "./tracked-link";
@@ -52,9 +54,33 @@ export function SiteHeader() {
   const [menu, setMenu] = useState<string | null>(null);
   const [mobile, setMobile] = useState(false);
   const pathname = usePathname();
+  const isShowcasePreview = pathname === "/preview/scroll-showcase";
+  const [announcementDismissed, setAnnouncementDismissed] = useState(false);
+  const [previewShowcasePassed, setPreviewShowcasePassed] = useState(false);
   const header = useRef<HTMLElement>(null);
   const toggle = useRef<HTMLButtonElement>(null);
   const hoverClose = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => {
+    if (!isShowcasePreview) return;
+    const update = () => {
+      const followingSection = document.getElementById("workspace-overview");
+      // Keep the initial flat header in the document until the showcase passes.
+      // The floating version returns as the next section enters the lower quarter.
+      setPreviewShowcasePassed(
+        window.scrollY > 16 &&
+          followingSection !== null &&
+          followingSection.getBoundingClientRect().top <=
+            window.innerHeight * 0.75,
+      );
+    };
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
+  }, [isShowcasePreview]);
   const cancelHoverClose = () => {
     if (hoverClose.current) clearTimeout(hoverClose.current);
     hoverClose.current = null;
@@ -166,10 +192,55 @@ export function SiteHeader() {
     setMobile(false);
   };
   return (
-    <div className={`${styles.page} ${styles.chromeScope}`}>
+    <div
+      className={`${styles.page} ${styles.chromeScope}${isShowcasePreview ? ` ${previewStyles.previewScope}` : ""}`}
+      data-preview-chrome={isShowcasePreview || undefined}
+      data-announcement-dismissed={
+        isShowcasePreview ? announcementDismissed : undefined
+      }
+    >
+      {isShowcasePreview && !announcementDismissed && (
+        <aside
+          className={previewStyles.announcement}
+          aria-label="Innflow announcement"
+        >
+          <Megaphone size={16} aria-hidden="true" />
+          <span>Explore the new Innflow experience</span>
+          <a
+            href="#workspace-overview"
+            aria-label="Learn more about the new Innflow experience"
+          >
+            Learn more <ArrowRight size={12} aria-hidden="true" />
+          </a>
+          <button
+            type="button"
+            aria-label="Dismiss announcement"
+            onClick={() => {
+              setAnnouncementDismissed(true);
+              header.current
+                ?.querySelector<HTMLAnchorElement>(
+                  'a[aria-label="innflow home"]',
+                )
+                ?.focus();
+            }}
+          >
+            <X size={16} aria-hidden="true" />
+          </button>
+        </aside>
+      )}
+      {isShowcasePreview && (
+        <div className={previewStyles.navSpace} aria-hidden="true" />
+      )}
       <header
         ref={header}
-        className={`${styles.header}${mobile ? ` ${styles.mobileOpen}` : ""}`}
+        data-preview-navigation={
+          isShowcasePreview
+            ? previewShowcasePassed || mobile
+              ? "floating"
+              : "flat"
+            : undefined
+        }
+        className={`${styles.header}${mobile ? ` ${styles.mobileOpen}` : ""}${isShowcasePreview && !previewShowcasePassed && !mobile ? ` ${previewStyles.flatHeader}` : ""}`}
       >
         <a href="/" className={styles.logo} aria-label="innflow home">
           <Image

@@ -1,0 +1,100 @@
+.previewScope {
+  position: relative;
+  background: #fcfbf8;
+  --preview-announcement-height: 40px;
+}
+.previewScope[data-announcement-dismissed="true"] {
+  --preview-announcement-height: 0px;
+}
+.navSpace {
+  height: 70px;
+}
+.announcement {
+  height: 40px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 48px;
+  position: relative;
+  background: #87bdff;
+  color: #071a31;
+  font-size: 13px;
+  line-height: 1.2;
+}
+.announcement > svg {
+  flex-shrink: 0;
+}
+.announcement a {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 5px;
+  background: #ffffff40;
+  border-radius: 5px;
+  padding: 4px 8px;
+  text-decoration: none;
+  color: inherit;
+  font-size: 12px;
+}
+.announcement button {
+  position: absolute;
+  right: 8px;
+  top: 0;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+.announcement :is(button, a):focus-visible {
+  outline: 2px solid #071a31;
+  outline-offset: -2px;
+}
+.previewScope .flatHeader {
+  position: absolute;
+  inset: var(--preview-announcement-height) 0 auto;
+  box-sizing: border-box;
+  height: 70px;
+  min-height: 70px;
+  padding: 10px 40px;
+  border-radius: 0;
+  background: #fcfbf8;
+}
+.previewScope .flatHeader::before {
+  border-radius: 0;
+  background: #fcfbf8;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+@media (max-width: 1180px) {
+  .previewScope .flatHeader {
+    padding: 8px 20px;
+  }
+}
+@media (max-width: 480px) {
+  .announcement {
+    justify-content: flex-start;
+    gap: 6px;
+    padding: 0 38px 0 12px;
+    font-size: 11px;
+  }
+  .announcement > svg {
+    display: none;
+  }
+  .announcement a {
+    font-size: 10px;
+    padding: 4px 5px;
+  }
+  .announcement button {
+    right: 0;
+    width: 36px;
+  }
+  .previewScope .flatHeader {
+    padding-inline: 12px;
+  }
+}

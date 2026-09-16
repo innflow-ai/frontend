@@ -1,0 +1,22 @@
+{
+  "description": "Vector integration marks for the scroll-showcase preview. Brand trademarks belong to their respective owners.",
+  "sources": {
+    "chrome": "https://raw.githubusercontent.com/pheralb/svgl/b49649915224db817b89ff400b940a2a93bdb3d3/static/library/chrome.svg",
+    "claude-ai-icon": "https://raw.githubusercontent.com/pheralb/svgl/b49649915224db817b89ff400b940a2a93bdb3d3/static/library/claude-ai-icon.svg",
+    "gmail": "https://raw.githubusercontent.com/pheralb/svgl/b49649915224db817b89ff400b940a2a93bdb3d3/static/library/gmail.svg",
+    "google-calendar": "https://raw.githubusercontent.com/pheralb/svgl/b49649915224db817b89ff400b940a2a93bdb3d3/static/library/google-calendar.svg",
+    "google-meet": "https://raw.githubusercontent.com/pheralb/svgl/b49649915224db817b89ff400b940a2a93bdb3d3/static/library/google-meet.svg",
+    "linkedin": "https://raw.githubusercontent.com/pheralb/svgl/b49649915224db817b89ff400b940a2a93bdb3d3/static/library/linkedin.svg",
+    "microsoft-outlook": "https://raw.githubusercontent.com/pheralb/svgl/b49649915224db817b89ff400b940a2a93bdb3d3/static/library/microsoft-outlook.svg",
+    "microsoft-teams": "https://raw.githubusercontent.com/pheralb/svgl/b49649915224db817b89ff400b940a2a93bdb3d3/static/library/microsoft-teams.svg",
+    "openai": "https://raw.githubusercontent.com/pheralb/svgl/b49649915224db817b89ff400b940a2a93bdb3d3/static/library/openai.svg",
+    "paypal": "https://raw.githubusercontent.com/pheralb/svgl/b49649915224db817b89ff400b940a2a93bdb3d3/static/library/paypal.svg",
+    "salesforce": "https://raw.githubusercontent.com/pheralb/svgl/b49649915224db817b89ff400b940a2a93bdb3d3/static/library/salesforce.svg",
+    "slack": "https://raw.githubusercontent.com/pheralb/svgl/b49649915224db817b89ff400b940a2a93bdb3d3/static/library/slack.svg",
+    "stripe": "https://www.vectorlogo.zone/logos/stripe/stripe-icon.svg",
+    "zoom": "User-supplied SVG; embedded attribution: Garuda Technology, https://github.com/garudatechnologydevelopers/sketch-icons (MIT)",
+    "hubspot": "https://www.vectorlogo.zone/logos/hubspot/hubspot-icon.svg",
+    "greenhouse": "https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/greenhouse/default.svg",
+    "zapier": "https://www.vectorlogo.zone/logos/zapier/zapier-icon.svg"
+  }
+}

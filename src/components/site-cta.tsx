@@ -1,10 +1,12 @@
 "use client";
+import { usePathname } from "next/navigation";
 import { type FormEvent, useState } from "react";
 import { siteConfig } from "@/config/site";
 import { GoogleCtaContent } from "./google-cta-content";
 import styles from "./site-shell.module.css";
 import { TrackedLink } from "./tracked-link";
 export function SiteCta() {
+  const pathname = usePathname();
   const [signupState, setSignupState] = useState<
     "idle" | "pending" | "success" | "error"
   >("idle");
@@ -45,6 +47,9 @@ export function SiteCta() {
       );
     }
   }
+
+  // This preview owns its Figma closing section; other routes retain this CTA.
+  if (pathname === "/preview/scroll-showcase") return null;
 
   return (
     <div className={styles.page}>

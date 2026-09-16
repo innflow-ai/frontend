@@ -41,6 +41,16 @@
 .rows {
   margin-top: 32px;
 }
+.readingWindow {
+  min-width: 0;
+}
+.channelImage {
+  opacity: 0;
+  transition: opacity 300ms ease;
+}
+.channelImage[data-selected="true"] {
+  opacity: 1;
+}
 .row {
   padding: 24px 0;
   border-bottom: 2px solid #071a3133;
@@ -184,9 +194,13 @@
   color: #071a31;
 }
 .section[data-channels="true"] .visual {
+  aspect-ratio: auto;
   border-radius: 80px;
   position: sticky;
   top: 110px;
+}
+.section[data-channels="true"] .imageFrame {
+  aspect-ratio: auto;
 }
 @media (max-width: 1100px) {
   .grid,
@@ -198,6 +212,50 @@
   }
   .heading h2 {
     font-size: 42px;
+  }
+}
+@media (min-width: 1101px) and (min-height: 700px) and (
+    prefers-reduced-motion: no-preference
+  ) {
+  .section[data-channels-scroll="true"] .grid {
+    min-height: var(--channels-scroll-height, 1500px);
+  }
+  .section[data-channels-scroll="true"] .copy {
+    position: sticky;
+    top: 110px;
+    min-height: 0;
+    display: block;
+  }
+  .section[data-channels-scroll="true"] .heading {
+    padding-bottom: 32px;
+  }
+  .section[data-channels-scroll="true"] .readingWindow {
+    height: 300px;
+    overflow: clip;
+    mask-image: linear-gradient(
+      to bottom,
+      transparent,
+      black 25%,
+      black 75%,
+      transparent
+    );
+  }
+  .section[data-channels-scroll="true"] .rows {
+    position: relative;
+    margin-top: 0;
+    will-change: transform;
+  }
+  .section[data-channels-scroll="true"] .row {
+    opacity: 0.3;
+    transition: opacity 250ms ease;
+  }
+  .section[data-channels-scroll="true"] .row[data-active="true"],
+  .section[data-channels-scroll="true"] .row:focus-within {
+    opacity: 1;
+  }
+  .section[data-channels-scroll="true"] .visual {
+    position: sticky;
+    top: 110px;
   }
 }
 @media (max-width: 800px) {
@@ -257,6 +315,9 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
+  .channelImage {
+    transition: none;
+  }
   .section[data-channels="true"] .visual {
     position: relative;
     top: auto;

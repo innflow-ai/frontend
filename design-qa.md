@@ -269,3 +269,46 @@ Final result: passed
 - Existing broader navigation suite has a stale “Self Learning” expectation (11/12 passing), unrelated to this pass's unchanged menu data; it was not rewritten.
 - Earlier HMR logs contained a stale category-markup hydration mismatch. No new console errors appeared after the final fresh reload.
 - No remaining actionable P0/P1/P2 findings in this scoped hero/announcement adaptation. Responsive viewport override was reset. No staging, commit, push or deployment performed by this task; concurrent user/agent staging was preserved.
+
+## Scroll-showcase follow-up and feature descriptions — 2026-09-16
+
+Final result: requested description visibility passed; testimonial motion remains an accepted draft, not an exact frame-for-frame reproduction.
+
+### Completed scope
+
+- Reused the prepared descriptions in `homepage-content.ts` for eight previously empty Agents, Workflows and Insights items. Selecting each item now reveals its corresponding body. All six Channels descriptions retain their existing always-visible behavior. The Plain-agent label now uses the existing Innflow draft title, “Delegate a task. Review the result.” No new marketing claims or CSV edits were introduced.
+- Preserved existing feature artwork, layouts, and pending illustration panels. Two Agents illustrations remain pending; adding body text does not make their animation complete.
+- Added the centered hero description and email signup / no-credit-card line. The desktop supporting description was verified at two lines. Google retains its existing destination; Microsoft remains disabled pending its URL.
+- Delayed preview floating navigation until the overview reaches 75% of viewport height. Flat navigation remains at the initial top; navigation stays hidden during the expanded showcase.
+- Changed the hero gradient from discrete chapter positions to continuous normalized scroll progress. Browser samples within one chapter confirmed fractional movement in both scroll directions. Compact and reduced-motion presentations retain a static fallback.
+- Applied stacked, fully expanded overview rows only at tablet widths (761–1100px). Desktop hover cards and the mobile accordion remain intact.
+- Added five explicitly labeled placeholder customer-story states before integrations; genuine CMS stories take precedence. Removed the preview carousel's glass rim, retained white connectors and keyboard controls, and kept all five photo nodes mounted during slot changes. The user accepted this draft and moved focus to feature descriptions. Mid-transition photo scaling/cropping still differs from the supplied recording and requires a separate fidelity pass before claiming an exact match.
+- Replaced the global favicon with the supplied Innflow image, packaged at six ICO sizes. Previous auto-discovered PNG/SVG icons were preserved in `public/brand/legacy-favicon`; the Apple touch icon and navigation logos were unchanged. Global favicon behavior was explicitly requested; the content changes remain preview-scoped.
+
+### Evidence and verification
+
+- Feature descriptions: all eight formerly empty items clicked and measured visible on desktop; all 17 selections covered by nine passing component tests. Mobile Catch up instantly checked at 390 × 844 with no horizontal overflow. Evidence: `output/playwright/preview-insights-description-desktop.png` and `output/playwright/preview-insights-description-mobile.png`.
+- Hero and tablet evidence: `output/playwright/preview-hero-email-subheadline.png`, `preview-hero-signup-mobile.png`, and `preview-overview-tablet-stacked.png`. The tablet capture at 889 × 952 has four 260px-or-taller rows with 24px gaps; phone behavior remains a one-open-item accordion.
+- Customer-story desktop/mobile layouts, selection controls and white connectors were checked. `testimonial-persistent-*.jpg` records the latest persistent-photo transition; older `testimonial-transition-*.jpg` captures are diagnostics of the superseded blank-photo issue, not final deliverables.
+- Final feature suite: nine tests passed. Final customer-story suite: nine tests passed. Earlier combined execution had three resource-related timeouts; affected suites passed when rerun serially with a command-local extended timeout. No claim of a clean full-repository test run is made. The broader navigation suite's older Self Learning expectation remains outside scope.
+- TypeScript and staged/unstaged whitespace checks passed. Fresh preview-tab console check returned no errors. The temporary responsive viewport override was reset.
+- Favicon returned HTTP 200 with the expected image content type; the rendered document points to the new ICO and retains the existing Apple touch icon.
+- Existing reference copy and placeholder stories remain pre-publication adaptation work. No staging, commit, push or deployment was performed by this task; concurrent staging was preserved.
+
+## Channels scroll-linked reading rail — 2026-09-16
+
+### Scope and reference
+
+- Adapted only “Consolidate support. Keep the context.” in `/preview/scroll-showcase` from the supplied `Screen Recording 2026-09-16 at 12.47.17 PM.mov` (24.41 seconds). Hero, overview, other feature sections, testimonials, and public homepage content were not redesigned in this pass.
+- Desktop heading and illustration stick independently while the description rail moves continuously through a faded reading window. Measured row centers choose the matching illustration in either scroll direction. The taller illustration releases before the shorter copy column, matching the observed exit pattern.
+- Preserved six existing descriptions and illustration mappings; all six image elements stay mounted and crossfade over 300ms. This reproduces the section interaction, not the internal animation of the flattened reference illustrations. Exact source easing and scroll thresholds cannot be established from the recording alone.
+- Motion guidance informed the native-document-scroll implementation, Motion-value translation, and reduced-motion fallback. No wheel interception, timer-driven selection, or additional animation library was added.
+
+### Browser verification
+
+- At 1440 × 1000, forward scrolling selected successive rows/artwork; reverse scrolling restored earlier selections. During the pinned stage, heading and illustration both measured 110px from the viewport top. At release, the illustration measured -41.5px while the heading remained near 100px, confirming independent exits.
+- All six retained images were loaded, manual selection and Home/End navigation worked, and no horizontal overflow was observed. An independent review caught secondary arrow focus leaving the readable window; the fix was browser-verified with Shift+Tab, which now selects/recenters the focused row. Native focus scrolling remains enabled in fallback layouts and other sections.
+- At 889 × 1000 and 390 × 844, all six descriptions stayed visible, manual selection worked, and there was no horizontal overflow. Resizing out of desktop mode removed the scroll-height property and rail transform. At 1440 × 680, the enhanced rail was disabled.
+- Emulated reduced motion disabled the rail transform, mask, sticky illustration, and image transition. Emulation and temporary viewport overrides were cleared after verification. Preview console error capture was empty.
+- Evidence: `output/playwright/preview-channels-scroll-desktop.png` and `output/playwright/preview-channels-scroll-middle.png`.
+- TypeScript, scoped Biome, and staged/unstaged whitespace checks passed. All 16 focused tests across two suites passed, covering descriptions, selection boundaries/reversal, responsive gating, retained layers, cleanup, and secondary-arrow focus in enhanced/fallback modes. No full-repository test pass is claimed. Existing staging remains untouched. No commit, push, or deployment.

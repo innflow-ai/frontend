@@ -1,0 +1,238 @@
+.demo {
+  width: 100%;
+  max-width: 580px;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  container-type: inline-size;
+}
+.scene {
+  position: relative;
+  width: min(100%, 486px);
+  aspect-ratio: 386.66 / 220;
+  container-type: inline-size;
+  color: #071a31;
+  font-family: var(--font-geist, var(--font-host-grotesk, sans-serif));
+  font-size: 2.069cqw;
+  line-height: 1.2;
+}
+.panel {
+  position: absolute;
+}
+.condition {
+  left: 6.983%;
+  top: 24.09%;
+  width: 39.053%;
+  height: 43.636%;
+}
+.user,
+.agent {
+  left: 56.897%;
+  width: 35.432%;
+  height: 25.91%;
+}
+.user {
+  top: 24.09%;
+}
+.agent {
+  top: 55%;
+}
+.glass {
+  position: absolute;
+  inset: -2.069cqw;
+  border-radius: 6.207cqw;
+  border: 0.1px solid rgb(255 255 255 / 90%);
+  background: rgb(255 255 255 / 15%);
+  box-shadow:
+    inset 0 1.3px 8px rgb(255 255 255 / 72%),
+    0 12px 32px -5px rgb(99 125 158 / 16%);
+  backdrop-filter: blur(10px);
+  pointer-events: none;
+}
+.card {
+  position: relative;
+  height: 100%;
+  border-radius: 4.138cqw;
+  border: 1px solid #ececf0;
+  background: #fff;
+  overflow: hidden;
+}
+.agent .card {
+  border-color: #10cd78;
+}
+.title {
+  position: absolute;
+  margin: 0;
+  top: 2.069cqw;
+  left: 6.207cqw;
+  font-size: 2.328cqw;
+  font-weight: 500;
+  white-space: nowrap;
+}
+.condition .title {
+  left: 5.69cqw;
+}
+.conditionInput,
+.elseInput,
+.assignment {
+  position: absolute;
+  border: 1px solid #ececf0;
+  border-radius: 1.035cqw;
+  background: #fff;
+  font-size: 2.069cqw;
+}
+.conditionInput {
+  left: 1.552cqw;
+  right: 1.552cqw;
+  top: 6.724cqw;
+  height: 9.57cqw;
+  padding: 1.035cqw 1.293cqw;
+  display: flex;
+  flex-direction: column;
+  gap: 1.552cqw;
+}
+.elseInput {
+  left: 1.552cqw;
+  right: 1.552cqw;
+  top: 17.328cqw;
+  height: 5.173cqw;
+  padding: 1.035cqw 1.293cqw;
+}
+.assignment {
+  left: 1.81cqw;
+  right: 1.81cqw;
+  top: 6.724cqw;
+  height: 5.69cqw;
+  padding: 1.293cqw 4.655cqw;
+  white-space: nowrap;
+}
+.routes {
+  position: absolute;
+  inset: 0;
+}
+.ifRoute,
+.elseRoute,
+.port {
+  position: absolute;
+}
+.ifRoute {
+  left: 46.035%;
+  top: 36.59%;
+  width: 10.862%;
+  height: 8.182%;
+}
+.elseRoute {
+  left: 46.035%;
+  top: 59.77%;
+  width: 10.862%;
+  height: 9.091%;
+}
+.port {
+  width: 1.293%;
+  height: 2.273%;
+  z-index: 2;
+}
+
+@container (max-width: 380px) {
+  .scene {
+    width: calc(100% - 24px);
+    height: 340px;
+    aspect-ratio: auto;
+    font-size: 11px;
+  }
+  .condition {
+    left: calc(50% - 94px);
+    top: 18px;
+    width: 188px;
+    height: 126px;
+  }
+  .user,
+  .agent {
+    top: 224px;
+    width: 46%;
+    height: 80px;
+  }
+  .user {
+    left: 0;
+  }
+  .agent {
+    left: 54%;
+  }
+  .glass {
+    inset: -6px;
+    border-radius: 22px;
+  }
+  .card {
+    border-radius: 16px;
+  }
+  .title,
+  .condition .title {
+    top: 12px;
+    left: 10px;
+    font-size: 11px;
+  }
+  .conditionInput,
+  .elseInput,
+  .assignment {
+    left: 8px;
+    right: 8px;
+    border-radius: 5px;
+    padding: 6px;
+    font-size: 11px;
+  }
+  .conditionInput {
+    top: 35px;
+    height: 48px;
+    gap: 6px;
+  }
+  .elseInput {
+    top: 90px;
+    height: 26px;
+  }
+  .assignment {
+    top: 37px;
+    height: 28px;
+  }
+  /* Reorient the exact source routes to the narrow, top-to-bottom layout. */
+  .ifRoute,
+  .elseRoute {
+    top: 164px;
+    width: 76px;
+    height: 32px;
+    transform: rotate(90deg);
+  }
+  .ifRoute {
+    left: calc(32% - 38px);
+  }
+  .elseRoute {
+    left: calc(68% - 38px);
+  }
+  .port {
+    width: 5px;
+    height: 5px;
+  }
+  .port:nth-of-type(3) {
+    left: calc(32% - 18px) !important;
+    top: 140px !important;
+  }
+  .port:nth-of-type(4) {
+    left: calc(68% + 13px) !important;
+    top: 140px !important;
+  }
+  .port:nth-of-type(5) {
+    left: calc(32% + 13px) !important;
+    top: 216px !important;
+  }
+  .port:nth-of-type(6) {
+    left: calc(68% - 18px) !important;
+    top: 216px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .demo {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+}

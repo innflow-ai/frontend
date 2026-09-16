@@ -56,16 +56,30 @@ export function SiteHeader() {
   const pathname = usePathname();
   const isShowcasePreview = pathname === "/preview/scroll-showcase";
   const [announcementDismissed, setAnnouncementDismissed] = useState(false);
-  const [previewScrolled, setPreviewScrolled] = useState(false);
+  const [previewShowcasePassed, setPreviewShowcasePassed] = useState(false);
   const header = useRef<HTMLElement>(null);
   const toggle = useRef<HTMLButtonElement>(null);
   const hoverClose = useRef<ReturnType<typeof setTimeout> | null>(null);
   useEffect(() => {
     if (!isShowcasePreview) return;
-    const update = () => setPreviewScrolled(window.scrollY > 16);
+    const update = () => {
+      const followingSection = document.getElementById("workspace-overview");
+      // Keep the initial flat header in the document until the showcase passes.
+      // The floating version returns as the next section enters the lower quarter.
+      setPreviewShowcasePassed(
+        window.scrollY > 16 &&
+          followingSection !== null &&
+          followingSection.getBoundingClientRect().top <=
+            window.innerHeight * 0.75,
+      );
+    };
     update();
     window.addEventListener("scroll", update, { passive: true });
-    return () => window.removeEventListener("scroll", update);
+    window.addEventListener("resize", update);
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
   }, [isShowcasePreview]);
   const cancelHoverClose = () => {
     if (hoverClose.current) clearTimeout(hoverClose.current);
@@ -221,12 +235,12 @@ export function SiteHeader() {
         ref={header}
         data-preview-navigation={
           isShowcasePreview
-            ? previewScrolled || mobile
+            ? previewShowcasePassed || mobile
               ? "floating"
               : "flat"
             : undefined
         }
-        className={`${styles.header}${mobile ? ` ${styles.mobileOpen}` : ""}${isShowcasePreview && !previewScrolled && !mobile ? ` ${previewStyles.flatHeader}` : ""}`}
+        className={`${styles.header}${mobile ? ` ${styles.mobileOpen}` : ""}${isShowcasePreview && !previewShowcasePassed && !mobile ? ` ${previewStyles.flatHeader}` : ""}`}
       >
         <a href="/" className={styles.logo} aria-label="innflow home">
           <Image

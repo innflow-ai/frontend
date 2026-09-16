@@ -7,6 +7,12 @@ import {
   BaselineCustomerStories,
 } from "./baseline-lower-sections";
 
+const motionPreference = vi.hoisted(() => ({ reduced: false }));
+vi.mock("motion/react", async (importOriginal) => ({
+  ...(await importOriginal<typeof import("motion/react")>()),
+  useReducedMotion: () => motionPreference.reduced,
+}));
+
 vi.mock("next/image", () => ({
   default: ({
     fill: _fill,
@@ -17,7 +23,10 @@ vi.mock("next/image", () => ({
     <img {...props} alt={props.alt ?? ""} />
   ),
 }));
-afterEach(cleanup);
+afterEach(() => {
+  cleanup();
+  motionPreference.reduced = false;
+});
 const story: Testimonial = {
   id: "cms-1",
   name: "Approved Person",
@@ -31,6 +40,125 @@ it("hides an empty CMS selection without inventing customer evidence", () => {
     <BaselineCustomerStories testimonials={[]} heading="Stories" />,
   );
   expect(container).toBeEmptyDOMElement();
+});
+it("opts into a clearly marked five-state layout preview without fake testimonials", () => {
+  const { container } = render(
+    <BaselineCustomerStories
+      testimonials={[]}
+      heading="CMS heading"
+      previewFallback
+    />,
+  );
+  expect(
+    screen.getByRole("heading", { name: "Real customers. Real results." }),
+  ).toBeVisible();
+  expect(
+    screen.getByText("Layout preview — customer content pending"),
+  ).toBeVisible();
+  expect(screen.getByText("Reference photo — replace")).toBeVisible();
+  expect(container.querySelector("blockquote")).toBeNull();
+  const persistentCopy = screen.getByText(
+    "Customer name — pending",
+  ).parentElement;
+  const persistentPhotos = Array.from(
+    container.querySelectorAll("[data-photo-index] img"),
+  );
+  expect(persistentPhotos).toHaveLength(5);
+  expect(
+    screen.queryByText(/75 hours|Marques Stewart|Calendly helps/),
+  ).toBeNull();
+  for (let index = 1; index <= 5; index++) {
+    fireEvent.click(
+      screen.getByRole("button", { name: `Customer story layout ${index}` }),
+    );
+    expect(
+      screen.getByRole("button", { name: `Customer story layout ${index}` }),
+    ).toHaveAttribute("aria-pressed", "true");
+    expect(
+      screen.getByRole("article", {
+        name: `Customer story layout preview ${index}`,
+      }),
+    ).toBeVisible();
+    expect(screen.getAllByRole("article")).toHaveLength(1);
+    expect(screen.getByText("Customer name — pending").parentElement).toBe(
+      persistentCopy,
+    );
+    expect(
+      Array.from(container.querySelectorAll("[data-photo-index] img")),
+    ).toEqual(persistentPhotos);
+  }
+  expect(screen.getByText("Photo slot — replace")).toBeVisible();
+});
+it("prefers supplied CMS stories even when layout fallback is enabled", () => {
+  render(
+    <BaselineCustomerStories
+      testimonials={[story]}
+      heading="Approved heading"
+      previewFallback
+    />,
+  );
+  expect(
+    screen.getByRole("heading", { name: "Approved heading" }),
+  ).toBeVisible();
+  expect(screen.getByText("Approved Person")).toBeVisible();
+  expect(
+    screen.queryByText("Layout preview — customer content pending"),
+  ).toBeNull();
+});
+it("keeps the five-card deck manual and supports directional and endpoint keys", () => {
+  const { container } = render(
+    <BaselineCustomerStories
+      testimonials={[]}
+      heading="Stories"
+      previewFallback
+    />,
+  );
+  const controls = screen.getByRole("group", {
+    name: "Choose a customer story layout preview",
+  });
+  expect(
+    container.querySelector('[data-motion="shared-layout"]'),
+  ).not.toBeNull();
+  fireEvent.keyDown(controls, { key: "ArrowLeft" });
+  expect(
+    screen.getByRole("button", { name: "Customer story layout 5" }),
+  ).toHaveFocus();
+  fireEvent.keyDown(controls, { key: "ArrowRight" });
+  expect(
+    screen.getByRole("button", { name: "Customer story layout 1" }),
+  ).toHaveFocus();
+  fireEvent.keyDown(controls, { key: "End" });
+  expect(
+    screen.getByRole("button", { name: "Customer story layout 5" }),
+  ).toHaveAttribute("aria-pressed", "true");
+  fireEvent.keyDown(controls, { key: "Home" });
+  expect(
+    screen.getByRole("button", { name: "Customer story layout 1" }),
+  ).toHaveAttribute("aria-pressed", "true");
+  fireEvent.click(
+    screen.getByRole("button", { name: "Show layout preview 2" }),
+  );
+  expect(
+    screen.getByRole("button", { name: "Customer story layout 2" }),
+  ).toHaveAttribute("aria-pressed", "true");
+});
+it("disables shared-layout motion while retaining all controls for reduced motion", () => {
+  motionPreference.reduced = true;
+  const { container } = render(
+    <BaselineCustomerStories
+      testimonials={[]}
+      heading="Stories"
+      previewFallback
+    />,
+  );
+  expect(container.querySelector('[data-motion="reduced"]')).not.toBeNull();
+  fireEvent.click(
+    screen.getByRole("button", { name: "Customer story layout 3" }),
+  );
+  expect(
+    screen.getByRole("article", { name: "Customer story layout preview 3" }),
+  ).toBeVisible();
+  expect(screen.getByText("Reference photo — replace")).toBeVisible();
 });
 it("uses only supplied CMS attribution and does not fabricate a metric", () => {
   render(

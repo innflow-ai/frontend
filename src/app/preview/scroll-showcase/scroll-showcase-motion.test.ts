@@ -8,6 +8,19 @@ import {
 } from "./scroll-showcase-motion";
 
 describe("showcase scroll phases", () => {
+  it("pans continuously within chapters and across a chapter boundary", () => {
+    const first = showcaseMotion(0.15);
+    const second = showcaseMotion(0.2);
+    expect(first.chapter).toBe(second.chapter);
+    expect(second.chapterProgress).toBeGreaterThan(first.chapterProgress);
+    const before = showcaseMotion(0.3 - 0.00001);
+    const after = showcaseMotion(0.3 + 0.00001);
+    expect(before.chapter).toBe(0);
+    expect(after.chapter).toBe(1);
+    expect(after.chapterProgress - before.chapterProgress).toBeLessThan(0.0001);
+    expect(showcaseMotion(ENTRANCE_END).chapterProgress).toBe(0);
+    expect(showcaseMotion(EXIT_START).chapterProgress).toBe(1);
+  });
   it("keeps navigation hidden through contraction and restores using actual following-section bounds", () => {
     expect(hideShowcaseNavigation(0, 2000, 900)).toBe(false);
     expect(hideShowcaseNavigation(0.9, 1200, 900)).toBe(true);

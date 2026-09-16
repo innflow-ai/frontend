@@ -1,5 +1,11 @@
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
-import { afterEach, describe, expect, it, vi } from "vitest";
+import {
+  act,
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+} from "@testing-library/react";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { WorkspaceOverview, workspaceCards } from "./workspace-overview";
 
 vi.mock("next/image", () => ({
@@ -13,9 +19,58 @@ vi.mock("next/image", () => ({
   ),
 }));
 
-afterEach(cleanup);
+let tablet = false;
+let mediaListeners: Set<() => void>;
+beforeEach(() => {
+  tablet = false;
+  mediaListeners = new Set();
+  vi.stubGlobal(
+    "matchMedia",
+    vi.fn(() => ({
+      matches: tablet,
+      addEventListener: (_event: string, listener: () => void) =>
+        mediaListeners.add(listener),
+      removeEventListener: (_event: string, listener: () => void) =>
+        mediaListeners.delete(listener),
+    })),
+  );
+});
+afterEach(() => {
+  cleanup();
+  vi.unstubAllGlobals();
+});
 
 describe("Workspace overview", () => {
+  it("shows static headings and every detail on tablet, then restores the active card on exit", () => {
+    render(<WorkspaceOverview />);
+    fireEvent.click(screen.getByRole("button", { name: "Assist" }));
+    act(() => {
+      tablet = true;
+      for (const notify of mediaListeners) notify();
+    });
+    for (const card of workspaceCards) {
+      expect(screen.getByRole("heading", { name: card.title })).toBeVisible();
+      expect(
+        screen.queryByRole("button", { name: card.title }),
+      ).not.toBeInTheDocument();
+      expect(
+        document.getElementById(`workspace-${card.id}-details`),
+      ).toHaveAttribute("aria-hidden", "false");
+    }
+    act(() => {
+      tablet = false;
+      for (const notify of mediaListeners) notify();
+    });
+    expect(screen.getByRole("button", { name: "Assist" })).toHaveAttribute(
+      "aria-expanded",
+      "true",
+    );
+    expect(screen.getByRole("button", { name: "Connect" })).toHaveAttribute(
+      "aria-expanded",
+      "false",
+    );
+  });
+
   it("starts with Connect expanded and exposes all four cards", () => {
     render(<WorkspaceOverview />);
     expect(

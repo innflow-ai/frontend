@@ -268,6 +268,68 @@
   }
 }
 
+/* The supplied stacked-card reference applies only to tablet. */
+@media (min-width: 761px) and (max-width: 1100px) {
+  .content {
+    padding-inline: 16px;
+  }
+  .cards {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 48px;
+  }
+  .card {
+    height: auto;
+    min-height: 260px;
+    transition: none;
+  }
+  .cardSurface {
+    display: grid;
+    grid-template-columns: 56% 44%;
+    min-height: 260px;
+    border-radius: 32px;
+  }
+  .card[data-active="true"] .cardSurface {
+    box-shadow: none;
+  }
+  .cardCopy {
+    height: auto;
+    padding: 24px;
+  }
+  .description {
+    min-height: 0;
+  }
+  .summary {
+    display: none;
+  }
+  .details {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+  }
+  .artwork {
+    position: relative;
+    align-self: stretch;
+    height: auto;
+    min-height: 260px;
+  }
+  .activeArt {
+    opacity: 1;
+  }
+  .inactiveArt {
+    opacity: 0;
+  }
+  .artwork .connectForeground {
+    object-position: center;
+  }
+  .bridge {
+    display: block;
+    top: -34.5px;
+    left: 38px;
+    transform: rotate(90deg);
+  }
+}
+
 @media (max-width: 760px) {
   .section {
     padding: 12px;

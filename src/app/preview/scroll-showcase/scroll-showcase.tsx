@@ -292,7 +292,10 @@ export function ScrollShowcase() {
           <br />
           Four possibilities.
         </h1>
-        <span>Scroll to explore, or choose a tab.</span>
+        <p className={styles.subheadline}>
+          Bring conversations, AI agents, and workflows together—so your team
+          can get more done with less coordination.
+        </p>
         <div className={styles.oauthActions}>
           <a href={siteConfig.googleAuthUrl}>
             <Image
@@ -307,6 +310,7 @@ export function ScrollShowcase() {
             type="button"
             disabled
             aria-describedby="hero-microsoft-pending"
+            title="Microsoft sign-in link pending"
           >
             <Image
               src="/preview/homepage/baseline-lower/card-microsoft.png"
@@ -317,9 +321,13 @@ export function ScrollShowcase() {
             Continue with Microsoft
           </button>
         </div>
-        <small id="hero-microsoft-pending" className={styles.oauthPending}>
-          Microsoft sign-in link pending
+        <small className={styles.signupNote}>
+          <a href={siteConfig.signupUrl}>Sign up with email</a>
+          {" · "}No credit card required
         </small>
+        <span id="hero-microsoft-pending" className={styles.srOnly}>
+          Microsoft sign-in link pending
+        </span>
       </header>
       <section
         ref={section}
@@ -332,7 +340,7 @@ export function ScrollShowcase() {
             className={styles.stage}
             style={
               {
-                "--chapter": active,
+                "--gradient-progress": reduced ? 0 : motion.chapterProgress,
                 "--expansion": reduced ? 1 : motion.expansion,
               } as CSSProperties
             }

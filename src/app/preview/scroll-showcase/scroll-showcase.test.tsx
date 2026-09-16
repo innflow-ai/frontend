@@ -16,6 +16,16 @@ it("offers configured Google sign-in and disabled Microsoft sign-in without a pr
   vi.stubGlobal("requestAnimationFrame", () => 1);
   vi.stubGlobal("cancelAnimationFrame", vi.fn());
   render(<ScrollShowcase />);
+  expect(
+    screen.getByText(/Bring conversations, AI agents, and workflows/),
+  ).toBeVisible();
+  expect(
+    screen.getByRole("link", { name: "Sign up with email" }),
+  ).toHaveAttribute("href", siteConfig.signupUrl);
+  expect(screen.getByText(/No credit card required/)).toBeVisible();
+  expect(
+    screen.queryByText("Scroll to explore, or choose a tab."),
+  ).not.toBeInTheDocument();
   expect(screen.queryByText("HOMEPAGE MOTION STUDY")).not.toBeInTheDocument();
   expect(
     screen.getByRole("link", { name: "Continue with Google" }),

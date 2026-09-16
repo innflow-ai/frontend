@@ -1,8 +1,12 @@
 "use client";
 
+import { motion } from "motion/react";
 import Image from "next/image";
 import { type KeyboardEvent, useRef, useState } from "react";
+import { ChannelsDemos } from "./agent-demos/channels-demos";
 import styles from "./baseline-features.module.css";
+import { features as preparedFeatures } from "./homepage-content";
+import { useChannelsScroll } from "./use-channels-scroll";
 
 const root = "/preview/homepage/baseline-features";
 type Item = { title: string; icon: string; body?: string };
@@ -17,8 +21,17 @@ type Feature = {
   items: Item[];
 };
 
-// Exact baseline copy and first canvases from Figma 350:10858. Collapsed
-// accordion bodies were not supplied; do not invent capability descriptions.
+function preparedBody(featureId: string, title: string): string {
+  const state = preparedFeatures
+    .find((feature) => feature.id === featureId)
+    ?.states.find((item) => item.title === title);
+  if (!state)
+    throw new Error(`Missing prepared feature copy: ${featureId}/${title}`);
+  return state.body;
+}
+
+// Preserve baseline copy/canvases; fill missing accordion descriptions from
+// the already prepared Innflow homepage copy, not new capability claims.
 export const baselineFeatures: Feature[] = [
   {
     id: "channels",
@@ -73,8 +86,16 @@ export const baselineFeatures: Feature[] = [
         icon: "imgIcon1.svg",
         body: "Run multiple AI agents alongside human teammates. Coordinate their work while keeping people in control.",
       },
-      { title: "Use Ari, Plain’s agent", icon: "imgImage.png" },
-      { title: "Build your own agents", icon: "imgMessages.svg" },
+      {
+        title: "Delegate a task. Review the result.",
+        icon: "imgImage.png",
+        body: preparedBody("agents", "Delegate a task. Review the result."),
+      },
+      {
+        title: "Build your own agents",
+        icon: "imgMessages.svg",
+        body: preparedBody("agents", "Build your own agents"),
+      },
     ],
   },
   {
@@ -90,9 +111,21 @@ export const baselineFeatures: Feature[] = [
         icon: "imgList.svg",
         body: "Create a Linear issue, notify engineers or call your own API. Put your support context to work.",
       },
-      { title: "Build with AI", icon: "imgContract.svg" },
-      { title: "Auto-triage requests", icon: "imgApps.svg" },
-      { title: "Keep thread summaries current", icon: "imgSparkles.svg" },
+      {
+        title: "Build with AI",
+        icon: "imgContract.svg",
+        body: preparedBody("workflows", "Build with AI"),
+      },
+      {
+        title: "Auto-triage requests",
+        icon: "imgApps.svg",
+        body: preparedBody("workflows", "Auto-triage requests"),
+      },
+      {
+        title: "Keep thread summaries current",
+        icon: "imgSparkles.svg",
+        body: preparedBody("workflows", "Keep thread summaries current"),
+      },
     ],
   },
   {
@@ -109,9 +142,21 @@ export const baselineFeatures: Feature[] = [
         icon: "imgImage.png",
         body: "Spot recurring issues, trends and opportunities across every conversation, without manual analysis.",
       },
-      { title: "Catch up instantly", icon: "imgCube.svg" },
-      { title: "Daily summaries", icon: "imgReceipt.svg" },
-      { title: "Product insights", icon: "imgLink.svg" },
+      {
+        title: "Catch up instantly",
+        icon: "imgCube.svg",
+        body: preparedBody("insights", "Catch up instantly"),
+      },
+      {
+        title: "Daily summaries",
+        icon: "imgReceipt.svg",
+        body: preparedBody("insights", "Daily summaries"),
+      },
+      {
+        title: "Product insights",
+        icon: "imgLink.svg",
+        body: preparedBody("insights", "Product insights"),
+      },
     ],
   },
 ];
@@ -120,6 +165,8 @@ function BaselineFeature({ feature }: { feature: Feature }) {
   const [selected, setSelected] = useState(0);
   const buttons = useRef<(HTMLButtonElement | null)[]>([]);
   const channels = feature.id === "channels";
+  const channelScroll = useChannelsScroll(channels, setSelected);
+  const select = channels ? channelScroll.select : setSelected;
   const asset = (name: string) => `${root}/${feature.id}-${name}`;
   // Reference draft states: Workflows 397:10533/10544/10554;
   // Insights 397:9900/9902/9904. User-controlled stills, not measured motion.
@@ -144,8 +191,8 @@ function BaselineFeature({ feature }: { feature: Feature }) {
               : null;
     if (next === null) return;
     event.preventDefault();
-    setSelected(next);
-    buttons.current[next]?.focus();
+    select(next);
+    buttons.current[next]?.focus({ preventScroll: channelScroll.enabled });
   }
   return (
     <section
@@ -153,89 +200,116 @@ function BaselineFeature({ feature }: { feature: Feature }) {
       className={styles.section}
       data-source-node={feature.node}
       data-channels={channels}
+      data-channels-scroll={channelScroll.enabled}
       aria-labelledby={`${feature.id}-baseline-heading`}
     >
-      <div className={styles.grid} data-reverse={feature.reverse}>
+      <div
+        ref={channelScroll.gridRef}
+        className={styles.grid}
+        data-reverse={feature.reverse}
+      >
         <div className={styles.copy}>
           <header className={styles.heading}>
             <h2 id={`${feature.id}-baseline-heading`}>{feature.title}</h2>
           </header>
-          <div className={styles.rows}>
-            {feature.items.map((item, index) => (
-              <div
-                key={item.title}
-                className={styles.row}
-                data-active={selected === index}
-              >
-                <h3>
-                  <button
-                    type="button"
-                    ref={(node) => {
-                      buttons.current[index] = node;
-                    }}
-                    id={`${feature.id}-baseline-trigger-${index}`}
-                    aria-expanded={
-                      !channels && item.body ? selected === index : undefined
-                    }
-                    aria-pressed={
-                      channels || !item.body ? selected === index : undefined
-                    }
-                    aria-controls={
-                      item.body
-                        ? `${feature.id}-baseline-panel-${index}`
-                        : `${feature.id}-baseline-visual`
-                    }
-                    onClick={() => setSelected(index)}
-                    onKeyDown={(event) => navigate(event, index)}
-                  >
-                    <Image
-                      src={asset(item.icon)}
-                      alt=""
-                      width={24}
-                      height={24}
-                    />
-                    <span>{item.title}</span>
-                  </button>
-                </h3>
-                <section
-                  id={`${feature.id}-baseline-panel-${index}`}
-                  aria-labelledby={`${feature.id}-baseline-trigger-${index}`}
-                  hidden={!item.body || (!channels && selected !== index)}
-                  className={styles.description}
+          <div ref={channelScroll.windowRef} className={styles.readingWindow}>
+            <motion.div
+              ref={channelScroll.rowsRef}
+              className={styles.rows}
+              style={channelScroll.enabled ? { y: channelScroll.y } : undefined}
+            >
+              {feature.items.map((item, index) => (
+                <div
+                  key={item.title}
+                  className={styles.row}
+                  data-active={selected === index}
                 >
-                  {item.body && <p>{item.body}</p>}
-                  {item.body && (
+                  <h3>
                     <button
                       type="button"
-                      className={styles.arrow}
-                      aria-label={`Show ${item.title}`}
-                      onClick={() => {
-                        setSelected(index);
-                        buttons.current[index]?.focus();
+                      ref={(node) => {
+                        buttons.current[index] = node;
                       }}
+                      id={`${feature.id}-baseline-trigger-${index}`}
+                      aria-expanded={
+                        !channels && item.body ? selected === index : undefined
+                      }
+                      aria-pressed={
+                        channels || !item.body ? selected === index : undefined
+                      }
+                      aria-controls={
+                        item.body
+                          ? `${feature.id}-baseline-panel-${index}`
+                          : `${feature.id}-baseline-visual`
+                      }
+                      onClick={() => select(index)}
+                      onFocus={() => {
+                        if (channelScroll.enabled) select(index);
+                      }}
+                      onKeyDown={(event) => navigate(event, index)}
                     >
                       <Image
-                        src={asset("imgArrowUpRight.svg")}
+                        src={asset(item.icon)}
                         alt=""
-                        width={16}
-                        height={16}
+                        width={24}
+                        height={24}
                       />
+                      <span>{item.title}</span>
                     </button>
-                  )}
-                </section>
-              </div>
-            ))}
+                  </h3>
+                  <section
+                    id={`${feature.id}-baseline-panel-${index}`}
+                    aria-labelledby={`${feature.id}-baseline-trigger-${index}`}
+                    hidden={!item.body || (!channels && selected !== index)}
+                    className={styles.description}
+                  >
+                    {item.body && <p>{item.body}</p>}
+                    {item.body && (
+                      <button
+                        type="button"
+                        className={styles.arrow}
+                        aria-label={`Show ${item.title}`}
+                        onFocus={() => {
+                          if (channelScroll.enabled) select(index);
+                        }}
+                        onClick={() => {
+                          select(index);
+                          buttons.current[index]?.focus({
+                            preventScroll: channelScroll.enabled,
+                          });
+                        }}
+                      >
+                        <Image
+                          src={asset("imgArrowUpRight.svg")}
+                          alt=""
+                          width={16}
+                          height={16}
+                        />
+                      </button>
+                    )}
+                  </section>
+                </div>
+              ))}
+            </motion.div>
           </div>
         </div>
-        <div className={styles.visual} id={`${feature.id}-baseline-visual`}>
+        <div
+          ref={channelScroll.visualRef}
+          className={styles.visual}
+          id={`${feature.id}-baseline-visual`}
+        >
           <div className={styles.imageFrame} data-pending={pending}>
-            <Image
-              key={artwork}
-              src={artwork}
-              alt={`${feature.label} — reference product illustration`}
-              fill
-              sizes="(max-width: 800px) calc(100vw - 48px), (max-width: 1280px) 46vw, 580px"
-            />
+            {channels ? (
+              <ChannelsDemos selected={selected} />
+            ) : (
+              <Image
+                key={artwork}
+                src={artwork}
+                alt={`${feature.label} — reference product illustration`}
+                fill
+                sizes="(max-width: 800px) calc(100vw - 48px), (max-width: 1280px) 46vw, 580px"
+              />
+            )}
           </div>
           {pending && (
             <div className={styles.pending} role="status">

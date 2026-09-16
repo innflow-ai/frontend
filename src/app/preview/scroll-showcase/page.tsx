@@ -50,6 +50,7 @@ export default async function ScrollShowcasePage() {
         <BaselineCustomerStories
           testimonials={stories.testimonials}
           heading={stories.heading}
+          previewFallback
         />
         <BaselineConnectedInfrastructure />
         <BaselineClosing />

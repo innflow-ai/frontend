@@ -1,11 +1,21 @@
 "use client";
 
 import Image from "next/image";
-import { type KeyboardEvent, useState } from "react";
+import { type KeyboardEvent, useState, useSyncExternalStore } from "react";
 import { siteConfig } from "@/config/site";
 import styles from "./workspace-overview.module.css";
 
 const assets = "/preview/homepage/workspace-overview";
+const tabletQuery = "(min-width: 761px) and (max-width: 1100px)";
+function subscribeTablet(onChange: () => void) {
+  const query = window.matchMedia(tabletQuery);
+  query.addEventListener("change", onChange);
+  return () => query.removeEventListener("change", onChange);
+}
+function getTabletSnapshot() {
+  return window.matchMedia(tabletQuery).matches;
+}
+const getServerTabletSnapshot = () => false;
 
 // Copy and artwork are the supplied Figma baseline, not new product claims.
 export const workspaceCards = [
@@ -62,6 +72,11 @@ export const workspaceCards = [
 
 export function WorkspaceOverview() {
   const [active, setActive] = useState(0);
+  const tablet = useSyncExternalStore(
+    subscribeTablet,
+    getTabletSnapshot,
+    getServerTabletSnapshot,
+  );
 
   function navigate(event: KeyboardEvent<HTMLButtonElement>, index: number) {
     const last = workspaceCards.length - 1;
@@ -127,12 +142,13 @@ export function WorkspaceOverview() {
               <article
                 key={card.id}
                 className={styles.card}
-                data-active={active === index}
+                data-active={tablet || active === index}
                 data-source-node={card.source}
                 onPointerEnter={(event) => {
                   if (
-                    event.pointerType === "mouse" ||
-                    event.pointerType === "pen"
+                    !tablet &&
+                    (event.pointerType === "mouse" ||
+                      event.pointerType === "pen")
                   ) {
                     setActive(index);
                   }
@@ -150,30 +166,34 @@ export function WorkspaceOverview() {
                 <div className={styles.cardSurface}>
                   <div className={styles.cardCopy}>
                     <h3>
-                      <button
-                        className={styles.cardButton}
-                        id={`workspace-${card.id}-button`}
-                        type="button"
-                        aria-expanded={active === index}
-                        aria-controls={`workspace-${card.id}-details`}
-                        onClick={() => setActive(index)}
-                        onFocus={() => setActive(index)}
-                        onKeyDown={(event) => navigate(event, index)}
-                      >
-                        {card.title}
-                      </button>
+                      {tablet ? (
+                        card.title
+                      ) : (
+                        <button
+                          className={styles.cardButton}
+                          id={`workspace-${card.id}-button`}
+                          type="button"
+                          aria-expanded={active === index}
+                          aria-controls={`workspace-${card.id}-details`}
+                          onClick={() => setActive(index)}
+                          onFocus={() => setActive(index)}
+                          onKeyDown={(event) => navigate(event, index)}
+                        >
+                          {card.title}
+                        </button>
+                      )}
                     </h3>
                     <div className={styles.description}>
                       <p
                         className={styles.summary}
-                        aria-hidden={active === index}
+                        aria-hidden={tablet || active === index}
                       >
                         {card.summary}
                       </p>
                       <div
                         className={styles.details}
                         id={`workspace-${card.id}-details`}
-                        aria-hidden={active !== index}
+                        aria-hidden={!tablet && active !== index}
                       >
                         <p>{card.description}</p>
                         <ul>

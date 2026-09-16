@@ -1,0 +1,8 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Cube">
+<path id="Vector" d="M21 16.008V7.99C20.9994 7.64107 20.9066 7.2985 20.731 6.99698C20.5554 6.69546 20.3032 6.4457 20 6.273L13 2.265C12.6954 2.09102 12.3508 1.9995 12 1.9995C11.6492 1.9995 11.3046 2.09102 11 2.265L4 6.273C3.381 6.628 3 7.283 3 7.991V16.009C3 16.718 3.381 17.372 4 17.726L11 21.734C11.3046 21.908 11.6492 21.9995 12 21.9995C12.3508 21.9995 12.6954 21.908 13 21.734L20 17.726C20.619 17.371 21 16.716 21 16.008Z" stroke="#071A31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M12 22V12" stroke="#071A31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_3" d="M12 12L20.73 6.96" stroke="#071A31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" d="M3.27 6.96L12 12" stroke="#071A31" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</svg>

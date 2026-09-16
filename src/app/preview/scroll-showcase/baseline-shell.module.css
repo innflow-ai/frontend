@@ -1,0 +1,7 @@
+.shell {
+  --font-sans: var(--font-geist), sans-serif;
+  --ink-strong: #071a31;
+  font-family: var(--font-geist), sans-serif;
+  color: #071a31;
+  background: #fcfbf8;
+}

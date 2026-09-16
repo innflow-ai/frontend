@@ -8,6 +8,7 @@ import { NavigationBlogPostsProvider } from "@/components/navigation-blog-posts"
 import { PostHogObservability } from "@/components/posthog-observability";
 import { SiteCta } from "@/components/site-cta";
 import { SiteFooter } from "@/components/site-footer";
+import { SiteFooterBoundary } from "@/components/site-footer-boundary";
 import { SiteHeader } from "@/components/site-header";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { siteConfig } from "@/config/site";
@@ -18,6 +19,7 @@ import {
   humanizeCategory,
   urlForImage,
 } from "@/lib/sanity";
+import { TemplateFooter } from "./preview/scroll-showcase/template-footer";
 import "./globals.css";
 import { getNavigationTestimonial } from "@/lib/testimonials";
 import "lenis/dist/lenis.css";
@@ -173,7 +175,9 @@ export default async function RootLayout({
           <SiteHeader />
           {children}
           <SiteCta />
-          <SiteFooter />
+          <SiteFooterBoundary preview={<TemplateFooter />}>
+            <SiteFooter />
+          </SiteFooterBoundary>
         </NavigationBlogPostsProvider>
         <MarketingRuntime />
         <ConsentManagedTags />

@@ -104,13 +104,13 @@ describe("baseline feature continuation", () => {
     ).not.toBeInTheDocument();
     expect(screen.queryByText("A request arrives")).not.toBeInTheDocument();
   });
-  it("selects all six matching Channels demos via pointer input", () => {
+  it("selects all seven matching Channels demos via pointer input", () => {
     render(<BaselineFeatures />);
     const section = screen.getByRole("region", {
-      name: /Consolidate support\.\s+Keep the context\./,
+      name: /10x with agent/,
     });
     const layers = section.querySelectorAll("[data-channel-art]");
-    expect(layers).toHaveLength(6);
+    expect(layers).toHaveLength(7);
     expect(section).toHaveAttribute("data-channels-scroll", "false");
     baselineFeatures[0].items.forEach((item, index) => {
       const button = within(section).getByRole("button", {
@@ -140,7 +140,10 @@ describe("baseline feature continuation", () => {
   });
   it("supports arrow, Home and End focus without fabricating collapsed copy", () => {
     render(<BaselineFeatures />);
-    const first = screen.getByRole("button", {
+    const agents = screen.getByRole("region", {
+      name: "Orchestrate your AI agents",
+    });
+    const first = within(agents).getByRole("button", {
       name: "Orchestrate actions",
     });
     first.focus();
@@ -170,9 +173,9 @@ describe("baseline feature continuation", () => {
     for (const [key, index] of [
       ["ArrowDown", 1],
       ["ArrowUp", 0],
-      ["End", 5],
+      ["End", 6],
       ["ArrowRight", 0],
-      ["ArrowLeft", 5],
+      ["ArrowLeft", 6],
       ["Home", 0],
     ] as const) {
       fireEvent.keyDown(document.activeElement ?? triggers[0], { key });

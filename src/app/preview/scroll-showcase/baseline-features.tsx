@@ -30,16 +30,19 @@ function preparedBody(featureId: string, title: string): string {
   return state.body;
 }
 
-// Preserve baseline copy/canvases; fill missing accordion descriptions from
-// the already prepared Innflow homepage copy, not new capability claims.
 export const baselineFeatures: Feature[] = [
   {
     id: "channels",
     node: "350:11199",
     label: "Channels",
-    title: "Consolidate support.\nKeep the context.",
+    title: "10x with agent",
     glyph: "imgVector.svg",
     items: [
+      {
+        title: "Orchestrate actions",
+        icon: "imgTemplate.svg",
+        body: "Give every handoff a clear owner. Route Priority IS Urgent to a teammate and everything else to an agent.",
+      },
       {
         title: "All your channels, connected",
         icon: "imgImage.png",
@@ -168,8 +171,6 @@ function BaselineFeature({ feature }: { feature: Feature }) {
   const channelScroll = useChannelsScroll(channels, setSelected);
   const select = channels ? channelScroll.select : setSelected;
   const asset = (name: string) => `${root}/${feature.id}-${name}`;
-  // Reference draft states: Workflows 397:10533/10544/10554;
-  // Insights 397:9900/9902/9904. User-controlled stills, not measured motion.
   const pending = feature.id === "agents" && selected > 0;
   const artwork =
     channels && selected > 0

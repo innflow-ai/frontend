@@ -111,27 +111,37 @@
   position: absolute;
   inset: 0;
 }
-.ifRoute,
-.elseRoute,
-.port {
+.ifReveal,
+.elseReveal {
   position: absolute;
+  transform-origin: left center;
 }
-.ifRoute {
+.ifReveal {
   left: 46.035%;
   top: 36.59%;
   width: 10.862%;
   height: 8.182%;
 }
-.elseRoute {
+.elseReveal {
   left: 46.035%;
   top: 59.77%;
   width: 10.862%;
   height: 9.091%;
 }
+.ifRoute,
+.elseRoute {
+  width: 100%;
+  height: 100%;
+}
 .port {
+  position: absolute;
   width: 1.293%;
   height: 2.273%;
   z-index: 2;
+}
+.port img {
+  width: 100%;
+  height: 100%;
 }
 
 @container (max-width: 380px) {
@@ -194,39 +204,26 @@
     top: 37px;
     height: 28px;
   }
-  /* Reorient the exact source routes to the narrow, top-to-bottom layout. */
-  .ifRoute,
-  .elseRoute {
+  .ifReveal,
+  .elseReveal {
     top: 164px;
     width: 76px;
     height: 32px;
-    transform: rotate(90deg);
+    transform-origin: center top;
   }
-  .ifRoute {
+  .ifReveal {
     left: calc(32% - 38px);
   }
-  .elseRoute {
+  .elseReveal {
     left: calc(68% - 38px);
+  }
+  .ifRoute,
+  .elseRoute {
+    transform: rotate(90deg);
   }
   .port {
     width: 5px;
     height: 5px;
-  }
-  .port:nth-of-type(3) {
-    left: calc(32% - 18px) !important;
-    top: 140px !important;
-  }
-  .port:nth-of-type(4) {
-    left: calc(68% + 13px) !important;
-    top: 140px !important;
-  }
-  .port:nth-of-type(5) {
-    left: calc(32% + 13px) !important;
-    top: 216px !important;
-  }
-  .port:nth-of-type(6) {
-    left: calc(68% - 18px) !important;
-    top: 216px !important;
   }
 }
 

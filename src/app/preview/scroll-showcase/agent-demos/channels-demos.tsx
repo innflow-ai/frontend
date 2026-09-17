@@ -35,6 +35,7 @@ const ApiBuildingBlocks = dynamic(
 );
 
 export const channelDemoDefinitions = [
+  { title: "Orchestrate actions", Demo: OrchestrateActions },
   { title: "All your channels, connected", Demo: ConnectedChannels },
   { title: "An assistant for your team", Demo: TeamAssistant },
   { title: "AI agents, working together", Demo: AgentsHero },
@@ -51,7 +52,7 @@ export function ChannelsDemos({ selected }: { selected: number }) {
   const nearViewport = useInView(ref, { margin: "120px 0px", once: true });
   const [visited, setVisited] = useState(0);
   const [paused, setPaused] = useState(false);
-  const [replays, setReplays] = useState([0, 0, 0, 0, 0, 0]);
+  const [replays, setReplays] = useState([0, 0, 0, 0, 0, 0, 0]);
 
   useEffect(() => {
     if (nearViewport) setVisited((value) => value | (1 << selected));

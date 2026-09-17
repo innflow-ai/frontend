@@ -39,7 +39,7 @@ export const channelDemoDefinitions = [
   { title: "All your channels, connected", Demo: ConnectedChannels },
   { title: "An assistant for your team", Demo: TeamAssistant },
   { title: "AI agents, working together", Demo: AgentsHero },
-  { title: "Workflows that take action", Demo: AgentsHero },
+  { title: "Workflows that take action", Demo: OrchestrateActions },
   { title: "Insights from every interaction", Demo: Insights },
   { title: "Flexible, API-first building blocks", Demo: ApiBuildingBlocks },
 ] as const;

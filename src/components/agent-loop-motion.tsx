@@ -36,7 +36,12 @@ function CursorMark() {
         strokeWidth="1.6"
         d="M12 3.2 20.2 8v8L12 20.8 3.8 16V8z"
       />
-      <path fill="none" stroke="#111" strokeWidth="1.4" d="M12 3.2v17.6M3.8 8l16.4 8M20.2 8 3.8 16" />
+      <path
+        fill="none"
+        stroke="#111"
+        strokeWidth="1.4"
+        d="M12 3.2v17.6M3.8 8l16.4 8M20.2 8 3.8 16"
+      />
     </svg>
   );
 }
@@ -59,7 +64,10 @@ function CodexMark() {
         fill="#7C6CF0"
         d="M7.2 8.2c.6-2.6 3-4.4 5.7-4.4 2.4 0 4.5 1.4 5.4 3.6 2.3.3 4 2.2 4 4.6 0 2.5-2 4.6-4.5 4.6H8.1C5.3 16.6 3 14.3 3 11.5c0-2.3 1.6-4.3 3.8-4.8z"
       />
-      <path fill="#fff" d="M8.4 11.1h1.6l.8 2.2h-1.3zm3.2 0H13l.5 2.2h-1.3zm2.6 0h2.4v.8h-1.5v.3h1.3v.7h-1.3v.4H16.6v.8h-2.4z" />
+      <path
+        fill="#fff"
+        d="M8.4 11.1h1.6l.8 2.2h-1.3zm3.2 0H13l.5 2.2h-1.3zm2.6 0h2.4v.8h-1.5v.3h1.3v.7h-1.3v.4H16.6v.8h-2.4z"
+      />
     </svg>
   );
 }

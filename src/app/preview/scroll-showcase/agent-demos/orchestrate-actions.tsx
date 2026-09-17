@@ -7,7 +7,7 @@ import { useDemoPlayback } from "./use-demo-playback";
 
 const asset = "/preview/homepage/agent-demos/orchestrate-";
 
-/** Proposed six-second reveal; the source is a static reference, not a recording. */
+/** CMS_Template 502:10184 / 567:738 — nine-beat node creation loop. */
 export function OrchestrateActionsDemo({
   active = true,
   replayKey = 0,
@@ -18,17 +18,17 @@ export function OrchestrateActionsDemo({
   const { ref, progress, playing } = useDemoPlayback({
     active,
     replayKey,
-    duration: 6,
+    duration: 9,
+    loop: true,
   });
-  const conditionOpacity = useTransform(progress, [0, 0.14], [0, 1]);
-  const conditionY = useTransform(progress, [0, 0.14], [10, 0]);
-  const inputOpacity = useTransform(progress, [0.15, 0.3], [0, 1]);
-  const routeOpacity = useTransform(progress, [0.3, 0.45], [0, 1]);
-  const userOpacity = useTransform(progress, [0.43, 0.6], [0, 1]);
-  const userX = useTransform(progress, [0.43, 0.6], [8, 0]);
-  const agentOpacity = useTransform(progress, [0.61, 0.8], [0, 1]);
-  const agentX = useTransform(progress, [0.61, 0.8], [8, 0]);
-  const changing = playing ? "transform, opacity" : undefined;
+  const changing = playing ? "opacity" : undefined;
+
+  const conditionOpacity = useTransform(progress, [0, 1 / 9, 2 / 9, 1], [0, 0.55, 1, 1]);
+  const userOpacity = useTransform(progress, [3 / 9, 4 / 9], [0, 1]);
+  const agentOpacity = useTransform(progress, [4 / 9, 5 / 9], [0, 1]);
+  const ifDraw = useTransform(progress, [5 / 9, 6 / 9], [0, 1]);
+  const elseDraw = useTransform(progress, [7 / 9, 8 / 9], [0, 1]);
+  const portOpacity = useTransform(progress, [1 / 9, 2 / 9], [0, 1]);
 
   return (
     <div ref={ref} className={styles.demo} data-demo="orchestrate-actions">
@@ -37,67 +37,62 @@ export function OrchestrateActionsDemo({
         role="img"
         aria-label="If/else workflow: Priority IS Urgent routes to Lara Kim; Else routes to AI Agent."
       >
-        <motion.div
-          className={styles.routes}
-          style={{ opacity: routeOpacity }}
-          aria-hidden="true"
-        >
-          <Image
-            className={styles.ifRoute}
-            src={`${asset}if-route.svg`}
-            alt=""
-            width={42}
-            height={18}
-          />
-          <Image
-            className={styles.elseRoute}
-            src={`${asset}else-route.svg`}
-            alt=""
-            width={42}
-            height={20}
-          />
+        <div className={styles.routes} aria-hidden="true">
+          <motion.div className={styles.ifReveal} style={{ scaleX: ifDraw }}>
+            <Image
+              className={styles.ifRoute}
+              src={`${asset}if-route.svg`}
+              alt=""
+              width={42}
+              height={18}
+            />
+          </motion.div>
+          <motion.div className={styles.elseReveal} style={{ scaleX: elseDraw }}>
+            <Image
+              className={styles.elseRoute}
+              src={`${asset}else-route.svg`}
+              alt=""
+              width={42}
+              height={20}
+            />
+          </motion.div>
           {[
             [45.39, 43.41],
             [45.39, 58.86],
             [56.25, 35.68],
             [56.25, 67.5],
-          ].map(([left, top]) => (
-            <Image
+          ].map(([left, top], index) => (
+            <motion.div
               key={`${left}-${top}`}
               className={styles.port}
-              style={{ left: `${left}%`, top: `${top}%` }}
-              src={`${asset}port.svg`}
-              alt=""
-              width={5}
-              height={5}
-            />
+              style={{
+                left: `${left}%`,
+                top: `${top}%`,
+                opacity: index < 2 ? portOpacity : index === 2 ? userOpacity : agentOpacity,
+              }}
+            >
+              <Image src={`${asset}port.svg`} alt="" width={5} height={5} />
+            </motion.div>
           ))}
-        </motion.div>
+        </div>
         <motion.div
           className={`${styles.panel} ${styles.condition}`}
-          style={{
-            opacity: conditionOpacity,
-            y: conditionY,
-            willChange: changing,
-          }}
+          style={{ opacity: conditionOpacity, willChange: changing }}
           aria-hidden="true"
         >
           <div className={styles.glass} />
           <div className={styles.card}>
             <p className={styles.title}>If/else</p>
-            <motion.div
-              className={styles.conditionInput}
-              style={{ opacity: inputOpacity }}
-            >
+            <div className={styles.conditionInput}>
               <span>If</span>
               <span>Priority&nbsp; IS&nbsp; Urgent</span>
-            </motion.div>
+            </div>
             <div className={styles.elseInput}>Else</div>
           </div>
         </motion.div>
         <motion.div
           className={`${styles.panel} ${styles.user}`}
-          style={{ opacity: userOpacity, x: userX, willChange: changing }}
+          style={{ opacity: userOpacity, willChange: changing }}
           aria-hidden="true"
         >
           <div className={styles.glass} />
@@ -108,7 +103,7 @@ export function OrchestrateActionsDemo({
         </motion.div>
         <motion.div
           className={`${styles.panel} ${styles.agent}`}
-          style={{ opacity: agentOpacity, x: agentX, willChange: changing }}
+          style={{ opacity: agentOpacity, willChange: changing }}
           aria-hidden="true"
         >
           <div className={styles.glass} />

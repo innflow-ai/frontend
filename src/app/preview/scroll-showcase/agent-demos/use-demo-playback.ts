@@ -13,16 +13,19 @@ type PlaybackOptions = {
   replayKey?: number;
   duration?: number;
   replayOnReentry?: boolean;
+  loop?: boolean;
 };
 
 /** One shared, pausable clock; foreground layers derive transforms from it.
- * No intervals or per-frame React state, and no off-screen repeat loops.
+ * No intervals or per-frame React state. Off-screen demos pause. `loop`
+ * repeats only while the demo stays active and in view.
  */
 export function useDemoPlayback({
   active = true,
   replayKey = 0,
   duration = 6,
   replayOnReentry = false,
+  loop = false,
 }: PlaybackOptions = {}) {
   const ref = useRef<HTMLDivElement>(null);
   const progress = useMotionValue(0);
@@ -53,8 +56,7 @@ export function useDemoPlayback({
   }, [inView, completed, replayOnReentry]);
 
   useEffect(() => {
-    // Selection and visibility never reset the clock. Only an explicit replay
-    // (or a changed duration/accessibility preference) creates a new run.
+    // Reset on explicit replay, an opted-in reentry, or changed playback settings.
     void replayKey;
     void entryRun;
     progress.set(reducedMotion ? 1 : 0);
@@ -68,8 +70,9 @@ export function useDemoPlayback({
       duration,
       ease: "linear",
       autoplay: false,
+      repeat: loop ? Infinity : 0,
       onComplete: () => {
-        if (alive) setCompleted(true);
+        if (alive && !loop) setCompleted(true);
       },
     });
     controls.current = animation;
@@ -78,20 +81,20 @@ export function useDemoPlayback({
       animation.stop();
       controls.current = null;
     };
-  }, [duration, progress, reducedMotion, replayKey, entryRun]);
+  }, [duration, loop, progress, reducedMotion, replayKey, entryRun]);
 
   const playing =
     active && inView && documentVisible && !reducedMotion && !completed;
 
   useEffect(() => {
-    // Include reset inputs so a replay starts even if playing was already true.
     void duration;
+    void loop;
     void reducedMotion;
     void replayKey;
     void entryRun;
     if (playing) controls.current?.play();
     else controls.current?.pause();
-  }, [playing, duration, reducedMotion, replayKey, entryRun]);
+  }, [playing, duration, loop, reducedMotion, replayKey, entryRun]);
 
   return { ref, progress, reducedMotion, playing, completed };
 }

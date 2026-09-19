@@ -12,6 +12,7 @@ type PlaybackOptions = {
   active?: boolean;
   replayKey?: number;
   duration?: number;
+  replayOnReentry?: boolean;
   loop?: boolean;
 };
 
@@ -23,6 +24,7 @@ export function useDemoPlayback({
   active = true,
   replayKey = 0,
   duration = 6,
+  replayOnReentry = false,
   loop = false,
 }: PlaybackOptions = {}) {
   const ref = useRef<HTMLDivElement>(null);
@@ -31,6 +33,8 @@ export function useDemoPlayback({
   const reducedMotion = useReducedMotion() === true;
   const [documentVisible, setDocumentVisible] = useState(false);
   const [completed, setCompleted] = useState(false);
+  const [entryRun, setEntryRun] = useState(0);
+  const wasInView = useRef(false);
   const controls = useRef<{
     play: () => void;
     pause: () => void;
@@ -45,7 +49,16 @@ export function useDemoPlayback({
   }, []);
 
   useEffect(() => {
+    if (replayOnReentry && inView && !wasInView.current && completed) {
+      setEntryRun((value) => value + 1);
+    }
+    wasInView.current = inView;
+  }, [inView, completed, replayOnReentry]);
+
+  useEffect(() => {
+    // Reset on explicit replay, an opted-in reentry, or changed playback settings.
     void replayKey;
+    void entryRun;
     progress.set(reducedMotion ? 1 : 0);
     setCompleted(reducedMotion);
     if (reducedMotion) {
@@ -68,7 +81,7 @@ export function useDemoPlayback({
       animation.stop();
       controls.current = null;
     };
-  }, [duration, loop, progress, reducedMotion, replayKey]);
+  }, [duration, loop, progress, reducedMotion, replayKey, entryRun]);
 
   const playing =
     active && inView && documentVisible && !reducedMotion && !completed;
@@ -78,9 +91,10 @@ export function useDemoPlayback({
     void loop;
     void reducedMotion;
     void replayKey;
+    void entryRun;
     if (playing) controls.current?.play();
     else controls.current?.pause();
-  }, [playing, duration, loop, reducedMotion, replayKey]);
+  }, [playing, duration, loop, reducedMotion, replayKey, entryRun]);
 
   return { ref, progress, reducedMotion, playing, completed };
 }

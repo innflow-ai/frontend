@@ -16,7 +16,7 @@ const TeamAssistant = dynamic(
   { loading },
 );
 const AgentsHero = dynamic(
-  () => import("./agents-hero").then((mod) => mod.AgentsHeroDemo),
+  () => import("./agent-ring").then((mod) => mod.AgentRingDemo),
   { loading },
 );
 const OrchestrateActions = dynamic(

@@ -119,6 +119,38 @@ describe("shared demo playback", () => {
     expect(hook.result.current.completed).toBe(false);
     expect(runs[1].play).toHaveBeenCalledTimes(1);
   });
+  it("replays a completed demo on reentry when opted in", () => {
+    const hook = renderHook(() => useDemoPlayback({ replayOnReentry: true }));
+    act(() => runs[0].complete());
+    expect(hook.result.current.completed).toBe(true);
+    motion.inView = false;
+    hook.rerender();
+    motion.inView = true;
+    hook.rerender();
+    expect(runs[0].stop).toHaveBeenCalledTimes(1);
+    expect(runs[1].play).toHaveBeenCalledTimes(1);
+    expect(hook.result.current.progress.get()).toBe(0);
+    expect(hook.result.current.completed).toBe(false);
+  });
+  it("pauses and resumes looping demos without starting a reentry run", () => {
+    const hook = renderHook(() =>
+      useDemoPlayback({ loop: true, replayOnReentry: true }),
+    );
+    expect(motion.animate).toHaveBeenCalledWith(
+      hook.result.current.progress,
+      1,
+      expect.objectContaining({ repeat: Infinity }),
+    );
+    act(() => runs[0].complete());
+    expect(hook.result.current.completed).toBe(false);
+    motion.inView = false;
+    hook.rerender();
+    expect(hook.result.current.playing).toBe(false);
+    motion.inView = true;
+    hook.rerender();
+    expect(hook.result.current.playing).toBe(true);
+    expect(motion.animate).toHaveBeenCalledTimes(1);
+  });
   it("shows only the completed static state with reduced motion", () => {
     motion.reduced = true;
     const hook = renderHook(() => useDemoPlayback());

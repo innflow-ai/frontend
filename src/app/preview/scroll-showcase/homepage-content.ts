@@ -74,15 +74,15 @@ export const features: readonly FeatureSection[] = [
   {
     id: "agents",
     label: "AI agents",
-    title: "Orchestrate your\nAI agents.",
+    title: "Your agents.\nOne workspace.",
     source: "350:11344",
     href: "/platform/agentic-automation",
     accent: "#daf098",
     imageFirst: true,
     states: [
       {
-        title: "Orchestrate actions",
-        body: "Give every handoff a clear owner and the context to act. Let an agent prepare the work while your team stays close to the decisions.",
+        title: "Bring your agents together",
+        body: "Choose the right agent for each task. Keep its instructions, context and results together in Innflow.",
         artwork: "agents-hero",
         source: "439:10270",
         pair: {
@@ -105,7 +105,7 @@ export const features: readonly FeatureSection[] = [
       },
       {
         title: "Delegate a task. Review the result.",
-        body: "Give an Innflow cloud agent a focused task, then review the output when it is ready. Start with the work your team repeats every day.",
+        body: "Hand off a focused task, such as summarizing requests or drafting a follow-up. Review the result before taking the next step.",
         artwork: "agents-assistant",
         source: "439:10309",
         pair: {
@@ -128,7 +128,7 @@ export const features: readonly FeatureSection[] = [
       },
       {
         title: "Build your own agents",
-        body: "Shape the brief with your instructions, relevant context, and selected tools. Make the expected output and review step clear from the start.",
+        body: "Set the instructions, add relevant context and choose the tools an agent can use. Define the output and where a teammate should review it.",
         artwork: "agents-build",
         source: "439:10324",
         pair: {
@@ -183,8 +183,8 @@ export const features: readonly FeatureSection[] = [
         },
       },
       {
-        title: "Build with AI",
-        body: "Use the intent and context of a request to suggest where it belongs. Keep the destination clear and the team in control.",
+        title: "Route by context",
+        body: "Use what a customer is asking to suggest the right owner. Pass along the original context so the next person can pick up the work.",
         artwork: "workflows-ai",
         source: "439:10231",
         pair: {
@@ -207,7 +207,7 @@ export const features: readonly FeatureSection[] = [
       },
       {
         title: "Auto-triage requests",
-        body: "Bring labels, priority and a current summary together so the next person can understand the request and decide what happens next.",
+        body: "Organize incoming requests with a category, priority and short summary, ready for your team to review.",
         artwork: "workflows-triage",
         source: "439:10242",
         pair: {
@@ -230,7 +230,7 @@ export const features: readonly FeatureSection[] = [
       },
       {
         title: "Keep thread summaries current",
-        body: "Carry the conversation so far into the next handoff, with decisions, open questions and the next step together.",
+        body: "Keep a clear record of what changed, what was decided and what is still open as a conversation develops.",
         artwork: "workflows-hero",
         source: "397:10554",
       },
@@ -268,7 +268,7 @@ export const features: readonly FeatureSection[] = [
       },
       {
         title: "Catch up instantly",
-        body: "Give teammates a clear view of the conversation so far. Keep decisions, open questions and the next step together.",
+        body: "Get the important decisions, open questions and next steps in one brief, without rereading the entire thread.",
         artwork: "insights-context",
         source: "439:10480",
         pair: {
@@ -289,7 +289,7 @@ export const features: readonly FeatureSection[] = [
       },
       {
         title: "Daily summaries",
-        body: "Review a daily digest of team activity and open work. See what changed, what is waiting and where to focus next.",
+        body: "Start with a digest of recent activity and open work. See what moved forward, what is waiting and where to focus today.",
         artwork: "insights-digest",
         source: "439:10495",
         pair: {
@@ -310,7 +310,7 @@ export const features: readonly FeatureSection[] = [
       },
       {
         title: "Product insights",
-        body: "Keep related feedback close to its source, so your team can explore the themes behind individual requests.",
+        body: "Connect feature requests and recurring friction to the conversations behind them. Give product teams the context to decide what to improve.",
         artwork: "insights-product",
         source: "439:10516",
       },

@@ -271,13 +271,13 @@ export function BaselineConnectedInfrastructure() {
   const cards = [
     {
       title: "Support channels",
-      body: "Connect Slack, Microsoft Teams, Discord, email and chat. Meet customers where they already are.",
+      body: "Bring messages from your connected channels into one place, so your team can follow the conversation and respond with context.",
       icon: "card-google.png",
       href: "/integrations",
     },
     {
       title: "Your tools. Your workflows.",
-      body: "Connect your CRM and issue tracker, call your own APIs, and automate the work across your systems.",
+      body: "Keep conversation details connected to the tools your team uses. Pass context into your CRM, issue tracker or own APIs.",
       icon: "card-microsoft.png",
       href: "/integrations",
     },
@@ -294,7 +294,10 @@ export function BaselineConnectedInfrastructure() {
           <br />
           you already use
         </h2>
-        <p>Connect your channels, internal data and external systems.</p>
+        <p>
+          Keep customer conversations connected to the information and tools
+          behind your work.
+        </p>
         <Link className={styles.directory} href="/integrations">
           View all integrations <span aria-hidden="true">→</span>
         </Link>
@@ -380,13 +383,13 @@ export function BaselineClosing() {
     >
       <header className={styles.heading}>
         <h2 id="baseline-closing-heading">
-          Start fast.
+          Bring your team
           <br />
-          Scale fearlessly.
+          and AI together.
         </h2>
         <p>
-          Connect your channels, bring in your customer context, and build the
-          support workflows your team needs.
+          See how Innflow brings conversations, agents and workflows into one
+          workspace. Start with the work your team handles every day.
         </p>
         <a className={styles.cta} href={siteConfig.demoUrl}>
           Book an Innflow demo

@@ -12,6 +12,7 @@ type PlaybackOptions = {
   active?: boolean;
   replayKey?: number;
   duration?: number;
+  replayOnReentry?: boolean;
 };
 
 /** One shared, pausable clock; foreground layers derive transforms from it.
@@ -21,6 +22,7 @@ export function useDemoPlayback({
   active = true,
   replayKey = 0,
   duration = 6,
+  replayOnReentry = false,
 }: PlaybackOptions = {}) {
   const ref = useRef<HTMLDivElement>(null);
   const progress = useMotionValue(0);
@@ -28,6 +30,8 @@ export function useDemoPlayback({
   const reducedMotion = useReducedMotion() === true;
   const [documentVisible, setDocumentVisible] = useState(false);
   const [completed, setCompleted] = useState(false);
+  const [entryRun, setEntryRun] = useState(0);
+  const wasInView = useRef(false);
   const controls = useRef<{
     play: () => void;
     pause: () => void;
@@ -42,9 +46,17 @@ export function useDemoPlayback({
   }, []);
 
   useEffect(() => {
+    if (replayOnReentry && inView && !wasInView.current && completed) {
+      setEntryRun((value) => value + 1);
+    }
+    wasInView.current = inView;
+  }, [inView, completed, replayOnReentry]);
+
+  useEffect(() => {
     // Selection and visibility never reset the clock. Only an explicit replay
     // (or a changed duration/accessibility preference) creates a new run.
     void replayKey;
+    void entryRun;
     progress.set(reducedMotion ? 1 : 0);
     setCompleted(reducedMotion);
     if (reducedMotion) {
@@ -66,7 +78,7 @@ export function useDemoPlayback({
       animation.stop();
       controls.current = null;
     };
-  }, [duration, progress, reducedMotion, replayKey]);
+  }, [duration, progress, reducedMotion, replayKey, entryRun]);
 
   const playing =
     active && inView && documentVisible && !reducedMotion && !completed;
@@ -76,9 +88,10 @@ export function useDemoPlayback({
     void duration;
     void reducedMotion;
     void replayKey;
+    void entryRun;
     if (playing) controls.current?.play();
     else controls.current?.pause();
-  }, [playing, duration, reducedMotion, replayKey]);
+  }, [playing, duration, reducedMotion, replayKey, entryRun]);
 
   return { ref, progress, reducedMotion, playing, completed };
 }

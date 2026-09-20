@@ -15,6 +15,14 @@ it("offers configured Google sign-in and disabled Microsoft sign-in without a pr
   }));
   vi.stubGlobal("requestAnimationFrame", () => 1);
   vi.stubGlobal("cancelAnimationFrame", vi.fn());
+  vi.stubGlobal(
+    "IntersectionObserver",
+    class {
+      observe() {}
+      unobserve() {}
+      disconnect() {}
+    },
+  );
   render(<ScrollShowcase />);
   expect(
     screen.getByText(/Bring conversations, AI agents, and workflows/),
@@ -38,4 +46,16 @@ it("offers configured Google sign-in and disabled Microsoft sign-in without a pr
   ).toHaveAccessibleDescription("Microsoft sign-in link pending");
   expect(screen.queryByText("Scroll to explore ↓")).not.toBeInTheDocument();
   expect(screen.queryByText(/01 \/ 04/)).not.toBeInTheDocument();
+  const scheduling = screen.getByRole("tabpanel", { name: "Agents" });
+  expect(scheduling).toHaveTextContent("Less busywork. More on autopilot.");
+  expect(scheduling).not.toHaveTextContent(
+    /Calendly|Meeting confirmed|#1 scheduling/,
+  );
+  expect(scheduling.querySelector("a")).toHaveAttribute(
+    "href",
+    "/products/platform",
+  );
+  expect(
+    scheduling.querySelector("[data-booking-calendar]"),
+  ).toBeInTheDocument();
 });

@@ -2,7 +2,9 @@
 
 Local route: `/preview/scroll-showcase` (noindex, not linked from navigation).
 
-Source: Figma file `JkJnW5Q1AIVAqgoV2AqAyb`, frames `365:9480`, `358:9480`, `359:9513`, `359:9557`. Icons, gradient and cropped portraits are local Figma exports in `public/preview/scroll-showcase`. Frame copy is intentionally preserved as reference content; Learn more links to Calendly. This is a motion study, not final Innflow product messaging.
+Source: Figma file `JkJnW5Q1AIVAqgoV2AqAyb`, frames `365:9480`, `358:9480`, `359:9513`, `359:9557`. Icons, gradient and cropped portraits are local Figma exports in `public/preview/scroll-showcase`. Scheduling now uses Innflow copy and links to the platform page; other panels retain their existing reference copy and destinations.
+
+Scheduling illustration: storyboard `731:728`, eight poses. A 3.2-second Motion clock expands the glass-backed shell, resolves skeletons into the month and date grid, reveals availability by week, then holds. No date selection or booking confirmation is implied. The shared demo playback hook pauses off-screen, when inactive, or when the document is hidden; reduced motion shows the complete calendar. Switching panels preserves progress. Exact exported waveform, controls and availability SVGs are local in `calendar-storyboard/`. Figma native glass is approximated with a translucent rim, inset highlight, blur and shadow in CSS.
 
 Styling follows these frames and the supplied Calendly_variables token files, with the site's Host Grotesk. All CSS is scoped to this route. The existing shared header/footer and Lenis controller remain in use. No dependencies added.
 

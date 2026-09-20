@@ -17,14 +17,14 @@ function getTabletSnapshot() {
 }
 const getServerTabletSnapshot = () => false;
 
-// Copy and artwork are the supplied Figma baseline, not new product claims.
+// Innflow copy paired with the supplied Figma reference artwork.
 export const workspaceCards = [
   {
     id: "connect",
     title: "Connect",
     summary: "Bring every support channel together.",
     description:
-      "A customer asks for help. Bring the conversation into one workspace, with the context your team needs to act.",
+      "Keep customer messages and their context together so your team can pick up the conversation without starting over.",
     steps: [
       "Connect your support channels",
       "Keep customer context together",
@@ -35,8 +35,9 @@ export const workspaceCards = [
   {
     id: "assist",
     title: "Assist",
-    summary: "Ask anything. Get the full context.",
-    description: "Ask anything. Get the full context.",
+    summary: "Find context. Prepare a helpful reply.",
+    description:
+      "Let an assistant gather relevant information and prepare a response. Your team reviews it before sending.",
     steps: [
       "Find the context you need",
       "Draft a helpful response",
@@ -48,7 +49,8 @@ export const workspaceCards = [
     id: "automate",
     title: "Automate",
     summary: "Route requests and run your workflows.",
-    description: "Route requests and run your workflows.",
+    description:
+      "Give each request a clear path, from identifying the issue to assigning the next step and tracking the outcome.",
     steps: [
       "Identify the request",
       "Run the right workflow",
@@ -60,7 +62,8 @@ export const workspaceCards = [
     id: "learn",
     title: "Learn",
     summary: "Find patterns in every conversation.",
-    description: "Find patterns in every conversation.",
+    description:
+      "Bring related feedback together to understand recurring questions and decide what to improve next.",
     steps: [
       "Spot recurring questions",
       "Review conversation patterns",
@@ -128,9 +131,9 @@ export function WorkspaceOverview() {
               Every conversation.
             </h2>
             <p className={styles.introduction}>
-              Connect your channels. Orchestrate every conversation. Get smarter
-              with each interaction, in one unified workspace built to scale
-              with you.
+              Bring customer conversations, AI assistance and team workflows
+              together. Keep the context from the first message to the next
+              step.
             </p>
             <a className={styles.cta} href={siteConfig.signupUrl}>
               Start for free

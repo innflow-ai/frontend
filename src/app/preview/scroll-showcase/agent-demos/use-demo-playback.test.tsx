@@ -1,4 +1,6 @@
 import { act, cleanup, renderHook } from "@testing-library/react";
+import { hydrateRoot } from "react-dom/client";
+import { renderToString } from "react-dom/server";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { useDemoPlayback } from "./use-demo-playback";
 
@@ -10,11 +12,11 @@ const motion = vi.hoisted(() => ({
 vi.mock("motion/react", async (importOriginal) => ({
   ...(await importOriginal<typeof import("motion/react")>()),
   useInView: () => motion.inView,
-  useReducedMotion: () => motion.reduced,
   animate: motion.animate,
 }));
 
 let hidden = false;
+const preferenceListeners = new Set<() => void>();
 let runs: {
   play: ReturnType<typeof vi.fn>;
   pause: ReturnType<typeof vi.fn>;
@@ -26,6 +28,14 @@ beforeEach(() => {
   hidden = false;
   motion.inView = true;
   motion.reduced = false;
+  preferenceListeners.clear();
+  vi.stubGlobal("matchMedia", () => ({
+    matches: motion.reduced,
+    addEventListener: (_type: string, listener: () => void) =>
+      preferenceListeners.add(listener),
+    removeEventListener: (_type: string, listener: () => void) =>
+      preferenceListeners.delete(listener),
+  }));
   runs = [];
   vi.spyOn(document, "hidden", "get").mockImplementation(() => hidden);
   motion.animate
@@ -47,6 +57,7 @@ beforeEach(() => {
 afterEach(() => {
   cleanup();
   vi.restoreAllMocks();
+  vi.unstubAllGlobals();
 });
 
 describe("shared demo playback", () => {
@@ -119,6 +130,38 @@ describe("shared demo playback", () => {
     expect(hook.result.current.completed).toBe(false);
     expect(runs[1].play).toHaveBeenCalledTimes(1);
   });
+  it("replays a completed demo on reentry when opted in", () => {
+    const hook = renderHook(() => useDemoPlayback({ replayOnReentry: true }));
+    act(() => runs[0].complete());
+    expect(hook.result.current.completed).toBe(true);
+    motion.inView = false;
+    hook.rerender();
+    motion.inView = true;
+    hook.rerender();
+    expect(runs[0].stop).toHaveBeenCalledTimes(1);
+    expect(runs[1].play).toHaveBeenCalledTimes(1);
+    expect(hook.result.current.progress.get()).toBe(0);
+    expect(hook.result.current.completed).toBe(false);
+  });
+  it("pauses and resumes looping demos without starting a reentry run", () => {
+    const hook = renderHook(() =>
+      useDemoPlayback({ loop: true, replayOnReentry: true }),
+    );
+    expect(motion.animate).toHaveBeenCalledWith(
+      hook.result.current.progress,
+      1,
+      expect.objectContaining({ repeat: Infinity }),
+    );
+    act(() => runs[0].complete());
+    expect(hook.result.current.completed).toBe(false);
+    motion.inView = false;
+    hook.rerender();
+    expect(hook.result.current.playing).toBe(false);
+    motion.inView = true;
+    hook.rerender();
+    expect(hook.result.current.playing).toBe(true);
+    expect(motion.animate).toHaveBeenCalledTimes(1);
+  });
   it("shows only the completed static state with reduced motion", () => {
     motion.reduced = true;
     const hook = renderHook(() => useDemoPlayback());
@@ -137,5 +180,38 @@ describe("shared demo playback", () => {
       "visibilitychange",
       expect.any(Function),
     );
+  });
+  it("responds to reduced-motion preference changes without remounting", () => {
+    const hook = renderHook(() => useDemoPlayback());
+    act(() => {
+      motion.reduced = true;
+      for (const listener of preferenceListeners) listener();
+    });
+    expect(hook.result.current.reducedMotion).toBe(true);
+    expect(hook.result.current.playing).toBe(false);
+    expect(hook.result.current.progress.get()).toBe(1);
+    expect(runs[0].stop).toHaveBeenCalled();
+  });
+  it("hydrates the server state before resolving a reduced-motion preference", async () => {
+    function Probe() {
+      const playback = useDemoPlayback();
+      return <div data-reduced={playback.reducedMotion} />;
+    }
+    motion.reduced = true;
+    const container = document.createElement("div");
+    container.innerHTML = renderToString(<Probe />);
+    expect(container.firstElementChild?.getAttribute("data-reduced")).toBe(
+      "false",
+    );
+    const errors = vi.spyOn(console, "error").mockImplementation(() => {});
+    let root: ReturnType<typeof hydrateRoot>;
+    await act(async () => {
+      root = hydrateRoot(container, <Probe />);
+    });
+    expect(container.firstElementChild?.getAttribute("data-reduced")).toBe(
+      "true",
+    );
+    expect(errors).not.toHaveBeenCalled();
+    await act(async () => root.unmount());
   });
 });

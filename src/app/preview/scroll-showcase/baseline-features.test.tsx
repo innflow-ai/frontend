@@ -141,10 +141,10 @@ describe("baseline feature continuation", () => {
   it("supports arrow, Home and End focus without fabricating collapsed copy", () => {
     render(<BaselineFeatures />);
     const agents = screen.getByRole("region", {
-      name: "Orchestrate your AI agents",
+      name: /Your agents\.\s+One workspace\./,
     });
     const first = within(agents).getByRole("button", {
-      name: "Orchestrate actions",
+      name: "Bring your agents together",
     });
     first.focus();
     fireEvent.keyDown(first, { key: "ArrowDown" });

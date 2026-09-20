@@ -1,0 +1,12 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="118" height="22" viewBox="0 0 118 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Month controls" clip-path="url(#clip0_0_135)">
+<path id="Vector" d="M11 22C17.0751 22 22 17.0751 22 11C22 4.92487 17.0751 0 11 0C4.92487 0 0 4.92487 0 11C0 17.0751 4.92487 22 11 22Z" fill="#EDF5FF"/>
+<path id="Vector_2" d="M107.001 21.9998C113.076 21.9998 118.001 17.0749 118.001 10.9998C118.001 4.92467 113.076 -0.000194203 107.001 -0.000194203C100.926 -0.000194203 96.0007 4.92467 96.0007 10.9998C96.0007 17.0749 100.926 21.9998 107.001 21.9998Z" fill="#EDF5FF"/>
+<path id="Vector_3" d="M11.9979 7.99978L8.99787 10.9998L11.9979 13.9998M105.998 7.99978L108.998 10.9998L105.998 13.9998" stroke="#2688FF"/>
+</g>
+<defs>
+<clipPath id="clip0_0_135">
+<rect width="118" height="22" fill="white"/>
+</clipPath>
+</defs>
+</svg>

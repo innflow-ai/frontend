@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { type KeyboardEvent, useRef, useState } from "react";
 import { ChannelsDemos } from "./agent-demos/channels-demos";
@@ -9,6 +10,9 @@ import { features as preparedFeatures } from "./homepage-content";
 import { useChannelsScroll } from "./use-channels-scroll";
 
 const root = "/preview/homepage/baseline-features";
+const AgentStoryboard = dynamic(() =>
+  import("./agent-demos/agent-ring").then((mod) => mod.AgentStoryboardPreview),
+);
 type Item = { title: string; icon: string; body?: string };
 type Feature = {
   id: string;
@@ -30,6 +34,7 @@ function preparedBody(featureId: string, title: string): string {
   return state.body;
 }
 
+// Preview copy: one clear action per item, matched to the corresponding demo.
 export const baselineFeatures: Feature[] = [
   {
     id: "channels",
@@ -46,32 +51,32 @@ export const baselineFeatures: Feature[] = [
       {
         title: "All your channels, connected",
         icon: "imgImage.png",
-        body: "Connect and scale Slack, Microsoft Teams, Discord, email, chat, your portal and more.",
+        body: "Bring messages from your connected channels into one workspace, with the customer context your team needs to respond.",
       },
       {
         title: "An assistant for your team",
         icon: "imgTextCaption.svg",
-        body: "Research, triage and resolve requests with an AI assistant that works across your systems.",
+        body: "Find relevant information, draft a response and review the next step without piecing together separate conversations.",
       },
       {
         title: "AI agents, working together",
         icon: "imgWindmill.svg",
-        body: "Run multiple AI agents alongside human teammates. Keep people in control of complex conversations.",
+        body: "Choose an agent for the task and give it the context to get started. Keep your team involved in the decisions that matter.",
       },
       {
         title: "Workflows that take action",
         icon: "imgTemplate.svg",
-        body: "Route requests, trigger investigations, notify teams and take action in your own systems.",
+        body: "Turn a request into a clear next step: assign an owner, notify the right team or trigger a connected workflow.",
       },
       {
         title: "Insights from every interaction",
         icon: "imgApps.svg",
-        body: "Spot recurring issues, understand customer themes and turn support into product insight.",
+        body: "Group related feedback, spot recurring questions and see which issues deserve your team's attention.",
       },
       {
         title: "Flexible, API-first building blocks",
         icon: "imgUsersGroup.svg",
-        body: "Extend, customize or embed your support infrastructure into your product and existing tools.",
+        body: "Use APIs and connected tools to shape the workflow around your product, your data and the way your team works.",
       },
     ],
   },
@@ -80,14 +85,14 @@ export const baselineFeatures: Feature[] = [
     node: "350:11344",
     label: "Agents",
     badge: "AI",
-    title: "Orchestrate your AI agents",
+    title: "Your agents.\nOne workspace.",
     reverse: true,
     glyph: "imgContainer.svg",
     items: [
       {
-        title: "Orchestrate actions",
+        title: "Bring your agents together",
         icon: "imgIcon1.svg",
-        body: "Run multiple AI agents alongside human teammates. Coordinate their work while keeping people in control.",
+        body: "Choose the right agent for each task. Keep its instructions, context and results together in Innflow.",
       },
       {
         title: "Delegate a task. Review the result.",
@@ -112,12 +117,12 @@ export const baselineFeatures: Feature[] = [
       {
         title: "Connect external systems",
         icon: "imgList.svg",
-        body: "Create a Linear issue, notify engineers or call your own API. Put your support context to work.",
+        body: "Carry conversation details into your connected tools. Create a task, send a team update or call your own API.",
       },
       {
-        title: "Build with AI",
+        title: "Route by context",
         icon: "imgContract.svg",
-        body: preparedBody("workflows", "Build with AI"),
+        body: preparedBody("workflows", "Route by context"),
       },
       {
         title: "Auto-triage requests",
@@ -143,7 +148,7 @@ export const baselineFeatures: Feature[] = [
       {
         title: "Detect trends",
         icon: "imgImage.png",
-        body: "Spot recurring issues, trends and opportunities across every conversation, without manual analysis.",
+        body: "See which questions and issues keep coming up. Review related conversations together to understand the pattern.",
       },
       {
         title: "Catch up instantly",
@@ -302,6 +307,8 @@ function BaselineFeature({ feature }: { feature: Feature }) {
           <div className={styles.imageFrame} data-pending={pending}>
             {channels ? (
               <ChannelsDemos selected={selected} />
+            ) : feature.id === "agents" && selected === 0 ? (
+              <AgentStoryboard />
             ) : (
               <Image
                 key={artwork}

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { type CSSProperties, useEffect, useRef, useState } from "react";
 import { siteConfig } from "@/config/site";
+import { BookingCalendar } from "./booking-calendar";
 import {
   chapterScrollProgress,
   hideShowcaseNavigation,
@@ -14,10 +15,10 @@ const assets = "/preview/scroll-showcase";
 const states = [
   {
     id: "scheduling",
-    label: "Scheduling",
+    label: "Agents",
     badge: "",
-    title: "Book meetings with the world’s #1 scheduling tool",
-    body: "Giving you complete control and total customization, Calendly is the easiest and most powerful way to find time to connect.",
+    title: "Less busywork. More on autopilot.",
+    body: "Put recurring property tasks in motion, with your team in control of the decisions that matter.",
     accent: "#6bb0ff",
     surface: "#d3e5ff",
   },
@@ -49,7 +50,6 @@ const states = [
     surface: "#e5f9f9",
   },
 ] as const;
-const days = Array.from({ length: 35 }, (_, i) => i - 2);
 const waveBars = Array.from({ length: 24 }, (_, i) => ({
   id: `bar-${i}`,
   height: 50 + ((i * 37) % 64),
@@ -69,7 +69,13 @@ function Portrait({ name, size = 36 }: { name: string; size?: number }) {
   );
 }
 
-function Illustration({ index }: { index: number }) {
+function Illustration({ index, active }: { index: number; active: boolean }) {
+  if (index === 0)
+    return (
+      <div className={styles.demo}>
+        <BookingCalendar active={active} />
+      </div>
+    );
   return (
     <div className={styles.demo} aria-hidden="true">
       <div className={styles.wave}>
@@ -77,32 +83,6 @@ function Illustration({ index }: { index: number }) {
           <i key={bar.id} style={{ height: bar.height }} />
         ))}
       </div>
-      {index === 0 && (
-        <div className={styles.calendar}>
-          <div className={styles.month}>
-            <span>‹</span>
-            <strong>July 2026</strong>
-            <span>›</span>
-          </div>
-          <div className={styles.week}>
-            {["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"].map((day) => (
-              <span key={day}>{day}</span>
-            ))}
-          </div>
-          <div className={styles.dates}>
-            {days.map((day, cell) => (
-              <span
-                key={day}
-                data-weekend={cell % 7 === 0 || cell % 7 === 6}
-                data-selected={day === 15}
-              >
-                {day > 0 && day <= 31 ? day : ""}
-              </span>
-            ))}
-          </div>
-          <div className={styles.booked}>✓ Meeting confirmed</div>
-        </div>
-      )}
       {index === 1 && (
         <div className={styles.email}>
           <div className={styles.sender}>
@@ -431,20 +411,34 @@ export function ScrollShowcase() {
                       <h2>{state.title}</h2>
                       <p>{state.body}</p>
                       <a
-                        href="https://calendly.com"
-                        target="_blank"
-                        rel="noreferrer"
+                        href={
+                          index === 0
+                            ? "/products/platform"
+                            : "https://calendly.com"
+                        }
+                        target={index === 0 ? undefined : "_blank"}
+                        rel={index === 0 ? undefined : "noreferrer"}
                       >
-                        Learn more <span aria-hidden="true">→</span>
+                        {index === 0 ? "Explore Innflow" : "Learn more"}{" "}
+                        <span aria-hidden="true">→</span>
                         <span className={styles.srOnly}>
                           {" "}
-                          about {state.label} on Calendly (opens a new tab)
+                          {index === 0
+                            ? "and its connected platform"
+                            : `about ${state.label} on Calendly (opens a new tab)`}
                         </span>
                       </a>
                     </div>
                     <Illustration
-                      key={active === index ? "active" : "idle"}
+                      key={
+                        index === 0
+                          ? "calendar"
+                          : active === index
+                            ? "active"
+                            : "idle"
+                      }
                       index={index}
+                      active={active === index}
                     />
                   </section>
                 ))}

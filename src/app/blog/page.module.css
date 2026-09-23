@@ -262,6 +262,26 @@
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 44px 28px;
 }
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin: 48px 0 8px;
+  font-size: 14px;
+}
+.pagination a,
+.pagination span {
+  min-width: 88px;
+  text-align: center;
+}
+.pagination a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.pagination span[aria-disabled="true"] {
+  color: #9aa7ab;
+}
 .card {
   display: flex;
   min-width: 0;

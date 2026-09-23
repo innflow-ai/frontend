@@ -11,6 +11,7 @@ import {
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { AnnouncementBar } from "@/components/announcement-bar";
 import { GoogleCtaContent } from "@/components/google-cta-content";
 import { LoginMenu } from "@/components/login-menu";
 import {
@@ -20,6 +21,7 @@ import {
   resourcesColumns,
   solutionsColumns,
 } from "@/components/mega-menu";
+import { SignupOfferPopup } from "@/components/signup-offer-popup";
 import { siteConfig } from "@/config/site";
 import { blMenuIcons } from "./bl-menu-icons";
 import { MobileNavigation } from "./editorial-header";
@@ -56,6 +58,7 @@ export function SiteHeader() {
   const pathname = usePathname();
   const isShowcasePreview = pathname === "/preview/scroll-showcase";
   const [announcementDismissed, setAnnouncementDismissed] = useState(false);
+  const [signupOfferOpen, setSignupOfferOpen] = useState(false);
   const [previewShowcasePassed, setPreviewShowcasePassed] = useState(false);
   const header = useRef<HTMLElement>(null);
   const toggle = useRef<HTMLButtonElement>(null);
@@ -199,6 +202,23 @@ export function SiteHeader() {
         isShowcasePreview ? announcementDismissed : undefined
       }
     >
+      {!isShowcasePreview && !announcementDismissed && (
+        <AnnouncementBar
+          onDismiss={() => {
+            setAnnouncementDismissed(true);
+            header.current
+              ?.querySelector<HTMLAnchorElement>('a[aria-label="innflow home"]')
+              ?.focus();
+          }}
+        />
+      )}
+      {!isShowcasePreview && (
+        <SignupOfferPopup
+          open={signupOfferOpen}
+          onOpen={() => setSignupOfferOpen(true)}
+          onDismiss={() => setSignupOfferOpen(false)}
+        />
+      )}
       {isShowcasePreview && !announcementDismissed && (
         <aside
           className={previewStyles.announcement}
@@ -470,6 +490,9 @@ export function SiteHeader() {
           </a>
         </nav>
         <div className={styles.headerActions}>
+          <a className={styles.login} href={siteConfig.demoUrl}>
+            Book a demo
+          </a>
           <LoginMenu
             href={`${siteConfig.appOrigin}/login`}
             open={menu === "Log in"}

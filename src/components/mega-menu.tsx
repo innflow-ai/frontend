@@ -36,7 +36,13 @@ import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
 import { platformPages } from "@/content/platform";
+import { megaMenuHref } from "@/lib/mega-menu-destinations";
 import styles from "./mega-menu.module.css";
+
+export {
+  MEGA_MENU_FEATURE_HREFS,
+  megaMenuHref,
+} from "@/lib/mega-menu-destinations";
 
 export type MegaMenuLink = {
   href: string;
@@ -64,29 +70,10 @@ export type LatestBlogPostNavItem = {
   imageAlt: string;
 };
 
-const featureDestinations: Record<string, string> = {
-  Residential: "/residential",
-  Multifamily: "/multifamily",
-  Commercial: "/commercial",
-  "Community Associations": "/community-associations",
-  Conventional: "/multifamily",
-  "Student Housing": "/student-housing",
-  "Centralized Operations": "/operations",
-  "Owner Portal": "/owners",
-  Owners: "/owners",
-  Listings: "/listing-and-advertising",
-  Advertising: "/listing-and-advertising",
-  "Application & eSign": "/rental-applications",
-  CRM: "/crm",
-  "Move-In": "/leasing",
-  Renewals: "/leasing",
-  Delinquency: "/rapid-rent",
-};
-
 function withApprovedMenuIcons(links: MegaMenuLink[]): MegaMenuLink[] {
   return links.map((link) => ({
     ...link,
-    href: featureDestinations[link.title] ?? link.href,
+    href: megaMenuHref(link.title, link.href),
     iconSrc:
       link.iconSrc ??
       `/brand/navigation/mega-menu-items/${link.title
@@ -277,7 +264,7 @@ const coreSolutionsColumns: MegaMenuColumn[] = [
     heading: "Operations",
     links: withApprovedMenuIcons([
       {
-        href: "/property-management",
+        href: "/operations",
         icon: CirclesFour,
         title: "Centralized Operations",
         body: "Modern, AI-powered operations across leasing, admin, and maintenance.",
@@ -290,14 +277,14 @@ const coreSolutionsColumns: MegaMenuColumn[] = [
         body: "Keep recurring rental workflows and resident context connected.",
       },
       {
-        href: "/property-management",
+        href: "/rapid-rent",
         icon: CreditCard,
         iconSrc: "/brand/navigation/bl-stroke/delinquency-alarm.svg",
         title: "Delinquency",
         body: "Reduce late payments and boost cash flow.",
       },
       {
-        href: "/property-management",
+        href: "/owners",
         icon: DoorOpen,
         title: "Owner Portal",
         body: "Keep owners connected to property information and team updates.",
@@ -308,37 +295,37 @@ const coreSolutionsColumns: MegaMenuColumn[] = [
     heading: "Leasing",
     links: withApprovedMenuIcons([
       {
-        href: "/products/agent-os",
+        href: "/listing-and-advertising",
         icon: ListBullets,
         title: "Listings",
         body: "Keep property listings accurate and up to date.",
       },
       {
-        href: "/products/agent-os",
+        href: "/listing-and-advertising",
         icon: Megaphone,
         title: "Advertising",
         body: "Reach qualified renters across the right channels.",
       },
       {
-        href: "/products/agent-os",
+        href: "/rental-applications",
         icon: Signature,
         title: "Application & eSign",
         body: "Coordinate rental applications and document signing.",
       },
       {
-        href: "/products/databases",
+        href: "/crm",
         icon: AddressBook,
         title: "CRM",
         body: "Capture, nurture, & convert prospects.",
       },
       {
-        href: "/property-management",
+        href: "/leasing",
         icon: HouseLine,
         title: "Move-In",
         body: "Effortless move-ins powered by AI.",
       },
       {
-        href: "/property-management",
+        href: "/leasing",
         icon: ArrowsClockwise,
         title: "Renewals",
         body: "Predict, engage, and renew.",
@@ -349,19 +336,19 @@ const coreSolutionsColumns: MegaMenuColumn[] = [
     heading: "By team",
     links: withApprovedMenuIcons([
       {
-        href: "/property-management",
+        href: "/operations",
         icon: UsersThree,
         title: "Owner Operators and Fee Managers",
         body: "AI automation for property management companies.",
       },
       {
-        href: "/property-management",
+        href: "/owners",
         icon: House,
         title: "Owners",
         body: "AI automation for ownership groups.",
       },
       {
-        href: "/property-management",
+        href: "/leasing",
         icon: UsersThree,
         iconSrc: "/brand/navigation/bl-stroke/leasing-teams.svg",
         title: "Leasing Teams",
@@ -530,6 +517,8 @@ export const productColumns = featuredColumns(allProductColumns, {
   "Build and customize": ["Agent Studio", "Agent Skills"],
   "Automation and intelligence": [
     "Agentic Automation",
+    "Self Learning",
+    "Evaluations",
     "Analytics and Observability",
   ],
   "Connections and governance": [
@@ -539,9 +528,22 @@ export const productColumns = featuredColumns(allProductColumns, {
 });
 
 export const solutionsColumns = featuredColumns(allSolutionsColumns, {
-  Operations: ["Centralized Operations", "Rent Collection", "Work Orders"],
-  Leasing: ["Advertising", "Application & eSign", "CRM"],
-  "By team": ["Owner Operators and Fee Managers", "Leasing Teams"],
+  Operations: [
+    "Centralized Operations",
+    "Rent Collection",
+    "Delinquency",
+    "Owner Portal",
+    "Work Orders",
+  ],
+  Leasing: [
+    "Listings",
+    "Advertising",
+    "Application & eSign",
+    "CRM",
+    "Move-In",
+    "Renewals",
+  ],
+  "By team": ["Owner Operators and Fee Managers", "Owners", "Leasing Teams"],
   Finance: ["Accounting", "Reports"],
 });
 

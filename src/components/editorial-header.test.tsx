@@ -421,3 +421,57 @@ describe("EditorialHeader navigation", () => {
     );
   });
 });
+
+describe("SiteHeader mega-menu destinations", () => {
+  beforeEach(() => {
+    mockPathname.current = "/";
+    Object.defineProperty(window, "matchMedia", {
+      configurable: true,
+      value: vi.fn().mockReturnValue({
+        matches: false,
+        addEventListener: vi.fn(),
+        removeEventListener: vi.fn(),
+      }),
+    });
+  });
+
+  const namedItems: Array<[string, string]> = [
+    ["Delinquency", "/rapid-rent"],
+    ["Owner Portal", "/owners"],
+    ["Listings", "/listing-and-advertising"],
+    ["Advertising", "/listing-and-advertising"],
+    ["Application & eSign", "/rental-applications"],
+    ["CRM", "/crm"],
+    ["Move-In", "/leasing"],
+    ["Renewals", "/leasing"],
+    ["Owners", "/owners"],
+    ["Leasing Teams", "/leasing"],
+  ];
+
+  afterEach(() => cleanup());
+
+  it("uses specific routes for named items on desktop and mobile", async () => {
+    const user = userEvent.setup();
+    render(<SiteHeader />);
+    await user.click(screen.getByRole("button", { name: "Solutions" }));
+    const desktop = screen.getByRole("group", { name: "Solutions" });
+    for (const [title, href] of namedItems) {
+      expect(
+        within(desktop).getByRole("link", { name: new RegExp(`^${title}`) }),
+      ).toHaveAttribute("href", href);
+      expect(href).not.toBe("/property-management");
+      expect(href).not.toBe("/products/agent-os");
+    }
+    await user.keyboard("{Escape}");
+    await user.click(screen.getByRole("button", { name: "Open navigation" }));
+    const mobile = within(
+      screen.getByRole("navigation", { name: "Mobile navigation" }),
+    );
+    await user.click(mobile.getByRole("button", { name: "Solutions" }));
+    for (const [title, href] of namedItems) {
+      expect(
+        mobile.getByRole("link", { name: new RegExp(`^${title}`) }),
+      ).toHaveAttribute("href", href);
+    }
+  });
+});

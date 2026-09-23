@@ -1,0 +1,65 @@
+.bar {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 40px;
+  padding: 8px 48px;
+  color: #071a31;
+  font-size: 13px;
+  line-height: 1.2;
+  text-align: center;
+}
+.ribbon {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: #00aeff;
+  background-image: var(--announcement-ribbon);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.copy {
+  margin: 0;
+  max-width: 720px;
+}
+.bar a {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 5px;
+  background: #ffffff40;
+  border-radius: 5px;
+  padding: 4px 8px;
+  text-decoration: none;
+  color: inherit;
+  font-size: 12px;
+}
+.dismiss {
+  position: absolute;
+  right: 8px;
+  top: 0;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+.bar :is(button, a):focus-visible {
+  outline: 2px solid #071a31;
+  outline-offset: -2px;
+}
+@media (max-width: 480px) {
+  .bar {
+    padding-inline: 40px 44px;
+    font-size: 12px;
+  }
+}

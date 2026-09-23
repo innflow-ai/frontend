@@ -5,6 +5,11 @@ import { BlogAuthorCard } from "@/components/blog/author-card";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { MarketingPage } from "@/components/page-primitives";
 import { BLOG_CATEGORIES, matchesBlogQuery } from "@/lib/blog";
+import {
+  blogListingHref,
+  paginateItems,
+  parseBlogPage,
+} from "@/lib/blog-listing";
 import { createPageMetadata } from "@/lib/metadata";
 import {
   type BlogPostSummary,
@@ -113,9 +118,19 @@ function FeaturedPost({ post }: { post: BlogPostSummary }) {
 export default async function BlogIndexPage({
   searchParams,
 }: {
-  searchParams: Promise<{ q?: string; category?: string; industry?: string }>;
+  searchParams: Promise<{
+    q?: string;
+    category?: string;
+    industry?: string;
+    page?: string;
+  }>;
 }) {
-  const { q = "", category = "", industry = "" } = await searchParams;
+  const {
+    q = "",
+    category = "",
+    industry = "",
+    page: pageParam,
+  } = await searchParams;
   const posts = await getBlogPosts();
   const filtered = posts.filter((post) => {
     const matchesQuery = matchesBlogQuery(
@@ -128,17 +143,21 @@ export default async function BlogIndexPage({
       : true;
     return matchesQuery && matchesCategory && matchesIndustry;
   });
-  const featured =
-    q || category || industry
-      ? undefined
-      : (filtered.find((post) => post.featured) ?? filtered[0]);
-  const rest = featured
-    ? filtered.filter((post) => post.slug !== featured.slug)
-    : filtered;
-
   const hasFilters = Boolean(q || category || industry);
-  const latest = featured ? rest.slice(0, 2) : [];
-  const remaining = featured ? rest.slice(2) : rest;
+  const requestedPage = parseBlogPage(pageParam);
+  const spotlight = hasFilters
+    ? undefined
+    : (filtered.find((post) => post.featured) ?? filtered[0]);
+  const rest = spotlight
+    ? filtered.filter((post) => post.slug !== spotlight.slug)
+    : filtered;
+  const latestAll = spotlight ? rest.slice(0, 2) : [];
+  const catalog = spotlight ? rest.slice(2) : rest;
+  const listing = paginateItems(catalog, requestedPage);
+  const featured = listing.page === 1 ? spotlight : undefined;
+  const latest = listing.page === 1 ? latestAll : [];
+  const remaining = listing.items;
+  const filters = { q, category, industry };
   const industries = [
     ...new Set(
       posts.flatMap((post) =>
@@ -146,13 +165,8 @@ export default async function BlogIndexPage({
       ),
     ),
   ].sort();
-  const categoryHref = (value: string) => {
-    const params = new URLSearchParams();
-    if (q) params.set("q", q);
-    if (industry) params.set("industry", industry);
-    if (value) params.set("category", value);
-    return `/blog${params.size ? `?${params}` : ""}`;
-  };
+  const categoryHref = (value: string) =>
+    blogListingHref({ q, industry, category: value });
 
   return (
     <MarketingPage>
@@ -308,6 +322,40 @@ export default async function BlogIndexPage({
                         <PostCard key={post.slug} post={post} />
                       ))}
                     </div>
+                    {listing.totalPages > 1 ? (
+                      <nav
+                        className={styles.pagination}
+                        aria-label="Blog pagination"
+                      >
+                        {listing.hasPrev ? (
+                          <a
+                            href={blogListingHref({
+                              ...filters,
+                              page: listing.page - 1,
+                            })}
+                          >
+                            Previous
+                          </a>
+                        ) : (
+                          <span aria-disabled="true">Previous</span>
+                        )}
+                        <p>
+                          Page {listing.page} of {listing.totalPages}
+                        </p>
+                        {listing.hasNext ? (
+                          <a
+                            href={blogListingHref({
+                              ...filters,
+                              page: listing.page + 1,
+                            })}
+                          >
+                            Next
+                          </a>
+                        ) : (
+                          <span aria-disabled="true">Next</span>
+                        )}
+                      </nav>
+                    ) : null}
                   </>
                 ) : null}
               </>

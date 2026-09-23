@@ -169,12 +169,17 @@ export async function FigmaFeaturePage({
             </div>
             <h1>{page.title}</h1>
             <p>{page.description}</p>
-            <a
-              className={`${base.heroGoogle} ${googleStyles.cream}`}
-              href={siteConfig.googleAuthUrl}
-            >
-              <GoogleCtaContent />
-            </a>
+            <div className={styles.heroActions}>
+              <a
+                className={`${base.heroGoogle} ${googleStyles.cream}`}
+                href={siteConfig.googleAuthUrl}
+              >
+                <GoogleCtaContent />
+              </a>
+              <a className={styles.heroDemo} href={siteConfig.demoUrl}>
+                See demo <ArrowRight size={18} aria-hidden="true" />
+              </a>
+            </div>
             <small className={base.heroDisclaimer}>
               By continuing, you agree to our{" "}
               <a href="/legal/terms-of-service">Terms of Service</a> and

@@ -1,6 +1,8 @@
-# Product and feature page pattern
+# Property-management product and feature page pattern
 
-The user designated `/rent-collection` as the default design pattern for all future product and feature pages on September 12, 2026. Use the current implementation as the visual reference. Apply this pattern when creating or intentionally redesigning a page; this decision does not require an immediate rewrite of every existing page.
+Scope: This guide applies to property-management product and feature pages only. The homepage and new industry pages follow the scroll-showcase design, as clarified on September 24, 2026.
+
+The user designated `/rent-collection` as the default design pattern for property-management product and feature pages on September 12, 2026. Use the current implementation as the visual reference. Apply this pattern when creating or intentionally redesigning a page; this decision does not require an immediate rewrite of every existing page.
 
 ## Page sequence
 

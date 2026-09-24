@@ -6,13 +6,11 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { type ReactNode, useEffect, useId, useRef, useState } from "react";
 import { GoogleSignInButton } from "@/components/google-sign-in";
-import { LoginMenu } from "@/components/login-menu";
 import {
   type LatestBlogPostNavItem,
   MegaMenu,
   type MegaMenuColumn,
   menuBrowseLinks,
-  portfolioColumns,
   productColumns,
   resourcesColumns,
   solutionsColumns,
@@ -35,7 +33,6 @@ type MobileMenuGroup = {
 const mobileMenuGroups: MobileMenuGroup[] = [
   { label: "Product", columns: productColumns },
   { label: "Solutions", columns: solutionsColumns },
-  { label: "Portfolios", columns: portfolioColumns },
   { label: "Resources", columns: resourcesColumns },
 ];
 
@@ -289,18 +286,7 @@ export function EditorialHeader({
                     showAside={false}
                   />
                 </li>
-                <li>
-                  <MegaMenu
-                    label="Portfolios"
-                    columns={portfolioColumns}
-                    promotionalBanner={{
-                      alt: "Interested in our product? Contact us to discuss becoming a customer and finding solutions for your needs. Talk to sales.",
-                      eventLabel: "mega_menu_portfolio_talk_to_sales",
-                      href: "/contact",
-                      src: "/brand/navigation/ico-banner-real.png",
-                    }}
-                  />
-                </li>
+
                 <li>
                   <MegaMenu
                     label="Resources"
@@ -452,63 +438,81 @@ export function MobileNavigation({
                         transition={{ duration: reduce ? 0 : 0.2 }}
                       >
                         <div className={styles.mobileGroupContent}>
-                          {group.columns.map((column) => (
-                            <section
-                              key={column.heading}
-                              className={styles.mobileSection}
-                            >
-                              <h2>{column.heading}</h2>
-                              <div className={styles.mobileSectionLinks}>
-                                {column.links.map((link) => {
-                                  const Icon = link.icon;
-                                  const iconSrc =
-                                    iconOverrides[link.title] ?? link.iconSrc;
-                                  return (
-                                    <a
-                                      key={link.title}
-                                      href={link.href}
-                                      onClick={closeMobile}
-                                      data-browse-all={
-                                        link.browseAll || undefined
-                                      }
-                                    >
-                                      {!link.hideIcon && (
-                                        <span className={styles.mobileLinkIcon}>
-                                          {iconSrc ? (
-                                            <Image
-                                              className={
-                                                styles.mobileCustomIcon
-                                              }
-                                              src={iconSrc}
-                                              alt=""
-                                              width={25}
-                                              height={25}
-                                              unoptimized
-                                            />
-                                          ) : (
-                                            <Icon size={17} weight="fill" />
-                                          )}
+                          {group.columns.map((column) => {
+                            const Section =
+                              group.label === "Solutions"
+                                ? "details"
+                                : "section";
+                            return (
+                              <Section
+                                key={column.heading}
+                                className={styles.mobileSection}
+                              >
+                                {group.label === "Solutions" ? (
+                                  <summary>
+                                    {column.heading}
+                                    <CaretDown size={16} aria-hidden="true" />
+                                  </summary>
+                                ) : (
+                                  <h2>{column.heading}</h2>
+                                )}
+                                <div className={styles.mobileSectionLinks}>
+                                  {column.links.map((link) => {
+                                    const Icon = link.icon;
+                                    const iconSrc =
+                                      iconOverrides[link.title] ?? link.iconSrc;
+                                    return (
+                                      <a
+                                        key={link.title}
+                                        href={link.href}
+                                        onClick={closeMobile}
+                                        data-solution={
+                                          group.label === "Solutions" || undefined
+                                        }
+                                        data-browse-all={
+                                          link.browseAll || undefined
+                                        }
+                                      >
+                                        {!link.hideIcon && (
+                                          <span
+                                            className={styles.mobileLinkIcon}
+                                          >
+                                            {iconSrc ? (
+                                              <Image
+                                                className={
+                                                  styles.mobileCustomIcon
+                                                }
+                                                src={iconSrc}
+                                                alt=""
+                                                width={25}
+                                                height={25}
+                                                unoptimized
+                                              />
+                                            ) : (
+                                              <Icon size={17} weight="fill" />
+                                            )}
+                                          </span>
+                                        )}
+                                        <span className={styles.mobileLinkCopy}>
+                                          <strong>
+                                            {link.title}
+                                            {link.badge ? (
+                                              <span
+                                                className={styles.mobileBadge}
+                                              >
+                                                {link.badge}
+                                              </span>
+                                            ) : null}
+                                          </strong>
+                                          <small>{link.body}</small>
                                         </span>
-                                      )}
-                                      <span className={styles.mobileLinkCopy}>
-                                        <strong>
-                                          {link.title}
-                                          {link.badge ? (
-                                            <span
-                                              className={styles.mobileBadge}
-                                            >
-                                              {link.badge}
-                                            </span>
-                                          ) : null}
-                                        </strong>
-                                        <small>{link.body}</small>
-                                      </span>
-                                    </a>
-                                  );
-                                })}
-                              </div>
-                            </section>
-                          ))}
+                                      </a>
+                                    );
+                                  })}
+                                </div>
+                              </Section>
+                            );
+                          })}
                           {menuBrowseLinks[group.label] && (
                             <a
                               className={styles.browseAll}
@@ -566,15 +570,14 @@ export function MobileNavigation({
               Blog
             </motion.a>
             {loginHref ? (
-              <LoginMenu
+              <motion.a
                 href={loginHref}
-                mobile
-                open={openMobileGroup === "Log in"}
-                onOpenChange={(open) =>
-                  setOpenMobileGroup(open ? "Log in" : null)
-                }
-                onSelect={closeMobile}
-              />
+                className={styles.mobilePrimaryLink}
+                variants={reduce ? undefined : itemVariants}
+                onClick={closeMobile}
+              >
+                Log in
+              </motion.a>
             ) : null}
             <div className={styles.mobileCtaRow}>
               <GoogleSignInButton

@@ -40,9 +40,9 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.marketingOrigin),
-  title: "Property Operations Software & AI Workflows | Innflow",
+  title: "AI Agents & Connected Workflows | Innflow",
   description:
-    "Coordinate property workflows, approvals, operational context, and execution history in one connected workspace built for modern property management teams.",
+    "Bring conversations, AI agents and everyday workflows into one workspace. Connect your team, tools and knowledge across industries.",
   alternates: { canonical: "/" },
   applicationName: "Innflow",
   authors: [{ name: "Innflow" }],
@@ -55,9 +55,9 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: "Property Operations Software & AI Workflows | Innflow",
+    title: "AI Agents & Connected Workflows | Innflow",
     description:
-      "Coordinate property workflows, approvals, operational context, and execution history in one connected workspace built for modern property management teams.",
+      "Bring conversations, AI agents and everyday workflows into one workspace. Connect your team, tools and knowledge across industries.",
     type: "website",
     url: "/",
     siteName: "Innflow",
@@ -67,19 +67,19 @@ export const metadata: Metadata = {
         url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "Innflow property operations platform",
+        alt: "Innflow connected workspace",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Property Operations Software & AI Workflows | Innflow",
+    title: "AI Agents & Connected Workflows | Innflow",
     description:
-      "Coordinate property workflows, approvals, operational context, and execution history in one connected workspace.",
+      "Connect conversations, agents and everyday workflows in one workspace.",
     images: [
       {
         url: "/opengraph-image.png",
-        alt: "Innflow property operations platform",
+        alt: "Innflow connected workspace",
       },
     ],
   },

@@ -2,7 +2,6 @@
 
 import { useInView } from "motion/react";
 import dynamic from "next/dynamic";
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import styles from "./channels-demos.module.css";
 
@@ -51,8 +50,6 @@ export function ChannelsDemos({ selected }: { selected: number }) {
   const ref = useRef<HTMLDivElement>(null);
   const nearViewport = useInView(ref, { margin: "120px 0px", once: true });
   const [visited, setVisited] = useState(0);
-  const [paused, setPaused] = useState(false);
-  const [replays, setReplays] = useState([0, 0, 0, 0, 0, 0, 0]);
 
   useEffect(() => {
     if (nearViewport) setVisited((value) => value | (1 << selected));
@@ -60,13 +57,6 @@ export function ChannelsDemos({ selected }: { selected: number }) {
 
   return (
     <div ref={ref} className={styles.stage} data-channel-demos>
-      <Image
-        className={styles.background}
-        src="/preview/homepage/agent-demos/channels-background.png"
-        alt=""
-        fill
-        sizes="(max-width: 800px) calc(100vw - 48px), (max-width: 1280px) 46vw, 580px"
-      />
       {channelDemoDefinitions.map(({ title, Demo }, index) => (
         <div
           key={title}
@@ -78,37 +68,10 @@ export function ChannelsDemos({ selected }: { selected: number }) {
           inert={selected !== index}
         >
           {(visited & (1 << index)) !== 0 && (
-            <Demo
-              active={selected === index && !paused}
-              replayKey={replays[index]}
-            />
+            <Demo active={selected === index} />
           )}
         </div>
       ))}
-      <fieldset className={styles.controls} aria-label="Demo playback">
-        <button
-          type="button"
-          aria-pressed={paused}
-          onClick={() => setPaused((value) => !value)}
-        >
-          {paused ? "Resume animation" : "Pause animation"}
-        </button>
-        <button
-          type="button"
-          aria-label={`Replay ${channelDemoDefinitions[selected].title}`}
-          onClick={() => {
-            setVisited((value) => value | (1 << selected));
-            setReplays((values) =>
-              values.map((value, index) =>
-                index === selected ? value + 1 : value,
-              ),
-            );
-            setPaused(false);
-          }}
-        >
-          Replay
-        </button>
-      </fieldset>
     </div>
   );
 }

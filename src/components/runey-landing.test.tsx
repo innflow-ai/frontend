@@ -112,14 +112,14 @@ describe("Runey landing interactions", () => {
     });
     expect(navigation).toBeVisible();
     expect(document.body.style.overflow).toBe("hidden");
-    for (const name of ["Product", "Solutions", "Portfolios", "Resources"]) {
+    for (const name of ["Product", "Solutions", "Resources"]) {
       expect(within(navigation).getByRole("button", { name })).toBeVisible();
     }
     await user.click(
       within(navigation).getByRole("button", { name: "Product" }),
     );
     expect(
-      within(navigation).getByRole("link", { name: /Agent OS/ }),
+      within(navigation).getByRole("link", { name: /^AI Agents/ }),
     ).toBeVisible();
     const link = navigation.querySelector("a");
     expect(link).not.toBeNull();

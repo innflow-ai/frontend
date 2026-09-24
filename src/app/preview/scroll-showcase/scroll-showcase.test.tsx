@@ -1,4 +1,4 @@
-import { cleanup, render, screen } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, expect, it, vi } from "vitest";
 import { siteConfig } from "@/config/site";
 import { ScrollShowcase } from "./scroll-showcase";
@@ -7,7 +7,7 @@ afterEach(() => {
   cleanup();
   vi.unstubAllGlobals();
 });
-it("offers configured Google sign-in and disabled Microsoft sign-in without a progress strip", () => {
+it("offers Google sign-in and clearly marks Microsoft sign-in unavailable", () => {
   vi.stubGlobal("matchMedia", () => ({
     matches: true,
     addEventListener: vi.fn(),
@@ -42,20 +42,27 @@ it("offers configured Google sign-in and disabled Microsoft sign-in without a pr
     screen.getByRole("button", { name: "Continue with Microsoft" }),
   ).toBeDisabled();
   expect(
-    screen.getByRole("button", { name: "Continue with Microsoft" }),
-  ).toHaveAccessibleDescription("Microsoft sign-in link pending");
+    screen.queryByRole("link", { name: "Book a demo" }),
+  ).not.toBeInTheDocument();
+  expect(
+    screen.queryByText("Microsoft sign-in link pending"),
+  ).not.toBeInTheDocument();
   expect(screen.queryByText("Scroll to explore ↓")).not.toBeInTheDocument();
   expect(screen.queryByText(/01 \/ 04/)).not.toBeInTheDocument();
-  const scheduling = screen.getByRole("tabpanel", { name: "Agents" });
-  expect(scheduling).toHaveTextContent("Less busywork. More on autopilot.");
-  expect(scheduling).not.toHaveTextContent(
-    /Calendly|Meeting confirmed|#1 scheduling/,
-  );
-  expect(scheduling.querySelector("a")).toHaveAttribute(
-    "href",
-    "/products/platform",
+  const scheduling = screen.getByRole("tabpanel", { name: "Scheduling" });
+  expect(scheduling).toHaveTextContent(
+    "Bring scheduling into the conversation",
   );
   expect(
     scheduling.querySelector("[data-booking-calendar]"),
+  ).toBeInTheDocument();
+  fireEvent.click(screen.getByRole("tab", { name: "AI assistant" }));
+  expect(
+    screen.getByRole("tabpanel", { name: "AI assistant" }),
+  ).toHaveTextContent("Let your assistant take the next step");
+  expect(
+    screen.getByRole("img", {
+      name: /AI assistant receives a scheduling request/,
+    }),
   ).toBeInTheDocument();
 });

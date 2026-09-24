@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
+import { usesShowcaseDesign } from "@/lib/showcase-routes";
 
 export function SiteFooterBoundary({
   children,
@@ -10,5 +11,5 @@ export function SiteFooterBoundary({
   children: ReactNode;
   preview: ReactNode;
 }) {
-  return usePathname() === "/preview/scroll-showcase" ? preview : children;
+  return usesShowcaseDesign(usePathname()) ? preview : children;
 }

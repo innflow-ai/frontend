@@ -3,7 +3,7 @@
 import { motion } from "motion/react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import { type KeyboardEvent, useRef, useState } from "react";
+import { type KeyboardEvent, useEffect, useRef, useState } from "react";
 import { ChannelsDemos } from "./agent-demos/channels-demos";
 import styles from "./baseline-features.module.css";
 import { features as preparedFeatures } from "./homepage-content";
@@ -39,8 +39,8 @@ export const baselineFeatures: Feature[] = [
   {
     id: "channels",
     node: "350:11199",
-    label: "Channels",
-    title: "10x with agent",
+    label: "Communication",
+    title: "Every conversation.\nConnected.",
     glyph: "imgVector.svg",
     items: [
       {
@@ -83,7 +83,7 @@ export const baselineFeatures: Feature[] = [
   {
     id: "agents",
     node: "350:11344",
-    label: "Agents",
+    label: "AI agents",
     badge: "AI",
     title: "Your agents.\nOne workspace.",
     reverse: true,
@@ -109,7 +109,7 @@ export const baselineFeatures: Feature[] = [
   {
     id: "workflows",
     node: "350:11402",
-    label: "Workflows",
+    label: "Automation",
     badge: "Platform",
     title: "Automate the work\nbetween conversations",
     glyph: "imgVector.svg",
@@ -141,7 +141,7 @@ export const baselineFeatures: Feature[] = [
     node: "350:11485",
     label: "Insights",
     badge: "Platform",
-    title: "Learn from your customers",
+    title: "Turn conversations\ninto insight",
     reverse: true,
     glyph: "imgVector.svg",
     items: [
@@ -171,16 +171,24 @@ export const baselineFeatures: Feature[] = [
 
 function BaselineFeature({ feature }: { feature: Feature }) {
   const [selected, setSelected] = useState(0);
+  const [mobile, setMobile] = useState(false);
+  useEffect(() => {
+    const query = window.matchMedia("(max-width: 800px)");
+    const sync = () => setMobile(query.matches);
+    sync();
+    query.addEventListener("change", sync);
+    return () => query.removeEventListener("change", sync);
+  }, []);
   const buttons = useRef<(HTMLButtonElement | null)[]>([]);
   const channels = feature.id === "channels";
   const channelScroll = useChannelsScroll(channels, setSelected);
   const select = channels ? channelScroll.select : setSelected;
   const asset = (name: string) => `${root}/${feature.id}-${name}`;
-  const pending = feature.id === "agents" && selected > 0;
+  const agentDetail = feature.id === "agents" && selected > 0;
   const artwork =
     channels && selected > 0
       ? `/preview/homepage/channels-${selected + 1}.png`
-      : selected > 0 && !pending
+      : selected > 0 && !agentDetail
         ? `${root}/${feature.id}-${selected}.png`
         : asset("imgCanvas.png");
   function navigate(event: KeyboardEvent<HTMLButtonElement>, index: number) {
@@ -200,6 +208,64 @@ function BaselineFeature({ feature }: { feature: Feature }) {
     select(next);
     buttons.current[next]?.focus({ preventScroll: channelScroll.enabled });
   }
+  const visual = (
+    <div
+      ref={channelScroll.visualRef}
+      className={styles.visual}
+      id={`${feature.id}-baseline-visual`}
+    >
+      <div className={styles.imageFrame} data-pending={false}>
+        {channels ? (
+          <ChannelsDemos selected={selected} />
+        ) : feature.id === "agents" && selected === 0 ? (
+          <AgentStoryboard showControls={false} />
+        ) : agentDetail ? (
+          <div className={styles.agentDetail}>
+            <span className={styles.agentDetailLabel}>
+              AI agents / Example workflow
+            </span>
+            <Image
+              src="/brand/innflow-wordmark.svg"
+              alt="Innflow"
+              width={112}
+              height={34}
+            />
+            <h3>{feature.items[selected].title}</h3>
+            <ol>
+              {(selected === 1
+                ? [
+                    "Describe the task",
+                    "Gather the relevant context",
+                    "Prepare the result",
+                    "Your team reviews the next step",
+                  ]
+                : [
+                    "Define your agent's purpose",
+                    "Add instructions and knowledge",
+                    "Choose tools and review points",
+                    "Try it with an example request",
+                  ]
+              ).map((step, i) => (
+                <li key={step}>
+                  <span>0{i + 1}</span>
+                  {step}
+                </li>
+              ))}
+            </ol>
+            <p>Your instructions. Your team in control.</p>
+          </div>
+        ) : (
+          <Image
+            key={artwork}
+            src={artwork}
+            alt={`${feature.label} — reference product illustration`}
+            fill
+            sizes="(max-width: 800px) calc(100vw - 48px), (max-width: 1280px) 46vw, 580px"
+          />
+        )}
+      </div>
+    </div>
+  );
   return (
     <section
       id={feature.id}
@@ -238,10 +304,14 @@ function BaselineFeature({ feature }: { feature: Feature }) {
                       }}
                       id={`${feature.id}-baseline-trigger-${index}`}
                       aria-expanded={
-                        !channels && item.body ? selected === index : undefined
+                        (!channels || mobile) && item.body
+                          ? selected === index
+                          : undefined
                       }
                       aria-pressed={
-                        channels || !item.body ? selected === index : undefined
+                        (channels && !mobile) || !item.body
+                          ? selected === index
+                          : undefined
                       }
                       aria-controls={
                         item.body
@@ -261,12 +331,21 @@ function BaselineFeature({ feature }: { feature: Feature }) {
                         height={24}
                       />
                       <span>{item.title}</span>
+                      <span
+                        className={styles.mobileIndicator}
+                        aria-hidden="true"
+                      >
+                        {selected === index ? "−" : "+"}
+                      </span>
                     </button>
                   </h3>
                   <section
                     id={`${feature.id}-baseline-panel-${index}`}
                     aria-labelledby={`${feature.id}-baseline-trigger-${index}`}
-                    hidden={!item.body || (!channels && selected !== index)}
+                    hidden={
+                      !item.body ||
+                      ((!channels || mobile) && selected !== index)
+                    }
                     className={styles.description}
                   >
                     {item.body && <p>{item.body}</p>}
@@ -294,42 +373,13 @@ function BaselineFeature({ feature }: { feature: Feature }) {
                       </button>
                     )}
                   </section>
+                  {mobile && selected === index && visual}
                 </div>
               ))}
             </motion.div>
           </div>
         </div>
-        <div
-          ref={channelScroll.visualRef}
-          className={styles.visual}
-          id={`${feature.id}-baseline-visual`}
-        >
-          <div className={styles.imageFrame} data-pending={pending}>
-            {channels ? (
-              <ChannelsDemos selected={selected} />
-            ) : feature.id === "agents" && selected === 0 ? (
-              <AgentStoryboard />
-            ) : (
-              <Image
-                key={artwork}
-                src={artwork}
-                alt={`${feature.label} — reference product illustration`}
-                fill
-                sizes="(max-width: 800px) calc(100vw - 48px), (max-width: 1280px) 46vw, 580px"
-              />
-            )}
-          </div>
-          {pending && (
-            <div className={styles.pending} role="status">
-              <span>Reference pending</span>
-              <h3>{feature.items[selected].title}</h3>
-              <p>
-                Expanded artwork for this state is not supplied in the baseline
-                yet.
-              </p>
-            </div>
-          )}
-        </div>
+        {!mobile && visual}
       </div>
     </section>
   );

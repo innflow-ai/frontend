@@ -13,16 +13,15 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { AnnouncementBar } from "@/components/announcement-bar";
 import { GoogleCtaContent } from "@/components/google-cta-content";
-import { LoginMenu } from "@/components/login-menu";
 import {
   menuBrowseLinks,
-  portfolioColumns as originalPortfolioColumns,
   productColumns,
   resourcesColumns,
   solutionsColumns,
 } from "@/components/mega-menu";
 import { SignupOfferPopup } from "@/components/signup-offer-popup";
 import { siteConfig } from "@/config/site";
+import { isShowcaseHome, usesShowcaseDesign } from "@/lib/showcase-routes";
 import { blMenuIcons } from "./bl-menu-icons";
 import { MobileNavigation } from "./editorial-header";
 import {
@@ -35,18 +34,9 @@ import styles from "./site-shell.module.css";
 import { TestimonialCard } from "./testimonial-cards";
 import { TrackedLink } from "./tracked-link";
 
-const portfolioColumns = originalPortfolioColumns.map((column) => ({
-  ...column,
-  links: column.links.map((link) => ({
-    ...link,
-    href: link.href === "/#portfolios" ? "/property-management" : link.href,
-  })),
-}));
-
 const menus = [
   { label: "Product", columns: productColumns },
   { label: "Solutions", columns: solutionsColumns },
-  { label: "Portfolios", columns: portfolioColumns },
   { label: "Resources", columns: resourcesColumns },
 ];
 export function SiteHeader() {
@@ -56,7 +46,7 @@ export function SiteHeader() {
   const [menu, setMenu] = useState<string | null>(null);
   const [mobile, setMobile] = useState(false);
   const pathname = usePathname();
-  const isShowcasePreview = pathname === "/preview/scroll-showcase";
+  const isShowcasePreview = usesShowcaseDesign(pathname);
   const [announcementDismissed, setAnnouncementDismissed] = useState(false);
   const [signupOfferOpen, setSignupOfferOpen] = useState(false);
   const [previewShowcasePassed, setPreviewShowcasePassed] = useState(false);
@@ -71,9 +61,10 @@ export function SiteHeader() {
       // The floating version returns as the next section enters the lower quarter.
       setPreviewShowcasePassed(
         window.scrollY > 16 &&
-          followingSection !== null &&
-          followingSection.getBoundingClientRect().top <=
-            window.innerHeight * 0.75,
+          (!isShowcaseHome(pathname) ||
+            (followingSection !== null &&
+              followingSection.getBoundingClientRect().top <=
+                window.innerHeight * 0.75)),
       );
     };
     update();
@@ -83,7 +74,7 @@ export function SiteHeader() {
       window.removeEventListener("scroll", update);
       window.removeEventListener("resize", update);
     };
-  }, [isShowcasePreview]);
+  }, [isShowcasePreview, pathname]);
   const cancelHoverClose = () => {
     if (hoverClose.current) clearTimeout(hoverClose.current);
     hoverClose.current = null;
@@ -227,7 +218,11 @@ export function SiteHeader() {
           <Megaphone size={16} aria-hidden="true" />
           <span>Explore the new Innflow experience</span>
           <a
-            href="#workspace-overview"
+            href={
+              isShowcaseHome(pathname)
+                ? "#workspace-overview"
+                : "/#workspace-overview"
+            }
             aria-label="Learn more about the new Innflow experience"
           >
             Learn more <ArrowRight size={12} aria-hidden="true" />
@@ -490,22 +485,18 @@ export function SiteHeader() {
           </a>
         </nav>
         <div className={styles.headerActions}>
-          <a className={styles.login} href={siteConfig.demoUrl}>
-            Book a demo
+          <a className={styles.login} href={`${siteConfig.appOrigin}/login`}>
+            Log in
           </a>
-          <LoginMenu
-            href={`${siteConfig.appOrigin}/login`}
-            open={menu === "Log in"}
-            onOpenChange={(open) => {
-              cancelHoverClose();
-              setMenu((current) =>
-                open ? "Log in" : current === "Log in" ? null : current,
-              );
-            }}
-            onSelect={closeMenus}
-          />
           <TrackedLink
-            className={styles.darkButton}
+            className={styles.mobileGetStarted}
+            destination={siteConfig.signupUrl}
+            eventLabel="mobile_header_signup"
+          >
+            Get started
+          </TrackedLink>
+          <TrackedLink
+            className={`${styles.darkButton} ${styles.desktopGoogle}`}
             destination={siteConfig.googleAuthUrl}
             eventLabel="baselane_header_signup"
             aria-label="Continue with Google"

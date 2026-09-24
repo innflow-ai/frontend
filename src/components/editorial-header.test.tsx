@@ -91,15 +91,18 @@ describe("EditorialHeader navigation", () => {
     expect(
       within(navigation).getByRole("link", { name: "Pricing" }),
     ).toHaveAttribute("href", "/pricing");
-    await user.click(
-      within(navigation).getByRole("button", { name: "Log in" }),
-    );
     expect(
-      within(navigation).getByRole("link", { name: "Landlord login" }),
+      within(navigation).getByRole("link", { name: "Log in" }),
     ).toHaveAttribute("href", "https://app.innflow.ai/login");
     expect(
-      within(navigation).getByRole("link", { name: "Tenant login Beta" }),
-    ).toHaveAttribute("href", "https://app.innflow.ai/login");
+      screen.queryByRole("link", { name: "Book a demo" }),
+    ).not.toBeInTheDocument();
+    expect(
+      within(navigation).queryByText("Landlord login"),
+    ).not.toBeInTheDocument();
+    expect(
+      within(navigation).queryByText("Tenant login"),
+    ).not.toBeInTheDocument();
     await user.click(
       within(navigation).getByRole("button", { name: "Product" }),
     );
@@ -232,20 +235,20 @@ describe("EditorialHeader navigation", () => {
     ).toHaveAttribute("href", "/blog");
   });
 
-  it("shows the sales banner in the desktop Portfolios menu", async () => {
+  it("replaces the property portfolio menu with industry solutions", async () => {
     const user = userEvent.setup();
     render(<EditorialHeader />);
-
-    await user.click(screen.getByRole("button", { name: "Portfolios" }));
-
-    const banner = screen.getByRole("link", {
-      name: /Interested in our product.*Talk to sales/i,
-    });
-    expect(banner).toHaveAttribute("href", "/contact");
-    expect(within(banner).getByRole("img")).toHaveAttribute(
-      "src",
-      expect.stringContaining("ico-banner-real.png"),
+    expect(
+      screen.queryByRole("button", { name: "Portfolios" }),
+    ).not.toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "Solutions" }));
+    expect(screen.getByRole("link", { name: /^Healthcare/ })).toHaveAttribute(
+      "href",
+      "/industries/healthcare",
     );
+    expect(
+      screen.queryByRole("link", { name: /^Rent Collection/ }),
+    ).not.toBeInTheDocument();
   });
 
   it("uses single-open mobile accordions and closes after navigation", async () => {
@@ -436,16 +439,10 @@ describe("SiteHeader mega-menu destinations", () => {
   });
 
   const namedItems: Array<[string, string]> = [
-    ["Delinquency", "/rapid-rent"],
-    ["Owner Portal", "/owners"],
-    ["Listings", "/listing-and-advertising"],
-    ["Advertising", "/listing-and-advertising"],
-    ["Application & eSign", "/rental-applications"],
-    ["CRM", "/crm"],
-    ["Move-In", "/leasing"],
-    ["Renewals", "/leasing"],
-    ["Owners", "/owners"],
-    ["Leasing Teams", "/leasing"],
+    ["Healthcare", "/industries/healthcare"],
+    ["Property Management", "/industries/property-management"],
+    ["Technology & Software", "/industries/technology-software"],
+    ["Custom AI Solutions", "/industries/custom-ai-solutions"],
   ];
 
   afterEach(() => cleanup());

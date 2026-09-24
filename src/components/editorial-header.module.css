@@ -363,6 +363,17 @@
     display: none;
   }
 
+  .mobileSectionLinks a[data-solution] {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  [data-solution] .mobileLinkIcon {
+    display: block;
+    flex: 0 0 25px;
+  }
+
   .mobileCustomIcon {
     display: block;
     width: 25px;
@@ -708,4 +719,47 @@
   background: transparent;
   text-decoration: underline;
   text-underline-offset: 4px;
+}
+
+@media (max-width: 1100px) {
+  details.mobileSection {
+    border-bottom: 1px solid #d8dce0;
+  }
+  .mobileSection summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 48px;
+    padding: 8px 0;
+    color: #071a31;
+    font-size: 15px;
+    cursor: pointer;
+    list-style: none;
+  }
+  .mobileSection summary::-webkit-details-marker {
+    display: none;
+  }
+  .mobileSection[open] summary svg {
+    transform: rotate(180deg);
+  }
+  details.mobileSection .mobileSectionLinks {
+    padding: 16px 0;
+    gap: 8px 16px;
+  }
+  details.mobileSection .mobileSectionLinks > a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  .mobileGroupContent:has(details) {
+    gap: 8px;
+  }
+  .mobileGroupContent:has(details) > .browseAll {
+    order: -1;
+    min-height: 44px;
+  }
+  .mobileSection summary:focus-visible {
+    outline: 3px solid #006bff;
+    outline-offset: 3px;
+  }
 }

@@ -14,13 +14,7 @@
   overflow: clip;
   isolation: isolate;
   border-radius: 0.723cqw;
-  background: linear-gradient(
-    180deg,
-    #badbff 0%,
-    #e8f5e8 48.558%,
-    #3dcfad 73.558%,
-    #246a87 100%
-  );
+  background: transparent;
 }
 .connector {
   position: absolute;

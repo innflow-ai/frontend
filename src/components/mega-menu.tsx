@@ -35,6 +35,7 @@ import Image from "next/image";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
+import { industryHref, industryPages } from "@/content/industries";
 import { platformPages } from "@/content/platform";
 import { megaMenuHref } from "@/lib/mega-menu-destinations";
 import styles from "./mega-menu.module.css";
@@ -88,7 +89,7 @@ const platformLinks: MegaMenuLink[] = [
     href: "/platform",
     icon: CirclesThreePlus,
     title: "Platform",
-    body: "The connected foundation for modern property operations.",
+    body: "The connected foundation for your everyday operations.",
   },
   {
     href: "/integrations",
@@ -112,7 +113,7 @@ const platformLinks: MegaMenuLink[] = [
     href: "/products/ai-agents",
     icon: Sparkle,
     title: "AI Agents",
-    body: "Purpose-built agents that move property work forward.",
+    body: "Purpose-built agents that move everyday work forward.",
   },
 ];
 
@@ -136,7 +137,7 @@ const capabilityLinks: MegaMenuLink[] = [
     href: "/files-and-documents",
     icon: Archive,
     title: "Files & Documents",
-    body: "Keep property files close to the work.",
+    body: "Keep your files close to the work.",
     iconSrc: "/brand/navigation/bl-stroke/09-file-records.svg",
   },
   {
@@ -509,7 +510,10 @@ export const menuBrowseLinks: Partial<
   Record<string, { href: string; title: string }>
 > = {
   Product: { href: "/products", title: "Browse all products" },
-  Solutions: { href: "/solutions", title: "Browse all solutions" },
+  Solutions: {
+    href: "/solutions",
+    title: "Browse all industries and solutions",
+  },
 };
 
 export const productColumns = featuredColumns(allProductColumns, {
@@ -527,25 +531,67 @@ export const productColumns = featuredColumns(allProductColumns, {
   ],
 });
 
-export const solutionsColumns = featuredColumns(allSolutionsColumns, {
-  Operations: [
-    "Centralized Operations",
-    "Rent Collection",
-    "Delinquency",
-    "Owner Portal",
-    "Work Orders",
-  ],
-  Leasing: [
-    "Listings",
-    "Advertising",
-    "Application & eSign",
-    "CRM",
-    "Move-In",
-    "Renewals",
-  ],
-  "By team": ["Owner Operators and Fee Managers", "Owners", "Leasing Teams"],
-  Finance: ["Accounting", "Reports"],
-});
+export const solutionsColumns: MegaMenuColumn[] = [
+  {
+    heading: "Financial & professional",
+    slugs: [
+      "financial-services-banking",
+      "finance",
+      "banking",
+      "insurance",
+      "private-equity",
+      "professional-services",
+    ],
+  },
+  {
+    heading: "People & services",
+    slugs: [
+      "healthcare",
+      "pharmaceutical",
+      "public-sector",
+      "hospitality-travel",
+      "retail-ecommerce",
+      "business-process-outsourcing",
+    ],
+  },
+  {
+    heading: "Industry & operations",
+    slugs: [
+      "property-real-estate",
+      "property-management",
+      "manufacturing",
+      "telecommunications",
+      "energy-utilities",
+      "construction",
+      "supply-chain-logistics",
+      "technology-software",
+    ],
+  },
+  {
+    heading: "Teams & use cases",
+    slugs: [
+      "hr-recruitment",
+      "talent-acquisition",
+      "customer-service",
+      "debt-collection",
+      "cross-industry",
+      "custom-ai-solutions",
+    ],
+  },
+].map(({ heading, slugs }) => ({
+  heading,
+  links: slugs.map((slug) => {
+    const page = industryPages.find((page) => page.slug === slug);
+    if (!page) throw new Error(`Unknown industry: ${slug}`);
+    return {
+      href: industryHref(page.slug),
+      title: page.name,
+      body: "",
+      icon: Buildings,
+      iconSrc: `/brand/navigation/solutions/${page.slug}.svg`,
+    };
+  }),
+}));
 
 export const portfolioColumns: MegaMenuColumn[] = corePortfolioColumns.map(
   (column) => ({

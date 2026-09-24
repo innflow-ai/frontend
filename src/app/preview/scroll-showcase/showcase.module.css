@@ -123,6 +123,8 @@
 
 :global(header[data-showcase-hidden="true"]) {
   opacity: 0;
+  transform: translateY(calc(-100% - 64px));
+  transition-delay: 0s, 0s, 460ms;
   visibility: hidden;
   pointer-events: none;
 }
@@ -976,4 +978,54 @@
     min-height: 0;
     padding: 64px 0 24px;
   }
+}
+
+/* Keep the showcase readable regardless of the global heading theme. */
+.intro h1,
+.copy h2 {
+  color: var(--preview-ink);
+}
+@media (max-width: 800px) {
+  .tabs {
+    height: 92px;
+    gap: 16px;
+  }
+  .tabs button {
+    width: 48px;
+    height: 48px;
+  }
+  .tabs button[aria-selected="true"]::after {
+    display: none;
+  }
+  .tooltip {
+    top: calc(100% + 8px);
+    bottom: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 64px;
+    padding: 0;
+    background: transparent;
+    color: #071a31;
+    font-size: 11px;
+    line-height: 14px;
+    opacity: 1;
+  }
+}
+
+.agentDemo {
+  width: 100%;
+  min-width: 0;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+/* The hero keeps its original decorative agent backdrop. */
+.agentDemo {
+  background: linear-gradient(
+    180deg,
+    #badbff 0%,
+    #e8f5e8 48.558%,
+    #3dcfad 73.558%,
+    #246a87 100%
+  );
 }

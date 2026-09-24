@@ -1,3 +1,5 @@
+import { industryHref, industryPages } from "@/content/industries";
+
 export const footerNavigation = [
   {
     heading: "Product",
@@ -18,38 +20,16 @@ export const footerNavigation = [
     ],
   },
   {
-    heading: "Solutions",
-    links: [
-      { label: "Listings", href: "/products/agent-os" },
-      { label: "Advertising", href: "/products/agent-os" },
-      { label: "Application & eSign", href: "/products/agent-os" },
-      { label: "CRM", href: "/products/databases" },
-      { label: "Conventional", href: "/property-management" },
-      { label: "Student Housing", href: "/property-management" },
-      { label: "Centralized Operations", href: "/property-management" },
-      {
-        label: "Owner Operators and Fee Managers",
-        href: "/property-management",
-      },
-      { label: "Owners", href: "/property-management" },
-      { label: "Move-In", href: "/property-management" },
-      { label: "Renewals", href: "/property-management" },
-      { label: "Delinquency", href: "/property-management" },
-      {
-        label: "Maintenance & Mobile App",
-        href: "/property-management",
-      },
-      { label: "Owner Portal", href: "/property-management" },
-    ],
+    heading: "Industries",
+    links: industryPages
+      .filter((page) => page.group === "industry")
+      .map((page) => ({ label: page.name, href: industryHref(page.slug) })),
   },
   {
-    heading: "Portfolios",
-    links: [
-      { label: "Residential", href: "/#portfolios" },
-      { label: "Multifamily", href: "/#portfolios" },
-      { label: "Commercial", href: "/#portfolios" },
-      { label: "Community Associations", href: "/#portfolios" },
-    ],
+    heading: "Teams & use cases",
+    links: industryPages
+      .filter((page) => page.group === "solution")
+      .map((page) => ({ label: page.name, href: industryHref(page.slug) })),
   },
   {
     heading: "Comparisons",

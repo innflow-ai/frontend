@@ -7,7 +7,7 @@ export function createPageMetadata({
   path,
   noIndex = false,
   image = "/opengraph-image.png",
-  imageAlt = `${siteConfig.name} property operations platform`,
+  imageAlt = `${siteConfig.name} connected workspace`,
 }: {
   title: string;
   description: string;

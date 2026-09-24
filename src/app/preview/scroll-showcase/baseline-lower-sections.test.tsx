@@ -213,7 +213,7 @@ it("offers all four closing scenes manually, including wraparound navigation", (
   render(<BaselineClosing />);
   expect(screen.queryByText("Get started")).toBeNull();
   expect(screen.getByRole("heading", { level: 2 })).toHaveTextContent(
-    "Start fast.Scale fearlessly.",
+    "Bring your teamand AI together.",
   );
   expect(
     screen.getByRole("button", { name: "Request resolved" }),

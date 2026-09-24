@@ -48,8 +48,8 @@ describe("baseline feature continuation", () => {
   it.each([true, false])(
     "recenters secondary-arrow focus only when Channels scroll is enabled (%s)",
     (enhanced) => {
-      vi.stubGlobal("matchMedia", () => ({
-        matches: enhanced,
+      vi.stubGlobal("matchMedia", (query: string) => ({
+        matches: query === "(max-width: 800px)" ? false : enhanced,
         addEventListener: vi.fn(),
         removeEventListener: vi.fn(),
       }));
@@ -107,7 +107,7 @@ describe("baseline feature continuation", () => {
   it("selects all seven matching Channels demos via pointer input", () => {
     render(<BaselineFeatures />);
     const section = screen.getByRole("region", {
-      name: /10x with agent/,
+      name: /Every conversation\.\s+Connected\./,
     });
     const layers = section.querySelectorAll("[data-channel-art]");
     expect(layers).toHaveLength(7);
@@ -133,10 +133,12 @@ describe("baseline feature continuation", () => {
         );
       });
     });
-    expect(section.querySelector("[data-channel-demos] > img")).toHaveAttribute(
-      "src",
-      "/preview/homepage/agent-demos/channels-background.png",
-    );
+    expect(
+      section.querySelector("[data-channel-demos] > img"),
+    ).not.toBeInTheDocument();
+    expect(
+      within(section).queryByRole("group", { name: "Demo playback" }),
+    ).not.toBeInTheDocument();
   });
   it("supports arrow, Home and End focus without fabricating collapsed copy", () => {
     render(<BaselineFeatures />);
@@ -153,9 +155,8 @@ describe("baseline feature continuation", () => {
     });
     expect(second).toHaveFocus();
     expect(second).toHaveAttribute("aria-expanded", "true");
-    expect(screen.getByRole("status")).toHaveTextContent(
-      "Expanded artwork for this state is not supplied in the baseline yet.",
-    );
+    expect(screen.getByText("Your team reviews the next step")).toBeVisible();
+    expect(screen.queryByText("Reference pending")).not.toBeInTheDocument();
     fireEvent.keyDown(second, { key: "End" });
     const last = screen.getByRole("button", {
       name: "Build your own agents",
@@ -258,4 +259,31 @@ describe("baseline feature continuation", () => {
       });
     }
   });
+});
+
+it("keeps only the selected mobile explanation open and moves its visual with it", () => {
+  vi.stubGlobal("matchMedia", (query: string) => ({
+    matches: query === "(max-width: 800px)",
+    addEventListener: vi.fn(),
+    removeEventListener: vi.fn(),
+  }));
+  render(<BaselineFeatures />);
+  const first = screen.getByRole("button", {
+    name: "Orchestrate actions",
+  });
+  const next = screen.getByRole("button", {
+    name: "All your channels, connected",
+  });
+  expect(first).toHaveAttribute("aria-expanded", "true");
+  expect(requiredElement("channels-baseline-panel-1")).not.toBeVisible();
+  expect(first.closest("h3")?.parentElement).toContainElement(
+    requiredElement("channels-baseline-visual"),
+  );
+  fireEvent.click(next);
+  expect(next).toHaveAttribute("aria-expanded", "true");
+  expect(requiredElement("channels-baseline-panel-0")).not.toBeVisible();
+  expect(requiredElement("channels-baseline-panel-1")).toBeVisible();
+  expect(next.closest("h3")?.parentElement).toContainElement(
+    requiredElement("channels-baseline-visual"),
+  );
 });

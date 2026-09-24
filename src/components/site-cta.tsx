@@ -2,6 +2,7 @@
 import { usePathname } from "next/navigation";
 import { type FormEvent, useState } from "react";
 import { siteConfig } from "@/config/site";
+import { usesShowcaseDesign } from "@/lib/showcase-routes";
 import { GoogleCtaContent } from "./google-cta-content";
 import styles from "./site-shell.module.css";
 import { TrackedLink } from "./tracked-link";
@@ -49,7 +50,7 @@ export function SiteCta() {
   }
 
   // This preview owns its Figma closing section; other routes retain this CTA.
-  if (pathname === "/preview/scroll-showcase") return null;
+  if (usesShowcaseDesign(pathname)) return null;
 
   return (
     <div className={styles.page}>

@@ -226,33 +226,41 @@ export function AgentRingDemo({
   );
 }
 
-export function AgentStoryboardPreview() {
+export function AgentStoryboardPreview({
+  active = true,
+  showControls = true,
+}: {
+  active?: boolean;
+  showControls?: boolean;
+}) {
   const [paused, setPaused] = useState(false);
   const [replayKey, setReplayKey] = useState(0);
   return (
     <div className={styles.preview}>
-      <AgentRingDemo active={!paused} replayKey={replayKey} />
-      <fieldset
-        className={styles.controls}
-        aria-label="Agent storyboard playback"
-      >
-        <button
-          type="button"
-          aria-pressed={paused}
-          onClick={() => setPaused((value) => !value)}
+      <AgentRingDemo active={active && !paused} replayKey={replayKey} />
+      {showControls && (
+        <fieldset
+          className={styles.controls}
+          aria-label="Agent storyboard playback"
         >
-          {paused ? "Resume animation" : "Pause animation"}
-        </button>
-        <button
-          type="button"
-          onClick={() => {
-            setReplayKey((value) => value + 1);
-            setPaused(false);
-          }}
-        >
-          Replay agent animation
-        </button>
-      </fieldset>
+          <button
+            type="button"
+            aria-pressed={paused}
+            onClick={() => setPaused((value) => !value)}
+          >
+            {paused ? "Resume animation" : "Pause animation"}
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              setReplayKey((value) => value + 1);
+              setPaused(false);
+            }}
+          >
+            Replay agent animation
+          </button>
+        </fieldset>
+      )}
     </div>
   );
 }

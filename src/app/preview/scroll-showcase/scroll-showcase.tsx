@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { type CSSProperties, useEffect, useRef, useState } from "react";
 import { siteConfig } from "@/config/site";
+import { SchedulingAssistant } from "./scheduling-assistant";
 import { BookingCalendar } from "./booking-calendar";
 import {
   chapterScrollProgress,
@@ -15,37 +16,37 @@ const assets = "/preview/scroll-showcase";
 const states = [
   {
     id: "scheduling",
-    label: "Agents",
+    label: "Scheduling",
     badge: "",
-    title: "Less busywork. More on autopilot.",
-    body: "Put recurring property tasks in motion, with your team in control of the decisions that matter.",
+    title: "Bring scheduling into the conversation",
+    body: "Coordinate availability and meeting details with your team, keeping the conversation and next step together.",
     accent: "#6bb0ff",
     surface: "#d3e5ff",
   },
   {
     id: "callie",
-    label: "Callie",
+    label: "AI assistant",
     badge: "Beta",
-    title: "Introducing your 24/7 AI scheduling assistant",
-    body: "Add Callie to any email thread to coordinate scheduling on your behalf without switching tools or sacrificing control.",
+    title: "Let your assistant take the next step",
+    body: "Bring your AI assistant into the conversation to help coordinate meetings and keep everyone moving forward.",
     accent: "#daf098",
     surface: "#f1f8dc",
   },
   {
     id: "notetaker",
-    label: "Notetaker",
+    label: "Meeting notes",
     badge: "New",
-    title: "Actionable, shareable recaps for every meeting",
-    body: "Finish the day knowing every meeting was captured, next steps were tracked, and follow-ups were handled.",
+    title: "Keep meeting notes and next steps together",
+    body: "Keep meeting notes, decisions and follow-up tasks together so your team can review the next steps.",
     accent: "#ba9dff",
     surface: "#eae3f9",
   },
   {
     id: "payments",
-    label: "Payments",
+    label: "Billing",
     badge: "New",
-    title: "Flexible, built-in payment tools",
-    body: "Charge upfront for meetings, sell packages, and send invoices with payment features that make it easy to get paid.",
+    title: "Keep billing conversations connected",
+    body: "Bring invoice questions, payment context and follow-ups into the same workspace as your team.",
     accent: "#5aded7",
     surface: "#e5f9f9",
   },
@@ -76,6 +77,12 @@ function Illustration({ index, active }: { index: number; active: boolean }) {
         <BookingCalendar active={active} />
       </div>
     );
+  if (index === 1)
+    return (
+      <div className={styles.demo}>
+        <SchedulingAssistant active={active} />
+      </div>
+    );
   return (
     <div className={styles.demo} aria-hidden="true">
       <div className={styles.wave}>
@@ -83,24 +90,6 @@ function Illustration({ index, active }: { index: number; active: boolean }) {
           <i key={bar.id} style={{ height: bar.height }} />
         ))}
       </div>
-      {index === 1 && (
-        <div className={styles.email}>
-          <div className={styles.sender}>
-            <Portrait name="dominic" />
-            <div>
-              <strong>Dominic Mills</strong>
-              <small>To Callie, Tori Mathers ▾</small>
-            </div>
-          </div>
-          <p className={styles.typing}>
-            Hi Callie, find a time for us to connect next week.
-          </p>
-          <div className={styles.reply}>
-            <Image src={`${assets}/callie.svg`} width={18} height={18} alt="" />{" "}
-            I’ll take care of the scheduling.
-          </div>
-        </div>
-      )}
       {index === 2 && (
         <div className={styles.recap}>
           <div className={styles.participants}>
@@ -270,10 +259,10 @@ export function ScrollShowcase() {
         <h1>
           One flow.
           <br />
-          Four possibilities.
+          For your whole team.
         </h1>
         <p className={styles.subheadline}>
-          Bring conversations, AI agents, and workflows together—so your team
+          Bring conversations, AI agents, and workflows together so your team
           can get more done with less coordination.
         </p>
         <div className={styles.oauthActions}>
@@ -289,25 +278,21 @@ export function ScrollShowcase() {
           <button
             type="button"
             disabled
-            aria-describedby="hero-microsoft-pending"
-            title="Microsoft sign-in link pending"
+            title="Microsoft sign-in is not available yet"
+            aria-describedby="microsoft-signin-status"
           >
-            <Image
-              src="/preview/homepage/baseline-lower/card-microsoft.png"
-              alt=""
-              width={24}
-              height={24}
-            />
+            <Image src="/brand/microsoft.svg" alt="" width={24} height={24} />
             Continue with Microsoft
           </button>
         </div>
+        <span id="microsoft-signin-status" className={styles.srOnly}>
+          Microsoft sign-in is not available yet. Continue with Google or sign
+          up with email.
+        </span>
         <small className={styles.signupNote}>
           <a href={siteConfig.signupUrl}>Sign up with email</a>
           {" · "}No credit card required
         </small>
-        <span id="hero-microsoft-pending" className={styles.srOnly}>
-          Microsoft sign-in link pending
-        </span>
       </header>
       <section
         ref={section}
@@ -410,22 +395,16 @@ export function ScrollShowcase() {
                       </div>
                       <h2>{state.title}</h2>
                       <p>{state.body}</p>
-                      <a
-                        href={
-                          index === 0
-                            ? "/products/platform"
-                            : "https://calendly.com"
-                        }
-                        target={index === 0 ? undefined : "_blank"}
-                        rel={index === 0 ? undefined : "noreferrer"}
-                      >
-                        {index === 0 ? "Explore Innflow" : "Learn more"}{" "}
+                      <a href="/products/platform">
+                        {index === 0
+                          ? "Explore Innflow"
+                          : "Explore the platform"}{" "}
                         <span aria-hidden="true">→</span>
                         <span className={styles.srOnly}>
                           {" "}
                           {index === 0
                             ? "and its connected platform"
-                            : `about ${state.label} on Calendly (opens a new tab)`}
+                            : `for ${state.label}`}
                         </span>
                       </a>
                     </div>

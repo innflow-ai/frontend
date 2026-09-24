@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
 import { featurePageDesigns } from "@/content/feature-pages";
+import { industryHref, industryPages } from "@/content/industries";
 import { allFeatureSlugs } from "@/content/marketing";
 import { platformPages } from "@/content/platform";
 import { getIntegrations } from "@/lib/integrations";
@@ -104,6 +105,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ]);
 
   return [
+    ...industryPages.map((page) => ({
+      url: `${siteConfig.marketingOrigin}${industryHref(page.slug)}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
     ...integrations.map((item) => ({
       url: `${siteConfig.marketingOrigin}/integrations/${item.slug}`,
       lastModified: new Date(item._updatedAt),

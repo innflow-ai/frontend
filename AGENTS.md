@@ -12,9 +12,13 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 Before creating, importing, updating, or selecting testimonial CMS records, read [sanity/TESTIMONIALS.md](sanity/TESTIMONIALS.md). Apply its field mapping, source accuracy, reuse, and page-selection guidance.
 
-## Product and feature pages
+## Property-management product and feature pages
 
-Use the `innflow-feature-page` skill when available. Its installed entrypoint is `/Users/ak/.codex/skills/innflow-feature-page/SKILL.md`. Use `/rent-collection` as the default pattern for all future product and feature pages. Before creating or redesigning one, read [docs/PRODUCT_FEATURE_PAGE_PATTERN.md](docs/PRODUCT_FEATURE_PAGE_PATTERN.md) and inspect the current Rent collection implementation. Preserve its section order, stacked scroll progression, image-led mobile layout, and shared components while adapting content to the feature. Do not bulk-restyle existing pages unless requested.
+Use the `innflow-property-management-feature-page` skill when available. Its installed entrypoint is `/Users/ak/.codex/skills/innflow-property-management-feature-page/SKILL.md`. Use `/rent-collection` as the default pattern for property-management product and feature pages. Before creating or redesigning one, read [docs/PRODUCT_FEATURE_PAGE_PATTERN.md](docs/PRODUCT_FEATURE_PAGE_PATTERN.md) and inspect the current Rent collection implementation. Preserve its section order, stacked scroll progression, image-led mobile layout, and shared components while adapting content to the feature. Do not bulk-restyle existing pages unless requested.
+
+## Homepage and cross-industry pages
+
+Use `src/app/preview/scroll-showcase` as the design reference for the homepage and new industry and cross-industry solution pages. Preserve its typography, colors, visual components, spacing, and responsive motion behavior. The property-management feature-page skill and Rent collection pattern do not apply to these pages.
 
 ## Blog directory and article design
 

@@ -1,23 +1,21 @@
 import { existsSync, readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import {
-  portfolioColumns,
-  productColumns,
-  solutionsColumns,
-} from "@/components/mega-menu";
+import { solutionsColumns } from "@/components/mega-menu";
 import { featurePageRoutes } from "./feature-page-routes";
 import { featurePageDesigns } from "./feature-pages";
 
 describe("Figma feature page handoff", () => {
-  it("makes every implemented design reachable from the shared navigation", () => {
-    const destinations = new Set(
-      [...portfolioColumns, ...productColumns, ...solutionsColumns].flatMap(
-        (column) => column.links.map((link) => link.href),
-      ),
-    );
-    for (const page of featurePageDesigns)
-      expect(destinations.has(page.path), page.path).toBe(true);
+  it("keeps property feature routes available outside the industry navigation", () => {
+    for (const page of featurePageDesigns) {
+      expect(existsSync(`src/app${page.path}/page.tsx`), page.path).toBe(true);
+    }
+    expect(
+      solutionsColumns
+        .flatMap((column) => column.links)
+        .every((link) => link.href.startsWith("/industries/")),
+    ).toBe(true);
   });
+
   it("provides a unique route and assigned hero for each design", () => {
     expect(featurePageDesigns).toHaveLength(33);
     expect(new Set(featurePageDesigns.map((page) => page.path)).size).toBe(33);

@@ -1,0 +1,12 @@
+# Deploy application source and public assets, never local credentials or QA artifacts.
+.env
+.env.*
+**/.env
+**/.env.*
+.playwright-cli/
+.playwright-mcp/
+.launch-audit/
+.codex*
+output/
+*.log
+*.tsbuildinfo

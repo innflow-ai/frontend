@@ -47,7 +47,7 @@ export function TemplateFooter() {
         <div className={styles.upper}>
           <div className={styles.brand}>
             <h2>
-              Build support
+              Connect work
               <br />
               your own way.
             </h2>

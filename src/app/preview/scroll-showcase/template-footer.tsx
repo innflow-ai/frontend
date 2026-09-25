@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CustomerSupportHours } from "@/components/customer-support-hours";
 import { FooterLegalLinks } from "@/components/footer-legal-links";
 import { footerNavigation } from "@/config/footer-navigation";
 import { siteConfig } from "@/config/site";
@@ -85,6 +86,7 @@ export function TemplateFooter() {
             <a href={`mailto:${siteConfig.supportEmail}`}>
               {siteConfig.supportEmail}
             </a>
+            <CustomerSupportHours />
           </div>
           <a href={siteConfig.demoUrl}>
             Book an Innflow demo <span aria-hidden="true">↗</span>

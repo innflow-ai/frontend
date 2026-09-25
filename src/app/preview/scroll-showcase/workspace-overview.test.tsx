@@ -43,7 +43,7 @@ afterEach(() => {
 describe("Workspace overview", () => {
   it("shows static headings and every detail on tablet, then restores the active card on exit", () => {
     render(<WorkspaceOverview />);
-    fireEvent.click(screen.getByRole("button", { name: "Assist" }));
+    fireEvent.click(screen.getByRole("button", { name: "Train" }));
     act(() => {
       tablet = true;
       for (const notify of mediaListeners) notify();
@@ -61,7 +61,7 @@ describe("Workspace overview", () => {
       tablet = false;
       for (const notify of mediaListeners) notify();
     });
-    expect(screen.getByRole("button", { name: "Assist" })).toHaveAttribute(
+    expect(screen.getByRole("button", { name: "Train" })).toHaveAttribute(
       "aria-expanded",
       "true",
     );
@@ -107,15 +107,15 @@ describe("Workspace overview", () => {
   it("supports arrow, Home and End navigation without losing focus", () => {
     render(<WorkspaceOverview />);
     const connect = screen.getByRole("button", { name: "Connect" });
-    const learn = screen.getByRole("button", { name: "Learn" });
+    const deploy = screen.getByRole("button", { name: "Deploy" });
     fireEvent.keyDown(connect, { key: "End" });
-    expect(learn).toHaveFocus();
-    expect(learn).toHaveAttribute("aria-expanded", "true");
-    fireEvent.keyDown(learn, { key: "ArrowRight" });
+    expect(deploy).toHaveFocus();
+    expect(deploy).toHaveAttribute("aria-expanded", "true");
+    fireEvent.keyDown(deploy, { key: "ArrowRight" });
     expect(connect).toHaveFocus();
     fireEvent.keyDown(connect, { key: "ArrowLeft" });
-    expect(learn).toHaveFocus();
-    fireEvent.keyDown(learn, { key: "Home" });
+    expect(deploy).toHaveFocus();
+    fireEvent.keyDown(deploy, { key: "Home" });
     expect(connect).toHaveFocus();
   });
 });

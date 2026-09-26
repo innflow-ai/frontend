@@ -107,7 +107,11 @@ it("fails safely to flat navigation when the overview is absent", () => {
   );
 });
 it("preserves default header on other routes and similarly prefixed paths", () => {
-  for (const path of ["/", "/pricing", "/preview/scroll-showcase/other"]) {
+  for (const path of [
+    "/rent-collection",
+    "/pricing",
+    "/preview/scroll-showcase/other",
+  ]) {
     route.value = path;
     const view = render(<SiteHeader />);
     expect(document.querySelector("[data-preview-chrome]")).toBeNull();

@@ -290,13 +290,13 @@ export function BaselineConnectedInfrastructure() {
     >
       <header className={styles.heading}>
         <h2 id="baseline-infrastructure-heading">
-          Build on the tools
+          Connect the tools
           <br />
-          you already use
+          behind your work.
         </h2>
         <p>
-          Keep customer conversations connected to the information and tools
-          behind your work.
+          Bring relevant information into the tools your team already uses.
+          Explore supported connections to find the right fit for your workflow.
         </p>
         <Link className={styles.directory} href="/integrations">
           View all integrations <span aria-hidden="true">→</span>
@@ -383,16 +383,16 @@ export function BaselineClosing() {
     >
       <header className={styles.heading}>
         <h2 id="baseline-closing-heading">
-          Bring your team
+          Start with one workflow
           <br />
-          and AI together.
+          your team handles every day.
         </h2>
         <p>
-          See how Innflow brings conversations, agents and workflows into one
-          workspace. Start with the work your team handles every day.
+          Choose a recurring request, follow-up, or handoff. See how Innflow can
+          help your team manage it from the first conversation to the next step.
         </p>
-        <a className={styles.cta} href={siteConfig.demoUrl}>
-          Book an Innflow demo
+        <a className={styles.cta} href={siteConfig.signupUrl}>
+          Get started
         </a>
       </header>
       <div className={styles.closingViewport}>

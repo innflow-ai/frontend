@@ -3,8 +3,8 @@
 import Image from "next/image";
 import { type CSSProperties, useEffect, useRef, useState } from "react";
 import { siteConfig } from "@/config/site";
-import { SchedulingAssistant } from "./scheduling-assistant";
 import { BookingCalendar } from "./booking-calendar";
+import { SchedulingAssistant } from "./scheduling-assistant";
 import {
   chapterScrollProgress,
   hideShowcaseNavigation,
@@ -256,42 +256,25 @@ export function ScrollShowcase() {
   return (
     <div className={styles.page}>
       <header className={styles.intro}>
+        <p className={styles.eyebrow}>An AI workspace for your team</p>
         <h1>
-          One flow.
+          Turn conversations
           <br />
-          For your whole team.
+          into completed work.
         </h1>
         <p className={styles.subheadline}>
-          Bring conversations, AI agents, and workflows together so your team
-          can get more done with less coordination.
+          Innflow brings customer conversations, AI agents, and team workflows
+          into one workspace. Respond to requests, delegate tasks, and manage
+          follow-ups with the context your team needs.
         </p>
         <div className={styles.oauthActions}>
-          <a href={siteConfig.googleAuthUrl}>
-            <Image
-              src="/preview/homepage/baseline-lower/card-google.png"
-              alt=""
-              width={24}
-              height={24}
-            />
-            Continue with Google
-          </a>
-          <button
-            type="button"
-            disabled
-            title="Microsoft sign-in is not available yet"
-            aria-describedby="microsoft-signin-status"
-          >
-            <Image src="/brand/microsoft.svg" alt="" width={24} height={24} />
-            Continue with Microsoft
-          </button>
+          <a href={siteConfig.signupUrl}>Get started</a>
+          <a href={siteConfig.demoUrl}>Book a demo</a>
         </div>
-        <span id="microsoft-signin-status" className={styles.srOnly}>
-          Microsoft sign-in is not available yet. Continue with Google or sign
-          up with email.
-        </span>
         <small className={styles.signupNote}>
+          <a href={siteConfig.googleAuthUrl}>Continue with Google</a>
+          {" · "}
           <a href={siteConfig.signupUrl}>Sign up with email</a>
-          {" · "}No credit card required
         </small>
       </header>
       <section

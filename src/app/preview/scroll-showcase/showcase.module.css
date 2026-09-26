@@ -65,7 +65,7 @@
   justify-content: center;
   gap: 10px;
   min-height: 50px;
-  padding: 6px 18px 6px 6px;
+  padding: 6px 18px;
   border: 0;
   border-radius: 12px;
   background: #071a31;
@@ -1028,4 +1028,11 @@
     #3dcfad 73.558%,
     #246a87 100%
   );
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--preview-muted);
 }

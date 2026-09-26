@@ -21,6 +21,13 @@ vi.mock("next/image", () => ({
 }));
 beforeEach(() => {
   vi.stubGlobal(
+    "ResizeObserver",
+    class {
+      observe() {}
+      disconnect() {}
+    },
+  );
+  vi.stubGlobal(
     "IntersectionObserver",
     class {
       observe() {}
@@ -90,9 +97,7 @@ describe("baseline feature continuation", () => {
     render(<BaselineFeatures />);
     expect(screen.getAllByRole("heading", { level: 2 })).toHaveLength(4);
     for (const feature of baselineFeatures) {
-      expect(
-        screen.queryByText(feature.label, { exact: true }),
-      ).not.toBeInTheDocument();
+      expect(screen.getByText(feature.label, { exact: true })).toBeVisible();
     }
     expect(
       screen.getByRole("button", {

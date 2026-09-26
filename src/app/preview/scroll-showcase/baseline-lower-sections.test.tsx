@@ -209,24 +209,18 @@ it("matches the baseline two-card infrastructure without extra focus controls", 
   ).toHaveLength(17);
   expect(screen.queryByRole("button")).toBeNull();
 });
-it("offers all four closing scenes manually, including wraparound navigation", () => {
+it("offers all four closing highlights in a keyboard-accessible scroll strip", () => {
   render(<BaselineClosing />);
-  expect(screen.queryByText("Get started")).toBeNull();
-  expect(screen.getByRole("heading", { level: 2 })).toHaveTextContent(
-    "Bring your teamand AI together.",
+  const strip = screen.getByRole("region", {
+    name: "Product highlights. Scroll horizontally to explore.",
+  });
+  expect(strip).toHaveAttribute("tabindex", "0");
+  expect(strip.querySelectorAll("[data-scene-index]")).toHaveLength(4);
+  expect(
+    screen.queryByRole("button", { name: "Next highlight" }),
+  ).not.toBeInTheDocument();
+  expect(screen.getByText("Get started")).toBeVisible();
+  expect(screen.getByRole("link", { name: "Start for free" })).toHaveAttribute(
+    "href",
   );
-  expect(
-    screen.getByRole("button", { name: "Request resolved" }),
-  ).toHaveAttribute("aria-pressed", "true");
-  fireEvent.click(screen.getByRole("button", { name: "Previous highlight" }));
-  expect(
-    screen.getByRole("button", { name: "Product highlight 4" }),
-  ).toHaveAttribute("aria-pressed", "true");
-  fireEvent.click(screen.getByRole("button", { name: "Next highlight" }));
-  expect(
-    screen.getByRole("button", { name: "Request resolved" }),
-  ).toHaveAttribute("aria-pressed", "true");
-  expect(
-    screen.getByRole("link", { name: "Book an Innflow demo" }),
-  ).toHaveAttribute("href");
 });

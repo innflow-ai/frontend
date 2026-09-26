@@ -204,18 +204,16 @@
   height: 14px;
 }
 .artwork {
+  container-type: inline-size;
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 260px;
 }
-.artwork img {
+.artwork > img,
+.activeArt > img {
   object-fit: cover;
-}
-.artwork .connectForeground {
-  object-fit: contain;
-  object-position: center bottom;
 }
 .inactiveArt {
   opacity: 1;
@@ -233,25 +231,6 @@
 .card[data-active="true"] .inactiveArt {
   opacity: 0;
 }
-.draftDetail {
-  position: absolute;
-  top: 28px;
-  left: 28px;
-  max-width: calc(100% - 56px);
-  padding: 20px;
-  border-radius: 20px;
-  background: white;
-  font-size: 14px;
-  line-height: 1.4;
-  color: #0a1f33;
-}
-.draftDetail p {
-  margin: 0;
-}
-.draftDetail p + p {
-  margin-top: 14px;
-}
-
 @media (max-width: 1100px) {
   .content {
     padding: 80px 32px;
@@ -318,9 +297,6 @@
   }
   .inactiveArt {
     opacity: 0;
-  }
-  .artwork .connectForeground {
-    object-position: center;
   }
   .bridge {
     display: block;

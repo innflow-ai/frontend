@@ -1,0 +1,272 @@
+/* Exact layer geometry from Figma Connect artwork, node 57:248. */
+.connect {
+  position: absolute;
+  height: 228px;
+  left: calc(1 / 2 * 100%);
+  overflow: clip;
+  top: calc(1 / 2 * 100%);
+  width: 272.61px;
+  transform: translate(-50%, -50%);
+}
+.pose {
+  position: absolute;
+  left: -45.12px;
+  overflow: clip;
+  border-radius: 40.682px;
+  width: 368.679px;
+  height: 368.679px;
+  top: -84.67px;
+}
+.connections {
+  position: absolute;
+  left: 0px;
+  overflow: clip;
+  width: 368.679px;
+  height: 368.679px;
+  top: 0px;
+}
+.salesforceConnection {
+  position: absolute;
+  inset: 22.97% 29.92% 50.05% 50.35%;
+}
+.calendarConnection {
+  position: absolute;
+  inset: 39.02% 59.68% 47.5% 12.24%;
+}
+.gmailConnection {
+  position: absolute;
+  inset: 45.08% 13.82% 41.63% 60.34%;
+}
+.zoomConnection {
+  position: absolute;
+  inset: 57.2% 55.48% 20.72% 22.45%;
+}
+.notionConnection {
+  position: absolute;
+  inset: 59.91% 30.82% 15.19% 52.08%;
+}
+.notionTile {
+  position: absolute;
+  align-content: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 213.16px;
+  overflow: clip;
+  width: 36.416px;
+  height: 36.416px;
+  top: 269.12px;
+}
+.notionMark {
+  height: 29.132px;
+  position: relative;
+  flex-shrink: 0;
+  width: 27.828px;
+}
+.salesforceTile {
+  position: absolute;
+  align-content: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 206.36px;
+  border-radius: 13.984px;
+  width: 50.337px;
+  height: 50.337px;
+  top: 87.04px;
+}
+.smallIconCanvas {
+  overflow: clip;
+  position: relative;
+  flex-shrink: 0;
+  width: 38.139px;
+  height: 38.139px;
+}
+.salesforceMark {
+  position: absolute;
+  height: 26.695px;
+  left: 0px;
+  overflow: clip;
+  top: 5.72px;
+  width: 38.139px;
+}
+.salesforceVector {
+  position: absolute;
+  inset: 0 0 0.01% 0;
+}
+.calendarTile {
+  position: absolute;
+  align-content: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 45.12px;
+  border-radius: 13.984px;
+  width: 49.723px;
+  height: 49.723px;
+  top: 143.84px;
+}
+.calendarMark {
+  position: absolute;
+  left: 0px;
+  overflow: clip;
+  width: 38.139px;
+  height: 38.139px;
+  top: 0px;
+}
+.calendarBinding {
+  position: absolute;
+  bottom: calc(1 / 2 * 100%);
+  left: 16.67%;
+  right: 16.67%;
+  top: 4.17%;
+}
+.calendarPaper {
+  position: absolute;
+  inset: 10.42% 10.23%;
+}
+.calendarMaskGroup {
+  position: absolute;
+  display: contents;
+  inset: 10.42% 10.23%;
+}
+.calendarLowerMask {
+  position: absolute;
+  bottom: 10.42%;
+  left: 6.77%;
+  mask-mode: alpha;
+  mask-composite: intersect;
+  mask-clip: no-clip;
+  mask-repeat: no-repeat;
+  mask-position: 1.319px -15.097px;
+  mask-size: 30.336px 30.194px;
+  right: 6.77%;
+  top: calc(1 / 2 * 100%);
+}
+.calendarUpperMask {
+  position: absolute;
+  bottom: calc(1 / 2 * 100%);
+  left: 16.67%;
+  mask-mode: alpha;
+  mask-composite: intersect;
+  mask-clip: no-clip;
+  mask-repeat: no-repeat;
+  mask-position: -2.455px 2.384px;
+  mask-size: 30.336px 30.194px;
+  right: 16.67%;
+  top: 4.17%;
+}
+.calendarBindingShadow {
+  position: absolute;
+  inset: -13.64% -9.38%;
+}
+.calendarDate {
+  position: absolute;
+  inset: 29.86% 29.51% 30.55% 26.85%;
+}
+.gmailTile {
+  position: absolute;
+  align-content: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 268.7px;
+  border-radius: 13.984px;
+  width: 49.026px;
+  height: 49.026px;
+  top: 166.18px;
+}
+.gmailIconCanvas {
+  align-content: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: clip;
+  position: relative;
+  flex-shrink: 0;
+  width: 47.37px;
+  height: 47.37px;
+}
+.gmailMark {
+  position: relative;
+  flex-shrink: 0;
+  width: 37.896px;
+  height: 37.896px;
+}
+.zoomTile {
+  position: absolute;
+  align-content: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 82.76px;
+  border-radius: 13.984px;
+  width: 48.228px;
+  height: 48.228px;
+  top: 244.05px;
+}
+.zoomMark {
+  position: absolute;
+  left: 0px;
+  width: 38.139px;
+  height: 38.139px;
+  top: 0px;
+}
+.hubGlass {
+  position: absolute;
+  left: 131.58px;
+  overflow: clip;
+  border-radius: 29.851px;
+  width: 105.518px;
+  height: 105.518px;
+  top: 137.94px;
+}
+.hubGlassShape {
+  position: absolute;
+  height: 105.518px;
+  left: 2.33px;
+  top: 0px;
+  width: 100.263px;
+}
+.hubspotConnection {
+  position: absolute;
+  inset: 24.65% 49.05% 48.38% 32.6%;
+}
+.hubspotTile {
+  position: absolute;
+  left: 129.68px;
+  width: 37.896px;
+  height: 37.896px;
+  top: 100.96px;
+}
+.hubMark {
+  position: absolute;
+  left: 141.12px;
+  overflow: clip;
+  border-radius: 25.426px;
+  width: 86.449px;
+  height: 86.449px;
+  top: 147.47px;
+}
+.hubMarkCanvas {
+  position: absolute;
+  height: 86.449px;
+  left: 1.91px;
+  overflow: clip;
+  top: 0px;
+  width: 82.143px;
+}
+.hubMarkBase {
+  position: absolute;
+  inset: 2.49% 0;
+}
+.hubLettering {
+  position: absolute;
+  inset: 27.21% 14.1% 31.64% 14.7%;
+  mix-blend-mode: hard-light;
+}
+
+.asset {
+  display: block;
+  max-width: none;
+}

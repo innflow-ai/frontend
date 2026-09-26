@@ -84,7 +84,7 @@ describe("Workspace overview", () => {
     }
     expect(
       screen.getByRole("heading", {
-        name: "One workspace. Every conversation.",
+        name: "Move everyday work forward.",
       }),
     ).toBeVisible();
   });

@@ -1,4 +1,4 @@
-import { Geist, Manrope, Source_Serif_4 } from "next/font/google";
+import { Geist, Manrope, Roboto, Source_Serif_4 } from "next/font/google";
 import type { ReactNode } from "react";
 import styles from "@/app/preview/scroll-showcase/baseline-shell.module.css";
 
@@ -17,11 +17,17 @@ const serif = Source_Serif_4({
   variable: "--font-source-serif-4",
   display: "swap",
 });
+const contactFont = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-workspace-contacts",
+  display: "swap",
+});
 
 export function ShowcaseTheme({ children }: { children: ReactNode }) {
   return (
     <div
-      className={`${geist.variable} ${manrope.variable} ${serif.variable} ${styles.shell}`}
+      className={`${geist.variable} ${manrope.variable} ${serif.variable} ${contactFont.variable} ${styles.shell}`}
     >
       {children}
     </div>

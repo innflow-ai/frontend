@@ -437,22 +437,50 @@
   margin-top: 24px;
 }
 .closing {
+  position: relative;
   overflow: hidden;
   padding: 120px 0;
   background: #fcfbf8;
+}
+.closingEyebrow {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 .closing .cta {
   display: inline-flex;
   background: #071a31;
   color: white;
-  padding: 14px 20px;
+  align-items: center;
+  justify-content: center;
+  min-width: 141px;
+  min-height: 50px;
+  padding: 12px 20px;
+  border: 2px solid transparent;
   border-radius: 20px;
   margin-top: 32px;
   text-decoration: none;
   font-size: 16px;
 }
 .closingViewport {
+  --w: 656px;
+  --gap: 38px;
+  position: relative;
   margin-top: 64px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+}
+.closingViewport::-webkit-scrollbar {
+  display: none;
+}
+.closingViewport:focus-visible {
+  outline: 2px solid #071a31;
+  outline-offset: -2px;
 }
 .closingTrack {
   --w: 656px;
@@ -460,12 +488,14 @@
   display: flex;
   gap: var(--gap);
   width: max-content;
-  margin-left: calc(50% - var(--w) * 1.5 - var(--gap));
+  padding-inline: max(24px, calc(50vw - var(--w) / 2));
 }
 .scene {
+  scroll-snap-align: center;
+  container-type: inline-size;
   position: relative;
   width: var(--w);
-  height: 432px;
+  aspect-ratio: 656 / 432;
   flex-shrink: 0;
   transform: scale(0.85);
   transition: transform 400ms ease;
@@ -475,7 +505,7 @@
 }
 .sceneBackdrop {
   position: absolute;
-  inset: 48px 0 0;
+  inset: 11.1065% 0 0;
   border-radius: 48px;
   overflow: hidden;
 }
@@ -486,38 +516,79 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: 148px;
-  height: 127px;
+  top: 38.4635%;
+  height: 33.0729%;
   background: var(--stripe);
 }
 .scenePerson {
-  object-fit: contain;
+  width: 90.3963% !important;
+  left: 4.8018% !important;
+  object-fit: cover;
   object-position: center bottom;
 }
 .sceneBadge {
   position: absolute;
-  top: 231px;
+  top: 53.5162%;
   left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  width: max-content;
+  transform: translateX(-50%) scale(min(1, calc(100cqw / 656px)));
+  transform-origin: top center;
   white-space: nowrap;
   filter: drop-shadow(0 2px 12px #5f6c7a4d);
 }
-.sceneBadge span,
-.sceneBadge strong {
-  background: white;
-  padding: 6px 12px;
-  border-radius: 24px;
-  font-size: 36px;
-  font-weight: 500;
+.badgeBase,
+.badgeForeground {
+  display: flex;
+  align-items: center;
 }
-.sceneBadge strong {
+.badgeBase span,
+.badgeBase strong,
+.badgeForeground span,
+.badgeForeground strong {
+  padding: 0 12px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  font:
+    500 36px / 39.6px var(--font-manrope),
+    sans-serif;
+  letter-spacing: -0.6309px;
+}
+.badgeBase strong,
+.badgeForeground strong {
   font-family: var(--font-source-serif-4), serif;
 }
-.sceneBadge span {
-  font-family: var(--font-manrope), sans-serif;
+.badgeBase span,
+.badgeBase strong {
+  background: white;
+  border-radius: 24px;
+  color: transparent;
+}
+.badgeForeground {
+  position: absolute;
+  inset: 0;
+  gap: 16px;
+}
+.badgeIcon {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  flex: none;
+}
+.badgeIcon img {
+  position: absolute;
+}
+.badgeIcon i {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  z-index: 1;
+}
+.badgeIcon img:last-child {
+  z-index: 2;
 }
 @media (max-width: 1250px) {
   .integrationTile {
@@ -592,34 +663,13 @@
   .infrastructureCards > a {
     border-radius: 32px;
   }
+  .closingViewport,
   .closingTrack {
     --w: 82vw;
     --gap: 20px;
   }
-  .scene {
-    height: 54vw;
-    min-height: 240px;
-  }
   .sceneBackdrop {
-    top: 32px;
     border-radius: 32px;
-  }
-  .sceneBackdrop > div {
-    top: 40%;
-    height: 33%;
-  }
-  .sceneBadge {
-    top: 55%;
-    gap: 4px;
-  }
-  .sceneBadge span,
-  .sceneBadge strong {
-    font-size: clamp(18px, 4vw, 28px);
-    padding: 6px 9px;
-  }
-  .sceneBadge img {
-    width: 32px;
-    height: 32px;
   }
 }
 @media (prefers-reduced-motion: reduce) {

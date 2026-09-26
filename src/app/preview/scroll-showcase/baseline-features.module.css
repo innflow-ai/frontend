@@ -29,6 +29,21 @@
   flex-direction: column;
   justify-content: space-between;
 }
+.sectionTag {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 24px;
+  font-size: 16px;
+  font-weight: 500;
+}
+.sectionTag img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  border-radius: 9px;
+  padding: 3px;
+}
 .heading h2 {
   margin: 0;
   font:
@@ -142,6 +157,34 @@
 .imageFrame[data-pending="true"] {
   filter: blur(24px);
   opacity: 0.35;
+}
+.workflowFrame {
+  --agent-storyboard-background: transparent;
+  isolation: isolate;
+  background: linear-gradient(
+    180deg,
+    #61a8ff 0%,
+    #bdedf0 48%,
+    #61a6e8 72%,
+    #0a3863 100%
+  );
+}
+.workflowBackdrop {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  display: flex;
+  align-items: flex-start;
+  gap: 2.413793%;
+  padding-top: 39.827586%;
+}
+.workflowBackdrop span {
+  flex: 0 0 10.689655%;
+  aspect-ratio: 62 / 138;
+  border-radius: 999px;
+  background: rgb(209 255 250 / 55%);
+  transform: translateX(-12.903226%);
 }
 .pending {
   position: absolute;
@@ -331,7 +374,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: #eae3f9;
+  background: transparent;
   color: #071a31;
 }
 .agentDetailLabel {
@@ -373,6 +416,7 @@
   opacity: 0.5;
 }
 .agentDetail > p {
+  color: #fff;
   font:
     400 12px / 1.5 var(--font-geist),
     sans-serif;
@@ -380,6 +424,19 @@
 }
 
 @media (max-width: 800px) {
+  .agentDetailLabel {
+    margin-bottom: 8px;
+  }
+  .agentDetail h3 {
+    margin: 12px 0;
+  }
+  .agentDetail li {
+    padding: 9px 12px;
+    font-size: 12px;
+  }
+  .agentDetail > p {
+    margin-top: 12px;
+  }
   .row h3 button {
     min-height: 44px;
     opacity: 1;

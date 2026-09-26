@@ -492,15 +492,17 @@ export function SiteHeader() {
           <a className={styles.login} href={`${siteConfig.appOrigin}/login`}>
             Log in
           </a>
+          {!isShowcaseHome(pathname) && (
+            <TrackedLink
+              className={styles.mobileGetStarted}
+              destination={siteConfig.signupUrl}
+              eventLabel="mobile_header_signup"
+            >
+              Get started
+            </TrackedLink>
+          )}
           <TrackedLink
-            className={styles.mobileGetStarted}
-            destination={siteConfig.signupUrl}
-            eventLabel="mobile_header_signup"
-          >
-            Get started
-          </TrackedLink>
-          <TrackedLink
-            className={`${styles.darkButton} ${styles.desktopGoogle}`}
+            className={`${styles.darkButton}${isShowcaseHome(pathname) ? "" : ` ${styles.desktopGoogle}`}`}
             destination={siteConfig.googleAuthUrl}
             eventLabel="baselane_header_signup"
             aria-label="Continue with Google"

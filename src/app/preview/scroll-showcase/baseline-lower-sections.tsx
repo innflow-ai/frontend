@@ -345,67 +345,137 @@ export function BaselineConnectedInfrastructure() {
   );
 }
 
+const closingAssets = "/preview/homepage/closing-figma";
 const scenes = [
   {
-    person: `${assets}/closing-imgImage.png`,
-    background: `${assets}/closing-imgContainer.png`,
-    label: "Request resolved",
+    person: `${closingAssets}/89753.png`,
+    background: `${closingAssets}/e9597.png`,
+    label: "Discovery scheduled",
+    subject: "Discovery",
+    outcome: "Scheduled",
+    icon: `${closingAssets}/beeac.svg`,
     stripe: "#f2f8de",
   },
   {
-    person: `${assets}/closing-imgImage2.png`,
-    background: `${assets}/closing-imgContainer1.png`,
-    label: "Product highlight 2",
+    person: `${closingAssets}/efb04.png`,
+    background: `${closingAssets}/6ddf2.png`,
+    label: "Workflows connected",
+    subject: "Workflows",
+    outcome: "Connected",
+    icon: "/preview/scroll-showcase/callie.svg",
     stripe: "#d4c2ff",
   },
   {
-    person: `${assets}/closing-imgImage3.png`,
-    background: `${assets}/closing-imgContainer2.png`,
-    label: "Product highlight 3",
+    person: `${closingAssets}/b40da.png`,
+    background: `${closingAssets}/7c695.png`,
+    label: "Sidekick ready",
+    subject: "Sidekick",
+    outcome: "Ready",
+    icon: "/preview/scroll-showcase/notetaker.svg",
     stripe: "#6bb1ff",
   },
   {
-    person: `${lower}/closing-four-person.png`,
-    background: `${lower}/closing-four-background.png`,
-    label: "Product highlight 4",
+    person: `${closingAssets}/02833.png`,
+    background: `${closingAssets}/2841c.png`,
+    label: "Insights uncovered",
+    subject: "Insights",
+    outcome: "Uncovered",
+    icon: "/preview/scroll-showcase/payments.svg",
     stripe: "#baf0ec",
   },
 ];
 
 export function BaselineClosing() {
-  const [active, setActive] = useState(0);
-  // Manual by default: static source artwork does not establish an observed autoplay timeline.
+  const [active, setActive] = useState(1);
+  const viewport = useRef<HTMLElement>(null);
+  const orderedScenes = [scenes[3], scenes[0], scenes[1], scenes[2]];
+  useEffect(() => {
+    const element = viewport.current;
+    if (!element) return;
+    const centerDiscovery = () => {
+      const card = element.querySelector<HTMLElement>("[data-scene-index='1']");
+      if (card)
+        element.scrollLeft =
+          card.offsetLeft + card.offsetWidth / 2 - element.clientWidth / 2;
+    };
+    const frame = requestAnimationFrame(centerDiscovery);
+    return () => cancelAnimationFrame(frame);
+  }, []);
   return (
     <section
       className={styles.closing}
       aria-labelledby="baseline-closing-heading"
-      data-source-node="350:11820"
+      id="get-started"
+      data-source-node="1:991"
     >
       <header className={styles.heading}>
+        <span className={styles.closingEyebrow}>Get started</span>
         <h2 id="baseline-closing-heading">
-          Start with one workflow
+          From the first meeting
           <br />
-          your team handles every day.
+          to the follow-up
         </h2>
         <p>
-          Choose a recurring request, follow-up, or handoff. See how Innflow can
-          help your team manage it from the first conversation to the next step.
+          All of the work around meetings, handled in one place. Book time,
+          capture every discussion, and keep next steps moving without the
+          manual work.
         </p>
         <a className={styles.cta} href={siteConfig.signupUrl}>
-          Get started
+          Start for free
         </a>
       </header>
-      <div className={styles.closingViewport}>
+      <section
+        ref={viewport}
+        className={styles.closingViewport}
+        aria-label="Product highlights. Scroll horizontally to explore."
+        // biome-ignore lint/a11y/noNoninteractiveTabindex: Allow keyboard scrolling of the horizontal region.
+        tabIndex={0}
+        data-lenis-prevent
+        onScroll={(event) => {
+          const element = event.currentTarget;
+          const center = element.scrollLeft + element.clientWidth / 2;
+          const cards = [
+            ...element.querySelectorAll<HTMLElement>("[data-scene-index]"),
+          ];
+          const closest = cards.reduce(
+            (best, card) =>
+              Math.abs(card.offsetLeft + card.offsetWidth / 2 - center) <
+              Math.abs(best.offsetLeft + best.offsetWidth / 2 - center)
+                ? card
+                : best,
+            cards[0],
+          );
+          if (closest) setActive(Number(closest.dataset.sceneIndex));
+        }}
+        onKeyDown={(event) => {
+          if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+          event.preventDefault();
+          const element = event.currentTarget;
+          const next = Math.max(
+            0,
+            Math.min(3, active + (event.key === "ArrowRight" ? 1 : -1)),
+          );
+          const card = element.querySelector<HTMLElement>(
+            `[data-scene-index='${next}']`,
+          );
+          if (card)
+            element.scrollTo({
+              left:
+                card.offsetLeft +
+                card.offsetWidth / 2 -
+                element.clientWidth / 2,
+              behavior: "instant",
+            });
+        }}
+      >
         <div className={styles.closingTrack}>
-          {[-1, 0, 1].map((offset) => {
-            const index = (active + offset + scenes.length) % scenes.length;
-            const scene = scenes[index];
+          {orderedScenes.map((scene, index) => {
             return (
               <div
-                key={offset}
+                key={scene.label}
                 className={styles.scene}
-                data-active={offset === 0}
-                aria-hidden={offset !== 0}
+                data-active={active === index}
+                data-scene-index={index}
                 style={{ "--stripe": scene.stripe } as CSSProperties}
               >
                 <div className={styles.sceneBackdrop}>
@@ -419,50 +489,56 @@ export function BaselineClosing() {
                   fill
                   sizes="(max-width: 700px) 85vw, 593px"
                 />
-                {index === 0 && (
+                {
                   <div className={styles.sceneBadge}>
-                    <Image
-                      src={`${assets}/innflow-mark.png`}
-                      alt=""
-                      width={42}
-                      height={42}
-                    />
-                    <span>Request</span>
-                    <strong>Resolved</strong>
+                    <div className={styles.badgeBase} aria-hidden="true">
+                      <Image
+                        src={`${closingAssets}/fd6d2.svg`}
+                        alt=""
+                        width={56}
+                        height={56}
+                      />
+                      <Image
+                        src={`${closingAssets}/3ebbd.svg`}
+                        alt=""
+                        width={16}
+                        height={28}
+                      />
+                      <span>{scene.subject}</span>
+                      <Image
+                        src={`${closingAssets}/3ebbd.svg`}
+                        alt=""
+                        width={16}
+                        height={28}
+                      />
+                      <strong>{scene.outcome}</strong>
+                    </div>
+                    <div className={styles.badgeForeground}>
+                      <div className={styles.badgeIcon}>
+                        <i style={{ background: scene.stripe }} />
+                        <Image
+                          src={`${closingAssets}/360d7.svg`}
+                          alt=""
+                          width={47.9844}
+                          height={47.9844}
+                        />
+                        <Image
+                          src={scene.icon}
+                          alt=""
+                          width={34.2969}
+                          height={34.2969}
+                        />
+                      </div>
+                      <span>{scene.subject}</span>
+                      <strong>{scene.outcome}</strong>
+                    </div>
                   </div>
-                )}
+                }
               </div>
             );
           })}
         </div>
-      </div>
-      <fieldset className={styles.controls} aria-label="Closing highlights">
-        <button
-          type="button"
-          onClick={() => setActive((active + 3) % 4)}
-          aria-label="Previous highlight"
-        >
-          ←
-        </button>
-        {scenes.map((scene, i) => (
-          <button
-            type="button"
-            key={scene.label}
-            aria-label={scene.label}
-            aria-pressed={active === i}
-            onClick={() => setActive(i)}
-          >
-            <span />
-          </button>
-        ))}
-        <button
-          type="button"
-          onClick={() => setActive((active + 1) % 4)}
-          aria-label="Next highlight"
-        >
-          →
-        </button>
-      </fieldset>
+      </section>
     </section>
   );
 }

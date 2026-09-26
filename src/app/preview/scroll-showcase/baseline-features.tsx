@@ -18,6 +18,8 @@ type Feature = {
   id: string;
   node: string;
   label: string;
+  tagIcon: string;
+  tagColor: string;
   badge?: string;
   title: string;
   reverse?: boolean;
@@ -39,7 +41,9 @@ export const baselineFeatures: Feature[] = [
   {
     id: "channels",
     node: "350:11199",
-    label: "Communication",
+    label: "AI agent",
+    tagIcon: "scheduling",
+    tagColor: "#6bb0ff",
     title: "Keep every request\nand handoff together.",
     glyph: "imgVector.svg",
     items: [
@@ -83,7 +87,9 @@ export const baselineFeatures: Feature[] = [
   {
     id: "agents",
     node: "350:11344",
-    label: "AI agents",
+    label: "Workflows",
+    tagIcon: "callie",
+    tagColor: "#daf098",
     badge: "AI",
     title: "Delegate tasks.\nStay involved.",
     reverse: true,
@@ -109,7 +115,9 @@ export const baselineFeatures: Feature[] = [
   {
     id: "workflows",
     node: "350:11402",
-    label: "Automation",
+    label: "Sidekick",
+    tagIcon: "notetaker",
+    tagColor: "#ba9dff",
     badge: "Platform",
     title: "Keep the next\nstep moving.",
     glyph: "imgVector.svg",
@@ -140,6 +148,8 @@ export const baselineFeatures: Feature[] = [
     id: "insights",
     node: "350:11485",
     label: "Insights",
+    tagIcon: "payments",
+    tagColor: "#5aded7",
     badge: "Platform",
     title: "See what needs\nyour attention.",
     reverse: true,
@@ -214,46 +224,41 @@ function BaselineFeature({ feature }: { feature: Feature }) {
       className={styles.visual}
       id={`${feature.id}-baseline-visual`}
     >
-      <div className={styles.imageFrame} data-pending={false}>
+      <div
+        className={`${styles.imageFrame} ${feature.id === "agents" ? styles.workflowFrame : ""}`}
+        data-pending={false}
+      >
+        {feature.id === "agents" && (
+          <div
+            className={styles.workflowBackdrop}
+            data-source-node="1064:1999"
+            aria-hidden="true"
+          >
+            {[1, 2, 3, 4, 5, 6, 7, 8].map((bar) => (
+              <span key={bar} />
+            ))}
+          </div>
+        )}
         {channels ? (
           <ChannelsDemos selected={selected} />
         ) : feature.id === "agents" && selected === 0 ? (
           <AgentStoryboard showControls={false} />
+        ) : feature.id === "agents" && selected === 1 ? (
+          <Image
+            src={`${root}/agents-delegate-workflow.png`}
+            alt="Workflow: a new API error thread triggers a condition check, assigns Engineering, sets urgent priority, alerts PagerDuty, and creates a Linear bug."
+            data-source-node="808:23031"
+            fill
+            sizes="(max-width: 800px) calc(100vw - 48px), (max-width: 1280px) 46vw, 580px"
+          />
         ) : agentDetail ? (
-          <div className={styles.agentDetail}>
-            <span className={styles.agentDetailLabel}>
-              AI agents / Example workflow
-            </span>
-            <Image
-              src="/brand/innflow-wordmark.svg"
-              alt="Innflow"
-              width={112}
-              height={34}
-            />
-            <h3>{feature.items[selected].title}</h3>
-            <ol>
-              {(selected === 1
-                ? [
-                    "Describe the task",
-                    "Gather the relevant context",
-                    "Prepare the result",
-                    "Your team reviews the next step",
-                  ]
-                : [
-                    "Define your agent's purpose",
-                    "Add instructions and knowledge",
-                    "Choose tools and review points",
-                    "Try it with an example request",
-                  ]
-              ).map((step, i) => (
-                <li key={step}>
-                  <span>0{i + 1}</span>
-                  {step}
-                </li>
-              ))}
-            </ol>
-            <p>Your instructions. Your team in control.</p>
-          </div>
+          <Image
+            src={`${root}/agents-build-orbit-transparent.png`}
+            alt="Your AI agent surrounded by connected tasks: schedule work, run recurring tasks, prepare renewals, send follow-ups, coordinate move-ins, and plan inspections."
+            data-source-node="35:379"
+            fill
+            sizes="(max-width: 800px) calc(100vw - 48px), (max-width: 1280px) 46vw, 580px"
+          />
         ) : (
           <Image
             key={artwork}
@@ -282,6 +287,16 @@ function BaselineFeature({ feature }: { feature: Feature }) {
       >
         <div className={styles.copy}>
           <header className={styles.heading}>
+            <div className={styles.sectionTag}>
+              <Image
+                src={`/preview/scroll-showcase/${feature.tagIcon}.svg`}
+                width={24}
+                height={24}
+                alt=""
+                style={{ backgroundColor: feature.tagColor }}
+              />
+              <span>{feature.label}</span>
+            </div>
             <h2 id={`${feature.id}-baseline-heading`}>{feature.title}</h2>
           </header>
           <div ref={channelScroll.windowRef} className={styles.readingWindow}>

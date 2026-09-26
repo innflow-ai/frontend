@@ -1,0 +1,97 @@
+[
+  {
+    "graphic": "OrchestrateActionsGraphic",
+    "variable": "imgAvatarLauraKimDemoPortrait",
+    "file": "1-c3607.png"
+  },
+  {
+    "graphic": "OrchestrateActionsGraphic",
+    "variable": "imgChevronDown",
+    "file": "1-f29ff.svg"
+  },
+  {
+    "graphic": "OrchestrateActionsGraphic",
+    "variable": "imgLucideSplit",
+    "file": "1-22845.svg"
+  },
+  {
+    "graphic": "OrchestrateActionsGraphic",
+    "variable": "imgMageUser",
+    "file": "1-7b86f.svg"
+  },
+  {
+    "graphic": "OrchestrateActionsGraphic",
+    "variable": "imgInnflowAiAgent",
+    "file": "1-6536d.svg"
+  },
+  {
+    "graphic": "OrchestrateActionsGraphic",
+    "variable": "imgIfRouteReveal",
+    "file": "1-bfdf8.svg"
+  },
+  {
+    "graphic": "OrchestrateActionsGraphic",
+    "variable": "imgElseRouteReveal",
+    "file": "1-a4781.svg"
+  },
+  {
+    "graphic": "OrchestrateActionsGraphic",
+    "variable": "imgConditionIfPort",
+    "file": "1-36630.svg"
+  },
+  {
+    "graphic": "ConnectedChannelsGraphic",
+    "variable": "imgConnection",
+    "file": "2-a559f.svg"
+  },
+  {
+    "graphic": "TeamAssistantGraphic",
+    "variable": "imgInnflowAiAgent",
+    "file": "3-ecfb3.svg"
+  },
+  {
+    "graphic": "AgentsTogetherGraphic",
+    "variable": "imgConnection",
+    "file": "4-8a4cc.svg"
+  },
+  {
+    "graphic": "AgentsTogetherGraphic",
+    "variable": "imgInnflowAiAgent",
+    "file": "4-19ffe.svg"
+  },
+  {
+    "graphic": "WorkflowsGraphic",
+    "variable": "imgConnection",
+    "file": "5-ed6da.svg"
+  },
+  {
+    "graphic": "WorkflowsGraphic",
+    "variable": "imgConnection1",
+    "file": "5-e67be.svg"
+  },
+  {
+    "graphic": "WorkflowsGraphic",
+    "variable": "imgConnection2",
+    "file": "5-ab212.svg"
+  },
+  {
+    "graphic": "WorkflowsGraphic",
+    "variable": "imgConnection3",
+    "file": "5-97c1c.svg"
+  },
+  {
+    "graphic": "WorkflowsGraphic",
+    "variable": "imgConnection4",
+    "file": "5-f4eae.svg"
+  },
+  {
+    "graphic": "InsightsGraphic",
+    "variable": "imgConnection",
+    "file": "6-e1285.svg"
+  },
+  {
+    "graphic": "ApiBuildingBlocksGraphic",
+    "variable": "imgConnection",
+    "file": "7-f1e37.svg"
+  }
+]

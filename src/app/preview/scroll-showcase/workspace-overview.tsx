@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { type KeyboardEvent, useState, useSyncExternalStore } from "react";
 import { siteConfig } from "@/config/site";
+import { WorkspaceCardArtwork } from "./workspace-card-artwork";
 import styles from "./workspace-overview.module.css";
 
 const assets = "/preview/homepage/workspace-overview";
@@ -30,7 +31,7 @@ export const workspaceCards = [
       "Add your business information",
       "Give your agents context",
     ],
-    source: "350:11101",
+    source: "53:1025",
   },
   {
     id: "assist",
@@ -43,7 +44,7 @@ export const workspaceCards = [
       "Define your processes",
       "Give clear instructions",
     ],
-    source: "385:9888",
+    source: "53:725",
   },
   {
     id: "automate",
@@ -56,7 +57,7 @@ export const workspaceCards = [
       "Set clear responsibilities",
       "Choose where approval is needed",
     ],
-    source: "385:9992",
+    source: "53:842",
   },
   {
     id: "learn",
@@ -69,7 +70,7 @@ export const workspaceCards = [
       "Follow their progress",
       "Manage work from one workspace",
     ],
-    source: "385:10096",
+    source: "53:959",
   },
 ] as const;
 
@@ -114,7 +115,7 @@ export function WorkspaceOverview() {
       className={styles.section}
       id="workspace-overview"
       aria-labelledby="workspace-heading"
-      data-source-node="350:11085"
+      data-source-node="66:380"
     >
       <div className={styles.surface}>
         <Image
@@ -241,21 +242,7 @@ export function WorkspaceOverview() {
                         fill
                         sizes="(max-width: 700px) 90vw, 384px"
                       />
-                      {card.id === "connect" ? (
-                        <Image
-                          className={styles.connectForeground}
-                          src={`${assets}/connect-foreground.png`}
-                          alt=""
-                          fill
-                          sizes="(max-width: 700px) 90vw, 384px"
-                        />
-                      ) : (
-                        <div className={styles.draftDetail}>
-                          {card.steps.map((step) => (
-                            <p key={step}>{step}</p>
-                          ))}
-                        </div>
-                      )}
+                      <WorkspaceCardArtwork id={card.id} />
                     </div>
                   </div>
                 </div>

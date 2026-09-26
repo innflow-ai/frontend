@@ -1,0 +1,336 @@
+/* Figma artwork uses a 384 × 260 stage. Scale the composition as one unit
+   on narrower cards so SVGs retain their intrinsic dimensions. */
+.stage {
+  position: absolute;
+  width: 384px;
+  height: 260px;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  scale: min(1, calc(100cqw / 384px));
+  pointer-events: none;
+  font-family: var(--font-geist), sans-serif;
+  color: #071a31;
+  letter-spacing: 0;
+}
+.stage p {
+  margin: 0;
+}
+.stage img {
+  display: block;
+  max-width: none;
+}
+.train {
+  position: absolute;
+  width: 369.083px;
+  height: 315.146px;
+  left: 50%;
+  top: calc(50% - 32.62px);
+  translate: -50% -50%;
+  font-family: var(--font-workspace-contacts), Arial, sans-serif;
+  font-size: 10.79px;
+  line-height: 15.411px;
+  color: #102033;
+}
+.contacts {
+  position: absolute;
+  left: 21.57px;
+  top: 50.85px;
+  width: 315.917px;
+  height: 223.453px;
+  overflow: clip;
+  border-radius: 18.493px;
+  background: white;
+  box-shadow: 0 12.328px 23.116px rgb(51 64 79 / 12%);
+}
+.columnHeadings,
+.contactRow {
+  display: grid;
+  grid-template-columns: 112.497px 107.874px 95.546px;
+}
+.columnHeadings {
+  height: 34.674px;
+  background: #f5f5f6;
+  font-size: 12.33px;
+  font-weight: 500;
+}
+.contactRow {
+  height: 37.756px;
+  border-bottom: 0.771px solid #e2e4e7;
+}
+.columnHeadings > span,
+.contactRow > span {
+  display: flex;
+  align-items: center;
+  padding: 1.541px 0 0 9.246px;
+  overflow: clip;
+  white-space: nowrap;
+}
+.columnHeadings > span {
+  padding-top: 3.082px;
+  border-bottom: 0.771px solid #e2e4e7;
+}
+.columnHeadings > span:not(:last-child),
+.contactRow > span:not(:last-child) {
+  border-right: 0.771px solid #e2e4e7;
+}
+.contactName {
+  gap: 6.164px;
+}
+.contactName img {
+  flex-shrink: 0;
+}
+.filter {
+  position: absolute;
+  top: 0;
+  left: 218.06px;
+  width: 151.024px;
+  height: 120.202px;
+}
+.glassFilter,
+.filterPlate,
+.filterLabel,
+.contactCount,
+.countPlate,
+.countBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.glassFilter {
+  height: 69.348px;
+  border: 0.771px solid rgb(255 255 255 / 60%);
+  border-radius: 21.575px;
+  background: rgb(255 255 255 / 42%);
+}
+.filterPlate {
+  width: 138.696px;
+  height: 57.02px;
+  border-radius: 15.411px;
+  background: white;
+  box-shadow: 0 9.246px 18.493px rgb(51 64 79 / 10%);
+}
+.filterLabel {
+  width: 107.874px;
+  height: 26.968px;
+  gap: 9.246px;
+  padding-top: 1.541px;
+  border: 0.771px solid #c8cdd3;
+  border-radius: 6.164px;
+  font-weight: 500;
+}
+.filterOptions {
+  position: absolute;
+  top: 50.85px;
+  left: 21.57px;
+  display: flex;
+  flex-direction: column;
+  width: 107.874px;
+  height: 69.348px;
+  padding: 2.312px 1.541px;
+  border-radius: 6.164px;
+  background: white;
+  color: #525d69;
+  box-shadow: 0 6.164px 15.411px rgb(51 64 79 / 17%);
+}
+.filterOptions span {
+  display: flex;
+  align-items: center;
+  height: 21.575px;
+  flex-shrink: 0;
+  padding-left: 7.705px;
+}
+.selectedOption {
+  border-radius: 3.082px;
+  background: #e6e7e9;
+  color: #102033;
+}
+.contactCount {
+  position: absolute;
+  top: 247.34px;
+  left: 0;
+  width: 161.811px;
+  height: 67.806px;
+  border-radius: 21.575px;
+  background: rgb(255 255 255 / 42%);
+  backdrop-filter: blur(1.541px);
+}
+.countPlate {
+  width: 149.482px;
+  height: 55.478px;
+  border-radius: 15.411px;
+  background: white;
+  box-shadow: 0 9.246px 18.493px rgb(51 64 79 / 10%);
+}
+.countBadge {
+  width: 118.661px;
+  height: 24.657px;
+  gap: 6.164px;
+  border-radius: 6.164px;
+  background: #282d31;
+  color: white;
+}
+.assign {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 369.083px;
+  height: 249.9px;
+  translate: -50% -50%;
+}
+.messageShell {
+  position: absolute;
+  top: 3.84px;
+  left: 30.76px;
+  width: 307.569px;
+  height: 213.376px;
+  border-radius: 30.757px;
+  background: white;
+  opacity: 0.7;
+  box-shadow: 0 17.301px 19.223px rgb(7 26 49 / 20%);
+}
+.message {
+  position: absolute;
+  top: 11.53px;
+  left: 38.45px;
+  display: flex;
+  flex-direction: column;
+  gap: 15.378px;
+  width: 292.191px;
+  height: 197.998px;
+  padding: 26.912px;
+  border-radius: 24.99px;
+  background: white;
+}
+.sender {
+  display: flex;
+  align-items: center;
+  gap: 7.689px;
+}
+.senderLabels {
+  display: flex;
+  flex-direction: column;
+  gap: 1.922px;
+}
+.senderLabels strong {
+  font-size: 13.456px;
+  font-weight: 500;
+  line-height: 17.301px;
+}
+.senderLabels span {
+  font-size: 9.612px;
+  line-height: 13.456px;
+  color: #5f6d77;
+}
+.messageCopy {
+  width: 238.366px;
+  font-size: 11.534px;
+  line-height: 16.34px;
+}
+.availableTimes {
+  display: flex;
+  gap: 3.845px;
+  padding: 11.534px;
+  border-radius: 11.534px;
+  background: #ebf4ff;
+}
+.availableTimes span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 69.203px;
+  height: 23.068px;
+  border-radius: 5.767px;
+  background: #c3dfff;
+  font-size: 9.612px;
+  font-weight: 500;
+  line-height: 13.456px;
+}
+.agent {
+  position: absolute;
+  top: 45.5px;
+  left: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 17.161px;
+  width: 304px;
+  padding: 26.968px;
+  border-radius: 25.742px;
+  background: white;
+  box-shadow:
+    0 0 0 7.968px rgb(255 255 255 / 70%),
+    0 17.774px 20.226px rgb(7 26 49 / 20%);
+}
+.agentIdentity {
+  display: flex;
+  align-items: center;
+  gap: 9.806px;
+  width: 100%;
+}
+.agentLogo {
+  border-radius: 15.935px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.agentLabels {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 2.452px;
+  white-space: nowrap;
+}
+.agentLabels strong,
+.agentValue strong {
+  font-size: 14.71px;
+  font-weight: 500;
+  line-height: 19.613px;
+  letter-spacing: -0.3065px;
+}
+.agentLabels span {
+  font-size: 9.806px;
+  line-height: 14.71px;
+  color: #5f6d77;
+}
+.agentSwitch {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 31.258px;
+  height: 19px;
+  flex-shrink: 0;
+  padding: 1.226px;
+  border-radius: 60.677px;
+  background: #34c759;
+}
+.agentSwitch > span {
+  position: relative;
+  width: 16.548px;
+  height: 16.548px;
+}
+.agentSwitch img {
+  position: absolute;
+  top: -0.612px;
+  left: -1.838px;
+}
+.agentValue {
+  display: flex;
+  flex-direction: column;
+  gap: 4.903px;
+}
+.agentValue strong {
+  letter-spacing: -0.429px;
+}
+.agentValue p {
+  font-size: 12.258px;
+  line-height: 17.161px;
+  color: #5f6d77;
+}
+
+/* The horizontal tablet card has no space above its artwork for the filter. */
+@media (min-width: 761px) and (max-width: 1100px) {
+  .train {
+    top: 50%;
+    scale: 0.78;
+  }
+}

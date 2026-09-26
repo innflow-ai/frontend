@@ -21,6 +21,7 @@ import {
 } from "@/components/mega-menu";
 import { SignupOfferPopup } from "@/components/signup-offer-popup";
 import { siteConfig } from "@/config/site";
+import { INNER_PAGE_ANNOUNCEMENTS_ENABLED } from "@/lib/marketing-chrome";
 import { isShowcaseHome, usesShowcaseDesign } from "@/lib/showcase-routes";
 import { blMenuIcons } from "./bl-menu-icons";
 import { MobileNavigation } from "./editorial-header";
@@ -48,6 +49,9 @@ export function SiteHeader() {
   const pathname = usePathname();
   const isShowcasePreview = usesShowcaseDesign(pathname);
   const [announcementDismissed, setAnnouncementDismissed] = useState(false);
+  const announcementHidden =
+    announcementDismissed ||
+    (!INNER_PAGE_ANNOUNCEMENTS_ENABLED && !isShowcaseHome(pathname));
   const [signupOfferOpen, setSignupOfferOpen] = useState(false);
   const [previewShowcasePassed, setPreviewShowcasePassed] = useState(false);
   const header = useRef<HTMLElement>(null);
@@ -190,10 +194,10 @@ export function SiteHeader() {
       className={`${styles.page} ${styles.chromeScope}${isShowcasePreview ? ` ${previewStyles.previewScope}` : ""}`}
       data-preview-chrome={isShowcasePreview || undefined}
       data-announcement-dismissed={
-        isShowcasePreview ? announcementDismissed : undefined
+        isShowcasePreview ? announcementHidden : undefined
       }
     >
-      {!isShowcasePreview && !announcementDismissed && (
+      {!isShowcasePreview && !announcementHidden && (
         <AnnouncementBar
           onDismiss={() => {
             setAnnouncementDismissed(true);
@@ -210,7 +214,7 @@ export function SiteHeader() {
           onDismiss={() => setSignupOfferOpen(false)}
         />
       )}
-      {isShowcasePreview && !announcementDismissed && (
+      {isShowcasePreview && !announcementHidden && (
         <aside
           className={previewStyles.announcement}
           aria-label="Innflow announcement"

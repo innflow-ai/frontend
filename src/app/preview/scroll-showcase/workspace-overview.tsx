@@ -22,12 +22,12 @@ export const workspaceCards = [
   {
     id: "connect",
     title: "Connect",
-    summary: "Connect your tools. Bring your properties.",
+    summary: "Connect your tools. Add your knowledge.",
     description:
-      "Connect the tools you use and upload your property information, giving your agents the context to get started.",
+      "Connect the tools you use and add relevant business information, giving your agents the context to get started.",
     steps: [
       "Connect your tools",
-      "Upload your property information",
+      "Add your business information",
       "Give your agents context",
     ],
     source: "350:11101",
@@ -50,9 +50,9 @@ export const workspaceCards = [
     title: "Assign",
     summary: "Hand off the work.",
     description:
-      "Tell your agents what needs doing across your properties, with clear responsibilities and approvals where you need them.",
+      "Give your agents a focused task, with clear responsibilities and review points for your team.",
     steps: [
-      "Assign tasks across your properties",
+      "Assign a focused task",
       "Set clear responsibilities",
       "Choose where approval is needed",
     ],
@@ -61,7 +61,7 @@ export const workspaceCards = [
   {
     id: "learn",
     title: "Deploy",
-    summary: "Let your agents take it from here.",
+    summary: "Put your agents to work. Review progress.",
     description:
       "Put your agents to work and follow their progress from one workspace.",
     steps: [
@@ -127,16 +127,15 @@ export function WorkspaceOverview() {
         <div className={styles.content}>
           <header className={styles.heading}>
             <h2 id="workspace-heading">
-              One workspace. <br />
-              Every conversation.
+              Move everyday <br />
+              work forward.
             </h2>
             <p className={styles.introduction}>
-              Bring customer conversations, AI assistance and team workflows
-              together. Keep the context from the first message to the next
-              step.
+              Schedule meetings, prepare follow-ups, review decisions, and
+              handle billing questions.
             </p>
             <a className={styles.cta} href={siteConfig.signupUrl}>
-              Start for free
+              Get started
             </a>
           </header>
 

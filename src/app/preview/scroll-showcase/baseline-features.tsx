@@ -40,13 +40,13 @@ export const baselineFeatures: Feature[] = [
     id: "channels",
     node: "350:11199",
     label: "Communication",
-    title: "Every conversation.\nConnected.",
+    title: "Keep every request\nand handoff together.",
     glyph: "imgVector.svg",
     items: [
       {
         title: "Orchestrate actions",
         icon: "imgTemplate.svg",
-        body: "Give every handoff a clear owner. Route Priority IS Urgent to a teammate and everything else to an agent.",
+        body: "Give each request a clear owner. Route urgent issues to a teammate and delegate routine tasks to an agent, with the conversation attached.",
       },
       {
         title: "All your channels, connected",
@@ -85,14 +85,14 @@ export const baselineFeatures: Feature[] = [
     node: "350:11344",
     label: "AI agents",
     badge: "AI",
-    title: "Your agents.\nOne workspace.",
+    title: "Delegate tasks.\nStay involved.",
     reverse: true,
     glyph: "imgContainer.svg",
     items: [
       {
         title: "Bring your agents together",
         icon: "imgIcon1.svg",
-        body: "Choose the right agent for each task. Keep its instructions, context and results together in Innflow.",
+        body: "Summarize incoming requests, draft follow-ups, and prepare the next step. Give each agent clear instructions and review its work before moving forward.",
       },
       {
         title: "Delegate a task. Review the result.",
@@ -111,7 +111,7 @@ export const baselineFeatures: Feature[] = [
     node: "350:11402",
     label: "Automation",
     badge: "Platform",
-    title: "Automate the work\nbetween conversations",
+    title: "Keep the next\nstep moving.",
     glyph: "imgVector.svg",
     items: [
       {
@@ -141,7 +141,7 @@ export const baselineFeatures: Feature[] = [
     node: "350:11485",
     label: "Insights",
     badge: "Platform",
-    title: "Turn conversations\ninto insight",
+    title: "See what needs\nyour attention.",
     reverse: true,
     glyph: "imgVector.svg",
     items: [

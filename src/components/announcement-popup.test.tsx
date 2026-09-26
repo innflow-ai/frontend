@@ -2,14 +2,12 @@ import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { siteConfig } from "@/config/site";
 import {
-  ANNOUNCEMENT_RIBBON_SRC,
-  ANNOUNCEMENT_STORAGE_KEY,
   SIGNUP_OFFER_SCROLL_PX,
   SIGNUP_OFFER_STORAGE_KEY,
 } from "@/lib/marketing-chrome";
 import { SiteHeader } from "./site-header";
 
-vi.mock("next/navigation", () => ({ usePathname: () => "/" }));
+vi.mock("next/navigation", () => ({ usePathname: () => "/rent-collection" }));
 
 beforeEach(() => {
   sessionStorage.clear();
@@ -33,18 +31,11 @@ afterEach(() => {
   vi.unstubAllGlobals();
 });
 
-it("renders a dismissible ribbon announcement and a signup offer after scroll", () => {
+it("hides the announcement and preserves the signup offer after scroll", () => {
   render(<SiteHeader />);
-  const bar = screen.getByRole("complementary", {
-    name: "Innflow announcement",
-  });
-  expect(bar).toBeVisible();
-  expect(bar.getAttribute("style")).toContain(ANNOUNCEMENT_RIBBON_SRC);
-  fireEvent.click(screen.getByRole("button", { name: "Dismiss announcement" }));
   expect(
     screen.queryByRole("complementary", { name: "Innflow announcement" }),
   ).toBeNull();
-  expect(sessionStorage.getItem(ANNOUNCEMENT_STORAGE_KEY)).toBe("1");
 
   expect(screen.queryByRole("heading", { name: "50% off signup" })).toBeNull();
   window.scrollY = SIGNUP_OFFER_SCROLL_PX + 40;

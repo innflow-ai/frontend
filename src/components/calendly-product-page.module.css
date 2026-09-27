@@ -602,3 +602,11 @@
     font-size: 20px;
   }
 }
+
+.spotlightArtwork {
+  background: var(--scene);
+  min-height: 360px;
+}
+.relatedImage {
+  overflow: hidden;
+}

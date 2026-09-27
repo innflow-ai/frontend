@@ -1,0 +1,2094 @@
+{
+  "assets": {
+    "A001": {
+      "id": "A001",
+      "name": "Assistant hero background",
+      "brief": "Reuse the existing Paper SVG as a separate background layer. No new background required.",
+      "action": "Reuse"
+    },
+    "A002": {
+      "id": "A002",
+      "name": "Agentic Automation product thumbnail",
+      "brief": "A request routed through an agent, a tool action and a review gate.",
+      "action": "Create"
+    },
+    "A003": {
+      "id": "A003",
+      "name": "Self Learning product thumbnail",
+      "brief": "A feedback card feeding a revised workflow and validation check.",
+      "action": "Create"
+    },
+    "A004": {
+      "id": "A004",
+      "name": "Evaluations product thumbnail",
+      "brief": "An expected-versus-actual result card with a review checklist.",
+      "action": "Create"
+    },
+    "A005": {
+      "id": "A005",
+      "name": "Analytics and Observability product thumbnail",
+      "brief": "A miniature trace timeline and workflow health dashboard.",
+      "action": "Create"
+    },
+    "A006": {
+      "id": "A006",
+      "name": "Integrations product thumbnail",
+      "brief": "A central Innflow node connected to a small set of tool tiles.",
+      "action": "Create"
+    },
+    "A007": {
+      "id": "A007",
+      "name": "Deployment Options product thumbnail",
+      "brief": "A deployment chooser with hosted, private and on-premise architecture tiles.",
+      "action": "Create"
+    },
+    "A008": {
+      "id": "A008",
+      "name": "Security and Compliance product thumbnail",
+      "brief": "A scoped-access panel beside an audit record and evidence folder.",
+      "action": "Create"
+    },
+    "A009": {
+      "id": "A009",
+      "name": "Workflows interactive workspace",
+      "brief": "Retain the existing interactive workspace. Optional static poster only if a still image is needed.",
+      "action": "Reuse"
+    },
+    "A010": {
+      "id": "A010",
+      "name": "Agentic Workflows product thumbnail",
+      "brief": "A compact workflow canvas with trigger, branch and action nodes.",
+      "action": "Create"
+    },
+    "A011": {
+      "id": "A011",
+      "name": "Agent OS product thumbnail",
+      "brief": "A small orchestration graph connecting agents and shared memory.",
+      "action": "Create"
+    },
+    "A012": {
+      "id": "A012",
+      "name": "AI Agents product thumbnail",
+      "brief": "An agent task card with linked evidence and a proposed next action.",
+      "action": "Create"
+    },
+    "A013": {
+      "id": "A013",
+      "name": "Agent Studio product thumbnail",
+      "brief": "A miniature visual editor with configurable workflow nodes.",
+      "action": "Create"
+    },
+    "A014": {
+      "id": "A014",
+      "name": "Scheduling hero background",
+      "brief": "Reuse the existing Paper SVG as a separate background layer. No new background required.",
+      "action": "Reuse"
+    },
+    "A015": {
+      "id": "A015",
+      "name": "Platform product thumbnail",
+      "brief": "A compact workspace overview linking agents, tools and shared knowledge.",
+      "action": "Create"
+    },
+    "A016": {
+      "id": "A016",
+      "name": "Notetaker hero background",
+      "brief": "Reuse the existing Paper SVG as a separate background layer. No new background required.",
+      "action": "Reuse"
+    },
+    "A017": {
+      "id": "A017",
+      "name": "Agentic Workflows / Workflow Builder",
+      "brief": "A floating workflow canvas with connected trigger, condition, action and review nodes.",
+      "action": "Rework"
+    },
+    "A018": {
+      "id": "A018",
+      "name": "Agentic Workflows overview",
+      "brief": "A wide workflow canvas showing a request, connected steps and a reviewable outcome.",
+      "action": "Rework"
+    },
+    "A019": {
+      "id": "A019",
+      "name": "Agentic Workflows / Repeatable Steps",
+      "brief": "Three reusable workflow steps arranged as a small sequence with a repeat control.",
+      "action": "Create"
+    },
+    "A020": {
+      "id": "A020",
+      "name": "Agentic Workflows / Shared Understanding",
+      "brief": "A shared workflow map with owner avatars and one clear handoff between teammates.",
+      "action": "Create"
+    },
+    "A021": {
+      "id": "A021",
+      "name": "Agentic Workflows / Useful Follow Up",
+      "brief": "A completed run with its linked next action and assigned owner.",
+      "action": "Create"
+    },
+    "A022": {
+      "id": "A022",
+      "name": "Agentic Workflows / Triggers And Conditions",
+      "brief": "A trigger setup panel next to a branching condition, showing the rule that starts each path.",
+      "action": "Rework"
+    },
+    "A023": {
+      "id": "A023",
+      "name": "Agentic Workflows / Activity Overview",
+      "brief": "An activity dashboard with recent workflow runs, current steps and an exception awaiting review.",
+      "action": "Rework"
+    },
+    "A024": {
+      "id": "A024",
+      "name": "Agentic Workflows / Workflow History",
+      "brief": "A run-history timeline with an expanded execution and its ordered steps.",
+      "action": "Rework"
+    },
+    "A025": {
+      "id": "A025",
+      "name": "Contacts hero background",
+      "brief": "Reuse the existing Paper SVG as a separate background layer. No new background required.",
+      "action": "Reuse"
+    },
+    "A026": {
+      "id": "A026",
+      "name": "Agent OS / Graph Based Execution",
+      "brief": "A branching agent graph with one highlighted route from request to reviewed output.",
+      "action": "Create"
+    },
+    "A027": {
+      "id": "A027",
+      "name": "Agent OS / Unified Building Blocks",
+      "brief": "Reusable skill, tool and trigger blocks snapping into a single workflow.",
+      "action": "Create"
+    },
+    "A028": {
+      "id": "A028",
+      "name": "Agent OS / Multi Agent Orchestration",
+      "brief": "Three agent role cards passing one shared task and its context between them.",
+      "action": "Create"
+    },
+    "A029": {
+      "id": "A029",
+      "name": "Agent OS / Review And Iteration",
+      "brief": "A run review panel showing a correction beside a revised workflow step.",
+      "action": "Create"
+    },
+    "A030": {
+      "id": "A030",
+      "name": "Agent OS / Evaluation Framework",
+      "brief": "A result checklist comparing expected and actual outputs, with one item needing review.",
+      "action": "Create"
+    },
+    "A031": {
+      "id": "A031",
+      "name": "Agent OS / Human In The Loop",
+      "brief": "An approval inbox with a proposed action, supporting context and approve or revise controls.",
+      "action": "Create"
+    },
+    "A032": {
+      "id": "A032",
+      "name": "Agent OS / Model Flexibility",
+      "brief": "A model selection panel assigning different models to drafting, reasoning and extraction tasks.",
+      "action": "Create"
+    },
+    "A033": {
+      "id": "A033",
+      "name": "Agent OS / Memory System",
+      "brief": "A memory drawer attaching a relevant document and prior decision to the current task.",
+      "action": "Create"
+    },
+    "A034": {
+      "id": "A034",
+      "name": "Payments hero background",
+      "brief": "Reuse the existing Paper SVG as a separate background layer. No new background required.",
+      "action": "Reuse"
+    },
+    "A035": {
+      "id": "A035",
+      "name": "AI Agents / Problem Solver",
+      "brief": "An incoming business question, linked evidence cards and a draft answer ready for review.",
+      "action": "Create"
+    },
+    "A036": {
+      "id": "A036",
+      "name": "AI Agents / Intelligent Planning",
+      "brief": "A request turning into an ordered plan with dependencies and a human review step.",
+      "action": "Create"
+    },
+    "A037": {
+      "id": "A037",
+      "name": "AI Agents / Integrations Tools",
+      "brief": "An agent connecting to an inbox, shared files and a record system through scoped tool cards.",
+      "action": "Create"
+    },
+    "A038": {
+      "id": "A038",
+      "name": "AI Agents / Agentic Execution",
+      "brief": "An agent task progressing through a tool action, status update and reviewed completion.",
+      "action": "Create"
+    },
+    "A039": {
+      "id": "A039",
+      "name": "AI Agents / Agent Character",
+      "brief": "An agent settings panel with its role, instructions and boundaries beside a matching draft response.",
+      "action": "Create"
+    },
+    "A040": {
+      "id": "A040",
+      "name": "AI Agents / Templates",
+      "brief": "A template picker with one reusable agent example expanded into editable steps.",
+      "action": "Create"
+    },
+    "A041": {
+      "id": "A041",
+      "name": "AI Agents / Learning Agent",
+      "brief": "A corrected result becoming a proposed instruction update before a comparison test.",
+      "action": "Create"
+    },
+    "A042": {
+      "id": "A042",
+      "name": "AI Agents / Human In The Loop",
+      "brief": "A person reviewing an agent proposal with context and an explicit approval control.",
+      "action": "Create"
+    },
+    "A043": {
+      "id": "A043",
+      "name": "Assistant interactive workspace",
+      "brief": "Retain the existing interactive workspace. Optional static poster only if a still image is needed.",
+      "action": "Reuse"
+    },
+    "A044": {
+      "id": "A044",
+      "name": "Agent Studio / Creation Paths",
+      "brief": "Three creation entry cards: choose a template, describe a workflow, or start with a blank canvas.",
+      "action": "Create"
+    },
+    "A045": {
+      "id": "A045",
+      "name": "Agent Studio / Connectors",
+      "brief": "A connectors drawer showing connected tools, their permission scopes and a selected action.",
+      "action": "Create"
+    },
+    "A046": {
+      "id": "A046",
+      "name": "Agent Studio / Visual Builder",
+      "brief": "A visual editor with connected steps and an open configuration drawer for one selected node.",
+      "action": "Create"
+    },
+    "A047": {
+      "id": "A047",
+      "name": "Agent Studio / Templates",
+      "brief": "A skill library card expanding into a preconfigured, editable operation.",
+      "action": "Create"
+    },
+    "A048": {
+      "id": "A048",
+      "name": "Agent Studio / Testing",
+      "brief": "A workflow test console with sample input, expected output and a reviewable test result.",
+      "action": "Create"
+    },
+    "A049": {
+      "id": "A049",
+      "name": "Agent Studio / Debugging",
+      "brief": "A step-by-step trace with one flagged step and its input and output panels expanded.",
+      "action": "Create"
+    },
+    "A050": {
+      "id": "A050",
+      "name": "Agent Studio / Learning",
+      "brief": "A feedback annotation beside a proposed revision and a comparison test.",
+      "action": "Create"
+    },
+    "A051": {
+      "id": "A051",
+      "name": "Agent Studio / Publish",
+      "brief": "A tested workflow moving through a release checklist into a published version, with a rollback option.",
+      "action": "Create"
+    },
+    "A052": {
+      "id": "A052",
+      "name": "Files & Documents / File Uploads",
+      "brief": "An upload tray feeding a file library, with processing state and a newly added document.",
+      "action": "Rework"
+    },
+    "A053": {
+      "id": "A053",
+      "name": "Files & Documents overview",
+      "brief": "A wide file library with upload, search and document detail panels.",
+      "action": "Rework"
+    },
+    "A054": {
+      "id": "A054",
+      "name": "Files & Documents / Organized Records",
+      "brief": "A compact set of labeled folders and document cards grouped by project.",
+      "action": "Create"
+    },
+    "A055": {
+      "id": "A055",
+      "name": "Files & Documents / Focused Lookup",
+      "brief": "A search query with one highlighted matching record and a filter chip.",
+      "action": "Create"
+    },
+    "A056": {
+      "id": "A056",
+      "name": "Files & Documents / Useful Context",
+      "brief": "A document card connected to the task and owner that need it.",
+      "action": "Create"
+    },
+    "A057": {
+      "id": "A057",
+      "name": "Files & Documents / File Filters",
+      "brief": "A file list narrowing through owner, type and project filters with the active filter chips visible.",
+      "action": "Rework"
+    },
+    "A058": {
+      "id": "A058",
+      "name": "Files & Documents / Library Search",
+      "brief": "A search field above a short list of matching files with relevant text excerpts.",
+      "action": "Rework"
+    },
+    "A059": {
+      "id": "A059",
+      "name": "Files & Documents / File Details",
+      "brief": "A document preview beside its owner, tags, source and linked workflow details.",
+      "action": "Rework"
+    },
+    "A060": {
+      "id": "A060",
+      "name": "AI Website Builder / Website Builder",
+      "brief": "A website editor with page sections, a property preview and a simple content settings panel.",
+      "action": "Rework"
+    },
+    "A061": {
+      "id": "A061",
+      "name": "AI Website Builder / A Clear First Impression",
+      "brief": "A polished property website preview shown in desktop and mobile frames.",
+      "action": "Create"
+    },
+    "A062": {
+      "id": "A062",
+      "name": "AI Website Builder / Connected Content",
+      "brief": "A property record linked to the corresponding website listing card.",
+      "action": "Create"
+    },
+    "A063": {
+      "id": "A063",
+      "name": "AI Website Builder / Familiar Access",
+      "brief": "A public website entry point connecting to a resident account panel.",
+      "action": "Create"
+    },
+    "A064": {
+      "id": "A064",
+      "name": "AI Website Builder overview",
+      "brief": "A wide website builder composition with desktop preview, mobile preview and content controls.",
+      "action": "Rework"
+    },
+    "A065": {
+      "id": "A065",
+      "name": "AI Website Builder / Template Gallery",
+      "brief": "A grid of website template thumbnails with one selected design and its mobile preview.",
+      "action": "Rework"
+    },
+    "A066": {
+      "id": "A066",
+      "name": "AI Website Builder / Resident Access",
+      "brief": "A website navigation item opening a resident portal sign-in panel and account preview.",
+      "action": "Rework"
+    },
+    "A067": {
+      "id": "A067",
+      "name": "AI Website Builder / Property Listings",
+      "brief": "A property listing grid with availability filters and a selected property detail card.",
+      "action": "Rework"
+    },
+    "A068": {
+      "id": "A068",
+      "name": "Databases / Agentic Rag",
+      "brief": "A question retrieving relevant passages from documents, with source citations attached to the answer.",
+      "action": "Create"
+    },
+    "A069": {
+      "id": "A069",
+      "name": "Databases / Retrieval",
+      "brief": "A search query ranking relevant document snippets and linking them to a reviewable answer.",
+      "action": "Create"
+    },
+    "A070": {
+      "id": "A070",
+      "name": "Databases / All File Types",
+      "brief": "A file library with document, spreadsheet and PDF tiles plus format and processing states.",
+      "action": "Create"
+    },
+    "A071": {
+      "id": "A071",
+      "name": "Databases / Agent Context",
+      "brief": "An agent context drawer linking current documents and records to the active task.",
+      "action": "Create"
+    },
+    "A072": {
+      "id": "A072",
+      "name": "Databases / Databases",
+      "brief": "A structured table with linked records, a selected row and the workflow that consumes it.",
+      "action": "Create"
+    },
+    "A073": {
+      "id": "A073",
+      "name": "Knowledge interactive workspace",
+      "brief": "Retain the existing interactive workspace. Optional static poster only if a still image is needed.",
+      "action": "Reuse"
+    },
+    "A074": {
+      "id": "A074",
+      "name": "Agentic Automation / Reasoning",
+      "brief": "A process graph splitting a routine request from an exception that needs reasoning and review.",
+      "action": "Rework"
+    },
+    "A075": {
+      "id": "A075",
+      "name": "Agentic Automation / Variety",
+      "brief": "Email, document and note cards converging into one normalized request record.",
+      "action": "Rework"
+    },
+    "A076": {
+      "id": "A076",
+      "name": "Agentic Automation / Integrations",
+      "brief": "A workflow connecting its inbox, shared record and action tools with scoped handoffs.",
+      "action": "Rework"
+    },
+    "A077": {
+      "id": "A077",
+      "name": "Agentic Automation / Learning",
+      "brief": "A reviewed correction feeding a proposed workflow revision and a retest.",
+      "action": "Rework"
+    },
+    "A078": {
+      "id": "A078",
+      "name": "Agentic Automation / Evaluations",
+      "brief": "An outcome rubric beside a workflow result, with expected fields and a review state.",
+      "action": "Rework"
+    },
+    "A079": {
+      "id": "A079",
+      "name": "Agentic Automation / Oversight",
+      "brief": "An approval gate inserted before a consequential workflow action.",
+      "action": "Rework"
+    },
+    "A080": {
+      "id": "A080",
+      "name": "Agentic Automation / Orchestration",
+      "brief": "An agent handoff map showing each owner and the context transferred at every step.",
+      "action": "Rework"
+    },
+    "A081": {
+      "id": "A081",
+      "name": "Agentic Automation / Operations",
+      "brief": "A workflow operations panel with run status, exception queue and assigned reviewer.",
+      "action": "Rework"
+    },
+    "A082": {
+      "id": "A082",
+      "name": "Self Learning / Hub",
+      "brief": "An improvement dashboard grouping flagged runs and review opportunities by workflow.",
+      "action": "Rework"
+    },
+    "A083": {
+      "id": "A083",
+      "name": "Self Learning / Process",
+      "brief": "A correction progressing through proposed change, validation and accepted revision.",
+      "action": "Rework"
+    },
+    "A084": {
+      "id": "A084",
+      "name": "Self Learning / Domain",
+      "brief": "A team knowledge library linked to the rules and examples an agent uses.",
+      "action": "Rework"
+    },
+    "A085": {
+      "id": "A085",
+      "name": "Self Learning / Correction",
+      "brief": "An incorrect field highlighted beside its corrected value and revised instruction.",
+      "action": "Rework"
+    },
+    "A086": {
+      "id": "A086",
+      "name": "Self Learning / Feedback",
+      "brief": "A reviewer annotating an output with a concise correction and supporting example.",
+      "action": "Rework"
+    },
+    "A087": {
+      "id": "A087",
+      "name": "Self Learning / Validation",
+      "brief": "A before-and-after test comparison with expected outputs and a review gate.",
+      "action": "Rework"
+    },
+    "A088": {
+      "id": "A088",
+      "name": "Self Learning / Tracking",
+      "brief": "A trend panel comparing reviewed outcomes across successive workflow versions.",
+      "action": "Rework"
+    },
+    "A089": {
+      "id": "A089",
+      "name": "Self Learning / Team",
+      "brief": "A team review queue with owners, discussion and the next improvement action.",
+      "action": "Rework"
+    },
+    "A090": {
+      "id": "A090",
+      "name": "Evaluations / Accuracy",
+      "brief": "An evaluation view drilling from task result to step result to one extracted field.",
+      "action": "Rework"
+    },
+    "A091": {
+      "id": "A091",
+      "name": "Evaluations / Benchmarks",
+      "brief": "A human-reviewed reference answer compared side by side with an agent output.",
+      "action": "Rework"
+    },
+    "A092": {
+      "id": "A092",
+      "name": "Evaluations / Retry",
+      "brief": "A failed step branching to a bounded retry or an escalation to a person.",
+      "action": "Rework"
+    },
+    "A093": {
+      "id": "A093",
+      "name": "Evaluations / Criteria",
+      "brief": "A rubric editor listing required fields and business rules beside a sample result.",
+      "action": "Rework"
+    },
+    "A094": {
+      "id": "A094",
+      "name": "Evaluations / Datasets",
+      "brief": "A test case library containing typical inputs and edge cases with expected outcomes.",
+      "action": "Rework"
+    },
+    "A095": {
+      "id": "A095",
+      "name": "Evaluations / Feedback",
+      "brief": "A flagged evaluation linked to reviewer feedback and a proposed workflow change.",
+      "action": "Rework"
+    },
+    "A096": {
+      "id": "A096",
+      "name": "Evaluations / Dashboards",
+      "brief": "An evaluation dashboard combining reviewed accuracy, unresolved issues and outcome quality.",
+      "action": "Rework"
+    },
+    "A097": {
+      "id": "A097",
+      "name": "Evaluations / Reporting",
+      "brief": "A review report combining a small trend, example outcomes and their source evidence.",
+      "action": "Rework"
+    },
+    "A098": {
+      "id": "A098",
+      "name": "Analytics and Observability / Performance",
+      "brief": "A workflow dashboard showing run volume, duration and a queue of exceptions.",
+      "action": "Rework"
+    },
+    "A099": {
+      "id": "A099",
+      "name": "Analytics and Observability / Accuracy",
+      "brief": "A result investigation drilling down to a flagged field and its original source.",
+      "action": "Rework"
+    },
+    "A100": {
+      "id": "A100",
+      "name": "Analytics and Observability / Traces",
+      "brief": "An execution trace with ordered agent and tool spans and one expanded handoff.",
+      "action": "Rework"
+    },
+    "A101": {
+      "id": "A101",
+      "name": "Analytics and Observability / Logs",
+      "brief": "A searchable log view correlated to a selected workflow run and event timeline.",
+      "action": "Rework"
+    },
+    "A102": {
+      "id": "A102",
+      "name": "Analytics and Observability / Costs",
+      "brief": "A resource breakdown by model and workflow with usage and cost categories.",
+      "action": "Rework"
+    },
+    "A103": {
+      "id": "A103",
+      "name": "Analytics and Observability / Learning",
+      "brief": "A version comparison showing reviewed outcomes before and after a correction.",
+      "action": "Rework"
+    },
+    "A104": {
+      "id": "A104",
+      "name": "Analytics and Observability / Fleet",
+      "brief": "An agent fleet grid showing role, current status and tasks needing attention.",
+      "action": "Rework"
+    },
+    "A105": {
+      "id": "A105",
+      "name": "Analytics and Observability / Metrics",
+      "brief": "A reporting panel mapping selected operational metrics into a shareable dashboard.",
+      "action": "Rework"
+    },
+    "A106": {
+      "id": "A106",
+      "name": "Deployment Options / Cloud",
+      "brief": "A hosted environment overview showing the application, managed services and team access boundary.",
+      "action": "Rework"
+    },
+    "A107": {
+      "id": "A107",
+      "name": "Deployment Options / Private",
+      "brief": "A dedicated environment architecture enclosed within a clearly labeled private boundary.",
+      "action": "Rework"
+    },
+    "A108": {
+      "id": "A108",
+      "name": "Deployment Options / On Premise",
+      "brief": "An on-premise architecture with infrastructure ownership and operational responsibilities labeled.",
+      "action": "Rework"
+    },
+    "A109": {
+      "id": "A109",
+      "name": "Deployment Options / Models",
+      "brief": "A model access chooser connecting approved providers to the deployment environment.",
+      "action": "Rework"
+    },
+    "A110": {
+      "id": "A110",
+      "name": "Deployment Options / Regions",
+      "brief": "A regional deployment map with a selected data location and defined storage boundary.",
+      "action": "Rework"
+    },
+    "A111": {
+      "id": "A111",
+      "name": "Deployment Options / Migration",
+      "brief": "A staged migration path from source environment through validation to the destination.",
+      "action": "Rework"
+    },
+    "A112": {
+      "id": "A112",
+      "name": "Deployment Options / Governance",
+      "brief": "An environment policy panel with roles, access boundaries and review controls.",
+      "action": "Rework"
+    },
+    "A113": {
+      "id": "A113",
+      "name": "Deployment Options / Support",
+      "brief": "A rollout checklist assigning infrastructure, security and operational tasks to team owners.",
+      "action": "Rework"
+    },
+    "A114": {
+      "id": "A114",
+      "name": "Security and Compliance / Compliance",
+      "brief": "An evidence library with policy and review documents grouped for assessment. Avoid unverified certification badges.",
+      "action": "Rework"
+    },
+    "A115": {
+      "id": "A115",
+      "name": "Security and Compliance / Privacy",
+      "brief": "A data-flow diagram showing collection, processing, storage and controlled sharing boundaries.",
+      "action": "Rework"
+    },
+    "A116": {
+      "id": "A116",
+      "name": "Security and Compliance / Data",
+      "brief": "A data-handling panel showing retention, deletion and storage settings.",
+      "action": "Rework"
+    },
+    "A117": {
+      "id": "A117",
+      "name": "Security and Compliance / Access",
+      "brief": "A role-and-permission matrix with a scoped access drawer and an approval step.",
+      "action": "Rework"
+    },
+    "A118": {
+      "id": "A118",
+      "name": "Security and Compliance / Audit",
+      "brief": "An audit timeline showing actor, action, timestamp and the affected record.",
+      "action": "Rework"
+    },
+    "A119": {
+      "id": "A119",
+      "name": "Security and Compliance / Encryption",
+      "brief": "A data-path diagram marking transport and storage protection review points.",
+      "action": "Rework"
+    },
+    "A120": {
+      "id": "A120",
+      "name": "Security and Compliance / Ai Security",
+      "brief": "An agent boundary view showing allowed inputs, scoped tools and restricted actions.",
+      "action": "Rework"
+    },
+    "A121": {
+      "id": "A121",
+      "name": "Security and Compliance / Deployment",
+      "brief": "An infrastructure security diagram separating network, workload and administrative access.",
+      "action": "Rework"
+    }
+  },
+  "pages": {
+    "/platform": {
+      "name": "Platform",
+      "style": "assistant",
+      "hero": {
+        "id": "P01-01",
+        "assetId": "A001"
+      },
+      "overview": {
+        "id": "P01-09",
+        "assetId": "A009"
+      },
+      "capability": null,
+      "cards": [
+        {
+          "id": "P01-02",
+          "assetId": "A002"
+        },
+        {
+          "id": "P01-03",
+          "assetId": "A003"
+        },
+        {
+          "id": "P01-04",
+          "assetId": "A004"
+        },
+        {
+          "id": "P01-05",
+          "assetId": "A005"
+        },
+        {
+          "id": "P01-06",
+          "assetId": "A006"
+        },
+        {
+          "id": "P01-07",
+          "assetId": "A007"
+        },
+        {
+          "id": "P01-08",
+          "assetId": "A008"
+        }
+      ],
+      "details": {},
+      "related": {
+        "Integrations": {
+          "id": "P01-10",
+          "assetId": "A006"
+        },
+        "Agentic Workflows": {
+          "id": "P01-11",
+          "assetId": "A010"
+        },
+        "Agent OS": {
+          "id": "P01-12",
+          "assetId": "A011"
+        },
+        "AI Agents": {
+          "id": "P01-13",
+          "assetId": "A012"
+        },
+        "Agent Studio": {
+          "id": "P01-14",
+          "assetId": "A013"
+        }
+      }
+    },
+    "/integrations": {
+      "name": "Integrations",
+      "style": "scheduling",
+      "hero": {
+        "id": "P02-01",
+        "assetId": "A014"
+      },
+      "overview": null,
+      "capability": null,
+      "cards": [],
+      "details": {},
+      "related": {
+        "Platform": {
+          "id": "P02-02",
+          "assetId": "A015"
+        },
+        "Agentic Workflows": {
+          "id": "P02-03",
+          "assetId": "A010"
+        },
+        "Agent OS": {
+          "id": "P02-04",
+          "assetId": "A011"
+        },
+        "AI Agents": {
+          "id": "P02-05",
+          "assetId": "A012"
+        },
+        "Agent Studio": {
+          "id": "P02-06",
+          "assetId": "A013"
+        }
+      }
+    },
+    "/products/agentic-workflows": {
+      "name": "Agentic Workflows",
+      "style": "notetaker",
+      "hero": {
+        "id": "P03-01",
+        "assetId": "A016"
+      },
+      "overview": {
+        "id": "P03-03",
+        "assetId": "A018"
+      },
+      "capability": {
+        "id": "P03-02",
+        "assetId": "A017"
+      },
+      "cards": [
+        {
+          "id": "P03-04",
+          "assetId": "A019"
+        },
+        {
+          "id": "P03-05",
+          "assetId": "A020"
+        },
+        {
+          "id": "P03-06",
+          "assetId": "A021"
+        }
+      ],
+      "details": {
+        "workflow-builder": {
+          "id": "P03-07",
+          "assetId": "A017"
+        },
+        "triggers-and-conditions": {
+          "id": "P03-08",
+          "assetId": "A022"
+        },
+        "activity-overview": {
+          "id": "P03-09",
+          "assetId": "A023"
+        },
+        "workflow-history": {
+          "id": "P03-10",
+          "assetId": "A024"
+        }
+      },
+      "related": {
+        "Platform": {
+          "id": "P03-11",
+          "assetId": "A015"
+        },
+        "Integrations": {
+          "id": "P03-12",
+          "assetId": "A006"
+        },
+        "Agent OS": {
+          "id": "P03-13",
+          "assetId": "A011"
+        },
+        "AI Agents": {
+          "id": "P03-14",
+          "assetId": "A012"
+        },
+        "Agent Studio": {
+          "id": "P03-15",
+          "assetId": "A013"
+        }
+      }
+    },
+    "/products/agent-os": {
+      "name": "Agent OS",
+      "style": "contacts",
+      "hero": {
+        "id": "P04-01",
+        "assetId": "A025"
+      },
+      "overview": {
+        "id": "P04-11",
+        "assetId": "A009"
+      },
+      "capability": {
+        "id": "P04-02",
+        "assetId": "A026"
+      },
+      "cards": [
+        {
+          "id": "P04-03",
+          "assetId": "A026"
+        },
+        {
+          "id": "P04-04",
+          "assetId": "A027"
+        },
+        {
+          "id": "P04-05",
+          "assetId": "A028"
+        },
+        {
+          "id": "P04-06",
+          "assetId": "A029"
+        },
+        {
+          "id": "P04-07",
+          "assetId": "A030"
+        },
+        {
+          "id": "P04-08",
+          "assetId": "A031"
+        },
+        {
+          "id": "P04-09",
+          "assetId": "A032"
+        },
+        {
+          "id": "P04-10",
+          "assetId": "A033"
+        }
+      ],
+      "details": {
+        "graph-based-execution": {
+          "id": "P04-12",
+          "assetId": "A026"
+        },
+        "unified-building-blocks": {
+          "id": "P04-13",
+          "assetId": "A027"
+        },
+        "multi-agent-orchestration": {
+          "id": "P04-14",
+          "assetId": "A028"
+        },
+        "review-and-iteration": {
+          "id": "P04-15",
+          "assetId": "A029"
+        },
+        "evaluation-framework": {
+          "id": "P04-16",
+          "assetId": "A030"
+        },
+        "human-in-the-loop": {
+          "id": "P04-17",
+          "assetId": "A031"
+        },
+        "model-flexibility": {
+          "id": "P04-18",
+          "assetId": "A032"
+        },
+        "memory-system": {
+          "id": "P04-19",
+          "assetId": "A033"
+        }
+      },
+      "related": {
+        "Platform": {
+          "id": "P04-20",
+          "assetId": "A015"
+        },
+        "Integrations": {
+          "id": "P04-21",
+          "assetId": "A006"
+        },
+        "Agentic Workflows": {
+          "id": "P04-22",
+          "assetId": "A010"
+        },
+        "AI Agents": {
+          "id": "P04-23",
+          "assetId": "A012"
+        },
+        "Agent Studio": {
+          "id": "P04-24",
+          "assetId": "A013"
+        }
+      }
+    },
+    "/products/ai-agents": {
+      "name": "AI Agents",
+      "style": "payments",
+      "hero": {
+        "id": "P05-01",
+        "assetId": "A034"
+      },
+      "overview": {
+        "id": "P05-11",
+        "assetId": "A043"
+      },
+      "capability": {
+        "id": "P05-02",
+        "assetId": "A035"
+      },
+      "cards": [
+        {
+          "id": "P05-03",
+          "assetId": "A035"
+        },
+        {
+          "id": "P05-04",
+          "assetId": "A036"
+        },
+        {
+          "id": "P05-05",
+          "assetId": "A037"
+        },
+        {
+          "id": "P05-06",
+          "assetId": "A038"
+        },
+        {
+          "id": "P05-07",
+          "assetId": "A039"
+        },
+        {
+          "id": "P05-08",
+          "assetId": "A040"
+        },
+        {
+          "id": "P05-09",
+          "assetId": "A041"
+        },
+        {
+          "id": "P05-10",
+          "assetId": "A042"
+        }
+      ],
+      "details": {
+        "problem-solver": {
+          "id": "P05-12",
+          "assetId": "A035"
+        },
+        "intelligent-planning": {
+          "id": "P05-13",
+          "assetId": "A036"
+        },
+        "agentic-execution": {
+          "id": "P05-14",
+          "assetId": "A038"
+        },
+        "integrations-tools": {
+          "id": "P05-15",
+          "assetId": "A037"
+        },
+        "agent-character": {
+          "id": "P05-16",
+          "assetId": "A039"
+        },
+        "templates": {
+          "id": "P05-17",
+          "assetId": "A040"
+        },
+        "learning-agent": {
+          "id": "P05-18",
+          "assetId": "A041"
+        },
+        "human-in-the-loop": {
+          "id": "P05-19",
+          "assetId": "A042"
+        }
+      },
+      "related": {
+        "Platform": {
+          "id": "P05-20",
+          "assetId": "A015"
+        },
+        "Integrations": {
+          "id": "P05-21",
+          "assetId": "A006"
+        },
+        "Agentic Workflows": {
+          "id": "P05-22",
+          "assetId": "A010"
+        },
+        "Agent OS": {
+          "id": "P05-23",
+          "assetId": "A011"
+        },
+        "Agent Studio": {
+          "id": "P05-24",
+          "assetId": "A013"
+        }
+      }
+    },
+    "/products/agent-studio": {
+      "name": "Agent Studio",
+      "style": "assistant",
+      "hero": {
+        "id": "P06-01",
+        "assetId": "A001"
+      },
+      "overview": {
+        "id": "P06-11",
+        "assetId": "A009"
+      },
+      "capability": {
+        "id": "P06-02",
+        "assetId": "A044"
+      },
+      "cards": [
+        {
+          "id": "P06-03",
+          "assetId": "A044"
+        },
+        {
+          "id": "P06-04",
+          "assetId": "A045"
+        },
+        {
+          "id": "P06-05",
+          "assetId": "A046"
+        },
+        {
+          "id": "P06-06",
+          "assetId": "A047"
+        },
+        {
+          "id": "P06-07",
+          "assetId": "A048"
+        },
+        {
+          "id": "P06-08",
+          "assetId": "A049"
+        },
+        {
+          "id": "P06-09",
+          "assetId": "A050"
+        },
+        {
+          "id": "P06-10",
+          "assetId": "A051"
+        }
+      ],
+      "details": {
+        "creation-paths": {
+          "id": "P06-12",
+          "assetId": "A044"
+        },
+        "visual-builder": {
+          "id": "P06-13",
+          "assetId": "A046"
+        },
+        "connectors": {
+          "id": "P06-14",
+          "assetId": "A045"
+        },
+        "templates": {
+          "id": "P06-15",
+          "assetId": "A047"
+        },
+        "testing": {
+          "id": "P06-16",
+          "assetId": "A048"
+        },
+        "debugging": {
+          "id": "P06-17",
+          "assetId": "A049"
+        },
+        "learning": {
+          "id": "P06-18",
+          "assetId": "A050"
+        },
+        "publish": {
+          "id": "P06-19",
+          "assetId": "A051"
+        }
+      },
+      "related": {
+        "Platform": {
+          "id": "P06-20",
+          "assetId": "A015"
+        },
+        "Integrations": {
+          "id": "P06-21",
+          "assetId": "A006"
+        },
+        "Agentic Workflows": {
+          "id": "P06-22",
+          "assetId": "A010"
+        },
+        "Agent OS": {
+          "id": "P06-23",
+          "assetId": "A011"
+        },
+        "AI Agents": {
+          "id": "P06-24",
+          "assetId": "A012"
+        }
+      }
+    },
+    "/skills": {
+      "name": "Agent Skills",
+      "style": "scheduling",
+      "hero": {
+        "id": "P07-01",
+        "assetId": "A014"
+      },
+      "overview": null,
+      "capability": null,
+      "cards": [],
+      "details": {},
+      "related": {
+        "Platform": {
+          "id": "P07-02",
+          "assetId": "A015"
+        },
+        "Integrations": {
+          "id": "P07-03",
+          "assetId": "A006"
+        },
+        "Agentic Workflows": {
+          "id": "P07-04",
+          "assetId": "A010"
+        },
+        "Agent OS": {
+          "id": "P07-05",
+          "assetId": "A011"
+        },
+        "AI Agents": {
+          "id": "P07-06",
+          "assetId": "A012"
+        }
+      }
+    },
+    "/files-and-documents": {
+      "name": "Files & Documents",
+      "style": "notetaker",
+      "hero": {
+        "id": "P08-01",
+        "assetId": "A016"
+      },
+      "overview": {
+        "id": "P08-03",
+        "assetId": "A053"
+      },
+      "capability": {
+        "id": "P08-02",
+        "assetId": "A052"
+      },
+      "cards": [
+        {
+          "id": "P08-04",
+          "assetId": "A054"
+        },
+        {
+          "id": "P08-05",
+          "assetId": "A055"
+        },
+        {
+          "id": "P08-06",
+          "assetId": "A056"
+        }
+      ],
+      "details": {
+        "file-uploads": {
+          "id": "P08-07",
+          "assetId": "A052"
+        },
+        "file-filters": {
+          "id": "P08-08",
+          "assetId": "A057"
+        },
+        "library-search": {
+          "id": "P08-09",
+          "assetId": "A058"
+        },
+        "file-details": {
+          "id": "P08-10",
+          "assetId": "A059"
+        }
+      },
+      "related": {
+        "Platform": {
+          "id": "P08-11",
+          "assetId": "A015"
+        },
+        "Integrations": {
+          "id": "P08-12",
+          "assetId": "A006"
+        },
+        "Agentic Workflows": {
+          "id": "P08-13",
+          "assetId": "A010"
+        },
+        "Agent OS": {
+          "id": "P08-14",
+          "assetId": "A011"
+        },
+        "AI Agents": {
+          "id": "P08-15",
+          "assetId": "A012"
+        }
+      }
+    },
+    "/features/website": {
+      "name": "AI Website Builder",
+      "style": "contacts",
+      "hero": {
+        "id": "P09-01",
+        "assetId": "A025"
+      },
+      "overview": {
+        "id": "P09-06",
+        "assetId": "A064"
+      },
+      "capability": {
+        "id": "P09-02",
+        "assetId": "A060"
+      },
+      "cards": [
+        {
+          "id": "P09-03",
+          "assetId": "A061"
+        },
+        {
+          "id": "P09-04",
+          "assetId": "A062"
+        },
+        {
+          "id": "P09-05",
+          "assetId": "A063"
+        }
+      ],
+      "details": {
+        "website-builder": {
+          "id": "P09-07",
+          "assetId": "A060"
+        },
+        "template-gallery": {
+          "id": "P09-08",
+          "assetId": "A065"
+        },
+        "resident-access": {
+          "id": "P09-09",
+          "assetId": "A066"
+        },
+        "property-listings": {
+          "id": "P09-10",
+          "assetId": "A067"
+        }
+      },
+      "related": {
+        "Platform": {
+          "id": "P09-11",
+          "assetId": "A015"
+        },
+        "Integrations": {
+          "id": "P09-12",
+          "assetId": "A006"
+        },
+        "Agentic Workflows": {
+          "id": "P09-13",
+          "assetId": "A010"
+        },
+        "Agent OS": {
+          "id": "P09-14",
+          "assetId": "A011"
+        },
+        "AI Agents": {
+          "id": "P09-15",
+          "assetId": "A012"
+        }
+      }
+    },
+    "/products/databases": {
+      "name": "Databases",
+      "style": "payments",
+      "hero": {
+        "id": "P10-01",
+        "assetId": "A034"
+      },
+      "overview": {
+        "id": "P10-08",
+        "assetId": "A073"
+      },
+      "capability": {
+        "id": "P10-02",
+        "assetId": "A068"
+      },
+      "cards": [
+        {
+          "id": "P10-03",
+          "assetId": "A068"
+        },
+        {
+          "id": "P10-04",
+          "assetId": "A069"
+        },
+        {
+          "id": "P10-05",
+          "assetId": "A070"
+        },
+        {
+          "id": "P10-06",
+          "assetId": "A071"
+        },
+        {
+          "id": "P10-07",
+          "assetId": "A072"
+        }
+      ],
+      "details": {
+        "agentic-rag": {
+          "id": "P10-09",
+          "assetId": "A068"
+        },
+        "all-file-types": {
+          "id": "P10-10",
+          "assetId": "A070"
+        },
+        "databases": {
+          "id": "P10-11",
+          "assetId": "A072"
+        },
+        "agent-context": {
+          "id": "P10-12",
+          "assetId": "A071"
+        },
+        "retrieval": {
+          "id": "P10-13",
+          "assetId": "A069"
+        }
+      },
+      "related": {
+        "Platform": {
+          "id": "P10-14",
+          "assetId": "A015"
+        },
+        "Integrations": {
+          "id": "P10-15",
+          "assetId": "A006"
+        },
+        "Agentic Workflows": {
+          "id": "P10-16",
+          "assetId": "A010"
+        },
+        "Agent OS": {
+          "id": "P10-17",
+          "assetId": "A011"
+        },
+        "AI Agents": {
+          "id": "P10-18",
+          "assetId": "A012"
+        }
+      }
+    },
+    "/platform/agentic-automation": {
+      "name": "Agentic Automation",
+      "style": "assistant",
+      "hero": {
+        "id": "P11-01",
+        "assetId": "A001"
+      },
+      "overview": null,
+      "capability": {
+        "id": "P11-02",
+        "assetId": "A074"
+      },
+      "cards": [
+        {
+          "id": "P11-03",
+          "assetId": "A074"
+        },
+        {
+          "id": "P11-04",
+          "assetId": "A075"
+        },
+        {
+          "id": "P11-05",
+          "assetId": "A076"
+        },
+        {
+          "id": "P11-06",
+          "assetId": "A077"
+        },
+        {
+          "id": "P11-07",
+          "assetId": "A078"
+        },
+        {
+          "id": "P11-08",
+          "assetId": "A079"
+        },
+        {
+          "id": "P11-09",
+          "assetId": "A080"
+        },
+        {
+          "id": "P11-10",
+          "assetId": "A081"
+        }
+      ],
+      "details": {
+        "reasoning": {
+          "id": "P11-11",
+          "assetId": "A074"
+        },
+        "variety": {
+          "id": "P11-12",
+          "assetId": "A075"
+        },
+        "integrations": {
+          "id": "P11-13",
+          "assetId": "A076"
+        },
+        "learning": {
+          "id": "P11-14",
+          "assetId": "A077"
+        },
+        "evaluations": {
+          "id": "P11-15",
+          "assetId": "A078"
+        },
+        "oversight": {
+          "id": "P11-16",
+          "assetId": "A079"
+        },
+        "orchestration": {
+          "id": "P11-17",
+          "assetId": "A080"
+        },
+        "operations": {
+          "id": "P11-18",
+          "assetId": "A081"
+        }
+      },
+      "related": {
+        "Platform": {
+          "id": "P11-19",
+          "assetId": "A015"
+        },
+        "Integrations": {
+          "id": "P11-20",
+          "assetId": "A006"
+        },
+        "Agentic Workflows": {
+          "id": "P11-21",
+          "assetId": "A010"
+        },
+        "Agent OS": {
+          "id": "P11-22",
+          "assetId": "A011"
+        },
+        "AI Agents": {
+          "id": "P11-23",
+          "assetId": "A012"
+        }
+      }
+    },
+    "/platform/self-learning": {
+      "name": "Self Learning",
+      "style": "scheduling",
+      "hero": {
+        "id": "P12-01",
+        "assetId": "A014"
+      },
+      "overview": null,
+      "capability": {
+        "id": "P12-02",
+        "assetId": "A082"
+      },
+      "cards": [
+        {
+          "id": "P12-03",
+          "assetId": "A082"
+        },
+        {
+          "id": "P12-04",
+          "assetId": "A083"
+        },
+        {
+          "id": "P12-05",
+          "assetId": "A084"
+        },
+        {
+          "id": "P12-06",
+          "assetId": "A085"
+        },
+        {
+          "id": "P12-07",
+          "assetId": "A086"
+        },
+        {
+          "id": "P12-08",
+          "assetId": "A087"
+        },
+        {
+          "id": "P12-09",
+          "assetId": "A088"
+        },
+        {
+          "id": "P12-10",
+          "assetId": "A089"
+        }
+      ],
+      "details": {
+        "hub": {
+          "id": "P12-11",
+          "assetId": "A082"
+        },
+        "process": {
+          "id": "P12-12",
+          "assetId": "A083"
+        },
+        "domain": {
+          "id": "P12-13",
+          "assetId": "A084"
+        },
+        "correction": {
+          "id": "P12-14",
+          "assetId": "A085"
+        },
+        "feedback": {
+          "id": "P12-15",
+          "assetId": "A086"
+        },
+        "validation": {
+          "id": "P12-16",
+          "assetId": "A087"
+        },
+        "tracking": {
+          "id": "P12-17",
+          "assetId": "A088"
+        },
+        "team": {
+          "id": "P12-18",
+          "assetId": "A089"
+        }
+      },
+      "related": {
+        "Platform": {
+          "id": "P12-19",
+          "assetId": "A015"
+        },
+        "Integrations": {
+          "id": "P12-20",
+          "assetId": "A006"
+        },
+        "Agentic Workflows": {
+          "id": "P12-21",
+          "assetId": "A010"
+        },
+        "Agent OS": {
+          "id": "P12-22",
+          "assetId": "A011"
+        },
+        "AI Agents": {
+          "id": "P12-23",
+          "assetId": "A012"
+        }
+      }
+    },
+    "/platform/evaluations": {
+      "name": "Evaluations",
+      "style": "notetaker",
+      "hero": {
+        "id": "P13-01",
+        "assetId": "A016"
+      },
+      "overview": null,
+      "capability": {
+        "id": "P13-02",
+        "assetId": "A090"
+      },
+      "cards": [
+        {
+          "id": "P13-03",
+          "assetId": "A090"
+        },
+        {
+          "id": "P13-04",
+          "assetId": "A091"
+        },
+        {
+          "id": "P13-05",
+          "assetId": "A092"
+        },
+        {
+          "id": "P13-06",
+          "assetId": "A093"
+        },
+        {
+          "id": "P13-07",
+          "assetId": "A094"
+        },
+        {
+          "id": "P13-08",
+          "assetId": "A095"
+        },
+        {
+          "id": "P13-09",
+          "assetId": "A096"
+        },
+        {
+          "id": "P13-10",
+          "assetId": "A097"
+        }
+      ],
+      "details": {
+        "accuracy": {
+          "id": "P13-11",
+          "assetId": "A090"
+        },
+        "benchmarks": {
+          "id": "P13-12",
+          "assetId": "A091"
+        },
+        "retry": {
+          "id": "P13-13",
+          "assetId": "A092"
+        },
+        "criteria": {
+          "id": "P13-14",
+          "assetId": "A093"
+        },
+        "datasets": {
+          "id": "P13-15",
+          "assetId": "A094"
+        },
+        "feedback": {
+          "id": "P13-16",
+          "assetId": "A095"
+        },
+        "dashboards": {
+          "id": "P13-17",
+          "assetId": "A096"
+        },
+        "reporting": {
+          "id": "P13-18",
+          "assetId": "A097"
+        }
+      },
+      "related": {
+        "Platform": {
+          "id": "P13-19",
+          "assetId": "A015"
+        },
+        "Integrations": {
+          "id": "P13-20",
+          "assetId": "A006"
+        },
+        "Agentic Workflows": {
+          "id": "P13-21",
+          "assetId": "A010"
+        },
+        "Agent OS": {
+          "id": "P13-22",
+          "assetId": "A011"
+        },
+        "AI Agents": {
+          "id": "P13-23",
+          "assetId": "A012"
+        }
+      }
+    },
+    "/platform/analytics-and-observability": {
+      "name": "Analytics and Observability",
+      "style": "contacts",
+      "hero": {
+        "id": "P14-01",
+        "assetId": "A025"
+      },
+      "overview": null,
+      "capability": {
+        "id": "P14-02",
+        "assetId": "A098"
+      },
+      "cards": [
+        {
+          "id": "P14-03",
+          "assetId": "A098"
+        },
+        {
+          "id": "P14-04",
+          "assetId": "A099"
+        },
+        {
+          "id": "P14-05",
+          "assetId": "A100"
+        },
+        {
+          "id": "P14-06",
+          "assetId": "A101"
+        },
+        {
+          "id": "P14-07",
+          "assetId": "A102"
+        },
+        {
+          "id": "P14-08",
+          "assetId": "A103"
+        },
+        {
+          "id": "P14-09",
+          "assetId": "A104"
+        },
+        {
+          "id": "P14-10",
+          "assetId": "A105"
+        }
+      ],
+      "details": {
+        "performance": {
+          "id": "P14-11",
+          "assetId": "A098"
+        },
+        "accuracy": {
+          "id": "P14-12",
+          "assetId": "A099"
+        },
+        "traces": {
+          "id": "P14-13",
+          "assetId": "A100"
+        },
+        "logs": {
+          "id": "P14-14",
+          "assetId": "A101"
+        },
+        "costs": {
+          "id": "P14-15",
+          "assetId": "A102"
+        },
+        "learning": {
+          "id": "P14-16",
+          "assetId": "A103"
+        },
+        "fleet": {
+          "id": "P14-17",
+          "assetId": "A104"
+        },
+        "metrics": {
+          "id": "P14-18",
+          "assetId": "A105"
+        }
+      },
+      "related": {
+        "Platform": {
+          "id": "P14-19",
+          "assetId": "A015"
+        },
+        "Integrations": {
+          "id": "P14-20",
+          "assetId": "A006"
+        },
+        "Agentic Workflows": {
+          "id": "P14-21",
+          "assetId": "A010"
+        },
+        "Agent OS": {
+          "id": "P14-22",
+          "assetId": "A011"
+        },
+        "AI Agents": {
+          "id": "P14-23",
+          "assetId": "A012"
+        }
+      }
+    },
+    "/platform/deployment-options": {
+      "name": "Deployment Options",
+      "style": "payments",
+      "hero": {
+        "id": "P15-01",
+        "assetId": "A034"
+      },
+      "overview": null,
+      "capability": {
+        "id": "P15-02",
+        "assetId": "A106"
+      },
+      "cards": [
+        {
+          "id": "P15-03",
+          "assetId": "A106"
+        },
+        {
+          "id": "P15-04",
+          "assetId": "A107"
+        },
+        {
+          "id": "P15-05",
+          "assetId": "A108"
+        },
+        {
+          "id": "P15-06",
+          "assetId": "A109"
+        },
+        {
+          "id": "P15-07",
+          "assetId": "A110"
+        },
+        {
+          "id": "P15-08",
+          "assetId": "A111"
+        },
+        {
+          "id": "P15-09",
+          "assetId": "A112"
+        },
+        {
+          "id": "P15-10",
+          "assetId": "A113"
+        }
+      ],
+      "details": {
+        "cloud": {
+          "id": "P15-11",
+          "assetId": "A106"
+        },
+        "private": {
+          "id": "P15-12",
+          "assetId": "A107"
+        },
+        "on-premise": {
+          "id": "P15-13",
+          "assetId": "A108"
+        },
+        "models": {
+          "id": "P15-14",
+          "assetId": "A109"
+        },
+        "regions": {
+          "id": "P15-15",
+          "assetId": "A110"
+        },
+        "migration": {
+          "id": "P15-16",
+          "assetId": "A111"
+        },
+        "governance": {
+          "id": "P15-17",
+          "assetId": "A112"
+        },
+        "support": {
+          "id": "P15-18",
+          "assetId": "A113"
+        }
+      },
+      "related": {
+        "Platform": {
+          "id": "P15-19",
+          "assetId": "A015"
+        },
+        "Integrations": {
+          "id": "P15-20",
+          "assetId": "A006"
+        },
+        "Agentic Workflows": {
+          "id": "P15-21",
+          "assetId": "A010"
+        },
+        "Agent OS": {
+          "id": "P15-22",
+          "assetId": "A011"
+        },
+        "AI Agents": {
+          "id": "P15-23",
+          "assetId": "A012"
+        }
+      }
+    },
+    "/platform/security-and-compliance": {
+      "name": "Security and Compliance",
+      "style": "assistant",
+      "hero": {
+        "id": "P16-01",
+        "assetId": "A001"
+      },
+      "overview": null,
+      "capability": {
+        "id": "P16-02",
+        "assetId": "A114"
+      },
+      "cards": [
+        {
+          "id": "P16-03",
+          "assetId": "A114"
+        },
+        {
+          "id": "P16-04",
+          "assetId": "A115"
+        },
+        {
+          "id": "P16-05",
+          "assetId": "A116"
+        },
+        {
+          "id": "P16-06",
+          "assetId": "A117"
+        },
+        {
+          "id": "P16-07",
+          "assetId": "A118"
+        },
+        {
+          "id": "P16-08",
+          "assetId": "A119"
+        },
+        {
+          "id": "P16-09",
+          "assetId": "A120"
+        },
+        {
+          "id": "P16-10",
+          "assetId": "A121"
+        }
+      ],
+      "details": {
+        "compliance": {
+          "id": "P16-11",
+          "assetId": "A114"
+        },
+        "privacy": {
+          "id": "P16-12",
+          "assetId": "A115"
+        },
+        "data": {
+          "id": "P16-13",
+          "assetId": "A116"
+        },
+        "access": {
+          "id": "P16-14",
+          "assetId": "A117"
+        },
+        "audit": {
+          "id": "P16-15",
+          "assetId": "A118"
+        },
+        "encryption": {
+          "id": "P16-16",
+          "assetId": "A119"
+        },
+        "ai-security": {
+          "id": "P16-17",
+          "assetId": "A120"
+        },
+        "deployment": {
+          "id": "P16-18",
+          "assetId": "A121"
+        }
+      },
+      "related": {
+        "Platform": {
+          "id": "P16-19",
+          "assetId": "A015"
+        },
+        "Integrations": {
+          "id": "P16-20",
+          "assetId": "A006"
+        },
+        "Agentic Workflows": {
+          "id": "P16-21",
+          "assetId": "A010"
+        },
+        "Agent OS": {
+          "id": "P16-22",
+          "assetId": "A011"
+        },
+        "AI Agents": {
+          "id": "P16-23",
+          "assetId": "A012"
+        }
+      }
+    }
+  }
+}

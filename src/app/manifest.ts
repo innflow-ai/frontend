@@ -14,13 +14,19 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#00AEFF",
     icons: [
       {
+        src: "/app-icon-192.png",
+        sizes: "192x192",
+        type: "image/png",
+        purpose: "any",
+      },
+      {
         src: "/icon.svg",
         sizes: "any",
         type: "image/svg+xml",
       },
       {
         src: "/icon.png",
-        sizes: "64x64",
+        sizes: "96x96",
         type: "image/png",
       },
       {
@@ -29,7 +35,7 @@ export default function manifest(): MetadataRoute.Manifest {
         type: "image/png",
       },
       {
-        src: "/brand/innflow-app-icon.png",
+        src: "/app-icon-512.png",
         sizes: "512x512",
         type: "image/png",
         purpose: "any",

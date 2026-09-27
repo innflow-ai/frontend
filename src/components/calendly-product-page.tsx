@@ -9,6 +9,13 @@ import {
 } from "@/content/product-design-rotation";
 import styles from "./calendly-product-page.module.css";
 import { JsonLd } from "./json-ld";
+import {
+  type ArtworkPlacement,
+  artworkAssets,
+  artworkPages,
+  placementAttributes,
+} from "./product-artwork/inventory";
+import { ProductArtwork } from "./product-artwork/product-artwork";
 import { TrackedLink } from "./tracked-link";
 
 const geist = Geist({
@@ -50,10 +57,24 @@ export type CalendlyPageContent = {
   }[];
 };
 
-function Artwork({ item }: { item: CalendlyFeature }) {
+function Artwork({
+  item,
+  placement,
+  compact = false,
+}: {
+  item: CalendlyFeature;
+  placement?: ArtworkPlacement | null;
+  compact?: boolean;
+}) {
   return (
-    <div className={styles.artwork}>
-      {item.artwork ??
+    <div className={styles.artwork} {...placementAttributes(placement)}>
+      {placement ? (
+        <ProductArtwork
+          assetId={placement.assetId}
+          density={compact ? "compact" : "full"}
+        />
+      ) : (
+        (item.artwork ??
         (item.image ? (
           <Image
             src={item.image.src}
@@ -72,7 +93,8 @@ function Artwork({ item }: { item: CalendlyFeature }) {
               <span key={point}>{point}</span>
             ))}
           </div>
-        ))}
+        )))
+      )}
     </div>
   );
 }
@@ -89,6 +111,7 @@ export function CalendlyProductPage({
   const variant = getProductDesign(content.path);
   if (!variant)
     throw new Error(`No Product navigation design assigned: ${content.path}`);
+  const inventory = artworkPages[content.path];
   const features = content.features ?? [];
   const cards = content.cards ?? [];
   const primary = content.primaryCta ?? {
@@ -112,7 +135,22 @@ export function CalendlyProductPage({
         <span className={styles.eyebrow}>{content.name} in focus</span>
         <h2>{content.intro?.[0]?.title ?? content.title}</h2>
       </div>
-      <div className={styles.spotlightMedia}>{content.heroArtwork}</div>
+      <div
+        className={styles.spotlightMedia}
+        {...placementAttributes(inventory?.overview)}
+      >
+        {inventory?.overview &&
+        artworkAssets[inventory.overview.assetId].action !== "Reuse" ? (
+          <div className={styles.spotlightArtwork}>
+            <ProductArtwork
+              assetId={inventory.overview.assetId}
+              density="wide"
+            />
+          </div>
+        ) : (
+          content.heroArtwork
+        )}
+      </div>
     </section>
   ) : null;
   return (
@@ -128,7 +166,10 @@ export function CalendlyProductPage({
       }
     >
       <header className={styles.hero}>
-        <div className={styles.heroSurface}>
+        <div
+          className={styles.heroSurface}
+          {...placementAttributes(inventory?.hero)}
+        >
           <div className={styles.productTag}>
             <span className={styles.productIcon} aria-hidden="true">
               ✳
@@ -187,7 +228,7 @@ export function CalendlyProductPage({
               ))}
             </div>
           </div>
-          <Artwork item={features[0]} />
+          <Artwork item={features[0]} placement={inventory?.capability} />
         </section>
       )}
 
@@ -230,7 +271,11 @@ export function CalendlyProductPage({
           >
             {cards.map((item, index) => (
               <article className={styles.stepCard} key={item.id}>
-                <Artwork item={item} />
+                <Artwork
+                  item={item}
+                  placement={inventory?.cards[index]}
+                  compact
+                />
                 <span className={styles.stepNumber}>
                   {String(index + 1).padStart(2, "0")}
                 </span>
@@ -264,7 +309,7 @@ export function CalendlyProductPage({
           id={item.id}
           key={item.id}
         >
-          <Artwork item={item} />
+          <Artwork item={item} placement={inventory?.details[item.id]} />
           <div className={styles.detailCopy}>
             <span className={styles.eyebrow}>{item.label ?? content.name}</span>
             <h2>{item.title}</h2>
@@ -328,14 +373,22 @@ export function CalendlyProductPage({
         <div className={styles.relatedRail}>
           {related.map((route) => (
             <Link key={route.path} href={route.path}>
-              <span
+              <div
+                {...placementAttributes(inventory?.related[route.title])}
                 className={styles.relatedImage}
                 style={{
                   backgroundImage: `url(/brand/calendly/${getProductDesign(route.path)}-hero.svg)`,
                 }}
               >
-                <span aria-hidden="true">✳</span>
-              </span>
+                {inventory?.related[route.title] ? (
+                  <ProductArtwork
+                    assetId={inventory.related[route.title].assetId}
+                    density="compact"
+                  />
+                ) : (
+                  <span aria-hidden="true">✳</span>
+                )}
+              </div>
               <h3>
                 {route.title} <span aria-hidden="true">↗</span>
               </h3>

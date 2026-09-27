@@ -45,6 +45,13 @@ export const metadata: Metadata = {
     "Bring conversations, AI agents and everyday workflows into one workspace. Connect your team, tools and knowledge across industries.",
   alternates: { canonical: "/" },
   applicationName: "Innflow",
+  icons: {
+    icon: [
+      { url: "/icon.svg", sizes: "any", type: "image/svg+xml" },
+      { url: "/icon.png", sizes: "96x96", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   authors: [{ name: "Innflow" }],
   creator: "Innflow",
   publisher: "Innflow",

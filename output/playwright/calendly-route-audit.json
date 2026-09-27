@@ -1,0 +1,162 @@
+[
+  {
+    "style": "assistant",
+    "h1": 1,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "duplicateIds": [],
+    "path": "/platform",
+    "status": 200,
+    "overflow": []
+  },
+  {
+    "style": "scheduling",
+    "h1": 1,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "duplicateIds": [],
+    "path": "/integrations",
+    "status": 200,
+    "overflow": []
+  },
+  {
+    "style": "notetaker",
+    "h1": 1,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "duplicateIds": [],
+    "path": "/products/agentic-workflows",
+    "status": 200,
+    "overflow": []
+  },
+  {
+    "style": "contacts",
+    "h1": 1,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "duplicateIds": [],
+    "path": "/products/agent-os",
+    "status": 200,
+    "overflow": []
+  },
+  {
+    "style": "payments",
+    "h1": 1,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "duplicateIds": [],
+    "path": "/products/ai-agents",
+    "status": 200,
+    "overflow": []
+  },
+  {
+    "style": "assistant",
+    "h1": 1,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "duplicateIds": [],
+    "path": "/products/agent-studio",
+    "status": 200,
+    "overflow": []
+  },
+  {
+    "style": "scheduling",
+    "h1": 1,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "duplicateIds": [],
+    "path": "/skills",
+    "status": 200,
+    "overflow": []
+  },
+  {
+    "style": "notetaker",
+    "h1": 1,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "duplicateIds": [],
+    "path": "/files-and-documents",
+    "status": 200,
+    "overflow": []
+  },
+  {
+    "style": "contacts",
+    "h1": 1,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "duplicateIds": [],
+    "path": "/features/website",
+    "status": 200,
+    "overflow": []
+  },
+  {
+    "style": "payments",
+    "h1": 1,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "duplicateIds": [],
+    "path": "/products/databases",
+    "status": 200,
+    "overflow": []
+  },
+  {
+    "style": "assistant",
+    "h1": 1,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "duplicateIds": [],
+    "path": "/platform/agentic-automation",
+    "status": 200,
+    "overflow": []
+  },
+  {
+    "style": "scheduling",
+    "h1": 1,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "duplicateIds": [],
+    "path": "/platform/self-learning",
+    "status": 200,
+    "overflow": []
+  },
+  {
+    "style": "notetaker",
+    "h1": 1,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "duplicateIds": [],
+    "path": "/platform/evaluations",
+    "status": 200,
+    "overflow": []
+  },
+  {
+    "style": "contacts",
+    "h1": 1,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "duplicateIds": [],
+    "path": "/platform/analytics-and-observability",
+    "status": 200,
+    "overflow": []
+  },
+  {
+    "style": "payments",
+    "h1": 1,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "duplicateIds": [],
+    "path": "/platform/deployment-options",
+    "status": 200,
+    "overflow": []
+  },
+  {
+    "style": "assistant",
+    "h1": 1,
+    "brokenImages": [],
+    "missingAnchors": [],
+    "duplicateIds": [],
+    "path": "/platform/security-and-compliance",
+    "status": 200,
+    "overflow": []
+  }
+]

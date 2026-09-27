@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
-import { Breadcrumbs } from "@/components/breadcrumbs";
-import { JsonLd } from "@/components/json-ld";
-import { FaqList, MarketingPage } from "@/components/page-primitives";
+import { CalendlyProductPage } from "@/components/calendly-product-page";
 import { SkillsLibrary } from "@/components/skills-library";
 import { getProductFaqs } from "@/content/product-faqs";
 import { getPageFaqs } from "@/lib/faqs";
@@ -27,31 +25,21 @@ export default async function SkillsIndexPage() {
     "/skills",
     getProductFaqs("skills"),
   );
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faqs.map((item) => ({
-      "@type": "Question",
-      name: item.question,
-      acceptedAnswer: { "@type": "Answer", text: item.answer },
-    })),
-  };
 
   return (
-    <MarketingPage>
-      <section className={styles.hero}>
-        <div className="shell">
-          <Breadcrumbs
-            items={[{ label: "Home", href: "/" }, { label: "Skills" }]}
-          />
-          <h1>Start with a skill. Make it your own.</h1>
-          <p className={styles.heroSubline}>
-            Find a starting point for the work your team repeats. Explore skills
-            for communication, finance, marketing, and property operations, then
-            adapt the tools and review steps to your process.
-          </p>
-        </div>
-      </section>
+    <CalendlyProductPage
+      content={{
+        path: "/skills",
+        name: "Agent Skills",
+        title: "Start with a skill. Make it your own.",
+        description:
+          "Find a starting point for the work your team repeats. Explore skills for communication, finance, marketing, and property operations, then adapt the tools and review steps to your process.",
+        faqs,
+        faqDescription:
+          "What a skill is, how review works, and how skills use the systems you already run.",
+        faqHeading: faqHeading || "Questions about agent skills.",
+      }}
+    >
       <section className={styles.listing}>
         <div className="shell">
           {skills.length === 0 ? (
@@ -63,20 +51,6 @@ export default async function SkillsIndexPage() {
           )}
         </div>
       </section>
-      <section className={`section faq-section ${styles.faq}`} id="faq">
-        <div className="shell faq-layout">
-          <div className="faq-intro">
-            <span className="section-label">FAQ</span>
-            <h2>{faqHeading || "Questions about agent skills."}</h2>
-            <p>
-              What a skill is, how review works, and how skills use the systems
-              you already run.
-            </p>
-          </div>
-          <FaqList items={faqs} />
-        </div>
-      </section>
-      <JsonLd value={faqSchema} />
-    </MarketingPage>
+    </CalendlyProductPage>
   );
 }

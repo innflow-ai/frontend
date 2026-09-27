@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { CalendlyCmsProductPage } from "@/components/calendly-product-adapters";
 import { JsonLd } from "@/components/json-ld";
 import { ProductPage } from "@/components/product-page";
 import { siteConfig } from "@/config/site";
+import { getProductDesign } from "@/content/product-design-rotation";
 import { createPageMetadata } from "@/lib/metadata";
 import { getProductPage, getProductSlugs } from "@/lib/product-pages";
 
@@ -82,7 +84,11 @@ export default async function ProductRoute({ params }: ProductRouteProps) {
           ],
         }}
       />
-      <ProductPage product={product} />
+      {getProductDesign(`/products/${product.slug}`) ? (
+        <CalendlyCmsProductPage product={product} />
+      ) : (
+        <ProductPage product={product} />
+      )}
     </>
   );
 }

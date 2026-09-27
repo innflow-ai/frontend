@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { CalendlyPlatformPage } from "@/components/calendly-product-adapters";
 import { MarketingPage, PageHero } from "@/components/page-primitives";
 import { PlatformDirectory } from "@/components/platform-directory";
 import { PlatformFeaturePage } from "@/components/platform-feature-page";
 import { getPlatformPage, platformPages } from "@/content/platform";
 import { getPlatformDetail } from "@/content/platform-details";
+import { getProductDesign } from "@/content/product-design-rotation";
 import { createPageMetadata } from "@/lib/metadata";
 
 type PlatformRouteProps = { params: Promise<{ slug: string }> };
@@ -32,6 +34,8 @@ export default async function PlatformDetailPage({
   if (!page) notFound();
 
   const detail = getPlatformDetail(slug);
+  if (detail && getProductDesign(`/platform/${slug}`))
+    return <CalendlyPlatformPage page={detail} />;
   if (detail) return <PlatformFeaturePage page={detail} />;
 
   return (

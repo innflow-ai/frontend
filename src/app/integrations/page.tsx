@@ -1,7 +1,5 @@
-import { Breadcrumbs } from "@/components/breadcrumbs";
+import { CalendlyProductPage } from "@/components/calendly-product-page";
 import { IntegrationDirectory } from "@/components/integration-directory";
-import styles from "@/components/integrations.module.css";
-import { MarketingPage } from "@/components/page-primitives";
 import { getIntegrations } from "@/lib/integrations";
 import { createPageMetadata } from "@/lib/metadata";
 export const revalidate = 60;
@@ -14,29 +12,22 @@ export const metadata = createPageMetadata({
 export default async function IntegrationsPage() {
   const items = await getIntegrations();
   return (
-    <MarketingPage>
-      <header className={styles.hero}>
-        <div className="shell">
-          <Breadcrumbs
-            items={[{ label: "Home", href: "/" }, { label: "Integrations" }]}
-          />
-          <span className={styles.eyebrow}>The integration directory</span>
-          <h1>
-            Your tools.
-            <br />
-            <span>One connected workflow.</span>
-          </h1>
-          <p>
-            Explore connections for the tools your team already uses, and the
-            ones we’re planning next.
-          </p>
-          <div className={styles.heroNote}>
-            <span aria-hidden="true">◎</span> Every integration includes its
-            current availability.
-          </div>
-        </div>
-      </header>
+    <CalendlyProductPage
+      content={{
+        path: "/integrations",
+        name: "Integrations",
+        title: "Your tools. One connected workflow.",
+        description:
+          "Explore connections for the tools your team already uses, and the ones we’re planning next.",
+        intro: [
+          {
+            eyebrow: "The integration directory",
+            title: "Every integration includes its current availability.",
+          },
+        ],
+      }}
+    >
       <IntegrationDirectory items={items} />
-    </MarketingPage>
+    </CalendlyProductPage>
   );
 }

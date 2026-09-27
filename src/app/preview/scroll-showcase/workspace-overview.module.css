@@ -347,11 +347,30 @@
     max-width: 100%;
   }
   .artwork {
-    opacity: 0;
+    opacity: 1;
     transition: opacity 240ms ease;
   }
-  .card[data-active="true"] .artwork {
+  .card[data-active="false"] .artwork {
+    left: auto;
+    right: 0;
+    width: 58%;
+    height: 100%;
+    pointer-events: none;
+    mask-image: linear-gradient(to right, transparent 5%, black 100%);
+  }
+  .card[data-active="false"] .activeArt {
     opacity: 1;
+  }
+  .card[data-active="false"] .cardCopy {
+    position: relative;
+    z-index: 1;
+  }
+  .card[data-active="false"] .activeArt > img {
+    object-fit: fill;
+  }
+  .card[data-active="false"] .inactiveArt,
+  .card[data-active="false"] [data-workspace-artwork] {
+    display: none;
   }
   .details li {
     gap: 8px;

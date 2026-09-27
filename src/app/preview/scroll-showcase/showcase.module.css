@@ -36,13 +36,13 @@
   font-size: clamp(40px, 4.5vw, 72px);
   letter-spacing: -0.045em;
   line-height: 1.1;
-  margin: 0 0 24px;
+  margin: 0 0 14px;
 }
 .subheadline {
-  max-width: 640px;
+  max-width: 480px;
   margin: 0 auto;
-  font-size: 18px;
-  line-height: 26px;
+  font-size: 15px;
+  line-height: 22px;
   color: var(--preview-muted);
   text-wrap: balance;
 }
@@ -56,7 +56,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
-  margin-top: 20px;
+  margin-top: 16px;
 }
 .oauthActions a,
 .oauthActions button {
@@ -828,10 +828,11 @@
     font-size: clamp(32px, 9vw, 40px);
   }
   .subheadline {
-    font-size: 16px;
+    font-size: 14px;
+    line-height: 20px;
   }
   .oauthActions {
-    margin-top: 28px;
+    margin-top: 16px;
   }
   .oauthActions a,
   .oauthActions button {
@@ -1028,11 +1029,4 @@
     #3dcfad 73.558%,
     #246a87 100%
   );
-}
-
-.eyebrow {
-  margin: 0 0 16px;
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--preview-muted);
 }

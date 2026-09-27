@@ -256,16 +256,13 @@ export function ScrollShowcase() {
   return (
     <div className={styles.page}>
       <header className={styles.intro}>
-        <p className={styles.eyebrow}>An AI workspace for your team</p>
         <h1>
           Turn conversations
           <br />
           into completed work.
         </h1>
         <p className={styles.subheadline}>
-          Innflow brings customer conversations, AI agents, and team workflows
-          into one workspace. Respond to requests, delegate tasks, and manage
-          follow-ups with the context your team needs.
+          Connect conversations, delegate tasks, and keep work moving.
         </p>
         <div className={styles.oauthActions}>
           <a href={siteConfig.signupUrl}>Get started</a>

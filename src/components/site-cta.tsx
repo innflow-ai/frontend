@@ -2,6 +2,7 @@
 import { usePathname } from "next/navigation";
 import { type FormEvent, useState } from "react";
 import { siteConfig } from "@/config/site";
+import { getProductDesign } from "@/content/product-design-rotation";
 import { usesShowcaseDesign } from "@/lib/showcase-routes";
 import { GoogleCtaContent } from "./google-cta-content";
 import styles from "./site-shell.module.css";
@@ -49,8 +50,8 @@ export function SiteCta() {
     }
   }
 
-  // This preview owns its Figma closing section; other routes retain this CTA.
-  if (usesShowcaseDesign(pathname)) return null;
+  // Showcase and Product designs render their own closing CTA.
+  if (usesShowcaseDesign(pathname) || getProductDesign(pathname)) return null;
 
   return (
     <div className={styles.page}>

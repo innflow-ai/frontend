@@ -3,6 +3,18 @@
 // Pending records require a homepage badge before submission or approval.
 export const launchDirectories = [
   {
+    name: "Bowora",
+    // Add Innflow's via code once Bowora creates the listing.
+    href: "https://bowora.com/",
+    src: "https://bowora.com/api/badge?startup=innflow.ai&theme=light",
+    alt: "Featured on Bowora",
+    width: 210,
+    height: 50,
+    rel: "noopener",
+    status: "pending",
+    source: "https://app.notion.com/37e0ac1bd32e8137b7f3f62173687e21",
+  },
+  {
     name: "ConfettiSaaS",
     href: "https://confettisaas.com/saas/innflow-ai?ref=badge",
     src: "https://confettisaas.com/badge-light.svg",

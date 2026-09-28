@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { LaunchDirectoryMarquee } from "@/components/launch-directory-marquee";
 import { siteConfig } from "@/config/site";
 import { CustomerSupportHours } from "./customer-support-hours";
 import { FooterLegalLinks } from "./footer-legal-links";
@@ -118,6 +119,7 @@ export function SiteFooter() {
             <FooterLegalLinks />
           </nav>
         </div>
+        <LaunchDirectoryMarquee />
       </footer>
     </div>
   );

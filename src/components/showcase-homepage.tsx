@@ -7,7 +7,6 @@ import {
 import styles from "@/app/preview/scroll-showcase/homepage.module.css";
 import { ScrollShowcase } from "@/app/preview/scroll-showcase/scroll-showcase";
 import { WorkspaceOverview } from "@/app/preview/scroll-showcase/workspace-overview";
-import { LaunchDirectoryMarquee } from "@/components/launch-directory-marquee";
 import { ShowcaseTheme } from "@/components/showcase-theme";
 import { getPageTestimonials } from "@/lib/testimonials";
 
@@ -25,7 +24,6 @@ export async function ShowcaseHomepage() {
           previewFallback
         />
         <BaselineConnectedInfrastructure />
-        <LaunchDirectoryMarquee />
         <BaselineClosing />
       </ShowcaseTheme>
     </main>

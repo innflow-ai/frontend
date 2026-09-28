@@ -1,5 +1,7 @@
 .section {
-  padding: 48px 0;
+  margin-top: 32px;
+  border-radius: 24px;
+  padding: 24px 0;
   background: #fcfbf8;
   color: #071a31;
   scroll-margin-top: 100px;
@@ -150,7 +152,7 @@
 
 @media (max-width: 700px) {
   .section {
-    padding: 36px 0;
+    padding: 24px 0;
   }
   .group {
     gap: 20px;

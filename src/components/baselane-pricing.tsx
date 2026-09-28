@@ -1,8 +1,12 @@
 "use client";
-import { ArrowRight as MageArrowRight, ArrowDown as MageArrowDown, Minus as MageMinus, Plus as MagePlus } from '@/components/icons/mage';
-
 
 import { useState } from "react";
+import {
+  ArrowDown as MageArrowDown,
+  ArrowRight as MageArrowRight,
+  Minus as MageMinus,
+  Plus as MagePlus,
+} from "@/components/icons/mage";
 import { TrackedLink } from "@/components/tracked-link";
 import { pricingCatalog } from "@/config/pricing";
 import { siteConfig } from "@/config/site";
@@ -88,17 +92,22 @@ export function BaselanePricing() {
               </p>
               <fieldset className={styles.billing}>
                 <legend className={styles.srOnly}>Billing term</legend>
-                {[false, true].map((option) => (
-                  <label key={String(option)}>
-                    <input
-                      type="radio"
-                      name="billing"
-                      checked={annual === option}
-                      onChange={() => setAnnual(option)}
-                    />
-                    {option ? "Annual plan" : "Monthly"}
-                  </label>
-                ))}
+                <span className={styles.billingLabel} data-active={!annual}>
+                  Monthly
+                </span>
+                <button
+                  type="button"
+                  role="switch"
+                  aria-label="Annual billing"
+                  aria-checked={annual}
+                  className={styles.billingSwitch}
+                  onClick={() => setAnnual((value) => !value)}
+                >
+                  <span className={styles.billingThumb} />
+                </button>
+                <span className={styles.billingLabel} data-active={annual}>
+                  Annual
+                </span>
                 <span className={styles.savings}>Save 15%</span>
               </fieldset>
               <p className={styles.billingNote} aria-live="polite">
@@ -170,7 +179,9 @@ export function BaselanePricing() {
                     }
                   >
                     {index === 3 ? "Talk to sales" : "Get started"}
-                    <span aria-hidden="true"><MageArrowRight size="1em" /></span>
+                    <span aria-hidden="true">
+                      <MageArrowRight size="1em" />
+                    </span>
                   </TrackedLink>
                 </div>
                 <div className={styles.planFeatures}>
@@ -222,7 +233,10 @@ export function BaselanePricing() {
             ))}
           </div>
           <a className={styles.compareLink} href="#compare-features">
-            Compare all features <span aria-hidden="true"><MageArrowDown size="1em" /></span>
+            Compare all features{" "}
+            <span aria-hidden="true">
+              <MageArrowDown size="1em" />
+            </span>
           </a>
         </section>
         <section id="compare-features" className={styles.comparison}>
@@ -256,7 +270,11 @@ export function BaselanePricing() {
               >
                 {group.title}
                 <span aria-hidden="true">
-                  {expanded.includes(group.title) ? <MageMinus size="1em" /> : <MagePlus size="1em" />}
+                  {expanded.includes(group.title) ? (
+                    <MageMinus size="1em" />
+                  ) : (
+                    <MagePlus size="1em" />
+                  )}
                 </span>
               </button>
               <div

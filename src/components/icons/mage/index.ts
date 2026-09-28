@@ -14,6 +14,7 @@ export { CheckCircle } from "./CheckCircle";
 export { Checklist } from "./Checklist";
 export { ChecklistNote } from "./ChecklistNote";
 export { ChevronDown } from "./ChevronDown";
+export { ChevronLeft } from "./ChevronLeft";
 export { ChevronRight } from "./ChevronRight";
 export { Clock } from "./Clock";
 export { ContactBook } from "./ContactBook";

@@ -54,9 +54,11 @@ export default async function IntegrationPage({ params }: Props) {
             <aside className={styles.detailSidebar}>
               <IntegrationLogo item={item} />
               <h2>{item.name}</h2>
-              <span className={styles.badge} data-status={item.status}>
-                {status.label}
-              </span>
+              {item.status !== "planned" && (
+                <span className={styles.badge} data-status={item.status}>
+                  {status.label}
+                </span>
+              )}
               <dl>
                 <dt>Category</dt>
                 <dd>{item.category?.title ?? "Other"}</dd>

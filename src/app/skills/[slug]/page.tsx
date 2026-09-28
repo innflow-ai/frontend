@@ -1,5 +1,5 @@
 
-import { ArrowLeft as MageArrowLeft } from '@/components/icons/mage';
+import { ChevronLeft as MageArrowLeft } from '@/components/icons/mage';
 import {
   PortableText,
   type PortableTextComponents,

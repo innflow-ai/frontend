@@ -92,7 +92,7 @@ describe("EditorialHeader navigation", () => {
       within(navigation).getByRole("link", { name: "Pricing" }),
     ).toHaveAttribute("href", "/pricing");
     expect(
-      within(navigation).getByRole("link", { name: "Log in" }),
+      within(navigation).getByRole("link", { name: "Login" }),
     ).toHaveAttribute("href", "https://app.innflow.ai/login");
     expect(
       screen.queryByRole("link", { name: "Book a demo" }),

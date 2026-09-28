@@ -1,5 +1,5 @@
 
-import { ArrowLeft as MageArrowLeft, ArrowRight as MageArrowRight } from '@/components/icons/mage';
+import { ChevronLeft as MageArrowLeft, ArrowRight as MageArrowRight } from '@/components/icons/mage';
 import { ChevronRight } from "@/components/chevron-right";
 import { legalPolicies } from "@/content/legal";
 import { BaselaneHomepage } from "./baselane-homepage";

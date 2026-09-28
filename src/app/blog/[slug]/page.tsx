@@ -1,5 +1,5 @@
 
-import { ArrowLeft as MageArrowLeft } from '@/components/icons/mage';
+import { ChevronLeft as MageArrowLeft } from '@/components/icons/mage';
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";

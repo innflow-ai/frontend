@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
 import {
-  ArrowLeft,
+  ChevronLeft as ArrowLeft,
   ArrowRight,
   BuildingB as Buildings,
   Home as HouseLine,

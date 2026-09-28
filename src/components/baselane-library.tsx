@@ -2,7 +2,7 @@
 import Image from "next/image";
 import { useRef, useState } from "react";
 import {
-  ArrowLeft,
+  ChevronLeft as ArrowLeft,
   ArrowRight,
   ArrowRight as MageArrowRight,
   Search as MagnifyingGlass,

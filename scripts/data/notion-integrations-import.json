@@ -1,0 +1,3085 @@
+{
+  "source": "https://app.notion.com/3120ac1bd32e81c7b24bd81fa262dad9",
+  "rows": [
+    {
+      "name": "1Password",
+      "categories": [
+        "Authentication"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81e3ab36db046408978f",
+      "copies": 1
+    },
+    {
+      "name": "A2A",
+      "categories": [
+        "Integration Protocol"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8186be49d63a06683b0b",
+      "copies": 1
+    },
+    {
+      "name": "A2A Agent",
+      "categories": [
+        "AI Providers"
+      ],
+      "source": "https://app.notion.com/31f0ac1bd32e8199b3b5dc15e879a195",
+      "copies": 68
+    },
+    {
+      "name": "Affinity",
+      "categories": [
+        "CRM"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81e3bfa6f3d31d547a1a",
+      "copies": 1
+    },
+    {
+      "name": "Agent",
+      "categories": [
+        "Workflow Components"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e813a822cd9e8f83bdfc4",
+      "copies": 1
+    },
+    {
+      "name": "AgentMail",
+      "categories": [
+        "Email"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e817c8fd8d12403229d97",
+      "copies": 1
+    },
+    {
+      "name": "AgentPhone",
+      "categories": [
+        "Communication"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81c3b3adf95f0f454c8e",
+      "copies": 1
+    },
+    {
+      "name": "Agiloft",
+      "categories": [
+        "Productivity"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e811b8d42db785e5d9862",
+      "copies": 1
+    },
+    {
+      "name": "Ahrefs",
+      "categories": [
+        "SEO Tools"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81f6bef1f1ce8b0bb6c6",
+      "copies": 50
+    },
+    {
+      "name": "AI Agent",
+      "categories": [
+        "AI Providers"
+      ],
+      "source": "https://app.notion.com/31f0ac1bd32e81f18a47cbbfb7a85da2",
+      "copies": 68
+    },
+    {
+      "name": "Airtable",
+      "categories": [
+        "Productivity"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8156a5cdc65dab53e4b2",
+      "copies": 3
+    },
+    {
+      "name": "Airweave",
+      "categories": [
+        "Search"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81c78635d6a2f8fc4ab5",
+      "copies": 1
+    },
+    {
+      "name": "Algolia",
+      "categories": [
+        "Search"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e817d9ee2e8fbf19f491d",
+      "copies": 1
+    },
+    {
+      "name": "Amazon DynamoDB",
+      "categories": [
+        "AWS"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8109b405f11978df085b",
+      "copies": 1
+    },
+    {
+      "name": "Amazon RDS",
+      "categories": [
+        "AWS"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81bb8016e03ac4c6c12f",
+      "copies": 1
+    },
+    {
+      "name": "Amazon SQS",
+      "categories": [
+        "AWS"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e813aa1a1e04d51fe1113",
+      "copies": 1
+    },
+    {
+      "name": "Amplitude",
+      "categories": [
+        "Analytics"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81d0914dc9d1f3c199b4",
+      "copies": 1
+    },
+    {
+      "name": "Anthropic",
+      "categories": [
+        "AI Providers"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81d088bced79b87bb436",
+      "copies": 69
+    },
+    {
+      "name": "API",
+      "categories": [
+        "Workflow Components"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e816597bfec6c739d1713",
+      "copies": 1
+    },
+    {
+      "name": "Apify",
+      "categories": [
+        "Automation"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81fb916cec18b0db73de",
+      "copies": 1
+    },
+    {
+      "name": "Apollo",
+      "categories": [
+        "Sales Tools"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e816aacfce2544e4813ca",
+      "copies": 3
+    },
+    {
+      "name": "AppFolio",
+      "categories": [
+        "Property Management"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81c5b830f4c9bbf6cb69",
+      "copies": 1
+    },
+    {
+      "name": "AppWork",
+      "categories": [
+        "Property Management"
+      ],
+      "source": "https://app.notion.com/3d40ac1bd32e81b68f90fa8d08e81e45",
+      "copies": 1
+    },
+    {
+      "name": "ArXiv",
+      "categories": [
+        "Research"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81fe9087ddbf0bf26db9",
+      "copies": 1
+    },
+    {
+      "name": "Asana",
+      "categories": [
+        "Project Management"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e816cb945eb3689d9e2ed",
+      "copies": 1
+    },
+    {
+      "name": "Ashby",
+      "categories": [
+        "Operations"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e8138ac16d0bd6a8440fe",
+      "copies": 1
+    },
+    {
+      "name": "Athena",
+      "categories": [
+        "AWS"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81f99c5ddb7b0159bb20",
+      "copies": 1
+    },
+    {
+      "name": "Attio",
+      "categories": [
+        "CRM"
+      ],
+      "source": "https://app.notion.com/3750ac1bd32e812890e7f7b3810e9075",
+      "copies": 1
+    },
+    {
+      "name": "AWS AppConfig",
+      "categories": [
+        "AWS"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e810eb0b2db4649005ca2",
+      "copies": 1
+    },
+    {
+      "name": "AWS IAM",
+      "categories": [
+        "AWS"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81cda08be2fd4ae1e648",
+      "copies": 1
+    },
+    {
+      "name": "AWS Identity Center",
+      "categories": [
+        "AWS"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e8150b70ae26b85d4742e",
+      "copies": 1
+    },
+    {
+      "name": "AWS Secrets Manager",
+      "categories": [
+        "AWS"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81808b90c03a034ae137",
+      "copies": 1
+    },
+    {
+      "name": "AWS SES",
+      "categories": [
+        "AWS"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81b3931ff9608b5ec6bb",
+      "copies": 1
+    },
+    {
+      "name": "AWS STS",
+      "categories": [
+        "AWS"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e8158a0c7d1d3b9fe573e",
+      "copies": 1
+    },
+    {
+      "name": "AWS Systems Manager",
+      "categories": [
+        "AWS"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e810a8f0cea604315562e",
+      "copies": 1
+    },
+    {
+      "name": "AWS Textract",
+      "categories": [
+        "AWS"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8172993bc7d5dc2a81aa",
+      "copies": 1
+    },
+    {
+      "name": "Azure AD",
+      "categories": [
+        "Authentication"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e818dbfefe0936c392f8b",
+      "copies": 1
+    },
+    {
+      "name": "Azure Data Explorer",
+      "categories": [
+        "Database"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e8187ac27e03e3252a2e8",
+      "copies": 1
+    },
+    {
+      "name": "Azure DevOps",
+      "categories": [
+        "Developer Tools"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e8185b5f2e63a5e1c863f",
+      "copies": 1
+    },
+    {
+      "name": "Baseten",
+      "categories": [
+        "AI Providers"
+      ],
+      "source": "https://app.notion.com/3e80ac1bd32e81599885e4c4f05f4ff0",
+      "copies": 1
+    },
+    {
+      "name": "BCompliant",
+      "categories": [
+        "Property Management"
+      ],
+      "source": "https://app.notion.com/3d40ac1bd32e812aa35dcdd920ecc4c3",
+      "copies": 1
+    },
+    {
+      "name": "BigQuery",
+      "categories": [
+        "Google Cloud"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81738239d661d2d746a1",
+      "copies": 1
+    },
+    {
+      "name": "Bitbucket",
+      "categories": [
+        "Developer Tools"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e818b8e68d0be4d330c6b",
+      "copies": 1
+    },
+    {
+      "name": "Box",
+      "categories": [
+        "Cloud Storage"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81f6a146c66904f88906",
+      "copies": 1
+    },
+    {
+      "name": "Brandfetch",
+      "categories": [
+        "Sales Tools"
+      ],
+      "source": "https://app.notion.com/3e80ac1bd32e817dad41e63256aa1c58",
+      "copies": 1
+    },
+    {
+      "name": "Brex",
+      "categories": [
+        "Payments"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81abb7a1ef6dd659166d",
+      "copies": 1
+    },
+    {
+      "name": "Bright Data",
+      "categories": [
+        "Web Scraping"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e8144a3d5d421e391dd81",
+      "copies": 1
+    },
+    {
+      "name": "Browser Use",
+      "categories": [
+        "Automation"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e8100ab31e472749c01b2",
+      "copies": 1
+    },
+    {
+      "name": "Buffer",
+      "categories": [
+        "Social Media"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e814286e0c8290ff0f9f7",
+      "copies": 1
+    },
+    {
+      "name": "Buildium",
+      "categories": [
+        "Property Management"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e812cbb92e6387eea6acb",
+      "copies": 1
+    },
+    {
+      "name": "Cal.com",
+      "categories": [
+        "Scheduling"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8194acbdc28dd3c56190",
+      "copies": 44
+    },
+    {
+      "name": "Calendly",
+      "categories": [
+        "Scheduling"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81ee8f2ded3f70a8091e",
+      "copies": 45
+    },
+    {
+      "name": "Canva",
+      "categories": [
+        "Productivity"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e818fae37da6ef3f526ba",
+      "copies": 1
+    },
+    {
+      "name": "CB Insights",
+      "categories": [
+        "Sales Tools"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e817abe6ce707675ee894",
+      "copies": 1
+    },
+    {
+      "name": "Chat Trigger",
+      "categories": [
+        "Communication"
+      ],
+      "source": "https://app.notion.com/31f0ac1bd32e814d8230fe846c6415bb",
+      "copies": 68
+    },
+    {
+      "name": "ChatGPT Ads",
+      "categories": [
+        "Sales Tools"
+      ],
+      "source": "https://app.notion.com/3d80ac1bd32e81eb813af70319dde1ff",
+      "copies": 1
+    },
+    {
+      "name": "Circleback",
+      "categories": [
+        "Meetings"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81598bb8d1eb85f753d0",
+      "copies": 1
+    },
+    {
+      "name": "Claude Managed Agents",
+      "categories": [
+        "AI/ML"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81188accdc575f2bc25c",
+      "copies": 1
+    },
+    {
+      "name": "Clay",
+      "categories": [
+        "Sales Tools"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e817fa599faceac924a5e",
+      "copies": 1
+    },
+    {
+      "name": "Clerk",
+      "categories": [
+        "Authentication"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e819c9ba9cf3b678608d6",
+      "copies": 1
+    },
+    {
+      "name": "ClickHouse",
+      "categories": [
+        "Database"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81358d99da0f2edaec88",
+      "copies": 1
+    },
+    {
+      "name": "ClickUp",
+      "categories": [
+        "Project Management"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e814f82f5c82c6bc418c0",
+      "copies": 1
+    },
+    {
+      "name": "Clio",
+      "categories": [
+        "CRM"
+      ],
+      "source": "https://app.notion.com/3d10ac1bd32e817fbccbdbb856a40b0b",
+      "copies": 1
+    },
+    {
+      "name": "Cloudflare",
+      "categories": [
+        "Web Development"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81e880c7d6e915172f1a",
+      "copies": 1
+    },
+    {
+      "name": "CloudFormation",
+      "categories": [
+        "AWS"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e819ebf90d7e68b9d0212",
+      "copies": 1
+    },
+    {
+      "name": "CloudTrail",
+      "categories": [
+        "AWS"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e816db6a5ebd50d9e230b",
+      "copies": 1
+    },
+    {
+      "name": "CloudWatch",
+      "categories": [
+        "AWS"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81949feffa536d4f03e8",
+      "copies": 1
+    },
+    {
+      "name": "Coda",
+      "categories": [
+        "Productivity"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81729f14c79da08ebb93",
+      "copies": 1
+    },
+    {
+      "name": "Code",
+      "categories": [
+        "Utility"
+      ],
+      "source": "https://app.notion.com/31f0ac1bd32e81299fb2e8ee40a149bf",
+      "copies": 40
+    },
+    {
+      "name": "CodePipeline",
+      "categories": [
+        "AWS"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e8195a707e5ccc1d68961",
+      "copies": 1
+    },
+    {
+      "name": "Cohere",
+      "categories": [
+        "AI Providers"
+      ],
+      "source": "https://app.notion.com/3e80ac1bd32e81a0bae7f38e061e8167",
+      "copies": 1
+    },
+    {
+      "name": "Condition",
+      "categories": [
+        "Workflow Components",
+        "Utility"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e814092e8c5bab6a96f4e",
+      "copies": 3
+    },
+    {
+      "name": "Confluence",
+      "categories": [
+        "Atlassian"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8195b52bc2c7859c69b3",
+      "copies": 1
+    },
+    {
+      "name": "Context.dev",
+      "categories": [
+        "Search & Research"
+      ],
+      "source": "https://app.notion.com/3e80ac1bd32e81a4afbecdbda84d8864",
+      "copies": 1
+    },
+    {
+      "name": "Convex",
+      "categories": [
+        "Database"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e810bba06c778fe592d80",
+      "copies": 1
+    },
+    {
+      "name": "CrowdStrike",
+      "categories": [
+        "Authentication"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81bd83b3f628c88c4a4e",
+      "copies": 1
+    },
+    {
+      "name": "Crunchbase",
+      "categories": [
+        "Sales Tools"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e815a978afe33a469975a",
+      "copies": 1
+    },
+    {
+      "name": "CSV Export",
+      "categories": [
+        "Utility"
+      ],
+      "source": "https://app.notion.com/31f0ac1bd32e810e8fd3e12bbb0c68f5",
+      "copies": 40
+    },
+    {
+      "name": "Cursor",
+      "categories": [
+        "Developer Tools"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e812e8f06cf65a5550c59",
+      "copies": 1
+    },
+    {
+      "name": "Dagster",
+      "categories": [
+        "Data Tools"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81bd9778fb9e54fb04e6",
+      "copies": 1
+    },
+    {
+      "name": "Databricks",
+      "categories": [
+        "Data Tools"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e816f8315c3805e8d4f90",
+      "copies": 1
+    },
+    {
+      "name": "Datadog",
+      "categories": [
+        "Monitoring"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8148a41df28ee8d856d3",
+      "copies": 1
+    },
+    {
+      "name": "Datagma",
+      "categories": [
+        "Sales Tools"
+      ],
+      "source": "https://app.notion.com/3e80ac1bd32e81518b74d23894a7c476",
+      "copies": 1
+    },
+    {
+      "name": "Daytona",
+      "categories": [
+        "Developer Tools"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81aa84e7ca1fb29c54bc",
+      "copies": 1
+    },
+    {
+      "name": "DeepSeek",
+      "categories": [
+        "AI Providers"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81ef9711c4fd13f363c7",
+      "copies": 69
+    },
+    {
+      "name": "Devin",
+      "categories": [
+        "Developer Tools"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81e5b57bf17ccca9861d",
+      "copies": 1
+    },
+    {
+      "name": "Discord",
+      "categories": [
+        "Communication"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8131af0be01f27142ded",
+      "copies": 3
+    },
+    {
+      "name": "DocuSign",
+      "categories": [
+        "Productivity"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81f19221e879d1708471",
+      "copies": 1
+    },
+    {
+      "name": "DoorLoop",
+      "categories": [
+        "Property Management"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e812b8597d260ae8f6785",
+      "copies": 1
+    },
+    {
+      "name": "Downdetector",
+      "categories": [
+        "Monitoring"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81769bb6cb492cc00952",
+      "copies": 1
+    },
+    {
+      "name": "DripJobs",
+      "categories": [
+        "Operations"
+      ],
+      "source": "https://app.notion.com/3d10ac1bd32e81799a8eea32b7ffcc16",
+      "copies": 1
+    },
+    {
+      "name": "Dropbox",
+      "categories": [
+        "Cloud Storage"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81209c85d742b8d634a5",
+      "copies": 3
+    },
+    {
+      "name": "Dropcontact",
+      "categories": [
+        "Sales Tools"
+      ],
+      "source": "https://app.notion.com/3e80ac1bd32e81109581e1f1978d634c",
+      "copies": 1
+    },
+    {
+      "name": "DSPy",
+      "categories": [
+        "AI/ML"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e815c9879e7754e17510a",
+      "copies": 1
+    },
+    {
+      "name": "Dub",
+      "categories": [
+        "Developer Tools"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e8139b50ff23a1d3b7f3d",
+      "copies": 1
+    },
+    {
+      "name": "DuckDuckGo",
+      "categories": [
+        "Search"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e813cae46fffa0218739a",
+      "copies": 1
+    },
+    {
+      "name": "Dynatrace",
+      "categories": [
+        "Monitoring"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e8128a7a5c072a5772c5e",
+      "copies": 1
+    },
+    {
+      "name": "Elasticsearch",
+      "categories": [
+        "Search/Database"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81aaa6f9ecba4e3bdd9c",
+      "copies": 1
+    },
+    {
+      "name": "ElevenLabs",
+      "categories": [
+        "AI/ML",
+        "Media"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81febca7e8f2fc26e34d",
+      "copies": 42
+    },
+    {
+      "name": "Email Bison",
+      "categories": [
+        "Email"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81f6a1c2d4c36fbe60cc",
+      "copies": 1
+    },
+    {
+      "name": "Embeddings",
+      "categories": [
+        "AI/ML"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8190b503ccbcc12cfb16",
+      "copies": 1
+    },
+    {
+      "name": "Engrain",
+      "categories": [
+        "Property Management"
+      ],
+      "source": "https://app.notion.com/3d40ac1bd32e8112beb1eae88809dec3",
+      "copies": 1
+    },
+    {
+      "name": "Enrich",
+      "categories": [
+        "Data Tools"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81e08faaeb17da662605",
+      "copies": 1
+    },
+    {
+      "name": "Enrow",
+      "categories": [
+        "Sales Tools"
+      ],
+      "source": "https://app.notion.com/3e80ac1bd32e81309ea6ff1ebb42ed27",
+      "copies": 1
+    },
+    {
+      "name": "Entrata",
+      "categories": [
+        "Property Management"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81d8b34aeca1e8056df4",
+      "copies": 1
+    },
+    {
+      "name": "Evaluator",
+      "categories": [
+        "Workflow Components"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81489381d47a394e5f36",
+      "copies": 1
+    },
+    {
+      "name": "Exa",
+      "categories": [
+        "Search",
+        "Search & Research"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81c09386ec6574650ef5",
+      "copies": 69
+    },
+    {
+      "name": "Excalidraw",
+      "categories": [
+        "Productivity"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e813caf24de0827257811",
+      "copies": 1
+    },
+    {
+      "name": "Extend",
+      "categories": [
+        "AI/ML"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81d8b5f6d784c2dfdf0e",
+      "copies": 1
+    },
+    {
+      "name": "Fal.ai",
+      "categories": [
+        "Media"
+      ],
+      "source": "https://app.notion.com/3e80ac1bd32e8120b1e6d309cb29caaa",
+      "copies": 1
+    },
+    {
+      "name": "Fathom",
+      "categories": [
+        "Meetings"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e812c9eb2e0f6cb49a0db",
+      "copies": 1
+    },
+    {
+      "name": "Figma",
+      "categories": [
+        "Productivity"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e811ba477db4623d92e23",
+      "copies": 1
+    },
+    {
+      "name": "File",
+      "categories": [
+        "Workflow Components"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81e8b37eece13ad54456",
+      "copies": 1
+    },
+    {
+      "name": "Findymail",
+      "categories": [
+        "Sales Tools"
+      ],
+      "source": "https://app.notion.com/3e80ac1bd32e8166b92cd79e26960ecc",
+      "copies": 1
+    },
+    {
+      "name": "Firebase",
+      "categories": [
+        "Google Cloud"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e816abd7efaf6eaa08d46",
+      "copies": 1
+    },
+    {
+      "name": "Firecrawl",
+      "categories": [
+        "Web Scraping"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8182b2b8fca0d5ebc109",
+      "copies": 3
+    },
+    {
+      "name": "Fireflies",
+      "categories": [
+        "Meetings"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8176827fd509735eea53",
+      "copies": 1
+    },
+    {
+      "name": "Fireworks",
+      "categories": [
+        "AI Providers"
+      ],
+      "source": "https://app.notion.com/3e80ac1bd32e81c8a9facf14d366fd5a",
+      "copies": 1
+    },
+    {
+      "name": "Flint",
+      "categories": [
+        "Social Media"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81d29bc7f9fc3b468a99",
+      "copies": 1
+    },
+    {
+      "name": "Freshdesk",
+      "categories": [
+        "Support"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81799bc0e376ca9a3514",
+      "copies": 1
+    },
+    {
+      "name": "Function",
+      "categories": [
+        "Workflow Components"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e812ba157e988a7774d01",
+      "copies": 1
+    },
+    {
+      "name": "Funnel Leasing",
+      "categories": [
+        "Property Management"
+      ],
+      "source": "https://app.notion.com/3d40ac1bd32e81068a5deb305fefd21b",
+      "copies": 1
+    },
+    {
+      "name": "Gamma",
+      "categories": [
+        "Productivity"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81bdabebd582b3f7277d",
+      "copies": 1
+    },
+    {
+      "name": "Gemini",
+      "categories": [
+        "AI Providers"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81fd81cfcaf07dabcd1b",
+      "copies": 69
+    },
+    {
+      "name": "GitHub",
+      "categories": [
+        "Developer Tools"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81f587b4d2f1b9bad70d",
+      "copies": 42
+    },
+    {
+      "name": "GitLab",
+      "categories": [
+        "Developer Tools"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81239dfce3b3c11c8986",
+      "copies": 1
+    },
+    {
+      "name": "Gmail",
+      "categories": [
+        "Google Workspace",
+        "Email"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8120869edbed0c635223",
+      "copies": 3
+    },
+    {
+      "name": "Gong",
+      "categories": [],
+      "source": "https://app.notion.com/3120ac1bd32e81f29c2ddb34726ae251",
+      "copies": 1
+    },
+    {
+      "name": "Google Ads",
+      "categories": [
+        "Sales Tools"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e8110baf7eb0b02076191",
+      "copies": 1
+    },
+    {
+      "name": "Google AppSheet",
+      "categories": [
+        "Google Workspace"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81e2b2acf1c472222cf5",
+      "copies": 1
+    },
+    {
+      "name": "Google Books",
+      "categories": [
+        "Search"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e817cb99bff0b6358c254",
+      "copies": 1
+    },
+    {
+      "name": "Google Calendar",
+      "categories": [
+        "Google Workspace"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81c589c9c752a10d846f",
+      "copies": 69
+    },
+    {
+      "name": "Google Cloud",
+      "categories": [
+        "Google Cloud"
+      ],
+      "source": "https://app.notion.com/3e80ac1bd32e8185b63dfc2c4c43ec50",
+      "copies": 1
+    },
+    {
+      "name": "Google Contacts",
+      "categories": [
+        "Google Workspace"
+      ],
+      "source": "https://app.notion.com/3d10ac1bd32e81d7bdc8c7c814baf22b",
+      "copies": 1
+    },
+    {
+      "name": "Google Docs",
+      "categories": [
+        "Google Workspace"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81309079c17df5a6fa89",
+      "copies": 3
+    },
+    {
+      "name": "Google Drive",
+      "categories": [
+        "Google Workspace"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e812b858afd2e3b239be8",
+      "copies": 3
+    },
+    {
+      "name": "Google Form Trigger",
+      "categories": [
+        "Google Workspace"
+      ],
+      "source": "https://app.notion.com/31f0ac1bd32e81bca213efc497534105",
+      "copies": 68
+    },
+    {
+      "name": "Google Forms",
+      "categories": [
+        "Google Workspace"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e817dab85d8bbd7c6514a",
+      "copies": 3
+    },
+    {
+      "name": "Google Groups",
+      "categories": [
+        "Google Workspace"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e818bbb39dbeeda8d4216",
+      "copies": 3
+    },
+    {
+      "name": "Google Maps",
+      "categories": [
+        "Google Workspace"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e811cb669f7aa5dd8278b",
+      "copies": 1
+    },
+    {
+      "name": "Google Meet",
+      "categories": [
+        "Meetings"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81a3b296e9f93d64d938",
+      "copies": 1
+    },
+    {
+      "name": "Google PageSpeed",
+      "categories": [
+        "Analytics"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81c7ace0f0b184909c98",
+      "copies": 1
+    },
+    {
+      "name": "Google Search",
+      "categories": [
+        "Google Workspace"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8157bf91c05f955b8212",
+      "copies": 1
+    },
+    {
+      "name": "Google Sheets",
+      "categories": [
+        "Google Workspace"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8132b4a5fb117a23d7d3",
+      "copies": 3
+    },
+    {
+      "name": "Google Slides",
+      "categories": [
+        "Google Workspace"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81bfbe23ce3f0b7d6117",
+      "copies": 69
+    },
+    {
+      "name": "Google Tasks",
+      "categories": [
+        "Google Workspace"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e818f8c17f396bf224ebd",
+      "copies": 1
+    },
+    {
+      "name": "Google Vault",
+      "categories": [
+        "Google Workspace"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e811c84ccf8fb943ed8e8",
+      "copies": 1
+    },
+    {
+      "name": "Grafana",
+      "categories": [
+        "Monitoring"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81f8a354d4d49a63194d",
+      "copies": 1
+    },
+    {
+      "name": "Grain",
+      "categories": [
+        "Meetings"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8184aa76dae2460e5ca2",
+      "copies": 1
+    },
+    {
+      "name": "Granola",
+      "categories": [
+        "Meetings"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81b28e83d204eda5302e",
+      "copies": 1
+    },
+    {
+      "name": "Greenhouse",
+      "categories": [
+        "Operations"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81618da0d1a9e716b6fe",
+      "copies": 1
+    },
+    {
+      "name": "Greptile",
+      "categories": [
+        "Developer Tools"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8131bb78d883cced6510",
+      "copies": 1
+    },
+    {
+      "name": "Grok",
+      "categories": [
+        "AI Providers"
+      ],
+      "source": "https://app.notion.com/31f0ac1bd32e818091f0d7db371d3a78",
+      "copies": 69
+    },
+    {
+      "name": "Guardrails",
+      "categories": [
+        "Workflow Components"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e811a96ffcb5beafd2991",
+      "copies": 1
+    },
+    {
+      "name": "Harmonic",
+      "categories": [
+        "Sales Tools"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e813da6effe6a734a0b59",
+      "copies": 1
+    },
+    {
+      "name": "Hex",
+      "categories": [
+        "Analytics"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81b9ba3efb9130cbc691",
+      "copies": 1
+    },
+    {
+      "name": "HeyGen",
+      "categories": [
+        "Media"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81cbb70ad25dd10db694",
+      "copies": 1
+    },
+    {
+      "name": "HighLevel",
+      "categories": [
+        "CRM"
+      ],
+      "source": "https://app.notion.com/3d10ac1bd32e815e9214f01f464327e4",
+      "copies": 1
+    },
+    {
+      "name": "HTTP Request",
+      "categories": [
+        "Utility"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8118a684de824f8d129b",
+      "copies": 3
+    },
+    {
+      "name": "HubSpot",
+      "categories": [
+        "CRM"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e813dbea6eb8674cd32e0",
+      "copies": 3
+    },
+    {
+      "name": "Hugging Face",
+      "categories": [
+        "AI/ML"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81a7b983e4d13a6c2b25",
+      "copies": 1
+    },
+    {
+      "name": "Human in the Loop",
+      "categories": [
+        "Workflow Components"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e815fa95afd653968d563",
+      "copies": 1
+    },
+    {
+      "name": "Hunter.io",
+      "categories": [
+        "Sales Tools"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e816fa8c4e5c6c6bf12bf",
+      "copies": 1
+    },
+    {
+      "name": "Icypeas",
+      "categories": [
+        "Sales Tools"
+      ],
+      "source": "https://app.notion.com/3e80ac1bd32e81c2bbcaeafa67d7996e",
+      "copies": 1
+    },
+    {
+      "name": "Image Generator",
+      "categories": [
+        "AI/ML"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e812abcc0d180e784ba66",
+      "copies": 1
+    },
+    {
+      "name": "IMAP Email",
+      "categories": [
+        "Email"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8194a383d52d5c3dd32e",
+      "copies": 1
+    },
+    {
+      "name": "incident.io",
+      "categories": [
+        "Operations"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81f9b275c34143bbb94d",
+      "copies": 1
+    },
+    {
+      "name": "Infisical",
+      "categories": [
+        "Authentication"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e810fb7d6dcbe377d66d8",
+      "copies": 1
+    },
+    {
+      "name": "Input Trigger",
+      "categories": [
+        "Triggers"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81928d8efa443b6e6cd1",
+      "copies": 69
+    },
+    {
+      "name": "Inspectr",
+      "categories": [
+        "Property Management"
+      ],
+      "source": "https://app.notion.com/3d40ac1bd32e81cfa637d84f9763acb4",
+      "copies": 1
+    },
+    {
+      "name": "Instagram",
+      "categories": [
+        "Social Media"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e8122adddea2f0f940c84",
+      "copies": 1
+    },
+    {
+      "name": "Instantly",
+      "categories": [
+        "Email Marketing"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81a1804cdfe0bd8e154d",
+      "copies": 1
+    },
+    {
+      "name": "insured.ai",
+      "categories": [
+        "Property Management"
+      ],
+      "source": "https://app.notion.com/3d40ac1bd32e81949565ff6c5f514aa4",
+      "copies": 1
+    },
+    {
+      "name": "Intercom",
+      "categories": [
+        "Communication"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81579278d30570affebc",
+      "copies": 1
+    },
+    {
+      "name": "Jina",
+      "categories": [
+        "AI/ML"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e816cb28dd01a90401611",
+      "copies": 1
+    },
+    {
+      "name": "Jira",
+      "categories": [
+        "Atlassian"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e818fa8e5ec905ce3c03f",
+      "copies": 1
+    },
+    {
+      "name": "Jira Service Management",
+      "categories": [
+        "Atlassian"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81978025e9c835b9d419",
+      "copies": 1
+    },
+    {
+      "name": "Jobber",
+      "categories": [
+        "Operations"
+      ],
+      "source": "https://app.notion.com/3d10ac1bd32e8128a205cba6db1dd47d",
+      "copies": 1
+    },
+    {
+      "name": "Jotform",
+      "categories": [
+        "Forms"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e8139adaad394611855c7",
+      "copies": 1
+    },
+    {
+      "name": "Jupyter",
+      "categories": [
+        "Developer Tools"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e8131b2c4db1557d2b6c9",
+      "copies": 1
+    },
+    {
+      "name": "Kalshi",
+      "categories": [
+        "Trading"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8118905ef67e5c26f396",
+      "copies": 1
+    },
+    {
+      "name": "Ketch",
+      "categories": [
+        "Authentication"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81929dc9ca85fa710944",
+      "copies": 1
+    },
+    {
+      "name": "Kimi",
+      "categories": [
+        "AI Providers"
+      ],
+      "source": "https://app.notion.com/31f0ac1bd32e81e19c41f3fc1fe21b91",
+      "copies": 68
+    },
+    {
+      "name": "Knowledge",
+      "categories": [
+        "Workflow Components"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81dc846deb3e52dda3c6",
+      "copies": 1
+    },
+    {
+      "name": "Knowledge Base",
+      "categories": [
+        "Search & Research",
+        "AI/ML"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e812587e4fda7d6ea68c1",
+      "copies": 3
+    },
+    {
+      "name": "Label Fields",
+      "categories": [
+        "Utility"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e818da2cde8cf071fb625",
+      "copies": 3
+    },
+    {
+      "name": "Lambda",
+      "categories": [
+        "AWS"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e8175a4f9cc97333954cc",
+      "copies": 1
+    },
+    {
+      "name": "LangSmith",
+      "categories": [
+        "AI/ML"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81a2b43dd5bb51c809d9",
+      "copies": 1
+    },
+    {
+      "name": "LaTeX",
+      "categories": [
+        "Productivity"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81f6b358e910329a80fe",
+      "copies": 1
+    },
+    {
+      "name": "LaunchDarkly",
+      "categories": [
+        "Developer Tools"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e8185bec2c5988186b464",
+      "copies": 1
+    },
+    {
+      "name": "LeadMagic",
+      "categories": [
+        "Sales Tools"
+      ],
+      "source": "https://app.notion.com/3e80ac1bd32e8154b077d57c96d854f0",
+      "copies": 1
+    },
+    {
+      "name": "LegalMate",
+      "categories": [
+        "CRM"
+      ],
+      "source": "https://app.notion.com/3d10ac1bd32e81b29d16ff84cca21264",
+      "copies": 1
+    },
+    {
+      "name": "Lemlist",
+      "categories": [
+        "Email Marketing"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8185b938fa84ce233aa0",
+      "copies": 1
+    },
+    {
+      "name": "Lemlist Trigger",
+      "categories": [
+        "Triggers"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81ef8fc9e4b0d10d8d25",
+      "copies": 1
+    },
+    {
+      "name": "Linear",
+      "categories": [
+        "Project Management"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8158b313ed5a799b3e9f",
+      "copies": 1
+    },
+    {
+      "name": "LinkedIn",
+      "categories": [
+        "Social Media"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8145a77ae954c5b85590",
+      "copies": 3
+    },
+    {
+      "name": "Linkup",
+      "categories": [
+        "Data Tools"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81fe9406f20f2bc65356",
+      "copies": 1
+    },
+    {
+      "name": "Linq",
+      "categories": [
+        "Communication"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e813bba29d84a4e15643c",
+      "copies": 1
+    },
+    {
+      "name": "Logfire",
+      "categories": [
+        "Monitoring"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81328b12dcd7a54355ec",
+      "copies": 1
+    },
+    {
+      "name": "LogRocket",
+      "categories": [
+        "Monitoring"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e814698ffc92b9f55100f",
+      "copies": 1
+    },
+    {
+      "name": "Loop",
+      "categories": [
+        "Workflow Components"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8146925cfab178c76720",
+      "copies": 1
+    },
+    {
+      "name": "Loops",
+      "categories": [
+        "Email"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81619da1d8c3ec919493",
+      "copies": 1
+    },
+    {
+      "name": "Luma",
+      "categories": [
+        "Productivity"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81cfa2fcf9953bf216c5",
+      "copies": 1
+    },
+    {
+      "name": "Mailchimp",
+      "categories": [
+        "Email Marketing"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e818aa850cef17bfa27cc",
+      "copies": 1
+    },
+    {
+      "name": "Mailgun",
+      "categories": [
+        "Email"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81d6bbaac744efd18925",
+      "copies": 1
+    },
+    {
+      "name": "Make",
+      "categories": [
+        "Automation"
+      ],
+      "source": "https://app.notion.com/3d10ac1bd32e81508b75fb074a2c6cd6",
+      "copies": 1
+    },
+    {
+      "name": "ManageEngine ServiceDesk Plus",
+      "categories": [
+        "IT Service"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e8102bb3be64be515ff3d",
+      "copies": 1
+    },
+    {
+      "name": "Manual Trigger",
+      "categories": [
+        "Triggers"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e813a8a9be99a35b3c406",
+      "copies": 3
+    },
+    {
+      "name": "MCP",
+      "categories": [
+        "Integration Protocol"
+      ],
+      "source": "https://app.notion.com/31f0ac1bd32e817385a8cc2b7e95b6b8",
+      "copies": 41
+    },
+    {
+      "name": "MCP Tool",
+      "categories": [
+        "Developer Tools"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8150ac63db543c59eaa1",
+      "copies": 1
+    },
+    {
+      "name": "MemO",
+      "categories": [
+        "Productivity"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81a58468cbe7c64fb93e",
+      "copies": 1
+    },
+    {
+      "name": "Memory",
+      "categories": [
+        "Workflow Components"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81f4abaff1ae76d8abf7",
+      "copies": 1
+    },
+    {
+      "name": "Meta",
+      "categories": [
+        "Social Media"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81308248f769de35b62b",
+      "copies": 1
+    },
+    {
+      "name": "Microsoft Dataverse",
+      "categories": [
+        "Microsoft 365"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e8190a788f306754f3065",
+      "copies": 1
+    },
+    {
+      "name": "Microsoft Dynamics 365 CRM",
+      "categories": [
+        "CRM"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81138b63ede2525b7a61",
+      "copies": 1
+    },
+    {
+      "name": "Microsoft Excel",
+      "categories": [
+        "Microsoft 365"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81a28e3dca396b6fd056",
+      "copies": 68
+    },
+    {
+      "name": "Microsoft Planner",
+      "categories": [
+        "Microsoft 365"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8114b82afeb6b9f6f490",
+      "copies": 3
+    },
+    {
+      "name": "Microsoft SQL Server",
+      "categories": [
+        "Database"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e8178a05feee9092c468c",
+      "copies": 1
+    },
+    {
+      "name": "Microsoft Teams",
+      "categories": [
+        "Microsoft 365"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81a8a465c54073ac7241",
+      "copies": 68
+    },
+    {
+      "name": "Microsoft Word",
+      "categories": [
+        "Microsoft 365"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81c3b337ff8595cf0c87",
+      "copies": 68
+    },
+    {
+      "name": "Microsoft(Legacy)",
+      "categories": [
+        "Microsoft 365"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8152ae7ef2999787beef",
+      "copies": 1
+    },
+    {
+      "name": "MillionVerifier",
+      "categories": [
+        "Sales Tools"
+      ],
+      "source": "https://app.notion.com/3e80ac1bd32e81218e8ad3f627929b10",
+      "copies": 1
+    },
+    {
+      "name": "Mintlify",
+      "categories": [
+        "Productivity"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81259a1bcd9c520925d1",
+      "copies": 1
+    },
+    {
+      "name": "Mistral Parser",
+      "categories": [
+        "AI/ML"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e810ab28bc713fa039e06",
+      "copies": 1
+    },
+    {
+      "name": "Mixpanel",
+      "categories": [
+        "Analytics"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e817487e3da37cf98baed",
+      "copies": 1
+    },
+    {
+      "name": "Modal",
+      "categories": [
+        "AI/ML"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81b4aa75cdb7c22588b5",
+      "copies": 1
+    },
+    {
+      "name": "Monday",
+      "categories": [
+        "Project Management"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81738109d482fcd5174d",
+      "copies": 1
+    },
+    {
+      "name": "MongoDB",
+      "categories": [
+        "Database"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81cf9721e1a2833b19a5",
+      "copies": 1
+    },
+    {
+      "name": "Motion",
+      "categories": [
+        "Media"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e8160a63bde72c680302b",
+      "copies": 1
+    },
+    {
+      "name": "MRI",
+      "categories": [
+        "Property Management"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81598d53d8bb09df9c8e",
+      "copies": 1
+    },
+    {
+      "name": "MySQL",
+      "categories": [
+        "Database"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e815f8604d8f2f3bc8d7c",
+      "copies": 1
+    },
+    {
+      "name": "Neo4j",
+      "categories": [
+        "Database"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e816591dccc9284da4594",
+      "copies": 1
+    },
+    {
+      "name": "Neon",
+      "categories": [
+        "Database"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e819285efc420f020f729",
+      "copies": 1
+    },
+    {
+      "name": "NeverBounce",
+      "categories": [
+        "Sales Tools"
+      ],
+      "source": "https://app.notion.com/3e80ac1bd32e8107987bef6a727cfa2b",
+      "copies": 1
+    },
+    {
+      "name": "New Relic",
+      "categories": [
+        "Monitoring"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81d5b1c7ef8dfadc6df4",
+      "copies": 1
+    },
+    {
+      "name": "Note",
+      "categories": [
+        "Workflow Components"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81ad895ce36e88f35eef",
+      "copies": 1
+    },
+    {
+      "name": "Notion",
+      "categories": [
+        "Productivity"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81f1bbe7ed21df393b7d",
+      "copies": 66
+    },
+    {
+      "name": "Notion Trigger",
+      "categories": [
+        "Productivity"
+      ],
+      "source": "https://app.notion.com/31f0ac1bd32e812f9712dea2ca5b640f",
+      "copies": 68
+    },
+    {
+      "name": "Obsidian",
+      "categories": [
+        "Productivity"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e8114967fd1b53e23717d",
+      "copies": 1
+    },
+    {
+      "name": "Okta",
+      "categories": [
+        "Authentication"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81468781ed2c8c2f02c5",
+      "copies": 1
+    },
+    {
+      "name": "Ollama Cloud",
+      "categories": [
+        "AI Providers"
+      ],
+      "source": "https://app.notion.com/3e80ac1bd32e814d8c89c64653d04f7d",
+      "copies": 1
+    },
+    {
+      "name": "OneDrive",
+      "categories": [
+        "Microsoft 365"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8121bbc3c027688c8dc4",
+      "copies": 3
+    },
+    {
+      "name": "OpenAI",
+      "categories": [
+        "AI Providers"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e816a918deb69a302f61b",
+      "copies": 3
+    },
+    {
+      "name": "OpenClaw",
+      "categories": [
+        "AI Providers"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e818d921dfe4f1547b7aa",
+      "copies": 3
+    },
+    {
+      "name": "OpenRouter",
+      "categories": [
+        "AI Providers"
+      ],
+      "source": "https://app.notion.com/31f0ac1bd32e81718bfafba717618477",
+      "copies": 68
+    },
+    {
+      "name": "Oracle NetSuite",
+      "categories": [
+        "Operations"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81dca2dde1ea8011370e",
+      "copies": 1
+    },
+    {
+      "name": "Outlook",
+      "categories": [
+        "Microsoft 365"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81798a8ee3a1f5332321",
+      "copies": 3
+    },
+    {
+      "name": "Oyster",
+      "categories": [
+        "Property Management"
+      ],
+      "source": "https://app.notion.com/3d40ac1bd32e81cb9f41eb57c455af86",
+      "copies": 1
+    },
+    {
+      "name": "PagerDuty",
+      "categories": [
+        "Operations"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81b3892af8300a85aba1",
+      "copies": 1
+    },
+    {
+      "name": "Paper",
+      "categories": [
+        "Productivity"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e819bb59ffc9d352045fa",
+      "copies": 1
+    },
+    {
+      "name": "Parallel",
+      "categories": [
+        "Workflow Components"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8150a4d7dce8f66cda79",
+      "copies": 1
+    },
+    {
+      "name": "Parallel AI",
+      "categories": [
+        "AI/ML"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e813b965acf1a5c35c5e0",
+      "copies": 1
+    },
+    {
+      "name": "PayPal",
+      "categories": [
+        "Payments"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81e3bc97f6fa15e3aee8",
+      "copies": 1
+    },
+    {
+      "name": "People Data Labs",
+      "categories": [
+        "Sales Tools"
+      ],
+      "source": "https://app.notion.com/3e80ac1bd32e81b19e74d01957340ebb",
+      "copies": 1
+    },
+    {
+      "name": "Perplexity",
+      "categories": [
+        "AI/ML",
+        "Search & Research"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81009361c82e520ab41e",
+      "copies": 3
+    },
+    {
+      "name": "Persona",
+      "categories": [
+        "Authentication"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81209ccdf49b9573674c",
+      "copies": 1
+    },
+    {
+      "name": "Pinecone",
+      "categories": [
+        "Database"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81558027d080b44cbec6",
+      "copies": 1
+    },
+    {
+      "name": "Pipedream",
+      "categories": [
+        "Automation"
+      ],
+      "source": "https://app.notion.com/3d10ac1bd32e810ebaafc2c46e023bd1",
+      "copies": 1
+    },
+    {
+      "name": "Pipedrive",
+      "categories": [
+        "CRM"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8125b317e841000288c2",
+      "copies": 1
+    },
+    {
+      "name": "PitchBook",
+      "categories": [
+        "Analytics"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81f4851ffff31fd0faad",
+      "copies": 1
+    },
+    {
+      "name": "Plaid",
+      "categories": [
+        "Payments"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81a283a0ffd2b1f8857c",
+      "copies": 1
+    },
+    {
+      "name": "Polymarket",
+      "categories": [
+        "Trading"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81d49dced54c0117b143",
+      "copies": 42
+    },
+    {
+      "name": "Post Bridge",
+      "categories": [
+        "Social Media"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e8198b863c1eba2ebd1d9",
+      "copies": 1
+    },
+    {
+      "name": "PostgreSQL",
+      "categories": [
+        "Database"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8195893bc4d6c1651b96",
+      "copies": 1
+    },
+    {
+      "name": "PostHog",
+      "categories": [
+        "Analytics"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81359fa6d1fcdcfe218b",
+      "copies": 1
+    },
+    {
+      "name": "Profound",
+      "categories": [
+        "Analytics"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e813fa2b9ce08e2768812",
+      "copies": 1
+    },
+    {
+      "name": "Property Meld",
+      "categories": [
+        "Property Management"
+      ],
+      "source": "https://app.notion.com/3d40ac1bd32e8117bd3ae802016344a3",
+      "copies": 1
+    },
+    {
+      "name": "Propertyware",
+      "categories": [
+        "Property Management"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e815fb32bc72023eae333",
+      "copies": 1
+    },
+    {
+      "name": "Propexo",
+      "categories": [
+        "Property Management"
+      ],
+      "source": "https://app.notion.com/3d40ac1bd32e810d960ef83ce1480c49",
+      "copies": 1
+    },
+    {
+      "name": "Prospeo",
+      "categories": [
+        "Sales Tools"
+      ],
+      "source": "https://app.notion.com/3e80ac1bd32e81c7816cd9bfe29b7817",
+      "copies": 1
+    },
+    {
+      "name": "Pulse",
+      "categories": [
+        "Monitoring"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81eeb340de1da718d7ae",
+      "copies": 1
+    },
+    {
+      "name": "Qdrant",
+      "categories": [
+        "Database"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81288e77c90b641284d2",
+      "copies": 1
+    },
+    {
+      "name": "Quartr",
+      "categories": [
+        "Analytics"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e8172a04ce9f64dfe4d36",
+      "copies": 1
+    },
+    {
+      "name": "QuickBooks",
+      "categories": [
+        "Payments"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81728889f909d87dffd9",
+      "copies": 1
+    },
+    {
+      "name": "Quiver",
+      "categories": [
+        "AI/ML"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81b6b37ae8d2b8003579",
+      "copies": 1
+    },
+    {
+      "name": "Qwen",
+      "categories": [
+        "AI Providers"
+      ],
+      "source": "https://app.notion.com/31f0ac1bd32e814ebd35f5b7850884a0",
+      "copies": 69
+    },
+    {
+      "name": "RabbitMQ",
+      "categories": [
+        "Developer Tools"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81a8aa24e72171572a65",
+      "copies": 1
+    },
+    {
+      "name": "Railway",
+      "categories": [
+        "Developer Tools"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e819b8045cf77257a0e4b",
+      "copies": 1
+    },
+    {
+      "name": "RB2B",
+      "categories": [
+        "Sales Tools"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e814792c5dbec07545bd5",
+      "copies": 1
+    },
+    {
+      "name": "RealPage",
+      "categories": [
+        "Property Management"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e813784e9f16709f26ed1",
+      "copies": 1
+    },
+    {
+      "name": "Reddit",
+      "categories": [
+        "Social Media"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81958b7eec7523e7cb67",
+      "copies": 1
+    },
+    {
+      "name": "Redis",
+      "categories": [
+        "Database"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e812e8cc1f65f4d733fe9",
+      "copies": 1
+    },
+    {
+      "name": "Reducto",
+      "categories": [
+        "Data Tools"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8165b113e8622a2ea9a3",
+      "copies": 1
+    },
+    {
+      "name": "Relay.app",
+      "categories": [
+        "Automation"
+      ],
+      "source": "https://app.notion.com/3d10ac1bd32e812099c9c1f73bb39126",
+      "copies": 1
+    },
+    {
+      "name": "Rent Manager",
+      "categories": [
+        "Property Management"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81d581b1f4fc47914922",
+      "copies": 1
+    },
+    {
+      "name": "Resend",
+      "categories": [
+        "Email"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8121af9aef1451008b5d",
+      "copies": 3
+    },
+    {
+      "name": "ResiDesk",
+      "categories": [
+        "Property Management"
+      ],
+      "source": "https://app.notion.com/3d40ac1bd32e81babc22ed28abcaa09a",
+      "copies": 1
+    },
+    {
+      "name": "ResMan",
+      "categories": [
+        "Property Management"
+      ],
+      "source": "https://app.notion.com/3d40ac1bd32e8155b3fee711f60d1e2a",
+      "copies": 1
+    },
+    {
+      "name": "Response",
+      "categories": [
+        "Workflow Components"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8104bfbcd7102a59d016",
+      "copies": 1
+    },
+    {
+      "name": "RevenueCat",
+      "categories": [
+        "Payments"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e811fa491f541ed561234",
+      "copies": 1
+    },
+    {
+      "name": "Rippling",
+      "categories": [
+        "Operations"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81a5a1bae4306e5155a3",
+      "copies": 1
+    },
+    {
+      "name": "Rocketlane",
+      "categories": [
+        "Productivity"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e810092e7f1341710bd6a",
+      "copies": 1
+    },
+    {
+      "name": "Rootly",
+      "categories": [
+        "Monitoring"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81cd892ce1284991d9a5",
+      "copies": 1
+    },
+    {
+      "name": "Router",
+      "categories": [
+        "Workflow Components",
+        "Utility"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81c7a56df4082d79108d",
+      "copies": 41
+    },
+    {
+      "name": "RSS Feed",
+      "categories": [
+        "Data Sources"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81bf840efa346991c919",
+      "copies": 1
+    },
+    {
+      "name": "S3",
+      "categories": [
+        "AWS"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8129894fc70d644744d6",
+      "copies": 1
+    },
+    {
+      "name": "SailPoint",
+      "categories": [
+        "Authentication"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e8187af78e8a4f48d2fce",
+      "copies": 1
+    },
+    {
+      "name": "Salesforce",
+      "categories": [
+        "CRM"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e811fb052ebf0bad10bd5",
+      "copies": 1
+    },
+    {
+      "name": "SAP Concur",
+      "categories": [
+        "Productivity"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81089729e7428b624b90",
+      "copies": 1
+    },
+    {
+      "name": "SAP S4HANA",
+      "categories": [
+        "Operations"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81a890f3e76d5bdb4ce1",
+      "copies": 1
+    },
+    {
+      "name": "Schedule",
+      "categories": [
+        "Workflow Components"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e815ab51ac7cc5cced35f",
+      "copies": 1
+    },
+    {
+      "name": "Scheduler",
+      "categories": [
+        "Triggers"
+      ],
+      "source": "https://app.notion.com/31f0ac1bd32e818ca2a8c7b5d13d9030",
+      "copies": 68
+    },
+    {
+      "name": "Search",
+      "categories": [
+        "Workflow Components"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81c48c2ff503c7440f44",
+      "copies": 1
+    },
+    {
+      "name": "Semrush",
+      "categories": [
+        "SEO Tools"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e819287c9f6e6e9edf6da",
+      "copies": 1
+    },
+    {
+      "name": "Sendblue",
+      "categories": [
+        "Communication"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81129c44d3e97bcb8ed4",
+      "copies": 1
+    },
+    {
+      "name": "SendGrid",
+      "categories": [
+        "Email"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81c0897cc95342636d91",
+      "copies": 1
+    },
+    {
+      "name": "Sentry",
+      "categories": [
+        "Monitoring"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81398d1cfc7f5cc56d48",
+      "copies": 1
+    },
+    {
+      "name": "Serper",
+      "categories": [
+        "Search"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81a68c0ff04e04764003",
+      "copies": 1
+    },
+    {
+      "name": "ServiceNow",
+      "categories": [
+        "IT Service"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e816686ebf03381af2db1",
+      "copies": 1
+    },
+    {
+      "name": "SFTP",
+      "categories": [
+        "File Transfer"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8127b105f667158bc43e",
+      "copies": 1
+    },
+    {
+      "name": "SharePoint",
+      "categories": [
+        "Microsoft 365"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81269c21c6f42336d623",
+      "copies": 3
+    },
+    {
+      "name": "Shopify",
+      "categories": [
+        "E-commerce"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8124a5c0df9f5cdc84eb",
+      "copies": 3
+    },
+    {
+      "name": "Similarweb",
+      "categories": [
+        "Analytics"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81ea8d8fc0102d129de1",
+      "copies": 1
+    },
+    {
+      "name": "Sixtyfour AI",
+      "categories": [
+        "Sales Tools"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81db8f6ec4ab63fecead",
+      "copies": 1
+    },
+    {
+      "name": "Slack",
+      "categories": [
+        "Communication"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8139b03ac84d2930ac77",
+      "copies": 3
+    },
+    {
+      "name": "Smartlead",
+      "categories": [
+        "Email"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e818682a5fd0adbe2dccc",
+      "copies": 1
+    },
+    {
+      "name": "SMTP",
+      "categories": [
+        "Email"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8100b4d2fbdef4417b36",
+      "copies": 1
+    },
+    {
+      "name": "Snowflake",
+      "categories": [
+        "Database"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81c5b1a5f7b008ef0c71",
+      "copies": 1
+    },
+    {
+      "name": "Speech-to-Text",
+      "categories": [
+        "AI/ML"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81cf84e6db925145ce8c",
+      "copies": 1
+    },
+    {
+      "name": "Splunk",
+      "categories": [
+        "Monitoring"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81c5a3dff7a868ccc925",
+      "copies": 1
+    },
+    {
+      "name": "Sportmonks",
+      "categories": [
+        "Analytics"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81e9b070fc99a56e0dfa",
+      "copies": 1
+    },
+    {
+      "name": "Spotify",
+      "categories": [
+        "Media"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e810aa712c1ba88a4aaca",
+      "copies": 1
+    },
+    {
+      "name": "Square",
+      "categories": [
+        "Payments"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e813e8b85e92537808e5f",
+      "copies": 1
+    },
+    {
+      "name": "SSH",
+      "categories": [
+        "Developer Tools"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81f6b9e2cb8fddc8ce08",
+      "copies": 1
+    },
+    {
+      "name": "Stagehand",
+      "categories": [
+        "Automation"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81388650f3e3603a7612",
+      "copies": 1
+    },
+    {
+      "name": "Stripe",
+      "categories": [
+        "Payments"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81509a21ff30d433fcee",
+      "copies": 1
+    },
+    {
+      "name": "Stripe Trigger",
+      "categories": [
+        "Payments"
+      ],
+      "source": "https://app.notion.com/31f0ac1bd32e81e7bc9ed3e73031c013",
+      "copies": 68
+    },
+    {
+      "name": "Supabase",
+      "categories": [
+        "Database"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81048567dd587ca445c6",
+      "copies": 1
+    },
+    {
+      "name": "Tables",
+      "categories": [
+        "Database"
+      ],
+      "source": "https://app.notion.com/31f0ac1bd32e817e8f5ae88e1b1c3ec0",
+      "copies": 42
+    },
+    {
+      "name": "Tailscale",
+      "categories": [
+        "Authentication"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81c5849ac5169914673b",
+      "copies": 1
+    },
+    {
+      "name": "Tavily",
+      "categories": [
+        "Search",
+        "Search & Research"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81e9b9fedf645f364c3c",
+      "copies": 69
+    },
+    {
+      "name": "Telegram",
+      "categories": [
+        "Communication"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81b687a1d657122d3959",
+      "copies": 64
+    },
+    {
+      "name": "Temporal",
+      "categories": [
+        "Developer Tools"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81658a58c5edfa70f6cb",
+      "copies": 1
+    },
+    {
+      "name": "Text-to-Speech",
+      "categories": [
+        "AI/ML"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8116bf8ac2885c9a3e69",
+      "copies": 1
+    },
+    {
+      "name": "Thrive",
+      "categories": [
+        "Operations"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e810b86bdd26cfc681754",
+      "copies": 1
+    },
+    {
+      "name": "TikTok",
+      "categories": [
+        "Social Media"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81d8af4defa00bcc2074",
+      "copies": 1
+    },
+    {
+      "name": "Tinybird",
+      "categories": [
+        "Analytics"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81dc9b03ee831f5b430c",
+      "copies": 1
+    },
+    {
+      "name": "TinyFish",
+      "categories": [
+        "Search & Research"
+      ],
+      "source": "https://app.notion.com/3e80ac1bd32e81e58c12d6c901fb093b",
+      "copies": 1
+    },
+    {
+      "name": "Together AI",
+      "categories": [
+        "AI Providers"
+      ],
+      "source": "https://app.notion.com/3e80ac1bd32e81849d9cce7b1038450d",
+      "copies": 1
+    },
+    {
+      "name": "Transform Array",
+      "categories": [
+        "Utility"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e814ca3d5f9864efebf48",
+      "copies": 3
+    },
+    {
+      "name": "Translate",
+      "categories": [
+        "AI/ML"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81179b45eaef33930a23",
+      "copies": 1
+    },
+    {
+      "name": "Trello",
+      "categories": [
+        "Project Management"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e819d9e89f05cb57d4bcd",
+      "copies": 54
+    },
+    {
+      "name": "Trigger.dev",
+      "categories": [
+        "Developer Tools"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81f9b626cc27f8b167e9",
+      "copies": 1
+    },
+    {
+      "name": "Triple Session",
+      "categories": [
+        "Sales Tools"
+      ],
+      "source": "https://app.notion.com/3d10ac1bd32e8147a02cfa845f1db52d",
+      "copies": 1
+    },
+    {
+      "name": "Twilio SMS",
+      "categories": [
+        "Communication"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81419bb2f0d7087ac7ec",
+      "copies": 1
+    },
+    {
+      "name": "Twilio Voice",
+      "categories": [
+        "Communication"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8126b6a6ee44c4cfde7a",
+      "copies": 1
+    },
+    {
+      "name": "Typeform",
+      "categories": [
+        "Forms"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81efa553cf7a1e3039b4",
+      "copies": 59
+    },
+    {
+      "name": "Typeform Trigger",
+      "categories": [
+        "Forms"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81c99c39ca985d54e7dc",
+      "copies": 69
+    },
+    {
+      "name": "TypeSafe",
+      "categories": [
+        "AI Providers"
+      ],
+      "source": "https://app.notion.com/3e80ac1bd32e816aa308ceff893d8636",
+      "copies": 1
+    },
+    {
+      "name": "Upstash",
+      "categories": [
+        "Database"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e813db43efe3558c8a2b5",
+      "copies": 1
+    },
+    {
+      "name": "UptimeRobot",
+      "categories": [
+        "Monitoring"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e812cbb2bcb0899cda1f0",
+      "copies": 1
+    },
+    {
+      "name": "Vanta",
+      "categories": [
+        "Authentication"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e81cbb205cda962c00f18",
+      "copies": 1
+    },
+    {
+      "name": "Variables",
+      "categories": [
+        "Workflow Components"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81489b15e6ac03b3ea4e",
+      "copies": 1
+    },
+    {
+      "name": "Vercel",
+      "categories": [
+        "Web Development"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e811a90ffe6d7bf5f32d0",
+      "copies": 1
+    },
+    {
+      "name": "Vertex AI",
+      "categories": [
+        "Google Cloud"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e816b867afc954f5833fe",
+      "copies": 1
+    },
+    {
+      "name": "Video Generator",
+      "categories": [
+        "AI/ML"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81d1a2e1ee5cecd442fe",
+      "copies": 1
+    },
+    {
+      "name": "Vision",
+      "categories": [
+        "AI/ML"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8117a14fd6e565ee7213",
+      "copies": 1
+    },
+    {
+      "name": "Wait",
+      "categories": [
+        "Workflow Components",
+        "Utility"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e819593efc69b9082962e",
+      "copies": 41
+    },
+    {
+      "name": "Wealthbox",
+      "categories": [
+        "CRM"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81e59d21eebf27ee22af",
+      "copies": 1
+    },
+    {
+      "name": "Webflow",
+      "categories": [
+        "Web Development"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8143b40adad743ae1b9a",
+      "copies": 1
+    },
+    {
+      "name": "Webhook",
+      "categories": [
+        "Developer Tools",
+        "Triggers"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e814f9b1fd9547c6dead3",
+      "copies": 3
+    },
+    {
+      "name": "Webhook Action",
+      "categories": [
+        "Utility"
+      ],
+      "source": "https://app.notion.com/31f0ac1bd32e81f3a3b7dbcb2f48813e",
+      "copies": 41
+    },
+    {
+      "name": "WhatsApp",
+      "categories": [
+        "Communication"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e812687aff128a1bd3a3d",
+      "copies": 1
+    },
+    {
+      "name": "Wikipedia",
+      "categories": [
+        "Data Sources"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81afa99fd76acc566c3a",
+      "copies": 1
+    },
+    {
+      "name": "Windchill",
+      "categories": [
+        "Productivity"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e8153aff9e0530c934e57",
+      "copies": 1
+    },
+    {
+      "name": "Wispr Flow",
+      "categories": [
+        "Productivity"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81259cdfd8132b7b45d5",
+      "copies": 1
+    },
+    {
+      "name": "Wiza",
+      "categories": [
+        "Sales Tools"
+      ],
+      "source": "https://app.notion.com/3e80ac1bd32e81ebae66e04787d470dd",
+      "copies": 1
+    },
+    {
+      "name": "WordPress",
+      "categories": [
+        "CMS"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81e99b38e5106daab3a0",
+      "copies": 1
+    },
+    {
+      "name": "Workday",
+      "categories": [
+        "Operations"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e8178b285ddf6f8badce9",
+      "copies": 1
+    },
+    {
+      "name": "Workflow",
+      "categories": [
+        "Workflow Components"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81368355fcd42a93db4d",
+      "copies": 1
+    },
+    {
+      "name": "X (Twitter)",
+      "categories": [
+        "Social Media"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81bda2d4fce757342f06",
+      "copies": 1
+    },
+    {
+      "name": "Xero",
+      "categories": [
+        "Payments"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e8173a453c09bc9f735d5",
+      "copies": 1
+    },
+    {
+      "name": "Yardi",
+      "categories": [
+        "Property Management"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81079212cbee516fa1b2",
+      "copies": 1
+    },
+    {
+      "name": "YouTube",
+      "categories": [
+        "Media"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8145b5c8fa131d7f3364",
+      "copies": 1
+    },
+    {
+      "name": "Z.ai",
+      "categories": [
+        "AI Providers"
+      ],
+      "source": "https://app.notion.com/3e80ac1bd32e8141b6ecd1a26e03f91b",
+      "copies": 1
+    },
+    {
+      "name": "Zapier",
+      "categories": [
+        "Automation"
+      ],
+      "source": "https://app.notion.com/3d10ac1bd32e8145b432f1cdf552bc4d",
+      "copies": 1
+    },
+    {
+      "name": "Zendesk",
+      "categories": [
+        "Support"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81a59106eab7f417d916",
+      "copies": 1
+    },
+    {
+      "name": "Zep",
+      "categories": [
+        "AI/ML"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e81b2aa5acf9103c1b2ec",
+      "copies": 1
+    },
+    {
+      "name": "ZeroBounce",
+      "categories": [
+        "Sales Tools"
+      ],
+      "source": "https://app.notion.com/3e80ac1bd32e811a98cddf7d9d3f8439",
+      "copies": 1
+    },
+    {
+      "name": "Zillow",
+      "categories": [
+        "Sales Tools"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e81c3bcdac65482d84d77",
+      "copies": 1
+    },
+    {
+      "name": "Zoho CRM",
+      "categories": [
+        "CRM"
+      ],
+      "source": "https://app.notion.com/3d10ac1bd32e81fea544e9be1038adc4",
+      "copies": 1
+    },
+    {
+      "name": "Zoho Desk",
+      "categories": [
+        "Support"
+      ],
+      "source": "https://app.notion.com/3e90ac1bd32e8166b4b7deeb648d4854",
+      "copies": 1
+    },
+    {
+      "name": "Zoom",
+      "categories": [
+        "Communication"
+      ],
+      "source": "https://app.notion.com/3120ac1bd32e8179b697fd4681a97343",
+      "copies": 1
+    },
+    {
+      "name": "ZoomInfo",
+      "categories": [
+        "Sales Tools"
+      ],
+      "source": "https://app.notion.com/3cf0ac1bd32e819c92fbfa476f6414f3",
+      "copies": 1
+    }
+  ]
+}

@@ -26,9 +26,11 @@ export function IntegrationCard({ item }: { item: Integration }) {
     <Link className={styles.card} href={`/integrations/${item.slug}`}>
       <div className={styles.cardTop}>
         <IntegrationLogo item={item} />
-        <span className={styles.badge} data-status={item.status}>
-          {integrationStatus(item.status).label}
-        </span>
+        {item.status !== "planned" && (
+          <span className={styles.badge} data-status={item.status}>
+            {integrationStatus(item.status).label}
+          </span>
+        )}
       </div>
       <h3>
         {item.name}
@@ -36,7 +38,12 @@ export function IntegrationCard({ item }: { item: Integration }) {
           <ChevronRight />
         </span>
       </h3>
-      <p>{item.shortDescription}</p>
+      <p>
+        {item.shortDescription ===
+        `${item.name} is planned for Innflow workflows. Explore this connection on our roadmap.`
+          ? `Explore ${item.name} for your Innflow workflows.`
+          : item.shortDescription}
+      </p>
       <span className={styles.categoryLabel}>
         {item.category?.title ?? "Other"}
       </span>

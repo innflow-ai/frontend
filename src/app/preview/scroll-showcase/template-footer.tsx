@@ -48,11 +48,6 @@ export function TemplateFooter() {
       <footer className={styles.footer} data-source-node="350:11986">
         <div className={styles.upper}>
           <div className={styles.brand}>
-            <h2>
-              Connect work
-              <br />
-              your own way.
-            </h2>
             <a href="/" aria-label="Innflow home">
               <Image
                 src="/brand/innflow-wordmark.svg"
@@ -61,6 +56,7 @@ export function TemplateFooter() {
                 height={38}
               />
             </a>
+            <p>Bring your work together.</p>
           </div>
           <nav className={styles.columns} aria-label="Footer navigation">
             {groups.map((column) => (

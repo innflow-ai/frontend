@@ -21,6 +21,7 @@ import {
   solutionsColumns,
 } from "@/components/mega-menu";
 import { TrackedLink } from "@/components/tracked-link";
+import { siteConfig } from "@/config/site";
 import styles from "./editorial-header.module.css";
 import {
   useNavigationAppUpdate,
@@ -354,7 +355,7 @@ export function MobileNavigation({
   id = "editorial-mobile-overlay",
   className = "",
   pricingHref = "/pricing",
-  loginHref,
+  loginHref = `${siteConfig.appOrigin}/login`,
 }: {
   open: boolean;
   onClose: () => void;
@@ -431,23 +432,12 @@ export function MobileNavigation({
                       >
                         <div className={styles.mobileGroupContent}>
                           {group.columns.map((column) => {
-                            const Section =
-                              group.label === "Solutions"
-                                ? "details"
-                                : "section";
                             return (
-                              <Section
+                              <section
                                 key={column.heading}
                                 className={styles.mobileSection}
                               >
-                                {group.label === "Solutions" ? (
-                                  <summary>
-                                    {column.heading}
-                                    <CaretDown size={16} aria-hidden="true" />
-                                  </summary>
-                                ) : (
-                                  <h2>{column.heading}</h2>
-                                )}
+                                <h2>{column.heading}</h2>
                                 <div className={styles.mobileSectionLinks}>
                                   {column.links.map((link) => {
                                     const Icon = link.icon;
@@ -456,10 +446,6 @@ export function MobileNavigation({
                                         key={link.title}
                                         href={link.href}
                                         onClick={closeMobile}
-                                        data-solution={
-                                          group.label === "Solutions" ||
-                                          undefined
-                                        }
                                         data-browse-all={
                                           link.browseAll || undefined
                                         }
@@ -488,7 +474,7 @@ export function MobileNavigation({
                                     );
                                   })}
                                 </div>
-                              </Section>
+                              </section>
                             );
                           })}
                           {menuBrowseLinks[group.label] && (
@@ -547,17 +533,14 @@ export function MobileNavigation({
             >
               Blog
             </motion.a>
-            {loginHref ? (
-              <motion.a
+            <div className={styles.mobileCtaRow}>
+              <a
                 href={loginHref}
-                className={styles.mobilePrimaryLink}
-                variants={reduce ? undefined : itemVariants}
+                className={`${styles.button} ${styles.mobileLoginButton}`}
                 onClick={closeMobile}
               >
-                Log in
-              </motion.a>
-            ) : null}
-            <div className={styles.mobileCtaRow}>
+                Login
+              </a>
               <GoogleSignInButton
                 className={`${styles.button} ${styles.mobileCta}`}
                 eventLabel="mobile_continue_google"

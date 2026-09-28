@@ -1,5 +1,5 @@
 "use client";
-import { ArrowDown as MageArrowDown, ArrowRight as MageArrowRight, ArrowLeft as MageArrowLeft } from '@/components/icons/mage';
+import { ArrowDown as MageArrowDown, ArrowRight as MageArrowRight, ChevronLeft as MageArrowLeft } from '@/components/icons/mage';
 
 import Image from "next/image";
 import { useRef } from "react";

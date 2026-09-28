@@ -1,3 +1,72 @@
+# Help center design QA
+
+Final result: passed
+
+Scope: new `/help` page, using Calendly's help-center layout with Innflow branding, topics, and destinations. This is a frontend help landing page, not a copy of Calendly's article database or support backend. The existing `/help-center` page remains available.
+
+## Evidence
+
+Source: https://calendly.com/help, inspected live on 2026-09-28.
+
+- Source visual truth: `output/help-center/source-desktop.png`, `output/help-center/source-mobile.png`.
+- Implementation: `output/help-center/desktop.png`, `output/help-center/mobile.png`.
+- Combined comparison inputs: `output/help-center/compare-desktop.png`, `output/help-center/compare-mobile.png`.
+- Additional states: `output/help-center/mobile-menu.png`, `output/help-center/desktop-features.png`, `output/help-center/desktop-lower.png`.
+- Desktop: 1208 x 800 CSS viewport and 1208 x 800 pixel captures for both sites.
+- Mobile: 390 x 844 CSS viewport. Source pixels 390 x 844; implementation pixels 391 x 844 due fractional device emulation rounding. Compared at native height, with the extra one-pixel column ignored. Source and local browser scrollbar widths differ by 11px, accounting for small content-width differences.
+- Density: local Chrome had 75% site zoom. CDP device metrics compensated for that zoom; raw CDP screenshots were used for the final images. No visual findings were inferred from the earlier wrapper screenshots, which included excess canvas.
+- State: announcement visible, hero at top, categories collapsed. The source Account row retains pointer focus. The local Next.js development badge is development chrome, not page content.
+
+## Fidelity review
+
+- Typography: locally served source Geist and display fonts. Desktop title 60px/66px, mobile 36px/39.6px, section headings 48px desktop and 28px mobile. The final combined inputs verify heading and body hierarchy, wrapping, and weights.
+- Spacing and layout: 280px fixed sidebar, 109px desktop header, 96px main top padding, 700px search control, two-column quick links, alternating illustration sections, compact footer. Mobile removes the sidebar, hides card descriptions, stacks text above illustrations, and adds persistent bottom tools. The full-width category drawer scrolls independently.
+- Colors: navy text, warm off-white background, white cards, gray borders, pale blue announcement, and subdued secondary text match the source palette.
+- Assets: existing Innflow logo, source fonts, and locally generated adaptations of the two source illustrations. Phosphor icons represent Innflow topics. No hotlinked assets or CSS-drawn illustrations.
+- Copy: intentionally adapted to Innflow. No Calendly support availability, community service, scheduling claims, or API functionality is represented as an Innflow service. Search indexes 12 static Innflow topic summaries and links to existing product/resource pages.
+- Focused review: hero typography and controls, quick-link cards, mobile header/bottom tools, menu drawer, and learning illustration were individually inspected at native scale in browser captures. No extra crop artifacts were necessary because these details are legible in the saved viewport captures.
+
+## Comparison history
+
+1. Initial inspection found inherited body letter spacing, excessive hero spacing, and a low-visibility logo. Reset letter spacing, matched reference hero gaps, and used the existing bold Innflow logo.
+2. Mobile inspection found browser default dialog max-width constraining the drawer. Explicitly reset max-width. The final drawer capture verifies full-width layout.
+3. Scrolling inspection found the global scroll shell interfered with the sticky header. Changed the help header to fixed positioning and disabled Lenis only on `/help`. DOM geometry verified header top remains 0 after scrolling.
+4. Link verification found obsolete agent-studio, files, and Terms paths. Corrected them and verified HTTP 200 at the replacement destinations.
+5. Final combined desktop/mobile comparisons have no actionable P0/P1/P2 findings for the stated Innflow adaptation.
+
+## Interaction checks
+
+Passed in Chrome:
+
+- Sidebar and hero search open an accessible native modal and focus the search input.
+- Ctrl/Cmd+K opens search; Escape closes it and restores trigger focus.
+- Popular-search chips populate the query and show matching results.
+- `workflow` returns 3 results; quick answers expand and reveal relevant text and topic links.
+- Unknown query shows 0 results and an actionable support path.
+- `files` returns the matching topic on mobile.
+- Category accordion opens on mobile and reveals its destination links.
+- Mobile navigation, category drawer, search, and support controls open their intended surfaces.
+- Support dialog provides the configured support email and contact-page link; no message was sent.
+- Announcement dismissal updates header and page offsets.
+- 320px and 390px mobile viewports have no horizontal document overflow.
+- All rendered image assets loaded successfully.
+- All local destinations referenced by the help page returned HTTP 200 after fixes.
+
+## Code checks and limitations
+
+- `npm run typecheck`: passed.
+- Biome check of all eight changed/new TSX/TS/CSS source files: passed.
+- Browser console reviewed. The shared Termly integration logs a statistics endpoint HTTP 500 and script-order warning; no help-component exception was observed. This existing global integration was not modified.
+- No production build, commit, merge, or deployment is claimed. Concurrent unrelated work exists in the shared checkout and was preserved.
+- Follow-up polish: native browser scrollbar styling and content-dependent card wrapping differ slightly. Brand-specific icons and copy are deliberate adaptations.
+
+Implementation checklist: complete for the local help landing page.
+
+
+---
+
+# Earlier page QA (preserved)
+
 # Alternate Innflow homepage design QA
 
 final result: passed

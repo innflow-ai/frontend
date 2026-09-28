@@ -1,48 +1,68 @@
+.page {
+  color: #071a31;
+  background: #fcfbf8;
+  font-family: var(--font-geist), sans-serif;
+}
+.page :where(a, button, select):focus-visible {
+  outline: 3px solid #006bff;
+  outline-offset: 4px;
+}
 .hero {
-  padding: 132px 0 66px;
-  background: #fffbf4;
-  border-bottom: 1px solid #e2e4df;
-  color: #0c1b2a;
+  padding: 168px 0 56px;
+  border-bottom: 1px solid #d8dce0;
 }
 .eyebrow {
   display: block;
-  text-transform: uppercase;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.13em;
-  margin: 40px 0 22px;
-  color: #536473;
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 0 22px;
+  color: #5d6d7b;
 }
 .hero.hero h1 {
-  font-size: clamp(42px, 5vw, 72px);
-  line-height: 1.06;
+  font-size: clamp(40px, 4.5vw, 64px);
+  line-height: 1.08;
   letter-spacing: -0.045em;
   max-width: 940px;
   font-weight: 500;
 }
 .hero h1 span {
-  color: #6a7a83;
+  color: #5d6d7b;
 }
 .hero p {
   max-width: 580px;
-  font-size: 19px;
+  font-size: 18px;
   line-height: 1.6;
   margin: 24px 0;
 }
-.heroNote {
-  display: flex;
+.browseLink {
+  display: inline-flex;
   align-items: center;
-  gap: 10px;
-  font-size: 13px;
-  color: #536473;
+  gap: 24px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.resultSummary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+.clearFilters {
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
 }
 .directory {
   display: grid;
   grid-template-columns: 230px minmax(0, 1fr);
   gap: 56px;
-  padding-top: 56px;
+  scroll-margin-top: 110px;
+  padding-top: 48px;
   padding-bottom: 100px;
-  color: #0c1b2a;
+  color: #071a31;
 }
 .directory .sidebar h2 {
   font-size: 14px;
@@ -72,12 +92,12 @@
   font-size: 12px;
 }
 .categories button[aria-pressed="true"] {
-  background: #eaf0ee;
-  color: #143f35;
+  background: #e9eef3;
+  color: #071a31;
   font-weight: 600;
 }
 .categories button:hover {
-  background: #f0f2ee;
+  background: #efeeeb;
 }
 .request {
   margin-top: 42px;
@@ -275,7 +295,7 @@
 .detail {
   padding-top: 132px;
   padding-bottom: 90px;
-  color: #0c1b2a;
+  color: #071a31;
 }
 .detailGrid {
   display: grid;
@@ -424,7 +444,7 @@
 }
 @media (max-width: 760px) {
   .hero {
-    padding: 105px 0 40px;
+    padding: 126px 0 40px;
   }
   .hero.hero h1 {
     font-size: 42px;
@@ -433,7 +453,7 @@
     font-size: 17px;
   }
   .directory {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 28px;
     padding-top: 32px;
     padding-bottom: 60px;
@@ -447,7 +467,13 @@
     flex-shrink: 0;
   }
   .request {
-    margin-top: 18px;
+    margin-top: 0;
+  }
+  .sidebar {
+    display: contents;
+  }
+  .request {
+    order: 3;
   }
   .sidebar {
     min-width: 0;

@@ -31,3 +31,9 @@ Verify Studio types with `npm run typecheck`, and deploy the local schema with `
 ## Verification (2026-09-14)
 
 Schema deployed and remotely verified; nine published records, four categories, all logos present. Website and Studio TypeScript checks passed; nine focused filtering and webhook tests passed. Browser search, category/status filters, reset, detail navigation, and desktop/mobile checks passed without horizontal overflow. Directory and detail routes return 200, unknown slug returns 404, and sitemap includes detail URLs. Static CMS logos are marked essential so declining optional tracking does not hide them. The legacy SharePoint SVG is rasterized before CMS upload because Sanity sanitization breaks its Illustrator DOCTYPE.
+
+## Directory refresh (2026-09-28)
+
+The directory and overview pages use the homepage's Showcase theme. Search matches names, short descriptions and category names. Category and availability filters combine with search; Reset all clears every filter and restores the initial 24-result limit. Visitors can load more results. An empty CMS catalog offers an integration request instead of a filter reset.
+
+All nine published records were rechecked: each has a logo and overview, and all remain Planned. Existing CMS copy is displayed verbatim. All nine detail URLs return 200 with an overview; unknown slugs return 404. Desktop and mobile browser checks cover search, combined filters, reset, logo display and horizontal overflow. New component tests cover pagination, searching beyond the first page, reset and the empty catalog state.

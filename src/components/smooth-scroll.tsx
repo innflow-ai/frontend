@@ -8,8 +8,9 @@ export function SmoothScroll() {
   const pathname = usePathname();
 
   // Recreate on navigation so momentum cannot carry into the next page.
-  // biome-ignore lint/correctness/useExhaustiveDependencies: pathname intentionally resets the scroll controller.
   useEffect(() => {
+    // Help navigation uses native scrolling for its fixed shell and dialogs.
+    if (pathname === "/help") return;
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     let lenis: Lenis | undefined;
 

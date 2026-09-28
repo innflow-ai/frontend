@@ -51,7 +51,12 @@ export function SiteCta() {
   }
 
   // Showcase and Product designs render their own closing CTA.
-  if (usesShowcaseDesign(pathname) || getProductDesign(pathname)) return null;
+  if (
+    pathname === "/help" ||
+    usesShowcaseDesign(pathname) ||
+    getProductDesign(pathname)
+  )
+    return null;
 
   return (
     <div className={styles.page}>

@@ -1,0 +1,790 @@
+- generic [ref=e1]:
+  - region "Cookie Consent Prompt" [ref=e815]:
+    - generic [ref=e817]:
+      - generic [ref=e818]:
+        - text: We use essential cookies to make our site work. With your consent, we may also use non-essential cookies to improve user experience, personalize advertisements, and analyze web traffic. For these reasons, we may share your site usage data with our advertising and analytics partners. By clicking “Accept,” you agree to our website's cookie use as described in our
+        - button "Cookie Policy" [ref=e819] [cursor=pointer]
+        - text: . You can change your cookie settings at any time by clicking “
+        - button "Preferences" [ref=e820] [cursor=pointer]
+        - text: .”
+      - generic [ref=e821]:
+        - button "Preferences" [ref=e822] [cursor=pointer]
+        - button "Decline" [ref=e823] [cursor=pointer]
+        - button "Accept" [ref=e824] [cursor=pointer]
+  - link "Skip to content" [ref=e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic [ref=e3]:
+    - complementary "Innflow announcement" [ref=e4]:
+      - generic [ref=e7]: Explore the new Innflow experience
+      - link "Learn more about the new Innflow experience" [ref=e8] [cursor=pointer]:
+        - /url: "#workspace-overview"
+        - text: Learn more
+      - button "Dismiss announcement" [ref=e11] [cursor=pointer]
+    - banner [ref=e15]:
+      - link "innflow home" [ref=e16] [cursor=pointer]:
+        - /url: /
+        - img "innflow" [ref=e17]
+      - navigation "Primary navigation" [ref=e18]:
+        - group "Product" [ref=e19]:
+          - button "Product" [ref=e20] [cursor=pointer]
+        - group "Solutions" [ref=e23]:
+          - button "Solutions" [ref=e24] [cursor=pointer]
+        - group "Resources" [ref=e27]:
+          - button "Resources" [ref=e28] [cursor=pointer]
+        - link "Pricing" [ref=e31] [cursor=pointer]:
+          - /url: /pricing
+        - link "Blog" [ref=e32] [cursor=pointer]:
+          - /url: /blog
+      - generic [ref=e33]:
+        - link "Log in" [ref=e34] [cursor=pointer]:
+          - /url: https://app.innflow.ai/login
+        - link "Continue with Google" [ref=e35] [cursor=pointer]:
+          - /url: https://app.innflow.ai/auth/google
+  - main [ref=e38]:
+    - generic [ref=e39]:
+      - generic [ref=e40]:
+        - heading "Turn conversations into completed work." [level=1] [ref=e41]: Turn conversationsinto completed work.
+        - paragraph [ref=e42]: Connect conversations, delegate tasks, and keep work moving.
+        - generic [ref=e43]:
+          - link "Get started" [ref=e44] [cursor=pointer]:
+            - /url: https://app.innflow.ai/signup
+          - link "Book a demo" [ref=e45] [cursor=pointer]:
+            - /url: https://cal.com/julian-patrick-afu0u2/innflow-demo?overlayCalendar=true
+        - generic [ref=e46]:
+          - link "Continue with Google" [ref=e47] [cursor=pointer]:
+            - /url: https://app.innflow.ai/auth/google
+          - text: ·
+          - link "Sign up with email" [ref=e48] [cursor=pointer]:
+            - /url: https://app.innflow.ai/signup
+      - region "Interactive feature showcase" [ref=e49]:
+        - generic [ref=e51]:
+          - button "Skip showcase" [ref=e53] [cursor=pointer]: ×
+          - generic [ref=e54]:
+            - tablist "Features" [ref=e55]:
+              - tab "AI agent" [ref=e56] [cursor=pointer]
+              - tab "Workflows" [ref=e57] [cursor=pointer]
+              - tab "Sidekick" [ref=e58] [cursor=pointer]
+              - tab "Insights" [selected] [ref=e59] [cursor=pointer]
+            - tabpanel "Insights" [ref=e825]:
+              - generic [ref=e826]:
+                - generic [ref=e827]:
+                  - generic [ref=e828]: Insights
+                  - generic [ref=e829]: New
+                - heading "See what needs your attention" [level=2] [ref=e830]
+                - paragraph [ref=e831]: Turn conversations and activity into clear summaries. Spot recurring questions, review open work, and decide where to focus next.
+                - link "Explore the platform for Insights" [ref=e832] [cursor=pointer]:
+                  - /url: /products/platform
+                  - text: Explore the platform
+                  - generic [aria-hidden] [ref=e833]: →
+                  - generic [ref=e834]: for Insights
+              - generic [ref=e861]:
+                - strong [ref=e862]: Consultation
+                - generic [ref=e863]: $100
+                - generic [ref=e864]:
+                  - text: Powered by
+                  - strong [ref=e865]: stripe
+                - paragraph [ref=e866]:
+                  - text: ◷ 45 min
+                  - generic [ref=e867]: ▰ Zoom
+                - generic [ref=e868]:
+                  - generic [ref=e869]: Require payment
+                  - text: Amount
+                  - generic [ref=e872]:
+                    - text: $
+                    - generic [ref=e873]: "100"
+                    - generic [ref=e874]: USD
+    - generic [ref=e142]:
+      - region [ref=e143]:
+        - generic [ref=e145]:
+          - generic [ref=e146]:
+            - heading "Move everyday work forward." [level=2] [ref=e147]
+            - paragraph [ref=e148]: Schedule meetings, prepare follow-ups, review decisions, and handle billing questions.
+            - link "Get started" [ref=e149] [cursor=pointer]:
+              - /url: https://app.innflow.ai/signup
+          - generic [ref=e150]:
+            - article [ref=e151]:
+              - generic [ref=e153]:
+                - heading [level=3] [ref=e154]:
+                  - button "Connect" [expanded] [ref=e155] [cursor=pointer]
+                - generic [ref=e157]:
+                  - paragraph [ref=e158]: Connect the tools you use and add relevant business information, giving your agents the context to get started.
+                  - list [ref=e159]:
+                    - listitem [ref=e160]: Connect your tools
+                    - listitem [ref=e162]: Add your business information
+                    - listitem [ref=e164]: Give your agents context
+            - article [ref=e168]:
+              - generic [ref=e169]:
+                - generic [ref=e170]:
+                  - heading [level=3] [ref=e171]:
+                    - button "Train" [ref=e172] [cursor=pointer]
+                  - paragraph [ref=e174]: Show your agents how you work.
+                - generic [ref=e176]:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic: Name
+                          - generic: Email
+                          - generic: Last activity
+                        - generic:
+                          - generic: Tori Mathers
+                          - generic: tori.mathers@pri...
+                          - generic: Today
+                        - generic:
+                          - generic: Carl Matthews
+                          - generic: carl.matthews@r...
+                          - generic: Yesterday
+                        - generic:
+                          - generic: Emily Kim
+                          - generic: emily.kim@liftwa...
+                          - generic: 2 days ago
+                        - generic:
+                          - generic: Meena Patel
+                          - generic: meena.patel@bri...
+                          - generic: 4 days ago
+                        - generic:
+                          - generic: Omar Raza
+                          - generic: omar.raza@talen...
+                          - generic: 2 weeks ago
+                      - generic:
+                        - generic: Filter
+                        - generic:
+                          - generic: First activity date
+                          - generic: Last activity date
+                          - generic: Next activity date
+                      - generic: All contacts 347
+            - article [ref=e177]:
+              - generic [ref=e178]:
+                - generic [ref=e179]:
+                  - heading [level=3] [ref=e180]:
+                    - button "Assign" [ref=e181] [cursor=pointer]
+                  - paragraph [ref=e183]: Hand off the work.
+                - generic [ref=e185]:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - strong: Quinn
+                            - generic: to me, Dominic Mills ▾
+                        - paragraph: Happy to set up a call for you with Dominic. Here are a few times you’re both available.
+                        - generic:
+                          - generic: 10:00 AM
+                          - generic: 2:30 PM
+                          - generic: 3:00 PM
+            - article [ref=e186]:
+              - generic [ref=e187]:
+                - generic [ref=e188]:
+                  - heading [level=3] [ref=e189]:
+                    - button "Deploy" [ref=e190] [cursor=pointer]
+                  - paragraph [ref=e192]: Put your agents to work. Review progress.
+                - generic [ref=e194]:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - strong: Your AI agent
+                          - generic: Working for you
+                      - generic:
+                        - strong: Keep work moving.
+                        - paragraph: Schedules work, follows up, and keeps your everyday tasks on track.
+      - generic [ref=e195]:
+        - region [ref=e196]:
+          - generic [ref=e198]:
+            - generic [ref=e199]:
+              - generic [ref=e200]: AI agent
+              - heading "Keep every request and handoff together." [level=2] [ref=e202]
+            - generic [ref=e204]:
+              - generic [ref=e205]:
+                - heading [level=3] [ref=e206]:
+                  - button "Orchestrate actions" [ref=e207] [cursor=pointer]
+                - region "Orchestrate actions" [ref=e209]:
+                  - paragraph [ref=e210]: Give each request a clear owner. Route urgent issues to a teammate and delegate routine tasks to an agent, with the conversation attached.
+                  - button "Show Orchestrate actions" [ref=e211] [cursor=pointer]
+              - generic [ref=e212]:
+                - heading [level=3] [ref=e213]:
+                  - button "All your channels, connected" [ref=e214] [cursor=pointer]
+                - region "All your channels, connected" [ref=e216]:
+                  - paragraph [ref=e217]: Bring messages from your connected channels into one workspace, with the customer context your team needs to respond.
+                  - button "Show All your channels, connected" [ref=e218] [cursor=pointer]
+              - generic [ref=e219]:
+                - heading [level=3] [ref=e220]:
+                  - button "An assistant for your team" [ref=e221] [cursor=pointer]
+                - region "An assistant for your team" [ref=e223]:
+                  - paragraph [ref=e224]: Find relevant information, draft a response and review the next step without piecing together separate conversations.
+                  - button "Show An assistant for your team" [ref=e225] [cursor=pointer]
+              - generic [ref=e226]:
+                - heading [level=3] [ref=e227]:
+                  - button "AI agents, working together" [ref=e228] [cursor=pointer]
+                - region "AI agents, working together" [ref=e230]:
+                  - paragraph [ref=e231]: Choose an agent for the task and give it the context to get started. Keep your team involved in the decisions that matter.
+                  - button "Show AI agents, working together" [ref=e232] [cursor=pointer]
+              - generic [ref=e233]:
+                - heading [level=3] [ref=e234]:
+                  - button "Workflows that take action" [ref=e235] [cursor=pointer]
+                - region "Workflows that take action" [ref=e237]:
+                  - paragraph [ref=e238]: "Turn a request into a clear next step: assign an owner, notify the right team or trigger a connected workflow."
+                  - button "Show Workflows that take action" [ref=e239] [cursor=pointer]
+              - generic [ref=e240]:
+                - heading [level=3] [ref=e241]:
+                  - button "Insights from every interaction" [ref=e242] [cursor=pointer]
+                - region "Insights from every interaction" [ref=e244]:
+                  - paragraph [ref=e245]: Group related feedback, spot recurring questions and see which issues deserve your team's attention.
+                  - button "Show Insights from every interaction" [ref=e246] [cursor=pointer]
+              - generic [ref=e247]:
+                - heading [level=3] [ref=e248]:
+                  - button "Flexible, API-first building blocks" [pressed] [ref=e249] [cursor=pointer]
+                - region "Flexible, API-first building blocks" [ref=e251]:
+                  - paragraph [ref=e252]: Use APIs and connected tools to shape the workflow around your product, your data and the way your team works.
+                  - button "Show Flexible, API-first building blocks" [ref=e253] [cursor=pointer]
+        - region [ref=e257]:
+          - generic [ref=e258]:
+            - generic [ref=e259]:
+              - generic [ref=e260]:
+                - generic [ref=e261]: Workflows
+                - heading "Delegate tasks. Stay involved." [level=2] [ref=e263]
+              - generic [ref=e265]:
+                - generic [ref=e266]:
+                  - heading [level=3] [ref=e267]:
+                    - button "Bring your agents together" [expanded] [ref=e268] [cursor=pointer]
+                  - region "Bring your agents together" [ref=e270]:
+                    - paragraph [ref=e271]: Summarize incoming requests, draft follow-ups, and prepare the next step. Give each agent clear instructions and review its work before moving forward.
+                    - button "Show Bring your agents together" [ref=e272] [cursor=pointer]
+                - heading [level=3] [ref=e274]:
+                  - button "Delegate a task. Review the result." [ref=e275] [cursor=pointer]
+                - heading [level=3] [ref=e278]:
+                  - button "Build your own agents" [ref=e279] [cursor=pointer]
+            - 'img "Agent selection storyboard: Codex, VS Code, Claude, Cursor, Muse, Devin, Grokbot, Quinn AI. Each icon rotates into the selected white card above Innflow." [ref=e284]':
+              - generic [ref=e287]: Your agent here
+        - region [ref=e300]:
+          - generic [ref=e301]:
+            - generic [ref=e302]:
+              - generic [ref=e303]:
+                - generic [ref=e304]: Sidekick
+                - heading "Keep the next step moving." [level=2] [ref=e306]
+              - generic [ref=e308]:
+                - generic [ref=e309]:
+                  - heading [level=3] [ref=e310]:
+                    - button "Connect external systems" [expanded] [ref=e311] [cursor=pointer]
+                  - region "Connect external systems" [ref=e313]:
+                    - paragraph [ref=e314]: Carry conversation details into your connected tools. Create a task, send a team update or call your own API.
+                    - button "Show Connect external systems" [ref=e315] [cursor=pointer]
+                - heading [level=3] [ref=e317]:
+                  - button "Route by context" [ref=e318] [cursor=pointer]
+                - heading [level=3] [ref=e321]:
+                  - button "Auto-triage requests" [ref=e322] [cursor=pointer]
+                - heading [level=3] [ref=e325]:
+                  - button "Keep thread summaries current" [ref=e326] [cursor=pointer]
+            - img "Sidekick — reference product illustration" [ref=e330]
+        - region [ref=e331]:
+          - generic [ref=e332]:
+            - generic [ref=e333]:
+              - generic [ref=e334]:
+                - generic [ref=e335]: Insights
+                - heading "See what needs your attention." [level=2] [ref=e337]
+              - generic [ref=e339]:
+                - generic [ref=e340]:
+                  - heading [level=3] [ref=e341]:
+                    - button "Detect trends" [expanded] [ref=e342] [cursor=pointer]
+                  - region "Detect trends" [ref=e344]:
+                    - paragraph [ref=e345]: See which questions and issues keep coming up. Review related conversations together to understand the pattern.
+                    - button "Show Detect trends" [ref=e346] [cursor=pointer]
+                - heading [level=3] [ref=e348]:
+                  - button "Catch up instantly" [ref=e349] [cursor=pointer]
+                - heading [level=3] [ref=e352]:
+                  - button "Daily summaries" [ref=e353] [cursor=pointer]
+                - heading [level=3] [ref=e356]:
+                  - button "Product insights" [ref=e357] [cursor=pointer]
+            - img "Insights — reference product illustration" [ref=e361]
+      - region [ref=e362]:
+        - heading "Real customers. Real results." [level=2] [ref=e364]
+        - generic [ref=e365]:
+          - button "Read Meera Shah's story" [ref=e366] [cursor=pointer]
+          - button "Read Daniel Cho's story" [ref=e367] [cursor=pointer]
+          - button "Read Marcus Reed's story" [ref=e368] [cursor=pointer]
+          - button "Read Grace Lin's story" [ref=e369] [cursor=pointer]
+          - article [ref=e370]:
+            - generic [ref=e372]:
+              - blockquote [ref=e373]: “The people are my favorite part of this work, and I want the organization around it to support that. More focus on people, less on admin. The everyday details feel easier to approach with a clear head.”
+              - paragraph [ref=e374]: Elena Morales
+              - paragraph [ref=e375]: Property manager
+            - img "Portrait of Elena Morales" [ref=e377]
+        - group "Choose a customer story" [ref=e378]:
+          - button "Show Elena Morales's story" [pressed] [ref=e379] [cursor=pointer]
+          - button "Show Meera Shah's story" [ref=e381] [cursor=pointer]
+          - button "Show Daniel Cho's story" [ref=e383] [cursor=pointer]
+          - button "Show Marcus Reed's story" [ref=e385] [cursor=pointer]
+          - button "Show Grace Lin's story" [ref=e387] [cursor=pointer]
+          - button "Show Arjun Desai's story" [ref=e389] [cursor=pointer]
+          - button "Show Andrew Collins's story" [ref=e391] [cursor=pointer]
+          - button "Show Angela Brooks's story" [ref=e393] [cursor=pointer]
+          - button "Show Carol Bennett's story" [ref=e395] [cursor=pointer]
+          - button "Show Denise Walker's story" [ref=e397] [cursor=pointer]
+          - button "Show Martin Hayes's story" [ref=e399] [cursor=pointer]
+          - button "Show Samir Haddad's story" [ref=e401] [cursor=pointer]
+      - region [ref=e403]:
+        - generic [ref=e404]:
+          - heading "Connect the tools behind your work." [level=2] [ref=e405]: Connect the toolsbehind your work.
+          - paragraph [ref=e406]: Bring relevant information into the tools your team already uses. Explore supported connections to find the right fit for your workflow.
+          - link "View all integrations" [ref=e407] [cursor=pointer]:
+            - /url: /integrations
+            - text: View all integrations
+            - generic [aria-hidden] [ref=e408]: →
+        - generic [ref=e409]:
+          - generic [ref=e410]:
+            - img "Zoom" [ref=e412]
+            - img "Google Calendar" [ref=e414]
+            - img "Gmail" [ref=e416]
+            - img "Google Meet" [ref=e418]
+            - img "Salesforce" [ref=e420]
+            - img "Slack" [ref=e422]
+            - img "Microsoft Teams" [ref=e424]
+            - img "Outlook" [ref=e426]
+            - img "Chrome" [ref=e428]
+          - generic [ref=e429]:
+            - img "OpenAI" [ref=e431]
+            - img "Claude" [ref=e433]
+            - img "HubSpot" [ref=e435]
+            - img "Greenhouse" [ref=e437]
+            - img "LinkedIn" [ref=e439]
+            - img "Stripe" [ref=e441]
+            - img "PayPal" [ref=e443]
+            - img "Zapier" [ref=e445]
+        - generic [ref=e446]:
+          - link [ref=e447] [cursor=pointer]:
+            - /url: /integrations
+            - generic [aria-hidden] [ref=e449]: ↗
+            - heading "Support channels" [level=3] [ref=e450]
+            - paragraph [ref=e451]: Bring messages from your connected channels into one place, so your team can follow the conversation and respond with context.
+          - link [ref=e452] [cursor=pointer]:
+            - /url: /integrations
+            - generic [aria-hidden] [ref=e454]: ↗
+            - heading "Your tools. Your workflows." [level=3] [ref=e455]
+            - paragraph [ref=e456]: Keep conversation details connected to the tools your team uses. Pass context into your CRM, issue tracker or own APIs.
+        - paragraph [ref=e457]: Connection examples from the design. Check the directory for availability.
+      - region [ref=e458]:
+        - generic [ref=e459]:
+          - generic [ref=e460]:
+            - paragraph [ref=e461]: THE STARTUP COMMUNITY
+            - heading "Featured on & launching with" [level=2] [ref=e462]
+            - paragraph [ref=e463]: Discover Innflow across startup directories. Upcoming listings are marked below.
+          - button "Pause directory animation" [active] [pressed] [ref=e464] [cursor=pointer]: Resume
+        - generic [ref=e466]:
+          - generic [ref=e467]:
+            - link "Visit EarlyHunt (opens in a new tab)" [ref=e468] [cursor=pointer]:
+              - /url: https://earlyhunt.com/project/innflow
+              - img "Featured on EarlyHunt" [ref=e875]
+              - generic [ref=e470]: Featured listing
+            - link "Visit neeed.directory (opens in a new tab)" [ref=e471] [cursor=pointer]:
+              - /url: https://neeed.directory/products/innflow?utm_source=innflow
+              - img "Featured on neeed.directory" [ref=e876]
+              - generic [ref=e473]: Featured listing
+            - link "Visit StartupFA.me (opens in a new tab)" [ref=e474] [cursor=pointer]:
+              - /url: https://startupfa.me/s/innflow.ai-345?utm_source=innflow.ai
+              - img "Featured on Startup Fame" [ref=e877]
+              - generic [ref=e476]: Featured listing
+            - link "Visit TechTrendin (opens in a new tab)" [ref=e477] [cursor=pointer]:
+              - /url: https://www.techtrendin.com/products/innflow
+              - img "Featured on TechTrendin" [ref=e878]
+              - generic [ref=e479]: Featured listing
+            - link "Visit ConfettiSaaS, listing pending (opens in a new tab)" [ref=e480] [cursor=pointer]:
+              - /url: https://confettisaas.com/saas/innflow-ai?ref=badge
+              - img "Innflow on ConfettiSaaS" [ref=e879]
+              - generic [ref=e482]: Listing pending
+            - link "Visit DodoDirectory, listing pending (opens in a new tab)" [ref=e483] [cursor=pointer]:
+              - /url: https://dododirectory.com
+              - img "Featured on DodoDirectory" [ref=e880]
+              - generic [ref=e485]: Listing pending
+            - link "Visit Fazier, listing pending (opens in a new tab)" [ref=e486] [cursor=pointer]:
+              - /url: https://fazier.com
+              - img "Fazier badge" [ref=e881]
+              - generic [ref=e488]: Listing pending
+            - link "Visit findly.tools, listing pending (opens in a new tab)" [ref=e489] [cursor=pointer]:
+              - /url: https://findly.tools
+              - img "Featured on Findly.tools" [ref=e882]
+              - generic [ref=e491]: Listing pending
+            - link "Visit Huzzler, listing pending (opens in a new tab)" [ref=e492] [cursor=pointer]:
+              - /url: https://huzzler.so
+              - generic [ref=e493]:
+                - img "Featured on Huzzler"
+              - generic [ref=e494]: Listing pending
+            - link "Visit IdeaKiln, listing pending (opens in a new tab)" [ref=e495] [cursor=pointer]:
+              - /url: https://ideakiln.com
+              - generic [ref=e496]:
+                - img "Featured on Idea Kiln"
+              - generic [ref=e497]: Listing pending
+            - link "Visit Indiehunt, listing pending (opens in a new tab)" [ref=e498] [cursor=pointer]:
+              - /url: https://indiehunt.io
+              - generic [ref=e499]:
+                - img "Featured on IndieHunt"
+              - generic [ref=e500]: Listing pending
+            - link "Visit Launch Llama Tools, listing pending (opens in a new tab)" [ref=e501] [cursor=pointer]:
+              - /url: https://tools.launchllama.co?utm_source=badge&utm_medium=referral
+              - generic [ref=e502]:
+                - img "As seen on Launch Llama Newsletter"
+              - generic [ref=e503]: Listing pending
+            - link "Visit SaaSBison, listing pending (opens in a new tab)" [ref=e504] [cursor=pointer]:
+              - /url: https://saasbison.com
+              - generic [ref=e505]:
+                - img "Featured on SaaSBison"
+              - generic [ref=e506]: Listing pending
+            - link "Visit SaaSGrow, listing pending (opens in a new tab)" [ref=e507] [cursor=pointer]:
+              - /url: https://saasgrow.app?ref=innflow.ai
+              - generic [ref=e508]:
+                - img "Innflow on SaaSGrow"
+              - generic [ref=e509]: Listing pending
+            - link "Visit StartupBase, listing pending (opens in a new tab)" [ref=e510] [cursor=pointer]:
+              - /url: https://startupbase.io
+              - generic [ref=e511]:
+                - img "Featured on StartupBase"
+              - generic [ref=e512]: Listing pending
+            - link "Visit startupfa.st, listing pending (opens in a new tab)" [ref=e513] [cursor=pointer]:
+              - /url: https://startupfa.st
+              - generic [ref=e514]:
+                - img "Powered by Startup Fast"
+              - generic [ref=e515]: Listing pending
+            - link "Visit Sumodir, listing pending (opens in a new tab)" [ref=e516] [cursor=pointer]:
+              - /url: https://sumodir.com
+              - generic [ref=e517]:
+                - img "Featured on SumoDir"
+              - generic [ref=e518]: Listing pending
+            - link "Visit Twelve Tools, listing pending (opens in a new tab)" [ref=e519] [cursor=pointer]:
+              - /url: https://twelve.tools
+              - generic [ref=e520]:
+                - img "Featured on Twelve Tools"
+              - generic [ref=e521]: Listing pending
+            - link "Visit Web Review, listing pending (opens in a new tab)" [ref=e522] [cursor=pointer]:
+              - /url: https://web-review.com
+              - generic [ref=e523]:
+                - img "Featured on Web Review"
+              - generic [ref=e524]: Listing pending
+          - generic [aria-hidden] [ref=e525]:
+            - link [ref=e526] [cursor=pointer]:
+              - /url: https://earlyhunt.com/project/innflow
+              - generic [ref=e528]: Featured listing
+            - link [ref=e529] [cursor=pointer]:
+              - /url: https://neeed.directory/products/innflow?utm_source=innflow
+              - generic [ref=e531]: Featured listing
+            - link [ref=e532] [cursor=pointer]:
+              - /url: https://startupfa.me/s/innflow.ai-345?utm_source=innflow.ai
+              - generic [ref=e534]: Featured listing
+            - link [ref=e535] [cursor=pointer]:
+              - /url: https://www.techtrendin.com/products/innflow
+              - generic [ref=e537]: Featured listing
+            - link [ref=e538] [cursor=pointer]:
+              - /url: https://confettisaas.com/saas/innflow-ai?ref=badge
+              - generic [ref=e540]: Listing pending
+            - link [ref=e541] [cursor=pointer]:
+              - /url: https://dododirectory.com
+              - generic [ref=e543]: Listing pending
+            - link [ref=e544] [cursor=pointer]:
+              - /url: https://fazier.com
+              - generic [ref=e546]: Listing pending
+            - link [ref=e547] [cursor=pointer]:
+              - /url: https://findly.tools
+              - generic [ref=e549]: Listing pending
+            - link [ref=e550] [cursor=pointer]:
+              - /url: https://huzzler.so
+              - generic [ref=e552]: Listing pending
+            - link [ref=e553] [cursor=pointer]:
+              - /url: https://ideakiln.com
+              - generic [ref=e555]: Listing pending
+            - link [ref=e556] [cursor=pointer]:
+              - /url: https://indiehunt.io
+              - generic [ref=e558]: Listing pending
+            - link [ref=e559] [cursor=pointer]:
+              - /url: https://tools.launchllama.co?utm_source=badge&utm_medium=referral
+              - generic [ref=e561]: Listing pending
+            - link [ref=e562] [cursor=pointer]:
+              - /url: https://saasbison.com
+              - generic [ref=e564]: Listing pending
+            - link [ref=e565] [cursor=pointer]:
+              - /url: https://saasgrow.app?ref=innflow.ai
+              - generic [ref=e567]: Listing pending
+            - link [ref=e568] [cursor=pointer]:
+              - /url: https://startupbase.io
+              - generic [ref=e570]: Listing pending
+            - link [ref=e571] [cursor=pointer]:
+              - /url: https://startupfa.st
+              - generic [ref=e573]: Listing pending
+            - link [ref=e574] [cursor=pointer]:
+              - /url: https://sumodir.com
+              - generic [ref=e576]: Listing pending
+            - link [ref=e577] [cursor=pointer]:
+              - /url: https://twelve.tools
+              - generic [ref=e579]: Listing pending
+            - link [ref=e580] [cursor=pointer]:
+              - /url: https://web-review.com
+              - generic [ref=e582]: Listing pending
+      - region [ref=e583]:
+        - generic [ref=e584]:
+          - generic [ref=e585]: Get started
+          - heading "From the first meeting to the follow-up" [level=2] [ref=e586]: From the first meetingto the follow-up
+          - paragraph [ref=e587]: All of the work around meetings, handled in one place. Book time, capture every discussion, and keep next steps moving without the manual work.
+          - link "Start for free" [ref=e588] [cursor=pointer]:
+            - /url: https://app.innflow.ai/signup
+        - region "Product highlights. Scroll horizontally to explore." [ref=e589]:
+          - generic [ref=e590]:
+            - generic [ref=e594]:
+              - generic [aria-hidden] [ref=e595]:
+                - generic [ref=e596]: Insights
+                - strong [ref=e597]: Uncovered
+              - generic [ref=e598]:
+                - generic [ref=e601]: Insights
+                - strong [ref=e602]: Uncovered
+            - generic [ref=e606]:
+              - generic [aria-hidden] [ref=e607]:
+                - generic [ref=e608]: Discovery
+                - strong [ref=e609]: Scheduled
+              - generic [ref=e610]:
+                - generic [ref=e613]: Discovery
+                - strong [ref=e614]: Scheduled
+            - generic [ref=e618]:
+              - generic [aria-hidden] [ref=e619]:
+                - generic [ref=e620]: Workflows
+                - strong [ref=e621]: Connected
+              - generic [ref=e622]:
+                - generic [ref=e625]: Workflows
+                - strong [ref=e626]: Connected
+            - generic [ref=e630]:
+              - generic [aria-hidden] [ref=e631]:
+                - generic [ref=e632]: Sidekick
+                - strong [ref=e633]: Ready
+              - generic [ref=e634]:
+                - generic [ref=e637]: Sidekick
+                - strong [ref=e638]: Ready
+  - contentinfo [ref=e640]:
+    - generic [ref=e641]:
+      - generic [ref=e642]:
+        - heading "Connect work your own way." [level=2] [ref=e643]: Connect workyour own way.
+        - link "Innflow home" [ref=e644] [cursor=pointer]:
+          - /url: /
+          - img "Innflow" [ref=e645]
+      - navigation "Footer navigation" [ref=e646]:
+        - generic [ref=e647]:
+          - generic [ref=e648]:
+            - heading "Product" [level=3] [ref=e649]
+            - list [ref=e650]:
+              - listitem [ref=e651]:
+                - link "Platform" [ref=e652] [cursor=pointer]:
+                  - /url: /platform
+              - listitem [ref=e653]:
+                - link "Agent OS" [ref=e654] [cursor=pointer]:
+                  - /url: /products/agent-os
+              - listitem [ref=e655]:
+                - link "Agent Studio" [ref=e656] [cursor=pointer]:
+                  - /url: /products/agent-studio
+              - listitem [ref=e657]:
+                - link "AI Agents" [ref=e658] [cursor=pointer]:
+                  - /url: /products/ai-agents
+              - listitem [ref=e659]:
+                - link "Copilot" [ref=e660] [cursor=pointer]:
+                  - /url: /products/agent-os
+              - listitem [ref=e661]:
+                - link "Agentic Workflows" [ref=e662] [cursor=pointer]:
+                  - /url: /products/agentic-workflows
+              - listitem [ref=e663]:
+                - link "Agent Skills" [ref=e664] [cursor=pointer]:
+                  - /url: /skills
+              - listitem [ref=e665]:
+                - link "AI Website Builder" [ref=e666] [cursor=pointer]:
+                  - /url: /features/website
+              - listitem [ref=e667]:
+                - link "Databases" [ref=e668] [cursor=pointer]:
+                  - /url: /products/databases
+              - listitem [ref=e669]:
+                - link "Templates" [ref=e670] [cursor=pointer]:
+                  - /url: /skills
+          - generic [ref=e671]:
+            - heading "Features" [level=3] [ref=e672]
+            - list [ref=e673]:
+              - listitem [ref=e674]:
+                - link "Security" [ref=e675] [cursor=pointer]:
+                  - /url: /security
+              - listitem [ref=e676]:
+                - link "Custom workflows" [ref=e677] [cursor=pointer]:
+                  - /url: /products/agentic-workflows
+              - listitem [ref=e678]:
+                - link "AI agents" [ref=e679] [cursor=pointer]:
+                  - /url: /products/ai-agents
+              - listitem [ref=e680]:
+                - link "Integrations" [ref=e681] [cursor=pointer]:
+                  - /url: /integrations
+        - generic [ref=e682]:
+          - generic [ref=e683]:
+            - heading "Industries" [level=3] [ref=e684]
+            - list [ref=e685]:
+              - listitem [ref=e686]:
+                - link "Financial Services & Banking" [ref=e687] [cursor=pointer]:
+                  - /url: /industries/financial-services-banking
+              - listitem [ref=e688]:
+                - link "Finance" [ref=e689] [cursor=pointer]:
+                  - /url: /industries/finance
+              - listitem [ref=e690]:
+                - link "Banking" [ref=e691] [cursor=pointer]:
+                  - /url: /industries/banking
+              - listitem [ref=e692]:
+                - link "Insurance" [ref=e693] [cursor=pointer]:
+                  - /url: /industries/insurance
+              - listitem [ref=e694]:
+                - link "Healthcare" [ref=e695] [cursor=pointer]:
+                  - /url: /industries/healthcare
+              - listitem [ref=e696]:
+                - link "Retail & eCommerce" [ref=e697] [cursor=pointer]:
+                  - /url: /industries/retail-ecommerce
+              - listitem [ref=e698]:
+                - link "Property & Real Estate" [ref=e699] [cursor=pointer]:
+                  - /url: /industries/property-real-estate
+              - listitem [ref=e700]:
+                - link "Property Management" [ref=e701] [cursor=pointer]:
+                  - /url: /industries/property-management
+              - listitem [ref=e702]:
+                - link "Manufacturing" [ref=e703] [cursor=pointer]:
+                  - /url: /industries/manufacturing
+              - listitem [ref=e704]:
+                - link "Telecommunications" [ref=e705] [cursor=pointer]:
+                  - /url: /industries/telecommunications
+              - listitem [ref=e706]:
+                - link "Professional Services" [ref=e707] [cursor=pointer]:
+                  - /url: /industries/professional-services
+              - listitem [ref=e708]:
+                - link "Business Process Outsourcing" [ref=e709] [cursor=pointer]:
+                  - /url: /industries/business-process-outsourcing
+              - listitem [ref=e710]:
+                - link "Public Sector" [ref=e711] [cursor=pointer]:
+                  - /url: /industries/public-sector
+              - listitem [ref=e712]:
+                - link "Energy & Utilities" [ref=e713] [cursor=pointer]:
+                  - /url: /industries/energy-utilities
+              - listitem [ref=e714]:
+                - link "Construction" [ref=e715] [cursor=pointer]:
+                  - /url: /industries/construction
+              - listitem [ref=e716]:
+                - link "Supply Chain & Logistics" [ref=e717] [cursor=pointer]:
+                  - /url: /industries/supply-chain-logistics
+              - listitem [ref=e718]:
+                - link "Hospitality & Travel" [ref=e719] [cursor=pointer]:
+                  - /url: /industries/hospitality-travel
+              - listitem [ref=e720]:
+                - link "Pharmaceutical" [ref=e721] [cursor=pointer]:
+                  - /url: /industries/pharmaceutical
+              - listitem [ref=e722]:
+                - link "Technology & Software" [ref=e723] [cursor=pointer]:
+                  - /url: /industries/technology-software
+              - listitem [ref=e724]:
+                - link "Private Equity" [ref=e725] [cursor=pointer]:
+                  - /url: /industries/private-equity
+              - listitem [ref=e726]:
+                - link "Cross-industry" [ref=e727] [cursor=pointer]:
+                  - /url: /industries/cross-industry
+          - generic [ref=e728]:
+            - heading "Teams & use cases" [level=3] [ref=e729]
+            - list [ref=e730]:
+              - listitem [ref=e731]:
+                - link "HR & Recruitment" [ref=e732] [cursor=pointer]:
+                  - /url: /industries/hr-recruitment
+              - listitem [ref=e733]:
+                - link "Customer Service" [ref=e734] [cursor=pointer]:
+                  - /url: /industries/customer-service
+              - listitem [ref=e735]:
+                - link "Debt Collection" [ref=e736] [cursor=pointer]:
+                  - /url: /industries/debt-collection
+              - listitem [ref=e737]:
+                - link "Talent Acquisition" [ref=e738] [cursor=pointer]:
+                  - /url: /industries/talent-acquisition
+              - listitem [ref=e739]:
+                - link "Custom AI Solutions" [ref=e740] [cursor=pointer]:
+                  - /url: /industries/custom-ai-solutions
+        - generic [ref=e741]:
+          - generic [ref=e742]:
+            - heading "Resources" [level=3] [ref=e743]
+            - list [ref=e744]:
+              - listitem [ref=e745]:
+                - link "Integrations" [ref=e746] [cursor=pointer]:
+                  - /url: /integrations
+              - listitem [ref=e747]:
+                - link "Pricing" [ref=e748] [cursor=pointer]:
+                  - /url: /pricing
+              - listitem [ref=e749]:
+                - link "Contact us" [ref=e750] [cursor=pointer]:
+                  - /url: /contact
+              - listitem [ref=e751]:
+                - link "Blog" [ref=e752] [cursor=pointer]:
+                  - /url: /blog
+              - listitem [ref=e753]:
+                - link "Become an Affiliate" [ref=e754] [cursor=pointer]:
+                  - /url: /demo
+              - listitem [ref=e755]:
+                - link "Customer Stories" [ref=e756] [cursor=pointer]:
+                  - /url: /blog
+              - listitem [ref=e757]:
+                - link "Asset Library" [ref=e758] [cursor=pointer]:
+                  - /url: /blog
+          - generic [ref=e759]:
+            - heading "Support" [level=3] [ref=e760]
+            - list [ref=e761]:
+              - listitem [ref=e762]:
+                - link "Help center" [ref=e763] [cursor=pointer]:
+                  - /url: /help-center
+              - listitem [ref=e764]:
+                - link "Contact support" [ref=e765] [cursor=pointer]:
+                  - /url: /contact
+              - listitem [ref=e766]:
+                - link "Contact sales" [ref=e767] [cursor=pointer]:
+                  - /url: https://cal.com/julian-patrick-afu0u2/innflow-demo?overlayCalendar=true
+          - generic [ref=e768]:
+            - heading "Company" [level=3] [ref=e769]
+            - list [ref=e770]:
+              - listitem [ref=e771]:
+                - link "About us" [ref=e772] [cursor=pointer]:
+                  - /url: /about
+              - listitem [ref=e773]:
+                - link "Careers" [ref=e774] [cursor=pointer]:
+                  - /url: /careers
+              - listitem [ref=e775]:
+                - link "Become a partner" [ref=e776] [cursor=pointer]:
+                  - /url: /partner-with-us
+              - listitem [ref=e777]:
+                - link "Blog" [ref=e778] [cursor=pointer]:
+                  - /url: /blog
+    - generic [ref=e779]:
+      - generic [ref=e780]:
+        - paragraph [ref=e781]: Let’s build together
+        - link "support@innflow.ai" [ref=e782] [cursor=pointer]:
+          - /url: mailto:support@innflow.ai
+        - region "Hours of operation" [ref=e783]:
+          - strong [ref=e784]: Hours of Operation
+          - generic [ref=e785]:
+            - generic [ref=e786]:
+              - term [ref=e787]: Monday–Friday
+              - definition [ref=e788]: 9:00 AM–6:00 PM ET
+            - generic [ref=e789]:
+              - term [ref=e790]: Saturday–Sunday
+              - definition [ref=e791]: 10:00 AM–5:00 PM ET
+      - link "Book an Innflow demo" [ref=e792] [cursor=pointer]:
+        - /url: https://cal.com/julian-patrick-afu0u2/innflow-demo?overlayCalendar=true
+        - text: Book an Innflow demo ↗
+    - generic [ref=e793]:
+      - generic [ref=e794]: English
+      - generic [ref=e795]:
+        - link "Privacy Policy" [ref=e796] [cursor=pointer]:
+          - /url: /legal/privacy-policy
+        - link "Terms of Service" [ref=e797] [cursor=pointer]:
+          - /url: /legal/terms-of-service
+        - link "Cookie Policy" [ref=e798] [cursor=pointer]:
+          - /url: /legal/cookie-policy
+        - link "Acceptable Use Policy" [ref=e799] [cursor=pointer]:
+          - /url: /legal/acceptable-use-policy
+        - link "EULA" [ref=e800] [cursor=pointer]:
+          - /url: /legal/eula
+        - link "Privacy Request" [ref=e801] [cursor=pointer]:
+          - /url: /legal/dsar
+        - link "Consent Preferences" [ref=e802] [cursor=pointer]:
+          - /url: "#"
+        - link "Do Not Sell or Share My Personal Information" [ref=e803] [cursor=pointer]:
+          - /url: https://app.termly.io/notify/d253192a-6c11-4338-9883-67b3307aea2f
+        - link "Limit the Use of My Sensitive Personal Information" [ref=e804] [cursor=pointer]:
+          - /url: https://app.termly.io/notify/d253192a-6c11-4338-9883-67b3307aea2f
+      - generic [ref=e805]: © 2026 Innflow
+  - button "Open Next.js Dev Tools" [ref=e811] [cursor=pointer]
+  - alert [ref=e891]

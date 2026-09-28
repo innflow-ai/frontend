@@ -189,6 +189,8 @@ export function SiteHeader() {
     setMenu(null);
     setMobile(false);
   };
+  if (pathname === "/help") return null;
+
   return (
     <div
       className={`${styles.page} ${styles.chromeScope}${isShowcasePreview ? ` ${previewStyles.previewScope}` : ""}`}

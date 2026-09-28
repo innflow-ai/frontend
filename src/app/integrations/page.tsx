@@ -1,5 +1,7 @@
-import { CalendlyProductPage } from "@/components/calendly-product-page";
+import { BaselineClosing } from "@/app/preview/scroll-showcase/baseline-lower-sections";
 import { IntegrationDirectory } from "@/components/integration-directory";
+import styles from "@/components/integrations.module.css";
+import { ShowcaseTheme } from "@/components/showcase-theme";
 import { getIntegrations } from "@/lib/integrations";
 import { createPageMetadata } from "@/lib/metadata";
 export const revalidate = 60;
@@ -12,22 +14,28 @@ export const metadata = createPageMetadata({
 export default async function IntegrationsPage() {
   const items = await getIntegrations();
   return (
-    <CalendlyProductPage
-      content={{
-        path: "/integrations",
-        name: "Integrations",
-        title: "Your tools. One connected workflow.",
-        description:
-          "Explore connections for the tools your team already uses, and the ones we’re planning next.",
-        intro: [
-          {
-            eyebrow: "The integration directory",
-            title: "Every integration includes its current availability.",
-          },
-        ],
-      }}
-    >
-      <IntegrationDirectory items={items} />
-    </CalendlyProductPage>
+    <ShowcaseTheme>
+      <main id="main-content" className={styles.page}>
+        <header className={styles.hero}>
+          <div className="shell">
+            <span className={styles.eyebrow}>Apps & integrations</span>
+            <h1>
+              Your tools.
+              <br />
+              <span>One connected workflow.</span>
+            </h1>
+            <p>
+              Explore connections for the tools your team already uses. Find an
+              integration, see what it does, and check its availability.
+            </p>
+            <a className={styles.browseLink} href="#integration-directory">
+              Explore integrations <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+        </header>
+        <IntegrationDirectory items={items} />
+        <BaselineClosing />
+      </main>
+    </ShowcaseTheme>
   );
 }

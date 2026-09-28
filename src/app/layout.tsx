@@ -46,7 +46,14 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   applicationName: "Innflow",
   icons: {
-    icon: [{ url: "/icon.png", sizes: "96x96", type: "image/png" }],
+    icon: [
+      { url: "/icon.png", sizes: "96x96", type: "image/png" },
+      {
+        url: "/brand/innflow-favicon.svg?v=20260928",
+        sizes: "any",
+        type: "image/svg+xml",
+      },
+    ],
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
   authors: [{ name: "Innflow" }],

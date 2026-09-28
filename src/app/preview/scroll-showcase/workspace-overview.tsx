@@ -1,6 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import { Checklist, Share, StarsA } from "@/components/icons/mage";
+
+const stepIcons = [StarsA, Share, Checklist];
+
 import { type KeyboardEvent, useState, useSyncExternalStore } from "react";
 import { siteConfig } from "@/config/site";
 import { WorkspaceCardArtwork } from "./workspace-card-artwork";
@@ -206,19 +210,10 @@ export function WorkspaceOverview() {
                                 className={styles.stepIcon}
                                 aria-hidden="true"
                               >
-                                <Image
-                                  src={`${assets}/step-${stepIndex + 1}-background.svg`}
-                                  alt=""
-                                  width={20}
-                                  height={20}
-                                />
-                                <Image
-                                  className={styles.stepGlyph}
-                                  src={`${assets}/step-${stepIndex + 1}-icon.svg`}
-                                  alt=""
-                                  width={14}
-                                  height={14}
-                                />
+                                {(() => {
+                                  const StepIcon = stepIcons[stepIndex];
+                                  return <StepIcon size={20} />;
+                                })()}
                               </span>
                               {step}
                             </li>

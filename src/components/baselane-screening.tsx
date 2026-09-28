@@ -1,4 +1,6 @@
 "use client";
+import { ArrowRight as MageArrowRight, Plus as MagePlus } from '@/components/icons/mage';
+
 
 import Image from "next/image";
 import { useState } from "react";
@@ -108,7 +110,7 @@ export function BaselaneScreening() {
           </p>
           <div className={styles.actions}>
             <a className={styles.button} href={source}>
-              See innflow in action →
+              See innflow in action <MageArrowRight size="1em" />
             </a>
             <a
               className={styles.outline}
@@ -116,7 +118,7 @@ export function BaselaneScreening() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Explore lease workflows →
+              Explore lease workflows <MageArrowRight size="1em" />
             </a>
           </div>
           <div className={styles.three}>
@@ -223,7 +225,7 @@ export function BaselaneScreening() {
                 {topics.slice(group * 3, group * 3 + 3).map((topic) => (
                   <div key={topic}>
                     <h3>{topic}</h3>
-                    <a href="/lease-agreement">Connect the next handoff →</a>
+                    <a href="/lease-agreement">Connect the next handoff <MageArrowRight size="1em" /></a>
                   </div>
                 ))}
               </div>
@@ -275,7 +277,7 @@ export function BaselaneScreening() {
                 <strong>{completed} / 3</strong>
               </div>
               <a className={styles.button} href={source}>
-                Discuss your workflow →
+                Discuss your workflow <MageArrowRight size="1em" />
               </a>
               <p className={styles.note}>
                 Use this checklist to prepare for a demo. Your selections stay
@@ -297,7 +299,7 @@ export function BaselaneScreening() {
                 <span className={styles.number}>{index + 1}</span>
                 <h3>{title}</h3>
                 <a className={styles.outline} href={href}>
-                  Explore →
+                  Explore <MageArrowRight size="1em" />
                 </a>
               </article>
             ))}
@@ -306,7 +308,7 @@ export function BaselaneScreening() {
             <div>
               <h3>Bring context into the wider workflow.</h3>
               <a className={styles.button} href={siteConfig.demoUrl}>
-                Explore innflow →
+                Explore innflow <MageArrowRight size="1em" />
               </a>
             </div>
           </div>
@@ -349,7 +351,7 @@ export function BaselaneScreening() {
             <details key={q}>
               <summary>
                 {q}
-                <span aria-hidden="true">+</span>
+                <span aria-hidden="true"><MagePlus size="1em" /></span>
               </summary>
               <p>{a}</p>
             </details>

@@ -1,7 +1,7 @@
-import { ArrowUpRight } from "@phosphor-icons/react/dist/ssr";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BaselaneHomepage } from "@/components/baselane-homepage";
+import { ChevronRight } from "@/components/chevron-right";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -231,7 +231,7 @@ export default function ConnectionsPage() {
                   <li key={link.href}>
                     <Link href={link.href}>
                       {link.label}
-                      <ArrowUpRight size={18} aria-hidden="true" />
+                      <ChevronRight size={18} aria-hidden="true" />
                     </Link>
                   </li>
                 ))}

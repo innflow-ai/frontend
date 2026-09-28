@@ -1,0 +1,110 @@
+.demo {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 771 / 830;
+  container-type: inline-size;
+  overflow: hidden;
+  position: relative;
+  color: #071a31;
+}
+.thread {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 3.1034cqw;
+  align-items: center;
+  padding: 3.6316cqw 0 0;
+  margin: 0;
+}
+.card {
+  width: 75.5144%;
+  min-height: 23.27497cqw;
+  flex-shrink: 0;
+  padding: 1.5517cqw;
+  border: 0.026cqw solid #ffffffe6;
+  border-radius: 6.2066cqw;
+  background: #ffffff26;
+  box-shadow:
+    inset 0 0.3362cqw 2.069cqw #ffffffb8,
+    0 3.1034cqw 8.2755cqw -1.293cqw #637d9e29;
+  box-sizing: border-box;
+}
+.surface {
+  min-height: 20.1716cqw;
+  display: flex;
+  align-items: center;
+  gap: 2.5861cqw;
+  padding: 3.1034cqw;
+  border: 0.2586cqw solid #ececf0;
+  border-radius: 4.655cqw;
+  background: white;
+  box-sizing: border-box;
+}
+.avatar {
+  width: 7.2411cqw;
+  height: 7.2411cqw;
+  flex-shrink: 0;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.avatar[data-agent="true"] {
+  border-radius: 1.55cqw;
+  background: linear-gradient(#5aaaf8, #00aeff);
+  display: grid;
+  place-items: center;
+}
+.avatar[data-agent="true"] img {
+  width: 79%;
+  height: 87%;
+  object-fit: contain;
+}
+.content {
+  flex: 1;
+  min-width: 0;
+  font:
+    400 2.84475cqw / 1.364 var(--font-geist),
+    sans-serif;
+}
+.name {
+  display: flex;
+  align-items: center;
+  gap: 1.81cqw;
+  font-weight: 500;
+}
+.name span {
+  font-size: 1.9396cqw;
+  line-height: 1.33;
+  border-radius: 2cqw;
+  background: #eee;
+  color: #686868;
+  padding: 0.3cqw 1cqw;
+}
+.content p {
+  margin: 0.776cqw 0 0;
+}
+.pause {
+  position: absolute;
+  right: 4%;
+  bottom: 2%;
+  padding: 6px 12px;
+  border: 1px solid #ffffff80;
+  border-radius: 20px;
+  background: #fff;
+  color: #071a31;
+  font:
+    500 11px var(--font-geist),
+    sans-serif;
+  cursor: pointer;
+}
+.pause:focus-visible {
+  outline: 3px solid #1260cc;
+  outline-offset: 3px;
+}
+.demo[data-reduced-motion="true"] {
+  overflow-y: auto;
+}

@@ -1,9 +1,9 @@
 "use client";
 
-import { ArrowRight, Copy } from "@phosphor-icons/react";
 import Image from "next/image";
 import { useState } from "react";
 import { GoogleCtaContent } from "@/components/google-cta-content";
+import { ArrowRight, Copy } from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
 import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-updates.module.css";

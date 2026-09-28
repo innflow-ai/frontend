@@ -1,7 +1,10 @@
 "use client";
+import { Plus as MagePlus } from '@/components/icons/mage';
+
 
 import Image from "next/image";
 import { useState } from "react";
+import { ChevronRight } from "@/components/chevron-right";
 import type { IndustryPageContent } from "@/content/industries";
 import styles from "./industry-pages.module.css";
 
@@ -45,7 +48,9 @@ export function WorkflowDemo({ page }: { page: IndustryPageContent }) {
               >
                 <span>{i + 1}</span>
                 {step}
-                <b aria-hidden="true">{active === i ? "↗" : "+"}</b>
+                <b aria-hidden="true">
+                  {active === i ? <ChevronRight /> : <MagePlus size="1em" />}
+                </b>
               </button>
             </li>
           ))}

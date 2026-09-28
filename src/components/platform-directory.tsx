@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ChevronRight } from "@/components/chevron-right";
 import { platformPages } from "@/content/platform";
 import styles from "./platform-directory.module.css";
 
@@ -28,7 +29,9 @@ export function PlatformDirectory({ currentSlug }: { currentSlug?: string }) {
               >
                 <h3>
                   {page.title}
-                  <span aria-hidden="true">↗</span>
+                  <span aria-hidden="true">
+                    <ChevronRight />
+                  </span>
                 </h3>
                 <p>{page.description}</p>
               </Link>

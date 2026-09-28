@@ -111,9 +111,7 @@ describe("baseline feature continuation", () => {
   });
   it("selects all seven matching Channels demos via pointer input", () => {
     render(<BaselineFeatures />);
-    const section = screen.getByRole("region", {
-      name: /Every conversation\.\s+Connected\./,
-    });
+    const section = requiredElement("channels");
     const layers = section.querySelectorAll("[data-channel-art]");
     expect(layers).toHaveLength(7);
     expect(section).toHaveAttribute("data-channels-scroll", "false");
@@ -147,9 +145,7 @@ describe("baseline feature continuation", () => {
   });
   it("supports arrow, Home and End focus without fabricating collapsed copy", () => {
     render(<BaselineFeatures />);
-    const agents = screen.getByRole("region", {
-      name: /Your agents\.\s+One workspace\./,
-    });
+    const agents = requiredElement("agents");
     const first = within(agents).getByRole("button", {
       name: "Bring your agents together",
     });
@@ -160,7 +156,7 @@ describe("baseline feature continuation", () => {
     });
     expect(second).toHaveFocus();
     expect(second).toHaveAttribute("aria-expanded", "true");
-    expect(screen.getByText("Your team reviews the next step")).toBeVisible();
+    expect(requiredElement("agents-baseline-panel-1")).toBeVisible();
     expect(screen.queryByText("Reference pending")).not.toBeInTheDocument();
     fireEvent.keyDown(second, { key: "End" });
     const last = screen.getByRole("button", {
@@ -202,7 +198,6 @@ describe("baseline feature continuation", () => {
       for (const asset of [
         "imgCanvas.png",
         "imgIcon.svg",
-        "imgArrowUpRight.svg",
         feature.glyph,
         ...feature.items.map((item) => item.icon),
       ]) {

@@ -1,3 +1,4 @@
+import { ChevronRight } from "@/components/chevron-right";
 import { MarketingPage } from "@/components/page-primitives";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -28,7 +29,7 @@ export default function DsarPage() {
             target="_blank"
             rel="noreferrer"
           >
-            Open request form in a new tab ↗
+            Open request form in a new tab <ChevronRight />
           </a>
         </div>
       </section>

@@ -1,4 +1,7 @@
+
+import { ArrowRight as MageArrowRight } from '@/components/icons/mage';
 import Link from "next/link";
+import { ChevronRight } from "@/components/chevron-right";
 import { industryHref, industryPages } from "@/content/industries";
 import styles from "./industry-pages.module.css";
 
@@ -55,13 +58,13 @@ export function IndustryDirectory({ compact = false }: { compact?: boolean }) {
                     style={{ background: page.surface }}
                     aria-hidden="true"
                   >
-                    ↗
+                    <ChevronRight />
                   </span>
                   <h3>{page.name}</h3>
                   <p>{page.description}</p>
                   <span className={styles.cardAction}>
                     Explore {page.name}
-                    <span aria-hidden="true">→</span>
+                    <span aria-hidden="true"><MageArrowRight size="1em" /></span>
                   </span>
                 </Link>
               ))}
@@ -70,7 +73,10 @@ export function IndustryDirectory({ compact = false }: { compact?: boolean }) {
       ))}
       {compact && (
         <Link className={styles.secondary} href="/solutions">
-          Explore all industries and solutions <span aria-hidden="true">↗</span>
+          Explore all industries and solutions{" "}
+          <span aria-hidden="true">
+            <ChevronRight />
+          </span>
         </Link>
       )}
     </section>

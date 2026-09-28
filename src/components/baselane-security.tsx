@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ChevronRight } from "@/components/chevron-right";
 import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-security.module.css";
 
@@ -146,9 +147,15 @@ export function BaselaneSecurity() {
                   to the team.
                 </p>
                 <div>
-                  <a href="/legal/privacy-policy">Privacy Policy ↗</a>
-                  <a href="/legal/terms-of-service">Terms of Service ↗</a>
-                  <a href="/legal-agreements">All agreements ↗</a>
+                  <a href="/legal/privacy-policy">
+                    Privacy Policy <ChevronRight />
+                  </a>
+                  <a href="/legal/terms-of-service">
+                    Terms of Service <ChevronRight />
+                  </a>
+                  <a href="/legal-agreements">
+                    All agreements <ChevronRight />
+                  </a>
                 </div>
               </section>
             )}
@@ -162,7 +169,9 @@ export function BaselaneSecurity() {
               for the proposed implementation.
             </p>
           </div>
-          <a href="/contact">Talk to the team ↗</a>
+          <a href="/contact">
+            Talk to the team <ChevronRight />
+          </a>
         </section>
       </div>
     </BaselaneHomepage>

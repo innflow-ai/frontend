@@ -1,7 +1,10 @@
 "use client";
+import { ArrowRight as MageArrowRight, Plus as MagePlus } from '@/components/icons/mage';
+
 
 import Image from "next/image";
 import { useState } from "react";
+import { ChevronRight } from "@/components/chevron-right";
 import { GoogleCtaContent } from "@/components/google-cta-content";
 import { siteConfig } from "@/config/site";
 import { BaselaneHomepage } from "./baselane-homepage";
@@ -140,7 +143,9 @@ function Workflow() {
             <div key={text}>
               <span>{String(index + 1).padStart(2, "0")}</span>
               {text}
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true">
+                <ChevronRight />
+              </span>
             </div>
           ))}
         </div>
@@ -250,12 +255,15 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
                 workflow.
               </p>
               <a className={styles.textLink} href={siteConfig.demoUrl}>
-                Explore innflow →
+                Explore innflow <MageArrowRight size="1em" />
               </a>
               <div className={styles.demo}>
                 <Workflow />
                 <a className={styles.demoLink} href={siteConfig.demoUrl}>
-                  Open the demo page <span aria-hidden="true">↗</span>
+                  Open the demo page{" "}
+                  <span aria-hidden="true">
+                    <ChevronRight />
+                  </span>
                 </a>
               </div>
             </section>
@@ -280,7 +288,7 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
                       <span>{String(index + 1).padStart(2, "0")}</span>
                       {title}
                       <span className={styles.plus} aria-hidden="true">
-                        +
+                        <MagePlus size="1em" />
                       </span>
                     </summary>
                     <p>{text}</p>
@@ -309,7 +317,7 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
                 <GoogleCtaContent />
               </a>
               <a className={styles.textLink} href="/partner-with-us">
-                Explore partnerships →
+                Explore partnerships <MageArrowRight size="1em" />
               </a>
             </div>
           </section>

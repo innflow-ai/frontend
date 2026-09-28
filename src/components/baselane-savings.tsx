@@ -1,4 +1,7 @@
+
+import { ArrowRight as MageArrowRight, Check as MageCheck } from '@/components/icons/mage';
 import Image from "next/image";
+import { ChevronRight } from "@/components/chevron-right";
 import { siteConfig } from "@/config/site";
 import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-savings.module.css";
@@ -94,7 +97,7 @@ export function BaselaneSavings() {
               reach.
             </p>
             <a className={styles.button} href={source}>
-              Explore innflow →
+              Explore innflow <MageArrowRight size="1em" />
             </a>
           </div>
           <Image
@@ -106,9 +109,9 @@ export function BaselaneSavings() {
           />
         </section>
         <div className={styles.band}>
-          <span>✓ Review the terms</span>
-          <span>✓ Understand the conditions</span>
-          <span>✓ Keep a record</span>
+          <span><MageCheck size="1em" /> Review the terms</span>
+          <span><MageCheck size="1em" /> Understand the conditions</span>
+          <span><MageCheck size="1em" /> Keep a record</span>
         </div>
         <section className={styles.section}>
           <h2>Start with the details.</h2>
@@ -196,7 +199,7 @@ export function BaselaneSavings() {
                   <ul>
                     {group.items.map((item) => (
                       <li key={item}>
-                        <span aria-hidden="true">✓</span>
+                        <span aria-hidden="true"><MageCheck size="1em" /></span>
                         {item}
                       </li>
                     ))}
@@ -205,7 +208,7 @@ export function BaselaneSavings() {
               ))}
             </div>
             <a className={styles.button} href={source}>
-              See how innflow fits →
+              See how innflow fits <MageArrowRight size="1em" />
             </a>
           </div>
         </section>
@@ -222,11 +225,13 @@ export function BaselaneSavings() {
                 <ul>
                   {group.items.map((item) => (
                     <li key={item}>
-                      <a href={source}>{item} ↗</a>
+                      <a href={source}>
+                        {item} <ChevronRight />
+                      </a>
                     </li>
                   ))}
                 </ul>
-                <a href={source}>Explore {group.title.toLowerCase()} →</a>
+                <a href={source}>Explore {group.title.toLowerCase()} <MageArrowRight size="1em" /></a>
               </article>
             ))}
           </div>

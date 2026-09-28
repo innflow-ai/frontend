@@ -68,7 +68,13 @@
   font-size: 16px;
 }
 .band span::before {
-  content: "✓";
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  background-color: currentColor;
+  mask: url("/brand/mage/check.svg") center / contain no-repeat;
   margin-right: 12px;
   color: #9bd5ff;
 }

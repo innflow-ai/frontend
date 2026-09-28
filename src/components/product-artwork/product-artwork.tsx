@@ -1,30 +1,36 @@
+import Image from "next/image";
+import type { ReactNode } from "react";
+import { ChevronRight } from "@/components/chevron-right";
 import {
   ArrowRight,
-  ArrowsClockwise,
-  CaretDown,
+  Refresh as ArrowsClockwise,
+  ChevronDown as CaretDown,
   Check,
   CheckCircle,
   Clock,
-  Cloud,
+  Server as Cloud,
   Database,
-  DotsThree,
-  FileText,
+  DotsHorizontal as DotsThree,
+  NoteText as FileText,
   Folder,
-  GearSix,
+  Settings as GearSix,
   Globe,
-  ListChecks,
+  Checklist as ListChecks,
   Lock,
-  MagnifyingGlass,
+  Clock as MageClock,
+  Goals as MageGoals,
+  LArrowDownLeft as MageLArrowDownLeft,
+  Minus as MageMinus,
+  Plus as MagePlus,
+  Search as MagnifyingGlass,
   Play,
   Plus,
   ShieldCheck,
-  SquaresFour,
-  UploadSimple,
+  Dashboard as SquaresFour,
+  Upload as UploadSimple,
   User,
   Users,
-} from "@phosphor-icons/react/dist/ssr";
-import Image from "next/image";
-import type { ReactNode } from "react";
+} from "@/components/icons/mage";
 import {
   type ArtworkScene,
   productArtworkScenes,
@@ -145,7 +151,9 @@ function SearchField({ label }: { label: string }) {
     <div className={styles.searchField}>
       <MagnifyingGlass />
       <span>{label}</span>
-      <span className={styles.keycap}>↵</span>
+      <span className={styles.keycap}>
+        <MageLArrowDownLeft size="1em" />
+      </span>
     </div>
   );
 }
@@ -183,12 +191,7 @@ function BranchScene({ scene }: { scene: ArtworkScene }) {
         <Heading
           title={condition.label}
           icon={
-            <Image
-              src="/brand/product-artwork/split.svg"
-              width={18}
-              height={18}
-              alt=""
-            />
+            <Image src="/brand/mage/split.svg" width={18} height={18} alt="" />
           }
         />
         <div className={styles.conditionRows}>
@@ -330,7 +333,7 @@ function EditorScene({ scene }: { scene: ArtworkScene }) {
             ))}
           </div>
           <div className={styles.canvasZoom}>
-            − <span>100%</span> +
+            <MageMinus size="1em" /> <span>100%</span> <MagePlus size="1em" />
           </div>
         </div>
       </Glass>
@@ -672,7 +675,15 @@ function DashboardScene({ scene }: { scene: ArtworkScene }) {
             {scene.items.slice(0, 3).map((item, i) => (
               <div key={`${item.label}:${item.value}`}>
                 <span>{item.label}</span>
-                <strong>{["↗", "◷", "◎"][i]}</strong>
+                <strong>
+                  {
+                    [
+                      <ChevronRight key="growth" />,
+                      <MageClock key="clock" size="1em" />,
+                      <MageGoals key="goals" size="1em" />,
+                    ][i]
+                  }
+                </strong>
                 <small>{item.value}</small>
               </div>
             ))}

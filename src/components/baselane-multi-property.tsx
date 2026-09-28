@@ -1,13 +1,13 @@
-import {
-  ArrowRight,
-  Buildings,
-  Files,
-  FlowArrow,
-  ShieldCheck,
-  Users,
-} from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import { GoogleCtaContent } from "@/components/google-cta-content";
+import {
+  ArrowRight,
+  BuildingB as Buildings,
+  FileRecords as Files,
+  Share as FlowArrow,
+  ShieldCheck,
+  Users,
+} from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
 import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-multi-property.module.css";

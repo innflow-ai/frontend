@@ -1,4 +1,6 @@
 "use client";
+import { Minus as MageMinus, Plus as MagePlus } from '@/components/icons/mage';
+
 
 import Image from "next/image";
 import { useId, useState } from "react";
@@ -75,7 +77,7 @@ export function TestimonialCard({ item }: { item: Testimonial }) {
         }}
       >
         {open ? "Close" : "Read story"}
-        <span aria-hidden="true">{open ? "−" : "+"}</span>
+        <span aria-hidden="true">{open ? <MageMinus size="1em" /> : <MagePlus size="1em" />}</span>
       </button>
     </article>
   );

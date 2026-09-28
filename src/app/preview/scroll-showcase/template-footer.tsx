@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { CustomerSupportHours } from "@/components/customer-support-hours";
 import { FooterLegalLinks } from "@/components/footer-legal-links";
+import { GoogleCtaContent } from "@/components/google-cta-content";
 import { footerNavigation } from "@/config/footer-navigation";
 import { siteConfig } from "@/config/site";
 import styles from "./template-footer.module.css";
@@ -26,7 +27,7 @@ const groups = [
       links: [
         { label: "Help center", href: "/help-center" },
         { label: "Contact support", href: "/contact" },
-        { label: "Contact sales", href: siteConfig.demoUrl },
+        { label: "Contact sales", href: siteConfig.contactUrl },
       ],
     },
     {
@@ -88,8 +89,8 @@ export function TemplateFooter() {
             </a>
             <CustomerSupportHours />
           </div>
-          <a href={siteConfig.demoUrl}>
-            Book an Innflow demo <span aria-hidden="true">↗</span>
+          <a className={styles.googleCta} href={siteConfig.googleAuthUrl}>
+            <GoogleCtaContent />
           </a>
         </div>
         <div className={styles.legal}>

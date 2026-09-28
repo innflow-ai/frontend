@@ -199,8 +199,8 @@
 }
 .storyCopy blockquote {
   font-family: var(--font-source-serif-4), serif;
-  font-size: 28px;
-  line-height: 1.2;
+  font-size: 20px;
+  line-height: 1.45;
   margin: 0 0 16px;
   max-height: 290px;
   overflow: auto;
@@ -631,7 +631,7 @@
     grid-row: 1;
   }
   .storyCopy blockquote {
-    font-size: 24px;
+    font-size: 18px;
     max-height: none;
   }
   .storyCopy h3 {

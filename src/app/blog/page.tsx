@@ -1,8 +1,9 @@
-import { ArrowUpRight, MagnifyingGlass } from "@phosphor-icons/react/dist/ssr";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { BlogAuthorCard } from "@/components/blog/author-card";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { ChevronRight } from "@/components/chevron-right";
+import { Search as MagnifyingGlass } from "@/components/icons/mage";
 import { MarketingPage } from "@/components/page-primitives";
 import { BLOG_CATEGORIES, matchesBlogQuery } from "@/lib/blog";
 import {
@@ -108,7 +109,7 @@ function FeaturedPost({ post }: { post: BlogPostSummary }) {
         {post.excerpt ? <p className={styles.excerpt}>{post.excerpt}</p> : null}
         <PostMeta post={post} />
         <a className={styles.readStory} href={`/blog/${post.slug}`}>
-          Read the story <ArrowUpRight size={16} aria-hidden="true" />
+          Read the story <ChevronRight size={16} aria-hidden="true" />
         </a>
       </div>
     </article>
@@ -224,7 +225,7 @@ export default async function BlogIndexPage({
                   ))}
                 </select>
                 <button type="submit">
-                  Search <ArrowUpRight size={16} aria-hidden="true" />
+                  Search <ChevronRight size={16} aria-hidden="true" />
                 </button>
               </form>
             </search>
@@ -290,7 +291,7 @@ export default async function BlogIndexPage({
                 {hasFilters ? (
                   <a href="/blog" className={styles.readStory}>
                     Explore all stories{" "}
-                    <ArrowUpRight size={16} aria-hidden="true" />
+                    <ChevronRight size={16} aria-hidden="true" />
                   </a>
                 ) : null}
               </div>

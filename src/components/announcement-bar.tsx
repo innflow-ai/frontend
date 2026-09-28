@@ -1,7 +1,7 @@
 "use client";
 
-import { ArrowRight, X } from "@phosphor-icons/react";
 import type { CSSProperties } from "react";
+import { ArrowRight, Multiply as X } from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
 import {
   ANNOUNCEMENT_RIBBON_SRC,

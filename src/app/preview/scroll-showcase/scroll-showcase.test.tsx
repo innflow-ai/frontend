@@ -7,7 +7,7 @@ afterEach(() => {
   cleanup();
   vi.unstubAllGlobals();
 });
-it("offers Google sign-in and clearly marks Microsoft sign-in unavailable", () => {
+it("offers Google sign-in and routes Microsoft through the regular login page", () => {
   vi.stubGlobal("matchMedia", () => ({
     matches: true,
     addEventListener: vi.fn(),
@@ -25,12 +25,13 @@ it("offers Google sign-in and clearly marks Microsoft sign-in unavailable", () =
   );
   render(<ScrollShowcase />);
   expect(
-    screen.getByText(/Bring conversations, AI agents, and workflows/),
+    screen.getByText(
+      /Connect conversations, delegate tasks, and keep work moving/,
+    ),
   ).toBeVisible();
   expect(
     screen.getByRole("link", { name: "Sign up with email" }),
   ).toHaveAttribute("href", siteConfig.signupUrl);
-  expect(screen.getByText(/No credit card required/)).toBeVisible();
   expect(
     screen.queryByText("Scroll to explore, or choose a tab."),
   ).not.toBeInTheDocument();
@@ -39,8 +40,8 @@ it("offers Google sign-in and clearly marks Microsoft sign-in unavailable", () =
     screen.getByRole("link", { name: "Continue with Google" }),
   ).toHaveAttribute("href", siteConfig.googleAuthUrl);
   expect(
-    screen.getByRole("button", { name: "Continue with Microsoft" }),
-  ).toBeDisabled();
+    screen.getByRole("link", { name: "Continue with Microsoft" }),
+  ).toHaveAttribute("href", `${siteConfig.appOrigin}/login`);
   expect(
     screen.queryByRole("link", { name: "Book a demo" }),
   ).not.toBeInTheDocument();
@@ -49,17 +50,15 @@ it("offers Google sign-in and clearly marks Microsoft sign-in unavailable", () =
   ).not.toBeInTheDocument();
   expect(screen.queryByText("Scroll to explore ↓")).not.toBeInTheDocument();
   expect(screen.queryByText(/01 \/ 04/)).not.toBeInTheDocument();
-  const scheduling = screen.getByRole("tabpanel", { name: "Scheduling" });
-  expect(scheduling).toHaveTextContent(
-    "Bring scheduling into the conversation",
-  );
+  const scheduling = screen.getByRole("tabpanel", { name: "AI agent" });
+  expect(scheduling).toHaveTextContent("Delegate tasks to your AI agent");
   expect(
     scheduling.querySelector("[data-booking-calendar]"),
   ).toBeInTheDocument();
-  fireEvent.click(screen.getByRole("tab", { name: "AI assistant" }));
-  expect(
-    screen.getByRole("tabpanel", { name: "AI assistant" }),
-  ).toHaveTextContent("Let your assistant take the next step");
+  fireEvent.click(screen.getByRole("tab", { name: "Workflows" }));
+  expect(screen.getByRole("tabpanel", { name: "Workflows" })).toHaveTextContent(
+    "Keep work moving across your tools",
+  );
   expect(
     screen.getByRole("img", {
       name: /AI assistant receives a scheduling request/,

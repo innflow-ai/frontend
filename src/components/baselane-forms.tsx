@@ -1,4 +1,6 @@
 "use client";
+import { ArrowDown as MageArrowDown, ArrowRight as MageArrowRight, ArrowLeft as MageArrowLeft } from '@/components/icons/mage';
+
 import Image from "next/image";
 import { useRef } from "react";
 import styles from "./baselane-forms.module.css";
@@ -40,7 +42,7 @@ function FormGroup({ group }: { group: (typeof formGroups)[number] }) {
                 rel="noreferrer"
                 aria-label={`Download ${title.toLowerCase()} preparation worksheet`}
               >
-                Download worksheet ↓
+                Download worksheet <MageArrowDown size="1em" />
               </a>
             </div>
           </article>
@@ -48,7 +50,7 @@ function FormGroup({ group }: { group: (typeof formGroups)[number] }) {
       </section>
       <div className={styles.controls}>
         <a href="/lease-agreement" target="_blank" rel="noreferrer">
-          Explore document workflows →
+          Explore document workflows <MageArrowRight size="1em" />
         </a>
         <div>
           <button
@@ -56,14 +58,14 @@ function FormGroup({ group }: { group: (typeof formGroups)[number] }) {
             onClick={() => move(-1)}
             aria-label={`Previous ${group.title.toLowerCase()}`}
           >
-            ←
+            <MageArrowLeft size="1em" />
           </button>
           <button
             type="button"
             onClick={() => move(1)}
             aria-label={`Next ${group.title.toLowerCase()}`}
           >
-            →
+            <MageArrowRight size="1em" />
           </button>
         </div>
       </div>
@@ -94,7 +96,7 @@ export function BaselaneForms() {
         <nav className={styles.categoryNav} aria-label="Form categories">
           {formGroups.map((g) => (
             <a key={g.slug} href={`#${g.slug}`}>
-              {g.title} ↓
+              {g.title} <MageArrowDown size="1em" />
             </a>
           ))}
         </nav>

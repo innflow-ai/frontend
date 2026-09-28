@@ -1,6 +1,5 @@
 "use client";
 
-import { X } from "@phosphor-icons/react";
 import Image from "next/image";
 import {
   type ButtonHTMLAttributes,
@@ -9,6 +8,7 @@ import {
   useRef,
   useState,
 } from "react";
+import { Multiply as X } from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
 import ctaStyles from "./google-cta.module.css";
 import styles from "./google-sign-in.module.css";

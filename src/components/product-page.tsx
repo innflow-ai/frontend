@@ -1,3 +1,4 @@
+import { ChevronRight } from "@/components/chevron-right";
 import { FeatureCardGrid } from "@/components/feature-card";
 import { GoogleCtaContent } from "@/components/google-cta-content";
 import { JsonLd } from "@/components/json-ld";
@@ -78,7 +79,10 @@ function Capabilities({
                   <h3>{card.title}</h3>
                   <p>{card.body}</p>
                   <span className={styles.agentCapabilityLink}>
-                    Explore capability <span aria-hidden="true">↗</span>
+                    Explore capability{" "}
+                    <span aria-hidden="true">
+                      <ChevronRight />
+                    </span>
                   </span>
                 </div>
                 <div className={styles.agentCapabilityMedia}>

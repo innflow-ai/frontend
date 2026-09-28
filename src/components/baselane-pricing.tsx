@@ -1,4 +1,6 @@
 "use client";
+import { ArrowRight as MageArrowRight, ArrowDown as MageArrowDown, Minus as MageMinus, Plus as MagePlus } from '@/components/icons/mage';
+
 
 import { useState } from "react";
 import { TrackedLink } from "@/components/tracked-link";
@@ -168,7 +170,7 @@ export function BaselanePricing() {
                     }
                   >
                     {index === 3 ? "Talk to sales" : "Get started"}
-                    <span aria-hidden="true">→</span>
+                    <span aria-hidden="true"><MageArrowRight size="1em" /></span>
                   </TrackedLink>
                 </div>
                 <div className={styles.planFeatures}>
@@ -220,7 +222,7 @@ export function BaselanePricing() {
             ))}
           </div>
           <a className={styles.compareLink} href="#compare-features">
-            Compare all features <span aria-hidden="true">↓</span>
+            Compare all features <span aria-hidden="true"><MageArrowDown size="1em" /></span>
           </a>
         </section>
         <section id="compare-features" className={styles.comparison}>
@@ -254,7 +256,7 @@ export function BaselanePricing() {
               >
                 {group.title}
                 <span aria-hidden="true">
-                  {expanded.includes(group.title) ? "−" : "+"}
+                  {expanded.includes(group.title) ? <MageMinus size="1em" /> : <MagePlus size="1em" />}
                 </span>
               </button>
               <div

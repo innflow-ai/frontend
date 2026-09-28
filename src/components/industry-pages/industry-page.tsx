@@ -1,6 +1,9 @@
+
+import { ArrowDown as MageArrowDown } from '@/components/icons/mage';
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { BaselineClosing } from "@/app/preview/scroll-showcase/baseline-lower-sections";
+import { ChevronRight } from "@/components/chevron-right";
 import { ShowcaseTheme } from "@/components/showcase-theme";
 import { siteConfig } from "@/config/site";
 import type { IndustryPageContent } from "@/content/industries";
@@ -18,17 +21,23 @@ export function IndustryPage({ page }: { page: IndustryPageContent }) {
         <section className={styles.hero}>
           <div className={styles.heroCopy}>
             <Link href="/solutions" className={styles.back}>
-              All solutions <span aria-hidden="true">↗</span>
+              All solutions{" "}
+              <span aria-hidden="true">
+                <ChevronRight />
+              </span>
             </Link>
             <p className={styles.eyebrow}>{page.name}</p>
             <h1>{page.headline}</h1>
             <p className={styles.intro}>{page.description}</p>
             <div className={styles.actions}>
               <a className={styles.primary} href={siteConfig.demoUrl}>
-                Explore your workflow <span aria-hidden="true">↗</span>
+                Explore your workflow{" "}
+                <span aria-hidden="true">
+                  <ChevronRight />
+                </span>
               </a>
               <a className={styles.secondary} href="#workflows">
-                See the possibilities <span aria-hidden="true">↓</span>
+                See the possibilities <span aria-hidden="true"><MageArrowDown size="1em" /></span>
               </a>
             </div>
           </div>
@@ -57,7 +66,9 @@ export function IndustryPage({ page }: { page: IndustryPageContent }) {
             {page.workflows.map((flow, i) => (
               <a key={flow.label} href={`#workflow-${i + 1}`}>
                 {flow.label}
-                <span aria-hidden="true">↗</span>
+                <span aria-hidden="true">
+                  <ChevronRight />
+                </span>
               </a>
             ))}
           </nav>
@@ -74,7 +85,10 @@ export function IndustryPage({ page }: { page: IndustryPageContent }) {
                 <h3>{flow.title}</h3>
                 <p>{flow.body}</p>
                 <a href={siteConfig.demoUrl} className={styles.textLink}>
-                  Talk through this workflow <span aria-hidden="true">↗</span>
+                  Talk through this workflow{" "}
+                  <span aria-hidden="true">
+                    <ChevronRight />
+                  </span>
                 </a>
               </div>
               <div
@@ -88,7 +102,7 @@ export function IndustryPage({ page }: { page: IndustryPageContent }) {
                   <strong>{flow.input}</strong>
                 </div>
                 <div className={styles.connector} aria-hidden="true">
-                  ↓
+                  <MageArrowDown size="1em" />
                 </div>
                 <div className={styles.contextCard}>
                   <span>02 / Prepare</span>
@@ -100,7 +114,7 @@ export function IndustryPage({ page }: { page: IndustryPageContent }) {
                   </div>
                 </div>
                 <div className={styles.connector} aria-hidden="true">
-                  ↓
+                  <MageArrowDown size="1em" />
                 </div>
                 <div className={styles.outputCard}>
                   <span>03 / Your team</span>

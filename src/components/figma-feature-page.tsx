@@ -1,6 +1,10 @@
-import { ArrowRight, CheckCircle } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import type { CSSProperties, ReactNode } from "react";
+import {
+  ArrowRight,
+  CheckCircle,
+  Plus as MagePlus,
+} from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
 import type {
   FeatureArtwork,
@@ -212,7 +216,9 @@ export async function FigmaFeaturePage({
               <details key={faqId}>
                 <summary>
                   {question}
-                  <span>+</span>
+                  <span>
+                    <MagePlus size="1em" />
+                  </span>
                 </summary>
                 <p style={{ whiteSpace: "pre-line" }}>{answer}</p>
               </details>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { ChevronRight } from "@/components/chevron-right";
 import {
   IntegrationCard,
   IntegrationLogo,
@@ -66,7 +67,7 @@ export default async function IntegrationPage({ params }: Props) {
                 className="button button-primary"
                 href={`/contact?integration=${encodeURIComponent(item.name)}`}
               >
-                {status.cta} ↗
+                {status.cta} <ChevronRight />
               </Link>
               {item.websiteUrl && (
                 <a
@@ -75,7 +76,7 @@ export default async function IntegrationPage({ params }: Props) {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Visit {item.name} ↗
+                  Visit {item.name} <ChevronRight />
                 </a>
               )}
             </aside>
@@ -118,7 +119,7 @@ export default async function IntegrationPage({ params }: Props) {
                 <Link
                   href={`/contact?integration=${encodeURIComponent(item.name)}`}
                 >
-                  {status.cta} ↗
+                  {status.cta} <ChevronRight />
                 </Link>
               </section>
             </article>
@@ -127,7 +128,9 @@ export default async function IntegrationPage({ params }: Props) {
             <section className={styles.related}>
               <div className={styles.relatedHeading}>
                 <h2>Explore more connections</h2>
-                <Link href="/integrations">View all integrations ↗</Link>
+                <Link href="/integrations">
+                  View all integrations <ChevronRight />
+                </Link>
               </div>
               <div className={styles.grid}>
                 {related.map((i) => (

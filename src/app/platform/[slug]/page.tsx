@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CalendlyPlatformPage } from "@/components/calendly-product-adapters";
+import { ChevronRight } from "@/components/chevron-right";
 import { MarketingPage, PageHero } from "@/components/page-primitives";
 import { PlatformDirectory } from "@/components/platform-directory";
 import { PlatformFeaturePage } from "@/components/platform-feature-page";
@@ -54,7 +55,10 @@ export default async function PlatformDetailPage({
         <section className="section">
           <div className="shell">
             <Link className="button button-secondary" href="/integrations">
-              Browse the integration directory <span aria-hidden="true">↗</span>
+              Browse the integration directory{" "}
+              <span aria-hidden="true">
+                <ChevronRight />
+              </span>
             </Link>
           </div>
         </section>

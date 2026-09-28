@@ -1,6 +1,9 @@
 "use client";
+import { Search as MageSearch } from '@/components/icons/mage';
+
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { ChevronRight } from "@/components/chevron-right";
 import {
   filterIntegrations,
   type Integration,
@@ -72,14 +75,16 @@ export function IntegrationDirectory({ items }: { items: Integration[] }) {
         <div className={styles.request}>
           <h3>Missing a connection?</h3>
           <p>Tell us which tool belongs in your workflow.</p>
-          <Link href="/contact">Request an integration ↗</Link>
+          <Link href="/contact">
+            Request an integration <ChevronRight />
+          </Link>
         </div>
       </aside>
       <div className={styles.results}>
         <div className={styles.toolbar}>
           <label className={styles.search}>
             <span className={styles.srOnly}>Search integrations</span>
-            <span aria-hidden="true">⌕</span>
+            <span aria-hidden="true"><MageSearch size="1em" /></span>
             <input
               type="search"
               value={search}
@@ -149,7 +154,9 @@ export function IntegrationDirectory({ items }: { items: Integration[] }) {
                 Clear filters
               </button>
             ) : (
-              <Link href="/contact">Request an integration ↗</Link>
+              <Link href="/contact">
+                Request an integration <ChevronRight />
+              </Link>
             )}
           </div>
         )}

@@ -1,4 +1,6 @@
 "use client";
+import { ArrowRight as MageArrowRight, ArrowLeft as MageArrowLeft } from '@/components/icons/mage';
+
 
 import Image from "next/image";
 import { useState } from "react";
@@ -90,14 +92,14 @@ export function BaselaneCustomers() {
                 Explore team workflows
               </a>
               <a className={styles.outline} href={siteConfig.demoUrl}>
-                Book a demo →
+                Book a demo <MageArrowRight size="1em" />
               </a>
             </div>
           </div>
         </section>
         <div className={styles.band}>
           <span>Clear ownership. Shared context. Visible progress.</span>
-          <a href="/multi-property-investors">Explore portfolio operations →</a>
+          <a href="/multi-property-investors">Explore portfolio operations <MageArrowRight size="1em" /></a>
         </div>
         <section className={styles.section} id="team-workflows">
           <h2>Built around the work on your team’s desk.</h2>
@@ -111,7 +113,7 @@ export function BaselaneCustomers() {
                 <span className={styles.eyebrow}>WORKFLOW</span>
                 <h3>{title}</h3>
                 <p>{text}</p>
-                <a href={href}>Explore the workflow →</a>
+                <a href={href}>Explore the workflow <MageArrowRight size="1em" /></a>
               </article>
             ))}
           </div>
@@ -139,7 +141,7 @@ export function BaselaneCustomers() {
               <h2>{story[1]}</h2>
               <p>{story[2]}</p>
               <a className={styles.button} href={story[3]}>
-                Explore with innflow →
+                Explore with innflow <MageArrowRight size="1em" />
               </a>
             </div>
           </div>
@@ -153,7 +155,7 @@ export function BaselaneCustomers() {
                 )
               }
             >
-              ←
+              <MageArrowLeft size="1em" />
             </button>
             <span aria-live="polite">
               {caseIndex + 1} / {scenarios.length}
@@ -163,7 +165,7 @@ export function BaselaneCustomers() {
               aria-label="Next workflow"
               onClick={() => setCaseIndex((caseIndex + 1) % scenarios.length)}
             >
-              →
+              <MageArrowRight size="1em" />
             </button>
           </div>
         </section>

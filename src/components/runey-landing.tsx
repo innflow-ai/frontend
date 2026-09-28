@@ -1,7 +1,11 @@
-import { ArrowRight, CheckCircle } from "@phosphor-icons/react/dist/ssr";
 import { Poppins } from "next/font/google";
 import Image from "next/image";
 import { GoogleCtaContent } from "@/components/google-cta-content";
+import {
+  ArrowRight,
+  CheckCircle,
+  Plus as MagePlus,
+} from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
 import { faqs } from "@/content/home";
 import { HomepageMedia } from "./homepage-media";
@@ -324,7 +328,9 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
             <details key={faq.question}>
               <summary>
                 {faq.question}
-                <span aria-hidden="true">+</span>
+                <span aria-hidden="true">
+                  <MagePlus size="1em" />
+                </span>
               </summary>
               <p>{faq.answer}</p>
             </details>

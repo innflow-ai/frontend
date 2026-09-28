@@ -1,4 +1,7 @@
+
+import { Check as MageCheck, Plus as MagePlus } from '@/components/icons/mage';
 import Image from "next/image";
+import { ChevronRight } from "@/components/chevron-right";
 import { siteConfig } from "@/config/site";
 import { getPageFaqTuples } from "@/lib/faqs";
 import styles from "./baselane-banking.module.css";
@@ -147,7 +150,10 @@ export async function BaselaneBanking() {
             details. More room to move forward.
           </p>
           <a className={styles.button} href={siteConfig.demoUrl}>
-            Explore innflow <span>↗</span>
+            Explore innflow{" "}
+            <span>
+              <ChevronRight />
+            </span>
           </a>
           <small>Connected context. Clear ownership. Human review.</small>
         </div>
@@ -187,12 +193,14 @@ export async function BaselaneBanking() {
                             : "Connected to your workspace"}
                         </small>
                       </span>
-                      <span>↗</span>
+                      <span>
+                        <ChevronRight />
+                      </span>
                     </div>
                   ))}
                   <div className={styles.productBottom}>
                     <span>Everything in context</span>
-                    <span>✓</span>
+                    <span><MageCheck size="1em" /></span>
                   </div>
                 </div>
               </section>
@@ -233,7 +241,10 @@ export async function BaselaneBanking() {
             One connected flow.
           </h2>
           <a href={siteConfig.demoUrl} className={styles.button}>
-            See what's possible <span>↗</span>
+            See what's possible{" "}
+            <span>
+              <ChevronRight />
+            </span>
           </a>
         </div>
       </section>
@@ -253,7 +264,9 @@ export async function BaselaneBanking() {
             <a href="/products/agentic-workflows" key={title}>
               <span>0{i + 1}</span>
               <h3>{title}</h3>
-              <span>Explore workflows ↗</span>
+              <span>
+                Explore workflows <ChevronRight />
+              </span>
             </a>
           ))}
         </div>
@@ -275,7 +288,7 @@ export async function BaselaneBanking() {
             <details key={faqId}>
               <summary>
                 {question}
-                <span>+</span>
+                <span><MagePlus size="1em" /></span>
               </summary>
               <p style={{ whiteSpace: "pre-line" }}>{answer}</p>
             </details>

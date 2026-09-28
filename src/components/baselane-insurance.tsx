@@ -1,13 +1,13 @@
 "use client";
-
-import {
-  CheckCircle,
-  Files,
-  FlowArrow,
-  ShieldCheck,
-} from "@phosphor-icons/react";
 import Image from "next/image";
 import { type FormEvent, useRef, useState } from "react";
+import {
+  CheckCircle,
+  FileRecords as Files,
+  Share as FlowArrow,
+  ArrowRight as MageArrowRight,
+  ShieldCheck,
+} from "@/components/icons/mage";
 import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-insurance.module.css";
 
@@ -290,7 +290,9 @@ export function BaselaneInsurance() {
                   ][i]
                 }
               </h3>
-              <small>Explore workflows →</small>
+              <small>
+                Explore workflows <MageArrowRight size="1em" />
+              </small>
             </a>
           ))}
         </div>

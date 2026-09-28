@@ -1,8 +1,12 @@
 "use client";
-
-import { ArrowLeft, ArrowRight, MagnifyingGlass } from "@phosphor-icons/react";
 import Image from "next/image";
 import { useRef, useState } from "react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  ArrowRight as MageArrowRight,
+  Search as MagnifyingGlass,
+} from "@/components/icons/mage";
 import { BaselaneHomepage } from "./baselane-homepage";
 import items from "./baselane-investing-data.json";
 import styles from "./baselane-library.module.css";
@@ -108,7 +112,9 @@ export function BaselaneInvesting() {
               <div className={styles.cardCopy}>
                 <h2>{i.title}</h2>
                 <p>{i.description}</p>
-                <span>Explore with innflow →</span>
+                <span>
+                  Explore with innflow <MageArrowRight size="1em" />
+                </span>
               </div>
             </a>
           ))}

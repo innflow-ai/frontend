@@ -1,29 +1,27 @@
 "use client";
 
-import {
-  ArrowUpRight,
-  Books,
-  CaretDown,
-  CaretRight,
-  ChatCircleDots,
-  ChatText,
-  Code,
-  Files,
-  GraduationCap,
-  List,
-  MagnifyingGlass,
-  Megaphone,
-  PlugsConnected,
-  Robot,
-  SidebarSimple,
-  Sparkle,
-  TrendUp,
-  UsersThree,
-  Warning,
-  X,
-} from "@phosphor-icons/react";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { ChevronRight } from "@/components/chevron-right";
+import {
+  FileRecords as Books,
+  ChevronDown as CaretDown,
+  ChevronRight as CaretRight,
+  MessageDotsRound as ChatCircleDots,
+  MessageConversation as ChatText,
+  Keyboard as Code,
+  FileRecords as Files,
+  FileRecords as GraduationCap,
+  Search as MagnifyingGlass,
+  Link as PlugsConnected,
+  Robot,
+  LayoutLeft as SidebarSimple,
+  StarsA as Sparkle,
+  ChartUp as TrendUp,
+  Users as UsersThree,
+  ExclamationTriangle as Warning,
+  Multiply as X,
+} from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
 import { helpArticles, helpCategories } from "@/content/help-center";
 import styles from "./help-center.module.css";
@@ -80,40 +78,11 @@ const popularQueries = [
   "AI agent",
   "permissions",
 ];
-const menus = [
-  {
-    title: "Product",
-    links: [
-      ["Platform", "/platform"],
-      ["AI agents", "/products/agent-studio"],
-      ["Workflows", "/features/workflows"],
-      ["Integrations", "/integrations"],
-    ],
-  },
-  {
-    title: "Solutions",
-    links: [
-      ["Solutions", "/solutions"],
-      ["Industries", "/industries"],
-    ],
-  },
-  {
-    title: "Resources",
-    links: [
-      ["Resource library", "/resources"],
-      ["Blog", "/blog"],
-      ["Help center", "/help"],
-      ["Contact us", "/contact"],
-    ],
-  },
-];
-
 export function HelpCenter() {
-  const [announcement, setAnnouncement] = useState(true);
   const [query, setQuery] = useState("");
-  const [modal, setModal] = useState<
-    "search" | "menu" | "support" | "navigation" | null
-  >(null);
+  const [modal, setModal] = useState<"search" | "menu" | "support" | null>(
+    null,
+  );
   const dialog = useRef<HTMLDialogElement>(null);
   const input = useRef<HTMLInputElement>(null);
   const opener = useRef<HTMLElement | null>(null);
@@ -172,12 +141,12 @@ export function HelpCenter() {
       <a href="/resources">
         <UsersThree />
         Innflow resources
-        <ArrowUpRight />
+        <ChevronRight />
       </a>
       <a href="/platform/integrations">
         <Code />
         Integration guides
-        <ArrowUpRight />
+        <ChevronRight />
       </a>
     </>
   );
@@ -203,76 +172,7 @@ export function HelpCenter() {
   );
 
   return (
-    <div className={styles.page} data-announcement={announcement}>
-      <header className={styles.header}>
-        {announcement && (
-          <div className={styles.announcement}>
-            <Megaphone size={16} />
-            <a href="/platform">
-              Meet Innflow, your connected workspace for everyday work.
-              <span>
-                Learn more <ArrowUpRight />
-              </span>
-            </a>
-            <button
-              type="button"
-              aria-label="Dismiss announcement"
-              onClick={() => setAnnouncement(false)}
-            >
-              <X />
-            </button>
-          </div>
-        )}
-        <div className={styles.navbar}>
-          <a href="/" aria-label="Innflow home">
-            <Image
-              className={styles.logo}
-              src="/brand/innflow_logo_set_B.svg"
-              alt="Innflow"
-              width={150}
-              height={36}
-              priority
-            />
-          </a>
-          <nav className={styles.desktopNav} aria-label="Main navigation">
-            {menus.map((menu) => (
-              <details key={menu.title}>
-                <summary>
-                  {menu.title}
-                  <CaretDown size={13} />
-                </summary>
-                <div>
-                  {menu.links.map(([label, href]) => (
-                    <a href={href} key={href}>
-                      {label}
-                    </a>
-                  ))}
-                </div>
-              </details>
-            ))}
-            <a href="/pricing">Pricing</a>
-          </nav>
-          <div className={styles.navActions}>
-            <a className={styles.sales} href={siteConfig.contactUrl}>
-              Talk to sales
-            </a>
-            <a className={styles.login} href={siteConfig.appOrigin}>
-              Log in
-            </a>
-            <a className={styles.primary} href={siteConfig.signupUrl}>
-              Get started<span>&nbsp;for free</span>
-            </a>
-            <button
-              className={styles.hamburger}
-              type="button"
-              aria-label="Open navigation"
-              onClick={() => openModal("navigation")}
-            >
-              <List size={24} />
-            </button>
-          </div>
-        </div>
-      </header>
+    <div className={styles.page}>
       <aside className={styles.sidebar} aria-label="Help navigation">
         <div className={styles.sidebarSearch}>
           <button type="button" onClick={() => openModal("search")}>
@@ -347,7 +247,7 @@ export function HelpCenter() {
                     <span>{description}</span>
                   </span>
                   <span className={styles.arrow}>
-                    <ArrowUpRight size={16} />
+                    <ChevronRight size={16} />
                   </span>
                 </a>
               ))}
@@ -362,7 +262,7 @@ export function HelpCenter() {
               </p>
               <a className={styles.primary} href="/resources">
                 <span>Start learning</span>
-                <ArrowUpRight />
+                <ChevronRight />
               </a>
             </div>
             <Image
@@ -381,7 +281,7 @@ export function HelpCenter() {
               </p>
               <a className={styles.primary} href="/platform/integrations">
                 <span>Explore integrations</span>
-                <ArrowUpRight />
+                <ChevronRight />
               </a>
             </div>
             <Image
@@ -405,7 +305,7 @@ export function HelpCenter() {
                 <span>Find ideas and helpful guides</span>
               </span>
               <span className={styles.arrow}>
-                <ArrowUpRight />
+                <ChevronRight />
               </span>
             </a>
             <button
@@ -421,7 +321,7 @@ export function HelpCenter() {
                 <span>Get in touch with our team</span>
               </span>
               <span className={styles.arrow}>
-                <ArrowUpRight />
+                <ChevronRight />
               </span>
             </button>
           </div>
@@ -470,7 +370,7 @@ export function HelpCenter() {
       {/* biome-ignore lint/a11y/useKeyWithClickEvents: native dialog Escape handling provides the keyboard equivalent of backdrop dismissal. */}
       <dialog
         ref={dialog}
-        className={`${styles.dialog} ${modal === "menu" || modal === "navigation" ? styles.menuDialog : ""}`}
+        className={`${styles.dialog} ${modal === "menu" ? styles.menuDialog : ""}`}
         aria-label={
           modal === "search"
             ? "Search help"
@@ -525,7 +425,7 @@ export function HelpCenter() {
                 <article key={article.title}>
                   <a href={article.href}>
                     <strong>{article.title}</strong>
-                    <ArrowUpRight size={18} />
+                    <ChevronRight size={18} />
                   </a>
                   <p>{article.description}</p>
                   <small>Help Center / {article.category}</small>
@@ -537,7 +437,7 @@ export function HelpCenter() {
                     </summary>
                     <p>{article.answer}</p>
                     <a href={article.href}>
-                      Explore this topic <ArrowUpRight size={14} />
+                      Explore this topic <ChevronRight size={14} />
                     </a>
                   </details>
                 </article>
@@ -589,7 +489,7 @@ export function HelpCenter() {
                       <strong>Email support</strong>
                       <small>{siteConfig.supportEmail}</small>
                     </span>
-                    <ArrowUpRight />
+                    <ChevronRight />
                   </a>
                   <a
                     className={styles.supportOption}
@@ -600,29 +500,13 @@ export function HelpCenter() {
                       <strong>Talk to our team</strong>
                       <small>Discuss your workspace and workflows</small>
                     </span>
-                    <ArrowUpRight />
+                    <ChevronRight />
                   </a>
-                </>
-              ) : modal === "menu" ? (
-                <>
-                  {categories}
-                  <div className={styles.supportLinks}>{supportLinks}</div>
                 </>
               ) : (
                 <>
-                  {menus.map((menu) => (
-                    <div className={styles.navigationGroup} key={menu.title}>
-                      <h3>{menu.title}</h3>
-                      {menu.links.map(([label, href]) => (
-                        <a key={href} href={href}>
-                          {label}
-                          <ArrowUpRight />
-                        </a>
-                      ))}
-                    </div>
-                  ))}
-                  <a href="/pricing">Pricing</a>
-                  <a href={siteConfig.appOrigin}>Log in</a>
+                  {categories}
+                  <div className={styles.supportLinks}>{supportLinks}</div>
                 </>
               )}
             </div>

@@ -1,13 +1,14 @@
-import {
-  ArrowRight,
-  CheckCircle,
-  Files,
-  FlowArrow,
-  ShieldCheck,
-} from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import googleCtaStyles from "@/components/google-cta.module.css";
 import { GoogleCtaContent } from "@/components/google-cta-content";
+import {
+  ArrowRight,
+  CheckCircle,
+  FileRecords as Files,
+  Share as FlowArrow,
+  Plus as MagePlus,
+  ShieldCheck,
+} from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
 import { getPageFaqTuples } from "@/lib/faqs";
 import { BaselaneHomepage } from "./baselane-homepage";
@@ -221,7 +222,9 @@ export async function BaselaneProductPage({
               <details key={faqId}>
                 <summary>
                   {question}
-                  <span>+</span>
+                  <span>
+                    <MagePlus size="1em" />
+                  </span>
                 </summary>
                 <p style={{ whiteSpace: "pre-line" }}>{answer}</p>
               </details>

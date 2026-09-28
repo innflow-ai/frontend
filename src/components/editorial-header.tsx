@@ -1,11 +1,16 @@
 "use client";
 
-import { CaretDown, Newspaper } from "@phosphor-icons/react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { type ReactNode, useEffect, useId, useRef, useState } from "react";
 import { GoogleSignInButton } from "@/components/google-sign-in";
+import {
+  ChevronDown as CaretDown,
+  DashMenu,
+  Multiply,
+  NoteText as Newspaper,
+} from "@/components/icons/mage";
 import {
   type LatestBlogPostNavItem,
   MegaMenu,
@@ -320,22 +325,11 @@ export function EditorialHeader({
               aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
               onClick={toggleMobile}
             >
-              <Image
-                className={styles.menuIcon}
-                src={
-                  mobileOpen
-                    ? `/brand/navigation/Close_X_${
-                        useLightChrome ? "white" : "black"
-                      }.svg`
-                    : `/brand/navigation/HamburgerMenu_${
-                        useLightChrome ? "white" : "black"
-                      }.svg`
-                }
-                alt=""
-                width={mobileOpen ? 25 : 27}
-                height={mobileOpen ? 25 : 27}
-                unoptimized
-              />
+              {mobileOpen ? (
+                <Multiply className={styles.menuIcon} size={25} />
+              ) : (
+                <DashMenu className={styles.menuIcon} size={27} />
+              )}
             </button>
           </div>
         </div>
@@ -360,7 +354,6 @@ export function MobileNavigation({
   id = "editorial-mobile-overlay",
   className = "",
   pricingHref = "/pricing",
-  iconOverrides = {},
   loginHref,
 }: {
   open: boolean;
@@ -369,7 +362,6 @@ export function MobileNavigation({
   id?: string;
   className?: string;
   pricingHref?: string;
-  iconOverrides?: Readonly<Record<string, string>>;
   loginHref?: string;
 }) {
   const reduce = useReducedMotion();
@@ -459,15 +451,14 @@ export function MobileNavigation({
                                 <div className={styles.mobileSectionLinks}>
                                   {column.links.map((link) => {
                                     const Icon = link.icon;
-                                    const iconSrc =
-                                      iconOverrides[link.title] ?? link.iconSrc;
                                     return (
                                       <a
                                         key={link.title}
                                         href={link.href}
                                         onClick={closeMobile}
                                         data-solution={
-                                          group.label === "Solutions" || undefined
+                                          group.label === "Solutions" ||
+                                          undefined
                                         }
                                         data-browse-all={
                                           link.browseAll || undefined
@@ -477,20 +468,7 @@ export function MobileNavigation({
                                           <span
                                             className={styles.mobileLinkIcon}
                                           >
-                                            {iconSrc ? (
-                                              <Image
-                                                className={
-                                                  styles.mobileCustomIcon
-                                                }
-                                                src={iconSrc}
-                                                alt=""
-                                                width={25}
-                                                height={25}
-                                                unoptimized
-                                              />
-                                            ) : (
-                                              <Icon size={17} weight="fill" />
-                                            )}
+                                            <Icon size={25} />
                                           </span>
                                         )}
                                         <span className={styles.mobileLinkCopy}>

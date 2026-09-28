@@ -1,11 +1,7 @@
 "use client";
 
-import {
-  Export,
-  FacebookLogo,
-  LinkedinLogo,
-  XLogo,
-} from "@phosphor-icons/react";
+import { FacebookLogo, LinkedinLogo, XLogo } from "@phosphor-icons/react";
+import { Share as Export } from "@/components/icons/mage";
 import styles from "./article.module.css";
 
 export function BlogShareBar({ url, title }: { url: string; title: string }) {

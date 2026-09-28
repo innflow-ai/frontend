@@ -1,8 +1,8 @@
 "use client";
 
-import { ArrowLeft, ArrowRight } from "@phosphor-icons/react";
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { ArrowLeft, ArrowRight } from "@/components/icons/mage";
 import { TrackedLink } from "@/components/tracked-link";
 import styles from "./blog-carousel.module.css";
 

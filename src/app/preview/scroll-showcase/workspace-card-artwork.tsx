@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { ChevronDown as MageChevronDown } from "@/components/icons/mage";
 import styles from "./workspace-card-artwork.module.css";
 import { WorkspaceConnectArtwork } from "./workspace-connect-artwork";
 
@@ -41,14 +42,14 @@ function TrainArtwork() {
           <div className={styles.filterPlate}>
             <div className={styles.filterLabel}>
               <Image
-                src={`${assets}/505d0.svg`}
+                src={`/brand/mage/filter.svg`}
                 alt=""
                 width={8.86108}
                 height={7.32002}
               />
               Filter
               <Image
-                src={`${assets}/64413.svg`}
+                src={`/brand/mage/down.svg`}
                 alt=""
                 width={7.32002}
                 height={4.23791}
@@ -66,7 +67,7 @@ function TrainArtwork() {
         <div className={styles.countPlate}>
           <div className={styles.countBadge}>
             <Image
-              src={`${assets}/0a9d9.svg`}
+              src="/brand/mage/check-circle-white.svg"
               alt=""
               width={9.24634}
               height={9.24634}
@@ -93,7 +94,9 @@ function AssignArtwork() {
           />
           <div className={styles.senderLabels}>
             <strong>Quinn</strong>
-            <span>to me, Dominic Mills ▾</span>
+            <span>
+              to me, Dominic Mills <MageChevronDown size="1em" />
+            </span>
           </div>
         </div>
         <p className={styles.messageCopy}>
@@ -129,7 +132,7 @@ function DeployArtwork() {
         <div className={styles.agentSwitch}>
           <span>
             <Image
-              src={`${assets}/c359f.svg`}
+              src={`/brand/mage/check.svg`}
               alt=""
               width={20.2258}
               height={20.2258}

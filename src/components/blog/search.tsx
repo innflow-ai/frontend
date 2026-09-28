@@ -1,4 +1,4 @@
-import { MagnifyingGlass } from "@phosphor-icons/react/dist/ssr";
+import { Search as MagnifyingGlass } from "@/components/icons/mage";
 import styles from "./article.module.css";
 
 export function BlogSearch({

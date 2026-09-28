@@ -9,6 +9,8 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { type CSSProperties, useEffect, useId, useRef, useState } from "react";
+import { ChevronRight } from "@/components/chevron-right";
+import { ArrowRight as MageArrowRight } from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
 import type { Testimonial } from "@/lib/testimonials";
 import styles from "./baseline-lower-sections.module.css";
@@ -299,7 +301,10 @@ export function BaselineConnectedInfrastructure() {
           Explore supported connections to find the right fit for your workflow.
         </p>
         <Link className={styles.directory} href="/integrations">
-          View all integrations <span aria-hidden="true">→</span>
+          View all integrations{" "}
+          <span aria-hidden="true">
+            <MageArrowRight size="1em" />
+          </span>
         </Link>
       </header>
       <div className={styles.integrations}>
@@ -330,7 +335,9 @@ export function BaselineConnectedInfrastructure() {
                 height={24}
                 alt=""
               />
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true">
+                <ChevronRight />
+              </span>
             </div>
             <h3>{card.title}</h3>
             <p>{card.body}</p>
@@ -345,6 +352,9 @@ export function BaselineConnectedInfrastructure() {
   );
 }
 
+import { CalendarCheck, Chart, Share, StarsA } from "@/components/icons/mage";
+
+const closingIcons = [CalendarCheck, Share, StarsA, Chart];
 const closingAssets = "/preview/homepage/closing-figma";
 const scenes = [
   {
@@ -522,12 +532,10 @@ export function BaselineClosing() {
                           width={47.9844}
                           height={47.9844}
                         />
-                        <Image
-                          src={scene.icon}
-                          alt=""
-                          width={34.2969}
-                          height={34.2969}
-                        />
+                        {(() => {
+                          const SceneIcon = closingIcons[index];
+                          return <SceneIcon size={34.2969} />;
+                        })()}
                       </div>
                       <span>{scene.subject}</span>
                       <strong>{scene.outcome}</strong>

@@ -1,3 +1,5 @@
+
+import { ArrowLeft as MageArrowLeft } from '@/components/icons/mage';
 import {
   PortableText,
   type PortableTextComponents,
@@ -211,7 +213,7 @@ export default async function SkillDetailPage({ params }: RouteParams) {
       </section>
       <div className={`shell ${styles.footerNav}`}>
         <a className={styles.backLink} href="/skills">
-          <span aria-hidden="true">←</span> Back to skills
+          <span aria-hidden="true"><MageArrowLeft size="1em" /></span> Back to skills
         </a>
       </div>
     </MarketingPage>

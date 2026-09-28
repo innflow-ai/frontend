@@ -1,21 +1,21 @@
 "use client";
-
+import { useEffect, useRef, useState } from "react";
 import {
   ArrowRight,
   Check,
   CheckCircle,
   Clock,
   Database,
-  FileText,
-  FlowArrow,
-  House,
-  Lightning,
-  MagnifyingGlass,
+  NoteText as FileText,
+  Share as FlowArrow,
+  Home as House,
+  Zap as Lightning,
+  ArrowUp as MageArrowUp,
+  Search as MagnifyingGlass,
   ShieldCheck,
-  Sparkle,
+  StarsA as Sparkle,
   Users,
-} from "@phosphor-icons/react";
-import { useEffect, useRef, useState } from "react";
+} from "@/components/icons/mage";
 import styles from "./runey-landing.module.css";
 
 const views = ["Workflows", "Assistant", "Knowledge", "Approvals"] as const;
@@ -214,7 +214,10 @@ export function RuneyWorkspace({
                 </div>
               </div>
               <div className={styles.promptPreview}>
-                Ask about your operations… <span>↑</span>
+                Ask about your operations…{" "}
+                <span>
+                  <MageArrowUp size="1em" />
+                </span>
               </div>
             </div>
           ) : view === "Knowledge" ? (

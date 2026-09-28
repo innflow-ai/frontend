@@ -1,16 +1,14 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
-import { GoogleCtaContent } from "@/components/google-cta-content";
+import { TrackedLink } from "@/components/tracked-link";
 import { pricingCatalog } from "@/config/pricing";
 import { siteConfig } from "@/config/site";
-import { faqs as homepageFaqs } from "@/content/home";
 import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-pricing.module.css";
 
 const plans = Object.values(pricingCatalog.plans);
-const { free, pro, business } = pricingCatalog.plans;
+const { pro, business } = pricingCatalog.plans;
 const money = (value: number | null) =>
   value === null ? "Custom" : `$${value.toFixed(value % 1 ? 2 : 0)}`;
 const groups = [
@@ -59,44 +57,35 @@ const questions = [
     "What is included with Enterprise?",
     "Enterprise plans are scoped around custom credit volume, rate limits, seats, security requirements, deployment needs, onboarding, and service levels.",
   ],
-  ...homepageFaqs.map(({ question, answer }) => [question, answer]),
 ];
 export function BaselanePricing() {
   const [annual, setAnnual] = useState(false);
-  const [expanded, setExpanded] = useState<string[]>([groups[0].title]);
+  const [expanded, setExpanded] = useState<string[]>(
+    groups.map((group) => group.title),
+  );
   const allOpen = expanded.length === groups.length;
   const value = (plan: (typeof plans)[number]) =>
     money(annual ? plan.commitmentMonthlyPrice : plan.monthlyPrice);
   return (
     <BaselaneHomepage>
       <div className={styles.page}>
-        <section className={styles.hero}>
-          <picture>
-            <source
-              media="(max-width:700px)"
-              srcSet="/brand/baselane-inspired/pricing/hero-mobile.webp"
-            />
-            <Image
-              src="/brand/baselane-inspired/pricing/hero-desktop.webp"
-              alt="House rooftops beneath a blue sky"
-              fill
-              preload
-              sizes="100vw"
-            />
-          </picture>
-          <div className={styles.heroGrid}>
-            <div className={styles.intro}>
-              <h1>
-                Clearer work.
+        <section className={styles.hero} aria-labelledby="pricing-title">
+          <div className={styles.intro}>
+            <div>
+              <span className={styles.eyebrow}>INNFLOW PRICING</span>
+              <h1 id="pricing-title">
+                Less busywork.
                 <br />
-                Room to grow.
+                More possibilities.
               </h1>
+            </div>
+            <div className={styles.introDetails}>
               <p>
-                Choose the workflow capacity you need, with a clear view of
-                what’s included.
+                Start with your first workflow. Find the right plan to connect
+                your tools, automate everyday work, and grow with your team.
               </p>
               <fieldset className={styles.billing}>
-                <legend>Billing term</legend>
+                <legend className={styles.srOnly}>Billing term</legend>
                 {[false, true].map((option) => (
                   <label key={String(option)}>
                     <input
@@ -105,76 +94,136 @@ export function BaselanePricing() {
                       checked={annual === option}
                       onChange={() => setAnnual(option)}
                     />
-                    {option ? "Annual plan" : "Monthly plan"}
+                    {option ? "Annual plan" : "Monthly"}
                   </label>
                 ))}
+                <span className={styles.savings}>Save 15%</span>
               </fieldset>
-              <div className={styles.note}>
-                <strong>Start with your next workflow.</strong>
-                <p>
-                  Compare the volume, context, and history your team needs. Move
-                  to more capacity as your operations grow.
-                </p>
-              </div>
+              <p className={styles.billingNote} aria-live="polite">
+                {annual
+                  ? "Annual commitment, billed monthly. All prices in USD."
+                  : "No annual commitment. All prices in USD."}
+              </p>
             </div>
-            {[free, pro].map((plan, index) => (
+          </div>
+          <nav className={styles.planNav} aria-label="Jump to a plan">
+            {plans.map((plan) => (
+              <a key={plan.name} href={`#plan-${plan.name.toLowerCase()}`}>
+                {plan.name}
+              </a>
+            ))}
+          </nav>
+          <div className={styles.planGrid}>
+            {plans.map((plan, index) => (
               <article
-                className={`${styles.plan} ${index ? styles.featured : ""}`}
+                id={`plan-${plan.name.toLowerCase()}`}
+                className={`${styles.plan} ${index === 1 ? styles.featured : ""}`}
                 key={plan.name}
+                aria-label={`${plan.name} plan`}
               >
-                <span className={styles.eyebrow}>
-                  {index ? "MORE ROOM TO AUTOMATE" : "YOUR FIRST WORKFLOWS"}
-                </span>
-                <h2>{plan.name}</h2>
-                <div className={styles.price}>
-                  {value(plan)}
-                  <span>/mo.</span>
+                {index === 1 && (
+                  <div className={styles.popular}>MOST POPULAR</div>
+                )}
+                <div className={styles.planTop}>
+                  <h2>{plan.name}</h2>
+                  <p className={styles.planDescription}>
+                    {
+                      [
+                        "Build your first workflows and see what’s possible.",
+                        "Put everyday work on autopilot, with room to grow.",
+                        "Scale connected workflows across your team.",
+                        "Shape a plan around your organization’s needs.",
+                      ][index]
+                    }
+                  </p>
+                  <div
+                    className={styles.price}
+                    aria-live="polite"
+                    aria-atomic="true"
+                  >
+                    <strong>{value(plan)}</strong>
+                    {plan.monthlyPrice !== null && <span>/month</span>}
+                  </div>
+                  <p className={styles.planNote}>
+                    {index === 0
+                      ? "Free to get started"
+                      : index === 3
+                        ? "Let’s find the right fit"
+                        : annual
+                          ? "Annual plan, billed monthly"
+                          : "Billed monthly"}
+                  </p>
+                  <TrackedLink
+                    className={styles.button}
+                    destination={
+                      index === 3
+                        ? siteConfig.contactUrl
+                        : siteConfig.googleAuthUrl
+                    }
+                    eventLabel={`pricing_${plan.name.toLowerCase()}_${index === 3 ? "contact" : "signup"}`}
+                    aria-label={
+                      index === 3
+                        ? "Talk to sales about Enterprise"
+                        : `Get started with ${plan.name}`
+                    }
+                  >
+                    {index === 3 ? "Talk to sales" : "Get started"}
+                    <span aria-hidden="true">→</span>
+                  </TrackedLink>
                 </div>
-                <p className={styles.planDescription}>
-                  {index
-                    ? "More capacity for connected operations"
-                    : "The essentials to get started"}
-                </p>
-                <a className={styles.button} href={siteConfig.googleAuthUrl}>
-                  <GoogleCtaContent />
-                </a>
-                <span className={styles.eyebrow}>INCLUDED CAPACITY</span>
-                <ul>
-                  <li>{plan.monthlyCredits} monthly credits</li>
-                  <li>
-                    {plan.workspaces} {index ? "workspaces" : "workspace"}
-                  </li>
-                  <li>{plan.deployedWorkflows} deployed workflows</li>
-                  <li>{plan.tables} tables</li>
-                  <li>{plan.rowsPerTable} rows per table</li>
-                  <li>{plan.runHistory} of run history</li>
-                  {index === 1 && <li>Premium workflow nodes</li>}
-                </ul>
-                <small>
-                  {annual && index
-                    ? "Annual commitment, billed monthly."
-                    : "Monthly plan."}{" "}
-                  Prices in USD.
-                </small>
+                <div className={styles.planFeatures}>
+                  <p className={styles.includes}>
+                    {
+                      [
+                        "The essentials to get started:",
+                        "More capacity, plus premium nodes:",
+                        "Higher limits, plus advanced AI:",
+                        "A plan built around your team:",
+                      ][index]
+                    }
+                  </p>
+                  <h3>
+                    {index === 3 ? "Custom capacity" : "Workflow automation"}
+                  </h3>
+                  <ul>
+                    {index === 3 ? (
+                      [
+                        "Custom monthly credits",
+                        "Custom workflow and data capacity",
+                        "Security and deployment requirements",
+                        "Onboarding and service levels",
+                      ].map((feature) => <li key={feature}>{feature}</li>)
+                    ) : (
+                      <>
+                        <li>
+                          <strong>{plan.monthlyCredits}</strong> monthly credits
+                        </li>
+                        <li>
+                          {plan.workspaces}{" "}
+                          {index === 0 ? "workspace" : "workspaces"}
+                        </li>
+                        <li>{plan.deployedWorkflows} deployed workflows</li>
+                        <li>{plan.tables} tables</li>
+                        <li>{plan.rowsPerTable} rows per table</li>
+                        <li>{plan.runHistory} of run history</li>
+                        {plan.premiumWorkflowNodes === "Yes" && (
+                          <li>Premium workflow nodes</li>
+                        )}
+                        {plan.exclusiveAiModels === "Yes" && (
+                          <li>Exclusive AI models</li>
+                        )}
+                      </>
+                    )}
+                  </ul>
+                </div>
               </article>
             ))}
           </div>
-        </section>
-        <section className={styles.growth}>
-          <div>
-            <span className={styles.eyebrow}>FOR YOUR WHOLE OPERATION</span>
-            <h2>Growing beyond Pro?</h2>
-            <p>
-              Business starts at {value(business)}/month with{" "}
-              {business.monthlyCredits} monthly credits. Enterprise brings
-              custom capacity for your team.
-            </p>
-          </div>
-          <a className={styles.outline} href={siteConfig.contactUrl}>
-            Talk to the team ↗
+          <a className={styles.compareLink} href="#compare-features">
+            Compare all features <span aria-hidden="true">↓</span>
           </a>
         </section>
-        <section className={styles.comparison}>
+        <section id="compare-features" className={styles.comparison}>
           <h2>Compare features</h2>
           <div className={styles.compareControls}>
             <button
@@ -204,7 +253,9 @@ export function BaselanePricing() {
                 }
               >
                 {group.title}
-                <span>{expanded.includes(group.title) ? "−" : "+"}</span>
+                <span aria-hidden="true">
+                  {expanded.includes(group.title) ? "−" : "+"}
+                </span>
               </button>
               <div
                 id={group.title.replaceAll(" ", "-")}
@@ -279,61 +330,15 @@ export function BaselanePricing() {
             ))}
           </div>
         </section>
-        <section className={styles.ocean}>
-          <Image
-            src="/brand/baselane-inspired/hero.webp"
-            alt="A calm coastal bay"
-            fill
-            sizes="100vw"
-          />
-          <div>
-            <h2>
-              Make room for
-              <br />
-              what’s next.
-            </h2>
-            <p>Connect the work behind your properties.</p>
-            <a className={styles.button} href={siteConfig.demoUrl}>
-              Explore a demo ↗
-            </a>
-          </div>
-        </section>
-        <section className={styles.useCases}>
-          <h2>Find your starting point.</h2>
-          <p>Explore the workflows behind different rental operations.</p>
-          <div>
-            {[
-              [
-                "Long-term rentals",
-                "Keep recurring work moving.",
-                "/long-term-rentals",
-              ],
-              [
-                "Mid-term rentals",
-                "Give each handoff a clear next step.",
-                "/mid-term-rentals",
-              ],
-              [
-                "Short-term rentals",
-                "Connect fast-moving operations.",
-                "/short-term-rentals",
-              ],
-              [
-                "Multi-property teams",
-                "Keep property context close.",
-                "/multi-property-investors",
-              ],
-            ].map(([title, text, href]) => (
-              <a key={href} href={href}>
-                <h3>{title}</h3>
-                <p>{text}</p>
-                <span>Explore →</span>
-              </a>
-            ))}
-          </div>
-        </section>
         <section className={styles.faq}>
-          <h2>FAQs</h2>
+          <div>
+            <span className={styles.eyebrow}>A LITTLE MORE CLARITY</span>
+            <h2>Frequently asked questions</h2>
+            <p className={styles.faqIntro}>
+              Need help choosing?{" "}
+              <a href={siteConfig.contactUrl}>Talk to our team.</a>
+            </p>
+          </div>
           <div>
             {questions.map(([question, answer]) => (
               <details key={question}>

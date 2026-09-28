@@ -1,185 +1,252 @@
+.page {
+  --pricing-ink: #012232;
+  --pricing-muted: #586b75;
+  --pricing-line: #dce3e5;
+  background: #fff;
+  color: var(--pricing-ink);
+  padding-top: 106px;
+}
 .hero {
-  position: relative;
-  padding: 150px 28px 65px;
-  min-height: 980px;
-  background: #a9d5ef;
-}
-.hero img {
-  object-fit: cover;
-  object-position: center bottom;
-}
-.heroGrid {
-  position: relative;
-  max-width: 1380px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 28px;
+  margin: 0 24px;
+  padding: 72px max(32px, calc((100vw - 1256px) / 2)) 36px;
+  background: #f5f5f0;
+  border-radius: 36px;
 }
 .intro {
-  display: flex;
-  flex-direction: column;
-}
-.intro h1 {
-  font-size: clamp(44px, 4.5vw, 64px);
-  line-height: 1.02;
-}
-.intro > p {
-  font-size: 20px;
-  line-height: 1.35;
-  max-width: 320px;
-  margin: 30px 0 !important;
-}
-.billing {
-  border: 0;
-  padding: 0;
-  margin: 0;
   display: grid;
-  gap: 12px;
-}
-.billing legend {
-  font-size: 12px;
-  letter-spacing: 0.08em;
-  margin-bottom: 14px;
-}
-.billing label {
-  display: flex;
+  grid-template-columns: 1.1fr 1fr;
   align-items: center;
-  gap: 10px;
-  cursor: pointer;
-}
-.billing input {
-  accent-color: #185883;
-  width: 18px;
-  height: 18px;
-}
-.note {
-  margin-top: auto;
-  background: #f3f8f5bd;
-  padding: 24px;
-  border-radius: 20px;
-  backdrop-filter: blur(18px);
-  max-width: 360px;
-}
-.note p {
-  font-size: 15px;
-  line-height: 1.4;
-  margin-top: 12px !important;
-}
-.plan {
-  border: 1px solid #ffffff5e;
-  border-radius: 22px;
-  padding: 30px 26px;
-  background: #e5f3f9b3;
-  backdrop-filter: blur(25px);
-  display: flex;
-  flex-direction: column;
-  min-height: 700px;
-}
-.featured {
-  background: #fffaf1eb;
+  gap: 70px;
+  max-width: 1208px;
+  margin: auto;
 }
 .eyebrow {
   display: block;
   font-size: 11px;
-  letter-spacing: 0.09em;
-  line-height: 1.4;
-}
-.plan h2 {
-  font-size: 44px !important;
-  margin-top: 34px !important;
-}
-.price {
-  font-size: 42px;
-  letter-spacing: -0.05em;
-  color: #526267;
-}
-.price span {
-  font-size: 30px;
-}
-.planDescription {
-  font-size: 20px;
-  line-height: 1.25;
-  margin: 22px 0 25px !important;
-  max-width: 260px;
-}
-.page .button {
-  display: inline-flex;
-  font-family: var(--font-button, var(--font-sans));
-  line-height: 1.25;
-  align-items: center;
-  justify-content: center;
-  align-self: flex-start;
-  padding: 14px 20px;
-  min-height: 48px;
-  border-radius: 7px;
-  background: var(--button-primary);
-  color: white;
-  font-size: 15px;
-}
-.plan .button {
-  margin-bottom: 28px;
-}
-.plan ul {
-  padding: 0;
-  margin: 20px 0 30px;
-  list-style: none;
-  display: grid;
-  gap: 20px;
-  font-size: 15px;
-}
-.plan li {
-  padding-left: 24px;
-  position: relative;
-}
-.plan li:before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: #346786;
-}
-.plan > small {
-  margin-top: auto;
-  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
   line-height: 1.5;
 }
-.growth {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 60px 28px;
+.page .intro h1 {
+  font-size: clamp(38px, 4vw, 58px);
+  line-height: 1.07;
+  letter-spacing: -0.045em;
+  margin-top: 16px;
+  font-weight: 500;
+}
+.introDetails > p {
+  color: var(--pricing-muted);
+  font-size: 18px;
+  line-height: 1.5;
+}
+.billing {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  border: 0;
+  padding: 0;
+  margin: 24px 0 12px;
+}
+.billing label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.billing input {
+  accent-color: var(--pricing-ink);
+  width: 19px;
+  height: 19px;
+  margin: 0;
+}
+.savings {
+  border-radius: 5px;
+  padding: 6px 9px;
+  background: #e5ebe4;
+  color: #354b39;
+  font-size: 12px;
+  font-weight: 500;
+}
+.introDetails .billingNote {
+  font-size: 12px;
+  min-height: 36px;
+}
+.planNav {
+  display: none;
+}
+.planGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin: 88px auto 0;
+  max-width: 1208px;
+  align-items: stretch;
+}
+.plan {
+  position: relative;
+  border: 1px solid #e7e9e6;
+  border-radius: 28px;
+  padding: 7px;
+  background: #fafbf8;
+  box-shadow: 0 6px 18px #01223206;
+  scroll-margin-top: 112px;
+}
+.featured {
+  border-color: #2972aa;
+  background: linear-gradient(180deg, #deebf6, #eff5ed);
+}
+.popular {
+  position: absolute;
+  height: 40px;
+  inset: -40px -1px auto;
+  border-radius: 24px 24px 0 0;
+  padding: 13px 20px;
+  background: #286b9e;
+  color: #fff;
+  font-size: 10px;
+  letter-spacing: 0.09em;
+  font-weight: 600;
+}
+.featured {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.planTop {
+  padding: 26px 20px 22px;
+  border-radius: 22px;
+  background: #fff;
+  box-shadow: 0 6px 12px #01223208;
+}
+.page .plan h2 {
+  font-size: 32px;
+  line-height: 1.15;
+  font-weight: 500;
+  letter-spacing: -0.045em;
+}
+.page .planDescription {
+  min-height: 66px;
+  margin: 14px 0 25px;
+  color: var(--pricing-muted);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.price strong {
+  font-size: clamp(32px, 2.7vw, 42px);
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: -0.055em;
+}
+.price span {
+  font-size: 12px;
+  color: var(--pricing-muted);
+}
+.page .planNote {
+  font-size: 11px;
+  color: var(--pricing-muted);
+  margin-top: 7px;
+}
+.page .button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
+  gap: 12px;
+  min-height: 48px;
+  padding: 12px 16px;
+  border: 1px solid var(--pricing-ink);
+  border-radius: 9px;
+  margin-top: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  transition:
+    background 160ms ease,
+    color 160ms ease;
 }
-.growth h2 {
-  font-size: 34px !important;
-  margin: 15px 0 !important;
+.page .featured .button {
+  background: var(--pricing-ink);
+  color: #fff;
 }
-.growth p {
+.page .button:hover {
+  background: #eaf2f6;
+}
+.page .featured .button:hover {
+  background: #185883;
+}
+.button > span {
+  font-size: 22px;
+  line-height: 1;
+}
+.planFeatures {
+  padding: 24px 18px 22px;
+}
+.page .includes {
+  font-size: 12px;
+  color: var(--pricing-muted);
+  min-height: 38px;
   line-height: 1.5;
-  max-width: 680px;
 }
-.outline {
-  border: 1px solid #344b53;
-  border-radius: 30px;
-  padding: 13px 20px;
-  display: inline-flex;
-  background: transparent;
-  font: inherit;
-  white-space: nowrap;
-  cursor: pointer;
-  font-family: var(--font-button, var(--font-sans));
-  line-height: 1.25;
+.page .planFeatures h3 {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  margin: 14px 0 20px;
+}
+.plan ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: grid;
+  gap: 14px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.plan li {
+  position: relative;
+  padding-left: 21px;
+}
+.plan li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #286b9e;
+}
+.plan li strong {
+  font-weight: 600;
+}
+.page .compareLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  width: fit-content;
+  min-height: 44px;
+  margin: 28px auto 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+.compareLink:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 .comparison {
-  max-width: 1280px;
-  padding: 45px 28px 65px;
+  max-width: 1264px;
+  padding: 88px 28px 72px;
   margin: auto;
+  scroll-margin-top: 82px;
 }
-.comparison > h2 {
+.page .comparison > h2 {
   text-align: center;
-  margin-bottom: 38px !important;
+  font-size: 46px;
+  margin-bottom: 40px;
 }
 .compareControls {
   display: flex;
@@ -190,59 +257,75 @@
 }
 .compareControls p {
   font-size: 13px;
-  color: #53636c;
+  color: var(--pricing-muted);
+}
+.outline {
+  border: 1px solid var(--pricing-line);
+  border-radius: 8px;
+  padding: 12px 16px;
+  min-height: 44px;
+  background: white;
+  font-size: 14px !important;
+  color: var(--pricing-ink);
+}
+.outline:hover {
+  background: #f5f7f8;
 }
 .group {
-  border-top: 1px solid #798789;
+  border-top: 1px solid var(--pricing-line);
 }
-.groupToggle {
+.page .groupToggle {
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  background: transparent;
+  background: #f4f7f8;
   border: 0;
-  padding: 22px 8px;
+  padding: 20px;
   font-size: 12px;
-  letter-spacing: 0.06em;
-  cursor: pointer;
+  font-weight: 500;
+  letter-spacing: 0.07em;
   text-align: left;
+  color: var(--pricing-ink);
 }
 .groupToggle > span {
   font-size: 22px;
 }
 .tableScroll {
   overflow: auto;
+  overscroll-behavior-x: contain;
 }
 .tableScroll table {
   width: 100%;
   border-collapse: collapse;
   min-width: 740px;
   table-layout: fixed;
-  font-size: 15px;
+  font-size: 14px;
 }
 .tableScroll th,
 .tableScroll td {
-  padding: 18px 12px;
-  border-bottom: 1px solid #d8dad4;
+  padding: 20px 12px;
+  border-bottom: 1px solid var(--pricing-line);
   text-align: center;
   font-weight: 400;
 }
 .tableScroll th:first-child {
   text-align: left;
-  width: 31%;
+  width: 30%;
 }
 .tableScroll thead th {
-  font-size: 20px;
+  font-size: 19px;
+  font-weight: 500;
 }
 .tableScroll th small {
   display: block;
   font-size: 12px;
+  font-weight: 400;
   margin-top: 8px;
-  color: #667476;
+  color: var(--pricing-muted);
 }
-.tableScroll tbody td:nth-child(3) {
-  background: #e2f0f54d;
+.tableScroll :is(th, td):nth-child(3) {
+  background: #f0f6fa;
 }
 .srOnly {
   position: absolute;
@@ -250,265 +333,248 @@
   height: 1px;
   overflow: hidden;
   clip-path: inset(50%);
+  white-space: nowrap;
 }
 .terms {
-  text-align: center;
-  max-width: 1280px;
+  max-width: 1264px;
   margin: auto;
-  padding: 40px 28px 80px;
+  padding: 0 28px 80px;
 }
-.terms > p,
-.useCases > p {
-  margin: 20px 0 35px !important;
-  color: #546367;
+.page .terms > h2 {
+  font-size: 32px;
+}
+.page .terms > p {
+  margin: 16px 0 32px;
+  color: var(--pricing-muted);
 }
 .terms > div {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 28px;
-  text-align: left;
+  gap: 32px;
 }
 .terms article {
-  border-top: 1px solid #bac7c8;
-  padding-top: 24px;
+  border-top: 1px solid var(--pricing-line);
+  padding-top: 22px;
 }
-.terms h3 {
-  font-size: 23px;
-  margin-bottom: 20px !important;
+.page .terms h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 12px;
 }
-.terms article p {
-  line-height: 1.55;
-  font-size: 15px;
-}
-.ocean {
-  height: 630px;
-  position: relative;
-  padding: 70px 6%;
-  display: flex;
-  align-items: center;
-}
-.ocean > img,
-.closing > img {
-  object-fit: cover;
-}
-.ocean > div,
-.closing > div {
-  position: relative;
-}
-.ocean h2 {
-  font-size: 56px !important;
-}
-.ocean p,
-.closing p {
-  margin: 24px 0 !important;
-}
-.useCases {
-  text-align: center;
-  padding: 75px 28px;
-  max-width: 1280px;
-  margin: auto;
-}
-.useCases > div {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  text-align: left;
-}
-.useCases a {
-  border-radius: 12px;
-  background: linear-gradient(140deg, #d8eaf4, #eef5f3);
-  padding: 28px;
-  min-height: 230px;
-  display: flex;
-  flex-direction: column;
-}
-.useCases h3 {
-  font-size: 26px;
-}
-.useCases a p {
-  line-height: 1.45;
-  margin: 20px 0 !important;
-}
-.useCases a span {
-  margin-top: auto;
+.page .terms article p {
+  color: var(--pricing-muted);
   font-size: 14px;
+  line-height: 1.65;
 }
 .faq {
-  max-width: 1280px;
-  margin: auto;
-  padding: 30px 28px 80px;
+  max-width: 1208px;
+  margin: 0 auto 80px;
+  padding: 48px;
+  background: #f5f5f0;
+  border-radius: 28px;
   display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 30px;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 70px;
+}
+.page .faq h2 {
+  font-size: 38px;
+  margin-top: 16px;
+}
+.page .faqIntro {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--pricing-muted);
+  margin-top: 24px;
+}
+.page .faqIntro a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 .faq details {
-  border-bottom: 1px solid #c9d1cf;
+  border-bottom: 1px solid #d7dfdc;
   padding: 22px 0;
 }
+.faq details:first-child {
+  padding-top: 0;
+}
 .faq summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 20px;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.4;
+  list-style: none;
 }
-.faq details p {
-  line-height: 1.6;
-  margin-top: 20px !important;
+.faq summary::-webkit-details-marker {
+  display: none;
 }
-.closing {
-  height: 380px;
-  position: relative;
-  padding: 70px 6%;
+.faq summary::after {
+  content: "+";
+  font-size: 24px;
 }
-.closing:before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: #fff;
+.faq details[open] summary::after {
+  content: "−";
 }
-.closing > div {
-  max-width: 540px;
+.page .faq details p {
+  line-height: 1.65;
+  font-size: 15px;
+  color: var(--pricing-muted);
+  margin-top: 18px;
 }
 .page :is(a, button, input, summary):focus-visible,
 .tableScroll:focus-visible {
   outline: 3px solid #2782b4;
   outline-offset: 4px;
 }
-@media (max-width: 1050px) {
-  .heroGrid {
-    gap: 16px;
+@media (max-width: 1150px) {
+  .hero {
+    padding: 56px 28px 32px;
   }
-  .plan {
-    padding: 26px 20px;
+  .intro {
+    gap: 36px;
   }
-  .intro h1 {
-    font-size: 46px;
+  .planGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 56px 20px;
   }
-  .plan .button {
-    font-size: 13px;
-    padding: 14px 12px;
+  .planTop {
+    padding: 26px;
   }
-  .useCases > div,
-  .terms > div {
-    grid-template-columns: 1fr 1fr;
+  .price strong {
+    font-size: 42px;
+  }
+  .planDescription {
+    min-height: 42px !important;
+  }
+  .faq {
+    margin-inline: 28px;
+    gap: 36px;
   }
 }
 @media (max-width: 700px) {
+  .page {
+    padding-top: 94px;
+  }
   .hero {
-    padding: 120px 20px 40px;
-    background: #aed7ed;
+    margin: 0 10px;
+    padding: 36px 20px 24px;
+    border-radius: 26px;
   }
-  .heroGrid {
+  .intro {
     grid-template-columns: 1fr;
-    gap: 25px;
+    text-align: center;
+    gap: 22px;
   }
-  .intro h1 {
-    font-size: 46px;
+  .page .intro h1 {
+    font-size: 40px;
   }
-  .intro > p {
-    max-width: none;
-    margin: 24px 0 !important;
+  .introDetails > p {
+    font-size: 16px;
   }
   .billing {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-bottom: 24px;
+    justify-content: center;
+    gap: 14px;
+    margin: 18px 0 8px;
   }
-  .note {
-    display: none;
+  .billing label {
+    font-size: 13px;
   }
-  .plan {
+  .savings {
+    font-size: 11px;
+    padding: 5px 7px;
+  }
+  .introDetails .billingNote {
     min-height: 0;
-    padding: 28px;
-    background: #edf7fbe6;
+    line-height: 1.6;
   }
-  .featured {
-    background: #fffaf1f2;
+  .planNav {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 22px;
   }
-  .plan h2 {
-    margin-top: 24px !important;
+  .page .planNav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    border: 1px solid #d9e1e2;
+    border-radius: 7px;
+    min-height: 44px;
+    font-size: 12px;
+    background: #fff;
   }
-  .plan .button {
-    font-size: 15px;
-    padding: 14px 20px;
+  .planGrid {
+    grid-template-columns: 1fr;
+    gap: 58px;
+    margin-top: 28px;
   }
-  .hero img {
-    object-position: center top;
+  .planTop {
+    padding: 24px;
   }
-  .growth {
-    display: block;
-    padding: 40px 24px;
+  .page .planDescription {
+    min-height: 0 !important;
+    margin-bottom: 25px;
   }
-  .growth .outline {
-    margin-top: 24px;
+  .price strong {
+    font-size: 44px;
   }
-  .comparison {
-    padding: 35px 20px;
+  .planFeatures {
+    padding: 24px;
   }
-  .comparison h2 {
-    font-size: 36px !important;
+  .page .includes {
+    min-height: 0;
   }
-  .compareControls {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 18px;
-  }
-  .terms {
-    padding: 40px 24px 55px;
-  }
-  .terms h2 {
-    font-size: 36px !important;
-  }
-  .terms > div {
-    gap: 28px;
-  }
-  .terms h3 {
-    font-size: 21px;
-  }
-  .terms article p {
+  .plan ul {
     font-size: 14px;
   }
-  .ocean {
-    height: 590px;
-    padding: 40px 24px;
+  .comparison {
+    padding: 56px 20px;
+  }
+  .page .comparison > h2 {
+    font-size: 34px;
+    margin-bottom: 28px;
+  }
+  .compareControls {
+    flex-direction: column;
     align-items: flex-start;
+    gap: 14px;
   }
-  .ocean > img {
-    object-position: 60% center;
+  .tableScroll th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    background: #fff;
+    width: 160px;
+    box-shadow: 1px 0 #dce3e5;
   }
-  .ocean h2 {
-    font-size: 42px !important;
+  .terms {
+    padding: 0 24px 48px;
   }
-  .useCases {
-    padding: 50px 24px;
+  .page .terms > h2 {
+    font-size: 30px;
   }
-  .useCases > div {
-    grid-template-columns: 1fr;
-  }
-  .useCases a {
-    min-height: 210px;
+  .terms > div {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 20px;
   }
   .faq {
     grid-template-columns: 1fr;
-    padding: 25px 24px 55px;
+    margin: 0 10px 48px;
+    padding: 30px 24px;
+    gap: 30px;
   }
-  .closing {
-    height: 390px;
-    padding: 45px 24px;
+  .page .faq h2 {
+    font-size: 34px;
   }
-  .closing > img {
-    object-position: 65% center;
-  }
-  .closing > div {
-    max-width: 300px;
-  }
-  .closing h2 {
-    font-size: 38px !important;
+  .faq summary {
+    font-size: 17px;
   }
 }
-
-/* Primary actions follow the shared BL brand reference. */
-.page .button:hover {
-  background: var(--button-primary-hover);
-  filter: none;
+@media (prefers-reduced-motion: reduce) {
+  .page .button {
+    transition: none;
+  }
 }

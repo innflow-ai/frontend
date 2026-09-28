@@ -6,10 +6,16 @@ it("treats Vercel's regenerated root pathname and the public root as the same sh
     expect(isShowcaseHome(path)).toBe(true);
     expect(usesShowcaseDesign(path)).toBe(true);
   }
-  for (const path of ["/solutions", "/industries/healthcare"]) {
+  for (const path of [
+    "/solutions",
+    "/industries/healthcare",
+    "/integrations",
+    "/integrations/gmail",
+  ]) {
     expect(isShowcaseHome(path)).toBe(false);
     expect(usesShowcaseDesign(path)).toBe(true);
   }
+  expect(usesShowcaseDesign("/integrations-other")).toBe(false);
   expect(usesShowcaseDesign("/rent-collection")).toBe(false);
   expect(usesShowcaseDesign("/index-not-a-page")).toBe(false);
 });

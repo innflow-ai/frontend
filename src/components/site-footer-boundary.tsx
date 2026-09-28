@@ -11,5 +11,7 @@ export function SiteFooterBoundary({
   children: ReactNode;
   preview: ReactNode;
 }) {
-  return usesShowcaseDesign(usePathname()) ? preview : children;
+  const pathname = usePathname();
+  if (pathname === "/help") return null;
+  return usesShowcaseDesign(pathname) ? preview : children;
 }

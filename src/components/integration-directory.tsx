@@ -33,38 +33,41 @@ export function IntegrationDirectory({ items }: { items: Integration[] }) {
   }
   return (
     <section
+      id="integration-directory"
       className={`shell ${styles.directory}`}
       aria-label="Integration directory"
     >
       <aside className={styles.sidebar}>
-        <h2>Categories</h2>
-        <div className={styles.categories}>
-          <button
-            type="button"
-            aria-pressed={category === ""}
-            onClick={() => {
-              setCategory("");
-              setLimit(24);
-            }}
-          >
-            All integrations <span>{items.length}</span>
-          </button>
-          {categories.map((item) => (
+        <div>
+          <h2>Categories</h2>
+          <div className={styles.categories}>
             <button
-              key={item.slug}
               type="button"
-              aria-pressed={category === item.slug}
+              aria-pressed={category === ""}
               onClick={() => {
-                setCategory(item.slug);
+                setCategory("");
                 setLimit(24);
               }}
             >
-              {item.title}
-              <span>
-                {items.filter((i) => i.category?.slug === item.slug).length}
-              </span>
+              All integrations <span>{items.length}</span>
             </button>
-          ))}
+            {categories.map((item) => (
+              <button
+                key={item.slug}
+                type="button"
+                aria-pressed={category === item.slug}
+                onClick={() => {
+                  setCategory(item.slug);
+                  setLimit(24);
+                }}
+              >
+                {item.title}
+                <span>
+                  {items.filter((i) => i.category?.slug === item.slug).length}
+                </span>
+              </button>
+            ))}
+          </div>
         </div>
         <div className={styles.request}>
           <h3>Missing a connection?</h3>
@@ -106,13 +109,24 @@ export function IntegrationDirectory({ items }: { items: Integration[] }) {
             </select>
           </label>
         </div>
-        <p className={styles.count} role="status">
-          {results.length}{" "}
-          {results.length === 1 ? "integration" : "integrations"}
-          {category
-            ? ` in ${categories.find((c) => c.slug === category)?.title}`
-            : " to explore"}
-        </p>
+        <div className={styles.resultSummary}>
+          <p className={styles.count} role="status">
+            {results.length}{" "}
+            {results.length === 1 ? "integration" : "integrations"}
+            {category
+              ? ` in ${categories.find((c) => c.slug === category)?.title}`
+              : " to explore"}
+          </p>
+          {(search || category || status) && (
+            <button
+              className={styles.clearFilters}
+              type="button"
+              onClick={reset}
+            >
+              Reset all
+            </button>
+          )}
+        </div>
         <div className={styles.grid}>
           {results.slice(0, limit).map((item) => (
             <IntegrationCard key={item._id} item={item} />
@@ -120,11 +134,23 @@ export function IntegrationDirectory({ items }: { items: Integration[] }) {
         </div>
         {results.length === 0 && (
           <div className={styles.empty}>
-            <h2>No integrations found</h2>
-            <p>Try another search or browse all categories.</p>
-            <button type="button" onClick={reset}>
-              Clear filters
-            </button>
+            <h2>
+              {items.length
+                ? "No integrations found"
+                : "More connections are on the way"}
+            </h2>
+            <p>
+              {items.length
+                ? "Try another search or browse all categories."
+                : "Tell us which tools you would like to connect."}
+            </p>
+            {items.length ? (
+              <button type="button" onClick={reset}>
+                Clear filters
+              </button>
+            ) : (
+              <Link href="/contact">Request an integration ↗</Link>
+            )}
           </div>
         )}
         {results.length > limit && (

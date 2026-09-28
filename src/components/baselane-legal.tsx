@@ -1,3 +1,6 @@
+
+import { ArrowLeft as MageArrowLeft, ArrowRight as MageArrowRight } from '@/components/icons/mage';
+import { ChevronRight } from "@/components/chevron-right";
 import { legalPolicies } from "@/content/legal";
 import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-legal.module.css";
@@ -45,7 +48,9 @@ export function BaselaneLegalDirectory() {
                   <li key={href}>
                     <a href={href}>
                       {title}
-                      <span aria-hidden="true">↗</span>
+                      <span aria-hidden="true">
+                        <ChevronRight />
+                      </span>
                     </a>
                   </li>
                 ))}
@@ -67,15 +72,15 @@ export function BaselaneLegalPolicy({ type }: { type: "privacy" | "terms" }) {
         </header>
         <article className={styles.document}>
           <nav aria-label="Legal navigation" className={styles.documentNav}>
-            <a href="/legal-agreements">← All agreements</a>
+            <a href="/legal-agreements"><MageArrowLeft size="1em" /> All agreements</a>
             <a href={type === "privacy" ? termsRoute : privacyRoute}>
-              {type === "privacy" ? "Terms of Service" : "Privacy Policy"} →
+              {type === "privacy" ? "Terms of Service" : "Privacy Policy"} <MageArrowRight size="1em" />
             </a>
           </nav>
           <div className={styles.policyIntro}>
             <p>{policy.description}</p>
             <a href={policy.source} target="_blank" rel="noreferrer">
-              Open the complete policy in a new tab ↗
+              Open the complete policy in a new tab <ChevronRight />
             </a>
           </div>
           <section
@@ -85,8 +90,8 @@ export function BaselaneLegalPolicy({ type }: { type: "privacy" | "terms" }) {
             <TermlyPolicyEmbed policyId={policy.policyId} />
           </section>
           <div className={styles.documentEnd}>
-            <a href="/legal-agreements">View all legal agreements →</a>
-            <a href="/legal/dsar">Privacy requests →</a>
+            <a href="/legal-agreements">View all legal agreements <MageArrowRight size="1em" /></a>
+            <a href="/legal/dsar">Privacy requests <MageArrowRight size="1em" /></a>
           </div>
         </article>
       </div>

@@ -1,10 +1,10 @@
+import Image from "next/image";
 import {
   ArrowRight,
   CheckCircle,
-  Files,
-  HouseLine,
-} from "@phosphor-icons/react/dist/ssr";
-import Image from "next/image";
+  FileRecords as Files,
+  Home as HouseLine,
+} from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
 import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-renters.module.css";

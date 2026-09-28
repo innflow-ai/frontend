@@ -1,29 +1,26 @@
 "use client";
 
-import {
-  ArrowRight,
-  CaretDown,
-  List,
-  Megaphone,
-  Newspaper,
-  X,
-} from "@phosphor-icons/react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { AnnouncementBar } from "@/components/announcement-bar";
 import { GoogleCtaContent } from "@/components/google-cta-content";
+import {
+  ArrowRight,
+  ChevronDown as CaretDown,
+  DashMenu as List,
+  MegaphoneA as Megaphone,
+  NoteText as Newspaper,
+  Multiply as X,
+} from "@/components/icons/mage";
 import {
   menuBrowseLinks,
   productColumns,
   resourcesColumns,
   solutionsColumns,
 } from "@/components/mega-menu";
-import { SignupOfferPopup } from "@/components/signup-offer-popup";
 import { siteConfig } from "@/config/site";
 import { INNER_PAGE_ANNOUNCEMENTS_ENABLED } from "@/lib/marketing-chrome";
-import { isShowcaseHome, usesShowcaseDesign } from "@/lib/showcase-routes";
-import { blMenuIcons } from "./bl-menu-icons";
+import { isShowcaseHome } from "@/lib/showcase-routes";
 import { MobileNavigation } from "./editorial-header";
 import {
   useNavigationAppUpdate,
@@ -47,18 +44,15 @@ export function SiteHeader() {
   const [menu, setMenu] = useState<string | null>(null);
   const [mobile, setMobile] = useState(false);
   const pathname = usePathname();
-  const isShowcasePreview = usesShowcaseDesign(pathname);
   const [announcementDismissed, setAnnouncementDismissed] = useState(false);
   const announcementHidden =
     announcementDismissed ||
     (!INNER_PAGE_ANNOUNCEMENTS_ENABLED && !isShowcaseHome(pathname));
-  const [signupOfferOpen, setSignupOfferOpen] = useState(false);
   const [previewShowcasePassed, setPreviewShowcasePassed] = useState(false);
   const header = useRef<HTMLElement>(null);
   const toggle = useRef<HTMLButtonElement>(null);
   const hoverClose = useRef<ReturnType<typeof setTimeout> | null>(null);
   useEffect(() => {
-    if (!isShowcasePreview) return;
     const update = () => {
       const followingSection = document.getElementById("workspace-overview");
       // Keep the initial flat header in the document until the showcase passes.
@@ -78,7 +72,7 @@ export function SiteHeader() {
       window.removeEventListener("scroll", update);
       window.removeEventListener("resize", update);
     };
-  }, [isShowcasePreview, pathname]);
+  }, [pathname]);
   const cancelHoverClose = () => {
     if (hoverClose.current) clearTimeout(hoverClose.current);
     hoverClose.current = null;
@@ -189,34 +183,14 @@ export function SiteHeader() {
     setMenu(null);
     setMobile(false);
   };
-  if (pathname === "/help") return null;
 
   return (
     <div
-      className={`${styles.page} ${styles.chromeScope}${isShowcasePreview ? ` ${previewStyles.previewScope}` : ""}`}
-      data-preview-chrome={isShowcasePreview || undefined}
-      data-announcement-dismissed={
-        isShowcasePreview ? announcementHidden : undefined
-      }
+      className={`${styles.page} ${styles.chromeScope} ${previewStyles.previewScope}`}
+      data-preview-chrome
+      data-announcement-dismissed={announcementHidden}
     >
-      {!isShowcasePreview && !announcementHidden && (
-        <AnnouncementBar
-          onDismiss={() => {
-            setAnnouncementDismissed(true);
-            header.current
-              ?.querySelector<HTMLAnchorElement>('a[aria-label="innflow home"]')
-              ?.focus();
-          }}
-        />
-      )}
-      {!isShowcasePreview && (
-        <SignupOfferPopup
-          open={signupOfferOpen}
-          onOpen={() => setSignupOfferOpen(true)}
-          onDismiss={() => setSignupOfferOpen(false)}
-        />
-      )}
-      {isShowcasePreview && !announcementHidden && (
+      {!announcementHidden && (
         <aside
           className={previewStyles.announcement}
           aria-label="Innflow announcement"
@@ -229,9 +203,15 @@ export function SiteHeader() {
                 ? "#workspace-overview"
                 : "/#workspace-overview"
             }
+            className={
+              isShowcaseHome(pathname) ? previewStyles.homeLearnMore : undefined
+            }
             aria-label="Learn more about the new Innflow experience"
           >
-            Learn more <ArrowRight size={12} aria-hidden="true" />
+            Learn more
+            {!isShowcaseHome(pathname) && (
+              <ArrowRight size={12} aria-hidden="true" />
+            )}
           </a>
           <button
             type="button"
@@ -249,19 +229,14 @@ export function SiteHeader() {
           </button>
         </aside>
       )}
-      {isShowcasePreview && (
-        <div className={previewStyles.navSpace} aria-hidden="true" />
-      )}
+      <div className={previewStyles.navSpace} aria-hidden="true" />
       <header
         ref={header}
+        data-home-navigation
         data-preview-navigation={
-          isShowcasePreview
-            ? previewShowcasePassed || mobile
-              ? "floating"
-              : "flat"
-            : undefined
+          previewShowcasePassed || mobile ? "floating" : "flat"
         }
-        className={`${styles.header}${mobile ? ` ${styles.mobileOpen}` : ""}${isShowcasePreview && !previewShowcasePassed && !mobile ? ` ${previewStyles.flatHeader}` : ""}`}
+        className={`${styles.header}${mobile ? ` ${styles.mobileOpen}` : ""}${!previewShowcasePassed && !mobile ? ` ${previewStyles.flatHeader}` : ""}`}
       >
         <a href="/" className={styles.logo} aria-label="innflow home">
           <Image
@@ -340,17 +315,9 @@ export function SiteHeader() {
                           data-browse-all={link.browseAll || undefined}
                         >
                           {!link.hideIcon && (
-                            <Image
+                            <link.icon
                               className={styles.menuItemIcon}
-                              src={
-                                blMenuIcons[link.title] ??
-                                link.iconSrc ??
-                                "/brand/navigation/bl-stroke/01-laptop.svg"
-                              }
-                              alt=""
-                              width={28}
-                              height={28}
-                              unoptimized
+                              size={28}
                             />
                           )}
                           <span>{link.title}</span>
@@ -494,17 +461,8 @@ export function SiteHeader() {
           <a className={styles.login} href={`${siteConfig.appOrigin}/login`}>
             Log in
           </a>
-          {!isShowcaseHome(pathname) && (
-            <TrackedLink
-              className={styles.mobileGetStarted}
-              destination={siteConfig.signupUrl}
-              eventLabel="mobile_header_signup"
-            >
-              Get started
-            </TrackedLink>
-          )}
           <TrackedLink
-            className={`${styles.darkButton}${isShowcaseHome(pathname) ? "" : ` ${styles.desktopGoogle}`}`}
+            className={styles.darkButton}
             destination={siteConfig.googleAuthUrl}
             eventLabel="baselane_header_signup"
             aria-label="Continue with Google"
@@ -531,7 +489,6 @@ export function SiteHeader() {
         open={mobile}
         latestBlogPosts={latestBlogPosts}
         onClose={closeMenus}
-        iconOverrides={blMenuIcons}
         id="baselane-mobile-overlay"
         className={styles.mobileMenu}
         pricingHref="/pricing"

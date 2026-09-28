@@ -1,3 +1,5 @@
+
+import { ArrowDown as MageArrowDown, Check as MageCheck, Plus as MagePlus, ArrowRight as MageArrowRight } from '@/components/icons/mage';
 import Image from "next/image";
 import { GoogleCtaContent } from "@/components/google-cta-content";
 import { siteConfig } from "@/config/site";
@@ -139,7 +141,7 @@ export async function BaselaneDeposits() {
             </p>
             <GoogleAction />
             <a className={styles.secondary} href="#deposit-benefits">
-              Explore the workflow ↓
+              Explore the workflow <MageArrowDown size="1em" />
             </a>
           </div>
           <Photo
@@ -151,7 +153,7 @@ export async function BaselaneDeposits() {
         <div className={styles.band}>
           {["Property context", "Connected documents", "Human review"].map(
             (text) => (
-              <span key={text}>✓ {text}</span>
+              <span key={text}><MageCheck size="1em" /> {text}</span>
             ),
           )}
         </div>
@@ -175,7 +177,7 @@ export async function BaselaneDeposits() {
                     <summary>
                       {title}
                       <span className={shared.plus} aria-hidden="true">
-                        +
+                        <MagePlus size="1em" />
                       </span>
                     </summary>
                     <p>{text}</p>
@@ -232,7 +234,7 @@ export async function BaselaneDeposits() {
                 <h3>{title}</h3>
                 <p>{text}</p>
                 <a className={shared.textLink} href={href}>
-                  Explore {title.toLowerCase()} →
+                  Explore {title.toLowerCase()} <MageArrowRight size="1em" />
                 </a>
               </article>
             ))}
@@ -284,7 +286,7 @@ export async function BaselaneDeposits() {
                   className={shared.button}
                   href="/free-rental-forms-and-templates-for-landlords"
                 >
-                  Explore preparation worksheets →
+                  Explore preparation worksheets <MageArrowRight size="1em" />
                 </a>
               </div>
             </article>
@@ -296,7 +298,7 @@ export async function BaselaneDeposits() {
               ].map(([title, href]) => (
                 <a key={href} href={href}>
                   <small>INNFLOW WORKFLOW</small>
-                  <h3>{title} →</h3>
+                  <h3>{title} <MageArrowRight size="1em" /></h3>
                 </a>
               ))}
             </div>
@@ -310,7 +312,7 @@ export async function BaselaneDeposits() {
                 <summary>
                   {title}
                   <span className={shared.plus} aria-hidden="true">
-                    +
+                    <MagePlus size="1em" />
                   </span>
                 </summary>
                 <p style={{ whiteSpace: "pre-line" }}>{text}</p>

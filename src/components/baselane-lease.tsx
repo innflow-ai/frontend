@@ -1,3 +1,5 @@
+
+import { ArrowRight as MageArrowRight, Plus as MagePlus } from '@/components/icons/mage';
 import Image from "next/image";
 import { GoogleCtaContent } from "@/components/google-cta-content";
 import { siteConfig } from "@/config/site";
@@ -77,7 +79,7 @@ export async function BaselaneLease() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Explore innflow workflows →
+                Explore innflow workflows <MageArrowRight size="1em" />
               </a>
             </div>
             <figure>
@@ -189,7 +191,7 @@ export async function BaselaneLease() {
                 <summary>
                   {title}
                   <span className={shared.plus} aria-hidden="true">
-                    +
+                    <MagePlus size="1em" />
                   </span>
                 </summary>
                 <p style={{ whiteSpace: "pre-line" }}>{text}</p>

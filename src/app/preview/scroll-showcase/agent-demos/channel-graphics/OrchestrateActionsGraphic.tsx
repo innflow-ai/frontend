@@ -3,9 +3,9 @@ import styles from "./channel-graphics.module.css";
 
 const imgAvatarLauraKimDemoPortrait =
   "/preview/homepage/channel-graphics/1-c3607.png";
-const imgChevronDown = "/preview/homepage/channel-graphics/1-f29ff.svg";
-const imgLucideSplit = "/preview/homepage/channel-graphics/1-22845.svg";
-const imgMageUser = "/preview/homepage/channel-graphics/1-7b86f.svg";
+const imgChevronDown = "/brand/mage/down.svg";
+const imgLucideSplit = "/brand/mage/split.svg";
+const imgMageUser = "/brand/mage/user.svg";
 const imgInnflowAiAgent = "/preview/homepage/channel-graphics/1-6536d.svg";
 const imgIfRouteReveal = "/preview/homepage/channel-graphics/1-bfdf8.svg";
 const imgElseRouteReveal = "/preview/homepage/channel-graphics/1-a4781.svg";

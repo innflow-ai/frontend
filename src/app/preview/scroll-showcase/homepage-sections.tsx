@@ -1,4 +1,6 @@
 "use client";
+import { Check as MageCheck, Minus as MageMinus, Plus as MagePlus, ArrowRight as MageArrowRight } from '@/components/icons/mage';
+
 
 import Image from "next/image";
 import Link from "next/link";
@@ -9,6 +11,7 @@ import {
   useRef,
   useState,
 } from "react";
+import { ChevronRight } from "@/components/chevron-right";
 import { siteConfig } from "@/config/site";
 import type { Testimonial } from "@/lib/testimonials";
 import styles from "./homepage.module.css";
@@ -122,7 +125,7 @@ function StateArtwork({
             <ul>
               {content.slice(2).map((line) => (
                 <li key={line}>
-                  <span aria-hidden="true">{after ? "✓" : "·"}</span>
+                  <span aria-hidden="true">{after ? <MageCheck size="1em" /> : "·"}</span>
                   {line}
                 </li>
               ))}
@@ -227,7 +230,7 @@ export function FeatureStory({ section }: { section: FeatureSection }) {
                   </span>
                   {state.title}
                   <span className={styles.rowArrow} aria-hidden="true">
-                    {active === index ? "−" : "+"}
+                    {active === index ? <MageMinus size="1em" /> : <MagePlus size="1em" />}
                   </span>
                 </span>
                 {(active === index || section.id === "channels") && (
@@ -240,7 +243,9 @@ export function FeatureStory({ section }: { section: FeatureSection }) {
           </div>
           <Link className={styles.textLink} href={section.href}>
             Explore {section.label.toLowerCase()}{" "}
-            <span aria-hidden="true">↗</span>
+            <span aria-hidden="true">
+              <ChevronRight />
+            </span>
           </Link>
         </div>
         <div className={styles.featureVisual}>
@@ -384,7 +389,7 @@ export function ConnectedInfrastructure() {
         </h2>
         <p>Connect your channels, internal data and external systems.</p>
         <Link className={styles.textLink} href="/integrations">
-          View all integrations <span aria-hidden="true">→</span>
+          View all integrations <span aria-hidden="true"><MageArrowRight size="1em" /></span>
         </Link>
       </div>
       <fieldset className={styles.focusControls} aria-label="Integration focus">
@@ -438,7 +443,9 @@ export function ConnectedInfrastructure() {
             </div>
             <p className={styles.cardCategory}>
               {card.label}
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true">
+                <ChevronRight />
+              </span>
             </p>
             <h3>{card.title}</h3>
             <p>{card.body}</p>
@@ -515,7 +522,10 @@ export function PreviewClosing() {
           your team needs.
         </p>
         <a className={styles.primaryButton} href={siteConfig.demoUrl}>
-          Book an Innflow demo <span aria-hidden="true">↗</span>
+          Book an Innflow demo{" "}
+          <span aria-hidden="true">
+            <ChevronRight />
+          </span>
         </a>
       </div>
       <div className={styles.closingViewport}>
@@ -553,7 +563,7 @@ export function PreviewClosing() {
                   height={42}
                 />
                 <span>{scene.from}</span>
-                <span aria-hidden="true">→</span>
+                <span aria-hidden="true"><MageArrowRight size="1em" /></span>
                 <strong>{scene.to}</strong>
               </div>
             </div>

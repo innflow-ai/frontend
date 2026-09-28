@@ -1,5 +1,8 @@
+
+import { ArrowDown as MageArrowDown } from '@/components/icons/mage';
 import Image from "next/image";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { ChevronRight } from "@/components/chevron-right";
 import { MarketingPage } from "@/components/page-primitives";
 import { PlatformDirectory } from "@/components/platform-directory";
 import { TrackedLink } from "@/components/tracked-link";
@@ -28,10 +31,13 @@ export function PlatformFeaturePage({ page }: { page: PlatformDetail }) {
                   destination="/contact"
                   eventLabel={`${page.slug}_contact`}
                 >
-                  Talk to our team <span aria-hidden="true">↗</span>
+                  Talk to our team{" "}
+                  <span aria-hidden="true">
+                    <ChevronRight />
+                  </span>
                 </TrackedLink>
                 <a className="button button-secondary" href="#capabilities">
-                  Explore capabilities <span aria-hidden="true">↓</span>
+                  Explore capabilities <span aria-hidden="true"><MageArrowDown size="1em" /></span>
                 </a>
               </div>
             </div>
@@ -72,7 +78,10 @@ export function PlatformFeaturePage({ page }: { page: PlatformDetail }) {
                   </span>
                   <h3>{capability.title}</h3>
                   <span className={styles.explore}>
-                    Explore <span aria-hidden="true">↗</span>
+                    Explore{" "}
+                    <span aria-hidden="true">
+                      <ChevronRight />
+                    </span>
                   </span>
                 </div>
                 <Image
@@ -114,7 +123,9 @@ export function PlatformFeaturePage({ page }: { page: PlatformDetail }) {
               <ul>
                 {capability.points.map((point) => (
                   <li key={point}>
-                    <span aria-hidden="true">↗</span>
+                    <span aria-hidden="true">
+                      <ChevronRight />
+                    </span>
                     {point}
                   </li>
                 ))}

@@ -24,7 +24,7 @@ afterEach(() => {
   cleanup();
   vi.unstubAllGlobals();
 });
-it("reserves preview-only chrome and dismisses the announcement with focus restored", () => {
+it("reserves homepage chrome and dismisses the announcement with focus restored", () => {
   render(<SiteHeader />);
   expect(
     screen.getByRole("complementary", { name: "Innflow announcement" }),
@@ -106,17 +106,37 @@ it("fails safely to flat navigation when the overview is absent", () => {
     "flat",
   );
 });
-it("preserves default header on other routes and similarly prefixed paths", () => {
+it("uses homepage navigation on inner pages, including help and nested routes", () => {
   for (const path of [
     "/rent-collection",
     "/pricing",
+    "/help",
+    "/blog/example",
+    "/legal/privacy-policy",
     "/preview/scroll-showcase/other",
   ]) {
     route.value = path;
     const view = render(<SiteHeader />);
-    expect(document.querySelector("[data-preview-chrome]")).toBeNull();
-    expect(screen.getByRole("banner")).not.toHaveAttribute(
+    expect(document.querySelector("[data-preview-chrome]")).not.toBeNull();
+    expect(screen.getByRole("banner")).toHaveAttribute(
       "data-preview-navigation",
+      "flat",
+    );
+    expect(
+      screen.getByRole("link", { name: "Continue with Google" }),
+    ).toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: "Get started" })).toBeNull();
+    window.scrollY = 100;
+    fireEvent.scroll(window);
+    expect(screen.getByRole("banner")).toHaveAttribute(
+      "data-preview-navigation",
+      "floating",
+    );
+    window.scrollY = 0;
+    fireEvent.scroll(window);
+    expect(screen.getByRole("banner")).toHaveAttribute(
+      "data-preview-navigation",
+      "flat",
     );
     expect(screen.queryByText("Explore the new Innflow experience")).toBeNull();
     view.unmount();

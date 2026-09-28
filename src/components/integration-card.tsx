@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ChevronRight } from "@/components/chevron-right";
 import { type Integration, integrationStatus } from "@/lib/integration-model";
 import styles from "./integrations.module.css";
 export function IntegrationLogo({ item }: { item: Integration }) {
@@ -31,7 +32,9 @@ export function IntegrationCard({ item }: { item: Integration }) {
       </div>
       <h3>
         {item.name}
-        <span aria-hidden="true">↗</span>
+        <span aria-hidden="true">
+          <ChevronRight />
+        </span>
       </h3>
       <p>{item.shortDescription}</p>
       <span className={styles.categoryLabel}>

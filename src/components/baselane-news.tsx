@@ -1,7 +1,10 @@
 "use client";
+import { ArrowLeft as MageArrowLeft, ArrowRight as MageArrowRight } from '@/components/icons/mage';
+
 
 import Image from "next/image";
 import { useRef } from "react";
+import { ChevronRight } from "@/components/chevron-right";
 import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-news.module.css";
 
@@ -75,7 +78,10 @@ export function BaselaneNews() {
                   <h2>{title}</h2>
                   <p>{description}</p>
                   <a href={href} target="_blank" rel="noopener noreferrer">
-                    Read the article <span aria-hidden="true">↗</span>
+                    Read the article{" "}
+                    <span aria-hidden="true">
+                      <ChevronRight />
+                    </span>
                   </a>
                 </div>
               </article>
@@ -87,14 +93,14 @@ export function BaselaneNews() {
               onClick={() => move(-1)}
               aria-label="Previous articles"
             >
-              ←
+              <MageArrowLeft size="1em" />
             </button>
             <button
               type="button"
               onClick={() => move(1)}
               aria-label="Next articles"
             >
-              →
+              <MageArrowRight size="1em" />
             </button>
           </div>
         </div>
@@ -117,7 +123,7 @@ export function BaselaneNews() {
                 Bring recurring requests, team ownership, and property context
                 into one connected flow.
               </p>
-              <a href="/landlord-banking">Explore property operations →</a>
+              <a href="/landlord-banking">Explore property operations <MageArrowRight size="1em" /></a>
             </div>
           </article>
           <article className={styles.feature}>
@@ -137,7 +143,7 @@ export function BaselaneNews() {
                 Connect supporting documents and review notes to the requests
                 and decisions they belong to.
               </p>
-              <a href="/landlord-accounting">Explore connected records →</a>
+              <a href="/landlord-accounting">Explore connected records <MageArrowRight size="1em" /></a>
             </div>
           </article>
         </section>
@@ -147,7 +153,7 @@ export function BaselaneNews() {
             Visit the innflow blog for ideas on workflows, AI agents, and the
             day-to-day work of running a property operation.
           </p>
-          <a href="/blog">Read the innflow blog →</a>
+          <a href="/blog">Read the innflow blog <MageArrowRight size="1em" /></a>
         </section>
       </div>
     </BaselaneHomepage>

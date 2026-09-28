@@ -1,8 +1,12 @@
 "use client";
-
-import { ArrowLeft, ArrowRight, MagnifyingGlass } from "@phosphor-icons/react";
 import Image from "next/image";
 import { useRef, useState } from "react";
+import {
+  ArrowLeft,
+  ArrowRight,
+  ArrowRight as MageArrowRight,
+  Search as MagnifyingGlass,
+} from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
 import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-library.module.css";
@@ -45,7 +49,9 @@ function Cards({ title, items }: { title: string; items: Item[] }) {
             <div className={styles.cardCopy}>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
-              <span>Explore with innflow →</span>
+              <span>
+                Explore with innflow <MageArrowRight size="1em" />
+              </span>
             </div>
           </a>
         ))}

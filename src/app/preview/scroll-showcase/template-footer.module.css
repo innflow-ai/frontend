@@ -92,13 +92,13 @@
 .contact a {
   font-size: 16px;
 }
-.contact > a {
-  border: 1px solid #ffffff40;
-  border-radius: 20px;
-  padding: 16px 24px;
+.googleCta {
+  --google-button-background: #fff;
+  --google-button-foreground: #071a31;
+  --google-button-hover: #edf2f7;
 }
-.contact span {
-  margin-left: 16px;
+.googleCta:hover {
+  text-decoration: none;
 }
 .legal {
   display: flex;

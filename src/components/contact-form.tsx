@@ -1,8 +1,8 @@
 "use client";
 
-import { ArrowRight } from "@phosphor-icons/react";
 import { type FormEvent, useId } from "react";
 import styles from "@/app/contact/contact.module.css";
+import { ArrowRight } from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
 
 export type ContactFormValues = {

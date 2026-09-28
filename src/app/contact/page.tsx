@@ -1,6 +1,6 @@
-import { ArrowRight, EnvelopeSimple } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import { ContactForm } from "@/components/contact-form";
+import { ArrowRight, Email as EnvelopeSimple } from "@/components/icons/mage";
 import { HeroIntro, HeroItem, Reveal } from "@/components/motion";
 import shellStyles from "@/components/site-shell.module.css";
 import { siteConfig } from "@/config/site";

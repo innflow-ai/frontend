@@ -1,7 +1,10 @@
 "use client";
+import { ArrowRight as MageArrowRight } from '@/components/icons/mage';
+
 
 import Image from "next/image";
 import { type FormEvent, useRef, useState } from "react";
+import { ChevronRight } from "@/components/chevron-right";
 import { GoogleCtaContent } from "@/components/google-cta-content";
 import { siteConfig } from "@/config/site";
 import { summarizeRents } from "@/lib/rent-comparison";
@@ -138,7 +141,7 @@ export function BaselaneRentCalculator() {
               </button>
             </form>
             <a className={styles.sourceLink} href={source}>
-              Connect your research workflow with innflow →
+              Connect your research workflow with innflow <MageArrowRight size="1em" />
             </a>
           </div>
           <picture>
@@ -204,7 +207,7 @@ export function BaselaneRentCalculator() {
               <GoogleCtaContent />
             </a>
             <button className={styles.copy} type="button" onClick={copyLink}>
-              Copy page link ↗
+              Copy page link <ChevronRight />
             </button>
             <p role="status">{copied}</p>
             <nav aria-label="In this guide">
@@ -245,7 +248,7 @@ export function BaselaneRentCalculator() {
                 pricing decision. Keep the official sources and your adviser’s
                 review notes alongside the property record.
               </p>
-              <a href="/lease-agreement">Explore document review workflows →</a>
+              <a href="/lease-agreement">Explore document review workflows <MageArrowRight size="1em" /></a>
             </section>
             <section id="operating-costs">
               <h2>Account for expenses</h2>
@@ -280,7 +283,7 @@ export function BaselaneRentCalculator() {
                 or property circumstances change.
               </p>
               <a href={source}>
-                Bring your research into an innflow workflow →
+                Bring your research into an innflow workflow <MageArrowRight size="1em" />
               </a>
             </section>
           </article>

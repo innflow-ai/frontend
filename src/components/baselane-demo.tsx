@@ -1,4 +1,7 @@
+
+import { ArrowDown as MageArrowDown, Check as MageCheck, ArrowRight as MageArrowRight } from '@/components/icons/mage';
 import Image from "next/image";
+import { ChevronRight } from "@/components/chevron-right";
 import { siteConfig } from "@/config/site";
 import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-support.module.css";
@@ -45,7 +48,7 @@ export function BaselaneDemo() {
               and human approvals into one flow.
             </p>
             <a className={styles.button} href={siteConfig.demoUrl}>
-              Book a demo ↗
+              Book a demo <ChevronRight />
             </a>
           </div>
         </section>
@@ -66,11 +69,11 @@ export function BaselaneDemo() {
             <div className={styles.workflow}>
               <small>EXAMPLE · MAINTENANCE REQUEST</small>
               <strong>New request received</strong>
-              <span>↓</span>
+              <span><MageArrowDown size="1em" /></span>
               <strong>Property context attached</strong>
-              <span>↓</span>
+              <span><MageArrowDown size="1em" /></span>
               <strong>
-                Ready for team review <b>✓</b>
+                Ready for team review <b><MageCheck size="1em" /></b>
               </strong>
             </div>
             <div className={styles.cardCopy}>
@@ -80,7 +83,7 @@ export function BaselaneDemo() {
                 matter to your team.
               </p>
               <a className={styles.button} href={siteConfig.demoUrl}>
-                Book a demo ↗
+                Book a demo <ChevronRight />
               </a>
             </div>
           </article>
@@ -94,7 +97,7 @@ export function BaselaneDemo() {
                 and the handoffs your team handles every day.
               </p>
               <a className={styles.button} href="/webinars">
-                Explore workflow topics →
+                Explore workflow topics <MageArrowRight size="1em" />
               </a>
             </div>
           </article>
@@ -111,7 +114,7 @@ export function BaselaneDemo() {
             a real example, and we can discuss the context, people, and
             approvals it needs.
           </p>
-          <a href="/multi-property-investors">Explore property operations →</a>
+          <a href="/multi-property-investors">Explore property operations <MageArrowRight size="1em" /></a>
         </section>
         <section className={styles.ocean}>
           <Image
@@ -128,7 +131,7 @@ export function BaselaneDemo() {
             </h2>
             <p>Give every recurring request a clear next step.</p>
             <a className={styles.button} href={siteConfig.contactUrl}>
-              Talk to the team ↗
+              Talk to the team <ChevronRight />
             </a>
           </div>
         </section>

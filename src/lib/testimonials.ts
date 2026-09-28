@@ -98,7 +98,7 @@ export const getNavigationTestimonial = cache(async () => {
         _id, name, role, propertyCount, portrait, avatar,
         firstQuote, secondQuote, frontStyle, statistic
       }`,
-      { id: "testimonial-meera-shah" },
+      { id: "testimonial-grace-lin" },
       { perspective: "published" },
     );
     return normalizeTestimonial(item);

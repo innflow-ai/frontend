@@ -2,6 +2,19 @@
 
 import Image from "next/image";
 import { type CSSProperties, useEffect, useRef, useState } from "react";
+import { ChevronRight } from "@/components/chevron-right";
+import googleButtonStyles from "@/components/google-cta.module.css";
+import { GoogleCtaContent } from "@/components/google-cta-content";
+import {
+  Chart,
+  Clock as MageClock,
+  Multiply as MageMultiply,
+  Users as MageUsers,
+  Video as MageVideo,
+  Robot,
+  Share,
+  StarsA,
+} from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
 import { BookingCalendar } from "./booking-calendar";
 import { SchedulingAssistant } from "./scheduling-assistant";
@@ -12,6 +25,7 @@ import {
 } from "./scroll-showcase-motion";
 import styles from "./showcase.module.css";
 
+const showcaseIcons = [Robot, Share, StarsA, Chart];
 const assets = "/preview/scroll-showcase";
 const states = [
   {
@@ -74,7 +88,7 @@ function Illustration({ index, active }: { index: number; active: boolean }) {
   if (index === 0)
     return (
       <div className={styles.demo}>
-        <BookingCalendar active={active} />
+        <BookingCalendar active={active} showControls={false} />
       </div>
     );
   if (index === 1)
@@ -97,7 +111,9 @@ function Illustration({ index, active }: { index: number; active: boolean }) {
             <Portrait name="participant-two" size={100} />
           </div>
           <div className={styles.notes}>
-            <strong>Q2 Hiring Review ♧</strong>
+            <strong>
+              Q2 Hiring Review <MageUsers size="1em" />
+            </strong>
             <p>Recap</p>
             <div className={styles.lines}>
               {recapLines.map((width, i) => (
@@ -136,7 +152,10 @@ function Illustration({ index, active }: { index: number; active: boolean }) {
             Powered by <strong>stripe</strong>
           </span>
           <p>
-            ◷ 45 min <span>▰ Zoom</span>
+            <MageClock size="1em" /> 45 min{" "}
+            <span>
+              <MageVideo size="1em" /> Zoom
+            </span>
           </p>
           <div className={styles.paymentSettings}>
             <div>
@@ -265,12 +284,23 @@ export function ScrollShowcase() {
           Connect conversations, delegate tasks, and keep work moving.
         </p>
         <div className={styles.oauthActions}>
-          <a href={siteConfig.signupUrl}>Get started</a>
-          <a href={siteConfig.demoUrl}>Book a demo</a>
+          <a
+            className={googleButtonStyles.button}
+            href={siteConfig.googleAuthUrl}
+          >
+            <GoogleCtaContent />
+          </a>
+          <a
+            className={googleButtonStyles.button}
+            href={`${siteConfig.appOrigin}/login`}
+          >
+            <span className={googleButtonStyles.content}>
+              <Image src="/brand/microsoft.svg" alt="" width={18} height={18} />
+              Continue with Microsoft
+            </span>
+          </a>
         </div>
         <small className={styles.signupNote}>
-          <a href={siteConfig.googleAuthUrl}>Continue with Google</a>
-          {" · "}
           <a href={siteConfig.signupUrl}>Sign up with email</a>
         </small>
       </header>
@@ -302,7 +332,7 @@ export function ScrollShowcase() {
                 })
               }
             >
-              ×
+              <MageMultiply size="1em" />
             </button>
             <div className={styles.showcase}>
               <div className={styles.tabs} role="tablist" aria-label="Features">
@@ -334,12 +364,10 @@ export function ScrollShowcase() {
                       tabs.current[next]?.focus({ preventScroll: true });
                     }}
                   >
-                    <Image
-                      src={`${assets}/${state.id}.svg`}
-                      width={28}
-                      height={28}
-                      alt=""
-                    />
+                    {(() => {
+                      const StateIcon = showcaseIcons[index];
+                      return <StateIcon size={28} />;
+                    })()}
                     <span className={styles.tooltip}>{state.label}</span>
                   </button>
                 ))}
@@ -364,27 +392,21 @@ export function ScrollShowcase() {
                   >
                     <div className={styles.copy}>
                       <div className={styles.label}>
-                        <Image
-                          src={`${assets}/${state.id}.svg`}
-                          width={24}
-                          height={24}
-                          alt=""
-                        />
+                        {(() => {
+                          const StateIcon = showcaseIcons[index];
+                          return <StateIcon size={24} />;
+                        })()}
                         <span>{state.label}</span>
                         {state.badge && <small>{state.badge}</small>}
                       </div>
                       <h2>{state.title}</h2>
                       <p>{state.body}</p>
                       <a href="/products/platform">
-                        {index === 0
-                          ? "Explore Innflow"
-                          : "Explore the platform"}{" "}
-                        <span aria-hidden="true">→</span>
+                        Learn more
+                        <ChevronRight />
                         <span className={styles.srOnly}>
                           {" "}
-                          {index === 0
-                            ? "and its connected platform"
-                            : `for ${state.label}`}
+                          about {state.label}
                         </span>
                       </a>
                     </div>

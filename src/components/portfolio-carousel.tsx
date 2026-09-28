@@ -1,16 +1,16 @@
 "use client";
 
+import Image from "next/image";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
   ArrowLeft,
   ArrowRight,
-  Buildings,
-  HouseLine,
+  BuildingB as Buildings,
+  Home as HouseLine,
   Key,
-  UsersThree,
-  Warehouse,
-} from "@phosphor-icons/react";
-import Image from "next/image";
-import { useCallback, useEffect, useRef, useState } from "react";
+  Users as UsersThree,
+  BuildingA as Warehouse,
+} from "@/components/icons/mage";
 import styles from "./portfolio-carousel.module.css";
 
 const portfolioTypes = [

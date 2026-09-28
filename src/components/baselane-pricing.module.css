@@ -214,7 +214,13 @@
   padding-left: 21px;
 }
 .plan li::before {
-  content: "✓";
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  background-color: currentColor;
+  mask: url("/brand/mage/check.svg") center / contain no-repeat;
   position: absolute;
   left: 0;
   color: #286b9e;
@@ -411,11 +417,23 @@
   display: none;
 }
 .faq summary::after {
-  content: "+";
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  background-color: currentColor;
+  mask: url("/brand/mage/plus.svg") center / contain no-repeat;
   font-size: 24px;
 }
 .faq details[open] summary::after {
-  content: "−";
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  background-color: currentColor;
+  mask: url("/brand/mage/minus.svg") center / contain no-repeat;
 }
 .page .faq details p {
   line-height: 1.65;

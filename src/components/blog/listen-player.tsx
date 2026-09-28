@@ -1,7 +1,7 @@
 "use client";
 
-import { Pause, Play } from "@phosphor-icons/react";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { Pause, Play } from "@/components/icons/mage";
 import styles from "./article.module.css";
 
 const SPEEDS = [1, 1.5, 2] as const;

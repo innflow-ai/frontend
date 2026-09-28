@@ -1,7 +1,7 @@
 "use client";
 
-import { X } from "@phosphor-icons/react";
 import { useEffect, useRef } from "react";
+import { Multiply as X } from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
 import {
   SIGNUP_OFFER_SCROLL_PX,

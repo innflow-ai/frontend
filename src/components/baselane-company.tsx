@@ -1,4 +1,7 @@
+
+import { ArrowDown as MageArrowDown, ArrowRight as MageArrowRight, Check as MageCheck } from '@/components/icons/mage';
 import Image from "next/image";
+import { ChevronRight } from "@/components/chevron-right";
 import { GoogleCtaContent } from "@/components/google-cta-content";
 import { siteConfig } from "@/config/site";
 import styles from "./baselane-company.module.css";
@@ -43,7 +46,7 @@ function Workspace() {
           </div>
           <b>Received</b>
         </div>
-        <div className={styles.connector}>↓</div>
+        <div className={styles.connector}><MageArrowDown size="1em" /></div>
         <div className={styles.request}>
           <span>02</span>
           <div>
@@ -52,7 +55,7 @@ function Workspace() {
           </div>
           <b>Review</b>
         </div>
-        <div className={styles.connector}>↓</div>
+        <div className={styles.connector}><MageArrowDown size="1em" /></div>
         <div className={styles.request}>
           <span>03</span>
           <div>
@@ -104,14 +107,16 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
                 href={careers ? careerUrl : siteConfig.googleAuthUrl}
               >
                 {careers ? (
-                  <>Explore working together ↗</>
+                  <>
+                    Explore working together <ChevronRight />
+                  </>
                 ) : (
                   <GoogleCtaContent />
                 )}
               </a>
               {!careers && (
                 <a className={styles.outline} href={siteConfig.demoUrl}>
-                  See demo →
+                  See demo <MageArrowRight size="1em" />
                 </a>
               )}
             </div>
@@ -150,7 +155,7 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
                 ? "The next request rarely arrives with every detail in place. We’re interested in the practical work of connecting context, decisions, and follow-through."
                 : "A request starts in one place. Its context lives in another. innflow brings those pieces together so your team can focus on the decision and the next action."}
             </p>
-            <a href={siteConfig.demoUrl}>Explore the product →</a>
+            <a href={siteConfig.demoUrl}>Explore the product <MageArrowRight size="1em" /></a>
           </div>
           <Workspace />
         </section>
@@ -205,13 +210,13 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
               <span className={styles.label}>EXAMPLE PROPERTY CONTEXT</span>
               <h3>Everything for the next step.</h3>
               <p>
-                Property details <b>✓</b>
+                Property details <b><MageCheck size="1em" /></b>
               </p>
               <p>
-                Operating procedure <b>✓</b>
+                Operating procedure <b><MageCheck size="1em" /></b>
               </p>
               <p>
-                Review owner <b>✓</b>
+                Review owner <b><MageCheck size="1em" /></b>
               </p>
             </div>
           </div>
@@ -272,12 +277,12 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
                   <span>{number}</span>
                   <h3>{title}</h3>
                   <p>{text}</p>
-                  <b>Explore →</b>
+                  <b>Explore <MageArrowRight size="1em" /></b>
                 </a>
               ))}
             </div>
             <a className={styles.button} href="/careers">
-              Explore working with us ↗
+              Explore working with us <ChevronRight />
             </a>
           </section>
         )}

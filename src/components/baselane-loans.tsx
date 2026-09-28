@@ -1,7 +1,10 @@
 "use client";
+import { ArrowRight as MageArrowRight, Plus as MagePlus } from '@/components/icons/mage';
+
 
 import Image from "next/image";
 import { useState } from "react";
+import { ChevronRight } from "@/components/chevron-right";
 import { siteConfig } from "@/config/site";
 import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-loans.module.css";
@@ -97,7 +100,7 @@ export function BaselaneLoans() {
             </p>
             <div className={styles.actions}>
               <a className={styles.button} href={source}>
-                Explore innflow →
+                Explore innflow <MageArrowRight size="1em" />
               </a>
               <a className={styles.outline} href="#loan-details">
                 Compare loan types
@@ -132,7 +135,9 @@ export function BaselaneLoans() {
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 <h3>{name}</h3>
-                <span aria-hidden="true">↗</span>
+                <span aria-hidden="true">
+                  <ChevronRight />
+                </span>
               </a>
             ))}
           </div>
@@ -146,7 +151,7 @@ export function BaselaneLoans() {
               lender.
             </p>
             <a className={styles.button} href={source}>
-              See the workspace →
+              See the workspace <MageArrowRight size="1em" />
             </a>
             <p className={styles.note}>
               innflow coordinates preparation and follow-up. Your lender handles
@@ -178,7 +183,7 @@ export function BaselaneLoans() {
                       ?.focus({ preventScroll: true });
                   }}
                 >
-                  Review questions →
+                  Review questions <MageArrowRight size="1em" />
                 </button>
               </article>
             ))}
@@ -197,7 +202,7 @@ export function BaselaneLoans() {
               everyone a shared starting point.
             </p>
             <a className={styles.outline} href={siteConfig.demoUrl}>
-              Explore innflow →
+              Explore innflow <MageArrowRight size="1em" />
             </a>
           </div>
         </section>
@@ -302,7 +307,7 @@ export function BaselaneLoans() {
                 </section>
               </div>
               <a className={styles.button} href={source}>
-                Plan your workflow →
+                Plan your workflow <MageArrowRight size="1em" />
               </a>
             </div>
           </div>
@@ -402,7 +407,7 @@ export function BaselaneLoans() {
             ))}
           </div>
           <a className={styles.button} href={source}>
-            Explore financing workflows →
+            Explore financing workflows <MageArrowRight size="1em" />
           </a>
         </section>
         <section className={styles.faq}>
@@ -411,14 +416,14 @@ export function BaselaneLoans() {
             <details key={topic}>
               <summary>
                 {topic}
-                <span aria-hidden="true">+</span>
+                <span aria-hidden="true"><MagePlus size="1em" /></span>
               </summary>
               <p>
                 Ask the provider to explain {topic.toLowerCase()} for your
                 specific property and application. This page does not assess
                 eligibility or offer financing.
               </p>
-              <a href={source}>Discuss your workflow with innflow →</a>
+              <a href={source}>Discuss your workflow with innflow <MageArrowRight size="1em" /></a>
             </details>
           ))}
         </section>

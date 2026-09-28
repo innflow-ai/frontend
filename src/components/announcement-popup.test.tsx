@@ -1,10 +1,5 @@
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
-import { siteConfig } from "@/config/site";
-import {
-  SIGNUP_OFFER_SCROLL_PX,
-  SIGNUP_OFFER_STORAGE_KEY,
-} from "@/lib/marketing-chrome";
 import { SiteHeader } from "./site-header";
 
 vi.mock("next/navigation", () => ({ usePathname: () => "/rent-collection" }));
@@ -31,22 +26,15 @@ afterEach(() => {
   vi.unstubAllGlobals();
 });
 
-it("hides the announcement and preserves the signup offer after scroll", () => {
+it("keeps the announcement and retired signup offer hidden after scroll", () => {
   render(<SiteHeader />);
   expect(
     screen.queryByRole("complementary", { name: "Innflow announcement" }),
   ).toBeNull();
 
   expect(screen.queryByRole("heading", { name: "50% off signup" })).toBeNull();
-  window.scrollY = SIGNUP_OFFER_SCROLL_PX + 40;
+  window.scrollY = 600;
   fireEvent.scroll(window);
-  const offer = screen.getByRole("heading", { name: "50% off signup" });
-  expect(offer).toBeVisible();
-  expect(screen.getByRole("link", { name: "Claim 50% off" })).toHaveAttribute(
-    "href",
-    siteConfig.googleAuthUrl,
-  );
-  fireEvent.click(screen.getByRole("button", { name: "Dismiss offer" }));
   expect(screen.queryByRole("heading", { name: "50% off signup" })).toBeNull();
-  expect(sessionStorage.getItem(SIGNUP_OFFER_STORAGE_KEY)).toBe("1");
+  expect(screen.queryByRole("link", { name: "Claim 50% off" })).toBeNull();
 });

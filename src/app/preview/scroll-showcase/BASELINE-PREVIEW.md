@@ -64,9 +64,9 @@ hint have been removed at the user's request; chapter tabs remain available.
 The hero is explicitly a reference motion study. Its Calendly copy and outgoing
 reference links remain placeholders; adding an Innflow sign-in CTA does not
 make the illustrated vendor features verified Innflow features. The existing
-Google sign-in destination comes from `siteConfig.googleAuthUrl`. Microsoft is
-a disabled, visibly labeled placeholder until its destination is supplied;
-this pass does not implement or change any authentication backend.
+Google sign-in destination comes from `siteConfig.googleAuthUrl`. The homepage
+Microsoft button temporarily links to `${siteConfig.appOrigin}/login`, the
+regular login page. It does not implement or change an authentication backend.
 
 ## Verification
 

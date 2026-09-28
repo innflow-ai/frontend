@@ -92,7 +92,13 @@ function TimeRow({
 }
 
 /** Approved Figma 615:710. Decorative date/time selection, never a booking request. */
-export function BookingCalendar({ active }: { active: boolean }) {
+export function BookingCalendar({
+  active,
+  showControls = true,
+}: {
+  active: boolean;
+  showControls?: boolean;
+}) {
   const [paused, setPaused] = useState(false);
   const [replayKey, setReplayKey] = useState(0);
   const { ref, progress, playing, reducedMotion } = useDemoPlayback({
@@ -271,29 +277,31 @@ export function BookingCalendar({ active }: { active: boolean }) {
           </TimeRow>
         </motion.div>
       </div>
-      <div className={styles.controls}>
-        <button
-          type="button"
-          aria-label={
-            paused ? "Resume calendar animation" : "Pause calendar animation"
-          }
-          onClick={() => setPaused((value) => !value)}
-          disabled={reducedMotion}
-        >
-          {paused ? "Play" : "Pause"}
-        </button>
-        <button
-          type="button"
-          aria-label="Replay calendar animation"
-          onClick={() => {
-            setReplayKey((value) => value + 1);
-            setPaused(false);
-          }}
-          disabled={reducedMotion}
-        >
-          Replay
-        </button>
-      </div>
+      {showControls && (
+        <div className={styles.controls}>
+          <button
+            type="button"
+            aria-label={
+              paused ? "Resume calendar animation" : "Pause calendar animation"
+            }
+            onClick={() => setPaused((value) => !value)}
+            disabled={reducedMotion}
+          >
+            {paused ? "Play" : "Pause"}
+          </button>
+          <button
+            type="button"
+            aria-label="Replay calendar animation"
+            onClick={() => {
+              setReplayKey((value) => value + 1);
+              setPaused(false);
+            }}
+            disabled={reducedMotion}
+          >
+            Replay
+          </button>
+        </div>
+      )}
     </div>
   );
 }

@@ -1,3 +1,5 @@
+
+import { ArrowRight as MageArrowRight } from '@/components/icons/mage';
 import { GoogleCtaContent } from "@/components/google-cta-content";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
@@ -18,7 +20,7 @@ export function BlogArticleIntroCta() {
           destination={siteConfig.demoUrl}
           eventLabel="blog_intro_demo"
         >
-          See demo <span aria-hidden="true">→</span>
+          See demo <span aria-hidden="true"><MageArrowRight size="1em" /></span>
         </TrackedLink>
         <TrackedLink
           destination={siteConfig.googleAuthUrl}

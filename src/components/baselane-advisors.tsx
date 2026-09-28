@@ -1,6 +1,9 @@
 "use client";
+import { ArrowRight as MageArrowRight, Plus as MagePlus } from '@/components/icons/mage';
+
 import Image from "next/image";
 import { useState } from "react";
+import { ChevronRight } from "@/components/chevron-right";
 import { siteConfig } from "@/config/site";
 import styles from "./baselane-advisors.module.css";
 import { BaselaneHomepage } from "./baselane-homepage";
@@ -42,7 +45,7 @@ export function BaselaneAdvisors() {
                 Start a conversation
               </a>
               <a className={styles.outline} href="#program-details">
-                Explore the workflow →
+                Explore the workflow <MageArrowRight size="1em" />
               </a>
             </div>
             <p className={styles.note}>
@@ -107,7 +110,7 @@ export function BaselaneAdvisors() {
                 <details key={title} name="advisor-topics" open={i === 0}>
                   <summary>
                     {title}
-                    <span aria-hidden="true">+</span>
+                    <span aria-hidden="true"><MagePlus size="1em" /></span>
                   </summary>
                   <p>{text}</p>
                 </details>
@@ -243,10 +246,10 @@ export function BaselaneAdvisors() {
                   <details key={title} name="advisor-next" open={i === 0}>
                     <summary>
                       {title}
-                      <span aria-hidden="true">+</span>
+                      <span aria-hidden="true"><MagePlus size="1em" /></span>
                     </summary>
                     <p>{text}</p>
-                    <a href={href}>Continue →</a>
+                    <a href={href}>Continue <MageArrowRight size="1em" /></a>
                   </details>
                 ))}
               </div>
@@ -360,7 +363,7 @@ export function BaselaneAdvisors() {
               </label>
             </div>
             <button type="submit" className={styles.button}>
-              Prepare inquiry →
+              Prepare inquiry <MageArrowRight size="1em" />
             </button>
           </form>
           {draft && (
@@ -371,7 +374,7 @@ export function BaselaneAdvisors() {
                 className={styles.button}
                 href={`mailto:${siteConfig.supportEmail}?subject=${encodeURIComponent("Advisor partnership inquiry")}&body=${encodeURIComponent(draft)}`}
               >
-                Open email draft ↗
+                Open email draft <ChevronRight />
               </a>
               <p>
                 Addressed to {siteConfig.supportEmail}. Send from your email app

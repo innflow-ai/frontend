@@ -407,8 +407,8 @@ describe("EditorialHeader navigation", () => {
     expect(
       screen
         .getByRole("button", { name: "Close navigation" })
-        .querySelector("img"),
-    ).toHaveAttribute("src", expect.stringContaining("Close_X_black.svg"));
+        .querySelector("svg path"),
+    ).toHaveAttribute("stroke", "currentColor");
   });
 
   it("keeps the blog index on the transparent dark-chrome default", () => {

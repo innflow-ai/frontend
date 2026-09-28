@@ -1,5 +1,5 @@
-import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
+import { ArrowRight } from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
 import { GoogleCtaContent } from "./google-cta-content";
 import styles from "./product-headspace-cta.module.css";

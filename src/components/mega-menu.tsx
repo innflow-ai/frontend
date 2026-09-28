@@ -1,38 +1,38 @@
 "use client";
 
-import {
-  AddressBook,
-  Archive,
-  ArrowRight,
-  ArrowsClockwise,
-  Browser,
-  Buildings,
-  CaretDown,
-  CirclesFour,
-  CirclesThreePlus,
-  CreditCard,
-  Database,
-  DoorOpen,
-  FlowArrow,
-  Handshake,
-  House,
-  HouseLine,
-  type Icon,
-  ListBullets,
-  Megaphone,
-  Newspaper,
-  PlugsConnected,
-  PuzzlePiece,
-  Quotes,
-  Signature,
-  Sparkle,
-  Storefront,
-  UsersThree,
-  Wrench,
-} from "@phosphor-icons/react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
+import {
+  ContactBook as AddressBook,
+  Archive,
+  ArrowRight,
+  Refresh as ArrowsClockwise,
+  Screencast as Browser,
+  BuildingB as Buildings,
+  ChevronDown as CaretDown,
+  Dashboard as CirclesFour,
+  DashboardPlus as CirclesThreePlus,
+  CreditCard,
+  Database,
+  Login as DoorOpen,
+  Share as FlowArrow,
+  Users as Handshake,
+  Home as House,
+  Home as HouseLine,
+  type Icon,
+  Checklist as ListBullets,
+  MegaphoneA as Megaphone,
+  NoteText as Newspaper,
+  Link as PlugsConnected,
+  Box3d as PuzzlePiece,
+  MessageSquare as Quotes,
+  EditPen as Signature,
+  StarsA as Sparkle,
+  Shop as Storefront,
+  Users as UsersThree,
+  Wrench,
+} from "@/components/icons/mage";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
 import { industryHref, industryPages } from "@/content/industries";
@@ -48,7 +48,6 @@ export {
 export type MegaMenuLink = {
   href: string;
   icon: Icon;
-  iconSrc?: string;
   hideIcon?: boolean;
   browseAll?: boolean;
   title: string;
@@ -71,16 +70,10 @@ export type LatestBlogPostNavItem = {
   imageAlt: string;
 };
 
-function withApprovedMenuIcons(links: MegaMenuLink[]): MegaMenuLink[] {
+function withMenuDestinations(links: MegaMenuLink[]): MegaMenuLink[] {
   return links.map((link) => ({
     ...link,
     href: megaMenuHref(link.title, link.href),
-    iconSrc:
-      link.iconSrc ??
-      `/brand/navigation/mega-menu-items/${link.title
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/(^-|-$)/g, "")}.svg`,
   }));
 }
 
@@ -138,7 +131,6 @@ const capabilityLinks: MegaMenuLink[] = [
     icon: Archive,
     title: "Files & Documents",
     body: "Keep your files close to the work.",
-    iconSrc: "/brand/navigation/bl-stroke/09-file-records.svg",
   },
   {
     href: "/features/website",
@@ -158,7 +150,7 @@ const resourcesLinks: MegaMenuLink[] = [
   {
     href: "https://docs.innflow.ai",
     icon: ListBullets,
-    iconSrc: "/brand/navigation/bl-stroke/09-file-records.svg",
+
     title: "Docs",
     body: "Guides and documentation for building with Innflow.",
   },
@@ -171,7 +163,7 @@ const resourcesLinks: MegaMenuLink[] = [
   {
     href: "/partner-with-us",
     icon: Handshake,
-    iconSrc: "/brand/navigation/mega-menu-items/become-an-affiliate.svg",
+
     title: "Partnerships",
     body: "Partner with Innflow and help more property teams modernize operations.",
   },
@@ -184,7 +176,7 @@ const resourcesLinks: MegaMenuLink[] = [
   {
     href: "/resources",
     icon: Archive,
-    iconSrc: "/brand/navigation/mega-menu-items/asset-library.svg",
+
     title: "Resource Library",
     body: "Explore reports, guides, testimonials, podcasts, and more.",
   },
@@ -193,14 +185,14 @@ const resourcesLinks: MegaMenuLink[] = [
 export const resourcesColumns: MegaMenuColumn[] = [
   {
     heading: "Resources",
-    links: withApprovedMenuIcons(resourcesLinks),
+    links: withMenuDestinations(resourcesLinks),
   },
 ];
 
 const corePortfolioColumns: MegaMenuColumn[] = [
   {
     heading: "Portfolios",
-    links: withApprovedMenuIcons([
+    links: withMenuDestinations([
       {
         href: "/multi-property-investors",
         icon: Buildings,
@@ -226,15 +218,15 @@ const corePortfolioColumns: MegaMenuColumn[] = [
 export const allProductColumns: MegaMenuColumn[] = [
   {
     heading: "Platform and agents",
-    links: withApprovedMenuIcons(platformLinks),
+    links: withMenuDestinations(platformLinks),
   },
   {
     heading: "Build and customize",
-    links: withApprovedMenuIcons([...buildWithAgentsLinks, ...capabilityLinks]),
+    links: withMenuDestinations([...buildWithAgentsLinks, ...capabilityLinks]),
   },
   {
     heading: "Automation and intelligence",
-    links: withApprovedMenuIcons(
+    links: withMenuDestinations(
       platformPages.slice(0, 4).map((page) => ({
         href: `/platform/${page.slug}`,
         icon: FlowArrow,
@@ -245,7 +237,7 @@ export const allProductColumns: MegaMenuColumn[] = [
   },
   {
     heading: "Connections and governance",
-    links: withApprovedMenuIcons([
+    links: withMenuDestinations([
       ...platformPages
         .filter((page) =>
           ["deployment-options", "security-and-compliance"].includes(page.slug),
@@ -263,7 +255,7 @@ export const allProductColumns: MegaMenuColumn[] = [
 const coreSolutionsColumns: MegaMenuColumn[] = [
   {
     heading: "Operations",
-    links: withApprovedMenuIcons([
+    links: withMenuDestinations([
       {
         href: "/operations",
         icon: CirclesFour,
@@ -273,14 +265,14 @@ const coreSolutionsColumns: MegaMenuColumn[] = [
       {
         href: "/rent-collection",
         icon: CreditCard,
-        iconSrc: "/brand/navigation/bl-stroke/23-credit-card.svg",
+
         title: "Rent Collection",
         body: "Keep recurring rental workflows and resident context connected.",
       },
       {
         href: "/rapid-rent",
         icon: CreditCard,
-        iconSrc: "/brand/navigation/bl-stroke/delinquency-alarm.svg",
+
         title: "Delinquency",
         body: "Reduce late payments and boost cash flow.",
       },
@@ -294,7 +286,7 @@ const coreSolutionsColumns: MegaMenuColumn[] = [
   },
   {
     heading: "Leasing",
-    links: withApprovedMenuIcons([
+    links: withMenuDestinations([
       {
         href: "/listing-and-advertising",
         icon: ListBullets,
@@ -335,7 +327,7 @@ const coreSolutionsColumns: MegaMenuColumn[] = [
   },
   {
     heading: "By team",
-    links: withApprovedMenuIcons([
+    links: withMenuDestinations([
       {
         href: "/operations",
         icon: UsersThree,
@@ -351,7 +343,7 @@ const coreSolutionsColumns: MegaMenuColumn[] = [
       {
         href: "/leasing",
         icon: UsersThree,
-        iconSrc: "/brand/navigation/bl-stroke/leasing-teams.svg",
+
         title: "Leasing Teams",
         body: "Coordinate prospect follow-up, applications, and resident handoffs.",
       },
@@ -359,6 +351,39 @@ const coreSolutionsColumns: MegaMenuColumn[] = [
   },
 ];
 
+import {
+  CalendarCheck,
+  ChecklistNote,
+  ContactBook,
+  FileRecords,
+  Inbox,
+  Key,
+  Laptop,
+  Home as MageHome,
+  Link as MageLink,
+  NoteText,
+  Settings,
+  UserCheck,
+  UserSquare,
+} from "@/components/icons/mage";
+
+const featureIcons: Record<string, Icon> = {
+  "10-checklist-note": ChecklistNote,
+  "19-wrench": Wrench,
+  "02-inbox": Inbox,
+  "01-laptop": Laptop,
+  "13-contact-book": ContactBook,
+  "18-key": Key,
+  "22-calendar-check": CalendarCheck,
+  "32-user-check": UserCheck,
+  "20-user-square": UserSquare,
+  "09-file-records": FileRecords,
+  "30-book-text": NoteText,
+  "35-link": MageLink,
+  "06-settings": Settings,
+  "23-credit-card": CreditCard,
+  "24-home": MageHome,
+};
 function featureLink(
   title: string,
   href: string,
@@ -369,8 +394,7 @@ function featureLink(
     title,
     href,
     body,
-    icon: CirclesFour,
-    iconSrc: `/brand/navigation/bl-stroke/${iconFile}.svg`,
+    icon: featureIcons[iconFile] ?? CirclesFour,
   };
 }
 
@@ -588,7 +612,6 @@ export const solutionsColumns: MegaMenuColumn[] = [
       title: page.name,
       body: "",
       icon: Buildings,
-      iconSrc: `/brand/navigation/solutions/${page.slug}.svg`,
     };
   }),
 }));
@@ -703,11 +726,11 @@ function PromotionalAside({ onSelect }: { onSelect: () => void }) {
         — with human control built in.
       </p>
       <TrackedLink
-        destination={siteConfig.demoUrl}
-        eventLabel="mega_menu_demo"
+        destination={siteConfig.signupUrl}
+        eventLabel="mega_menu_signup"
         onClick={onSelect}
       >
-        Book a demo <ArrowRight size={13} />
+        Get started now <ArrowRight size={13} />
       </TrackedLink>
     </aside>
   );
@@ -864,18 +887,7 @@ export function MegaMenu({
                       >
                         {!link.hideIcon && (
                           <span className={styles.icon}>
-                            {link.iconSrc ? (
-                              <Image
-                                className={styles.customIcon}
-                                src={link.iconSrc}
-                                alt=""
-                                width={24}
-                                height={24}
-                                unoptimized
-                              />
-                            ) : (
-                              <Icon size={16} weight="fill" />
-                            )}
+                            <Icon size={24} />
                           </span>
                         )}
                         <span>

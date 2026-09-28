@@ -1,3 +1,4 @@
+import { ChevronRight } from "@/components/chevron-right";
 import { MarketingPage } from "@/components/page-primitives";
 import { TermlyPolicyEmbed } from "@/components/termly-policy-embed";
 
@@ -25,7 +26,7 @@ export function LegalPolicyPage({
             target="_blank"
             rel="noreferrer"
           >
-            Open policy in a new tab ↗
+            Open policy in a new tab <ChevronRight />
           </a>
         </div>
       </section>

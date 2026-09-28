@@ -1,6 +1,9 @@
+
+import { Plus as MagePlus } from '@/components/icons/mage';
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { type BreadcrumbItem, Breadcrumbs } from "@/components/breadcrumbs";
+import { ChevronRight } from "@/components/chevron-right";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
 
@@ -54,7 +57,9 @@ export function PageHero({
               eventLabel={`${eyebrow.toLowerCase().replaceAll(" ", "_")}_demo`}
             >
               {siteConfig.primaryCta}
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true">
+                <ChevronRight />
+              </span>
             </TrackedLink>
             <a className="button button-secondary" href={secondaryHref}>
               See the property workflow
@@ -162,7 +167,7 @@ export function FaqList({
         <details key={item.id || item.question} open={index === 0}>
           <summary>
             <span>{item.question}</span>
-            <i aria-hidden="true">+</i>
+            <i aria-hidden="true"><MagePlus size="1em" /></i>
           </summary>
           <p style={{ whiteSpace: "pre-line" }}>{item.answer}</p>
         </details>

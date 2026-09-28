@@ -1,7 +1,10 @@
+
+import { StarsA as MageStarsA, Plus as MagePlus } from '@/components/icons/mage';
 import { Geist } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties, ReactNode } from "react";
+import { ChevronRight } from "@/components/chevron-right";
 import { siteConfig } from "@/config/site";
 import {
   getProductDesign,
@@ -86,7 +89,7 @@ function Artwork({
         ) : (
           <div className={styles.contextCard}>
             <span className={styles.cardMark} aria-hidden="true">
-              ✳
+              <MageStarsA size="1em" />
             </span>
             <strong>{item.title}</strong>
             {item.points?.map((point) => (
@@ -172,7 +175,7 @@ export function CalendlyProductPage({
         >
           <div className={styles.productTag}>
             <span className={styles.productIcon} aria-hidden="true">
-              ✳
+              <MageStarsA size="1em" />
             </span>
             <span>{content.name}</span>
           </div>
@@ -221,7 +224,9 @@ export function CalendlyProductPage({
                 <a key={item.id} href={`#${item.id}`}>
                   <h3>
                     {item.label ?? item.title}
-                    <span aria-hidden="true">↗</span>
+                    <span aria-hidden="true">
+                      <ChevronRight />
+                    </span>
                   </h3>
                   <p>{item.body}</p>
                 </a>
@@ -281,7 +286,9 @@ export function CalendlyProductPage({
                 </span>
                 <h3>
                   {item.href ? (
-                    <Link href={item.href}>{item.title} ↗</Link>
+                    <Link href={item.href}>
+                      {item.title} <ChevronRight />
+                    </Link>
                   ) : (
                     item.title
                   )}
@@ -323,7 +330,9 @@ export function CalendlyProductPage({
             ) : null}
             <a className={styles.textLink} href={item.href ?? primary.href}>
               {item.href ? "Explore" : "Get started"}{" "}
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true">
+                <ChevronRight />
+              </span>
             </a>
           </div>
         </section>
@@ -340,7 +349,7 @@ export function CalendlyProductPage({
             {content.faqs?.map((faq) => (
               <details key={faq.question}>
                 <summary>
-                  <span aria-hidden="true">+</span>
+                  <span aria-hidden="true"><MagePlus size="1em" /></span>
                   {faq.question}
                 </summary>
                 <p>{faq.answer}</p>
@@ -386,11 +395,14 @@ export function CalendlyProductPage({
                     density="compact"
                   />
                 ) : (
-                  <span aria-hidden="true">✳</span>
+                  <span aria-hidden="true"><MageStarsA size="1em" /></span>
                 )}
               </div>
               <h3>
-                {route.title} <span aria-hidden="true">↗</span>
+                {route.title}{" "}
+                <span aria-hidden="true">
+                  <ChevronRight />
+                </span>
               </h3>
             </Link>
           ))}

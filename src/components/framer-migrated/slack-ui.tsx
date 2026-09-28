@@ -10,6 +10,7 @@ import {
   useCallback,
   useState,
 } from "react";
+import { ChevronDown, MessageRound } from "@/components/icons/mage";
 
 interface Reaction {
   emoji: string;
@@ -627,9 +628,6 @@ const styles: Record<string, CSSProperties> = {
   },
 };
 
-const chatBubblePath =
-  "M8 2C4.69 2 2 4.06 2 6.5C2 7.85 2.76 9.05 4 9.86V13L6.4 11.2C6.92 11.33 7.45 11.4 8 11.4C11.31 11.4 14 9.34 14 6.9C14 4.46 11.31 2 8 2Z";
-
 const ChatBubbleIcon = memo(function ChatBubbleIcon({
   color,
   size = 13,
@@ -637,18 +635,7 @@ const ChatBubbleIcon = memo(function ChatBubbleIcon({
   color: string;
   size?: number;
 }) {
-  return (
-    <svg
-      aria-hidden="true"
-      focusable="false"
-      width={size}
-      height={size}
-      viewBox="0 0 16 16"
-      fill="none"
-    >
-      <path d={chatBubblePath} fill={color} />
-    </svg>
-  );
+  return <MessageRound size={size} color={color} />;
 });
 
 const WorkspaceLogoIcon = memo(function WorkspaceLogoIcon() {
@@ -910,27 +897,15 @@ const SectionGroup = memo(function SectionGroup({
         ariaExpanded={!isCollapsed}
         style={styles.sectionToggle}
       >
-        <svg
-          aria-hidden="true"
-          focusable="false"
-          width="9"
-          height="9"
-          viewBox="0 0 8 8"
-          fill="none"
+        <ChevronDown
+          size={9}
+          color="#737373"
           style={{
             transform: isCollapsed ? "rotate(-90deg)" : "rotate(0deg)",
             transition: `transform 160ms ${easeOut}`,
             flexShrink: 0,
           }}
-        >
-          <path
-            d="M1 2.5L4 5.5L7 2.5"
-            stroke="#737373"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
+        />
 
         <SectionIcon letter={section.icon} />
 

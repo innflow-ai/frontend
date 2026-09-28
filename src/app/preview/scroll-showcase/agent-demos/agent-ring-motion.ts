@@ -32,10 +32,10 @@ export const ringAssets = [
   "quinn.svg",
 ] as const;
 export const ringGeometry = {
-  width: 1085,
-  height: 893,
-  centerX: 542.5,
-  centerY: 1224.41681,
+  width: 771,
+  height: 830,
+  centerX: 386,
+  centerY: 1196,
   radius: 880,
   tile: 112,
   selected: 189.8923,

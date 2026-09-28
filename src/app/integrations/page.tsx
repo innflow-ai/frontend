@@ -1,3 +1,5 @@
+
+import { ArrowDown as MageArrowDown } from '@/components/icons/mage';
 import { BaselineClosing } from "@/app/preview/scroll-showcase/baseline-lower-sections";
 import { IntegrationDirectory } from "@/components/integration-directory";
 import styles from "@/components/integrations.module.css";
@@ -29,7 +31,7 @@ export default async function IntegrationsPage() {
               integration, see what it does, and check its availability.
             </p>
             <a className={styles.browseLink} href="#integration-directory">
-              Explore integrations <span aria-hidden="true">↓</span>
+              Explore integrations <span aria-hidden="true"><MageArrowDown size="1em" /></span>
             </a>
           </div>
         </header>

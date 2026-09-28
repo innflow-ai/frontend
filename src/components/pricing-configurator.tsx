@@ -1,4 +1,6 @@
 "use client";
+import { Check as MageCheck, ArrowDown as MageArrowDown } from '@/components/icons/mage';
+
 
 import { useState } from "react";
 import styles from "@/app/pricing/pricing.module.css";
@@ -102,7 +104,7 @@ function PaidPlanCard({
       <ul className={styles.featureList}>
         {features.map((feature) => (
           <li key={feature}>
-            <span aria-hidden="true">✓</span>
+            <span aria-hidden="true"><MageCheck size="1em" /></span>
             {feature}
           </li>
         ))}
@@ -189,7 +191,7 @@ export function PricingConfigurator() {
               `${free.runHistory} of run history`,
             ].map((feature) => (
               <li key={feature}>
-                <span aria-hidden="true">✓</span>
+                <span aria-hidden="true"><MageCheck size="1em" /></span>
                 {feature}
               </li>
             ))}
@@ -221,7 +223,7 @@ export function PricingConfigurator() {
         />
       </div>
       <a className={styles.compareLink} href="#compare-plans">
-        Compare all features <span aria-hidden="true">↓</span>
+        Compare all features <span aria-hidden="true"><MageArrowDown size="1em" /></span>
       </a>
     </>
   );

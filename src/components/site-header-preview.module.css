@@ -38,6 +38,16 @@
   color: inherit;
   font-size: 12px;
 }
+.announcement .homeLearnMore {
+  justify-content: center;
+  text-align: center;
+  line-height: 16px;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.announcement .homeLearnMore:is(:hover, :focus-visible) {
+  text-decoration-line: underline;
+}
 .announcement button {
   position: absolute;
   right: 8px;
@@ -71,9 +81,18 @@
   box-shadow: none;
   backdrop-filter: none;
 }
+/* Match the standard header width while retaining the flat homepage surface. */
+.previewScope .flatHeader[data-home-navigation="true"] {
+  inset-inline: max(40px, calc((100vw - 1320px) / 2));
+  padding-inline: 32px;
+}
 @media (max-width: 1180px) {
   .previewScope .flatHeader {
     padding: 8px 20px;
+  }
+  .previewScope .flatHeader[data-home-navigation="true"] {
+    inset-inline: 20px;
+    padding-inline: 14px;
   }
 }
 @media (max-width: 480px) {
@@ -96,5 +115,12 @@
   }
   .previewScope .flatHeader {
     padding-inline: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  .previewScope .flatHeader[data-home-navigation="true"] {
+    inset-inline: 12px;
+    padding-inline: 10px;
   }
 }

@@ -4,11 +4,43 @@ import { motion } from "motion/react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { type KeyboardEvent, useEffect, useRef, useState } from "react";
+import { ChevronRight } from "@/components/chevron-right";
+import {
+  Chart,
+  ChartUp,
+  CheckCircle,
+  Inbox,
+  Keyboard,
+  Link,
+  Minus as MageMinus,
+  Plus as MagePlus,
+  MessageConversation,
+  NoteText,
+  Robot,
+  Settings,
+  Share,
+  StarsA,
+  Users,
+  Zap,
+} from "@/components/icons/mage";
 import { ChannelsDemos } from "./agent-demos/channels-demos";
+import { DelegateConversation } from "./agent-demos/delegate-conversation";
 import styles from "./baseline-features.module.css";
 import { features as preparedFeatures } from "./homepage-content";
 import { useChannelsScroll } from "./use-channels-scroll";
 
+const featureIcons = {
+  channels: Robot,
+  agents: Share,
+  workflows: StarsA,
+  insights: Chart,
+};
+const itemIcons = {
+  channels: [Share, Link, StarsA, Users, Zap, ChartUp, Keyboard],
+  agents: [Users, CheckCircle, Settings],
+  workflows: [Link, Share, Inbox, MessageConversation],
+  insights: [ChartUp, MessageConversation, NoteText, Chart],
+};
 const root = "/preview/homepage/baseline-features";
 const AgentStoryboard = dynamic(() =>
   import("./agent-demos/agent-ring").then((mod) => mod.AgentStoryboardPreview),
@@ -218,39 +250,23 @@ function BaselineFeature({ feature }: { feature: Feature }) {
     select(next);
     buttons.current[next]?.focus({ preventScroll: channelScroll.enabled });
   }
+  const FeatureIcon = featureIcons[feature.id as keyof typeof featureIcons];
   const visual = (
     <div
       ref={channelScroll.visualRef}
-      className={styles.visual}
+      className={`${styles.visual} ${feature.id === "agents" ? styles.workflowVisual : ""}`}
       id={`${feature.id}-baseline-visual`}
     >
       <div
         className={`${styles.imageFrame} ${feature.id === "agents" ? styles.workflowFrame : ""}`}
         data-pending={false}
       >
-        {feature.id === "agents" && (
-          <div
-            className={styles.workflowBackdrop}
-            data-source-node="1064:1999"
-            aria-hidden="true"
-          >
-            {[1, 2, 3, 4, 5, 6, 7, 8].map((bar) => (
-              <span key={bar} />
-            ))}
-          </div>
-        )}
         {channels ? (
           <ChannelsDemos selected={selected} />
         ) : feature.id === "agents" && selected === 0 ? (
           <AgentStoryboard showControls={false} />
         ) : feature.id === "agents" && selected === 1 ? (
-          <Image
-            src={`${root}/agents-delegate-workflow.png`}
-            alt="Workflow: a new API error thread triggers a condition check, assigns Engineering, sets urgent priority, alerts PagerDuty, and creates a Linear bug."
-            data-source-node="808:23031"
-            fill
-            sizes="(max-width: 800px) calc(100vw - 48px), (max-width: 1280px) 46vw, 580px"
-          />
+          <DelegateConversation />
         ) : agentDetail ? (
           <Image
             src={`${root}/agents-build-orbit-transparent.png`}
@@ -288,13 +304,7 @@ function BaselineFeature({ feature }: { feature: Feature }) {
         <div className={styles.copy}>
           <header className={styles.heading}>
             <div className={styles.sectionTag}>
-              <Image
-                src={`/preview/scroll-showcase/${feature.tagIcon}.svg`}
-                width={24}
-                height={24}
-                alt=""
-                style={{ backgroundColor: feature.tagColor }}
-              />
+              <FeatureIcon size={24} />
               <span>{feature.label}</span>
             </div>
             <h2 id={`${feature.id}-baseline-heading`}>{feature.title}</h2>
@@ -339,18 +349,23 @@ function BaselineFeature({ feature }: { feature: Feature }) {
                       }}
                       onKeyDown={(event) => navigate(event, index)}
                     >
-                      <Image
-                        src={asset(item.icon)}
-                        alt=""
-                        width={24}
-                        height={24}
-                      />
+                      {(() => {
+                        const ItemIcon =
+                          itemIcons[feature.id as keyof typeof itemIcons][
+                            index
+                          ];
+                        return <ItemIcon size={24} />;
+                      })()}
                       <span>{item.title}</span>
                       <span
                         className={styles.mobileIndicator}
                         aria-hidden="true"
                       >
-                        {selected === index ? "−" : "+"}
+                        {selected === index ? (
+                          <MageMinus size="1em" />
+                        ) : (
+                          <MagePlus size="1em" />
+                        )}
                       </span>
                     </button>
                   </h3>
@@ -379,12 +394,7 @@ function BaselineFeature({ feature }: { feature: Feature }) {
                           });
                         }}
                       >
-                        <Image
-                          src={asset("imgArrowUpRight.svg")}
-                          alt=""
-                          width={16}
-                          height={16}
-                        />
+                        <ChevronRight size={16} />
                       </button>
                     )}
                   </section>

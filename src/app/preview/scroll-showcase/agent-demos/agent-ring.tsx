@@ -145,7 +145,7 @@ export function AgentRingDemo({
       role="img"
       aria-label={`Agent selection storyboard: ${ringNames.join(", ")}. Each icon rotates into the selected white card above Innflow.`}
       data-demo="agent-ring"
-      data-source-node="534:10184"
+      data-source-node="1086:14435"
       data-playing={playing}
       data-completed={completed}
       data-reduced-motion={reducedMotion}

@@ -3,6 +3,7 @@
 import { motion, useTransform } from "motion/react";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
+import { ChevronDown as MageChevronDown, Robot } from "@/components/icons/mage";
 import { useDemoPlayback } from "./agent-demos/use-demo-playback";
 import styles from "./scheduling-assistant.module.css";
 
@@ -76,7 +77,9 @@ export function SchedulingAssistant({ active }: { active: boolean }) {
               />
               <div>
                 <strong>Dominic Mills</strong>
-                <small>To Innflow, Tori Mathers ▾</small>
+                <small>
+                  To Innflow, Tori Mathers <MageChevronDown size="1em" />
+                </small>
               </div>
             </div>
             <p className={styles.message}>
@@ -92,12 +95,7 @@ export function SchedulingAssistant({ active }: { active: boolean }) {
               className={styles.reply}
               style={{ opacity: replyOpacity, y: replyY }}
             >
-              <Image
-                src={`${assets}/callie.svg`}
-                width={18}
-                height={18}
-                alt=""
-              />
+              <Robot size={18} />
               <span>I’ll coordinate a time with everyone.</span>
             </motion.div>
           </div>

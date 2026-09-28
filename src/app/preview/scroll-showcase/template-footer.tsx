@@ -2,6 +2,7 @@ import Image from "next/image";
 import { CustomerSupportHours } from "@/components/customer-support-hours";
 import { FooterLegalLinks } from "@/components/footer-legal-links";
 import { GoogleCtaContent } from "@/components/google-cta-content";
+import { LaunchDirectoryMarquee } from "@/components/launch-directory-marquee";
 import { footerNavigation } from "@/config/footer-navigation";
 import { siteConfig } from "@/config/site";
 import styles from "./template-footer.module.css";
@@ -96,6 +97,7 @@ export function TemplateFooter() {
           </div>
           <span>© {new Date().getFullYear()} Innflow</span>
         </div>
+        <LaunchDirectoryMarquee />
       </footer>
     </div>
   );

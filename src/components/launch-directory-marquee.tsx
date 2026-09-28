@@ -29,14 +29,15 @@ export function LaunchDirectoryMarquee() {
                   <span key={directory.name} className={styles.artwork}>
                     <Image
                       src={directory.src}
-                      alt={directory.name}
+                      alt={directory.alt}
                       width={directory.width}
                       height={directory.height}
+                      loading="eager"
                       unoptimized
                     />
                   </span>
                 );
-                return directory.status === "listed" ? (
+                return (
                   <a
                     key={directory.name}
                     className={styles.badge}
@@ -48,10 +49,6 @@ export function LaunchDirectoryMarquee() {
                   >
                     {artwork}
                   </a>
-                ) : (
-                  <span key={directory.name} className={styles.badge}>
-                    {artwork}
-                  </span>
                 );
               })}
             </div>

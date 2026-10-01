@@ -42,8 +42,9 @@ const itemIcons = {
   insights: [ChartUp, MessageConversation, NoteText, Chart],
 };
 const root = "/preview/homepage/baseline-features";
-const AgentStoryboard = dynamic(() =>
-  import("./agent-demos/agent-ring").then((mod) => mod.AgentStoryboardPreview),
+const AgentLoopRive = dynamic(
+  () => import("./agent-loop-rive").then((mod) => mod.AgentLoopRive),
+  { ssr: false },
 );
 type Item = { title: string; icon: string; body?: string };
 type Feature = {
@@ -264,7 +265,7 @@ function BaselineFeature({ feature }: { feature: Feature }) {
         {channels ? (
           <ChannelsDemos selected={selected} />
         ) : feature.id === "agents" && selected === 0 ? (
-          <AgentStoryboard showControls={false} />
+          <AgentLoopRive active={selected === 0} />
         ) : feature.id === "agents" && selected === 1 ? (
           <DelegateConversation />
         ) : agentDetail ? (

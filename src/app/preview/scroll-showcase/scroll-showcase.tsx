@@ -1,6 +1,5 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import Image from "next/image";
 import { type CSSProperties, useEffect, useRef, useState } from "react";
 import { ChevronRight } from "@/components/chevron-right";
@@ -17,6 +16,7 @@ import {
   StarsA,
 } from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
+import { BookingCalendar } from "./booking-calendar";
 import { SchedulingAssistant } from "./scheduling-assistant";
 import {
   chapterScrollProgress,
@@ -26,10 +26,6 @@ import {
 import styles from "./showcase.module.css";
 
 const showcaseIcons = [Robot, Share, StarsA, Chart];
-const AgentLoopRive = dynamic(
-  () => import("./agent-loop-rive").then((mod) => mod.AgentLoopRive),
-  { ssr: false },
-);
 const assets = "/preview/scroll-showcase";
 const states = [
   {
@@ -91,8 +87,8 @@ function Portrait({ name, size = 36 }: { name: string; size?: number }) {
 function Illustration({ index, active }: { index: number; active: boolean }) {
   if (index === 0)
     return (
-      <div className={`${styles.demo} ${styles.agentLoopDemo}`}>
-        <AgentLoopRive active={active} />
+      <div className={styles.demo}>
+        <BookingCalendar active={active} showControls={false} />
       </div>
     );
   if (index === 1)

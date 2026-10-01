@@ -70,7 +70,7 @@ export function AgentLoopRive({ active }: { active: boolean }) {
         src="/brand/agents/agent-seamless-loop-poster.jpg"
         alt=""
         fill
-        sizes="310px"
+        sizes="(max-width: 800px) calc(100vw - 48px), (max-width: 1280px) 46vw, 580px"
       />
       <RiveComponent
         className={styles.agentLoopCanvas}

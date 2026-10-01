@@ -3,15 +3,11 @@ import { afterEach, expect, it, vi } from "vitest";
 import { siteConfig } from "@/config/site";
 import { ScrollShowcase } from "./scroll-showcase";
 
-vi.mock("./agent-loop-rive", () => ({
-  AgentLoopRive: () => <div data-agent-loop="rive" />,
-}));
-
 afterEach(() => {
   cleanup();
   vi.unstubAllGlobals();
 });
-it("offers Google sign-in and routes Microsoft through the regular login page", async () => {
+it("offers Google sign-in and routes Microsoft through the regular login page", () => {
   vi.stubGlobal("matchMedia", () => ({
     matches: true,
     addEventListener: vi.fn(),
@@ -56,11 +52,9 @@ it("offers Google sign-in and routes Microsoft through the regular login page", 
   expect(screen.queryByText(/01 \/ 04/)).not.toBeInTheDocument();
   const scheduling = screen.getByRole("tabpanel", { name: "AI agent" });
   expect(scheduling).toHaveTextContent("Delegate tasks to your AI agent");
-  await vi.waitFor(() => {
-    expect(
-      scheduling.querySelector('[data-agent-loop="rive"]'),
-    ).toBeInTheDocument();
-  });
+  expect(
+    scheduling.querySelector("[data-booking-calendar]"),
+  ).toBeInTheDocument();
   fireEvent.click(screen.getByRole("tab", { name: "Workflows" }));
   expect(screen.getByRole("tabpanel", { name: "Workflows" })).toHaveTextContent(
     "Keep work moving across your tools",

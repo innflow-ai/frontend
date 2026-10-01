@@ -9,6 +9,10 @@ import {
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { BaselineFeatures, baselineFeatures } from "./baseline-features";
 
+vi.mock("./agent-loop-rive", () => ({
+  AgentLoopRive: () => <div data-agent-loop="rive" />,
+}));
+
 vi.mock("next/image", () => ({
   default: ({
     fill: _fill,
@@ -52,6 +56,33 @@ function requiredElement(id: string) {
 }
 
 describe("baseline feature continuation", () => {
+  it("shows the Rive loop first in Bring your agents together", async () => {
+    render(<BaselineFeatures />);
+    const agents = requiredElement("agents");
+    await vi.waitFor(() => {
+      expect(
+        agents.querySelector('[data-agent-loop="rive"]'),
+      ).toBeInTheDocument();
+    });
+    fireEvent.click(
+      within(agents).getByRole("button", {
+        name: "Delegate a task. Review the result.",
+      }),
+    );
+    expect(
+      agents.querySelector('[data-agent-loop="rive"]'),
+    ).not.toBeInTheDocument();
+    fireEvent.click(
+      within(agents).getByRole("button", {
+        name: "Bring your agents together",
+      }),
+    );
+    await vi.waitFor(() => {
+      expect(
+        agents.querySelector('[data-agent-loop="rive"]'),
+      ).toBeInTheDocument();
+    });
+  });
   it.each([true, false])(
     "recenters secondary-arrow focus only when Channels scroll is enabled (%s)",
     (enhanced) => {

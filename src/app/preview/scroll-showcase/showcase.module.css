@@ -276,6 +276,21 @@
   grid-template-rows: minmax(0, 1fr);
   line-height: normal;
 }
+.demo.agentLoopDemo {
+  background: transparent;
+}
+.agentLoopArtwork {
+  position: relative;
+  aspect-ratio: 771 / 830;
+  max-width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.agentLoopCanvas {
+  position: absolute;
+  inset: 0;
+}
 .wave {
   position: absolute;
   display: flex;

@@ -134,9 +134,9 @@
 }
 .visual {
   position: relative;
-  aspect-ratio: 1;
+  aspect-ratio: 771 / 830;
   width: 100%;
-  border-radius: 64px;
+  border-radius: 7.241% / 6.726%;
   overflow: hidden;
   background: #e4e6e9;
 }
@@ -228,8 +228,8 @@
   color: #071a31;
 }
 .section[data-channels="true"] .visual {
-  aspect-ratio: auto;
-  border-radius: 80px;
+  aspect-ratio: 771 / 830;
+  border-radius: 7.241% / 6.726%;
   position: sticky;
   top: 110px;
 }

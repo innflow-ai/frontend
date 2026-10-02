@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ChevronDown as MageChevronDown } from "@/components/icons/mage";
+import { Check, ChevronDown as MageChevronDown } from "@/components/icons/mage";
 import styles from "./workspace-card-artwork.module.css";
 import { WorkspaceConnectArtwork } from "./workspace-connect-artwork";
 
@@ -131,12 +131,7 @@ function DeployArtwork() {
         </div>
         <div className={styles.agentSwitch}>
           <span>
-            <Image
-              src={`/brand/mage/check.svg`}
-              alt=""
-              width={20.2258}
-              height={20.2258}
-            />
+            <Check size={11.5} />
           </span>
         </div>
       </div>

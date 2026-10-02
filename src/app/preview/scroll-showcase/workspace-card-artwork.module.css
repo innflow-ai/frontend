@@ -293,6 +293,7 @@
   color: #5f6d77;
 }
 .agentSwitch {
+  box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -304,14 +305,16 @@
   background: #34c759;
 }
 .agentSwitch > span {
-  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
   width: 16.548px;
   height: 16.548px;
-}
-.agentSwitch img {
-  position: absolute;
-  top: -0.612px;
-  left: -1.838px;
+  border-radius: 50%;
+  background: white;
+  color: #34c759;
+  box-shadow: 0 1px 2px rgb(7 26 49 / 15%);
 }
 .agentValue {
   display: flex;

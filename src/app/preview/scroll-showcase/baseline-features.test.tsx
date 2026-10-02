@@ -1,4 +1,4 @@
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import {
   cleanup,
   fireEvent,
@@ -8,21 +8,17 @@ import {
 } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { BaselineFeatures, baselineFeatures } from "./baseline-features";
+import type { Storyboard } from "./storyboard-artwork";
 
-vi.mock("./agent-loop-rive", () => ({
-  AgentLoopRive: () => <div data-agent-loop="rive" />,
-}));
-
-vi.mock("next/image", () => ({
-  default: ({
-    fill: _fill,
-    sizes: _sizes,
-    ...props
-  }: React.ImgHTMLAttributes<HTMLImageElement> & { fill?: boolean }) => (
-    // biome-ignore lint/performance/noImgElement: Test double for next/image.
-    <img {...props} alt={props.alt ?? ""} />
+vi.mock("./storyboard-artwork", () => ({
+  StoryboardArtwork: ({ storyboard }: { storyboard: Storyboard }) => (
+    <div
+      data-storyboard={storyboard.number}
+      data-source={storyboard.src ?? "poster-only"}
+    />
   ),
 }));
+
 beforeEach(() => {
   vi.stubGlobal(
     "ResizeObserver",
@@ -49,272 +45,130 @@ afterEach(() => {
   cleanup();
   vi.unstubAllGlobals();
 });
-function requiredElement(id: string) {
-  const element = document.getElementById(id);
-  if (!element) throw new Error(`Missing test element: ${id}`);
-  return element;
+function element(id: string) {
+  const result = document.getElementById(id);
+  if (!result) throw new Error(`Missing ${id}`);
+  return result;
 }
 
-describe("baseline feature continuation", () => {
-  it("shows the Rive loop first in Bring your agents together", async () => {
+describe("numbered homepage storyboards", () => {
+  it("places all 18 stories in the approved 6/4/4/4 section order", () => {
     render(<BaselineFeatures />);
-    const agents = requiredElement("agents");
-    await vi.waitFor(() => {
-      expect(
-        agents.querySelector('[data-agent-loop="rive"]'),
-      ).toBeInTheDocument();
-    });
-    fireEvent.click(
-      within(agents).getByRole("button", {
-        name: "Delegate a task. Review the result.",
-      }),
-    );
     expect(
-      agents.querySelector('[data-agent-loop="rive"]'),
-    ).not.toBeInTheDocument();
-    fireEvent.click(
-      within(agents).getByRole("button", {
-        name: "Bring your agents together",
-      }),
-    );
-    await vi.waitFor(() => {
-      expect(
-        agents.querySelector('[data-agent-loop="rive"]'),
-      ).toBeInTheDocument();
-    });
-  });
-  it.each([true, false])(
-    "recenters secondary-arrow focus only when Channels scroll is enabled (%s)",
-    (enhanced) => {
-      vi.stubGlobal("matchMedia", (query: string) => ({
-        matches: query === "(max-width: 800px)" ? false : enhanced,
-        addEventListener: vi.fn(),
-        removeEventListener: vi.fn(),
-      }));
-      vi.stubGlobal(
-        "ResizeObserver",
-        class {
-          observe() {}
-          disconnect() {}
-        },
-      );
-      const scrollTo = vi.fn();
-      vi.stubGlobal("scrollTo", scrollTo);
-      render(<BaselineFeatures />);
-      scrollTo.mockClear();
-      const index = baselineFeatures[0].items.length - 1;
-      const arrow = screen.getByRole("button", {
-        name: `Show ${baselineFeatures[0].items[index].title}`,
-      });
-      fireEvent.focus(arrow);
-      expect(
-        requiredElement(`channels-baseline-trigger-${index}`),
-      ).toHaveAttribute("aria-pressed", String(enhanced));
-      if (enhanced) {
-        expect(scrollTo).toHaveBeenCalledWith({
-          top: expect.any(Number),
-          behavior: "instant",
-        });
-      } else {
-        expect(requiredElement("channels-baseline-trigger-0")).toHaveAttribute(
-          "aria-pressed",
-          "true",
-        );
-        expect(scrollTo).not.toHaveBeenCalled();
-      }
-    },
-  );
-  it("preserves the four reference sections without comparison or sequence additions", () => {
-    render(<BaselineFeatures />);
+      baselineFeatures.map((feature) => [
+        feature.label,
+        feature.items.map((item) => item.number),
+      ]),
+    ).toEqual([
+      ["AI agent", [1, 2, 3, 4, 5, 6]],
+      ["Workflows", [7, 8, 9, 10]],
+      ["Assistant", [11, 12, 13, 14]],
+      ["Insights", [15, 16, 17, 18]],
+    ]);
     expect(screen.getAllByRole("heading", { level: 2 })).toHaveLength(4);
-    for (const feature of baselineFeatures) {
-      expect(screen.getByText(feature.label, { exact: true })).toBeVisible();
-    }
     expect(
-      screen.getByRole("button", {
-        name: "Delegate a task. Review the result.",
-      }),
-    ).toBeInTheDocument();
+      within(element("agents")).getAllByRole("heading", { level: 3 })[0],
+    ).toHaveTextContent("Get work done across your tools");
     expect(
-      screen.queryByRole("button", { name: "Before" }),
-    ).not.toBeInTheDocument();
-    expect(screen.queryByText("A request arrives")).not.toBeInTheDocument();
-  });
-  it("selects all seven matching Channels demos via pointer input", () => {
-    render(<BaselineFeatures />);
-    const section = requiredElement("channels");
-    const layers = section.querySelectorAll("[data-channel-art]");
-    expect(layers).toHaveLength(7);
-    expect(section).toHaveAttribute("data-channels-scroll", "false");
-    baselineFeatures[0].items.forEach((item, index) => {
-      const button = within(section).getByRole("button", {
-        name: item.title,
-      });
-      fireEvent.click(button);
-      expect(button).toHaveAttribute("aria-pressed", "true");
-      layers.forEach((layer, layerIndex) => {
-        expect(layer).toHaveAttribute(
-          "data-selected",
-          String(layerIndex === index),
-        );
-      });
-      expect(layers[index]).toHaveAttribute("data-demo-title", item.title);
-      expect(layers[index]).not.toHaveAttribute("inert");
-      layers.forEach((layer, layerIndex) => {
-        expect(layer).toHaveAttribute(
-          "aria-hidden",
-          String(layerIndex !== index),
-        );
-      });
-    });
+      within(element("workflows")).getAllByRole("heading", { level: 3 })[1],
+    ).toHaveTextContent("Get requests to the right team");
     expect(
-      section.querySelector("[data-channel-demos] > img"),
-    ).not.toBeInTheDocument();
-    expect(
-      within(section).queryByRole("group", { name: "Demo playback" }),
-    ).not.toBeInTheDocument();
+      within(element("insights")).getAllByRole("heading", { level: 3 })[3],
+    ).toHaveTextContent("Turn insights into action");
   });
-  it("supports arrow, Home and End focus without fabricating collapsed copy", () => {
-    render(<BaselineFeatures />);
-    const agents = requiredElement("agents");
-    const first = within(agents).getByRole("button", {
-      name: "Bring your agents together",
-    });
-    first.focus();
-    fireEvent.keyDown(first, { key: "ArrowDown" });
-    const second = screen.getByRole("button", {
-      name: "Delegate a task. Review the result.",
-    });
-    expect(second).toHaveFocus();
-    expect(second).toHaveAttribute("aria-expanded", "true");
-    expect(requiredElement("agents-baseline-panel-1")).toBeVisible();
-    expect(screen.queryByText("Reference pending")).not.toBeInTheDocument();
-    fireEvent.keyDown(second, { key: "End" });
-    const last = screen.getByRole("button", {
-      name: "Build your own agents",
-    });
-    expect(last).toHaveFocus();
-    fireEvent.keyDown(last, { key: "Home" });
-    expect(first).toHaveFocus();
-  });
-  it("supports Channels keyboard selection in both directions and keeps descriptions available", () => {
-    render(<BaselineFeatures />);
-    const triggers = baselineFeatures[0].items.map((_item, index) =>
-      requiredElement(`channels-baseline-trigger-${index}`),
-    );
-    triggers[0].focus();
-    for (const [key, index] of [
-      ["ArrowDown", 1],
-      ["ArrowUp", 0],
-      ["End", 6],
-      ["ArrowRight", 0],
-      ["ArrowLeft", 6],
-      ["Home", 0],
-    ] as const) {
-      fireEvent.keyDown(document.activeElement ?? triggers[0], { key });
-      expect(triggers[index]).toHaveFocus();
-      triggers.forEach((trigger, otherIndex) => {
-        expect(trigger).toHaveAttribute(
-          "aria-pressed",
-          String(otherIndex === index),
-        );
-        expect(
-          requiredElement(`channels-baseline-panel-${otherIndex}`),
-        ).not.toHaveAttribute("hidden");
-      });
-    }
-  });
-  it("references downloaded baseline art and exact exported icons", () => {
-    for (const feature of baselineFeatures) {
-      for (const asset of [
-        "imgCanvas.png",
-        "imgIcon.svg",
-        feature.glyph,
-        ...feature.items.map((item) => item.icon),
-      ]) {
-        expect(
-          existsSync(
-            `public/preview/homepage/baseline-features/${feature.id}-${asset}`,
-          ),
-        ).toBe(true);
-      }
-    }
-  });
+
   it.each(baselineFeatures)(
-    "reveals the prepared description for every $id item",
+    "selects each $label story with its own asset and description",
     (feature) => {
       render(<BaselineFeatures />);
-      feature.items.forEach((item, index) => {
-        expect(item.body).toBeTruthy();
-        if (!item.body) throw new Error(`Missing description: ${item.title}`);
-        const trigger = requiredElement(
-          `${feature.id}-baseline-trigger-${index}`,
-        );
+      const section = element(feature.id);
+      for (const [index, item] of feature.items.entries()) {
+        const trigger = within(section).getByRole("button", {
+          name: item.title,
+        });
         fireEvent.click(trigger);
-        const panel = requiredElement(`${feature.id}-baseline-panel-${index}`);
-        expect(panel).not.toHaveAttribute("hidden");
+        expect(section.querySelectorAll("[data-storyboard]")).toHaveLength(1);
+        expect(section.querySelector("[data-storyboard]")).toHaveAttribute(
+          "data-storyboard",
+          String(item.number),
+        );
+        expect(section.querySelector("[data-storyboard]")).toHaveAttribute(
+          "data-source",
+          item.number === 2
+            ? "poster-only"
+            : `/brand/homepage/${String(item.number).padStart(2, "0")}.riv`,
+        );
         expect(
-          within(panel).getByText(item.body, { exact: true }),
-        ).toBeVisible();
+          element(`${feature.id}-baseline-panel-${index}`),
+        ).toHaveTextContent(item.body);
         expect(trigger).toHaveAttribute(
           feature.id === "channels" ? "aria-pressed" : "aria-expanded",
           "true",
         );
-        feature.items.forEach((_other, otherIndex) => {
-          const otherPanel = requiredElement(
-            `${feature.id}-baseline-panel-${otherIndex}`,
-          );
-          if (feature.id !== "channels" && otherIndex !== index) {
-            expect(otherPanel).toHaveAttribute("hidden");
-          } else {
-            expect(otherPanel).not.toHaveAttribute("hidden");
-          }
-        });
-      });
+      }
     },
   );
-  it("changes every secondary Workflow and Insights illustration to its mapped draft", () => {
+
+  it("supports arrow, Home, End and wrapping focus within each section", () => {
     render(<BaselineFeatures />);
-    for (const feature of baselineFeatures.filter(
-      (entry) => entry.id === "workflows" || entry.id === "insights",
-    )) {
-      feature.items.slice(1).forEach((item, offset) => {
-        fireEvent.click(screen.getByRole("button", { name: item.title }));
-        const src = `/preview/homepage/baseline-features/${feature.id}-${offset + 1}.png`;
+    for (const feature of baselineFeatures) {
+      const triggers = feature.items.map((_, i) =>
+        element(`${feature.id}-baseline-trigger-${i}`),
+      );
+      triggers[0].focus();
+      for (const [key, index] of [
+        ["ArrowDown", 1],
+        ["ArrowUp", 0],
+        ["End", triggers.length - 1],
+        ["ArrowRight", 0],
+        ["ArrowLeft", triggers.length - 1],
+        ["Home", 0],
+      ] as const) {
+        fireEvent.keyDown(document.activeElement ?? triggers[0], { key });
+        expect(triggers[index]).toHaveFocus();
         expect(
-          screen.getByAltText(
-            `${feature.label} — reference product illustration`,
-          ),
-        ).toHaveAttribute("src", src);
-        expect(existsSync(`public${src}`)).toBe(true);
-      });
+          element(feature.id).querySelector("[data-storyboard]"),
+        ).toHaveAttribute(
+          "data-storyboard",
+          String(feature.items[index].number),
+        );
+      }
     }
   });
-});
 
-it("keeps only the selected mobile explanation open and moves its visual with it", () => {
-  vi.stubGlobal("matchMedia", (query: string) => ({
-    matches: query === "(max-width: 800px)",
-    addEventListener: vi.fn(),
-    removeEventListener: vi.fn(),
-  }));
-  render(<BaselineFeatures />);
-  const first = screen.getByRole("button", {
-    name: "Orchestrate actions",
+  it("moves only the selected illustration into the open mobile row", () => {
+    vi.stubGlobal("matchMedia", (query: string) => ({
+      matches: query === "(max-width: 800px)",
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
+    }));
+    render(<BaselineFeatures />);
+    const first = element("channels-baseline-trigger-0");
+    const next = element("channels-baseline-trigger-1");
+    expect(first).toHaveAttribute("aria-expanded", "true");
+    expect(first.closest("h3")?.parentElement).toContainElement(
+      element("channels-baseline-visual"),
+    );
+    fireEvent.click(next);
+    expect(element("channels-baseline-panel-0")).not.toBeVisible();
+    expect(next).toHaveAttribute("aria-expanded", "true");
+    expect(next.closest("h3")?.parentElement).toContainElement(
+      element("channels-baseline-visual"),
+    );
   });
-  const next = screen.getByRole("button", {
-    name: "All your channels, connected",
+
+  it("ships matching artboard/timeline names rather than a blank default artboard", () => {
+    for (const item of baselineFeatures.flatMap((feature) => feature.items)) {
+      expect(existsSync(`public${item.poster}`)).toBe(true);
+      if (!item.src) {
+        expect(item.number).toBe(2);
+        continue;
+      }
+      const bytes = readFileSync(`public${item.src}`);
+      expect(bytes.subarray(0, 4).toString()).toBe("RIVE");
+      expect(bytes.includes(Buffer.from(item.artboard))).toBe(true);
+      expect(bytes.includes(Buffer.from(item.animation))).toBe(true);
+      expect(bytes.includes(Buffer.from(item.stateMachine ?? ""))).toBe(true);
+    }
   });
-  expect(first).toHaveAttribute("aria-expanded", "true");
-  expect(requiredElement("channels-baseline-panel-1")).not.toBeVisible();
-  expect(first.closest("h3")?.parentElement).toContainElement(
-    requiredElement("channels-baseline-visual"),
-  );
-  fireEvent.click(next);
-  expect(next).toHaveAttribute("aria-expanded", "true");
-  expect(requiredElement("channels-baseline-panel-0")).not.toBeVisible();
-  expect(requiredElement("channels-baseline-panel-1")).toBeVisible();
-  expect(next.closest("h3")?.parentElement).toContainElement(
-    requiredElement("channels-baseline-visual"),
-  );
 });

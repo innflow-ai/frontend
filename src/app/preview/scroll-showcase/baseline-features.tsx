@@ -1,8 +1,6 @@
 "use client";
 
 import { motion } from "motion/react";
-import dynamic from "next/dynamic";
-import Image from "next/image";
 import { type KeyboardEvent, useEffect, useRef, useState } from "react";
 import { ChevronRight } from "@/components/chevron-right";
 import {
@@ -10,7 +8,6 @@ import {
   ChartUp,
   CheckCircle,
   Inbox,
-  Keyboard,
   Link,
   Minus as MageMinus,
   Plus as MagePlus,
@@ -21,12 +18,10 @@ import {
   Share,
   StarsA,
   Users,
-  Zap,
 } from "@/components/icons/mage";
-import { ChannelsDemos } from "./agent-demos/channels-demos";
-import { DelegateConversation } from "./agent-demos/delegate-conversation";
 import styles from "./baseline-features.module.css";
-import { features as preparedFeatures } from "./homepage-content";
+import storyboards from "./homepage-storyboards.json";
+import { StoryboardArtwork } from "./storyboard-artwork";
 import { useChannelsScroll } from "./use-channels-scroll";
 
 const featureIcons = {
@@ -36,179 +31,51 @@ const featureIcons = {
   insights: Chart,
 };
 const itemIcons = {
-  channels: [Share, Link, StarsA, Users, Zap, ChartUp, Keyboard],
-  agents: [Users, CheckCircle, Settings],
-  workflows: [Link, Share, Inbox, MessageConversation],
+  channels: [MessageConversation, Users, Settings, Link, Inbox, ChartUp],
+  agents: [Share, StarsA, Inbox, CheckCircle],
+  workflows: [StarsA, Users, CheckCircle, NoteText],
   insights: [ChartUp, MessageConversation, NoteText, Chart],
 };
-const root = "/preview/homepage/baseline-features";
-const AgentLoopRive = dynamic(
-  () => import("./agent-loop-rive").then((mod) => mod.AgentLoopRive),
-  { ssr: false },
-);
-type Item = { title: string; icon: string; body?: string };
 type Feature = {
-  id: string;
+  id: keyof typeof featureIcons;
   node: string;
   label: string;
-  tagIcon: string;
-  tagColor: string;
-  badge?: string;
   title: string;
   reverse?: boolean;
-  glyph: string;
-  items: Item[];
+  items: typeof storyboards;
 };
-
-function preparedBody(featureId: string, title: string): string {
-  const state = preparedFeatures
-    .find((feature) => feature.id === featureId)
-    ?.states.find((item) => item.title === title);
-  if (!state)
-    throw new Error(`Missing prepared feature copy: ${featureId}/${title}`);
-  return state.body;
-}
-
-// Preview copy: one clear action per item, matched to the corresponding demo.
+// Keep the existing section anchors and scroll interaction; the storyboard numbers
+// are the source of truth for which file belongs to each accordion item.
 export const baselineFeatures: Feature[] = [
   {
     id: "channels",
     node: "350:11199",
     label: "AI agent",
-    tagIcon: "scheduling",
-    tagColor: "#6bb0ff",
-    title: "Keep every request\nand handoff together.",
-    glyph: "imgVector.svg",
-    items: [
-      {
-        title: "Orchestrate actions",
-        icon: "imgTemplate.svg",
-        body: "Give each request a clear owner. Route urgent issues to a teammate and delegate routine tasks to an agent, with the conversation attached.",
-      },
-      {
-        title: "All your channels, connected",
-        icon: "imgImage.png",
-        body: "Bring messages from your connected channels into one workspace, with the customer context your team needs to respond.",
-      },
-      {
-        title: "An assistant for your team",
-        icon: "imgTextCaption.svg",
-        body: "Find relevant information, draft a response and review the next step without piecing together separate conversations.",
-      },
-      {
-        title: "AI agents, working together",
-        icon: "imgWindmill.svg",
-        body: "Choose an agent for the task and give it the context to get started. Keep your team involved in the decisions that matter.",
-      },
-      {
-        title: "Workflows that take action",
-        icon: "imgTemplate.svg",
-        body: "Turn a request into a clear next step: assign an owner, notify the right team or trigger a connected workflow.",
-      },
-      {
-        title: "Insights from every interaction",
-        icon: "imgApps.svg",
-        body: "Group related feedback, spot recurring questions and see which issues deserve your team's attention.",
-      },
-      {
-        title: "Flexible, API-first building blocks",
-        icon: "imgUsersGroup.svg",
-        body: "Use APIs and connected tools to shape the workflow around your product, your data and the way your team works.",
-      },
-    ],
+    title: "Get more done\nwith AI agents.",
+    items: storyboards.slice(0, 6),
   },
   {
     id: "agents",
     node: "350:11344",
     label: "Workflows",
-    tagIcon: "callie",
-    tagColor: "#daf098",
-    badge: "AI",
-    title: "Delegate tasks.\nStay involved.",
+    title: "Move work forward\nwith less effort.",
     reverse: true,
-    glyph: "imgContainer.svg",
-    items: [
-      {
-        title: "Bring your agents together",
-        icon: "imgIcon1.svg",
-        body: "Summarize incoming requests, draft follow-ups, and prepare the next step. Give each agent clear instructions and review its work before moving forward.",
-      },
-      {
-        title: "Delegate a task. Review the result.",
-        icon: "imgImage.png",
-        body: preparedBody("agents", "Delegate a task. Review the result."),
-      },
-      {
-        title: "Build your own agents",
-        icon: "imgMessages.svg",
-        body: preparedBody("agents", "Build your own agents"),
-      },
-    ],
+    items: storyboards.slice(6, 10),
   },
   {
     id: "workflows",
     node: "350:11402",
-    label: "Sidekick",
-    tagIcon: "notetaker",
-    tagColor: "#ba9dff",
-    badge: "Platform",
-    title: "Keep the next\nstep moving.",
-    glyph: "imgVector.svg",
-    items: [
-      {
-        title: "Connect external systems",
-        icon: "imgList.svg",
-        body: "Carry conversation details into your connected tools. Create a task, send a team update or call your own API.",
-      },
-      {
-        title: "Route by context",
-        icon: "imgContract.svg",
-        body: preparedBody("workflows", "Route by context"),
-      },
-      {
-        title: "Auto-triage requests",
-        icon: "imgApps.svg",
-        body: preparedBody("workflows", "Auto-triage requests"),
-      },
-      {
-        title: "Keep thread summaries current",
-        icon: "imgSparkles.svg",
-        body: preparedBody("workflows", "Keep thread summaries current"),
-      },
-    ],
+    label: "Assistant",
+    title: "Spend less time\nmanaging requests.",
+    items: storyboards.slice(10, 14),
   },
   {
     id: "insights",
     node: "350:11485",
     label: "Insights",
-    tagIcon: "payments",
-    tagColor: "#5aded7",
-    badge: "Platform",
-    title: "See what needs\nyour attention.",
+    title: "Know where\nto focus next.",
     reverse: true,
-    glyph: "imgVector.svg",
-    items: [
-      {
-        title: "Detect trends",
-        icon: "imgImage.png",
-        body: "See which questions and issues keep coming up. Review related conversations together to understand the pattern.",
-      },
-      {
-        title: "Catch up instantly",
-        icon: "imgCube.svg",
-        body: preparedBody("insights", "Catch up instantly"),
-      },
-      {
-        title: "Daily summaries",
-        icon: "imgReceipt.svg",
-        body: preparedBody("insights", "Daily summaries"),
-      },
-      {
-        title: "Product insights",
-        icon: "imgLink.svg",
-        body: preparedBody("insights", "Product insights"),
-      },
-    ],
+    items: storyboards.slice(14, 18),
   },
 ];
 
@@ -226,14 +93,6 @@ function BaselineFeature({ feature }: { feature: Feature }) {
   const channels = feature.id === "channels";
   const channelScroll = useChannelsScroll(channels, setSelected);
   const select = channels ? channelScroll.select : setSelected;
-  const asset = (name: string) => `${root}/${feature.id}-${name}`;
-  const agentDetail = feature.id === "agents" && selected > 0;
-  const artwork =
-    channels && selected > 0
-      ? `/preview/homepage/channels-${selected + 1}.png`
-      : selected > 0 && !agentDetail
-        ? `${root}/${feature.id}-${selected}.png`
-        : asset("imgCanvas.png");
   function navigate(event: KeyboardEvent<HTMLButtonElement>, index: number) {
     const last = feature.items.length - 1;
     const next =
@@ -258,34 +117,10 @@ function BaselineFeature({ feature }: { feature: Feature }) {
       className={`${styles.visual} ${feature.id === "agents" ? styles.workflowVisual : ""}`}
       id={`${feature.id}-baseline-visual`}
     >
-      <div
-        className={`${styles.imageFrame} ${feature.id === "agents" ? styles.workflowFrame : ""}`}
-        data-pending={false}
-      >
-        {channels ? (
-          <ChannelsDemos selected={selected} />
-        ) : feature.id === "agents" && selected === 0 ? (
-          <AgentLoopRive active={selected === 0} />
-        ) : feature.id === "agents" && selected === 1 ? (
-          <DelegateConversation />
-        ) : agentDetail ? (
-          <Image
-            src={`${root}/agents-build-orbit-transparent.png`}
-            alt="Your AI agent surrounded by connected tasks: schedule work, run recurring tasks, prepare renewals, send follow-ups, coordinate move-ins, and plan inspections."
-            data-source-node="35:379"
-            fill
-            sizes="(max-width: 800px) calc(100vw - 48px), (max-width: 1280px) 46vw, 580px"
-          />
-        ) : (
-          <Image
-            key={artwork}
-            src={artwork}
-            alt={`${feature.label} — reference product illustration`}
-            fill
-            sizes="(max-width: 800px) calc(100vw - 48px), (max-width: 1280px) 46vw, 580px"
-          />
-        )}
-      </div>
+      <StoryboardArtwork
+        key={feature.items[selected].number}
+        storyboard={feature.items[selected]}
+      />
     </div>
   );
   return (

@@ -11,16 +11,16 @@ import { WorkspaceCardArtwork } from "./workspace-card-artwork";
 import styles from "./workspace-overview.module.css";
 
 const assets = "/preview/homepage/workspace-overview";
-const mobileQuery = "(max-width: 760px)";
-function subscribeMobile(onChange: () => void) {
-  const query = window.matchMedia(mobileQuery);
+const tabletQuery = "(min-width: 761px) and (max-width: 1100px)";
+function subscribeTablet(onChange: () => void) {
+  const query = window.matchMedia(tabletQuery);
   query.addEventListener("change", onChange);
   return () => query.removeEventListener("change", onChange);
 }
-function getMobileSnapshot() {
-  return window.matchMedia(mobileQuery).matches;
+function getTabletSnapshot() {
+  return window.matchMedia(tabletQuery).matches;
 }
-const getServerMobileSnapshot = () => false;
+const getServerTabletSnapshot = () => false;
 
 // Innflow copy paired with the supplied Figma reference artwork.
 export const workspaceCards = [
@@ -80,10 +80,10 @@ export const workspaceCards = [
 
 export function WorkspaceOverview() {
   const [active, setActive] = useState(0);
-  const mobile = useSyncExternalStore(
-    subscribeMobile,
-    getMobileSnapshot,
-    getServerMobileSnapshot,
+  const tablet = useSyncExternalStore(
+    subscribeTablet,
+    getTabletSnapshot,
+    getServerTabletSnapshot,
   );
 
   function navigate(event: KeyboardEvent<HTMLButtonElement>, index: number) {
@@ -149,11 +149,14 @@ export function WorkspaceOverview() {
               <article
                 key={card.id}
                 className={styles.card}
-                data-active={mobile || active === index}
+                data-active={!tablet || active === index}
                 data-source-node={card.source}
                 onPointerEnter={(event) => {
                   if (
-                    !mobile &&
+                    tablet &&
+                    !event.currentTarget.parentElement?.querySelector(
+                      ":focus-visible",
+                    ) &&
                     (event.pointerType === "mouse" ||
                       event.pointerType === "pen")
                   ) {
@@ -173,7 +176,7 @@ export function WorkspaceOverview() {
                 <div className={styles.cardSurface}>
                   <div className={styles.cardCopy}>
                     <h3>
-                      {mobile ? (
+                      {!tablet ? (
                         card.title
                       ) : (
                         <button
@@ -193,14 +196,14 @@ export function WorkspaceOverview() {
                     <div className={styles.description}>
                       <p
                         className={styles.summary}
-                        aria-hidden={mobile || active === index}
+                        aria-hidden={!tablet || active === index}
                       >
                         {card.summary}
                       </p>
                       <div
                         className={styles.details}
                         id={`workspace-${card.id}-details`}
-                        aria-hidden={!mobile && active !== index}
+                        aria-hidden={tablet && active !== index}
                       >
                         <p>{card.description}</p>
                         <ul>
@@ -228,14 +231,14 @@ export function WorkspaceOverview() {
                       src={`${assets}/${card.id}-inactive.png`}
                       alt=""
                       fill
-                      sizes="(max-width: 700px) 90vw, 384px"
+                      sizes="(max-width: 1100px) 90vw, (max-width: 1328px) 40vw, 480px"
                     />
                     <div className={styles.activeArt}>
                       <Image
                         src={`${assets}/${card.id}-background.png`}
                         alt=""
                         fill
-                        sizes="(max-width: 700px) 90vw, 384px"
+                        sizes="(max-width: 1100px) 90vw, (max-width: 1328px) 40vw, 480px"
                       />
                       <WorkspaceCardArtwork id={card.id} />
                     </div>

@@ -1,0 +1,176 @@
+/* Innflow homepage snapshot: 2026-10-03. See DESIGN.md for sources and usage. */
+:root, [data-innflow-tokens] {
+  /* color */
+  --innflow-color-ink: #071a31;
+  --innflow-color-muted-hero: #5d6d7b;
+  --innflow-color-muted-body: #5f6d77;
+  --innflow-color-canvas: #fcfbf8;
+  --innflow-color-surface: #ffffff;
+  --innflow-color-surface-warm: #f5f3ee;
+  --innflow-color-surface-workspace: #f5f4ef;
+  --innflow-color-surface-inset: #f0f0ee;
+  --innflow-color-border-subtle: #071a310d;
+  --innflow-color-border-divider: #071a3133;
+  --innflow-color-focus: #006bff;
+  --innflow-color-brand-sky: #00aeff;
+  --innflow-color-brand-soft: #e0f4ff;
+  --innflow-color-brand-kit: #5aaaf8;
+  --innflow-color-action-shared: #012232;
+  --innflow-color-action-shared-hover: #013247;
+  --innflow-color-stories-fallback: #b7bce8;
+  --innflow-color-agent: #6bb0ff;
+  --innflow-color-agent-soft: #d3e5ff;
+  --innflow-color-workflow: #daf098;
+  --innflow-color-workflow-soft: #f1f8dc;
+  --innflow-color-sidekick: #ba9dff;
+  --innflow-color-sidekick-soft: #eae3f9;
+  --innflow-color-insights: #5aded7;
+  --innflow-color-insights-soft: #e5f9f9;
+  /* font */
+  --innflow-font-hero: var(--font-host-grotesk, "Host Grotesk"), Arial, sans-serif;
+  --innflow-font-body: var(--font-geist, "Geist"), Arial, sans-serif;
+  --innflow-font-heading: var(--font-manrope, "Manrope"), Arial, sans-serif;
+  --innflow-font-editorial: var(--font-source-serif-4, "Source Serif 4"), Georgia, serif;
+  /* typography */
+  --innflow-typography-hero-font-family: var(--innflow-font-hero);
+  --innflow-typography-hero-font-size: clamp(40px, 4.5vw, 72px);
+  --innflow-typography-hero-font-weight: 500;
+  --innflow-typography-hero-line-height: 1.1;
+  --innflow-typography-hero-letter-spacing: -0.045em;
+  --innflow-typography-hero-mobile-font-family: var(--innflow-font-hero);
+  --innflow-typography-hero-mobile-font-size: clamp(32px, 9vw, 40px);
+  --innflow-typography-hero-mobile-font-weight: 500;
+  --innflow-typography-hero-mobile-line-height: 1.1;
+  --innflow-typography-hero-mobile-letter-spacing: -0.045em;
+  --innflow-typography-hero-body-font-family: var(--innflow-font-hero);
+  --innflow-typography-hero-body-font-size: 15px;
+  --innflow-typography-hero-body-font-weight: 400;
+  --innflow-typography-hero-body-line-height: 22px;
+  --innflow-typography-hero-body-letter-spacing: 0.02em;
+  --innflow-typography-section-font-family: var(--innflow-font-heading);
+  --innflow-typography-section-font-size: clamp(38px, 4.17vw, 60px);
+  --innflow-typography-section-font-weight: 500;
+  --innflow-typography-section-line-height: 1.1;
+  --innflow-typography-section-letter-spacing: -0.029em;
+  --innflow-typography-section-compact-font-family: var(--innflow-font-heading);
+  --innflow-typography-section-compact-font-size: clamp(32px, 8vw, 44px);
+  --innflow-typography-section-compact-font-weight: 500;
+  --innflow-typography-section-compact-line-height: 1.1;
+  --innflow-typography-section-compact-letter-spacing: -0.029em;
+  --innflow-typography-feature-font-family: var(--innflow-font-editorial);
+  --innflow-typography-feature-font-size: 48px;
+  --innflow-typography-feature-font-weight: 500;
+  --innflow-typography-feature-line-height: 1.1;
+  --innflow-typography-feature-letter-spacing: -1.6484px;
+  --innflow-typography-feature-tablet-font-family: var(--innflow-font-editorial);
+  --innflow-typography-feature-tablet-font-size: 40px;
+  --innflow-typography-feature-tablet-font-weight: 500;
+  --innflow-typography-feature-tablet-line-height: 1.1;
+  --innflow-typography-feature-tablet-letter-spacing: -1.2px;
+  --innflow-typography-feature-mobile-font-family: var(--innflow-font-editorial);
+  --innflow-typography-feature-mobile-font-size: 34px;
+  --innflow-typography-feature-mobile-font-weight: 500;
+  --innflow-typography-feature-mobile-line-height: 1.1;
+  --innflow-typography-feature-mobile-letter-spacing: -1.2px;
+  --innflow-typography-workspace-card-font-family: var(--innflow-font-heading);
+  --innflow-typography-workspace-card-font-size: 36px;
+  --innflow-typography-workspace-card-font-weight: 500;
+  --innflow-typography-workspace-card-line-height: 1.2;
+  --innflow-typography-workspace-card-letter-spacing: -0.025em;
+  --innflow-typography-workspace-card-compact-font-family: var(--innflow-font-heading);
+  --innflow-typography-workspace-card-compact-font-size: 26px;
+  --innflow-typography-workspace-card-compact-font-weight: 500;
+  --innflow-typography-workspace-card-compact-line-height: 1.2;
+  --innflow-typography-workspace-card-compact-letter-spacing: 0.38px;
+  --innflow-typography-feature-row-font-family: var(--innflow-font-heading);
+  --innflow-typography-feature-row-font-size: 20px;
+  --innflow-typography-feature-row-font-weight: 500;
+  --innflow-typography-feature-row-line-height: 28px;
+  --innflow-typography-feature-row-letter-spacing: -0.4492px;
+  --innflow-typography-body-font-family: var(--innflow-font-body);
+  --innflow-typography-body-font-size: 16px;
+  --innflow-typography-body-font-weight: 400;
+  --innflow-typography-body-line-height: 22.4px;
+  --innflow-typography-body-letter-spacing: 0.02em;
+  --innflow-typography-body-large-font-family: var(--innflow-font-body);
+  --innflow-typography-body-large-font-size: 18px;
+  --innflow-typography-body-large-font-weight: 400;
+  --innflow-typography-body-large-line-height: 1.4;
+  --innflow-typography-body-large-letter-spacing: 0.02em;
+  --innflow-typography-quote-font-family: var(--innflow-font-editorial);
+  --innflow-typography-quote-font-size: 20px;
+  --innflow-typography-quote-font-weight: 400;
+  --innflow-typography-quote-line-height: 1.45;
+  --innflow-typography-quote-letter-spacing: 0.02em;
+  --innflow-typography-button-font-family: var(--innflow-font-body);
+  --innflow-typography-button-font-size: 16px;
+  --innflow-typography-button-font-weight: 500;
+  --innflow-typography-button-line-height: 22.4px;
+  --innflow-typography-button-letter-spacing: 0.02em;
+  /* spacing */
+  --innflow-spacing-4: 4px;
+  --innflow-spacing-8: 8px;
+  --innflow-spacing-12: 12px;
+  --innflow-spacing-16: 16px;
+  --innflow-spacing-20: 20px;
+  --innflow-spacing-24: 24px;
+  --innflow-spacing-28: 28px;
+  --innflow-spacing-32: 32px;
+  --innflow-spacing-40: 40px;
+  --innflow-spacing-48: 48px;
+  --innflow-spacing-64: 64px;
+  --innflow-spacing-72: 72px;
+  --innflow-spacing-80: 80px;
+  --innflow-spacing-120: 120px;
+  /* radius */
+  --innflow-radius-control: 8px;
+  --innflow-radius-button: 20px;
+  --innflow-radius-card: 32px;
+  --innflow-radius-hero: 40px;
+  --innflow-radius-workspace-card: 48px;
+  --innflow-radius-workspace-surface: 64px;
+  --innflow-radius-hero-mobile: 28px;
+  --innflow-radius-card-mobile: 24px;
+  --innflow-radius-workspace-card-mobile: 32px;
+  --innflow-radius-workspace-surface-mobile: 36px;
+  --innflow-radius-storyboard: 7.241% / 6.726%;
+  /* layout */
+  --innflow-layout-shell: 1280px;
+  --innflow-layout-gutter: 40px;
+  --innflow-layout-gutter-mobile: 24px;
+  --innflow-layout-section: 120px;
+  --innflow-layout-section-mobile: 72px;
+  --innflow-layout-feature-gap: 80px;
+  --innflow-layout-feature-gap-mobile: 32px;
+  --innflow-layout-page-inset: 24px;
+  --innflow-layout-page-inset-mobile: 12px;
+  --innflow-layout-workspace-section-mobile: 64px;
+  --innflow-layout-workspace-gutter-mobile: 16px;
+  --innflow-layout-button-height: 50px;
+  --innflow-layout-touch-target: 44px;
+  --innflow-layout-focus-width: 3px;
+  --innflow-layout-focus-offset: 5px;
+  /* breakpoint */
+  --innflow-breakpoint-small: 480px;
+  --innflow-breakpoint-workspace-mobile: 760px;
+  --innflow-breakpoint-mobile: 800px;
+  --innflow-breakpoint-tablet: 1100px;
+  /* duration */
+  --innflow-duration-tooltip: 150ms;
+  --innflow-duration-tab: 250ms;
+  --innflow-duration-panel: 280ms;
+  --innflow-duration-artwork: 300ms;
+  /* easing */
+  --innflow-easing-standard: ease;
+  --innflow-easing-out: cubic-bezier(0.22, 1, 0.36, 1);
+  /* shadow */
+  --innflow-shadow-hero: 0 24px 24px #47678818;
+  --innflow-shadow-story: 0 0 0 8px #ffffff50, 0 12px 32px -5px #637d9e29;
+  /* gradient */
+  --innflow-gradient-workflow: linear-gradient(181.486991841deg, #4fb2ff 6.4541%, #69bbff 18.736%, #b0e5ff 32.655%, #aee9f1 49.441%, #7acced 67.381%, #2184cf 84.293%, #004077 98.856%);
+  /* asset */
+  --innflow-asset-hero-gradient: url("/preview/scroll-showcase/gradient.png");
+  --innflow-asset-stories-background: url("/preview/homepage/baseline-lower/stories-background.png");
+  /* ratio */
+  --innflow-ratio-storyboard: 771 / 830;
+}

@@ -1,0 +1,401 @@
+- generic [active] [ref=f9e1]:
+  - link "Skip to content" [ref=f9e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f9e5]:
+    - link "innflow home" [ref=f9e6] [cursor=pointer]:
+      - /url: /
+      - img "innflow" [ref=f9e7]
+    - generic [ref=f9e8]:
+      - link "Continue with Google" [ref=f9e9] [cursor=pointer]:
+        - /url: https://app.innflow.ai/auth/google
+      - button "Open navigation" [ref=f9e12] [cursor=pointer]
+  - main [ref=f9e15]:
+    - generic [ref=f9e16]:
+      - generic [ref=f9e20]:
+        - navigation "Breadcrumb" [ref=f9e22]:
+          - list [ref=f9e23]:
+            - listitem [ref=f9e24]:
+              - link "Home" [ref=f9e25] [cursor=pointer]:
+                - /url: /
+              - generic [aria-hidden] [ref=f9e29]: /
+            - listitem [ref=f9e30]:
+              - generic "Bookkeeping" [ref=f9e31]
+        - heading "Keep your books connected to the work." [level=1] [ref=f9e32]
+        - paragraph [ref=f9e33]: Bring property records, supporting details, and review steps together for a clearer view of your bookkeeping.
+        - generic [ref=f9e34]:
+          - link "Continue with Google" [ref=f9e35] [cursor=pointer]:
+            - /url: https://app.innflow.ai/auth/google
+          - link "See demo" [ref=f9e38] [cursor=pointer]:
+            - /url: https://cal.com/julian-patrick-afu0u2/innflow-demo?overlayCalendar=true
+        - generic [ref=f9e41]:
+          - text: By continuing, you agree to our
+          - link "Terms of Service" [ref=f9e42] [cursor=pointer]:
+            - /url: /legal/terms-of-service
+          - text: and acknowledge our
+          - link "Privacy Policy" [ref=f9e43] [cursor=pointer]:
+            - /url: /legal/privacy-policy
+          - text: .
+      - generic [ref=f9e44]:
+        - heading "Less searching. More useful context." [level=2] [ref=f9e45]
+        - generic [ref=f9e46]:
+          - navigation "On this page" [ref=f9e47]:
+            - link "Accounting Connections" [ref=f9e48] [cursor=pointer]:
+              - /url: "#accounting-connections"
+            - link "Account Categories" [ref=f9e51] [cursor=pointer]:
+              - /url: "#account-categories"
+            - link "Income & Expenses" [ref=f9e54] [cursor=pointer]:
+              - /url: "#income-expenses"
+            - link "Bank Connections" [ref=f9e57] [cursor=pointer]:
+              - /url: "#bank-connections"
+            - link "Supporting features" [ref=f9e60] [cursor=pointer]:
+              - /url: "#additional-features"
+          - generic [ref=f9e63]:
+            - generic [ref=f9e64]:
+              - generic [ref=f9e66]: Accounting Connections
+              - generic [ref=f9e67]:
+                - heading "Keep the supporting details together." [level=3] [ref=f9e68]
+                - paragraph [ref=f9e69]: Give your team a shared place to organize records and review the information behind the next accounting step.
+            - generic [ref=f9e70]:
+              - generic [ref=f9e72]: Account Categories
+              - generic [ref=f9e73]:
+                - heading "Give every record a clear place." [level=3] [ref=f9e74]
+                - paragraph [ref=f9e75]: Keep account categories and property context easy to follow, so information is easier to find when it is needed.
+            - generic [ref=f9e76]:
+              - generic [ref=f9e78]: Income & Expenses
+              - generic [ref=f9e79]:
+                - heading "See the activity behind the numbers." [level=3] [ref=f9e80]
+                - paragraph [ref=f9e81]: Bring income and expense context into a shared view, with the details your team needs for a focused review.
+            - generic [ref=f9e82]:
+              - generic [ref=f9e84]: Bank Connections
+              - generic [ref=f9e85]:
+                - heading "Keep account context close." [level=3] [ref=f9e86]
+                - paragraph [ref=f9e87]: Organize the information behind connected accounts and keep supporting records within reach.
+            - generic [ref=f9e88]:
+              - article [ref=f9e89]:
+                - heading "Property-level organization" [level=3] [ref=f9e90]
+                - paragraph [ref=f9e94]: Keep each record connected to the property it belongs to.
+              - article [ref=f9e95]:
+                - heading "Shared review context" [level=3] [ref=f9e96]
+                - paragraph [ref=f9e100]: Bring supporting details into the conversation before the next step.
+              - article [ref=f9e101]:
+                - heading "Clear handoffs" [level=3] [ref=f9e102]
+                - paragraph [ref=f9e106]: Keep ownership visible as work moves between your team and advisors.
+      - region "Make room for life" [ref=f9e107]:
+        - generic [ref=f9e108]:
+          - text: A LITTLE MORE HEADSPACE
+          - heading "Make room for life around your properties." [level=2] [ref=f9e109]: Make room for lifearound your properties.
+          - paragraph [ref=f9e110]: Bring your team, your information, and your next steps into one flow.
+          - generic [ref=f9e111]:
+            - link "Continue with Google" [ref=f9e112] [cursor=pointer]:
+              - /url: https://app.innflow.ai/auth/google
+            - link "See demo" [ref=f9e115] [cursor=pointer]:
+              - /url: https://cal.com/julian-patrick-afu0u2/innflow-demo?overlayCalendar=true
+      - region [ref=f9e118]:
+        - heading "Trusted by 1,260+ real estate professionals" [level=2] [ref=f9e119]
+        - generic [ref=f9e120]:
+          - article [ref=f9e121]:
+            - img "Portrait of Elena Morales" [ref=f9e122]
+            - generic [ref=f9e124]:
+              - generic [ref=f9e125]: Elena Morales
+              - paragraph [ref=f9e126]:
+                - generic [aria-hidden] [ref=f9e127]: “
+                - text: More focus on people, less on admin.
+            - button "Read Elena Morales’s testimonial" [ref=f9e128] [cursor=pointer]: Read story
+          - article [ref=f9e131]:
+            - img "Portrait of Meera Shah" [ref=f9e132]
+            - generic [ref=f9e134]:
+              - generic [ref=f9e135]: Meera Shah
+              - paragraph [ref=f9e136]:
+                - generic [aria-hidden] [ref=f9e137]: “
+                - text: The next step always feels clearer.
+            - button "Read Meera Shah’s testimonial" [ref=f9e138] [cursor=pointer]: Read story
+          - article [ref=f9e141]:
+            - img "Portrait of Daniel Cho" [ref=f9e142]
+            - generic [ref=f9e144]:
+              - generic [ref=f9e145]: Daniel Cho
+              - paragraph [ref=f9e146]:
+                - generic [aria-hidden] [ref=f9e147]: “
+                - text: Rental admin feels much less overwhelming.
+            - button "Read Daniel Cho’s testimonial" [ref=f9e148] [cursor=pointer]: Read story
+          - article [ref=f9e151]:
+            - img "Portrait of Marcus Reed" [ref=f9e152]
+            - generic [ref=f9e154]:
+              - generic [ref=f9e155]: Marcus Reed
+              - paragraph [ref=f9e156]:
+                - generic [aria-hidden] [ref=f9e157]: “
+                - text: I start each day with direction.
+            - button "Read Marcus Reed’s testimonial" [ref=f9e158] [cursor=pointer]: Read story
+      - generic [ref=f9e161]:
+        - heading "FAQs" [level=2] [ref=f9e162]
+        - generic [ref=f9e163]:
+          - group [ref=f9e164]:
+            - generic [ref=f9e165] [cursor=pointer]
+          - group [ref=f9e168]:
+            - generic [ref=f9e169] [cursor=pointer]
+          - group [ref=f9e172]:
+            - generic [ref=f9e173] [cursor=pointer]
+          - group [ref=f9e176]:
+            - generic [ref=f9e177] [cursor=pointer]
+  - generic [ref=f9e182]:
+    - heading "A clearer day starts with a connected flow." [level=2] [ref=f9e183]
+    - paragraph [ref=f9e184]: Bring your team, context, and next steps together.
+    - link "Continue with Google" [ref=f9e186] [cursor=pointer]:
+      - /url: https://app.innflow.ai/auth/google
+    - form [ref=f9e189]:
+      - heading "A little more, just for members." [level=3] [ref=f9e190]
+      - paragraph [ref=f9e191]: Get Innflow updates and member offers by email.
+      - group [ref=f9e192]:
+        - generic [ref=f9e193]: Email address
+        - generic [ref=f9e194]:
+          - textbox "Email address" [ref=f9e195]:
+            - /placeholder: Enter your email
+          - button "Sign up" [ref=f9e196] [cursor=pointer]
+      - status
+  - contentinfo [ref=f9e198]:
+    - generic [ref=f9e199]:
+      - generic [ref=f9e200]:
+        - link "innflow home" [ref=f9e201] [cursor=pointer]:
+          - /url: /
+          - img "innflow" [ref=f9e202]
+        - paragraph [ref=f9e203]: Property operations.Connected in one place.
+        - link "support@innflow.ai" [ref=f9e204] [cursor=pointer]:
+          - /url: mailto:support@innflow.ai
+        - region "Hours of operation" [ref=f9e205]:
+          - strong [ref=f9e206]: Hours of Operation
+          - generic [ref=f9e207]:
+            - generic [ref=f9e208]:
+              - term [ref=f9e209]: Monday–Friday
+              - definition [ref=f9e210]: 9:00 AM–6:00 PM ET
+            - generic [ref=f9e211]:
+              - term [ref=f9e212]: Saturday–Sunday
+              - definition [ref=f9e213]: 10:00 AM–5:00 PM ET
+      - generic [ref=f9e214]:
+        - heading "Why innflow" [level=3] [ref=f9e215]
+        - link "About innflow" [ref=f9e216] [cursor=pointer]:
+          - /url: /about
+        - link "Careers" [ref=f9e217] [cursor=pointer]:
+          - /url: /careers
+        - link "Industry coverage" [ref=f9e218] [cursor=pointer]:
+          - /url: /in-the-news
+        - link "Who we help" [ref=f9e219] [cursor=pointer]:
+          - /url: /our-customers
+        - link "Security" [ref=f9e220] [cursor=pointer]:
+          - /url: /security
+        - link "Share innflow" [ref=f9e221] [cursor=pointer]:
+          - /url: /landlord-referral
+        - link "Partnerships" [ref=f9e222] [cursor=pointer]:
+          - /url: /partner-with-us
+        - link "Advisor partnerships" [ref=f9e223] [cursor=pointer]:
+          - /url: /advisor-partner-program
+        - link "Workflows" [ref=f9e224] [cursor=pointer]:
+          - /url: /products/agentic-workflows
+        - link "AI assistant" [ref=f9e225] [cursor=pointer]:
+          - /url: /products/ai-agents
+        - link "Knowledge" [ref=f9e226] [cursor=pointer]:
+          - /url: /platform
+        - link "Approvals" [ref=f9e227] [cursor=pointer]:
+          - /url: /platform/security-and-compliance
+      - generic [ref=f9e228]:
+        - heading "Solutions" [level=3] [ref=f9e229]
+        - link "Overview" [ref=f9e230] [cursor=pointer]:
+          - /url: /
+        - link "Multi-property investors" [ref=f9e231] [cursor=pointer]:
+          - /url: /multi-property-investors
+        - link "Landlord operations" [ref=f9e232] [cursor=pointer]:
+          - /url: /landlord-banking
+        - link "Rental workflows" [ref=f9e233] [cursor=pointer]:
+          - /url: /rent-collection
+        - link "Rental workflows overview" [ref=f9e234] [cursor=pointer]:
+          - /url: /rent-collection-2
+        - link "Connected property records" [ref=f9e235] [cursor=pointer]:
+          - /url: /landlord-accounting
+        - link "Property review preparation" [ref=f9e236] [cursor=pointer]:
+          - /url: /landlord-insurance
+        - link "Document preparation" [ref=f9e237] [cursor=pointer]:
+          - /url: /tax-preparation
+        - link "Deposit workflows" [ref=f9e238] [cursor=pointer]:
+          - /url: /security-deposit-account
+        - link "Screening workflows" [ref=f9e239] [cursor=pointer]:
+          - /url: /tenant-screening-service
+        - link "Reserve planning" [ref=f9e240] [cursor=pointer]:
+          - /url: /landlord-banking-apy
+        - link "Financing preparation" [ref=f9e241] [cursor=pointer]:
+          - /url: /rental-property-loans
+        - link "Property management" [ref=f9e242] [cursor=pointer]:
+          - /url: /property-management
+        - link "Connected operations" [ref=f9e243] [cursor=pointer]:
+          - /url: /platform
+        - link "Integrations" [ref=f9e244] [cursor=pointer]:
+          - /url: /integrations
+      - generic [ref=f9e245]:
+        - heading "Resources" [level=3] [ref=f9e246]
+        - link "Resource library" [ref=f9e247] [cursor=pointer]:
+          - /url: /resources
+        - link "Document checklists" [ref=f9e248] [cursor=pointer]:
+          - /url: /free-rental-forms-and-templates-for-landlords
+        - link "Rent comparison" [ref=f9e249] [cursor=pointer]:
+          - /url: /how-much-should-i-charge-for-rent
+        - link "Lease workflows" [ref=f9e250] [cursor=pointer]:
+          - /url: /lease-agreement
+        - link "Workflow learning" [ref=f9e251] [cursor=pointer]:
+          - /url: /webinars
+        - link "Investor resources" [ref=f9e252] [cursor=pointer]:
+          - /url: /real-estate-investing
+        - link "Product updates" [ref=f9e253] [cursor=pointer]:
+          - /url: /product-updates
+        - link "Blog" [ref=f9e254] [cursor=pointer]:
+          - /url: /blog
+        - link "Help center" [ref=f9e255] [cursor=pointer]:
+          - /url: /help-center
+        - link "Legal agreements" [ref=f9e256] [cursor=pointer]:
+          - /url: /legal-agreements
+        - link "FAQ" [ref=f9e257] [cursor=pointer]:
+          - /url: /faq
+        - link "Contact" [ref=f9e258] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=f9e259]:
+        - heading "Property teams" [level=3] [ref=f9e260]
+        - link "Long-term rentals" [ref=f9e261] [cursor=pointer]:
+          - /url: /long-term-rentals
+        - link "Mid-term rentals" [ref=f9e262] [cursor=pointer]:
+          - /url: /mid-term-rentals
+        - link "Short-term rentals" [ref=f9e263] [cursor=pointer]:
+          - /url: /short-term-rentals
+        - link "Resident experiences" [ref=f9e264] [cursor=pointer]:
+          - /url: /renters
+        - heading "Get started" [level=3] [ref=f9e265]
+        - link "Book a demo" [ref=f9e266] [cursor=pointer]:
+          - /url: https://cal.com/julian-patrick-afu0u2/innflow-demo?overlayCalendar=true
+        - link "Pricing" [ref=f9e267] [cursor=pointer]:
+          - /url: /pricing
+        - link "Log in" [ref=f9e268] [cursor=pointer]:
+          - /url: https://app.innflow.ai/login
+        - link "Continue with Google" [ref=f9e269] [cursor=pointer]:
+          - /url: https://app.innflow.ai/auth/google
+    - generic [ref=f9e272]:
+      - generic [ref=f9e273]: © 2026 Innflow. All rights reserved.
+      - navigation "Legal" [ref=f9e274]:
+        - link "Privacy Policy" [ref=f9e275] [cursor=pointer]:
+          - /url: /legal/privacy-policy
+        - link "Terms of Service" [ref=f9e276] [cursor=pointer]:
+          - /url: /legal/terms-of-service
+        - link "Cookie Policy" [ref=f9e277] [cursor=pointer]:
+          - /url: /legal/cookie-policy
+        - link "Acceptable Use Policy" [ref=f9e278] [cursor=pointer]:
+          - /url: /legal/acceptable-use-policy
+        - link "EULA" [ref=f9e279] [cursor=pointer]:
+          - /url: /legal/eula
+        - link "Privacy Request" [ref=f9e280] [cursor=pointer]:
+          - /url: /legal/dsar
+        - link "Consent Preferences" [ref=f9e281] [cursor=pointer]:
+          - /url: "#"
+        - link "Do Not Sell or Share My Personal Information" [ref=f9e282] [cursor=pointer]:
+          - /url: https://app.termly.io/notify/d253192a-6c11-4338-9883-67b3307aea2f
+        - link "Limit the Use of My Sensitive Personal Information" [ref=f9e283] [cursor=pointer]:
+          - /url: https://app.termly.io/notify/d253192a-6c11-4338-9883-67b3307aea2f
+    - region [ref=f9e284]:
+      - heading "Featured on" [level=2] [ref=f9e286]
+      - generic [ref=f9e288]:
+        - generic [ref=f9e289]:
+          - link "Visit EarlyHunt (opens in a new tab)" [ref=f9e290] [cursor=pointer]:
+            - /url: https://earlyhunt.com/project/innflow
+            - img "Featured on EarlyHunt" [ref=f9e292]
+          - link "Visit neeed.directory (opens in a new tab)" [ref=f9e293] [cursor=pointer]:
+            - /url: https://neeed.directory/products/innflow?utm_source=innflow
+            - img "Featured on neeed.directory" [ref=f9e295]
+          - link "Visit StartupFA.me (opens in a new tab)" [ref=f9e296] [cursor=pointer]:
+            - /url: https://startupfa.me/s/innflow.ai-345?utm_source=innflow.ai
+            - img "Featured on Startup Fame" [ref=f9e298]
+          - link "Visit TechTrendin (opens in a new tab)" [ref=f9e299] [cursor=pointer]:
+            - /url: https://www.techtrendin.com/products/innflow
+            - img "Featured on TechTrendin" [ref=f9e301]
+          - link "Visit Bowora (opens in a new tab)" [ref=f9e302] [cursor=pointer]:
+            - /url: https://bowora.com/
+            - img "Featured on Bowora" [ref=f9e304]
+          - link "Visit ConfettiSaaS (opens in a new tab)" [ref=f9e305] [cursor=pointer]:
+            - /url: https://confettisaas.com/saas/innflow-ai?ref=badge
+            - img "Innflow on ConfettiSaaS" [ref=f9e307]
+          - link "Visit DodoDirectory (opens in a new tab)" [ref=f9e308] [cursor=pointer]:
+            - /url: https://dododirectory.com
+            - img "Featured on DodoDirectory" [ref=f9e310]
+          - link "Visit Fazier (opens in a new tab)" [ref=f9e311] [cursor=pointer]:
+            - /url: https://fazier.com
+            - img "Fazier badge" [ref=f9e313]
+          - link "Visit findly.tools (opens in a new tab)" [ref=f9e314] [cursor=pointer]:
+            - /url: https://findly.tools
+            - img "Featured on Findly.tools" [ref=f9e316]
+          - link "Visit Huzzler (opens in a new tab)" [ref=f9e317] [cursor=pointer]:
+            - /url: https://huzzler.so
+            - img "Featured on Huzzler" [ref=f9e319]
+          - link "Visit IdeaKiln (opens in a new tab)" [ref=f9e320] [cursor=pointer]:
+            - /url: https://ideakiln.com
+            - img "Featured on Idea Kiln" [ref=f9e322]
+          - link "Visit Indiehunt (opens in a new tab)" [ref=f9e323] [cursor=pointer]:
+            - /url: https://indiehunt.io
+            - img "Featured on IndieHunt" [ref=f9e325]
+          - link "Visit Launch Llama Tools (opens in a new tab)" [ref=f9e326] [cursor=pointer]:
+            - /url: https://tools.launchllama.co?utm_source=badge&utm_medium=referral
+            - img "As seen on Launch Llama Newsletter" [ref=f9e328]
+          - link "Visit SaaSBison (opens in a new tab)" [ref=f9e329] [cursor=pointer]:
+            - /url: https://saasbison.com
+            - img "Featured on SaaSBison" [ref=f9e331]
+          - link "Visit SaaSGrow (opens in a new tab)" [ref=f9e332] [cursor=pointer]:
+            - /url: https://saasgrow.app?ref=innflow.ai
+            - img "Innflow on SaaSGrow" [ref=f9e334]
+          - link "Visit StartupBase (opens in a new tab)" [ref=f9e335] [cursor=pointer]:
+            - /url: https://startupbase.io
+            - img "Featured on StartupBase" [ref=f9e337]
+          - link "Visit startupfa.st (opens in a new tab)" [ref=f9e338] [cursor=pointer]:
+            - /url: https://startupfa.st
+            - img "Powered by Startup Fast" [ref=f9e340]
+          - link "Visit Sumodir (opens in a new tab)" [ref=f9e341] [cursor=pointer]:
+            - /url: https://sumodir.com
+            - img "Featured on SumoDir" [ref=f9e343]
+          - link "Visit Twelve Tools (opens in a new tab)" [ref=f9e344] [cursor=pointer]:
+            - /url: https://twelve.tools
+            - img "Featured on Twelve Tools" [ref=f9e346]
+          - link "Visit Web Review (opens in a new tab)" [ref=f9e347] [cursor=pointer]:
+            - /url: https://web-review.com
+            - img "Featured on Web Review" [ref=f9e349]
+        - generic [aria-hidden] [ref=f9e350]:
+          - link [ref=f9e351] [cursor=pointer]:
+            - /url: https://earlyhunt.com/project/innflow
+          - link [ref=f9e354] [cursor=pointer]:
+            - /url: https://neeed.directory/products/innflow?utm_source=innflow
+          - link [ref=f9e357] [cursor=pointer]:
+            - /url: https://startupfa.me/s/innflow.ai-345?utm_source=innflow.ai
+          - link [ref=f9e360] [cursor=pointer]:
+            - /url: https://www.techtrendin.com/products/innflow
+          - link [ref=f9e363] [cursor=pointer]:
+            - /url: https://bowora.com/
+          - link [ref=f9e366] [cursor=pointer]:
+            - /url: https://confettisaas.com/saas/innflow-ai?ref=badge
+          - link [ref=f9e369] [cursor=pointer]:
+            - /url: https://dododirectory.com
+          - link [ref=f9e372] [cursor=pointer]:
+            - /url: https://fazier.com
+          - link [ref=f9e375] [cursor=pointer]:
+            - /url: https://findly.tools
+          - link [ref=f9e378] [cursor=pointer]:
+            - /url: https://huzzler.so
+          - link [ref=f9e381] [cursor=pointer]:
+            - /url: https://ideakiln.com
+          - link [ref=f9e384] [cursor=pointer]:
+            - /url: https://indiehunt.io
+          - link [ref=f9e387] [cursor=pointer]:
+            - /url: https://tools.launchllama.co?utm_source=badge&utm_medium=referral
+          - link [ref=f9e390] [cursor=pointer]:
+            - /url: https://saasbison.com
+          - link [ref=f9e393] [cursor=pointer]:
+            - /url: https://saasgrow.app?ref=innflow.ai
+          - link [ref=f9e396] [cursor=pointer]:
+            - /url: https://startupbase.io
+          - link [ref=f9e399] [cursor=pointer]:
+            - /url: https://startupfa.st
+          - link [ref=f9e402] [cursor=pointer]:
+            - /url: https://sumodir.com
+          - link [ref=f9e405] [cursor=pointer]:
+            - /url: https://twelve.tools
+          - link [ref=f9e408] [cursor=pointer]:
+            - /url: https://web-review.com
+  - alert [ref=f9e411]

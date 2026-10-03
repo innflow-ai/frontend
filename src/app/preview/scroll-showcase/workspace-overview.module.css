@@ -402,6 +402,91 @@
   }
 }
 
+/* Desktop tells the whole story in connected, fully expanded rows. */
+@media (min-width: 1101px) {
+  .cards {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+  .card {
+    height: auto;
+    min-height: 380px;
+    transition: none;
+  }
+  .cardSurface {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+    min-height: 380px;
+  }
+  .card[data-active="true"] .cardSurface {
+    box-shadow: none;
+  }
+  .cardCopy {
+    height: auto;
+    padding: 40px;
+  }
+  .cardCopy h3 {
+    font-size: 36px;
+    letter-spacing: -0.025em;
+    margin-bottom: 20px;
+  }
+  .description {
+    min-height: 0;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  .summary {
+    display: none;
+  }
+  .details {
+    position: static;
+    width: auto;
+    opacity: 1;
+    visibility: visible;
+  }
+  .details ul {
+    margin-top: 24px;
+    gap: 16px;
+  }
+  .details li {
+    align-items: flex-start;
+  }
+  .stepIcon {
+    margin-top: 3px;
+  }
+  .details li:not(:last-child)::after {
+    top: 27px;
+    bottom: -13px;
+    height: auto;
+  }
+  .artwork {
+    --workspace-artwork-max-scale: 1.2;
+    --workspace-train-offset: 0px;
+    --workspace-train-scale: 0.9;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 380px;
+  }
+  .activeArt {
+    opacity: 1;
+  }
+  .activeArt > img {
+    mask-image: linear-gradient(to right, transparent, black 28%);
+  }
+  .inactiveArt {
+    display: none;
+  }
+  .bridge {
+    top: -38.5px;
+    left: 48px;
+    width: 32px;
+    height: 45px;
+    transform: rotate(90deg);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .card,
   .cardSurface,

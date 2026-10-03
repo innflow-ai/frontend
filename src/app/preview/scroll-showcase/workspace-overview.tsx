@@ -11,16 +11,16 @@ import { WorkspaceCardArtwork } from "./workspace-card-artwork";
 import styles from "./workspace-overview.module.css";
 
 const assets = "/preview/homepage/workspace-overview";
-const tabletQuery = "(min-width: 761px) and (max-width: 1100px)";
-function subscribeTablet(onChange: () => void) {
-  const query = window.matchMedia(tabletQuery);
+const mobileQuery = "(max-width: 760px)";
+function subscribeMobile(onChange: () => void) {
+  const query = window.matchMedia(mobileQuery);
   query.addEventListener("change", onChange);
   return () => query.removeEventListener("change", onChange);
 }
-function getTabletSnapshot() {
-  return window.matchMedia(tabletQuery).matches;
+function getMobileSnapshot() {
+  return window.matchMedia(mobileQuery).matches;
 }
-const getServerTabletSnapshot = () => false;
+const getServerMobileSnapshot = () => false;
 
 // Innflow copy paired with the supplied Figma reference artwork.
 export const workspaceCards = [
@@ -80,10 +80,10 @@ export const workspaceCards = [
 
 export function WorkspaceOverview() {
   const [active, setActive] = useState(0);
-  const tablet = useSyncExternalStore(
-    subscribeTablet,
-    getTabletSnapshot,
-    getServerTabletSnapshot,
+  const mobile = useSyncExternalStore(
+    subscribeMobile,
+    getMobileSnapshot,
+    getServerMobileSnapshot,
   );
 
   function navigate(event: KeyboardEvent<HTMLButtonElement>, index: number) {
@@ -149,11 +149,11 @@ export function WorkspaceOverview() {
               <article
                 key={card.id}
                 className={styles.card}
-                data-active={tablet || active === index}
+                data-active={mobile || active === index}
                 data-source-node={card.source}
                 onPointerEnter={(event) => {
                   if (
-                    !tablet &&
+                    !mobile &&
                     (event.pointerType === "mouse" ||
                       event.pointerType === "pen")
                   ) {
@@ -173,7 +173,7 @@ export function WorkspaceOverview() {
                 <div className={styles.cardSurface}>
                   <div className={styles.cardCopy}>
                     <h3>
-                      {tablet ? (
+                      {mobile ? (
                         card.title
                       ) : (
                         <button
@@ -193,14 +193,14 @@ export function WorkspaceOverview() {
                     <div className={styles.description}>
                       <p
                         className={styles.summary}
-                        aria-hidden={tablet || active === index}
+                        aria-hidden={mobile || active === index}
                       >
                         {card.summary}
                       </p>
                       <div
                         className={styles.details}
                         id={`workspace-${card.id}-details`}
-                        aria-hidden={!tablet && active !== index}
+                        aria-hidden={!mobile && active !== index}
                       >
                         <p>{card.description}</p>
                         <ul>

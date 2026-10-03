@@ -35,7 +35,7 @@ import {
 } from "@/components/icons/mage";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
-import { industryHref, industryPages } from "@/content/industries";
+import { industryHref, industryNavigation } from "@/content/industry-navigation";
 import { platformPages } from "@/content/platform";
 import { megaMenuHref } from "@/lib/mega-menu-destinations";
 import styles from "./mega-menu.module.css";
@@ -605,7 +605,7 @@ export const solutionsColumns: MegaMenuColumn[] = [
 ].map(({ heading, slugs }) => ({
   heading,
   links: slugs.map((slug) => {
-    const page = industryPages.find((page) => page.slug === slug);
+    const page = industryNavigation.find((page) => page.slug === slug);
     if (!page) throw new Error(`Unknown industry: ${slug}`);
     return {
       href: industryHref(page.slug),

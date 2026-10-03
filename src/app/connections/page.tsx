@@ -1,13 +1,15 @@
-import type { Metadata } from "next";
 import Link from "next/link";
-import { BaselaneHomepage } from "@/components/baselane-homepage";
 import { ChevronRight } from "@/components/chevron-right";
+import { InnerPageShell } from "@/components/inner-page-shell";
+import { createPageMetadata } from "@/lib/metadata";
 import styles from "./page.module.css";
 
-export const metadata: Metadata = {
-  title: "Connections | innflow",
-  alternates: { canonical: "/connections" },
-};
+export const metadata = createPageMetadata({
+  title: "Site Directory | Innflow",
+  description:
+    "Find Innflow products, solutions, property workflows, learning resources, company information, and policies in one directory.",
+  path: "/connections",
+});
 
 const groups = [
   {
@@ -17,7 +19,7 @@ const groups = [
       { href: "/solutions", label: "Browse all solutions" },
       {
         href: "/",
-        label: "BL Home",
+        label: "Innflow home",
       },
       {
         href: "/pricing",
@@ -92,7 +94,6 @@ const groups = [
       { href: "/student-housing", label: "Student Housing" },
       { href: "/affordable-housing", label: "Affordable Housing" },
       { href: "/residential", label: "Residential" },
-      { href: "/multifamily", label: "Conventional" },
       { href: "/mobile-home", label: "Mobile Home" },
       { href: "/self-storage", label: "Self Storage" },
     ],
@@ -209,16 +210,16 @@ const groups = [
 
 export default function ConnectionsPage() {
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={styles.directory}>
         <header className={styles.intro}>
           <h1>Connections</h1>
           <p>
-            Every BL page, together in one place. Find the tools, resources, and
+            Explore Innflow in one place. Find the tools, resources, and
             information you need.
           </p>
         </header>
-        <nav className={styles.groups} aria-label="BL page directory">
+        <nav className={styles.groups} aria-label="Innflow page directory">
           {groups.map((group) => (
             <section
               id={group.heading.toLowerCase().replaceAll(" ", "-")}
@@ -240,6 +241,6 @@ export default function ConnectionsPage() {
           ))}
         </nav>
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

@@ -1,13 +1,15 @@
 "use client";
-import { ArrowRight as MageArrowRight, Plus as MagePlus } from '@/components/icons/mage';
-
 
 import Image from "next/image";
 import { useState } from "react";
 import { GoogleCtaContent } from "@/components/google-cta-content";
+import {
+  ArrowRight as MageArrowRight,
+  Plus as MagePlus,
+} from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
-import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-screening.module.css";
+import { InnerPageShell } from "./inner-page-shell";
 
 const source = siteConfig.demoUrl;
 const topics = [
@@ -68,7 +70,7 @@ export function BaselaneScreening() {
   const [selected, setSelected] = useState<boolean[]>([false, false, false]);
   const completed = selected.filter(Boolean).length;
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={styles.page}>
         <div className={styles.dark}>
           <section className={styles.hero}>
@@ -225,7 +227,9 @@ export function BaselaneScreening() {
                 {topics.slice(group * 3, group * 3 + 3).map((topic) => (
                   <div key={topic}>
                     <h3>{topic}</h3>
-                    <a href="/lease-agreement">Connect the next handoff <MageArrowRight size="1em" /></a>
+                    <a href="/lease-agreement">
+                      Connect the next handoff <MageArrowRight size="1em" />
+                    </a>
                   </div>
                 ))}
               </div>
@@ -351,7 +355,9 @@ export function BaselaneScreening() {
             <details key={q}>
               <summary>
                 {q}
-                <span aria-hidden="true"><MagePlus size="1em" /></span>
+                <span aria-hidden="true">
+                  <MagePlus size="1em" />
+                </span>
               </summary>
               <p>{a}</p>
             </details>
@@ -365,6 +371,6 @@ export function BaselaneScreening() {
           </a>
         </section>
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

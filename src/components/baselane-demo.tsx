@@ -1,10 +1,13 @@
-
-import { ArrowDown as MageArrowDown, Check as MageCheck, ArrowRight as MageArrowRight } from '@/components/icons/mage';
 import Image from "next/image";
 import { ChevronRight } from "@/components/chevron-right";
+import {
+  ArrowDown as MageArrowDown,
+  ArrowRight as MageArrowRight,
+  Check as MageCheck,
+} from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
-import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-support.module.css";
+import { InnerPageShell } from "./inner-page-shell";
 
 const root = "/brand/baselane-inspired/demo/";
 function Photo({
@@ -32,7 +35,7 @@ function Photo({
 }
 export function BaselaneDemo() {
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={styles.demo}>
         <section className={styles.hero}>
           <Photo name="hero" priority />
@@ -69,11 +72,18 @@ export function BaselaneDemo() {
             <div className={styles.workflow}>
               <small>EXAMPLE · MAINTENANCE REQUEST</small>
               <strong>New request received</strong>
-              <span><MageArrowDown size="1em" /></span>
+              <span>
+                <MageArrowDown size="1em" />
+              </span>
               <strong>Property context attached</strong>
-              <span><MageArrowDown size="1em" /></span>
+              <span>
+                <MageArrowDown size="1em" />
+              </span>
               <strong>
-                Ready for team review <b><MageCheck size="1em" /></b>
+                Ready for team review{" "}
+                <b>
+                  <MageCheck size="1em" />
+                </b>
               </strong>
             </div>
             <div className={styles.cardCopy}>
@@ -114,7 +124,9 @@ export function BaselaneDemo() {
             a real example, and we can discuss the context, people, and
             approvals it needs.
           </p>
-          <a href="/multi-property-investors">Explore property operations <MageArrowRight size="1em" /></a>
+          <a href="/multi-property-investors">
+            Explore property operations <MageArrowRight size="1em" />
+          </a>
         </section>
         <section className={styles.ocean}>
           <Image
@@ -136,6 +148,6 @@ export function BaselaneDemo() {
           </div>
         </section>
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

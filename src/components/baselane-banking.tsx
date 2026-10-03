@@ -1,11 +1,10 @@
-
-import { Check as MageCheck, Plus as MagePlus } from '@/components/icons/mage';
 import Image from "next/image";
 import { ChevronRight } from "@/components/chevron-right";
+import { Check as MageCheck, Plus as MagePlus } from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
 import { getPageFaqTuples } from "@/lib/faqs";
 import styles from "./baselane-banking.module.css";
-import { BaselaneHomepage } from "./baselane-homepage";
+import { InnerPageShell } from "./inner-page-shell";
 import { FeatureTestimonials } from "./page-testimonials";
 import { ProductHeadspaceCta } from "./product-headspace-cta";
 import { ScrollStory } from "./scroll-story";
@@ -136,7 +135,7 @@ function Scene({
 export async function BaselaneBanking() {
   const cmsFaqs = await getPageFaqTuples("/landlord-banking", faqs);
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <section className={styles.hero}>
         <Scene name="hero" priority />
         <div className={styles.heroCopy}>
@@ -200,7 +199,9 @@ export async function BaselaneBanking() {
                   ))}
                   <div className={styles.productBottom}>
                     <span>Everything in context</span>
-                    <span><MageCheck size="1em" /></span>
+                    <span>
+                      <MageCheck size="1em" />
+                    </span>
                   </div>
                 </div>
               </section>
@@ -288,13 +289,15 @@ export async function BaselaneBanking() {
             <details key={faqId}>
               <summary>
                 {question}
-                <span><MagePlus size="1em" /></span>
+                <span>
+                  <MagePlus size="1em" />
+                </span>
               </summary>
               <p style={{ whiteSpace: "pre-line" }}>{answer}</p>
             </details>
           ))}
         </div>
       </section>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

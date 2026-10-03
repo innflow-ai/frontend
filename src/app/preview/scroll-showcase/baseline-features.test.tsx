@@ -94,9 +94,7 @@ describe("numbered homepage storyboards", () => {
         );
         expect(section.querySelector("[data-storyboard]")).toHaveAttribute(
           "data-source",
-          item.number === 2
-            ? "poster-only"
-            : `/brand/homepage/${String(item.number).padStart(2, "0")}.riv`,
+          `/brand/homepage/${String(item.number).padStart(2, "0")}.riv`,
         );
         expect(
           element(`${feature.id}-baseline-panel-${index}`),
@@ -136,24 +134,31 @@ describe("numbered homepage storyboards", () => {
     }
   });
 
-  it("moves only the selected illustration into the open mobile row", () => {
+  it("keeps every AI agent story open on mobile and other sections selectable", () => {
     vi.stubGlobal("matchMedia", (query: string) => ({
       matches: query === "(max-width: 800px)",
       addEventListener: vi.fn(),
       removeEventListener: vi.fn(),
     }));
     render(<BaselineFeatures />);
-    const first = element("channels-baseline-trigger-0");
-    const next = element("channels-baseline-trigger-1");
+    expect(
+      element("channels").querySelectorAll("[data-storyboard]"),
+    ).toHaveLength(6);
+    for (let index = 0; index < 6; index++) {
+      expect(element(`channels-baseline-panel-${index}`)).toBeVisible();
+      expect(
+        element(`channels-baseline-trigger-${index}`).closest("h3")
+          ?.parentElement,
+      ).toContainElement(element(`channels-baseline-visual-${index}`));
+    }
+    const first = element("agents-baseline-trigger-0");
+    const next = element("agents-baseline-trigger-1");
     expect(first).toHaveAttribute("aria-expanded", "true");
-    expect(first.closest("h3")?.parentElement).toContainElement(
-      element("channels-baseline-visual"),
-    );
     fireEvent.click(next);
-    expect(element("channels-baseline-panel-0")).not.toBeVisible();
+    expect(element("agents-baseline-panel-0")).not.toBeVisible();
     expect(next).toHaveAttribute("aria-expanded", "true");
     expect(next.closest("h3")?.parentElement).toContainElement(
-      element("channels-baseline-visual"),
+      element("agents-baseline-visual"),
     );
   });
 

@@ -10,8 +10,8 @@ import {
 import { TrackedLink } from "@/components/tracked-link";
 import { pricingCatalog } from "@/config/pricing";
 import { siteConfig } from "@/config/site";
-import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-pricing.module.css";
+import { InnerPageShell } from "./inner-page-shell";
 
 const plans = Object.values(pricingCatalog.plans);
 const { pro, business } = pricingCatalog.plans;
@@ -73,7 +73,7 @@ export function BaselanePricing() {
   const value = (plan: (typeof plans)[number]) =>
     money(annual ? plan.commitmentMonthlyPrice : plan.monthlyPrice);
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={styles.page}>
         <section className={styles.hero} aria-labelledby="pricing-title">
           <div className={styles.intro}>
@@ -369,6 +369,6 @@ export function BaselanePricing() {
           </div>
         </section>
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

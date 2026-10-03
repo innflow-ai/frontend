@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { BLOG_CATEGORIES } from "@/lib/blog";
-import { humanizeCategory } from "@/lib/sanity";
+import { humanizeCategory } from "@/lib/blog-labels";
 import styles from "./article.module.css";
 
 export function BlogTaxonomy({

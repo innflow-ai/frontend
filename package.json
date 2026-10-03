@@ -12,6 +12,7 @@
     "test": "vitest",
     "test:run": "vitest run",
     "audit:site": "node scripts/audit-site.mjs",
+    "audit:inner-pages": "node scripts/audit-inner-pages.mjs",
     "audit:bundle": "node scripts/check-bundle-budget.mjs",
     "inventory:legacy": "node scripts/inventory-legacy-routes.mjs",
     "products:assets": "python3 scripts/resolve-product-assets.py --output scripts/data/product-asset-map.json",

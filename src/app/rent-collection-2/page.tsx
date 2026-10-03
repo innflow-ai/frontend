@@ -1,9 +1,11 @@
-import type { Metadata } from "next";
 import { BaselaneProductPage } from "@/components/baselane-product-page";
-export const metadata: Metadata = {
-  title: "Recurring rental workflows | innflow",
-  alternates: { canonical: "/rent-collection-2" },
-};
+import { createPageMetadata } from "@/lib/metadata";
+export const metadata = createPageMetadata({
+  title: "Recurring Rental Workflows | Innflow",
+  description:
+    "Connect the recurring work around rent, with organized context, clearer follow-ups, and coordinated steps for your property team.",
+  path: "/rent-collection-2",
+});
 export default function Page() {
   return <BaselaneProductPage kind="rent-collection" />;
 }

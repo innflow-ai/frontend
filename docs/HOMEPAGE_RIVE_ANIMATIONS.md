@@ -8,12 +8,12 @@ Runtime exports live in `public/brand/homepage`. The current download collection
 
 ## Current delivery
 
-17 numbered Rive files are installed. File 02 has not been located in the Rive library or existing exports. Its homepage slot currently uses a still illustration composed from the contacts storyboard source. It is not a verified Rive animation. Replace that entry with an approved export when available.
+All 18 numbered Rive files are installed. File 02 was rebuilt as an editable Rive scene from the verified contacts storyboard and its original Figma motion tracks. It preserves all five portraits, the native Solar gradient, the contacts reveal, filter menu, cursor feedback, and return transition.
 
 | Number | Section | Story | Delivery | Rive source |
 |---|---|---|---|---|
 | 01 | AI agent | Pick up conversations with context | Rive | https://editor.rive.app/file/innflow-pick-up-conversations-with-context/2624697 |
-| 02 | AI agent | Let AI manage your contacts | Still illustration only | Missing |
+| 02 | AI agent | Let AI manage your contacts | Rive | https://editor.rive.app/file/02/2626799 |
 | 03 | AI agent | Put AI to work your way | Rive | https://editor.rive.app/file/03---put-ai-to-work-your-way/2626295 |
 | 04 | AI agent | Connect your agents to your tools | Rive | https://editor.rive.app/file/04-innflow-unified-inbox-breathing-hub/2622411 |
 | 05 | AI agent | Respond with the full picture | Rive | https://editor.rive.app/file/05/2626550 |
@@ -42,7 +42,9 @@ Runtime exports live in `public/brand/homepage`. The current download collection
 
 ## Validation on October 2, 2026
 
-All 18 selections were checked on the local homepage. All 17 Rive files loaded and entered playback without Rive errors. Desktop and mobile layout, selection placement, viewport overflow, and reduced-motion behavior were checked. TypeScript and 20 focused tests passed.
+All 18 selections were checked on the local homepage. The original 17 Rive files loaded and entered playback without Rive errors. Desktop and mobile layout, selection placement, viewport overflow, and reduced-motion behavior were checked. TypeScript and 20 focused tests passed. The subsequent file 02 handoff is verified separately below.
+
+02 uses a 7.6-second loop with 352 native keyframes. Its runtime export contains the correct artboard and state machine, and its rendered opening and closing frames match exactly. The filter menu and final selection were checked in the website's WebGL2 renderer. The empty starter artboard was removed before export. Editable `.rev` and runtime `.riv` copies are retained in the task's `work/02-contacts` directory.
 
 11 retains its corrected opening icons and closing transition. 12 uses the optimized 208-object, 198 KB export and matching opening/ending frames. 09 now preserves its original 687 keyframes and appends 93 return keys, extending the loop to 7.2 seconds; rendered opening and closing frames match exactly.
 

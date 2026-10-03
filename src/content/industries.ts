@@ -1,3 +1,7 @@
+import { industryIdentities } from "./industry-navigation";
+
+export { industryHref } from "./industry-navigation";
+
 export type IndustryWorkflow = {
   label: string;
   title: string;
@@ -22,8 +26,7 @@ export type IndustryPageContent = {
 // Original Innflow copy. Workflow examples describe starting points, not customer results.
 export const industryPages: IndustryPageContent[] = [
   {
-    slug: "financial-services-banking",
-    name: "Financial Services & Banking",
+    ...industryIdentities["financial-services-banking"],
     group: "industry",
     headline: "Keep financial work moving, with context.",
     description:
@@ -64,8 +67,7 @@ export const industryPages: IndustryPageContent[] = [
     ],
   },
   {
-    slug: "finance",
-    name: "Finance",
+    ...industryIdentities.finance,
     group: "industry",
     headline: "Make room for the work behind the numbers.",
     description:
@@ -106,8 +108,7 @@ export const industryPages: IndustryPageContent[] = [
     ],
   },
   {
-    slug: "banking",
-    name: "Banking",
+    ...industryIdentities.banking,
     group: "industry",
     headline: "A clearer path for every service request.",
     description:
@@ -148,8 +149,7 @@ export const industryPages: IndustryPageContent[] = [
     ],
   },
   {
-    slug: "insurance",
-    name: "Insurance",
+    ...industryIdentities.insurance,
     group: "industry",
     headline: "Bring clarity to every policy conversation.",
     description:
@@ -190,8 +190,7 @@ export const industryPages: IndustryPageContent[] = [
     ],
   },
   {
-    slug: "healthcare",
-    name: "Healthcare",
+    ...industryIdentities.healthcare,
     group: "industry",
     headline: "More clarity around the work of care.",
     description:
@@ -232,8 +231,7 @@ export const industryPages: IndustryPageContent[] = [
     ],
   },
   {
-    slug: "retail-ecommerce",
-    name: "Retail & eCommerce",
+    ...industryIdentities["retail-ecommerce"],
     group: "industry",
     headline: "Keep the conversation moving after checkout.",
     description:
@@ -274,8 +272,7 @@ export const industryPages: IndustryPageContent[] = [
     ],
   },
   {
-    slug: "property-real-estate",
-    name: "Property & Real Estate",
+    ...industryIdentities["property-real-estate"],
     group: "industry",
     headline: "Connect the people behind every property.",
     description:
@@ -316,8 +313,7 @@ export const industryPages: IndustryPageContent[] = [
     ],
   },
   {
-    slug: "property-management",
-    name: "Property Management",
+    ...industryIdentities["property-management"],
     group: "industry",
     headline: "A clearer day in property operations.",
     description:
@@ -358,8 +354,7 @@ export const industryPages: IndustryPageContent[] = [
     ],
   },
   {
-    slug: "manufacturing",
-    name: "Manufacturing",
+    ...industryIdentities.manufacturing,
     group: "industry",
     headline: "Keep operational handoffs in motion.",
     description:
@@ -400,8 +395,7 @@ export const industryPages: IndustryPageContent[] = [
     ],
   },
   {
-    slug: "telecommunications",
-    name: "Telecommunications",
+    ...industryIdentities.telecommunications,
     group: "industry",
     headline: "Connect service conversations to action.",
     description:
@@ -442,8 +436,7 @@ export const industryPages: IndustryPageContent[] = [
     ],
   },
   {
-    slug: "professional-services",
-    name: "Professional Services",
+    ...industryIdentities["professional-services"],
     group: "industry",
     headline: "Keep client work connected from the start.",
     description:
@@ -484,8 +477,7 @@ export const industryPages: IndustryPageContent[] = [
     ],
   },
   {
-    slug: "business-process-outsourcing",
-    name: "Business Process Outsourcing",
+    ...industryIdentities["business-process-outsourcing"],
     group: "industry",
     headline: "Make every handoff feel like one team.",
     description:
@@ -526,8 +518,7 @@ export const industryPages: IndustryPageContent[] = [
     ],
   },
   {
-    slug: "public-sector",
-    name: "Public Sector",
+    ...industryIdentities["public-sector"],
     group: "industry",
     headline: "Give every public request a clear path.",
     description:
@@ -569,8 +560,7 @@ export const industryPages: IndustryPageContent[] = [
     ],
   },
   {
-    slug: "energy-utilities",
-    name: "Energy & Utilities",
+    ...industryIdentities["energy-utilities"],
     group: "industry",
     headline: "Keep service teams and customers connected.",
     description:
@@ -611,8 +601,7 @@ export const industryPages: IndustryPageContent[] = [
     ],
   },
   {
-    slug: "construction",
-    name: "Construction",
+    ...industryIdentities.construction,
     group: "industry",
     headline: "Keep project conversations connected to the job.",
     description:
@@ -653,8 +642,7 @@ export const industryPages: IndustryPageContent[] = [
     ],
   },
   {
-    slug: "supply-chain-logistics",
-    name: "Supply Chain & Logistics",
+    ...industryIdentities["supply-chain-logistics"],
     group: "industry",
     headline: "Keep the next handoff connected.",
     description:
@@ -695,8 +683,7 @@ export const industryPages: IndustryPageContent[] = [
     ],
   },
   {
-    slug: "hospitality-travel",
-    name: "Hospitality & Travel",
+    ...industryIdentities["hospitality-travel"],
     group: "industry",
     headline: "Make every guest conversation easier to follow.",
     description:
@@ -737,8 +724,7 @@ export const industryPages: IndustryPageContent[] = [
     ],
   },
   {
-    slug: "pharmaceutical",
-    name: "Pharmaceutical",
+    ...industryIdentities.pharmaceutical,
     group: "industry",
     headline: "Connect the operations behind the science.",
     description:
@@ -779,8 +765,7 @@ export const industryPages: IndustryPageContent[] = [
     ],
   },
   {
-    slug: "technology-software",
-    name: "Technology & Software",
+    ...industryIdentities["technology-software"],
     group: "industry",
     headline: "Connect customer conversations to product work.",
     description:
@@ -821,8 +806,7 @@ export const industryPages: IndustryPageContent[] = [
     ],
   },
   {
-    slug: "private-equity",
-    name: "Private Equity",
+    ...industryIdentities["private-equity"],
     group: "industry",
     headline: "Bring clarity to portfolio coordination.",
     description:
@@ -863,8 +847,7 @@ export const industryPages: IndustryPageContent[] = [
     ],
   },
   {
-    slug: "cross-industry",
-    name: "Cross-industry",
+    ...industryIdentities["cross-industry"],
     group: "industry",
     headline: "One connected flow. Many ways to work.",
     description:
@@ -905,8 +888,7 @@ export const industryPages: IndustryPageContent[] = [
     ],
   },
   {
-    slug: "hr-recruitment",
-    name: "HR & Recruitment",
+    ...industryIdentities["hr-recruitment"],
     group: "solution",
     headline: "More time for people. Clearer next steps.",
     description:
@@ -948,8 +930,7 @@ export const industryPages: IndustryPageContent[] = [
     ],
   },
   {
-    slug: "customer-service",
-    name: "Customer Service",
+    ...industryIdentities["customer-service"],
     group: "solution",
     headline: "Help your team pick up with context.",
     description:
@@ -991,8 +972,7 @@ export const industryPages: IndustryPageContent[] = [
     ],
   },
   {
-    slug: "debt-collection",
-    name: "Debt Collection",
+    ...industryIdentities["debt-collection"],
     group: "solution",
     headline: "Keep account follow-ups clear and considered.",
     description:
@@ -1033,8 +1013,7 @@ export const industryPages: IndustryPageContent[] = [
     ],
   },
   {
-    slug: "talent-acquisition",
-    name: "Talent Acquisition",
+    ...industryIdentities["talent-acquisition"],
     group: "solution",
     headline: "Keep hiring conversations moving.",
     description:
@@ -1075,8 +1054,7 @@ export const industryPages: IndustryPageContent[] = [
     ],
   },
   {
-    slug: "custom-ai-solutions",
-    name: "Custom AI Solutions",
+    ...industryIdentities["custom-ai-solutions"],
     group: "solution",
     headline: "Shape the workflow around your team.",
     description:
@@ -1122,4 +1100,3 @@ export const industryPages: IndustryPageContent[] = [
 export function getIndustryPage(slug: string) {
   return industryPages.find((page) => page.slug === slug);
 }
-export const industryHref = (slug: string) => `/industries/${slug}`;

@@ -1,12 +1,16 @@
-
-import { ArrowDown as MageArrowDown, Check as MageCheck, Plus as MagePlus, ArrowRight as MageArrowRight } from '@/components/icons/mage';
 import Image from "next/image";
 import { GoogleCtaContent } from "@/components/google-cta-content";
+import {
+  ArrowDown as MageArrowDown,
+  ArrowRight as MageArrowRight,
+  Check as MageCheck,
+  Plus as MagePlus,
+} from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
 import { getPageFaqTuples } from "@/lib/faqs";
 import styles from "./baselane-deposits.module.css";
-import { BaselaneHomepage } from "./baselane-homepage";
 import shared from "./baselane-partners.module.css";
+import { InnerPageShell } from "./inner-page-shell";
 
 const benefits = [
   {
@@ -130,7 +134,7 @@ function GoogleAction() {
 export async function BaselaneDeposits() {
   const cmsFaqs = await getPageFaqTuples("/security-deposit-account", faqs);
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={`${shared.page} ${styles.page}`}>
         <section className={shared.hero}>
           <div className={shared.heroCopy}>
@@ -153,7 +157,9 @@ export async function BaselaneDeposits() {
         <div className={styles.band}>
           {["Property context", "Connected documents", "Human review"].map(
             (text) => (
-              <span key={text}><MageCheck size="1em" /> {text}</span>
+              <span key={text}>
+                <MageCheck size="1em" /> {text}
+              </span>
             ),
           )}
         </div>
@@ -298,7 +304,9 @@ export async function BaselaneDeposits() {
               ].map(([title, href]) => (
                 <a key={href} href={href}>
                   <small>INNFLOW WORKFLOW</small>
-                  <h3>{title} <MageArrowRight size="1em" /></h3>
+                  <h3>
+                    {title} <MageArrowRight size="1em" />
+                  </h3>
                 </a>
               ))}
             </div>
@@ -321,6 +329,6 @@ export async function BaselaneDeposits() {
           </div>
         </section>
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

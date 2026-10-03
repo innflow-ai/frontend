@@ -9,9 +9,9 @@ import {
   Users,
 } from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
-import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-multi-property.module.css";
 import { type RentalAudience, rentalContent } from "./baselane-rental-content";
+import { InnerPageShell } from "./inner-page-shell";
 
 const asset = "/brand/baselane-inspired/multi-property/";
 function Photo({
@@ -93,7 +93,7 @@ export function BaselaneMultiProperty({
       }))
     : defaultTools;
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <section className={styles.hero}>
         <Photo root={assetRoot} name="hero" responsive priority />
         <div className={styles.heroCopy}>
@@ -349,6 +349,6 @@ export function BaselaneMultiProperty({
           ))}
         </div>
       </section>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

@@ -1,13 +1,15 @@
 "use client";
-import { ArrowRight as MageArrowRight, Plus as MagePlus } from '@/components/icons/mage';
-
 
 import Image from "next/image";
 import { useState } from "react";
 import { ChevronRight } from "@/components/chevron-right";
+import {
+  ArrowRight as MageArrowRight,
+  Plus as MagePlus,
+} from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
-import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-loans.module.css";
+import { InnerPageShell } from "./inner-page-shell";
 
 const source = siteConfig.demoUrl;
 const types = [
@@ -68,10 +70,12 @@ function Photo({
   name,
   alt,
   hero = false,
+  sizes = "(max-width: 700px) calc(100vw - 48px), (max-width: 1000px) calc((100vw - 104px) / 2), (max-width: 1440px) calc((100vw - 154px) / 2), 643px",
 }: {
   name: string;
   alt: string;
   hero?: boolean;
+  sizes?: string;
 }) {
   return (
     <Image
@@ -80,6 +84,7 @@ function Photo({
       alt={alt}
       width={1164}
       height={800}
+      sizes={sizes}
       priority={hero}
     />
   );
@@ -88,7 +93,7 @@ export function BaselaneLoans() {
   const [tab, setTab] = useState(0);
   const current = types[tab];
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={styles.page}>
         <section className={styles.hero}>
           <div>
@@ -328,7 +333,11 @@ export function BaselaneLoans() {
               ],
             ].map(([image, title, text]) => (
               <article key={image}>
-                <Photo name={image} alt={title} />
+                <Photo
+                  name={image}
+                  alt={title}
+                  sizes="(max-width: 700px) calc(100vw - 48px), (max-width: 1440px) calc((100vw - 114px) / 2), 663px"
+                />
                 <h3>{title}</h3>
                 <p>{text}</p>
               </article>
@@ -336,8 +345,13 @@ export function BaselaneLoans() {
           </div>
         </section>
         <section className={styles.section}>
-          <h2>Compare the conversation topics.</h2>
-          <div className={styles.tableWrap}>
+          <h2 id="loan-comparison-heading">Compare the conversation topics.</h2>
+          <section
+            className={styles.tableWrap}
+            aria-labelledby="loan-comparison-heading"
+            // biome-ignore lint/a11y/noNoninteractiveTabindex: Enables keyboard scrolling of the comparison table.
+            tabIndex={0}
+          >
             <table>
               <thead>
                 <tr>
@@ -388,7 +402,7 @@ export function BaselaneLoans() {
                 ))}
               </tbody>
             </table>
-          </div>
+          </section>
         </section>
         <section className={styles.section}>
           <h2>Prepare for the next conversation.</h2>
@@ -416,18 +430,22 @@ export function BaselaneLoans() {
             <details key={topic}>
               <summary>
                 {topic}
-                <span aria-hidden="true"><MagePlus size="1em" /></span>
+                <span aria-hidden="true">
+                  <MagePlus size="1em" />
+                </span>
               </summary>
               <p>
                 Ask the provider to explain {topic.toLowerCase()} for your
                 specific property and application. This page does not assess
                 eligibility or offer financing.
               </p>
-              <a href={source}>Discuss your workflow with innflow <MageArrowRight size="1em" /></a>
+              <a href={source}>
+                Discuss your workflow with innflow <MageArrowRight size="1em" />
+              </a>
             </details>
           ))}
         </section>
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

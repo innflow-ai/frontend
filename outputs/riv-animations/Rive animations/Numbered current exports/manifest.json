@@ -25,8 +25,15 @@
     "heading": "Get more done with AI agents.",
     "figmaNode": "1355:3334",
     "poster": "/brand/homepage/02.webp",
-    "stateMachine": null,
-    "status": "poster-only"
+    "stateMachine": "State Machine 1",
+    "status": "rive",
+    "src": "/brand/homepage/02.riv",
+    "artboard": "02 / Let AI manage your contacts / Final cut",
+    "animation": "02 / Contacts and activity filter / 7.6s loop",
+    "duration": 7.6,
+    "sourceUrl": "https://editor.rive.app/file/02/2626799",
+    "bytes": 294186,
+    "sha256": "325a39906203f27501ed45df199a3d6e41b3c9ebbf2b019ed91cecf70bff2d5d"
   },
   {
     "number": 3,
@@ -43,8 +50,8 @@
     "sourceUrl": "https://editor.rive.app/file/03---put-ai-to-work-your-way/2626295",
     "stateMachine": "State Machine 1",
     "status": "rive",
-    "bytes": 626906,
-    "sha256": "0595e5471934941c0d313b1deecc95040a18cd4886781f57320d65595a208328"
+    "bytes": 634135,
+    "sha256": "2d0357bbdefacd5537d47ad1d967269f3b799cf052a24636a5236ec261ec0d8c"
   },
   {
     "number": 4,

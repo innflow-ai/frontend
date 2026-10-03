@@ -11,12 +11,12 @@ import type {
   FeaturePageContent,
 } from "@/content/feature-pages";
 import { getPageFaqTuples } from "@/lib/faqs";
-import { BaselaneHomepage } from "./baselane-homepage";
 import base from "./baselane-product-page.module.css";
 import { Breadcrumbs } from "./breadcrumbs";
 import styles from "./figma-feature-page.module.css";
 import googleStyles from "./google-cta.module.css";
 import { GoogleCtaContent } from "./google-cta-content";
+import { InnerPageShell } from "./inner-page-shell";
 import { ListingHeroArtwork } from "./listing-hero-artwork";
 import { FeatureTestimonials } from "./page-testimonials";
 import { ProductHeadspaceCta } from "./product-headspace-cta";
@@ -131,7 +131,7 @@ export async function FigmaFeaturePage({
     </div>
   );
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div
         className={`${base.rentCollection} ${styles.page} ${page.key === "accounting" ? styles.accounting : ""} ${page.key === "listing-and-advertising" ? styles.listing : ""}`}
       >
@@ -226,6 +226,6 @@ export async function FigmaFeaturePage({
           </div>
         </section>
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

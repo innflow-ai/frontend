@@ -1,10 +1,12 @@
-
-import { ArrowRight as MageArrowRight, Check as MageCheck } from '@/components/icons/mage';
 import Image from "next/image";
 import { ChevronRight } from "@/components/chevron-right";
+import {
+  ArrowRight as MageArrowRight,
+  Check as MageCheck,
+} from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
-import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-savings.module.css";
+import { InnerPageShell } from "./inner-page-shell";
 
 const source = siteConfig.demoUrl;
 const steps = [
@@ -86,7 +88,7 @@ const fees = [
 
 export function BaselaneSavings() {
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={styles.page}>
         <section className={styles.hero}>
           <div>
@@ -109,9 +111,15 @@ export function BaselaneSavings() {
           />
         </section>
         <div className={styles.band}>
-          <span><MageCheck size="1em" /> Review the terms</span>
-          <span><MageCheck size="1em" /> Understand the conditions</span>
-          <span><MageCheck size="1em" /> Keep a record</span>
+          <span>
+            <MageCheck size="1em" /> Review the terms
+          </span>
+          <span>
+            <MageCheck size="1em" /> Understand the conditions
+          </span>
+          <span>
+            <MageCheck size="1em" /> Keep a record
+          </span>
         </div>
         <section className={styles.section}>
           <h2>Start with the details.</h2>
@@ -141,7 +149,12 @@ export function BaselaneSavings() {
             Make the purpose, supporting information, and next action clear
             before a decision moves forward.
           </p>
-          <div className={styles.tableWrap}>
+          <section
+            className={styles.tableWrap}
+            aria-label="Example reserve review checklist"
+            // biome-ignore lint/a11y/noNoninteractiveTabindex: Enables keyboard scrolling of the comparison table.
+            tabIndex={0}
+          >
             <table>
               <caption>Example reserve review checklist</caption>
               <thead>
@@ -182,7 +195,7 @@ export function BaselaneSavings() {
                 ))}
               </tbody>
             </table>
-          </div>
+          </section>
           <p className={styles.note}>
             Keep your existing bank accounts. innflow supports the records,
             review steps, and follow-ups around your reserve planning.
@@ -199,7 +212,9 @@ export function BaselaneSavings() {
                   <ul>
                     {group.items.map((item) => (
                       <li key={item}>
-                        <span aria-hidden="true"><MageCheck size="1em" /></span>
+                        <span aria-hidden="true">
+                          <MageCheck size="1em" />
+                        </span>
                         {item}
                       </li>
                     ))}
@@ -231,7 +246,10 @@ export function BaselaneSavings() {
                     </li>
                   ))}
                 </ul>
-                <a href={source}>Explore {group.title.toLowerCase()} <MageArrowRight size="1em" /></a>
+                <a href={source}>
+                  Explore {group.title.toLowerCase()}{" "}
+                  <MageArrowRight size="1em" />
+                </a>
               </article>
             ))}
           </div>
@@ -261,6 +279,6 @@ export function BaselaneSavings() {
           </div>
         </section>
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

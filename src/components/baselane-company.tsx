@@ -1,11 +1,14 @@
-
-import { ArrowDown as MageArrowDown, ArrowRight as MageArrowRight, Check as MageCheck } from '@/components/icons/mage';
 import Image from "next/image";
 import { ChevronRight } from "@/components/chevron-right";
 import { GoogleCtaContent } from "@/components/google-cta-content";
+import {
+  ArrowDown as MageArrowDown,
+  ArrowRight as MageArrowRight,
+  Check as MageCheck,
+} from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
 import styles from "./baselane-company.module.css";
-import { BaselaneHomepage } from "./baselane-homepage";
+import { InnerPageShell } from "./inner-page-shell";
 
 const values = [
   [
@@ -46,7 +49,9 @@ function Workspace() {
           </div>
           <b>Received</b>
         </div>
-        <div className={styles.connector}><MageArrowDown size="1em" /></div>
+        <div className={styles.connector}>
+          <MageArrowDown size="1em" />
+        </div>
         <div className={styles.request}>
           <span>02</span>
           <div>
@@ -55,7 +60,9 @@ function Workspace() {
           </div>
           <b>Review</b>
         </div>
-        <div className={styles.connector}><MageArrowDown size="1em" /></div>
+        <div className={styles.connector}>
+          <MageArrowDown size="1em" />
+        </div>
         <div className={styles.request}>
           <span>03</span>
           <div>
@@ -72,7 +79,7 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
   const variant = careers ? "careers" : "about";
   const careerUrl = `mailto:${siteConfig.supportEmail}?subject=Careers%20at%20Innflow`;
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={styles.page}>
         <section
           className={`${styles.hero} ${careers ? styles.careerHero : ""}`}
@@ -155,7 +162,9 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
                 ? "The next request rarely arrives with every detail in place. We’re interested in the practical work of connecting context, decisions, and follow-through."
                 : "A request starts in one place. Its context lives in another. innflow brings those pieces together so your team can focus on the decision and the next action."}
             </p>
-            <a href={siteConfig.demoUrl}>Explore the product <MageArrowRight size="1em" /></a>
+            <a href={siteConfig.demoUrl}>
+              Explore the product <MageArrowRight size="1em" />
+            </a>
           </div>
           <Workspace />
         </section>
@@ -210,13 +219,22 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
               <span className={styles.label}>EXAMPLE PROPERTY CONTEXT</span>
               <h3>Everything for the next step.</h3>
               <p>
-                Property details <b><MageCheck size="1em" /></b>
+                Property details{" "}
+                <b>
+                  <MageCheck size="1em" />
+                </b>
               </p>
               <p>
-                Operating procedure <b><MageCheck size="1em" /></b>
+                Operating procedure{" "}
+                <b>
+                  <MageCheck size="1em" />
+                </b>
               </p>
               <p>
-                Review owner <b><MageCheck size="1em" /></b>
+                Review owner{" "}
+                <b>
+                  <MageCheck size="1em" />
+                </b>
               </p>
             </div>
           </div>
@@ -277,7 +295,9 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
                   <span>{number}</span>
                   <h3>{title}</h3>
                   <p>{text}</p>
-                  <b>Explore <MageArrowRight size="1em" /></b>
+                  <b>
+                    Explore <MageArrowRight size="1em" />
+                  </b>
                 </a>
               ))}
             </div>
@@ -296,6 +316,6 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
           </div>
         </section>
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

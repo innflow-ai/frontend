@@ -1,5 +1,14 @@
 export const BLOG_PAGE_SIZE = 9;
 
+export type BlogSearchParams = Partial<
+  Record<"q" | "category" | "industry" | "page", string | string[]>
+>;
+
+/** Match URLSearchParams.get: the first value wins for repeated keys. */
+export function blogFilterValue(value: string | string[] | undefined) {
+  return (Array.isArray(value) ? value[0] : value)?.trim() ?? "";
+}
+
 export type BlogListingFilters = {
   q?: string;
   category?: string;
@@ -8,9 +17,9 @@ export type BlogListingFilters = {
 };
 
 export function parseBlogPage(value: string | string[] | undefined) {
-  const raw = Array.isArray(value) ? value[0] : value;
-  const page = Number.parseInt(raw ?? "1", 10);
-  return Number.isFinite(page) && page > 0 ? Math.floor(page) : 1;
+  const raw = blogFilterValue(value);
+  const page = /^\d+$/.test(raw) ? Number(raw) : 1;
+  return Number.isSafeInteger(page) && page > 0 ? page : 1;
 }
 
 export function blogListingHref({

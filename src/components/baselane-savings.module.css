@@ -113,6 +113,10 @@
   margin-top: 48px;
   overflow-x: auto;
 }
+.tableWrap:focus-visible {
+  outline: 3px solid #177ead;
+  outline-offset: 4px;
+}
 .tableWrap table {
   border-collapse: collapse;
   width: 100%;

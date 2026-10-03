@@ -14,8 +14,8 @@ vi.mock("./tracked-link", () => ({
   }) => <a href={destination}>{children}</a>,
 }));
 afterEach(cleanup);
-it("retains the shared CTA on public routes and omits it only on the homepage preview", () => {
-  for (const pathname of ["/", "/rent-collection", "/preview/another-study"]) {
+it("retains the shared CTA on inner pages without a dedicated closing section", () => {
+  for (const pathname of ["/pricing", "/rent-collection", "/contact"]) {
     route.pathname = pathname;
     const view = render(<SiteCta />);
     expect(
@@ -23,7 +23,19 @@ it("retains the shared CTA on public routes and omits it only on the homepage pr
     ).toBeVisible();
     view.unmount();
   }
-  route.pathname = "/preview/scroll-showcase";
-  const { container } = render(<SiteCta />);
-  expect(container).toBeEmptyDOMElement();
+});
+it("avoids duplicate closing sections on product and industry designs", () => {
+  for (const pathname of [
+    "/help",
+    "/platform",
+    "/skills",
+    "/products/ai-agents",
+    "/integrations",
+    "/industries/healthcare",
+  ]) {
+    route.pathname = pathname;
+    const view = render(<SiteCta />);
+    expect(view.container).toBeEmptyDOMElement();
+    view.unmount();
+  }
 });

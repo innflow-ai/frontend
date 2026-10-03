@@ -6,8 +6,8 @@ import {
   Home as HouseLine,
 } from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
-import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-renters.module.css";
+import { InnerPageShell } from "./inner-page-shell";
 
 const root = "/brand/baselane-inspired/renters/";
 function Photo({
@@ -59,7 +59,7 @@ const features = [
 ];
 export function BaselaneRenters() {
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <section className={styles.hero}>
         <Photo name="hero" responsive priority />
         <div>
@@ -194,6 +194,6 @@ export function BaselaneRenters() {
           ))}
         </ol>
       </section>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

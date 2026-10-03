@@ -32,28 +32,31 @@ export function BlogListenPlayer({
   const [rateIndex, setRateIndex] = useState(0);
   const [elapsed, setElapsed] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [error, setError] = useState("");
   const rate = SPEEDS[rateIndex] ?? 1;
   const sourceText = useMemo(() => text.replace(/\s+/g, " ").trim(), [text]);
   const canPlay = Boolean(audioUrl || sourceText);
 
   useEffect(() => {
-    setDuration(estimatedDuration(sourceText, rate));
-  }, [sourceText, rate]);
+    if (!audioUrl) setDuration(estimatedDuration(sourceText, rate));
+  }, [sourceText, rate, audioUrl]);
 
   useEffect(() => {
+    const audio = audioUrl ? audioRef.current : null;
     return () => {
       window.speechSynthesis?.cancel();
-      audioRef.current?.pause();
+      audio?.pause();
     };
-  }, []);
+  }, [audioUrl]);
 
   const stopSpeech = () => {
     window.speechSynthesis?.cancel();
     utteranceRef.current = null;
   };
 
-  const toggle = () => {
+  const toggle = async () => {
     if (!canPlay) return;
+    setError("");
 
     if (audioUrl && audioRef.current) {
       const audio = audioRef.current;
@@ -63,12 +66,25 @@ export function BlogListenPlayer({
         return;
       }
       audio.playbackRate = rate;
-      void audio.play();
-      setPlaying(true);
+      try {
+        await audio.play();
+      } catch {
+        setPlaying(false);
+        setError("Audio could not play. Please try again.");
+      }
       return;
     }
 
-    if (!window.speechSynthesis || !sourceText) return;
+    if (
+      !window.speechSynthesis ||
+      typeof SpeechSynthesisUtterance === "undefined"
+    ) {
+      setError(
+        "Narration is unavailable in this browser. You can read the article below.",
+      );
+      return;
+    }
+    if (!sourceText) return;
 
     if (playing) {
       window.speechSynthesis.pause();
@@ -89,7 +105,11 @@ export function BlogListenPlayer({
       setPlaying(false);
       setElapsed(duration);
     };
-    utterance.onerror = () => setPlaying(false);
+    utterance.onerror = (event) => {
+      if (event.error === "canceled" || event.error === "interrupted") return;
+      setPlaying(false);
+      setError("Narration stopped. Please try again.");
+    };
     utterance.onboundary = (event) => {
       if (event.name !== "word" || !sourceText.length) return;
       const progress = event.charIndex / sourceText.length;
@@ -123,6 +143,15 @@ export function BlogListenPlayer({
             setDuration(event.currentTarget.duration)
           }
           onEnded={() => setPlaying(false)}
+          onPlay={() => {
+            setError("");
+            setPlaying(true);
+          }}
+          onPause={() => setPlaying(false)}
+          onError={() => {
+            setPlaying(false);
+            setError("Audio could not load. Please try again.");
+          }}
         />
       ) : null}
       <p className={styles.listenLabel}>Listen to this post</p>
@@ -157,6 +186,7 @@ export function BlogListenPlayer({
           {rate}x
         </button>
       </div>
+      {error ? <p role="status">{error}</p> : null}
     </div>
   );
 }

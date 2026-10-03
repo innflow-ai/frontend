@@ -120,6 +120,10 @@
     color 160ms ease;
 }
 
+.link[data-hide-icon] {
+  grid-template-columns: minmax(0, 1fr);
+}
+
 .link:hover {
   background: var(--sky-soft);
 }

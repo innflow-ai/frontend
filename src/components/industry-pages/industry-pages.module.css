@@ -1,5 +1,5 @@
 .page {
-  background: #fcfbf8;
+  background: var(--marketing-paper);
   color: #071a31;
   font-family: var(--font-geist), sans-serif;
 }
@@ -49,7 +49,7 @@
 .intro,
 .directoryHero > p:last-child {
   color: #5f6d77;
-  font-size: 18px;
+  font-size: var(--marketing-body);
   line-height: 1.6;
   max-width: 510px;
 }
@@ -72,7 +72,7 @@
 }
 .page .primary {
   background: #071a31;
-  color: #fcfbf8;
+  color: var(--marketing-paper);
   padding: 16px 20px;
   border-radius: 8px;
 }
@@ -367,14 +367,10 @@
   border-top: 1px solid #071a3130;
   padding-top: 24px;
 }
-.supporting article > span {
-  font-size: 11px;
-  color: #5f6d77;
-}
 .supporting h3 {
   font-size: 19px;
   font-weight: 500;
-  margin: 25px 0 14px;
+  margin: 0 0 14px;
 }
 .supporting p {
   color: #5f6d77;
@@ -482,7 +478,7 @@
 }
 .cardAction > span {
   flex-shrink: 0;
-  font-size: 18px;
+  font-size: var(--marketing-body);
 }
 .directory > .secondary {
   margin-top: 30px;

@@ -60,7 +60,7 @@ describe("numbered homepage storyboards", () => {
         feature.items.map((item) => item.number),
       ]),
     ).toEqual([
-      ["AI agent", [1, 2, 3, 4, 5, 6]],
+      ["AI agent", [3, 2, 1, 4, 5, 6]],
       ["Workflows", [7, 8, 9, 10]],
       ["Assistant", [11, 12, 13, 14]],
       ["Insights", [15, 16, 17, 18]],

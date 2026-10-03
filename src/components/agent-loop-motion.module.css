@@ -1,5 +1,5 @@
 .root {
-  --cream: #f7f4ef;
+  --cream: var(--marketing-cloud);
   --ink: rgba(19, 34, 53, 0.12);
   width: min(100%, 1085px);
   margin-inline: auto;

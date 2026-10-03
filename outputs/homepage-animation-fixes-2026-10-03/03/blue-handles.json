@@ -1,0 +1,19 @@
+{
+  "handles": [
+    "Start",
+    "If",
+    "Else"
+  ],
+  "rest": {
+    "fill": "#00aeff",
+    "plus": "#ffffff",
+    "scale": 80
+  },
+  "hover": {
+    "fill": "#ffffff",
+    "plus": "#00aeff",
+    "scale": 110
+  },
+  "clickScale": 100,
+  "duration": 27.6
+}

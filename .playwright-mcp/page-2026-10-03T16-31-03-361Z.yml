@@ -1,0 +1,83 @@
+- generic [active] [ref=f11e1]:
+  - link "Skip to content" [ref=f11e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f11e5]:
+    - link "innflow home" [ref=f11e6] [cursor=pointer]:
+      - /url: /
+      - img "innflow" [ref=f11e7]
+    - generic [ref=f11e8]:
+      - link "Continue with Google" [ref=f11e9] [cursor=pointer]:
+        - /url: https://app.innflow.ai/auth/google
+      - button "Open navigation" [ref=f11e12] [cursor=pointer]
+  - generic [ref=f11e14]:
+    - generic [ref=f11e15]:
+      - main [ref=f11e16]:
+        - generic [ref=f11e17]:
+          - heading "How can we help?" [level=1] [ref=f11e18]
+          - paragraph [ref=f11e19]: Find clear answers, solve issues fast, and get back to what matters.
+          - button "Search for anything..." [ref=f11e20] [cursor=pointer]
+        - region [ref=f11e25]:
+          - heading "Using Innflow" [level=2] [ref=f11e26]
+          - generic [ref=f11e27]:
+            - link [ref=f11e28] [cursor=pointer]:
+              - /url: /integrations
+              - strong [ref=f11e34]: Connect my tools
+            - link [ref=f11e38] [cursor=pointer]:
+              - /url: /features/workflows
+              - strong [ref=f11e44]: Build a workflow
+            - link [ref=f11e48] [cursor=pointer]:
+              - /url: /products/agent-studio
+              - strong [ref=f11e56]: Set up an AI agent
+            - link [ref=f11e60] [cursor=pointer]:
+              - /url: /platform
+              - strong [ref=f11e68]: Manage my workspace
+            - link [ref=f11e72] [cursor=pointer]:
+              - /url: /files-and-documents
+              - strong [ref=f11e80]: Add files and knowledge
+            - link [ref=f11e84] [cursor=pointer]:
+              - /url: /platform/analytics-and-observability
+              - strong [ref=f11e90]: Review workflow activity
+        - generic [ref=f11e94]:
+          - generic [ref=f11e95]:
+            - heading "Learning hub" [level=2] [ref=f11e96]
+            - paragraph [ref=f11e97]: Learn how to use Innflow at your own pace with resources and workflow guides.
+            - link "Start learning" [ref=f11e98] [cursor=pointer]:
+              - /url: /resources
+          - 'img "Getting started with Innflow: from setup to your first workflow" [ref=f11e102]'
+        - generic [ref=f11e103]:
+          - generic [ref=f11e104]:
+            - heading "Innflow integrations" [level=2] [ref=f11e105]
+            - paragraph [ref=f11e106]: Build connected workflows with the tools and systems your team already uses.
+            - link "Explore integrations" [ref=f11e107] [cursor=pointer]:
+              - /url: /platform/integrations
+          - img "Innflow connected to tools, workflows, and data" [ref=f11e111]
+      - generic [ref=f11e112]:
+        - heading "Still need help?" [level=2] [ref=f11e113]
+        - paragraph [ref=f11e114]: Our team is here to help you find the next step.
+        - generic [ref=f11e115]:
+          - link [ref=f11e116] [cursor=pointer]:
+            - /url: /resources
+            - strong [ref=f11e124]: Explore Innflow resources
+          - button [ref=f11e128] [cursor=pointer]:
+            - strong [ref=f11e134]: Contact support
+      - contentinfo [ref=f11e138]:
+        - generic [ref=f11e139]: English
+        - generic [ref=f11e140]:
+          - link "Privacy Policy" [ref=f11e141] [cursor=pointer]:
+            - /url: /legal/privacy-policy
+          - link "Terms" [ref=f11e142] [cursor=pointer]:
+            - /url: /legal/terms-of-service
+          - link "Cookie Policy" [ref=f11e143] [cursor=pointer]:
+            - /url: /legal/cookie-policy
+          - link "Contact" [ref=f11e144] [cursor=pointer]:
+            - /url: /contact
+        - generic [ref=f11e145]: Copyright Innflow 2026
+    - navigation "Help tools" [ref=f11e146]:
+      - link "Help" [ref=f11e147] [cursor=pointer]:
+        - /url: /help
+      - link "Learn" [ref=f11e153] [cursor=pointer]:
+        - /url: /resources
+      - button "Menu" [ref=f11e159] [cursor=pointer]
+      - button "Search" [ref=f11e162] [cursor=pointer]
+      - button "Support" [ref=f11e166] [cursor=pointer]
+  - alert [ref=f11e170]

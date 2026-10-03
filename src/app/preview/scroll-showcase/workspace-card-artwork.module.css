@@ -7,7 +7,7 @@
   top: 50%;
   left: 50%;
   translate: -50% -50%;
-  scale: min(1, calc(100cqw / 384px));
+  scale: min(var(--workspace-artwork-max-scale, 1), calc(100cqw / 384px));
   pointer-events: none;
   font-family: var(--font-geist), sans-serif;
   color: #071a31;
@@ -25,8 +25,9 @@
   width: 369.083px;
   height: 315.146px;
   left: 50%;
-  top: calc(50% - 32.62px);
+  top: calc(50% + var(--workspace-train-offset, -32.62px));
   translate: -50% -50%;
+  scale: var(--workspace-train-scale, 1);
   font-family: var(--font-workspace-contacts), Arial, sans-serif;
   font-size: 10.79px;
   line-height: 15.411px;

@@ -1,0 +1,26 @@
+[
+  {
+    "number": 1,
+    "runtime": "public/brand/homepage/01.riv",
+    "bytes": 1302019,
+    "sha256": "21c67defb2f4c6a15869bdcef5e5335512325ee1e06cff48dd85adc1e633775e",
+    "duration": 24.0,
+    "sourceUrl": "https://editor.rive.app/file/innflow-pick-up-conversations-with-context/2624697"
+  },
+  {
+    "number": 2,
+    "runtime": "public/brand/homepage/02.riv",
+    "bytes": 295003,
+    "sha256": "5dee50150aee12cc0edb0cb24d63e348b1e9b46bd014671ba4e82b3664f0d677",
+    "duration": 7.6,
+    "sourceUrl": "https://editor.rive.app/file/02/2626799"
+  },
+  {
+    "number": 3,
+    "runtime": "public/brand/homepage/03.riv",
+    "bytes": 925372,
+    "sha256": "1bc39da9e4c50cca039b71e28340881d22d799ed9b13bc7f387867427fa79eb9",
+    "duration": 27.6,
+    "sourceUrl": "https://editor.rive.app/file/03---put-ai-to-work-your-way/2626295"
+  }
+]

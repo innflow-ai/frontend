@@ -23,3 +23,19 @@ Use `src/app/preview/scroll-showcase` as the design reference for the homepage a
 ## Blog directory and article design
 
 For blog UI work, use the `innflow-blog-design` skill when available at `/Users/ak/.codex/skills/innflow-blog-design/SKILL.md`. Read [docs/BLOG_DESIGN_PATTERN.md](docs/BLOG_DESIGN_PATTERN.md) before changing the directory, search/filter layout, article header, or author card. Preserve the approved clear artwork, smaller titles below images, audio beneath the article title, and borderless transparent author cards unless the user requests a different direction.
+
+## Current visual direction (2026-10-03)
+
+The user's current direction supersedes older cream/Baselane palette guidance in
+skills, DESIGN.md, and extracted token packages. Marketing pages use white and
+cool-gray surfaces from the supplied Calendly tokens: `--marketing-paper`,
+`--marketing-cloud`, and `--marketing-pebble` in `src/app/globals.css`. Keep existing
+page layouts, Innflow fonts, gradients, artwork, and responsive interactions.
+Use strong headings with compact supporting copy: normally 16px body, 14px card
+copy, and 12px metadata, with readable line height. Do not enlarge all supporting
+text to match headings or shrink article prose and form controls indiscriminately.
+
+Never add decorative numbered section labels, eyebrows, or feature-card badges
+such as 01, 02, 03. Use descriptive titles or meaningful icons. This does not
+remove real numeric data, dates, prices, pagination, or numbers within authored
+content where they carry meaning.

@@ -1,6 +1,6 @@
 .page {
   color: #071a31;
-  background: #fcfbf8;
+  background: var(--marketing-paper);
   font-family: var(--font-geist), sans-serif;
 }
 .page :where(a, button, select):focus-visible {

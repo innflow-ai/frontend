@@ -1,0 +1,185 @@
+- generic [ref=f11e1]:
+  - link "Skip to content" [ref=f11e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f11e5]:
+    - link "innflow home" [ref=f11e6] [cursor=pointer]:
+      - /url: /
+      - img "innflow" [ref=f11e7]
+    - generic [ref=f11e8]:
+      - link "Continue with Google" [ref=f11e9] [cursor=pointer]:
+        - /url: https://app.innflow.ai/auth/google
+      - button "Open navigation" [ref=f11e12] [cursor=pointer]
+  - generic [ref=f11e14]:
+    - generic [ref=f11e15]:
+      - main [ref=f11e16]:
+        - generic [ref=f11e17]:
+          - heading "How can we help?" [level=1] [ref=f11e18]
+          - paragraph [ref=f11e19]: Find clear answers, solve issues fast, and get back to what matters.
+          - button "Search for anything..." [ref=f11e20] [cursor=pointer]
+        - region [ref=f11e25]:
+          - heading "Using Innflow" [level=2] [ref=f11e26]
+          - generic [ref=f11e27]:
+            - link [ref=f11e28] [cursor=pointer]:
+              - /url: /integrations
+              - strong [ref=f11e34]: Connect my tools
+            - link [ref=f11e38] [cursor=pointer]:
+              - /url: /features/workflows
+              - strong [ref=f11e44]: Build a workflow
+            - link [ref=f11e48] [cursor=pointer]:
+              - /url: /products/agent-studio
+              - strong [ref=f11e56]: Set up an AI agent
+            - link [ref=f11e60] [cursor=pointer]:
+              - /url: /platform
+              - strong [ref=f11e68]: Manage my workspace
+            - link [ref=f11e72] [cursor=pointer]:
+              - /url: /files-and-documents
+              - strong [ref=f11e80]: Add files and knowledge
+            - link [ref=f11e84] [cursor=pointer]:
+              - /url: /platform/analytics-and-observability
+              - strong [ref=f11e90]: Review workflow activity
+        - generic [ref=f11e94]:
+          - generic [ref=f11e95]:
+            - heading "Learning hub" [level=2] [ref=f11e96]
+            - paragraph [ref=f11e97]: Learn how to use Innflow at your own pace with resources and workflow guides.
+            - link "Start learning" [ref=f11e98] [cursor=pointer]:
+              - /url: /resources
+          - 'img "Getting started with Innflow: from setup to your first workflow" [ref=f11e102]'
+        - generic [ref=f11e103]:
+          - generic [ref=f11e104]:
+            - heading "Innflow integrations" [level=2] [ref=f11e105]
+            - paragraph [ref=f11e106]: Build connected workflows with the tools and systems your team already uses.
+            - link "Explore integrations" [ref=f11e107] [cursor=pointer]:
+              - /url: /platform/integrations
+          - img "Innflow connected to tools, workflows, and data" [ref=f11e111]
+      - generic [ref=f11e112]:
+        - heading "Still need help?" [level=2] [ref=f11e113]
+        - paragraph [ref=f11e114]: Our team is here to help you find the next step.
+        - generic [ref=f11e115]:
+          - link [ref=f11e116] [cursor=pointer]:
+            - /url: /resources
+            - strong [ref=f11e124]: Explore Innflow resources
+          - button [ref=f11e128] [cursor=pointer]:
+            - strong [ref=f11e134]: Contact support
+      - contentinfo [ref=f11e138]:
+        - generic [ref=f11e139]: English
+        - generic [ref=f11e140]:
+          - link "Privacy Policy" [ref=f11e141] [cursor=pointer]:
+            - /url: /legal/privacy-policy
+          - link "Terms" [ref=f11e142] [cursor=pointer]:
+            - /url: /legal/terms-of-service
+          - link "Cookie Policy" [ref=f11e143] [cursor=pointer]:
+            - /url: /legal/cookie-policy
+          - link "Contact" [ref=f11e144] [cursor=pointer]:
+            - /url: /contact
+        - generic [ref=f11e145]: Copyright Innflow 2026
+    - navigation "Help tools" [ref=f11e146]:
+      - link "Help" [ref=f11e147] [cursor=pointer]:
+        - /url: /help
+      - link "Learn" [ref=f11e153] [cursor=pointer]:
+        - /url: /resources
+      - button "Menu" [ref=f11e159] [cursor=pointer]
+      - button "Search" [ref=f11e162] [cursor=pointer]
+      - button "Support" [ref=f11e166] [cursor=pointer]
+    - dialog "Search help" [ref=f11e171]:
+      - generic [ref=f11e172]:
+        - searchbox "Search help articles" [active] [ref=f11e176]
+        - button "Close search" [ref=f11e177] [cursor=pointer]: Esc
+      - generic [ref=f11e178]:
+        - status [ref=f11e179]: Popular articles
+        - article [ref=f11e180]:
+          - link [ref=f11e181] [cursor=pointer]:
+            - /url: /integrations
+            - strong [ref=f11e182]: Connect your tools to Innflow
+          - paragraph [ref=f11e185]: Bring your existing apps into your workspace with connected accounts and integrations.
+          - generic [ref=f11e186]: Help Center / Integrations
+          - group [ref=f11e187]:
+            - generic "Quick answer" [ref=f11e188] [cursor=pointer]
+        - article [ref=f11e194]:
+          - link [ref=f11e195] [cursor=pointer]:
+            - /url: /features/workflows
+            - strong [ref=f11e196]: Build your first workflow
+          - paragraph [ref=f11e199]: Turn a recurring task into a clear sequence of triggers, actions, and review points.
+          - generic [ref=f11e200]: Help Center / Workflows
+          - group [ref=f11e201]:
+            - generic "Quick answer" [ref=f11e202] [cursor=pointer]
+        - article [ref=f11e208]:
+          - link [ref=f11e209] [cursor=pointer]:
+            - /url: /products/agent-studio
+            - strong [ref=f11e210]: Set up an AI agent
+          - paragraph [ref=f11e213]: Give an agent a clear role, relevant knowledge, and the tools it needs.
+          - generic [ref=f11e214]: Help Center / AI agents
+          - group [ref=f11e215]:
+            - generic "Quick answer" [ref=f11e216] [cursor=pointer]
+        - article [ref=f11e222]:
+          - link [ref=f11e223] [cursor=pointer]:
+            - /url: /files-and-documents
+            - strong [ref=f11e224]: Add files and knowledge
+          - paragraph [ref=f11e227]: Keep the context behind your work available to your team and agents.
+          - generic [ref=f11e228]: Help Center / Knowledge
+          - group [ref=f11e229]:
+            - generic "Quick answer" [ref=f11e230] [cursor=pointer]
+        - article [ref=f11e236]:
+          - link [ref=f11e237] [cursor=pointer]:
+            - /url: /features/workflows
+            - strong [ref=f11e238]: Keep people in the loop
+          - paragraph [ref=f11e241]: Add human review where decisions need a closer look.
+          - generic [ref=f11e242]: Help Center / Workflows
+          - group [ref=f11e243]:
+            - generic "Quick answer" [ref=f11e244] [cursor=pointer]
+        - article [ref=f11e250]:
+          - link [ref=f11e251] [cursor=pointer]:
+            - /url: /platform/security-and-compliance
+            - strong [ref=f11e252]: Understand workspace security
+          - paragraph [ref=f11e255]: Learn about access boundaries, connected-account permissions, and review controls.
+          - generic [ref=f11e256]: Help Center / Account
+          - group [ref=f11e257]:
+            - generic "Quick answer" [ref=f11e258] [cursor=pointer]
+        - article [ref=f11e264]:
+          - link [ref=f11e265] [cursor=pointer]:
+            - /url: /pricing
+            - strong [ref=f11e266]: Explore plans and pricing
+          - paragraph [ref=f11e269]: Find the right starting point for your team and workflows.
+          - generic [ref=f11e270]: Help Center / Account
+          - group [ref=f11e271]:
+            - generic "Quick answer" [ref=f11e272] [cursor=pointer]
+        - article [ref=f11e278]:
+          - link [ref=f11e279] [cursor=pointer]:
+            - /url: /platform/analytics-and-observability
+            - strong [ref=f11e280]: Follow workflow activity
+          - paragraph [ref=f11e283]: Understand execution, review outcomes, and find steps that need attention.
+          - generic [ref=f11e284]: Help Center / Analytics
+          - group [ref=f11e285]:
+            - generic "Quick answer" [ref=f11e286] [cursor=pointer]
+        - article [ref=f11e292]:
+          - link [ref=f11e293] [cursor=pointer]:
+            - /url: /platform/integrations
+            - strong [ref=f11e294]: Connect custom tools
+          - paragraph [ref=f11e297]: Explore integration options for the systems your team already uses.
+          - generic [ref=f11e298]: Help Center / Integrations
+          - group [ref=f11e299]:
+            - generic "Quick answer" [ref=f11e300] [cursor=pointer]
+        - article [ref=f11e306]:
+          - link [ref=f11e307] [cursor=pointer]:
+            - /url: /platform
+            - strong [ref=f11e308]: Bring your team together
+          - paragraph [ref=f11e311]: Keep conversations, context, and the next step connected in a shared workspace.
+          - generic [ref=f11e312]: Help Center / Workspace
+          - group [ref=f11e313]:
+            - generic "Quick answer" [ref=f11e314] [cursor=pointer]
+        - article [ref=f11e320]:
+          - link [ref=f11e321] [cursor=pointer]:
+            - /url: /resources
+            - strong [ref=f11e322]: Learn at your own pace
+          - paragraph [ref=f11e325]: Explore articles and resources for getting more from Innflow.
+          - generic [ref=f11e326]: Help Center / Learning
+          - group [ref=f11e327]:
+            - generic "Quick answer" [ref=f11e328] [cursor=pointer]
+        - article [ref=f11e334]:
+          - link [ref=f11e335] [cursor=pointer]:
+            - /url: /platform/deployment-options
+            - strong [ref=f11e336]: Discuss deployment options
+          - paragraph [ref=f11e339]: Plan a workspace and deployment approach around your requirements.
+          - generic [ref=f11e340]: Help Center / Account
+          - group [ref=f11e341]:
+            - generic "Quick answer" [ref=f11e342] [cursor=pointer]
+  - alert [ref=f11e170]

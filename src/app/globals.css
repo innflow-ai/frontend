@@ -7,9 +7,17 @@
   --font-figtree: var(--font-sans);
   /* Compatibility for components that still reference the previous default. */
   --font-questrial: var(--font-sans);
-  /* Warm page backgrounds with the existing sky accent palette. */
-  --canvas: #fffbf4;
-  --canvas-warm: #fffbf4;
+  /* White/cool neutrals from the supplied Calendly_variables palette.
+     Preserve Innflow's existing ink, typography families, and product artwork. */
+  --marketing-paper: #ffffff;
+  --marketing-cloud: #f8f9fb;
+  --marketing-pebble: #f0f3f8;
+  --marketing-hairline: #d4e0ed;
+  --marketing-body: 16px;
+  --marketing-body-small: 14px;
+  --marketing-caption: 12px;
+  --canvas: var(--marketing-paper);
+  --canvas-warm: var(--marketing-cloud);
   --surface: #ffffff;
   --surface-soft: #eef4fa;
   --ink: #0c1b2a;
@@ -139,7 +147,7 @@ body {
 }
 
 html[data-blog-article] body {
-  background: #fffbf4;
+  background: var(--marketing-paper);
   color: #121111;
 }
 
@@ -648,7 +656,7 @@ p {
 
 .assistant-panel > p {
   color: var(--ink-strong);
-  font-size: 18px;
+  font-size: var(--marketing-body);
   font-weight: 560;
   line-height: 1.45;
 }
@@ -2340,7 +2348,7 @@ p {
 .legal-hero p,
 .not-found-section p {
   color: var(--ink-muted);
-  font-size: 18px;
+  font-size: var(--marketing-body);
   line-height: 1.7;
 }
 
@@ -2418,29 +2426,18 @@ p {
   line-height: 1.7;
 }
 
-.numbered-list {
+.operating-list {
   border-top: 1px solid var(--border);
 }
 
-.numbered-list li {
-  display: grid;
-  grid-template-columns: 64px 1fr;
-  gap: 24px;
+.operating-list li {
   border-bottom: 1px solid var(--border);
   padding: 28px 0;
 }
 
-.numbered-list span {
-  color: var(--brand);
-  font-family: var(--font-sans);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-}
-
-.numbered-list p {
+.operating-list p {
   max-width: 720px;
-  font-size: 18px;
+  font-size: var(--marketing-body);
   line-height: 1.55;
 }
 
@@ -2696,7 +2693,7 @@ p {
     padding-inline: 0;
   }
 
-  .numbered-list li,
+  .operating-list li,
   .portfolio-links article {
     grid-template-columns: 46px 1fr;
   }
@@ -2733,7 +2730,7 @@ p {
    Existing tokens above remain the system for pricing, integrations,
    features, legal, and demo pages. See DESIGN.md. */
 :root {
-  --sky-canvas: #fffbf4;
+  --sky-canvas: var(--marketing-paper);
   --sky-soft: #f4f8fc;
   --sky-line: #e3ecf4;
   --sky-ink: #0c1b2a;

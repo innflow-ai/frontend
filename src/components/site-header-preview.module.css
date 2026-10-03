@@ -1,6 +1,6 @@
 .previewScope {
   position: relative;
-  background: #fcfbf8;
+  background: var(--marketing-paper);
   --preview-announcement-height: 40px;
 }
 .previewScope[data-announcement-dismissed="true"] {
@@ -73,11 +73,11 @@
   min-height: 70px;
   padding: 10px 40px;
   border-radius: 0;
-  background: #fcfbf8;
+  background: var(--marketing-paper);
 }
 .previewScope .flatHeader::before {
   border-radius: 0;
-  background: #fcfbf8;
+  background: var(--marketing-paper);
   box-shadow: none;
   backdrop-filter: none;
 }

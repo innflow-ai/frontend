@@ -9,7 +9,7 @@
 }
 
 .page {
-  --blog-bg: #fffbf4;
+  --blog-bg: var(--marketing-paper);
   --blog-ink: #121111;
   --blog-muted: #63635f;
   --blog-accent: #00303e;

@@ -2,7 +2,7 @@
   --ink: #071a31;
   --muted: #5d6d7b;
   color: var(--ink);
-  background: #fcfbf8;
+  background: var(--marketing-paper);
   font-family: var(--font-host-grotesk), sans-serif;
 }
 .page button {

@@ -35,7 +35,10 @@ import {
 } from "@/components/icons/mage";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
-import { industryHref, industryNavigation } from "@/content/industry-navigation";
+import {
+  industryHref,
+  industryNavigation,
+} from "@/content/industry-navigation";
 import { platformPages } from "@/content/platform";
 import { megaMenuHref } from "@/lib/mega-menu-destinations";
 import styles from "./mega-menu.module.css";
@@ -612,6 +615,7 @@ export const solutionsColumns: MegaMenuColumn[] = [
       title: page.name,
       body: "",
       icon: Buildings,
+      hideIcon: true,
     };
   }),
 }));
@@ -882,6 +886,7 @@ export function MegaMenu({
                         key={link.title}
                         href={link.href}
                         className={styles.link}
+                        data-hide-icon={link.hideIcon || undefined}
                         data-browse-all={link.browseAll || undefined}
                         onClick={closeMenu}
                       >

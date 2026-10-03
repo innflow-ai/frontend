@@ -44,7 +44,7 @@
 }
 .logo {
   height: 136px;
-  background: #f1eee3;
+  background: var(--marketing-pebble);
   display: grid;
   place-items: center;
   padding: 28px;

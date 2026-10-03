@@ -1,5 +1,5 @@
 .features {
-  background: #fcfbf8;
+  background: var(--marketing-paper);
   color: #071a31;
   font-family: var(--font-geist), sans-serif;
 }

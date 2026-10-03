@@ -1,10 +1,12 @@
-
-import { StarsA as MageStarsA, Plus as MagePlus } from '@/components/icons/mage';
 import { Geist } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties, ReactNode } from "react";
 import { ChevronRight } from "@/components/chevron-right";
+import {
+  Plus as MagePlus,
+  StarsA as MageStarsA,
+} from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
 import {
   getProductDesign,
@@ -281,9 +283,6 @@ export function CalendlyProductPage({
                   placement={inventory?.cards[index]}
                   compact
                 />
-                <span className={styles.stepNumber}>
-                  {String(index + 1).padStart(2, "0")}
-                </span>
                 <h3>
                   {item.href ? (
                     <Link href={item.href}>
@@ -349,7 +348,9 @@ export function CalendlyProductPage({
             {content.faqs?.map((faq) => (
               <details key={faq.question}>
                 <summary>
-                  <span aria-hidden="true"><MagePlus size="1em" /></span>
+                  <span aria-hidden="true">
+                    <MagePlus size="1em" />
+                  </span>
                   {faq.question}
                 </summary>
                 <p>{faq.answer}</p>
@@ -395,7 +396,9 @@ export function CalendlyProductPage({
                     density="compact"
                   />
                 ) : (
-                  <span aria-hidden="true"><MageStarsA size="1em" /></span>
+                  <span aria-hidden="true">
+                    <MageStarsA size="1em" />
+                  </span>
                 )}
               </div>
               <h3>

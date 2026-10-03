@@ -1,0 +1,566 @@
+- generic [active] [ref=f6e1]:
+  - link "Skip to content" [ref=f6e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f6e5]:
+    - link "innflow home" [ref=f6e6] [cursor=pointer]:
+      - /url: /
+      - img "innflow" [ref=f6e7]
+    - navigation "Primary navigation" [ref=f6e8]:
+      - group "Product" [ref=f6e9]:
+        - button "Product" [ref=f6e10] [cursor=pointer]
+      - group "Solutions" [ref=f6e13]:
+        - button "Solutions" [ref=f6e14] [cursor=pointer]
+      - group "Resources" [ref=f6e17]:
+        - button "Resources" [ref=f6e18] [cursor=pointer]
+      - link "Pricing" [ref=f6e21] [cursor=pointer]:
+        - /url: /pricing
+      - link "Blog" [ref=f6e22] [cursor=pointer]:
+        - /url: /blog
+    - generic [ref=f6e23]:
+      - link "Log in" [ref=f6e24] [cursor=pointer]:
+        - /url: https://app.innflow.ai/login
+      - link "Continue with Google" [ref=f6e25] [cursor=pointer]:
+        - /url: https://app.innflow.ai/auth/google
+  - main [ref=f6e28]:
+    - article [ref=f6e29]:
+      - generic [ref=f6e30]:
+        - generic [ref=f6e31]:
+          - generic [ref=f6e32]:
+            - 'img "OpenAI vs Anthropic: Which AI Platform Fits Your Business?" [ref=f6e33]'
+            - link "About Arianna Khan" [ref=f6e34] [cursor=pointer]:
+              - /url: "#author-bio"
+              - generic [ref=f6e35]: Arianna Khan
+              - generic [ref=f6e37]: Account Executive @ Innflow.ai
+          - generic [ref=f6e38]:
+            - paragraph [ref=f6e39]:
+              - time [ref=f6e40]: "Published: September 22"
+              - generic [aria-hidden] [ref=f6e41]: ▪
+              - generic [ref=f6e42]: 12 min read
+            - 'heading "OpenAI vs Anthropic: Which AI Platform Fits Your Business?" [level=1] [ref=f6e43]'
+            - generic [ref=f6e44]:
+              - generic [ref=f6e45]:
+                - paragraph [ref=f6e46]: Listen to this post
+                - generic [ref=f6e47]:
+                  - button "Play article audio" [ref=f6e48] [cursor=pointer]
+                  - generic [ref=f6e52]: 0:00 / 14:50
+                  - button "Playback speed 1x" [ref=f6e53] [cursor=pointer]: 1x
+              - generic [ref=f6e54]:
+                - generic [ref=f6e55]:
+                  - paragraph [ref=f6e56]: Industries
+                  - list [ref=f6e57]:
+                    - listitem [ref=f6e58]:
+                      - link "General" [ref=f6e59] [cursor=pointer]:
+                        - /url: /blog?industry=General
+                - generic [ref=f6e60]:
+                  - paragraph [ref=f6e61]: Tags
+                  - list [ref=f6e62]:
+                    - listitem [ref=f6e63]:
+                      - link "ai" [ref=f6e64] [cursor=pointer]:
+                        - /url: /blog?q=ai
+                    - listitem [ref=f6e65]:
+                      - link "comparison" [ref=f6e66] [cursor=pointer]:
+                        - /url: /blog?q=comparison
+                - generic [ref=f6e67]:
+                  - paragraph [ref=f6e68]: Content types
+                  - list [ref=f6e69]:
+                    - listitem [ref=f6e70]:
+                      - link "AI" [ref=f6e71] [cursor=pointer]:
+                        - /url: /blog?category=ai
+                  - button "Show more" [ref=f6e72] [cursor=pointer]
+        - generic [ref=f6e73]:
+          - complementary "Article tools" [ref=f6e74]:
+            - generic [ref=f6e75]:
+              - paragraph [ref=f6e76]: Bring your property operations together with Innflow
+              - button "Get started" [ref=f6e77] [cursor=pointer]
+            - generic [ref=f6e79]:
+              - paragraph [ref=f6e80]: Share
+              - generic [ref=f6e81]:
+                - button "Share this post" [ref=f6e82] [cursor=pointer]
+                - link "Share on Facebook" [ref=f6e89] [cursor=pointer]:
+                  - /url: https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Finnflow.ai%2Fblog%2Fopenai-vs-anthropic-ai-platform
+                - link "Share on X" [ref=f6e92] [cursor=pointer]:
+                  - /url: https://twitter.com/intent/tweet?url=https%3A%2F%2Finnflow.ai%2Fblog%2Fopenai-vs-anthropic-ai-platform&text=OpenAI%20vs%20Anthropic%3A%20Which%20AI%20Platform%20Fits%20Your%20Business%3F
+                - link "Share on LinkedIn" [ref=f6e95] [cursor=pointer]:
+                  - /url: https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Finnflow.ai%2Fblog%2Fopenai-vs-anthropic-ai-platform
+            - navigation "In this article" [ref=f6e98]:
+              - paragraph [ref=f6e99]: "In this article:"
+              - link "What “AI platform” means when you are not a lab" [ref=f6e100] [cursor=pointer]:
+                - /url: "#section-31731db2776c"
+              - 'link "OpenAI: product surface, ecosystem, and pace" [ref=f6e101] [cursor=pointer]':
+                - /url: "#section-2bba1c357907"
+              - 'link "Anthropic: instruction discipline and long work" [ref=f6e102] [cursor=pointer]':
+                - /url: "#section-dfcb37549441"
+              - 'link "OpenAI vs Anthropic: compare like an operator" [ref=f6e103] [cursor=pointer]':
+                - /url: "#section-d8cbfb095d6d"
+              - link "Keep the workflow portable" [ref=f6e104] [cursor=pointer]:
+                - /url: "#section-00ccfaf7e5a8"
+              - link "A practical evaluation sequence" [ref=f6e105] [cursor=pointer]:
+                - /url: "#section-54e02586457f"
+              - 'link "How innflow fits: the model as a component" [ref=f6e106] [cursor=pointer]':
+                - /url: "#section-2df578fdcaf2"
+              - link "Frequently Asked Questions" [ref=f6e107] [cursor=pointer]:
+                - /url: "#section-7b4fa1ee54b0"
+              - link "Conclusion" [ref=f6e108] [cursor=pointer]:
+                - /url: "#section-67b96acbb4d5"
+          - generic [ref=f6e109]:
+            - region "Explore Innflow" [ref=f6e110]:
+              - heading "More time for your team. Less time chasing tasks." [level=2] [ref=f6e111]: More time for your team.Less time chasing tasks.
+              - paragraph [ref=f6e112]: Bring your property operations into one connected flow.
+              - generic [ref=f6e113]:
+                - link "See demo" [ref=f6e114] [cursor=pointer]:
+                  - /url: https://cal.com/julian-patrick-afu0u2/innflow-demo?overlayCalendar=true
+                - link "Continue with Google" [ref=f6e118] [cursor=pointer]:
+                  - /url: https://app.innflow.ai/auth/google
+            - generic [ref=f6e121]:
+              - paragraph [ref=f6e122]:
+                - emphasis [ref=f6e123]:
+                  - text: The
+                  - strong [ref=f6e124]: OpenAI vs Anthropic
+                  - text: question is the one executives ask after the first chatbot demo.
+                - text: Both companies sell frontier language models through APIs, consumer apps, and enterprise programs. Both support tool use, long context, and the kind of drafting and classification that property teams want. Neither company is a property operations platform. The useful decision is not “which logo is smarter this quarter.” It is how you will keep workflows portable when the model changes, and where a human still has to sign the work.
+              - paragraph [ref=f6e125]: This guide is written for operators and the IT partners who support them. It covers what you are actually buying from each provider, how the comparison should be run inside a real portfolio, and why locking a leasing or maintenance process to a single model is a fragile design. innflow treats the model as a component inside governed workflows. You can evaluate OpenAI vs Anthropic on the merits, then keep the canvas, the tools, and the review gates stable.
+              - heading "What “AI platform” means when you are not a lab" [level=2] [ref=f6e126]
+              - paragraph [ref=f6e127]: "OpenAI and Anthropic are model providers. They train models, host inference, publish APIs, and wrap some of that in chat products (ChatGPT, Claude). Around those cores sit enterprise features: administration, data processing terms, usage controls, and tool-calling interfaces that let a model request an action. When a vendor says “platform,” they often mean the combination of model, API, and those controls."
+              - paragraph [ref=f6e128]:
+                - link "Book an operations demo" [ref=f6e129] [cursor=pointer]:
+                  - /url: https://cal.com/julian-patrick-afu0u2/innflow-demo?overlayCalendar=true
+              - paragraph [ref=f6e130]: "Property companies buy a slice of that. You need a model that can classify a resident message, draft a reply in your voice, extract a unit number, or propose the next step in a workflow. You also need a place where that output becomes work: a work order, a ledger note, a human approval. The model provider does not know your PMS. It does not know which employee may discuss occupancy. It does not know your after-hours emergency definition. If you treat OpenAI or Anthropic as the operations system, you will rebuild those facts in prompts, and prompts drift."
+              - paragraph [ref=f6e131]: In 2026 the labs ship new model names on a short cycle. Rankings move. Prices move. Tool-calling reliability on your actual tickets matters more than a public leaderboard you cannot reproduce. A durable architecture assumes the model will be swapped. The workflow, the tools, and the gates should not have to be rewritten when that happens.
+              - 'heading "OpenAI: product surface, ecosystem, and pace" [level=2] [ref=f6e132]'
+              - heading "What teams typically use" [level=3] [ref=f6e133]
+              - paragraph [ref=f6e134]: "OpenAI is often the first provider a company tries because ChatGPT is already on someone’s laptop. The API side offers a family of models at different price and latency points, plus tool calling, file inputs, and a large ecosystem of tutorials, gateways, and copilot products. For many businesses the “platform” feeling comes from that ecosystem: Microsoft channels, consumer familiarity, and a long list of examples for drafting, extraction, and coding assistants."
+              - paragraph [ref=f6e135]: For property operations, the practical upside is availability of skills. More staff have already used the chat product. More contractors have already wired the API. If you need a classification step or a draft step quickly, you will find examples. That is not the same as fitness for housing work. It is a hiring and onboarding fact.
+              - paragraph [ref=f6e136]:
+                - link "Book an operations demo" [ref=f6e137] [cursor=pointer]:
+                  - /url: https://cal.com/julian-patrick-afu0u2/innflow-demo?overlayCalendar=true
+              - heading "Where OpenAI is a strong fit" [level=3] [ref=f6e138]
+              - paragraph [ref=f6e139]: Use OpenAI as a candidate when your workload is mixed (drafting, extraction, light reasoning, multimodal inputs such as photos of a unit), when your IT stack already has an approved path to that vendor, or when you need a cheaper, faster model for high-volume classification next to a stronger model for hard cases. The provider’s breadth is the point. You can route easy tickets to a smaller model and reserve a larger one for messy narratives, as long as the workflow engine, not a one-off script, does the routing.
+              - heading "Where operators should slow down" [level=3] [ref=f6e140]
+              - paragraph [ref=f6e141]: Consumer ChatGPT is not your system of record and not your approval log. Staff who paste resident emails into a personal chat create a data path you did not design. Enterprise and API terms are the conversation to have with legal and IT. Even then, a model that is good at sounding confident can still invent a policy. If the workflow sends the draft, the confidence becomes a resident-facing statement. Keep OpenAI in the “propose” seat until a gate says otherwise.
+              - 'heading "Anthropic: instruction discipline and long work" [level=2] [ref=f6e142]'
+              - heading "What teams typically use" [level=3] [ref=f6e143]
+              - paragraph [ref=f6e144]: "Anthropic’s Claude models are widely used for long documents, careful instruction following, and agent-style loops that must not wander. The company has been explicit about constitutional-style safety training and about refusing some categories of work. The API similarly offers a tiered family: faster cheaper models for volume, larger models for harder tasks. Tool use is a first-class idea: the model asks to call a function, your system runs it, the model continues."
+              - paragraph [ref=f6e145]:
+                - link "Book an operations demo" [ref=f6e146] [cursor=pointer]:
+                  - /url: https://cal.com/julian-patrick-afu0u2/innflow-demo?overlayCalendar=true
+              - paragraph [ref=f6e147]: For property operations, the practical upside is tone and constraint. Lease files, inspection notes, and owner packets are long. A model that stays inside the instructions and the retrieved policy is easier to put behind a draft step. That is a tendency, not a guarantee. You still evaluate on your documents, not on a lab blog post.
+              - heading "Where Anthropic is a strong fit" [level=3] [ref=f6e148]
+              - paragraph [ref=f6e149]: Use Anthropic as a candidate when the work is document-heavy (lease abstraction, inspection summaries, policy Q&A over your own knowledge), when you want a model that is conservative about jumping to action, or when your eval set shows fewer instruction misses on your voice and your tools. Some teams also prefer Anthropic’s posture on training data and safety as a procurement story. Procurement still has to read the current terms. Do not treat a brand reputation as a control.
+              - heading "Where operators should slow down" [level=3] [ref=f6e150]
+              - paragraph [ref=f6e151]: A careful model can still be wrong, and a refusal can still block a legitimate operational draft if your prompt is vague. Anthropic is not a Fair Housing department. It will not know your local ordinance. It will not be the named human on an eviction-related notice. If you pick Claude because it “feels safer,” keep the human gate anyway. Safety training is not the same as an approval record in your workspace.
+              - 'heading "OpenAI vs Anthropic: compare like an operator" [level=2] [ref=f6e152]'
+              - paragraph [ref=f6e153]:
+                - text: Run the
+                - strong [ref=f6e154]: OpenAI vs Anthropic
+                - text: evaluation on your tickets, with your tools, under your gates. A slide about benchmarks will not tell you whether the model can extract a unit number from a rambling voicemail transcript.
+              - heading "Task mix, not a single winner" [level=3] [ref=f6e155]
+              - paragraph [ref=f6e156]: "Split a month of real work into buckets: classify inbound messages, draft resident replies, summarize inspections, extract fields into a table, propose a work-order priority, answer staff questions from SOPs. Score each bucket separately. One provider may win classification latency. The other may win long-lease summaries. That is a routing problem, not a reason to declare a company-wide winner after one demo."
+              - heading "Tool calling is the property-relevant skill" [level=3] [ref=f6e157]
+              - paragraph [ref=f6e158]:
+                - text: "Agents that only chat are chatbots. Agents that help operations must request tools: get unit, create work order, look up ledger, file a note. Watch whether the model calls the right tool, with the right arguments, and whether it stops when the tool is missing. A pretty paragraph that never calls"
+                - code [ref=f6e159]: create_work_order
+                - text: is a failed run, even if a human would have praised the empathy. Score tool precision on your schema.
+              - heading "Data path and training posture" [level=3] [ref=f6e160]
+              - paragraph [ref=f6e161]: Ask both providers, and your own counsel, the same questions. What is retained? Is customer content used to train foundation models? Where does inference run? What admin controls exist to block consumer-product leakage? innflow’s own stance for model training is zero data retention for that purpose, with AES-256 in transit and at rest, and private deployment options when a portfolio needs them. Your provider choice should be compatible with that bar, not a workaround around it.
+              - heading "Price as a routing input" [level=3] [ref=f6e162]
+              - paragraph [ref=f6e163]: Token prices move. Output tokens on long drafts cost more than short classifications. A “cheaper” provider can become expensive if it rambles. A “premium” provider can be cheaper if it finishes in one tool loop. Measure cost per completed, accepted task (a draft a manager actually sent), not cost per thousand tokens in a vacuum. Then keep the workflow able to switch models so a price change is a config change.
+              - heading "Do not outsource housing law to a lab" [level=3] [ref=f6e164]
+              - paragraph [ref=f6e165]: Neither OpenAI nor Anthropic should be the final actor on Fair Housing, screening, eviction strategy, or money movement. Models can flag risky language. Models can draft. A qualified human decides. That is operating practice, not legal advice. If a vendor demo skips the pause, the demo is not a property demo.
+              - heading "Keep the workflow portable" [level=2] [ref=f6e166]
+              - paragraph [ref=f6e167]: The expensive mistake in the OpenAI vs Anthropic debate is rewriting the operation around a model name. Prompts that hard-code vendor features, tools that only exist in one lab’s plugin store, and staff trained on one chat product all become switching costs. Model flexibility is the control.
+              - heading "What portability looks like in practice" [level=3] [ref=f6e168]
+              - list [ref=f6e169]:
+                - listitem [ref=f6e170]:
+                  - strong [ref=f6e171]: Stable tools.
+                  - text: Define
+                  - code [ref=f6e172]: get_unit
+                  - text: ","
+                  - code [ref=f6e173]: create_work_order
+                  - text: ","
+                  - code [ref=f6e174]: draft_resident_reply
+                  - text: as your objects. The model calls them. The vendor should be interchangeable behind that interface.
+                - listitem [ref=f6e175]:
+                  - strong [ref=f6e176]: Stable gates.
+                  - text: “Human must send” and “human must approve spend” are workflow steps, not prompt footnotes. They survive a model swap.
+                - listitem [ref=f6e177]:
+                  - strong [ref=f6e178]: Eval sets you own.
+                  - text: Keep a packet of redacted, realistic tickets. Re-run it when a provider ships a new default. Promote a model only if it beats the current one on your packet.
+                - listitem [ref=f6e179]:
+                  - strong [ref=f6e180]: Context from the operation.
+                  - text: Policies, unit history, and vendor rules should live in your knowledge and tables, not only in a lab’s project folder. Retrieval should be yours.
+                - listitem [ref=f6e181]:
+                  - strong [ref=f6e182]: No shadow chat.
+                  - text: If staff can only get good drafts inside a consumer app, you do not have a portable workflow. You have a habit.
+              - paragraph [ref=f6e183]: Portability is also how you avoid panic when a model is deprecated or a region has an outage. A second provider on the same tools is an operational backup, not a science project.
+              - heading "A practical evaluation sequence" [level=2] [ref=f6e184]
+              - paragraph [ref=f6e185]: Use a short, boring process. It will beat a month of opinion.
+              - list [ref=f6e186]:
+                - listitem [ref=f6e187]:
+                  - strong [ref=f6e188]: Pick five real case types.
+                  - text: "Example set: maintenance intake, late-rent reminder draft, inspection summary, owner weekly digest, application follow-up that must not discuss protected classes."
+                - listitem [ref=f6e189]:
+                  - strong [ref=f6e190]: Connect the same tools to both providers.
+                  - text: Same schemas, same permissions, same stop conditions.
+                - listitem [ref=f6e191]:
+                  - strong [ref=f6e192]: Blind the reviewers.
+                  - text: Managers score drafts and tool traces without seeing the model name. Score correctness, tone, and whether the gate fired.
+                - listitem [ref=f6e193]:
+                  - strong [ref=f6e194]: Measure the human time.
+                  - text: A draft that needs a full rewrite is not a win even if the model is “smart.”
+                - listitem [ref=f6e195]:
+                  - strong [ref=f6e196]: Check the admin path.
+                  - text: SSO, key management, retention, and who can change the prompt in production.
+                - listitem [ref=f6e197]:
+                  - strong [ref=f6e198]: Write the routing rule.
+                  - text: Maybe classification goes to a fast model and lease-length summaries go to the other provider. Record it in the workflow, not in Slack.
+              - paragraph [ref=f6e199]: If one provider refuses to run behind your gates, that is a disqualifier. If both run, you have a choice you can revisit when the next model ships.
+              - 'heading "How innflow fits: the model as a component" [level=2] [ref=f6e200]'
+              - paragraph [ref=f6e201]: "innflow is property operations software with AI workflows. The visual canvas is the durable object: triggers, agents, tools, and human review. OpenAI vs Anthropic is a setting on a step, not a rewrite of leasing. Agents use tools, share context, and complete multi-step work. They stop where you place gates for judgment, money, safety, and Fair Housing. The Assistant answers with the operation’s own context (knowledge, files, tables), not with a generic chat persona from a lab."
+              - paragraph [ref=f6e202]: That design is what “model flexibility” means in production. You evaluate providers on your packet. You keep PMS records in the PMS. You keep approvals and executions next to the work. Integrations use structured actions, including MCP-style tool access, so the agent is not scraping a UI that changes twice a year. Security discussions can include AES-256 in transit and at rest, zero data retention for model training, and private deployment options.
+              - paragraph [ref=f6e203]:
+                - text: For the work itself, that looks like a
+                - link "work order" [ref=f6e204] [cursor=pointer]:
+                  - /url: https://innflow.ai/work-orders
+                - text: flow that can draft and dispatch with a spend pause, a
+                - link "leasing" [ref=f6e205] [cursor=pointer]:
+                  - /url: https://innflow.ai/leasing
+                - text: follow-up that a person sends, and a
+                - link "rent collection" [ref=f6e206] [cursor=pointer]:
+                  - /url: https://innflow.ai/rent-collection
+                - text: exception that never auto-promises a waiver. See the
+                - link "platform" [ref=f6e207] [cursor=pointer]:
+                  - /url: https://innflow.ai/platform
+                - text: and
+                - link "security" [ref=f6e208] [cursor=pointer]:
+                  - /url: https://innflow.ai/security
+                - text: pages, then
+                - link "get started" [ref=f6e209] [cursor=pointer]:
+                  - /url: https://app.innflow.ai/signup
+                - text: or
+                - link "book a demo" [ref=f6e210] [cursor=pointer]:
+                  - /url: https://app.innflow.ai
+                - text: .
+              - heading "Frequently Asked Questions" [level=2] [ref=f6e211]
+              - heading "Is there a single winner in OpenAI vs Anthropic for property management?" [level=3] [ref=f6e212]
+              - paragraph [ref=f6e213]: "No. Score your own case types. Many portfolios will use more than one model: a faster one for classification, a stronger one for long documents. The workflow should allow that routing. A single-vendor mandate is a procurement convenience, not an operations design."
+              - heading "Should we let staff use ChatGPT or Claude directly on resident email?" [level=3] [ref=f6e214]
+              - paragraph [ref=f6e215]: Not as the production path. Consumer chat creates an unmanaged data path and no approval record. If people need drafts, give them a workflow that already has context, tools, and a send gate. Personal chat products are fine for generic writing that does not include resident data.
+              - heading "Will switching models break our workflows?" [level=3] [ref=f6e216]
+              - paragraph [ref=f6e217]: "It will if prompts, tools, and gates are glued to one vendor’s features. It will not if the model is a component: stable tools, stable review steps, and an eval packet you re-run. innflow is built for that portability so a provider change is not a project to rebuild leasing."
+              - heading "Can a model be the Fair Housing control?" [level=3] [ref=f6e218]
+              - paragraph [ref=f6e219]: No. A model may help flag risky language. A qualified human remains accountable for housing decisions, screening outcomes, and eviction-related communication. That is not legal advice. Build the pause in the workflow even if the model is conservative.
+              - heading "How do we keep this from becoming an IT-only project?" [level=3] [ref=f6e220]
+              - paragraph [ref=f6e221]: Put operators on the review panel. If a community manager cannot see the run, the tools called, and the gate, the “platform” is still a lab account. Buy the canvas they will use on a Tuesday, then plug OpenAI, Anthropic, or both into it.
+              - heading "Conclusion" [level=2] [ref=f6e222]
+              - paragraph [ref=f6e223]:
+                - strong [ref=f6e224]: OpenAI vs Anthropic
+                - text: "is a model-provider choice, and it is worth running with your tickets and your tools. OpenAI often wins on ecosystem familiarity and mixed workloads. Anthropic often wins on long documents and careful instruction following. Those tendencies change as new models ship. What should not change is the operation: portable workflows, explicit gates, and a system of record that remains the PMS."
+              - paragraph [ref=f6e225]:
+                - text: innflow keeps the model in its place, inside a governed canvas agents and humans can share.
+                - link "Get started" [ref=f6e226] [cursor=pointer]:
+                  - /url: https://app.innflow.ai/signup
+                - text: or
+                - link "book a demo" [ref=f6e227] [cursor=pointer]:
+                  - /url: https://app.innflow.ai
+                - text: ", and read more on the"
+                - link "innflow blog" [ref=f6e228] [cursor=pointer]:
+                  - /url: https://innflow.ai/blog
+                - text: .
+            - region "Author" [ref=f6e229]:
+              - img "AriannaKhan" [ref=f6e230]
+              - generic [ref=f6e231]:
+                - heading "Arianna Khan" [level=2] [ref=f6e232]
+                - paragraph [ref=f6e233]: Account Executive @ Innflow.ai
+            - region [ref=f6e234]:
+              - paragraph [ref=f6e235]: Continue learning
+              - heading "Keep going with the next field note." [level=2] [ref=f6e236]
+              - paragraph [ref=f6e237]: "n8n vs Dify: Choosing a Platform for AI Workflows"
+              - generic [ref=f6e238]:
+                - 'link "Read next: n8n vs Dify: Choosing a Platform for AI Workflows" [ref=f6e239] [cursor=pointer]':
+                  - /url: /blog/n8n-vs-dify-ai-workflows
+                - link "Book an operations demo" [ref=f6e240] [cursor=pointer]:
+                  - /url: https://cal.com/julian-patrick-afu0u2/innflow-demo?overlayCalendar=true
+      - generic [ref=f6e241]:
+        - region [ref=f6e242]:
+          - heading "Related posts" [level=2] [ref=f6e243]
+          - generic [ref=f6e244]:
+            - 'link "n8n vs Dify: Choosing a Platform for AI Workflows AI · September 21, 2026 n8n vs Dify: Choosing a Platform for AI Workflows" [ref=f6e245] [cursor=pointer]':
+              - /url: /blog/n8n-vs-dify-ai-workflows
+              - 'img "n8n vs Dify: Choosing a Platform for AI Workflows" [ref=f6e247]'
+              - generic [ref=f6e248]: AI · September 21, 2026
+              - strong [ref=f6e249]: "n8n vs Dify: Choosing a Platform for AI Workflows"
+            - 'link "Zapier vs n8n: Choosing a Workflow Automation Platform AI · September 21, 2026 Zapier vs n8n: Choosing a Workflow Automation Platform" [ref=f6e250] [cursor=pointer]':
+              - /url: /blog/zapier-vs-n8n-workflow-automation
+              - 'img "Zapier vs n8n: Choosing a Workflow Automation Platform" [ref=f6e252]'
+              - generic [ref=f6e253]: AI · September 21, 2026
+              - strong [ref=f6e254]: "Zapier vs n8n: Choosing a Workflow Automation Platform"
+            - 'link "AI steps only where they help: when not to automate a handoff AI · September 21, 2026 AI steps only where they help: when not to automate a handoff" [ref=f6e255] [cursor=pointer]':
+              - /url: /blog/when-not-to-automate-a-handoff
+              - 'img "AI steps only where they help: when not to automate a handoff" [ref=f6e257]'
+              - generic [ref=f6e258]: AI · September 21, 2026
+              - strong [ref=f6e259]: "AI steps only where they help: when not to automate a handoff"
+        - link "Back to blog" [ref=f6e261] [cursor=pointer]:
+          - /url: /blog
+  - generic [ref=f6e266]:
+    - heading "A clearer day starts with a connected flow." [level=2] [ref=f6e267]
+    - paragraph [ref=f6e268]: Bring your team, context, and next steps together.
+    - link "Continue with Google" [ref=f6e270] [cursor=pointer]:
+      - /url: https://app.innflow.ai/auth/google
+    - form [ref=f6e273]:
+      - heading "A little more, just for members." [level=3] [ref=f6e274]
+      - paragraph [ref=f6e275]: Get Innflow updates and member offers by email.
+      - group [ref=f6e276]:
+        - generic [ref=f6e277]: Email address
+        - generic [ref=f6e278]:
+          - textbox "Email address" [ref=f6e279]:
+            - /placeholder: Enter your email
+          - button "Sign up" [ref=f6e280] [cursor=pointer]
+      - status
+  - contentinfo [ref=f6e282]:
+    - generic [ref=f6e283]:
+      - generic [ref=f6e284]:
+        - link "innflow home" [ref=f6e285] [cursor=pointer]:
+          - /url: /
+          - img "innflow" [ref=f6e286]
+        - paragraph [ref=f6e287]: Property operations.Connected in one place.
+        - link "support@innflow.ai" [ref=f6e288] [cursor=pointer]:
+          - /url: mailto:support@innflow.ai
+        - region "Hours of operation" [ref=f6e289]:
+          - strong [ref=f6e290]: Hours of Operation
+          - generic [ref=f6e291]:
+            - generic [ref=f6e292]:
+              - term [ref=f6e293]: Monday–Friday
+              - definition [ref=f6e294]: 9:00 AM–6:00 PM ET
+            - generic [ref=f6e295]:
+              - term [ref=f6e296]: Saturday–Sunday
+              - definition [ref=f6e297]: 10:00 AM–5:00 PM ET
+      - generic [ref=f6e298]:
+        - heading "Why innflow" [level=3] [ref=f6e299]
+        - link "About innflow" [ref=f6e300] [cursor=pointer]:
+          - /url: /about
+        - link "Careers" [ref=f6e301] [cursor=pointer]:
+          - /url: /careers
+        - link "Industry coverage" [ref=f6e302] [cursor=pointer]:
+          - /url: /in-the-news
+        - link "Who we help" [ref=f6e303] [cursor=pointer]:
+          - /url: /our-customers
+        - link "Security" [ref=f6e304] [cursor=pointer]:
+          - /url: /security
+        - link "Share innflow" [ref=f6e305] [cursor=pointer]:
+          - /url: /landlord-referral
+        - link "Partnerships" [ref=f6e306] [cursor=pointer]:
+          - /url: /partner-with-us
+        - link "Advisor partnerships" [ref=f6e307] [cursor=pointer]:
+          - /url: /advisor-partner-program
+        - link "Workflows" [ref=f6e308] [cursor=pointer]:
+          - /url: /products/agentic-workflows
+        - link "AI assistant" [ref=f6e309] [cursor=pointer]:
+          - /url: /products/ai-agents
+        - link "Knowledge" [ref=f6e310] [cursor=pointer]:
+          - /url: /platform
+        - link "Approvals" [ref=f6e311] [cursor=pointer]:
+          - /url: /platform/security-and-compliance
+      - generic [ref=f6e312]:
+        - heading "Solutions" [level=3] [ref=f6e313]
+        - link "Overview" [ref=f6e314] [cursor=pointer]:
+          - /url: /
+        - link "Multi-property investors" [ref=f6e315] [cursor=pointer]:
+          - /url: /multi-property-investors
+        - link "Landlord operations" [ref=f6e316] [cursor=pointer]:
+          - /url: /landlord-banking
+        - link "Rental workflows" [ref=f6e317] [cursor=pointer]:
+          - /url: /rent-collection
+        - link "Rental workflows overview" [ref=f6e318] [cursor=pointer]:
+          - /url: /rent-collection-2
+        - link "Connected property records" [ref=f6e319] [cursor=pointer]:
+          - /url: /landlord-accounting
+        - link "Property review preparation" [ref=f6e320] [cursor=pointer]:
+          - /url: /landlord-insurance
+        - link "Document preparation" [ref=f6e321] [cursor=pointer]:
+          - /url: /tax-preparation
+        - link "Deposit workflows" [ref=f6e322] [cursor=pointer]:
+          - /url: /security-deposit-account
+        - link "Screening workflows" [ref=f6e323] [cursor=pointer]:
+          - /url: /tenant-screening-service
+        - link "Reserve planning" [ref=f6e324] [cursor=pointer]:
+          - /url: /landlord-banking-apy
+        - link "Financing preparation" [ref=f6e325] [cursor=pointer]:
+          - /url: /rental-property-loans
+        - link "Property management" [ref=f6e326] [cursor=pointer]:
+          - /url: /property-management
+        - link "Connected operations" [ref=f6e327] [cursor=pointer]:
+          - /url: /platform
+        - link "Integrations" [ref=f6e328] [cursor=pointer]:
+          - /url: /integrations
+      - generic [ref=f6e329]:
+        - heading "Resources" [level=3] [ref=f6e330]
+        - link "Resource library" [ref=f6e331] [cursor=pointer]:
+          - /url: /resources
+        - link "Document checklists" [ref=f6e332] [cursor=pointer]:
+          - /url: /free-rental-forms-and-templates-for-landlords
+        - link "Rent comparison" [ref=f6e333] [cursor=pointer]:
+          - /url: /how-much-should-i-charge-for-rent
+        - link "Lease workflows" [ref=f6e334] [cursor=pointer]:
+          - /url: /lease-agreement
+        - link "Workflow learning" [ref=f6e335] [cursor=pointer]:
+          - /url: /webinars
+        - link "Investor resources" [ref=f6e336] [cursor=pointer]:
+          - /url: /real-estate-investing
+        - link "Product updates" [ref=f6e337] [cursor=pointer]:
+          - /url: /product-updates
+        - link "Blog" [ref=f6e338] [cursor=pointer]:
+          - /url: /blog
+        - link "Help center" [ref=f6e339] [cursor=pointer]:
+          - /url: /help-center
+        - link "Legal agreements" [ref=f6e340] [cursor=pointer]:
+          - /url: /legal-agreements
+        - link "FAQ" [ref=f6e341] [cursor=pointer]:
+          - /url: /faq
+        - link "Contact" [ref=f6e342] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=f6e343]:
+        - heading "Property teams" [level=3] [ref=f6e344]
+        - link "Long-term rentals" [ref=f6e345] [cursor=pointer]:
+          - /url: /long-term-rentals
+        - link "Mid-term rentals" [ref=f6e346] [cursor=pointer]:
+          - /url: /mid-term-rentals
+        - link "Short-term rentals" [ref=f6e347] [cursor=pointer]:
+          - /url: /short-term-rentals
+        - link "Resident experiences" [ref=f6e348] [cursor=pointer]:
+          - /url: /renters
+        - heading "Get started" [level=3] [ref=f6e349]
+        - link "Book a demo" [ref=f6e350] [cursor=pointer]:
+          - /url: https://cal.com/julian-patrick-afu0u2/innflow-demo?overlayCalendar=true
+        - link "Pricing" [ref=f6e351] [cursor=pointer]:
+          - /url: /pricing
+        - link "Log in" [ref=f6e352] [cursor=pointer]:
+          - /url: https://app.innflow.ai/login
+        - link "Continue with Google" [ref=f6e353] [cursor=pointer]:
+          - /url: https://app.innflow.ai/auth/google
+    - generic [ref=f6e356]:
+      - generic [ref=f6e357]: © 2026 Innflow. All rights reserved.
+      - navigation "Legal" [ref=f6e358]:
+        - link "Privacy Policy" [ref=f6e359] [cursor=pointer]:
+          - /url: /legal/privacy-policy
+        - link "Terms of Service" [ref=f6e360] [cursor=pointer]:
+          - /url: /legal/terms-of-service
+        - link "Cookie Policy" [ref=f6e361] [cursor=pointer]:
+          - /url: /legal/cookie-policy
+        - link "Acceptable Use Policy" [ref=f6e362] [cursor=pointer]:
+          - /url: /legal/acceptable-use-policy
+        - link "EULA" [ref=f6e363] [cursor=pointer]:
+          - /url: /legal/eula
+        - link "Privacy Request" [ref=f6e364] [cursor=pointer]:
+          - /url: /legal/dsar
+        - link "Consent Preferences" [ref=f6e365] [cursor=pointer]:
+          - /url: "#"
+        - link "Do Not Sell or Share My Personal Information" [ref=f6e366] [cursor=pointer]:
+          - /url: https://app.termly.io/notify/d253192a-6c11-4338-9883-67b3307aea2f
+        - link "Limit the Use of My Sensitive Personal Information" [ref=f6e367] [cursor=pointer]:
+          - /url: https://app.termly.io/notify/d253192a-6c11-4338-9883-67b3307aea2f
+    - region [ref=f6e368]:
+      - heading "Featured on" [level=2] [ref=f6e370]
+      - generic [ref=f6e372]:
+        - generic [ref=f6e373]:
+          - link "Visit EarlyHunt (opens in a new tab)" [ref=f6e374] [cursor=pointer]:
+            - /url: https://earlyhunt.com/project/innflow
+            - img "Featured on EarlyHunt" [ref=f6e376]
+          - link "Visit neeed.directory (opens in a new tab)" [ref=f6e377] [cursor=pointer]:
+            - /url: https://neeed.directory/products/innflow?utm_source=innflow
+            - img "Featured on neeed.directory" [ref=f6e379]
+          - link "Visit StartupFA.me (opens in a new tab)" [ref=f6e380] [cursor=pointer]:
+            - /url: https://startupfa.me/s/innflow.ai-345?utm_source=innflow.ai
+            - img "Featured on Startup Fame" [ref=f6e382]
+          - link "Visit TechTrendin (opens in a new tab)" [ref=f6e383] [cursor=pointer]:
+            - /url: https://www.techtrendin.com/products/innflow
+            - img "Featured on TechTrendin" [ref=f6e385]
+          - link "Visit Bowora (opens in a new tab)" [ref=f6e386] [cursor=pointer]:
+            - /url: https://bowora.com/
+            - img "Featured on Bowora" [ref=f6e388]
+          - link "Visit ConfettiSaaS (opens in a new tab)" [ref=f6e389] [cursor=pointer]:
+            - /url: https://confettisaas.com/saas/innflow-ai?ref=badge
+            - img "Innflow on ConfettiSaaS" [ref=f6e391]
+          - link "Visit DodoDirectory (opens in a new tab)" [ref=f6e392] [cursor=pointer]:
+            - /url: https://dododirectory.com
+            - img "Featured on DodoDirectory" [ref=f6e394]
+          - link "Visit Fazier (opens in a new tab)" [ref=f6e395] [cursor=pointer]:
+            - /url: https://fazier.com
+            - img "Fazier badge" [ref=f6e397]
+          - link "Visit findly.tools (opens in a new tab)" [ref=f6e398] [cursor=pointer]:
+            - /url: https://findly.tools
+            - img "Featured on Findly.tools" [ref=f6e400]
+          - link "Visit Huzzler (opens in a new tab)" [ref=f6e401] [cursor=pointer]:
+            - /url: https://huzzler.so
+            - img "Featured on Huzzler" [ref=f6e403]
+          - link "Visit IdeaKiln (opens in a new tab)" [ref=f6e404] [cursor=pointer]:
+            - /url: https://ideakiln.com
+            - img "Featured on Idea Kiln" [ref=f6e406]
+          - link "Visit Indiehunt (opens in a new tab)" [ref=f6e407] [cursor=pointer]:
+            - /url: https://indiehunt.io
+            - img "Featured on IndieHunt" [ref=f6e409]
+          - link "Visit Launch Llama Tools (opens in a new tab)" [ref=f6e410] [cursor=pointer]:
+            - /url: https://tools.launchllama.co?utm_source=badge&utm_medium=referral
+            - img "As seen on Launch Llama Newsletter" [ref=f6e412]
+          - link "Visit SaaSBison (opens in a new tab)" [ref=f6e413] [cursor=pointer]:
+            - /url: https://saasbison.com
+            - img "Featured on SaaSBison" [ref=f6e415]
+          - link "Visit SaaSGrow (opens in a new tab)" [ref=f6e416] [cursor=pointer]:
+            - /url: https://saasgrow.app?ref=innflow.ai
+            - img "Innflow on SaaSGrow" [ref=f6e418]
+          - link "Visit StartupBase (opens in a new tab)" [ref=f6e419] [cursor=pointer]:
+            - /url: https://startupbase.io
+            - img "Featured on StartupBase" [ref=f6e421]
+          - link "Visit startupfa.st (opens in a new tab)" [ref=f6e422] [cursor=pointer]:
+            - /url: https://startupfa.st
+            - img "Powered by Startup Fast" [ref=f6e424]
+          - link "Visit Sumodir (opens in a new tab)" [ref=f6e425] [cursor=pointer]:
+            - /url: https://sumodir.com
+            - img "Featured on SumoDir" [ref=f6e427]
+          - link "Visit Twelve Tools (opens in a new tab)" [ref=f6e428] [cursor=pointer]:
+            - /url: https://twelve.tools
+            - img "Featured on Twelve Tools" [ref=f6e430]
+          - link "Visit Web Review (opens in a new tab)" [ref=f6e431] [cursor=pointer]:
+            - /url: https://web-review.com
+            - img "Featured on Web Review" [ref=f6e433]
+        - generic [aria-hidden] [ref=f6e434]:
+          - link [ref=f6e435] [cursor=pointer]:
+            - /url: https://earlyhunt.com/project/innflow
+          - link [ref=f6e438] [cursor=pointer]:
+            - /url: https://neeed.directory/products/innflow?utm_source=innflow
+          - link [ref=f6e441] [cursor=pointer]:
+            - /url: https://startupfa.me/s/innflow.ai-345?utm_source=innflow.ai
+          - link [ref=f6e444] [cursor=pointer]:
+            - /url: https://www.techtrendin.com/products/innflow
+          - link [ref=f6e447] [cursor=pointer]:
+            - /url: https://bowora.com/
+          - link [ref=f6e450] [cursor=pointer]:
+            - /url: https://confettisaas.com/saas/innflow-ai?ref=badge
+          - link [ref=f6e453] [cursor=pointer]:
+            - /url: https://dododirectory.com
+          - link [ref=f6e456] [cursor=pointer]:
+            - /url: https://fazier.com
+          - link [ref=f6e459] [cursor=pointer]:
+            - /url: https://findly.tools
+          - link [ref=f6e462] [cursor=pointer]:
+            - /url: https://huzzler.so
+          - link [ref=f6e465] [cursor=pointer]:
+            - /url: https://ideakiln.com
+          - link [ref=f6e468] [cursor=pointer]:
+            - /url: https://indiehunt.io
+          - link [ref=f6e471] [cursor=pointer]:
+            - /url: https://tools.launchllama.co?utm_source=badge&utm_medium=referral
+          - link [ref=f6e474] [cursor=pointer]:
+            - /url: https://saasbison.com
+          - link [ref=f6e477] [cursor=pointer]:
+            - /url: https://saasgrow.app?ref=innflow.ai
+          - link [ref=f6e480] [cursor=pointer]:
+            - /url: https://startupbase.io
+          - link [ref=f6e483] [cursor=pointer]:
+            - /url: https://startupfa.st
+          - link [ref=f6e486] [cursor=pointer]:
+            - /url: https://sumodir.com
+          - link [ref=f6e489] [cursor=pointer]:
+            - /url: https://twelve.tools
+          - link [ref=f6e492] [cursor=pointer]:
+            - /url: https://web-review.com
+  - alert [ref=f6e495]

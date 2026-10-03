@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-03",
+  "target": "https://innflow.ai",
+  "observed": {
+    "blog_mobile_first_article_y": 828.546875,
+    "blog_industry_options": [
+      "All industries",
+      "General"
+    ],
+    "blog_total_stories": 189,
+    "blog_automation_general_count": 63,
+    "blog_automation_comparison_general_count": 3,
+    "blog_empty_and_reset": "passed",
+    "blog_page_two": {
+      "page": 2,
+      "totalPages": 21,
+      "storyCount": 9,
+      "duplicatesFromPageOne": 0
+    },
+    "mobile_nav_escape": {
+      "mainInertWhileOpen": true,
+      "bodyOverflowWhileOpen": "hidden",
+      "focusAfterEscape": "Open navigation",
+      "mainInertAfterEscape": false
+    },
+    "mobile_nav_toggle_320": {
+      "width": 22,
+      "height": 22
+    },
+    "article_mobile_tools": {
+      "top": 883.234375,
+      "height": 841.25,
+      "articleMainTop": 1764.484375
+    },
+    "banking_cta": {
+      "foreground": "rgb(1, 34, 50)",
+      "background": "rgb(1, 34, 50)"
+    },
+    "pricing_annual_toggle": "passed",
+    "pricing_collapse_all": "three groups false",
+    "integration_show_more": [
+      24,
+      48
+    ],
+    "integration_slack_results": 1,
+    "skills_card_count": 319,
+    "skills_mobile_height_390": 76384,
+    "help_dialog_initial_focus_and_escape": "passed"
+  },
+  "not_exercised": [
+    "form submission",
+    "authentication",
+    "booking",
+    "CMS mutations",
+    "full motion playback",
+    "all dynamic records visually",
+    "full accessibility audit"
+  ]
+}

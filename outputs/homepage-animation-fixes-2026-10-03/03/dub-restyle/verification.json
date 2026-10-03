@@ -1,0 +1,16 @@
+{
+  "runtimeBytes": 762847,
+  "sha256": "75f6a59da840b72165c2ae44b22d630dc6a7c165aa082614b24f40a33207a8bc",
+  "referenceCopyChecksums": {
+    "DESIGN (1).md": "16b345716d46761b35c54065d601fd313d54f48fd4056eee172b6447255e9171",
+    "theme (1).css": "731cf194eeac5eb2a50ae50d008b16510e6727610578f0e3793b908c1951508d",
+    "tokens (2).json": "db7891d07ffd18416968d0f329b6ea237016cbba8fc5c1277df552aac592003b",
+    "variables (1).css": "2b6cc85a20478645ea59a9844374134a0040d3811c5c55fe1c45ddc84685633f"
+  },
+  "loopPixelsIdentical": true,
+  "fullLoopObserved": true,
+  "focusedTestsPassed": 8,
+  "duration": 27.6,
+  "installedLocally": true,
+  "deployed": false
+}

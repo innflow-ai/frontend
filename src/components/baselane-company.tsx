@@ -273,26 +273,22 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
             <div>
               {[
                 [
-                  "01",
                   "Workflows",
                   "Give recurring requests a repeatable path.",
                   "/products/agentic-workflows",
                 ],
                 [
-                  "02",
                   "Knowledge",
                   "Keep useful context available to your team.",
                   "/platform",
                 ],
                 [
-                  "03",
                   "Approvals",
                   "Bring human review into consequential steps.",
                   "/platform/security-and-compliance",
                 ],
-              ].map(([number, title, text, href]) => (
+              ].map(([title, text, href]) => (
                 <a href={href} key={title}>
-                  <span>{number}</span>
                   <h3>{title}</h3>
                   <p>{text}</p>
                   <b>

@@ -1,0 +1,12 @@
+{
+  "duration": 27.6,
+  "fullPlaybackLoopCompleted": true,
+  "openingClosingPixelsIdentical": true,
+  "layout": "Larger condition beside smaller Start; bottom If and Else outputs; top-input assignment nodes below",
+  "agentPicker": "Seven Paper character options; Outreach Owen selected after picker close",
+  "accent": "#00AEFF",
+  "outlineMenuIcon": "Transparent eye cutouts - Outline.svg",
+  "runtimeSha256": "ff2684d55ca3bc17f8d210d63ad56dc333a4d788d82895bc22043e9691ce6f3f",
+  "testsPassed": 8,
+  "deployed": false
+}

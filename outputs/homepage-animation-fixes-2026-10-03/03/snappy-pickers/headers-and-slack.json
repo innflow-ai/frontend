@@ -1,0 +1,9 @@
+{
+  "selectedAgent": "Research Riley",
+  "selectedAgentNode": "1-20294",
+  "slackNode": "1-20740",
+  "slackSource": "public/integrations/slack.svg",
+  "triggerChevronNode": "1-20883",
+  "headersFixedDuringOpen": true,
+  "downChevronsRetained": true
+}

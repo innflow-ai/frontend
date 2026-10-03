@@ -128,7 +128,7 @@
 }
 .secondaryButton {
   color: #22231f;
-  background: #fafaf9;
+  background: var(--marketing-cloud);
   border: 1px solid #eaece6;
 }
 .secondaryButton:hover {
@@ -252,7 +252,7 @@
   display: flex;
   border: 1px solid #e8ebe1;
   border-radius: 17px;
-  background: #fafbf8;
+  background: var(--marketing-cloud);
   padding: 12px;
   gap: 12px;
   box-shadow:
@@ -368,7 +368,7 @@
   padding: 26px 24px 22px;
   background-image: radial-gradient(#d9dfce 1px, transparent 1px);
   background-size: 18px 18px;
-  background-color: #fafcf7;
+  background-color: var(--marketing-cloud);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -467,7 +467,7 @@
 .knowledgeCanvas,
 .approvalCanvas {
   min-height: 405px;
-  background: #fafcf7;
+  background: var(--marketing-cloud);
   border-block: 1px solid #eef0e8;
   padding: 35px 7%;
 }

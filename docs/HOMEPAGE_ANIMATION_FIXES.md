@@ -4,9 +4,9 @@ Created: 2026-10-03
 
 Updated: 2026-10-03
 
-Status: First-pass fixes for 01–03 implemented locally on 2026-10-03 and ready for visual review. Remaining animations are pending.
+Status: Revisions for 05, 11, 13, 15, and 16 are implemented, exported, and installed locally for visual review. 06 was subsequently reassigned to the assistant and rebuilt with a fixed gray header and one downward-expanding body. 17 remains checked off at the user's request. Earlier 01–03 work is recorded below, with the supplied 03 runtime taking precedence over its historical revisions.
 
-Animation numbers and titles follow the current [homepage storyboard manifest](../src/app/preview/scroll-showcase/homepage-storyboards.json). See [Homepage Rive animations](HOMEPAGE_RIVE_ANIMATIONS.md) for source links. These are review notes, not implementation or playback verification results.
+Animation numbers and titles follow the current [homepage storyboard manifest](../src/app/preview/scroll-showcase/homepage-storyboards.json). See [Homepage Rive animations](HOMEPAGE_RIVE_ANIMATIONS.md) for source links. Checked items record implementation or explicit user-directed scope exclusions. Verification for the current five-scene revision is recorded in the handoff below.
 
 ## AI agent
 
@@ -70,17 +70,27 @@ First pass is ready for user review. The runtime timeline name still contains �
 
 ### 05. Respond with the full picture
 
-**Direction: Add detail and polish.**
+**Direction: Keep the original Dominic Mills component and develop it in place.**
 
-- [ ] Give the second message that appears more detail and visual interest. The review asks for more “spice”; the specific treatment is still to be defined.
+- [x] Keep the original email, recipient, and request visible while its native panel and backing expand downward.
+- [x] Reveal a draft response, calendar icon, divider, and Ready for review state inside that same component.
+- [x] Suppress the separate second message and its shadow throughout the timeline.
+
+This supersedes the earlier request to embellish a second message. The loop remains 11.5 seconds; the expanded state and return were checked in WebGL2 playback.
 
 ### 06. Learn what keeps coming up
 
-**Direction: Full redo. The current animation feels raw.**
+**Direction: One focused component, with a gray header and a body that extends downward.**
 
-- [ ] Redo the animation.
-- [ ] Correct the spacing of the appearing elements.
-- [ ] Reduce excessive corner rounding on the appearing elements.
+The user reassigned 06 to the assistant after it would not load. The source opened successfully and its original export played in WebGL2; the exact earlier failure was not reproduced. An empty first artboard was present and could show a blank scene in a default-artboard viewer. The empty starter was removed from the editable source, but Rive still emits an empty default artboard in this runtime export. The homepage therefore explicitly selects the named scene and state machine. The original is preserved in the before backup.
+
+- [x] Create and browser-check a standalone HTML motion preview before Rive composition.
+- [x] Rebuild as one component with a persistent gray header, fixed position and width, and a white body that extends downward without scaling text.
+- [x] Retain the original Cedar issue and related reports from Flowbit, Ollo, and Codemesh; reveal them with consistent spacing, smaller corner radii, and a linked-conversation review action.
+- [x] Preserve the existing gradient and runtime names. The actual loop is now 12 seconds; the legacy animation name still contains “8s.”
+- [x] Save editable/runtime exports and install the revised runtime and readable fallback image locally.
+
+HTML preview, before/final exports, and rendered endpoint captures are in `outputs/homepage-animation-fixes-2026-10-03/remaining/06/`. The opening/closing editor poses match byte-for-byte. See the verification file for final runtime playback and test evidence.
 
 ## Assistant
 
@@ -88,13 +98,17 @@ First pass is ready for user review. The runtime timeline name still contains �
 
 **Direction: Small icon correction.**
 
-- [ ] Replace the top-right icon in the “Ask Sidekick” interface with an X / close icon.
+- [x] Replace the top-right icon in the “Ask Sidekick” interface with a native X / close icon. Checked in both the opening and expanded panel. The 6-second sequence is retained.
 
 ### 13. Delegate tasks. Keep the final say.
 
 **Direction: Redo.**
 
-- [ ] Redo this animation. No specific replacement direction was given in the review.
+- [x] Rebuild around one persistent task card: request, staggered task preparation, draft review, and approval.
+- [x] Use skeleton placeholders, native expanding geometry, readable holds, and an illustrated cursor for review and approval.
+- [x] Apply the current Calendly-inspired navy, white, cool-gray, and blue controls while retaining the original gradient.
+
+The new loop is 14 seconds. Its legacy timeline name still contains “8.2s” to preserve the integration contract.
 
 ## Insights
 
@@ -102,20 +116,26 @@ First pass is ready for user review. The runtime timeline name still contains �
 
 **Direction: Full redo. The current animation feels raw.**
 
-- [ ] Redo this animation. No specific replacement direction was given in the review.
+- [x] Rebuild the centered-card source as one persistent insight component, retaining the original Slack API thread-management issue.
+- [x] Resolve the heading skeleton, expand the card to show the summary and two evidence rows, then reveal the three-linked-conversations review action.
+- [x] Apply the current Calendly-inspired component styling and preserve the original mint gradient.
+
+The new loop is 12 seconds. The legacy timeline name still contains “10s”; the manifest records the actual duration. Source: [innflow-15-centered-cards](https://editor.rive.app/file/innflow-15-centered-cards/2628054).
 
 ### 16. Catch up instantly
 
 **Direction: Icon update.**
 
-- [ ] Change the icons to the requested stroke icon style. The dictated name was “made UI stroke icons”; confirm the exact icon library name before choosing replacements.
+- [x] Replace Stars A, Chevron Down, Chip, and Search with Mage UI stroke SVGs from the supplied local library, retaining their parent transforms and timing. Checked the expanded state and complete 6-second loop.
 
 ### 17. Start each day with a clear picture
 
 **Direction: Improve the opening and return transitions.**
 
-- [ ] Smooth out the transition at the start.
-- [ ] Animate the return to the first state by scaling the entire component down, with panning as appropriate to the intended movement, so the loop returns smoothly.
+- [x] Smooth out the transition at the start.
+- [x] Animate the return to the first state by scaling the entire component down, with panning as appropriate to the intended movement, so the loop returns smoothly.
+
+Checked off at the user's request on 2026-10-03 and excluded from this revision pass. This is a user-directed completion status, not new assistant playback or export verification.
 
 ## Fine for now
 
@@ -138,6 +158,12 @@ After 06, the review says “next one ... okay” twice before naming 11. These 
 | 10 | Turn requests into completed tasks | No identifiable feedback captured. |
 
 ## Shared changes
+
+### Current storyboard and design foundation
+
+The user selected Innflow storyboarding plus the supplied Calendly design markdown as the current foundation. One recognizable component should expand through the story, with native geometry, reserved text slots, meaningful interaction, and a planned loop return. Preserve Innflow gradients, portraits, fonts, and agent artwork. Dub styling notes for older 03 revisions below are historical, not the default for new scenes.
+
+The generic Rive skill routes Innflow work to the updated domain skill and its `references/storyboard-calendly-direction.md`. Both skill packages passed structural validation.
 
 ### Innflow agent icon reference
 
@@ -166,3 +192,21 @@ Source file availability and import into animation 03 verified on 2026-10-03.
 03’s first layout reorder now follows the illustrated click on the large Set condition node’s bottom If stub. Hover runs at frames 408–419, press and layout start share frame 426, the layout settles at frame 463, and the Select next step shell reveals at frames 470–480. The cursor tracks the pressed handle through the rearrangement before moving into the menu. This is the authored demonstration sequence, not a new runtime input listener. Evidence and exports are in `outputs/homepage-animation-fixes-2026-10-03/03/layout-on-handle-click/`.
 
 The user-supplied `/Users/ak/Documents/03_-_put_ai_to_work_your_way.riv` is now the installed 03 runtime. It replaces the later working revisions. In the AI agents section, display order is now 03, 02, 01, 04, 05, 06: Put AI to work your way is first, and Pick up conversations with context is third. Asset numbers remain stable.
+
+## Remaining-scene handoff: 05, 11, 13, 15, 16
+
+- Revised `.riv` files and matching WebP fallback artwork are installed in `public/brand/homepage`. Both manifests record current durations, export sizes, and SHA-256 checksums.
+- Editable `.rev` and runtime `.riv` copies are in the numbered export collection and `/Users/ak/Library/CloudStorage/Dropbox/finished_rive_homepage/2026-10-03-remaining-revisions/`. Existing Dropbox originals are retained.
+- Before/after files, readable-state captures, endpoint captures, implementation scripts, and verification metadata are in [the revision folder](../outputs/homepage-animation-fixes-2026-10-03/remaining/).
+- All five revised exports loaded and completed loops in the website's WebGL2 runtime. Readable intermediate states were visually checked.
+- For all five, editor renders of the authored opening and closing poses matched byte-for-byte. These comparisons sampled native keyed properties at the settled endpoints; they are distinct from the separately observed runtime playback checks.
+- The focused baseline-feature and storyboard-artwork suites passed: 2 files, 10 tests. Delivered runtime/source copies were checked against the final exports.
+- These revisions are ready for user visual review. They have not been committed or deployed.
+
+### 06 approved Figma storyboard redesign
+
+The user approved the new HTML component as the exact reference and asked to make it the Rive skill's default for this component family. It uses the current Figma Rive-test page: recurring issue master `1620:24948`, Admin management panel `1585:3834`, and Automatic triage `1620:36337`. This supersedes the earlier inset-row 06 design.
+
+The single panel now has Geist 400/600 typography, a neutral gray “Recurring issues” header, a prominent finding, the source's 11-customer summary, a flat two-column evidence table with the original Cedar/Flowbit/Ollo logos, Codemesh text, thin separators, a glass rim, and a blue text link. Position and width remain fixed; the panel extends downward. The 12-second motion follows the approved HTML preview. Native glass uses layered highlights rather than identical CSS blur effects.
+
+Editable/runtime exports, provenance, local font/logo assets, preview, and captures are in `outputs/homepage-animation-fixes-2026-10-03/remaining/06/figma-redesign/`. Current homepage files, numbered collection, and Dropbox delivery are refreshed. The skill bundles a portable copy of the approved HTML and assets; Figma/approved-preview fidelity now takes priority over generic Calendly styling or added overshoot.

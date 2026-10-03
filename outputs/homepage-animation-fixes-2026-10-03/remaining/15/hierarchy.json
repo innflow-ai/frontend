@@ -1,0 +1,4856 @@
+{
+  "success": true,
+  "objects": [
+    {
+      "id": "3-14126",
+      "types": [
+        "Shape"
+      ],
+      "name": "R15_97"
+    },
+    {
+      "id": "3-14140",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_95"
+    },
+    {
+      "id": "3-14144",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle"
+    },
+    {
+      "id": "3-14148",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle"
+    },
+    {
+      "id": "3-14152",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip26_1745_753"
+    },
+    {
+      "id": "3-14125",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_94",
+      "children": [
+        "3-14126",
+        "3-14140",
+        "3-14144",
+        "3-14148",
+        "3-14152"
+      ]
+    },
+    {
+      "id": "3-14160",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_92"
+    },
+    {
+      "id": "3-14164",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_90"
+    },
+    {
+      "id": "3-14168",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_88"
+    },
+    {
+      "id": "3-14172",
+      "types": [
+        "ClippingShape"
+      ],
+      "name": "clip22_1745_753"
+    },
+    {
+      "id": "3-14173",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip25_1745_753"
+    },
+    {
+      "id": "3-14180",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip24_1745_753"
+    },
+    {
+      "id": "3-14187",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip23_1745_753"
+    },
+    {
+      "id": "3-14159",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_87",
+      "children": [
+        "3-14160",
+        "3-14164",
+        "3-14168",
+        "3-14172",
+        "3-14173",
+        "3-14180",
+        "3-14187"
+      ]
+    },
+    {
+      "id": "3-14194",
+      "types": [
+        "ClippingShape"
+      ],
+      "name": "clip21_1745_753"
+    },
+    {
+      "id": "3-14196",
+      "types": [
+        "Node"
+      ],
+      "name": "Group"
+    },
+    {
+      "id": "3-14195",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip22_1745_753",
+      "children": [
+        "3-14196"
+      ]
+    },
+    {
+      "id": "3-14124",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_86",
+      "children": [
+        "3-14125",
+        "3-14159",
+        "3-14194",
+        "3-14195"
+      ]
+    },
+    {
+      "id": "3-14204",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14218",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14223",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14228",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14264",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14300",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14305",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14310",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14331",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14357",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14367",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14386",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14397",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14412",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14425",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14434",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14453",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14464",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14484",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14491",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14506",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14517",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14522",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14527",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14532",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14552",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14559",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14595",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14625",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14635",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14656",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14673",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14685",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14698",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14718",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14725",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14741",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14760",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14771",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14791",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14798",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14813",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14848",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14853",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14858",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14894",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14930",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14935",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14940",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14953",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14962",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-14983",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15019",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15024",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15029",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15050",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15061",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15066",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15086",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15093",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15108",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15123",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15142",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15161",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15172",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15183",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15188",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15193",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15198",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15219",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15230",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15235",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15255",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15262",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15288",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15298",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15313",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15343",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15353",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15364",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15369",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15374",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15379",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15392",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15401",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15422",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15458",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15463",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff5f6d77"
+      }
+    },
+    {
+      "id": "3-14203",
+      "types": [
+        "Shape"
+      ],
+      "name": "R15_85",
+      "children": [
+        "3-14204",
+        "3-14218",
+        "3-14223",
+        "3-14228",
+        "3-14264",
+        "3-14300",
+        "3-14305",
+        "3-14310",
+        "3-14331",
+        "3-14357",
+        "3-14367",
+        "3-14386",
+        "3-14397",
+        "3-14412",
+        "3-14425",
+        "3-14434",
+        "3-14453",
+        "3-14464",
+        "3-14484",
+        "3-14491",
+        "3-14506",
+        "3-14517",
+        "3-14522",
+        "3-14527",
+        "3-14532",
+        "3-14552",
+        "3-14559",
+        "3-14595",
+        "3-14625",
+        "3-14635",
+        "3-14656",
+        "3-14673",
+        "3-14685",
+        "3-14698",
+        "3-14718",
+        "3-14725",
+        "3-14741",
+        "3-14760",
+        "3-14771",
+        "3-14791",
+        "3-14798",
+        "3-14813",
+        "3-14848",
+        "3-14853",
+        "3-14858",
+        "3-14894",
+        "3-14930",
+        "3-14935",
+        "3-14940",
+        "3-14953",
+        "3-14962",
+        "3-14983",
+        "3-15019",
+        "3-15024",
+        "3-15029",
+        "3-15050",
+        "3-15061",
+        "3-15066",
+        "3-15086",
+        "3-15093",
+        "3-15108",
+        "3-15123",
+        "3-15142",
+        "3-15161",
+        "3-15172",
+        "3-15183",
+        "3-15188",
+        "3-15193",
+        "3-15198",
+        "3-15219",
+        "3-15230",
+        "3-15235",
+        "3-15255",
+        "3-15262",
+        "3-15288",
+        "3-15298",
+        "3-15313",
+        "3-15343",
+        "3-15353",
+        "3-15364",
+        "3-15369",
+        "3-15374",
+        "3-15379",
+        "3-15392",
+        "3-15401",
+        "3-15422",
+        "3-15458",
+        "3-15463"
+      ]
+    },
+    {
+      "id": "3-15466",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15475",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15479",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15490",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15498",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15503",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15533",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15544",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15568",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15592",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15612",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15618",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15654",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15690",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15720",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15731",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15752",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15769",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15781",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15800",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15812",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15832",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15838",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15853",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15888",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15893",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15898",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15934",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15970",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15975",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15980",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-15993",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16002",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16023",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16059",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff071a31"
+      }
+    },
+    {
+      "id": "3-15465",
+      "types": [
+        "Shape"
+      ],
+      "name": "R15_84",
+      "children": [
+        "3-15466",
+        "3-15475",
+        "3-15479",
+        "3-15490",
+        "3-15498",
+        "3-15503",
+        "3-15533",
+        "3-15544",
+        "3-15568",
+        "3-15592",
+        "3-15612",
+        "3-15618",
+        "3-15654",
+        "3-15690",
+        "3-15720",
+        "3-15731",
+        "3-15752",
+        "3-15769",
+        "3-15781",
+        "3-15800",
+        "3-15812",
+        "3-15832",
+        "3-15838",
+        "3-15853",
+        "3-15888",
+        "3-15893",
+        "3-15898",
+        "3-15934",
+        "3-15970",
+        "3-15975",
+        "3-15980",
+        "3-15993",
+        "3-16002",
+        "3-16023",
+        "3-16059"
+      ]
+    },
+    {
+      "id": "3-16061",
+      "types": [
+        "ClippingShape"
+      ],
+      "name": "clip20_1745_753"
+    },
+    {
+      "id": "3-14202",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_83",
+      "children": [
+        "3-14203",
+        "3-15465",
+        "3-16061"
+      ]
+    },
+    {
+      "id": "3-16064",
+      "types": [
+        "Image"
+      ],
+      "name": "15 R15_81 exact source crop"
+    },
+    {
+      "id": "3-16065",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_82"
+    },
+    {
+      "id": "3-16066",
+      "types": [
+        "ClippingShape"
+      ],
+      "name": "clip19_1745_753"
+    },
+    {
+      "id": "3-16063",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_81",
+      "children": [
+        "3-16064",
+        "3-16065",
+        "3-16066"
+      ]
+    },
+    {
+      "id": "3-16068",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_78"
+    },
+    {
+      "id": "3-16165",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_76"
+    },
+    {
+      "id": "3-16210",
+      "types": [
+        "ClippingShape"
+      ],
+      "name": "clip18_1745_753"
+    },
+    {
+      "id": "3-16067",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_75",
+      "children": [
+        "3-16068",
+        "3-16165",
+        "3-16210"
+      ]
+    },
+    {
+      "id": "3-16211",
+      "types": [
+        "ClippingShape"
+      ],
+      "name": "clip17_1745_753"
+    },
+    {
+      "id": "3-16213",
+      "types": [
+        "Node"
+      ],
+      "name": "Group"
+    },
+    {
+      "id": "3-16212",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip19_1745_753",
+      "children": [
+        "3-16213"
+      ]
+    },
+    {
+      "id": "3-16220",
+      "types": [
+        "Node"
+      ],
+      "name": "Group"
+    },
+    {
+      "id": "3-16219",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip18_1745_753",
+      "children": [
+        "3-16220"
+      ]
+    },
+    {
+      "id": "3-16062",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_74",
+      "children": [
+        "3-16063",
+        "3-16067",
+        "3-16211",
+        "3-16212",
+        "3-16219"
+      ]
+    },
+    {
+      "id": "3-16227",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path",
+      "children": []
+    },
+    {
+      "id": "3-16229",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "3-16228",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "3-16229"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ffffffff"
+      }
+    },
+    {
+      "id": "3-16226",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle",
+      "children": [
+        "3-16227",
+        "3-16228"
+      ]
+    },
+    {
+      "id": "3-16232",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16231",
+      "types": [
+        "Node"
+      ],
+      "name": "Group",
+      "children": [
+        "3-16232"
+      ]
+    },
+    {
+      "id": "3-16230",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip21_1745_753",
+      "children": [
+        "3-16231"
+      ]
+    },
+    {
+      "id": "3-16239",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16238",
+      "types": [
+        "Node"
+      ],
+      "name": "Group",
+      "children": [
+        "3-16239"
+      ]
+    },
+    {
+      "id": "3-16237",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip20_1745_753",
+      "children": [
+        "3-16238"
+      ]
+    },
+    {
+      "id": "3-16246",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16245",
+      "types": [
+        "Node"
+      ],
+      "name": "Group",
+      "children": [
+        "3-16246"
+      ]
+    },
+    {
+      "id": "3-16244",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip17_1745_753",
+      "children": [
+        "3-16245"
+      ]
+    },
+    {
+      "id": "3-14123",
+      "types": [
+        "Node"
+      ],
+      "name": "Card 3 / Content",
+      "children": [
+        "3-14124",
+        "3-14202",
+        "3-16062",
+        "3-16226",
+        "3-16230",
+        "3-16237",
+        "3-16244"
+      ]
+    },
+    {
+      "id": "3-16253",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path",
+      "children": []
+    },
+    {
+      "id": "3-16255",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "3-16254",
+      "types": [
+        "Stroke"
+      ],
+      "name": "Stroke 1",
+      "children": [
+        "3-16255"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#e6ffffff"
+      }
+    },
+    {
+      "id": "3-16252",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle",
+      "children": [
+        "3-16253",
+        "3-16254"
+      ]
+    },
+    {
+      "id": "3-16257",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path",
+      "children": []
+    },
+    {
+      "id": "3-16259",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "3-16258",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "3-16259"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#26ffffff"
+      }
+    },
+    {
+      "id": "3-16256",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle",
+      "children": [
+        "3-16257",
+        "3-16258"
+      ]
+    },
+    {
+      "id": "3-16251",
+      "types": [
+        "Node"
+      ],
+      "name": "Card 3 / Glass backing",
+      "children": [
+        "3-16252",
+        "3-16256"
+      ]
+    },
+    {
+      "id": "3-21178",
+      "types": [
+        "Node"
+      ],
+      "name": "Card 3 / Centered improvements",
+      "children": [
+        "3-14123",
+        "3-16251"
+      ]
+    },
+    {
+      "id": "3-16263",
+      "types": [
+        "Shape"
+      ],
+      "name": "R15_71"
+    },
+    {
+      "id": "3-16292",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_69"
+    },
+    {
+      "id": "3-16296",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle"
+    },
+    {
+      "id": "3-16300",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle"
+    },
+    {
+      "id": "3-16304",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip16_1745_753"
+    },
+    {
+      "id": "3-16262",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_68",
+      "children": [
+        "3-16263",
+        "3-16292",
+        "3-16296",
+        "3-16300",
+        "3-16304"
+      ]
+    },
+    {
+      "id": "3-16312",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_66"
+    },
+    {
+      "id": "3-16316",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_64"
+    },
+    {
+      "id": "3-16320",
+      "types": [
+        "ClippingShape"
+      ],
+      "name": "clip13_1745_753"
+    },
+    {
+      "id": "3-16321",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip15_1745_753"
+    },
+    {
+      "id": "3-16328",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip14_1745_753"
+    },
+    {
+      "id": "3-16311",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_63",
+      "children": [
+        "3-16312",
+        "3-16316",
+        "3-16320",
+        "3-16321",
+        "3-16328"
+      ]
+    },
+    {
+      "id": "3-16335",
+      "types": [
+        "ClippingShape"
+      ],
+      "name": "clip12_1745_753"
+    },
+    {
+      "id": "3-16337",
+      "types": [
+        "Node"
+      ],
+      "name": "Group"
+    },
+    {
+      "id": "3-16336",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip13_1745_753",
+      "children": [
+        "3-16337"
+      ]
+    },
+    {
+      "id": "3-16261",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_62",
+      "children": [
+        "3-16262",
+        "3-16311",
+        "3-16335",
+        "3-16336"
+      ]
+    },
+    {
+      "id": "3-16345",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16353",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16366",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16375",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16396",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16423",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16433",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16444",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16474",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16485",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16502",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16514",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16534",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16541",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16552",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16588",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16618",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16628",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16643",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16663",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16670",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16694",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16713",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16724",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16729",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16742",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16751",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16762",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16767",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16778",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16783",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16791",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16821",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16831",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16852",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16869",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16881",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16892",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16897",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16902",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16907",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16918",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16929",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16934",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16954",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16961",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-16976",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17012",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17047",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17077",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17087",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17100",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17120",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17127",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17132",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17137",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17173",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17209",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17228",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17248",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17255",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17291",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17311",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17341",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17352",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17367",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17384",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17396",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17416",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17423",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17438",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17449",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17454",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17467",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17476",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17487",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17492",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17497",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17502",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17523",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17540",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17552",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17557",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff5f6d77"
+      }
+    },
+    {
+      "id": "3-16344",
+      "types": [
+        "Shape"
+      ],
+      "name": "R15_61",
+      "children": [
+        "3-16345",
+        "3-16353",
+        "3-16366",
+        "3-16375",
+        "3-16396",
+        "3-16423",
+        "3-16433",
+        "3-16444",
+        "3-16474",
+        "3-16485",
+        "3-16502",
+        "3-16514",
+        "3-16534",
+        "3-16541",
+        "3-16552",
+        "3-16588",
+        "3-16618",
+        "3-16628",
+        "3-16643",
+        "3-16663",
+        "3-16670",
+        "3-16694",
+        "3-16713",
+        "3-16724",
+        "3-16729",
+        "3-16742",
+        "3-16751",
+        "3-16762",
+        "3-16767",
+        "3-16778",
+        "3-16783",
+        "3-16791",
+        "3-16821",
+        "3-16831",
+        "3-16852",
+        "3-16869",
+        "3-16881",
+        "3-16892",
+        "3-16897",
+        "3-16902",
+        "3-16907",
+        "3-16918",
+        "3-16929",
+        "3-16934",
+        "3-16954",
+        "3-16961",
+        "3-16976",
+        "3-17012",
+        "3-17047",
+        "3-17077",
+        "3-17087",
+        "3-17100",
+        "3-17120",
+        "3-17127",
+        "3-17132",
+        "3-17137",
+        "3-17173",
+        "3-17209",
+        "3-17228",
+        "3-17248",
+        "3-17255",
+        "3-17291",
+        "3-17311",
+        "3-17341",
+        "3-17352",
+        "3-17367",
+        "3-17384",
+        "3-17396",
+        "3-17416",
+        "3-17423",
+        "3-17438",
+        "3-17449",
+        "3-17454",
+        "3-17467",
+        "3-17476",
+        "3-17487",
+        "3-17492",
+        "3-17497",
+        "3-17502",
+        "3-17523",
+        "3-17540",
+        "3-17552",
+        "3-17557"
+      ]
+    },
+    {
+      "id": "3-17560",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17568",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17598",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17609",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17626",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17637",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17657",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17664",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17675",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17688",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17697",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17705",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17725",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17731",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17746",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17757",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17762",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17773",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17786",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17795",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17809",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17839",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17850",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17871",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17888",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17900",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17911",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17916",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17921",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17926",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17937",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17948",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17953",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17973",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17979",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17994",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-17999",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-18004",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-18025",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-18052",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-18063",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-18068",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-18073",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-18109",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-18145",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-18164",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-18184",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-18191",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-18227",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff071a31"
+      }
+    },
+    {
+      "id": "3-17559",
+      "types": [
+        "Shape"
+      ],
+      "name": "R15_60",
+      "children": [
+        "3-17560",
+        "3-17568",
+        "3-17598",
+        "3-17609",
+        "3-17626",
+        "3-17637",
+        "3-17657",
+        "3-17664",
+        "3-17675",
+        "3-17688",
+        "3-17697",
+        "3-17705",
+        "3-17725",
+        "3-17731",
+        "3-17746",
+        "3-17757",
+        "3-17762",
+        "3-17773",
+        "3-17786",
+        "3-17795",
+        "3-17809",
+        "3-17839",
+        "3-17850",
+        "3-17871",
+        "3-17888",
+        "3-17900",
+        "3-17911",
+        "3-17916",
+        "3-17921",
+        "3-17926",
+        "3-17937",
+        "3-17948",
+        "3-17953",
+        "3-17973",
+        "3-17979",
+        "3-17994",
+        "3-17999",
+        "3-18004",
+        "3-18025",
+        "3-18052",
+        "3-18063",
+        "3-18068",
+        "3-18073",
+        "3-18109",
+        "3-18145",
+        "3-18164",
+        "3-18184",
+        "3-18191",
+        "3-18227"
+      ]
+    },
+    {
+      "id": "3-16343",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_59",
+      "children": [
+        "3-16344",
+        "3-17559"
+      ]
+    },
+    {
+      "id": "3-18231",
+      "types": [
+        "Image"
+      ],
+      "name": "15 R15_57 exact source crop"
+    },
+    {
+      "id": "3-18232",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_58"
+    },
+    {
+      "id": "3-18233",
+      "types": [
+        "ClippingShape"
+      ],
+      "name": "clip11_1745_753"
+    },
+    {
+      "id": "3-18230",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_57",
+      "children": [
+        "3-18231",
+        "3-18232",
+        "3-18233"
+      ]
+    },
+    {
+      "id": "3-18235",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_54"
+    },
+    {
+      "id": "3-18447",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_52"
+    },
+    {
+      "id": "3-18494",
+      "types": [
+        "ClippingShape"
+      ],
+      "name": "clip10_1745_753"
+    },
+    {
+      "id": "3-18234",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_51",
+      "children": [
+        "3-18235",
+        "3-18447",
+        "3-18494"
+      ]
+    },
+    {
+      "id": "3-18495",
+      "types": [
+        "ClippingShape"
+      ],
+      "name": "clip9_1745_753"
+    },
+    {
+      "id": "3-18497",
+      "types": [
+        "Node"
+      ],
+      "name": "Group"
+    },
+    {
+      "id": "3-18496",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip11_1745_753",
+      "children": [
+        "3-18497"
+      ]
+    },
+    {
+      "id": "3-18504",
+      "types": [
+        "Node"
+      ],
+      "name": "Group"
+    },
+    {
+      "id": "3-18503",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip10_1745_753",
+      "children": [
+        "3-18504"
+      ]
+    },
+    {
+      "id": "3-18229",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_50",
+      "children": [
+        "3-18230",
+        "3-18234",
+        "3-18495",
+        "3-18496",
+        "3-18503"
+      ]
+    },
+    {
+      "id": "3-18511",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path",
+      "children": []
+    },
+    {
+      "id": "3-18513",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "3-18512",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "3-18513"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ffffffff"
+      }
+    },
+    {
+      "id": "3-18510",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle",
+      "children": [
+        "3-18511",
+        "3-18512"
+      ]
+    },
+    {
+      "id": "3-18516",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-18515",
+      "types": [
+        "Node"
+      ],
+      "name": "Group",
+      "children": [
+        "3-18516"
+      ]
+    },
+    {
+      "id": "3-18514",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip12_1745_753",
+      "children": [
+        "3-18515"
+      ]
+    },
+    {
+      "id": "3-18523",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-18522",
+      "types": [
+        "Node"
+      ],
+      "name": "Group",
+      "children": [
+        "3-18523"
+      ]
+    },
+    {
+      "id": "3-18521",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip9_1745_753",
+      "children": [
+        "3-18522"
+      ]
+    },
+    {
+      "id": "3-16260",
+      "types": [
+        "Node"
+      ],
+      "name": "Card 2 / Content",
+      "children": [
+        "3-16261",
+        "3-16343",
+        "3-18229",
+        "3-18510",
+        "3-18514",
+        "3-18521"
+      ]
+    },
+    {
+      "id": "3-18530",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path",
+      "children": []
+    },
+    {
+      "id": "3-18532",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "3-18531",
+      "types": [
+        "Stroke"
+      ],
+      "name": "Stroke 1",
+      "children": [
+        "3-18532"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#e6ffffff"
+      }
+    },
+    {
+      "id": "3-18529",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle",
+      "children": [
+        "3-18530",
+        "3-18531"
+      ]
+    },
+    {
+      "id": "3-18534",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path",
+      "children": []
+    },
+    {
+      "id": "3-18536",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "3-18535",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "3-18536"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#26ffffff"
+      }
+    },
+    {
+      "id": "3-18533",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle",
+      "children": [
+        "3-18534",
+        "3-18535"
+      ]
+    },
+    {
+      "id": "3-18528",
+      "types": [
+        "Node"
+      ],
+      "name": "Card 2 / Glass backing",
+      "children": [
+        "3-18529",
+        "3-18533"
+      ]
+    },
+    {
+      "id": "3-21177",
+      "types": [
+        "Node"
+      ],
+      "name": "Card 2 / Centered feedback",
+      "children": [
+        "3-16260",
+        "3-18528"
+      ]
+    },
+    {
+      "id": "3-18540",
+      "types": [
+        "Shape"
+      ],
+      "name": "R15_47"
+    },
+    {
+      "id": "3-18578",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_45"
+    },
+    {
+      "id": "3-18582",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle"
+    },
+    {
+      "id": "3-18586",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle"
+    },
+    {
+      "id": "3-18590",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip8_1745_753"
+    },
+    {
+      "id": "3-18539",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_44",
+      "children": [
+        "3-18540",
+        "3-18578",
+        "3-18582",
+        "3-18586",
+        "3-18590"
+      ]
+    },
+    {
+      "id": "3-18598",
+      "types": [
+        "Shape"
+      ],
+      "name": "R15_43"
+    },
+    {
+      "id": "3-18653",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_41"
+    },
+    {
+      "id": "3-18657",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_39"
+    },
+    {
+      "id": "3-18661",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip7_1745_753"
+    },
+    {
+      "id": "3-18668",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip6_1745_753"
+    },
+    {
+      "id": "3-18597",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_38",
+      "children": [
+        "3-18598",
+        "3-18653",
+        "3-18657",
+        "3-18661",
+        "3-18668"
+      ]
+    },
+    {
+      "id": "3-18675",
+      "types": [
+        "ClippingShape"
+      ],
+      "name": "clip5_1745_753"
+    },
+    {
+      "id": "3-18538",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_37",
+      "children": [
+        "3-18539",
+        "3-18597",
+        "3-18675"
+      ]
+    },
+    {
+      "id": "3-18678",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle"
+    },
+    {
+      "id": "3-18677",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_36",
+      "children": [
+        "3-18678"
+      ]
+    },
+    {
+      "id": "3-18683",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle"
+    },
+    {
+      "id": "3-18682",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_35",
+      "children": [
+        "3-18683"
+      ]
+    },
+    {
+      "id": "3-18688",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle"
+    },
+    {
+      "id": "3-18687",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_34",
+      "children": [
+        "3-18688"
+      ]
+    },
+    {
+      "id": "3-18693",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle"
+    },
+    {
+      "id": "3-18692",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_33",
+      "children": [
+        "3-18693"
+      ]
+    },
+    {
+      "id": "3-18698",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-18723",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-18742",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-18778",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-18789",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-18794",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-18807",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-18816",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-18851",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-18871",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-18878",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-18893",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-18929",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-18944",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-18964",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-18971",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-18990",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19001",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19014",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19023",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19038",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19049",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19054",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19065",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19070",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19100",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19110",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19115",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19120",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19131",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19151",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19158",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19175",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19187",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19198",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19203",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19223",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19238",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19258",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19265",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19295",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19306",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19323",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19335",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19359",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19374",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19394",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19401",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19431",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19442",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19453",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19458",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19463",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19468",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19481",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19490",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19511",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19541",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19552",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19573",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19590",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19602",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19607",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19612",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19633",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19657",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19670",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19679",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19700",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19736",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19741",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19746",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19782",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19793",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19798",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19818",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19825",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19846",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19857",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19862",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19877",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19897",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19904",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19923",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19934",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19945",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19950",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19955",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19975",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-19982",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20018",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20023",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff5f6d77"
+      }
+    },
+    {
+      "id": "3-18697",
+      "types": [
+        "Shape"
+      ],
+      "name": "R15_32",
+      "children": [
+        "3-18698",
+        "3-18723",
+        "3-18742",
+        "3-18778",
+        "3-18789",
+        "3-18794",
+        "3-18807",
+        "3-18816",
+        "3-18851",
+        "3-18871",
+        "3-18878",
+        "3-18893",
+        "3-18929",
+        "3-18944",
+        "3-18964",
+        "3-18971",
+        "3-18990",
+        "3-19001",
+        "3-19014",
+        "3-19023",
+        "3-19038",
+        "3-19049",
+        "3-19054",
+        "3-19065",
+        "3-19070",
+        "3-19100",
+        "3-19110",
+        "3-19115",
+        "3-19120",
+        "3-19131",
+        "3-19151",
+        "3-19158",
+        "3-19175",
+        "3-19187",
+        "3-19198",
+        "3-19203",
+        "3-19223",
+        "3-19238",
+        "3-19258",
+        "3-19265",
+        "3-19295",
+        "3-19306",
+        "3-19323",
+        "3-19335",
+        "3-19359",
+        "3-19374",
+        "3-19394",
+        "3-19401",
+        "3-19431",
+        "3-19442",
+        "3-19453",
+        "3-19458",
+        "3-19463",
+        "3-19468",
+        "3-19481",
+        "3-19490",
+        "3-19511",
+        "3-19541",
+        "3-19552",
+        "3-19573",
+        "3-19590",
+        "3-19602",
+        "3-19607",
+        "3-19612",
+        "3-19633",
+        "3-19657",
+        "3-19670",
+        "3-19679",
+        "3-19700",
+        "3-19736",
+        "3-19741",
+        "3-19746",
+        "3-19782",
+        "3-19793",
+        "3-19798",
+        "3-19818",
+        "3-19825",
+        "3-19846",
+        "3-19857",
+        "3-19862",
+        "3-19877",
+        "3-19897",
+        "3-19904",
+        "3-19923",
+        "3-19934",
+        "3-19945",
+        "3-19950",
+        "3-19955",
+        "3-19975",
+        "3-19982",
+        "3-20018",
+        "3-20023"
+      ]
+    },
+    {
+      "id": "3-20026",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20065",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20076",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20106",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20117",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20141",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20154",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20163",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20167",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20178",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20186",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20191",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20202",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20207",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20227",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20242",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20262",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20268",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20298",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20309",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20326",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20338",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20373",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20403",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20414",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20435",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20465",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20476",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20503",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20513",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20533",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20539",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20574",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20594",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20600",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20621",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20632",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20637",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff071a31"
+      }
+    },
+    {
+      "id": "3-20025",
+      "types": [
+        "Shape"
+      ],
+      "name": "R15_31",
+      "children": [
+        "3-20026",
+        "3-20065",
+        "3-20076",
+        "3-20106",
+        "3-20117",
+        "3-20141",
+        "3-20154",
+        "3-20163",
+        "3-20167",
+        "3-20178",
+        "3-20186",
+        "3-20191",
+        "3-20202",
+        "3-20207",
+        "3-20227",
+        "3-20242",
+        "3-20262",
+        "3-20268",
+        "3-20298",
+        "3-20309",
+        "3-20326",
+        "3-20338",
+        "3-20373",
+        "3-20403",
+        "3-20414",
+        "3-20435",
+        "3-20465",
+        "3-20476",
+        "3-20503",
+        "3-20513",
+        "3-20533",
+        "3-20539",
+        "3-20574",
+        "3-20594",
+        "3-20600",
+        "3-20621",
+        "3-20632",
+        "3-20637"
+      ]
+    },
+    {
+      "id": "3-20639",
+      "types": [
+        "ClippingShape"
+      ],
+      "name": "clip4_1745_753"
+    },
+    {
+      "id": "3-18676",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_30",
+      "children": [
+        "3-18677",
+        "3-18682",
+        "3-18687",
+        "3-18692",
+        "3-18697",
+        "3-20025",
+        "3-20639"
+      ]
+    },
+    {
+      "id": "3-20642",
+      "types": [
+        "Image"
+      ],
+      "name": "15 R15_28 exact source crop"
+    },
+    {
+      "id": "3-20643",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_29"
+    },
+    {
+      "id": "3-20644",
+      "types": [
+        "ClippingShape"
+      ],
+      "name": "clip3_1745_753"
+    },
+    {
+      "id": "3-20641",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_28",
+      "children": [
+        "3-20642",
+        "3-20643",
+        "3-20644"
+      ]
+    },
+    {
+      "id": "3-20646",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_25"
+    },
+    {
+      "id": "3-20745",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_23"
+    },
+    {
+      "id": "3-20775",
+      "types": [
+        "ClippingShape"
+      ],
+      "name": "clip2_1745_753"
+    },
+    {
+      "id": "3-20645",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_22",
+      "children": [
+        "3-20646",
+        "3-20745",
+        "3-20775"
+      ]
+    },
+    {
+      "id": "3-20776",
+      "types": [
+        "ClippingShape"
+      ],
+      "name": "clip1_1745_753"
+    },
+    {
+      "id": "3-20778",
+      "types": [
+        "Node"
+      ],
+      "name": "Group"
+    },
+    {
+      "id": "3-20777",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip3_1745_753",
+      "children": [
+        "3-20778"
+      ]
+    },
+    {
+      "id": "3-20785",
+      "types": [
+        "Node"
+      ],
+      "name": "Group"
+    },
+    {
+      "id": "3-20784",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip2_1745_753",
+      "children": [
+        "3-20785"
+      ]
+    },
+    {
+      "id": "3-20640",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_21",
+      "children": [
+        "3-20641",
+        "3-20645",
+        "3-20776",
+        "3-20777",
+        "3-20784"
+      ]
+    },
+    {
+      "id": "3-20792",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path",
+      "children": []
+    },
+    {
+      "id": "3-20794",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "3-20793",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "3-20794"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ffffffff"
+      }
+    },
+    {
+      "id": "3-20791",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle",
+      "children": [
+        "3-20792",
+        "3-20793"
+      ]
+    },
+    {
+      "id": "3-20797",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20796",
+      "types": [
+        "Node"
+      ],
+      "name": "Group",
+      "children": [
+        "3-20797"
+      ]
+    },
+    {
+      "id": "3-20795",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip5_1745_753",
+      "children": [
+        "3-20796"
+      ]
+    },
+    {
+      "id": "3-20804",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20803",
+      "types": [
+        "Node"
+      ],
+      "name": "Group",
+      "children": [
+        "3-20804"
+      ]
+    },
+    {
+      "id": "3-20802",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip4_1745_753",
+      "children": [
+        "3-20803"
+      ]
+    },
+    {
+      "id": "3-20811",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20810",
+      "types": [
+        "Node"
+      ],
+      "name": "Group",
+      "children": [
+        "3-20811"
+      ]
+    },
+    {
+      "id": "3-20809",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip1_1745_753",
+      "children": [
+        "3-20810"
+      ]
+    },
+    {
+      "id": "3-18537",
+      "types": [
+        "Node"
+      ],
+      "name": "Card 1 / Content",
+      "children": [
+        "3-18538",
+        "3-18676",
+        "3-20640",
+        "3-20791",
+        "3-20795",
+        "3-20802",
+        "3-20809"
+      ]
+    },
+    {
+      "id": "3-20818",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path",
+      "children": []
+    },
+    {
+      "id": "3-20820",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "3-20819",
+      "types": [
+        "Stroke"
+      ],
+      "name": "Stroke 1",
+      "children": [
+        "3-20820"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#e6ffffff"
+      }
+    },
+    {
+      "id": "3-20817",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle",
+      "children": [
+        "3-20818",
+        "3-20819"
+      ]
+    },
+    {
+      "id": "3-20822",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path",
+      "children": []
+    },
+    {
+      "id": "3-20824",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "3-20823",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "3-20824"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#26ffffff"
+      }
+    },
+    {
+      "id": "3-20821",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle",
+      "children": [
+        "3-20822",
+        "3-20823"
+      ]
+    },
+    {
+      "id": "3-20816",
+      "types": [
+        "Node"
+      ],
+      "name": "Card 1 / Glass backing",
+      "children": [
+        "3-20817",
+        "3-20821"
+      ]
+    },
+    {
+      "id": "3-21176",
+      "types": [
+        "Node"
+      ],
+      "name": "Card 1 / Centered insights",
+      "children": [
+        "3-18537",
+        "3-20816"
+      ]
+    },
+    {
+      "id": "3-20833",
+      "types": [
+        "LayoutComponentStyle"
+      ],
+      "name": "Layout Style"
+    },
+    {
+      "id": "3-20825",
+      "types": [
+        "ClippingShape"
+      ],
+      "name": "clip0_1745_753"
+    },
+    {
+      "id": "3-14122",
+      "types": [
+        "Node"
+      ],
+      "name": "Original carousel / Stationary",
+      "children": [
+        "3-20825"
+      ]
+    },
+    {
+      "id": "3-20828",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-20827",
+      "types": [
+        "Node"
+      ],
+      "name": "Group",
+      "children": [
+        "3-20828"
+      ]
+    },
+    {
+      "id": "3-20826",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip0_1745_753",
+      "children": [
+        "3-20827"
+      ]
+    },
+    {
+      "id": "3-14121",
+      "types": [
+        "Node"
+      ],
+      "name": "R15_0",
+      "children": [
+        "3-14122",
+        "3-20826"
+      ]
+    },
+    {
+      "id": "3-14120",
+      "types": [
+        "Node"
+      ],
+      "name": "15 / Editable centered card sequence",
+      "children": [
+        "3-14121"
+      ]
+    },
+    {
+      "id": "3-20835",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "3-20834",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "3-20835"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#00000000"
+      }
+    },
+    {
+      "id": "3-20836",
+      "types": [
+        "Image"
+      ],
+      "name": "15 Source gradient",
+      "children": []
+    },
+    {
+      "id": "3-14119",
+      "types": [
+        "Artboard"
+      ],
+      "name": "15 / Know what to improve next / Primary final cut",
+      "children": [
+        "3-21178",
+        "3-21177",
+        "3-21176",
+        "3-20833",
+        "3-14120",
+        "3-20834",
+        "3-20836"
+      ]
+    }
+  ]
+}

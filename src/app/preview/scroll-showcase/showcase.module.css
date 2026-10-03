@@ -117,6 +117,9 @@
   will-change: transform;
   filter: blur(60px);
 }
+.scrollTrack[data-compact="true"] .gradient {
+  transition: transform 0.28s ease-out;
+}
 .close {
   position: absolute;
   top: 32px;

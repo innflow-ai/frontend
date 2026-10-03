@@ -86,8 +86,8 @@
     "sourceUrl": "https://editor.rive.app/file/05/2626550",
     "stateMachine": "State Machine 1",
     "status": "rive",
-    "bytes": 684769,
-    "sha256": "c56ab83bd93f47a7784478397dbec3d8465f95434f5eda7fd2deb64b7a7d2187"
+    "bytes": 1564033,
+    "sha256": "70599bd956df74cd20660ac759f77fa611f3589bdab1363234402fceebd1073b"
   },
   {
     "number": 6,
@@ -100,12 +100,12 @@
     "src": "/brand/homepage/06.riv",
     "artboard": "06 / Learn what keeps coming up / Final cut",
     "animation": "06 / Recurring issues / 8s loop",
-    "duration": 8.0,
+    "duration": 12.0,
     "sourceUrl": "https://editor.rive.app/file/06/2626554",
     "stateMachine": "State Machine 1",
     "status": "rive",
-    "bytes": 1496125,
-    "sha256": "60e937037ffa95466848b091739b5c4aa1e00fb7e121ec65d0b8ea238e729ff6"
+    "bytes": 2458546,
+    "sha256": "eb4350441fe316c81649034c0e4494b0b0b65b713376ad6c844daf655881e133"
   },
   {
     "number": 7,
@@ -190,12 +190,12 @@
     "src": "/brand/homepage/11.riv",
     "artboard": "11 / Spend less time finding answers / Final cut",
     "animation": "11 / Find answers / 6s reveal",
-    "duration": 6.0,
+    "duration": 6,
     "sourceUrl": "https://editor.rive.app/file/11/2626580",
     "stateMachine": "State Machine 1",
     "status": "rive",
-    "bytes": 290325,
-    "sha256": "efac37319eea61b1147ded22109d28a7fe38e3204ff636fb6bf8f535f048a1c9"
+    "bytes": 290424,
+    "sha256": "67399d00ecb8200c43699f7a651f97b5f42649378e888f9fddc4300b7e7026c6"
   },
   {
     "number": 12,
@@ -226,12 +226,12 @@
     "src": "/brand/homepage/13.riv",
     "artboard": "13 / Delegate tasks. Keep the final say. / Final cut",
     "animation": "13 / Delegate and review / 8.2s loop",
-    "duration": 8.2,
+    "duration": 14,
     "sourceUrl": "https://editor.rive.app/file/13/2626589",
     "stateMachine": "State Machine 1",
     "status": "rive",
-    "bytes": 282881,
-    "sha256": "db7c969ce34b76c172e3e1ca2cef3e333dec1c83c17055e8e77e626ba3f5fcee"
+    "bytes": 1174312,
+    "sha256": "958d8c4cefd12d76f2932e75aa78093ad901c661b6fb6037ddecee99baf4f7db"
   },
   {
     "number": 14,
@@ -262,12 +262,12 @@
     "src": "/brand/homepage/15.riv",
     "artboard": "15 / Know what to improve next / Primary final cut",
     "animation": "15 / Insights carousel / 10s loop",
-    "duration": 10.0,
-    "sourceUrl": "https://editor.rive.app/file/15/2626593",
+    "duration": 12,
+    "sourceUrl": "https://editor.rive.app/file/innflow-15-centered-cards/2628054",
     "stateMachine": "State Machine 1",
     "status": "rive",
-    "bytes": 369642,
-    "sha256": "ef33639ad2ae4884f861e864fcd36a5e5caa5518f249a10c7b00e023f7ba0819"
+    "bytes": 1246459,
+    "sha256": "25fef04f4f2610c217ebdc59092fd047f12faeb7c556e16e79401f32f5641777"
   },
   {
     "number": 16,
@@ -280,12 +280,12 @@
     "src": "/brand/homepage/16.riv",
     "artboard": "16 / Catch up instantly / Final cut",
     "animation": "16 / Summary and next steps / 6s loop",
-    "duration": 6.0,
+    "duration": 6,
     "sourceUrl": "https://editor.rive.app/file/16/2626595",
     "stateMachine": "State Machine 1",
     "status": "rive",
-    "bytes": 214477,
-    "sha256": "83942eeacb28e7250c997af3a22d9aa35295de1b559cd8b17c6d37adc5cabe09"
+    "bytes": 218219,
+    "sha256": "94315ed46ad24b253768ee37f7220f40bdffb6c7b924af595897eff682e4391e"
   },
   {
     "number": 17,

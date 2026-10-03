@@ -1,0 +1,1399 @@
+{
+  "success": true,
+  "objects": [
+    {
+      "id": "0-2716",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2717",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2718",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2719",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2720",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2721",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2722",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2723",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2724",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2725",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2726",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2727",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2728",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2729",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2730",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2731",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2732",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2733",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2734",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2735",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2736",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2737",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2738",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2739",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2740",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2741",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2742",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2743",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2744",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2745",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2746",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2747",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2748",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2715",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path",
+      "children": [
+        "0-2716",
+        "0-2717",
+        "0-2718",
+        "0-2719",
+        "0-2720",
+        "0-2721",
+        "0-2722",
+        "0-2723",
+        "0-2724",
+        "0-2725",
+        "0-2726",
+        "0-2727",
+        "0-2728",
+        "0-2729",
+        "0-2730",
+        "0-2731",
+        "0-2732",
+        "0-2733",
+        "0-2734",
+        "0-2735",
+        "0-2736",
+        "0-2737",
+        "0-2738",
+        "0-2739",
+        "0-2740",
+        "0-2741",
+        "0-2742",
+        "0-2743",
+        "0-2744",
+        "0-2745",
+        "0-2746",
+        "0-2747",
+        "0-2748"
+      ]
+    },
+    {
+      "id": "0-2749",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2787",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-2749"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff7972de"
+      }
+    },
+    {
+      "id": "0-2714",
+      "types": [
+        "Shape"
+      ],
+      "name": "Custom Shape",
+      "children": [
+        "0-2715",
+        "0-2787"
+      ]
+    },
+    {
+      "id": "0-2752",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2753",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2754",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2755",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2756",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2757",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2758",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2759",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2760",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2761",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2762",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2763",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2764",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2765",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2766",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2767",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2768",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2769",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2770",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2771",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2772",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2773",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2774",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2775",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2776",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2777",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2778",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2779",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2780",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2781",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2782",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2783",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2784",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2785",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2751",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path",
+      "children": [
+        "0-2752",
+        "0-2753",
+        "0-2754",
+        "0-2755",
+        "0-2756",
+        "0-2757",
+        "0-2758",
+        "0-2759",
+        "0-2760",
+        "0-2761",
+        "0-2762",
+        "0-2763",
+        "0-2764",
+        "0-2765",
+        "0-2766",
+        "0-2767",
+        "0-2768",
+        "0-2769",
+        "0-2770",
+        "0-2771",
+        "0-2772",
+        "0-2773",
+        "0-2774",
+        "0-2775",
+        "0-2776",
+        "0-2777",
+        "0-2778",
+        "0-2779",
+        "0-2780",
+        "0-2781",
+        "0-2782",
+        "0-2783",
+        "0-2784",
+        "0-2785"
+      ]
+    },
+    {
+      "id": "0-2786",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2788",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-2786"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff7972de"
+      }
+    },
+    {
+      "id": "0-2750",
+      "types": [
+        "Shape"
+      ],
+      "name": "Custom Shape",
+      "children": [
+        "0-2751",
+        "0-2788"
+      ]
+    },
+    {
+      "id": "0-2712",
+      "types": [
+        "Node"
+      ],
+      "name": "16 / Mage filled Stars A",
+      "children": [
+        "0-2714",
+        "0-2750"
+      ]
+    },
+    {
+      "id": "0-2519",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2518",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-2519"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff172b3f"
+      }
+    },
+    {
+      "id": "0-2517",
+      "types": [
+        "TextStylePaint"
+      ],
+      "name": "Style 1",
+      "children": [
+        "0-2518"
+      ]
+    },
+    {
+      "id": "0-2522",
+      "types": [
+        "TextValueRun"
+      ],
+      "name": "Run 1"
+    },
+    {
+      "id": "0-2516",
+      "types": [
+        "Text"
+      ],
+      "name": "16 / Summary title",
+      "children": [
+        "0-2517",
+        "0-2522"
+      ]
+    },
+    {
+      "id": "0-2792",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-2810",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff939cac"
+      }
+    },
+    {
+      "id": "0-2791",
+      "types": [
+        "Shape"
+      ],
+      "name": "Custom Shape",
+      "children": [
+        "0-2792",
+        "0-2810"
+      ]
+    },
+    {
+      "id": "0-2789",
+      "types": [
+        "Node"
+      ],
+      "name": "16 / Mage filled Caret Down",
+      "children": [
+        "0-2791"
+      ]
+    },
+    {
+      "id": "0-2523",
+      "types": [
+        "Shape"
+      ],
+      "name": "16 / Disclosure chevron",
+      "children": [
+        "0-2789"
+      ]
+    },
+    {
+      "id": "0-2532",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path",
+      "children": []
+    },
+    {
+      "id": "0-2534",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2533",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-2534"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#fff7f7f9"
+      }
+    },
+    {
+      "id": "0-2531",
+      "types": [
+        "Shape"
+      ],
+      "name": "16 / Header surface",
+      "children": [
+        "0-2532",
+        "0-2533"
+      ]
+    },
+    {
+      "id": "0-2913",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-2934",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff586a7b"
+      }
+    },
+    {
+      "id": "0-2912",
+      "types": [
+        "Shape"
+      ],
+      "name": "Custom Shape",
+      "children": [
+        "0-2913",
+        "0-2934"
+      ]
+    },
+    {
+      "id": "0-2910",
+      "types": [
+        "Node"
+      ],
+      "name": "16 / Mage filled Search",
+      "children": [
+        "0-2912"
+      ]
+    },
+    {
+      "id": "0-2538",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff172b3f"
+      }
+    },
+    {
+      "id": "0-2537",
+      "types": [
+        "TextStylePaint"
+      ],
+      "name": "Style 1",
+      "children": [
+        "0-2538"
+      ]
+    },
+    {
+      "id": "0-2542",
+      "types": [
+        "TextValueRun"
+      ],
+      "name": "Run 1"
+    },
+    {
+      "id": "0-2536",
+      "types": [
+        "Text"
+      ],
+      "name": "16 / Second next step text",
+      "children": [
+        "0-2537",
+        "0-2542"
+      ]
+    },
+    {
+      "id": "0-2535",
+      "types": [
+        "Node"
+      ],
+      "name": "16 / Second next step",
+      "children": [
+        "0-2910",
+        "0-2536"
+      ]
+    },
+    {
+      "id": "0-2814",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-2908",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff586a7b"
+      }
+    },
+    {
+      "id": "0-2813",
+      "types": [
+        "Shape"
+      ],
+      "name": "Custom Shape",
+      "children": [
+        "0-2814",
+        "0-2908"
+      ]
+    },
+    {
+      "id": "0-2830",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-2894",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-2909",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff586a7b"
+      }
+    },
+    {
+      "id": "0-2829",
+      "types": [
+        "Shape"
+      ],
+      "name": "Shape",
+      "children": [
+        "0-2830",
+        "0-2894",
+        "0-2909"
+      ]
+    },
+    {
+      "id": "0-2811",
+      "types": [
+        "Node"
+      ],
+      "name": "16 / Mage filled Chip",
+      "children": [
+        "0-2813",
+        "0-2829"
+      ]
+    },
+    {
+      "id": "0-2550",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff172b3f"
+      }
+    },
+    {
+      "id": "0-2549",
+      "types": [
+        "TextStylePaint"
+      ],
+      "name": "Style 1",
+      "children": [
+        "0-2550"
+      ]
+    },
+    {
+      "id": "0-2554",
+      "types": [
+        "TextValueRun"
+      ],
+      "name": "Run 1"
+    },
+    {
+      "id": "0-2548",
+      "types": [
+        "Text"
+      ],
+      "name": "16 / First next step text",
+      "children": [
+        "0-2549",
+        "0-2554"
+      ]
+    },
+    {
+      "id": "0-2547",
+      "types": [
+        "Node"
+      ],
+      "name": "16 / First next step",
+      "children": [
+        "0-2811",
+        "0-2548"
+      ]
+    },
+    {
+      "id": "0-2560",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path",
+      "children": []
+    },
+    {
+      "id": "0-2562",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2561",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-2562"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ffffffff"
+      }
+    },
+    {
+      "id": "0-2559",
+      "types": [
+        "Shape"
+      ],
+      "name": "16 / White panel",
+      "children": [
+        "0-2560",
+        "0-2561"
+      ]
+    },
+    {
+      "id": "0-2564",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path",
+      "children": []
+    },
+    {
+      "id": "0-2566",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2565",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-2566"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#32ffffff"
+      }
+    },
+    {
+      "id": "0-2563",
+      "types": [
+        "Shape"
+      ],
+      "name": "16 / Glass rim",
+      "children": [
+        "0-2564",
+        "0-2565"
+      ]
+    },
+    {
+      "id": "0-2515",
+      "types": [
+        "Node"
+      ],
+      "name": "16 / Summary panel",
+      "children": [
+        "0-2712",
+        "0-2516",
+        "0-2523",
+        "0-2531",
+        "0-2535",
+        "0-2547",
+        "0-2559",
+        "0-2563"
+      ]
+    },
+    {
+      "id": "0-5",
+      "types": [
+        "LayoutComponentStyle"
+      ],
+      "name": "Layout Style"
+    },
+    {
+      "id": "0-7",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-7"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#00000000"
+      }
+    },
+    {
+      "id": "0-2964",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path",
+      "children": []
+    },
+    {
+      "id": "0-2967",
+      "types": [
+        "GradientStop"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2968",
+      "types": [
+        "GradientStop"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2966",
+      "types": [
+        "LinearGradient"
+      ],
+      "name": "Component",
+      "children": [
+        "0-2967",
+        "0-2968"
+      ]
+    },
+    {
+      "id": "0-2965",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-2966"
+      ],
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-2966",
+        "stops": [
+          {
+            "id": "0-2967",
+            "color": "#80123b56",
+            "position": 0.0
+          },
+          {
+            "id": "0-2968",
+            "color": "#00123b56",
+            "position": 32.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-2963",
+      "types": [
+        "Shape"
+      ],
+      "name": "Mint / Upper edge shade",
+      "children": [
+        "0-2964",
+        "0-2965"
+      ]
+    },
+    {
+      "id": "0-2970",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path",
+      "children": []
+    },
+    {
+      "id": "0-2973",
+      "types": [
+        "GradientStop"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2974",
+      "types": [
+        "GradientStop"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2975",
+      "types": [
+        "GradientStop"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2972",
+      "types": [
+        "RadialGradient"
+      ],
+      "name": "Component",
+      "children": [
+        "0-2973",
+        "0-2974",
+        "0-2975"
+      ]
+    },
+    {
+      "id": "0-2971",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-2972"
+      ],
+      "paint": {
+        "colorType": "radial",
+        "gradientId": "0-2972",
+        "stops": [
+          {
+            "id": "0-2973",
+            "color": "#ffc7fff0",
+            "position": 0.0
+          },
+          {
+            "id": "0-2974",
+            "color": "#4dc7fff0",
+            "position": 64.0
+          },
+          {
+            "id": "0-2975",
+            "color": "#00c7fff0",
+            "position": 100.0
+          }
+        ],
+        "startX": 385.5,
+        "startY": -138.78,
+        "endX": 1040.85,
+        "endY": -138.78
+      }
+    },
+    {
+      "id": "0-2969",
+      "types": [
+        "Shape"
+      ],
+      "name": "Mint / Radial glow",
+      "children": [
+        "0-2970",
+        "0-2971"
+      ]
+    },
+    {
+      "id": "0-2977",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path",
+      "children": []
+    },
+    {
+      "id": "0-2980",
+      "types": [
+        "GradientStop"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2981",
+      "types": [
+        "GradientStop"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2982",
+      "types": [
+        "GradientStop"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2983",
+      "types": [
+        "GradientStop"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-2979",
+      "types": [
+        "LinearGradient"
+      ],
+      "name": "Component",
+      "children": [
+        "0-2980",
+        "0-2981",
+        "0-2982",
+        "0-2983"
+      ]
+    },
+    {
+      "id": "0-2978",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-2979"
+      ],
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-2979",
+        "stops": [
+          {
+            "id": "0-2980",
+            "color": "#ffbadbff",
+            "position": 0.0
+          },
+          {
+            "id": "0-2981",
+            "color": "#ffe8f5e8",
+            "position": 41.999998688697815
+          },
+          {
+            "id": "0-2982",
+            "color": "#ff3dcfad",
+            "position": 68.00000071525574
+          },
+          {
+            "id": "0-2983",
+            "color": "#ff051f29",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-2976",
+      "types": [
+        "Shape"
+      ],
+      "name": "Mint / Blue to cream base",
+      "children": [
+        "0-2977",
+        "0-2978"
+      ]
+    },
+    {
+      "id": "0-2962",
+      "types": [
+        "Node"
+      ],
+      "name": "Shared gradient / Mint / CMS template",
+      "children": [
+        "0-2963",
+        "0-2969",
+        "0-2976"
+      ]
+    },
+    {
+      "id": "0-2",
+      "types": [
+        "Artboard"
+      ],
+      "name": "16 / Catch up instantly / Final cut",
+      "children": [
+        "0-2515",
+        "0-5",
+        "0-6",
+        "0-2962"
+      ]
+    }
+  ]
+}

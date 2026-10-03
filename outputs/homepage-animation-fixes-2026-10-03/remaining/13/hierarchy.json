@@ -1,0 +1,652 @@
+{
+  "success": true,
+  "objects": [
+    {
+      "id": "0-4842",
+      "types": [
+        "LayoutComponentStyle"
+      ],
+      "name": "Layout Style"
+    },
+    {
+      "id": "0-7",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-19",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-29",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff000000"
+      }
+    },
+    {
+      "id": "0-6",
+      "types": [
+        "Shape"
+      ],
+      "name": "R13_107",
+      "children": [
+        "0-7",
+        "0-19",
+        "0-29"
+      ]
+    },
+    {
+      "id": "0-32",
+      "types": [
+        "Shape"
+      ],
+      "name": "Custom Shape"
+    },
+    {
+      "id": "0-52",
+      "types": [
+        "Shape"
+      ],
+      "name": "Custom Shape"
+    },
+    {
+      "id": "0-31",
+      "types": [
+        "Node"
+      ],
+      "name": "R13_106",
+      "children": [
+        "0-32",
+        "0-52"
+      ]
+    },
+    {
+      "id": "0-5",
+      "types": [
+        "Node"
+      ],
+      "name": "R13_105",
+      "children": [
+        "0-6",
+        "0-31"
+      ]
+    },
+    {
+      "id": "0-69",
+      "types": [
+        "Ellipse"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-70",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff00aeff"
+      }
+    },
+    {
+      "id": "0-68",
+      "types": [
+        "Shape"
+      ],
+      "name": "R13_104",
+      "children": [
+        "0-69",
+        "0-70"
+      ]
+    },
+    {
+      "id": "0-73",
+      "types": [
+        "Shape"
+      ],
+      "name": "R13_93"
+    },
+    {
+      "id": "0-77",
+      "types": [
+        "Node"
+      ],
+      "name": "R13_82"
+    },
+    {
+      "id": "0-601",
+      "types": [
+        "Node"
+      ],
+      "name": "R13_71"
+    },
+    {
+      "id": "0-1142",
+      "types": [
+        "Node"
+      ],
+      "name": "R13_60"
+    },
+    {
+      "id": "0-1588",
+      "types": [
+        "Shape"
+      ],
+      "name": "R13_59"
+    },
+    {
+      "id": "0-1596",
+      "types": [
+        "Node"
+      ],
+      "name": "R13_54"
+    },
+    {
+      "id": "0-1863",
+      "types": [
+        "Shape"
+      ],
+      "name": "R13_53"
+    },
+    {
+      "id": "0-2236",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle"
+    },
+    {
+      "id": "0-2240",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle"
+    },
+    {
+      "id": "0-2244",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip13_1772_1844"
+    },
+    {
+      "id": "0-2251",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip12_1772_1844"
+    },
+    {
+      "id": "0-2258",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip11_1772_1844"
+    },
+    {
+      "id": "0-2265",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip10_1772_1844"
+    },
+    {
+      "id": "0-72",
+      "types": [
+        "Node"
+      ],
+      "name": "R13_52",
+      "children": [
+        "0-73",
+        "0-77",
+        "0-601",
+        "0-1142",
+        "0-1588",
+        "0-1596",
+        "0-1863",
+        "0-2236",
+        "0-2240",
+        "0-2244",
+        "0-2251",
+        "0-2258",
+        "0-2265"
+      ]
+    },
+    {
+      "id": "0-2273",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle"
+    },
+    {
+      "id": "0-2277",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle"
+    },
+    {
+      "id": "0-2272",
+      "types": [
+        "Node"
+      ],
+      "name": "R13_51",
+      "children": [
+        "0-2273",
+        "0-2277"
+      ]
+    },
+    {
+      "id": "0-2282",
+      "types": [
+        "Shape"
+      ],
+      "name": "R13_50"
+    },
+    {
+      "id": "0-2532",
+      "types": [
+        "Shape"
+      ],
+      "name": "R13_49"
+    },
+    {
+      "id": "0-2880",
+      "types": [
+        "Shape"
+      ],
+      "name": "R13_48"
+    },
+    {
+      "id": "0-3253",
+      "types": [
+        "Shape"
+      ],
+      "name": "R13_47"
+    },
+    {
+      "id": "0-3546",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle"
+    },
+    {
+      "id": "0-3550",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle"
+    },
+    {
+      "id": "0-2281",
+      "types": [
+        "Node"
+      ],
+      "name": "R13_46",
+      "children": [
+        "0-2282",
+        "0-2532",
+        "0-2880",
+        "0-3253",
+        "0-3546",
+        "0-3550"
+      ]
+    },
+    {
+      "id": "0-3555",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle"
+    },
+    {
+      "id": "0-3559",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle"
+    },
+    {
+      "id": "0-3554",
+      "types": [
+        "Node"
+      ],
+      "name": "R13_45",
+      "children": [
+        "0-3555",
+        "0-3559"
+      ]
+    },
+    {
+      "id": "0-3564",
+      "types": [
+        "Shape"
+      ],
+      "name": "R13_44"
+    },
+    {
+      "id": "0-3568",
+      "types": [
+        "Node"
+      ],
+      "name": "R13_35"
+    },
+    {
+      "id": "0-4262",
+      "types": [
+        "Shape"
+      ],
+      "name": "R13_34"
+    },
+    {
+      "id": "0-4641",
+      "types": [
+        "Node"
+      ],
+      "name": "R13_15"
+    },
+    {
+      "id": "0-4811",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle"
+    },
+    {
+      "id": "0-4815",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle"
+    },
+    {
+      "id": "0-4819",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip9_1772_1844"
+    },
+    {
+      "id": "0-4826",
+      "types": [
+        "Shape"
+      ],
+      "name": "clip0_1772_1844"
+    },
+    {
+      "id": "0-3563",
+      "types": [
+        "Node"
+      ],
+      "name": "R13_14",
+      "children": [
+        "0-3564",
+        "0-3568",
+        "0-4262",
+        "0-4641",
+        "0-4811",
+        "0-4815",
+        "0-4819",
+        "0-4826"
+      ]
+    },
+    {
+      "id": "0-4834",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle"
+    },
+    {
+      "id": "0-4838",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle"
+    },
+    {
+      "id": "0-4833",
+      "types": [
+        "Node"
+      ],
+      "name": "R13_13",
+      "children": [
+        "0-4834",
+        "0-4838"
+      ]
+    },
+    {
+      "id": "0-67",
+      "types": [
+        "Node"
+      ],
+      "name": "R13_12",
+      "children": [
+        "0-68",
+        "0-72",
+        "0-2272",
+        "0-2281",
+        "0-3554",
+        "0-3563",
+        "0-4833"
+      ]
+    },
+    {
+      "id": "0-4",
+      "types": [
+        "Node"
+      ],
+      "name": "R13_0",
+      "children": [
+        "0-5",
+        "0-67"
+      ]
+    },
+    {
+      "id": "0-3",
+      "types": [
+        "Node"
+      ],
+      "name": "13 Editable foreground",
+      "children": [
+        "0-4"
+      ]
+    },
+    {
+      "id": "0-4844",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-4843",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-4844"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#00000000"
+      }
+    },
+    {
+      "id": "0-5946",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path",
+      "children": []
+    },
+    {
+      "id": "0-5949",
+      "types": [
+        "GradientStop"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-5950",
+      "types": [
+        "GradientStop"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-5951",
+      "types": [
+        "GradientStop"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-5952",
+      "types": [
+        "GradientStop"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-5953",
+      "types": [
+        "GradientStop"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-5954",
+      "types": [
+        "GradientStop"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-5955",
+      "types": [
+        "GradientStop"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-5948",
+      "types": [
+        "LinearGradient"
+      ],
+      "name": "Component",
+      "children": [
+        "0-5949",
+        "0-5950",
+        "0-5951",
+        "0-5952",
+        "0-5953",
+        "0-5954",
+        "0-5955"
+      ]
+    },
+    {
+      "id": "0-5947",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-5948"
+      ],
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-5948",
+        "stops": [
+          {
+            "id": "0-5949",
+            "color": "#ff315fa5",
+            "position": 0.0
+          },
+          {
+            "id": "0-5950",
+            "color": "#ff8295da",
+            "position": 15.000000596046448
+          },
+          {
+            "id": "0-5951",
+            "color": "#fff4c2e5",
+            "position": 36.000001430511475
+          },
+          {
+            "id": "0-5952",
+            "color": "#ffffe1df",
+            "position": 47.999998927116394
+          },
+          {
+            "id": "0-5953",
+            "color": "#ffffc9e7",
+            "position": 64.99999761581421
+          },
+          {
+            "id": "0-5954",
+            "color": "#ffe4a9ee",
+            "position": 81.99999928474426
+          },
+          {
+            "id": "0-5955",
+            "color": "#ffcba8f3",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-5945",
+      "types": [
+        "Shape"
+      ],
+      "name": "Purple / Seven stop linear gradient",
+      "children": [
+        "0-5946",
+        "0-5947"
+      ]
+    },
+    {
+      "id": "0-5944",
+      "types": [
+        "Node"
+      ],
+      "name": "Shared gradient / Purple / CMS template",
+      "children": [
+        "0-5945"
+      ]
+    },
+    {
+      "id": "0-2",
+      "types": [
+        "Artboard"
+      ],
+      "name": "13 / Delegate tasks. Keep the final say. / Final cut",
+      "children": [
+        "0-4842",
+        "0-3",
+        "0-4843",
+        "0-5944"
+      ]
+    }
+  ]
+}

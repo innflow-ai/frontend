@@ -1,0 +1,28 @@
+{
+  "5": {
+    "duration": 11.5,
+    "bytes": 1564033,
+    "sha256": "70599bd956df74cd20660ac759f77fa611f3589bdab1363234402fceebd1073b"
+  },
+  "11": {
+    "duration": 6,
+    "bytes": 290424,
+    "sha256": "67399d00ecb8200c43699f7a651f97b5f42649378e888f9fddc4300b7e7026c6"
+  },
+  "13": {
+    "duration": 14,
+    "bytes": 1174312,
+    "sha256": "958d8c4cefd12d76f2932e75aa78093ad901c661b6fb6037ddecee99baf4f7db"
+  },
+  "15": {
+    "duration": 12,
+    "bytes": 1246459,
+    "sha256": "25fef04f4f2610c217ebdc59092fd047f12faeb7c556e16e79401f32f5641777",
+    "sourceUrl": "https://editor.rive.app/file/innflow-15-centered-cards/2628054"
+  },
+  "16": {
+    "duration": 6,
+    "bytes": 218219,
+    "sha256": "94315ed46ad24b253768ee37f7220f40bdffb6c7b924af595897eff682e4391e"
+  }
+}

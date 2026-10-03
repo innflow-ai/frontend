@@ -1,0 +1,5843 @@
+{
+  "objects": [
+    {
+      "id": "0-6574",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6575",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6576",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6577",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6573",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path",
+      "children": [
+        "0-6574",
+        "0-6575",
+        "0-6576",
+        "0-6577"
+      ]
+    },
+    {
+      "id": "0-6578",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6580",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6578"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff213547"
+      }
+    },
+    {
+      "id": "0-6579",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6581",
+      "types": [
+        "Stroke"
+      ],
+      "name": "Stroke 1",
+      "children": [
+        "0-6579"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ffffffff"
+      }
+    },
+    {
+      "id": "0-6572",
+      "types": [
+        "Shape"
+      ],
+      "name": "Custom Shape",
+      "children": [
+        "0-6573",
+        "0-6580",
+        "0-6581"
+      ]
+    },
+    {
+      "id": "0-6570",
+      "types": [
+        "Node"
+      ],
+      "name": "Cursor glyph",
+      "children": [
+        "0-6572"
+      ]
+    },
+    {
+      "id": "0-6568",
+      "types": [
+        "Node"
+      ],
+      "name": "Demonstration cursor",
+      "children": [
+        "0-6570"
+      ]
+    },
+    {
+      "id": "0-6557",
+      "types": [
+        "LayoutComponentStyle"
+      ],
+      "name": "Layout Style"
+    },
+    {
+      "id": "0-6559",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6558",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6559"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#00000000"
+      }
+    },
+    {
+      "id": "0-6563",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6562",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6563"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff67788a"
+      }
+    },
+    {
+      "id": "0-6564",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6565",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6561",
+      "types": [
+        "TextStylePaint"
+      ],
+      "name": "Style 1",
+      "children": [
+        "0-6562",
+        "0-6564",
+        "0-6565"
+      ]
+    },
+    {
+      "id": "0-6566",
+      "types": [
+        "TextValueRun"
+      ],
+      "name": "Run 1"
+    },
+    {
+      "id": "0-6567",
+      "types": [
+        "LayoutParticipant"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6560",
+      "types": [
+        "Text"
+      ],
+      "name": "Text",
+      "children": [
+        "0-6561",
+        "0-6566",
+        "0-6567"
+      ]
+    },
+    {
+      "id": "0-6556",
+      "types": [
+        "LayoutComponent"
+      ],
+      "name": "Approved context text layout",
+      "children": [
+        "0-6557",
+        "0-6558",
+        "0-6560"
+      ]
+    },
+    {
+      "id": "0-6555",
+      "types": [
+        "Node"
+      ],
+      "name": "Approved context",
+      "children": [
+        "0-6556"
+      ]
+    },
+    {
+      "id": "0-6544",
+      "types": [
+        "LayoutComponentStyle"
+      ],
+      "name": "Layout Style"
+    },
+    {
+      "id": "0-6546",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6545",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6546"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#00000000"
+      }
+    },
+    {
+      "id": "0-6550",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6549",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6550"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff67788a"
+      }
+    },
+    {
+      "id": "0-6551",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6552",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6548",
+      "types": [
+        "TextStylePaint"
+      ],
+      "name": "Style 1",
+      "children": [
+        "0-6549",
+        "0-6551",
+        "0-6552"
+      ]
+    },
+    {
+      "id": "0-6553",
+      "types": [
+        "TextValueRun"
+      ],
+      "name": "Run 1"
+    },
+    {
+      "id": "0-6554",
+      "types": [
+        "LayoutParticipant"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6547",
+      "types": [
+        "Text"
+      ],
+      "name": "Text",
+      "children": [
+        "0-6548",
+        "0-6553",
+        "0-6554"
+      ]
+    },
+    {
+      "id": "0-6543",
+      "types": [
+        "LayoutComponent"
+      ],
+      "name": "Approved detail text layout",
+      "children": [
+        "0-6544",
+        "0-6545",
+        "0-6547"
+      ]
+    },
+    {
+      "id": "0-6542",
+      "types": [
+        "Node"
+      ],
+      "name": "Approved detail",
+      "children": [
+        "0-6543"
+      ]
+    },
+    {
+      "id": "0-6531",
+      "types": [
+        "LayoutComponentStyle"
+      ],
+      "name": "Layout Style"
+    },
+    {
+      "id": "0-6533",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6532",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6533"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#00000000"
+      }
+    },
+    {
+      "id": "0-6537",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6536",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6537"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff213547"
+      }
+    },
+    {
+      "id": "0-6538",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6539",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6535",
+      "types": [
+        "TextStylePaint"
+      ],
+      "name": "Style 1",
+      "children": [
+        "0-6536",
+        "0-6538",
+        "0-6539"
+      ]
+    },
+    {
+      "id": "0-6540",
+      "types": [
+        "TextValueRun"
+      ],
+      "name": "Run 1"
+    },
+    {
+      "id": "0-6541",
+      "types": [
+        "LayoutParticipant"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6534",
+      "types": [
+        "Text"
+      ],
+      "name": "Text",
+      "children": [
+        "0-6535",
+        "0-6540",
+        "0-6541"
+      ]
+    },
+    {
+      "id": "0-6530",
+      "types": [
+        "LayoutComponent"
+      ],
+      "name": "Approved heading text layout",
+      "children": [
+        "0-6531",
+        "0-6532",
+        "0-6534"
+      ]
+    },
+    {
+      "id": "0-6529",
+      "types": [
+        "Node"
+      ],
+      "name": "Approved heading",
+      "children": [
+        "0-6530"
+      ]
+    },
+    {
+      "id": "0-6506",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path",
+      "children": []
+    },
+    {
+      "id": "0-6508",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6507",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6508"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ffffffff"
+      }
+    },
+    {
+      "id": "0-6510",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6509",
+      "types": [
+        "Stroke"
+      ],
+      "name": "Stroke 1",
+      "children": [
+        "0-6510"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ffe5e5e5"
+      }
+    },
+    {
+      "id": "0-6505",
+      "types": [
+        "Shape"
+      ],
+      "name": "Approved surface",
+      "children": [
+        "0-6506",
+        "0-6507",
+        "0-6509"
+      ]
+    },
+    {
+      "id": "0-6520",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6521",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6522",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6523",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6524",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6525",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6526",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6519",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path",
+      "children": [
+        "0-6520",
+        "0-6521",
+        "0-6522",
+        "0-6523",
+        "0-6524",
+        "0-6525",
+        "0-6526"
+      ]
+    },
+    {
+      "id": "0-6527",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6528",
+      "types": [
+        "Stroke"
+      ],
+      "name": "Stroke 1",
+      "children": [
+        "0-6527"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff13966d"
+      }
+    },
+    {
+      "id": "0-6518",
+      "types": [
+        "Shape"
+      ],
+      "name": "Custom Shape",
+      "children": [
+        "0-6519",
+        "0-6528"
+      ]
+    },
+    {
+      "id": "0-6516",
+      "types": [
+        "Node"
+      ],
+      "name": "Mage Check",
+      "children": [
+        "0-6518"
+      ]
+    },
+    {
+      "id": "0-6512",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path",
+      "children": []
+    },
+    {
+      "id": "0-6514",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6513",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6514"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ffe5f8f0"
+      }
+    },
+    {
+      "id": "0-6511",
+      "types": [
+        "Shape"
+      ],
+      "name": "Approved backing",
+      "children": [
+        "0-6512",
+        "0-6513"
+      ]
+    },
+    {
+      "id": "0-6504",
+      "types": [
+        "Node"
+      ],
+      "name": "Approval confirmed",
+      "children": [
+        "0-6555",
+        "0-6542",
+        "0-6529",
+        "0-6505",
+        "0-6516",
+        "0-6511"
+      ]
+    },
+    {
+      "id": "0-6493",
+      "types": [
+        "LayoutComponentStyle"
+      ],
+      "name": "Layout Style"
+    },
+    {
+      "id": "0-6495",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6494",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6495"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#00000000"
+      }
+    },
+    {
+      "id": "0-6499",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6498",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6499"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ffffffff"
+      }
+    },
+    {
+      "id": "0-6500",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6501",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6497",
+      "types": [
+        "TextStylePaint"
+      ],
+      "name": "Style 1",
+      "children": [
+        "0-6498",
+        "0-6500",
+        "0-6501"
+      ]
+    },
+    {
+      "id": "0-6502",
+      "types": [
+        "TextValueRun"
+      ],
+      "name": "Run 1"
+    },
+    {
+      "id": "0-6503",
+      "types": [
+        "LayoutParticipant"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6496",
+      "types": [
+        "Text"
+      ],
+      "name": "Text",
+      "children": [
+        "0-6497",
+        "0-6502",
+        "0-6503"
+      ]
+    },
+    {
+      "id": "0-6492",
+      "types": [
+        "LayoutComponent"
+      ],
+      "name": "Approve label text layout",
+      "children": [
+        "0-6493",
+        "0-6494",
+        "0-6496"
+      ]
+    },
+    {
+      "id": "0-6491",
+      "types": [
+        "Node"
+      ],
+      "name": "Approve label",
+      "children": [
+        "0-6492"
+      ]
+    },
+    {
+      "id": "0-6476",
+      "types": [
+        "LayoutComponentStyle"
+      ],
+      "name": "Layout Style"
+    },
+    {
+      "id": "0-6478",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6477",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6478"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#00000000"
+      }
+    },
+    {
+      "id": "0-6482",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6481",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6482"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff67788a"
+      }
+    },
+    {
+      "id": "0-6483",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6484",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6480",
+      "types": [
+        "TextStylePaint"
+      ],
+      "name": "Style 1",
+      "children": [
+        "0-6481",
+        "0-6483",
+        "0-6484"
+      ]
+    },
+    {
+      "id": "0-6485",
+      "types": [
+        "TextValueRun"
+      ],
+      "name": "Run 1"
+    },
+    {
+      "id": "0-6486",
+      "types": [
+        "LayoutParticipant"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6479",
+      "types": [
+        "Text"
+      ],
+      "name": "Text",
+      "children": [
+        "0-6480",
+        "0-6485",
+        "0-6486"
+      ]
+    },
+    {
+      "id": "0-6475",
+      "types": [
+        "LayoutComponent"
+      ],
+      "name": "Approval note text layout",
+      "children": [
+        "0-6476",
+        "0-6477",
+        "0-6479"
+      ]
+    },
+    {
+      "id": "0-6474",
+      "types": [
+        "Node"
+      ],
+      "name": "Approval note",
+      "children": [
+        "0-6475"
+      ]
+    },
+    {
+      "id": "0-6463",
+      "types": [
+        "LayoutComponentStyle"
+      ],
+      "name": "Layout Style"
+    },
+    {
+      "id": "0-6465",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6464",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6465"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#00000000"
+      }
+    },
+    {
+      "id": "0-6469",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6468",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6469"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff213547"
+      }
+    },
+    {
+      "id": "0-6470",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6471",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6467",
+      "types": [
+        "TextStylePaint"
+      ],
+      "name": "Style 1",
+      "children": [
+        "0-6468",
+        "0-6470",
+        "0-6471"
+      ]
+    },
+    {
+      "id": "0-6472",
+      "types": [
+        "TextValueRun"
+      ],
+      "name": "Run 1"
+    },
+    {
+      "id": "0-6473",
+      "types": [
+        "LayoutParticipant"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6466",
+      "types": [
+        "Text"
+      ],
+      "name": "Text",
+      "children": [
+        "0-6467",
+        "0-6472",
+        "0-6473"
+      ]
+    },
+    {
+      "id": "0-6462",
+      "types": [
+        "LayoutComponent"
+      ],
+      "name": "Draft content text layout",
+      "children": [
+        "0-6463",
+        "0-6464",
+        "0-6466"
+      ]
+    },
+    {
+      "id": "0-6461",
+      "types": [
+        "Node"
+      ],
+      "name": "Draft content",
+      "children": [
+        "0-6462"
+      ]
+    },
+    {
+      "id": "0-6446",
+      "types": [
+        "LayoutComponentStyle"
+      ],
+      "name": "Layout Style"
+    },
+    {
+      "id": "0-6448",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6447",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6448"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#00000000"
+      }
+    },
+    {
+      "id": "0-6452",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6451",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6452"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff67788a"
+      }
+    },
+    {
+      "id": "0-6453",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6454",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6450",
+      "types": [
+        "TextStylePaint"
+      ],
+      "name": "Style 1",
+      "children": [
+        "0-6451",
+        "0-6453",
+        "0-6454"
+      ]
+    },
+    {
+      "id": "0-6455",
+      "types": [
+        "TextValueRun"
+      ],
+      "name": "Run 1"
+    },
+    {
+      "id": "0-6456",
+      "types": [
+        "LayoutParticipant"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6449",
+      "types": [
+        "Text"
+      ],
+      "name": "Text",
+      "children": [
+        "0-6450",
+        "0-6455",
+        "0-6456"
+      ]
+    },
+    {
+      "id": "0-6445",
+      "types": [
+        "LayoutComponent"
+      ],
+      "name": "Draft recipient text layout",
+      "children": [
+        "0-6446",
+        "0-6447",
+        "0-6449"
+      ]
+    },
+    {
+      "id": "0-6444",
+      "types": [
+        "Node"
+      ],
+      "name": "Draft recipient",
+      "children": [
+        "0-6445"
+      ]
+    },
+    {
+      "id": "0-6433",
+      "types": [
+        "LayoutComponentStyle"
+      ],
+      "name": "Layout Style"
+    },
+    {
+      "id": "0-6435",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6434",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6435"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#00000000"
+      }
+    },
+    {
+      "id": "0-6439",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6438",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6439"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff213547"
+      }
+    },
+    {
+      "id": "0-6440",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6441",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6437",
+      "types": [
+        "TextStylePaint"
+      ],
+      "name": "Style 1",
+      "children": [
+        "0-6438",
+        "0-6440",
+        "0-6441"
+      ]
+    },
+    {
+      "id": "0-6442",
+      "types": [
+        "TextValueRun"
+      ],
+      "name": "Run 1"
+    },
+    {
+      "id": "0-6443",
+      "types": [
+        "LayoutParticipant"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6436",
+      "types": [
+        "Text"
+      ],
+      "name": "Text",
+      "children": [
+        "0-6437",
+        "0-6442",
+        "0-6443"
+      ]
+    },
+    {
+      "id": "0-6432",
+      "types": [
+        "LayoutComponent"
+      ],
+      "name": "Draft heading text layout",
+      "children": [
+        "0-6433",
+        "0-6434",
+        "0-6436"
+      ]
+    },
+    {
+      "id": "0-6431",
+      "types": [
+        "Node"
+      ],
+      "name": "Draft heading",
+      "children": [
+        "0-6432"
+      ]
+    },
+    {
+      "id": "0-6426",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path",
+      "children": []
+    },
+    {
+      "id": "0-6428",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6427",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6428"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ffffffff"
+      }
+    },
+    {
+      "id": "0-6430",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6429",
+      "types": [
+        "Stroke"
+      ],
+      "name": "Stroke 1",
+      "children": [
+        "0-6430"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ffe5e5e5"
+      }
+    },
+    {
+      "id": "0-6425",
+      "types": [
+        "Shape"
+      ],
+      "name": "Draft surface",
+      "children": [
+        "0-6426",
+        "0-6427",
+        "0-6429"
+      ]
+    },
+    {
+      "id": "0-6488",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path",
+      "children": []
+    },
+    {
+      "id": "0-6490",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6489",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6490"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff00aeff"
+      }
+    },
+    {
+      "id": "0-6487",
+      "types": [
+        "Shape"
+      ],
+      "name": "Approve action",
+      "children": [
+        "0-6488",
+        "0-6489"
+      ]
+    },
+    {
+      "id": "0-6458",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path",
+      "children": []
+    },
+    {
+      "id": "0-6460",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6459",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6460"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#fff6f8fa"
+      }
+    },
+    {
+      "id": "0-6457",
+      "types": [
+        "Shape"
+      ],
+      "name": "Draft content background",
+      "children": [
+        "0-6458",
+        "0-6459"
+      ]
+    },
+    {
+      "id": "0-6424",
+      "types": [
+        "Node"
+      ],
+      "name": "Draft awaiting approval",
+      "children": [
+        "0-6491",
+        "0-6474",
+        "0-6461",
+        "0-6444",
+        "0-6431",
+        "0-6425",
+        "0-6487",
+        "0-6457"
+      ]
+    },
+    {
+      "id": "0-6413",
+      "types": [
+        "LayoutComponentStyle"
+      ],
+      "name": "Layout Style"
+    },
+    {
+      "id": "0-6415",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6414",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6415"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#00000000"
+      }
+    },
+    {
+      "id": "0-6419",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6418",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6419"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ffffffff"
+      }
+    },
+    {
+      "id": "0-6420",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6421",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6417",
+      "types": [
+        "TextStylePaint"
+      ],
+      "name": "Style 1",
+      "children": [
+        "0-6418",
+        "0-6420",
+        "0-6421"
+      ]
+    },
+    {
+      "id": "0-6422",
+      "types": [
+        "TextValueRun"
+      ],
+      "name": "Run 1"
+    },
+    {
+      "id": "0-6423",
+      "types": [
+        "LayoutParticipant"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6416",
+      "types": [
+        "Text"
+      ],
+      "name": "Text",
+      "children": [
+        "0-6417",
+        "0-6422",
+        "0-6423"
+      ]
+    },
+    {
+      "id": "0-6412",
+      "types": [
+        "LayoutComponent"
+      ],
+      "name": "Review button label text layout",
+      "children": [
+        "0-6413",
+        "0-6414",
+        "0-6416"
+      ]
+    },
+    {
+      "id": "0-6411",
+      "types": [
+        "Node"
+      ],
+      "name": "Review button label",
+      "children": [
+        "0-6412"
+      ]
+    },
+    {
+      "id": "0-6396",
+      "types": [
+        "LayoutComponentStyle"
+      ],
+      "name": "Layout Style"
+    },
+    {
+      "id": "0-6398",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6397",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6398"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#00000000"
+      }
+    },
+    {
+      "id": "0-6402",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6401",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6402"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff63788f"
+      }
+    },
+    {
+      "id": "0-6403",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6404",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6400",
+      "types": [
+        "TextStylePaint"
+      ],
+      "name": "Style 1",
+      "children": [
+        "0-6401",
+        "0-6403",
+        "0-6404"
+      ]
+    },
+    {
+      "id": "0-6405",
+      "types": [
+        "TextValueRun"
+      ],
+      "name": "Run 1"
+    },
+    {
+      "id": "0-6406",
+      "types": [
+        "LayoutParticipant"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6399",
+      "types": [
+        "Text"
+      ],
+      "name": "Text",
+      "children": [
+        "0-6400",
+        "0-6405",
+        "0-6406"
+      ]
+    },
+    {
+      "id": "0-6395",
+      "types": [
+        "LayoutComponent"
+      ],
+      "name": "Draft count text layout",
+      "children": [
+        "0-6396",
+        "0-6397",
+        "0-6399"
+      ]
+    },
+    {
+      "id": "0-6394",
+      "types": [
+        "Node"
+      ],
+      "name": "Draft count",
+      "children": [
+        "0-6395"
+      ]
+    },
+    {
+      "id": "0-6408",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path",
+      "children": []
+    },
+    {
+      "id": "0-6410",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6409",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6410"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff00aeff"
+      }
+    },
+    {
+      "id": "0-6407",
+      "types": [
+        "Shape"
+      ],
+      "name": "Review action",
+      "children": [
+        "0-6408",
+        "0-6409"
+      ]
+    },
+    {
+      "id": "0-6393",
+      "types": [
+        "Node"
+      ],
+      "name": "Review drafts button",
+      "children": [
+        "0-6411",
+        "0-6394",
+        "0-6407"
+      ]
+    },
+    {
+      "id": "0-6384",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6385",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6386",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6387",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6388",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6389",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6390",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6383",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path",
+      "children": [
+        "0-6384",
+        "0-6385",
+        "0-6386",
+        "0-6387",
+        "0-6388",
+        "0-6389",
+        "0-6390"
+      ]
+    },
+    {
+      "id": "0-6391",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6392",
+      "types": [
+        "Stroke"
+      ],
+      "name": "Stroke 1",
+      "children": [
+        "0-6391"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff16a085"
+      }
+    },
+    {
+      "id": "0-6382",
+      "types": [
+        "Shape"
+      ],
+      "name": "Custom Shape",
+      "children": [
+        "0-6383",
+        "0-6392"
+      ]
+    },
+    {
+      "id": "0-6380",
+      "types": [
+        "Node"
+      ],
+      "name": "Mage Check",
+      "children": [
+        "0-6382"
+      ]
+    },
+    {
+      "id": "0-6378",
+      "types": [
+        "Node"
+      ],
+      "name": "Prepare CRM updates ready",
+      "children": [
+        "0-6380"
+      ]
+    },
+    {
+      "id": "0-6367",
+      "types": [
+        "LayoutComponentStyle"
+      ],
+      "name": "Layout Style"
+    },
+    {
+      "id": "0-6369",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6368",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6369"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#00000000"
+      }
+    },
+    {
+      "id": "0-6373",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6372",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6373"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff67788a"
+      }
+    },
+    {
+      "id": "0-6374",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6375",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6371",
+      "types": [
+        "TextStylePaint"
+      ],
+      "name": "Style 1",
+      "children": [
+        "0-6372",
+        "0-6374",
+        "0-6375"
+      ]
+    },
+    {
+      "id": "0-6376",
+      "types": [
+        "TextValueRun"
+      ],
+      "name": "Run 1"
+    },
+    {
+      "id": "0-6377",
+      "types": [
+        "LayoutParticipant"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6370",
+      "types": [
+        "Text"
+      ],
+      "name": "Text",
+      "children": [
+        "0-6371",
+        "0-6376",
+        "0-6377"
+      ]
+    },
+    {
+      "id": "0-6366",
+      "types": [
+        "LayoutComponent"
+      ],
+      "name": "Contact details and activity, ready to review text layout",
+      "children": [
+        "0-6367",
+        "0-6368",
+        "0-6370"
+      ]
+    },
+    {
+      "id": "0-6365",
+      "types": [
+        "Node"
+      ],
+      "name": "Contact details and activity, ready to review",
+      "children": [
+        "0-6366"
+      ]
+    },
+    {
+      "id": "0-6354",
+      "types": [
+        "LayoutComponentStyle"
+      ],
+      "name": "Layout Style"
+    },
+    {
+      "id": "0-6356",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6355",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6356"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#00000000"
+      }
+    },
+    {
+      "id": "0-6360",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6359",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6360"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff213547"
+      }
+    },
+    {
+      "id": "0-6361",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6362",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6358",
+      "types": [
+        "TextStylePaint"
+      ],
+      "name": "Style 1",
+      "children": [
+        "0-6359",
+        "0-6361",
+        "0-6362"
+      ]
+    },
+    {
+      "id": "0-6363",
+      "types": [
+        "TextValueRun"
+      ],
+      "name": "Run 1"
+    },
+    {
+      "id": "0-6364",
+      "types": [
+        "LayoutParticipant"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6357",
+      "types": [
+        "Text"
+      ],
+      "name": "Text",
+      "children": [
+        "0-6358",
+        "0-6363",
+        "0-6364"
+      ]
+    },
+    {
+      "id": "0-6353",
+      "types": [
+        "LayoutComponent"
+      ],
+      "name": "Prepare CRM updates text layout",
+      "children": [
+        "0-6354",
+        "0-6355",
+        "0-6357"
+      ]
+    },
+    {
+      "id": "0-6352",
+      "types": [
+        "Node"
+      ],
+      "name": "Prepare CRM updates",
+      "children": [
+        "0-6353"
+      ]
+    },
+    {
+      "id": "0-6315",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6316",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6314",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path",
+      "children": [
+        "0-6315",
+        "0-6316"
+      ]
+    },
+    {
+      "id": "0-6317",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6346",
+      "types": [
+        "Stroke"
+      ],
+      "name": "Stroke 1",
+      "children": [
+        "0-6317"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff63788f"
+      }
+    },
+    {
+      "id": "0-6313",
+      "types": [
+        "Shape"
+      ],
+      "name": "Custom Shape",
+      "children": [
+        "0-6314",
+        "0-6346"
+      ]
+    },
+    {
+      "id": "0-6320",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6321",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6319",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path",
+      "children": [
+        "0-6320",
+        "0-6321"
+      ]
+    },
+    {
+      "id": "0-6322",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6347",
+      "types": [
+        "Stroke"
+      ],
+      "name": "Stroke 1",
+      "children": [
+        "0-6322"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff63788f"
+      }
+    },
+    {
+      "id": "0-6318",
+      "types": [
+        "Shape"
+      ],
+      "name": "Custom Shape",
+      "children": [
+        "0-6319",
+        "0-6347"
+      ]
+    },
+    {
+      "id": "0-6325",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6326",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6324",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path",
+      "children": [
+        "0-6325",
+        "0-6326"
+      ]
+    },
+    {
+      "id": "0-6327",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6348",
+      "types": [
+        "Stroke"
+      ],
+      "name": "Stroke 1",
+      "children": [
+        "0-6327"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff63788f"
+      }
+    },
+    {
+      "id": "0-6323",
+      "types": [
+        "Shape"
+      ],
+      "name": "Custom Shape",
+      "children": [
+        "0-6324",
+        "0-6348"
+      ]
+    },
+    {
+      "id": "0-6330",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6331",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6332",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6329",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path",
+      "children": [
+        "0-6330",
+        "0-6331",
+        "0-6332"
+      ]
+    },
+    {
+      "id": "0-6333",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6349",
+      "types": [
+        "Stroke"
+      ],
+      "name": "Stroke 1",
+      "children": [
+        "0-6333"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff63788f"
+      }
+    },
+    {
+      "id": "0-6328",
+      "types": [
+        "Shape"
+      ],
+      "name": "Custom Shape",
+      "children": [
+        "0-6329",
+        "0-6349"
+      ]
+    },
+    {
+      "id": "0-6336",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6337",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6338",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6335",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path",
+      "children": [
+        "0-6336",
+        "0-6337",
+        "0-6338"
+      ]
+    },
+    {
+      "id": "0-6339",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6350",
+      "types": [
+        "Stroke"
+      ],
+      "name": "Stroke 1",
+      "children": [
+        "0-6339"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff63788f"
+      }
+    },
+    {
+      "id": "0-6334",
+      "types": [
+        "Shape"
+      ],
+      "name": "Custom Shape",
+      "children": [
+        "0-6335",
+        "0-6350"
+      ]
+    },
+    {
+      "id": "0-6342",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6343",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6344",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6341",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path",
+      "children": [
+        "0-6342",
+        "0-6343",
+        "0-6344"
+      ]
+    },
+    {
+      "id": "0-6345",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6351",
+      "types": [
+        "Stroke"
+      ],
+      "name": "Stroke 1",
+      "children": [
+        "0-6345"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff63788f"
+      }
+    },
+    {
+      "id": "0-6340",
+      "types": [
+        "Shape"
+      ],
+      "name": "Custom Shape",
+      "children": [
+        "0-6341",
+        "0-6351"
+      ]
+    },
+    {
+      "id": "0-6311",
+      "types": [
+        "Node"
+      ],
+      "name": "Mage Checklist",
+      "children": [
+        "0-6313",
+        "0-6318",
+        "0-6323",
+        "0-6328",
+        "0-6334",
+        "0-6340"
+      ]
+    },
+    {
+      "id": "0-6307",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path",
+      "children": []
+    },
+    {
+      "id": "0-6309",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6308",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6309"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#fff6f8fa"
+      }
+    },
+    {
+      "id": "0-6306",
+      "types": [
+        "Shape"
+      ],
+      "name": "Task row",
+      "children": [
+        "0-6307",
+        "0-6308"
+      ]
+    },
+    {
+      "id": "0-6305",
+      "types": [
+        "Node"
+      ],
+      "name": "Task Prepare CRM updates",
+      "children": [
+        "0-6378",
+        "0-6365",
+        "0-6352",
+        "0-6311",
+        "0-6306"
+      ]
+    },
+    {
+      "id": "0-6296",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6297",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6298",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6299",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6300",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6301",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6302",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6295",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path",
+      "children": [
+        "0-6296",
+        "0-6297",
+        "0-6298",
+        "0-6299",
+        "0-6300",
+        "0-6301",
+        "0-6302"
+      ]
+    },
+    {
+      "id": "0-6303",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6304",
+      "types": [
+        "Stroke"
+      ],
+      "name": "Stroke 1",
+      "children": [
+        "0-6303"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff16a085"
+      }
+    },
+    {
+      "id": "0-6294",
+      "types": [
+        "Shape"
+      ],
+      "name": "Custom Shape",
+      "children": [
+        "0-6295",
+        "0-6304"
+      ]
+    },
+    {
+      "id": "0-6292",
+      "types": [
+        "Node"
+      ],
+      "name": "Mage Check",
+      "children": [
+        "0-6294"
+      ]
+    },
+    {
+      "id": "0-6290",
+      "types": [
+        "Node"
+      ],
+      "name": "Summarize context ready",
+      "children": [
+        "0-6292"
+      ]
+    },
+    {
+      "id": "0-6279",
+      "types": [
+        "LayoutComponentStyle"
+      ],
+      "name": "Layout Style"
+    },
+    {
+      "id": "0-6281",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6280",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6281"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#00000000"
+      }
+    },
+    {
+      "id": "0-6285",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6284",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6285"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff67788a"
+      }
+    },
+    {
+      "id": "0-6286",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6287",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6283",
+      "types": [
+        "TextStylePaint"
+      ],
+      "name": "Style 1",
+      "children": [
+        "0-6284",
+        "0-6286",
+        "0-6287"
+      ]
+    },
+    {
+      "id": "0-6288",
+      "types": [
+        "TextValueRun"
+      ],
+      "name": "Run 1"
+    },
+    {
+      "id": "0-6289",
+      "types": [
+        "LayoutParticipant"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6282",
+      "types": [
+        "Text"
+      ],
+      "name": "Text",
+      "children": [
+        "0-6283",
+        "0-6288",
+        "0-6289"
+      ]
+    },
+    {
+      "id": "0-6278",
+      "types": [
+        "LayoutComponent"
+      ],
+      "name": "Key decisions and the next step text layout",
+      "children": [
+        "0-6279",
+        "0-6280",
+        "0-6282"
+      ]
+    },
+    {
+      "id": "0-6277",
+      "types": [
+        "Node"
+      ],
+      "name": "Key decisions and the next step",
+      "children": [
+        "0-6278"
+      ]
+    },
+    {
+      "id": "0-6266",
+      "types": [
+        "LayoutComponentStyle"
+      ],
+      "name": "Layout Style"
+    },
+    {
+      "id": "0-6268",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6267",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6268"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#00000000"
+      }
+    },
+    {
+      "id": "0-6272",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6271",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6272"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff213547"
+      }
+    },
+    {
+      "id": "0-6273",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6274",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6270",
+      "types": [
+        "TextStylePaint"
+      ],
+      "name": "Style 1",
+      "children": [
+        "0-6271",
+        "0-6273",
+        "0-6274"
+      ]
+    },
+    {
+      "id": "0-6275",
+      "types": [
+        "TextValueRun"
+      ],
+      "name": "Run 1"
+    },
+    {
+      "id": "0-6276",
+      "types": [
+        "LayoutParticipant"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6269",
+      "types": [
+        "Text"
+      ],
+      "name": "Text",
+      "children": [
+        "0-6270",
+        "0-6275",
+        "0-6276"
+      ]
+    },
+    {
+      "id": "0-6265",
+      "types": [
+        "LayoutComponent"
+      ],
+      "name": "Summarize context text layout",
+      "children": [
+        "0-6266",
+        "0-6267",
+        "0-6269"
+      ]
+    },
+    {
+      "id": "0-6264",
+      "types": [
+        "Node"
+      ],
+      "name": "Summarize context",
+      "children": [
+        "0-6265"
+      ]
+    },
+    {
+      "id": "0-6221",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6222",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6223",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6224",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6220",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path",
+      "children": [
+        "0-6221",
+        "0-6222",
+        "0-6223",
+        "0-6224"
+      ]
+    },
+    {
+      "id": "0-6225",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6260",
+      "types": [
+        "Stroke"
+      ],
+      "name": "Stroke 1",
+      "children": [
+        "0-6225"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff63788f"
+      }
+    },
+    {
+      "id": "0-6219",
+      "types": [
+        "Shape"
+      ],
+      "name": "Custom Shape",
+      "children": [
+        "0-6220",
+        "0-6260"
+      ]
+    },
+    {
+      "id": "0-6228",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6229",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6230",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6231",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6232",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6233",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6234",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6235",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6236",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6237",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6238",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6239",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6227",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path",
+      "children": [
+        "0-6228",
+        "0-6229",
+        "0-6230",
+        "0-6231",
+        "0-6232",
+        "0-6233",
+        "0-6234",
+        "0-6235",
+        "0-6236",
+        "0-6237",
+        "0-6238",
+        "0-6239"
+      ]
+    },
+    {
+      "id": "0-6240",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6261",
+      "types": [
+        "Stroke"
+      ],
+      "name": "Stroke 1",
+      "children": [
+        "0-6240"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff63788f"
+      }
+    },
+    {
+      "id": "0-6226",
+      "types": [
+        "Shape"
+      ],
+      "name": "Custom Shape",
+      "children": [
+        "0-6227",
+        "0-6261"
+      ]
+    },
+    {
+      "id": "0-6243",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6244",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6245",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6246",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6242",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path",
+      "children": [
+        "0-6243",
+        "0-6244",
+        "0-6245",
+        "0-6246"
+      ]
+    },
+    {
+      "id": "0-6247",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6262",
+      "types": [
+        "Stroke"
+      ],
+      "name": "Stroke 1",
+      "children": [
+        "0-6247"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff63788f"
+      }
+    },
+    {
+      "id": "0-6241",
+      "types": [
+        "Shape"
+      ],
+      "name": "Custom Shape",
+      "children": [
+        "0-6242",
+        "0-6262"
+      ]
+    },
+    {
+      "id": "0-6250",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6251",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6252",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6253",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6254",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6255",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6256",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6257",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6258",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6249",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path",
+      "children": [
+        "0-6250",
+        "0-6251",
+        "0-6252",
+        "0-6253",
+        "0-6254",
+        "0-6255",
+        "0-6256",
+        "0-6257",
+        "0-6258"
+      ]
+    },
+    {
+      "id": "0-6259",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6263",
+      "types": [
+        "Stroke"
+      ],
+      "name": "Stroke 1",
+      "children": [
+        "0-6259"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff63788f"
+      }
+    },
+    {
+      "id": "0-6248",
+      "types": [
+        "Shape"
+      ],
+      "name": "Custom Shape",
+      "children": [
+        "0-6249",
+        "0-6263"
+      ]
+    },
+    {
+      "id": "0-6217",
+      "types": [
+        "Node"
+      ],
+      "name": "Mage File Records",
+      "children": [
+        "0-6219",
+        "0-6226",
+        "0-6241",
+        "0-6248"
+      ]
+    },
+    {
+      "id": "0-6213",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path",
+      "children": []
+    },
+    {
+      "id": "0-6215",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6214",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6215"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#fff6f8fa"
+      }
+    },
+    {
+      "id": "0-6212",
+      "types": [
+        "Shape"
+      ],
+      "name": "Task row",
+      "children": [
+        "0-6213",
+        "0-6214"
+      ]
+    },
+    {
+      "id": "0-6211",
+      "types": [
+        "Node"
+      ],
+      "name": "Task Summarize context",
+      "children": [
+        "0-6290",
+        "0-6277",
+        "0-6264",
+        "0-6217",
+        "0-6212"
+      ]
+    },
+    {
+      "id": "0-6202",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6203",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6204",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6205",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6206",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6207",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6208",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6201",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path",
+      "children": [
+        "0-6202",
+        "0-6203",
+        "0-6204",
+        "0-6205",
+        "0-6206",
+        "0-6207",
+        "0-6208"
+      ]
+    },
+    {
+      "id": "0-6209",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6210",
+      "types": [
+        "Stroke"
+      ],
+      "name": "Stroke 1",
+      "children": [
+        "0-6209"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff16a085"
+      }
+    },
+    {
+      "id": "0-6200",
+      "types": [
+        "Shape"
+      ],
+      "name": "Custom Shape",
+      "children": [
+        "0-6201",
+        "0-6210"
+      ]
+    },
+    {
+      "id": "0-6198",
+      "types": [
+        "Node"
+      ],
+      "name": "Mage Check",
+      "children": [
+        "0-6200"
+      ]
+    },
+    {
+      "id": "0-6196",
+      "types": [
+        "Node"
+      ],
+      "name": "Draft follow-ups ready",
+      "children": [
+        "0-6198"
+      ]
+    },
+    {
+      "id": "0-6185",
+      "types": [
+        "LayoutComponentStyle"
+      ],
+      "name": "Layout Style"
+    },
+    {
+      "id": "0-6187",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6186",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6187"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#00000000"
+      }
+    },
+    {
+      "id": "0-6191",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6190",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6191"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff67788a"
+      }
+    },
+    {
+      "id": "0-6192",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6193",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6189",
+      "types": [
+        "TextStylePaint"
+      ],
+      "name": "Style 1",
+      "children": [
+        "0-6190",
+        "0-6192",
+        "0-6193"
+      ]
+    },
+    {
+      "id": "0-6194",
+      "types": [
+        "TextValueRun"
+      ],
+      "name": "Run 1"
+    },
+    {
+      "id": "0-6195",
+      "types": [
+        "LayoutParticipant"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6188",
+      "types": [
+        "Text"
+      ],
+      "name": "Text",
+      "children": [
+        "0-6189",
+        "0-6194",
+        "0-6195"
+      ]
+    },
+    {
+      "id": "0-6184",
+      "types": [
+        "LayoutComponent"
+      ],
+      "name": "Personalized replies from each conversation text layout",
+      "children": [
+        "0-6185",
+        "0-6186",
+        "0-6188"
+      ]
+    },
+    {
+      "id": "0-6183",
+      "types": [
+        "Node"
+      ],
+      "name": "Personalized replies from each conversation",
+      "children": [
+        "0-6184"
+      ]
+    },
+    {
+      "id": "0-6172",
+      "types": [
+        "LayoutComponentStyle"
+      ],
+      "name": "Layout Style"
+    },
+    {
+      "id": "0-6174",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6173",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6174"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#00000000"
+      }
+    },
+    {
+      "id": "0-6178",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6177",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6178"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff213547"
+      }
+    },
+    {
+      "id": "0-6179",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6180",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6176",
+      "types": [
+        "TextStylePaint"
+      ],
+      "name": "Style 1",
+      "children": [
+        "0-6177",
+        "0-6179",
+        "0-6180"
+      ]
+    },
+    {
+      "id": "0-6181",
+      "types": [
+        "TextValueRun"
+      ],
+      "name": "Run 1"
+    },
+    {
+      "id": "0-6182",
+      "types": [
+        "LayoutParticipant"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6175",
+      "types": [
+        "Text"
+      ],
+      "name": "Text",
+      "children": [
+        "0-6176",
+        "0-6181",
+        "0-6182"
+      ]
+    },
+    {
+      "id": "0-6171",
+      "types": [
+        "LayoutComponent"
+      ],
+      "name": "Draft follow-ups text layout",
+      "children": [
+        "0-6172",
+        "0-6173",
+        "0-6175"
+      ]
+    },
+    {
+      "id": "0-6170",
+      "types": [
+        "Node"
+      ],
+      "name": "Draft follow-ups",
+      "children": [
+        "0-6171"
+      ]
+    },
+    {
+      "id": "0-6121",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6122",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6123",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6124",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6125",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6120",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path",
+      "children": [
+        "0-6121",
+        "0-6122",
+        "0-6123",
+        "0-6124",
+        "0-6125"
+      ]
+    },
+    {
+      "id": "0-6126",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6166",
+      "types": [
+        "Stroke"
+      ],
+      "name": "Stroke 1",
+      "children": [
+        "0-6126"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff63788f"
+      }
+    },
+    {
+      "id": "0-6119",
+      "types": [
+        "Shape"
+      ],
+      "name": "Custom Shape",
+      "children": [
+        "0-6120",
+        "0-6166"
+      ]
+    },
+    {
+      "id": "0-6129",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6130",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6131",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6132",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6128",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path",
+      "children": [
+        "0-6129",
+        "0-6130",
+        "0-6131",
+        "0-6132"
+      ]
+    },
+    {
+      "id": "0-6133",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6167",
+      "types": [
+        "Stroke"
+      ],
+      "name": "Stroke 1",
+      "children": [
+        "0-6133"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff63788f"
+      }
+    },
+    {
+      "id": "0-6127",
+      "types": [
+        "Shape"
+      ],
+      "name": "Custom Shape",
+      "children": [
+        "0-6128",
+        "0-6167"
+      ]
+    },
+    {
+      "id": "0-6136",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6137",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6138",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6139",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6135",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path",
+      "children": [
+        "0-6136",
+        "0-6137",
+        "0-6138",
+        "0-6139"
+      ]
+    },
+    {
+      "id": "0-6140",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6168",
+      "types": [
+        "Stroke"
+      ],
+      "name": "Stroke 1",
+      "children": [
+        "0-6140"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff63788f"
+      }
+    },
+    {
+      "id": "0-6134",
+      "types": [
+        "Shape"
+      ],
+      "name": "Custom Shape",
+      "children": [
+        "0-6135",
+        "0-6168"
+      ]
+    },
+    {
+      "id": "0-6143",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6144",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6145",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6146",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6147",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6148",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6149",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6150",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6151",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6152",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6153",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6154",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6155",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6156",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6157",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6158",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6159",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6160",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6161",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6162",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6163",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6164",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6142",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path",
+      "children": [
+        "0-6143",
+        "0-6144",
+        "0-6145",
+        "0-6146",
+        "0-6147",
+        "0-6148",
+        "0-6149",
+        "0-6150",
+        "0-6151",
+        "0-6152",
+        "0-6153",
+        "0-6154",
+        "0-6155",
+        "0-6156",
+        "0-6157",
+        "0-6158",
+        "0-6159",
+        "0-6160",
+        "0-6161",
+        "0-6162",
+        "0-6163",
+        "0-6164"
+      ]
+    },
+    {
+      "id": "0-6165",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6169",
+      "types": [
+        "Stroke"
+      ],
+      "name": "Stroke 1",
+      "children": [
+        "0-6165"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff63788f"
+      }
+    },
+    {
+      "id": "0-6141",
+      "types": [
+        "Shape"
+      ],
+      "name": "Custom Shape",
+      "children": [
+        "0-6142",
+        "0-6169"
+      ]
+    },
+    {
+      "id": "0-6117",
+      "types": [
+        "Node"
+      ],
+      "name": "Mage Message Dots",
+      "children": [
+        "0-6119",
+        "0-6127",
+        "0-6134",
+        "0-6141"
+      ]
+    },
+    {
+      "id": "0-6113",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path",
+      "children": []
+    },
+    {
+      "id": "0-6115",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6114",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6115"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#fff6f8fa"
+      }
+    },
+    {
+      "id": "0-6112",
+      "types": [
+        "Shape"
+      ],
+      "name": "Task row",
+      "children": [
+        "0-6113",
+        "0-6114"
+      ]
+    },
+    {
+      "id": "0-6111",
+      "types": [
+        "Node"
+      ],
+      "name": "Task Draft follow-ups",
+      "children": [
+        "0-6196",
+        "0-6183",
+        "0-6170",
+        "0-6117",
+        "0-6112"
+      ]
+    },
+    {
+      "id": "0-6100",
+      "types": [
+        "LayoutComponentStyle"
+      ],
+      "name": "Layout Style"
+    },
+    {
+      "id": "0-6102",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6101",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6102"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#00000000"
+      }
+    },
+    {
+      "id": "0-6106",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6105",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6106"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff67788a"
+      }
+    },
+    {
+      "id": "0-6107",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6108",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6104",
+      "types": [
+        "TextStylePaint"
+      ],
+      "name": "Style 1",
+      "children": [
+        "0-6105",
+        "0-6107",
+        "0-6108"
+      ]
+    },
+    {
+      "id": "0-6109",
+      "types": [
+        "TextValueRun"
+      ],
+      "name": "Run 1"
+    },
+    {
+      "id": "0-6110",
+      "types": [
+        "LayoutParticipant"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6103",
+      "types": [
+        "Text"
+      ],
+      "name": "Text",
+      "children": [
+        "0-6104",
+        "0-6109",
+        "0-6110"
+      ]
+    },
+    {
+      "id": "0-6099",
+      "types": [
+        "LayoutComponent"
+      ],
+      "name": "Review subheading text layout",
+      "children": [
+        "0-6100",
+        "0-6101",
+        "0-6103"
+      ]
+    },
+    {
+      "id": "0-6098",
+      "types": [
+        "Node"
+      ],
+      "name": "Review subheading",
+      "children": [
+        "0-6099"
+      ]
+    },
+    {
+      "id": "0-6087",
+      "types": [
+        "LayoutComponentStyle"
+      ],
+      "name": "Layout Style"
+    },
+    {
+      "id": "0-6089",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6088",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6089"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#00000000"
+      }
+    },
+    {
+      "id": "0-6093",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6092",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6093"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff213547"
+      }
+    },
+    {
+      "id": "0-6094",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6095",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6091",
+      "types": [
+        "TextStylePaint"
+      ],
+      "name": "Style 1",
+      "children": [
+        "0-6092",
+        "0-6094",
+        "0-6095"
+      ]
+    },
+    {
+      "id": "0-6096",
+      "types": [
+        "TextValueRun"
+      ],
+      "name": "Run 1"
+    },
+    {
+      "id": "0-6097",
+      "types": [
+        "LayoutParticipant"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6090",
+      "types": [
+        "Text"
+      ],
+      "name": "Text",
+      "children": [
+        "0-6091",
+        "0-6096",
+        "0-6097"
+      ]
+    },
+    {
+      "id": "0-6086",
+      "types": [
+        "LayoutComponent"
+      ],
+      "name": "Review heading text layout",
+      "children": [
+        "0-6087",
+        "0-6088",
+        "0-6090"
+      ]
+    },
+    {
+      "id": "0-6085",
+      "types": [
+        "Node"
+      ],
+      "name": "Review heading",
+      "children": [
+        "0-6086"
+      ]
+    },
+    {
+      "id": "0-6080",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path",
+      "children": []
+    },
+    {
+      "id": "0-6082",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6081",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6082"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ffffffff"
+      }
+    },
+    {
+      "id": "0-6084",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6083",
+      "types": [
+        "Stroke"
+      ],
+      "name": "Stroke 1",
+      "children": [
+        "0-6084"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ffe5e5e5"
+      }
+    },
+    {
+      "id": "0-6079",
+      "types": [
+        "Shape"
+      ],
+      "name": "Review surface",
+      "children": [
+        "0-6080",
+        "0-6081",
+        "0-6083"
+      ]
+    },
+    {
+      "id": "0-6078",
+      "types": [
+        "Node"
+      ],
+      "name": "Prepared tasks",
+      "children": [
+        "0-6393",
+        "0-6305",
+        "0-6211",
+        "0-6111",
+        "0-6098",
+        "0-6085",
+        "0-6079"
+      ]
+    },
+    {
+      "id": "0-6067",
+      "types": [
+        "LayoutComponentStyle"
+      ],
+      "name": "Layout Style"
+    },
+    {
+      "id": "0-6069",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6068",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6069"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#00000000"
+      }
+    },
+    {
+      "id": "0-6073",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6072",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6073"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff67788a"
+      }
+    },
+    {
+      "id": "0-6074",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6075",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6071",
+      "types": [
+        "TextStylePaint"
+      ],
+      "name": "Style 1",
+      "children": [
+        "0-6072",
+        "0-6074",
+        "0-6075"
+      ]
+    },
+    {
+      "id": "0-6076",
+      "types": [
+        "TextValueRun"
+      ],
+      "name": "Run 1"
+    },
+    {
+      "id": "0-6077",
+      "types": [
+        "LayoutParticipant"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6070",
+      "types": [
+        "Text"
+      ],
+      "name": "Text",
+      "children": [
+        "0-6071",
+        "0-6076",
+        "0-6077"
+      ]
+    },
+    {
+      "id": "0-6066",
+      "types": [
+        "LayoutComponent"
+      ],
+      "name": "Request context text layout",
+      "children": [
+        "0-6067",
+        "0-6068",
+        "0-6070"
+      ]
+    },
+    {
+      "id": "0-6065",
+      "types": [
+        "Node"
+      ],
+      "name": "Request context",
+      "children": [
+        "0-6066"
+      ]
+    },
+    {
+      "id": "0-6053",
+      "types": [
+        "LayoutComponentStyle"
+      ],
+      "name": "Layout Style"
+    },
+    {
+      "id": "0-6055",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6054",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6055"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#00000000"
+      }
+    },
+    {
+      "id": "0-6060",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6059",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6060"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff213547"
+      }
+    },
+    {
+      "id": "0-6061",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6062",
+      "types": [
+        "TextStyleAxis"
+      ],
+      "name": "Style Axis"
+    },
+    {
+      "id": "0-6058",
+      "types": [
+        "TextStylePaint"
+      ],
+      "name": "Style 1",
+      "children": [
+        "0-6059",
+        "0-6061",
+        "0-6062"
+      ]
+    },
+    {
+      "id": "0-6063",
+      "types": [
+        "TextValueRun"
+      ],
+      "name": "Run 1"
+    },
+    {
+      "id": "0-6064",
+      "types": [
+        "LayoutParticipant"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6056",
+      "types": [
+        "Text"
+      ],
+      "name": "Text",
+      "children": [
+        "0-6058",
+        "0-6063",
+        "0-6064"
+      ]
+    },
+    {
+      "id": "0-6052",
+      "types": [
+        "LayoutComponent"
+      ],
+      "name": "Request heading text layout",
+      "children": [
+        "0-6053",
+        "0-6054",
+        "0-6056"
+      ]
+    },
+    {
+      "id": "0-6051",
+      "types": [
+        "Node"
+      ],
+      "name": "Request heading",
+      "children": [
+        "0-6052"
+      ]
+    },
+    {
+      "id": "0-5965",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path",
+      "children": []
+    },
+    {
+      "id": "0-5967",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-5966",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-5967"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ffffffff"
+      }
+    },
+    {
+      "id": "0-5969",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-5968",
+      "types": [
+        "Stroke"
+      ],
+      "name": "Stroke 1",
+      "children": [
+        "0-5969"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ffe5e5e5"
+      }
+    },
+    {
+      "id": "0-5964",
+      "types": [
+        "Shape"
+      ],
+      "name": "Request surface",
+      "children": [
+        "0-5965",
+        "0-5966",
+        "0-5968"
+      ]
+    },
+    {
+      "id": "0-5979",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-5980",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-5981",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-5982",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-5983",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-5984",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-5985",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-5986",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-5987",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-5988",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-5989",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-5990",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-5991",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-5992",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-5993",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-5994",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-5995",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-5996",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-5997",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-5998",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-5999",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6000",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6001",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6002",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6003",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6004",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6005",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6006",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6007",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6008",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6009",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6010",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6011",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-5978",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path",
+      "children": [
+        "0-5979",
+        "0-5980",
+        "0-5981",
+        "0-5982",
+        "0-5983",
+        "0-5984",
+        "0-5985",
+        "0-5986",
+        "0-5987",
+        "0-5988",
+        "0-5989",
+        "0-5990",
+        "0-5991",
+        "0-5992",
+        "0-5993",
+        "0-5994",
+        "0-5995",
+        "0-5996",
+        "0-5997",
+        "0-5998",
+        "0-5999",
+        "0-6000",
+        "0-6001",
+        "0-6002",
+        "0-6003",
+        "0-6004",
+        "0-6005",
+        "0-6006",
+        "0-6007",
+        "0-6008",
+        "0-6009",
+        "0-6010",
+        "0-6011"
+      ]
+    },
+    {
+      "id": "0-6012",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6049",
+      "types": [
+        "Stroke"
+      ],
+      "name": "Stroke 1",
+      "children": [
+        "0-6012"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff00aeff"
+      }
+    },
+    {
+      "id": "0-5977",
+      "types": [
+        "Shape"
+      ],
+      "name": "Custom Shape",
+      "children": [
+        "0-5978",
+        "0-6049"
+      ]
+    },
+    {
+      "id": "0-6015",
+      "types": [
+        "StraightVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6016",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6017",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6018",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6019",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6020",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6021",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6022",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6023",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6024",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6025",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6026",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6027",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6028",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6029",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6030",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6031",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6032",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6033",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6034",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6035",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6036",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6037",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6038",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6039",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6040",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6041",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6042",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6043",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6044",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6045",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6046",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6047",
+      "types": [
+        "CubicDetachedVertex"
+      ],
+      "name": "Component",
+      "children": []
+    },
+    {
+      "id": "0-6014",
+      "types": [
+        "PointsPath"
+      ],
+      "name": "Path",
+      "children": [
+        "0-6015",
+        "0-6016",
+        "0-6017",
+        "0-6018",
+        "0-6019",
+        "0-6020",
+        "0-6021",
+        "0-6022",
+        "0-6023",
+        "0-6024",
+        "0-6025",
+        "0-6026",
+        "0-6027",
+        "0-6028",
+        "0-6029",
+        "0-6030",
+        "0-6031",
+        "0-6032",
+        "0-6033",
+        "0-6034",
+        "0-6035",
+        "0-6036",
+        "0-6037",
+        "0-6038",
+        "0-6039",
+        "0-6040",
+        "0-6041",
+        "0-6042",
+        "0-6043",
+        "0-6044",
+        "0-6045",
+        "0-6046",
+        "0-6047"
+      ]
+    },
+    {
+      "id": "0-6048",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6050",
+      "types": [
+        "Stroke"
+      ],
+      "name": "Stroke 1",
+      "children": [
+        "0-6048"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ff00aeff"
+      }
+    },
+    {
+      "id": "0-6013",
+      "types": [
+        "Shape"
+      ],
+      "name": "Custom Shape",
+      "children": [
+        "0-6014",
+        "0-6050"
+      ]
+    },
+    {
+      "id": "0-5975",
+      "types": [
+        "Node"
+      ],
+      "name": "Mage Stars A",
+      "children": [
+        "0-5977",
+        "0-6013"
+      ]
+    },
+    {
+      "id": "0-5971",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path",
+      "children": []
+    },
+    {
+      "id": "0-5973",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-5972",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-5973"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ffeaf6ff"
+      }
+    },
+    {
+      "id": "0-5970",
+      "types": [
+        "Shape"
+      ],
+      "name": "Agent icon backing",
+      "children": [
+        "0-5971",
+        "0-5972"
+      ]
+    },
+    {
+      "id": "0-5963",
+      "types": [
+        "Node"
+      ],
+      "name": "Request",
+      "children": [
+        "0-6065",
+        "0-6051",
+        "0-5964",
+        "0-5975",
+        "0-5970"
+      ]
+    },
+    {
+      "id": "0-6901",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path",
+      "children": []
+    },
+    {
+      "id": "0-6903",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6902",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-6903"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ffffffff"
+      }
+    },
+    {
+      "id": "0-6905",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-6904",
+      "types": [
+        "Stroke"
+      ],
+      "name": "Stroke 1",
+      "children": [
+        "0-6905"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#ffe5e5e5"
+      }
+    },
+    {
+      "id": "0-6900",
+      "types": [
+        "Shape"
+      ],
+      "name": "13 / Single expanding component",
+      "children": [
+        "0-6901",
+        "0-6902",
+        "0-6904"
+      ]
+    },
+    {
+      "id": "0-5962",
+      "types": [
+        "Node"
+      ],
+      "name": "13 / Delegation and human review",
+      "children": [
+        "0-6568",
+        "0-6504",
+        "0-6424",
+        "0-6078",
+        "0-5963",
+        "0-6900"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-03",
+  "tests": {
+    "files": 2,
+    "passed": 10,
+    "command": "npm run test:run -- src/app/preview/scroll-showcase/baseline-features.test.tsx src/app/preview/scroll-showcase/storyboard-artwork.test.tsx"
+  },
+  "scenes": {
+    "05": {
+      "duration": 11.5,
+      "bytes": 1564033,
+      "sha256": "70599bd956df74cd20660ac759f77fa611f3589bdab1363234402fceebd1073b",
+      "runtimeLoopsObservedAtLeast": 5,
+      "editorEndpointPngByteMatch": true,
+      "endpointMethod": "Apply exact authored key values at settled endpoints, render through editor, restore base properties. Not a runtime screenshot comparison.",
+      "deliveredRivAndRevMatch": true,
+      "readableIntermediateStatesVisuallyChecked": true
+    },
+    "11": {
+      "duration": 6,
+      "bytes": 290424,
+      "sha256": "67399d00ecb8200c43699f7a651f97b5f42649378e888f9fddc4300b7e7026c6",
+      "runtimeLoopsObservedAtLeast": 7,
+      "editorEndpointPngByteMatch": true,
+      "endpointMethod": "Apply exact authored key values at settled endpoints, render through editor, restore base properties. Not a runtime screenshot comparison.",
+      "deliveredRivAndRevMatch": true,
+      "readableIntermediateStatesVisuallyChecked": true
+    },
+    "13": {
+      "duration": 14,
+      "bytes": 1174312,
+      "sha256": "958d8c4cefd12d76f2932e75aa78093ad901c661b6fb6037ddecee99baf4f7db",
+      "runtimeLoopsObservedAtLeast": 4,
+      "editorEndpointPngByteMatch": true,
+      "endpointMethod": "Apply exact authored key values at settled endpoints, render through editor, restore base properties. Not a runtime screenshot comparison.",
+      "deliveredRivAndRevMatch": true,
+      "readableIntermediateStatesVisuallyChecked": true
+    },
+    "15": {
+      "duration": 12,
+      "bytes": 1246459,
+      "sha256": "25fef04f4f2610c217ebdc59092fd047f12faeb7c556e16e79401f32f5641777",
+      "sourceUrl": "https://editor.rive.app/file/innflow-15-centered-cards/2628054",
+      "runtimeLoopsObservedAtLeast": 11,
+      "editorEndpointPngByteMatch": true,
+      "endpointMethod": "Apply exact authored key values at settled endpoints, render through editor, restore base properties. Not a runtime screenshot comparison.",
+      "deliveredRivAndRevMatch": true,
+      "readableIntermediateStatesVisuallyChecked": true
+    },
+    "16": {
+      "duration": 6,
+      "bytes": 218219,
+      "sha256": "94315ed46ad24b253768ee37f7220f40bdffb6c7b924af595897eff682e4391e",
+      "runtimeLoopsObservedAtLeast": 46,
+      "editorEndpointPngByteMatch": true,
+      "endpointMethod": "Apply exact authored key values at settled endpoints, render through editor, restore base properties. Not a runtime screenshot comparison.",
+      "deliveredRivAndRevMatch": true,
+      "readableIntermediateStatesVisuallyChecked": true
+    }
+  }
+}

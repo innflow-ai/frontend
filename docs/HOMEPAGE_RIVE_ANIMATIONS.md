@@ -26,7 +26,7 @@ All 18 numbered Rive files are installed. File 02 was rebuilt as an editable Riv
 | 12 | Assistant | Get requests to the right team | Rive | https://editor.rive.app/file/12/2626588 |
 | 13 | Assistant | Delegate tasks. Keep the final say. | Rive | https://editor.rive.app/file/13/2626589 |
 | 14 | Assistant | Schedule your assistant | Rive | https://editor.rive.app/file/14/2626592 |
-| 15 | Insights | Know what to improve next | Rive | https://editor.rive.app/file/15/2626593 |
+| 15 | Insights | Know what to improve next | Rive | https://editor.rive.app/file/innflow-15-centered-cards/2628054 |
 | 16 | Insights | Catch up instantly | Rive | https://editor.rive.app/file/16/2626595 |
 | 17 | Insights | Start each day with a clear picture | Rive | https://editor.rive.app/file/17/2626603 |
 | 18 | Insights | Turn insights into action | Rive | https://editor.rive.app/file/18/2626601 |
@@ -97,3 +97,27 @@ Both assignment fields expand into their menus in 200 ms and collapse in 200 ms,
 03’s first layout reorder now follows the illustrated click on the large Set condition node’s bottom If stub. Hover runs at frames 408–419, press and layout start share frame 426, the layout settles at frame 463, and the Select next step shell reveals at frames 470–480. The cursor tracks the pressed handle through the rearrangement before moving into the menu. This is the authored demonstration sequence, not a new runtime input listener. Evidence and exports are in `outputs/homepage-animation-fixes-2026-10-03/03/layout-on-handle-click/`.
 
 The user-supplied `/Users/ak/Documents/03_-_put_ai_to_work_your_way.riv` is now the installed 03 runtime. It replaces the later working revisions. In the AI agents section, display order is now 03, 02, 01, 04, 05, 06: Put AI to work your way is first, and Pick up conversations with context is third. Asset numbers remain stable.
+
+## Remaining review revisions on October 3, 2026
+
+05, 11, 13, 15, and 16 are now revised and installed locally with matching readable WebP fallback artwork. 06 and 17 are checked off at the user's request and were excluded from this pass.
+
+| Scene | Current behavior | Actual duration |
+| --- | --- | --- |
+| 05 | Dominic's original email component expands in place to include a draft response and review status. No second message card appears. | 11.5 s |
+| 11 | Ask Sidekick uses a native X close icon. | 6 s |
+| 13 | One task card develops from request to prepared tasks, draft review, and approval. | 14 s |
+| 15 | One insight card develops the original Slack API issue into a summary, evidence, and linked-conversation action. | 12 s |
+| 16 | Stars, chevron, chip, and search use Mage UI stroke icons. | 6 s |
+
+New component styling follows Innflow storyboarding and the supplied Calendly design markdown. This supersedes Dub as the default design reference; historical 03 notes above do not prescribe new work. Approved Innflow gradients and artwork remain. Timeline names are preserved for compatibility, so 13 still says “8.2s” and 15 still says “10s” despite their updated durations.
+
+All five exports loaded and completed loops in WebGL2 playback, and intermediate states were visually checked. Separately, editor-rendered native opening and closing poses matched byte-for-byte for all five. Two focused integration suites passed all 10 tests. Source/runtime exports are retained in the numbered collection and the Dropbox `finished_rive_homepage/2026-10-03-remaining-revisions` folder. The [revision artifacts](../outputs/homepage-animation-fixes-2026-10-03/remaining/) include before/after exports, captures, and verification metadata. No deployment is implied.
+
+## 06 single-component revision
+
+06 was subsequently reassigned to the assistant. A simple HTML motion preview was created and checked before rebuilding the scene in Rive. One fixed gray header retains the Cedar issue; the white body grows only in height to reveal three related reports and four linked conversations. Position, width, and text proportions remain constant. The loop is now 12 seconds, while the existing timeline name containing “8s” is retained.
+
+The source and original runtime loaded during diagnosis, so the earlier failure was not reproduced. The empty starter was removed from the editable source, but the runtime export still contains an empty default artboard. A default-artboard state-machine load fails; the exact named artboard and state machine used by the homepage load successfully. The original document is backed up. The updated runtime and poster are installed locally; editable/runtime copies and preview are in the Dropbox remaining-revisions folder. Artifacts are under `outputs/homepage-animation-fixes-2026-10-03/remaining/06/`.
+
+06 was subsequently redesigned to match the actual Innflow Figma Rive-test components and the user-approved HTML preview. The current export uses embedded Geist, original company logos, a gray header, flat evidence rows, and a blue text link inside one downward-expanding panel. Its 12-second duration and runtime names remain. The final artifacts and Figma provenance are in `remaining/06/figma-redesign/`; these supersede the earlier generic gray-header treatment. Native glass highlights approximate the HTML inset light rather than using identical CSS blur.

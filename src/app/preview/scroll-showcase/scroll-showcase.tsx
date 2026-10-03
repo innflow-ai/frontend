@@ -182,6 +182,7 @@ export function ScrollShowcase() {
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
   const [active, setActive] = useState(0);
   const [reduced, setReduced] = useState(false);
+  const [isCompact, setIsCompact] = useState(false);
   const [progress, setProgress] = useState(0);
   const motion = showcaseMotion(progress);
 
@@ -205,7 +206,8 @@ export function ScrollShowcase() {
       }
     };
     const syncPreference = () => {
-      setReduced(media.matches || compact.matches);
+      setReduced(media.matches);
+      setIsCompact(compact.matches);
       requestUpdate();
     };
     media.addEventListener("change", syncPreference);
@@ -214,11 +216,26 @@ export function ScrollShowcase() {
     const update = () => {
       frame = 0;
       const element = section.current;
-      if (!element || media.matches || compact.matches) {
+      if (!element || media.matches) {
         restoreHeader();
         return;
       }
       const top = element.getBoundingClientRect().top;
+      if (compact.matches) {
+        // The unpinned layout travels through the viewport instead of a tall track.
+        setProgress(
+          Math.max(
+            0,
+            Math.min(
+              1,
+              (window.innerHeight - top) /
+                (element.offsetHeight + window.innerHeight),
+            ),
+          ),
+        );
+        restoreHeader();
+        return;
+      }
       const range = element.offsetHeight - window.innerHeight;
       const next = Math.max(0, Math.min(1, -top / Math.max(1, range)));
       setProgress(next);
@@ -262,7 +279,7 @@ export function ScrollShowcase() {
 
   function select(index: number) {
     setActive(index);
-    if (!section.current || reduced) return;
+    if (!section.current || reduced || isCompact) return;
     const start = section.current.getBoundingClientRect().top + window.scrollY;
     const range = section.current.offsetHeight - window.innerHeight;
     // Instant native jump avoids racing the site's Lenis wheel controller.
@@ -308,6 +325,7 @@ export function ScrollShowcase() {
         ref={section}
         className={styles.scrollTrack}
         data-reduced={reduced}
+        data-compact={isCompact}
         aria-label="Interactive feature showcase"
       >
         <div className={styles.sticky}>
@@ -315,8 +333,12 @@ export function ScrollShowcase() {
             className={styles.stage}
             style={
               {
-                "--gradient-progress": reduced ? 0 : motion.chapterProgress,
-                "--expansion": reduced ? 1 : motion.expansion,
+                "--gradient-progress": reduced
+                  ? 0
+                  : isCompact
+                    ? (active + progress) / states.length
+                    : motion.chapterProgress,
+                "--expansion": reduced || isCompact ? 1 : motion.expansion,
               } as CSSProperties
             }
           >

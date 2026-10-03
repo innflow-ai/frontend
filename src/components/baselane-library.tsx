@@ -8,9 +8,9 @@ import {
   Search as MagnifyingGlass,
 } from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
-import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-library.module.css";
 import data from "./baselane-library-data.json";
+import { InnerPageShell } from "./inner-page-shell";
 
 type Item = (typeof data.articles)[number];
 const articleCategories = [
@@ -114,7 +114,7 @@ export function BaselaneLibrary({ kind }: { kind: "articles" | "webinars" }) {
     .slice(0, 3)
     .map((item) => [item.category, item.title, item.href]);
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <section className={styles.featured}>
         <h1>
           {isWebinar
@@ -192,7 +192,12 @@ export function BaselaneLibrary({ kind }: { kind: "articles" | "webinars" }) {
               type="button"
               aria-label="Previous categories"
               onClick={() =>
-                tabs.current?.scrollBy({ left: -300, behavior: "smooth" })
+                tabs.current?.scrollBy({
+                  left: -300,
+                  behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+                    ? "instant"
+                    : "smooth",
+                })
               }
             >
               <ArrowLeft size={18} />
@@ -201,7 +206,12 @@ export function BaselaneLibrary({ kind }: { kind: "articles" | "webinars" }) {
               type="button"
               aria-label="More categories"
               onClick={() =>
-                tabs.current?.scrollBy({ left: 300, behavior: "smooth" })
+                tabs.current?.scrollBy({
+                  left: 300,
+                  behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+                    ? "instant"
+                    : "smooth",
+                })
               }
             >
               <ArrowRight size={18} />
@@ -275,6 +285,6 @@ export function BaselaneLibrary({ kind }: { kind: "articles" | "webinars" }) {
           ))
         )}
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

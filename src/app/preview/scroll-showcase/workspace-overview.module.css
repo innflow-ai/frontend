@@ -251,10 +251,10 @@
   }
 }
 
-/* The supplied stacked-card reference applies only to tablet. */
-@media (min-width: 761px) and (max-width: 1100px) {
+/* Mobile shows every full card as the visitor scrolls. */
+@media (max-width: 760px) {
   .activeArt > img {
-    mask-image: linear-gradient(to right, transparent, black 35%);
+    mask-image: linear-gradient(to bottom, transparent, black 30%);
   }
   .content {
     padding-inline: 16px;
@@ -271,7 +271,7 @@
   }
   .cardSurface {
     display: grid;
-    grid-template-columns: 56% 44%;
+    grid-template-columns: minmax(0, 1fr);
     min-height: 260px;
     border-radius: 32px;
   }
@@ -297,7 +297,7 @@
     position: relative;
     align-self: stretch;
     height: auto;
-    min-height: 260px;
+    min-height: 320px;
   }
   .activeArt {
     opacity: 1;
@@ -313,15 +313,9 @@
   }
 }
 
-@media (max-width: 760px) {
+@media (min-width: 761px) and (max-width: 1100px) {
   .card[data-active="true"] .activeArt > img {
     mask-image: linear-gradient(to bottom, transparent, black 30%);
-  }
-  .section {
-    padding: 12px;
-  }
-  .surface {
-    border-radius: 36px;
   }
   .content {
     padding: 64px 16px;
@@ -384,6 +378,27 @@
   }
   .details li {
     gap: 8px;
+  }
+}
+
+@media (max-width: 760px) {
+  .section {
+    padding: 12px;
+  }
+  .surface {
+    border-radius: 36px;
+  }
+  .content {
+    padding: 64px 16px;
+  }
+  .heading h2 {
+    font-size: clamp(32px, 8vw, 44px);
+  }
+  .introduction {
+    font-size: 16px;
+  }
+  .cardCopy h3 {
+    font-size: 26px;
   }
 }
 

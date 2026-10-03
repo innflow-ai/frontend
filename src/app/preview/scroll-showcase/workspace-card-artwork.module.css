@@ -330,10 +330,10 @@
   color: #5f6d77;
 }
 
-/* The horizontal tablet card has no space above its artwork for the filter. */
-@media (min-width: 761px) and (max-width: 1100px) {
+/* Fit the full contacts composition within the expanded mobile card. */
+@media (max-width: 760px) {
   .train {
     top: 50%;
-    scale: 0.78;
+    scale: min(1, calc(100cqw / 384px));
   }
 }

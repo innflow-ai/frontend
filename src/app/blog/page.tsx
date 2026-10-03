@@ -5,8 +5,14 @@ import { Breadcrumbs } from "@/components/breadcrumbs";
 import { ChevronRight } from "@/components/chevron-right";
 import { Search as MagnifyingGlass } from "@/components/icons/mage";
 import { MarketingPage } from "@/components/page-primitives";
-import { BLOG_CATEGORIES, matchesBlogQuery } from "@/lib/blog";
 import {
+  BLOG_CATEGORIES,
+  industriesForPost,
+  matchesBlogQuery,
+} from "@/lib/blog";
+import {
+  type BlogSearchParams,
+  blogFilterValue,
   blogListingHref,
   paginateItems,
   parseBlogPage,
@@ -119,19 +125,12 @@ function FeaturedPost({ post }: { post: BlogPostSummary }) {
 export default async function BlogIndexPage({
   searchParams,
 }: {
-  searchParams: Promise<{
-    q?: string;
-    category?: string;
-    industry?: string;
-    page?: string;
-  }>;
+  searchParams: Promise<BlogSearchParams>;
 }) {
-  const {
-    q = "",
-    category = "",
-    industry = "",
-    page: pageParam,
-  } = await searchParams;
+  const params = await searchParams;
+  const q = blogFilterValue(params.q);
+  const category = blogFilterValue(params.category);
+  const industry = blogFilterValue(params.industry);
   const posts = await getBlogPosts();
   const filtered = posts.filter((post) => {
     const matchesQuery = matchesBlogQuery(
@@ -140,12 +139,12 @@ export default async function BlogIndexPage({
     );
     const matchesCategory = category ? post.category === category : true;
     const matchesIndustry = industry
-      ? (post.industries ?? ["General"]).includes(industry)
+      ? industriesForPost(post.industries).includes(industry)
       : true;
     return matchesQuery && matchesCategory && matchesIndustry;
   });
   const hasFilters = Boolean(q || category || industry);
-  const requestedPage = parseBlogPage(pageParam);
+  const requestedPage = parseBlogPage(params.page);
   const spotlight = hasFilters
     ? undefined
     : (filtered.find((post) => post.featured) ?? filtered[0]);
@@ -160,11 +159,7 @@ export default async function BlogIndexPage({
   const remaining = listing.items;
   const filters = { q, category, industry };
   const industries = [
-    ...new Set(
-      posts.flatMap((post) =>
-        post.industries?.length ? post.industries : ["General"],
-      ),
-    ),
+    ...new Set(posts.flatMap((post) => industriesForPost(post.industries))),
   ].sort();
   const categoryHref = (value: string) =>
     blogListingHref({ q, industry, category: value });

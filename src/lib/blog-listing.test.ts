@@ -1,12 +1,28 @@
 import { describe, expect, it } from "vitest";
 import {
   BLOG_PAGE_SIZE,
+  blogFilterValue,
   blogListingHref,
   paginateItems,
   parseBlogPage,
 } from "./blog-listing";
 
 describe("blog listing pagination", () => {
+  it("normalizes repeated, empty, and whitespace-only filters", () => {
+    expect(blogFilterValue([" automation ", "agents"])).toBe("automation");
+    expect(blogFilterValue([])).toBe("");
+    expect(blogFilterValue(undefined)).toBe("");
+    expect(blogFilterValue("   ")).toBe("");
+  });
+  it.each(["2junk", "2.5", "-2", "Infinity", "9007199254740992"])(
+    "rejects a malformed page: %s",
+    (value) => {
+      expect(parseBlogPage(value)).toBe(1);
+    },
+  );
+  it("uses the first repeated page value", () => {
+    expect(parseBlogPage([" 2 ", "3"])).toBe(2);
+  });
   const posts = Array.from({ length: 23 }, (_, index) => `post-${index + 1}`);
 
   it("bounds the first page and keeps filters on next/previous links", () => {

@@ -1,14 +1,16 @@
 "use client";
-import { ArrowRight as MageArrowRight, Plus as MagePlus } from '@/components/icons/mage';
-
 
 import Image from "next/image";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { ChevronRight } from "@/components/chevron-right";
 import { GoogleCtaContent } from "@/components/google-cta-content";
+import {
+  ArrowRight as MageArrowRight,
+  Plus as MagePlus,
+} from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
-import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-partners.module.css";
+import { InnerPageShell } from "./inner-page-shell";
 
 const audience = [
   [
@@ -99,10 +101,12 @@ function Photo({
   name,
   alt,
   hero = false,
+  sizes = "(max-width: 700px) calc(100vw - 48px), (max-width: 1440px) calc((100vw - 120px) / 3), 440px",
 }: {
   name: string;
   alt: string;
   hero?: boolean;
+  sizes?: string;
 }) {
   return (
     <Image
@@ -111,6 +115,7 @@ function Photo({
       alt={alt}
       width={1164}
       height={840}
+      sizes={sizes}
       priority={hero}
     />
   );
@@ -155,6 +160,7 @@ function Workflow() {
 }
 export function BaselanePartners({ referral = false }: { referral?: boolean }) {
   const [shareStatus, setShareStatus] = useState("");
+  const shareInput = useRef<HTMLInputElement>(null);
   const shareUrl = `${siteConfig.marketingOrigin.replace(/\/$/, "")}/`;
   const inquiry = `mailto:${siteConfig.supportEmail}?subject=${encodeURIComponent("Partner with innflow")}`;
   async function copyLink() {
@@ -162,7 +168,9 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
       await navigator.clipboard.writeText(shareUrl);
       setShareStatus("Link copied. Ready to share.");
     } catch {
-      setShareStatus("Copy the address below to share innflow.");
+      setShareStatus("Copy the selected public page link to share innflow.");
+      shareInput.current?.focus();
+      shareInput.current?.select();
     }
   }
   const action = referral ? (
@@ -175,7 +183,7 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
     </a>
   );
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={styles.page}>
         <section className={styles.hero}>
           <div className={styles.heroCopy}>
@@ -195,6 +203,7 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
                 <label htmlFor="share-address">Public page link</label>
                 <input
                   id="share-address"
+                  ref={shareInput}
                   readOnly
                   value={shareUrl}
                   onFocus={(event) => event.currentTarget.select()}
@@ -210,6 +219,7 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
             )}
           </div>
           <Photo
+            sizes="(max-width: 700px) calc(100vw - 48px), (max-width: 900px) calc((100vw - 100px) * 1.1 / 2.1), (max-width: 1440px) calc((100vw - 134px) * 1.1 / 2.1), 685px"
             name={referral ? "referral-hero" : "partner-hero"}
             alt={
               referral
@@ -305,7 +315,11 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
           {referral ? (
             <Workflow />
           ) : (
-            <Photo name="join" alt="A man smiling while looking at his phone" />
+            <Photo
+              name="join"
+              alt="A man smiling while looking at his phone"
+              sizes="(max-width: 700px) calc(100vw - 48px), (max-width: 900px) calc((100vw - 100px) * 1.1 / 2.1), (max-width: 1440px) calc((100vw - 154px) * 1.1 / 2.1), 674px"
+            />
           )}
         </section>
         {referral && (
@@ -323,6 +337,6 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
           </section>
         )}
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

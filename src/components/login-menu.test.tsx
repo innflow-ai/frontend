@@ -40,8 +40,8 @@ it("opens on mouse hover and allows time to enter the dropdown", () => {
     dispatchEvent: vi.fn(),
   }));
   render(<SiteHeader />);
-  const group = screen.getByRole("group", { name: "Login options" });
-  const trigger = screen.getByRole("button", { name: "Log in" });
+  const group = screen.getByRole("group", { name: "Product" });
+  const trigger = screen.getByRole("button", { name: "Product" });
   fireEvent.pointerEnter(group, { pointerType: "mouse" });
   expect(trigger).toHaveAttribute("aria-expanded", "true");
   fireEvent.pointerLeave(group, { pointerType: "mouse" });
@@ -55,31 +55,25 @@ it("opens on mouse hover and allows time to enter the dropdown", () => {
   expect(trigger).toHaveAttribute("aria-expanded", "false");
 });
 
-it("opens ordered login choices with the shared destination and returns focus on Escape", async () => {
+it("keeps direct login links and returns focus to the product disclosure on Escape", async () => {
   const user = userEvent.setup();
   render(<SiteHeader />);
-  const trigger = screen.getByRole("button", { name: "Log in" });
+  for (const link of screen.getAllByRole("link", { name: "Log in" })) {
+    expect(link).toHaveAttribute("href", "https://app.innflow.ai/login");
+  }
+  const trigger = screen.getByRole("button", { name: "Product" });
   trigger.focus();
   await user.keyboard("{Enter}");
   expect(trigger).toHaveAttribute("aria-expanded", "true");
-  const links = screen.getAllByRole("link", {
-    name: /^(Landlord|Tenant) login/,
-  });
-  expect(links.map((link) => link.textContent)).toEqual([
-    "Landlord login",
-    "Tenant loginBeta",
-  ]);
-  for (const link of links)
-    expect(link).toHaveAttribute("href", "https://app.innflow.ai/login");
+  const platform = screen.getByRole("link", { name: "Platform" });
+  expect(platform).toHaveAttribute("href", "/platform");
   await user.tab();
-  expect(links[0]).toHaveFocus();
-  await user.tab();
-  expect(links[1]).toHaveFocus();
+  expect(platform).toHaveFocus();
   await user.keyboard("{Escape}");
   expect(trigger).toHaveFocus();
   expect(trigger).toHaveAttribute("aria-expanded", "false");
   expect(
-    screen.queryByRole("link", { name: "Landlord login" }),
+    screen.queryByRole("link", { name: "Platform" }),
   ).not.toBeInTheDocument();
 });
 
@@ -91,13 +85,13 @@ it("closes on an outside click and keeps only one navbar disclosure open", async
       <button type="button">Outside</button>
     </>,
   );
-  const login = screen.getByRole("button", { name: "Log in" });
-  await user.click(login);
+  const product = screen.getByRole("button", { name: "Product" });
+  await user.click(product);
   await user.click(screen.getByRole("button", { name: "Outside" }));
-  expect(login).toHaveAttribute("aria-expanded", "false");
-  await user.click(login);
+  expect(product).toHaveAttribute("aria-expanded", "false");
+  await user.click(product);
   await user.click(screen.getByRole("button", { name: "Resources" }));
-  expect(login).toHaveAttribute("aria-expanded", "false");
+  expect(product).toHaveAttribute("aria-expanded", "false");
   expect(screen.getByRole("button", { name: "Resources" })).toHaveAttribute(
     "aria-expanded",
     "true",

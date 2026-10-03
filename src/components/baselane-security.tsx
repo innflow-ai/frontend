@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ChevronRight } from "@/components/chevron-right";
-import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-security.module.css";
+import { InnerPageShell } from "./inner-page-shell";
 
 const sections = [
   {
@@ -68,7 +68,7 @@ const sections = [
 ];
 export function BaselaneSecurity() {
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={styles.page}>
         <section className={styles.hero}>
           <picture>
@@ -174,6 +174,6 @@ export function BaselaneSecurity() {
           </a>
         </section>
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

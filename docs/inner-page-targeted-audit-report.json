@@ -1,0 +1,258 @@
+{
+  "origin": "http://localhost:3012",
+  "auditedAt": "2026-10-03T01:38:25.712Z",
+  "scope": "Public inner pages; homepage and preview/lab routes excluded",
+  "routes": [
+    {
+      "route": "/about",
+      "status": 200,
+      "elapsedMs": 592,
+      "title": "About Innflow | Connected Workflows",
+      "description": "Learn how Innflow connects requests, context, and team handoffs, with clear workflows and people in control of the next step.",
+      "canonical": "https://innflow.ai/about",
+      "h1Count": 1,
+      "noIndex": false
+    },
+    {
+      "route": "/advisor-partner-program",
+      "status": 200,
+      "elapsedMs": 572,
+      "title": "Advisor Partnerships | Innflow",
+      "description": "Keep client records, document requests, and review steps connected. Explore how Innflow supports clearer conversations and handoffs for advisors.",
+      "canonical": "https://innflow.ai/advisor-partner-program",
+      "h1Count": 1,
+      "noIndex": false
+    },
+    {
+      "route": "/careers",
+      "status": 200,
+      "elapsedMs": 473,
+      "title": "Careers at Innflow",
+      "description": "Get to know Innflow, the way we work, and our focus on connecting people, context, and everyday workflows. Explore working with our team.",
+      "canonical": "https://innflow.ai/careers",
+      "h1Count": 1,
+      "noIndex": false
+    },
+    {
+      "route": "/connections",
+      "status": 200,
+      "elapsedMs": 473,
+      "title": "Site Directory | Innflow",
+      "description": "Find Innflow products, solutions, property workflows, learning resources, company information, and policies in one directory.",
+      "canonical": "https://innflow.ai/connections",
+      "h1Count": 1,
+      "noIndex": false
+    },
+    {
+      "route": "/demo",
+      "status": 200,
+      "elapsedMs": 396,
+      "title": "Book an Innflow Demo | See Connected Workflows",
+      "description": "Explore Innflow with your team. Book a demo to discuss your workflows, connected tools, and the next steps for getting started.",
+      "canonical": "https://innflow.ai/demo",
+      "h1Count": 1,
+      "noIndex": false
+    },
+    {
+      "route": "/help",
+      "status": 200,
+      "elapsedMs": 396,
+      "title": "Help Center | Innflow",
+      "description": "Find answers, explore workflow guides, and get help with your Innflow workspace, agents, and integrations.",
+      "canonical": "https://innflow.ai/help",
+      "h1Count": 1,
+      "noIndex": false
+    },
+    {
+      "route": "/help-center",
+      "status": 200,
+      "elapsedMs": 401,
+      "title": "Help Center | Innflow",
+      "description": "Get help with Innflow, from getting started and connecting tools to managing property operations, resident requests, and security.",
+      "canonical": "https://innflow.ai/help-center",
+      "h1Count": 1,
+      "noIndex": false
+    },
+    {
+      "route": "/how-much-should-i-charge-for-rent",
+      "status": 200,
+      "elapsedMs": 397,
+      "title": "Rent Comparison Calculator | Innflow",
+      "description": "Compare the rental figures you provide and organize the context for your next pricing review, including property details, expenses, and local requirements.",
+      "canonical": "https://innflow.ai/how-much-should-i-charge-for-rent",
+      "h1Count": 1,
+      "noIndex": false
+    },
+    {
+      "route": "/in-the-news",
+      "status": 200,
+      "elapsedMs": 392,
+      "title": "Industry Coverage and Perspectives | Innflow",
+      "description": "Explore independent coverage and perspectives on property technology, connected operations, and the changing work of property teams.",
+      "canonical": "https://innflow.ai/in-the-news",
+      "h1Count": 1,
+      "noIndex": false
+    },
+    {
+      "route": "/landlord-insurance",
+      "status": 200,
+      "elapsedMs": 396,
+      "title": "Property Review Preparation | Innflow",
+      "description": "Organize property details and prepare a clearer brief for an insurance review. Keep the relevant context and next steps together for your team.",
+      "canonical": "https://innflow.ai/landlord-insurance",
+      "h1Count": 1,
+      "noIndex": false
+    },
+    {
+      "route": "/landlord-referral",
+      "status": 200,
+      "elapsedMs": 383,
+      "title": "Share Innflow",
+      "description": "Know someone who could use a more connected workflow? Learn how to introduce them to Innflow and start a conversation about their team&#x27;s needs.",
+      "canonical": "https://innflow.ai/landlord-referral",
+      "h1Count": 1,
+      "noIndex": false
+    },
+    {
+      "route": "/lease-agreement",
+      "status": 200,
+      "elapsedMs": 381,
+      "title": "Lease Document Workflows | Innflow",
+      "description": "Keep lease paperwork, requests, and review context organized. Explore connected document workflows that help your team prepare for the next review.",
+      "canonical": "https://innflow.ai/lease-agreement",
+      "h1Count": 1,
+      "noIndex": false
+    },
+    {
+      "route": "/legal-agreements",
+      "status": 200,
+      "elapsedMs": 401,
+      "title": "Legal Agreements | Innflow",
+      "description": "Find Innflow&#x27;s legal agreements, terms, privacy policies, and privacy request information in one directory, with links to the relevant documents.",
+      "canonical": "https://innflow.ai/legal-agreements",
+      "h1Count": 1,
+      "noIndex": false
+    },
+    {
+      "route": "/long-term-rentals",
+      "status": 200,
+      "elapsedMs": 408,
+      "title": "Long-Term Rental Operations | Innflow",
+      "description": "Connect recurring work, property context, and team handoffs across long-term rentals. Keep useful answers and the next steps within reach.",
+      "canonical": "https://innflow.ai/long-term-rentals",
+      "h1Count": 1,
+      "noIndex": false
+    },
+    {
+      "route": "/mid-term-rentals",
+      "status": 200,
+      "elapsedMs": 408,
+      "title": "Mid-Term Rental Operations | Innflow",
+      "description": "Keep mid-term rental operations connected, from property information to recurring tasks and team handoffs, with a clearer view of what comes next.",
+      "canonical": "https://innflow.ai/mid-term-rentals",
+      "h1Count": 1,
+      "noIndex": false
+    },
+    {
+      "route": "/partner-with-us",
+      "status": 200,
+      "elapsedMs": 393,
+      "title": "Partner with Innflow",
+      "description": "Bring your experience, community, or idea to Innflow. Explore ways to work together and start a conversation about the workflows people need.",
+      "canonical": "https://innflow.ai/partner-with-us",
+      "h1Count": 1,
+      "noIndex": false
+    },
+    {
+      "route": "/real-estate-investing",
+      "status": 200,
+      "elapsedMs": 415,
+      "title": "Real Estate Investing Resources | Innflow",
+      "description": "Browse real estate investing resources and practical perspectives for property teams. Find articles by topic and explore related guidance.",
+      "canonical": "https://innflow.ai/real-estate-investing",
+      "h1Count": 1,
+      "noIndex": false
+    },
+    {
+      "route": "/rent-collection",
+      "status": 200,
+      "elapsedMs": 418,
+      "title": "Recurring Rental Workflows | Innflow",
+      "description": "Connect the recurring work around rent, with organized context, clearer follow-ups, and coordinated steps for your property team.",
+      "canonical": "https://innflow.ai/rent-collection",
+      "h1Count": 1,
+      "noIndex": false
+    },
+    {
+      "route": "/rent-collection-2",
+      "status": 200,
+      "elapsedMs": 325,
+      "title": "Recurring Rental Workflows | Innflow",
+      "description": "Connect the recurring work around rent, with organized context, clearer follow-ups, and coordinated steps for your property team.",
+      "canonical": "https://innflow.ai/rent-collection-2",
+      "h1Count": 1,
+      "noIndex": false
+    },
+    {
+      "route": "/renters",
+      "status": 200,
+      "elapsedMs": 535,
+      "title": "Connected Resident Experiences | Innflow",
+      "description": "Keep resident conversations, requests, and property details connected. Give your team a clearer path from the first request to its resolution.",
+      "canonical": "https://innflow.ai/renters",
+      "h1Count": 1,
+      "noIndex": false
+    },
+    {
+      "route": "/resources",
+      "status": 200,
+      "elapsedMs": 362,
+      "title": "Resource Library | Innflow",
+      "description": "Explore Innflow resources for property operations, records and reviews, planning tools, and connected team workflows.",
+      "canonical": "https://innflow.ai/resources",
+      "h1Count": 1,
+      "noIndex": false
+    },
+    {
+      "route": "/security",
+      "status": 200,
+      "elapsedMs": 299,
+      "title": "Security and Governance | Innflow",
+      "description": "Explore access controls, data handling, and operational governance with Innflow. Discuss the security requirements for your workflows and team.",
+      "canonical": "https://innflow.ai/security",
+      "h1Count": 1,
+      "noIndex": false
+    },
+    {
+      "route": "/security-deposit-account",
+      "status": 200,
+      "elapsedMs": 318,
+      "title": "Deposit Workflows | Innflow",
+      "description": "Organize deposit-related records, requirements, and next steps. Keep property owners, residents, and your team working from connected context.",
+      "canonical": "https://innflow.ai/security-deposit-account",
+      "h1Count": 1,
+      "noIndex": false
+    },
+    {
+      "route": "/short-term-rentals",
+      "status": 200,
+      "elapsedMs": 314,
+      "title": "Short-Term Rental Operations | Innflow",
+      "description": "Coordinate short-term rental work with connected property details, recurring tasks, and team handoffs, so the next step stays clear.",
+      "canonical": "https://innflow.ai/short-term-rentals",
+      "h1Count": 1,
+      "noIndex": false
+    },
+    {
+      "route": "/tax-preparation",
+      "status": 200,
+      "elapsedMs": 429,
+      "title": "Property Document Preparation | Innflow",
+      "description": "Organize property records, document requests, and review steps before tax preparation. Keep your team&#x27;s supporting context connected and easy to find.",
+      "canonical": "https://innflow.ai/tax-preparation",
+      "h1Count": 1,
+      "noIndex": false
+    }
+  ],
+  "failures": []
+}

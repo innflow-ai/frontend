@@ -1,12 +1,14 @@
 "use client";
-import { ArrowRight as MageArrowRight, ChevronLeft as MageArrowLeft } from '@/components/icons/mage';
-
 
 import Image from "next/image";
 import { useState } from "react";
+import {
+  ChevronLeft as MageArrowLeft,
+  ArrowRight as MageArrowRight,
+} from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
 import styles from "./baselane-customers.module.css";
-import { BaselaneHomepage } from "./baselane-homepage";
+import { InnerPageShell } from "./inner-page-shell";
 
 const workflows = [
   [
@@ -71,7 +73,7 @@ export function BaselaneCustomers() {
   const [caseIndex, setCaseIndex] = useState(0);
   const story = scenarios[caseIndex];
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={styles.page}>
         <section className={styles.hero}>
           <Image
@@ -99,7 +101,9 @@ export function BaselaneCustomers() {
         </section>
         <div className={styles.band}>
           <span>Clear ownership. Shared context. Visible progress.</span>
-          <a href="/multi-property-investors">Explore portfolio operations <MageArrowRight size="1em" /></a>
+          <a href="/multi-property-investors">
+            Explore portfolio operations <MageArrowRight size="1em" />
+          </a>
         </div>
         <section className={styles.section} id="team-workflows">
           <h2>Built around the work on your team’s desk.</h2>
@@ -113,7 +117,9 @@ export function BaselaneCustomers() {
                 <span className={styles.eyebrow}>WORKFLOW</span>
                 <h3>{title}</h3>
                 <p>{text}</p>
-                <a href={href}>Explore the workflow <MageArrowRight size="1em" /></a>
+                <a href={href}>
+                  Explore the workflow <MageArrowRight size="1em" />
+                </a>
               </article>
             ))}
           </div>
@@ -170,6 +176,6 @@ export function BaselaneCustomers() {
           </div>
         </section>
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

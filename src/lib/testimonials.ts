@@ -75,7 +75,6 @@ export const getPageTestimonials = cache(async (pagePath: string) => {
     );
     return {
       heading: selection?.heading || "In their own words.",
-      previewNote: previewDrafts ? "In their own words." : undefined,
       testimonials: (selection?.testimonials || [])
         .map(normalizeTestimonial)
         .filter((item): item is Testimonial => item !== null),

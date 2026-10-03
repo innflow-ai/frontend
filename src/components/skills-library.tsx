@@ -2,8 +2,8 @@
 
 import { useMemo, useState } from "react";
 import styles from "@/app/skills/page.module.css";
+import { skillColorValue } from "@/lib/skill-colors";
 import type { SkillCategory, SkillSummary } from "@/lib/skills";
-import { skillColorValue } from "@/lib/skills";
 
 type SkillsLibraryProps = {
   skills: SkillSummary[];

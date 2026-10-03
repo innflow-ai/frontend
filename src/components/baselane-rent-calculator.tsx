@@ -1,15 +1,14 @@
 "use client";
-import { ArrowRight as MageArrowRight } from '@/components/icons/mage';
-
 
 import Image from "next/image";
 import { type FormEvent, useRef, useState } from "react";
 import { ChevronRight } from "@/components/chevron-right";
 import { GoogleCtaContent } from "@/components/google-cta-content";
+import { ArrowRight as MageArrowRight } from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
 import { summarizeRents } from "@/lib/rent-comparison";
-import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-rent-calculator.module.css";
+import { InnerPageShell } from "./inner-page-shell";
 
 const source = siteConfig.demoUrl;
 const money = (n: number) =>
@@ -37,6 +36,7 @@ export function BaselaneRentCalculator() {
   const form = useRef<HTMLFormElement>(null);
   function analyze(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (!event.currentTarget.reportValidity()) return;
     const data = new FormData(event.currentTarget);
     try {
       const summary = summarizeRents(String(data.get("rents")));
@@ -51,7 +51,11 @@ export function BaselaneRentCalculator() {
         report.current?.scrollIntoView({ block: "start", behavior: "instant" });
       });
     } catch (e) {
+      setResult(null);
       setError(e instanceof Error ? e.message : "Check the rent values.");
+      (
+        event.currentTarget.elements.namedItem("rents") as HTMLTextAreaElement
+      )?.focus();
     }
   }
   async function copyLink() {
@@ -65,7 +69,7 @@ export function BaselaneRentCalculator() {
     }
   }
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={styles.page}>
         <section className={styles.hero}>
           <div>
@@ -74,12 +78,22 @@ export function BaselaneRentCalculator() {
               Summarize rents you have researched. This calculator uses your
               entries; it does not look up local listings.
             </p>
-            <form ref={form} onSubmit={analyze} className={styles.form}>
+            <form
+              ref={form}
+              onSubmit={analyze}
+              onChange={() => {
+                // A report only represents the exact inputs submitted for it.
+                setResult(null);
+                setError("");
+              }}
+              className={styles.form}
+            >
               <label>
                 Property address
                 <input
                   name="address"
                   required
+                  pattern=".*\S.*"
                   maxLength={200}
                   placeholder="Enter the property address"
                 />
@@ -126,6 +140,7 @@ export function BaselaneRentCalculator() {
                   rows={3}
                   placeholder="1800, 1900, 2000, 2100, 2200"
                   aria-describedby="rent-input-help rent-error"
+                  aria-invalid={Boolean(error)}
                 />
               </label>
               <p id="rent-input-help" className={styles.note}>
@@ -141,7 +156,8 @@ export function BaselaneRentCalculator() {
               </button>
             </form>
             <a className={styles.sourceLink} href={source}>
-              Connect your research workflow with innflow <MageArrowRight size="1em" />
+              Connect your research workflow with innflow{" "}
+              <MageArrowRight size="1em" />
             </a>
           </div>
           <picture>
@@ -248,7 +264,9 @@ export function BaselaneRentCalculator() {
                 pricing decision. Keep the official sources and your adviser’s
                 review notes alongside the property record.
               </p>
-              <a href="/lease-agreement">Explore document review workflows <MageArrowRight size="1em" /></a>
+              <a href="/lease-agreement">
+                Explore document review workflows <MageArrowRight size="1em" />
+              </a>
             </section>
             <section id="operating-costs">
               <h2>Account for expenses</h2>
@@ -283,12 +301,13 @@ export function BaselaneRentCalculator() {
                 or property circumstances change.
               </p>
               <a href={source}>
-                Bring your research into an innflow workflow <MageArrowRight size="1em" />
+                Bring your research into an innflow workflow{" "}
+                <MageArrowRight size="1em" />
               </a>
             </section>
           </article>
         </div>
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

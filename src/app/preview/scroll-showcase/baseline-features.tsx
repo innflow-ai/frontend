@@ -91,8 +91,54 @@ function BaselineFeature({ feature }: { feature: Feature }) {
   }, []);
   const buttons = useRef<(HTMLButtonElement | null)[]>([]);
   const channels = feature.id === "channels";
+  const mobileStory = channels && mobile;
   const channelScroll = useChannelsScroll(channels, setSelected);
-  const select = channels ? channelScroll.select : setSelected;
+  useEffect(() => {
+    if (!mobileStory) return;
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const rows = channelScroll.rowsRef.current?.children;
+      if (!rows?.length) return;
+      const focus = window.innerHeight * 0.5;
+      let nearest = 0;
+      let distance = Infinity;
+      Array.from(rows).forEach((row, index) => {
+        const rect = row.getBoundingClientRect();
+        const next = Math.abs(rect.top + rect.height / 2 - focus);
+        if (next < distance) {
+          nearest = index;
+          distance = next;
+        }
+      });
+      setSelected(nearest);
+    };
+    const requestUpdate = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate);
+    const observer = new ResizeObserver(requestUpdate);
+    if (channelScroll.rowsRef.current)
+      observer.observe(channelScroll.rowsRef.current);
+    requestUpdate();
+    return () => {
+      cancelAnimationFrame(frame);
+      observer.disconnect();
+      window.removeEventListener("scroll", requestUpdate);
+      window.removeEventListener("resize", requestUpdate);
+    };
+  }, [mobileStory, channelScroll.rowsRef]);
+  function select(index: number) {
+    if (mobileStory) {
+      setSelected(index);
+      channelScroll.rowsRef.current?.children[index]?.scrollIntoView({
+        block: "start",
+        behavior: "instant",
+      });
+    } else if (channels) channelScroll.select(index);
+    else setSelected(index);
+  }
   function navigate(event: KeyboardEvent<HTMLButtonElement>, index: number) {
     const last = feature.items.length - 1;
     const next =
@@ -165,14 +211,10 @@ function BaselineFeature({ feature }: { feature: Feature }) {
                       }}
                       id={`${feature.id}-baseline-trigger-${index}`}
                       aria-expanded={
-                        (!channels || mobile) && item.body
-                          ? selected === index
-                          : undefined
+                        !channels && item.body ? selected === index : undefined
                       }
                       aria-pressed={
-                        (channels && !mobile) || !item.body
-                          ? selected === index
-                          : undefined
+                        channels || !item.body ? selected === index : undefined
                       }
                       aria-controls={
                         item.body
@@ -181,7 +223,7 @@ function BaselineFeature({ feature }: { feature: Feature }) {
                       }
                       onClick={() => select(index)}
                       onFocus={() => {
-                        if (channelScroll.enabled) select(index);
+                        if (channelScroll.enabled || mobileStory) select(index);
                       }}
                       onKeyDown={(event) => navigate(event, index)}
                     >
@@ -197,7 +239,7 @@ function BaselineFeature({ feature }: { feature: Feature }) {
                         className={styles.mobileIndicator}
                         aria-hidden="true"
                       >
-                        {selected === index ? (
+                        {mobileStory || selected === index ? (
                           <MageMinus size="1em" />
                         ) : (
                           <MagePlus size="1em" />
@@ -208,10 +250,7 @@ function BaselineFeature({ feature }: { feature: Feature }) {
                   <section
                     id={`${feature.id}-baseline-panel-${index}`}
                     aria-labelledby={`${feature.id}-baseline-trigger-${index}`}
-                    hidden={
-                      !item.body ||
-                      ((!channels || mobile) && selected !== index)
-                    }
+                    hidden={!item.body || (!channels && selected !== index)}
                     className={styles.description}
                   >
                     {item.body && <p>{item.body}</p>}
@@ -221,7 +260,8 @@ function BaselineFeature({ feature }: { feature: Feature }) {
                         className={styles.arrow}
                         aria-label={`Show ${item.title}`}
                         onFocus={() => {
-                          if (channelScroll.enabled) select(index);
+                          if (channelScroll.enabled || mobileStory)
+                            select(index);
                         }}
                         onClick={() => {
                           select(index);
@@ -234,7 +274,16 @@ function BaselineFeature({ feature }: { feature: Feature }) {
                       </button>
                     )}
                   </section>
-                  {mobile && selected === index && visual}
+                  {mobileStory ? (
+                    <div
+                      className={styles.visual}
+                      id={`${feature.id}-baseline-visual-${index}`}
+                    >
+                      <StoryboardArtwork storyboard={item} />
+                    </div>
+                  ) : (
+                    mobile && selected === index && visual
+                  )}
                 </div>
               ))}
             </motion.div>

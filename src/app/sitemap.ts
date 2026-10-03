@@ -7,6 +7,7 @@ import { platformPages } from "@/content/platform";
 import { getIntegrations } from "@/lib/integrations";
 import { productSlugs } from "@/lib/product-pages";
 import { getBlogPosts } from "@/lib/sanity";
+import { getSkillSlugs } from "@/lib/skills";
 
 const staticRoutes: Array<{
   path: string;
@@ -19,6 +20,8 @@ const staticRoutes: Array<{
   { path: "/products", changeFrequency: "monthly", priority: 0.8 },
   { path: "/solutions", changeFrequency: "monthly", priority: 0.8 },
   { path: "/integrations", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/skills", changeFrequency: "weekly", priority: 0.8 },
+  { path: "/help", changeFrequency: "monthly", priority: 0.6 },
   { path: "/pricing", changeFrequency: "monthly", priority: 0.8 },
   { path: "/demo", changeFrequency: "monthly", priority: 0.8 },
   { path: "/contact", changeFrequency: "monthly", priority: 0.8 },
@@ -99,12 +102,18 @@ const staticRoutes: Array<{
 const siteLastModified = new Date("2026-08-22T00:00:00.000Z");
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [posts, integrations] = await Promise.all([
+  const [posts, integrations, skillSlugs] = await Promise.all([
     getBlogPosts(),
     getIntegrations(),
+    getSkillSlugs(),
   ]);
 
   return [
+    ...skillSlugs.map((slug) => ({
+      url: `${siteConfig.marketingOrigin}/skills/${slug}`,
+      changeFrequency: "weekly" as const,
+      priority: 0.6,
+    })),
     ...industryPages.map((page) => ({
       url: `${siteConfig.marketingOrigin}${industryHref(page.slug)}`,
       changeFrequency: "monthly" as const,

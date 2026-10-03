@@ -1,12 +1,16 @@
 "use client";
-import { ArrowDown as MageArrowDown, ArrowRight as MageArrowRight, ChevronLeft as MageArrowLeft } from '@/components/icons/mage';
 
 import Image from "next/image";
 import { useRef } from "react";
+import {
+  ArrowDown as MageArrowDown,
+  ChevronLeft as MageArrowLeft,
+  ArrowRight as MageArrowRight,
+} from "@/components/icons/mage";
 import styles from "./baselane-forms.module.css";
 import { formGroups } from "./baselane-forms-data";
-import { BaselaneHomepage } from "./baselane-homepage";
 import shared from "./baselane-partners.module.css";
+import { InnerPageShell } from "./inner-page-shell";
 
 function FormGroup({ group }: { group: (typeof formGroups)[number] }) {
   const track = useRef<HTMLElement>(null);
@@ -74,7 +78,7 @@ function FormGroup({ group }: { group: (typeof formGroups)[number] }) {
 }
 export function BaselaneForms() {
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={`${shared.page} ${styles.page}`}>
         <section className={shared.hero}>
           <div className={shared.heroCopy}>
@@ -109,6 +113,6 @@ export function BaselaneForms() {
           <FormGroup key={group.slug} group={group} />
         ))}
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

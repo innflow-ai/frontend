@@ -7,9 +7,9 @@ import {
   ArrowRight as MageArrowRight,
   Search as MagnifyingGlass,
 } from "@/components/icons/mage";
-import { BaselaneHomepage } from "./baselane-homepage";
 import items from "./baselane-investing-data.json";
 import styles from "./baselane-library.module.css";
+import { InnerPageShell } from "./inner-page-shell";
 
 const categories = [
   "All investor resources",
@@ -30,7 +30,7 @@ export function BaselaneInvesting() {
         .includes(search.trim().toLowerCase()),
   );
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={styles.categoryTop} />
       <section
         className={styles.filterBar}
@@ -61,7 +61,12 @@ export function BaselaneInvesting() {
               type="button"
               aria-label="Previous categories"
               onClick={() =>
-                tabs.current?.scrollBy({ left: -300, behavior: "smooth" })
+                tabs.current?.scrollBy({
+                  left: -300,
+                  behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+                    ? "instant"
+                    : "smooth",
+                })
               }
             >
               <ArrowLeft size={18} />
@@ -70,7 +75,12 @@ export function BaselaneInvesting() {
               type="button"
               aria-label="More categories"
               onClick={() =>
-                tabs.current?.scrollBy({ left: 300, behavior: "smooth" })
+                tabs.current?.scrollBy({
+                  left: 300,
+                  behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+                    ? "instant"
+                    : "smooth",
+                })
               }
             >
               <ArrowRight size={18} />
@@ -135,6 +145,6 @@ export function BaselaneInvesting() {
           </div>
         )}
       </section>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

@@ -1,12 +1,14 @@
-
-import { ArrowRight as MageArrowRight, Plus as MagePlus } from '@/components/icons/mage';
 import Image from "next/image";
 import { GoogleCtaContent } from "@/components/google-cta-content";
+import {
+  ArrowRight as MageArrowRight,
+  Plus as MagePlus,
+} from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
 import { getPageFaqTuples } from "@/lib/faqs";
-import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-lease.module.css";
 import shared from "./baselane-partners.module.css";
+import { InnerPageShell } from "./inner-page-shell";
 
 const steps = [
   [
@@ -62,7 +64,7 @@ function Action() {
 export async function BaselaneLease() {
   const cmsFaqs = await getPageFaqTuples("/lease-agreement", faqs);
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={`${shared.page} ${styles.page}`}>
         <div className={styles.dark}>
           <section className={shared.hero}>
@@ -212,6 +214,6 @@ export async function BaselaneLease() {
           </div>
         </section>
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

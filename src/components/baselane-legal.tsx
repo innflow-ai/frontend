@@ -1,9 +1,11 @@
-
-import { ChevronLeft as MageArrowLeft, ArrowRight as MageArrowRight } from '@/components/icons/mage';
 import { ChevronRight } from "@/components/chevron-right";
+import {
+  ChevronLeft as MageArrowLeft,
+  ArrowRight as MageArrowRight,
+} from "@/components/icons/mage";
 import { legalPolicies } from "@/content/legal";
-import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-legal.module.css";
+import { InnerPageShell } from "./inner-page-shell";
 import { TermlyPolicyEmbed } from "./termly-policy-embed";
 
 const privacyRoute = "/legal/privacy-policy";
@@ -34,7 +36,7 @@ const sections = [
 ];
 export function BaselaneLegalDirectory() {
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={styles.page}>
         <header className={styles.heading}>
           <h1>Legal agreements</h1>
@@ -59,22 +61,25 @@ export function BaselaneLegalDirectory() {
           ))}
         </div>
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }
 export function BaselaneLegalPolicy({ type }: { type: "privacy" | "terms" }) {
   const policy = legalPolicies[type];
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={styles.page}>
         <header className={styles.heading}>
           <h1>{policy.title}</h1>
         </header>
         <article className={styles.document}>
           <nav aria-label="Legal navigation" className={styles.documentNav}>
-            <a href="/legal-agreements"><MageArrowLeft size="1em" /> All agreements</a>
+            <a href="/legal-agreements">
+              <MageArrowLeft size="1em" /> All agreements
+            </a>
             <a href={type === "privacy" ? termsRoute : privacyRoute}>
-              {type === "privacy" ? "Terms of Service" : "Privacy Policy"} <MageArrowRight size="1em" />
+              {type === "privacy" ? "Terms of Service" : "Privacy Policy"}{" "}
+              <MageArrowRight size="1em" />
             </a>
           </nav>
           <div className={styles.policyIntro}>
@@ -90,11 +95,15 @@ export function BaselaneLegalPolicy({ type }: { type: "privacy" | "terms" }) {
             <TermlyPolicyEmbed policyId={policy.policyId} />
           </section>
           <div className={styles.documentEnd}>
-            <a href="/legal-agreements">View all legal agreements <MageArrowRight size="1em" /></a>
-            <a href="/legal/dsar">Privacy requests <MageArrowRight size="1em" /></a>
+            <a href="/legal-agreements">
+              View all legal agreements <MageArrowRight size="1em" />
+            </a>
+            <a href="/legal/dsar">
+              Privacy requests <MageArrowRight size="1em" />
+            </a>
           </div>
         </article>
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

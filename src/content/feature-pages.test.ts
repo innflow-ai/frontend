@@ -29,7 +29,25 @@ describe("Figma feature page handoff", () => {
       expect(new Set(page.panels.map((panel) => panel.id)).size).toBe(4);
       expect(page.features.length).toBeGreaterThanOrEqual(3);
       expect(page.faqs).toHaveLength(4);
-      expect(page.heroArtwork.length).toBeGreaterThan(0);
+      // Listing uses its dedicated layered hero instead of generic overlay data.
+      if (page.key === "listing-and-advertising") {
+        expect(page.heroArtwork).toEqual([]);
+        for (const asset of [
+          "porch-bordered.png",
+          "listing-channels.svg",
+          "couple.png",
+          "unit-status.svg",
+        ]) {
+          expect(
+            existsSync(
+              `public/brand/feature-pages/listing-and-advertising/${asset}`,
+            ),
+            asset,
+          ).toBe(true);
+        }
+      } else {
+        expect(page.heroArtwork.length).toBeGreaterThan(0);
+      }
       const images = [page.hero, ...page.heroArtwork.map((art) => art.src)];
       for (const panel of page.panels) {
         expect(panel.artwork.length).toBeGreaterThan(0);

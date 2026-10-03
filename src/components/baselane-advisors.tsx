@@ -1,12 +1,15 @@
 "use client";
-import { ArrowRight as MageArrowRight, Plus as MagePlus } from '@/components/icons/mage';
 
 import Image from "next/image";
 import { useState } from "react";
 import { ChevronRight } from "@/components/chevron-right";
+import {
+  ArrowRight as MageArrowRight,
+  Plus as MagePlus,
+} from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
 import styles from "./baselane-advisors.module.css";
-import { BaselaneHomepage } from "./baselane-homepage";
+import { InnerPageShell } from "./inner-page-shell";
 
 const source = "#advisor-inquiry";
 const topics = [
@@ -31,7 +34,7 @@ export function BaselaneAdvisors() {
   const [advisorType, setAdvisorType] = useState("");
   const [draft, setDraft] = useState("");
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={styles.page}>
         <section className={styles.hero}>
           <div>
@@ -110,7 +113,9 @@ export function BaselaneAdvisors() {
                 <details key={title} name="advisor-topics" open={i === 0}>
                   <summary>
                     {title}
-                    <span aria-hidden="true"><MagePlus size="1em" /></span>
+                    <span aria-hidden="true">
+                      <MagePlus size="1em" />
+                    </span>
                   </summary>
                   <p>{text}</p>
                 </details>
@@ -154,7 +159,12 @@ export function BaselaneAdvisors() {
             Use innflow to connect the people and supporting records around each
             client engagement.
           </p>
-          <div className={styles.tableWrap}>
+          <section
+            className={styles.tableWrap}
+            aria-label="Example client coordination workflow"
+            // biome-ignore lint/a11y/noNoninteractiveTabindex: Enables keyboard scrolling of the comparison table.
+            tabIndex={0}
+          >
             <table>
               <caption>Example client coordination workflow</caption>
               <thead>
@@ -209,7 +219,7 @@ export function BaselaneAdvisors() {
                 ))}
               </tbody>
             </table>
-          </div>
+          </section>
           <p className={styles.note}>
             Tell us how your firm works with property teams. We can discuss
             workflow fit, required connections, and the next steps together.
@@ -246,10 +256,14 @@ export function BaselaneAdvisors() {
                   <details key={title} name="advisor-next" open={i === 0}>
                     <summary>
                       {title}
-                      <span aria-hidden="true"><MagePlus size="1em" /></span>
+                      <span aria-hidden="true">
+                        <MagePlus size="1em" />
+                      </span>
                     </summary>
                     <p>{text}</p>
-                    <a href={href}>Continue <MageArrowRight size="1em" /></a>
+                    <a href={href}>
+                      Continue <MageArrowRight size="1em" />
+                    </a>
                   </details>
                 ))}
               </div>
@@ -263,10 +277,32 @@ export function BaselaneAdvisors() {
             before opening your email app; nothing is submitted here.
           </p>
           <form
-            onInput={() => setDraft("")}
+            onInput={(event) => {
+              setDraft("");
+              const field = event.target;
+              if (
+                field instanceof HTMLInputElement ||
+                field instanceof HTMLTextAreaElement
+              )
+                field.setCustomValidity("");
+            }}
             onSubmit={(event) => {
               event.preventDefault();
-              const data = new FormData(event.currentTarget);
+              const form = event.currentTarget;
+              for (const field of form.querySelectorAll<
+                HTMLInputElement | HTMLTextAreaElement
+              >("input[required], textarea[required]")) {
+                field.setCustomValidity(
+                  field.value.trim()
+                    ? ""
+                    : "Please enter a value, not just spaces.",
+                );
+              }
+              if (!form.reportValidity()) return;
+              const data = new FormData(form);
+              for (const [key, value] of data.entries()) {
+                if (typeof value === "string") data.set(key, value.trim());
+              }
               setDraft(
                 [
                   `Name: ${data.get("firstName")} ${data.get("lastName")}`,
@@ -384,6 +420,6 @@ export function BaselaneAdvisors() {
           )}
         </section>
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

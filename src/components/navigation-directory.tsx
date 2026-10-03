@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import styles from "@/app/connections/page.module.css";
-import { BaselaneHomepage } from "./baselane-homepage";
 import { Breadcrumbs } from "./breadcrumbs";
+import { InnerPageShell } from "./inner-page-shell";
 import {
   allProductColumns,
   allSolutionsColumns,
@@ -18,7 +18,7 @@ export function NavigationDirectory({
   const title = kind === "products" ? "Products" : "Solutions";
   const columns = kind === "products" ? allProductColumns : allSolutionsColumns;
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={styles.directory}>
         <header className={styles.intro}>
           <Breadcrumbs
@@ -50,6 +50,6 @@ export function NavigationDirectory({
           ))}
         </nav>
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

@@ -1,12 +1,23 @@
 "use client";
-import { Home as MageHome, UserCircle as MageUserCircle, Box3d as MageBox3d, Search as MageSearch, ArrowRight as MageArrowRight, Email as MageEmail, Phone as MagePhone, StarsA as MageStarsA, ChevronDown as MageChevronDown, Play as MagePlay } from '@/components/icons/mage';
 
 import { useState } from "react";
 import { ChevronRight } from "@/components/chevron-right";
+import {
+  ArrowRight as MageArrowRight,
+  Box3d as MageBox3d,
+  ChevronDown as MageChevronDown,
+  Email as MageEmail,
+  Home as MageHome,
+  Phone as MagePhone,
+  Play as MagePlay,
+  Search as MageSearch,
+  StarsA as MageStarsA,
+  UserCircle as MageUserCircle,
+} from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
 import { faqs } from "@/content/home";
-import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-support.module.css";
+import { InnerPageShell } from "./inner-page-shell";
 
 const topics = [
   {
@@ -56,12 +67,14 @@ export function BaselaneHelp() {
     .flatMap((topic) => topic.links)
     .filter(([label]) => label.toLowerCase().includes(term));
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={styles.help}>
         <section className={styles.helpHero}>
           <h1>How can we help?</h1>
           <label className={styles.search}>
-            <span aria-hidden="true"><MageSearch size="1em" /></span>
+            <span aria-hidden="true">
+              <MageSearch size="1em" />
+            </span>
             <input
               type="search"
               aria-label="Search innflow help"
@@ -106,14 +119,18 @@ export function BaselaneHelp() {
               <h2>Contact us</h2>
               <div className={styles.contactGrid}>
                 <a href={`mailto:${siteConfig.supportEmail}`}>
-                  <span><MageEmail size="1em" /></span>
+                  <span>
+                    <MageEmail size="1em" />
+                  </span>
                   <h3>Email support</h3>
                   <p>
                     Share your question and the details our team needs to help.
                   </p>
                 </a>
                 <a href={siteConfig.contactUrl}>
-                  <span><MagePhone size="1em" /></span>
+                  <span>
+                    <MagePhone size="1em" />
+                  </span>
                   <h3>Talk to our team</h3>
                   <p>
                     Discuss your property workflows and the next step for your
@@ -123,7 +140,9 @@ export function BaselaneHelp() {
                 <a
                   href={`mailto:${siteConfig.supportEmail}?subject=Feature%20request`}
                 >
-                  <span><MageStarsA size="1em" /></span>
+                  <span>
+                    <MageStarsA size="1em" />
+                  </span>
                   <h3>Suggest a feature</h3>
                   <p>Tell us what would make your day-to-day work easier.</p>
                 </a>
@@ -137,7 +156,9 @@ export function BaselaneHelp() {
                     <summary>
                       <span className={styles.topicIcon}>{topic.icon}</span>
                       {topic.title}
-                      <span className={styles.chevron}><MageChevronDown size="1em" /></span>
+                      <span className={styles.chevron}>
+                        <MageChevronDown size="1em" />
+                      </span>
                     </summary>
                     <div>
                       {topic.links.map(([label, href]) => (
@@ -153,7 +174,9 @@ export function BaselaneHelp() {
             <section className={styles.helpSection}>
               <h2>Popular resources</h2>
               <a className={styles.resource} href="/webinars">
-                <span><MagePlay size="1em" /></span>
+                <span>
+                  <MagePlay size="1em" />
+                </span>
                 <div>
                   <h3>Workflow learning</h3>
                   <p>
@@ -161,12 +184,14 @@ export function BaselaneHelp() {
                     recurring requests to document reviews.
                   </p>
                 </div>
-                <span><MageArrowRight size="1em" /></span>
+                <span>
+                  <MageArrowRight size="1em" />
+                </span>
               </a>
             </section>
           </>
         )}
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

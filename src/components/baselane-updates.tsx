@@ -5,8 +5,8 @@ import { useState } from "react";
 import { GoogleCtaContent } from "@/components/google-cta-content";
 import { ArrowRight, Copy } from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
-import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-updates.module.css";
+import { InnerPageShell } from "./inner-page-shell";
 
 const entries = [
   {
@@ -88,14 +88,16 @@ export function BaselaneUpdates() {
   const [copied, setCopied] = useState("");
   async function copy() {
     try {
-      await navigator.clipboard.writeText(window.location.href);
+      await navigator.clipboard.writeText(
+        `${siteConfig.marketingOrigin.replace(/\/$/, "")}/product-updates`,
+      );
       setCopied("Link copied");
     } catch {
       setCopied("Copy the address from your browser to share this page.");
     }
   }
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <section className={styles.hero}>
         <div>
           <small>EXPLORE INNFLOW</small>
@@ -167,6 +169,6 @@ export function BaselaneUpdates() {
           ))}
         </div>
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

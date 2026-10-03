@@ -11,12 +11,12 @@ import {
 } from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
 import { getPageFaqTuples } from "@/lib/faqs";
-import { BaselaneHomepage } from "./baselane-homepage";
 import {
   type ProductPageKind,
   productContent,
 } from "./baselane-product-content";
 import styles from "./baselane-product-page.module.css";
+import { InnerPageShell } from "./inner-page-shell";
 import { FeatureTestimonials } from "./page-testimonials";
 import { ProductHeadspaceCta } from "./product-headspace-cta";
 import { ScrollStory } from "./scroll-story";
@@ -149,7 +149,7 @@ export async function BaselaneProductPage({
     </div>
   );
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div
         className={
           kind === "rent-collection" ? styles.rentCollection : undefined
@@ -232,6 +232,6 @@ export async function BaselaneProductPage({
           </div>
         </section>
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

@@ -1,12 +1,12 @@
-import type { Metadata } from "next";
 import { HelpCenter } from "@/components/help-center";
+import { createPageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Help Center | Innflow",
   description:
     "Find answers, explore workflow guides, and get help with your Innflow workspace, agents, and integrations.",
-  alternates: { canonical: "/help" },
-};
+  path: "/help",
+});
 
 export default function HelpPage() {
   return <HelpCenter />;

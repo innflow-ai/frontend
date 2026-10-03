@@ -19,15 +19,15 @@ vi.mock("next/image", () => ({
   ),
 }));
 
-let tablet = false;
+let mobile = false;
 let mediaListeners: Set<() => void>;
 beforeEach(() => {
-  tablet = false;
+  mobile = false;
   mediaListeners = new Set();
   vi.stubGlobal(
     "matchMedia",
     vi.fn(() => ({
-      matches: tablet,
+      matches: mobile,
       addEventListener: (_event: string, listener: () => void) =>
         mediaListeners.add(listener),
       removeEventListener: (_event: string, listener: () => void) =>
@@ -41,11 +41,11 @@ afterEach(() => {
 });
 
 describe("Workspace overview", () => {
-  it("shows static headings and every detail on tablet, then restores the active card on exit", () => {
+  it("shows static headings and every detail on mobile, then restores the active card on exit", () => {
     render(<WorkspaceOverview />);
     fireEvent.click(screen.getByRole("button", { name: "Train" }));
     act(() => {
-      tablet = true;
+      mobile = true;
       for (const notify of mediaListeners) notify();
     });
     for (const card of workspaceCards) {
@@ -58,7 +58,7 @@ describe("Workspace overview", () => {
       ).toHaveAttribute("aria-hidden", "false");
     }
     act(() => {
-      tablet = false;
+      mobile = false;
       for (const notify of mediaListeners) notify();
     });
     expect(screen.getByRole("button", { name: "Train" })).toHaveAttribute(

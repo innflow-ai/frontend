@@ -8,8 +8,8 @@ import {
   ArrowRight as MageArrowRight,
   ShieldCheck,
 } from "@/components/icons/mage";
-import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-insurance.module.css";
+import { InnerPageShell } from "./inner-page-shell";
 
 const root = "/brand/baselane-inspired/insurance/";
 const benefits = [
@@ -64,6 +64,7 @@ export function BaselaneInsurance() {
   const resultRef = useRef<HTMLDivElement>(null);
   function prepare(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (!event.currentTarget.reportValidity()) return;
     const data = new FormData(event.currentTarget);
     setBrief({
       address: String(data.get("address")).trim(),
@@ -85,7 +86,7 @@ export function BaselaneInsurance() {
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <section className={styles.hero}>
         <div className={styles.heroPhoto}>
           <Image
@@ -109,7 +110,11 @@ export function BaselaneInsurance() {
             Gather the essentials for your rental property and prepare a brief
             for your next conversation.
           </p>
-          <form onSubmit={prepare} className={styles.form}>
+          <form
+            onSubmit={prepare}
+            onChange={() => setBrief(null)}
+            className={styles.form}
+          >
             <label htmlFor="brief-address">Property address</label>
             <input
               id="brief-address"
@@ -238,7 +243,12 @@ export function BaselaneInsurance() {
       <section className={styles.comparison}>
         <h2>Know what comes next.</h2>
         <p>A simple framework for a more useful property conversation.</p>
-        <div className={styles.tableWrap}>
+        <section
+          className={styles.tableWrap}
+          aria-label="Property review preparation checklist"
+          // biome-ignore lint/a11y/noNoninteractiveTabindex: Gives the comparison region a keyboard focus target.
+          tabIndex={0}
+        >
           <table>
             <thead>
               <tr>
@@ -257,7 +267,7 @@ export function BaselaneInsurance() {
               ))}
             </tbody>
           </table>
-        </div>
+        </section>
         <a href="#property-brief" className={styles.primary}>
           Prepare property brief
         </a>
@@ -297,6 +307,6 @@ export function BaselaneInsurance() {
           ))}
         </div>
       </section>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

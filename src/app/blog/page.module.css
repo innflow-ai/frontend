@@ -1,5 +1,5 @@
 .directory {
-  background: #fffbf4;
+  background: var(--marketing-paper);
   color: #012232;
 }
 .shell {

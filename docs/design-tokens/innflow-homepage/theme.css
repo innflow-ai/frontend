@@ -1,4 +1,4 @@
-/* Tailwind v4 adapter. Import variables.css first. */
+/* Generated Tailwind v4 adapter. Import variables.css first. */
 @theme inline {
   --color-innflow-ink: var(--innflow-color-ink);
   --color-innflow-muted-hero: var(--innflow-color-muted-hero);
@@ -25,6 +25,11 @@
   --color-innflow-sidekick-soft: var(--innflow-color-sidekick-soft);
   --color-innflow-insights: var(--innflow-color-insights);
   --color-innflow-insights-soft: var(--innflow-color-insights-soft);
+  --color-innflow-announcement: var(--innflow-color-announcement);
+  --color-innflow-footer-muted: var(--innflow-color-footer-muted);
+  --color-innflow-story-active: var(--innflow-color-story-active);
+  --color-innflow-navigation-focus: var(--innflow-color-navigation-focus);
+  --color-innflow-footer-divider: var(--innflow-color-footer-divider);
   --font-innflow-hero: var(--innflow-font-hero);
   --font-innflow-body: var(--innflow-font-body);
   --font-innflow-heading: var(--innflow-font-heading);
@@ -53,6 +58,28 @@
   --radius-innflow-card-mobile: var(--innflow-radius-card-mobile);
   --radius-innflow-workspace-card-mobile: var(--innflow-radius-workspace-card-mobile);
   --radius-innflow-workspace-surface-mobile: var(--innflow-radius-workspace-surface-mobile);
+  --radius-innflow-signup: var(--innflow-radius-signup);
+  --radius-innflow-navigation: var(--innflow-radius-navigation);
+  --radius-innflow-dropdown: var(--innflow-radius-dropdown);
+  --radius-innflow-badge: var(--innflow-radius-badge);
+  --radius-innflow-footer: var(--innflow-radius-footer);
+  --radius-innflow-footer-mobile: var(--innflow-radius-footer-mobile);
+  --radius-innflow-integration: var(--innflow-radius-integration);
+  --radius-innflow-integration-mobile: var(--innflow-radius-integration-mobile);
+  --shadow-innflow-story: var(--innflow-shadow-story);
+  --shadow-innflow-signup: var(--innflow-shadow-signup);
+  --shadow-innflow-signup-hover: var(--innflow-shadow-signup-hover);
+  --shadow-innflow-navigation: var(--innflow-shadow-navigation);
+  --shadow-innflow-dropdown: var(--innflow-shadow-dropdown);
+  --color-innflow-surface-canvas: var(--innflow-surface-canvas);
+  --color-innflow-surface-card: var(--innflow-surface-card);
+  --color-innflow-surface-hero: var(--innflow-surface-hero);
+  --color-innflow-surface-workspace: var(--innflow-surface-workspace);
+  --color-innflow-surface-badge: var(--innflow-surface-badge);
+  --color-innflow-surface-control: var(--innflow-surface-control);
+  --color-innflow-surface-dark: var(--innflow-surface-dark);
+  --color-innflow-surface-signup: var(--innflow-surface-signup);
+  --color-innflow-surface-navigation-glass: var(--innflow-surface-navigation-glass);
   --text-innflow-hero: var(--innflow-typography-hero-font-size);
   --text-innflow-hero--line-height: var(--innflow-typography-hero-line-height);
   --text-innflow-hero--letter-spacing: var(--innflow-typography-hero-letter-spacing);
@@ -113,4 +140,32 @@
   --text-innflow-button--line-height: var(--innflow-typography-button-line-height);
   --text-innflow-button--letter-spacing: var(--innflow-typography-button-letter-spacing);
   --text-innflow-button--font-weight: var(--innflow-typography-button-font-weight);
+  --text-innflow-signup: var(--innflow-typography-signup-font-size);
+  --text-innflow-signup--line-height: var(--innflow-typography-signup-line-height);
+  --text-innflow-signup--letter-spacing: var(--innflow-typography-signup-letter-spacing);
+  --text-innflow-signup--font-weight: var(--innflow-typography-signup-font-weight);
+  --text-innflow-caption: var(--innflow-typography-caption-font-size);
+  --text-innflow-caption--line-height: var(--innflow-typography-caption-line-height);
+  --text-innflow-caption--letter-spacing: var(--innflow-typography-caption-letter-spacing);
+  --text-innflow-caption--font-weight: var(--innflow-typography-caption-font-weight);
+  --text-innflow-stories-heading: var(--innflow-typography-stories-heading-font-size);
+  --text-innflow-stories-heading--line-height: var(--innflow-typography-stories-heading-line-height);
+  --text-innflow-stories-heading--letter-spacing: var(--innflow-typography-stories-heading-letter-spacing);
+  --text-innflow-stories-heading--font-weight: var(--innflow-typography-stories-heading-font-weight);
+  --text-innflow-stories-heading-mobile: var(--innflow-typography-stories-heading-mobile-font-size);
+  --text-innflow-stories-heading-mobile--line-height: var(--innflow-typography-stories-heading-mobile-line-height);
+  --text-innflow-stories-heading-mobile--letter-spacing: var(--innflow-typography-stories-heading-mobile-letter-spacing);
+  --text-innflow-stories-heading-mobile--font-weight: var(--innflow-typography-stories-heading-mobile-font-weight);
+  --text-innflow-infrastructure-card: var(--innflow-typography-infrastructure-card-font-size);
+  --text-innflow-infrastructure-card--line-height: var(--innflow-typography-infrastructure-card-line-height);
+  --text-innflow-infrastructure-card--letter-spacing: var(--innflow-typography-infrastructure-card-letter-spacing);
+  --text-innflow-infrastructure-card--font-weight: var(--innflow-typography-infrastructure-card-font-weight);
+  --text-innflow-footer-heading: var(--innflow-typography-footer-heading-font-size);
+  --text-innflow-footer-heading--line-height: var(--innflow-typography-footer-heading-line-height);
+  --text-innflow-footer-heading--letter-spacing: var(--innflow-typography-footer-heading-letter-spacing);
+  --text-innflow-footer-heading--font-weight: var(--innflow-typography-footer-heading-font-weight);
+  --text-innflow-footer-link: var(--innflow-typography-footer-link-font-size);
+  --text-innflow-footer-link--line-height: var(--innflow-typography-footer-link-line-height);
+  --text-innflow-footer-link--letter-spacing: var(--innflow-typography-footer-link-letter-spacing);
+  --text-innflow-footer-link--font-weight: var(--innflow-typography-footer-link-font-weight);
 }

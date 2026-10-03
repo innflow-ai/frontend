@@ -134,11 +134,8 @@ export function BaselaneLoans() {
               "Fix and flips",
               "FHA",
               "HELOC",
-            ].map((name, index) => (
+            ].map((name) => (
               <a href="#loan-details" key={name}>
-                <span aria-hidden="true">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
                 <h3>{name}</h3>
                 <span aria-hidden="true">
                   <ChevronRight />

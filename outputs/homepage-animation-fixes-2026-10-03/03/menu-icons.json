@@ -1,0 +1,123 @@
+{
+  "source": "Local Mage UI SVG stroke library",
+  "instances": [
+    {
+      "nodeId": "1-11725",
+      "option": "Add an action",
+      "icon": "Zap",
+      "menu": "Start"
+    },
+    {
+      "nodeId": "1-11754",
+      "option": "Assign to user",
+      "icon": "User",
+      "menu": "Start"
+    },
+    {
+      "nodeId": "1-12773",
+      "option": "Assign to agent",
+      "icon": "Innflow transparent eye cutouts",
+      "menu": "Start"
+    },
+    {
+      "nodeId": "1-11841",
+      "option": "Search knowledge base",
+      "icon": "Book Text",
+      "menu": "Start"
+    },
+    {
+      "nodeId": "1-11895",
+      "option": "Enter a loop",
+      "icon": "Reload",
+      "menu": "Start"
+    },
+    {
+      "nodeId": "1-11937",
+      "option": "Set a condition",
+      "icon": "Filter 2",
+      "menu": "Start"
+    },
+    {
+      "nodeId": "1-11966",
+      "option": "Add an action",
+      "icon": "Zap",
+      "menu": "If"
+    },
+    {
+      "nodeId": "1-11995",
+      "option": "Assign to user",
+      "icon": "User",
+      "menu": "If"
+    },
+    {
+      "nodeId": "1-12859",
+      "option": "Assign to agent",
+      "icon": "Innflow transparent eye cutouts",
+      "menu": "If"
+    },
+    {
+      "nodeId": "1-12082",
+      "option": "Search knowledge base",
+      "icon": "Book Text",
+      "menu": "If"
+    },
+    {
+      "nodeId": "1-12136",
+      "option": "Enter a loop",
+      "icon": "Reload",
+      "menu": "If"
+    },
+    {
+      "nodeId": "1-12178",
+      "option": "Set a condition",
+      "icon": "Filter 2",
+      "menu": "If"
+    },
+    {
+      "nodeId": "1-12207",
+      "option": "Add an action",
+      "icon": "Zap",
+      "menu": "Else"
+    },
+    {
+      "nodeId": "1-12236",
+      "option": "Assign to user",
+      "icon": "User",
+      "menu": "Else"
+    },
+    {
+      "nodeId": "1-12945",
+      "option": "Assign to agent",
+      "icon": "Innflow transparent eye cutouts",
+      "menu": "Else"
+    },
+    {
+      "nodeId": "1-12323",
+      "option": "Search knowledge base",
+      "icon": "Book Text",
+      "menu": "Else"
+    },
+    {
+      "nodeId": "1-12377",
+      "option": "Enter a loop",
+      "icon": "Reload",
+      "menu": "Else"
+    },
+    {
+      "nodeId": "1-12419",
+      "option": "Set a condition",
+      "icon": "Filter 2",
+      "menu": "Else"
+    }
+  ],
+  "assets": {
+    "Zap": "1-11719",
+    "User": "1-11720",
+    "Robot": "1-11721",
+    "Book Text": "1-11722",
+    "Reload": "1-11723",
+    "Filter 2": "1-11724"
+  },
+  "agentIconSource": "/Users/ak/Library/CloudStorage/Dropbox/Transparent eye cutouts.svg",
+  "agentAssetId": "1-12772"
+}

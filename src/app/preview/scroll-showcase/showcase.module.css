@@ -2,7 +2,7 @@
 .page {
   --preview-ink: #071a31;
   --preview-muted: #5d6d7b;
-  background: #f5f3ee;
+  background: var(--marketing-cloud);
   margin-inline: 24px;
   border-radius: 40px;
   color: var(--preview-ink);
@@ -194,7 +194,7 @@
 .card {
   display: grid;
   border-radius: 32px;
-  background: #fcfbf8;
+  background: var(--marketing-paper);
   min-height: 429px;
   overflow: hidden;
 }

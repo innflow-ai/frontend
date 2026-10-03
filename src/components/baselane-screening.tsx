@@ -125,16 +125,11 @@ export function BaselaneScreening() {
           </div>
           <div className={styles.three}>
             {[
-              ["01", "Report scope", "See which information is included."],
-              [
-                "02",
-                "Verification",
-                "Review the provider’s verification methods.",
-              ],
-              ["03", "Next steps", "Connect the work that follows the report."],
-            ].map(([number, title, text]) => (
+              ["Report scope", "See which information is included."],
+              ["Verification", "Review the provider’s verification methods."],
+              ["Next steps", "Connect the work that follows the report."],
+            ].map(([title, text]) => (
               <article key={title}>
-                <span className={styles.number}>{number}</span>
                 <h3>{title}</h3>
                 <p>{text}</p>
               </article>
@@ -297,10 +292,9 @@ export function BaselaneScreening() {
               ["screen", "Plan your screening workflow", source],
               ["lease", "Explore lease workflows", "/lease-agreement"],
               ["rent", "Explore rental workflows", "/rent-collection"],
-            ].map(([image, title, href], index) => (
+            ].map(([image, title, href]) => (
               <article key={image}>
                 <Photo name={image} alt={`Illustrative ${image} workflow`} />
-                <span className={styles.number}>{index + 1}</span>
                 <h3>{title}</h3>
                 <a className={styles.outline} href={href}>
                   Explore <MageArrowRight size="1em" />

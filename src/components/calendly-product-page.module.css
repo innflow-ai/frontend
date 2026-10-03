@@ -8,7 +8,7 @@
     #5dd9c5 64%,
     #153d45 96%
   );
-  background: #fcfbf8;
+  background: var(--marketing-paper);
   color: #071a31;
   font-family: var(--font-geist), var(--font-sans), sans-serif;
   overflow: clip;
@@ -72,7 +72,7 @@
   min-height: 776px;
   border-radius: 40px;
   background: #3075b7 var(--calendly-hero) center / cover;
-  color: #fcfbf8;
+  color: var(--marketing-paper);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -98,7 +98,7 @@
   background: var(--accent);
 }
 .hero h1 {
-  color: #fcfbf8;
+  color: var(--marketing-paper);
   font-family: inherit;
   max-width: 880px;
   font-size: clamp(42px, 5vw, 72px);
@@ -108,10 +108,10 @@
   text-wrap: balance;
 }
 .hero p {
-  color: #fcfbf8;
+  color: var(--marketing-paper);
   max-width: 620px;
-  font-size: 18px;
-  line-height: 25px;
+  font-size: var(--marketing-body);
+  line-height: 1.5;
 }
 .signupNotice {
   max-width: 520px;
@@ -140,13 +140,13 @@
   line-height: 20px;
 }
 .page .primary {
-  background: #fcfbf8;
+  background: var(--marketing-paper);
   color: #071a31;
-  border: 1px solid #fcfbf8;
+  border: 1px solid var(--marketing-paper);
 }
 .page .secondary {
-  color: #fcfbf8;
-  border: 1px solid #fcfbf8;
+  color: var(--marketing-paper);
+  border: 1px solid var(--marketing-paper);
 }
 .eyebrow {
   display: block;
@@ -298,13 +298,12 @@
   aspect-ratio: 1.2;
   border-radius: 28px;
 }
-.stepNumber {
-  display: block;
-  font-size: 12px;
-  color: #5f6d77;
-  margin: 24px 0 10px;
+.page .stepCard h3 {
+  margin-top: 24px;
 }
 .stepCard p {
+  font-size: var(--marketing-body-small);
+  line-height: 1.5;
   margin-top: 12px;
 }
 .stepCard ul {
@@ -480,10 +479,10 @@
   border-radius: 40px;
   text-align: center;
   background: #071a31;
-  color: #fcfbf8;
+  color: var(--marketing-paper);
 }
 .closing h2 {
-  color: #fcfbf8;
+  color: var(--marketing-paper);
   font-family: inherit;
 }
 .closing p {

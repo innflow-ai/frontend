@@ -1,0 +1,57 @@
+{
+  "sourceFolder": "/Users/ak/Library/CloudStorage/Dropbox/innflow Agents Icons/Colored SVGs",
+  "instances": [
+    {
+      "name": "outreach-owen",
+      "nodeId": "1-21164",
+      "source": "/Users/ak/Library/CloudStorage/Dropbox/innflow Agents Icons/Colored SVGs/outreach-owen.svg"
+    },
+    {
+      "name": "follow-up-fred",
+      "nodeId": "1-21257",
+      "source": "/Users/ak/Library/CloudStorage/Dropbox/innflow Agents Icons/Colored SVGs/follow-up-fred.svg"
+    },
+    {
+      "name": "research-riley",
+      "nodeId": "1-21347",
+      "source": "/Users/ak/Library/CloudStorage/Dropbox/innflow Agents Icons/Colored SVGs/research-riley.svg"
+    },
+    {
+      "name": "scheduling-sam",
+      "nodeId": "1-21456",
+      "source": "/Users/ak/Library/CloudStorage/Dropbox/innflow Agents Icons/Colored SVGs/scheduling-sam.svg"
+    },
+    {
+      "name": "content-cleo",
+      "nodeId": "1-21549",
+      "source": "/Users/ak/Library/CloudStorage/Dropbox/innflow Agents Icons/Colored SVGs/content-cleo.svg"
+    },
+    {
+      "name": "support-sage",
+      "nodeId": "1-21627",
+      "source": "/Users/ak/Library/CloudStorage/Dropbox/innflow Agents Icons/Colored SVGs/support-sage.svg"
+    },
+    {
+      "name": "insights-iris",
+      "nodeId": "1-21717",
+      "source": "/Users/ak/Library/CloudStorage/Dropbox/innflow Agents Icons/Colored SVGs/insights-iris.svg"
+    }
+  ],
+  "selectedResearchIcon": "1-21794",
+  "menuWidth": 320,
+  "menuHeight": 344,
+  "priorMenuWidth": 265.6,
+  "priorMenuHeight": 283.86,
+  "alignment": "Menu and native field share their local origin and full dimensions",
+  "agentNodeOpenShift": [
+    -45,
+    -16
+  ],
+  "transitionMs": 200,
+  "iconSize": 24,
+  "svgViewBoxSize": 256,
+  "iconScalePercent": 9.375,
+  "runtimeBytes": 905739,
+  "runtimeSha256": "b0ed3650acc7e4c4b87de01003324511ac3b709fb8c6f37962b9301ffbb205e7",
+  "editableBytes": 4930960
+}

@@ -1,0 +1,21 @@
+{
+  "conditionScale": 0.75,
+  "startScale": 0.32,
+  "conditionPosition": [
+    280,
+    110
+  ],
+  "userPosition": [
+    135,
+    440
+  ],
+  "agentPosition": [
+    455,
+    440
+  ],
+  "routes": [
+    "1-13311",
+    "1-13317",
+    "1-13323"
+  ]
+}

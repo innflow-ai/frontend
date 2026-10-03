@@ -77,7 +77,7 @@
 
 .secondary,
 .cream {
-  --google-button-background: var(--bl-cream, #fffbf4);
+  --google-button-background: var(--bl-cream, var(--marketing-paper));
   --google-button-foreground: var(--bl-navy, #012232);
   --google-button-hover: #f0ece5;
 }

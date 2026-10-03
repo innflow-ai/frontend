@@ -164,7 +164,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background: #f6f5ee;
+  background: var(--marketing-cloud);
 }
 .page .reviews h3 {
   font-size: 28px;
@@ -227,7 +227,7 @@
   bottom: 24px;
   left: 24px;
   right: 24px;
-  background: var(--bl-cream) ec;
+  background: rgb(255 255 255 / 93%);
   border-radius: 16px;
   padding: 24px;
   display: flex;

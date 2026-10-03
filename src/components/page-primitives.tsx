@@ -1,9 +1,8 @@
-
-import { Plus as MagePlus } from '@/components/icons/mage';
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { type BreadcrumbItem, Breadcrumbs } from "@/components/breadcrumbs";
 import { ChevronRight } from "@/components/chevron-right";
+import { Plus as MagePlus } from "@/components/icons/mage";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
 
@@ -114,14 +113,13 @@ export function OperatingSteps({
           <h2>{title}</h2>
           <p>{intro}</p>
         </div>
-        <ol className="numbered-list">
-          {steps.map((step, index) => (
+        <ul className="operating-list">
+          {steps.map((step) => (
             <li key={step}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
               <p>{step}</p>
             </li>
           ))}
-        </ol>
+        </ul>
       </div>
     </section>
   );
@@ -167,7 +165,9 @@ export function FaqList({
         <details key={item.id || item.question} open={index === 0}>
           <summary>
             <span>{item.question}</span>
-            <i aria-hidden="true"><MagePlus size="1em" /></i>
+            <i aria-hidden="true">
+              <MagePlus size="1em" />
+            </i>
           </summary>
           <p style={{ whiteSpace: "pre-line" }}>{item.answer}</p>
         </details>

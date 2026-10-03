@@ -9,7 +9,7 @@
 .hero {
   margin: 0 24px;
   padding: 72px max(32px, calc((100vw - 1256px) / 2)) 36px;
-  background: #f5f5f0;
+  background: var(--marketing-cloud);
   border-radius: 36px;
 }
 .intro {
@@ -131,7 +131,7 @@
   border: 1px solid #e7e9e6;
   border-radius: 28px;
   padding: 7px;
-  background: #fafbf8;
+  background: var(--marketing-cloud);
   box-shadow: 0 6px 18px #01223206;
   scroll-margin-top: 112px;
 }
@@ -417,7 +417,7 @@
   max-width: 1208px;
   margin: 0 auto 80px;
   padding: 48px;
-  background: #f5f5f0;
+  background: var(--marketing-cloud);
   border-radius: 28px;
   display: grid;
   grid-template-columns: 1fr 1.5fr;

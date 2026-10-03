@@ -122,13 +122,6 @@ export function WorkspaceOverview() {
       data-source-node="66:380"
     >
       <div className={styles.surface}>
-        <Image
-          className={styles.backdrop}
-          src={`${assets}/section-background.png`}
-          alt=""
-          fill
-          sizes="100vw"
-        />
         <div className={styles.content}>
           <header className={styles.heading}>
             <h2 id="workspace-heading">

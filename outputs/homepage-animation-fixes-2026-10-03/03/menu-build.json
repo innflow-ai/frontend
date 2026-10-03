@@ -1,0 +1,72 @@
+{
+  "duration": 27.0,
+  "newKeyframes": 180,
+  "menus": [
+    {
+      "label": "Start",
+      "root": "0-10082",
+      "panel": "0-12351",
+      "header": "0-12016",
+      "start": 74,
+      "full": 101,
+      "close": 165,
+      "hidden": 192,
+      "rows": [
+        "0-11747",
+        "0-11453",
+        "0-11112",
+        "0-10609",
+        "0-10386",
+        "0-10083"
+      ],
+      "newStart": 74,
+      "newClose": 201,
+      "newHidden": 228,
+      "buildComplete": 135
+    },
+    {
+      "label": "If",
+      "root": "0-2372",
+      "panel": "0-4638",
+      "header": "0-4305",
+      "start": 434,
+      "full": 461,
+      "close": 482,
+      "hidden": 509,
+      "rows": [
+        "0-4035",
+        "0-3737",
+        "0-3400",
+        "0-2900",
+        "0-2676",
+        "0-2373"
+      ],
+      "newStart": 470,
+      "newClose": 554,
+      "newHidden": 581,
+      "buildComplete": 531
+    },
+    {
+      "label": "Else",
+      "root": "0-85",
+      "panel": "0-2357",
+      "header": "0-2020",
+      "start": 803,
+      "full": 830,
+      "close": 851,
+      "hidden": 878,
+      "rows": [
+        "0-1749",
+        "0-1456",
+        "0-1113",
+        "0-612",
+        "0-389",
+        "0-86"
+      ],
+      "newStart": 875,
+      "newClose": 959,
+      "newHidden": 986,
+      "buildComplete": 936
+    }
+  ]
+}

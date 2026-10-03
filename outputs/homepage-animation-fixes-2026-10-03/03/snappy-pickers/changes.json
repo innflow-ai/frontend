@@ -1,0 +1,27 @@
+{
+  "openDurationMs": 200,
+  "closeDurationMs": 200,
+  "userOpenFrames": [
+    688,
+    700
+  ],
+  "userCloseFrames": [
+    810,
+    822
+  ],
+  "agentOpenFrames": [
+    1101,
+    1113
+  ],
+  "agentCloseFrames": [
+    1187,
+    1199
+  ],
+  "nativeFieldGeometryExpands": true,
+  "textScaledDuringExpansion": false,
+  "agentPickerParent": "0-4728",
+  "userOpenBackgroundHidden": "0-8238",
+  "agentOpenBackgroundHidden": "1-18573",
+  "changedTracks": 72,
+  "keysAdded": 353
+}

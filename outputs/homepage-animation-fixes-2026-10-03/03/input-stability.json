@@ -1,0 +1,23 @@
+{
+  "changes": "Stable If and Else widths; menu resolves once to final node size; geometry-based panel resizing preserves corners",
+  "changed": 2,
+  "deleted": 560,
+  "added": 3891,
+  "normalizedPanels": 10,
+  "duration": 27,
+  "alignmentHolds": [
+    {
+      "objectId": "0-9082",
+      "propertyKey": 13,
+      "frame": 201,
+      "value": 225.619
+    },
+    {
+      "objectId": "0-10065",
+      "propertyKey": 13,
+      "frame": 201,
+      "value": 197.384
+    }
+  ],
+  "elseCursorHoverCorrection": "Both cursor layers at frame 869 shifted left 19 units to match the shorter stub."
+}

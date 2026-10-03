@@ -1,0 +1,38 @@
+[
+  {
+    "label": "Condition",
+    "path": "/Users/ak/innflow-web/outputs/homepage-animation-fixes-2026-10-03/03/assets/condition-mage-stroke.svg",
+    "parent": "0-9083",
+    "old": "0-52961",
+    "x": 0,
+    "y": 0,
+    "scale": 176.47083333333
+  },
+  {
+    "label": "User",
+    "path": "/Users/ak/innflow-web/outputs/homepage-animation-fixes-2026-10-03/03/assets/user-mage-stroke.svg",
+    "parent": "0-8247",
+    "old": "0-53054",
+    "x": 0,
+    "y": 0,
+    "scale": 176.47083333333
+  },
+  {
+    "label": "Start",
+    "path": "/Users/ak/innflow-web/outputs/homepage-animation-fixes-2026-10-03/03/assets/start-mage-stroke.svg",
+    "parent": "0-13123",
+    "old": "0-51875",
+    "x": 1.223241,
+    "y": 11.143871,
+    "scale": 143.49126
+  },
+  {
+    "label": "Innflow agent",
+    "path": "/Users/ak/innflow-web/outputs/homepage-animation-fixes-2026-10-03/03/assets/innflow_agent_idle_blue.svg",
+    "parent": "0-4692",
+    "old": "0-53109",
+    "x": -1.086,
+    "y": 0,
+    "scale": 19.517511520737326
+  }
+]

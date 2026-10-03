@@ -1,7 +1,7 @@
 .section {
   padding: 88px 0;
   color: var(--bl-navy, #012232);
-  background: var(--bl-cream, #fffbf4);
+  background: var(--bl-cream, var(--marketing-paper));
 }
 .section h2 {
   text-align: center;
@@ -28,7 +28,7 @@
   overflow: hidden;
   border-radius: 20px;
   background: #012232;
-  color: #fffbf4;
+  color: var(--marketing-paper);
   scroll-snap-align: center;
 }
 .portrait {
@@ -169,7 +169,7 @@
   cursor: pointer;
 }
 .toggle:focus-visible {
-  outline: 2px solid #fffbf4;
+  outline: 2px solid var(--marketing-paper);
   outline-offset: -5px;
   border-radius: 12px;
 }

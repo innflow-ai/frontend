@@ -873,7 +873,12 @@
 
 /* Shared BL product language; keep each product's media and section structure. */
 .page .hero {
-  background: linear-gradient(150deg, #d8ecfa, #eef6fb 65%, #fffbf4);
+  background: linear-gradient(
+    150deg,
+    #d8ecfa,
+    #eef6fb 65%,
+    var(--marketing-paper)
+  );
   padding-top: 160px;
 }
 .page .hero h1 {
@@ -907,7 +912,7 @@
   border-radius: 28px;
 }
 .page .intro {
-  background: #fffbf4;
+  background: var(--marketing-paper);
 }
 .page .detail {
   border-radius: 28px;
@@ -933,7 +938,7 @@
   letter-spacing: 0.08em;
 }
 .page .faq {
-  background: #fffbf4;
+  background: var(--marketing-paper);
 }
 @media (max-width: 760px) {
   .page .hero {

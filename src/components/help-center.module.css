@@ -14,7 +14,7 @@
 .page {
   --ink: #071a31;
   --muted: #657078;
-  --paper: #f5f3ee;
+  --paper: var(--marketing-cloud);
   --line: #e4e3df;
   --help-header: 90px;
   padding-top: 0;
@@ -75,7 +75,7 @@
   left: 0;
   right: 0;
   z-index: 40;
-  background: #fcfbf8;
+  background: var(--marketing-paper);
   border-bottom: 1px solid var(--line);
 }
 .announcement {
@@ -209,7 +209,7 @@
   bottom: 0;
   width: 280px;
   border-right: 1px solid var(--line);
-  background: #fcfbf8;
+  background: var(--marketing-paper);
   display: flex;
   flex-direction: column;
   z-index: 30;
@@ -238,7 +238,7 @@
 .page kbd {
   font: inherit;
   border: 1px solid #d3d3d1;
-  background: #fafaf8;
+  background: var(--marketing-cloud);
   border-radius: 4px;
   padding: 1px 5px;
   white-space: nowrap;
@@ -550,7 +550,7 @@
   flex-wrap: wrap;
   gap: 24px;
   font-size: 12px;
-  background: #fcfbf8;
+  background: var(--marketing-paper);
 }
 .footer > span {
   width: 100%;
@@ -652,7 +652,7 @@
   border-radius: 12px;
 }
 .results article:hover {
-  background: #fcfbf8;
+  background: var(--marketing-paper);
 }
 .results article > a {
   display: flex;

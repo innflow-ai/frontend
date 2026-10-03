@@ -144,9 +144,8 @@ function Workflow() {
             "Review context and assign",
             "Approve the next action",
             "Keep the team informed",
-          ].map((text, index) => (
+          ].map((text) => (
             <div key={text}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
               {text}
               <span aria-hidden="true">
                 <ChevronRight />
@@ -295,7 +294,6 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
                 ([title, text], index) => (
                   <details key={title} open={index === 0}>
                     <summary>
-                      <span>{String(index + 1).padStart(2, "0")}</span>
                       {title}
                       <span className={styles.plus} aria-hidden="true">
                         <MagePlus size="1em" />

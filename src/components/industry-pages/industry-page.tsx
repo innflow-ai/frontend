@@ -1,9 +1,8 @@
-
-import { ArrowDown as MageArrowDown } from '@/components/icons/mage';
 import Link from "next/link";
 import type { CSSProperties } from "react";
 import { BaselineClosing } from "@/app/preview/scroll-showcase/baseline-lower-sections";
 import { ChevronRight } from "@/components/chevron-right";
+import { ArrowDown as MageArrowDown } from "@/components/icons/mage";
 import { ShowcaseTheme } from "@/components/showcase-theme";
 import { siteConfig } from "@/config/site";
 import type { IndustryPageContent } from "@/content/industries";
@@ -37,7 +36,10 @@ export function IndustryPage({ page }: { page: IndustryPageContent }) {
                 </span>
               </a>
               <a className={styles.secondary} href="#workflows">
-                See the possibilities <span aria-hidden="true"><MageArrowDown size="1em" /></span>
+                See the possibilities{" "}
+                <span aria-hidden="true">
+                  <MageArrowDown size="1em" />
+                </span>
               </a>
             </div>
           </div>
@@ -98,14 +100,14 @@ export function IndustryPage({ page }: { page: IndustryPageContent }) {
               >
                 <span className={styles.eyebrow}>Example workflow</span>
                 <div className={styles.inputCard}>
-                  <span>01 / Request</span>
+                  <span>Request</span>
                   <strong>{flow.input}</strong>
                 </div>
                 <div className={styles.connector} aria-hidden="true">
                   <MageArrowDown size="1em" />
                 </div>
                 <div className={styles.contextCard}>
-                  <span>02 / Prepare</span>
+                  <span>Prepare</span>
                   <strong>{flow.context}</strong>
                   <div className={styles.paperLines} aria-hidden="true">
                     <i />
@@ -117,7 +119,7 @@ export function IndustryPage({ page }: { page: IndustryPageContent }) {
                   <MageArrowDown size="1em" />
                 </div>
                 <div className={styles.outputCard}>
-                  <span>03 / Your team</span>
+                  <span>Your team</span>
                   <strong>{flow.output}</strong>
                   <span className={styles.reviewBadge}>Ready for review</span>
                 </div>
@@ -132,7 +134,6 @@ export function IndustryPage({ page }: { page: IndustryPageContent }) {
           <h2 id="working-heading">Your people stay in the loop.</h2>
           <div>
             <article>
-              <span>01</span>
               <h3>Keep the source close</h3>
               <p>
                 Carry the original conversation and supporting information into
@@ -140,7 +141,6 @@ export function IndustryPage({ page }: { page: IndustryPageContent }) {
               </p>
             </article>
             <article>
-              <span>02</span>
               <h3>Make ownership clear</h3>
               <p>
                 Give each next step a responsible person and a clear place for
@@ -148,7 +148,6 @@ export function IndustryPage({ page }: { page: IndustryPageContent }) {
               </p>
             </article>
             <article>
-              <span>03</span>
               <h3>Build around your process</h3>
               <p>
                 Start with one defined workflow and explore the tools and review

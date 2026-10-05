@@ -1,0 +1,78 @@
+{
+  "status": "draft",
+  "scope": "Notion Status = Queued",
+  "width": 1920,
+  "height": 1080,
+  "boardId": "1411:103",
+  "drafts": [
+    {
+      "key": "zapier-tray",
+      "title": "Zapier Vs. Tray.AI Comparison: Enterprise Automation",
+      "notion": "3ea0ac1b-d32e-8117-9c5e-c988dea246d7",
+      "bg": "1248:190",
+      "nodeId": "1411:108",
+      "url": "https://www.figma.com/design/WnHFwxKUKL8UuGwEkpJago/?node-id=1411-108",
+      "file": "zapier-tray.png",
+      "sha256": "b2cf0ef41080d409bd11868184b2e360d5adc7cd74e557b0fc4e1bc9ae6e0907"
+    },
+    {
+      "key": "gmail",
+      "title": "Innflow + Gmail: 7 Tips for Inbox Triage and Better Reply Drafts",
+      "notion": "3e90ac1b-d32e-8188-ac9d-cbb3ac7f6cff",
+      "bg": "1242:105",
+      "nodeId": "1411:192",
+      "url": "https://www.figma.com/design/WnHFwxKUKL8UuGwEkpJago/?node-id=1411-192",
+      "file": "gmail.png",
+      "sha256": "f532f80892a6f68a7e0a447be4ee6ca5549b2bce7afa5c43f600dd1e1e42c96d"
+    },
+    {
+      "key": "features-operations",
+      "title": "AI Features vs AI Operations for Property Managers",
+      "notion": "3d40ac1b-d32e-81f0-996f-d6ec9bb6fbd4",
+      "bg": "1242:109",
+      "src": "1212:233",
+      "nodeId": "1411:216",
+      "url": "https://www.figma.com/design/WnHFwxKUKL8UuGwEkpJago/?node-id=1411-216",
+      "file": "features-operations.png",
+      "sha256": "e946112454a7989f0893692027127b382a48fb2e9f733bcf57894e418a3f8569"
+    },
+    {
+      "key": "governed-tools",
+      "title": "Governed AI tools for property ops: what Innflow agents can and cannot do",
+      "notion": "3d10ac1b-d32e-810d-ad2d-f0bd0e8365d5",
+      "bg": "1248:126",
+      "nodeId": "1411:275",
+      "url": "https://www.figma.com/design/WnHFwxKUKL8UuGwEkpJago/?node-id=1411-275",
+      "file": "governed-tools.png",
+      "sha256": "57fc0c97c6a95e2f814ea299c0895d8d3d254d66f4b7b184330d03bc47514862"
+    },
+    {
+      "key": "model-flexibility",
+      "title": "Model flexibility without lock-in for property automation stacks",
+      "notion": "3d10ac1b-d32e-816f-b99a-e56752a173ee",
+      "bg": "1242:107",
+      "src": "1213:326",
+      "nodeId": "1411:340",
+      "url": "https://www.figma.com/design/WnHFwxKUKL8UuGwEkpJago/?node-id=1411-340",
+      "file": "model-flexibility.png",
+      "sha256": "f9a82dc59e1b5ad2258b43aea09b3e96a16e300554be12867e805a2686c457a2"
+    },
+    {
+      "key": "mcp-app-access",
+      "title": "Giving AI agents reliable app access (MCP-style) for property workflows",
+      "notion": "3d10ac1b-d32e-817f-8ece-e6b9280af50e",
+      "bg": "1242:110",
+      "src": "1212:401",
+      "nodeId": "1411:358",
+      "url": "https://www.figma.com/design/WnHFwxKUKL8UuGwEkpJago/?node-id=1411-358",
+      "file": "mcp-app-access.png",
+      "sha256": "d1a4766d3649dd83d79e82f9f37aac47743cbb77c11571e7e98ab3bf15531702"
+    }
+  ],
+  "verification": {
+    "png_dimensions": "All six verified at 1920 x 1080",
+    "visual_review": "All six exported PNGs inspected",
+    "editable_components": "Native Figma text, frames, vectors and groups; supplied raster backgrounds",
+    "publication": "Draft only; CMS images unchanged"
+  }
+}

@@ -1,0 +1,1044 @@
+{
+  "object": "data_source",
+  "id": "91d0ac1b-d32e-824a-9362-87c81b3e5a97",
+  "cover": null,
+  "icon": {
+    "type": "emoji",
+    "emoji": "🏞️"
+  },
+  "created_time": "2026-08-11T20:32:00.000Z",
+  "created_by": {
+    "object": "user",
+    "id": "2b6d872b-594c-8169-b098-000248a589c5"
+  },
+  "last_edited_by": {
+    "object": "user",
+    "id": "2b6d872b-594c-8169-b098-000248a589c5"
+  },
+  "last_edited_time": "2026-10-04T18:04:00.000Z",
+  "title": [
+    {
+      "type": "text",
+      "text": {
+        "content": "Blog Content Calendar",
+        "link": null
+      },
+      "annotations": {
+        "bold": false,
+        "italic": false,
+        "strikethrough": false,
+        "underline": false,
+        "code": false,
+        "color": "default"
+      },
+      "plain_text": "Blog Content Calendar",
+      "href": null
+    }
+  ],
+  "description": [],
+  "is_inline": false,
+  "database_type": null,
+  "properties": {
+    "Priority": {
+      "id": "%3DqYn",
+      "name": "Priority",
+      "description": null,
+      "type": "select",
+      "select": {
+        "options": [
+          {
+            "id": "8eac2373-9534-497e-a951-efbe696b6e2d",
+            "name": "🔴 High",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "93d95251-d44d-45e0-8dcd-2e6c6feb58ce",
+            "name": "🟡 Medium",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "c7968440-6eb8-496c-8987-811763c0b11d",
+            "name": "🟢 Low",
+            "color": "green",
+            "description": null
+          }
+        ]
+      }
+    },
+    "story_IMG": {
+      "id": "%3FbJX",
+      "name": "story_IMG",
+      "description": null,
+      "type": "files",
+      "files": {}
+    },
+    "x_caption": {
+      "id": "A%7Dj%3E",
+      "name": "x_caption",
+      "description": null,
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "SEO_Target_Keywords": {
+      "id": "DR%3BO",
+      "name": "SEO_Target_Keywords",
+      "description": null,
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Tag": {
+      "id": "D%5Cym",
+      "name": "Tag",
+      "description": null,
+      "type": "select",
+      "select": {
+        "options": [
+          {
+            "id": "5c0a458b-af5b-40c4-9808-312fc1a0dc1e",
+            "name": "Automation with Innflow",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "ba870fb5-1971-4cad-ad3e-62e9283b8626",
+            "name": "Product & Platform",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "492e1c04-5210-44e6-bf6a-87231d1efd81",
+            "name": "Remote Work",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "e84953d2-fa0a-4cd3-b107-8a7e00e1e90a",
+            "name": "Company Updates",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "b0d5702d-8536-4cc0-afe3-5d56d978b7df",
+            "name": "All",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "9a7bf1d5-3792-41c9-9492-d795be58a57d",
+            "name": "Automation",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "950c25ae-3177-40b2-9537-2b75f18f8abe",
+            "name": "AI Agent",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "3db868ed-0314-4fbd-9260-1166ea937129",
+            "name": "Workflow",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "abefdfdf-c1cf-4e93-a0a1-a9925d274f43",
+            "name": "Integrations",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "6609201f-204b-4133-86bb-dd39f163e013",
+            "name": "Comparison",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "8d8618b3-556c-439b-95eb-4d8dbc13941d",
+            "name": "Case Study",
+            "color": "blue",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Heading": {
+      "id": "DqBO",
+      "name": "Heading",
+      "description": null,
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "bluesky_caption": {
+      "id": "EE%3Ck",
+      "name": "bluesky_caption",
+      "description": null,
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Asset City": {
+      "id": "EjB_",
+      "name": "Asset City",
+      "description": null,
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Last edited time": {
+      "id": "FL%7DI",
+      "name": "Last edited time",
+      "description": null,
+      "type": "last_edited_time",
+      "last_edited_time": {}
+    },
+    "Unique Visual Idea": {
+      "id": "Fqg%60",
+      "name": "Unique Visual Idea",
+      "description": null,
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Slug": {
+      "id": "IG%3B%40",
+      "name": "Slug",
+      "description": null,
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Writer name": {
+      "id": "IQcJ",
+      "name": "Writer name",
+      "description": null,
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "threads_caption": {
+      "id": "NLN%3E",
+      "name": "threads_caption",
+      "description": null,
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "facebook_caption": {
+      "id": "O%3CSD",
+      "name": "facebook_caption",
+      "description": null,
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "linkedin_caption": {
+      "id": "OqUU",
+      "name": "linkedin_caption",
+      "description": null,
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Asset Prompt": {
+      "id": "PAbo",
+      "name": "Asset Prompt",
+      "description": "Short subject-only prompt for adapting the pre-created base asset to this blog topic.",
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Published Date": {
+      "id": "ST%7B%7B",
+      "name": "Published Date",
+      "description": null,
+      "type": "date",
+      "date": {}
+    },
+    "Author": {
+      "id": "Uj%3DW",
+      "name": "Author",
+      "description": null,
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "tiktok_caption": {
+      "id": "WDrP",
+      "name": "tiktok_caption",
+      "description": "One-line TikTok hook. No URL. No hashtags.",
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Blog_URL": {
+      "id": "XQY%5B",
+      "name": "Blog_URL",
+      "description": null,
+      "type": "url",
+      "url": {}
+    },
+    "Sanity Document ID": {
+      "id": "Y%3DA%5E",
+      "name": "Sanity Document ID",
+      "description": null,
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Assets": {
+      "id": "ZIYB",
+      "name": "Assets",
+      "description": "Multiline visual production brief: cover, logos, people or figures, data or UI, and supporting assets.",
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Tags(Meta)": {
+      "id": "Z%5C%3C%3D",
+      "name": "Tags(Meta)",
+      "description": null,
+      "type": "multi_select",
+      "multi_select": {
+        "options": [
+          {
+            "id": "8c20eb8f-8a5a-4cfc-bd30-a12f945912bc",
+            "name": "All",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "b37bf865-dbb4-4204-a468-c029cfc63760",
+            "name": "Automation",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "f49e82e5-de6f-4269-a216-53b560a857c7",
+            "name": "AI Agent",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "16e086d9-7528-42ac-9e00-39a2e1fc248d",
+            "name": "Workflow",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "e362e876-62fb-494d-91fc-6a5ee42d4103",
+            "name": "Company Updates",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "4b1178c4-3eaa-4c07-a87a-50b8c5c0646d",
+            "name": "Automation with Innflow",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "433e1d9e-3845-47c4-8cab-580ef72cb299",
+            "name": "Product & Platform",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "ada5bb4b-2025-471f-a272-a642ce295297",
+            "name": "Integrations",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "b8f80cc2-82b9-42a3-a826-84efabb60e10",
+            "name": "Comparison",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "3d95435d-a63c-4d94-94ea-d4c587cf4b1a",
+            "name": "Case Study",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "80979e88-9808-4f23-be06-932bb46f1051",
+            "name": "Software",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "b998be7e-997b-45c9-b435-78b8004a2b6b",
+            "name": "Property Management",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "d92a5c49-6b6d-4106-ae66-353951f237a9",
+            "name": "Leasing",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "745013b9-c02f-4572-8dd5-d37886668446",
+            "name": "Maintenance",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "24211ea4-10db-4474-b9cc-d912ba94de2b",
+            "name": "AI",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "7e936b12-ac2b-4480-bac9-c951827cf8e6",
+            "name": "Community Associations",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "269013ff-cbda-4390-8d93-223c68c21896",
+            "name": "Accounting",
+            "color": "purple",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Split": {
+      "id": "%5BUxX",
+      "name": "Split",
+      "description": null,
+      "type": "select",
+      "select": {
+        "options": [
+          {
+            "id": "af073e3e-00a5-4be8-ba02-208109870961",
+            "name": "Uncatagorized",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "1feb7439-c336-4d64-98c0-aa548fd88c79",
+            "name": "Property Management",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "775fdc9a-e7a2-44ac-bb86-3cf74fee67e6",
+            "name": "Integration",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "79d60c59-449b-4924-959a-93ac78c6d22c",
+            "name": "Harness",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "5d8a5ac0-ea1d-431b-b800-ed8ed1806dfb",
+            "name": "General",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "2672ff51-6c54-45c6-990b-2df4e1abccba",
+            "name": "Comparison",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "b44462bf-b9d2-4a27-b90e-29bf0d74d07f",
+            "name": "Comparison (w/o innflow)",
+            "color": "yellow",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Desktop_img": {
+      "id": "%5ESVI",
+      "name": "Desktop_img",
+      "description": null,
+      "type": "files",
+      "files": {}
+    },
+    "Author slug": {
+      "id": "_K%7D_",
+      "name": "Author slug",
+      "description": null,
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Writer Image": {
+      "id": "_vBL",
+      "name": "Writer Image",
+      "description": null,
+      "type": "url",
+      "url": {}
+    },
+    "Status": {
+      "id": "%60K%3C~",
+      "name": "Status",
+      "description": null,
+      "type": "status",
+      "status": {
+        "options": [
+          {
+            "id": "63e6c101-db85-4f6d-92df-0264744b2634",
+            "name": "Published",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "8be3f1ce-ce9b-43fc-9618-3d9b94f36407",
+            "name": "Breaking",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "8114c949-97cd-48e5-bbdf-5459cd719207",
+            "name": "Queued",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "ed58d31d-df74-48d8-a7d7-59a2417fc8ad",
+            "name": "Pending",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "9a3fd257-3bae-412e-b035-0d7c6a3fd3da",
+            "name": "Draft",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "503f2fea-a618-46e1-97fd-c333a69f9c12",
+            "name": "In-Prog",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "5e149c4f-d3cd-4649-962d-98e007e98fed",
+            "name": "Not started",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "77303cab-b3a1-4df4-8cde-29215dc0ae6b",
+            "name": "Error",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "89e7faa3-1bfe-4a7a-9ed8-dc04e8532d29",
+            "name": "Archived",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "549a7504-ce49-43ee-89da-6912c99c025b",
+            "name": "Posted",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "aee7d69e-5446-4e5d-8c8d-359fb48834c3",
+            "name": "In progress",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "f8868555-989f-4768-b136-20ebd1444596",
+            "name": "Done",
+            "color": "green",
+            "description": null
+          }
+        ],
+        "groups": [
+          {
+            "id": "ca66e2fe-8458-4915-82bb-be3472a8173a",
+            "name": "To-do",
+            "color": "gray",
+            "option_ids": [
+              "63e6c101-db85-4f6d-92df-0264744b2634",
+              "8114c949-97cd-48e5-bbdf-5459cd719207",
+              "8be3f1ce-ce9b-43fc-9618-3d9b94f36407",
+              "ed58d31d-df74-48d8-a7d7-59a2417fc8ad",
+              "9a3fd257-3bae-412e-b035-0d7c6a3fd3da",
+              "503f2fea-a618-46e1-97fd-c333a69f9c12",
+              "5e149c4f-d3cd-4649-962d-98e007e98fed",
+              "77303cab-b3a1-4df4-8cde-29215dc0ae6b",
+              "89e7faa3-1bfe-4a7a-9ed8-dc04e8532d29",
+              "549a7504-ce49-43ee-89da-6912c99c025b"
+            ]
+          },
+          {
+            "id": "a6200b7e-2eb0-4d59-a82d-ca8636108460",
+            "name": "In progress",
+            "color": "blue",
+            "option_ids": [
+              "aee7d69e-5446-4e5d-8c8d-359fb48834c3"
+            ]
+          },
+          {
+            "id": "541f8e54-9079-4020-abc0-1a7dc30245b2",
+            "name": "Complete",
+            "color": "green",
+            "option_ids": [
+              "f8868555-989f-4768-b136-20ebd1444596"
+            ]
+          }
+        ]
+      }
+    },
+    "Asset Subhead Line 2": {
+      "id": "aZl%5B",
+      "name": "Asset Subhead Line 2",
+      "description": null,
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Subheading": {
+      "id": "d%3FsA",
+      "name": "Subheading",
+      "description": null,
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "instagram_caption": {
+      "id": "dUN_",
+      "name": "instagram_caption",
+      "description": null,
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Asset Heading": {
+      "id": "eW%60X",
+      "name": "Asset Heading",
+      "description": null,
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "description": {
+      "id": "f%3Dqd",
+      "name": "description",
+      "description": null,
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "CMS-Status": {
+      "id": "g%3AsG",
+      "name": "CMS-Status",
+      "description": null,
+      "type": "select",
+      "select": {
+        "options": [
+          {
+            "id": "0e166dfe-dd70-4128-80d0-e5a093e4e79d",
+            "name": "Draft",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "7c66074c-4822-4aa3-b1a9-04a521705e27",
+            "name": "Live",
+            "color": "green",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Estimated Reading Time": {
+      "id": "gmHr",
+      "name": "Estimated Reading Time",
+      "description": null,
+      "type": "number",
+      "number": {
+        "format": "number"
+      }
+    },
+    "Audience": {
+      "id": "h_ZQ",
+      "name": "Audience",
+      "description": null,
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Date": {
+      "id": "idvB",
+      "name": "Date",
+      "description": null,
+      "type": "date",
+      "date": {}
+    },
+    "first_comment": {
+      "id": "mBHb",
+      "name": "first_comment",
+      "description": "First-comment payload after publish: one context line + destination URL. No URL in captions. Pin this comment as the posting account.",
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "✅Ready": {
+      "id": "neR%40",
+      "name": "✅Ready",
+      "description": null,
+      "type": "checkbox",
+      "checkbox": {}
+    },
+    "Custom Component Description": {
+      "id": "q%7Bxo",
+      "name": "Custom Component Description",
+      "description": null,
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "pintrest_caption": {
+      "id": "q%7DZG",
+      "name": "pintrest_caption",
+      "description": null,
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Topic": {
+      "id": "rJxK",
+      "name": "Topic",
+      "description": null,
+      "type": "select",
+      "select": {
+        "options": [
+          {
+            "id": "e40af5f3-fe33-49e0-9447-627cfb9c3c2d",
+            "name": "Commercial",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "75cbe5e0-031a-4b95-85d3-056aaf22e6eb",
+            "name": "Community Associations",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "f08e7f45-6cbb-419f-8013-14447bc132eb",
+            "name": "Residential",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "8804de7a-de99-4cbd-a0a2-7351283e23ea",
+            "name": "Accounting",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "8b18abd2-4329-4c1d-8dee-6576f2dd3e98",
+            "name": "AI",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "7820164c-7295-4482-a42e-6ff83460891d",
+            "name": "Checklists & Templates",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "f1486b56-37a2-493f-b007-535dc370e1f0",
+            "name": "Definitions",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "a35a700d-cd2c-4c68-ac9b-894a56cdab6e",
+            "name": "Leasing",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "b46ec628-6a78-44e7-9c50-a1acf7603963",
+            "name": "Legal",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "65a80b49-ae22-480c-890d-20166a656389",
+            "name": "Maintenance",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "b3a04565-5699-4c45-8457-c623c71dc496",
+            "name": "Property Management",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "48a3dd38-8b87-4403-b7dd-b256aae4fdb0",
+            "name": "Software",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "5f759028-657a-4eda-9937-7eae413dd88a",
+            "name": "Marketing",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "f25d3090-5c07-4218-9c43-a4e9cfa6a3be",
+            "name": "Sales",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "7fd5cbe6-c0cd-465c-986b-f03a87ca3095",
+            "name": "Market Updates by City",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "5ccf66a9-e04d-410a-8e22-2e5c330b1bfa",
+            "name": "Market Trends",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "c870ef74-f20b-461a-acf3-1e90a1afb316",
+            "name": "Landlord-Tenant Laws",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "5b3e81a4-6f25-466b-985d-40d42b75477c",
+            "name": "Breaking A Lease",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "d2b79839-a855-47c7-9e3e-ae9728918ac0",
+            "name": "Eviction Laws",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "000e03bc-4f82-44be-8fbc-8010eed32e36",
+            "name": "Squatters Rights Laws",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "dd5bb70d-6d20-40d9-bc88-964892cc33c9",
+            "name": "Rent Control Laws",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "a8171975-89e0-4e32-87aa-57611756c207",
+            "name": "Rent Increase Notice",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "30300bdd-22ad-44bc-b764-d477276feb25",
+            "name": "Security Deposit Laws",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "5d5e3b67-baac-4dd2-afe1-dc981fcdca69",
+            "name": "HOA Laws",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "72570512-2086-4ffd-b4d8-f4923a0282c8",
+            "name": "Commercial Lease Agreements",
+            "color": "pink",
+            "description": null
+          },
+          {
+            "id": "41ddeb26-ee68-470a-879c-b34ae5547a48",
+            "name": "Lease Termination Letter",
+            "color": "yellow",
+            "description": null
+          },
+          {
+            "id": "4c0a0af7-31de-4b23-8d14-eea5c61ae79a",
+            "name": "Month-To-Month Lease Agreement",
+            "color": "brown",
+            "description": null
+          },
+          {
+            "id": "87bdb70f-57a9-42c6-b376-c2861119c9b4",
+            "name": "Property Management Agreements",
+            "color": "gray",
+            "description": null
+          },
+          {
+            "id": "9f04dd4b-2dde-467c-8959-c3b610ebf86e",
+            "name": "Real Estate Purchase Agreements",
+            "color": "red",
+            "description": null
+          },
+          {
+            "id": "63feca25-2f65-4f1b-aa26-a6f5e2b72ef6",
+            "name": "Rental Applications",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "87aaead7-fe7d-4a95-8a2a-f4be85eae495",
+            "name": "Residential Lease Agreements",
+            "color": "blue",
+            "description": null
+          },
+          {
+            "id": "486478ba-2215-4f81-b542-505c9d240b88",
+            "name": "Room Rental Agreement",
+            "color": "green",
+            "description": null
+          },
+          {
+            "id": "5cb1bbaf-a507-48b6-9a9d-4e55945ee59a",
+            "name": "Sublease Agreements",
+            "color": "orange",
+            "description": null
+          },
+          {
+            "id": "55eaa159-8925-42bb-bfdc-5f1f15c88404",
+            "name": "Product Updates",
+            "color": "purple",
+            "description": null
+          },
+          {
+            "id": "2a8243dc-b7bc-4050-a739-cf3aeefd64e4",
+            "name": "Press Releases",
+            "color": "pink",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Created time": {
+      "id": "t%7BDi",
+      "name": "Created time",
+      "description": null,
+      "type": "created_time",
+      "created_time": {}
+    },
+    "Number of assets required": {
+      "id": "vCK%5C",
+      "name": "Number of assets required",
+      "description": "Count of distinct assets requested for the blog image-generation run.",
+      "type": "number",
+      "number": {
+        "format": "number"
+      }
+    },
+    "Referenced_Article": {
+      "id": "vg%5ER",
+      "name": "Referenced_Article",
+      "description": null,
+      "type": "url",
+      "url": {}
+    },
+    "Asset Subhead Line 1": {
+      "id": "wcWP",
+      "name": "Asset Subhead Line 1",
+      "description": null,
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "draft_blog": {
+      "id": "y%3FGk",
+      "name": "draft_blog",
+      "description": null,
+      "type": "rich_text",
+      "rich_text": {}
+    },
+    "Publish Channels": {
+      "id": "%7DJJP",
+      "name": "Publish Channels",
+      "description": null,
+      "type": "multi_select",
+      "multi_select": {
+        "options": [
+          {
+            "id": "387659d4-7ae0-453a-acc1-a6f1170ee94c",
+            "name": "Facebook Feed",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "a1c331dc-7bbd-4b1a-ab8a-3e2ff595eec7",
+            "name": "Instagram Feed",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "ee8d9167-7da0-48a0-92fd-6d2558bbb27c",
+            "name": "Facebook Story",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "7d8e5950-af9a-4c79-89ea-0b77a47fda99",
+            "name": "Instagram Story",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "1481f128-579a-4d8b-a6ad-99a2eea4c41e",
+            "name": "Pinterest",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "82cb8221-504b-4732-873c-f8b0e19a5087",
+            "name": "Bluesky",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "230eaa20-9a25-4ae3-adc1-9f2c308f7041",
+            "name": "LinkedIn",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "6e6bf91e-408a-4140-bccb-6cc6d1a9f881",
+            "name": "X/Twitter",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "7a8d6c11-6630-4ee1-940f-d0cf0a1439e8",
+            "name": "TikTok",
+            "color": "default",
+            "description": null
+          },
+          {
+            "id": "c22437d3-f5a0-46a8-9d25-65ba30a6a270",
+            "name": "YouTube",
+            "color": "default",
+            "description": null
+          }
+        ]
+      }
+    },
+    "Title": {
+      "id": "title",
+      "name": "Title",
+      "description": null,
+      "type": "title",
+      "title": {}
+    }
+  },
+  "parent": {
+    "type": "database_id",
+    "database_id": "3b90ac1b-d32e-80b5-afbd-f647511969a9"
+  },
+  "database_parent": {
+    "type": "page_id",
+    "page_id": "3ee0ac1b-d32e-815f-a550-c7ef0a767043"
+  },
+  "url": "https://app.notion.com/p/3b90ac1bd32e80b5afbdf647511969a9",
+  "public_url": null,
+  "in_trash": false,
+  "archived": false,
+  "request_id": "fa8f2e91-d275-48d0-9b91-2a6d4f948812"
+}

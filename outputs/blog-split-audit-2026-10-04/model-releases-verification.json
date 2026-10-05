@@ -1,0 +1,17 @@
+{
+  "verified_at": "2026-10-04T18:17:53.070Z",
+  "preserved": {
+    "id": "6db83f0e-b51e-4f29-9c1d-e10b0caf3dc8",
+    "name": "AI Models",
+    "color": "purple",
+    "description": "Evergreen model capabilities, providers, model selection, and model portability. Dated model launches belong in Model Releases; score-led testing belongs in Benchmarks & Evaluations; execution environments belong in Harness."
+  },
+  "added": {
+    "id": "0fc18f82-a819-4c82-ac4d-141dec19f25d",
+    "name": "Model Releases",
+    "color": "purple",
+    "description": "Dated launches, previews, version updates, and availability changes for AI models. Use a model/provider announcement component. Evergreen model strategy stays AI Models; benchmark-led analysis stays Benchmarks & Evaluations."
+  },
+  "option_count": 16,
+  "page_assignments_changed": false
+}

@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata, Viewport } from "next";
 import { Host_Grotesk } from "next/font/google";
 import type { ReactNode } from "react";
@@ -193,6 +194,7 @@ export default async function RootLayout({
         <MarketingRuntime />
         <ConsentManagedTags />
         <PostHogObservability experience={experience} />
+        <Analytics />
       </body>
     </html>
   );

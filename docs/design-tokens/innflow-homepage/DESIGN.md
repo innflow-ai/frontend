@@ -1,6 +1,6 @@
-# Innflow homepage design system
+# Historical homepage implementation snapshot
 
-> White and cool-gray surfaces, navy typography, rounded product stories, and motion that explains the work.
+> Superseded as brand guidance on 2026-10-29 by [current brand foundations](../innflow-brand/BRAND-GUIDELINES.md). This package records the October 3 implementation only, including its old font roles. Its token files and generator remain historical; do not import them as the updated brand kit. Homepage headings now use Instrument Sans. The examples below are source-era records, not current design prescriptions.
 
 **Theme:** light. **Source:** current local homepage at commit `2ce4deb`, reviewed 2026-10-03. **Scope:** homepage and its shared navigation/footer, with guidance for new cross-industry pages. This is a source-based design reference, not a fresh visual audit of the deployed site.
 

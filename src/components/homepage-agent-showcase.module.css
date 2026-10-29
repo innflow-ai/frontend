@@ -1,0 +1,165 @@
+/* Register the supplied demo font for its shadow root. */
+@font-face {
+  font-family: "Inter";
+  src: url("/components/agent-showcase/assets/inter.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+.section {
+  padding: 85px 40px 64px;
+  background: var(--marketing-paper, white);
+  color: #18191b;
+  font-family: var(--font-geist), sans-serif;
+  scroll-margin-top: 110px;
+}
+.container {
+  display: grid;
+  grid-template-columns: 360px minmax(0, 1fr);
+  gap: clamp(48px, 12.5vw, 180px);
+  align-items: start;
+  width: 100%;
+}
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  min-width: 0;
+}
+.heading {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  color: #5f5f68;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+.heading h2 {
+  margin: 0;
+  font:
+    500 36px / 1.25 var(--font-geist),
+    sans-serif;
+  letter-spacing: -0.9px;
+  color: #18191b;
+}
+.description {
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  color: #5f5f68;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 10px 26px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-decoration: none;
+  transition: background 150ms;
+}
+.actions .primaryButton {
+  background: #18191b;
+  color: white;
+}
+.actions .primaryButton:hover {
+  background: #333438;
+}
+.secondaryButton {
+  background: white;
+  color: #18191b;
+  box-shadow:
+    0 0 0 1px #e2e2e8,
+    0 3px 3px -1.5px #00000005;
+}
+.secondaryButton:hover {
+  background: #f3f3f6;
+}
+.actions a:focus-visible {
+  outline: 2px solid #006bff;
+  outline-offset: 4px;
+}
+.capabilities {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 16px;
+  margin: 0;
+  padding: 24px 0 0;
+  border-top: 1px solid #ebebf1;
+  list-style: none;
+}
+.capabilities li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+.capabilities img,
+.eyebrow img {
+  flex: 0 0 16px;
+}
+.component {
+  min-width: 0;
+  min-height: 640px;
+  margin-top: 11px;
+}
+@media (max-width: 1200px) {
+  .container {
+    grid-template-columns: minmax(300px, 360fr) minmax(0, 820fr);
+    gap: 48px;
+  }
+}
+@media (max-width: 1000px) {
+  .container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 40px;
+  }
+  .copy {
+    max-width: 480px;
+  }
+  .component {
+    margin-top: 0;
+  }
+}
+@media (max-width: 800px) {
+  .section {
+    padding: 64px 24px;
+  }
+}
+@media (max-width: 480px) {
+  .section {
+    padding: 48px 20px;
+  }
+  .heading h2 {
+    font-size: 34px;
+  }
+  .capabilities {
+    column-gap: 12px;
+  }
+  .capabilities li {
+    font-size: 13px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .actions a {
+    transition: none;
+  }
+}

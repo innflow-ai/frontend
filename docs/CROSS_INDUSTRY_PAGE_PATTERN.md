@@ -5,7 +5,7 @@ The scroll showcase is the design reference for the public homepage and new indu
 ## Shared design
 
 - `ShowcaseHomepage` serves `/` and `/preview/scroll-showcase`; the preview remains noindex and can show a layout fallback when no testimonial is selected. The public homepage does not show that fallback.
-- `ShowcaseTheme` shares Geist, Manrope and Source Serif 4 with cream backgrounds, navy text and pastel product scenes.
+- Follow [current brand foundations](design-tokens/innflow-brand/BRAND-GUIDELINES.md) for new styling. Homepage headings use Instrument Sans. Older `ShowcaseTheme` families and paints remain implementation history; preserve approved product artwork and behavior.
 - New industry pages use a benefit-led hero, an interactive workflow example, three industry-specific workflow sections, supporting points, FAQs and the showcase closing/footer. Mobile retains normal document flow; controls do not autoplay.
 - `src/content/industries.ts` owns 26 industry and use-case entries, including the separately requested overlapping categories. Financial Services & Banking is the overview; Finance focuses on finance operations and Banking on account service. Property & Real Estate focuses on inquiries and transactions; Property Management on resident and operational work. HR & Recruitment and Talent Acquisition have distinct audiences.
 - `/solutions` is the industry and use-case directory. Every category has its own `/industries/[slug]` route. `/industries` redirects to the directory. Unknown slugs return 404.

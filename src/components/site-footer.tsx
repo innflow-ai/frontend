@@ -65,6 +65,7 @@ const footerMenus = [
 export function SiteFooter() {
   return (
     <div className={styles.page}>
+      <LaunchDirectoryMarquee />
       <footer className={styles.footer}>
         <div className={styles.footerGrid}>
           <div>
@@ -119,7 +120,6 @@ export function SiteFooter() {
             <FooterLegalLinks />
           </nav>
         </div>
-        <LaunchDirectoryMarquee />
       </footer>
     </div>
   );

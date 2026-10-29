@@ -1,0 +1,8 @@
+.headings {
+  --agent-heading-font: var(--font-homepage-heading);
+}
+
+/* Keep the shared sections' sizes and weights, with one homepage heading family. */
+main.headings[id] :is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-homepage-heading), sans-serif;
+}

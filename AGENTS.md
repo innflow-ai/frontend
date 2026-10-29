@@ -18,19 +18,15 @@ Use the `innflow-property-management-feature-page` skill when available. Its ins
 
 ## Homepage and cross-industry pages
 
-Use `src/app/preview/scroll-showcase` as the design reference for the homepage and new industry and cross-industry solution pages. Preserve its typography, colors, visual components, spacing, and responsive motion behavior. The property-management feature-page skill and Rent collection pattern do not apply to these pages.
+Use `src/app/preview/scroll-showcase` as the design reference for the homepage and new industry and cross-industry solution pages. Preserve its composition, visual components, spacing, and responsive motion behavior. For newly styled work follow the current brand guidance below; homepage headings use Instrument Sans. The property-management feature-page skill and Rent collection pattern do not apply to these pages.
 
 ## Blog directory and article design
 
 For blog UI work, use the `innflow-blog-design` skill when available at `/Users/ak/.codex/skills/innflow-blog-design/SKILL.md`. Read [docs/BLOG_DESIGN_PATTERN.md](docs/BLOG_DESIGN_PATTERN.md) before changing the directory, search/filter layout, article header, or author card. Preserve the approved clear artwork, smaller titles below images, audio beneath the article title, and borderless transparent author cards unless the user requests a different direction.
 
-## Current visual direction (2026-10-03)
+## Current visual direction (2026-10-29)
 
-The user's current direction supersedes older cream/Baselane palette guidance in
-skills, DESIGN.md, and extracted token packages. Marketing pages use white and
-cool-gray surfaces from the supplied Calendly tokens: `--marketing-paper`,
-`--marketing-cloud`, and `--marketing-pebble` in `src/app/globals.css`. Keep existing
-page layouts, Innflow fonts, gradients, artwork, and responsive interactions.
+Use [the current brand guidelines](docs/design-tokens/innflow-brand/BRAND-GUIDELINES.md) and `innflow-design-v2`, sourced from Figma frame `328:5`. New shared UI uses Inter, Instrument Serif display, JetBrains Mono, neutral actions, and the documented component corner roles. Homepage headings use Instrument Sans by explicit user choice. Preserve existing page layouts, reference artwork, and responsive interactions. Older Calendly, cream/Baselane, and homepage token extractions record implementation history and do not override this source. Apply changes within the requested scope; this guidance does not itself restyle existing pages.
 Use strong headings with compact supporting copy: normally 16px body, 14px card
 copy, and 12px metadata, with readable line height. Do not enlarge all supporting
 text to match headings or shrink article prose and form controls indiscriminately.

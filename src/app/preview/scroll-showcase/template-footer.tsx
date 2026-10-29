@@ -46,6 +46,7 @@ const groups = [
 export function TemplateFooter() {
   return (
     <div className={styles.shell}>
+      <LaunchDirectoryMarquee />
       <footer className={styles.footer} data-source-node="350:11986">
         <div className={styles.upper}>
           <div className={styles.brand}>
@@ -97,7 +98,6 @@ export function TemplateFooter() {
           </div>
           <span>© {new Date().getFullYear()} Innflow</span>
         </div>
-        <LaunchDirectoryMarquee />
       </footer>
     </div>
   );

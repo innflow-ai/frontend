@@ -8,6 +8,7 @@ it("treats Vercel's regenerated root pathname and the public root as the same sh
   }
   for (const path of [
     "/solutions",
+    "/pricing",
     "/industries/healthcare",
     "/integrations",
     "/integrations/gmail",

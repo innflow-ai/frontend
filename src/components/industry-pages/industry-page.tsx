@@ -3,6 +3,7 @@ import type { CSSProperties } from "react";
 import { BaselineClosing } from "@/app/preview/scroll-showcase/baseline-lower-sections";
 import { ChevronRight } from "@/components/chevron-right";
 import { ArrowDown as MageArrowDown } from "@/components/icons/mage";
+import { LaunchDirectoryMarquee } from "@/components/launch-directory-marquee";
 import { ShowcaseTheme } from "@/components/showcase-theme";
 import { siteConfig } from "@/config/site";
 import type { IndustryPageContent } from "@/content/industries";
@@ -198,6 +199,7 @@ export function IndustryPage({ page }: { page: IndustryPageContent }) {
             </details>
           </div>
         </section>
+        <LaunchDirectoryMarquee />
         <BaselineClosing />
       </main>
     </ShowcaseTheme>

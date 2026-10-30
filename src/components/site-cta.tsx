@@ -5,6 +5,7 @@ import { siteConfig } from "@/config/site";
 import { getProductDesign } from "@/content/product-design-rotation";
 import { usesShowcaseDesign } from "@/lib/showcase-routes";
 import { GoogleCtaContent } from "./google-cta-content";
+import { LaunchDirectoryMarquee } from "./launch-directory-marquee";
 import styles from "./site-shell.module.css";
 import { TrackedLink } from "./tracked-link";
 export function SiteCta() {
@@ -60,6 +61,7 @@ export function SiteCta() {
 
   return (
     <div className={styles.page}>
+      <LaunchDirectoryMarquee />
       <div className={styles.closingWrap}>
         <section className={styles.closing}>
           <h2>

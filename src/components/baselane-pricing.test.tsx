@@ -37,3 +37,42 @@ it("keeps comparison disclosure state and keyboard activation synchronized", asy
   for (const title of headings) assertState(title, true);
   expect(screen.getAllByRole("table")).toHaveLength(3);
 });
+
+it("updates both plan cards and comparison prices from the selected billing term", async () => {
+  const user = userEvent.setup();
+  render(<BaselanePricing />);
+  expect(
+    screen.getByRole("radio", { name: "Annual commitment" }),
+  ).toBeChecked();
+  expect(screen.getByRole("article", { name: "Pro plan" })).toHaveTextContent(
+    "$16.99",
+  );
+  expect(
+    screen.getByRole("article", { name: "Business plan" }),
+  ).toHaveTextContent("$169.99");
+  expect(screen.getByText("$16.99/mo.")).toBeInTheDocument();
+  await user.click(screen.getByRole("radio", { name: "Monthly" }));
+  expect(screen.getByRole("article", { name: "Pro plan" })).toHaveTextContent(
+    "$19.99",
+  );
+  expect(
+    screen.getByRole("article", { name: "Business plan" }),
+  ).toHaveTextContent("$199.99");
+  expect(screen.getByText("$19.99/mo.")).toBeInTheDocument();
+  expect(
+    screen.getByText("No annual commitment. All prices in USD."),
+  ).toBeInTheDocument();
+  await user.keyboard("{ArrowRight}");
+  expect(
+    screen.getByRole("radio", { name: "Annual commitment" }),
+  ).toBeChecked();
+  expect(screen.getByRole("article", { name: "Pro plan" })).toHaveTextContent(
+    "$16.99",
+  );
+  expect(screen.getByRole("article", { name: "Free plan" })).toHaveTextContent(
+    "Always free",
+  );
+  expect(
+    screen.getByRole("article", { name: "Enterprise plan" }),
+  ).toHaveTextContent("Custom");
+});

@@ -1,8 +1,8 @@
-
-import { ArrowDown as MageArrowDown } from '@/components/icons/mage';
 import { BaselineClosing } from "@/app/preview/scroll-showcase/baseline-lower-sections";
+import { ArrowDown as MageArrowDown } from "@/components/icons/mage";
 import { IntegrationDirectory } from "@/components/integration-directory";
 import styles from "@/components/integrations.module.css";
+import { LaunchDirectoryMarquee } from "@/components/launch-directory-marquee";
 import { ShowcaseTheme } from "@/components/showcase-theme";
 import { getIntegrations } from "@/lib/integrations";
 import { createPageMetadata } from "@/lib/metadata";
@@ -31,11 +31,15 @@ export default async function IntegrationsPage() {
               integration, see what it does, and check its availability.
             </p>
             <a className={styles.browseLink} href="#integration-directory">
-              Explore integrations <span aria-hidden="true"><MageArrowDown size="1em" /></span>
+              Explore integrations{" "}
+              <span aria-hidden="true">
+                <MageArrowDown size="1em" />
+              </span>
             </a>
           </div>
         </header>
         <IntegrationDirectory items={items} />
+        <LaunchDirectoryMarquee />
         <BaselineClosing />
       </main>
     </ShowcaseTheme>

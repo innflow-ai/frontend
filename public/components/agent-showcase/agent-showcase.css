@@ -177,15 +177,12 @@ h2 {
   font-weight: 600;
 }
 .person {
-  width: 23px;
-  height: 23px;
-  display: grid;
-  place-items: center;
+  width: 28px;
+  height: 28px;
+  display: block;
+  flex: 0 0 28px;
+  object-fit: cover;
   border-radius: 50%;
-  font-size: 9px;
-  font-weight: 650;
-  background: #e6e9e4;
-  color: #4a5445;
 }
 .prompt {
   background: var(--agent-surface);

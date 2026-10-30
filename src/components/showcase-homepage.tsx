@@ -1,3 +1,4 @@
+import { Source_Serif_4 } from "next/font/google";
 import { BaselineFeatures } from "@/app/preview/scroll-showcase/baseline-features";
 import {
   BaselineClosing,
@@ -13,7 +14,7 @@ import { ShowcaseTheme } from "@/components/showcase-theme";
 import { getPageTestimonials } from "@/lib/testimonials";
 import typography from "./homepage-typography.module.css";
 
-const instrumentSans = Instrument_Sans({
+const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
   variable: "--font-homepage-heading",
   display: "swap",
@@ -24,24 +25,22 @@ export async function ShowcaseHomepage() {
   return (
     <main
       id="main-content"
-      className={`${styles.page} ${instrumentSans.variable} ${typography.headings}`}
+      className={`${styles.page} ${sourceSerif.variable} ${typography.headings}`}
     >
       <ScrollShowcase />
       <ShowcaseTheme>
         <WorkspaceOverview />
         <HomepageAgentShowcase />
-        <HomepageCollaboration />
         <BaselineFeatures />
         <BaselineCustomerStories
           testimonials={stories.testimonials}
           heading={stories.heading}
           previewFallback
         />
+        <HomepageCollaboration />
         <BaselineConnectedInfrastructure />
         <BaselineClosing />
       </ShowcaseTheme>
     </main>
   );
 }
-
-import { Instrument_Sans } from "next/font/google";

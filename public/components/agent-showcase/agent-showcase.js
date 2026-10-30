@@ -2,6 +2,7 @@
   // Resolve assets relative to this script, so the host page can live anywhere.
   const base = new URL(".", document.currentScript.src);
   const asset = (name) => new URL(`assets/${name}.svg`, base).href;
+  const portrait = (name) => new URL(`assets/portraits/${name}.png`, base).href;
   const escapeHtml = (value) =>
     String(value).replace(
       /[&<>"']/g,
@@ -31,8 +32,8 @@
         ["notion", "Notion"],
         ["slack", "Slack"],
       ],
-      person: "Alexandra",
-      initials: "AL",
+      person: "Maya Chen",
+      portrait: "maya-chen",
       prompt:
         "We're meeting Northstar tomorrow. Pull together what we know about them, their recent news, and where we could help.",
       steps: [
@@ -68,8 +69,8 @@
         ["google-docs", "Google Docs"],
         ["slack", "Slack"],
       ],
-      person: "Omid",
-      initials: "OM",
+      person: "Alex Morgan",
+      portrait: "alex-morgan",
       prompt:
         "Which of our articles need a refresh? Start with the ones losing traffic and draft the changes for review.",
       steps: [
@@ -105,8 +106,8 @@
         ["hubspot", "HubSpot"],
         ["google-sheets", "Google Sheets"],
       ],
-      person: "Alexandra",
-      initials: "AL",
+      person: "Priya Shah",
+      portrait: "priya-shah",
       prompt:
         "Our prospecting campaign is spending more this week. Is it bringing in qualified leads, or should we move the budget?",
       steps: [
@@ -142,8 +143,8 @@
         ["google-gmail", "Gmail"],
         ["slack", "Slack"],
       ],
-      person: "Jamie",
-      initials: "JA",
+      person: "Jordan Brooks",
+      portrait: "jordan-brooks",
       prompt:
         "Look through the open deals. Who hasn't heard from us in a while? Draft a useful follow-up for each one.",
       steps: [
@@ -179,8 +180,8 @@
         ["notion", "Notion"],
         ["google-gmail", "Gmail"],
       ],
-      person: "Wesley",
-      initials: "WE",
+      person: "Daniel Park",
+      portrait: "daniel-park",
       prompt:
         "We've had a few questions about CSV imports today. Are they connected? Find the issue and draft a reply for the team.",
       steps: [
@@ -216,8 +217,8 @@
         ["google-sheets", "Google Sheets"],
         ["google-drive", "Google Drive"],
       ],
-      person: "Joseph",
-      initials: "JO",
+      person: "Amara Davis",
+      portrait: "amara-davis",
       prompt:
         "Compare this month's invoices with the payment export. Flag anything that doesn't match and put the summary in a sheet.",
       steps: [
@@ -292,7 +293,7 @@
       panel.setAttribute("aria-labelledby", `tab-${agent.id}`);
       panel.style.setProperty("--accent", agent.accent);
       panel.style.setProperty("--hue", agent.hue);
-      panel.innerHTML = `<header class="reveal"><div class="agent-heading"><img class="avatar" src="${asset("agent")}" alt="" width="36" height="36"><h2>${escapeHtml(agent.title)}</h2></div><p class="description">${escapeHtml(agent.description)}</p><div class="connections"><span class="model"><img src="${asset(agent.modelIcon)}" alt="" width="13" height="13">${escapeHtml(agent.model)}</span><span class="connection-list" aria-label="Example connected apps">${agent.apps.map(([icon, name]) => `<img src="${asset(icon)}" alt="${escapeHtml(name)}" title="${escapeHtml(name)}" width="15" height="15">`).join("")}</span></div></header><div class="conversation"><div class="reveal"><p class="speaker"><span class="person" aria-hidden="true">${agent.initials}</span>${escapeHtml(agent.person)}</p><p class="prompt">${escapeHtml(agent.prompt)}</p></div><p class="agent-name reveal">${escapeHtml(agent.title)}</p><ul class="steps">${agent.steps.map((step) => `<li class="reveal"><span class="step-mark" aria-hidden="true">✓</span><span>${escapeHtml(step)}</span></li>`).join("")}</ul><div class="reveal"><p class="result"><strong>${escapeHtml(agent.result)}</strong></p><p class="detail">${escapeHtml(agent.detail)}</p></div><details class="artifact reveal"><summary><img src="${asset(agent.fileIcon)}" alt="" width="22" height="22"><span class="artifact-label">${escapeHtml(agent.file)}<span>${escapeHtml(agent.fileType)}</span></span><span class="chevron" aria-hidden="true"></span></summary><div class="artifact-body">${agent.rows.map(([label, value]) => `<div class="artifact-row"><span>${escapeHtml(label)}</span><span>${escapeHtml(value)}</span></div>`).join("")}</div></details><p class="demo-note reveal">Example conversation · Illustrative data</p></div>`;
+      panel.innerHTML = `<header class="reveal"><div class="agent-heading"><img class="avatar" src="${asset("agent")}" alt="" width="36" height="36"><h2>${escapeHtml(agent.title)}</h2></div><p class="description">${escapeHtml(agent.description)}</p><div class="connections"><span class="model"><img src="${asset(agent.modelIcon)}" alt="" width="13" height="13">${escapeHtml(agent.model)}</span><span class="connection-list" aria-label="Example connected apps">${agent.apps.map(([icon, name]) => `<img src="${asset(icon)}" alt="${escapeHtml(name)}" title="${escapeHtml(name)}" width="15" height="15">`).join("")}</span></div></header><div class="conversation"><div class="reveal"><p class="speaker"><img class="person" src="${portrait(agent.portrait)}" alt="" width="28" height="28">${escapeHtml(agent.person)}</p><p class="prompt">${escapeHtml(agent.prompt)}</p></div><p class="agent-name reveal">${escapeHtml(agent.title)}</p><ul class="steps">${agent.steps.map((step) => `<li class="reveal"><span class="step-mark" aria-hidden="true">✓</span><span>${escapeHtml(step)}</span></li>`).join("")}</ul><div class="reveal"><p class="result"><strong>${escapeHtml(agent.result)}</strong></p><p class="detail">${escapeHtml(agent.detail)}</p></div><details class="artifact reveal"><summary><img src="${asset(agent.fileIcon)}" alt="" width="22" height="22"><span class="artifact-label">${escapeHtml(agent.file)}<span>${escapeHtml(agent.fileType)}</span></span><span class="chevron" aria-hidden="true"></span></summary><div class="artifact-body">${agent.rows.map(([label, value]) => `<div class="artifact-row"><span>${escapeHtml(label)}</span><span>${escapeHtml(value)}</span></div>`).join("")}</div></details><p class="demo-note reveal">Example conversation · Illustrative data</p></div>`;
       if (animate && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
         this.animations = [...panel.querySelectorAll(".reveal")].map(
           (element, index) =>

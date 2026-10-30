@@ -7,9 +7,8 @@ it("treats Vercel's regenerated root pathname and the public root as the same sh
     expect(usesShowcaseDesign(path)).toBe(true);
   }
   for (const path of [
-    "/hotel-pms",
-    "/hotel-pms/procurement",
     "/solutions",
+    "/pricing",
     "/industries/healthcare",
     "/integrations",
     "/integrations/gmail",

@@ -33,21 +33,7 @@ export const productDesignRoutes = [
   },
 ] as const;
 
-const hotelDesigns: Record<string, CalendlyStyle> = {
-  "/hotel-pms": "assistant",
-  "/hotel-pms/front-desk": "scheduling",
-  "/hotel-pms/guest-experience": "contacts",
-  "/hotel-pms/housekeeping": "assistant",
-  "/hotel-pms/accounting": "payments",
-  "/hotel-pms/procurement": "assistant",
-  "/hotel-pms/labor": "scheduling",
-  "/hotel-pms/revenue": "notetaker",
-  "/hotel-pms/payments": "payments",
-  "/hotel-pms/portfolio": "notetaker",
-};
-
 export function getProductDesign(path: string | null) {
-  if (path && hotelDesigns[path]) return hotelDesigns[path];
   const index = productDesignRoutes.findIndex((route) => route.path === path);
   return index < 0 ? undefined : calendlyStyles[index % calendlyStyles.length];
 }

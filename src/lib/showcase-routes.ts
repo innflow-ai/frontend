@@ -11,9 +11,8 @@ export function isShowcaseHome(pathname: string | null) {
 export function usesShowcaseDesign(pathname: string | null) {
   return (
     isShowcaseHome(pathname) ||
-    pathname === "/hotel-pms" ||
-    Boolean(pathname?.startsWith("/hotel-pms/")) ||
     pathname === "/solutions" ||
+    pathname === "/pricing" ||
     pathname === "/integrations" ||
     Boolean(pathname?.startsWith("/integrations/")) ||
     pathname === "/industries" ||

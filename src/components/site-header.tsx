@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import { GoogleCtaContent } from "@/components/google-cta-content";
 import {
   ArrowRight,
   ChevronDown as CaretDown,
@@ -21,9 +22,14 @@ import { siteConfig } from "@/config/site";
 import { INNER_PAGE_ANNOUNCEMENTS_ENABLED } from "@/lib/marketing-chrome";
 import { isShowcaseHome } from "@/lib/showcase-routes";
 import { MobileNavigation } from "./editorial-header";
-import { useNavigationBlogPosts } from "./navigation-blog-posts";
+import {
+  useNavigationAppUpdate,
+  useNavigationBlogPosts,
+  useNavigationTestimonial,
+} from "./navigation-blog-posts";
 import previewStyles from "./site-header-preview.module.css";
 import styles from "./site-shell.module.css";
+import { TestimonialCard } from "./testimonial-cards";
 import { TrackedLink } from "./tracked-link";
 
 const menus = [
@@ -33,6 +39,8 @@ const menus = [
 ];
 export function SiteHeader() {
   const latestBlogPosts = useNavigationBlogPosts();
+  const latestUpdate = useNavigationAppUpdate();
+  const testimonial = useNavigationTestimonial();
   const [menu, setMenu] = useState<string | null>(null);
   const [mobile, setMobile] = useState(false);
   const pathname = usePathname();
@@ -179,7 +187,6 @@ export function SiteHeader() {
   return (
     <div
       className={`${styles.page} ${styles.chromeScope} ${previewStyles.previewScope}`}
-      data-hotel-navigation
       data-preview-chrome
       data-announcement-dismissed={announcementHidden}
     >
@@ -189,7 +196,7 @@ export function SiteHeader() {
           aria-label="Innflow announcement"
         >
           <Megaphone size={16} aria-hidden="true" />
-          <span>Explore the Innflow hotel platform</span>
+          <span>Explore the new Innflow experience</span>
           <a
             href={
               isShowcaseHome(pathname)
@@ -233,11 +240,10 @@ export function SiteHeader() {
       >
         <a href="/" className={styles.logo} aria-label="innflow home">
           <Image
-            src="/hotel-pms/innflow-black.svg"
+            src="/brand/innflow-wordmark.svg"
             alt="innflow"
-            width={99}
-            height={20}
-            style={{ width: 99, height: "auto" }}
+            width={95}
+            height={28}
             preload
           />
         </a>
@@ -296,7 +302,7 @@ export function SiteHeader() {
               {menu === group.label && (
                 <div
                   id={`baselane-${group.label.replaceAll(" ", "-")}`}
-                  className={`${styles.dropdown}${group.label === "Portfolios" ? ` ${styles.dropdownWithBanner}` : ""}${group.label === "Resources" && latestBlogPosts.length ? ` ${styles.dropdownWithPosts}` : ""}`}
+                  className={`${styles.dropdown}${group.label === "Portfolios" ? ` ${styles.dropdownWithBanner}` : ""}${group.label === "Resources" && latestBlogPosts.length ? ` ${styles.dropdownWithPosts}` : ""}${(group.label === "Product" && latestUpdate) || (group.label === "Solutions" && testimonial) ? ` ${styles.dropdownWithUpdate}` : ""}`}
                 >
                   {group.columns.map((column) => (
                     <div className={styles.dropdownColumn} key={column.heading}>
@@ -320,6 +326,51 @@ export function SiteHeader() {
                       ))}
                     </div>
                   ))}
+                  {group.label === "Solutions" && testimonial && (
+                    <section
+                      className={styles.menuUpdateSection}
+                      aria-label="Customer testimonial"
+                    >
+                      <h3>In their own words</h3>
+                      <TestimonialCard item={testimonial} />
+                    </section>
+                  )}
+                  {group.label === "Product" && latestUpdate && (
+                    <section
+                      className={styles.menuUpdateSection}
+                      aria-label="Company updates"
+                    >
+                      <h3>Company updates</h3>
+                      <TrackedLink
+                        destination={latestUpdate.href}
+                        eventLabel="product_menu_latest_update"
+                        className={styles.menuBlogCard}
+                        onClick={closeMenus}
+                      >
+                        <span className={styles.menuBlogMedia}>
+                          {latestUpdate.imageUrl ? (
+                            <Image
+                              src={latestUpdate.imageUrl}
+                              alt={latestUpdate.imageAlt}
+                              width={720}
+                              height={389}
+                              sizes="300px"
+                            />
+                          ) : (
+                            <Newspaper size={28} aria-hidden="true" />
+                          )}
+                        </span>
+                        <span className={styles.menuBlogMeta}>
+                          {latestUpdate.publishedLabel}
+                        </span>
+                        <strong>{latestUpdate.title}</strong>
+                        <span>
+                          {latestUpdate.actionLabel}{" "}
+                          <ArrowRight size={14} aria-hidden="true" />
+                        </span>
+                      </TrackedLink>
+                    </section>
+                  )}
                   {menuBrowseLinks[group.label] && (
                     <a
                       className={styles.browseAll}
@@ -397,7 +448,7 @@ export function SiteHeader() {
               )}
             </div>
           ))}
-          <a href="/hotel-pms">Platform overview</a>
+          <a href="/pricing">Pricing</a>
           <a href="/blog">Blog</a>
           <a
             className={styles.mobileLogin}
@@ -412,11 +463,11 @@ export function SiteHeader() {
           </a>
           <TrackedLink
             className={styles.darkButton}
-            destination={siteConfig.demoUrl}
-            eventLabel="hotel_header_demo"
-            aria-label="Plan your hotel workflow"
+            destination={siteConfig.googleAuthUrl}
+            eventLabel="baselane_header_signup"
+            aria-label="Continue with Google"
           >
-            Plan your hotel workflow
+            <GoogleCtaContent />
           </TrackedLink>
           <button
             ref={toggle}
@@ -440,8 +491,7 @@ export function SiteHeader() {
         onClose={closeMenus}
         id="baselane-mobile-overlay"
         className={styles.mobileMenu}
-        pricingHref="/hotel-pms"
-        pricingLabel="Platform overview"
+        pricingHref="/pricing"
         loginHref={`${siteConfig.appOrigin}/login`}
       />
     </div>

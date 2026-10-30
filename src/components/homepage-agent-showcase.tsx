@@ -24,16 +24,6 @@ export function HomepageAgentShowcase() {
       <div className={styles.container}>
         <div className={styles.copy}>
           <header className={styles.heading}>
-            <p className={styles.eyebrow}>
-              Build
-              {/* biome-ignore lint/performance/noImgElement: Tiny local SVG preserves the reference's intrinsic dimensions. */}
-              <img
-                src="/components/agent-showcase/section-icons/arrow.svg"
-                alt=""
-                width={16}
-                height={16}
-              />
-            </p>
             <h2 id="agent-showcase-heading">
               Let your experts <br />
               build the agents

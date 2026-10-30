@@ -1,6 +1,7 @@
 import { BaselineClosing } from "@/app/preview/scroll-showcase/baseline-lower-sections";
 import { IndustryDirectory } from "@/components/industry-pages/industry-directory";
 import styles from "@/components/industry-pages/industry-pages.module.css";
+import { LaunchDirectoryMarquee } from "@/components/launch-directory-marquee";
 import { ShowcaseTheme } from "@/components/showcase-theme";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -27,6 +28,7 @@ export default function SolutionsPage() {
           </p>
         </header>
         <IndustryDirectory />
+        <LaunchDirectoryMarquee />
         <BaselineClosing />
       </main>
     </ShowcaseTheme>

@@ -119,9 +119,7 @@ describe("Runey landing interactions", () => {
       within(navigation).getByRole("button", { name: "Product" }),
     );
     expect(
-      within(navigation).getByRole("link", {
-        name: /^Reservations & front desk/,
-      }),
+      within(navigation).getByRole("link", { name: /^AI Agents/ }),
     ).toBeVisible();
     const link = navigation.querySelector("a");
     expect(link).not.toBeNull();

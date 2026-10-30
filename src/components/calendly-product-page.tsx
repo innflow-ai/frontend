@@ -7,6 +7,7 @@ import {
   Plus as MagePlus,
   StarsA as MageStarsA,
 } from "@/components/icons/mage";
+import { LaunchDirectoryMarquee } from "@/components/launch-directory-marquee";
 import { siteConfig } from "@/config/site";
 import {
   getProductDesign,
@@ -411,6 +412,7 @@ export function CalendlyProductPage({
           ))}
         </div>
       </section>
+      <LaunchDirectoryMarquee />
       {(content.closing?.length
         ? content.closing
         : [

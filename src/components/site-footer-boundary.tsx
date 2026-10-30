@@ -2,25 +2,19 @@
 
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
-import { usesShowcaseDesign } from "@/lib/showcase-routes";
+import { isShowcaseHome, usesShowcaseDesign } from "@/lib/showcase-routes";
 
 export function SiteFooterBoundary({
   children,
   preview,
-  hotel,
+  homepage,
 }: {
   children: ReactNode;
   preview: ReactNode;
-  hotel: ReactNode;
+  homepage?: ReactNode;
 }) {
   const pathname = usePathname();
   if (pathname === "/help") return null;
-  if (
-    pathname === "/" ||
-    pathname === "/index" ||
-    pathname === "/hotel-pms" ||
-    pathname?.startsWith("/hotel-pms/")
-  )
-    return hotel;
+  if (isShowcaseHome(pathname)) return homepage ?? preview;
   return usesShowcaseDesign(pathname) ? preview : children;
 }

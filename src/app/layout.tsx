@@ -3,7 +3,6 @@ import type { Metadata, Viewport } from "next";
 import { Host_Grotesk } from "next/font/google";
 import type { ReactNode } from "react";
 import { ConsentManagedTags } from "@/components/consent-managed-tags";
-import { HotelFooter } from "@/components/hotel-pms/hotel-pages";
 import { MarketingRuntime } from "@/components/marketing-runtime";
 import type { LatestBlogPostNavItem } from "@/components/mega-menu";
 import { NavigationBlogPostsProvider } from "@/components/navigation-blog-posts";
@@ -49,12 +48,12 @@ export const metadata: Metadata = {
   applicationName: "Innflow",
   icons: {
     icon: [
-      { url: "/icon.png", sizes: "96x96", type: "image/png" },
       {
-        url: "/brand/innflow-favicon.svg?v=20260928",
-        sizes: "any",
-        type: "image/svg+xml",
+        url: "/favicon.ico?v=20261030",
+        sizes: "16x16 24x24 32x32 48x48 64x64 96x96 128x128 256x256",
+        type: "image/x-icon",
       },
+      { url: "/icon.png?v=20261030", sizes: "96x96", type: "image/png" },
     ],
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
@@ -189,8 +188,8 @@ export default async function RootLayout({
           {children}
           <SiteCta />
           <SiteFooterBoundary
-            preview={<TemplateFooter />}
-            hotel={<HotelFooter />}
+            preview={<TemplateFooter featuredOn={false} />}
+            homepage={<TemplateFooter />}
           >
             <SiteFooter />
           </SiteFooterBoundary>

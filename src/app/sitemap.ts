@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
 import { featurePageDesigns } from "@/content/feature-pages";
+import { hotelHref, hotelModules } from "@/content/hotel-pms";
 import { industryHref, industryPages } from "@/content/industries";
 import { allFeatureSlugs } from "@/content/marketing";
 import { platformPages } from "@/content/platform";
@@ -109,6 +110,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ]);
 
   return [
+    ...[
+      "/hotel-pms",
+      ...hotelModules.map((module) => hotelHref(module.slug)),
+    ].map((path) => ({
+      url: `${siteConfig.marketingOrigin}${path}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
     ...skillSlugs.map((slug) => ({
       url: `${siteConfig.marketingOrigin}/skills/${slug}`,
       changeFrequency: "weekly" as const,

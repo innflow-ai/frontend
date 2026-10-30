@@ -5,15 +5,20 @@ import { type CSSProperties, useEffect, useRef, useState } from "react";
 import { ChevronRight } from "@/components/chevron-right";
 import googleButtonStyles from "@/components/google-cta.module.css";
 import { GoogleCtaContent } from "@/components/google-cta-content";
+import { HotelWorkspace } from "@/components/hotel-pms/hotel-workspace";
 import {
+  CalendarCheck,
   Chart,
+  CreditCard,
   Clock as MageClock,
   Multiply as MageMultiply,
   Users as MageUsers,
   Video as MageVideo,
   Robot,
   Share,
+  Shop,
   StarsA,
+  Wrench,
 } from "@/components/icons/mage";
 import { siteConfig } from "@/config/site";
 import { BookingCalendar } from "./booking-calendar";
@@ -27,7 +32,7 @@ import styles from "./showcase.module.css";
 
 const showcaseIcons = [Robot, Share, StarsA, Chart];
 const assets = "/preview/scroll-showcase";
-const states = [
+const defaultStates = [
   {
     id: "scheduling",
     label: "AI agent",
@@ -176,7 +181,50 @@ function Illustration({ index, active }: { index: number; active: boolean }) {
   );
 }
 
-export function ScrollShowcase() {
+const hotelStates = [
+  {
+    id: "front-desk",
+    label: "Front desk",
+    badge: "",
+    title: "Every stay, in the same picture.",
+    body: "Bring reservations, arrivals, and room readiness together. Give reception the context to welcome each guest.",
+    accent: "#dddcd8",
+    surface: "#f2f2f0",
+  },
+  {
+    id: "housekeeping",
+    label: "Operations",
+    badge: "",
+    title: "Keep the day moving, room by room.",
+    body: "Connect cleaning assignments, inspections, and maintenance to the next arrival. Make every handoff visible.",
+    accent: "#dddcd8",
+    surface: "#f2f2f0",
+  },
+  {
+    id: "accounting",
+    label: "Accounting",
+    badge: "",
+    title: "See the story behind every balance.",
+    body: "Bring invoices, approvals, reconciliation, and budgets into the same operating picture.",
+    accent: "#dddcd8",
+    surface: "#f2f2f0",
+  },
+  {
+    id: "procurement",
+    label: "Procurement",
+    badge: "",
+    title: "Buy with the whole hotel in mind.",
+    body: "Compare suppliers, check spend, and coordinate approvals. Keep the order connected through delivery.",
+    accent: "#dddcd8",
+    surface: "#f2f2f0",
+  },
+];
+
+export function ScrollShowcase({ hotel = false }: { hotel?: boolean }) {
+  const states = hotel ? hotelStates : defaultStates;
+  const icons = hotel
+    ? [CalendarCheck, Wrench, CreditCard, Shop]
+    : showcaseIcons;
   const section = useRef<HTMLElement>(null);
   const exit = useRef<HTMLDivElement>(null);
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
@@ -290,36 +338,71 @@ export function ScrollShowcase() {
   }
 
   return (
-    <div className={styles.page}>
+    <div className={styles.page} data-hotel={hotel || undefined}>
       <header className={styles.intro}>
-        <h1>
-          Turn conversations
-          <br />
-          into completed work.
-        </h1>
-        <p className={styles.subheadline}>
-          Connect conversations, delegate tasks, and keep work moving.
-        </p>
-        <div className={styles.oauthActions}>
-          <a
-            className={googleButtonStyles.button}
-            href={siteConfig.googleAuthUrl}
-          >
-            <GoogleCtaContent />
-          </a>
-          <a
-            className={googleButtonStyles.button}
-            href={`${siteConfig.appOrigin}/login`}
-          >
-            <span className={googleButtonStyles.content}>
-              <Image src="/brand/microsoft.svg" alt="" width={18} height={18} />
-              Continue with Microsoft
+        {hotel ? (
+          <>
+            <span className={styles.hotelEyebrow}>
+              THE INNFLOW HOTEL PLATFORM · PREVIEW
             </span>
-          </a>
-        </div>
-        <small className={styles.signupNote}>
-          <a href={siteConfig.signupUrl}>Sign up with email</a>
-        </small>
+            <h1>
+              Great stays start
+              <br />
+              with connected teams.
+            </h1>
+            <p className={styles.subheadline}>
+              Reservations, operations, and finance. Bring the work behind every
+              stay into one connected hotel workspace.
+            </p>
+            <div className={styles.oauthActions}>
+              <a className={styles.hotelPrimary} href={siteConfig.demoUrl}>
+                Plan your hotel workflow <span aria-hidden="true">↗</span>
+              </a>
+              <a className={styles.hotelSecondary} href="/hotel-pms">
+                Explore the platform <span aria-hidden="true">↓</span>
+              </a>
+            </div>
+            <small className={styles.signupNote}>
+              A preview of what we’re building for hospitality.
+            </small>
+          </>
+        ) : (
+          <>
+            <h1>
+              Turn conversations
+              <br />
+              into completed work.
+            </h1>
+            <p className={styles.subheadline}>
+              Connect conversations, delegate tasks, and keep work moving.
+            </p>
+            <div className={styles.oauthActions}>
+              <a
+                className={googleButtonStyles.button}
+                href={siteConfig.googleAuthUrl}
+              >
+                <GoogleCtaContent />
+              </a>
+              <a
+                className={googleButtonStyles.button}
+                href={`${siteConfig.appOrigin}/login`}
+              >
+                <span className={googleButtonStyles.content}>
+                  <Image
+                    src="/brand/microsoft.svg"
+                    alt=""
+                    width={18}
+                    height={18}
+                  />
+                  Continue with Microsoft
+                </span>
+              </a>
+            </div>
+            <small className={styles.signupNote}>
+              <a href={siteConfig.signupUrl}>Sign up with email</a>
+            </small>
+          </>
+        )}
       </header>
       <section
         ref={section}
@@ -387,7 +470,7 @@ export function ScrollShowcase() {
                     }}
                   >
                     {(() => {
-                      const StateIcon = showcaseIcons[index];
+                      const StateIcon = icons[index];
                       return <StateIcon size={28} />;
                     })()}
                     <span className={styles.tooltip}>{state.label}</span>
@@ -415,7 +498,7 @@ export function ScrollShowcase() {
                     <div className={styles.copy}>
                       <div className={styles.label}>
                         {(() => {
-                          const StateIcon = showcaseIcons[index];
+                          const StateIcon = icons[index];
                           return <StateIcon size={24} />;
                         })()}
                         <span>{state.label}</span>
@@ -423,7 +506,13 @@ export function ScrollShowcase() {
                       </div>
                       <h2>{state.title}</h2>
                       <p>{state.body}</p>
-                      <a href="/products/platform">
+                      <a
+                        href={
+                          hotel
+                            ? `/hotel-pms/${state.id}`
+                            : "/products/platform"
+                        }
+                      >
                         Learn more
                         <ChevronRight />
                         <span className={styles.srOnly}>
@@ -432,17 +521,21 @@ export function ScrollShowcase() {
                         </span>
                       </a>
                     </div>
-                    <Illustration
-                      key={
-                        index === 0
-                          ? "calendar"
-                          : active === index
-                            ? "active"
-                            : "idle"
-                      }
-                      index={index}
-                      active={active === index}
-                    />
+                    {hotel ? (
+                      <HotelWorkspace kind={state.id} compact />
+                    ) : (
+                      <Illustration
+                        key={
+                          index === 0
+                            ? "calendar"
+                            : active === index
+                              ? "active"
+                              : "idle"
+                        }
+                        index={index}
+                        active={active === index}
+                      />
+                    )}
                   </section>
                 ))}
               </div>

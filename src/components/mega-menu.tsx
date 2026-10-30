@@ -11,6 +11,7 @@ import {
   Screencast as Browser,
   BuildingB as Buildings,
   ChevronDown as CaretDown,
+  Chart as ChartIcon,
   Dashboard as CirclesFour,
   DashboardPlus as CirclesThreePlus,
   CreditCard,
@@ -35,10 +36,7 @@ import {
 } from "@/components/icons/mage";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
-import {
-  industryHref,
-  industryNavigation,
-} from "@/content/industry-navigation";
+import { hotelGroups, hotelHref, hotelModules } from "@/content/hotel-pms";
 import { platformPages } from "@/content/platform";
 import { megaMenuHref } from "@/lib/mega-menu-destinations";
 import styles from "./mega-menu.module.css";
@@ -517,108 +515,78 @@ export function directorySectionId(heading: string) {
   return heading.toLowerCase().replaceAll(" ", "-");
 }
 
-function featuredColumns(
-  columns: MegaMenuColumn[],
-  selections: Record<string, string[]>,
-): MegaMenuColumn[] {
-  return columns.map((column) => ({
-    ...column,
-    links: [
-      ...(selections[column.heading]
-        ? column.links.filter((link) =>
-            selections[column.heading].includes(link.title),
-          )
-        : column.links.slice(0, 4)),
-    ],
-  }));
-}
-
 export const menuBrowseLinks: Partial<
   Record<string, { href: string; title: string }>
 > = {
-  Product: { href: "/products", title: "Browse all products" },
-  Solutions: {
-    href: "/solutions",
-    title: "Browse all industries and solutions",
-  },
+  Product: { href: "/hotel-pms", title: "Explore the hotel platform" },
+  Solutions: { href: "/hotel-pms#hotel-teams", title: "Explore hotel teams" },
 };
 
-export const productColumns = featuredColumns(allProductColumns, {
-  "Platform and agents": ["Platform", "Integrations", "AI Agents"],
-  "Build and customize": ["Agent Studio", "Agent Skills"],
-  "Automation and intelligence": [
-    "Agentic Automation",
-    "Self Learning",
-    "Evaluations",
-    "Analytics and Observability",
-  ],
-  "Connections and governance": [
-    "Deployment Options",
-    "Security and Compliance",
-  ],
-});
+export const productColumns: MegaMenuColumn[] = hotelGroups.map((group) => ({
+  heading: group,
+  links: hotelModules
+    .filter((module) => module.group === group)
+    .map((module) => ({
+      href: hotelHref(module.slug),
+      title: module.name,
+      body: module.description,
+      icon:
+        group === "Guest operations"
+          ? DoorOpen
+          : group === "Hotel operations"
+            ? Wrench
+            : ChartIcon,
+    })),
+}));
 
 export const solutionsColumns: MegaMenuColumn[] = [
   {
-    heading: "Financial & professional",
-    slugs: [
-      "financial-services-banking",
-      "finance",
-      "banking",
-      "insurance",
-      "private-equity",
-      "professional-services",
+    heading: "Your hotel",
+    links: [
+      {
+        title: "Independent hotels",
+        href: "/hotel-pms#hotel-teams",
+        body: "Connect the daily work behind a great stay.",
+        icon: Buildings,
+      },
+      {
+        title: "Hotel groups",
+        href: "/hotel-pms/portfolio",
+        body: "Property detail with a portfolio perspective.",
+        icon: Buildings,
+      },
+      {
+        title: "Extended stays",
+        href: "/hotel-pms#hotel-teams",
+        body: "Longer stays, connected service and billing.",
+        icon: Buildings,
+      },
     ],
   },
   {
-    heading: "People & services",
-    slugs: [
-      "healthcare",
-      "pharmaceutical",
-      "public-sector",
-      "hospitality-travel",
-      "retail-ecommerce",
-      "business-process-outsourcing",
+    heading: "Your team",
+    links: [
+      {
+        title: "Front office",
+        href: "/hotel-pms/front-desk",
+        body: "Reservations, arrivals, and guest context.",
+        icon: DoorOpen,
+      },
+      {
+        title: "Hotel operations",
+        href: "/hotel-pms/housekeeping",
+        body: "Room readiness and team handoffs.",
+        icon: Wrench,
+      },
+      {
+        title: "Finance teams",
+        href: "/hotel-pms/accounting",
+        body: "Invoice review, reconciliation, and budgets.",
+        icon: CreditCard,
+      },
     ],
   },
-  {
-    heading: "Industry & operations",
-    slugs: [
-      "property-real-estate",
-      "property-management",
-      "manufacturing",
-      "telecommunications",
-      "energy-utilities",
-      "construction",
-      "supply-chain-logistics",
-      "technology-software",
-    ],
-  },
-  {
-    heading: "Teams & use cases",
-    slugs: [
-      "hr-recruitment",
-      "talent-acquisition",
-      "customer-service",
-      "debt-collection",
-      "cross-industry",
-      "custom-ai-solutions",
-    ],
-  },
-].map(({ heading, slugs }) => ({
-  heading,
-  links: slugs.map((slug) => {
-    const page = industryNavigation.find((page) => page.slug === slug);
-    if (!page) throw new Error(`Unknown industry: ${slug}`);
-    return {
-      href: industryHref(page.slug),
-      title: page.name,
-      body: "",
-      icon: Buildings,
-      hideIcon: true,
-    };
-  }),
-}));
+];
 
 export const portfolioColumns: MegaMenuColumn[] = corePortfolioColumns.map(
   (column) => ({

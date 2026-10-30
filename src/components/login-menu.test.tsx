@@ -65,15 +65,17 @@ it("keeps direct login links and returns focus to the product disclosure on Esca
   trigger.focus();
   await user.keyboard("{Enter}");
   expect(trigger).toHaveAttribute("aria-expanded", "true");
-  const platform = screen.getByRole("link", { name: "Platform" });
-  expect(platform).toHaveAttribute("href", "/platform");
+  const platform = screen.getByRole("link", {
+    name: "Reservations & front desk",
+  });
+  expect(platform).toHaveAttribute("href", "/hotel-pms/front-desk");
   await user.tab();
   expect(platform).toHaveFocus();
   await user.keyboard("{Escape}");
   expect(trigger).toHaveFocus();
   expect(trigger).toHaveAttribute("aria-expanded", "false");
   expect(
-    screen.queryByRole("link", { name: "Platform" }),
+    screen.queryByRole("link", { name: "Reservations & front desk" }),
   ).not.toBeInTheDocument();
 });
 

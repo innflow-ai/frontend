@@ -5,14 +5,14 @@ import { featurePageRoutes } from "./feature-page-routes";
 import { featurePageDesigns } from "./feature-pages";
 
 describe("Figma feature page handoff", () => {
-  it("keeps property feature routes available outside the industry navigation", () => {
+  it("keeps property feature routes available outside the hotel navigation", () => {
     for (const page of featurePageDesigns) {
       expect(existsSync(`src/app${page.path}/page.tsx`), page.path).toBe(true);
     }
     expect(
       solutionsColumns
         .flatMap((column) => column.links)
-        .every((link) => link.href.startsWith("/industries/")),
+        .every((link) => link.href.startsWith("/hotel-pms")),
     ).toBe(true);
   });
 

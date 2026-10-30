@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next";
 import { Host_Grotesk } from "next/font/google";
 import type { ReactNode } from "react";
 import { ConsentManagedTags } from "@/components/consent-managed-tags";
+import { HotelFooter } from "@/components/hotel-pms/hotel-pages";
 import { MarketingRuntime } from "@/components/marketing-runtime";
 import type { LatestBlogPostNavItem } from "@/components/mega-menu";
 import { NavigationBlogPostsProvider } from "@/components/navigation-blog-posts";
@@ -187,7 +188,10 @@ export default async function RootLayout({
           <SiteHeader />
           {children}
           <SiteCta />
-          <SiteFooterBoundary preview={<TemplateFooter />}>
+          <SiteFooterBoundary
+            preview={<TemplateFooter />}
+            hotel={<HotelFooter />}
+          >
             <SiteFooter />
           </SiteFooterBoundary>
         </NavigationBlogPostsProvider>

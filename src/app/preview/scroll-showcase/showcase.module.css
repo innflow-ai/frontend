@@ -1,4 +1,4 @@
-/* Figma four-state reference + supplied Calendly tokens, scoped to this preview. */
+/* Figma four-state reference. Hotel variant retains the same responsive motion. */
 .page {
   --preview-ink: #071a31;
   --preview-muted: #5d6d7b;
@@ -996,4 +996,85 @@
     #3dcfad 73.558%,
     #246a87 100%
   );
+}
+
+.page[data-hotel="true"] {
+  --preview-ink: #1a1a1a;
+  --preview-muted: #4d4d4d;
+  background: #f3f3f1;
+  font-family: var(--hotel-body), Inter, sans-serif;
+}
+.page[data-hotel="true"] :is(h1, h2, h3) {
+  font-family: var(--hotel-heading), sans-serif;
+}
+.page[data-hotel="true"] .intro {
+  padding-top: 150px;
+  padding-bottom: 48px;
+}
+.hotelEyebrow {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  margin-bottom: 24px;
+}
+.hotelPrimary,
+.hotelSecondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  border-radius: 16px;
+  padding: 16px 22px;
+  font-size: 14px;
+  text-decoration: none;
+}
+.hotelPrimary {
+  background: #202020;
+  color: white;
+}
+.hotelSecondary {
+  color: #1a1a1a;
+  border: 1px solid #0e213e1a;
+  background: #fff;
+}
+.page[data-hotel="true"] .gradient {
+  background:
+    linear-gradient(#1a1a1a15, #1a1a1a40),
+    url("/hotel-pms/lobby.jpg") center / cover;
+  width: 124%;
+  transform: translate3d(calc(var(--gradient-progress, 0) * -3%), 0, 0);
+  filter: none;
+}
+.page[data-hotel="true"] .card {
+  background: #f8f8f8f5;
+}
+.page[data-hotel="true"] .panel {
+  gap: 40px;
+}
+.page[data-hotel="true"] .copy h2 {
+  font-size: clamp(28px, 3vw, 40px);
+}
+.page[data-hotel="true"] .copy p {
+  font-size: 14px;
+}
+.page[data-hotel="true"] .tabs button {
+  color: #1a1a1a;
+}
+@media (max-width: 800px) {
+  .page[data-hotel="true"] {
+    margin-inline: 12px;
+    border-radius: 30px;
+  }
+  .page[data-hotel="true"] .intro {
+    padding: 120px 16px 36px;
+  }
+  .page[data-hotel="true"] .panel {
+    gap: 28px;
+  }
+  .page[data-hotel="true"] .hotelPrimary,
+  .page[data-hotel="true"] .hotelSecondary {
+    padding: 14px 18px;
+    font-size: 12px;
+    gap: 16px;
+  }
 }

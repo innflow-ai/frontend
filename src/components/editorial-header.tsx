@@ -23,11 +23,6 @@ import {
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
 import styles from "./editorial-header.module.css";
-import {
-  useNavigationAppUpdate,
-  useNavigationTestimonial,
-} from "./navigation-blog-posts";
-import { TestimonialCard } from "./testimonial-cards";
 
 type MobileMenuGroup = {
   label: string;
@@ -354,7 +349,8 @@ export function MobileNavigation({
   latestBlogPosts = [],
   id = "editorial-mobile-overlay",
   className = "",
-  pricingHref = "/pricing",
+  pricingHref = "/hotel-pms",
+  pricingLabel = "Platform overview",
   loginHref = `${siteConfig.appOrigin}/login`,
 }: {
   open: boolean;
@@ -363,12 +359,11 @@ export function MobileNavigation({
   id?: string;
   className?: string;
   pricingHref?: string;
+  pricingLabel?: string;
   loginHref?: string;
 }) {
   const reduce = useReducedMotion();
   const mobileMenuBaseId = useId();
-  const latestUpdate = useNavigationAppUpdate();
-  const testimonial = useNavigationTestimonial();
   const [openMobileGroup, setOpenMobileGroup] = useState<string | null>(null);
   useEffect(() => {
     if (!open) setOpenMobileGroup(null);
@@ -487,23 +482,6 @@ export function MobileNavigation({
                               <span>{menuBrowseLinks[group.label]?.title}</span>
                             </a>
                           )}
-                          {group.label === "Solutions" && testimonial && (
-                            <section
-                              className={styles.mobileLatestPosts}
-                              aria-label="Customer testimonial"
-                            >
-                              <h3>In their own words</h3>
-                              <TestimonialCard item={testimonial} />
-                            </section>
-                          )}
-                          {group.label === "Product" && latestUpdate && (
-                            <MobileLatestPosts
-                              posts={[latestUpdate]}
-                              onSelect={closeMobile}
-                              heading="Company updates"
-                              showAll={false}
-                            />
-                          )}
                           {group.label === "Resources" ? (
                             <MobileLatestPosts
                               posts={latestBlogPosts}
@@ -523,7 +501,7 @@ export function MobileNavigation({
               variants={reduce ? undefined : itemVariants}
               onClick={closeMobile}
             >
-              Pricing
+              {pricingLabel}
             </motion.a>
             <motion.a
               href="/blog"
@@ -541,13 +519,13 @@ export function MobileNavigation({
               >
                 Login
               </a>
-              <GoogleSignInButton
+              <a
+                href={siteConfig.demoUrl}
                 className={`${styles.button} ${styles.mobileCta}`}
-                eventLabel="mobile_continue_google"
-                label="Continue with Google"
-                variant="brand"
-                iconSize={20}
-              />
+                onClick={closeMobile}
+              >
+                Plan your hotel workflow
+              </a>
             </div>
           </motion.nav>
         </motion.div>

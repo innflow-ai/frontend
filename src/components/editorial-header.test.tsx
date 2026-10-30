@@ -89,8 +89,8 @@ describe("EditorialHeader navigation", () => {
     });
     expect(document.body.style.overflow).toBe("hidden");
     expect(
-      within(navigation).getByRole("link", { name: "Pricing" }),
-    ).toHaveAttribute("href", "/pricing");
+      within(navigation).getByRole("link", { name: "Platform overview" }),
+    ).toHaveAttribute("href", "/hotel-pms");
     expect(
       within(navigation).getByRole("link", { name: "Login" }),
     ).toHaveAttribute("href", "https://app.innflow.ai/login");
@@ -146,20 +146,19 @@ describe("EditorialHeader navigation", () => {
     vi.stubGlobal("cancelAnimationFrame", vi.fn());
   });
 
-  it("groups platform capabilities and the integration directory under Product on desktop and mobile", async () => {
+  it("groups hotel workflows under Product on desktop and mobile", async () => {
     const user = userEvent.setup();
     render(<EditorialHeader />);
     expect(
       screen.queryByRole("button", { name: "Platform" }),
     ).not.toBeInTheDocument();
     const pages = [
-      ["Agentic Automation", "agentic-automation"],
-      ["Self Learning", "self-learning"],
-      ["Evaluations", "evaluations"],
-      ["Analytics and Observability", "analytics-and-observability"],
-      ["Integrations", "integrations"],
-      ["Deployment Options", "deployment-options"],
-      ["Security and Compliance", "security-and-compliance"],
+      ["Reservations & front desk", "front-desk"],
+      ["Housekeeping & maintenance", "housekeeping"],
+      ["Hotel accounting", "accounting"],
+      ["Procurement & inventory", "procurement"],
+      ["Labor & scheduling", "labor"],
+      ["Portfolio intelligence", "portfolio"],
     ];
     await user.click(screen.getByRole("button", { name: "Product" }));
     const desktop = within(
@@ -168,10 +167,7 @@ describe("EditorialHeader navigation", () => {
     for (const [title, slug] of pages) {
       expect(
         desktop.getByRole("link", { name: new RegExp(`^${title}`) }),
-      ).toHaveAttribute(
-        "href",
-        slug === "integrations" ? "/integrations" : `/platform/${slug}`,
-      );
+      ).toHaveAttribute("href", `/hotel-pms/${slug}`);
     }
     await user.keyboard("{Escape}");
     expect(
@@ -185,13 +181,10 @@ describe("EditorialHeader navigation", () => {
     for (const [title, slug] of pages) {
       expect(
         mobile.getByRole("link", { name: new RegExp(`^${title}`) }),
-      ).toHaveAttribute(
-        "href",
-        slug === "integrations" ? "/integrations" : `/platform/${slug}`,
-      );
+      ).toHaveAttribute("href", `/hotel-pms/${slug}`);
     }
     await user.click(
-      mobile.getByRole("link", { name: /^Security and Compliance/ }),
+      mobile.getByRole("link", { name: /^Portfolio intelligence/ }),
     );
     expect(
       document.getElementById("editorial-mobile-overlay"),
@@ -235,17 +228,16 @@ describe("EditorialHeader navigation", () => {
     ).toHaveAttribute("href", "/blog");
   });
 
-  it("replaces the property portfolio menu with industry solutions", async () => {
+  it("shows hotel teams and operating models in Solutions", async () => {
     const user = userEvent.setup();
     render(<EditorialHeader />);
     expect(
       screen.queryByRole("button", { name: "Portfolios" }),
     ).not.toBeInTheDocument();
     await user.click(screen.getByRole("button", { name: "Solutions" }));
-    expect(screen.getByRole("link", { name: /^Healthcare/ })).toHaveAttribute(
-      "href",
-      "/industries/healthcare",
-    );
+    expect(
+      screen.getByRole("link", { name: /^Independent hotels/ }),
+    ).toHaveAttribute("href", "/hotel-pms#hotel-teams");
     expect(
       screen.queryByRole("link", { name: /^Rent Collection/ }),
     ).not.toBeInTheDocument();
@@ -270,10 +262,12 @@ describe("EditorialHeader navigation", () => {
 
     expect(product).toHaveAttribute("aria-expanded", "false");
     expect(resources).toHaveAttribute("aria-expanded", "false");
-    expect(mobile.getByRole("link", { name: "Pricing" })).toBeInTheDocument();
+    expect(
+      mobile.getByRole("link", { name: "Platform overview" }),
+    ).toBeInTheDocument();
     expect(mobile.getByRole("link", { name: "Blog" })).toBeInTheDocument();
     expect(
-      mobile.getByRole("button", { name: "Continue with Google" }),
+      mobile.getByRole("link", { name: "Plan your hotel workflow" }),
     ).toHaveClass(styles.mobileCta);
     expect(
       mobile.queryByRole("link", { name: "Sign Up" }),
@@ -439,10 +433,10 @@ describe("SiteHeader mega-menu destinations", () => {
   });
 
   const namedItems: Array<[string, string]> = [
-    ["Healthcare", "/industries/healthcare"],
-    ["Property Management", "/industries/property-management"],
-    ["Technology & Software", "/industries/technology-software"],
-    ["Custom AI Solutions", "/industries/custom-ai-solutions"],
+    ["Independent hotels", "/hotel-pms#hotel-teams"],
+    ["Hotel groups", "/hotel-pms/portfolio"],
+    ["Front office", "/hotel-pms/front-desk"],
+    ["Finance teams", "/hotel-pms/accounting"],
   ];
 
   afterEach(() => cleanup());

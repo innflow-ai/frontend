@@ -124,3 +124,16 @@
     padding-inline: 10px;
   }
 }
+
+.previewScope[data-hotel-navigation] {
+  color: #1a1a1a;
+}
+.previewScope[data-hotel-navigation] .announcement {
+  background: #e9e9e7;
+  color: #1a1a1a;
+}
+.previewScope[data-hotel-navigation] header a[href*="cal.com"] {
+  background: #202020;
+  color: #fff;
+  border-radius: 16px;
+}

@@ -1,13 +1,15 @@
 import { AuthenticatedHomeRedirect } from "@/components/authenticated-home-redirect";
-import { ShowcaseHomepage } from "@/components/showcase-homepage";
+import { HotelHomepage } from "@/components/hotel-pms/hotel-pages";
 import { siteConfig } from "@/config/site";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "AI Agents & Connected Workflows | Innflow",
+  title: "Hotel PMS & Connected Operations | Innflow",
   description:
-    "Bring conversations, AI agents and everyday workflows into one workspace. Connect your team, tools and knowledge across industries.",
+    "Explore a connected hotel workspace for reservations, guest experience, housekeeping, accounting, procurement, and portfolio performance.",
   path: "/",
+  image: "/hotel-pms/lobby.jpg",
+  imageAlt: "Innflow hotel operations platform",
 });
 
 export default function HomePage() {
@@ -17,7 +19,7 @@ export default function HomePage() {
         appOrigin={siteConfig.appOrigin}
         marketingOrigin={siteConfig.marketingOrigin}
       />
-      <ShowcaseHomepage />
+      <HotelHomepage />
     </>
   );
 }

@@ -123,7 +123,7 @@ it("uses homepage navigation on inner pages, including help and nested routes", 
       "flat",
     );
     expect(
-      screen.getByRole("link", { name: "Continue with Google" }),
+      screen.getByRole("link", { name: "Plan your hotel workflow" }),
     ).toBeInTheDocument();
     expect(screen.queryByRole("link", { name: "Get started" })).toBeNull();
     window.scrollY = 100;

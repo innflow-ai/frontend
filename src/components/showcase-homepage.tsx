@@ -19,16 +19,16 @@ const instrumentSans = Instrument_Sans({
   display: "swap",
 });
 
-export async function ShowcaseHomepage({ hotel = false }: { hotel?: boolean }) {
+export async function ShowcaseHomepage() {
   const stories = await getPageTestimonials("/");
   return (
     <main
       id="main-content"
       className={`${styles.page} ${instrumentSans.variable} ${typography.headings}`}
     >
-      <ScrollShowcase hotel={hotel} />
+      <ScrollShowcase />
       <ShowcaseTheme>
-        <WorkspaceOverview hotel={hotel} />
+        <WorkspaceOverview />
         <HomepageAgentShowcase />
         <HomepageCollaboration />
         <BaselineFeatures />

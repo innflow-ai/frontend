@@ -51,7 +51,7 @@ Source: `329:253`; dialog specimens `409:133`; font variables `406:47` UI, `406:
 | Code | JetBrains Mono 400 | 13 / 19.5px | 0 |
 | Metadata | JetBrains Mono 500 | 11 / 15.4px | 0 |
 
-**Homepage exception, requested 2026-10-29:** use Instrument Sans for homepage headings, including the former Manrope and Source Serif 4 heading roles and “Let your experts build the agents.” Instrument Sans and Instrument Serif are different families. This exception does not replace the app's Inter controls or serif display role. Existing homepage body fonts are implementation history, not a new shared default. Check nested button labels and web-component shadow roots when implementing heading changes.
+**Homepage exception, updated 2026-10-30:** use Source Serif 4 for homepage headings, including “Let your experts build the agents.” This replaces the Instrument Sans choice from 2026-10-29. This exception does not replace the app's Inter controls or Instrument Serif display role. Existing homepage body fonts are implementation history, not a new shared default. Check nested button labels and web-component shadow roots when implementing heading changes.
 
 Cal Sans / Host Grotesk, Questrial / Figtree, and Space Mono / Geist Mono are no longer default shared UI roles. Preserve approved identity artwork, tier labels, and explicit reproduction exceptions. Load actual available font styles and licensed font files through the destination's loader. The new asset package does not claim to bundle font binaries. Never re-typeset the outlined logo.
 
@@ -63,7 +63,7 @@ Cal Sans / Host Grotesk, Questrial / Figtree, and Space Mono / Geist Mono are no
 - Dialog recipe: 40px outer corners, 12px shell padding, Inter 24/32 semibold title, 14/20 secondary body text, 16px action gap, 40px actions with 16px corners. Secondary action uses control fill; primary uses action/on-action colors. Keep the actual action clear in its label.
 - Floating UI may use restrained layered elevation. Ordinary actions remain flat. The selected dialog specimens currently have no effects; do not invent a universal shadow or blur value from the prose elevation rule.
 - On marketing pages preserve full-width section backgrounds, readable copy widths, responsive stacking, and the approved scroll interactions. App dimensions do not dictate a universal website container width.
-- Navigation, controls, tables, and composer text use Inter. Editorial display uses Instrument Serif sparingly; the homepage exception uses Instrument Sans. Preserve authentic third-party UI conventions inside Slack, Teams, email, and iMessage demonstrations.
+- Navigation, controls, tables, and composer text use Inter. Editorial display uses Instrument Serif sparingly; the homepage exception uses Source Serif 4. Preserve authentic third-party UI conventions inside Slack, Teams, email, and iMessage demonstrations.
 
 ## Motion and accessibility
 

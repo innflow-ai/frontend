@@ -48,12 +48,12 @@ export const metadata: Metadata = {
   applicationName: "Innflow",
   icons: {
     icon: [
-      { url: "/icon.png", sizes: "96x96", type: "image/png" },
       {
-        url: "/brand/innflow-favicon.svg?v=20260928",
-        sizes: "any",
-        type: "image/svg+xml",
+        url: "/favicon.ico?v=20261030",
+        sizes: "16x16 24x24 32x32 48x48 64x64 96x96 128x128 256x256",
+        type: "image/x-icon",
       },
+      { url: "/icon.png?v=20261030", sizes: "96x96", type: "image/png" },
     ],
     apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
   },
@@ -187,7 +187,10 @@ export default async function RootLayout({
           <SiteHeader />
           {children}
           <SiteCta />
-          <SiteFooterBoundary preview={<TemplateFooter />}>
+          <SiteFooterBoundary
+            preview={<TemplateFooter featuredOn={false} />}
+            homepage={<TemplateFooter />}
+          >
             <SiteFooter />
           </SiteFooterBoundary>
         </NavigationBlogPostsProvider>

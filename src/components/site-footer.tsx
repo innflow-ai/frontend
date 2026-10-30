@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { LaunchDirectoryMarquee } from "@/components/launch-directory-marquee";
 import { siteConfig } from "@/config/site";
 import { CustomerSupportHours } from "./customer-support-hours";
 import { FooterLegalLinks } from "./footer-legal-links";
@@ -65,7 +64,6 @@ const footerMenus = [
 export function SiteFooter() {
   return (
     <div className={styles.page}>
-      <LaunchDirectoryMarquee />
       <footer className={styles.footer}>
         <div className={styles.footerGrid}>
           <div>

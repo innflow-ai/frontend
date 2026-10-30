@@ -2,10 +2,12 @@
 
 import { useState } from "react";
 import {
+  Database,
   ArrowDown as MageArrowDown,
-  ArrowRight as MageArrowRight,
   Minus as MageMinus,
   Plus as MagePlus,
+  Share,
+  StarsA,
 } from "@/components/icons/mage";
 import { TrackedLink } from "@/components/tracked-link";
 import { pricingCatalog } from "@/config/pricing";
@@ -20,6 +22,8 @@ const money = (value: number | null) =>
 const groups = [
   {
     title: "WORKFLOW CAPACITY",
+    label: "Workflow capacity",
+    icon: Share,
     rows: [
       ["Monthly credits", "monthlyCredits"],
       ["Workspaces", "workspaces"],
@@ -28,6 +32,8 @@ const groups = [
   },
   {
     title: "DATA AND HISTORY",
+    label: "Data and history",
+    icon: Database,
     rows: [
       ["Tables", "tables"],
       ["Rows per table", "rowsPerTable"],
@@ -36,6 +42,8 @@ const groups = [
   },
   {
     title: "ADVANCED CAPABILITIES",
+    label: "Advanced capabilities",
+    icon: StarsA,
     rows: [
       ["Premium workflow nodes", "premiumWorkflowNodes"],
       ["Exclusive AI models", "exclusiveAiModels"],
@@ -64,53 +72,125 @@ const questions = [
     "Enterprise plans are scoped around custom credit volume, rate limits, seats, security requirements, deployment needs, onboarding, and service levels.",
   ],
 ];
+type Plan = (typeof plans)[number];
+
+function PlanLink({
+  plan,
+  compact = false,
+}: {
+  plan: Plan;
+  compact?: boolean;
+}) {
+  const enterprise = plan.name === "Enterprise";
+  const featured = plan.name === "Pro";
+  return (
+    <TrackedLink
+      className={`${styles.button} ${compact ? styles.compactButton : ""} ${featured ? styles.primaryButton : ""}`}
+      destination={
+        enterprise ? siteConfig.contactUrl : siteConfig.googleAuthUrl
+      }
+      eventLabel={`pricing_${plan.name.toLowerCase()}_${enterprise ? "contact" : "signup"}`}
+      aria-label={
+        enterprise
+          ? "Talk to sales about Enterprise"
+          : `Get started with ${plan.name}`
+      }
+    >
+      {enterprise ? "Talk to sales" : "Get started"}
+      {!compact && (
+        // biome-ignore lint/performance/noImgElement: Exact, local Figma control asset.
+        <img
+          src={`/pricing/figma/arrow-right${featured ? "-light" : ""}.svg`}
+          alt=""
+          width={24}
+          height={24}
+        />
+      )}
+    </TrackedLink>
+  );
+}
+
+function FeatureValue({ value }: { value: string }) {
+  if (value === "Yes")
+    return (
+      <>
+        {/* biome-ignore lint/performance/noImgElement: Exact local 20px comparison icon. */}
+        <img
+          className={styles.includedIcon}
+          src="/pricing/figma/included.svg"
+          alt=""
+          width={20}
+          height={20}
+        />
+        <span className={styles.srOnly}>Included</span>
+      </>
+    );
+  if (value === "No")
+    return (
+      <>
+        <span aria-hidden="true">·</span>
+        <span className={styles.srOnly}>Not included</span>
+      </>
+    );
+  return value;
+}
+
 export function BaselanePricing() {
-  const [annual, setAnnual] = useState(false);
+  const [annual, setAnnual] = useState(true);
   const [expanded, setExpanded] = useState<string[]>(
     groups.map((group) => group.title),
   );
   const allOpen = expanded.length === groups.length;
-  const value = (plan: (typeof plans)[number]) =>
+  const value = (plan: Plan) =>
     money(annual ? plan.commitmentMonthlyPrice : plan.monthlyPrice);
   return (
     <InnerPageShell>
       <div className={styles.page}>
         <section className={styles.hero} aria-labelledby="pricing-title">
           <div className={styles.intro}>
-            <div>
-              <span className={styles.eyebrow}>INNFLOW PRICING</span>
-              <h1 id="pricing-title">
-                Less busywork.
-                <br />
-                More possibilities.
-              </h1>
-            </div>
+            <h1 id="pricing-title">
+              Less busywork.
+              <br />
+              More possibilities.
+            </h1>
             <div className={styles.introDetails}>
               <p>
-                Start with your first workflow. Find the right plan to connect
-                your tools, automate everyday work, and grow with your team.
+                Connect your tools, automate everyday work, and give your team
+                more room to grow. Find the plan that fits.
               </p>
-              <fieldset className={styles.billing}>
+              <fieldset
+                className={styles.billing}
+                aria-describedby="billing-note"
+              >
                 <legend className={styles.srOnly}>Billing term</legend>
-                <span className={styles.billingLabel} data-active={!annual}>
+                <label>
+                  <input
+                    type="radio"
+                    name="billing"
+                    value="monthly"
+                    checked={!annual}
+                    onChange={() => setAnnual(false)}
+                  />
                   Monthly
-                </span>
-                <button
-                  type="button"
-                  role="switch"
-                  aria-label="Annual billing"
-                  aria-checked={annual}
-                  className={styles.billingSwitch}
-                  onClick={() => setAnnual((value) => !value)}
-                >
-                  <span className={styles.billingThumb} />
-                </button>
-                <span className={styles.billingLabel} data-active={annual}>
-                  Annual
-                </span>
+                </label>
+                <span className={styles.billingDivider} aria-hidden="true" />
+                <label>
+                  <input
+                    type="radio"
+                    name="billing"
+                    value="annual"
+                    checked={annual}
+                    onChange={() => setAnnual(true)}
+                  />
+                  Annual commitment
+                </label>
                 <span className={styles.savings}>Save 15%</span>
               </fieldset>
-              <p className={styles.billingNote} aria-live="polite">
+              <p
+                id="billing-note"
+                className={styles.billingNote}
+                aria-live="polite"
+              >
                 {annual
                   ? "Annual commitment, billed monthly. All prices in USD."
                   : "No annual commitment. All prices in USD."}
@@ -133,114 +213,116 @@ export function BaselanePricing() {
                 aria-label={`${plan.name} plan`}
               >
                 {index === 1 && (
-                  <div className={styles.popular}>MOST POPULAR</div>
+                  <div className={styles.popular}>POPULAR PLAN</div>
                 )}
                 <div className={styles.planTop}>
-                  <h2>{plan.name}</h2>
-                  <p className={styles.planDescription}>
-                    {
-                      [
-                        "Build your first workflows and see what’s possible.",
-                        "Put everyday work on autopilot, with room to grow.",
-                        "Scale connected workflows across your team.",
-                        "Shape a plan around your organization’s needs.",
-                      ][index]
-                    }
-                  </p>
-                  <div
-                    className={styles.price}
-                    aria-live="polite"
-                    aria-atomic="true"
-                  >
-                    <strong>{value(plan)}</strong>
-                    {plan.monthlyPrice !== null && <span>/month</span>}
+                  <div>
+                    <h2>{plan.name}</h2>
+                    <p className={styles.planDescription}>
+                      {
+                        [
+                          "Build your first workflows and see what’s possible.",
+                          "Put everyday work on autopilot, with room to grow.",
+                          "Scale connected workflows across your team.",
+                          "Shape a plan around your organization’s needs.",
+                        ][index]
+                      }
+                    </p>
                   </div>
-                  <p className={styles.planNote}>
-                    {index === 0
-                      ? "Free to get started"
-                      : index === 3
-                        ? "Let’s find the right fit"
-                        : annual
-                          ? "Annual plan, billed monthly"
-                          : "Billed monthly"}
-                  </p>
-                  <TrackedLink
-                    className={styles.button}
-                    destination={
-                      index === 3
-                        ? siteConfig.contactUrl
-                        : siteConfig.googleAuthUrl
-                    }
-                    eventLabel={`pricing_${plan.name.toLowerCase()}_${index === 3 ? "contact" : "signup"}`}
-                    aria-label={
-                      index === 3
-                        ? "Talk to sales about Enterprise"
-                        : `Get started with ${plan.name}`
-                    }
-                  >
-                    {index === 3 ? "Talk to sales" : "Get started"}
-                    <span aria-hidden="true">
-                      <MageArrowRight size="1em" />
-                    </span>
-                  </TrackedLink>
+                  <div>
+                    <div
+                      className={styles.price}
+                      data-free={index === 0}
+                      aria-live="polite"
+                      aria-atomic="true"
+                    >
+                      <strong>
+                        {index === 0 ? "Always free" : value(plan)}
+                      </strong>
+                      {index > 0 && index < 3 && <span>/month</span>}
+                    </div>
+                    <p className={styles.planNote}>
+                      {index === 0
+                        ? "Free to get started"
+                        : index === 3
+                          ? "Let’s find the right fit"
+                          : annual
+                            ? "Annual plan, billed monthly"
+                            : "Billed monthly"}
+                    </p>
+                    <PlanLink plan={plan} />
+                  </div>
                 </div>
                 <div className={styles.planFeatures}>
                   <p className={styles.includes}>
                     {
                       [
-                        "The essentials to get started:",
+                        "Includes:",
                         "More capacity, plus premium nodes:",
                         "Higher limits, plus advanced AI:",
                         "A plan built around your team:",
                       ][index]
                     }
                   </p>
-                  <h3>
-                    {index === 3 ? "Custom capacity" : "Workflow automation"}
-                  </h3>
-                  <ul>
-                    {index === 3 ? (
-                      [
-                        "Custom monthly credits",
-                        "Custom workflow and data capacity",
-                        "Security and deployment requirements",
-                        "Onboarding and service levels",
-                      ].map((feature) => <li key={feature}>{feature}</li>)
-                    ) : (
-                      <>
-                        <li>
-                          <strong>{plan.monthlyCredits}</strong> monthly credits
-                        </li>
-                        <li>
-                          {plan.workspaces}{" "}
-                          {index === 0 ? "workspace" : "workspaces"}
-                        </li>
-                        <li>{plan.deployedWorkflows} deployed workflows</li>
-                        <li>{plan.tables} tables</li>
-                        <li>{plan.rowsPerTable} rows per table</li>
-                        <li>{plan.runHistory} of run history</li>
-                        {plan.premiumWorkflowNodes === "Yes" && (
-                          <li>Premium workflow nodes</li>
-                        )}
-                        {plan.exclusiveAiModels === "Yes" && (
-                          <li>Exclusive AI models</li>
-                        )}
-                      </>
-                    )}
-                  </ul>
+                  {groups.map((group, groupIndex) => (
+                    <div className={styles.featureSection} key={group.title}>
+                      <h3>
+                        <span
+                          className={styles.featureIcon}
+                          data-category={groupIndex}
+                        >
+                          <group.icon size={16} />
+                        </span>
+                        {
+                          ["Workflows", "Data & history", "AI & capabilities"][
+                            groupIndex
+                          ]
+                        }
+                      </h3>
+                      <ul>
+                        {group.rows.map(([label, key]) => (
+                          <li key={key} data-unavailable={plan[key] === "No"}>
+                            {plan[key] === "Yes" || plan[key] === "No" ? (
+                              label
+                            ) : (
+                              <>
+                                <strong>{plan[key]}</strong>{" "}
+                                {key === "workspaces" && plan[key] === "1"
+                                  ? "workspace"
+                                  : label.toLowerCase()}
+                              </>
+                            )}
+                            {plan[key] === "No" && (
+                              <span className={styles.srOnly}>
+                                {" "}
+                                (not included)
+                              </span>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                  {index === 3 && (
+                    <p className={styles.enterpriseNote}>
+                      Talk with us about security, deployment, onboarding, and
+                      service levels.
+                    </p>
+                  )}
                 </div>
               </article>
             ))}
           </div>
           <a className={styles.compareLink} href="#compare-features">
-            Compare all features{" "}
-            <span aria-hidden="true">
-              <MageArrowDown size="1em" />
-            </span>
+            Compare all features <MageArrowDown size={18} />
           </a>
         </section>
-        <section id="compare-features" className={styles.comparison}>
-          <h2>Compare features</h2>
+        <section
+          id="compare-features"
+          className={styles.comparison}
+          aria-labelledby="comparison-title"
+        >
+          <h2 id="comparison-title">Compare features</h2>
           <div className={styles.compareControls}>
             <button
               className={styles.outline}
@@ -250,123 +332,113 @@ export function BaselanePricing() {
               }
             >
               {allOpen ? "Collapse all features" : "Expand all features"}
+              {allOpen ? <MageMinus size={16} /> : <MagePlus size={16} />}
             </button>
-            <p>Scroll across on smaller screens to compare all four plans.</p>
-          </div>
-          {groups.map((group) => (
-            <div className={styles.group} key={group.title}>
-              <button
-                type="button"
-                className={styles.groupToggle}
-                aria-expanded={expanded.includes(group.title)}
-                aria-controls={group.title.replaceAll(" ", "-")}
-                onClick={() =>
-                  setExpanded((old) =>
-                    old.includes(group.title)
-                      ? old.filter((t) => t !== group.title)
-                      : [...old, group.title],
-                  )
-                }
-              >
-                {group.title}
-                <span aria-hidden="true">
-                  {expanded.includes(group.title) ? (
-                    <MageMinus size="1em" />
-                  ) : (
-                    <MagePlus size="1em" />
-                  )}
-                </span>
-              </button>
-              <div
-                id={group.title.replaceAll(" ", "-")}
-                hidden={!expanded.includes(group.title)}
-              >
-                {/* Keyboard access to the horizontally scrollable comparison. */}
-                <section
-                  className={styles.tableScroll}
-                  aria-label={`${group.title.toLowerCase()} comparison`} // biome-ignore lint/a11y/noNoninteractiveTabindex: keyboard access to horizontal scrolling
-                  tabIndex={0}
-                >
-                  <table>
-                    <caption className={styles.srOnly}>
-                      {group.title} by innflow plan
-                    </caption>
-                    <thead>
-                      <tr>
-                        <th scope="col">Feature</th>
-                        {plans.map((plan) => (
-                          <th key={plan.name} scope="col">
-                            {plan.name}
-                            <small>
-                              {value(plan)}
-                              {plan.monthlyPrice !== null ? "/mo." : ""}
-                            </small>
-                          </th>
-                        ))}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {group.rows.map(([label, key]) => (
-                        <tr key={key}>
-                          <th scope="row">{label}</th>
-                          {plans.map((plan) => (
-                            <td key={plan.name}>{plan[key]}</td>
-                          ))}
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </section>
-              </div>
-            </div>
-          ))}
-        </section>
-        <section className={styles.terms}>
-          <h2>Simple, transparent choices.</h2>
-          <p>Know what your plan covers before you start.</p>
-          <div>
-            {[
-              [
-                "Monthly plans",
-                "Pay the standard monthly rate without choosing an annual plan.",
-              ],
-              [
-                "Annual plans",
-                "Choose an annual commitment, billed monthly at the lower annual rate.",
-              ],
-              [
-                "Usage",
-                "Credits reflect workflow and AI actions. Different actions can use different amounts.",
-              ],
-              [
-                "Enterprise",
-                "Discuss custom requirements and service levels directly with the team.",
-              ],
-            ].map(([title, text]) => (
-              <article key={title}>
-                <h3>{title}</h3>
-                <p>{text}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-        <section className={styles.faq}>
-          <div>
-            <span className={styles.eyebrow}>A LITTLE MORE CLARITY</span>
-            <h2>Frequently asked questions</h2>
-            <p className={styles.faqIntro}>
-              Need help choosing?{" "}
-              <a href={siteConfig.contactUrl}>Talk to our team.</a>
+            <p>
+              All plans in USD. Scroll across to compare on smaller screens.
             </p>
           </div>
-          <div>
+          <section
+            className={styles.tableScroll}
+            aria-label="Plan feature comparison"
+            // biome-ignore lint/a11y/noNoninteractiveTabindex: Keyboard access to horizontal comparison scrolling.
+            tabIndex={0}
+            data-lenis-prevent
+          >
+            <div className={styles.comparisonInner}>
+              <div className={styles.comparePlans}>
+                <span className={styles.comparePlanLabel}>Find your fit</span>
+                {plans.map((plan) => (
+                  <div key={plan.name}>
+                    <h3>{plan.name}</h3>
+                    <p>
+                      {value(plan)}
+                      {plan.monthlyPrice !== null ? "/mo." : ""}
+                    </p>
+                    <PlanLink plan={plan} compact />
+                  </div>
+                ))}
+              </div>
+              {groups.map((group) => (
+                <div className={styles.group} key={group.title}>
+                  <button
+                    type="button"
+                    className={styles.groupToggle}
+                    aria-label={group.title}
+                    aria-expanded={expanded.includes(group.title)}
+                    aria-controls={group.title.replaceAll(" ", "-")}
+                    onClick={() =>
+                      setExpanded((old) =>
+                        old.includes(group.title)
+                          ? old.filter((t) => t !== group.title)
+                          : [...old, group.title],
+                      )
+                    }
+                  >
+                    <span>
+                      <group.icon size={28} />
+                      {group.label}
+                    </span>
+                    {expanded.includes(group.title) ? (
+                      <MageMinus size={18} />
+                    ) : (
+                      <MagePlus size={18} />
+                    )}
+                  </button>
+                  <div
+                    id={group.title.replaceAll(" ", "-")}
+                    hidden={!expanded.includes(group.title)}
+                  >
+                    <table>
+                      <caption className={styles.srOnly}>
+                        {group.title} by Innflow plan
+                      </caption>
+                      <thead className={styles.srOnly}>
+                        <tr>
+                          <th scope="col">Feature</th>
+                          {plans.map((plan) => (
+                            <th key={plan.name} scope="col">
+                              {plan.name}
+                            </th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {group.rows.map(([label, key]) => (
+                          <tr key={key}>
+                            <th scope="row">{label}</th>
+                            {plans.map((plan) => (
+                              <td key={plan.name}>
+                                <FeatureValue value={plan[key]} />
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+        </section>
+        <section className={styles.faq} aria-labelledby="faq-title">
+          <h2 id="faq-title">Frequently asked questions</h2>
+          <div className={styles.questions}>
             {questions.map(([question, answer]) => (
               <details key={question}>
-                <summary>{question}</summary>
+                <summary>
+                  <span className={styles.faqSymbol} aria-hidden="true" />
+                  {question}
+                </summary>
                 <p>{answer}</p>
               </details>
             ))}
           </div>
+          <p className={styles.faqIntro}>
+            Need help choosing?{" "}
+            <a href={siteConfig.contactUrl}>Talk to our team.</a>
+          </p>
         </section>
       </div>
     </InnerPageShell>

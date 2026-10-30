@@ -14,7 +14,9 @@ export function LaunchDirectoryMarquee() {
       aria-labelledby="directory-heading"
     >
       <div className={styles.heading}>
-        <h2 id="directory-heading">Featured on</h2>
+        <h2 id="directory-heading" className={styles.title}>
+          Featured on
+        </h2>
       </div>
       <div className={styles.viewport}>
         <div className={styles.track}>

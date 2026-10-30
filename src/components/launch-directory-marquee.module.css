@@ -1,4 +1,6 @@
 .section {
+  min-width: 0;
+  font-family: var(--font-host-grotesk), sans-serif;
   margin: 32px 0;
   border-radius: 24px;
   padding: 24px 0;
@@ -11,11 +13,13 @@
   padding: 0 24px;
   text-align: center;
 }
-.heading h2 {
+.section .heading .title {
   margin: 0;
   font: inherit;
   font-size: 14px;
   font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0;
   color: #5d6d7b;
 }
 .viewport {

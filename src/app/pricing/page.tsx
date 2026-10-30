@@ -1,4 +1,6 @@
+import { BaselineClosing } from "@/app/preview/scroll-showcase/baseline-lower-sections";
 import { BaselanePricing } from "@/components/baselane-pricing";
+import { ShowcaseTheme } from "@/components/showcase-theme";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -9,5 +11,10 @@ export const metadata = createPageMetadata({
 });
 
 export default function PricingPage() {
-  return <BaselanePricing />;
+  return (
+    <ShowcaseTheme>
+      <BaselanePricing />
+      <BaselineClosing />
+    </ShowcaseTheme>
+  );
 }

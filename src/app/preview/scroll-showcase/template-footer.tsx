@@ -43,10 +43,14 @@ const groups = [
   ],
 ];
 
-export function TemplateFooter() {
+export function TemplateFooter({
+  featuredOn = true,
+}: {
+  featuredOn?: boolean;
+}) {
   return (
     <div className={styles.shell}>
-      <LaunchDirectoryMarquee />
+      {featuredOn && <LaunchDirectoryMarquee />}
       <footer className={styles.footer} data-source-node="350:11986">
         <div className={styles.upper}>
           <div className={styles.brand}>

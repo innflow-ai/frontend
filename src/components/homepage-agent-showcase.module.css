@@ -65,34 +65,36 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 40px;
-  padding: 10px 26px;
-  border-radius: 8px;
-  font-size: 14px;
+  min-height: 50px;
+  padding: 12px 20px;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  font-size: 16px;
   font-weight: 500;
-  line-height: 20px;
+  line-height: 22.4px;
   text-decoration: none;
-  transition: background 150ms;
+  transition:
+    background 150ms,
+    border-color 150ms;
 }
 .actions .primaryButton {
-  background: #18191b;
-  color: white;
+  background: #071a31;
+  color: var(--marketing-paper, white);
 }
 .actions .primaryButton:hover {
-  background: #333438;
+  background: #142d48;
 }
 .secondaryButton {
-  background: white;
-  color: #18191b;
-  box-shadow:
-    0 0 0 1px #e2e2e8,
-    0 3px 3px -1.5px #00000005;
+  border-color: #071a3126;
+  background: transparent;
+  color: #071a31;
 }
 .secondaryButton:hover {
-  background: #f3f3f6;
+  border-color: #071a314d;
+  background: #071a3108;
 }
 .actions a:focus-visible {
-  outline: 2px solid #006bff;
+  outline: 3px solid #006bff;
   outline-offset: 4px;
 }
 .capabilities {

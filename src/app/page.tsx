@@ -8,7 +8,6 @@ export const metadata = createPageMetadata({
   description:
     "Explore a connected hotel workspace for reservations, guest experience, housekeeping, accounting, procurement, and portfolio performance.",
   path: "/",
-  image: "/hotel-pms/lobby.jpg",
   imageAlt: "Innflow hotel operations platform",
 });
 

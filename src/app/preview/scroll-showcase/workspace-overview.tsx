@@ -78,7 +78,46 @@ export const workspaceCards = [
   },
 ] as const;
 
-export function WorkspaceOverview() {
+export function WorkspaceOverview({ hotel = false }: { hotel?: boolean }) {
+  const cards = hotel
+    ? workspaceCards.map((card, index) => ({
+        ...card,
+        summary: [
+          "Connect your hotel tools and context.",
+          "Share how your hotel operates.",
+          "Give every handoff an owner.",
+          "Review progress across the hotel.",
+        ][index],
+        description: [
+          "Bring guest context, hotel information, and connected tools into the same workspace.",
+          "Share your service standards, approval rules, and operating procedures with your agents.",
+          "Assign a focused workflow, from a guest request to an invoice review, with clear human checkpoints.",
+          "Follow progress across teams and properties. Keep people involved in the decisions that matter.",
+        ][index],
+        steps: [
+          [
+            "Connect your hotel tools",
+            "Add property information",
+            "Bring guest context together",
+          ],
+          [
+            "Share service standards",
+            "Define operating procedures",
+            "Set review requirements",
+          ],
+          [
+            "Assign the next handoff",
+            "Name the responsible team",
+            "Keep approval with people",
+          ],
+          [
+            "Follow workflow progress",
+            "Review open requests",
+            "Connect property and portfolio",
+          ],
+        ][index],
+      }))
+    : workspaceCards;
   const [active, setActive] = useState(0);
   const tablet = useSyncExternalStore(
     subscribeTablet,
@@ -129,8 +168,9 @@ export function WorkspaceOverview() {
               work forward.
             </h2>
             <p className={styles.introduction}>
-              Schedule meetings, prepare follow-ups, review decisions, and
-              handle billing questions.
+              {hotel
+                ? "Connect guest requests, team handoffs, purchasing, and financial review without losing the context behind the stay."
+                : "Schedule meetings, prepare follow-ups, review decisions, and handle billing questions."}
             </p>
             <a className={styles.cta} href={siteConfig.signupUrl}>
               Get started
@@ -138,7 +178,7 @@ export function WorkspaceOverview() {
           </header>
 
           <div className={styles.cards}>
-            {workspaceCards.map((card, index) => (
+            {cards.map((card, index) => (
               <article
                 key={card.id}
                 className={styles.card}

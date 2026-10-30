@@ -522,22 +522,25 @@ export const menuBrowseLinks: Partial<
   Solutions: { href: "/hotel-pms#hotel-teams", title: "Explore hotel teams" },
 };
 
-export const productColumns: MegaMenuColumn[] = hotelGroups.map((group) => ({
-  heading: group,
-  links: hotelModules
-    .filter((module) => module.group === group)
-    .map((module) => ({
-      href: hotelHref(module.slug),
-      title: module.name,
-      body: module.description,
-      icon:
-        group === "Guest operations"
-          ? DoorOpen
-          : group === "Hotel operations"
-            ? Wrench
-            : ChartIcon,
-    })),
-}));
+export const productColumns: MegaMenuColumn[] = [
+  { heading: "Platform & agents", links: platformLinks },
+  ...hotelGroups.map((group) => ({
+    heading: group,
+    links: hotelModules
+      .filter((module) => module.group === group)
+      .map((module) => ({
+        href: hotelHref(module.slug),
+        title: module.name,
+        body: module.description,
+        icon:
+          group === "Guest operations"
+            ? DoorOpen
+            : group === "Hotel operations"
+              ? Wrench
+              : ChartIcon,
+      })),
+  })),
+];
 
 export const solutionsColumns: MegaMenuColumn[] = [
   {

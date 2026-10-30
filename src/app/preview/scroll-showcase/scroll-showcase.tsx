@@ -221,7 +221,13 @@ const hotelStates = [
 ];
 
 export function ScrollShowcase({ hotel = false }: { hotel?: boolean }) {
-  const states = hotel ? hotelStates : defaultStates;
+  const states = hotel
+    ? hotelStates.map((state, index) => ({
+        ...state,
+        accent: defaultStates[index].accent,
+        surface: defaultStates[index].surface,
+      }))
+    : defaultStates;
   const icons = hotel
     ? [CalendarCheck, Wrench, CreditCard, Shop]
     : showcaseIcons;
@@ -342,7 +348,7 @@ export function ScrollShowcase({ hotel = false }: { hotel?: boolean }) {
       <header className={styles.intro}>
         {hotel ? (
           <>
-            <span className={styles.hotelEyebrow}>
+            <span className={styles.signupNote}>
               THE INNFLOW HOTEL PLATFORM · PREVIEW
             </span>
             <h1>
@@ -355,10 +361,13 @@ export function ScrollShowcase({ hotel = false }: { hotel?: boolean }) {
               stay into one connected hotel workspace.
             </p>
             <div className={styles.oauthActions}>
-              <a className={styles.hotelPrimary} href={siteConfig.demoUrl}>
+              <a
+                className={googleButtonStyles.button}
+                href={siteConfig.demoUrl}
+              >
                 Plan your hotel workflow <span aria-hidden="true">↗</span>
               </a>
-              <a className={styles.hotelSecondary} href="/hotel-pms">
+              <a className={googleButtonStyles.button} href="/hotel-pms">
                 Explore the platform <span aria-hidden="true">↓</span>
               </a>
             </div>

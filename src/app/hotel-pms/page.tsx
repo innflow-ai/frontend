@@ -6,7 +6,6 @@ export const metadata = createPageMetadata({
   description:
     "Explore Innflow’s hotel platform direction: reservations, guest experience, housekeeping, accounting, procurement, labor, and portfolio intelligence.",
   path: "/hotel-pms",
-  image: "/hotel-pms/lobby.jpg",
   imageAlt: "The Innflow hotel operations platform",
 });
 export default HotelPlatformPage;

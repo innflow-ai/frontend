@@ -5,6 +5,7 @@ import { GoogleCtaContent } from "@/components/google-cta-content";
 import { LaunchDirectoryMarquee } from "@/components/launch-directory-marquee";
 import { footerNavigation } from "@/config/footer-navigation";
 import { siteConfig } from "@/config/site";
+import { hotelGroups, hotelHref, hotelModules } from "@/content/hotel-pms";
 import styles from "./template-footer.module.css";
 
 const groups = [
@@ -43,7 +44,36 @@ const groups = [
   ],
 ];
 
-export function TemplateFooter() {
+export function TemplateFooter({ hotel = false }: { hotel?: boolean }) {
+  const displayedGroups = hotel
+    ? hotelGroups.map((heading, index) => [
+        {
+          heading,
+          links: hotelModules
+            .filter((module) => module.group === heading)
+            .map((module) => ({
+              label: module.name,
+              href: hotelHref(module.slug),
+            })),
+        },
+        ...(index === 0
+          ? [
+              {
+                heading: "Platform & agents",
+                links: [
+                  { label: "Platform", href: "/platform" },
+                  {
+                    label: "Agentic workflows",
+                    href: "/products/agentic-workflows",
+                  },
+                  { label: "AI agents", href: "/products/ai-agents" },
+                  { label: "Integrations", href: "/integrations" },
+                ],
+              },
+            ]
+          : []),
+      ])
+    : groups;
   return (
     <div className={styles.shell}>
       <LaunchDirectoryMarquee />
@@ -52,16 +82,25 @@ export function TemplateFooter() {
           <div className={styles.brand}>
             <a href="/" aria-label="Innflow home">
               <Image
-                src="/brand/innflow-wordmark.svg"
+                src={
+                  hotel
+                    ? "/hotel-pms/innflow-black.svg"
+                    : "/brand/innflow-wordmark.svg"
+                }
                 alt="Innflow"
                 width={132}
-                height={38}
+                height={hotel ? 27 : 38}
+                style={hotel ? { height: "auto" } : undefined}
               />
             </a>
-            <p>Bring your work together.</p>
+            <p>
+              {hotel
+                ? "Bring the work behind the stay together."
+                : "Bring your work together."}
+            </p>
           </div>
           <nav className={styles.columns} aria-label="Footer navigation">
-            {groups.map((column) => (
+            {displayedGroups.map((column) => (
               <div key={column[0].heading}>
                 {column.map((group) => (
                   <div className={styles.group} key={group.heading}>
@@ -87,8 +126,11 @@ export function TemplateFooter() {
             </a>
             <CustomerSupportHours />
           </div>
-          <a className={styles.googleCta} href={siteConfig.googleAuthUrl}>
-            <GoogleCtaContent />
+          <a
+            className={styles.googleCta}
+            href={hotel ? siteConfig.demoUrl : siteConfig.googleAuthUrl}
+          >
+            {hotel ? "Plan your hotel workflow" : <GoogleCtaContent />}
           </a>
         </div>
         <div className={styles.legal}>

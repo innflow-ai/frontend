@@ -18,7 +18,6 @@ export async function generateMetadata({
     title: `${module.name} | Innflow Hotels`,
     description: module.description,
     path: hotelHref(module.slug),
-    image: "/hotel-pms/lobby.jpg",
     imageAlt: `Innflow ${module.name.toLowerCase()}`,
   });
 }

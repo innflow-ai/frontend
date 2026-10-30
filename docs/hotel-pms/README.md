@@ -26,30 +26,32 @@ This is a website implementation and proposed product narrative. It does not imp
 
 ## Implemented review surface
 
-- `/`: hotel positioning, retained four-chapter scroll showcase, three operating pillars, full module map, stacked workflow stories, consultation CTA.
-- `/hotel-pms`: platform directory and independent hotel, hotel group, extended-stay positioning.
-- Nine detail pages: feature-specific narrative, interactive illustrative workspace, four stacked sections, supporting points, FAQs, related workflows.
-- Shared desktop/mobile navigation points into the hotel structure. Homepage and hotel routes have a hotel footer. Existing non-hotel routes are retained for a later migration decision.
-- Existing approved showcase motion and stacked ScrollStory reused, including reduced-motion and mobile layouts.
-- No new CMS records, testimonials, dependencies, or backend changes.
+Design correction: retain the Calendly-inspired homepage and the existing platform/agent design system. The hotel pivot changes positioning and workflow content within that established visual structure.
+
+- `/`: original `ShowcaseHomepage` sequence, four-chapter scroll showcase, expandable workspace cards, agent showcase, collaboration, feature accordions, existing customer stories, integrations, and closing carousel. Hotel copy and illustrative workflows fit into those components.
+- `/hotel-pms`: uses the existing `CalendlyProductPage` template, with a hotel capability rail and the connection to the agent layer.
+- Nine detail pages: use that same template and its existing gradient variants, type, spacing, alternating artwork sections, FAQs, related platform pages, and closing CTA.
+- Original homepage tokens, gradient artwork, button treatments, header styling, and shared `TemplateFooter` restored. Instrument Sans homepage headings retained. Hotel footer links use the existing footer layout.
+- Platform, integrations, agentic workflows, Agent OS, and AI agents remain visible alongside the hotel workflow navigation.
+- The 278-row source map and hotel content are retained. No new CMS records, dependencies, or backend changes.
 
 ## Assets
 
-- Hotel lobby: Pexels photo 6876603, https://www.pexels.com/photo/brown-couch-in-the-hotel-lobby-6876603/ . Downloaded original service image to `public/hotel-pms/lobby.jpg`; Pexels license: https://www.pexels.com/license/ . Locally served, no runtime third-party image dependency.
+- Initial draft asset, no longer displayed in the revised layouts: Pexels photo 6876603, https://www.pexels.com/photo/brown-couch-in-the-hotel-lobby-6876603/ . Downloaded original service image to `public/hotel-pms/lobby.jpg`; Pexels license: https://www.pexels.com/license/ . Locally served, no runtime third-party image dependency.
 - Black and white logos copied from the canonical Dropbox bold sets supplied in AGENTS.md. SVG proportions retained.
 - Product workspace artwork is original HTML/CSS with explicitly illustrative records. No competitor branding or product screenshot reuse.
-- Neutral theme verified against INNFLOW_BRAND_KIT node 329:49. Homepage composition derives from the existing scroll showcase; Instrument Sans headings and Inter body.
+- The existing homepage and Calendly platform tokens and artwork are retained by explicit user direction. Shared templates own the typography, colors, spacing, and responsive behavior.
 
 ## Morning decisions
 
-Confirm the hotel-first positioning, initial delivery scope, supplier/channel/payment partners, and the first workflow to validate with a hotel. Decide whether to migrate or retire legacy agent and rental-property pages before any production launch. Confirm final product photography and rollout wording.
+Confirm the hotel-first positioning, initial delivery scope, supplier/channel/payment partners, and the first workflow to validate with a hotel. Keep the platform and agent layer as the foundation. Decide how to handle older rental-property pages before launch and confirm rollout wording.
 
 ## Validation
 
 - Production build and TypeScript check pass. All 1,057 existing/new static pages generated successfully.
 - Full Vitest suite: 483 pass, one pre-existing failure in `baseline-lower-sections.test.tsx` (old infrastructure heading assertion). Reproduced that failure against untouched commit `09e8066` in an isolated source checkout. All changed navigation, footer, routing, and showcase tests pass.
 - All 11 review routes return HTTP 200 with exactly one H1 and the correct canonical URL. Unknown hotel feature returns 404.
-- Browser checks: desktop keyboard tab selection; normal-motion chapter selection, reverse navigation, and skip; attention filter and reset; mobile Product navigation through to Procurement with menu dismissal; FAQ expansion; reduced motion; no horizontal overflow at 320, 390, 768, and 1440px.
+- Revised desktop/mobile captures confirm the original homepage shell and Calendly detail template. Keyboard showcase selection, mobile Product navigation, platform links, and reduced-motion rendering checked. No homepage horizontal overflow at 320, 390, 768, or 1440px.
 - Existing local third-party consent/preload warnings remain. Apollo tracking returned 400 before declining optional cookies; no hotel-page application errors remained after verification.
 - Changed-file Biome checks pass with existing specificity warnings in the reused showcase CSS.
 - No production deployment or merge performed.

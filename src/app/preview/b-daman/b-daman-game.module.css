@@ -1,25 +1,26 @@
 /**
- * B. Damian arcade shell.
- * Ink field + acid lime accent keeps the game readable without defaulting to purple glow.
+ * B-Daman arena shell.
+ * Steel navy + amber marble accents — toy-battle energy without purple defaults.
  */
 .page {
-  --bd-ink: #071210;
-  --bd-field: #0d1c18;
-  --bd-panel: #12261f;
-  --bd-lime: #c8f542;
-  --bd-lime-soft: #e7ff9a;
-  --bd-coral: #ff5a36;
-  --bd-foam: #d8f5e8;
-  --bd-muted: #7fa894;
+  --bd-ink: #071018;
+  --bd-field: #0d1a28;
+  --bd-panel: #132536;
+  --bd-amber: #ffb020;
+  --bd-amber-soft: #ffd27a;
+  --bd-steel: #7ec8ff;
+  --bd-foam: #e7f2ff;
+  --bd-muted: #7f93a8;
+  --bd-danger: #ff5d4a;
 
   min-height: 100vh;
   padding: 96px 16px 48px;
   background:
-    radial-gradient(120% 80% at 50% -10%, #1a3d32 0%, transparent 55%),
-    radial-gradient(80% 60% at 100% 100%, #1f2a14 0%, transparent 45%),
+    radial-gradient(110% 70% at 50% -8%, #1d3a55 0%, transparent 55%),
+    radial-gradient(70% 50% at 0% 100%, #2a2210 0%, transparent 45%),
     var(--bd-ink);
   color: var(--bd-foam);
-  font-family: var(--font-b-damian-mono), ui-monospace, monospace;
+  font-family: var(--font-b-daman-mono), ui-monospace, monospace;
 }
 
 .shell {
@@ -38,18 +39,18 @@
 }
 
 .brand {
-  font-family: var(--font-b-damian-display), Georgia, serif;
+  font-family: var(--font-b-daman-display), Georgia, serif;
   font-size: clamp(2.5rem, 8vw, 4.5rem);
   line-height: 0.9;
   letter-spacing: -0.04em;
-  color: var(--bd-lime);
+  color: var(--bd-amber);
   margin: 0;
   animation: brandIn 700ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
 .tagline {
   margin: 8px 0 0;
-  max-width: 28ch;
+  max-width: 34ch;
   font-size: 0.95rem;
   line-height: 1.45;
   color: var(--bd-muted);
@@ -58,7 +59,7 @@
 
 .hud {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 10px;
   font-size: 0.75rem;
   letter-spacing: 0.04em;
@@ -67,7 +68,7 @@
 
 .hudStat {
   background: color-mix(in srgb, var(--bd-panel) 88%, black);
-  border: 1px solid color-mix(in srgb, var(--bd-lime) 18%, transparent);
+  border: 1px solid color-mix(in srgb, var(--bd-amber) 18%, transparent);
   padding: 12px 14px;
 }
 
@@ -78,39 +79,22 @@
 }
 
 .hudValue {
-  font-family: var(--font-b-damian-display), Georgia, serif;
-  font-size: 1.55rem;
-  color: var(--bd-lime-soft);
+  font-family: var(--font-b-daman-display), Georgia, serif;
+  font-size: 1.45rem;
+  color: var(--bd-amber-soft);
   letter-spacing: -0.02em;
 }
 
 .stageWrap {
   position: relative;
-  border: 1px solid color-mix(in srgb, var(--bd-lime) 22%, transparent);
+  border: 1px solid color-mix(in srgb, var(--bd-steel) 28%, transparent);
   background: linear-gradient(
     180deg,
     color-mix(in srgb, var(--bd-field) 92%, white) 0%,
     var(--bd-field) 100%
   );
   overflow: hidden;
-  /* Soft scanline atmosphere without heavy glow effects */
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, white 4%, transparent);
   animation: stageIn 650ms 80ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
-}
-
-.stageWrap::after {
-  content: "";
-  pointer-events: none;
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    to bottom,
-    transparent 0,
-    transparent 3px,
-    color-mix(in srgb, black 10%, transparent) 3px,
-    color-mix(in srgb, black 10%, transparent) 4px
-  );
-  opacity: 0.35;
 }
 
 .canvas {
@@ -134,16 +118,16 @@
 }
 
 .overlayTitle {
-  font-family: var(--font-b-damian-display), Georgia, serif;
+  font-family: var(--font-b-daman-display), Georgia, serif;
   font-size: clamp(1.8rem, 5vw, 2.8rem);
   letter-spacing: -0.03em;
-  color: var(--bd-lime);
+  color: var(--bd-amber);
   margin: 0 0 8px;
 }
 
 .overlayCopy {
   margin: 0 auto 18px;
-  max-width: 36ch;
+  max-width: 40ch;
   color: var(--bd-foam);
   line-height: 1.5;
   font-size: 0.95rem;
@@ -158,8 +142,8 @@
 
 .button {
   appearance: none;
-  border: 1px solid var(--bd-lime);
-  background: var(--bd-lime);
+  border: 1px solid var(--bd-amber);
+  background: var(--bd-amber);
   color: var(--bd-ink);
   font: inherit;
   font-weight: 600;
@@ -176,14 +160,20 @@
 .button:hover,
 .button:focus-visible {
   background: transparent;
-  color: var(--bd-lime);
+  color: var(--bd-amber);
   outline: none;
   transform: translateY(-1px);
 }
 
 .buttonGhost {
   background: transparent;
-  color: var(--bd-lime-soft);
+  color: var(--bd-amber-soft);
+}
+
+.button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .controls {
@@ -199,15 +189,15 @@
 
 .mobileControls {
   display: none;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.4fr 1fr;
   gap: 10px;
 }
 
 .mobileBtn {
   appearance: none;
-  border: 1px solid color-mix(in srgb, var(--bd-lime) 35%, transparent);
+  border: 1px solid color-mix(in srgb, var(--bd-amber) 35%, transparent);
   background: var(--bd-panel);
-  color: var(--bd-lime-soft);
+  color: var(--bd-amber-soft);
   font: inherit;
   font-weight: 600;
   letter-spacing: 0.06em;
@@ -219,16 +209,24 @@
 }
 
 .mobileBtn:active {
-  background: color-mix(in srgb, var(--bd-lime) 18%, var(--bd-panel));
+  background: color-mix(in srgb, var(--bd-amber) 18%, var(--bd-panel));
+}
+
+.fireBtn {
+  border-color: var(--bd-amber);
+  background: color-mix(in srgb, var(--bd-amber) 22%, var(--bd-panel));
+  color: var(--bd-amber-soft);
+}
+
+@media (max-width: 820px) {
+  .hud {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 720px) {
   .page {
     padding: 88px 12px 32px;
-  }
-
-  .hud {
-    grid-template-columns: 1fr;
   }
 
   .mobileControls {

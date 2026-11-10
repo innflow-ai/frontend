@@ -18,7 +18,7 @@ export const pricingCatalog = {
     },
     pro: {
       name: "Pro",
-      monthlyPrice: 19,
+      monthlyPrice: 19.99,
       commitmentMonthlyPrice: 14.99,
       commitmentValue: 179.88,
       monthlyCredits: "10,000",
@@ -34,7 +34,7 @@ export const pricingCatalog = {
     },
     business: {
       name: "Business",
-      monthlyPrice: 197,
+      monthlyPrice: 197.99,
       commitmentMonthlyPrice: 149.99,
       commitmentValue: 1799.88,
       monthlyCredits: "140,000",

@@ -224,6 +224,15 @@
   line-height: 28px;
   text-decoration-thickness: 1px;
 }
+.price .oldCents {
+  font-size: 14px;
+}
+.price[data-business="true"]:has(del) {
+  gap: 3px;
+}
+.price[data-business="true"]:has(del) strong {
+  font-size: 54px;
+}
 .price strong .cents {
   font-size: 26px;
   line-height: 36px;
@@ -748,6 +757,9 @@
 @media (max-width: 400px) {
   .price strong {
     font-size: 48px;
+  }
+  .price[data-business="true"]:has(del) strong {
+    font-size: 44px;
   }
   .price strong .cents {
     font-size: 22px;

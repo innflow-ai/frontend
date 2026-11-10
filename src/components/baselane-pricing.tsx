@@ -286,6 +286,7 @@ export function BaselanePricing() {
                     <div
                       className={styles.price}
                       data-custom={index === 3}
+                      data-business={index === 2}
                       aria-live="polite"
                       aria-atomic="true"
                     >
@@ -304,7 +305,12 @@ export function BaselanePricing() {
                               <span className={styles.srOnly}>
                                 Regular monthly price{" "}
                               </span>
-                              <del>{money(plan.monthlyPrice)}</del>
+                              <del>
+                                {money(plan.monthlyPrice).split(".")[0]}
+                                <span className={styles.oldCents}>
+                                  .{money(plan.monthlyPrice).split(".")[1]}
+                                </span>
+                              </del>
                             </>
                           )}
                           <span>/month</span>

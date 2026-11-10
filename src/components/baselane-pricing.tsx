@@ -10,7 +10,11 @@ import {
   StarsA,
 } from "@/components/icons/mage";
 import { TrackedLink } from "@/components/tracked-link";
-import { pricingCatalog } from "@/config/pricing";
+import {
+  annualSavingsPercent,
+  maxAnnualSavingsPercent,
+  pricingCatalog,
+} from "@/config/pricing";
 import { siteConfig } from "@/config/site";
 import styles from "./baselane-pricing.module.css";
 import { InnerPageShell } from "./inner-page-shell";
@@ -18,7 +22,9 @@ import { InnerPageShell } from "./inner-page-shell";
 const plans = Object.values(pricingCatalog.plans);
 const { pro, business } = pricingCatalog.plans;
 const money = (value: number | null) =>
-  value === null ? "Custom" : `$${value.toFixed(value % 1 ? 2 : 0)}`;
+  value === null
+    ? "Custom"
+    : `$${value.toLocaleString("en-US", { minimumFractionDigits: value % 1 ? 2 : 0, maximumFractionDigits: 2 })}`;
 const groups = [
   {
     title: "WORKFLOW CAPACITY",
@@ -46,30 +52,64 @@ const groups = [
     icon: StarsA,
     rows: [
       ["Premium workflow nodes", "premiumWorkflowNodes"],
-      ["Exclusive AI models", "exclusiveAiModels"],
+      ["Code node", "codeNode"],
+      ["Analytics", "analytics"],
     ],
   },
 ] as const;
+const workspaceNote =
+  "Workspace availability and limits need confirmation. Enterprise limits shown are starting defaults and can be tailored by agreement.";
+const toolGroups = [
+  {
+    title: "KNOWLEDGE, AGENTS AND CONNECTED WORK",
+    label: "Knowledge, agents and connected work",
+    note: "With setup: sign-in, permissions and supporting services are required. Rollout: availability depends on your workspace and permissions.",
+    rows: [
+      ["Files", "With setup", "With setup"],
+      ["Knowledge bases", "With setup", "With setup"],
+      ["Reusable skills", "With setup", "With setup"],
+      ["Scheduled tasks", "With setup + credits", "With setup + credits"],
+      ["Workspace agents", "Rollout", "Rollout"],
+      ["Channels & personal agent", "Rollout", "Rollout"],
+      ["Agent delegation", "Rollout", "Rollout"],
+      ["Connected apps", "With permissions", "With permissions"],
+    ],
+  },
+  {
+    title: "COMPUTER TOOLS AND COMMUNICATION",
+    label: "Computer tools and communication",
+    note: "Eligible means a paid plan can qualify, subject to rollout and access approval. It does not mean unlimited computer or AI usage.",
+    rows: [
+      ["Dedicated cloud computers", "Not included", "Eligible"],
+      ["Local computer access", "Approval + desktop", "Approval + desktop"],
+      ["Browser sign-in vault", "Beta + authorization", "Beta + authorization"],
+      ["Create & send from own mailbox", "Not included", "Eligible + setup"],
+      ["Voice input & output", "Rollout + setup", "Rollout + setup"],
+      ["Sensitive action approvals", "Requester review", "Requester review"],
+    ],
+  },
+] as const;
+const allGroupTitles = [...groups, ...toolGroups].map((group) => group.title);
 const questions = [
   [
-    "What are innflow credits?",
-    "Credits measure usage across supported workflow and AI actions. Usage depends on the action and model involved, so consider both run volume and workflow complexity.",
+    "What are Innflow credits?",
+    "AI and workflow activity consume credits. Basic includes 500 credits per month, Pro 10,000 and Business 140,000. Credits are not a fixed number of messages.",
   ],
   [
     "How does annual pricing work?",
-    `Annual plans are billed monthly at the lower annual rate: ${money(pro.commitmentMonthlyPrice)} for Pro or ${money(business.commitmentMonthlyPrice)} for Business. Monthly plans remain available at the standard rate. Prices are in USD.`,
+    `Pay once upfront for 12 months: ${money(pro.commitmentValue)} for Pro or ${money(business.commitmentValue)} for Business. The displayed monthly equivalents are ${money(pro.commitmentMonthlyPrice)} and ${money(business.commitmentMonthlyPrice)}. Monthly plans are ${money(pro.monthlyPrice)} and ${money(business.monthlyPrice)} respectively. Prices are in USD.`,
   ],
   [
-    "Can I change plans later?",
-    "You can move between Free, Pro, and Business as your usage changes. Contact the team if your requirements extend beyond the published plans.",
+    "Are all workspace tools available immediately?",
+    "Access to files, knowledge, skills and connected apps depends on account setup and permissions. Agents, channels, delegation and voice also depend on rollout. Computer tools require additional authorization.",
   ],
   [
     "When should I choose Business?",
-    `Business includes ${business.monthlyCredits} monthly credits, unlimited workspaces, workflows, and tables, plus exclusive AI models. Compare this with the capacity your team needs.`,
+    "Choose Business for 140,000 monthly credits, unlimited tables, 50,000 rows per table and 90-day run history. Premium workflow nodes, code nodes and analytics support more demanding workflows.",
   ],
   [
     "What is included with Enterprise?",
-    "Enterprise plans are scoped around custom credit volume, rate limits, seats, security requirements, deployment needs, onboarding, and service levels.",
+    "Enterprise uses a custom agreement. Discuss credit capacity and commercial limits with our team. The current starting defaults include 10,000 rows per table and 90-day run history; your agreement can tailor those limits.",
   ],
 ];
 type Plan = (typeof plans)[number];
@@ -89,7 +129,7 @@ function PlanLink({
       destination={
         enterprise ? siteConfig.contactUrl : siteConfig.googleAuthUrl
       }
-      eventLabel={`pricing_${plan.name.toLowerCase()}_${enterprise ? "contact" : "signup"}`}
+      eventLabel={`pricing_${plan.name === "Basic" ? "free" : plan.name.toLowerCase()}_${enterprise ? "contact" : "signup"}`}
       aria-label={
         enterprise
           ? "Talk to sales about Enterprise"
@@ -137,10 +177,8 @@ function FeatureValue({ value }: { value: string }) {
 
 export function BaselanePricing() {
   const [annual, setAnnual] = useState(true);
-  const [expanded, setExpanded] = useState<string[]>(
-    groups.map((group) => group.title),
-  );
-  const allOpen = expanded.length === groups.length;
+  const [expanded, setExpanded] = useState<string[]>(allGroupTitles);
+  const allOpen = expanded.length === allGroupTitles.length;
   const value = (plan: Plan) =>
     money(annual ? plan.commitmentMonthlyPrice : plan.monthlyPrice);
   return (
@@ -149,17 +187,17 @@ export function BaselanePricing() {
         <section className={styles.hero} aria-labelledby="pricing-title">
           <div className={styles.intro}>
             <h1 id="pricing-title">
-              Less busywork.
+              Pick a plan.
               <br />
-              More possibilities.
+              <span className={styles.serifHeading}>
+                Your AI team is waiting.
+              </span>
             </h1>
             <div className={styles.introDetails}>
-              <p>
-                Connect your tools, automate everyday work, and give your team
-                more room to grow. Find the plan that fits.
-              </p>
+              <p>Agents, workflows and knowledge. One workspace.</p>
               <fieldset
                 className={styles.billing}
+                data-annual={annual}
                 aria-describedby="billing-note"
               >
                 <legend className={styles.srOnly}>Billing term</legend>
@@ -173,7 +211,7 @@ export function BaselanePricing() {
                   />
                   Monthly
                 </label>
-                <span className={styles.billingDivider} aria-hidden="true" />
+
                 <label>
                   <input
                     type="radio"
@@ -182,9 +220,11 @@ export function BaselanePricing() {
                     checked={annual}
                     onChange={() => setAnnual(true)}
                   />
-                  Annual commitment
+                  Yearly{" "}
+                  <span className={styles.savings}>
+                    (up to {maxAnnualSavingsPercent}% off)
+                  </span>
                 </label>
-                <span className={styles.savings}>Save 15%</span>
               </fieldset>
               <p
                 id="billing-note"
@@ -192,7 +232,7 @@ export function BaselanePricing() {
                 aria-live="polite"
               >
                 {annual
-                  ? "Annual commitment, billed monthly. All prices in USD."
+                  ? "Billed yearly upfront. Monthly equivalents shown. All prices in USD."
                   : "No annual commitment. All prices in USD."}
               </p>
             </div>
@@ -217,14 +257,27 @@ export function BaselanePricing() {
                 )}
                 <div className={styles.planTop}>
                   <div>
-                    <h2>{plan.name}</h2>
+                    <div className={styles.planTitle}>
+                      <h2>{plan.name}</h2>
+                      {annual &&
+                        plan.monthlyPrice !== null &&
+                        plan.monthlyPrice > 0 && (
+                          <span className={styles.discountTag}>
+                            {annualSavingsPercent(
+                              plan.monthlyPrice,
+                              plan.commitmentMonthlyPrice ?? 0,
+                            )}
+                            % OFF
+                          </span>
+                        )}
+                    </div>
                     <p className={styles.planDescription}>
                       {
                         [
-                          "Build your first workflows and see what’s possible.",
-                          "Put everyday work on autopilot, with room to grow.",
-                          "Scale connected workflows across your team.",
-                          "Shape a plan around your organization’s needs.",
+                          "Explore your AI workspace and build your first workflows.",
+                          "Bring more capacity to your agents, knowledge and workflows.",
+                          "Scale team automation with higher credit and data limits.",
+                          "Shape your workspace and commercial terms around your team.",
                         ][index]
                       }
                     </p>
@@ -232,23 +285,40 @@ export function BaselanePricing() {
                   <div>
                     <div
                       className={styles.price}
-                      data-free={index === 0}
+                      data-custom={index === 3}
                       aria-live="polite"
                       aria-atomic="true"
                     >
                       <strong>
-                        {index === 0 ? "Always free" : value(plan)}
+                        {value(plan).split(".")[0]}
+                        {value(plan).includes(".") && (
+                          <span className={styles.cents}>
+                            .{value(plan).split(".")[1]}
+                          </span>
+                        )}
                       </strong>
-                      {index > 0 && index < 3 && <span>/month</span>}
+                      {index > 0 && index < 3 && (
+                        <span className={styles.priceAside}>
+                          {annual && (
+                            <>
+                              <span className={styles.srOnly}>
+                                Regular monthly price{" "}
+                              </span>
+                              <del>{money(plan.monthlyPrice)}</del>
+                            </>
+                          )}
+                          <span>/month</span>
+                        </span>
+                      )}
                     </div>
                     <p className={styles.planNote}>
                       {index === 0
-                        ? "Free to get started"
+                        ? "No payment required"
                         : index === 3
-                          ? "Let’s find the right fit"
+                          ? "Custom agreement"
                           : annual
-                            ? "Annual plan, billed monthly"
-                            : "Billed monthly"}
+                            ? `${money("commitmentValue" in plan ? plan.commitmentValue : null)} billed yearly`
+                            : `${money(plan.monthlyPrice)} billed monthly`}
                     </p>
                     <PlanLink plan={plan} />
                   </div>
@@ -259,7 +329,7 @@ export function BaselanePricing() {
                       [
                         "Includes:",
                         "More capacity, plus premium nodes:",
-                        "Higher limits, plus advanced AI:",
+                        "More room for your team:",
                         "A plan built around your team:",
                       ][index]
                     }
@@ -290,6 +360,7 @@ export function BaselanePricing() {
                                 {key === "workspaces" && plan[key] === "1"
                                   ? "workspace"
                                   : label.toLowerCase()}
+                                {key === "workspaces" ? "*" : ""}
                               </>
                             )}
                             {plan[key] === "No" && (
@@ -313,6 +384,11 @@ export function BaselanePricing() {
               </article>
             ))}
           </div>
+          <p className={styles.capacityNote}>
+            AI and workflow activity consume credits. Credits are not a fixed
+            message count.
+            <br />* {workspaceNote}
+          </p>
           <a className={styles.compareLink} href="#compare-features">
             Compare all features <MageArrowDown size={18} />
           </a>
@@ -327,9 +403,7 @@ export function BaselanePricing() {
             <button
               className={styles.outline}
               type="button"
-              onClick={() =>
-                setExpanded(allOpen ? [] : groups.map((g) => g.title))
-              }
+              onClick={() => setExpanded(allOpen ? [] : allGroupTitles)}
             >
               {allOpen ? "Collapse all features" : "Expand all features"}
               {allOpen ? <MageMinus size={16} /> : <MagePlus size={16} />}
@@ -409,7 +483,73 @@ export function BaselanePricing() {
                             <th scope="row">{label}</th>
                             {plans.map((plan) => (
                               <td key={plan.name}>
-                                <FeatureValue value={plan[key]} />
+                                <FeatureValue
+                                  value={
+                                    key === "workspaces"
+                                      ? `${plan[key]}*`
+                                      : plan[key]
+                                  }
+                                />
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              ))}
+              {toolGroups.map((group) => (
+                <div className={styles.group} key={group.title}>
+                  <button
+                    type="button"
+                    className={styles.groupToggle}
+                    aria-label={group.title}
+                    aria-expanded={expanded.includes(group.title)}
+                    aria-controls={group.title.replaceAll(" ", "-")}
+                    onClick={() =>
+                      setExpanded((old) =>
+                        old.includes(group.title)
+                          ? old.filter((title) => title !== group.title)
+                          : [...old, group.title],
+                      )
+                    }
+                  >
+                    <span>{group.label}</span>
+                    {expanded.includes(group.title) ? (
+                      <MageMinus size={18} />
+                    ) : (
+                      <MagePlus size={18} />
+                    )}
+                  </button>
+                  <div
+                    id={group.title.replaceAll(" ", "-")}
+                    hidden={!expanded.includes(group.title)}
+                  >
+                    <p className={styles.groupNote}>{group.note}</p>
+                    <table>
+                      <caption className={styles.srOnly}>
+                        {group.label} by Innflow plan
+                      </caption>
+                      <thead>
+                        <tr>
+                          <th scope="col">
+                            <span className={styles.srOnly}>Feature</span>
+                          </th>
+                          {plans.map((plan) => (
+                            <th scope="col" key={plan.name}>
+                              {plan.name}
+                            </th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {group.rows.map(([label, basic, paid]) => (
+                          <tr key={label}>
+                            <th scope="row">{label}</th>
+                            {plans.map((plan, index) => (
+                              <td key={plan.name}>
+                                {index === 0 ? basic : paid}
                               </td>
                             ))}
                           </tr>
@@ -421,6 +561,13 @@ export function BaselanePricing() {
               ))}
             </div>
           </section>
+          <p className={styles.capacityNote}>
+            * {workspaceNote}
+            <br />
+            Connected tools require the relevant account permissions. Local
+            computer access needs owner approval and the desktop app. Voice
+            requires provider setup.
+          </p>
         </section>
         <section className={styles.faq} aria-labelledby="faq-title">
           <h2 id="faq-title">Frequently asked questions</h2>

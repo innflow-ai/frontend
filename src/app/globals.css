@@ -2,7 +2,15 @@
 @import "./termly-consent.css";
 
 :root {
-  --font-sans: var(--font-host-grotesk), Arial, sans-serif;
+  /* Shared typography approved alongside the Paper pricing refresh. */
+  --font-sans: var(--font-archivo), Arial, sans-serif;
+  --font-display: var(--font-source-serif-4), Georgia, serif;
+  --font-heading-emphasis: var(--font-archivo), Arial, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+  /* Existing components inherit the new families through these aliases. */
+  --font-host-grotesk: var(--font-archivo);
+  --font-manrope: var(--font-archivo);
+  --font-jetbrains-mono: var(--font-geist-mono);
   --font-button: var(--font-sans);
   --font-figtree: var(--font-sans);
   /* Compatibility for components that still reference the previous default. */
@@ -195,11 +203,21 @@ h1,
 h2,
 h3 {
   color: var(--ink-strong);
-  font-family: var(--font-sans);
-  font-weight: 560;
+  font-family: var(--font-display);
+  font-weight: 400;
   letter-spacing: 0.005em;
   line-height: 1.04;
   text-wrap: balance;
+}
+
+/* Use semantic emphasis to mix Archivo Bold into serif headings. */
+:is(h1, h2, h3) :is(strong, b) {
+  font-family: var(--font-heading-emphasis);
+  font-weight: 700;
+}
+
+code, kbd, pre, samp {
+  font-family: var(--font-mono);
 }
 
 p {

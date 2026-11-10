@@ -23,8 +23,8 @@ describe("PricingConfigurator", () => {
 
     await user.click(screen.getByRole("button", { name: "Monthly" }));
 
-    expect(screen.getByText("$19.00")).toBeInTheDocument();
-    expect(screen.getByText("$197.00")).toBeInTheDocument();
+    expect(screen.getByText("$19.99")).toBeInTheDocument();
+    expect(screen.getByText("$197.99")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Monthly" })).toHaveAttribute(
       "aria-pressed",
       "true",

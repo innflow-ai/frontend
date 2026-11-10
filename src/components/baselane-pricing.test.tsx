@@ -44,7 +44,7 @@ it("updates both plan cards and comparison prices from the selected billing term
   const user = userEvent.setup();
   render(<BaselanePricing />);
   expect(
-    screen.getByRole("radio", { name: "Yearly (up to 24% off)" }),
+    screen.getByRole("radio", { name: "Yearly (up to 25% off)" }),
   ).toBeChecked();
   expect(screen.getByRole("article", { name: "Pro plan" })).toHaveTextContent(
     "$14.99",
@@ -55,18 +55,18 @@ it("updates both plan cards and comparison prices from the selected billing term
   expect(screen.getByText("$14.99/mo.")).toBeInTheDocument();
   await user.click(screen.getByRole("radio", { name: "Monthly" }));
   expect(screen.getByRole("article", { name: "Pro plan" })).toHaveTextContent(
-    "$19",
+    "$19.99",
   );
   expect(
     screen.getByRole("article", { name: "Business plan" }),
-  ).toHaveTextContent("$197");
-  expect(screen.getByText("$19/mo.")).toBeInTheDocument();
+  ).toHaveTextContent("$197.99");
+  expect(screen.getByText("$19.99/mo.")).toBeInTheDocument();
   expect(
     screen.getByText("No annual commitment. All prices in USD."),
   ).toBeInTheDocument();
   await user.keyboard("{ArrowRight}");
   expect(
-    screen.getByRole("radio", { name: "Yearly (up to 24% off)" }),
+    screen.getByRole("radio", { name: "Yearly (up to 25% off)" }),
   ).toBeChecked();
   expect(screen.getByRole("article", { name: "Pro plan" })).toHaveTextContent(
     "$14.99",
@@ -84,10 +84,10 @@ it("shows annual discounts only for paid plans and removes them on monthly billi
   render(<BaselanePricing />);
   const pro = screen.getByRole("article", { name: "Pro plan" });
   const business = screen.getByRole("article", { name: "Business plan" });
-  expect(within(pro).getByText("21% OFF")).toBeInTheDocument();
+  expect(within(pro).getByText("25% OFF")).toBeInTheDocument();
   expect(within(business).getByText("24% OFF")).toBeInTheDocument();
-  expect(pro.querySelector("del")).toHaveTextContent("$19");
-  expect(business.querySelector("del")).toHaveTextContent("$197");
+  expect(pro.querySelector("del")).toHaveTextContent("$19.99");
+  expect(business.querySelector("del")).toHaveTextContent("$197.99");
   expect(pro).toHaveTextContent("$179.88 billed yearly");
   expect(business).toHaveTextContent("$1,799.88 billed yearly");
   for (const name of ["Basic plan", "Enterprise plan"]) {
@@ -104,11 +104,11 @@ it("shows annual discounts only for paid plans and removes them on monthly billi
   await user.click(screen.getByRole("radio", { name: "Monthly" }));
   expect(pro.querySelector("del")).toBeNull();
   expect(business.querySelector("del")).toBeNull();
-  expect(screen.queryByText("21% OFF")).not.toBeInTheDocument();
+  expect(screen.queryByText("25% OFF")).not.toBeInTheDocument();
   expect(screen.queryByText("24% OFF")).not.toBeInTheDocument();
-  expect(pro).toHaveTextContent("$19 billed monthly");
-  expect(business).toHaveTextContent("$197 billed monthly");
+  expect(pro).toHaveTextContent("$19.99 billed monthly");
+  expect(business).toHaveTextContent("$197.99 billed monthly");
   expect(
-    screen.getByRole("radio", { name: "Yearly (up to 24% off)" }),
+    screen.getByRole("radio", { name: "Yearly (up to 25% off)" }),
   ).not.toBeChecked();
 });

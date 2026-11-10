@@ -10,31 +10,33 @@ describe("PricingConfigurator", () => {
     const user = userEvent.setup();
     render(<PricingConfigurator />);
 
-    expect(screen.getByRole("heading", { name: "Free" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Basic" })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Pro" })).toBeInTheDocument();
     expect(
       screen.getByRole("heading", { name: "Business" }),
     ).toBeInTheDocument();
-    expect(screen.getByText("1,200")).toBeInTheDocument();
+    expect(screen.getByText("500")).toBeInTheDocument();
     expect(screen.getByText("10,000")).toBeInTheDocument();
     expect(screen.getByText("140,000")).toBeInTheDocument();
-    expect(screen.getByText("$16.99")).toBeInTheDocument();
-    expect(screen.getByText("$169.99")).toBeInTheDocument();
+    expect(screen.getByText("$14.99")).toBeInTheDocument();
+    expect(screen.getByText("$149.99")).toBeInTheDocument();
 
     await user.click(screen.getByRole("button", { name: "Monthly" }));
 
-    expect(screen.getByText("$19.99")).toBeInTheDocument();
-    expect(screen.getByText("$199.99")).toBeInTheDocument();
+    expect(screen.getByText("$19.00")).toBeInTheDocument();
+    expect(screen.getByText("$197.00")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Monthly" })).toHaveAttribute(
       "aria-pressed",
       "true",
     );
-    expect(screen.queryByText("$16.99")).not.toBeInTheDocument();
+    expect(screen.queryByText("$14.99")).not.toBeInTheDocument();
 
     await user.click(screen.getByRole("button", { name: /Annual plan/ }));
-    expect(screen.getByText("$16.99")).toBeInTheDocument();
-    expect(screen.getByText("$169.99")).toBeInTheDocument();
-    expect(screen.getAllByText("Annual plan, billed monthly")).toHaveLength(2);
+    expect(screen.getByText("$14.99")).toBeInTheDocument();
+    expect(screen.getByText("$149.99")).toBeInTheDocument();
+    expect(
+      screen.getAllByText("Annual plan, billed yearly upfront"),
+    ).toHaveLength(2);
     expect(
       screen.getByRole("link", { name: "Continue with Google for Pro" }),
     ).toHaveAttribute("data-marketing-label", "pricing_pro_signup");

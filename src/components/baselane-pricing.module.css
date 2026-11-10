@@ -1,4 +1,4 @@
-/* Figma innflow-web / 219:7866. Pricing uses the selected cream reference. */
+/* Paper pricing reference: 644-1, including annual savings treatment. */
 .page {
   --pricing-ink: #071a31;
   --pricing-muted: #5f6d77;
@@ -11,8 +11,8 @@
   font-family: var(--font-geist), sans-serif;
 }
 .page :is(h1, h2, h3) {
-  font-family: var(--font-manrope), sans-serif;
-  font-weight: 500;
+  font-family: var(--font-archivo), sans-serif;
+  font-weight: 600;
 }
 .hero {
   max-width: 1920px;
@@ -22,81 +22,106 @@
   border-radius: 64px;
 }
 .intro {
-  display: grid;
-  grid-template-columns: minmax(0, 640fr) minmax(0, 520fr);
-  align-items: end;
-  gap: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
   max-width: 1200px;
   margin: auto;
+  text-align: center;
 }
 .page .intro h1 {
-  font-size: 48px;
-  line-height: 1.1;
-  letter-spacing: -1.65px;
+  font-size: 71px;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  color: #333;
   margin: 0;
+}
+.serifHeading {
+  font-family: var(--font-source-serif-4), serif;
+  font-weight: 400;
+}
+.introDetails {
+  width: 100%;
+  min-width: 0;
 }
 .introDetails > p {
-  color: var(--pricing-muted);
-  font-size: 18px;
-  line-height: 1.4;
+  font-family: var(--font-archivo), sans-serif;
+  color: #333;
+  font-size: 20px;
+  line-height: 26px;
 }
 .billing {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  border: 0;
-  padding: 0;
-  margin: 16px 0 0;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: 36fr 64fr;
+  align-items: stretch;
+  gap: 4px;
+  width: 384px;
+  max-width: 100%;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 4px;
+  margin: 16px auto 0;
+}
+.billing::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  top: 4px;
+  bottom: 4px;
+  left: 4px;
+  width: calc((100% - 12px) * 0.36);
+  border-radius: 6px;
+  background: #333;
+  transition:
+    left 240ms cubic-bezier(0.22, 1, 0.36, 1),
+    width 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.billing[data-annual="true"]::before {
+  left: calc(8px + (100% - 12px) * 0.36);
+  width: calc((100% - 12px) * 0.64);
 }
 .billing label {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 8px;
-  min-height: 32px;
+  justify-content: center;
+  gap: 4px;
+  min-height: 42px;
+  padding: 8px 20px;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 14px;
+  font-family: var(--font-archivo), sans-serif;
+  font-size: 20px;
   font-weight: 500;
+  color: #333;
+  transition: color 180ms ease;
+}
+.billing label:has(input:checked) {
+  color: #fff;
+}
+.billing label:has(input:focus-visible) {
+  outline: 2px solid #2782b4;
+  outline-offset: 4px;
 }
 .billing input {
-  appearance: none;
-  display: grid;
-  place-content: center;
-  margin: 0;
-  width: 20px;
-  height: 20px;
-  border: 1px solid var(--pricing-ink);
-  border-radius: 50%;
-  background: white;
-  cursor: pointer;
-}
-.billing input::before {
-  content: "";
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--pricing-ink);
-  transform: scale(0);
-}
-.billing input:checked::before {
-  transform: scale(1);
-}
-.billingDivider {
+  position: absolute;
+  opacity: 0;
   width: 1px;
-  height: 14px;
-  background: #c6ccd2;
+  height: 1px;
 }
 .savings {
-  border-radius: 8px;
-  padding: 4px 12px;
-  background: rgb(7 26 49 / 5%);
-  color: #3d464e;
   font-size: 14px;
-  font-weight: 500;
   white-space: nowrap;
 }
 .introDetails .billingNote {
   font-size: 12px;
+  line-height: 18px;
+  color: var(--pricing-muted);
   margin-top: 8px;
 }
 .planNav {
@@ -113,7 +138,7 @@
 .plan {
   position: relative;
   min-width: 0;
-  min-height: 933px;
+  min-height: 1030px;
   padding: 8px;
   background: var(--pricing-paper);
   border-radius: 48px;
@@ -128,10 +153,8 @@
   position: absolute;
   z-index: -1;
   inset: -40px -8px -8px;
-  border-radius: 48px;
-  background:
-    #2567ac url("/pricing/figma/plan-glow.png") 60% 58% / 1099px 1935px
-    no-repeat;
+  border-radius: 56px;
+  background: #2567ac;
 }
 .popular {
   position: absolute;
@@ -147,7 +170,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 302px;
+  min-height: 368px;
   padding: 24px;
   border-radius: 40px;
   background: #fff;
@@ -170,30 +193,86 @@
 .price {
   display: flex;
   gap: 4px;
-  align-items: baseline;
+  align-items: center;
   flex-wrap: wrap;
+  min-height: 82px;
   margin-top: 24px;
 }
 .price strong {
-  font-family: var(--font-source-serif-4), serif;
-  font-size: 44px;
+  font-family: var(--font-archivo), sans-serif;
+  font-size: 60px;
   line-height: 1.1;
-  letter-spacing: -1.5px;
-  font-weight: 500;
+  letter-spacing: -0.034em;
+  font-weight: 600;
 }
 .plan li strong {
   font-weight: 500;
 }
-.price[data-free="true"] strong {
-  font-size: 36px;
+.price[data-custom="true"] strong {
+  font-size: 48px;
   letter-spacing: -0.63px;
+}
+.priceAside {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.price del {
+  color: #ff005b;
+  font-family: var(--font-archivo), sans-serif;
+  font-size: 22px;
+  line-height: 28px;
+  text-decoration-thickness: 1px;
+}
+.price strong .cents {
+  font-size: 26px;
+  line-height: 36px;
+}
+.planTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.page .planTitle h2 {
+  margin: 0;
+}
+.planTitle:has(.discountTag) h2 {
+  font-size: 32px;
+}
+.discountTag {
+  display: inline-block;
+  flex-shrink: 0;
+  border-radius: 2px;
+  padding: 3px 5px;
+  color: #fff;
+  background: #ff005b;
+  font:
+    700 12px / 14px var(--font-archivo),
+    sans-serif;
+  white-space: nowrap;
+}
+.page .capacityNote {
+  max-width: 1200px;
+  margin: 32px auto 0;
+  font-size: 12px;
+  line-height: 20px;
+  color: var(--pricing-muted);
+}
+.page .groupNote {
+  margin: 0 16px 16px;
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--pricing-muted);
 }
 .price > span {
   font-size: 12px;
   color: var(--pricing-muted);
 }
 .page .planNote {
-  font-size: 11px;
+  font-size: 12px;
+  line-height: 18px;
+  min-height: 36px;
   color: var(--pricing-muted);
   margin: 8px 0 20px;
 }
@@ -326,7 +405,7 @@
 }
 .page .comparison > h2,
 .page .faq > h2 {
-  font-family: var(--font-source-serif-4), serif;
+  font-family: var(--font-archivo), sans-serif;
   font-size: 48px;
   line-height: 1.1;
   letter-spacing: -1.65px;
@@ -415,7 +494,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  font-family: var(--font-manrope), sans-serif;
+  font-family: var(--font-archivo), sans-serif;
   font-size: 24px;
   line-height: 1.4;
   letter-spacing: -0.3px;
@@ -479,7 +558,7 @@
   padding: 24px;
   cursor: pointer;
   font:
-    500 20px / 28px var(--font-manrope),
+    500 20px / 28px var(--font-archivo),
     sans-serif;
   letter-spacing: -0.45px;
   list-style: none;
@@ -552,7 +631,7 @@
     min-height: 780px;
   }
   .planTop {
-    min-height: 302px;
+    min-height: 368px;
   }
   .comparison {
     padding: 96px 40px;
@@ -579,10 +658,11 @@
     font-size: 16px;
   }
   .billing {
-    gap: 8px 12px;
+    gap: 4px;
   }
   .billing label {
-    font-size: 13px;
+    padding: 8px 10px;
+    font-size: 14px;
   }
   .savings {
     font-size: 12px;
@@ -665,8 +745,21 @@
     font-size: 14px;
   }
 }
+@media (max-width: 400px) {
+  .price strong {
+    font-size: 48px;
+  }
+  .price strong .cents {
+    font-size: 22px;
+  }
+  .page .planTitle:has(.discountTag) h2 {
+    font-size: 26px;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
-  .page .button {
+  .page .button,
+  .billing::before,
+  .billing label {
     transition: none;
   }
 }

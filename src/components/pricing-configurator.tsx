@@ -1,12 +1,14 @@
 "use client";
-import { Check as MageCheck, ArrowDown as MageArrowDown } from '@/components/icons/mage';
-
 
 import { useState } from "react";
 import styles from "@/app/pricing/pricing.module.css";
 import { GoogleCtaContent } from "@/components/google-cta-content";
+import {
+  ArrowDown as MageArrowDown,
+  Check as MageCheck,
+} from "@/components/icons/mage";
 import { TrackedLink } from "@/components/tracked-link";
-import { pricingCatalog } from "@/config/pricing";
+import { maxAnnualSavingsPercent, pricingCatalog } from "@/config/pricing";
 import { siteConfig } from "@/config/site";
 
 type BillingCycle = "commitment" | "monthly";
@@ -81,7 +83,7 @@ function PaidPlanCard({
         </div>
         <p className={styles.billingNote}>
           {billing === "commitment"
-            ? "Annual plan, billed monthly"
+            ? "Annual plan, billed yearly upfront"
             : "Month to month"}
         </p>
       </div>
@@ -104,7 +106,9 @@ function PaidPlanCard({
       <ul className={styles.featureList}>
         {features.map((feature) => (
           <li key={feature}>
-            <span aria-hidden="true"><MageCheck size="1em" /></span>
+            <span aria-hidden="true">
+              <MageCheck size="1em" />
+            </span>
             {feature}
           </li>
         ))}
@@ -129,7 +133,7 @@ export function PricingConfigurator() {
           type="button"
         >
           Annual plan
-          <span>Save 15%</span>
+          <span>Save up to {maxAnnualSavingsPercent}%</span>
         </button>
         <button
           aria-pressed={billing === "monthly"}
@@ -143,12 +147,12 @@ export function PricingConfigurator() {
 
       <p className={styles.billingExplanation}>
         {billing === "commitment"
-          ? "Save 15% with an annual plan. Payments are made monthly."
+          ? `Save up to ${maxAnnualSavingsPercent}% with an annual plan. Pay upfront for 12 months.`
           : "Monthly pricing, with no annual commitment."}
         <span>All prices in USD.</span>
       </p>
       <nav className={styles.planJumpNav} aria-label="Jump to a plan">
-        <a href="#plan-free">Free</a>
+        <a href="#plan-free">Basic</a>
         <a href="#plan-pro">Pro</a>
         <a href="#plan-business">Business</a>
       </nav>
@@ -157,7 +161,7 @@ export function PricingConfigurator() {
         <article id="plan-free" className={`${styles.planCard} ${styles.free}`}>
           <div className={styles.planHeader}>
             <div className={styles.planTitleRow}>
-              <h2>Free</h2>
+              <h2>Basic</h2>
             </div>
             <p className={styles.planDescription}>
               Explore Innflow and build your first workflows with a focused
@@ -175,7 +179,7 @@ export function PricingConfigurator() {
             </p>
           </div>
           <TrackedLink
-            aria-label="Continue with Google for Free"
+            aria-label="Continue with Google for Basic"
             className={styles.planCta}
             destination={siteConfig.googleAuthUrl}
             eventLabel="pricing_free_signup"
@@ -191,7 +195,9 @@ export function PricingConfigurator() {
               `${free.runHistory} of run history`,
             ].map((feature) => (
               <li key={feature}>
-                <span aria-hidden="true"><MageCheck size="1em" /></span>
+                <span aria-hidden="true">
+                  <MageCheck size="1em" />
+                </span>
                 {feature}
               </li>
             ))}
@@ -223,7 +229,10 @@ export function PricingConfigurator() {
         />
       </div>
       <a className={styles.compareLink} href="#compare-plans">
-        Compare all features <span aria-hidden="true"><MageArrowDown size="1em" /></span>
+        Compare all features{" "}
+        <span aria-hidden="true">
+          <MageArrowDown size="1em" />
+        </span>
       </a>
     </>
   );

@@ -7,10 +7,12 @@ import { MarketingPageView } from "@/components/marketing-page-view";
 import { MarketingRuntime } from "@/components/marketing-runtime";
 import type { LatestBlogPostNavItem } from "@/components/mega-menu";
 import { NavigationBlogPostsProvider } from "@/components/navigation-blog-posts";
+import { OfferAnnouncementBar } from "@/components/offer-announcement-bar";
 import { PostHogObservability } from "@/components/posthog-observability";
 import { SiteCloseAndFooter } from "@/components/site-close-and-footer";
 import { SiteHeader } from "@/components/site-header";
 import { SmoothScroll } from "@/components/smooth-scroll";
+import { announcementBar, offerBarBootScript } from "@/config/announcement-bar";
 import { siteConfig } from "@/config/site";
 import {
   formatPostDate,
@@ -178,6 +180,13 @@ export default async function RootLayout({
             __html: `try{var t=localStorage.getItem("innflow-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t;}catch(e){}`,
           }}
         />
+        {announcementBar.enabled ? (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: offerBarBootScript(announcementBar),
+            }}
+          />
+        ) : null}
       </head>
       <body>
         <SmoothScroll />
@@ -198,6 +207,7 @@ export default async function RootLayout({
           latestUpdate={latestUpdate}
           testimonial={navigationTestimonial}
         >
+          <OfferAnnouncementBar />
           <SiteHeader />
           {children}
           <SiteCloseAndFooter />

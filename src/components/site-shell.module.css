@@ -70,6 +70,11 @@
     opacity 360ms ease-out,
     visibility 0s;
 }
+/* The offer bar is sticky. Once the header floats, keep it below that bar. */
+:global(html:not([data-offer-bar="hidden"]))
+.header[data-preview-navigation="floating"] {
+  top: calc(16px + var(--offer-bar-height, 0px));
+}
 .header::before {
   content: "";
   position: absolute;

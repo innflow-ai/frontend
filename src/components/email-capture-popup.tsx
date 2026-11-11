@@ -24,7 +24,7 @@ import {
   isEmailCaptureSuppressed,
   readEmailCapture,
 } from "@/config/email-capture";
-import { trackEmailCaptureSubmitted } from "@/lib/email-capture-analytics";
+import { trackEmailSignup } from "@/lib/email-capture-analytics";
 import { fixedBottomBannerHeight } from "@/lib/email-capture-placement";
 import styles from "./email-capture-popup.module.css";
 
@@ -308,7 +308,7 @@ async function submit(
     handlers.setPhase("success");
     if (!handlers.reported.current) {
       handlers.reported.current = true;
-      trackEmailCaptureSubmitted();
+      trackEmailSignup();
     }
   } catch (error) {
     handlers.setPhase("error");

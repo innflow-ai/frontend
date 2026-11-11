@@ -12,7 +12,6 @@ import {
   isEmailCaptureExcluded,
   isEmailCaptureSuppressed,
 } from "@/config/email-capture";
-import { siteConfig } from "@/config/site";
 import { fixedBottomBannerHeight } from "@/lib/email-capture-placement";
 import { EmailCapturePopup } from "./email-capture-popup";
 import { EmailCaptureSlot } from "./email-capture-slot";
@@ -134,7 +133,7 @@ it("saves the address through the email capture route and emits one event", asyn
   const fetchMock = vi.fn().mockResolvedValue(Response.json({ success: true }));
   vi.stubGlobal("fetch", fetchMock);
   const gtag = vi.fn();
-  Object.assign(window, { gtag });
+  Object.assign(window, { gtag, dataLayer: [] });
   render(<EmailCapturePopup />);
   setScroll(900, 800, 1800);
   fireEvent.scroll(window);
@@ -154,10 +153,8 @@ it("saves the address through the email capture route and emits one event", asyn
   expect(JSON.parse(fetchMock.mock.calls[0][1].body)).toMatchObject({
     email: "person@example.com",
   });
-  expect(gtag).toHaveBeenCalledTimes(1);
-  expect(gtag).toHaveBeenCalledWith("event", "email_capture_submitted", {
-    send_to: siteConfig.analytics.googleAnalyticsId,
-  });
+  expect(gtag).not.toHaveBeenCalled();
+  expect(window.dataLayer).toEqual([{ event: "email_signup" }]);
   expect(
     JSON.parse(localStorage.getItem(EMAIL_CAPTURE_STORAGE_KEY) ?? "{}").status,
   ).toBe("submitted");
@@ -177,7 +174,7 @@ it("does not emit the event when signup fails", async () => {
       ),
   );
   const gtag = vi.fn();
-  Object.assign(window, { gtag });
+  Object.assign(window, { gtag, dataLayer: [] });
   render(<EmailCapturePopup />);
   setScroll(900, 800, 1800);
   fireEvent.scroll(window);
@@ -191,6 +188,7 @@ it("does not emit the event when signup fails", async () => {
     await Promise.resolve();
   });
   expect(gtag).not.toHaveBeenCalled();
+  expect(window.dataLayer).toEqual([]);
   expect(screen.getByRole("status")).toHaveTextContent(
     "Enter a valid email address.",
   );

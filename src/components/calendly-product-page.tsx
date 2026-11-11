@@ -258,13 +258,17 @@ export function CalendlyProductPage({
           className={styles.walkthrough}
           aria-label={`${content.name} features`}
         >
-          <SectionHeading
-            eyebrow={
-              variant === "payments" ? "Your options" : "Made for your workflow"
-            }
-            title="More ways to move"
-            accent="your work forward."
-          />
+          <div className={styles.centerHeading}>
+            <SectionHeading
+              eyebrow={
+                variant === "payments"
+                  ? "Your options"
+                  : "Made for your workflow"
+              }
+              title="More ways to move"
+              accent="your work forward."
+            />
+          </div>
           <section
             className={styles.cardRail}
             // The horizontal feature rail must be keyboard-scrollable.

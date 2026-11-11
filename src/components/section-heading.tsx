@@ -13,17 +13,12 @@ export function HeadingAccent({ children }: { children: ReactNode }) {
 type HeadingLevel = 1 | 2 | 3;
 
 /**
- * Section heading taken from the pricing page intro.
+ * Shared heading structure from the pricing intro.
  *
- * Desktop title: Archivo, 71px, weight 700, line-height 0.95,
- * letter-spacing -0.03em, color #333, margin 0.
- * Accent line: Source Serif 4, weight 400, same size.
- * That mix (Archivo plus Source Serif 4 in one heading) is the signature.
- * Source Serif 4 is the root-layout next/font variable --font-source-serif-4.
- * Subtitle: Archivo, 20px / 26px, color #333.
- * Block: centered, max-width 1200px, 12px gap (32px under 1200px, 24px under 700px).
- * Under 700px the title is 38px with -1.2px tracking and the subtitle is 16px.
- * Pricing has no eyebrow; the optional eyebrow sits above the title in the same stack.
+ * Archivo is the default face. `accent` and `HeadingAccent` switch those
+ * words to Source Serif 4. Sizes, weights, tracking, and line height live
+ * as `--section-heading-*` on `.block` and are still the live pricing
+ * measurements. Brand kit frame 432:1292 replaces them when the specs arrive.
  */
 export function SectionHeading({
   eyebrow,

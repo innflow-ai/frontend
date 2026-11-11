@@ -108,8 +108,9 @@ export function OperatingSteps({
 }) {
   return (
     <section className="section">
-      <div className="shell">
+      <div className="shell editorial-grid">
         <SectionHeading
+          align="start"
           eyebrow="Operating model"
           title={title}
           subtitle={intro}

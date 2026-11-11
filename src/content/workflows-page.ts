@@ -11,6 +11,7 @@ export const workflowsPage = {
   description:
     "A visual, reviewable path for a recurring handoff: trigger, steps, a person where you mark a review, and a record of the run.",
   hero: {
+    id: "workflows-hero",
     title: "Every handoff.",
     emphasis: "One path you can inspect.",
     subtitle:
@@ -19,6 +20,7 @@ export const workflowsPage = {
     secondary: { label: "See an example", href: "#example" },
   },
   example: {
+    id: "maintenance-intake",
     unverified: true,
     hidden: false,
     label: "Example",
@@ -32,33 +34,39 @@ export const workflowsPage = {
     ],
   },
   plan: {
+    id: "a-plan-the-team-can-read",
     title: "A plan the team can read.",
     subtitle:
       "The workflow keeps the sequence visible. An agent can work inside a step. A person still owns the review you mark.",
     rows: [
       {
+        id: "show-who-owns-the-step",
         unverified: true,
         hidden: false,
         title: "Show who owns the step",
         body: "Each step names an agent or a person, so the next move is not left in a side conversation.",
       },
       {
+        id: "pause-where-a-person-decides",
         title: "Pause where a person decides",
         body: "The workflow waits at the review you set. The person sees the request and the context attached to it.",
       },
       {
+        id: "keep-the-exception-on-the-path",
         unverified: true,
         hidden: false,
         title: "Keep the exception on the path",
         body: "Plan the retry and the unfinished work in the same workflow, with an owner, instead of starting a new thread.",
       },
       {
+        id: "open-the-run",
         title: "Open the run",
         body: "Drafts and deployed runs stay in one list. Open a run when you need the record of what happened.",
       },
     ],
   },
   attention: {
+    id: "see-what-is-waiting",
     unverified: true,
     hidden: false,
     title: "See what is waiting.",
@@ -71,25 +79,30 @@ export const workflowsPage = {
     ],
   },
   loop: {
+    id: "from-the-first-trigger",
     title: "From the first trigger to the follow-up.",
     subtitle:
       "The workflow holds the handoffs. It does not replace the system of record.",
     steps: [
       {
+        id: "name-the-outcome",
         title: "Name the outcome",
         body: "Start with the result, and with the step where a person has to decide.",
       },
       {
+        id: "assign-the-steps",
         unverified: true,
         hidden: false,
         title: "Assign the steps",
         body: "Give a step to an agent or a teammate. Attach only the tools and records that step needs.",
       },
       {
+        id: "run-it",
         title: "Run it",
         body: "A trigger starts the path. Connected actions follow the steps you set.",
       },
       {
+        id: "review-and-continue",
         unverified: true,
         hidden: false,
         title: "Review and continue",
@@ -98,15 +111,18 @@ export const workflowsPage = {
     ],
   },
   angles: {
+    id: "two-ways-in",
     title: "Two ways in.",
     cards: [
       {
+        id: "start-with-one-intake",
         title: "Start with one intake",
         body: "Collect a maintenance request, classify it, and route it to the owner who already handles that work.",
         href: "#example",
         label: "See the example",
       },
       {
+        id: "closer-article",
         title: "A closer article",
         body: "TODO: Julian to confirm a published Innflow article for this card.",
         href: null,
@@ -115,6 +131,7 @@ export const workflowsPage = {
     ],
   },
   close: {
+    id: "hand-off-the-step",
     title: "Hand off the step.",
     emphasis: "Keep the record.",
     subtitle: "Bring one recurring handoff your team already understands.",

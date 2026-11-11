@@ -9,6 +9,22 @@ it("follows the workflow page structure without borrowed names", () => {
     screen.getByRole("heading", { level: 1, name: /Every handoff/ }),
   ).toBeInTheDocument();
   expect(screen.getByText("Maintenance intake")).toBeInTheDocument();
+  expect(
+    document.querySelector("[data-feature-id='workflows-hero']"),
+  ).toBeTruthy();
+  expect(document.getElementById("workflows-hero")).toHaveAttribute(
+    "href",
+    expect.stringContaining("cal.com"),
+  );
+  expect(document.getElementById("maintenance-intake")).toHaveAttribute(
+    "href",
+    "#example",
+  );
+  expect(document.getElementById("hand-off-the-step")).toBeTruthy();
+  expect(document.getElementById("start-with-one-intake")).toHaveAttribute(
+    "href",
+    "#example",
+  );
   expect(screen.getByText(/TODO: Julian/)).toBeInTheDocument();
   expect(screen.queryByText(/Offloop|off-loop|Botmode/i)).toBeNull();
   expect(screen.getAllByRole("heading", { level: 2 })).toHaveLength(5);

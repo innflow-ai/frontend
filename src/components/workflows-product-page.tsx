@@ -10,7 +10,11 @@ import styles from "./workflows-product-page.module.css";
 export function WorkflowsProductPage() {
   return (
     <main className={styles.page} id="main-content">
-      <section className={styles.hero} aria-labelledby="workflows-title">
+      <section
+        className={styles.hero}
+        aria-labelledby="workflows-title"
+        data-feature-id={page.hero.id}
+      >
         <SectionHeading
           id="workflows-title"
           as="h1"
@@ -21,6 +25,7 @@ export function WorkflowsProductPage() {
         >
           <div className={styles.actions}>
             <TrackedLink
+              id={page.hero.id}
               className={styles.primary}
               destination={page.hero.primary.href}
               eventLabel="workflows_hero_demo"
@@ -28,7 +33,11 @@ export function WorkflowsProductPage() {
               {page.hero.primary.label}
             </TrackedLink>
             {showWorkflowSection(page.example) ? (
-              <a className={styles.secondary} href={page.hero.secondary.href}>
+              <a
+                id={page.example.id}
+                className={styles.secondary}
+                href={page.hero.secondary.href}
+              >
                 {page.hero.secondary.label}
               </a>
             ) : null}
@@ -37,7 +46,11 @@ export function WorkflowsProductPage() {
         {showWorkflowSection(page.example) ? <ExampleCard /> : null}
       </section>
 
-      <section className={styles.block} aria-labelledby="workflows-plan">
+      <section
+        className={styles.block}
+        aria-labelledby="workflows-plan"
+        data-feature-id={page.plan.id}
+      >
         <SectionHeading
           id="workflows-plan"
           title={page.plan.title}
@@ -45,7 +58,7 @@ export function WorkflowsProductPage() {
         />
         <ol className={styles.rows}>
           {page.plan.rows.filter(showWorkflowSection).map((row, index) => (
-            <li className={styles.row} key={row.title}>
+            <li className={styles.row} data-feature-id={row.id} key={row.id}>
               <div>
                 <p className={styles.index}>{index + 1}</p>
                 <SectionHeading
@@ -65,7 +78,11 @@ export function WorkflowsProductPage() {
       </section>
 
       {showWorkflowSection(page.attention) ? (
-        <section className={styles.block} aria-labelledby="workflows-attention">
+        <section
+          className={styles.block}
+          aria-labelledby="workflows-attention"
+          data-feature-id={page.attention.id}
+        >
           <SectionHeading
             id="workflows-attention"
             title={page.attention.title}
@@ -82,7 +99,11 @@ export function WorkflowsProductPage() {
         </section>
       ) : null}
 
-      <section className={styles.block} aria-labelledby="workflows-loop">
+      <section
+        className={styles.block}
+        aria-labelledby="workflows-loop"
+        data-feature-id={page.loop.id}
+      >
         <SectionHeading
           id="workflows-loop"
           title={page.loop.title}
@@ -90,7 +111,7 @@ export function WorkflowsProductPage() {
         />
         <ol className={styles.steps}>
           {page.loop.steps.filter(showWorkflowSection).map((step, index) => (
-            <li key={step.title}>
+            <li data-feature-id={step.id} key={step.id}>
               <p className={styles.index}>{index + 1}</p>
               <SectionHeading
                 as="h3"
@@ -104,25 +125,39 @@ export function WorkflowsProductPage() {
         </ol>
       </section>
 
-      <section className={styles.block} aria-labelledby="workflows-angles">
+      <section
+        className={styles.block}
+        aria-labelledby="workflows-angles"
+        data-feature-id={page.angles.id}
+      >
         <SectionHeading id="workflows-angles" title={page.angles.title} />
         <div className={styles.cards}>
           {page.angles.cards.map((card) => (
-            <article className={styles.card} key={card.title}>
+            <article
+              className={styles.card}
+              data-feature-id={card.id}
+              key={card.id}
+            >
               <h3>{card.title}</h3>
               <p>{card.body}</p>
               {card.href &&
               card.label &&
               (card.href !== "#example" ||
                 showWorkflowSection(page.example)) ? (
-                <a href={card.href}>{card.label}</a>
+                <a href={card.href} id={card.id}>
+                  {card.label}
+                </a>
               ) : null}
             </article>
           ))}
         </div>
       </section>
 
-      <section className={styles.close} aria-labelledby="workflows-close">
+      <section
+        className={styles.close}
+        aria-labelledby="workflows-close"
+        data-feature-id={page.close.id}
+      >
         <SectionHeading
           id="workflows-close"
           title={page.close.title}
@@ -130,6 +165,7 @@ export function WorkflowsProductPage() {
           subtitle={page.close.subtitle}
         >
           <TrackedLink
+            id={page.close.id}
             className={styles.primary}
             destination={page.close.cta.href}
             eventLabel="workflows_close_demo"
@@ -148,6 +184,7 @@ function ExampleCard() {
     <aside
       className={styles.example}
       id="example"
+      data-feature-id={example.id}
       aria-label="Example workflow"
     >
       <p className={styles.exampleLabel}>{example.label}</p>

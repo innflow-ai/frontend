@@ -4,24 +4,14 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { GoogleCtaContent } from "@/components/google-cta-content";
-import {
-  ArrowRight,
-  ChevronDown as CaretDown,
-  DashMenu as List,
-  MegaphoneA as Megaphone,
-  NoteText as Newspaper,
-  Multiply as X,
-} from "@/components/icons/mage";
-import {
-  menuBrowseLinks,
-  productColumns,
-  resourcesColumns,
-  solutionsColumns,
-} from "@/components/mega-menu";
+import { ArrowRight } from "@/components/icons/mage/ArrowRight";
+import { ChevronDown as CaretDown } from "@/components/icons/mage/ChevronDown";
+import { DashMenu as List } from "@/components/icons/mage/DashMenu";
+import { MegaphoneA as Megaphone } from "@/components/icons/mage/MegaphoneA";
+import { Multiply as X } from "@/components/icons/mage/Multiply";
 import { siteConfig } from "@/config/site";
 import { INNER_PAGE_ANNOUNCEMENTS_ENABLED } from "@/lib/marketing-chrome";
 import { isShowcaseHome } from "@/lib/showcase-routes";
-import { MobileNavigation } from "./editorial-header";
 import {
   useNavigationAppUpdate,
   useNavigationBlogPosts,
@@ -29,20 +19,36 @@ import {
 } from "./navigation-blog-posts";
 import previewStyles from "./site-header-preview.module.css";
 import styles from "./site-shell.module.css";
-import { TestimonialCard } from "./testimonial-cards";
 import { TrackedLink } from "./tracked-link";
 
-const menus = [
-  { label: "Product", columns: productColumns },
-  { label: "Solutions", columns: solutionsColumns },
-  { label: "Resources", columns: resourcesColumns },
-];
+const menuLabels = ["Product", "Solutions", "Resources"] as const;
+
+// Loaded on open so motion and the menu icon set are not in the first paint.
+type DropdownComponent = typeof import("./site-header-dropdown").HeaderDropdown;
+type MobileNavigationComponent =
+  typeof import("./editorial-header").MobileNavigation;
 export function SiteHeader() {
   const latestBlogPosts = useNavigationBlogPosts();
   const latestUpdate = useNavigationAppUpdate();
   const testimonial = useNavigationTestimonial();
   const [menu, setMenu] = useState<string | null>(null);
   const [mobile, setMobile] = useState(false);
+  const [Dropdown, setDropdown] = useState<DropdownComponent | null>(null);
+  const [MobileNav, setMobileNav] = useState<MobileNavigationComponent | null>(
+    null,
+  );
+  const loadDropdown = () => {
+    if (Dropdown) return;
+    void import("./site-header-dropdown").then((mod) => {
+      setDropdown(() => mod.HeaderDropdown);
+    });
+  };
+  const loadMobileNav = () => {
+    if (MobileNav) return;
+    void import("./editorial-header").then((mod) => {
+      setMobileNav(() => mod.MobileNavigation);
+    });
+  };
   const pathname = usePathname();
   const [announcementDismissed, setAnnouncementDismissed] = useState(false);
   const announcementHidden =
@@ -252,13 +258,13 @@ export function SiteHeader() {
           aria-label="Primary navigation"
           className={styles.nav}
         >
-          {menus.map((group) => (
+          {menuLabels.map((label) => (
             // biome-ignore lint/a11y/useSemanticElements: This groups navigation disclosures, not form fields.
             <div
               className={styles.menuGroup}
-              key={group.label}
+              key={label}
               role="group"
-              aria-label={group.label}
+              aria-label={label}
               onPointerEnter={(event) => {
                 if (
                   event.pointerType !== "mouse" ||
@@ -267,185 +273,45 @@ export function SiteHeader() {
                 )
                   return;
                 cancelHoverClose();
-                setMenu(group.label);
+                loadDropdown();
+                setMenu(label);
               }}
               onPointerLeave={(event) => {
                 if (event.pointerType !== "mouse" || mobile) return;
                 cancelHoverClose();
                 hoverClose.current = setTimeout(() => {
-                  setMenu((current) =>
-                    current === group.label ? null : current,
-                  );
+                  setMenu((current) => (current === label ? null : current));
                 }, 180);
               }}
               onBlur={(event) => {
                 if (!event.currentTarget.contains(event.relatedTarget)) {
                   cancelHoverClose();
-                  setMenu((current) =>
-                    current === group.label ? null : current,
-                  );
+                  setMenu((current) => (current === label ? null : current));
                 }
               }}
             >
               <button
                 type="button"
-                aria-expanded={menu === group.label}
-                aria-controls={`baselane-${group.label.replaceAll(" ", "-")}`}
+                aria-expanded={menu === label}
+                aria-controls={`baselane-${label.replaceAll(" ", "-")}`}
                 onClick={() => {
                   cancelHoverClose();
-                  setMenu(menu === group.label ? null : group.label);
+                  loadDropdown();
+                  setMenu(menu === label ? null : label);
                 }}
               >
-                {group.label}
+                {label}
                 <CaretDown size={13} />
               </button>
-              {menu === group.label && (
-                <div
-                  id={`baselane-${group.label.replaceAll(" ", "-")}`}
-                  className={`${styles.dropdown}${group.label === "Portfolios" ? ` ${styles.dropdownWithBanner}` : ""}${group.label === "Resources" && latestBlogPosts.length ? ` ${styles.dropdownWithPosts}` : ""}${(group.label === "Product" && latestUpdate) || (group.label === "Solutions" && testimonial) ? ` ${styles.dropdownWithUpdate}` : ""}`}
-                >
-                  {group.columns.map((column) => (
-                    <div className={styles.dropdownColumn} key={column.heading}>
-                      <h3>{column.heading}</h3>
-                      {column.links.map((link) => (
-                        <a
-                          key={link.title}
-                          href={link.href}
-                          onClick={closeMenus}
-                          data-browse-all={link.browseAll || undefined}
-                        >
-                          {!link.hideIcon && (
-                            <link.icon
-                              className={styles.menuItemIcon}
-                              size={28}
-                            />
-                          )}
-                          <span>{link.title}</span>
-                          {link.badge ? <small>{link.badge}</small> : null}
-                        </a>
-                      ))}
-                    </div>
-                  ))}
-                  {group.label === "Solutions" && testimonial && (
-                    <section
-                      className={styles.menuUpdateSection}
-                      aria-label="Customer testimonial"
-                    >
-                      <h3>In their own words</h3>
-                      <TestimonialCard item={testimonial} />
-                    </section>
-                  )}
-                  {group.label === "Product" && latestUpdate && (
-                    <section
-                      className={styles.menuUpdateSection}
-                      aria-label="Company updates"
-                    >
-                      <h3>Company updates</h3>
-                      <TrackedLink
-                        destination={latestUpdate.href}
-                        eventLabel="product_menu_latest_update"
-                        className={styles.menuBlogCard}
-                        onClick={closeMenus}
-                      >
-                        <span className={styles.menuBlogMedia}>
-                          {latestUpdate.imageUrl ? (
-                            <Image
-                              src={latestUpdate.imageUrl}
-                              alt={latestUpdate.imageAlt}
-                              width={720}
-                              height={389}
-                              sizes="300px"
-                            />
-                          ) : (
-                            <Newspaper size={28} aria-hidden="true" />
-                          )}
-                        </span>
-                        <span className={styles.menuBlogMeta}>
-                          {latestUpdate.publishedLabel}
-                        </span>
-                        <strong>{latestUpdate.title}</strong>
-                        <span>
-                          {latestUpdate.actionLabel}{" "}
-                          <ArrowRight size={14} aria-hidden="true" />
-                        </span>
-                      </TrackedLink>
-                    </section>
-                  )}
-                  {menuBrowseLinks[group.label] && (
-                    <a
-                      className={styles.browseAll}
-                      data-browse-all
-                      href={menuBrowseLinks[group.label]?.href}
-                      onClick={closeMenus}
-                    >
-                      <span>{menuBrowseLinks[group.label]?.title}</span>
-                    </a>
-                  )}
-                  {group.label === "Resources" &&
-                    latestBlogPosts.length > 0 && (
-                      <section
-                        className={styles.menuBlogSection}
-                        aria-label="Latest from Innflow"
-                      >
-                        <div className={styles.menuBlogHeading}>
-                          <h3>Latest from Innflow</h3>
-                          <a href="/blog" onClick={closeMenus}>
-                            View all posts{" "}
-                            <ArrowRight size={14} aria-hidden="true" />
-                          </a>
-                        </div>
-                        <div className={styles.menuBlogGrid}>
-                          {latestBlogPosts.slice(0, 4).map((post) => (
-                            <TrackedLink
-                              key={post.href}
-                              destination={post.href}
-                              eventLabel="baselane_menu_latest_blog_post"
-                              className={styles.menuBlogCard}
-                              onClick={closeMenus}
-                            >
-                              <span className={styles.menuBlogMedia}>
-                                {post.imageUrl ? (
-                                  <Image
-                                    src={post.imageUrl}
-                                    alt={post.imageAlt}
-                                    width={720}
-                                    height={512}
-                                    quality={100}
-                                    sizes="(min-width: 1380px) 230px, 250px"
-                                  />
-                                ) : (
-                                  <Newspaper size={32} aria-hidden="true" />
-                                )}
-                              </span>
-                              <span className={styles.menuBlogMeta}>
-                                {[post.categoryLabel, post.publishedLabel]
-                                  .filter(Boolean)
-                                  .join(" · ")}
-                              </span>
-                              <strong>{post.title}</strong>
-                            </TrackedLink>
-                          ))}
-                        </div>
-                      </section>
-                    )}
-                  {group.label === "Portfolios" && (
-                    <TrackedLink
-                      className={styles.dropdownBanner}
-                      destination="/contact"
-                      eventLabel="baselane_menu_portfolio_talk_to_sales"
-                      onClick={closeMenus}
-                    >
-                      <Image
-                        src="/brand/navigation/ico-banner-real.png"
-                        alt="Interested in our product? Contact us to discuss becoming a customer and finding solutions for your needs. Talk to sales."
-                        width={2430}
-                        height={776}
-                        sizes="(min-width: 1181px) 900px, 1px"
-                      />
-                    </TrackedLink>
-                  )}
-                </div>
-              )}
+              {menu === label && Dropdown ? (
+                <Dropdown
+                  label={label}
+                  closeMenus={closeMenus}
+                  latestBlogPosts={latestBlogPosts}
+                  latestUpdate={latestUpdate}
+                  testimonial={testimonial}
+                />
+              ) : null}
             </div>
           ))}
           <a href="/pricing">Pricing</a>
@@ -477,7 +343,9 @@ export function SiteHeader() {
             aria-expanded={mobile}
             aria-controls="baselane-mobile-overlay"
             onClick={() => {
-              setMobile(!mobile);
+              const next = !mobile;
+              if (next) loadMobileNav();
+              setMobile(next);
               setMenu(null);
             }}
           >
@@ -485,15 +353,17 @@ export function SiteHeader() {
           </button>
         </div>
       </header>
-      <MobileNavigation
-        open={mobile}
-        latestBlogPosts={latestBlogPosts}
-        onClose={closeMenus}
-        id="baselane-mobile-overlay"
-        className={styles.mobileMenu}
-        pricingHref="/pricing"
-        loginHref={`${siteConfig.appOrigin}/login`}
-      />
+      {mobile && MobileNav ? (
+        <MobileNav
+          open={mobile}
+          latestBlogPosts={latestBlogPosts}
+          onClose={closeMenus}
+          id="baselane-mobile-overlay"
+          className={styles.mobileMenu}
+          pricingHref="/pricing"
+          loginHref={`${siteConfig.appOrigin}/login`}
+        />
+      ) : null}
     </div>
   );
 }

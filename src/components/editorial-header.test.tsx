@@ -454,7 +454,9 @@ describe("SiteHeader mega-menu destinations", () => {
     const desktop = screen.getByRole("group", { name: "Solutions" });
     for (const [title, href] of namedItems) {
       expect(
-        within(desktop).getByRole("link", { name: new RegExp(`^${title}`) }),
+        await within(desktop).findByRole("link", {
+          name: new RegExp(`^${title}`),
+        }),
       ).toHaveAttribute("href", href);
       expect(href).not.toBe("/property-management");
       expect(href).not.toBe("/products/agent-os");
@@ -462,7 +464,7 @@ describe("SiteHeader mega-menu destinations", () => {
     await user.keyboard("{Escape}");
     await user.click(screen.getByRole("button", { name: "Open navigation" }));
     const mobile = within(
-      screen.getByRole("navigation", { name: "Mobile navigation" }),
+      await screen.findByRole("navigation", { name: "Mobile navigation" }),
     );
     await user.click(mobile.getByRole("button", { name: "Solutions" }));
     for (const [title, href] of namedItems) {

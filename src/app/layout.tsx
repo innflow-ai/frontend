@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next";
 import { Archivo, Geist_Mono, Source_Serif_4 } from "next/font/google";
 import type { ReactNode } from "react";
 import { ConsentManagedTags } from "@/components/consent-managed-tags";
+import { MarketingPageView } from "@/components/marketing-page-view";
 import { MarketingRuntime } from "@/components/marketing-runtime";
 import type { LatestBlogPostNavItem } from "@/components/mega-menu";
 import { NavigationBlogPostsProvider } from "@/components/navigation-blog-posts";
@@ -197,6 +198,7 @@ export default async function RootLayout({
           <SiteCloseAndFooter />
         </NavigationBlogPostsProvider>
         <MarketingRuntime />
+        <MarketingPageView />
         <ConsentManagedTags />
         <PostHogObservability experience={experience} />
         <Analytics />

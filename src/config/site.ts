@@ -18,6 +18,9 @@ export const siteConfig = {
     termlyResourceBlockerId:
       process.env.NEXT_PUBLIC_TERMLY_RESOURCE_BLOCKER_ID ??
       "414cd1e3-288d-41cd-9efe-871f9f35e9d1",
+    // Production has no env override, so these defaults are the live IDs.
+    // GTM-KBDVHJKF is the only container. Its Google tag is G-V8ZV0QLZB7.
+    // Do not also inject gtag.js for that measurement ID.
     googleTagManagerId:
       process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID ?? "GTM-KBDVHJKF",
     googleAnalyticsId:
@@ -46,6 +49,9 @@ export const attributionKeys = [
   "utm_term",
   "utm_content",
   "gclid",
+  // Google click IDs used alongside gclid. Signup links must keep them.
+  "gbraid",
+  "wbraid",
   "fbclid",
   "msclkid",
   "landing_page",

@@ -1,5 +1,16 @@
-const runtime = `(() => {
-  const keys = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid", "msclkid", "landing_page", "referrer"];
+import { attributionKeys, siteConfig } from "@/config/site";
+
+/**
+ * Inline, before-hydration attribution. Keys come from attributionKeys so
+ * gclid, gbraid, and wbraid cannot drift from the server helper.
+ * Signup clicks are not sign_up: that event belongs after account creation.
+ */
+export function marketingRuntimeSource() {
+  const keys = JSON.stringify(attributionKeys);
+  const appOrigin = JSON.stringify(siteConfig.appOrigin);
+  return `(() => {
+  const keys = ${keys};
+  const appOrigin = ${appOrigin};
   const prefix = "innflow-attribution:";
   const values = new URLSearchParams(location.search);
   let storage;
@@ -12,6 +23,12 @@ const runtime = `(() => {
     if (!values.has(key) && read(key)) values.set(key, read(key));
     write(key, values.get(key));
   }
+
+  const isAppDestination = (destination) => {
+    try {
+      return new URL(destination, location.origin).origin === new URL(appOrigin).origin;
+    } catch { return false; }
+  };
 
   // Decorate just-in-time on click instead of at parse time: rewriting hrefs
   // before React hydrates causes hydration mismatch warnings.
@@ -29,6 +46,12 @@ const runtime = `(() => {
     } catch {}
   };
 
+  const shouldDecorate = (anchor) => {
+    if (anchor.dataset.marketingEvent) return true;
+    const destination = anchor.dataset.marketingDestination || anchor.getAttribute("href");
+    return Boolean(destination) && isAppDestination(destination);
+  };
+
   const emit = (event, properties = {}) => {
     window.dispatchEvent(new CustomEvent("innflow:analytics", { detail: { event, properties } }));
     try {
@@ -38,12 +61,21 @@ const runtime = `(() => {
       }
     } catch {}
   };
-  const onActivate = (event) => {
-    const anchor = event.target instanceof Element ? event.target.closest("a[data-marketing-event]") : null;
-    if (!anchor) return;
+  const anchorFrom = (event) => event.target instanceof Element ? event.target.closest("a[href]") : null;
+  // pointerdown rewrites the href before a new-tab or modified click reads it.
+  const onPointerDown = (event) => {
+    const anchor = anchorFrom(event);
+    if (!anchor || !shouldDecorate(anchor)) return;
     decorate(anchor);
-    emit(anchor.dataset.marketingEvent, { label: anchor.dataset.marketingLabel, destination: anchor.dataset.marketingDestination });
   };
+  const onActivate = (event) => {
+    const anchor = anchorFrom(event);
+    if (!anchor || !shouldDecorate(anchor)) return;
+    decorate(anchor);
+    if (!anchor.dataset.marketingEvent) return;
+    emit(anchor.dataset.marketingEvent, { label: anchor.dataset.marketingLabel, destination: anchor.dataset.marketingDestination || anchor.href });
+  };
+  document.addEventListener("pointerdown", onPointerDown, true);
   document.addEventListener("click", onActivate);
   document.addEventListener("auxclick", onActivate);
 
@@ -60,12 +92,13 @@ const runtime = `(() => {
     }).observe({ type: "layout-shift", buffered: true });
   } catch {}
 })();`;
+}
 
 export function MarketingRuntime() {
   return (
     <script
       id="innflow-marketing-runtime"
-      dangerouslySetInnerHTML={{ __html: runtime }}
+      dangerouslySetInnerHTML={{ __html: marketingRuntimeSource() }}
     />
   );
 }

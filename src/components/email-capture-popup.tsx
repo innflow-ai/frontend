@@ -8,15 +8,16 @@ import {
   useRef,
   useState,
 } from "react";
+import { BotIcon } from "@/components/icons/bot-icon";
 import { Multiply as X } from "@/components/icons/mage/Multiply";
 import {
+  activeEmailCaptureVariant,
   EMAIL_CAPTURE_DELAY_MS,
   EMAIL_CAPTURE_SCROLL_RATIO,
   EMAIL_CAPTURE_SESSION_KEY,
   EMAIL_CAPTURE_STORAGE_KEY,
   type EmailCaptureRecord,
   type EmailCaptureVariant,
-  emailCapture,
   emailCaptureCopy,
   emailCaptureScrollRatio,
   emailCaptureSeenThisSession,
@@ -30,7 +31,7 @@ import { fixedBottomBannerHeight } from "@/lib/email-capture-placement";
 import styles from "./email-capture-popup.module.css";
 
 export function EmailCapturePopup({
-  variant = emailCapture.variant,
+  variant = activeEmailCaptureVariant() ?? "newsletter",
 }: {
   variant?: EmailCaptureVariant;
 }) {
@@ -129,6 +130,7 @@ export function EmailCapturePopup({
       ref={cardRef}
       className={styles.card}
       data-email-capture=""
+      data-variant={variant}
       role="dialog"
       aria-modal="false"
       aria-labelledby="email-capture-title"
@@ -152,9 +154,18 @@ export function EmailCapturePopup({
       >
         <X size={16} aria-hidden="true" />
       </button>
-      <h2 id="email-capture-title" className={styles.headline}>
-        {variant === "upsell" ? offer.headline : emailCaptureCopy.headline}
-      </h2>
+      {variant === "newsletter" ? (
+        <div className={styles.titleRow}>
+          <BotIcon size={18} />
+          <h2 id="email-capture-title" className={styles.headline}>
+            {emailCaptureCopy.headline}
+          </h2>
+        </div>
+      ) : (
+        <h2 id="email-capture-title" className={styles.headline}>
+          {offer.headline}
+        </h2>
+      )}
       <p id="email-capture-copy" className={styles.subcopy}>
         {variant === "upsell" ? offer.subcopy : emailCaptureCopy.subcopy}
       </p>

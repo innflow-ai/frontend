@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
+  activeEmailCaptureVariant,
   EMAIL_CAPTURE_SESSION_KEY,
   EMAIL_CAPTURE_STORAGE_KEY,
   emailCaptureSeenThisSession,
@@ -21,8 +22,10 @@ export function EmailCaptureSlot() {
   const pathname = usePathname();
   const [Popup, setPopup] = useState<PopupComponent | null>(null);
 
+  const variant = activeEmailCaptureVariant();
+
   useEffect(() => {
-    if (isEmailCaptureExcluded(pathname)) return;
+    if (!variant || isEmailCaptureExcluded(pathname)) return;
     try {
       if (
         emailCaptureSeenThisSession(
@@ -65,8 +68,8 @@ export function EmailCaptureSlot() {
       if (idle !== undefined) idleWindow.cancelIdleCallback?.(idle);
       if (timer !== undefined) window.clearTimeout(timer);
     };
-  }, [pathname]);
+  }, [pathname, variant]);
 
-  if (!Popup || isEmailCaptureExcluded(pathname)) return null;
-  return <Popup />;
+  if (!Popup || !variant || isEmailCaptureExcluded(pathname)) return null;
+  return <Popup variant={variant} />;
 }

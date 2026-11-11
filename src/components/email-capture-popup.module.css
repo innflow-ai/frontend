@@ -1,48 +1,81 @@
 /*
-  Look matched to the signup offer popup, commit 1c42993
-  (src/components/signup-offer-popup.module.css). Placement stays
-  bottom-left, and the mobile sheet and motion rules are unchanged.
+  Newsletter card (Paper PR-0): bottom-left email signup.
+  Upsell (Paper R5-0) reuses the signup offer popup from commit 1c42993.
+  Exact specs for both are still coming from the designer.
 */
 .card {
   position: fixed;
   z-index: 80;
-  left: 24px;
-  bottom: 24px;
-  width: min(360px, calc(100vw - 32px));
+  left: 20px;
+  bottom: 20px;
+  width: min(320px, calc(100vw - 40px));
   box-sizing: border-box;
   margin: 0;
-  padding: 28px 24px 24px;
-  border: 1px solid #dde8f1;
-  border-radius: 18px;
+  padding: 16px 16px 14px;
+  border: 1px solid rgb(26 26 26 / 12%);
+  border-radius: 16px;
   background: #fff;
-  color: #0c1b2a;
-  box-shadow: 0 18px 48px rgb(12 27 42 / 18%);
+  color: #1a1a1a;
+  box-shadow: 0 12px 32px rgb(26 26 26 / 12%);
   font-family: var(--font-archivo), Arial, sans-serif;
   animation: email-capture-rise 240ms ease;
 }
 
+.card[data-variant="upsell"] {
+  left: auto;
+  right: 24px;
+  width: min(360px, calc(100vw - 32px));
+  padding: 28px 24px 24px;
+  border-color: #dde8f1;
+  border-radius: 18px;
+  color: #0c1b2a;
+  box-shadow: 0 18px 48px rgb(12 27 42 / 18%);
+}
+
+.titleRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0 28px 6px 0;
+}
+
 .headline {
+  margin: 0;
+  color: #1a1a1a;
+  font-family: var(--font-source-serif-4), serif;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 28px;
+}
+
+.card[data-variant="upsell"] .headline {
   margin: 0 28px 8px 0;
   color: #0c1b2a;
   font-family: var(--font-archivo), Arial, sans-serif;
   font-size: 28px;
-  font-weight: 400;
   letter-spacing: -0.03em;
   line-height: 1.15;
 }
 
 .subcopy {
-  margin: 0 0 20px;
+  margin: 0 0 12px;
+  color: rgb(26 26 26 / 72%);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.card[data-variant="upsell"] .subcopy {
+  margin-bottom: 20px;
   color: #74777b;
   font-size: 15px;
-  font-weight: 400;
   line-height: 1.5;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 8px;
   margin: 0;
 }
@@ -56,7 +89,6 @@
 }
 
 .label {
-  color: #0c1b2a;
   font-size: 12px;
   font-weight: 600;
   line-height: 16px;
@@ -65,36 +97,43 @@
 .input {
   box-sizing: border-box;
   width: 100%;
-  height: 44px;
-  margin: 0 0 8px;
+  height: 40px;
+  margin: 0;
   padding: 0 12px;
-  border: 1px solid #dde8f1;
+  border: 1px solid rgb(26 26 26 / 24%);
   border-radius: 10px;
   background: #fff;
-  color: #0c1b2a;
+  color: #1a1a1a;
   font:
-    400 15px / 1.5 var(--font-archivo),
+    400 14px / 20px var(--font-archivo),
     Arial,
     sans-serif;
 }
 
 .submit {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  align-self: flex-start;
-  min-height: 44px;
-  padding: 10px 18px;
+  height: 40px;
   border: 0;
   border-radius: 999px;
-  background: linear-gradient(180deg, #5aaaf8 0%, #00aeff 100%);
+  background: #1a1a1a;
   color: #fff;
   font:
-    600 14px / 1 var(--font-archivo),
+    600 14px / 20px var(--font-archivo),
     Arial,
     sans-serif;
   text-decoration: none;
   cursor: pointer;
+}
+
+.card[data-variant="upsell"] .submit {
+  align-self: flex-start;
+  width: auto;
+  min-height: 44px;
+  height: auto;
+  padding: 10px 18px;
+  background: linear-gradient(180deg, #5aaaf8 0%, #00aeff 100%);
 }
 
 .submit:disabled {
@@ -104,35 +143,47 @@
 
 .status,
 .success {
-  margin: 8px 0 0;
+  margin: 0;
   min-height: 20px;
-  color: #0c1b2a;
-  font-size: 15px;
-  line-height: 1.5;
+  color: #1a1a1a;
+  font-size: 13px;
+  line-height: 20px;
 }
 
 .close {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 8px;
+  right: 8px;
   display: grid;
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   place-items: center;
   border: 0;
   border-radius: 999px;
   background: transparent;
-  color: #0c1b2a;
+  color: #1a1a1a;
   cursor: pointer;
 }
 
+.card[data-variant="upsell"] .close {
+  top: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  color: #0c1b2a;
+}
+
 .card :is(button, a, input):focus-visible {
-  outline: 2px solid #00aeff;
+  outline: 2px solid #1a1a1a;
   outline-offset: 2px;
 }
 
+.card[data-variant="upsell"] :is(button, a, input):focus-visible {
+  outline-color: #00aeff;
+}
+
 @media (max-width: 700px) {
-  .card {
+  .card:not([data-variant="upsell"]) {
     left: 12px;
     right: 12px;
     bottom: 12px;

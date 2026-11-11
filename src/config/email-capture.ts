@@ -1,10 +1,11 @@
 import { announcementBar } from "@/config/announcement-bar";
 
 /**
- * PLACEHOLDER copy until the Figma cards are matched.
- * File `1fbFIPN1GfSkioiOSUZMaV`:
- * newsletter desktop `55:7853`, mobile `55:8186`;
- * upsell desktop `55:8045`, mobile `55:8299`.
+ * PLACEHOLDER copy until the designer sends exact specs.
+ * Paper file `01M64EXWWY8RJHT2PWPEWV4ZFR`:
+ * `PR-0` is the bottom-left email card. `R5-0` is the offer promo.
+ * Figma `1fbFIPN1GfSkioiOSUZMaV`: newsletter `55:7853` / `55:8186`,
+ * upsell `55:8045` / `55:8299`.
  */
 export const emailCaptureCopy = {
   headline: "A note when it matters.",
@@ -20,10 +21,21 @@ export const emailCaptureCopy = {
 export type EmailCaptureVariant = "newsletter" | "upsell";
 
 export const emailCapture = {
-  /** Switch to "upsell" for the campaign card. */
-  variant: "newsletter" as EmailCaptureVariant,
+  /** PR-0, the bottom-left email card. This is the one that shows. */
+  newsletterEnabled: true,
+  /** R5-0, the offer promo. Off until Julian turns it on. */
+  upsellEnabled: false,
   upsellHref: "/pricing?ref=email-capture",
 };
+
+/** Newsletter wins when both switches are on, so the two popups never share the screen. */
+export function activeEmailCaptureVariant(
+  config: { newsletterEnabled: boolean; upsellEnabled: boolean } = emailCapture,
+): EmailCaptureVariant | null {
+  if (config.newsletterEnabled) return "newsletter";
+  if (config.upsellEnabled) return "upsell";
+  return null;
+}
 
 export const EMAIL_CAPTURE_STORAGE_KEY = "innflow-email-capture";
 export const EMAIL_CAPTURE_SESSION_KEY = "innflow-email-capture-session";

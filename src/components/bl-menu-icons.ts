@@ -1,7 +1,7 @@
 // Paper stroke icons, mapped by menu label rather than destination (some links share URLs).
 export const blMenuIcons: Record<string, string> = {
   Platform: "/brand/navigation/bl-stroke/34-dashboard.svg",
-  "AI Agents": "/brand/navigation/bl-stroke/03-direction-up-right.svg",
+  "AI Agents": "/brand/icons/bot.svg",
   Copilot: "/brand/navigation/bl-stroke/04-preview.svg",
   "Agentic Workflows": "/brand/navigation/bl-stroke/05-stack.svg",
   "Agent Skills": "/brand/navigation/bl-stroke/06-settings.svg",

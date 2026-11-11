@@ -5,13 +5,13 @@ import { type CSSProperties, useEffect, useRef, useState } from "react";
 import { ChevronRight } from "@/components/chevron-right";
 import googleButtonStyles from "@/components/google-cta.module.css";
 import { GoogleCtaContent } from "@/components/google-cta-content";
+import { BotIcon } from "@/components/icons/bot-icon";
 import {
   Chart,
   Clock as MageClock,
   Multiply as MageMultiply,
   Users as MageUsers,
   Video as MageVideo,
-  Robot,
   Share,
   StarsA,
 } from "@/components/icons/mage";
@@ -25,7 +25,7 @@ import {
 } from "./scroll-showcase-motion";
 import styles from "./showcase.module.css";
 
-const showcaseIcons = [Robot, Share, StarsA, Chart];
+const showcaseIcons = [BotIcon, Share, StarsA, Chart];
 const assets = "/preview/scroll-showcase";
 const states = [
   {

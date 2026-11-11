@@ -3,7 +3,8 @@
 import { motion, useTransform } from "motion/react";
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-import { ChevronDown as MageChevronDown, Robot } from "@/components/icons/mage";
+import { BotIcon } from "@/components/icons/bot-icon";
+import { ChevronDown as MageChevronDown } from "@/components/icons/mage";
 import { useDemoPlayback } from "./agent-demos/use-demo-playback";
 import styles from "./scheduling-assistant.module.css";
 
@@ -95,7 +96,7 @@ export function SchedulingAssistant({ active }: { active: boolean }) {
               className={styles.reply}
               style={{ opacity: replyOpacity, y: replyY }}
             >
-              <Robot size={18} />
+              <BotIcon size={18} />
               <span>I’ll coordinate a time with everyone.</span>
             </motion.div>
           </div>

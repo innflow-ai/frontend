@@ -16,7 +16,7 @@ translucent backing, opaque white cards, navy text, Geist typography, UI spacing
 and connected workflow nodes. CSS blur, border and shadow approximate the glass
 backing; they do not reproduce Figma's native refraction shader.
 
-- AI Agent: approved Dropbox brand SVG, copied to `public/brand/product-artwork/ai-agent.svg`.
+- AI Agent: brand bot icon (`BotIcon`), the round head from the Innflow brand kit.
 - Laura Kim: approved demo portrait, sourced from `avatar-15-hana-kim.png` in the demo profiles library.
 - Condition: official Lucide Split SVG, https://raw.githubusercontent.com/lucide-icons/lucide/main/icons/split.svg.
 - Other icons: installed Phosphor SSR package. Integration logos: existing local assets.

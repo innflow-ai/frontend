@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import { BotIcon } from "@/components/icons/bot-icon";
 import {
   ArrowRight,
   Check,
@@ -99,7 +100,7 @@ export function RuneyWorkspace({
           <span className={styles.railLogo}>i</span>
           <House />
           <FlowArrow />
-          <Sparkle />
+          <BotIcon />
           <Database />
           <FileText />
           <Users />
@@ -192,7 +193,7 @@ export function RuneyWorkspace({
                 What needs review for this maintenance request?
               </div>
               <div className={styles.answer}>
-                <Sparkle size={25} />
+                <BotIcon size={25} />
                 <div>
                   <strong>Here’s the context for your review.</strong>
                   <p>

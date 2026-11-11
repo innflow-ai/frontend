@@ -7,7 +7,6 @@ import {
   IntegrationLogo,
 } from "@/components/integration-card";
 import styles from "@/components/integrations.module.css";
-import { LaunchDirectoryMarquee } from "@/components/launch-directory-marquee";
 import { ShowcaseTheme } from "@/components/showcase-theme";
 import { integrationStatus } from "@/lib/integration-model";
 import { getIntegration, getIntegrations } from "@/lib/integrations";
@@ -113,7 +112,6 @@ export default async function IntegrationPage({ params }: Props) {
                   ))}
                 </section>
               )}
-              <LaunchDirectoryMarquee />
               <section className={styles.nextStep}>
                 <h2>Bring your workflow into the conversation.</h2>
                 <p>

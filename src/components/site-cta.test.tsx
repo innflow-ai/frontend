@@ -1,9 +1,8 @@
 import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, expect, it, vi } from "vitest";
 import { SiteCta } from "./site-cta";
+import { SiteCloseAndFooter } from "./site-footer";
 
-const route = vi.hoisted(() => ({ pathname: "/" }));
-vi.mock("next/navigation", () => ({ usePathname: () => route.pathname }));
 vi.mock("./tracked-link", () => ({
   TrackedLink: ({
     destination,
@@ -14,28 +13,26 @@ vi.mock("./tracked-link", () => ({
   }) => <a href={destination}>{children}</a>,
 }));
 afterEach(cleanup);
-it("retains the shared CTA on inner pages without a dedicated closing section", () => {
-  for (const pathname of ["/pricing", "/rent-collection", "/contact"]) {
-    route.pathname = pathname;
-    const view = render(<SiteCta />);
-    expect(
-      screen.getByRole("heading", { name: /A clearer day starts/ }),
-    ).toBeVisible();
-    view.unmount();
-  }
+
+it("renders the shared sky close and directory badges", () => {
+  render(<SiteCta />);
+  expect(
+    screen.getByRole("heading", { name: /A clearer day starts/ }),
+  ).toBeVisible();
+  expect(screen.getByRole("heading", { name: "Featured on" })).toBeVisible();
+  expect(
+    screen.getByRole("heading", { name: "A little more, just for members." }),
+  ).toBeVisible();
 });
-it("avoids duplicate closing sections on product and industry designs", () => {
-  for (const pathname of [
-    "/help",
-    "/platform",
-    "/skills",
-    "/products/ai-agents",
-    "/integrations",
-    "/industries/healthcare",
-  ]) {
-    route.pathname = pathname;
-    const view = render(<SiteCta />);
-    expect(view.container).toBeEmptyDOMElement();
-    view.unmount();
-  }
+
+it("keeps the sky close, members signup, and Property teams column in one footer", () => {
+  render(<SiteCloseAndFooter />);
+  expect(
+    screen.getByRole("heading", { name: /A clearer day starts/ }),
+  ).toBeVisible();
+  expect(screen.getByRole("heading", { name: "Property teams" })).toBeVisible();
+  expect(
+    screen.getByRole("link", { name: "Long-term rentals" }),
+  ).toHaveAttribute("href", "/long-term-rentals");
+  expect(screen.queryByText("Bring your work together.")).toBeNull();
 });

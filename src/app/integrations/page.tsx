@@ -2,7 +2,6 @@ import { BaselineClosing } from "@/app/preview/scroll-showcase/baseline-lower-se
 import { ArrowDown as MageArrowDown } from "@/components/icons/mage";
 import { IntegrationDirectory } from "@/components/integration-directory";
 import styles from "@/components/integrations.module.css";
-import { LaunchDirectoryMarquee } from "@/components/launch-directory-marquee";
 import { ShowcaseTheme } from "@/components/showcase-theme";
 import { getIntegrations } from "@/lib/integrations";
 import { createPageMetadata } from "@/lib/metadata";
@@ -39,7 +38,6 @@ export default async function IntegrationsPage() {
           </div>
         </header>
         <IntegrationDirectory items={items} />
-        <LaunchDirectoryMarquee />
         <BaselineClosing />
       </main>
     </ShowcaseTheme>

@@ -3,6 +3,7 @@
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
+import { BotIcon } from "@/components/icons/bot-icon";
 import {
   ContactBook as AddressBook,
   Archive,
@@ -107,7 +108,7 @@ const platformLinks: MegaMenuLink[] = [
   },
   {
     href: "/products/ai-agents",
-    icon: Sparkle,
+    icon: BotIcon,
     title: "AI Agents",
     body: "Purpose-built agents that move everyday work forward.",
   },

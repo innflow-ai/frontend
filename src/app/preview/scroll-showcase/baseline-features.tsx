@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { type KeyboardEvent, useEffect, useRef, useState } from "react";
 import { ChevronRight } from "@/components/chevron-right";
+import { BotIcon } from "@/components/icons/bot-icon";
 import {
   Chart,
   ChartUp,
@@ -13,7 +14,6 @@ import {
   Plus as MagePlus,
   MessageConversation,
   NoteText,
-  Robot,
   Settings,
   Share,
   StarsA,
@@ -25,7 +25,7 @@ import { StoryboardArtwork } from "./storyboard-artwork";
 import { useChannelsScroll } from "./use-channels-scroll";
 
 const featureIcons = {
-  channels: Robot,
+  channels: BotIcon,
   agents: Share,
   workflows: StarsA,
   insights: Chart,

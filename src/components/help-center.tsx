@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { ChevronRight } from "@/components/chevron-right";
+import { BotIcon } from "@/components/icons/bot-icon";
 import {
   FileRecords as Books,
   ChevronDown as CaretDown,
@@ -14,7 +15,6 @@ import {
   FileRecords as GraduationCap,
   Search as MagnifyingGlass,
   Link as PlugsConnected,
-  Robot,
   LayoutLeft as SidebarSimple,
   StarsA as Sparkle,
   ChartUp as TrendUp,
@@ -42,7 +42,7 @@ const cards = [
   {
     title: "Set up an AI agent",
     description: "Give your agent tools and context",
-    icon: Robot,
+    icon: BotIcon,
     article: 2,
   },
   {

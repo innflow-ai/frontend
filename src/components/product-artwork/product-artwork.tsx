@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { ChevronRight } from "@/components/chevron-right";
+import { BotIcon } from "@/components/icons/bot-icon";
 import {
   ArrowRight,
   Refresh as ArrowsClockwise,
@@ -40,15 +41,7 @@ import { artworkAssets } from "./inventory";
 import styles from "./product-artwork.module.css";
 
 function AgentIcon() {
-  return (
-    <Image
-      src="/brand/product-artwork/ai-agent.svg"
-      width={19}
-      height={20}
-      alt=""
-      className={styles.agentIcon}
-    />
-  );
+  return <BotIcon className={styles.agentIcon} size="1.2em" />;
 }
 function Avatar() {
   return (

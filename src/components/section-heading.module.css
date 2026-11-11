@@ -1,0 +1,129 @@
+/*
+  Brand kit type (Figma TI7hq816ZzDMvvTd3HjyIS, node 432:1541).
+  Change the custom properties to retune a size. The mobile step is 700px,
+  the same cutoff the pricing page already uses.
+*/
+.block {
+  --section-heading-gap: 12px;
+  --section-heading-max-width: 1200px;
+  --section-heading-color: #1a1a1a;
+  --section-heading-subcopy: rgb(26 26 26 / 72%);
+  --section-heading-serif: var(--font-source-serif-4), serif;
+  --section-heading-sans: var(--font-archivo), sans-serif;
+  --section-heading-title-size: 48px;
+  --section-heading-title-line: 56px;
+  --section-heading-title-tracking: -0.02em;
+  --section-heading-title-size-mobile: 28px;
+  --section-heading-title-line-mobile: 34px;
+  --section-heading-title-tracking-mobile: 0;
+  --section-heading-eyebrow-size: 12px;
+  --section-heading-eyebrow-line: 16px;
+  --section-heading-eyebrow-tracking: 0.08em;
+  --section-heading-subtitle-size: 20px;
+  --section-heading-subtitle-line: 30px;
+  --section-heading-subtitle-size-mobile: 16px;
+  --section-heading-subtitle-line-mobile: 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--section-heading-gap);
+  max-width: var(--section-heading-max-width);
+  margin: auto;
+  text-align: center;
+  width: 100%;
+}
+
+.block[data-size="hero"] {
+  --section-heading-title-size: 72px;
+  --section-heading-title-line: 76px;
+  --section-heading-title-tracking: -0.02em;
+  --section-heading-title-size-mobile: 48px;
+  --section-heading-title-line-mobile: 56px;
+  --section-heading-title-tracking-mobile: -0.02em;
+}
+
+/* Kit H2. Same numbers as the section size once it steps down. */
+.block[data-size="h2"] {
+  --section-heading-title-size: 28px;
+  --section-heading-title-line: 34px;
+  --section-heading-title-tracking: 0;
+  --section-heading-title-size-mobile: 28px;
+  --section-heading-title-line-mobile: 34px;
+  --section-heading-title-tracking-mobile: 0;
+}
+
+.block[data-size="h3"] {
+  --section-heading-title-size: 22px;
+  --section-heading-title-line: 28px;
+  --section-heading-title-tracking: 0;
+  --section-heading-title-size-mobile: 22px;
+  --section-heading-title-line-mobile: 28px;
+  --section-heading-title-tracking-mobile: 0;
+}
+
+.block[data-tone="inverse"] {
+  --section-heading-color: #fff;
+  --section-heading-subcopy: rgb(255 255 255 / 72%);
+}
+
+.block[data-align="start"] {
+  align-items: flex-start;
+  margin: 0;
+  text-align: start;
+}
+
+/* data-align is always set so these beat page-level heading rules. */
+.block[data-align] .eyebrow {
+  margin: 0;
+  color: var(--section-heading-color);
+  font-family: var(--section-heading-sans);
+  font-size: var(--section-heading-eyebrow-size);
+  font-weight: 600;
+  letter-spacing: var(--section-heading-eyebrow-tracking);
+  line-height: var(--section-heading-eyebrow-line);
+  text-transform: uppercase;
+}
+
+.block[data-align] :is(h1, h2, h3).title {
+  margin: 0;
+  color: var(--section-heading-color);
+  font-family: var(--section-heading-serif);
+  font-size: var(--section-heading-title-size);
+  font-weight: 400;
+  font-synthesis: none;
+  letter-spacing: var(--section-heading-title-tracking);
+  line-height: var(--section-heading-title-line);
+}
+
+.block[data-align] .emphasis {
+  font-family: var(--section-heading-sans);
+  font-weight: 700;
+}
+
+.details {
+  width: 100%;
+  min-width: 0;
+}
+
+.block[data-align] .subtitle {
+  margin: 0;
+  color: var(--section-heading-subcopy);
+  font-family: var(--section-heading-sans);
+  font-size: var(--section-heading-subtitle-size);
+  font-weight: 400;
+  line-height: var(--section-heading-subtitle-line);
+}
+
+@media (max-width: 700px) {
+  .block[data-align] :is(h1, h2, h3).title {
+    font-size: var(--section-heading-title-size-mobile);
+    letter-spacing: var(--section-heading-title-tracking-mobile);
+    line-height: var(--section-heading-title-line-mobile);
+  }
+
+  .block[data-align] .subtitle {
+    font-size: var(--section-heading-subtitle-size-mobile);
+    line-height: var(--section-heading-subtitle-line-mobile);
+  }
+}

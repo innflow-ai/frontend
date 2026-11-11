@@ -255,7 +255,6 @@
 .workflowCopy h3 {
   font:
     500 46px / 1.1 var(--font-source-serif-4),
-    Georgia,
     serif;
   letter-spacing: -0.035em;
   margin: 20px 0;
@@ -353,7 +352,6 @@
 .faq h2 {
   font:
     500 42px / 1.15 var(--font-source-serif-4),
-    Georgia,
     serif;
   letter-spacing: -0.035em;
 }
@@ -422,7 +420,6 @@
 .directoryGroup > h3 {
   font:
     500 28px / 1.2 var(--font-source-serif-4),
-    Georgia,
     serif;
   margin-bottom: 28px;
 }

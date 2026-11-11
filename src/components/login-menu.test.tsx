@@ -65,7 +65,7 @@ it("keeps direct login links and returns focus to the product disclosure on Esca
   trigger.focus();
   await user.keyboard("{Enter}");
   expect(trigger).toHaveAttribute("aria-expanded", "true");
-  const platform = screen.getByRole("link", { name: "Platform" });
+  const platform = await screen.findByRole("link", { name: "Platform" });
   expect(platform).toHaveAttribute("href", "/platform");
   await user.tab();
   expect(platform).toHaveFocus();

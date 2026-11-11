@@ -642,7 +642,7 @@
   letter-spacing: -0.04em;
 }
 .sceneBadge > strong {
-  font-family: Georgia, serif;
+  font-family: var(--font-source-serif-4), serif;
 }
 .sceneBadge > span:nth-of-type(2) {
   background: #ffffff80;

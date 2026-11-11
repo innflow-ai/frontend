@@ -19,6 +19,24 @@ describe("product page FAQs", () => {
     },
   );
 
+  it("keeps the platform FAQ on the approved questions, without property-management copy", () => {
+    const faqs = getProductFaqs("platform");
+    const blob = faqs
+      .map((item) => `${item.question} ${item.answer}`)
+      .join("\n");
+
+    expect(faqs.map((item) => item.question)).toEqual([
+      "What is the innflow platform?",
+      "How do agents use tools and memory?",
+      "Can agents act without a person in the loop?",
+      "Which tools can I connect?",
+      "How is innflow deployed?",
+      "How does innflow handle security?",
+    ]);
+    expect(blob).not.toMatch(/property/i);
+    expect(blob).not.toMatch(/1,260/);
+  });
+
   it("covers agents, memory, HITL, deployment, and security on AI Agents", () => {
     const blob = getProductFaqs("ai-agents")
       .map((item) => `${item.question} ${item.answer}`)

@@ -16,6 +16,7 @@ import typography from "./homepage-typography.module.css";
 
 const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
+  weight: ["400", "500"],
   variable: "--font-homepage-heading",
   display: "swap",
 });

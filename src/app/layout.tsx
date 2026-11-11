@@ -1,8 +1,9 @@
-import { Analytics } from "@vercel/analytics/next";
 import type { Metadata, Viewport } from "next";
 import { Archivo, Geist_Mono, Source_Serif_4 } from "next/font/google";
 import type { ReactNode } from "react";
 import { ConsentManagedTags } from "@/components/consent-managed-tags";
+import { DeferredAnalytics } from "@/components/deferred-analytics";
+import { MarketingPageView } from "@/components/marketing-page-view";
 import { MarketingRuntime } from "@/components/marketing-runtime";
 import type { LatestBlogPostNavItem } from "@/components/mega-menu";
 import { NavigationBlogPostsProvider } from "@/components/navigation-blog-posts";
@@ -24,12 +25,17 @@ import "lenis/dist/lenis.css";
 
 const archivo = Archivo({
   subsets: ["latin"],
+  // 400, 600, and 700 are the brand kit faces. 500 stays so existing UI
+  // that already asks for medium does not synthesize a weight.
+  weight: ["400", "500", "600", "700"],
   variable: "--font-archivo",
   display: "swap",
 });
 
 const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
+  // 400 is the kit regular. 500 stays for serif headings outside this kit.
+  weight: ["400", "500"],
   variable: "--font-source-serif-4",
   display: "swap",
 });
@@ -197,9 +203,10 @@ export default async function RootLayout({
           <SiteCloseAndFooter />
         </NavigationBlogPostsProvider>
         <MarketingRuntime />
+        <MarketingPageView />
         <ConsentManagedTags />
         <PostHogObservability experience={experience} />
-        <Analytics />
+        <DeferredAnalytics />
       </body>
     </html>
   );

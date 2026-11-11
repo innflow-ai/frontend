@@ -29,4 +29,4 @@ Mage stroke geometry is preserved. Exports match the existing navbar treatment: 
 - `customer-service.svg`: `MessageConversationIcon.js`
 - `debt-collection.svg`: `CoinAIcon.js`
 - `cross-industry.svg`: `LayoutGridIcon.js`
-- `custom-ai-solutions.svg`: `RobotIcon.js`
+- `custom-ai-solutions.svg`: brand `BotIcon` paths (`src/components/icons/bot-icon.tsx`)

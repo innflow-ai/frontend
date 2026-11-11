@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { ChevronRight } from "@/components/chevron-right";
+import { BotIcon } from "@/components/icons/bot-icon";
 import {
   FileRecords as Books,
   ChevronDown as CaretDown,
@@ -14,7 +15,6 @@ import {
   FileRecords as GraduationCap,
   Search as MagnifyingGlass,
   Link as PlugsConnected,
-  Robot,
   LayoutLeft as SidebarSimple,
   StarsA as Sparkle,
   ChartUp as TrendUp,
@@ -22,6 +22,7 @@ import {
   ExclamationTriangle as Warning,
   Multiply as X,
 } from "@/components/icons/mage";
+import { SectionHeading } from "@/components/section-heading";
 import { siteConfig } from "@/config/site";
 import { helpArticles, helpCategories } from "@/content/help-center";
 import styles from "./help-center.module.css";
@@ -42,7 +43,7 @@ const cards = [
   {
     title: "Set up an AI agent",
     description: "Give your agent tools and context",
-    icon: Robot,
+    icon: BotIcon,
     article: 2,
   },
   {
@@ -231,7 +232,9 @@ export function HelpCenter() {
             </div>
           </section>
           <section className={styles.using} aria-labelledby="using-innflow">
-            <h2 id="using-innflow">Using Innflow</h2>
+            <div className={styles.sectionLead}>
+              <SectionHeading id="using-innflow" title="Using Innflow" />
+            </div>
             <div className={styles.cardGrid}>
               {cards.map(({ title, description, icon: Icon, article }) => (
                 <a
@@ -293,8 +296,12 @@ export function HelpCenter() {
           </section>
         </main>
         <section className={styles.needHelp}>
-          <h2>Still need help?</h2>
-          <p>Our team is here to help you find the next step.</p>
+          <div className={styles.sectionLead}>
+            <SectionHeading
+              title="Still need help?"
+              subtitle="Our team is here to help you find the next step."
+            />
+          </div>
           <div className={styles.cardGrid}>
             <a className={styles.card} href="/resources">
               <span className={styles.cardIcon}>

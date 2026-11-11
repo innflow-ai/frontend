@@ -11,6 +11,7 @@ import Link from "next/link";
 import { type CSSProperties, useEffect, useId, useRef, useState } from "react";
 import { ChevronRight } from "@/components/chevron-right";
 import { ArrowRight as MageArrowRight } from "@/components/icons/mage";
+import { SectionHeading } from "@/components/section-heading";
 import { siteConfig } from "@/config/site";
 import type { Testimonial } from "@/lib/testimonials";
 import styles from "./baseline-lower-sections.module.css";
@@ -184,6 +185,14 @@ function CustomerStoryLayoutPreview() {
   );
 }
 
+/**
+ * Customer-story band under "Real customers. Real results." (Elena Morales
+ * and the other selected stories). Homepage and `/preview/scroll-showcase`
+ * both render this component. Set this to true to show the band again.
+ * Markup, CMS content, and the layout preview stay in place either way.
+ */
+export const SHOW_TESTIMONIAL = false;
+
 export function BaselineCustomerStories({
   testimonials,
   heading,
@@ -194,6 +203,9 @@ export function BaselineCustomerStories({
   previewFallback?: boolean;
 }) {
   const [active, setActive] = useState(0);
+  // One switch hides the whole band, including its padding, so the sections
+  // above and below meet with their own spacing and no empty slot remains.
+  if (!SHOW_TESTIMONIAL) return null;
   const selected = testimonials[active % Math.max(1, testimonials.length)];
   // Empty CMS selections remain empty: never replace customer evidence with reference endorsements.
   if (!selected) return previewFallback ? <CustomerStoryLayoutPreview /> : null;
@@ -291,15 +303,12 @@ export function BaselineConnectedInfrastructure() {
       data-source-node="350:11630"
     >
       <header className={styles.heading}>
-        <h2 id="baseline-infrastructure-heading">
-          Connect the tools
-          <br />
-          behind your work.
-        </h2>
-        <p>
-          Bring relevant information into the tools your team already uses.
-          Explore supported connections to find the right fit for your workflow.
-        </p>
+        <SectionHeading
+          id="baseline-infrastructure-heading"
+          title="Connect the tools"
+          emphasis="behind your work."
+          subtitle="Bring relevant information into the tools your team already uses. Explore supported connections to find the right fit for your workflow."
+        />
         <Link className={styles.directory} href="/integrations">
           View all integrations{" "}
           <span aria-hidden="true">
@@ -428,17 +437,13 @@ export function BaselineClosing() {
       data-source-node="1:991"
     >
       <header className={styles.heading}>
-        <span className={styles.closingEyebrow}>Get started</span>
-        <h2 id="baseline-closing-heading">
-          From the first meeting
-          <br />
-          to the follow-up
-        </h2>
-        <p>
-          All of the work around meetings, handled in one place. Book time,
-          capture every discussion, and keep next steps moving without the
-          manual work.
-        </p>
+        <SectionHeading
+          id="baseline-closing-heading"
+          eyebrow="Get started"
+          title="From the first meeting"
+          emphasis="to the follow-up"
+          subtitle="All of the work around meetings, handled in one place. Book time, capture every discussion, and keep next steps moving without the manual work."
+        />
         <a className={styles.cta} href={siteConfig.signupUrl}>
           Start for free
         </a>

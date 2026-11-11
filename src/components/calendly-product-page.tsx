@@ -266,7 +266,7 @@ export function CalendlyProductPage({
                   : "Made for your workflow"
               }
               title="More ways to move"
-              accent="your work forward."
+              emphasis="your work forward."
             />
           </div>
           <section

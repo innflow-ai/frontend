@@ -2,62 +2,70 @@ import { createElement, type ReactNode } from "react";
 import styles from "./section-heading.module.css";
 
 /**
- * Source Serif 4 span for the pricing mix: Archivo around it, serif inside it.
- * Use this inside `title` when the serif words stay on the same line.
- * The `accent` prop is the second line, with a break before this span.
+ * Archivo Bold span for words that share a line with the serif title.
+ * `emphasis` is the second line, with a break before this span.
  */
-export function HeadingAccent({ children }: { children: ReactNode }) {
-  return <span className={styles.accent}>{children}</span>;
+export function HeadingEmphasis({ children }: { children: ReactNode }) {
+  return <span className={styles.emphasis}>{children}</span>;
 }
 
-type HeadingLevel = 1 | 2 | 3;
+type HeadingTag = "h1" | "h2" | "h3";
+type HeadingSize = "hero" | "section" | "h2" | "h3";
 
 /**
- * Shared heading structure from the pricing intro.
+ * Brand kit heading (Figma `TI7hq816ZzDMvvTd3HjyIS` node `432:1541`,
+ * component set `52:9544` in `1fbFIPN1GfSkioiOSUZMaV`).
  *
- * Archivo is the default face. `accent` and `HeadingAccent` switch those
- * words to Source Serif 4. Sizes, weights, tracking, and line height live
- * as `--section-heading-*` on `.block` and are still the live pricing
- * measurements. Brand kit frame 432:1292 replaces them when the specs arrive.
+ * `title` is Source Serif 4 Regular and comes first. `emphasis` is Archivo
+ * Bold and comes second. Sizes live on `.block` as `--section-heading-*`.
+ * `h2` and `h3` are the kit's smaller steps: 28/34 and 22/28, tracking 0.
  */
 export function SectionHeading({
   eyebrow,
   title,
-  accent,
+  emphasis,
   subtitle,
-  level = 2,
+  size = "section",
   align = "center",
+  as = "h2",
+  tone = "default",
   id,
   className,
   children,
 }: {
   eyebrow?: ReactNode;
+  /** Source Serif 4 Regular. The whole heading, when there is no emphasis. */
   title: ReactNode;
-  /** Second line in Source Serif 4, after a line break. Pricing uses this. */
-  accent?: ReactNode;
+  /** Archivo Bold. Second line, after a break. */
+  emphasis?: ReactNode;
   subtitle?: ReactNode;
-  level?: HeadingLevel;
+  size?: HeadingSize;
   align?: "center" | "start";
+  /** Semantic heading level. Independent of the type size. */
+  as?: HeadingTag;
+  /** `inverse` is for dark backgrounds. */
+  tone?: "default" | "inverse";
   id?: string;
   className?: string;
   /** Extra content under the subtitle, such as the pricing billing control. */
   children?: ReactNode;
 }) {
-  const tag = headingTag(level);
   return (
     <div
       className={[styles.block, className].filter(Boolean).join(" ")}
       data-align={align}
+      data-size={size}
+      data-tone={tone}
     >
       {eyebrow ? <p className={styles.eyebrow}>{eyebrow}</p> : null}
       {createElement(
-        tag,
+        as,
         { id, className: styles.title },
         title,
-        accent ? (
+        emphasis ? (
           <>
             <br />
-            <HeadingAccent>{accent}</HeadingAccent>
+            <HeadingEmphasis>{emphasis}</HeadingEmphasis>
           </>
         ) : null,
       )}
@@ -69,19 +77,4 @@ export function SectionHeading({
       ) : null}
     </div>
   );
-}
-
-function headingTag(level: HeadingLevel) {
-  switch (level) {
-    case 1:
-      return "h1";
-    case 2:
-      return "h2";
-    case 3:
-      return "h3";
-    default: {
-      const unreachable: never = level;
-      return unreachable;
-    }
-  }
 }

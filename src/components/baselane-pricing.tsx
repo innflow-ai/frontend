@@ -188,9 +188,10 @@ export function BaselanePricing() {
         <section className={styles.hero} aria-labelledby="pricing-title">
           <SectionHeading
             id="pricing-title"
-            level={1}
+            as="h1"
+            size="hero"
             title="Pick a plan."
-            accent="Your AI team is waiting."
+            emphasis="Your AI team is waiting."
             subtitle="Agents, workflows and knowledge. One workspace."
           >
             <fieldset

@@ -367,7 +367,8 @@ export function PlatformProductPage() {
         <SectionHeading
           id="platform-options-title"
           eyebrow="Your options"
-          title="More ways to move your work forward."
+          title="More ways to move"
+          emphasis="your work forward."
         />
         <div className={styles.optionGrid}>
           {options.map((option) => (

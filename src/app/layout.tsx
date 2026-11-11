@@ -25,12 +25,17 @@ import "lenis/dist/lenis.css";
 
 const archivo = Archivo({
   subsets: ["latin"],
+  // 400, 600, and 700 are the brand kit faces. 500 stays so existing UI
+  // that already asks for medium does not synthesize a weight.
+  weight: ["400", "500", "600", "700"],
   variable: "--font-archivo",
   display: "swap",
 });
 
 const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
+  // 400 is the kit regular. 500 stays for serif headings outside this kit.
+  weight: ["400", "500"],
   variable: "--font-source-serif-4",
   display: "swap",
 });

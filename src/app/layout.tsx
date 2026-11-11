@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, Geist_Mono, Source_Serif_4 } from "next/font/google";
+import { Archivo, Geist_Mono, Inter, Source_Serif_4 } from "next/font/google";
 import type { ReactNode } from "react";
 import { ConsentManagedTags } from "@/components/consent-managed-tags";
 import { DeferredAnalytics } from "@/components/deferred-analytics";
@@ -40,6 +40,19 @@ const sourceSerif = Source_Serif_4({
   // 400 is the kit regular. 500 stays for serif headings outside this kit.
   weight: ["400", "500"],
   variable: "--font-source-serif-4",
+  display: "swap",
+});
+const archivoItalic = Archivo({
+  subsets: ["latin"],
+  weight: "800",
+  style: "italic",
+  variable: "--font-archivo-italic",
+  display: "swap",
+});
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["500", "600"],
+  variable: "--font-inter",
   display: "swap",
 });
 const geistMono = Geist_Mono({
@@ -172,7 +185,7 @@ export default async function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${archivo.variable} ${sourceSerif.variable} ${geistMono.variable}`}
+      className={`${archivo.variable} ${archivoItalic.variable} ${inter.variable} ${sourceSerif.variable} ${geistMono.variable}`}
       suppressHydrationWarning
     >
       <head>

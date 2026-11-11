@@ -70,10 +70,9 @@
     opacity 360ms ease-out,
     visibility 0s;
 }
-/* The offer bar is sticky. Once the header floats, keep it below that bar. */
-:global(html:not([data-offer-bar="hidden"]))
+/* The offer bar scrolls away. While any of it is still on screen, the floating nav sits below it. */
 .header[data-preview-navigation="floating"] {
-  top: calc(16px + var(--offer-bar-height, 0px));
+  top: calc(16px + var(--announcement-h, 0px));
 }
 .header::before {
   content: "";

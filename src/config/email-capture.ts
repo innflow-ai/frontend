@@ -1,16 +1,17 @@
 /**
- * PLACEHOLDER copy until the designer sends Paper frame PR-0 specs.
- * Paper file `01M64EXWWY8RJHT2PWPEWV4ZFR`, frame `PR-0`.
- * Figma `1fbFIPN1GfSkioiOSUZMaV`: desktop `55:7853`, mobile `55:8186`.
+ * Figma `1fbFIPN1GfSkioiOSUZMaV`: desktop `74:48960`, mobile `74:48980`.
+ * Subscribe fill is the `--email-subscribe` token, pending Julian.
  */
 export const emailCaptureCopy = {
-  headline: "A note when it matters.",
-  subcopy: "PLACEHOLDER. Product news, nothing extra.",
+  headline: "Get the weekly agent playbook.",
+  subcopy: "Workflows and templates, weekly.",
   emailLabel: "Email address",
-  emailPlaceholder: "you@company.com",
-  submitLabel: "Get updates",
+  emailPlaceholder: "What’s your work email?",
+  submitLabel: "Subscribe",
   pendingLabel: "Sending…",
   success: "You’re on the list.",
+  playbookTitle: "The Agent Playbook",
+  playbookCaption: "Workflows, templates & launches · weekly",
 } as const;
 
 export const emailCapture = {

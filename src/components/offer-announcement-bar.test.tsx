@@ -8,6 +8,7 @@ import {
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import {
   announcementBar,
+  announcementModelName,
   announcementStorageKey,
   countdownParts,
   offerBarBootScript,
@@ -34,15 +35,21 @@ it("shows the offer, an exact pricing link, and a stable countdown", () => {
   );
   const offer = screen.getByRole("complementary", { name: "Get 63% off now" });
   expect(offer).toHaveAttribute("data-announcement-id", announcementBar.id);
-  expect(screen.getByRole("link", { name: "See pricing" })).toHaveAttribute(
+  expect(screen.getByRole("link", { name: "Claim 63% off" })).toHaveAttribute(
     "href",
     "/pricing?ref=announcement-bar",
   );
+  expect(screen.getByRole("timer")).toBeInTheDocument();
   expect(
     offer
       .querySelector("[data-ready='true']")
       ?.textContent?.replace(/\s+/g, ""),
-  ).toBe("02d03h04m05s");
+  ).toBe("02d:03h:04m:05");
+  expect(
+    screen.getByText("Offer ends in 2 days 3 hours 4 minutes"),
+  ).toBeInTheDocument();
+  expect(screen.queryByText("[Model name]")).toBeNull();
+  expect(screen.queryByText("NEW")).toBeNull();
 });
 
 it("hides the bar when the countdown reaches zero", () => {
@@ -92,9 +99,9 @@ it("remembers a dismissal per announcement id", () => {
   render(
     <OfferAnnouncementBar config={{ ...announcementBar, enabled: true }} />,
   );
-  fireEvent.click(screen.getByRole("button", { name: "Dismiss offer" }));
+  fireEvent.click(screen.getByRole("button", { name: "Dismiss announcement" }));
   expect(localStorage.getItem(announcementStorageKey(announcementBar.id))).toBe(
-    "dismissed",
+    "1",
   );
   expect(
     screen.queryByRole("complementary", { name: "Get 63% off now" }),
@@ -122,6 +129,69 @@ it("does not render when the offer is disabled", () => {
     <OfferAnnouncementBar config={{ ...announcementBar, enabled: false }} />,
   );
   expect(screen.queryByRole("complementary")).toBeNull();
+});
+
+it("announces the remaining time when the minute changes, not every second", () => {
+  vi.setSystemTime(target - (2 * 86400 + 3 * 3600 + 4 * 60 + 5) * 1000);
+  render(
+    <OfferAnnouncementBar config={{ ...announcementBar, enabled: true }} />,
+  );
+  expect(
+    screen.getByText("Offer ends in 2 days 3 hours 4 minutes"),
+  ).toBeInTheDocument();
+  act(() => {
+    vi.advanceTimersByTime(4000);
+  });
+  expect(
+    screen.getByText("Offer ends in 2 days 3 hours 4 minutes"),
+  ).toBeInTheDocument();
+  expect(
+    screen.queryByText("Offer ends in 2 days 3 hours 3 minutes"),
+  ).toBeNull();
+  act(() => {
+    vi.advanceTimersByTime(2000);
+  });
+  expect(
+    screen.getByText("Offer ends in 2 days 3 hours 3 minutes"),
+  ).toBeInTheDocument();
+});
+
+it("hides the model pill unless a real model name is configured", () => {
+  vi.setSystemTime(target - 3600 * 1000);
+  const { unmount } = render(
+    <OfferAnnouncementBar
+      config={{ ...announcementBar, enabled: true, modelName: "[Model name]" }}
+    />,
+  );
+  expect(screen.queryByText("NEW")).toBeNull();
+  unmount();
+  render(
+    <OfferAnnouncementBar
+      config={{ ...announcementBar, enabled: true, modelName: "Atlas" }}
+    />,
+  );
+  expect(screen.getByText("NEW")).toBeInTheDocument();
+  expect(screen.getByText("Atlas")).toBeInTheDocument();
+  expect(announcementModelName("")).toBeNull();
+  expect(announcementModelName("[Model name]")).toBeNull();
+  expect(announcementModelName("Atlas")).toBe("Atlas");
+});
+
+it("does not bring the offer back after the countdown ends", () => {
+  vi.setSystemTime(target - 1500);
+  render(
+    <OfferAnnouncementBar config={{ ...announcementBar, enabled: true }} />,
+  );
+  act(() => {
+    vi.advanceTimersByTime(2000);
+  });
+  vi.setSystemTime(target - 20_000);
+  act(() => {
+    vi.advanceTimersByTime(3000);
+  });
+  expect(
+    screen.queryByRole("complementary", { name: "Get 63% off now" }),
+  ).toBeNull();
 });
 
 it("counts whole seconds and stops at zero", () => {

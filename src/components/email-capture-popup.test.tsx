@@ -91,7 +91,7 @@ it("opens after about half the page is scrolled", () => {
   setScroll(400, 800, 1800);
   fireEvent.scroll(window);
   expect(
-    screen.getByRole("dialog", { name: "A note when it matters." }),
+    screen.getByRole("dialog", { name: "Get the weekly agent playbook." }),
   ).toBeInTheDocument();
   expect(screen.getByLabelText("Email address")).toBeInTheDocument();
 });

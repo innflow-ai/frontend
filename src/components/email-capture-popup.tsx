@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   type FormEvent,
@@ -9,7 +10,6 @@ import {
   useState,
 } from "react";
 import { BotIcon } from "@/components/icons/bot-icon";
-import { Multiply as X } from "@/components/icons/mage/Multiply";
 import {
   EMAIL_CAPTURE_DELAY_MS,
   EMAIL_CAPTURE_SCROLL_RATIO,
@@ -142,20 +142,25 @@ export function EmailCapturePopup() {
       <button
         type="button"
         className={styles.close}
-        aria-label="Dismiss email signup"
+        aria-label="Close"
         onClick={dismiss}
       >
-        <X size={16} aria-hidden="true" />
+        <Image
+          src="/brand/announcement/close.svg"
+          alt=""
+          width={12}
+          height={12}
+          unoptimized
+        />
       </button>
-      <div className={styles.titleRow}>
-        <BotIcon size={18} />
+      <div className={styles.copy}>
         <h2 id="email-capture-title" className={styles.headline}>
           {emailCaptureCopy.headline}
         </h2>
+        <p id="email-capture-copy" className={styles.subcopy}>
+          {emailCaptureCopy.subcopy}
+        </p>
       </div>
-      <p id="email-capture-copy" className={styles.subcopy}>
-        {emailCaptureCopy.subcopy}
-      </p>
       {phase === "success" ? (
         <p className={styles.success} role="status">
           {emailCaptureCopy.success}
@@ -183,33 +188,35 @@ export function EmailCapturePopup() {
               autoComplete="off"
             />
           </div>
-          <label className={styles.label} htmlFor="email-capture-email">
-            {emailCaptureCopy.emailLabel}
-          </label>
-          <input
-            id="email-capture-email"
-            className={styles.input}
-            name="email"
-            type="email"
-            inputMode="email"
-            autoComplete="email"
-            placeholder={emailCaptureCopy.emailPlaceholder}
-            required
-            maxLength={254}
-            aria-invalid={phase === "error"}
-            aria-describedby={
-              phase === "error" ? "email-capture-status" : undefined
-            }
-          />
-          <button
-            className={styles.submit}
-            type="submit"
-            disabled={phase === "pending"}
-          >
-            {phase === "pending"
-              ? emailCaptureCopy.pendingLabel
-              : emailCaptureCopy.submitLabel}
-          </button>
+          <div className={styles.field}>
+            <label className={styles.label} htmlFor="email-capture-email">
+              {emailCaptureCopy.emailLabel}
+            </label>
+            <input
+              id="email-capture-email"
+              className={styles.input}
+              name="email"
+              type="email"
+              inputMode="email"
+              autoComplete="email"
+              placeholder={emailCaptureCopy.emailPlaceholder}
+              required
+              maxLength={254}
+              aria-invalid={phase === "error"}
+              aria-describedby={
+                phase === "error" ? "email-capture-status" : undefined
+              }
+            />
+            <button
+              className={styles.submit}
+              type="submit"
+              disabled={phase === "pending"}
+            >
+              {phase === "pending"
+                ? emailCaptureCopy.pendingLabel
+                : emailCaptureCopy.submitLabel}
+            </button>
+          </div>
           <p
             id="email-capture-status"
             className={styles.status}
@@ -220,6 +227,15 @@ export function EmailCapturePopup() {
           </p>
         </form>
       )}
+      <div className={styles.playbook} aria-hidden="true">
+        <p className={styles.playbookTitle}>{emailCaptureCopy.playbookTitle}</p>
+        <p className={styles.playbookCaption}>
+          {emailCaptureCopy.playbookCaption}
+        </p>
+        <span className={styles.playbookMark}>
+          <BotIcon size={14} />
+        </span>
+      </div>
     </aside>
   );
 }

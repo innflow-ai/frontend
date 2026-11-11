@@ -1,57 +1,70 @@
 /*
-  Bottom-left newsletter card. Paper frame PR-0 specs are still coming.
+  Bottom-left newsletter card.
+  Figma 1fbFIPN1GfSkioiOSUZMaV, desktop 74:48960, mobile 74:48980.
 */
 .card {
   position: fixed;
   z-index: 80;
   left: 20px;
   bottom: 20px;
-  width: min(320px, calc(100vw - 40px));
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   box-sizing: border-box;
+  width: 520px;
+  height: 148px;
   margin: 0;
-  padding: 16px 16px 14px;
-  border: 1px solid rgb(26 26 26 / 12%);
-  border-radius: 16px;
+  padding: 22px 26px;
+  overflow: visible;
+  border: 1px solid #dddad8;
+  border-radius: 10px;
   background: #fff;
-  color: #1a1a1a;
-  box-shadow: 0 12px 32px rgb(26 26 26 / 12%);
+  color: #0f0d0b;
+  box-shadow: 0 12px 32px rgb(0 0 0 / 8%);
   font-family: var(--font-archivo), Arial, sans-serif;
   animation: email-capture-rise 240ms ease;
 }
 
-.titleRow {
+.card:has(.status:not(:empty)) {
+  height: auto;
+}
+
+.copy {
   display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  margin: 0 28px 6px 0;
+  flex-direction: column;
+  gap: 2px;
+  width: min(300px, 100%);
+}
+
+.headline,
+.subcopy,
+.playbookTitle,
+.playbookCaption {
+  margin: 0;
+}
+
+.headline,
+.subcopy {
+  font-size: 16px;
+  line-height: 22px;
 }
 
 .headline {
-  margin: 0;
-  color: #1a1a1a;
-  font-family: var(--font-source-serif-4), serif;
-  font-size: 22px;
-  font-weight: 400;
-  letter-spacing: 0;
-  line-height: 28px;
+  color: #0f0d0b;
+  font-weight: 500;
 }
 
 .subcopy {
-  margin: 0 0 12px;
-  color: rgb(26 26 26 / 72%);
-  font-size: 14px;
+  color: #7c7b7a;
   font-weight: 400;
-  line-height: 20px;
 }
 
 .form {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
   margin: 0;
 }
 
-.honeypot {
+.honeypot,
+.label {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -59,42 +72,54 @@
   clip: rect(0 0 0 0);
 }
 
-.label {
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 16px;
+.field {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  width: 280px;
+  max-width: 100%;
+  height: 42px;
+  padding: 0 4px 0 16px;
+  border: 1px solid #eeeeed;
+  border-radius: 8px;
+  background: #fbfbfb;
 }
 
 .input {
-  box-sizing: border-box;
-  width: 100%;
-  height: 40px;
+  flex: 1;
+  min-width: 0;
+  height: 100%;
   margin: 0;
-  padding: 0 12px;
-  border: 1px solid rgb(26 26 26 / 24%);
-  border-radius: 10px;
-  background: #fff;
-  color: #1a1a1a;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #0f0d0b;
   font:
-    400 14px / 20px var(--font-archivo),
+    400 14px / 20px var(--font-inter),
+    Inter,
     Arial,
     sans-serif;
+}
+
+.input::placeholder {
+  color: #7a7a79;
 }
 
 .submit {
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  height: 40px;
+  width: 96px;
+  height: 34px;
   border: 0;
-  border-radius: 999px;
-  background: #1a1a1a;
-  color: #fff;
+  border-radius: 6px;
+  background: var(--email-subscribe);
+  color: #19180c;
   font:
-    600 14px / 20px var(--font-archivo),
+    500 14px / 20px var(--font-archivo),
     Arial,
     sans-serif;
-  text-decoration: none;
   cursor: pointer;
 }
 
@@ -105,39 +130,108 @@
 
 .status,
 .success {
-  margin: 0;
-  min-height: 20px;
-  color: #1a1a1a;
-  font-size: 13px;
+  margin: 8px 0 0;
+  color: #0f0d0b;
+  font-size: 14px;
   line-height: 20px;
+}
+
+.status:empty {
+  display: none;
+  margin: 0;
+}
+
+.success {
+  margin: 0;
+  line-height: 42px;
+}
+
+.playbook {
+  position: absolute;
+  top: 28px;
+  right: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  box-sizing: border-box;
+  width: 104px;
+  height: 132px;
+  padding: 10px 9px 0;
+  border: 1px solid #e3ddeb;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #f0e7f6 0%, #edeaf4 50%, #faf2ec 100%);
+  box-shadow: 0 4px 10px rgb(0 0 0 / 10%);
+  transform: rotate(-3deg);
+}
+
+.playbookTitle {
+  color: #1a1a1a;
+  font-family: var(--font-source-serif-4), serif;
+  font-size: 12.5px;
+  font-weight: 500;
+  line-height: 14px;
+}
+
+.playbookCaption {
+  color: #5b6067;
+  font-family: var(--font-inter), Inter, Arial, sans-serif;
+  font-size: 6.5px;
+  font-weight: 400;
+  line-height: 8.5px;
+}
+
+.playbookMark {
+  display: grid;
+  width: 22px;
+  height: 22px;
+  place-items: center;
+  border-radius: 11px;
+  background: #fff;
+  color: #1a1a1a;
 }
 
 .close {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: -12px;
+  right: -12px;
   display: grid;
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
   place-items: center;
-  border: 0;
-  border-radius: 999px;
-  background: transparent;
-  color: #1a1a1a;
+  border: 1px solid #dddad8;
+  border-radius: 12px;
+  background: #fff;
   cursor: pointer;
 }
 
+.close img {
+  display: block;
+  width: 12px;
+  height: 12px;
+}
+
 .card :is(button, input):focus-visible {
-  outline: 2px solid #1a1a1a;
+  outline: 2px solid #0f0d0b;
   outline-offset: 2px;
 }
 
 @media (max-width: 700px) {
   .card {
-    left: 12px;
-    right: 12px;
+    left: 16px;
+    right: 16px;
     bottom: 12px;
     width: auto;
+    height: auto;
+    gap: 14px;
+    padding: 20px;
+  }
+
+  .field {
+    width: 100%;
+  }
+
+  .playbook {
+    display: none;
   }
 }
 

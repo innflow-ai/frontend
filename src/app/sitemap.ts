@@ -136,6 +136,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),
+    ...["/features/agent-memory", "/features/teammates"].map((path) => ({
+      url: `${siteConfig.marketingOrigin}${path}`,
+      lastModified: siteLastModified,
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    })),
     ...allFeatureSlugs.map((slug) => ({
       url: `${siteConfig.marketingOrigin}/features/${slug}`,
       lastModified: siteLastModified,

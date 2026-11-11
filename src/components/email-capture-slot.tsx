@@ -3,7 +3,9 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
+  EMAIL_CAPTURE_SESSION_KEY,
   EMAIL_CAPTURE_STORAGE_KEY,
+  emailCaptureSeenThisSession,
   isEmailCaptureExcluded,
   isEmailCaptureSuppressed,
   readEmailCapture,
@@ -21,6 +23,17 @@ export function EmailCaptureSlot() {
 
   useEffect(() => {
     if (isEmailCaptureExcluded(pathname)) return;
+    try {
+      if (
+        emailCaptureSeenThisSession(
+          sessionStorage.getItem(EMAIL_CAPTURE_SESSION_KEY),
+        )
+      ) {
+        return;
+      }
+    } catch {
+      // Session storage can be blocked. The popup still checks before it opens.
+    }
     let record = null;
     try {
       record = readEmailCapture(

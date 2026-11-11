@@ -79,6 +79,9 @@
 }
 
 .submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 40px;
   border: 0;
   border-radius: 999px;
@@ -88,6 +91,7 @@
     600 14px / 20px var(--font-archivo),
     Arial,
     sans-serif;
+  text-decoration: none;
   cursor: pointer;
 }
 

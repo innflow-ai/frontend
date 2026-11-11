@@ -13,18 +13,28 @@ import { Multiply as X } from "@/components/icons/mage/Multiply";
 import {
   EMAIL_CAPTURE_DELAY_MS,
   EMAIL_CAPTURE_SCROLL_RATIO,
+  EMAIL_CAPTURE_SESSION_KEY,
   EMAIL_CAPTURE_STORAGE_KEY,
   type EmailCaptureRecord,
+  type EmailCaptureVariant,
+  emailCapture,
   emailCaptureCopy,
   emailCaptureScrollRatio,
+  emailCaptureSeenThisSession,
   isEmailCaptureExcluded,
   isEmailCaptureSuppressed,
   readEmailCapture,
+  upsellOffer,
 } from "@/config/email-capture";
 import { trackEmailCaptureSubmitted } from "@/lib/email-capture-analytics";
+import { fixedBottomBannerHeight } from "@/lib/email-capture-placement";
 import styles from "./email-capture-popup.module.css";
 
-export function EmailCapturePopup() {
+export function EmailCapturePopup({
+  variant = emailCapture.variant,
+}: {
+  variant?: EmailCaptureVariant;
+}) {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [phase, setPhase] = useState<"idle" | "pending" | "success" | "error">(
@@ -38,13 +48,21 @@ export function EmailCapturePopup() {
 
   useEffect(() => {
     if (isEmailCaptureExcluded(pathname)) return;
+    if (seenThisSession()) return;
     stored.current = readStored();
     if (isEmailCaptureSuppressed(stored.current, Date.now())) return;
 
     let opened = false;
     const show = () => {
-      if (opened || isEmailCaptureSuppressed(readStored(), Date.now())) return;
+      if (
+        opened ||
+        seenThisSession() ||
+        isEmailCaptureSuppressed(readStored(), Date.now())
+      ) {
+        return;
+      }
       opened = true;
+      markSeenThisSession();
       setOpen(true);
       window.removeEventListener("scroll", onScroll);
       window.clearTimeout(timer);
@@ -90,7 +108,22 @@ export function EmailCapturePopup() {
     return () => document.removeEventListener("keydown", onKey);
   }, [dismiss, open]);
 
+  useEffect(() => {
+    if (!open) return;
+    const place = () => {
+      const card = cardRef.current;
+      if (!card) return;
+      const base = window.innerWidth <= 700 ? 12 : 20;
+      card.style.bottom = `${base + fixedBottomBannerHeight()}px`;
+    };
+    place();
+    window.addEventListener("resize", place);
+    return () => window.removeEventListener("resize", place);
+  }, [open]);
+
   if (!open || isEmailCaptureExcluded(pathname)) return null;
+
+  const offer = upsellOffer();
 
   return (
     <aside
@@ -123,13 +156,23 @@ export function EmailCapturePopup() {
       <div className={styles.titleRow}>
         <BotIcon size={18} />
         <h2 id="email-capture-title" className={styles.headline}>
-          {emailCaptureCopy.headline}
+          {variant === "upsell" ? offer.headline : emailCaptureCopy.headline}
         </h2>
       </div>
       <p id="email-capture-copy" className={styles.subcopy}>
-        {emailCaptureCopy.subcopy}
+        {variant === "upsell" ? offer.subcopy : emailCaptureCopy.subcopy}
       </p>
-      {phase === "success" ? (
+      {variant === "upsell" ? (
+        <a
+          className={styles.submit}
+          href={offer.ctaHref}
+          onClick={() => {
+            stored.current = writeRecord("submitted");
+          }}
+        >
+          {offer.ctaLabel}
+        </a>
+      ) : phase === "success" ? (
         <p className={styles.success} role="status">
           {emailCaptureCopy.success}
         </p>
@@ -205,6 +248,24 @@ function readStored() {
   }
 }
 
+function seenThisSession() {
+  try {
+    return emailCaptureSeenThisSession(
+      sessionStorage.getItem(EMAIL_CAPTURE_SESSION_KEY),
+    );
+  } catch {
+    return false;
+  }
+}
+
+function markSeenThisSession() {
+  try {
+    sessionStorage.setItem(EMAIL_CAPTURE_SESSION_KEY, "1");
+  } catch {
+    // The 30-day record still applies after dismiss or submit.
+  }
+}
+
 function writeRecord(status: EmailCaptureRecord["status"]) {
   const record: EmailCaptureRecord = { status, at: Date.now() };
   try {
@@ -230,12 +291,13 @@ async function submit(
   handlers.setPhase("pending");
   handlers.setStatusMessage("");
   try {
-    const response = await fetch("/api/newsletter", {
+    const response = await fetch("/api/email-capture", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         email: data.get("email"),
         website: data.get("website"),
+        variant: "newsletter",
       }),
       signal: AbortSignal.timeout(25000),
     });

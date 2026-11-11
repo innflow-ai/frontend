@@ -7,11 +7,13 @@ import {
 } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import {
+  EMAIL_CAPTURE_SESSION_KEY,
   EMAIL_CAPTURE_STORAGE_KEY,
   isEmailCaptureExcluded,
   isEmailCaptureSuppressed,
 } from "@/config/email-capture";
 import { siteConfig } from "@/config/site";
+import { fixedBottomBannerHeight } from "@/lib/email-capture-placement";
 import { EmailCapturePopup } from "./email-capture-popup";
 import { EmailCaptureSlot } from "./email-capture-slot";
 
@@ -39,6 +41,7 @@ beforeEach(() => {
   vi.useFakeTimers();
   route.value = "/";
   localStorage.clear();
+  sessionStorage.clear();
   setScroll(0, 800, 5000);
   Reflect.deleteProperty(window, "gtag");
   Reflect.deleteProperty(window, "dataLayer");
@@ -61,32 +64,31 @@ it("stays off pricing, login, signup, legal, and checkout paths", () => {
   expect(isEmailCaptureExcluded("/products/platform")).toBe(false);
 });
 
-it("hides a dismissal for 14 days and a submission for good", () => {
+it("hides a dismissal or a submission for 30 days", () => {
   const now = Date.parse("2026-11-11T12:00:00Z");
+  const recent = now - 29 * 86400000;
+  const expired = now - 31 * 86400000;
   expect(
-    isEmailCaptureSuppressed(
-      { status: "dismissed", at: now - 13 * 86400000 },
-      now,
-    ),
+    isEmailCaptureSuppressed({ status: "dismissed", at: recent }, now),
   ).toBe(true);
   expect(
-    isEmailCaptureSuppressed(
-      { status: "dismissed", at: now - 15 * 86400000 },
-      now,
-    ),
+    isEmailCaptureSuppressed({ status: "dismissed", at: expired }, now),
   ).toBe(false);
-  expect(isEmailCaptureSuppressed({ status: "submitted", at: 0 }, now)).toBe(
-    true,
-  );
+  expect(
+    isEmailCaptureSuppressed({ status: "submitted", at: recent }, now),
+  ).toBe(true);
+  expect(
+    isEmailCaptureSuppressed({ status: "submitted", at: expired }, now),
+  ).toBe(false);
 });
 
 it("opens after about half the page is scrolled", () => {
   render(<EmailCapturePopup />);
   expect(screen.queryByRole("dialog")).toBeNull();
-  setScroll(440, 800, 1800);
+  setScroll(390, 800, 1800);
   fireEvent.scroll(window);
   expect(screen.queryByRole("dialog")).toBeNull();
-  setScroll(450, 800, 1800);
+  setScroll(400, 800, 1800);
   fireEvent.scroll(window);
   expect(
     screen.getByRole("dialog", { name: "A note when it matters." }),
@@ -128,7 +130,7 @@ it("remembers a dismissal and restores focus on Escape", () => {
   expect(pageAction).toHaveFocus();
 });
 
-it("saves the address through the newsletter route and emits one event", async () => {
+it("saves the address through the email capture route and emits one event", async () => {
   const fetchMock = vi.fn().mockResolvedValue(Response.json({ success: true }));
   vi.stubGlobal("fetch", fetchMock);
   const gtag = vi.fn();
@@ -146,7 +148,7 @@ it("saves the address through the newsletter route and emits one event", async (
     await Promise.resolve();
   });
   expect(fetchMock).toHaveBeenCalledWith(
-    "/api/newsletter",
+    "/api/email-capture",
     expect.objectContaining({ method: "POST" }),
   );
   expect(JSON.parse(fetchMock.mock.calls[0][1].body)).toMatchObject({
@@ -193,6 +195,62 @@ it("does not emit the event when signup fails", async () => {
     "Enter a valid email address.",
   );
   expect(localStorage.getItem(EMAIL_CAPTURE_STORAGE_KEY)).toBeNull();
+});
+
+it("shows at most once in a session", () => {
+  const first = render(<EmailCapturePopup />);
+  setScroll(900, 800, 1800);
+  fireEvent.scroll(window);
+  expect(screen.getByRole("dialog")).toBeInTheDocument();
+  expect(sessionStorage.getItem(EMAIL_CAPTURE_SESSION_KEY)).toBe("1");
+  first.unmount();
+  render(<EmailCapturePopup />);
+  fireEvent.scroll(window);
+  expect(screen.queryByRole("dialog")).toBeNull();
+});
+
+it("links the campaign card to the pricing offer", () => {
+  render(<EmailCapturePopup variant="upsell" />);
+  setScroll(900, 800, 1800);
+  fireEvent.scroll(window);
+  const link = screen.getByRole("link", { name: "See pricing" });
+  expect(link).toHaveAttribute("href", "/pricing?ref=email-capture");
+  expect(screen.getByRole("dialog")).toHaveTextContent("Get 63% off now");
+  expect(screen.queryByLabelText("Email address")).toBeNull();
+  fireEvent.click(link);
+  expect(
+    JSON.parse(localStorage.getItem(EMAIL_CAPTURE_STORAGE_KEY) ?? "{}").status,
+  ).toBe("submitted");
+});
+
+it("stacks the card above a fixed bottom banner", () => {
+  const banner = document.createElement("div");
+  banner.dataset.bottomBanner = "";
+  banner.style.position = "fixed";
+  banner.style.height = "64px";
+  banner.style.width = "1000px";
+  document.body.append(banner);
+  vi.spyOn(banner, "getBoundingClientRect").mockReturnValue({
+    x: 0,
+    y: 736,
+    top: 736,
+    left: 0,
+    right: 1000,
+    bottom: 800,
+    width: 1000,
+    height: 64,
+    toJSON: () => ({}),
+  });
+  Object.defineProperty(window, "innerWidth", {
+    configurable: true,
+    value: 1000,
+  });
+  expect(fixedBottomBannerHeight()).toBe(64);
+  render(<EmailCapturePopup />);
+  setScroll(900, 800, 1800);
+  fireEvent.scroll(window);
+  expect(screen.getByRole("dialog")).toHaveStyle({ bottom: "84px" });
+  banner.remove();
 });
 
 it("does not load the card on an excluded page", async () => {

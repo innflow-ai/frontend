@@ -7,7 +7,7 @@ import { MarketingRuntime } from "@/components/marketing-runtime";
 import type { LatestBlogPostNavItem } from "@/components/mega-menu";
 import { NavigationBlogPostsProvider } from "@/components/navigation-blog-posts";
 import { PostHogObservability } from "@/components/posthog-observability";
-import { SiteCloseAndFooter } from "@/components/site-footer";
+import { SiteCloseAndFooter } from "@/components/site-close-and-footer";
 import { SiteHeader } from "@/components/site-header";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { siteConfig } from "@/config/site";

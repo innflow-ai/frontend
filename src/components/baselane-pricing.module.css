@@ -218,11 +218,30 @@
   gap: 2px;
 }
 .price del {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  white-space: nowrap;
   color: #ff005b;
   font-family: var(--font-archivo), sans-serif;
   font-size: 22px;
   line-height: 28px;
-  text-decoration-thickness: 1px;
+  text-decoration: none;
+}
+.priceStrike {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 28px;
+  overflow: visible;
+  pointer-events: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5px;
+  stroke-linecap: round;
+}
+.priceStrike path {
+  vector-effect: non-scaling-stroke;
 }
 .price .oldCents {
   font-size: 14px;

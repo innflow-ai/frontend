@@ -7,7 +7,6 @@ import {
 } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import {
-  activeEmailCaptureVariant,
   EMAIL_CAPTURE_SESSION_KEY,
   EMAIL_CAPTURE_STORAGE_KEY,
   isEmailCaptureExcluded,
@@ -52,28 +51,6 @@ afterEach(() => {
   cleanup();
   vi.useRealTimers();
   vi.unstubAllGlobals();
-});
-
-it("enables only the newsletter card, even if the promo switch is also on", () => {
-  expect(activeEmailCaptureVariant()).toBe("newsletter");
-  expect(
-    activeEmailCaptureVariant({
-      newsletterEnabled: true,
-      upsellEnabled: true,
-    }),
-  ).toBe("newsletter");
-  expect(
-    activeEmailCaptureVariant({
-      newsletterEnabled: false,
-      upsellEnabled: true,
-    }),
-  ).toBe("upsell");
-  expect(
-    activeEmailCaptureVariant({
-      newsletterEnabled: false,
-      upsellEnabled: false,
-    }),
-  ).toBeNull();
 });
 
 it("stays off pricing, login, signup, legal, and checkout paths", () => {
@@ -230,21 +207,6 @@ it("shows at most once in a session", () => {
   render(<EmailCapturePopup />);
   fireEvent.scroll(window);
   expect(screen.queryByRole("dialog")).toBeNull();
-});
-
-it("links the campaign card to the pricing offer", () => {
-  render(<EmailCapturePopup variant="upsell" />);
-  setScroll(900, 800, 1800);
-  fireEvent.scroll(window);
-  const link = screen.getByRole("link", { name: "See pricing" });
-  expect(link).toHaveAttribute("href", "/pricing?ref=email-capture");
-  expect(screen.getByRole("dialog")).toHaveAttribute("data-variant", "upsell");
-  expect(screen.getByRole("dialog")).toHaveTextContent("Get 63% off now");
-  expect(screen.queryByLabelText("Email address")).toBeNull();
-  fireEvent.click(link);
-  expect(
-    JSON.parse(localStorage.getItem(EMAIL_CAPTURE_STORAGE_KEY) ?? "{}").status,
-  ).toBe("submitted");
 });
 
 it("stacks the card above a fixed bottom banner", () => {

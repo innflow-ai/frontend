@@ -11,7 +11,7 @@ const request = (
   new Request("https://innflow.ai/api/email-capture", {
     method: "POST",
     headers: { origin, "Content-Type": "application/json" },
-    body: JSON.stringify({ email, variant: "newsletter" }),
+    body: JSON.stringify({ email }),
   });
 
 afterEach(() => {

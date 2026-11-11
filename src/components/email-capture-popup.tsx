@@ -11,30 +11,24 @@ import {
 import { BotIcon } from "@/components/icons/bot-icon";
 import { Multiply as X } from "@/components/icons/mage/Multiply";
 import {
-  activeEmailCaptureVariant,
   EMAIL_CAPTURE_DELAY_MS,
   EMAIL_CAPTURE_SCROLL_RATIO,
   EMAIL_CAPTURE_SESSION_KEY,
   EMAIL_CAPTURE_STORAGE_KEY,
   type EmailCaptureRecord,
-  type EmailCaptureVariant,
+  emailCapture,
   emailCaptureCopy,
   emailCaptureScrollRatio,
   emailCaptureSeenThisSession,
   isEmailCaptureExcluded,
   isEmailCaptureSuppressed,
   readEmailCapture,
-  upsellOffer,
 } from "@/config/email-capture";
 import { trackEmailCaptureSubmitted } from "@/lib/email-capture-analytics";
 import { fixedBottomBannerHeight } from "@/lib/email-capture-placement";
 import styles from "./email-capture-popup.module.css";
 
-export function EmailCapturePopup({
-  variant = activeEmailCaptureVariant() ?? "newsletter",
-}: {
-  variant?: EmailCaptureVariant;
-}) {
+export function EmailCapturePopup() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [phase, setPhase] = useState<"idle" | "pending" | "success" | "error">(
@@ -47,7 +41,7 @@ export function EmailCapturePopup({
   const stored = useRef<EmailCaptureRecord | null>(null);
 
   useEffect(() => {
-    if (isEmailCaptureExcluded(pathname)) return;
+    if (!emailCapture.enabled || isEmailCaptureExcluded(pathname)) return;
     if (seenThisSession()) return;
     stored.current = readStored();
     if (isEmailCaptureSuppressed(stored.current, Date.now())) return;
@@ -121,16 +115,15 @@ export function EmailCapturePopup({
     return () => window.removeEventListener("resize", place);
   }, [open]);
 
-  if (!open || isEmailCaptureExcluded(pathname)) return null;
-
-  const offer = upsellOffer();
+  if (!emailCapture.enabled || !open || isEmailCaptureExcluded(pathname)) {
+    return null;
+  }
 
   return (
     <aside
       ref={cardRef}
       className={styles.card}
       data-email-capture=""
-      data-variant={variant}
       role="dialog"
       aria-modal="false"
       aria-labelledby="email-capture-title"
@@ -154,32 +147,16 @@ export function EmailCapturePopup({
       >
         <X size={16} aria-hidden="true" />
       </button>
-      {variant === "newsletter" ? (
-        <div className={styles.titleRow}>
-          <BotIcon size={18} />
-          <h2 id="email-capture-title" className={styles.headline}>
-            {emailCaptureCopy.headline}
-          </h2>
-        </div>
-      ) : (
+      <div className={styles.titleRow}>
+        <BotIcon size={18} />
         <h2 id="email-capture-title" className={styles.headline}>
-          {offer.headline}
+          {emailCaptureCopy.headline}
         </h2>
-      )}
+      </div>
       <p id="email-capture-copy" className={styles.subcopy}>
-        {variant === "upsell" ? offer.subcopy : emailCaptureCopy.subcopy}
+        {emailCaptureCopy.subcopy}
       </p>
-      {variant === "upsell" ? (
-        <a
-          className={styles.submit}
-          href={offer.ctaHref}
-          onClick={() => {
-            stored.current = writeRecord("submitted");
-          }}
-        >
-          {offer.ctaLabel}
-        </a>
-      ) : phase === "success" ? (
+      {phase === "success" ? (
         <p className={styles.success} role="status">
           {emailCaptureCopy.success}
         </p>
@@ -304,7 +281,6 @@ async function submit(
       body: JSON.stringify({
         email: data.get("email"),
         website: data.get("website"),
-        variant: "newsletter",
       }),
       signal: AbortSignal.timeout(25000),
     });

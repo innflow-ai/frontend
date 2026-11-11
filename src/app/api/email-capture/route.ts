@@ -11,7 +11,7 @@ export async function POST(request: Request) {
     return Response.json({ error: "Invalid request." }, { status: 403 });
   }
 
-  let body: { email?: unknown; website?: unknown; variant?: unknown };
+  let body: { email?: unknown; website?: unknown };
   try {
     const text = await request.text();
     if (text.length > 2048) {
@@ -32,10 +32,8 @@ export async function POST(request: Request) {
       { status: 400 },
     );
   }
-  const variant = body.variant === "upsell" ? "upsell" : "newsletter";
-
   try {
-    const result = await deliverEmailCapture({ email, variant });
+    const result = await deliverEmailCapture({ email });
     return Response.json({ success: true, stored: result.stored });
   } catch {
     return unavailable();

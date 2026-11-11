@@ -1,6 +1,5 @@
 export type EmailCaptureLead = {
   email: string;
-  variant: "newsletter" | "upsell";
 };
 
 /**

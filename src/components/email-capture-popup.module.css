@@ -1,7 +1,5 @@
 /*
-  Newsletter card (Paper PR-0): bottom-left email signup.
-  Upsell (Paper R5-0) reuses the signup offer popup from commit 1c42993.
-  Exact specs for both are still coming from the designer.
+  Bottom-left newsletter card. Paper frame PR-0 specs are still coming.
 */
 .card {
   position: fixed;
@@ -21,17 +19,6 @@
   animation: email-capture-rise 240ms ease;
 }
 
-.card[data-variant="upsell"] {
-  left: auto;
-  right: 24px;
-  width: min(360px, calc(100vw - 32px));
-  padding: 28px 24px 24px;
-  border-color: #dde8f1;
-  border-radius: 18px;
-  color: #0c1b2a;
-  box-shadow: 0 18px 48px rgb(12 27 42 / 18%);
-}
-
 .titleRow {
   display: flex;
   align-items: flex-start;
@@ -49,28 +36,12 @@
   line-height: 28px;
 }
 
-.card[data-variant="upsell"] .headline {
-  margin: 0 28px 8px 0;
-  color: #0c1b2a;
-  font-family: var(--font-archivo), Arial, sans-serif;
-  font-size: 28px;
-  letter-spacing: -0.03em;
-  line-height: 1.15;
-}
-
 .subcopy {
   margin: 0 0 12px;
   color: rgb(26 26 26 / 72%);
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
-}
-
-.card[data-variant="upsell"] .subcopy {
-  margin-bottom: 20px;
-  color: #74777b;
-  font-size: 15px;
-  line-height: 1.5;
 }
 
 .form {
@@ -127,15 +98,6 @@
   cursor: pointer;
 }
 
-.card[data-variant="upsell"] .submit {
-  align-self: flex-start;
-  width: auto;
-  min-height: 44px;
-  height: auto;
-  padding: 10px 18px;
-  background: linear-gradient(180deg, #5aaaf8 0%, #00aeff 100%);
-}
-
 .submit:disabled {
   cursor: progress;
   opacity: 0.72;
@@ -165,25 +127,13 @@
   cursor: pointer;
 }
 
-.card[data-variant="upsell"] .close {
-  top: 10px;
-  right: 10px;
-  width: 36px;
-  height: 36px;
-  color: #0c1b2a;
-}
-
-.card :is(button, a, input):focus-visible {
+.card :is(button, input):focus-visible {
   outline: 2px solid #1a1a1a;
   outline-offset: 2px;
 }
 
-.card[data-variant="upsell"] :is(button, a, input):focus-visible {
-  outline-color: #00aeff;
-}
-
 @media (max-width: 700px) {
-  .card:not([data-variant="upsell"]) {
+  .card {
     left: 12px;
     right: 12px;
     bottom: 12px;

@@ -1,15 +1,11 @@
 "use client";
-import { usePathname } from "next/navigation";
 import { type FormEvent, useState } from "react";
 import { siteConfig } from "@/config/site";
-import { getProductDesign } from "@/content/product-design-rotation";
-import { usesShowcaseDesign } from "@/lib/showcase-routes";
 import { GoogleCtaContent } from "./google-cta-content";
 import { LaunchDirectoryMarquee } from "./launch-directory-marquee";
 import styles from "./site-shell.module.css";
 import { TrackedLink } from "./tracked-link";
 export function SiteCta() {
-  const pathname = usePathname();
   const [signupState, setSignupState] = useState<
     "idle" | "pending" | "success" | "error"
   >("idle");
@@ -50,14 +46,6 @@ export function SiteCta() {
       );
     }
   }
-
-  // Showcase and Product designs render their own closing CTA.
-  if (
-    pathname === "/help" ||
-    usesShowcaseDesign(pathname) ||
-    getProductDesign(pathname)
-  )
-    return null;
 
   return (
     <div className={styles.page}>

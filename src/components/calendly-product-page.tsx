@@ -7,7 +7,6 @@ import {
   Plus as MagePlus,
   StarsA as MageStarsA,
 } from "@/components/icons/mage";
-import { LaunchDirectoryMarquee } from "@/components/launch-directory-marquee";
 import { siteConfig } from "@/config/site";
 import {
   getProductDesign,
@@ -412,41 +411,6 @@ export function CalendlyProductPage({
           ))}
         </div>
       </section>
-      <LaunchDirectoryMarquee />
-      {(content.closing?.length
-        ? content.closing
-        : [
-            {
-              title: "Make space for what matters.",
-              body: "Bring your team, context, and next steps together.",
-              primaryCta: primary,
-              secondaryCta: secondary,
-            },
-          ]
-      ).map((closing) => (
-        <section className={styles.closing} key={closing.title}>
-          <h2>{closing.title}</h2>
-          <p>{closing.body}</p>
-          <div className={styles.actions}>
-            <TrackedLink
-              className={styles.primary}
-              destination={closing.primaryCta.href}
-              eventLabel={`${content.path}_closing`}
-            >
-              {closing.primaryCta.label}
-            </TrackedLink>
-            {closing.secondaryCta && (
-              <TrackedLink
-                className={styles.secondary}
-                destination={closing.secondaryCta.href}
-                eventLabel={`${content.path}_closing_secondary`}
-              >
-                {closing.secondaryCta.label}
-              </TrackedLink>
-            )}
-          </div>
-        </section>
-      ))}
     </main>
   );
 }

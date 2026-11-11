@@ -3,6 +3,7 @@ import { siteConfig } from "@/config/site";
 import { CustomerSupportHours } from "./customer-support-hours";
 import { FooterLegalLinks } from "./footer-legal-links";
 import { GoogleCtaContent } from "./google-cta-content";
+import { SiteCta } from "./site-cta";
 import styles from "./site-shell.module.css";
 
 const footerMenus = [
@@ -95,6 +96,7 @@ export function SiteFooter() {
               ))}
             </div>
           ))}
+          {/* One column to edit if Property teams is renamed or removed. */}
           <div>
             <h3>Property teams</h3>
             <a href="/long-term-rentals">Long-term rentals</a>
@@ -120,5 +122,15 @@ export function SiteFooter() {
         </div>
       </footer>
     </div>
+  );
+}
+
+/** Directory badges, sky close, members signup, and the navy link columns. */
+export function SiteCloseAndFooter() {
+  return (
+    <>
+      <SiteCta />
+      <SiteFooter />
+    </>
   );
 }

@@ -7,9 +7,7 @@ import { MarketingRuntime } from "@/components/marketing-runtime";
 import type { LatestBlogPostNavItem } from "@/components/mega-menu";
 import { NavigationBlogPostsProvider } from "@/components/navigation-blog-posts";
 import { PostHogObservability } from "@/components/posthog-observability";
-import { SiteCta } from "@/components/site-cta";
-import { SiteFooter } from "@/components/site-footer";
-import { SiteFooterBoundary } from "@/components/site-footer-boundary";
+import { SiteCloseAndFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { siteConfig } from "@/config/site";
@@ -20,7 +18,6 @@ import {
   humanizeCategory,
   urlForImage,
 } from "@/lib/sanity";
-import { TemplateFooter } from "./preview/scroll-showcase/template-footer";
 import "./globals.css";
 import { getNavigationTestimonial } from "@/lib/testimonials";
 import "lenis/dist/lenis.css";
@@ -197,13 +194,7 @@ export default async function RootLayout({
         >
           <SiteHeader />
           {children}
-          <SiteCta />
-          <SiteFooterBoundary
-            preview={<TemplateFooter featuredOn={false} />}
-            homepage={<TemplateFooter />}
-          >
-            <SiteFooter />
-          </SiteFooterBoundary>
+          <SiteCloseAndFooter />
         </NavigationBlogPostsProvider>
         <MarketingRuntime />
         <ConsentManagedTags />

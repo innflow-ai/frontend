@@ -78,6 +78,10 @@
     #efb7a3 35%, #dd8fa9 52%, #d896ba 69%, #7a94d5 86%, #5b8edd 100%;
 }
 
+html[data-logo-ink="feature"] img[src*="innflow-wordmark.svg"] {
+  filter: brightness(0) invert(12.55%);
+}
+
 * {
   box-sizing: border-box;
 }

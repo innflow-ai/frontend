@@ -1,145 +1,212 @@
-import { siteConfig } from "@/config/site";
+import { appSignup, type StorySection } from "@/content/feature-story";
 
-/**
- * Structure follows the live Flow page at offloop.org/features/flow:
- * hero, four feature rows, a status list, four steps, two cards, close.
- * Sentences are Innflow's, from existing product copy. Not theirs.
- */
 export const workflowsPage = {
   path: "/features/workflows",
-  title: "Workflows | Innflow",
+  title: "Workflows for multi-agent work | Innflow",
   description:
-    "A visual, reviewable path for a recurring handoff: trigger, steps, a person where you mark a review, and a record of the run.",
-  hero: {
-    id: "workflows-hero",
-    title: "Every handoff.",
-    emphasis: "One path you can inspect.",
-    subtitle:
-      "Turn a recurring request into a workflow with a trigger, an owner, and a review your team can see.",
-    primary: { label: "Book a demo", href: siteConfig.demoUrl },
-    secondary: { label: "See an example", href: "#example" },
-  },
-  example: {
-    id: "maintenance-intake",
-    unverified: true,
-    hidden: false,
-    label: "Example",
-    name: "Maintenance intake",
-    progress: "2 of 4",
-    steps: [
-      { name: "Capture the request", owner: "Workflow" },
-      { name: "Prepare the next step", owner: "Agent" },
-      { name: "Review before it goes out", owner: "Person" },
-      { name: "Follow up", owner: "Workflow" },
-    ],
-  },
-  plan: {
-    id: "a-plan-the-team-can-read",
-    title: "A plan the team can read.",
-    subtitle:
-      "The workflow keeps the sequence visible. An agent can work inside a step. A person still owns the review you mark.",
-    rows: [
-      {
-        id: "show-who-owns-the-step",
-        unverified: true,
-        hidden: false,
-        title: "Show who owns the step",
-        body: "Each step names an agent or a person, so the next move is not left in a side conversation.",
-      },
-      {
-        id: "pause-where-a-person-decides",
-        title: "Pause where a person decides",
-        body: "The workflow waits at the review you set. The person sees the request and the context attached to it.",
-      },
-      {
-        id: "keep-the-exception-on-the-path",
-        unverified: true,
-        hidden: false,
-        title: "Keep the exception on the path",
-        body: "Plan the retry and the unfinished work in the same workflow, with an owner, instead of starting a new thread.",
-      },
-      {
-        id: "open-the-run",
-        title: "Open the run",
-        body: "Drafts and deployed runs stay in one list. Open a run when you need the record of what happened.",
-      },
-    ],
-  },
-  attention: {
-    id: "see-what-is-waiting",
-    unverified: true,
-    hidden: false,
-    title: "See what is waiting.",
-    subtitle:
-      "Open the workflow instead of asking for a status. The next step and its owner are on it.",
-    rows: [
-      { name: "Request recorded", state: "Draft" },
-      { name: "Next step prepared", state: "Needs review" },
-      { name: "Follow-up held", state: "Waiting on a person" },
-    ],
-  },
-  loop: {
-    id: "from-the-first-trigger",
-    title: "From the first trigger to the follow-up.",
-    subtitle:
-      "The workflow holds the handoffs. It does not replace the system of record.",
-    steps: [
-      {
-        id: "name-the-outcome",
-        title: "Name the outcome",
-        body: "Start with the result, and with the step where a person has to decide.",
-      },
-      {
-        id: "assign-the-steps",
-        unverified: true,
-        hidden: false,
-        title: "Assign the steps",
-        body: "Give a step to an agent or a teammate. Attach only the tools and records that step needs.",
-      },
-      {
-        id: "run-it",
-        title: "Run it",
-        body: "A trigger starts the path. Connected actions follow the steps you set.",
-      },
-      {
-        id: "review-and-continue",
-        unverified: true,
-        hidden: false,
-        title: "Review and continue",
-        body: "The reviewer decides. The same workflow picks up from that step.",
-      },
-    ],
-  },
-  angles: {
-    id: "two-ways-in",
-    title: "Two ways in.",
-    cards: [
-      {
-        id: "start-with-one-intake",
-        title: "Start with one intake",
-        body: "Collect a maintenance request, classify it, and route it to the owner who already handles that work.",
-        href: "#example",
-        label: "See the example",
-      },
-      {
-        id: "closer-article",
-        title: "A closer article",
-        body: "TODO: Julian to confirm a published Innflow article for this card.",
-        href: null,
-        label: null,
-      },
-    ],
-  },
-  close: {
-    id: "hand-off-the-step",
-    title: "Hand off the step.",
-    emphasis: "Keep the record.",
-    subtitle: "Bring one recurring handoff your team already understands.",
-    cta: { label: "Book a demo", href: siteConfig.demoUrl },
-  },
+    "Build visual workflows your agents can run and your team can follow, with clear owners, review gates, and a live record of every step.",
+  sections: [
+    {
+      id: "hero",
+      type: "hero",
+      title: "Give every outcome a path your team can see.",
+      subtitle:
+        "Build a workflow for the result you want. The owners, the review gates, the progress, and the proof all live in one view.",
+      primary: { label: "Start for free", href: appSignup },
+      secondary: { label: "See a launch workflow", href: "#launch-workflow" },
+    },
+    {
+      id: "launch-workflow",
+      type: "features",
+      anchor: "launch-workflow",
+      title: "Product launch",
+      items: [
+        {
+          title: "Product launch",
+          nodes: [
+            {
+              label: "Research",
+              owner: "Research Agent",
+              agent: true,
+              status: "done",
+            },
+            {
+              label: "Positioning",
+              owner: "Research Agent",
+              agent: true,
+              status: "done",
+            },
+            {
+              label: "Build campaign",
+              owner: "Launch Agent",
+              agent: true,
+              status: "running",
+            },
+            {
+              label: "Enablement",
+              owner: "Enablement Agent",
+              agent: true,
+              status: "running",
+            },
+            {
+              label: "Approve launch",
+              owner: "Launch owner",
+              status: "decision",
+            },
+            {
+              label: "Publish",
+              owner: "Launch Agent",
+              agent: true,
+              status: "waiting",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: "positioning",
+      type: "split",
+      title: "Agents can execute the plan. People can always see the state.",
+      body: "The workflow holds one outcome as it moves through agents, tools, waiting time, and decisions. Work inside a stage can adapt. Who hands off, and who has authority, stays written down.",
+    },
+    {
+      id: "ownership",
+      type: "features",
+      title: "Make it clear who owns each step.",
+      items: [
+        {
+          title: "Make it clear who owns each step.",
+          body: "Each step that can run has a named owner, either an agent or a person. When a review is required, the gate shows who has to decide. Work does not disappear into a crowded thread.",
+          nodes: [
+            {
+              label: "Positioning",
+              owner: "Research Agent",
+              agent: true,
+              status: "done",
+            },
+            {
+              label: "Build campaign",
+              owner: "Launch Agent",
+              agent: true,
+              status: "running",
+            },
+            {
+              label: "Enablement",
+              owner: "Enablement Agent",
+              agent: true,
+              status: "running",
+            },
+            {
+              label: "Approve launch",
+              owner: "Launch owner",
+              status: "waiting",
+            },
+          ],
+        },
+        {
+          title: "Pause for a decision, not for a status meeting.",
+          body: "Agents keep going until they hit a real authority line. The gate brings back the choice, the surrounding context, and the proof together. After that, the same workflow starts again from that point.",
+          nodes: [
+            { label: "Build campaign", owner: "Complete", status: "done" },
+            {
+              label: "Approve launch",
+              owner: "Waiting on Launch owner",
+              status: "decision",
+            },
+            {
+              label: "Publish",
+              owner: "Ready after approval",
+              status: "waiting",
+            },
+          ],
+          actions: ["Approve", "Send back"],
+        },
+        {
+          title: "Let the workflow wait, then pick back up.",
+          body: "The plan already expects pauses, retries, and limited correction. A person, a scheduled time, or an outside event can hold a step. When the wait ends, the workflow continues from the same place. Nobody has to rebuild the context or write a new prompt.",
+          nodes: [
+            { label: "Build campaign", status: "done" },
+            { label: "QA review", owner: "Waiting", status: "waiting" },
+            {
+              label: "Revise and continue",
+              owner: "Resumes in the same workflow",
+              status: "running",
+            },
+          ],
+        },
+        {
+          title: "Open any step and see the work behind it.",
+          body: "The graph shows who owns the step and where it stands. Open the run when you need the files, the history, and the proof behind the result.",
+          nodes: [
+            {
+              label: "Approve launch",
+              owner: "Launch owner",
+              status: "decision",
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: "status",
+      type: "status",
+      title: "See what needs you, without opening every run.",
+      subtitle:
+        "Skip the status ask. The workflow already shows the front of the work, who owns it, and why something is blocked.",
+      rows: [
+        { label: "Launch evidence synthesized", state: "Completed" },
+        { label: "Campaign and enablement", state: "In progress" },
+        { label: "Launch approval", state: "Waiting on owner" },
+      ],
+    },
+    {
+      id: "how-it-works",
+      type: "steps",
+      title: "From the outcome you want to a loop you can close",
+      subtitle:
+        "The workflow structures handoffs between agents. It does not script every action they take while the work is underway.",
+      steps: [
+        {
+          title: "Define the outcome.",
+          body: "Begin with the finished state you want, the limits around it, and who may decide. Leave the loose task list for later.",
+        },
+        {
+          title: "Assign the team.",
+          body: "Put specialist agents on the steps that can run. Put each decision gate with the person or agent who has the authority to close it.",
+        },
+        {
+          title: "Run and recover.",
+          body: "Work that is ready moves forward, and its outputs travel with it. You can see when a step is blocked, waiting, failed, or retrying.",
+        },
+        {
+          title: "Review and continue.",
+          body: "Read the proof, make the calls that belong to you, and let this same workflow keep going until the outcome is confirmed.",
+        },
+      ],
+    },
+    {
+      id: "angles",
+      type: "cards",
+      title: "See Workflows from every angle",
+      cards: [
+        {
+          title: "Run a product launch as a single workflow",
+          body: "Keep research, positioning, production, approval, publishing, and later learning in one connected process, without turning yourself into the project manager for every agent.",
+          links: [{ label: "See a launch workflow", href: "#launch-workflow" }],
+        },
+        {
+          title: "A launch needs more than a checklist",
+          body: "A closer look at ownership, parallel work, human gates, recovery after failure, and what happens after launch day.",
+        },
+      ],
+    },
+    {
+      id: "close",
+      type: "close",
+      title: "Hand off the work. Keep the outcome in view.",
+      subtitle:
+        "Start with the recurring work your team already carries. Innflow helps turn it into a workflow people and agents can both follow.",
+      links: [{ label: "Start for free", href: appSignup }],
+    },
+  ] satisfies StorySection[],
 };
-
-/** Unverified sections stay visible. Set `hidden: true` on one section to remove it. */
-export function showWorkflowSection(section: { hidden?: boolean }) {
-  return section.hidden !== true;
-}

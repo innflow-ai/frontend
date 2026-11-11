@@ -1,51 +1,28 @@
 import { render, screen } from "@testing-library/react";
 import { expect, it } from "vitest";
-import { workflowsPage } from "@/content/workflows-page";
 import { WorkflowsProductPage } from "./workflows-product-page";
 
-it("follows the workflow page structure without borrowed names", () => {
+it("uses the workflows copy and leaves the field note unlinked", () => {
   render(<WorkflowsProductPage />);
   expect(
-    screen.getByRole("heading", { level: 1, name: /Every handoff/ }),
-  ).toBeInTheDocument();
-  expect(screen.getByText("Maintenance intake")).toBeInTheDocument();
-  expect(
-    document.querySelector("[data-feature-id='workflows-hero']"),
-  ).toBeTruthy();
-  expect(document.getElementById("workflows-hero")).toHaveAttribute(
-    "href",
-    expect.stringContaining("cal.com"),
-  );
-  expect(document.getElementById("maintenance-intake")).toHaveAttribute(
-    "href",
-    "#example",
-  );
-  expect(document.getElementById("hand-off-the-step")).toBeTruthy();
-  expect(document.getElementById("start-with-one-intake")).toHaveAttribute(
-    "href",
-    "#example",
-  );
-  expect(screen.getByText(/TODO: Julian/)).toBeInTheDocument();
-  expect(screen.queryByText(/Offloop|off-loop|Botmode/i)).toBeNull();
-  expect(screen.getAllByRole("heading", { level: 2 })).toHaveLength(5);
-  expect(workflowsPage.example.unverified).toBe(true);
-  expect(workflowsPage.example.hidden).toBe(false);
-  expect(workflowsPage.attention.unverified).toBe(true);
-  expect(workflowsPage.attention.hidden).toBe(false);
-  expect(
-    screen.getByRole("heading", { name: "See what is waiting." }),
+    screen.getByRole("heading", {
+      level: 1,
+      name: "Give every outcome a path your team can see.",
+    }),
   ).toBeInTheDocument();
   expect(
-    screen.getByRole("heading", { name: "Show who owns the step" }),
+    screen.getAllByRole("link", { name: "Start for free" })[0],
+  ).toHaveAttribute("href", "https://app.innflow.ai");
+  expect(
+    screen.getAllByRole("link", { name: "See a launch workflow" })[0],
+  ).toHaveAttribute("href", "#launch-workflow");
+  expect(screen.getByLabelText("Product launch")).toBeInTheDocument();
+  expect(screen.getAllByText("Launch owner").length).toBeGreaterThan(0);
+  expect(
+    screen.getByRole("heading", {
+      name: "A launch needs more than a checklist",
+    }),
   ).toBeInTheDocument();
-  expect(
-    workflowsPage.plan.rows
-      .filter((row) => row.unverified)
-      .map((row) => row.title),
-  ).toEqual(["Show who owns the step", "Keep the exception on the path"]);
-  expect(
-    workflowsPage.loop.steps
-      .filter((step) => step.unverified)
-      .map((step) => step.title),
-  ).toEqual(["Assign the steps", "Review and continue"]);
+  expect(screen.queryByRole("link", { name: /field note/i })).toBeNull();
+  expect(screen.queryByText(/Coming soon|Northwind|Offloop/i)).toBeNull();
 });

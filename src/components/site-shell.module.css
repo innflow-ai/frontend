@@ -653,6 +653,20 @@
 .footerLogo img {
   filter: brightness(0) invert(1);
 }
+:global(html[data-logo-ink="feature"]) .footer {
+  background: #fff;
+  color: #5c5c5c;
+}
+:global(html[data-logo-ink="feature"]) .footerLogo img {
+  filter: brightness(0) invert(12.55%);
+}
+:global(html[data-logo-ink="feature"]) .footerGrid h3 {
+  color: #202020;
+  border-bottom-color: #e6e6e6;
+}
+:global(html[data-logo-ink="feature"]) .footerGrid a:hover {
+  color: #202020;
+}
 .footerGrid h3 {
   font-size: 18px;
   color: #edf3f4;

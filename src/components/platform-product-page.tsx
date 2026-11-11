@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { BotIcon } from "@/components/icons/bot-icon";
 import { siteConfig } from "@/config/site";
 import { getProductFaqs } from "@/content/product-faqs";
 import { JsonLd } from "./json-ld";
@@ -473,7 +474,11 @@ export function PlatformProductPage() {
           {nextStops.map((stop) => (
             <Link className={styles.nextCard} href={stop.href} key={stop.href}>
               <span className={styles.nextIcon}>
-                <Mark name={stop.icon} className={styles.nextMark} />
+                {stop.icon === "bot" ? (
+                  <BotIcon className={styles.nextMark} size={24} />
+                ) : (
+                  <Mark name={stop.icon} className={styles.nextMark} />
+                )}
               </span>
               <strong>{stop.title}</strong>
               <span>{stop.body}</span>

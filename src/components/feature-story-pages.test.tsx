@@ -13,7 +13,7 @@ it("lists wired connectors and hides a coming-soon label", () => {
   expect(
     screen.getByRole("heading", {
       level: 1,
-      name: "Connect agents to the tools your work already lives in.",
+      name: /Connect agents to the tools/,
     }),
   ).toBeInTheDocument();
   expect(screen.getByRole("link", { name: "Gmail" })).toHaveAttribute(
@@ -40,7 +40,11 @@ it("keeps agent, channel, memory, and teammate claims inside the copy", () => {
   ).toBeInTheDocument();
   render(<FeatureStoryPage sections={channelsPage.sections} />);
   expect(screen.getByText("Receiving on Slack")).toBeInTheDocument();
-  expect(screen.queryByRole("link", { name: /field note/i })).toBeNull();
+  expect(screen.getByRole("link", { name: "Read the field note" })).toHaveAttribute(
+    "href",
+    "/blog",
+  );
+  expect(screen.queryByRole("heading", { name: "Not in market yet" })).toBeNull();
   render(<FeatureStoryPage sections={agentMemoryPage.sections} />);
   expect(
     screen.queryByText(/trains on my data|remember everything forever/i),
@@ -48,7 +52,7 @@ it("keeps agent, channel, memory, and teammate claims inside the copy", () => {
   render(<FeatureStoryPage sections={teammatesPage.sections} />);
   expect(
     screen.getByRole("heading", {
-      name: "Make every AI win useful to the whole team.",
+      name: /Make every AI win/,
     }),
   ).toBeInTheDocument();
   expect(screen.queryByText(/Northwind|Coming soon/i)).toBeNull();

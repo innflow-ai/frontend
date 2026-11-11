@@ -9,7 +9,20 @@ export const agentMemoryPage = {
     {
       id: "memory-hero",
       type: "hero",
-      title: "Agents that remember the work itself",
+      eyebrow: "Agent memory",
+      title: "Agents that remember",
+      emphasis: "the work itself",
+      lines: [
+        {
+          role: "You",
+          text: "Draft the announcement from the locked brief.",
+        },
+        {
+          role: "Launch Agent",
+          text: "The next task starts from the decision the team already made.",
+        },
+      ],
+      chips: ["Goal", "Decision", "Evidence"],
       subtitle:
         "Work continues from what the team already settled, instead of restarting at an empty prompt.",
       primary: { label: "Get started", href: appSignup },
@@ -36,7 +49,10 @@ export const agentMemoryPage = {
     {
       id: "memory-comparison",
       type: "comparison",
-      title: "The next run begins with the last decision already attached.",
+      tone: "inverse",
+      eyebrow: "The next run",
+      title: "The next run begins",
+      emphasis: "with the last decision already attached.",
       subtitle:
         "Pick up from the current project state. You should not have to paste an old conversation into a fresh window.",
       links: [

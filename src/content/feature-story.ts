@@ -35,9 +35,16 @@ export type StorySection = {
     | "comparison"
     | "chips"
     | "catalog"
-    | "beats";
+    | "beats"
+    | "dark";
+  eyebrow?: string;
   title: string;
+  emphasis?: string;
+  tone?: "default" | "inverse";
   subtitle?: string;
+  lines?: { role: string; text: string }[];
+  chips?: string[];
+  footnote?: string;
   body?: string;
   primary?: StoryLink;
   secondary?: StoryLink;

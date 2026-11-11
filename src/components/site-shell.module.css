@@ -653,19 +653,23 @@
 .footerLogo img {
   filter: brightness(0) invert(1);
 }
-:global(html[data-logo-ink="feature"]) .footer {
-  background: #fff;
-  color: #5c5c5c;
+.productFooter {
+  background: #202020;
+  color: rgb(255 255 255 / 75%);
 }
-:global(html[data-logo-ink="feature"]) .footerLogo img {
-  filter: brightness(0) invert(12.55%);
+.productFooter .footerLogo img {
+  filter: brightness(0) invert(1);
 }
-:global(html[data-logo-ink="feature"]) .footerGrid h3 {
-  color: #202020;
-  border-bottom-color: #e6e6e6;
+.productFooter .footerGrid h3 {
+  color: #fff;
+  border-bottom-color: rgb(255 255 255 / 25%);
 }
-:global(html[data-logo-ink="feature"]) .footerGrid a:hover {
-  color: #202020;
+.productFooter .footerGrid a:hover {
+  color: #fff;
+}
+.productFooter .footerBottom,
+.productFooter .legalLinks a {
+  color: rgb(255 255 255 / 70%);
 }
 .footerGrid h3 {
   font-size: 18px;

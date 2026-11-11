@@ -1,7 +1,110 @@
 .page {
+  overflow-x: clip;
   background: #fff;
   color: #1a1a1a;
   font-family: var(--font-archivo), Arial, sans-serif;
+}
+
+.scene {
+  box-sizing: border-box;
+  width: min(1200px, calc(100% - 32px));
+  margin: 0 auto 24px;
+  padding: 28px;
+  border-radius: 28px;
+  background: linear-gradient(160deg, #f0e7f6 0%, #edeaf4 42%, #faf2ec 100%);
+}
+
+.window {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 16px;
+  border: 1px solid rgb(255 255 255 / 80%);
+  border-radius: 18px;
+  background: rgb(255 255 255 / 72%);
+  box-shadow: 0 18px 40px rgb(32 32 32 / 8%);
+}
+
+.windowBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 12px;
+  font-weight: 600;
+}
+
+.frost,
+.mock,
+.thread {
+  display: grid;
+  gap: 10px;
+}
+
+.bubble,
+.mock p,
+.thread p {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+  margin: 0;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: #fff;
+  overflow-wrap: anywhere;
+}
+
+.fileChips,
+.mock {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.fileChips span,
+.mock span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #fff;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.darkBand {
+  width: min(1200px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 72px 28px;
+  border-radius: 28px;
+  background: #202020;
+  color: #fff;
+}
+
+.darkBand h3,
+.darkBand li,
+.darkBand p {
+  color: rgb(255 255 255 / 82%);
+}
+
+.dark {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.8fr);
+  gap: 32px;
+  width: min(1200px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 72px 28px;
+  border-radius: 28px;
+  background: #202020;
+  color: #fff;
+}
+
+.dark .copy,
+.thread strong {
+  color: rgb(255 255 255 / 78%);
+}
+
+.footnote {
+  margin: 0;
+  color: #5c5c5c;
+  font-size: 14px;
+  line-height: 22px;
 }
 
 .hero,
@@ -275,7 +378,8 @@
   .hero,
   .split,
   .featureGrid,
-  .steps {
+  .steps,
+  .dark {
     grid-template-columns: 1fr;
   }
 

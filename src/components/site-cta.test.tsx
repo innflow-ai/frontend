@@ -28,20 +28,26 @@ it("renders the shared sky close and directory badges", () => {
   ).toBeVisible();
 });
 
-it("keeps the sky close, members signup, and Property teams column in one footer", () => {
+it("uses the product footer away from the homepage", () => {
   route.pathname = "/blog";
   render(<SiteCloseAndFooter />);
   expect(
     screen.getByRole("heading", { name: /A clearer day starts/ }),
   ).toBeVisible();
+  expect(screen.getByRole("heading", { name: "Why innflow" })).toBeVisible();
+  expect(screen.getByRole("heading", { name: "Product" })).toBeVisible();
+  expect(screen.getByRole("heading", { name: "Resources" })).toBeVisible();
+  expect(screen.getByRole("heading", { name: "Get started" })).toBeVisible();
+  expect(screen.queryByRole("heading", { name: "Property teams" })).toBeNull();
+  expect(screen.queryByRole("heading", { name: "Solutions" })).toBeNull();
+  expect(screen.queryByRole("link", { name: "Long-term rentals" })).toBeNull();
+  expect(screen.queryByRole("link", { name: "Lease workflows" })).toBeNull();
+});
+
+it("keeps the homepage footer", () => {
+  route.pathname = "/";
+  render(<SiteCloseAndFooter />);
   expect(screen.getByRole("heading", { name: "Property teams" })).toBeVisible();
-  expect(screen.getByText(/Your AI agent workspace\./)).toBeVisible();
-  expect(screen.getByText(/Connected in one place\./)).toBeVisible();
-  expect(screen.queryByText(/Property operations\./)).toBeNull();
-  expect(
-    screen.getByRole("link", { name: "Long-term rentals" }),
-  ).toHaveAttribute("href", "/long-term-rentals");
-  expect(screen.queryByText("Bring your work together.")).toBeNull();
 });
 
 it("leaves the help center's fixed chrome unobstructed", () => {

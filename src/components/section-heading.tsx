@@ -29,6 +29,7 @@ export function SectionHeading({
   align = "center",
   as = "h2",
   tone = "default",
+  emphasisWeight = "bold",
   id,
   className,
   children,
@@ -45,6 +46,8 @@ export function SectionHeading({
   as?: HeadingTag;
   /** `inverse` is for dark backgrounds. */
   tone?: "default" | "inverse";
+  /** Feature pages use SemiBold. The shared kit default stays Bold. */
+  emphasisWeight?: "bold" | "semibold";
   id?: string;
   className?: string;
   /** Extra content under the subtitle, such as the pricing billing control. */
@@ -54,6 +57,7 @@ export function SectionHeading({
     <div
       className={[styles.block, className].filter(Boolean).join(" ")}
       data-align={align}
+      data-emphasis={emphasisWeight}
       data-size={size}
       data-tone={tone}
     >

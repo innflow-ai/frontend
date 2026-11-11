@@ -53,6 +53,9 @@ export const connectorGroups: ConnectorGroup[] = [
       { name: "Telegram", href: page("telegram") },
       { name: "WhatsApp", href: page("whatsapp") },
       { name: "Discord", href: page("discord"), note: "Send only" },
+      { name: "Zoom", unbuilt: true },
+      { name: "Mailchimp", unbuilt: true },
+      { name: "Twilio", unbuilt: true },
     ],
   },
   {
@@ -70,6 +73,11 @@ export const connectorGroups: ConnectorGroup[] = [
       { name: "Cal.com", href: page("cal-com") },
       { name: "Dub", href: page("dub") },
       { name: "QuickBooks", href: page("quickbooks"), note: "Beta" },
+      { name: "Asana", unbuilt: true },
+      { name: "Jira", unbuilt: true },
+      { name: "Salesforce", unbuilt: true },
+      { name: "Linear", unbuilt: true },
+      { name: "Monday", unbuilt: true },
     ],
   },
   {
@@ -113,20 +121,7 @@ export const connectorGroups: ConnectorGroup[] = [
         href: page("stripe"),
         note: "Payment event trigger only",
       },
-    ],
-  },
-  {
-    name: "Not in market yet",
-    items: [
-      { name: "Asana", unbuilt: true },
-      { name: "Jira", unbuilt: true },
-      { name: "Salesforce", unbuilt: true },
-      { name: "Zoom", unbuilt: true },
-      { name: "Mailchimp", unbuilt: true },
-      { name: "Linear", unbuilt: true },
-      { name: "Monday", unbuilt: true },
       { name: "Zapier", unbuilt: true },
-      { name: "Twilio", unbuilt: true },
     ],
   },
 ];

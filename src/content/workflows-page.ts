@@ -9,9 +9,22 @@ export const workflowsPage = {
     {
       id: "hero",
       type: "hero",
-      title: "Give every outcome a path your team can see.",
+      eyebrow: "Workflows",
+      title: "Give every outcome",
+      emphasis: "a path your team can see.",
       subtitle:
         "Build a workflow for the result you want. The owners, the review gates, the progress, and the proof all live in one view.",
+      lines: [
+        {
+          role: "You",
+          text: "Build a workflow for the result you want.",
+        },
+        {
+          role: "Launch owner",
+          text: "When a review is required, the gate shows who has to decide.",
+        },
+      ],
+      chips: ["Files", "History", "Proof"],
       primary: { label: "Start for free", href: appSignup },
       secondary: { label: "See a launch workflow", href: "#launch-workflow" },
     },
@@ -66,7 +79,9 @@ export const workflowsPage = {
     {
       id: "positioning",
       type: "split",
-      title: "Agents can execute the plan. People can always see the state.",
+      eyebrow: "The plan",
+      title: "Agents can execute the plan.",
+      emphasis: "People can always see the state.",
       body: "The workflow holds one outcome as it moves through agents, tools, waiting time, and decisions. Work inside a stage can adapt. Who hands off, and who has authority, stays written down.",
     },
     {
@@ -197,6 +212,7 @@ export const workflowsPage = {
         {
           title: "A launch needs more than a checklist",
           body: "A closer look at ownership, parallel work, human gates, recovery after failure, and what happens after launch day.",
+          links: [{ label: "Read the field note", href: "/blog" }],
         },
       ],
     },

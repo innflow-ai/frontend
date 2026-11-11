@@ -66,10 +66,23 @@
 
 .catalog li {
   display: grid;
-  gap: 4px;
+  grid-template-columns: 36px 1fr;
+  gap: 4px 10px;
+  align-items: center;
   padding: 14px;
   border: 1px solid #eeeeed;
   border-radius: 12px;
+}
+
+.tile {
+  grid-row: span 2;
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 10px;
+  color: #202020;
+  font-weight: 700;
 }
 
 .catalog a,

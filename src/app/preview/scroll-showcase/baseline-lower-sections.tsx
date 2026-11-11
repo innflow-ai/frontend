@@ -184,6 +184,14 @@ function CustomerStoryLayoutPreview() {
   );
 }
 
+/**
+ * Customer-story band under "Real customers. Real results." (Elena Morales
+ * and the other selected stories). Homepage and `/preview/scroll-showcase`
+ * both render this component. Set this to true to show the band again.
+ * Markup, CMS content, and the layout preview stay in place either way.
+ */
+export const SHOW_TESTIMONIAL = false;
+
 export function BaselineCustomerStories({
   testimonials,
   heading,
@@ -194,6 +202,9 @@ export function BaselineCustomerStories({
   previewFallback?: boolean;
 }) {
   const [active, setActive] = useState(0);
+  // One switch hides the whole band, including its padding, so the sections
+  // above and below meet with their own spacing and no empty slot remains.
+  if (!SHOW_TESTIMONIAL) return null;
   const selected = testimonials[active % Math.max(1, testimonials.length)];
   // Empty CMS selections remain empty: never replace customer evidence with reference endorsements.
   if (!selected) return previewFallback ? <CustomerStoryLayoutPreview /> : null;

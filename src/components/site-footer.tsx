@@ -76,7 +76,7 @@ export function SiteFooter() {
               />
             </a>
             <p>
-              Property operations.
+              Your AI agent workspace.
               <br />
               Connected in one place.
             </p>

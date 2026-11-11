@@ -35,6 +35,9 @@ it("keeps the sky close, members signup, and Property teams column in one footer
     screen.getByRole("heading", { name: /A clearer day starts/ }),
   ).toBeVisible();
   expect(screen.getByRole("heading", { name: "Property teams" })).toBeVisible();
+  expect(screen.getByText(/Your AI agent workspace\./)).toBeVisible();
+  expect(screen.getByText(/Connected in one place\./)).toBeVisible();
+  expect(screen.queryByText(/Property operations\./)).toBeNull();
   expect(
     screen.getByRole("link", { name: "Long-term rentals" }),
   ).toHaveAttribute("href", "/long-term-rentals");

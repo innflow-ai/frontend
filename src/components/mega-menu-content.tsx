@@ -105,6 +105,20 @@ const platformLinks: MegaMenuLink[] = [
   },
 ];
 
+// TODO(julian): confirm before these links appear in the product menu.
+const SHOW_STRUCTURE_PRODUCT_NAV = false;
+const structureProductLinks: MegaMenuLink[] = [
+  {
+    href: "/products/workflows",
+    icon: FlowArrow,
+    title: "Workflows",
+    body: "A visible path from the first trigger to the review.",
+  },
+];
+if (SHOW_STRUCTURE_PRODUCT_NAV) {
+  platformLinks.push(...structureProductLinks);
+}
+
 const buildWithAgentsLinks: MegaMenuLink[] = [
   {
     href: "/products/agent-studio",

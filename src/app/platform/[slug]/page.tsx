@@ -13,7 +13,9 @@ import { createPageMetadata } from "@/lib/metadata";
 type PlatformRouteProps = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
-  return platformPages.map(({ slug }) => ({ slug }));
+  return platformPages
+    .filter(({ slug }) => slug !== "integrations")
+    .map(({ slug }) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: PlatformRouteProps) {

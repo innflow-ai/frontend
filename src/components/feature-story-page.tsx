@@ -1,3 +1,4 @@
+import { ConnectorCatalog } from "@/components/connector-catalog";
 import { FeaturePageInk } from "@/components/feature-page-ink";
 import { BotIcon } from "@/components/icons/bot-icon";
 import { SectionHeading } from "@/components/section-heading";
@@ -8,6 +9,7 @@ import type {
   StoryLink,
   StorySection,
 } from "@/content/feature-story";
+import { connectorGroups } from "@/content/wired-connectors";
 import styles from "./feature-story-page.module.css";
 
 export function FeatureStoryPage({ sections }: { sections: StorySection[] }) {
@@ -59,7 +61,23 @@ function SectionView({ section }: { section: StorySection }) {
   if (section.type === "comparison") return <Comparison section={section} />;
   if (section.type === "chips") return <Chips section={section} />;
   if (section.type === "beats") return <Beats section={section} />;
-  if (section.type === "catalog") return null;
+  if (section.type === "catalog") {
+    return (
+      <section
+        className={styles.block}
+        id={section.anchor === section.id ? undefined : section.anchor}
+        aria-labelledby={section.id}
+      >
+        <SectionHeading
+          id={section.id}
+          align="start"
+          title={section.title}
+          subtitle={section.subtitle}
+        />
+        <ConnectorCatalog groups={connectorGroups} />
+      </section>
+    );
+  }
   const unhandled: never = section.type;
   return unhandled;
 }
@@ -110,7 +128,7 @@ function Features({ section }: { section: StorySection }) {
     return (
       <section
         className={styles.canvasBand}
-        id={section.anchor}
+        id={section.anchor === section.id ? undefined : section.anchor}
         aria-label={section.title}
       >
         <NodeBoard title={items[0].title} nodes={items[0].nodes} />
@@ -121,7 +139,7 @@ function Features({ section }: { section: StorySection }) {
     <section
       className={styles.block}
       aria-labelledby={section.id}
-      id={section.anchor}
+      id={section.anchor === section.id ? undefined : section.anchor}
     >
       {section.subtitle ? (
         <SectionHeading
@@ -183,7 +201,7 @@ function Steps({ section }: { section: StorySection }) {
   return (
     <section
       className={styles.block}
-      id={section.anchor}
+      id={section.anchor === section.id ? undefined : section.anchor}
       aria-labelledby={section.id}
     >
       <SectionHeading

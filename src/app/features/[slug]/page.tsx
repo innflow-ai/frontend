@@ -8,6 +8,7 @@ import {
   PageHero,
 } from "@/components/page-primitives";
 import { FeatureMedia } from "@/components/product-media";
+import { SectionHeading } from "@/components/section-heading";
 import { siteConfig } from "@/config/site";
 import { allFeatureSlugs, featurePages } from "@/content/marketing";
 import { getPageFaqs } from "@/lib/faqs";
@@ -114,9 +115,11 @@ export default async function FeaturePage({
         <FeatureMedia type={content.media} />
       </PageHero>
       <section className="section">
-        <div className="shell statement-grid">
-          <span className="section-label">The operational problem</span>
-          <h2>{content.problem}</h2>
+        <div className="shell">
+          <SectionHeading
+            eyebrow="The operational problem"
+            title={content.problem}
+          />
         </div>
       </section>
       <OperatingSteps
@@ -129,11 +132,11 @@ export default async function FeaturePage({
         items={content.controls}
       />
       <section className="section faq-section">
-        <div className="shell faq-layout">
-          <div className="faq-intro">
-            <span className="section-label">Your questions</span>
-            <h2>{faqHeading || "A clearer picture before you begin."}</h2>
-          </div>
+        <div className="shell">
+          <SectionHeading
+            eyebrow="Your questions"
+            title={faqHeading || "A clearer picture before you begin."}
+          />
           <FaqList items={faqs} />
         </div>
       </section>

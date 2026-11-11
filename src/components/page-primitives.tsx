@@ -7,6 +7,7 @@ import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
 
 import experience from "./product-experience.module.css";
+import { SectionHeading } from "./section-heading";
 
 export function MarketingPage({ children }: { children: ReactNode }) {
   return (
@@ -107,12 +108,12 @@ export function OperatingSteps({
 }) {
   return (
     <section className="section">
-      <div className="shell editorial-grid">
-        <div className="editorial-intro">
-          <span className="section-label">Operating model</span>
-          <h2>{title}</h2>
-          <p>{intro}</p>
-        </div>
+      <div className="shell">
+        <SectionHeading
+          eyebrow="Operating model"
+          title={title}
+          subtitle={intro}
+        />
         <ul className="operating-list">
           {steps.map((step) => (
             <li key={step}>
@@ -137,10 +138,7 @@ export function ControlsGrid({
   return (
     <section className="section quiet-section">
       <div className="shell">
-        <div className="section-intro compact-intro">
-          <span className="section-label">{eyebrow}</span>
-          <h2>{title}</h2>
-        </div>
+        <SectionHeading eyebrow={eyebrow} title={title} />
         <div className="control-card-grid">
           {items.map((item) => (
             <article key={item.title}>

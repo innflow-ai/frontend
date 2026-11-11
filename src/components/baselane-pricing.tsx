@@ -18,6 +18,7 @@ import {
 import { siteConfig } from "@/config/site";
 import styles from "./baselane-pricing.module.css";
 import { InnerPageShell } from "./inner-page-shell";
+import { SectionHeading } from "./section-heading";
 
 const plans = Object.values(pricingCatalog.plans);
 const { pro, business } = pricingCatalog.plans;
@@ -185,58 +186,54 @@ export function BaselanePricing() {
     <InnerPageShell>
       <div className={styles.page}>
         <section className={styles.hero} aria-labelledby="pricing-title">
-          <div className={styles.intro}>
-            <h1 id="pricing-title">
-              Pick a plan.
-              <br />
-              <span className={styles.serifHeading}>
-                Your AI team is waiting.
-              </span>
-            </h1>
-            <div className={styles.introDetails}>
-              <p>Agents, workflows and knowledge. One workspace.</p>
-              <fieldset
-                className={styles.billing}
-                data-annual={annual}
-                aria-describedby="billing-note"
-              >
-                <legend className={styles.srOnly}>Billing term</legend>
-                <label>
-                  <input
-                    type="radio"
-                    name="billing"
-                    value="monthly"
-                    checked={!annual}
-                    onChange={() => setAnnual(false)}
-                  />
-                  Monthly
-                </label>
+          <SectionHeading
+            id="pricing-title"
+            level={1}
+            title="Pick a plan."
+            accent="Your AI team is waiting."
+            subtitle="Agents, workflows and knowledge. One workspace."
+          >
+            <fieldset
+              className={styles.billing}
+              data-annual={annual}
+              aria-describedby="billing-note"
+            >
+              <legend className={styles.srOnly}>Billing term</legend>
+              <label>
+                <input
+                  type="radio"
+                  name="billing"
+                  value="monthly"
+                  checked={!annual}
+                  onChange={() => setAnnual(false)}
+                />
+                Monthly
+              </label>
 
-                <label>
-                  <input
-                    type="radio"
-                    name="billing"
-                    value="annual"
-                    checked={annual}
-                    onChange={() => setAnnual(true)}
-                  />
-                  Yearly{" "}
-                  <span className={styles.savings}>
-                    (up to {maxAnnualSavingsPercent}% off)
-                  </span>
-                </label>
-              </fieldset>
-              <p
-                id="billing-note"
-                className={styles.billingNote}
-                aria-live="polite"
-              >
-                {annual
-                  ? "Billed yearly upfront. Monthly equivalents shown. All prices in USD."
-                  : "No annual commitment. All prices in USD."}
-              </p>
-            </div>
-          </div>
+              <label>
+                <input
+                  type="radio"
+                  name="billing"
+                  value="annual"
+                  checked={annual}
+                  onChange={() => setAnnual(true)}
+                />
+                Yearly{" "}
+                <span className={styles.savings}>
+                  (up to {maxAnnualSavingsPercent}% off)
+                </span>
+              </label>
+            </fieldset>
+            <p
+              id="billing-note"
+              className={styles.billingNote}
+              aria-live="polite"
+            >
+              {annual
+                ? "Billed yearly upfront. Monthly equivalents shown. All prices in USD."
+                : "No annual commitment. All prices in USD."}
+            </p>
+          </SectionHeading>
           <nav className={styles.planNav} aria-label="Jump to a plan">
             {plans.map((plan) => (
               <a key={plan.name} href={`#plan-${plan.name.toLowerCase()}`}>

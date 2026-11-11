@@ -5,6 +5,7 @@ import { getProductFaqs } from "@/content/product-faqs";
 import { JsonLd } from "./json-ld";
 import { PlatformPiecesAccordion } from "./platform-pieces-accordion";
 import styles from "./platform-product-page.module.css";
+import { SectionHeading } from "./section-heading";
 
 const shots = {
   home: {
@@ -362,12 +363,11 @@ export function PlatformProductPage() {
         className={styles.options}
         aria-labelledby="platform-options-title"
       >
-        <div className={styles.sectionHead}>
-          <Eyebrow>Your options</Eyebrow>
-          <h2 id="platform-options-title">
-            More ways to move your work forward.
-          </h2>
-        </div>
+        <SectionHeading
+          id="platform-options-title"
+          eyebrow="Your options"
+          title="More ways to move your work forward."
+        />
         <div className={styles.optionGrid}>
           {options.map((option) => (
             <article className={styles.option} key={option.title}>
@@ -394,14 +394,12 @@ export function PlatformProductPage() {
 
       <section className={styles.focus} aria-labelledby="platform-focus-title">
         <div className={styles.focusPanel}>
-          <div className={styles.sectionHead}>
-            <Eyebrow>Platform in focus</Eyebrow>
-            <h2 id="platform-focus-title">Every handoff. One clear flow.</h2>
-            <p>
-              Build a workflow once, keep it in one place, and turn it on when
-              it is ready to run.
-            </p>
-          </div>
+          <SectionHeading
+            id="platform-focus-title"
+            eyebrow="Platform in focus"
+            title="Every handoff. One clear flow."
+            subtitle="Build a workflow once, keep it in one place, and turn it on when it is ready to run."
+          />
           <AppWindow
             shot="workflows"
             frameClassName={styles.heroFrame}
@@ -432,13 +430,11 @@ export function PlatformProductPage() {
         id="faq"
         aria-labelledby="platform-faq-title"
       >
-        <div className={styles.sectionHead}>
-          <h2 id="platform-faq-title">Frequently asked questions</h2>
-          <p>
-            Direct answers on agents, workflows, human review, integrations,
-            deployment, and security.
-          </p>
-        </div>
+        <SectionHeading
+          id="platform-faq-title"
+          title="Frequently asked questions"
+          subtitle="Direct answers on agents, workflows, human review, integrations, deployment, and security."
+        />
         {/* FAQ answers are pending Julian's approval. */}
         <div className={styles.faqList}>
           {faqs.map((faq) => (
@@ -467,11 +463,12 @@ export function PlatformProductPage() {
       </section>
 
       <section className={styles.next} aria-labelledby="platform-next-title">
-        <div className={styles.sectionHead}>
-          <Eyebrow>Keep exploring</Eyebrow>
-          <h2 id="platform-next-title">Where to go next.</h2>
-          <p>Pick the page that answers your next question.</p>
-        </div>
+        <SectionHeading
+          id="platform-next-title"
+          eyebrow="Keep exploring"
+          title="Where to go next."
+          subtitle="Pick the page that answers your next question."
+        />
         <div className={styles.nextGrid}>
           {nextStops.map((stop) => (
             <Link className={styles.nextCard} href={stop.href} key={stop.href}>

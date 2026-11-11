@@ -21,37 +21,6 @@
   background: var(--pricing-cloud);
   border-radius: 64px;
 }
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  max-width: 1200px;
-  margin: auto;
-  text-align: center;
-}
-.page .intro h1 {
-  font-size: 71px;
-  line-height: 0.95;
-  letter-spacing: -0.03em;
-  font-weight: 700;
-  color: #333;
-  margin: 0;
-}
-.serifHeading {
-  font-family: var(--font-source-serif-4), serif;
-  font-weight: 400;
-}
-.introDetails {
-  width: 100%;
-  min-width: 0;
-}
-.introDetails > p {
-  font-family: var(--font-archivo), sans-serif;
-  color: #333;
-  font-size: 20px;
-  line-height: 26px;
-}
 .billing {
   position: relative;
   isolation: isolate;
@@ -118,7 +87,8 @@
   font-size: 14px;
   white-space: nowrap;
 }
-.introDetails .billingNote {
+.billingNote {
+  font-family: var(--font-archivo), sans-serif;
   font-size: 12px;
   line-height: 18px;
   color: var(--pricing-muted);
@@ -647,9 +617,6 @@
   .hero {
     padding: 72px 32px 56px;
   }
-  .intro {
-    gap: 32px;
-  }
   .planGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 64px 24px;
@@ -673,17 +640,6 @@
     margin-inline: 12px;
     padding: 48px 20px 32px;
     border-radius: 36px;
-  }
-  .intro {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-  .page .intro h1 {
-    font-size: 38px;
-    letter-spacing: -1.2px;
-  }
-  .introDetails > p {
-    font-size: 16px;
   }
   .billing {
     gap: 4px;

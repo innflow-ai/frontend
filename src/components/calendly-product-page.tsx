@@ -21,6 +21,7 @@ import {
   placementAttributes,
 } from "./product-artwork/inventory";
 import { ProductArtwork } from "./product-artwork/product-artwork";
+import { SectionHeading } from "./section-heading";
 import { TrackedLink } from "./tracked-link";
 
 const geist = Geist({
@@ -242,11 +243,11 @@ export function CalendlyProductPage({
       {(features.length ? content.intro?.slice(1) : content.intro)?.map(
         (intro) => (
           <section className={styles.statement} key={intro.title}>
-            {intro.eyebrow && (
-              <span className={styles.eyebrow}>{intro.eyebrow}</span>
-            )}
-            <h2>{intro.title}</h2>
-            {intro.body && <p>{intro.body}</p>}
+            <SectionHeading
+              eyebrow={intro.eyebrow || undefined}
+              title={intro.title}
+              subtitle={intro.body || undefined}
+            />
           </section>
         ),
       )}
@@ -257,18 +258,18 @@ export function CalendlyProductPage({
           className={styles.walkthrough}
           aria-label={`${content.name} features`}
         >
-          <div className={styles.centerHeading}>
-            <span className={styles.eyebrow}>
-              {variant === "payments"
-                ? "Your options"
-                : "Made for your workflow"}
-            </span>
-            <h2>
-              More ways to move
-              <br />
-              your work forward.
-            </h2>
-          </div>
+          <SectionHeading
+            eyebrow={
+              variant === "payments" ? "Your options" : "Made for your workflow"
+            }
+            title={
+              <>
+                More ways to move
+                <br />
+                your work forward.
+              </>
+            }
+          />
           <section
             className={styles.cardRail}
             // The horizontal feature rail must be keyboard-scrollable.
@@ -340,10 +341,10 @@ export function CalendlyProductPage({
       {testimonials && <div className={styles.evidence}>{testimonials}</div>}
       {Boolean(content.faqs?.length) && (
         <section className={styles.faq} id="faq">
-          <h2>{content.faqHeading || "Frequently asked questions"}</h2>
-          {content.faqDescription && (
-            <p className={styles.faqDescription}>{content.faqDescription}</p>
-          )}
+          <SectionHeading
+            title={content.faqHeading || "Frequently asked questions"}
+            subtitle={content.faqDescription || undefined}
+          />
           <div>
             {content.faqs?.map((faq) => (
               <details key={faq.question}>

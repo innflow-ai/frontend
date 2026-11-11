@@ -421,11 +421,11 @@
 .popular button:hover {
   background: #dddfdf;
 }
-.using h2 {
-  font-size: 24px;
-  line-height: 1.4;
-  letter-spacing: -0.02em;
+.sectionLead {
   margin-bottom: 24px;
+}
+.needHelp .sectionLead {
+  margin-bottom: 40px;
 }
 .cardGrid {
   display: grid;
@@ -528,16 +528,6 @@
   border-top: 1px solid var(--line);
   padding: 48px 32px;
   text-align: center;
-}
-.needHelp > h2 {
-  font-size: 48px;
-  line-height: 1.1;
-}
-.needHelp > p {
-  font-size: 20px;
-  color: var(--muted);
-  margin-top: 24px;
-  margin-bottom: 40px;
 }
 .needHelp > .cardGrid {
   max-width: 1136px;
@@ -982,10 +972,6 @@
   .popular {
     display: none;
   }
-  .using h2 {
-    font-size: 20px;
-    margin-bottom: 24px;
-  }
   .cardGrid {
     grid-template-columns: 1fr;
     gap: 12px;
@@ -1066,13 +1052,6 @@
   }
   .needHelp {
     padding: 48px 24px;
-  }
-  .needHelp > h2 {
-    font-size: 24px;
-  }
-  .needHelp > p {
-    font-size: 14px;
-    margin: 16px 0 24px;
   }
   .footer {
     padding: 32px 24px 100px;

@@ -18,6 +18,7 @@ import { FeatureTestimonials } from "./page-testimonials";
 import { ProductHeadspaceCta } from "./product-headspace-cta";
 import styles from "./product-page.module.css";
 import { RuneyWorkspace } from "./runey-workspace";
+import { SectionHeading } from "./section-heading";
 import { WorkflowIllustration } from "./workflow-illustration";
 
 function ctaDestination(cta: ProductCta) {
@@ -219,13 +220,11 @@ export async function ProductPage({ product }: { product: ProductPageData }) {
         if (section._type === "productIntroSection") {
           return (
             <section className={styles.intro} key={section._key}>
-              <div className={styles.introInner}>
-                {section.eyebrow ? (
-                  <span className={styles.eyebrow}>{section.eyebrow}</span>
-                ) : null}
-                <h2>{section.heading}</h2>
-                <p>{section.body}</p>
-              </div>
+              <SectionHeading
+                eyebrow={section.eyebrow || undefined}
+                title={section.heading}
+                subtitle={section.body}
+              />
             </section>
           );
         }
@@ -296,14 +295,11 @@ export async function ProductPage({ product }: { product: ProductPageData }) {
           aria-label="Frequently asked questions"
         >
           <div className={`${styles.shell} ${styles.faqInner}`}>
-            <div className={styles.faqIntro}>
-              <span className={styles.eyebrow}>FAQ</span>
-              <h2>{faqHeading || `Questions about ${product.title}.`}</h2>
-              <p>
-                Direct answers on agents, memory, human review, deployment, and
-                security, and fitting innflow into your operation.
-              </p>
-            </div>
+            <SectionHeading
+              eyebrow="FAQ"
+              title={faqHeading || `Questions about ${product.title}.`}
+              subtitle="Direct answers on agents, memory, human review, deployment, and security, and fitting innflow into your operation."
+            />
             <FaqList items={faqs} />
           </div>
         </section>

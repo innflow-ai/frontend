@@ -1,0 +1,76 @@
+/* Pricing intro, extracted. Values match baselane-pricing before this split. */
+.block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  width: 100%;
+}
+
+.block[data-align="start"] {
+  align-items: flex-start;
+  margin: 0;
+  text-align: start;
+}
+
+.block .eyebrow {
+  margin: 0;
+  color: #333;
+  font-family: var(--font-archivo), sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+}
+
+.block :is(h1, h2, h3).title {
+  margin: 0;
+  color: #333;
+  font-family: var(--font-archivo), sans-serif;
+  font-size: 71px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+}
+
+.accent {
+  font-family: var(--font-source-serif-4), serif;
+  font-weight: 400;
+}
+
+.details {
+  width: 100%;
+  min-width: 0;
+}
+
+.block .subtitle {
+  margin: 0;
+  color: #333;
+  font-family: var(--font-archivo), sans-serif;
+  font-size: 20px;
+  line-height: 26px;
+}
+
+@media (max-width: 1199px) {
+  .block {
+    gap: 32px;
+  }
+}
+
+@media (max-width: 700px) {
+  .block {
+    gap: 24px;
+  }
+
+  .block :is(h1, h2, h3).title {
+    font-size: 38px;
+    letter-spacing: -1.2px;
+  }
+
+  .block .subtitle {
+    font-size: 16px;
+  }
+}

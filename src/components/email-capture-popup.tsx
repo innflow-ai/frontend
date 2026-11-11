@@ -8,7 +8,6 @@ import {
   useRef,
   useState,
 } from "react";
-import { BotIcon } from "@/components/icons/bot-icon";
 import { Multiply as X } from "@/components/icons/mage/Multiply";
 import {
   EMAIL_CAPTURE_DELAY_MS,
@@ -153,12 +152,9 @@ export function EmailCapturePopup({
       >
         <X size={16} aria-hidden="true" />
       </button>
-      <div className={styles.titleRow}>
-        <BotIcon size={18} />
-        <h2 id="email-capture-title" className={styles.headline}>
-          {variant === "upsell" ? offer.headline : emailCaptureCopy.headline}
-        </h2>
-      </div>
+      <h2 id="email-capture-title" className={styles.headline}>
+        {variant === "upsell" ? offer.headline : emailCaptureCopy.headline}
+      </h2>
       <p id="email-capture-copy" className={styles.subcopy}>
         {variant === "upsell" ? offer.subcopy : emailCaptureCopy.subcopy}
       </p>

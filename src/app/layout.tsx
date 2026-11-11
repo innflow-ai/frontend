@@ -1,16 +1,19 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, Geist_Mono, Source_Serif_4 } from "next/font/google";
+import { Archivo, Geist_Mono, Inter, Source_Serif_4 } from "next/font/google";
 import type { ReactNode } from "react";
 import { ConsentManagedTags } from "@/components/consent-managed-tags";
 import { DeferredAnalytics } from "@/components/deferred-analytics";
+import { EmailCaptureSlot } from "@/components/email-capture-slot";
 import { MarketingPageView } from "@/components/marketing-page-view";
 import { MarketingRuntime } from "@/components/marketing-runtime";
 import type { LatestBlogPostNavItem } from "@/components/mega-menu";
 import { NavigationBlogPostsProvider } from "@/components/navigation-blog-posts";
+import { OfferAnnouncementBar } from "@/components/offer-announcement-bar";
 import { PostHogObservability } from "@/components/posthog-observability";
 import { SiteCloseAndFooter } from "@/components/site-close-and-footer";
 import { SiteHeader } from "@/components/site-header";
 import { SmoothScroll } from "@/components/smooth-scroll";
+import { announcementBar, offerBarBootScript } from "@/config/announcement-bar";
 import { siteConfig } from "@/config/site";
 import {
   formatPostDate,
@@ -37,6 +40,19 @@ const sourceSerif = Source_Serif_4({
   // 400 is the kit regular. 500 stays for serif headings outside this kit.
   weight: ["400", "500"],
   variable: "--font-source-serif-4",
+  display: "swap",
+});
+const archivoItalic = Archivo({
+  subsets: ["latin"],
+  weight: "800",
+  style: "italic",
+  variable: "--font-archivo-italic",
+  display: "swap",
+});
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["500", "600"],
+  variable: "--font-inter",
   display: "swap",
 });
 const geistMono = Geist_Mono({
@@ -169,7 +185,7 @@ export default async function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${archivo.variable} ${sourceSerif.variable} ${geistMono.variable}`}
+      className={`${archivo.variable} ${archivoItalic.variable} ${inter.variable} ${sourceSerif.variable} ${geistMono.variable}`}
       suppressHydrationWarning
     >
       <head>
@@ -178,6 +194,13 @@ export default async function RootLayout({
             __html: `try{var t=localStorage.getItem("innflow-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t;}catch(e){}`,
           }}
         />
+        {announcementBar.enabled ? (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: offerBarBootScript(announcementBar),
+            }}
+          />
+        ) : null}
       </head>
       <body>
         <SmoothScroll />
@@ -198,6 +221,7 @@ export default async function RootLayout({
           latestUpdate={latestUpdate}
           testimonial={navigationTestimonial}
         >
+          <OfferAnnouncementBar />
           <SiteHeader />
           {children}
           <SiteCloseAndFooter />
@@ -206,6 +230,7 @@ export default async function RootLayout({
         <MarketingPageView />
         <ConsentManagedTags />
         <PostHogObservability experience={experience} />
+        <EmailCaptureSlot />
         <DeferredAnalytics />
       </body>
     </html>

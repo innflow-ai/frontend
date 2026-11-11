@@ -1,0 +1,263 @@
+/*
+  Sky offer bar. It sits in normal flow above the nav and scrolls away.
+  Height stays 44px (76px on small screens only when a model pill is present).
+*/
+:global(html[data-offer-bar="hidden"]) .bar {
+  display: none;
+}
+
+.bar {
+  position: relative;
+  z-index: 94;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-sizing: border-box;
+  height: 44px;
+  margin: 0;
+  padding: 0 56px;
+  background: #4eabf8;
+  color: #fff;
+  font-family: var(--font-archivo), Arial, sans-serif;
+}
+
+.offer,
+.cta,
+.model {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  height: 28px;
+  margin: 0;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.offer {
+  gap: 7px;
+  padding: 0 14px 0 12px;
+  background: linear-gradient(90deg, #d02f7a 0%, #c2309a 50%, #d02f7a 100%);
+}
+
+.alarm {
+  display: block;
+}
+
+.headline {
+  margin: 0;
+  font-family: var(--font-archivo-italic), var(--font-archivo), Arial, sans-serif;
+  font-size: 13px;
+  font-style: italic;
+  font-weight: 800;
+  line-height: 16px;
+}
+
+.caption {
+  margin: 0;
+  color: #fff;
+  font-family: var(--font-inter), Inter, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 14px;
+}
+
+.timer {
+  display: inline-flex;
+  align-items: center;
+  gap: 1px;
+  margin: 0;
+  color: #fff;
+  font-family: var(--font-inter), Inter, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+  line-height: 16px;
+}
+
+.timer[data-ready="false"] {
+  visibility: hidden;
+}
+
+.digit {
+  display: inline-block;
+  width: 20px;
+  text-align: center;
+}
+
+.colon {
+  color: #f8d0f8;
+}
+
+.suffix {
+  display: none;
+  color: #f8d0f8;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.cta {
+  gap: 5px;
+  padding: 0 12px 0 14px;
+  background: #111519;
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 16px;
+  text-decoration: none;
+}
+
+.cta img {
+  display: block;
+  width: 12px;
+  height: 12px;
+}
+
+.model {
+  gap: 6px;
+  padding: 0 10px;
+  background: #111519;
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 16px;
+}
+
+.model img {
+  display: block;
+  width: 12px;
+  height: 12px;
+}
+
+.modelTag {
+  color: #5ea8ec;
+  font-weight: 800;
+}
+
+.modelBot {
+  display: grid;
+  width: 16px;
+  height: 16px;
+  place-items: center;
+  border-radius: 8px;
+  background: #fff;
+  color: #111519;
+}
+
+.dismiss {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  display: grid;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border: 0;
+  border-radius: 12px;
+  background: transparent;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.dismiss img {
+  display: block;
+  width: 12px;
+  height: 12px;
+}
+
+.live {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.bar :is(a, button):focus-visible {
+  outline: 2px solid #111519;
+  outline-offset: 2px;
+}
+
+@media (max-width: 700px) {
+  .bar {
+    gap: 6px;
+    height: 44px;
+    padding: 0 36px 0 8px;
+  }
+
+  .bar:has(.model) {
+    flex-wrap: wrap;
+    height: 76px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+  }
+
+  .offer,
+  .cta,
+  .model {
+    height: 26px;
+  }
+
+  .offer {
+    gap: 5px;
+    padding: 0 10px 0 9px;
+  }
+
+  .headline {
+    font-size: 11.5px;
+  }
+
+  .caption {
+    display: none;
+  }
+
+  .timer {
+    font-size: 12px;
+  }
+
+  .digit {
+    width: 16px;
+  }
+
+  .suffix {
+    display: inline;
+  }
+
+  .seconds {
+    display: none;
+  }
+
+  .cta {
+    gap: 4px;
+    padding: 0 9px 0 10px;
+    font-size: 11.5px;
+  }
+
+  .dismiss {
+    top: 9px;
+    right: 8px;
+    transform: none;
+  }
+}
+
+@media (max-width: 389px) {
+  .bar {
+    gap: 4px;
+    padding-right: 32px;
+  }
+
+  .headline,
+  .cta {
+    font-size: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bar,
+  .cta,
+  .dismiss {
+    transition: none;
+    scroll-behavior: auto;
+  }
+}

@@ -338,7 +338,7 @@ export function BaselaneMultiProperty({
               "resources-desktop",
             ],
           ].map(([title, text, photo], i) => (
-            <a href="/products/agentic-workflows" key={title}>
+            <a href="/features/workflows" key={title}>
               <Photo root={assetRoot} name={photo} />
               <small>{title}</small>
               <h3>{content?.stories[i] ?? text}</h3>

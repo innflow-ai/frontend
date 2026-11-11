@@ -10,7 +10,10 @@ import { DashMenu as List } from "@/components/icons/mage/DashMenu";
 import { MegaphoneA as Megaphone } from "@/components/icons/mage/MegaphoneA";
 import { Multiply as X } from "@/components/icons/mage/Multiply";
 import { siteConfig } from "@/config/site";
-import { INNER_PAGE_ANNOUNCEMENTS_ENABLED } from "@/lib/marketing-chrome";
+import {
+  EXPERIENCE_ANNOUNCEMENT_ENABLED,
+  INNER_PAGE_ANNOUNCEMENTS_ENABLED,
+} from "@/lib/marketing-chrome";
 import { isShowcaseHome } from "@/lib/showcase-routes";
 import {
   useNavigationAppUpdate,
@@ -52,6 +55,7 @@ export function SiteHeader() {
   const pathname = usePathname();
   const [announcementDismissed, setAnnouncementDismissed] = useState(false);
   const announcementHidden =
+    !EXPERIENCE_ANNOUNCEMENT_ENABLED ||
     announcementDismissed ||
     (!INNER_PAGE_ANNOUNCEMENTS_ENABLED && !isShowcaseHome(pathname));
   const [previewShowcasePassed, setPreviewShowcasePassed] = useState(false);

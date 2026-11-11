@@ -1,0 +1,89 @@
+.catalog {
+  display: grid;
+  gap: 28px;
+}
+
+.search {
+  display: grid;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.search input {
+  height: 44px;
+  padding: 0 14px;
+  border: 1px solid #eeeeed;
+  border-radius: 10px;
+  background: #fbfbfb;
+  font: 400 16px / 24px var(--font-archivo), Arial, sans-serif;
+}
+
+.legend {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.filters {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filters button {
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid #eeeeed;
+  border-radius: 999px;
+  background: #fff;
+  color: #202020;
+  font: 600 13px / 18px var(--font-archivo), Arial, sans-serif;
+}
+
+.filters button[aria-pressed="true"] {
+  background: #202020;
+  color: #fff;
+}
+
+.catalog h3 {
+  margin: 0 0 12px;
+  font-size: 18px;
+}
+
+.catalog ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.catalog li {
+  display: grid;
+  gap: 4px;
+  padding: 14px;
+  border: 1px solid #eeeeed;
+  border-radius: 12px;
+}
+
+.catalog a,
+.catalog li > span {
+  color: #202020;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.catalog a:hover {
+  text-decoration: underline;
+}
+
+.catalog small {
+  color: #5c5c5c;
+  font-size: 12px;
+}

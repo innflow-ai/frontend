@@ -38,6 +38,8 @@
   --brand-hover: #0095db;
   --brand-soft: #e0f4ff;
   --brand-kit-blue: #5aaaf8;
+  /* Lime subscribe action on the email card. Pending Julian. */
+  --email-subscribe: #e4f054;
   --deep: #070909;
   --deep-surface: #121515;
   --deep-border: #2a2f2e;
@@ -74,6 +76,10 @@
   --gradient-connections-governance:
     #f5f7df 0%, #f4f1d5 14%, #f4dcb6 25%,
     #efb7a3 35%, #dd8fa9 52%, #d896ba 69%, #7a94d5 86%, #5b8edd 100%;
+}
+
+html[data-logo-ink="feature"] img[src*="innflow-wordmark.svg"] {
+  filter: brightness(0) invert(12.55%);
 }
 
 * {

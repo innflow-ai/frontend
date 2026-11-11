@@ -3038,7 +3038,7 @@
   {
     "key": "workflows",
     "name": "Workflows",
-    "path": "/products/agentic-workflows",
+    "path": "/features/workflows",
     "figmaNode": "155:5413",
     "title": "Give recurring work a clear next step.",
     "description": "Connect triggers, actions, and activity in a workflow your property team can follow.",

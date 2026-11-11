@@ -352,7 +352,11 @@ export function HelpCenter() {
       >
         <ChatCircleDots size={26} />
       </button>
-      <nav className={styles.mobileBar} aria-label="Help tools">
+      <nav
+        className={styles.mobileBar}
+        data-bottom-banner=""
+        aria-label="Help tools"
+      >
         <a href="/help" aria-current="page">
           <Books />
           Help

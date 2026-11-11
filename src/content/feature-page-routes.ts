@@ -127,4 +127,8 @@ export const featurePageRoutes = [
     title: "Accounting",
     value: "/landlord-accounting",
   },
+  {
+    title: "Workflows",
+    value: "/features/workflows",
+  },
 ] as const;

@@ -24,27 +24,18 @@ afterEach(() => {
   cleanup();
   vi.unstubAllGlobals();
 });
-it("reserves homepage chrome and dismisses the announcement with focus restored", () => {
+it("keeps the experience strip off without leaving a gap above the nav", () => {
   render(<SiteHeader />);
-  expect(
-    screen.getByRole("complementary", { name: "Innflow announcement" }),
-  ).toBeVisible();
-  expect(
-    screen.getByRole("link", {
-      name: "Learn more about the new Innflow experience",
-    }),
-  ).toHaveAttribute("href", "#workspace-overview");
-  const header = screen.getByRole("banner");
-  expect(header).toHaveAttribute("data-preview-navigation", "flat");
-  fireEvent.click(screen.getByRole("button", { name: "Dismiss announcement" }));
   expect(
     screen.queryByRole("complementary", { name: "Innflow announcement" }),
   ).toBeNull();
+  expect(screen.queryByText("Explore the new Innflow experience")).toBeNull();
+  const header = screen.getByRole("banner");
+  expect(header).toHaveAttribute("data-preview-navigation", "flat");
   expect(document.querySelector("[data-preview-chrome]")).toHaveAttribute(
     "data-announcement-dismissed",
     "true",
   );
-  expect(screen.getByRole("link", { name: "innflow home" })).toHaveFocus();
 });
 it("waits for the overview, responds to reverse scroll and resize, and preserves showcase hiding", () => {
   let overviewTop = window.innerHeight + 500;

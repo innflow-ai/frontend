@@ -17,7 +17,7 @@ const footerMenus = [
       ["Share innflow", "/landlord-referral"],
       ["Partnerships", "/partner-with-us"],
       ["Advisor partnerships", "/advisor-partner-program"],
-      ["Workflows", "/products/agentic-workflows"],
+      ["Workflows", "/features/workflows"],
       ["AI assistant", "/products/ai-agents"],
       ["Knowledge", "/platform"],
       ["Approvals", "/platform/security-and-compliance"],

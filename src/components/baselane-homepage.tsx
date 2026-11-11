@@ -144,7 +144,7 @@ export function BaselaneHomepage({ children }: { children?: ReactNode }) {
                   tag: "WORKFLOWS",
                   title: "Give every handoff a clear next step.",
                   copy: "Bring triggers, connected actions, and review points into a workflow your team can follow.",
-                  href: "/products/agentic-workflows",
+                  href: "/features/workflows",
                   view: "Workflows" as const,
                   note: "From the first request to the final review, keep the right context attached to every step.",
                   foot: "Your team stays in control.",

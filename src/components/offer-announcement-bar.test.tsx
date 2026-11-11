@@ -29,7 +29,9 @@ afterEach(() => {
 
 it("shows the offer, an exact pricing link, and a stable countdown", () => {
   vi.setSystemTime(target - (2 * 86400 + 3 * 3600 + 4 * 60 + 5) * 1000);
-  render(<OfferAnnouncementBar />);
+  render(
+    <OfferAnnouncementBar config={{ ...announcementBar, enabled: true }} />,
+  );
   const offer = screen.getByRole("complementary", { name: "Get 63% off now" });
   expect(offer).toHaveAttribute("data-announcement-id", announcementBar.id);
   expect(screen.getByRole("link", { name: "See pricing" })).toHaveAttribute(
@@ -45,7 +47,9 @@ it("shows the offer, an exact pricing link, and a stable countdown", () => {
 
 it("hides the bar when the countdown reaches zero", () => {
   vi.setSystemTime(target - 1500);
-  render(<OfferAnnouncementBar />);
+  render(
+    <OfferAnnouncementBar config={{ ...announcementBar, enabled: true }} />,
+  );
   expect(
     screen.getByRole("complementary", { name: "Get 63% off now" }),
   ).toBeInTheDocument();
@@ -60,7 +64,9 @@ it("hides the bar when the countdown reaches zero", () => {
 
 it("keeps an optional live message hidden unless one is configured", () => {
   vi.setSystemTime(target + 1000);
-  const { unmount } = render(<OfferAnnouncementBar />);
+  const { unmount } = render(
+    <OfferAnnouncementBar config={{ ...announcementBar, enabled: true }} />,
+  );
   expect(
     screen.queryByRole("complementary", { name: "Get 63% off now" }),
   ).toBeNull();
@@ -68,7 +74,11 @@ it("keeps an optional live message hidden unless one is configured", () => {
   document.documentElement.removeAttribute("data-offer-bar");
   render(
     <OfferAnnouncementBar
-      config={{ ...announcementBar, liveMessage: "The offer is live" }}
+      config={{
+        ...announcementBar,
+        enabled: true,
+        liveMessage: "The offer is live",
+      }}
     />,
   );
   expect(
@@ -79,7 +89,9 @@ it("keeps an optional live message hidden unless one is configured", () => {
 
 it("remembers a dismissal per announcement id", () => {
   vi.setSystemTime(target - 86400 * 1000);
-  render(<OfferAnnouncementBar />);
+  render(
+    <OfferAnnouncementBar config={{ ...announcementBar, enabled: true }} />,
+  );
   fireEvent.click(screen.getByRole("button", { name: "Dismiss offer" }));
   expect(localStorage.getItem(announcementStorageKey(announcementBar.id))).toBe(
     "dismissed",
@@ -92,12 +104,17 @@ it("remembers a dismissal per announcement id", () => {
   document.documentElement.removeAttribute("data-offer-bar");
   render(
     <OfferAnnouncementBar
-      config={{ ...announcementBar, id: "next-discount" }}
+      config={{ ...announcementBar, enabled: true, id: "next-discount" }}
     />,
   );
   expect(
     screen.getByRole("complementary", { name: "Get 63% off now" }),
   ).toBeInTheDocument();
+});
+
+it("stays off while the offer switch is disabled", () => {
+  render(<OfferAnnouncementBar />);
+  expect(screen.queryByRole("complementary")).toBeNull();
 });
 
 it("does not render when the offer is disabled", () => {

@@ -23,7 +23,7 @@ export type AnnouncementBarConfig = {
 };
 
 export const announcementBar: AnnouncementBarConfig = {
-  enabled: true,
+  enabled: false,
   id: "discount-63-placeholder",
   message: "Get 63% off now",
   modelName: "",

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CalendlyCmsProductPage } from "@/components/calendly-product-adapters";
 import { JsonLd } from "@/components/json-ld";
+import { PlatformProductPage } from "@/components/platform-product-page";
 import { ProductPage } from "@/components/product-page";
 import { siteConfig } from "@/config/site";
 import { getProductDesign } from "@/content/product-design-rotation";
@@ -29,6 +30,15 @@ export async function generateMetadata({
       description: "The requested Innflow product page could not be found.",
       path: `/products/${slug}`,
       noIndex: true,
+    });
+  }
+
+  if (slug === "platform") {
+    return createPageMetadata({
+      title: "AI Agent Builder and Workflow Automation Platform | Innflow",
+      description:
+        "Bring your team, tools, and knowledge into one flow. Build agents, connect your tools, and run workflows with room for people to review what matters.",
+      path: "/products/platform",
     });
   }
 
@@ -84,7 +94,9 @@ export default async function ProductRoute({ params }: ProductRouteProps) {
           ],
         }}
       />
-      {getProductDesign(`/products/${product.slug}`) ? (
+      {product.slug === "platform" ? (
+        <PlatformProductPage />
+      ) : getProductDesign(`/products/${product.slug}`) ? (
         <CalendlyCmsProductPage product={product} />
       ) : (
         <ProductPage product={product} />

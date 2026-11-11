@@ -38,23 +38,39 @@ const sharedFaqs: ProductFaq[] = [
 ];
 
 const productFaqMap: Record<ProductFaqSlug, ProductFaq[]> = {
+  // FAQ questions are the approved frame copy. Answers are drafted for the
+  // page and are pending Julian's approval before they should be treated as final.
   platform: [
     {
       question: "What is the innflow platform?",
       answer:
-        "innflow is property operations software with AI agents and visual workflows. One workspace for capturing a request, attaching context, routing the next step, and keeping a visible record — without replacing the property-management system of record.",
+        "innflow is a workspace for building AI agents and running workflows. Bring conversations, tools, and knowledge into one flow, then review the steps that need a person.",
     },
     {
-      question: "What can AI agents do here?",
+      question: "How do agents use tools and memory?",
       answer:
-        "Agents use connected tools, knowledge, and workflow logic to move a defined task forward. Your team defines the task, the tools it can use, and the points that need review.",
+        "An agent runs with the integrations, files, and knowledge you attach. Memory is that connected context, retrieved for the current task, with access defined by your workspace.",
     },
     {
-      question: "How do agents use memory and context?",
+      question: "Can agents act without a person in the loop?",
       answer:
-        "Agents retrieve the files, tables, knowledge, and records you attach to the workflow. Keep the source information current and choose what each task can access.",
+        "Only where you allow it. Messages, money, access, and other high-stakes handoffs should keep an approval step. Exact boundaries are set per workflow.",
     },
-    ...sharedFaqs,
+    {
+      question: "Which tools can I connect?",
+      answer:
+        "Connect the systems a task needs, such as email, documents, chat, and spreadsheets. Access stays scoped to the connected accounts you choose. Browse the integrations directory for the current list.",
+    },
+    {
+      question: "How is innflow deployed?",
+      answer:
+        "Teams start in the innflow workspace, connect the systems involved in one operation, and expand from there. Talk with our team about setup, timing, and hosting requirements for a private or custom deployment.",
+    },
+    {
+      question: "How does innflow handle security?",
+      answer:
+        "Access follows workspace permissions, connected-account scopes, and the approval points you place in a workflow. Our team can help you review the security documentation and hosting requirements for your proposed setup.",
+    },
   ],
   "agent-os": [
     {

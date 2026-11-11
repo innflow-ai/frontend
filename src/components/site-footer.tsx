@@ -3,7 +3,6 @@ import { siteConfig } from "@/config/site";
 import { CustomerSupportHours } from "./customer-support-hours";
 import { FooterLegalLinks } from "./footer-legal-links";
 import { GoogleCtaContent } from "./google-cta-content";
-import { SiteCta } from "./site-cta";
 import styles from "./site-shell.module.css";
 
 const footerMenus = [
@@ -122,15 +121,5 @@ export function SiteFooter() {
         </div>
       </footer>
     </div>
-  );
-}
-
-/** Directory badges, sky close, members signup, and the navy link columns. */
-export function SiteCloseAndFooter() {
-  return (
-    <>
-      <SiteCta />
-      <SiteFooter />
-    </>
   );
 }

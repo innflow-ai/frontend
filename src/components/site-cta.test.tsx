@@ -1,7 +1,10 @@
 import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, expect, it, vi } from "vitest";
+import { SiteCloseAndFooter } from "./site-close-and-footer";
 import { SiteCta } from "./site-cta";
-import { SiteCloseAndFooter } from "./site-footer";
+
+const route = vi.hoisted(() => ({ pathname: "/blog" }));
+vi.mock("next/navigation", () => ({ usePathname: () => route.pathname }));
 
 vi.mock("./tracked-link", () => ({
   TrackedLink: ({
@@ -26,6 +29,7 @@ it("renders the shared sky close and directory badges", () => {
 });
 
 it("keeps the sky close, members signup, and Property teams column in one footer", () => {
+  route.pathname = "/blog";
   render(<SiteCloseAndFooter />);
   expect(
     screen.getByRole("heading", { name: /A clearer day starts/ }),
@@ -35,4 +39,10 @@ it("keeps the sky close, members signup, and Property teams column in one footer
     screen.getByRole("link", { name: "Long-term rentals" }),
   ).toHaveAttribute("href", "/long-term-rentals");
   expect(screen.queryByText("Bring your work together.")).toBeNull();
+});
+
+it("leaves the help center's fixed chrome unobstructed", () => {
+  route.pathname = "/help";
+  const view = render(<SiteCloseAndFooter />);
+  expect(view.container).toBeEmptyDOMElement();
 });

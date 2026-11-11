@@ -199,6 +199,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: "/products/workflows",
+        destination: "/products/agentic-workflows",
+        permanent: true,
+      },
+      {
         source: "/product/ai-agents",
         destination: "/products/ai-agents",
         permanent: true,

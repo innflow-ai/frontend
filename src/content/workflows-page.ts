@@ -6,7 +6,7 @@ import { siteConfig } from "@/config/site";
  * Sentences are Innflow's, from existing product copy. Not theirs.
  */
 export const workflowsPage = {
-  path: "/products/workflows",
+  path: "/products/agentic-workflows",
   title: "Workflows | Innflow",
   description:
     "A visual, reviewable path for a recurring handoff: trigger, steps, a person where you mark a review, and a record of the run.",

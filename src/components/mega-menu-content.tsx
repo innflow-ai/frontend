@@ -109,7 +109,7 @@ const platformLinks: MegaMenuLink[] = [
 const SHOW_STRUCTURE_PRODUCT_NAV = false;
 const structureProductLinks: MegaMenuLink[] = [
   {
-    href: "/products/workflows",
+    href: "/products/agentic-workflows",
     icon: FlowArrow,
     title: "Workflows",
     body: "A visible path from the first trigger to the review.",

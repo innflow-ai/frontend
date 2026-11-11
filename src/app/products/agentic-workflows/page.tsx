@@ -1,14 +1,13 @@
-import { CalendlyFeaturePage } from "@/components/calendly-product-adapters";
-import { getFeaturePageDesign } from "@/content/feature-pages";
+import { WorkflowsProductPage } from "@/components/workflows-product-page";
+import { workflowsPage } from "@/content/workflows-page";
 import { createPageMetadata } from "@/lib/metadata";
 
-const page = getFeaturePageDesign("workflows");
 export const metadata = createPageMetadata({
-  title: `${page.name} | Innflow`,
-  description: page.description,
-  path: page.path,
+  title: workflowsPage.title,
+  description: workflowsPage.description,
+  path: workflowsPage.path,
 });
 
 export default function Page() {
-  return <CalendlyFeaturePage page={page} />;
+  return <WorkflowsProductPage />;
 }

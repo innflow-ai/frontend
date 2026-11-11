@@ -6,18 +6,12 @@
   --platform-muted: rgba(26, 26, 26, 0.68);
   --platform-soft: rgba(26, 26, 26, 0.65);
   --platform-line: rgba(14, 33, 62, 0.1);
+  /* Category 1 only. The light stop stays at the top, matching the platform frame. */
   --platform-gradient: linear-gradient(
-    150deg,
-    #1f7aeb 7%,
-    #01adff 46%,
-    #b2f2db 79%
+    to bottom,
+    var(--gradient-platform-agents)
   );
-  --platform-tile: linear-gradient(
-    180deg,
-    #ccf5e5 0%,
-    #8cd6fa 45%,
-    #0194eb 100%
-  );
+  --platform-tile: var(--platform-gradient);
   background: #fff;
   color: var(--platform-ink);
   color-scheme: light;
@@ -338,6 +332,7 @@
 }
 
 .optionMedia {
+  background-image: var(--platform-gradient);
   border-radius: 20px;
   display: block;
   height: 200px;
@@ -375,7 +370,11 @@
 
 .focusPanel {
   align-items: center;
-  background: #f8f8f8;
+  /* 22% of the category gradient over white. The panel copy stays opaque. */
+  background-color: #fff;
+  background-image:
+    linear-gradient(rgb(255 255 255 / 78%), rgb(255 255 255 / 78%)),
+    var(--platform-gradient);
   border-radius: 32px;
   display: flex;
   flex-direction: column;

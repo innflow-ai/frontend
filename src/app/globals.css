@@ -57,6 +57,22 @@
     0 30px 80px rgba(19, 29, 35, 0.12), 0 2px 8px rgba(19, 29, 35, 0.06);
   --shell: 1280px;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  /* Product-page category gradients. Each token is the stop list only, so a
+     page can write linear-gradient(to bottom, var(--token)). Stop 0 is the
+     top. Heroes in automation-intelligence and connections-governance should
+     use to top, so the dark stop sits under white text. Other pages are not
+     restyled by defining these tokens. */
+  --gradient-platform-agents:
+    #4fb2ff 5%, #69bbff 18%, #b0e5ff 32%, #aee9f1 49%, #7acced 68%, #2184cf 85%,
+    #004077 100%;
+  --gradient-build-customize:
+    #315fa5 0%, #8295da 15%, #f4c2e5 36%, #ffe1df 48%, #ffc9e7 65%, #e4a9ee 82%,
+    #cba8f3 100%;
+  --gradient-automation-intelligence:
+    #b8d9fa 0%, #e4f5e8 42%, #3dcab0 65%, #062d36 100%;
+  --gradient-connections-governance:
+    #f5f7df 0%, #f4f1d5 14%, #f4dcb6 25%,
+    #efb7a3 35%, #dd8fa9 52%, #d896ba 69%, #7a94d5 86%, #5b8edd 100%;
 }
 
 * {
@@ -216,7 +232,10 @@ h3 {
   font-weight: 700;
 }
 
-code, kbd, pre, samp {
+code,
+kbd,
+pre,
+samp {
   font-family: var(--font-mono);
 }
 

@@ -126,6 +126,7 @@ export const connectorGroups: ConnectorGroup[] = [
       { name: "Linear", unbuilt: true },
       { name: "Monday", unbuilt: true },
       { name: "Zapier", unbuilt: true },
+      { name: "Twilio", unbuilt: true },
     ],
   },
 ];

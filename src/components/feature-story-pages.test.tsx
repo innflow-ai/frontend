@@ -21,6 +21,10 @@ it("lists wired connectors and hides a coming-soon label", () => {
     "/integrations/gmail",
   );
   expect(screen.getByText("Salesforce")).toBeInTheDocument();
+  expect(screen.getByText("Twilio").closest("li")).toHaveAttribute(
+    "data-unbuilt",
+    "true",
+  );
   expect(screen.getByText("Browser Agent")).toBeInTheDocument();
   expect(screen.queryByRole("link", { name: "Browser Agent" })).toBeNull();
   expect(screen.queryByText(/Coming soon|Northwind/i)).toBeNull();

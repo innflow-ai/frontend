@@ -310,6 +310,15 @@ export function BaselanePricing() {
                                 <span className={styles.oldCents}>
                                   .{money(plan.monthlyPrice).split(".")[1]}
                                 </span>
+                                <svg
+                                  className={styles.priceStrike}
+                                  viewBox="0 0 100 28"
+                                  preserveAspectRatio="none"
+                                  aria-hidden="true"
+                                  focusable="false"
+                                >
+                                  <path d="M1 26 L99 4" />
+                                </svg>
                               </del>
                             </>
                           )}

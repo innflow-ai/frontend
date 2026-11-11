@@ -190,8 +190,8 @@ const productIntroductions: Record<
   { title: string; body: string }
 > = {
   platform: {
-    title: "One place for the work behind every property.",
-    body: "Bring your people, AI agents, and everyday workflows together. Keep the context close and the next step clear.",
+    title: "Your operation, connected.",
+    body: "Bring your team, tools, and knowledge into one flow. Build agents, connect your tools, and run workflows with room for people to review what matters.",
   },
   "agent-os": {
     title: "Give your agents a clear path to follow.",

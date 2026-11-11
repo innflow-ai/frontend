@@ -154,7 +154,9 @@ it("saves the address through the email capture route and emits one event", asyn
     email: "person@example.com",
   });
   expect(gtag).not.toHaveBeenCalled();
-  expect(window.dataLayer).toEqual([{ event: "email_signup" }]);
+  expect(
+    (window as Window & { dataLayer?: { event: string }[] }).dataLayer,
+  ).toEqual([{ event: "email_signup" }]);
   expect(
     JSON.parse(localStorage.getItem(EMAIL_CAPTURE_STORAGE_KEY) ?? "{}").status,
   ).toBe("submitted");
@@ -188,7 +190,9 @@ it("does not emit the event when signup fails", async () => {
     await Promise.resolve();
   });
   expect(gtag).not.toHaveBeenCalled();
-  expect(window.dataLayer).toEqual([]);
+  expect(
+    (window as Window & { dataLayer?: { event: string }[] }).dataLayer,
+  ).toEqual([]);
   expect(screen.getByRole("status")).toHaveTextContent(
     "Enter a valid email address.",
   );

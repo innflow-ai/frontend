@@ -5,6 +5,7 @@ import {
   BaselineClosing,
   BaselineConnectedInfrastructure,
   BaselineCustomerStories,
+  SHOW_PHOTO_CARDS,
 } from "./baseline-lower-sections";
 
 const motionPreference = vi.hoisted(() => ({ reduced: false }));
@@ -209,18 +210,29 @@ it("matches the baseline two-card infrastructure without extra focus controls", 
   ).toHaveLength(17);
   expect(screen.queryByRole("button")).toBeNull();
 });
-it("offers all four closing highlights in a keyboard-accessible scroll strip", () => {
+it("keeps the closing invite and gates the photo-card strip with SHOW_PHOTO_CARDS", () => {
   render(<BaselineClosing />);
-  const strip = screen.getByRole("region", {
-    name: "Product highlights. Scroll horizontally to explore.",
-  });
-  expect(strip).toHaveAttribute("tabindex", "0");
-  expect(strip.querySelectorAll("[data-scene-index]")).toHaveLength(4);
-  expect(
-    screen.queryByRole("button", { name: "Next highlight" }),
-  ).not.toBeInTheDocument();
   expect(screen.getByText("Get started")).toBeVisible();
+  expect(
+    screen.getByRole("heading", { name: /From the first meeting/i }),
+  ).toBeVisible();
   expect(screen.getByRole("link", { name: "Start for free" })).toHaveAttribute(
     "href",
   );
+  const strip = screen.queryByRole("region", {
+    name: "Product highlights. Scroll horizontally to explore.",
+  });
+  if (SHOW_PHOTO_CARDS) {
+    expect(strip).toHaveAttribute("tabindex", "0");
+    expect(strip?.querySelectorAll("[data-scene-index]")).toHaveLength(4);
+  } else {
+    expect(strip).not.toBeInTheDocument();
+    expect(screen.queryByText("Insights")).not.toBeInTheDocument();
+    expect(screen.queryByText("Discovery")).not.toBeInTheDocument();
+    expect(screen.queryByText("Workflows")).not.toBeInTheDocument();
+    expect(screen.queryByText("Sidekick")).not.toBeInTheDocument();
+  }
+  expect(
+    screen.queryByRole("button", { name: "Next highlight" }),
+  ).not.toBeInTheDocument();
 });

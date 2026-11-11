@@ -1130,7 +1130,10 @@
     font-weight: 500;
   }
 
-  .mobileMenu nav > div > a {
+  /* White text is only for the filled primary action in this row
+     (Continue with Google). The outlined login control is the sibling
+     anchor and keeps the menu ink color from the header module. */
+  .mobileMenu nav > div > button {
     color: var(--button-primary-text, #fff);
   }
 }

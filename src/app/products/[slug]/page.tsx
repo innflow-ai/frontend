@@ -15,7 +15,9 @@ type ProductRouteProps = {
 
 export async function generateStaticParams() {
   const slugs = await getProductSlugs();
-  return slugs.map((slug) => ({ slug }));
+  return slugs
+    .filter((slug) => slug !== "ai-agents")
+    .map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({

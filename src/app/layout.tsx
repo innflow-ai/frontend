@@ -3,6 +3,7 @@ import { Archivo, Geist_Mono, Source_Serif_4 } from "next/font/google";
 import type { ReactNode } from "react";
 import { ConsentManagedTags } from "@/components/consent-managed-tags";
 import { DeferredAnalytics } from "@/components/deferred-analytics";
+import { EmailCaptureSlot } from "@/components/email-capture-slot";
 import { MarketingPageView } from "@/components/marketing-page-view";
 import { MarketingRuntime } from "@/components/marketing-runtime";
 import type { LatestBlogPostNavItem } from "@/components/mega-menu";
@@ -216,6 +217,7 @@ export default async function RootLayout({
         <MarketingPageView />
         <ConsentManagedTags />
         <PostHogObservability experience={experience} />
+        <EmailCaptureSlot />
         <DeferredAnalytics />
       </body>
     </html>

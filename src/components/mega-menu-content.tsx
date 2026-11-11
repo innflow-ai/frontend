@@ -86,7 +86,7 @@ const platformLinks: MegaMenuLink[] = [
     body: "Explore integrations and planned connections for your team's tools.",
   },
   {
-    href: "/products/agentic-workflows",
+    href: "/features/workflows",
     icon: FlowArrow,
     title: "Agentic Workflows",
     body: "Recurring work made visible, governed, and repeatable.",
@@ -106,10 +106,13 @@ const platformLinks: MegaMenuLink[] = [
 ];
 
 // TODO(julian): confirm before these links appear in the product menu.
+// Planned routes, not built yet:
+// Agent Memory → /features/agent-memory (/platform/self-learning stays)
+// Teammates → /features/teammates (/features/assistant stays)
 const SHOW_STRUCTURE_PRODUCT_NAV = false;
 const structureProductLinks: MegaMenuLink[] = [
   {
-    href: "/products/agentic-workflows",
+    href: "/features/workflows",
     icon: FlowArrow,
     title: "Workflows",
     body: "A visible path from the first trigger to the review.",

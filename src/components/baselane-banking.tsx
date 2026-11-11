@@ -262,7 +262,7 @@ export async function BaselaneBanking() {
             "Property onboarding",
             "Team knowledge",
           ].map((title, i) => (
-            <a href="/products/agentic-workflows" key={title}>
+            <a href="/features/workflows" key={title}>
               <span>0{i + 1}</span>
               <h3>{title}</h3>
               <span>

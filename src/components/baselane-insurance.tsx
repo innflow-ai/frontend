@@ -282,7 +282,7 @@ export function BaselaneInsurance() {
             "Review steps",
             "Shared context",
           ].map((title, i) => (
-            <a href="/products/agentic-workflows" key={title}>
+            <a href="/features/workflows" key={title}>
               <Image
                 src={`${root}${steps[i % 3][0]}.webp`}
                 alt=""

@@ -105,7 +105,7 @@ const features: {
     title: "Turn the request into a plan.",
     body: pieces[1].body,
     points: ["Outline the steps", "Connect resources", "Add review points"],
-    href: "/products/agentic-workflows",
+    href: "/features/workflows",
     link: "Explore agentic workflows",
     media: { kind: "shot", shot: "workflows", edge: "start" },
   },

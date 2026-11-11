@@ -34,7 +34,7 @@ const features = [
       "Context beside the work",
     ],
     view: "Workflows" as const,
-    href: "/products/agentic-workflows",
+    href: "/features/workflows",
   },
   {
     id: "assistant",

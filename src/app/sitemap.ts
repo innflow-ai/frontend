@@ -142,12 +142,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "weekly" as const,
       priority: 0.8,
     })),
-    ...productSlugs.map((slug) => ({
-      url: `${siteConfig.marketingOrigin}/products/${slug}`,
-      lastModified: siteLastModified,
-      changeFrequency: "weekly" as const,
-      priority: 0.9,
-    })),
+    ...productSlugs
+      .filter((slug) => slug !== "agentic-workflows")
+      .map((slug) => ({
+        url: `${siteConfig.marketingOrigin}/products/${slug}`,
+        lastModified: siteLastModified,
+        changeFrequency: "weekly" as const,
+        priority: 0.9,
+      })),
     ...featurePageDesigns
       .filter(
         (page) =>

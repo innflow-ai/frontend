@@ -275,7 +275,7 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
                 [
                   "Workflows",
                   "Give recurring requests a repeatable path.",
-                  "/products/agentic-workflows",
+                  "/features/workflows",
                 ],
                 [
                   "Knowledge",

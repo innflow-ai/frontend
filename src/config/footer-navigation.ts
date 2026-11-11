@@ -11,7 +11,7 @@ export const footerNavigation = [
       { label: "Copilot", href: "/products/agent-os" },
       {
         label: "Agentic Workflows",
-        href: "/products/agentic-workflows",
+        href: "/features/workflows",
       },
       { label: "Agent Skills", href: "/skills" },
       { label: "AI Website Builder", href: "/features/website" },

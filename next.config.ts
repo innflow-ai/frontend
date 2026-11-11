@@ -195,13 +195,18 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/product/agentic-workflows",
-        destination: "/products/agentic-workflows",
-        permanent: true,
+        destination: "/features/workflows",
+        statusCode: 301,
+      },
+      {
+        source: "/products/agentic-workflows",
+        destination: "/features/workflows",
+        statusCode: 301,
       },
       {
         source: "/products/workflows",
-        destination: "/products/agentic-workflows",
-        permanent: true,
+        destination: "/features/workflows",
+        statusCode: 301,
       },
       {
         source: "/product/ai-agents",

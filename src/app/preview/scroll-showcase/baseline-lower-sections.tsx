@@ -305,13 +305,8 @@ export function BaselineConnectedInfrastructure() {
       <header className={styles.heading}>
         <SectionHeading
           id="baseline-infrastructure-heading"
-          title={
-            <>
-              Connect the tools
-              <br />
-              behind your work.
-            </>
-          }
+          title="Connect the tools"
+          accent="behind your work."
           subtitle="Bring relevant information into the tools your team already uses. Explore supported connections to find the right fit for your workflow."
         />
         <Link className={styles.directory} href="/integrations">
@@ -445,13 +440,8 @@ export function BaselineClosing() {
         <SectionHeading
           id="baseline-closing-heading"
           eyebrow="Get started"
-          title={
-            <>
-              From the first meeting
-              <br />
-              to the follow-up
-            </>
-          }
+          title="From the first meeting"
+          accent="to the follow-up"
           subtitle="All of the work around meetings, handled in one place. Book time, capture every discussion, and keep next steps moving without the manual work."
         />
         <a className={styles.cta} href={siteConfig.signupUrl}>

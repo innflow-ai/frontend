@@ -1,6 +1,15 @@
 import { createElement, type ReactNode } from "react";
 import styles from "./section-heading.module.css";
 
+/**
+ * Source Serif 4 span for the pricing mix: Archivo around it, serif inside it.
+ * Use this inside `title` when the serif words stay on the same line.
+ * The `accent` prop is the second line, with a break before this span.
+ */
+export function HeadingAccent({ children }: { children: ReactNode }) {
+  return <span className={styles.accent}>{children}</span>;
+}
+
 type HeadingLevel = 1 | 2 | 3;
 
 /**
@@ -9,6 +18,8 @@ type HeadingLevel = 1 | 2 | 3;
  * Desktop title: Archivo, 71px, weight 700, line-height 0.95,
  * letter-spacing -0.03em, color #333, margin 0.
  * Accent line: Source Serif 4, weight 400, same size.
+ * That mix (Archivo plus Source Serif 4 in one heading) is the signature.
+ * Source Serif 4 is the root-layout next/font variable --font-source-serif-4.
  * Subtitle: Archivo, 20px / 26px, color #333.
  * Block: centered, max-width 1200px, 12px gap (32px under 1200px, 24px under 700px).
  * Under 700px the title is 38px with -1.2px tracking and the subtitle is 16px.
@@ -27,7 +38,7 @@ export function SectionHeading({
 }: {
   eyebrow?: ReactNode;
   title: ReactNode;
-  /** Second line, set in Source Serif 4. Pricing uses this. */
+  /** Second line in Source Serif 4, after a line break. Pricing uses this. */
   accent?: ReactNode;
   subtitle?: ReactNode;
   level?: HeadingLevel;
@@ -51,7 +62,7 @@ export function SectionHeading({
         accent ? (
           <>
             <br />
-            <span className={styles.accent}>{accent}</span>
+            <HeadingAccent>{accent}</HeadingAccent>
           </>
         ) : null,
       )}

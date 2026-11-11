@@ -16,7 +16,9 @@ describe("SectionHeading", () => {
     const title = screen.getByRole("heading", { level: 1 });
     expect(title).toHaveAttribute("id", "pricing-title");
     expect(title).toHaveTextContent("Pick a plan.");
-    expect(title).toHaveTextContent("Your AI team is waiting.");
+    expect(title.querySelector("span")).toHaveTextContent(
+      "Your AI team is waiting.",
+    );
     expect(
       screen.getByText("Agents, workflows and knowledge. One workspace."),
     ).toBeInTheDocument();

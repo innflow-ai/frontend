@@ -35,7 +35,7 @@
   --innflow-font-hero: var(--font-host-grotesk, "Host Grotesk"), Arial, sans-serif;
   --innflow-font-body: var(--font-geist, "Geist"), Arial, sans-serif;
   --innflow-font-heading: var(--font-manrope, "Manrope"), Arial, sans-serif;
-  --innflow-font-editorial: var(--font-source-serif-4, "Source Serif 4"), Georgia, serif;
+  --innflow-font-editorial: var(--font-source-serif-4, "Source Serif 4"), serif;
   /* typography */
   --innflow-typography-hero-font-family: var(--innflow-font-hero);
   --innflow-typography-hero-font-size: clamp(40px, 4.5vw, 72px);

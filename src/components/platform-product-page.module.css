@@ -1,6 +1,5 @@
-/* Approved platform frame. Headings use the site display stack
-   (Source Serif 4, then Georgia) and do not change the shared product-page
-   rule that currently falls back to Georgia. */
+/* Approved platform frame. Headings use Source Serif 4 from the root
+   layout (--font-display). Georgia is not in that stack. */
 .page {
   --platform-ink: #1a1a1a;
   --platform-muted: rgba(26, 26, 26, 0.68);

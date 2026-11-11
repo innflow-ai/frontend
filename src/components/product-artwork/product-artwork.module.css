@@ -1225,7 +1225,7 @@
 }
 .websitePreview > strong {
   position: relative;
-  font-family: Georgia, serif;
+  font-family: var(--font-source-serif-4), serif;
   font-size: 1.8em;
   width: 55%;
   line-height: 1.05;

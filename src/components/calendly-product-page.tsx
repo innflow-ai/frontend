@@ -262,13 +262,8 @@ export function CalendlyProductPage({
             eyebrow={
               variant === "payments" ? "Your options" : "Made for your workflow"
             }
-            title={
-              <>
-                More ways to move
-                <br />
-                your work forward.
-              </>
-            }
+            title="More ways to move"
+            accent="your work forward."
           />
           <section
             className={styles.cardRail}

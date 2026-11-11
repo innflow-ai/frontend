@@ -4,7 +4,8 @@
 :root {
   /* Shared typography approved alongside the Paper pricing refresh. */
   --font-sans: var(--font-archivo), Arial, sans-serif;
-  --font-display: var(--font-source-serif-4), Georgia, serif;
+  /* Source Serif 4 is loaded on <html>. Do not fall through to Georgia. */
+  --font-display: var(--font-source-serif-4), serif;
   --font-heading-emphasis: var(--font-archivo), Arial, sans-serif;
   --font-mono: var(--font-geist-mono), monospace;
   /* Existing components inherit the new families through these aliases. */

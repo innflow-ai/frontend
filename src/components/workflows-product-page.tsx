@@ -1,7 +1,10 @@
 import { BotIcon } from "@/components/icons/bot-icon";
 import { SectionHeading } from "@/components/section-heading";
 import { TrackedLink } from "@/components/tracked-link";
-import { workflowsPage as page } from "@/content/workflows-page";
+import {
+  workflowsPage as page,
+  showWorkflowSection,
+} from "@/content/workflows-page";
 import styles from "./workflows-product-page.module.css";
 
 export function WorkflowsProductPage() {
@@ -24,12 +27,14 @@ export function WorkflowsProductPage() {
             >
               {page.hero.primary.label}
             </TrackedLink>
-            <a className={styles.secondary} href={page.hero.secondary.href}>
-              {page.hero.secondary.label}
-            </a>
+            {showWorkflowSection(page.example) ? (
+              <a className={styles.secondary} href={page.hero.secondary.href}>
+                {page.hero.secondary.label}
+              </a>
+            ) : null}
           </div>
         </SectionHeading>
-        <ExampleCard />
+        {showWorkflowSection(page.example) ? <ExampleCard /> : null}
       </section>
 
       <section className={styles.block} aria-labelledby="workflows-plan">
@@ -39,7 +44,7 @@ export function WorkflowsProductPage() {
           subtitle={page.plan.subtitle}
         />
         <ol className={styles.rows}>
-          {page.plan.rows.map((row, index) => (
+          {page.plan.rows.filter(showWorkflowSection).map((row, index) => (
             <li className={styles.row} key={row.title}>
               <div>
                 <p className={styles.index}>{index + 1}</p>
@@ -51,27 +56,31 @@ export function WorkflowsProductPage() {
                   subtitle={row.body}
                 />
               </div>
-              <StepStrip active={index} />
+              {showWorkflowSection(page.example) ? (
+                <StepStrip active={index} />
+              ) : null}
             </li>
           ))}
         </ol>
       </section>
 
-      <section className={styles.block} aria-labelledby="workflows-attention">
-        <SectionHeading
-          id="workflows-attention"
-          title={page.attention.title}
-          subtitle={page.attention.subtitle}
-        />
-        <ul className={styles.states} aria-label="Example workflow states">
-          {page.attention.rows.map((row) => (
-            <li key={row.name}>
-              <span>{row.name}</span>
-              <strong>{row.state}</strong>
-            </li>
-          ))}
-        </ul>
-      </section>
+      {showWorkflowSection(page.attention) ? (
+        <section className={styles.block} aria-labelledby="workflows-attention">
+          <SectionHeading
+            id="workflows-attention"
+            title={page.attention.title}
+            subtitle={page.attention.subtitle}
+          />
+          <ul className={styles.states} aria-label="Example workflow states">
+            {page.attention.rows.map((row) => (
+              <li key={row.name}>
+                <span>{row.name}</span>
+                <strong>{row.state}</strong>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
       <section className={styles.block} aria-labelledby="workflows-loop">
         <SectionHeading
@@ -80,7 +89,7 @@ export function WorkflowsProductPage() {
           subtitle={page.loop.subtitle}
         />
         <ol className={styles.steps}>
-          {page.loop.steps.map((step, index) => (
+          {page.loop.steps.filter(showWorkflowSection).map((step, index) => (
             <li key={step.title}>
               <p className={styles.index}>{index + 1}</p>
               <SectionHeading
@@ -102,7 +111,10 @@ export function WorkflowsProductPage() {
             <article className={styles.card} key={card.title}>
               <h3>{card.title}</h3>
               <p>{card.body}</p>
-              {card.href && card.label ? (
+              {card.href &&
+              card.label &&
+              (card.href !== "#example" ||
+                showWorkflowSection(page.example)) ? (
                 <a href={card.href}>{card.label}</a>
               ) : null}
             </article>

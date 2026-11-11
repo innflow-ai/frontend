@@ -6,6 +6,8 @@ import { siteConfig } from "@/config/site";
  * Sentences are Innflow's, from existing product copy. Not theirs.
  */
 export const workflowsPage = {
+  /** Set to true to hide every section marked unverified. */
+  hideUnverified: false,
   path: "/products/agentic-workflows",
   title: "Workflows | Innflow",
   description:
@@ -19,6 +21,7 @@ export const workflowsPage = {
     secondary: { label: "See an example", href: "#example" },
   },
   example: {
+    unverified: true,
     label: "Example",
     name: "Maintenance intake",
     progress: "2 of 4",
@@ -35,6 +38,7 @@ export const workflowsPage = {
       "The workflow keeps the sequence visible. An agent can work inside a step. A person still owns the review you mark.",
     rows: [
       {
+        unverified: true,
         title: "Show who owns the step",
         body: "Each step names an agent or a person, so the next move is not left in a side conversation.",
       },
@@ -43,6 +47,7 @@ export const workflowsPage = {
         body: "The workflow waits at the review you set. The person sees the request and the context attached to it.",
       },
       {
+        unverified: true,
         title: "Keep the exception on the path",
         body: "Plan the retry and the unfinished work in the same workflow, with an owner, instead of starting a new thread.",
       },
@@ -53,6 +58,7 @@ export const workflowsPage = {
     ],
   },
   attention: {
+    unverified: true,
     title: "See what is waiting.",
     subtitle:
       "Open the workflow instead of asking for a status. The next step and its owner are on it.",
@@ -72,14 +78,16 @@ export const workflowsPage = {
         body: "Start with the result, and with the step where a person has to decide.",
       },
       {
+        unverified: true,
         title: "Assign the steps",
         body: "Give a step to an agent or a teammate. Attach only the tools and records that step needs.",
       },
       {
         title: "Run it",
-        body: "A trigger starts the path. The workflow shows what is moving and what is waiting.",
+        body: "A trigger starts the path. Connected actions follow the steps you set.",
       },
       {
+        unverified: true,
         title: "Review and continue",
         body: "The reviewer decides. The same workflow picks up from that step.",
       },
@@ -108,4 +116,8 @@ export const workflowsPage = {
     subtitle: "Bring one recurring handoff your team already understands.",
     cta: { label: "Book a demo", href: siteConfig.demoUrl },
   },
-} as const;
+};
+
+export function showWorkflowSection(section: { unverified?: boolean }) {
+  return !(workflowsPage.hideUnverified && section.unverified);
+}

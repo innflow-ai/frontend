@@ -42,7 +42,7 @@ const featureSeo: Record<
 
 export function generateStaticParams() {
   return allFeatureSlugs
-    .filter((slug) => slug !== "workflows")
+    .filter((slug) => slug !== "workflows" && slug !== "communications")
     .map((slug) => ({ slug }));
 }
 

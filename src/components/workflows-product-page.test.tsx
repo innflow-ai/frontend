@@ -12,9 +12,16 @@ it("follows the workflow page structure without borrowed names", () => {
   expect(screen.getByText(/TODO: Julian/)).toBeInTheDocument();
   expect(screen.queryByText(/Offloop|off-loop|Botmode/i)).toBeNull();
   expect(screen.getAllByRole("heading", { level: 2 })).toHaveLength(5);
-  expect(workflowsPage.hideUnverified).toBe(false);
   expect(workflowsPage.example.unverified).toBe(true);
+  expect(workflowsPage.example.hidden).toBe(false);
   expect(workflowsPage.attention.unverified).toBe(true);
+  expect(workflowsPage.attention.hidden).toBe(false);
+  expect(
+    screen.getByRole("heading", { name: "See what is waiting." }),
+  ).toBeInTheDocument();
+  expect(
+    screen.getByRole("heading", { name: "Show who owns the step" }),
+  ).toBeInTheDocument();
   expect(
     workflowsPage.plan.rows
       .filter((row) => row.unverified)

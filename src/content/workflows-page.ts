@@ -6,8 +6,6 @@ import { siteConfig } from "@/config/site";
  * Sentences are Innflow's, from existing product copy. Not theirs.
  */
 export const workflowsPage = {
-  /** Set to true to hide every section marked unverified. */
-  hideUnverified: false,
   path: "/products/agentic-workflows",
   title: "Workflows | Innflow",
   description:
@@ -22,6 +20,7 @@ export const workflowsPage = {
   },
   example: {
     unverified: true,
+    hidden: false,
     label: "Example",
     name: "Maintenance intake",
     progress: "2 of 4",
@@ -39,6 +38,7 @@ export const workflowsPage = {
     rows: [
       {
         unverified: true,
+        hidden: false,
         title: "Show who owns the step",
         body: "Each step names an agent or a person, so the next move is not left in a side conversation.",
       },
@@ -48,6 +48,7 @@ export const workflowsPage = {
       },
       {
         unverified: true,
+        hidden: false,
         title: "Keep the exception on the path",
         body: "Plan the retry and the unfinished work in the same workflow, with an owner, instead of starting a new thread.",
       },
@@ -59,6 +60,7 @@ export const workflowsPage = {
   },
   attention: {
     unverified: true,
+    hidden: false,
     title: "See what is waiting.",
     subtitle:
       "Open the workflow instead of asking for a status. The next step and its owner are on it.",
@@ -79,6 +81,7 @@ export const workflowsPage = {
       },
       {
         unverified: true,
+        hidden: false,
         title: "Assign the steps",
         body: "Give a step to an agent or a teammate. Attach only the tools and records that step needs.",
       },
@@ -88,6 +91,7 @@ export const workflowsPage = {
       },
       {
         unverified: true,
+        hidden: false,
         title: "Review and continue",
         body: "The reviewer decides. The same workflow picks up from that step.",
       },
@@ -118,6 +122,7 @@ export const workflowsPage = {
   },
 };
 
-export function showWorkflowSection(section: { unverified?: boolean }) {
-  return !(workflowsPage.hideUnverified && section.unverified);
+/** Unverified sections stay visible. Set `hidden: true` on one section to remove it. */
+export function showWorkflowSection(section: { hidden?: boolean }) {
+  return section.hidden !== true;
 }

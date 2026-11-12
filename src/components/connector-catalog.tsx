@@ -5,6 +5,22 @@ import { showFeatureItem } from "@/config/unbuilt-features";
 import type { ConnectorGroup } from "@/content/wired-connectors";
 import styles from "./connector-catalog.module.css";
 
+const tilePalette = [
+  "#f0e7f6",
+  "#d9f3e4",
+  "#d7ecff",
+  "#ffe7c2",
+  "#ffd9e8",
+  "#e7e9ff",
+];
+
+function tileColor(name: string) {
+  const index = name
+    .split("")
+    .reduce((sum, char) => sum + char.charCodeAt(0), 0);
+  return tilePalette[index % tilePalette.length];
+}
+
 export function ConnectorCatalog({ groups }: { groups: ConnectorGroup[] }) {
   const visible = groups
     .map((group) => ({
@@ -61,6 +77,13 @@ export function ConnectorCatalog({ groups }: { groups: ConnectorGroup[] }) {
                 key={item.name}
                 data-unbuilt={item.unbuilt ? "true" : undefined}
               >
+                <span
+                  className={styles.tile}
+                  style={{ background: tileColor(item.name) }}
+                  aria-hidden="true"
+                >
+                  {item.name.slice(0, 1)}
+                </span>
                 {item.href ? (
                   <a href={item.href}>{item.name}</a>
                 ) : (

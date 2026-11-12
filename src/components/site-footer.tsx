@@ -61,6 +61,109 @@ const footerMenus = [
     ],
   },
 ];
+const productFooterMenus = [
+  {
+    label: "Why innflow",
+    links: [
+      ["About innflow", "/about"],
+      ["Careers", "/careers"],
+      ["Industry coverage", "/in-the-news"],
+      ["Who we help", "/our-customers"],
+      ["Security", "/security"],
+      ["Partnerships", "/partner-with-us"],
+      ["Advisor partnerships", "/advisor-partner-program"],
+      ["Workflows", "/features/workflows"],
+      ["AI assistant", "/products/ai-agents"],
+      ["Knowledge", "/platform"],
+      ["Approvals", "/platform/security-and-compliance"],
+    ],
+  },
+  {
+    label: "Product",
+    links: [
+      ["Platform", "/platform"],
+      ["Agent OS", "/products/agent-os"],
+      ["Agent Studio", "/products/agent-studio"],
+      ["AI Agents", "/products/ai-agents"],
+      ["Agentic Workflows", "/features/workflows"],
+      ["Databases", "/products/databases"],
+      ["AI Website Builder", "/features/website"],
+      ["Integrations", "/integrations"],
+      ["Agent Skills", "/skills"],
+    ],
+  },
+  {
+    label: "Resources",
+    links: [
+      ["Resource library", "/resources"],
+      ["Workflow learning", "/webinars"],
+      ["Product updates", "/product-updates"],
+      ["Blog", "/blog"],
+      ["Help center", "/help-center"],
+      ["Legal agreements", "/legal-agreements"],
+      ["FAQ", "/faq"],
+      ["Contact", "/contact"],
+    ],
+  },
+];
+
+export function ProductFooter() {
+  return (
+    <div className={styles.page}>
+      <footer className={`${styles.footer} ${styles.productFooter}`}>
+        <div className={styles.footerGrid}>
+          <div>
+            <a href="/" aria-label="innflow home" className={styles.footerLogo}>
+              <Image
+                src="/brand/innflow-wordmark.svg"
+                width={105}
+                height={30}
+                alt="innflow"
+              />
+            </a>
+            <p>
+              Your AI agent workspace.
+              <br />
+              Connected in one place.
+            </p>
+            <a href={`mailto:${siteConfig.supportEmail}`}>
+              {siteConfig.supportEmail}
+            </a>
+            <CustomerSupportHours />
+          </div>
+          {productFooterMenus.map((group) => (
+            <div key={group.label}>
+              <h3>{group.label}</h3>
+              {group.links.map(([label, href]) => (
+                <a href={href} key={label}>
+                  {label}
+                </a>
+              ))}
+            </div>
+          ))}
+          <div>
+            <h3>Get started</h3>
+            <a href={siteConfig.demoUrl}>Book a demo</a>
+            <a href="/pricing">Pricing</a>
+            <a href={`${siteConfig.appOrigin}/login`}>Log in</a>
+            <a href={siteConfig.googleAuthUrl}>
+              <GoogleCtaContent />
+            </a>
+          </div>
+        </div>
+        <div className={styles.footerBottom}>
+          <span>
+            © {new Date().getFullYear()} Innflow. All rights reserved.
+          </span>
+          <nav className={styles.legalLinks} aria-label="Legal">
+            <FooterLegalLinks />
+          </nav>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
 export function SiteFooter() {
   return (
     <div className={styles.page}>

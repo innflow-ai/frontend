@@ -101,6 +101,10 @@
   font-weight: 700;
 }
 
+.block[data-emphasis="semibold"] .emphasis {
+  font-weight: 600;
+}
+
 .details {
   width: 100%;
   min-width: 0;

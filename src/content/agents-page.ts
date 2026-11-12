@@ -9,7 +9,20 @@ export const agentsPage = {
     {
       id: "agents-hero",
       type: "hero",
-      title: "Hand an outcome to an agent that can keep going.",
+      eyebrow: "Agents",
+      title: "Hand an outcome",
+      emphasis: "to an agent that can keep going.",
+      lines: [
+        {
+          role: "You",
+          text: "Tell the agent what done looks like, and where it must stop.",
+        },
+        {
+          role: "Agent",
+          text: "Watch the run, and review the result in the same workspace.",
+        },
+      ],
+      chips: ["Brief", "Evidence", "Approval"],
       subtitle:
         "Tell the agent what done looks like, and where it must stop. Watch the run, step in when a judgment is needed, and review the result in the same workspace.",
       primary: { label: "Get started", href: appSignup },
@@ -38,6 +51,31 @@ export const agentsPage = {
         {
           title: "Come back with a result you can review",
           body: "The agent tells you what changed, what is still open, and which files or decisions back the outcome.",
+        },
+      ],
+    },
+    {
+      id: "agent-thread",
+      type: "dark",
+      eyebrow: "A run",
+      title: "Each run follows the same shape,",
+      emphasis: "so you can tell where any piece of work stands.",
+      lines: [
+        {
+          role: "You",
+          text: "Prepare the agreement for signature, and escalate anything outside the approved terms.",
+        },
+        {
+          role: "Agent",
+          text: "The draft stays inside policy, and one clause needs a human call.",
+        },
+        {
+          role: "Reviewer",
+          text: "Approve the agreement, or request changes.",
+        },
+        {
+          role: "Agent",
+          text: "After approval, the agreement goes out for signature with the final document and a term comparison.",
         },
       ],
     },

@@ -9,7 +9,20 @@ export const channelsPage = {
     {
       id: "channels-hero",
       type: "hero",
-      title: "Channels: where people and agents already talk",
+      eyebrow: "Channels",
+      title: "Channels:",
+      emphasis: "where people and agents already talk",
+      lines: [
+        {
+          role: "Teammate",
+          text: "Research Agent, the next move on positioning is yours.",
+        },
+        {
+          role: "Research Agent",
+          text: "Positioning is approved, and the sources stay on the brief.",
+        },
+      ],
+      chips: ["In-app chat", "Mailbox", "Approval"],
       subtitle:
         "Work can arrive and continue in a channel, instead of living only in a disposable chat log. Your team can pick it up later without rebuilding the context.",
       primary: { label: "Get started", href: appSignup },
@@ -125,6 +138,7 @@ export const channelsPage = {
           title: "Launch work that spans a team",
           body: "Hold research, positioning, outreach, approvals, files, and the final launch decision in one connected place.",
           links: [
+            { label: "Read the field note", href: "/blog" },
             {
               label: "See teammates and agents work in one channel",
               href: "/features/teammates",

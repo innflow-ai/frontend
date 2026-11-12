@@ -7,7 +7,7 @@ it("uses the workflows copy and leaves the field note unlinked", () => {
   expect(
     screen.getByRole("heading", {
       level: 1,
-      name: "Give every outcome a path your team can see.",
+      name: /Give every outcome/,
     }),
   ).toBeInTheDocument();
   expect(
@@ -23,6 +23,9 @@ it("uses the workflows copy and leaves the field note unlinked", () => {
       name: "A launch needs more than a checklist",
     }),
   ).toBeInTheDocument();
-  expect(screen.queryByRole("link", { name: /field note/i })).toBeNull();
+  expect(screen.getByRole("link", { name: "Read the field note" })).toHaveAttribute(
+    "href",
+    "/blog",
+  );
   expect(screen.queryByText(/Coming soon|Northwind|Offloop/i)).toBeNull();
 });

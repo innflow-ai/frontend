@@ -61,6 +61,7 @@ function SectionView({ section }: { section: StorySection }) {
   if (section.type === "comparison") return <Comparison section={section} />;
   if (section.type === "chips") return <Chips section={section} />;
   if (section.type === "beats") return <Beats section={section} />;
+  if (section.type === "dark") return <Dark section={section} />;
   if (section.type === "catalog") {
     return (
       <section
@@ -68,13 +69,11 @@ function SectionView({ section }: { section: StorySection }) {
         id={section.anchor === section.id ? undefined : section.anchor}
         aria-labelledby={section.id}
       >
-        <SectionHeading
-          id={section.id}
-          align="start"
-          title={section.title}
-          subtitle={section.subtitle}
-        />
+        <StoryHeading section={section} />
         <ConnectorCatalog groups={connectorGroups} />
+        {section.footnote ? (
+          <p className={styles.footnote}>{section.footnote}</p>
+        ) : null}
       </section>
     );
   }
@@ -82,33 +81,112 @@ function SectionView({ section }: { section: StorySection }) {
   return unhandled;
 }
 
+function StoryHeading({
+  section,
+  as = "h2",
+  size = "section",
+}: {
+  section: StorySection;
+  as?: "h1" | "h2" | "h3";
+  size?: "hero" | "section" | "h2" | "h3";
+}) {
+  return (
+    <SectionHeading
+      id={section.id}
+      as={as}
+      size={size}
+      align={section.type === "close" ? "center" : "start"}
+      emphasis={section.emphasis}
+      emphasisWeight="semibold"
+      eyebrow={section.eyebrow}
+      subtitle={section.subtitle}
+      title={section.title}
+      tone={section.tone}
+    />
+  );
+}
+
 function Hero({ section }: { section: StorySection }) {
   return (
-    <section className={styles.hero} aria-labelledby={section.id}>
-      <div>
-        <SectionHeading
-          id={section.id}
-          as="h1"
-          size="hero"
-          align="start"
-          title={section.title}
-        />
-        <div className={styles.actions}>
-          {section.primary ? (
-            <Cta link={section.primary} tone="primary" label={section.id} />
-          ) : null}
-          {section.secondary ? (
-            <Cta
-              link={section.secondary}
-              tone="secondary"
-              label={`${section.id}-secondary`}
-            />
+    <>
+      <section className={styles.hero} aria-labelledby={section.id}>
+        <div>
+          <StoryHeading
+            as="h1"
+            section={{ ...section, subtitle: undefined }}
+            size="hero"
+          />
+          <div className={styles.actions}>
+            {section.primary ? (
+              <Cta link={section.primary} tone="primary" label={section.id} />
+            ) : null}
+            {section.secondary ? (
+              <Cta
+                link={section.secondary}
+                tone="secondary"
+                label={`${section.id}-secondary`}
+              />
+            ) : null}
+          </div>
+        </div>
+        {section.subtitle ? (
+          <p className={styles.heroCopy}>{section.subtitle}</p>
+        ) : null}
+      </section>
+      <Scene lines={section.lines ?? []} chips={section.chips ?? []} />
+    </>
+  );
+}
+
+function Scene({
+  lines,
+  chips,
+}: {
+  lines: { role: string; text: string }[];
+  chips: string[];
+}) {
+  return (
+    <div className={styles.scene}>
+      <div className={styles.window}>
+        <p className={styles.windowBar}>
+          <BotIcon size={16} />
+          Workspace
+        </p>
+        <div className={styles.frost}>
+          {lines.map((line) => (
+            <p className={styles.bubble} key={`${line.role}-${line.text}`}>
+              <strong>{line.role}</strong>
+              {line.text}
+            </p>
+          ))}
+          {chips.length > 0 ? (
+            <div className={styles.fileChips}>
+              {chips.map((chip) => (
+                <span key={chip}>{chip}</span>
+              ))}
+            </div>
           ) : null}
         </div>
       </div>
-      {section.subtitle ? (
-        <p className={styles.heroCopy}>{section.subtitle}</p>
-      ) : null}
+    </div>
+  );
+}
+
+function Dark({ section }: { section: StorySection }) {
+  return (
+    <section className={styles.dark} aria-labelledby={section.id}>
+      <div>
+        <StoryHeading section={{ ...section, tone: "inverse" }} />
+        {section.body ? <p className={styles.copy}>{section.body}</p> : null}
+      </div>
+      <div className={styles.thread}>
+        {(section.lines ?? []).map((line) => (
+          <p key={`${line.role}-${line.text}`}>
+            <strong>{line.role}</strong>
+            {line.text}
+          </p>
+        ))}
+      </div>
     </section>
   );
 }
@@ -116,9 +194,35 @@ function Hero({ section }: { section: StorySection }) {
 function Split({ section }: { section: StorySection }) {
   return (
     <section className={styles.split} aria-labelledby={section.id}>
-      <SectionHeading id={section.id} align="start" title={section.title} />
+      <StoryHeading section={section} />
       {section.body ? <p className={styles.copy}>{section.body}</p> : null}
+      {section.lines ? (
+        <Thread lines={section.lines} chips={section.chips} />
+      ) : null}
     </section>
+  );
+}
+
+function Thread({
+  lines,
+  chips,
+}: {
+  lines: { role: string; text: string }[];
+  chips?: string[];
+}) {
+  return (
+    <div className={styles.mock}>
+      {lines.map((line) => (
+        <p key={`${line.role}-${line.text}`}>
+          <BotIcon size={14} />
+          <strong>{line.role}</strong>
+          {line.text}
+        </p>
+      ))}
+      {chips?.map((chip) => (
+        <span key={chip}>{chip}</span>
+      ))}
+    </div>
   );
 }
 
@@ -319,13 +423,11 @@ function Columns({ section }: { section: StorySection }) {
 
 function Comparison({ section }: { section: StorySection }) {
   return (
-    <section className={styles.block} aria-labelledby={section.id}>
-      <SectionHeading
-        id={section.id}
-        align="start"
-        title={section.title}
-        subtitle={section.subtitle}
-      />
+    <section
+      className={section.tone === "inverse" ? styles.darkBand : styles.block}
+      aria-labelledby={section.id}
+    >
+      <StoryHeading section={section} />
       <div className={styles.featureGrid}>
         {(section.sides ?? []).map((side) => (
           <article key={side.title}>

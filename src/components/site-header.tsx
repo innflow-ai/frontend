@@ -53,6 +53,13 @@ export function SiteHeader() {
     });
   };
   const pathname = usePathname();
+  useEffect(() => {
+    if (pathname === "/") {
+      delete document.documentElement.dataset.logoInk;
+      return;
+    }
+    document.documentElement.dataset.logoInk = "feature";
+  }, [pathname]);
   const [announcementDismissed, setAnnouncementDismissed] = useState(false);
   const announcementHidden =
     !EXPERIENCE_ANNOUNCEMENT_ENABLED ||

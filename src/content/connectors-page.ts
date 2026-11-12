@@ -9,7 +9,20 @@ export const connectorsPage = {
     {
       id: "connectors-hero",
       type: "hero",
-      title: "Connect agents to the tools your work already lives in.",
+      eyebrow: "Connectors",
+      title: "Connect agents to the tools",
+      emphasis: "your work already lives in.",
+      lines: [
+        {
+          role: "You",
+          text: "Get the brief current, open a pull request, and message the owners.",
+        },
+        {
+          role: "Launch Agent",
+          text: "Notify account owners still needs approval.",
+        },
+      ],
+      chips: ["Brief", "Pull request", "Approval"],
       subtitle:
         "Grant agents the context and actions they are allowed to use. A connected app is not a blank credential, and it is not unlimited authority.",
       primary: { label: "Get started", href: appSignup },
@@ -61,9 +74,12 @@ export const connectorsPage = {
       id: "connector-catalog",
       type: "catalog",
       anchor: "connector-catalog",
+      eyebrow: "Catalog",
       title: "Browse the connector catalog",
       subtitle:
         "Search the tools your team already uses. What appears in a workspace depends on how that workspace is configured.",
+      footnote:
+        "A connector appears in a workspace when its authorization is configured and enabled. Individual read, write, and trigger actions are exposed separately.",
     },
     {
       id: "connectors-faq",

@@ -8,13 +8,17 @@ import { MarketingPageView } from "@/components/marketing-page-view";
 import { MarketingRuntime } from "@/components/marketing-runtime";
 import type { LatestBlogPostNavItem } from "@/components/mega-menu";
 import { NavigationBlogPostsProvider } from "@/components/navigation-blog-posts";
-import { OfferAnnouncementBar } from "@/components/offer-announcement-bar";
 import { PostHogObservability } from "@/components/posthog-observability";
 import { SiteCloseAndFooter } from "@/components/site-close-and-footer";
 import { SiteHeader } from "@/components/site-header";
 import { SmoothScroll } from "@/components/smooth-scroll";
-import { announcementBar, offerBarBootScript } from "@/config/announcement-bar";
+import { WebsiteAnnouncementBar } from "@/components/website-announcement";
 import { siteConfig } from "@/config/site";
+import {
+  announcementIdentity,
+  announcementState,
+  websiteAnnouncementBootScript,
+} from "@/config/website-announcement";
 import {
   formatPostDate,
   getLatestAppUpdate,
@@ -22,6 +26,7 @@ import {
   humanizeCategory,
   urlForImage,
 } from "@/lib/sanity";
+import { getWebsiteAnnouncement } from "@/lib/website-announcement";
 import "./globals.css";
 import { getNavigationTestimonial } from "@/lib/testimonials";
 import "lenis/dist/lenis.css";
@@ -144,11 +149,17 @@ export default async function RootLayout({
   children: ReactNode;
 }) {
   const experience = { variant: null, measure: false } as const;
-  const [latestPosts, appUpdate, navigationTestimonial] = await Promise.all([
-    getLatestBlogPosts(),
-    getLatestAppUpdate(),
-    getNavigationTestimonial(),
-  ]);
+  const [latestPosts, appUpdate, navigationTestimonial, announcement] =
+    await Promise.all([
+      getLatestBlogPosts(),
+      getLatestAppUpdate(),
+      getNavigationTestimonial(),
+      getWebsiteAnnouncement(),
+    ]);
+  const announcementNow = Date.now();
+  const announcementVisible = announcement
+    ? announcementState(announcement, announcementNow).visible
+    : false;
   const latestUpdate: LatestBlogPostNavItem | null = appUpdate
     ? {
         title: appUpdate.title,
@@ -184,6 +195,7 @@ export default async function RootLayout({
     // root attribute is intentionally different from the static HTML.
     <html
       lang="en"
+      data-website-announcement={announcementVisible ? "visible" : "hidden"}
       data-scroll-behavior="smooth"
       className={`${archivo.variable} ${archivoItalic.variable} ${inter.variable} ${sourceSerif.variable} ${geistMono.variable}`}
       suppressHydrationWarning
@@ -194,13 +206,13 @@ export default async function RootLayout({
             __html: `try{var t=localStorage.getItem("innflow-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t;}catch(e){}`,
           }}
         />
-        {announcementBar.enabled ? (
+        {announcement && (
           <script
             dangerouslySetInnerHTML={{
-              __html: offerBarBootScript(announcementBar),
+              __html: websiteAnnouncementBootScript(announcement),
             }}
           />
-        ) : null}
+        )}
       </head>
       <body>
         <SmoothScroll />
@@ -221,7 +233,13 @@ export default async function RootLayout({
           latestUpdate={latestUpdate}
           testimonial={navigationTestimonial}
         >
-          <OfferAnnouncementBar />
+          {announcement && (
+            <WebsiteAnnouncementBar
+              key={announcementIdentity(announcement)}
+              config={announcement}
+              initialNow={announcementNow}
+            />
+          )}
           <SiteHeader />
           {children}
           <SiteCloseAndFooter />

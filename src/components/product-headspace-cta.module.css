@@ -3,7 +3,7 @@
   isolation: isolate;
   min-height: 520px;
   padding: 72px 24px 120px;
-  color: var(--button-primary, #012232);
+  color: var(--button-primary-border, #0756bc);
   text-align: center;
   overflow: hidden;
 }

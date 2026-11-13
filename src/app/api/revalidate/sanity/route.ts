@@ -35,6 +35,11 @@ export async function POST(request: NextRequest) {
       return Response.json({ message: "Invalid signature." }, { status: 401 });
     }
 
+    if (body?._type === "websiteAnnouncement") {
+      revalidateTag("website-announcement", { expire: 0 });
+      revalidatePath("/", "layout");
+      return Response.json({ revalidated: true });
+    }
     if (body?._type && ["faq", "faqSet", "faqPlacement"].includes(body._type)) {
       revalidateTag("faqs", { expire: 0 });
       return Response.json({ revalidated: true });

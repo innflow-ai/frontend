@@ -60,7 +60,7 @@ describe("EditorialHeader navigation", () => {
       </NavigationBlogPostsProvider>,
     );
     await user.click(screen.getByRole("button", { name: "Resources" }));
-    const previews = screen.getByRole("region", {
+    const previews = await screen.findByRole("region", {
       name: "Latest from Innflow",
     });
     expect(within(previews).getAllByRole("img")).toHaveLength(4);

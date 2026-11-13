@@ -5,13 +5,13 @@ import { type CSSProperties, useEffect, useRef, useState } from "react";
 import { ChevronRight } from "@/components/chevron-right";
 import googleButtonStyles from "@/components/google-cta.module.css";
 import { GoogleCtaContent } from "@/components/google-cta-content";
-import { BotIcon } from "@/components/icons/bot-icon";
 import {
   Chart,
   Clock as MageClock,
   Multiply as MageMultiply,
   Users as MageUsers,
   Video as MageVideo,
+  Robot,
   Share,
   StarsA,
 } from "@/components/icons/mage";
@@ -25,7 +25,7 @@ import {
 } from "./scroll-showcase-motion";
 import styles from "./showcase.module.css";
 
-const showcaseIcons = [BotIcon, Share, StarsA, Chart];
+const showcaseIcons = [Robot, Share, StarsA, Chart];
 const assets = "/preview/scroll-showcase";
 const states = [
   {
@@ -292,10 +292,10 @@ export function ScrollShowcase() {
   return (
     <div className={styles.page}>
       <header className={styles.intro}>
-        <h1>
-          Turn conversations
+        <h1 data-reference-heading>
+          <span className={styles.heroEmphasis}>Turn conversations</span>
           <br />
-          <span className={styles.heroEmphasis}>into completed work.</span>
+          <span className={styles.heroSerif}>into completed work.</span>
         </h1>
         <p className={styles.subheadline}>
           Connect conversations, delegate tasks, and keep work moving.
@@ -308,7 +308,7 @@ export function ScrollShowcase() {
             <GoogleCtaContent />
           </a>
           <a
-            className={googleButtonStyles.button}
+            className={`${googleButtonStyles.button} ${googleButtonStyles.microsoft}`}
             href={`${siteConfig.appOrigin}/login`}
           >
             <span className={googleButtonStyles.content}>
@@ -421,7 +421,7 @@ export function ScrollShowcase() {
                         <span>{state.label}</span>
                         {state.badge && <small>{state.badge}</small>}
                       </div>
-                      <h2>{state.title}</h2>
+                      <h2 data-reference-heading>{state.title}</h2>
                       <p>{state.body}</p>
                       <a href="/products/platform">
                         Learn more

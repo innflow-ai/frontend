@@ -1,5 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, Geist_Mono, Inter, Source_Serif_4 } from "next/font/google";
+import {
+  Archivo,
+  Geist_Mono,
+  Host_Grotesk,
+  Instrument_Sans,
+  Inter,
+  Source_Serif_4,
+} from "next/font/google";
 import type { ReactNode } from "react";
 import { ConsentManagedTags } from "@/components/consent-managed-tags";
 import { DeferredAnalytics } from "@/components/deferred-analytics";
@@ -44,14 +51,27 @@ const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
   // 400 is the kit regular. 500 stays for serif headings outside this kit.
   weight: ["400", "500"],
+  style: ["normal", "italic"],
   variable: "--font-source-serif-4",
   display: "swap",
 });
 const archivoItalic = Archivo({
   subsets: ["latin"],
-  weight: "800",
+  weight: ["600", "700", "800"],
   style: "italic",
   variable: "--font-archivo-italic",
+  display: "swap",
+});
+const heroHeading = Instrument_Sans({
+  subsets: ["latin"],
+  weight: "500",
+  variable: "--font-hero-heading",
+  display: "swap",
+});
+const heroUi = Host_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-hero-ui",
   display: "swap",
 });
 const inter = Inter({
@@ -197,7 +217,7 @@ export default async function RootLayout({
       lang="en"
       data-website-announcement={announcementVisible ? "visible" : "hidden"}
       data-scroll-behavior="smooth"
-      className={`${archivo.variable} ${archivoItalic.variable} ${inter.variable} ${sourceSerif.variable} ${geistMono.variable}`}
+      className={`${archivo.variable} ${heroUi.variable} ${heroHeading.variable} ${archivoItalic.variable} ${inter.variable} ${sourceSerif.variable} ${geistMono.variable}`}
       suppressHydrationWarning
     >
       <head>

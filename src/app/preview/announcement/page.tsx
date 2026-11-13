@@ -23,7 +23,7 @@ export default async function AnnouncementPreview({
             mode === "model"
               ? undefined
               : {
-                  message: "Preview offer",
+                  message: "LIMITED OFFER",
                   targetTime: new Date(
                     now + (mode === "expiry" ? 10000 : 172800000),
                   ).toISOString(),
@@ -35,8 +35,8 @@ export default async function AnnouncementPreview({
               ? undefined
               : {
                   id: "preview",
-                  name: "Gemini (preview)",
-                  iconSrc: "/brand/google-g.svg",
+                  name: "Opus 5 (preview)",
+                  iconSrc: "/brand/announcement/anthropic.svg",
                   action: { label: "Explore", href: "/" },
                 },
         }}

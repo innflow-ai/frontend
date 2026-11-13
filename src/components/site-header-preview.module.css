@@ -124,3 +124,22 @@
     padding-inline: 10px;
   }
 }
+
+/* Local backing: the page-colored header surface reveals blue at its corners. */
+:global(html[data-website-announcement="visible"]) .previewScope {
+  background: var(--announcement-background);
+}
+:global(html[data-website-announcement="visible"]) .navSpace {
+  background: var(--marketing-paper);
+  border-radius: var(--announcement-radius) var(--announcement-radius) 0 0;
+}
+:global(html[data-website-announcement="visible"]) .flatHeader,
+:global(html[data-website-announcement="visible"]) .flatHeader::before {
+  background: transparent;
+}
+:global(html[data-website-announcement="visible"]) .announcement {
+  display: none;
+}
+:global(html[data-website-announcement="visible"]) .previewScope {
+  --preview-announcement-height: 0px;
+}

@@ -1,0 +1,129 @@
+/* Provisional geometry/colors pending access to the supplied Paper frames. */
+.bar {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 8px 56px 8px 24px;
+  background: var(--announcement-background);
+  color: #071a31;
+  font-family: var(--font-inter), sans-serif;
+  font-size: 13px;
+}
+:global(html[data-website-announcement="hidden"]) .bar {
+  display: none;
+}
+.offer,
+.model {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 7px 12px;
+  border-radius: 20px;
+  min-width: 0;
+  max-width: 100%;
+}
+.offer {
+  background: linear-gradient(90deg, #aa165e, #aa167a);
+  color: white;
+}
+.model {
+  background: #15181e;
+  color: white;
+}
+.model strong {
+  overflow-wrap: anywhere;
+}
+.model img {
+  object-fit: contain;
+  flex-shrink: 0;
+}
+.new {
+  color: #69c8ff;
+  font-weight: 700;
+}
+.timer {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+.toggle {
+  background: transparent;
+  color: inherit;
+  border: 0;
+  text-decoration: underline;
+  cursor: pointer;
+  min-height: 32px;
+  font: inherit;
+}
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 8px 16px;
+  background: var(--button-primary);
+  color: white;
+  border: 1px solid var(--button-primary-border);
+  border-radius: 16px;
+  text-decoration: none;
+  font-weight: 600;
+}
+.cta:hover {
+  background: var(--button-primary-hover);
+}
+.dismiss {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: transparent;
+  color: #071a31;
+  font-size: 24px;
+  cursor: pointer;
+}
+.bar :is(a, button):focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+.mobileMessage {
+  display: none;
+}
+@media (max-width: 1199px) {
+  .supporting {
+    display: none;
+  }
+}
+@media (max-width: 700px) {
+  .bar {
+    padding: 10px 48px 10px 12px;
+    gap: 8px;
+  }
+  .offer,
+  .model {
+    width: 100%;
+    border-radius: 14px;
+  }
+  .seconds,
+  .desktopMessage {
+    display: none;
+  }
+  .mobileMessage {
+    display: inline;
+  }
+  .offer > strong {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+:global(html[data-website-offer="inactive"]) .offer {
+  display: none;
+}

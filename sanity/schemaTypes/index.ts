@@ -17,8 +17,10 @@ import { skillCategoryType } from "./skillCategoryType";
 import { skillType } from "./skillType";
 import { testimonialPlacementType } from "./testimonialPlacementType";
 import { testimonialType } from "./testimonialType";
+import { websiteAnnouncementType } from "./websiteAnnouncementType";
 
 export const schemaTypes = [
+  websiteAnnouncementType,
   faqType,
   faqSetType,
   faqPlacementType,

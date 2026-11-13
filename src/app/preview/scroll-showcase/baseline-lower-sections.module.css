@@ -452,7 +452,7 @@
 }
 .closing .cta {
   display: inline-flex;
-  background: #071a31;
+  background: var(--button-primary);
   color: white;
   align-items: center;
   justify-content: center;

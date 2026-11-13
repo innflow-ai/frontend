@@ -18,7 +18,7 @@
   gap: 10px !important;
   min-height: 48px;
   padding: 12px 22px !important;
-  border: 1px solid var(--google-button-background, var(--button-primary)) !important;
+  border: 1px solid var(--google-button-border, var(--button-primary-border)) !important;
   border-radius: 999px !important;
   background: var(--google-button-background, var(--button-primary)) !important;
   box-shadow:
@@ -80,4 +80,22 @@
   --google-button-background: var(--bl-cream, var(--marketing-paper));
   --google-button-foreground: var(--bl-navy, #012232);
   --google-button-hover: #f0ece5;
+}
+
+.button:focus-visible,
+:global(a):has(> .content):focus-visible {
+  outline: 3px solid #0756bc;
+  outline-offset: 3px;
+}
+.button:active {
+  transform: translateY(1px);
+}
+.button:disabled,
+.button[aria-disabled="true"] {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.secondary,
+.cream {
+  --google-button-border: var(--marketing-hairline);
 }

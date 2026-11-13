@@ -10,9 +10,30 @@ export default defineConfig({
   projectId: "hnjg8vum",
   dataset: "production",
 
-  plugins: [structureTool(), visionTool()],
+  plugins: [
+    structureTool({
+      structure: (S) =>
+        S.list()
+          .title("Content")
+          .items([
+            S.listItem()
+              .title("Website announcement")
+              .child(
+                S.document()
+                  .schemaType("websiteAnnouncement")
+                  .documentId("website-announcement"),
+              ),
+            ...S.documentTypeListItems().filter(
+              (item) => item.getId() !== "websiteAnnouncement",
+            ),
+          ]),
+    }),
+    visionTool(),
+  ],
 
   schema: {
     types: schemaTypes,
+    templates: (templates) =>
+      templates.filter((t) => t.schemaType !== "websiteAnnouncement"),
   },
 });

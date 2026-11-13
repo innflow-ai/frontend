@@ -1,5 +1,7 @@
 # Announcement bar with countdown
 
+> Visual source update: approved Figma frame `351:24439` and primary button `354:5843` supersede provisional Paper values below. See [implementation details](ANNOUNCEMENT_IMPLEMENTATION.md).
+
 Draft for review · 13 November 2026
 
 **Updated design direction:** [Paper desktop/mobile change list](PAPER_DESKTOP_MOBILE_CHANGE_LIST.md) expands this work to the hero, navigation and website button system. The user has specified the Paper blue gradient as Innflow Web's new primary button style, superseding this draft's earlier dark-primary recommendation. Exact Paper measurements remain unverified; earlier proposed dimensions in this document are provisional.

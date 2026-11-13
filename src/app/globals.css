@@ -2784,12 +2784,12 @@ p {
   --sky-blue-hover: #0095db;
   --sky-blue-bright: var(--brand-kit-blue);
   --sky-blue-soft: #e3f0fe;
-  /* Provisional blue gradient, pending exact Paper token extraction. */
-  --button-primary: linear-gradient(180deg, #0879df 0%, #0756bc 100%);
-  --button-primary-border: #0756bc;
+  /* Approved Figma primary action, node 354:5843. */
+  --button-primary: linear-gradient(180deg, #5aaaf8 0%, #0c99ff 100%);
+  --button-primary-border: #0680c2f2;
   --announcement-background: linear-gradient(180deg, #00aeef, #0095ff);
   --announcement-radius: 28px;
-  --button-primary-hover: linear-gradient(180deg, #086bc6, #06499f);
+  --button-primary-hover: linear-gradient(180deg, #429bf0, #008bec);
   --gradient-cta: var(--button-primary);
   --gradient-cta-hover: var(--button-primary-hover);
   --sky-radius-pill: 999px;

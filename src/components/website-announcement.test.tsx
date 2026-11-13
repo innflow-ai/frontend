@@ -15,7 +15,7 @@ import {
 import { WebsiteAnnouncementBar } from "./website-announcement";
 
 const now = Date.parse("2026-11-13T12:00:00Z");
-const config: WebsiteAnnouncement = {
+const config = {
   enabled: true,
   id: "test",
   offer: {
@@ -30,7 +30,7 @@ const config: WebsiteAnnouncement = {
     iconSrc: "/brand/google-g.svg",
     action: { label: "Explore model", href: "/" },
   },
-};
+} satisfies WebsiteAnnouncement;
 beforeEach(() => {
   vi.useFakeTimers();
   vi.setSystemTime(now);
@@ -46,7 +46,9 @@ it("keeps model and switches action after offer expiry, then stops ticking", () 
   act(() => vi.advanceTimersByTime(2000));
   expect(screen.queryByText("Test offer")).toBeNull();
   expect(screen.getByText("Example model")).toBeInTheDocument();
-  expect(screen.getByText("- Exclusive on innflow")).toBeInTheDocument();
+  expect(screen.getByText(/- Exclusive on/)).toHaveTextContent(
+    "- Exclusive on innflow",
+  );
   expect(
     screen.getByRole("link", { name: /Explore model/ }),
   ).toBeInTheDocument();
@@ -66,7 +68,7 @@ it("dismisses persistently but new releases appear", () => {
     <WebsiteAnnouncementBar
       config={{
         ...config,
-        modelRelease: { ...config.modelRelease!, id: "next" },
+        modelRelease: { ...config.modelRelease, id: "next" },
       }}
       initialNow={now}
     />,
@@ -79,7 +81,7 @@ it("supports model-only and scheduled offer states", () => {
       {
         ...config,
         offer: {
-          ...config.offer!,
+          ...config.offer,
           startsAt: new Date(now + 1000).toISOString(),
         },
       },
@@ -107,8 +109,8 @@ it("hides offer-only exactly at deadline and clears offset", () => {
   expect(
     document.documentElement.style.getPropertyValue("--announcement-h"),
   ).toBe("0px");
-  expect(remainingSeconds(config.offer!.targetTime, now + 1999)).toBe(1);
-  expect(remainingSeconds(config.offer!.targetTime, now + 2000)).toBe(0);
+  expect(remainingSeconds(config.offer.targetTime, now + 1999)).toBe(1);
+  expect(remainingSeconds(config.offer.targetTime, now + 2000)).toBe(0);
 });
 it("allows static deadline mode and catches up after tab sleep", () => {
   render(<WebsiteAnnouncementBar config={config} initialNow={now} />);

@@ -259,8 +259,8 @@ export function SiteHeader() {
           <Image
             src="/brand/innflow-wordmark.svg"
             alt="innflow"
-            width={95}
-            height={28}
+            width={110}
+            height={22.28}
             preload
           />
         </a>

@@ -1,4 +1,5 @@
 .previewScope {
+  font-family: var(--font-hero-ui), sans-serif;
   position: relative;
   background: var(--marketing-paper);
   --preview-announcement-height: 40px;
@@ -142,4 +143,11 @@
 }
 :global(html[data-website-announcement="visible"]) .previewScope {
   --preview-announcement-height: 0px;
+}
+
+@media (min-width: 1181px) {
+  .flatHeader [aria-label="innflow home"] img {
+    width: 110px;
+    height: auto;
+  }
 }

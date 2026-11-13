@@ -1,5 +1,6 @@
 /* Figma four-state reference + supplied Calendly tokens, scoped to this preview. */
 .page {
+  --font-host-grotesk: var(--font-hero-ui);
   --preview-ink: #071a31;
   --preview-muted: #5d6d7b;
   background: var(--marketing-cloud);
@@ -22,7 +23,8 @@
   outline-offset: 5px;
 }
 .intro {
-  padding: 135px 24px 32px;
+  /* The 70px navigation occupies the first part of the reference top inset. */
+  padding: 65px 24px 32px;
   text-align: center;
 }
 .outro > p {
@@ -33,9 +35,10 @@
 }
 .intro h1 {
   font-weight: 500;
-  font-size: clamp(40px, 4.5vw, 72px);
-  letter-spacing: -0.045em;
-  line-height: 1.1;
+  font-size: clamp(40px, 5.75vw, 84px);
+  letter-spacing: -0.03522em;
+  line-height: 0.861;
+  font-style: italic;
   margin: 0 0 14px;
 }
 .subheadline {
@@ -77,13 +80,17 @@
   height: 100svh;
   position: sticky;
   top: 0;
-  padding: 16px;
+  padding: 0 16px 16px;
   display: grid;
   place-items: start center;
 }
 .stage {
   width: calc(69% + var(--expansion, 0) * 31%);
-  height: calc(78% + var(--expansion, 0) * 22%);
+  height: calc(
+    min(686.391px, 78svh) +
+    var(--expansion, 0) *
+    (100% - min(686.391px, 78svh))
+  );
   min-height: 510px;
   max-width: none;
   margin: 0 auto;
@@ -998,8 +1005,29 @@
   );
 }
 
-/* Existing font pairing is provisional until the Paper font runs are available. */
+/* Approved Figma headline, node 354:5681. */
 .heroEmphasis {
-  font-family: var(--font-heading-emphasis);
+  font-family: var(--font-archivo-italic), sans-serif;
   font-weight: 600;
+}
+
+.heroSerif {
+  font-family: var(--font-source-serif-4), serif;
+  font-weight: 400;
+}
+.copy h2 {
+  font-family: var(--font-hero-heading), sans-serif;
+}
+@media (max-width: 480px) {
+  .intro h1 {
+    font-size: clamp(28px, 8.8vw, 40px);
+    line-height: 1;
+  }
+  .oauthActions {
+    flex-direction: column;
+    align-items: center;
+  }
+  .oauthActions a {
+    min-width: 232px;
+  }
 }

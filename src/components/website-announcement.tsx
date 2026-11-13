@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import {
   announcementIdentity,
@@ -101,7 +102,16 @@ export function WebsiteAnnouncementBar({
         timeZone: offer.displayTimeZone,
       }).format(new Date(offer.targetTime))
     : "";
-  const action = offer?.action ?? model?.action;
+  const trackAction = (destination: string) => {
+    try {
+      captureMarketingEvent("marketing_cta_clicked", {
+        placement: "announcement_bar",
+        campaign_id: config.id,
+        destination,
+        route: window.location.pathname,
+      });
+    } catch {}
+  };
   return (
     <aside
       ref={bar}
@@ -119,54 +129,90 @@ export function WebsiteAnnouncementBar({
     >
       {offer && (
         <div className={styles.offer}>
-          <strong
-            className={offer.mobileMessage ? styles.desktopMessage : undefined}
+          <a
+            href={offer.action.href}
+            aria-label={`${offer.action.label}: ${offer.message}`}
+            className={styles.offerMessage}
+            onClick={() => trackAction(offer.action.href)}
           >
-            {offer.message}
-          </strong>
-          {offer.mobileMessage && (
-            <strong className={styles.mobileMessage}>
-              {offer.mobileMessage}
-            </strong>
-          )}
-          <span>Ends in</span>
-          {fixed || !ready ? (
-            <time dateTime={offer.targetTime}>{deadline}</time>
-          ) : (
-            <span
-              role="timer"
-              aria-label={`Offer ends ${deadline}`}
-              aria-live="off"
-              className={styles.timer}
-            >
-              <span aria-hidden="true">
-                {units.map((unit, i) => (
-                  <span
-                    key={["days", "hours", "minutes", "seconds"][i]}
-                    className={i === 3 ? styles.seconds : undefined}
-                  >
-                    {i > 0 ? " : " : ""}
-                    {String(unit).padStart(2, "0")}
-                    {["d", "h", "m", "s"][i]}
-                  </span>
-                ))}
-              </span>
-            </span>
-          )}
+            {offer.message.toUpperCase() === "LIMITED OFFER" ? (
+              <>
+                <strong>LIMITED</strong>
+                <Image
+                  src="/brand/announcement/alarm-clock.svg"
+                  alt=""
+                  width={22}
+                  height={22}
+                />
+                <strong>OFFER</strong>
+              </>
+            ) : (
+              <>
+                <Image
+                  src="/brand/announcement/alarm-clock.svg"
+                  alt=""
+                  width={22}
+                  height={22}
+                />
+                <strong
+                  className={
+                    offer.mobileMessage ? styles.desktopMessage : undefined
+                  }
+                >
+                  {offer.message}
+                </strong>
+                {offer.mobileMessage && (
+                  <strong className={styles.mobileMessage}>
+                    {offer.mobileMessage}
+                  </strong>
+                )}
+              </>
+            )}
+          </a>
+          <span className={styles.expires}>expires:</span>
           <button
             className={styles.toggle}
             type="button"
+            aria-label={fixed ? "Show countdown" : "Show deadline"}
+            title={
+              fixed
+                ? "Show countdown"
+                : `Offer ends ${deadline}. Click to show deadline.`
+            }
             onClick={() => setFixed(!fixed)}
           >
-            {fixed ? "Show countdown" : "Show deadline"}
+            {fixed ? (
+              <time dateTime={offer.targetTime}>{deadline}</time>
+            ) : (
+              <span
+                role="timer"
+                aria-label={`Offer ends ${deadline}`}
+                aria-live="off"
+                className={styles.timer}
+              >
+                <span aria-hidden="true">
+                  {ready
+                    ? units
+                        .map((unit) => String(unit).padStart(2, "0"))
+                        .join(":")
+                    : "--:--:--:--"}
+                </span>
+              </span>
+            )}
           </button>
         </div>
       )}
       {model && (
         <div className={styles.model}>
+          <Image
+            src="/brand/announcement/sparkle.svg"
+            alt=""
+            width={14}
+            height={14}
+          />
           <span className={styles.new}>NEW</span>
-          {failedIcon !==
-            model.iconSrc /* biome-ignore lint/performance/noImgElement: CMS icon uses intrinsic dimensions and error fallback. */ && (
+          {failedIcon !== model.iconSrc && (
+            /* biome-ignore lint/performance/noImgElement: Dynamic CMS provider icon has an error fallback. */
             <img
               src={model.iconSrc}
               alt=""
@@ -175,30 +221,30 @@ export function WebsiteAnnouncementBar({
               onError={() => setFailedIcon(model.iconSrc)}
             />
           )}
-          <strong>{model.name}</strong>
-          <span>- Exclusive on innflow</span>
+          {model.action ? (
+            <a
+              href={model.action.href}
+              aria-label={`${model.action.label}: ${model.name}`}
+              onClick={(event) => trackAction(event.currentTarget.href)}
+            >
+              <strong>{model.name}</strong>
+            </a>
+          ) : (
+            <strong>{model.name}</strong>
+          )}
+          <span className={styles.exclusive}>
+            - Exclusive on <b>innflow</b>
+          </span>
+          <Image
+            src="/brand/announcement/sparkle-end.svg"
+            alt=""
+            width={15}
+            height={15}
+          />
         </div>
       )}
       {config.supportingCopy && (
         <span className={styles.supporting}>{config.supportingCopy}</span>
-      )}
-      {action && (
-        <a
-          className={styles.cta}
-          href={action.href}
-          onClick={() => {
-            try {
-              captureMarketingEvent("marketing_cta_clicked", {
-                placement: "announcement_bar",
-                campaign_id: config.id,
-                destination: action.href,
-                route: window.location.pathname,
-              });
-            } catch {}
-          }}
-        >
-          {action.label} <span aria-hidden="true">→</span>
-        </a>
       )}
       <button
         className={styles.dismiss}

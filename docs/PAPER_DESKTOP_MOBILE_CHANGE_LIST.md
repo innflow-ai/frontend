@@ -1,5 +1,7 @@
 # Innflow Web: Paper desktop and mobile change list
 
+> Visual source update: approved Figma frame `351:24439` and primary button `354:5843` supersede provisional Paper values below. See [implementation details](ANNOUNCEMENT_IMPLEMENTATION.md).
+
 Status: functional CMS/announcement implementation and provisional visual changes are in the working tree. See [implementation and release notes](ANNOUNCEMENT_IMPLEMENTATION.md). Exact Paper comparison remains pending; the checkboxes below are the acceptance inventory, not a claim that visual review is complete.
 
 ## Design sources and precedence

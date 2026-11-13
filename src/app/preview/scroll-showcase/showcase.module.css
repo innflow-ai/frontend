@@ -997,3 +997,9 @@
     #246a87 100%
   );
 }
+
+/* Existing font pairing is provisional until the Paper font runs are available. */
+.heroEmphasis {
+  font-family: var(--font-heading-emphasis);
+  font-weight: 600;
+}

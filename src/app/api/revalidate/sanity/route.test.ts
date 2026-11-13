@@ -23,6 +23,22 @@ describe("Sanity revalidation webhook", () => {
     process.env.SANITY_REVALIDATE_SECRET = "test-secret";
   });
 
+  it("invalidates announcement data and all shared layouts", async () => {
+    parseBodyMock.mockResolvedValue({
+      body: { _type: "websiteAnnouncement" },
+      isValidSignature: true,
+    });
+    const response = await POST(
+      new NextRequest("https://innflow.ai/api/revalidate/sanity", {
+        method: "POST",
+      }),
+    );
+    expect(response.status).toBe(200);
+    expect(revalidateTagMock).toHaveBeenCalledWith("website-announcement", {
+      expire: 0,
+    });
+    expect(revalidatePathMock).toHaveBeenCalledWith("/", "layout");
+  });
   it("rejects requests with invalid signatures", async () => {
     parseBodyMock.mockResolvedValue({
       body: { _type: "post" },

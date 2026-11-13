@@ -295,7 +295,7 @@ export function ScrollShowcase() {
         <h1>
           Turn conversations
           <br />
-          into completed work.
+          <span className={styles.heroEmphasis}>into completed work.</span>
         </h1>
         <p className={styles.subheadline}>
           Connect conversations, delegate tasks, and keep work moving.

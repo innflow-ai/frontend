@@ -1,12 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import {
-  Archivo,
-  Geist_Mono,
-  Host_Grotesk,
-  Instrument_Sans,
-  Inter,
-  Source_Serif_4,
-} from "next/font/google";
+import { Archivo, Geist_Mono, Instrument_Sans, Inter } from "next/font/google";
+import localFont from "next/font/local";
 import type { ReactNode } from "react";
 import { ConsentManagedTags } from "@/components/consent-managed-tags";
 import { DeferredAnalytics } from "@/components/deferred-analytics";
@@ -47,11 +41,19 @@ const archivo = Archivo({
   display: "swap",
 });
 
-const sourceSerif = Source_Serif_4({
-  subsets: ["latin"],
-  // 400 is the kit regular. 500 stays for serif headings outside this kit.
-  weight: ["400", "500"],
-  style: ["normal", "italic"],
+const sourceSerif = localFont({
+  src: [
+    {
+      path: "./fonts/source-serif-4-normal.woff2",
+      weight: "400 500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/source-serif-4-italic.woff2",
+      weight: "400 500",
+      style: "italic",
+    },
+  ],
   variable: "--font-source-serif-4",
   display: "swap",
 });
@@ -68,9 +70,14 @@ const heroHeading = Instrument_Sans({
   variable: "--font-hero-heading",
   display: "swap",
 });
-const heroUi = Host_Grotesk({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
+const heroUi = localFont({
+  src: [
+    {
+      path: "./fonts/host-grotesk-normal.woff2",
+      weight: "400 600",
+      style: "normal",
+    },
+  ],
   variable: "--font-hero-ui",
   display: "swap",
 });

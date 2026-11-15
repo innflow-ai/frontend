@@ -22,6 +22,7 @@ import {
   ExclamationTriangle as Warning,
   Multiply as X,
 } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { SectionHeading } from "@/components/section-heading";
 import { siteConfig } from "@/config/site";
 import { helpArticles, helpCategories } from "@/content/help-center";
@@ -199,7 +200,9 @@ export function HelpCenter() {
       <div className={styles.body}>
         <main id="main-content" className={styles.main}>
           <section className={styles.hero}>
-            <h1>How can we help?</h1>
+            <h1 data-mixed-heading>
+              <MixedHeadingText>How can we help?</MixedHeadingText>
+            </h1>
             <p>
               Find clear answers, solve issues fast, and get back to what
               matters.
@@ -258,7 +261,9 @@ export function HelpCenter() {
           </section>
           <section className={`${styles.feature} ${styles.learning}`}>
             <div className={styles.featureText}>
-              <h2>Learning hub</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>Learning hub</MixedHeadingText>
+              </h2>
               <p>
                 Learn how to use Innflow at your own pace with resources and
                 workflow guides.
@@ -277,7 +282,9 @@ export function HelpCenter() {
           </section>
           <section className={styles.feature}>
             <div className={styles.featureText}>
-              <h2>Innflow integrations</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>Innflow integrations</MixedHeadingText>
+              </h2>
               <p>
                 Build connected workflows with the tools and systems your team
                 already uses.

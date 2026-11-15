@@ -3,6 +3,7 @@ import {
   ChevronLeft as MageArrowLeft,
   ArrowRight as MageArrowRight,
 } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { legalPolicies } from "@/content/legal";
 import styles from "./baselane-legal.module.css";
 import { InnerPageShell } from "./inner-page-shell";
@@ -39,12 +40,16 @@ export function BaselaneLegalDirectory() {
     <InnerPageShell>
       <div className={styles.page}>
         <header className={styles.heading}>
-          <h1>Legal agreements</h1>
+          <h1 data-mixed-heading>
+            <MixedHeadingText>Legal agreements</MixedHeadingText>
+          </h1>
         </header>
         <div className={styles.directory}>
           {sections.map((section) => (
             <section key={section.title}>
-              <h2>{section.title}</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>{section.title}</MixedHeadingText>
+              </h2>
               <ul>
                 {section.links.map(([title, href]) => (
                   <li key={href}>
@@ -70,7 +75,9 @@ export function BaselaneLegalPolicy({ type }: { type: "privacy" | "terms" }) {
     <InnerPageShell>
       <div className={styles.page}>
         <header className={styles.heading}>
-          <h1>{policy.title}</h1>
+          <h1 data-mixed-heading>
+            <MixedHeadingText>{policy.title}</MixedHeadingText>
+          </h1>
         </header>
         <article className={styles.document}>
           <nav aria-label="Legal navigation" className={styles.documentNav}>

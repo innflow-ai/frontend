@@ -7,6 +7,7 @@ import {
   ChevronLeft as MageArrowLeft,
   ArrowRight as MageArrowRight,
 } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import styles from "./baselane-news.module.css";
 import { InnerPageShell } from "./inner-page-shell";
 
@@ -53,7 +54,11 @@ export function BaselaneNews() {
     <InnerPageShell>
       <div className={styles.page}>
         <header className={styles.intro}>
-          <h1>Industry coverage and perspectives</h1>
+          <h1 data-mixed-heading>
+            <MixedHeadingText>
+              Industry coverage and perspectives
+            </MixedHeadingText>
+          </h1>
           <p>
             Explore independent reporting on the property market and the tools
             around it, alongside practical ways to connect your work with
@@ -79,7 +84,9 @@ export function BaselaneNews() {
                   />
                 </div>
                 <div className={styles.body}>
-                  <h2>{title}</h2>
+                  <h2 data-mixed-heading>
+                    <MixedHeadingText>{title}</MixedHeadingText>
+                  </h2>
                   <p>{description}</p>
                   <a href={href} target="_blank" rel="noopener noreferrer">
                     Read the article{" "}
@@ -109,7 +116,11 @@ export function BaselaneNews() {
           </div>
         </div>
         <section className={styles.features}>
-          <h2>A closer look at connected property work</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              A closer look at connected property work
+            </MixedHeadingText>
+          </h2>
           <article className={styles.feature}>
             <div className={styles.visual}>
               <Image
@@ -123,7 +134,11 @@ export function BaselaneNews() {
             </div>
             <div className={styles.copy}>
               <span>EXPLORE INNFLOW</span>
-              <h3>Operations organized around your properties</h3>
+              <h3 data-mixed-heading>
+                <MixedHeadingText>
+                  Operations organized around your properties
+                </MixedHeadingText>
+              </h3>
               <p>
                 Bring recurring requests, team ownership, and property context
                 into one connected flow.
@@ -146,7 +161,11 @@ export function BaselaneNews() {
             </div>
             <div className={styles.copy}>
               <span>EXPLORE INNFLOW</span>
-              <h3>Keep the records behind the work together</h3>
+              <h3 data-mixed-heading>
+                <MixedHeadingText>
+                  Keep the records behind the work together
+                </MixedHeadingText>
+              </h3>
               <p>
                 Connect supporting documents and review notes to the requests
                 and decisions they belong to.
@@ -158,7 +177,11 @@ export function BaselaneNews() {
           </article>
         </section>
         <section className={styles.closing}>
-          <h2>More perspectives on property technology</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              More perspectives on property technology
+            </MixedHeadingText>
+          </h2>
           <p>
             Visit the innflow blog for ideas on workflows, AI agents, and the
             day-to-day work of running a property operation.

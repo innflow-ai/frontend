@@ -5,6 +5,7 @@ import {
   FileRecords as Files,
   Home as HouseLine,
 } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
 import styles from "./baselane-renters.module.css";
 import { InnerPageShell } from "./inner-page-shell";
@@ -63,10 +64,12 @@ export function BaselaneRenters() {
       <section className={styles.hero}>
         <Photo name="hero" responsive priority />
         <div>
-          <h1>
-            More clarity.
-            <br />
-            Less back and forth.
+          <h1 data-mixed-heading>
+            <MixedHeadingText>
+              More clarity.
+              <br />
+              Less back and forth.
+            </MixedHeadingText>
           </h1>
           <p>
             Help your team create a more connected resident experience, with
@@ -89,9 +92,11 @@ export function BaselaneRenters() {
             <Photo name="panorama" />
           </div>
           <div>
-            <h2>
-              Behind a better resident experience is a team with the right
-              context.
+            <h2 data-mixed-heading>
+              <MixedHeadingText>
+                Behind a better resident experience is a team with the right
+                context.
+              </MixedHeadingText>
             </h2>
             <p>
               innflow connects the work that helps your property team move
@@ -102,7 +107,11 @@ export function BaselaneRenters() {
       </section>
       <section className={styles.section}>
         <div className={styles.intro}>
-          <h2>Built for better everyday experiences.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              Built for better everyday experiences.
+            </MixedHeadingText>
+          </h2>
           <p>Keep your team, your properties, and the work ahead connected.</p>
         </div>
         <div className={styles.features}>
@@ -113,7 +122,9 @@ export function BaselaneRenters() {
               </div>
               <div className={styles.featureCopy}>
                 <small>{feature.label}</small>
-                <h3>{feature.title}</h3>
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>{feature.title}</MixedHeadingText>
+                </h3>
                 <p>{feature.text}</p>
               </div>
             </article>
@@ -122,7 +133,9 @@ export function BaselaneRenters() {
       </section>
       <section className={styles.section}>
         <div className={styles.intro}>
-          <h2>The details, together.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>The details, together.</MixedHeadingText>
+          </h2>
         </div>
         <div className={styles.cards}>
           {[
@@ -169,7 +182,9 @@ export function BaselaneRenters() {
                   ))}
                 </div>
               </div>
-              <h3>{title}</h3>
+              <h3 data-mixed-heading>
+                <MixedHeadingText>{title}</MixedHeadingText>
+              </h3>
               <p>{text}</p>
             </article>
           ))}
@@ -177,7 +192,11 @@ export function BaselaneRenters() {
       </section>
       <section className={styles.section}>
         <div className={styles.intro}>
-          <h2>A clearer path from request to resolution.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              A clearer path from request to resolution.
+            </MixedHeadingText>
+          </h2>
         </div>
         <ol className={styles.steps}>
           {[
@@ -188,7 +207,9 @@ export function BaselaneRenters() {
           ].map(([title, text], i) => (
             <li key={title}>
               <span>{i + 1}</span>
-              <h3>{title}</h3>
+              <h3 data-mixed-heading>
+                <MixedHeadingText>{title}</MixedHeadingText>
+              </h3>
               <p>{text}</p>
             </li>
           ))}

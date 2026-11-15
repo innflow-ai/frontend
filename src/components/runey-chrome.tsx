@@ -135,10 +135,10 @@ export function RuneyChrome({
           <div className={styles.headerInner}>
             <a href="/" aria-label="Innflow home">
               <Image
-                src="/brand/innflow_logo_set_B.svg"
+                src="/brand/innflow-nav-wordmark.svg"
                 alt="Innflow"
                 width={122}
-                height={26}
+                height={33}
                 preload
               />
             </a>

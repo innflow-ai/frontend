@@ -4,6 +4,7 @@ import { BlogAuthorCard } from "@/components/blog/author-card";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { ChevronRight } from "@/components/chevron-right";
 import { Search as MagnifyingGlass } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { MarketingPage } from "@/components/page-primitives";
 import {
   BLOG_CATEGORIES,
@@ -71,7 +72,9 @@ function PostCard({ post }: { post: BlogPostSummary }) {
       ) : null}
       <div className={styles.cardBody}>
         <span className={styles.chip}>{humanizeCategory(post.category)}</span>
-        <h3>{post.title}</h3>
+        <h3 data-mixed-heading>
+          <MixedHeadingText>{post.title}</MixedHeadingText>
+        </h3>
         {post.excerpt ? <p className={styles.excerpt}>{post.excerpt}</p> : null}
         <PostMeta post={post} />
       </div>
@@ -109,8 +112,10 @@ function FeaturedPost({ post }: { post: BlogPostSummary }) {
       </div>
       <div className={styles.featuredCopy}>
         <span className={styles.chip}>{humanizeCategory(post.category)}</span>
-        <h2>
-          <a href={`/blog/${post.slug}`}>{post.title}</a>
+        <h2 data-mixed-heading>
+          <MixedHeadingText>
+            <a href={`/blog/${post.slug}`}>{post.title}</a>
+          </MixedHeadingText>
         </h2>
         {post.excerpt ? <p className={styles.excerpt}>{post.excerpt}</p> : null}
         <PostMeta post={post} />
@@ -175,10 +180,12 @@ export default async function BlogIndexPage({
             <div className={styles.intro}>
               <div>
                 <p className={styles.eyebrow}>The Innflow journal</p>
-                <h1>
-                  Good ideas.
-                  <br />
-                  Better property operations.
+                <h1 data-mixed-heading>
+                  <MixedHeadingText>
+                    Good ideas.
+                    <br />
+                    Better property operations.
+                  </MixedHeadingText>
                 </h1>
               </div>
               <p className={styles.heroSubline}>
@@ -259,7 +266,11 @@ export default async function BlogIndexPage({
         <section className={styles.listing} aria-label="Blog articles">
           <div className={styles.shell}>
             <div className={styles.sectionHeading}>
-              <h2>{hasFilters ? "Your reading list" : "Fresh perspectives"}</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>
+                  {hasFilters ? "Your reading list" : "Fresh perspectives"}
+                </MixedHeadingText>
+              </h2>
               <span>
                 {filtered.length} {filtered.length === 1 ? "story" : "stories"}
                 {q ? ` matching “${q}”` : " to explore"}
@@ -273,10 +284,12 @@ export default async function BlogIndexPage({
             {filtered.length === 0 ? (
               <div className={styles.empty}>
                 <MagnifyingGlass size={32} aria-hidden="true" />
-                <h3>
-                  {hasFilters
-                    ? "No stories found just yet."
-                    : "New perspectives are on the way."}
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>
+                    {hasFilters
+                      ? "No stories found just yet."
+                      : "New perspectives are on the way."}
+                  </MixedHeadingText>
                 </h3>
                 <p>
                   {hasFilters
@@ -309,7 +322,9 @@ export default async function BlogIndexPage({
                   <>
                     {featured ? (
                       <div className={styles.sectionHeading}>
-                        <h2>Keep exploring</h2>
+                        <h2 data-mixed-heading>
+                          <MixedHeadingText>Keep exploring</MixedHeadingText>
+                        </h2>
                         <span>More ideas for your everyday</span>
                       </div>
                     ) : null}

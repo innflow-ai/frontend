@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { JsonLd } from "@/components/json-ld";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { FaqList, MarketingPage } from "@/components/page-primitives";
 import { siteConfig } from "@/config/site";
 import { faqs as fallbackFaqs } from "@/content/home";
@@ -38,7 +39,11 @@ export default async function FaqPage() {
             <Breadcrumbs
               items={[{ label: "Home", href: "/" }, { label: "FAQ" }]}
             />
-            <h1>{faqHeading || "Frequently Asked Questions"}</h1>
+            <h1 data-mixed-heading>
+              <MixedHeadingText>
+                {faqHeading || "Frequently Asked Questions"}
+              </MixedHeadingText>
+            </h1>
           </div>
           <div className={styles.questions}>
             <FaqList items={faqs} />

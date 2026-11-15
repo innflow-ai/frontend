@@ -1,3 +1,4 @@
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { MarketingPage } from "@/components/page-primitives";
 
 export default function NotFound() {
@@ -6,7 +7,9 @@ export default function NotFound() {
       <section className="not-found-section">
         <div className="shell">
           <span className="section-label">404</span>
-          <h1>We couldn’t find that page.</h1>
+          <h1 data-mixed-heading>
+            <MixedHeadingText>We couldn’t find that page.</MixedHeadingText>
+          </h1>
           <p>
             The address may have changed, or the page may no longer be
             available. Explore our products or return home to find your next

@@ -3,6 +3,7 @@ import type { CSSProperties } from "react";
 import { BaselineClosing } from "@/app/preview/scroll-showcase/baseline-lower-sections";
 import { ChevronRight } from "@/components/chevron-right";
 import { ArrowDown as MageArrowDown } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { ShowcaseTheme } from "@/components/showcase-theme";
 import { siteConfig } from "@/config/site";
 import type { IndustryPageContent } from "@/content/industries";
@@ -26,7 +27,9 @@ export function IndustryPage({ page }: { page: IndustryPageContent }) {
               </span>
             </Link>
             <p className={styles.eyebrow}>{page.name}</p>
-            <h1>{page.headline}</h1>
+            <h1 data-mixed-heading>
+              <MixedHeadingText>{page.headline}</MixedHeadingText>
+            </h1>
             <p className={styles.intro}>{page.description}</p>
             <div className={styles.actions}>
               <a className={styles.primary} href={siteConfig.demoUrl}>
@@ -54,10 +57,12 @@ export function IndustryPage({ page }: { page: IndustryPageContent }) {
         >
           <header className={styles.sectionHeading}>
             <p className={styles.eyebrow}>A place to start</p>
-            <h2 id="workflows-heading">
-              Less chasing.
-              <br />
-              Clearer next steps.
+            <h2 id="workflows-heading" data-mixed-heading>
+              <MixedHeadingText>
+                Less chasing.
+                <br />
+                Clearer next steps.
+              </MixedHeadingText>
             </h2>
             <p>
               Explore how connected conversations and human review can shape
@@ -84,7 +89,9 @@ export function IndustryPage({ page }: { page: IndustryPageContent }) {
                 <p className={styles.eyebrow}>
                   0{i + 1} / {flow.label}
                 </p>
-                <h3>{flow.title}</h3>
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>{flow.title}</MixedHeadingText>
+                </h3>
                 <p>{flow.body}</p>
                 <a href={siteConfig.demoUrl} className={styles.textLink}>
                   Talk through this workflow{" "}
@@ -131,24 +138,32 @@ export function IndustryPage({ page }: { page: IndustryPageContent }) {
           className={styles.supporting}
           aria-labelledby="working-heading"
         >
-          <h2 id="working-heading">Your people stay in the loop.</h2>
+          <h2 id="working-heading" data-mixed-heading>
+            <MixedHeadingText>Your people stay in the loop.</MixedHeadingText>
+          </h2>
           <div>
             <article>
-              <h3>Keep the source close</h3>
+              <h3 data-mixed-heading>
+                <MixedHeadingText>Keep the source close</MixedHeadingText>
+              </h3>
               <p>
                 Carry the original conversation and supporting information into
                 each handoff.
               </p>
             </article>
             <article>
-              <h3>Make ownership clear</h3>
+              <h3 data-mixed-heading>
+                <MixedHeadingText>Make ownership clear</MixedHeadingText>
+              </h3>
               <p>
                 Give each next step a responsible person and a clear place for
                 unresolved questions.
               </p>
             </article>
             <article>
-              <h3>Build around your process</h3>
+              <h3 data-mixed-heading>
+                <MixedHeadingText>Build around your process</MixedHeadingText>
+              </h3>
               <p>
                 Start with one defined workflow and explore the tools and review
                 points it needs.
@@ -159,7 +174,9 @@ export function IndustryPage({ page }: { page: IndustryPageContent }) {
         <section className={styles.faq} aria-labelledby="faq-heading">
           <div>
             <p className={styles.eyebrow}>Before you begin</p>
-            <h2 id="faq-heading">A few useful answers.</h2>
+            <h2 id="faq-heading" data-mixed-heading>
+              <MixedHeadingText>A few useful answers.</MixedHeadingText>
+            </h2>
           </div>
           <div>
             <details>

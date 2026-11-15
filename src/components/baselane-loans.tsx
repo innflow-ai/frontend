@@ -7,6 +7,7 @@ import {
   ArrowRight as MageArrowRight,
   Plus as MagePlus,
 } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
 import styles from "./baselane-loans.module.css";
 import { InnerPageShell } from "./inner-page-shell";
@@ -97,7 +98,11 @@ export function BaselaneLoans() {
       <div className={styles.page}>
         <section className={styles.hero}>
           <div>
-            <h1>Get your next property project ready.</h1>
+            <h1 data-mixed-heading>
+              <MixedHeadingText>
+                Get your next property project ready.
+              </MixedHeadingText>
+            </h1>
             <p>
               Bring project records, document requests, and lender follow-ups
               into one innflow workflow. Keep your team ready for the next
@@ -120,7 +125,11 @@ export function BaselaneLoans() {
           <span>Questions for your lender</span>
         </div>
         <section className={styles.section}>
-          <h2>Resources for different property plans.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              Resources for different property plans.
+            </MixedHeadingText>
+          </h2>
           <p className={styles.lead}>
             Organize the documents and handoffs around the project you have in
             mind.
@@ -136,7 +145,9 @@ export function BaselaneLoans() {
               "HELOC",
             ].map((name) => (
               <a href="#loan-details" key={name}>
-                <h3>{name}</h3>
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>{name}</MixedHeadingText>
+                </h3>
                 <span aria-hidden="true">
                   <ChevronRight />
                 </span>
@@ -146,7 +157,11 @@ export function BaselaneLoans() {
         </section>
         <section className={styles.split}>
           <div>
-            <h2>Keep every property in context.</h2>
+            <h2 data-mixed-heading>
+              <MixedHeadingText>
+                Keep every property in context.
+              </MixedHeadingText>
+            </h2>
             <p>
               Connect each property’s location, project scope, and open
               requests. Give your team a clear record to share with its chosen
@@ -166,11 +181,15 @@ export function BaselaneLoans() {
           />
         </section>
         <section className={styles.section}>
-          <h2>Explore the loan categories.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>Explore the loan categories.</MixedHeadingText>
+          </h2>
           <div className={styles.cards}>
             {types.map((type, index) => (
               <article key={type.name}>
-                <h3>{type.name}</h3>
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>{type.name}</MixedHeadingText>
+                </h3>
                 <p>{type.focus}</p>
                 <button
                   type="button"
@@ -197,7 +216,11 @@ export function BaselaneLoans() {
             alt="A property investor reviewing information on a phone"
           />
           <div>
-            <h2>Keep the project context together.</h2>
+            <h2 data-mixed-heading>
+              <MixedHeadingText>
+                Keep the project context together.
+              </MixedHeadingText>
+            </h2>
             <p>
               Collect the property details, the proposed work, and your timeline
               before starting a conversation. A clear project record gives
@@ -210,7 +233,9 @@ export function BaselaneLoans() {
         </section>
         <section className={styles.split}>
           <div>
-            <h2>Make the conversation useful.</h2>
+            <h2 data-mixed-heading>
+              <MixedHeadingText>Make the conversation useful.</MixedHeadingText>
+            </h2>
             <div className={styles.values}>
               {[
                 ["Be specific", "Describe the project and desired outcome."],
@@ -222,7 +247,9 @@ export function BaselaneLoans() {
                 ["Follow through", "Record owners and next actions."],
               ].map(([title, text]) => (
                 <div key={title}>
-                  <h3>{title}</h3>
+                  <h3 data-mixed-heading>
+                    <MixedHeadingText>{title}</MixedHeadingText>
+                  </h3>
                   <p>{text}</p>
                 </div>
               ))}
@@ -231,7 +258,9 @@ export function BaselaneLoans() {
           <Photo name="values" alt="Residential rooftops" />
         </section>
         <section className={styles.section} id="loan-details">
-          <h2>A closer look at each option.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>A closer look at each option.</MixedHeadingText>
+          </h2>
           <p className={styles.lead}>
             Use these prompts to structure a discussion. The lender determines
             terms and eligibility.
@@ -282,7 +311,9 @@ export function BaselaneLoans() {
             aria-labelledby={`loan-tab-${tab}`}
           >
             <div>
-              <h3>{current.name}</h3>
+              <h3 data-mixed-heading>
+                <MixedHeadingText>{current.name}</MixedHeadingText>
+              </h3>
               <p>{current.focus}</p>
               <ul>
                 {current.questions.map((q) => (
@@ -291,7 +322,9 @@ export function BaselaneLoans() {
               </ul>
             </div>
             <div>
-              <h3>Before you proceed</h3>
+              <h3 data-mixed-heading>
+                <MixedHeadingText>Before you proceed</MixedHeadingText>
+              </h3>
               <div className={styles.checks}>
                 <section>
                   <h4>Confirm</h4>
@@ -315,7 +348,11 @@ export function BaselaneLoans() {
           </div>
         </section>
         <section className={styles.section}>
-          <h2>A starting point for every stage.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              A starting point for every stage.
+            </MixedHeadingText>
+          </h2>
           <div className={styles.audiences}>
             {[
               [
@@ -335,14 +372,20 @@ export function BaselaneLoans() {
                   alt={title}
                   sizes="(max-width: 700px) calc(100vw - 48px), (max-width: 1440px) calc((100vw - 114px) / 2), 663px"
                 />
-                <h3>{title}</h3>
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>{title}</MixedHeadingText>
+                </h3>
                 <p>{text}</p>
               </article>
             ))}
           </div>
         </section>
         <section className={styles.section}>
-          <h2 id="loan-comparison-heading">Compare the conversation topics.</h2>
+          <h2 id="loan-comparison-heading" data-mixed-heading>
+            <MixedHeadingText>
+              Compare the conversation topics.
+            </MixedHeadingText>
+          </h2>
           <section
             className={styles.tableWrap}
             aria-labelledby="loan-comparison-heading"
@@ -402,7 +445,11 @@ export function BaselaneLoans() {
           </section>
         </section>
         <section className={styles.section}>
-          <h2>Prepare for the next conversation.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              Prepare for the next conversation.
+            </MixedHeadingText>
+          </h2>
           <div className={styles.steps}>
             {[
               ["Gather", "Collect the project details."],
@@ -412,7 +459,9 @@ export function BaselaneLoans() {
             ].map(([title, text], index) => (
               <article key={title}>
                 <span>{index + 1}</span>
-                <h3>{title}</h3>
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>{title}</MixedHeadingText>
+                </h3>
                 <p>{text}</p>
               </article>
             ))}
@@ -422,7 +471,11 @@ export function BaselaneLoans() {
           </a>
         </section>
         <section className={styles.faq}>
-          <h2>Questions to bring to your lender</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              Questions to bring to your lender
+            </MixedHeadingText>
+          </h2>
           {faqTopics.map((topic) => (
             <details key={topic}>
               <summary>

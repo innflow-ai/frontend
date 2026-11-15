@@ -55,3 +55,26 @@ it("leaves the help center's fixed chrome unobstructed", () => {
   const view = render(<SiteCloseAndFooter />);
   expect(view.container).toBeEmptyDOMElement();
 });
+
+it("uses mixed closing titles on the homepage and other Web routes", () => {
+  route.pathname = "/";
+  const view = render(<SiteCloseAndFooter />);
+  expect(
+    screen.getByRole("heading", {
+      name: "A clearer day starts with a connected flow.",
+    }),
+  ).toHaveAttribute("data-mixed-heading", "true");
+  expect(screen.getByRole("heading", { name: "Featured on" })).toHaveAttribute(
+    "data-mixed-heading",
+    "true",
+  );
+  route.pathname = "/blog";
+  view.rerender(<SiteCloseAndFooter />);
+  expect(
+    screen.getByRole("heading", { name: /A clearer day starts/ }),
+  ).toHaveAttribute("data-mixed-heading", "true");
+  expect(screen.getByRole("heading", { name: "Featured on" })).toHaveAttribute(
+    "data-mixed-heading",
+    "true",
+  );
+});

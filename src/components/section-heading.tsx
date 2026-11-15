@@ -1,4 +1,5 @@
 import { createElement, type ReactNode } from "react";
+import { MixedHeadingText } from "./mixed-heading-text";
 import styles from "./section-heading.module.css";
 
 /**
@@ -9,19 +10,58 @@ export function HeadingEmphasis({ children }: { children: ReactNode }) {
   return <span className={styles.emphasis}>{children}</span>;
 }
 
+export type HeadingVariant = "default" | "mixed-italic";
+type HeadingBreak = "always" | "desktop" | "never";
+
+/** One semantic sentence, with independently styled font runs. */
+export function MixedHeadingContent({
+  title,
+  emphasis,
+  breakAt = "always",
+}: {
+  title: ReactNode;
+  emphasis?: ReactNode;
+  breakAt?: HeadingBreak;
+}) {
+  return (
+    <>
+      <span className={styles.mixedLead}>{title}</span>
+      {emphasis ? (
+        <>
+          {" "}
+          <span className={styles.mixedTail} data-break={breakAt}>
+            {emphasis}
+          </span>
+        </>
+      ) : null}
+    </>
+  );
+}
+
+/** Preserve arbitrary CMS text unless an exact word-boundary split is supplied. */
+export function splitHeading(text: string, splitAfter?: string) {
+  if (
+    !splitAfter ||
+    !text.startsWith(splitAfter) ||
+    !/\s/.test(text.charAt(splitAfter.length))
+  )
+    return null;
+  const continuation = text.slice(splitAfter.length).trimStart();
+  return continuation ? { title: splitAfter, emphasis: continuation } : null;
+}
+
 type HeadingTag = "h1" | "h2" | "h3";
 type HeadingSize = "hero" | "section" | "h2" | "h3";
 
 /**
- * Brand kit heading (Figma `TI7hq816ZzDMvvTd3HjyIS` node `432:1541`,
- * component set `52:9544` in `1fbFIPN1GfSkioiOSUZMaV`).
- *
- * `title` is Source Serif 4 Regular and comes first. `emphasis` is Archivo
- * Bold and comes second. Sizes live on `.block` as `--section-heading-*`.
- * `h2` and `h3` are the kit's smaller steps: 28/34 and 22/28, tracking 0.
+ * Shared marketing heading. Mixed italic is the Web default; `default` retains
+ * the legacy serif-first treatment for explicitly unmigrated consumers.
+ * Sizes, semantic levels, alignment, and color stay independent of typography.
  */
 export function SectionHeading({
   eyebrow,
+  variant = "mixed-italic",
+  breakAt = "always",
   title,
   emphasis,
   subtitle,
@@ -34,10 +74,12 @@ export function SectionHeading({
   className,
   children,
 }: {
+  variant?: HeadingVariant;
+  breakAt?: HeadingBreak;
   eyebrow?: ReactNode;
-  /** Source Serif 4 Regular. The whole heading, when there is no emphasis. */
+  /** Opening phrase, or the full title when no explicit split is supplied. */
   title: ReactNode;
-  /** Archivo Bold. Second line, after a break. */
+  /** Continuation phrase. Source Serif 4 Italic in the mixed variant. */
   emphasis?: ReactNode;
   subtitle?: ReactNode;
   size?: HeadingSize;
@@ -56,6 +98,7 @@ export function SectionHeading({
   return (
     <div
       className={[styles.block, className].filter(Boolean).join(" ")}
+      data-heading-variant={variant}
       data-align={align}
       data-emphasis={emphasisWeight}
       data-size={size}
@@ -64,9 +107,25 @@ export function SectionHeading({
       {eyebrow ? <p className={styles.eyebrow}>{eyebrow}</p> : null}
       {createElement(
         as,
-        { id, className: styles.title },
-        title,
-        emphasis ? (
+        {
+          id,
+          className: styles.title,
+          "data-mixed-heading": variant === "mixed-italic" || undefined,
+        },
+        variant === "mixed-italic" ? (
+          emphasis ? (
+            <MixedHeadingContent
+              title={title}
+              emphasis={emphasis}
+              breakAt={breakAt}
+            />
+          ) : (
+            <MixedHeadingText>{title}</MixedHeadingText>
+          )
+        ) : (
+          title
+        ),
+        variant !== "mixed-italic" && emphasis ? (
           <>
             <br />
             <HeadingEmphasis>{emphasis}</HeadingEmphasis>

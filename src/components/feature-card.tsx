@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import styles from "./feature-card.module.css";
 
 function classNames(...values: Array<string | undefined>) {
@@ -43,7 +44,9 @@ export function FeatureCard({
       </div>
       <div className={styles.copy}>
         {eyebrow ? <span className={styles.eyebrow}>{eyebrow}</span> : null}
-        <h3>{title}</h3>
+        <h3 data-mixed-heading>
+          <MixedHeadingText>{title}</MixedHeadingText>
+        </h3>
         <p>{body}</p>
       </div>
     </article>

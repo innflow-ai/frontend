@@ -1,6 +1,7 @@
 import { ConnectorCatalog } from "@/components/connector-catalog";
 import { FeaturePageInk } from "@/components/feature-page-ink";
 import { BotIcon } from "@/components/icons/bot-icon";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { SectionHeading } from "@/components/section-heading";
 import { TrackedLink } from "@/components/tracked-link";
 import { showFeatureItem } from "@/config/unbuilt-features";
@@ -408,7 +409,9 @@ function Columns({ section }: { section: StorySection }) {
       <div className={styles.featureGrid}>
         {(section.columns ?? []).map((column) => (
           <article key={column.title}>
-            <h3>{column.title}</h3>
+            <h3 data-mixed-heading>
+              <MixedHeadingText>{column.title}</MixedHeadingText>
+            </h3>
             <ul>
               {column.items.map((item) => (
                 <li key={item}>{item}</li>
@@ -431,7 +434,9 @@ function Comparison({ section }: { section: StorySection }) {
       <div className={styles.featureGrid}>
         {(section.sides ?? []).map((side) => (
           <article key={side.title}>
-            <h3>{side.title}</h3>
+            <h3 data-mixed-heading>
+              <MixedHeadingText>{side.title}</MixedHeadingText>
+            </h3>
             <ul>
               {side.items.map((item) => (
                 <li key={item}>{item}</li>

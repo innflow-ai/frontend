@@ -6,6 +6,7 @@ import {
   ChevronLeft as MageArrowLeft,
   ArrowRight as MageArrowRight,
 } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
 import styles from "./baselane-customers.module.css";
 import { InnerPageShell } from "./inner-page-shell";
@@ -84,7 +85,11 @@ export function BaselaneCustomers() {
             sizes="100vw"
           />
           <div className={styles.heroCopy}>
-            <h1>Your people. Your properties. One connected flow.</h1>
+            <h1 data-mixed-heading>
+              <MixedHeadingText>
+                Your people. Your properties. One connected flow.
+              </MixedHeadingText>
+            </h1>
             <p>
               innflow brings workflows, knowledge, and approvals together for
               the people keeping property operations moving.
@@ -106,7 +111,11 @@ export function BaselaneCustomers() {
           </a>
         </div>
         <section className={styles.section} id="team-workflows">
-          <h2>Built around the work on your team’s desk.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              Built around the work on your team’s desk.
+            </MixedHeadingText>
+          </h2>
           <p className={styles.lead}>
             Start with a recurring process. Connect the information behind it
             and make the next handoff clear.
@@ -115,7 +124,9 @@ export function BaselaneCustomers() {
             {workflows.map(([title, text, href]) => (
               <article key={title}>
                 <span className={styles.eyebrow}>WORKFLOW</span>
-                <h3>{title}</h3>
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>{title}</MixedHeadingText>
+                </h3>
                 <p>{text}</p>
                 <a href={href}>
                   Explore the workflow <MageArrowRight size="1em" />
@@ -144,7 +155,9 @@ export function BaselaneCustomers() {
             </div>
             <div className={styles.caseCopy}>
               <span className={styles.eyebrow}>HOW THE WORK CONNECTS</span>
-              <h2>{story[1]}</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>{story[1]}</MixedHeadingText>
+              </h2>
               <p>{story[2]}</p>
               <a className={styles.button} href={story[3]}>
                 Explore with innflow <MageArrowRight size="1em" />

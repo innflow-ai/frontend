@@ -1,5 +1,3 @@
-
-import { ChevronLeft as MageArrowLeft } from '@/components/icons/mage';
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
@@ -14,7 +12,9 @@ import { BlogRelatedPosts } from "@/components/blog/related-posts";
 import { BlogShareBar } from "@/components/blog/share-bar";
 import { BlogTaxonomy } from "@/components/blog/taxonomy";
 import { GoogleSignInButton } from "@/components/google-sign-in";
+import { ChevronLeft as MageArrowLeft } from "@/components/icons/mage";
 import { JsonLd } from "@/components/json-ld";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { MarketingPage } from "@/components/page-primitives";
 import { siteConfig } from "@/config/site";
 import {
@@ -170,7 +170,9 @@ export default async function BlogPostPage({ params }: RouteParams) {
                 ) : null}
                 {post.readTime ? <span>{post.readTime} min read</span> : null}
               </p>
-              <h1 className={styles.title}>{post.title}</h1>
+              <h1 className={styles.title} data-mixed-heading>
+                <MixedHeadingText>{post.title}</MixedHeadingText>
+              </h1>
               <div className={styles.articleExtras}>
                 <BlogListenPlayer text={listenText} audioUrl={post.audioUrl} />
                 <BlogTaxonomy

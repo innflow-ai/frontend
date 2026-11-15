@@ -11,7 +11,11 @@ import Link from "next/link";
 import { type CSSProperties, useEffect, useId, useRef, useState } from "react";
 import { ChevronRight } from "@/components/chevron-right";
 import { ArrowRight as MageArrowRight } from "@/components/icons/mage";
-import { SectionHeading } from "@/components/section-heading";
+import {
+  MixedHeadingContent,
+  SectionHeading,
+  splitHeading,
+} from "@/components/section-heading";
 import { siteConfig } from "@/config/site";
 import type { Testimonial } from "@/lib/testimonials";
 import styles from "./baseline-lower-sections.module.css";
@@ -64,7 +68,13 @@ function CustomerStoryLayoutPreview() {
       data-motion={reducedMotion ? "reduced" : "shared-layout"}
     >
       <header className={styles.heading}>
-        <h2 id="baseline-stories-heading">Real customers. Real results.</h2>
+        <h2 id="baseline-stories-heading" data-mixed-heading>
+          <MixedHeadingContent
+            title="Real customers."
+            emphasis="Real results."
+            breakAt="never"
+          />
+        </h2>
       </header>
       <LayoutGroup id={layoutId}>
         <div className={`${styles.storyStage} ${styles.previewStoryStage}`}>
@@ -196,13 +206,24 @@ export const SHOW_TESTIMONIAL = false;
 export function BaselineCustomerStories({
   testimonials,
   heading,
+  headingSplitAfter,
   previewFallback = false,
 }: {
   testimonials: Testimonial[];
   heading: string;
+  headingSplitAfter?: string;
   previewFallback?: boolean;
 }) {
   const [active, setActive] = useState(0);
+  const headingRuns = splitHeading(
+    heading,
+    headingSplitAfter ??
+      (heading === "In their own words."
+        ? "In their"
+        : heading === "Real customers. Real results."
+          ? "Real customers."
+          : undefined),
+  );
   // One switch hides the whole band, including its padding, so the sections
   // above and below meet with their own spacing and no empty slot remains.
   if (!SHOW_TESTIMONIAL) return null;
@@ -219,7 +240,16 @@ export function BaselineCustomerStories({
       data-source-node="350:11559"
     >
       <header className={styles.heading}>
-        <h2 id="baseline-stories-heading">{heading}</h2>
+        <h2
+          id="baseline-stories-heading"
+          data-mixed-heading={!!headingRuns || undefined}
+        >
+          {headingRuns ? (
+            <MixedHeadingContent {...headingRuns} breakAt="never" />
+          ) : (
+            heading
+          )}
+        </h2>
       </header>
       <div className={styles.storyStage}>
         {neighbors.map((item, i) => (
@@ -304,6 +334,7 @@ export function BaselineConnectedInfrastructure() {
     >
       <header className={styles.heading}>
         <SectionHeading
+          variant="mixed-italic"
           id="baseline-infrastructure-heading"
           title="Connect the tools"
           emphasis="behind your work."
@@ -438,6 +469,7 @@ export function BaselineClosing() {
     >
       <header className={styles.heading}>
         <SectionHeading
+          variant="mixed-italic"
           id="baseline-closing-heading"
           eyebrow="Get started"
           title="From the first meeting"

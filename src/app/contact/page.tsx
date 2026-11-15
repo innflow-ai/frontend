@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ContactForm } from "@/components/contact-form";
 import { ArrowRight, Email as EnvelopeSimple } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { HeroIntro, HeroItem, Reveal } from "@/components/motion";
 import shellStyles from "@/components/site-shell.module.css";
 import { siteConfig } from "@/config/site";
@@ -48,7 +49,11 @@ export default function ContactPage() {
             <div className={styles.heroGrid}>
               <div className={styles.heroCopy}>
                 <HeroItem>
-                  <h1>Let’s talk about the work.</h1>
+                  <h1 data-mixed-heading>
+                    <MixedHeadingText>
+                      Let’s talk about the work.
+                    </MixedHeadingText>
+                  </h1>
                 </HeroItem>
                 <HeroItem>
                   <p className={styles.lede}>
@@ -89,7 +94,11 @@ export default function ContactPage() {
       >
         <div className={styles.supportInner}>
           <Reveal className={styles.supportHeading}>
-            <h2 id="support-heading">A conversation for every stage.</h2>
+            <h2 id="support-heading" data-mixed-heading>
+              <MixedHeadingText>
+                A conversation for every stage.
+              </MixedHeadingText>
+            </h2>
             <p>
               From your first question to your next step, we’re here to help.
             </p>
@@ -105,7 +114,9 @@ export default function ContactPage() {
                     height={324}
                     sizes="(max-width: 720px) calc(100vw - 40px), (max-width: 1100px) calc((100vw - 90px) / 2), 470px"
                   />
-                  <h3>{audience.title}</h3>
+                  <h3 data-mixed-heading>
+                    <MixedHeadingText>{audience.title}</MixedHeadingText>
+                  </h3>
                   <p>{audience.body}</p>
                 </article>
               </Reveal>

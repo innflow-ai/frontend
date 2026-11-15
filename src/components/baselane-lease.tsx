@@ -4,6 +4,7 @@ import {
   ArrowRight as MageArrowRight,
   Plus as MagePlus,
 } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
 import { getPageFaqTuples } from "@/lib/faqs";
 import styles from "./baselane-lease.module.css";
@@ -69,7 +70,11 @@ export async function BaselaneLease() {
         <div className={styles.dark}>
           <section className={shared.hero}>
             <div className={shared.heroCopy}>
-              <h1>Lease paperwork. Connected context.</h1>
+              <h1 data-mixed-heading>
+                <MixedHeadingText>
+                  Lease paperwork. Connected context.
+                </MixedHeadingText>
+              </h1>
               <p>
                 Bring property details, document reviews, and team handoffs into
                 a clearer process.
@@ -118,7 +123,9 @@ export async function BaselaneLease() {
             ].map(([n, title, text]) => (
               <article key={title}>
                 <span>{n}</span>
-                <h3>{title}</h3>
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>{title}</MixedHeadingText>
+                </h3>
                 <p>{text}</p>
               </article>
             ))}
@@ -126,13 +133,19 @@ export async function BaselaneLease() {
         </section>
         <section className={shared.steps}>
           <div className={styles.stepsCopy}>
-            <h2>A clearer lease-document workflow.</h2>
+            <h2 data-mixed-heading>
+              <MixedHeadingText>
+                A clearer lease-document workflow.
+              </MixedHeadingText>
+            </h2>
             <p>
               Keep the information and people involved connected at each stage.
             </p>
             {steps.map(([title, text]) => (
               <div key={title}>
-                <h3>{title}</h3>
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>{title}</MixedHeadingText>
+                </h3>
                 <p>{text}</p>
               </div>
             ))}
@@ -154,7 +167,11 @@ export async function BaselaneLease() {
         <section className={styles.tinted}>
           <div className={styles.why}>
             <div>
-              <h2>Keep the work around the agreement organized.</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>
+                  Keep the work around the agreement organized.
+                </MixedHeadingText>
+              </h2>
               <Action />
             </div>
             <div className={styles.four}>
@@ -178,7 +195,9 @@ export async function BaselaneLease() {
               ].map(([title, text], i) => (
                 <article key={title}>
                   <span>0{i + 1}</span>
-                  <h3>{title}</h3>
+                  <h3 data-mixed-heading>
+                    <MixedHeadingText>{title}</MixedHeadingText>
+                  </h3>
                   <p>{text}</p>
                 </article>
               ))}
@@ -186,7 +205,11 @@ export async function BaselaneLease() {
           </div>
         </section>
         <section className={styles.why}>
-          <h2>{cmsFaqs.heading || "Frequently asked questions"}</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              {cmsFaqs.heading || "Frequently asked questions"}
+            </MixedHeadingText>
+          </h2>
           <div className={shared.accordion}>
             {cmsFaqs.items.map(([title, text, faqId], i) => (
               <details key={faqId} open={i === 0}>
@@ -203,7 +226,11 @@ export async function BaselaneLease() {
         </section>
         <section className={`${shared.closing} ${styles.dark}`}>
           <div>
-            <h2>Prepare for the next document review.</h2>
+            <h2 data-mixed-heading>
+              <MixedHeadingText>
+                Prepare for the next document review.
+              </MixedHeadingText>
+            </h2>
             <p>Browse the forms and checklists in the resource library.</p>
             <a
               className={shared.button}

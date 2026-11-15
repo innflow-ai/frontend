@@ -5,6 +5,7 @@ import { type FormEvent, useRef, useState } from "react";
 import { ChevronRight } from "@/components/chevron-right";
 import { GoogleCtaContent } from "@/components/google-cta-content";
 import { ArrowRight as MageArrowRight } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
 import { summarizeRents } from "@/lib/rent-comparison";
 import styles from "./baselane-rent-calculator.module.css";
@@ -73,7 +74,11 @@ export function BaselaneRentCalculator() {
       <div className={styles.page}>
         <section className={styles.hero}>
           <div>
-            <h1>How do your comparable rents stack up?</h1>
+            <h1 data-mixed-heading>
+              <MixedHeadingText>
+                How do your comparable rents stack up?
+              </MixedHeadingText>
+            </h1>
             <p className={styles.intro}>
               Summarize rents you have researched. This calculator uses your
               entries; it does not look up local listings.
@@ -183,7 +188,9 @@ export function BaselaneRentCalculator() {
             aria-label="Your comparable rent report"
           >
             <span className={styles.eyebrow}>YOUR COMPARABLE RENT REPORT</span>
-            <h2>{result.address}</h2>
+            <h2 data-mixed-heading>
+              <MixedHeadingText>{result.address}</MixedHeadingText>
+            </h2>
             <p>{result.details}</p>
             <div className={styles.metrics}>
               {[
@@ -241,7 +248,9 @@ export function BaselaneRentCalculator() {
               This worksheet helps organize that review.
             </p>
             <section id="comparable-rentals">
-              <h2>Compare similar rentals</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>Compare similar rentals</MixedHeadingText>
+              </h2>
               <p>
                 Record the source, date, location, size, and condition of each
                 comparable. Use the calculator to summarize the monthly rents in
@@ -258,7 +267,9 @@ export function BaselaneRentCalculator() {
               </ul>
             </section>
             <section id="local-rules">
-              <h2>Check local requirements</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>Check local requirements</MixedHeadingText>
+              </h2>
               <p>
                 Review the rules that apply to the property before making a
                 pricing decision. Keep the official sources and your adviser’s
@@ -269,7 +280,9 @@ export function BaselaneRentCalculator() {
               </a>
             </section>
             <section id="operating-costs">
-              <h2>Account for expenses</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>Account for expenses</MixedHeadingText>
+              </h2>
               <p>
                 Keep a separate record of recurring expenses and planned work. A
                 comparison of rents does not calculate the property’s costs or
@@ -287,7 +300,9 @@ export function BaselaneRentCalculator() {
               </div>
             </section>
             <section id="amenities">
-              <h2>Consider the property</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>Consider the property</MixedHeadingText>
+              </h2>
               <p>
                 Document the features that distinguish the property from the
                 sample. Review whether each comparison includes similar space,
@@ -295,7 +310,9 @@ export function BaselaneRentCalculator() {
               </p>
             </section>
             <section id="timing">
-              <h2>Review the timing</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>Review the timing</MixedHeadingText>
+              </h2>
               <p>
                 Save the date of your research. Revisit the inputs when listings
                 or property circumstances change.

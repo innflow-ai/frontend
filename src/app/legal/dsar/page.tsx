@@ -1,4 +1,5 @@
 import { ChevronRight } from "@/components/chevron-right";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { MarketingPage } from "@/components/page-primitives";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -18,7 +19,9 @@ export default function DsarPage() {
     <MarketingPage>
       <section className="legal-hero">
         <div className="shell">
-          <h1>Data subject access request</h1>
+          <h1 data-mixed-heading>
+            <MixedHeadingText>Data subject access request</MixedHeadingText>
+          </h1>
           <p>
             Use the form below to submit a privacy request. If the embedded form
             does not load, you can open it in a new tab.

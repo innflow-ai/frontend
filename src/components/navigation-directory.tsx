@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import styles from "@/app/connections/page.module.css";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { Breadcrumbs } from "./breadcrumbs";
 import { InnerPageShell } from "./inner-page-shell";
 import {
@@ -24,7 +25,9 @@ export function NavigationDirectory({
           <Breadcrumbs
             items={[{ label: "Home", href: "/" }, { label: title }]}
           />
-          <h1>Browse all {kind}</h1>
+          <h1 data-mixed-heading>
+            <MixedHeadingText>Browse all {kind}</MixedHeadingText>
+          </h1>
           <p>
             {kind === "products"
               ? "Explore the Innflow platform, agents, tools, and integrations."

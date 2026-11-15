@@ -262,7 +262,7 @@ describe("EditorialHeader navigation", () => {
     expect(document.querySelector("header")).toHaveClass(styles.menuOpen);
     expect(screen.getByRole("img", { name: "Innflow" })).toHaveAttribute(
       "src",
-      expect.stringContaining("innflow-wordmark.svg"),
+      expect.stringContaining("innflow-nav-wordmark.svg"),
     );
     const mobile = within(overlay as HTMLElement);
     const product = mobile.getByRole("button", { name: "Product" });
@@ -314,7 +314,7 @@ describe("EditorialHeader navigation", () => {
     const header = document.querySelector("header");
     expect(screen.getByRole("img", { name: "Innflow" })).toHaveAttribute(
       "src",
-      expect.stringContaining("innflow-wordmark.svg"),
+      expect.stringContaining("innflow-nav-wordmark.svg"),
     );
     expect(header).not.toHaveClass(styles.homeTop);
     expect(header).not.toHaveClass(styles.pageTop);
@@ -393,7 +393,7 @@ describe("EditorialHeader navigation", () => {
 
     expect(screen.getByRole("img", { name: "Innflow" })).toHaveAttribute(
       "src",
-      expect.stringContaining("innflow-wordmark.svg"),
+      expect.stringContaining("innflow-nav-wordmark.svg"),
     );
 
     await user.click(screen.getByRole("button", { name: "Open navigation" }));
@@ -402,7 +402,7 @@ describe("EditorialHeader navigation", () => {
     expect(header).not.toHaveClass(styles.homeTop);
     expect(screen.getByRole("img", { name: "Innflow" })).toHaveAttribute(
       "src",
-      expect.stringContaining("innflow-wordmark.svg"),
+      expect.stringContaining("innflow-nav-wordmark.svg"),
     );
     expect(
       screen
@@ -420,7 +420,7 @@ describe("EditorialHeader navigation", () => {
     expect(header).not.toHaveClass(styles.homeTop);
     expect(screen.getByRole("img", { name: "Innflow" })).toHaveAttribute(
       "src",
-      expect.stringContaining("innflow-wordmark.svg"),
+      expect.stringContaining("innflow-nav-wordmark.svg"),
     );
   });
 });

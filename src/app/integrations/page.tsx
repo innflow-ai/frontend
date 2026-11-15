@@ -2,6 +2,7 @@ import { BaselineClosing } from "@/app/preview/scroll-showcase/baseline-lower-se
 import { ArrowDown as MageArrowDown } from "@/components/icons/mage";
 import { IntegrationDirectory } from "@/components/integration-directory";
 import styles from "@/components/integrations.module.css";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { ShowcaseTheme } from "@/components/showcase-theme";
 import { getIntegrations } from "@/lib/integrations";
 import { createPageMetadata } from "@/lib/metadata";
@@ -20,10 +21,12 @@ export default async function IntegrationsPage() {
         <header className={styles.hero}>
           <div className="shell">
             <span className={styles.eyebrow}>Apps & integrations</span>
-            <h1>
-              Your tools.
-              <br />
-              <span>One connected workflow.</span>
+            <h1 data-mixed-heading>
+              <MixedHeadingText>
+                Your tools.
+                <br />
+                <span>One connected workflow.</span>
+              </MixedHeadingText>
             </h1>
             <p>
               Explore connections for the tools your team already uses. Find an

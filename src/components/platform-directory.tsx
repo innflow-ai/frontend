@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ChevronRight } from "@/components/chevron-right";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { platformPages } from "@/content/platform";
 import styles from "./platform-directory.module.css";
 
@@ -12,10 +13,12 @@ export function PlatformDirectory({ currentSlug }: { currentSlug?: string }) {
       <div className="shell">
         <div className="section-intro compact-intro">
           <span className="section-label">Platform</span>
-          <h2 id="platform-pages-title">
-            {currentSlug
-              ? "Explore more of the platform."
-              : "Explore the platform."}
+          <h2 id="platform-pages-title" data-mixed-heading>
+            <MixedHeadingText>
+              {currentSlug
+                ? "Explore more of the platform."
+                : "Explore the platform."}
+            </MixedHeadingText>
           </h2>
         </div>
         <div className={styles.grid}>
@@ -27,8 +30,8 @@ export function PlatformDirectory({ currentSlug }: { currentSlug?: string }) {
                 href={`/platform/${page.slug}`}
                 key={page.slug}
               >
-                <h3>
-                  {page.title}
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>{page.title}</MixedHeadingText>
                   <span aria-hidden="true">
                     <ChevronRight />
                   </span>

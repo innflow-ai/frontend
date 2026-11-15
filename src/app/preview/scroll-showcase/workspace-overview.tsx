@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { Checklist, Share, StarsA } from "@/components/icons/mage";
+import { MixedHeadingContent } from "@/components/section-heading";
 
 const stepIcons = [StarsA, Share, Checklist];
 
@@ -124,9 +125,11 @@ export function WorkspaceOverview() {
       <div className={styles.surface}>
         <div className={styles.content}>
           <header className={styles.heading}>
-            <h2 id="workspace-heading">
-              Move everyday <br />
-              work forward.
+            <h2 id="workspace-heading" data-mixed-heading>
+              <MixedHeadingContent
+                title="Move everyday"
+                emphasis="work forward."
+              />
             </h2>
             <p className={styles.introduction}>
               Schedule meetings, prepare follow-ups, review decisions, and

@@ -1,4 +1,3 @@
-import { Source_Serif_4 } from "next/font/google";
 import { BaselineFeatures } from "@/app/preview/scroll-showcase/baseline-features";
 import {
   BaselineClosing,
@@ -14,20 +13,10 @@ import { ShowcaseTheme } from "@/components/showcase-theme";
 import { getPageTestimonials } from "@/lib/testimonials";
 import typography from "./homepage-typography.module.css";
 
-const sourceSerif = Source_Serif_4({
-  subsets: ["latin"],
-  weight: ["400", "500"],
-  variable: "--font-homepage-heading",
-  display: "swap",
-});
-
 export async function ShowcaseHomepage() {
   const stories = await getPageTestimonials("/");
   return (
-    <main
-      id="main-content"
-      className={`${styles.page} ${sourceSerif.variable} ${typography.headings}`}
-    >
+    <main id="main-content" className={`${styles.page} ${typography.headings}`}>
       <ScrollShowcase />
       <ShowcaseTheme>
         <WorkspaceOverview />

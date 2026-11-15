@@ -257,10 +257,10 @@ export function SiteHeader() {
       >
         <a href="/" className={styles.logo} aria-label="innflow home">
           <Image
-            src="/brand/innflow-wordmark.svg"
+            src="/brand/innflow-nav-wordmark.svg"
             alt="innflow"
             width={110}
-            height={22.28}
+            height={29}
             preload
           />
         </a>

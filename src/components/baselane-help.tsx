@@ -14,6 +14,7 @@ import {
   StarsA as MageStarsA,
   UserCircle as MageUserCircle,
 } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
 import { faqs } from "@/content/home";
 import styles from "./baselane-support.module.css";
@@ -70,7 +71,9 @@ export function BaselaneHelp() {
     <InnerPageShell>
       <div className={styles.help}>
         <section className={styles.helpHero}>
-          <h1>How can we help?</h1>
+          <h1 data-mixed-heading>
+            <MixedHeadingText>How can we help?</MixedHeadingText>
+          </h1>
           <label className={styles.search}>
             <span aria-hidden="true">
               <MageSearch size="1em" />
@@ -87,7 +90,9 @@ export function BaselaneHelp() {
         {term ? (
           <section className={styles.results}>
             <div className={styles.resultHeading}>
-              <h2>Search results</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>Search results</MixedHeadingText>
+              </h2>
               <button type="button" onClick={() => setQuery("")}>
                 Clear search
               </button>
@@ -116,13 +121,17 @@ export function BaselaneHelp() {
         ) : (
           <>
             <section className={styles.helpSection}>
-              <h2>Contact us</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>Contact us</MixedHeadingText>
+              </h2>
               <div className={styles.contactGrid}>
                 <a href={`mailto:${siteConfig.supportEmail}`}>
                   <span>
                     <MageEmail size="1em" />
                   </span>
-                  <h3>Email support</h3>
+                  <h3 data-mixed-heading>
+                    <MixedHeadingText>Email support</MixedHeadingText>
+                  </h3>
                   <p>
                     Share your question and the details our team needs to help.
                   </p>
@@ -131,7 +140,9 @@ export function BaselaneHelp() {
                   <span>
                     <MagePhone size="1em" />
                   </span>
-                  <h3>Talk to our team</h3>
+                  <h3 data-mixed-heading>
+                    <MixedHeadingText>Talk to our team</MixedHeadingText>
+                  </h3>
                   <p>
                     Discuss your property workflows and the next step for your
                     team.
@@ -143,13 +154,17 @@ export function BaselaneHelp() {
                   <span>
                     <MageStarsA size="1em" />
                   </span>
-                  <h3>Suggest a feature</h3>
+                  <h3 data-mixed-heading>
+                    <MixedHeadingText>Suggest a feature</MixedHeadingText>
+                  </h3>
                   <p>Tell us what would make your day-to-day work easier.</p>
                 </a>
               </div>
             </section>
             <section className={styles.helpSection}>
-              <h2>Browse topics</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>Browse topics</MixedHeadingText>
+              </h2>
               <div className={styles.topicGrid}>
                 {topics.map((topic) => (
                   <details key={topic.title}>
@@ -172,13 +187,17 @@ export function BaselaneHelp() {
               </div>
             </section>
             <section className={styles.helpSection}>
-              <h2>Popular resources</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>Popular resources</MixedHeadingText>
+              </h2>
               <a className={styles.resource} href="/webinars">
                 <span>
                   <MagePlay size="1em" />
                 </span>
                 <div>
-                  <h3>Workflow learning</h3>
+                  <h3 data-mixed-heading>
+                    <MixedHeadingText>Workflow learning</MixedHeadingText>
+                  </h3>
                   <p>
                     Explore innflow workflow topics for property teams, from
                     recurring requests to document reviews.

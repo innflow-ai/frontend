@@ -1,9 +1,9 @@
 "use client";
-import { Minus as MageMinus, Plus as MagePlus } from '@/components/icons/mage';
-
 
 import Image from "next/image";
 import { useId, useState } from "react";
+import { Minus as MageMinus, Plus as MagePlus } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import type { Testimonial } from "@/lib/testimonials";
 import styles from "./testimonial-cards.module.css";
 
@@ -77,7 +77,9 @@ export function TestimonialCard({ item }: { item: Testimonial }) {
         }}
       >
         {open ? "Close" : "Read story"}
-        <span aria-hidden="true">{open ? <MageMinus size="1em" /> : <MagePlus size="1em" />}</span>
+        <span aria-hidden="true">
+          {open ? <MageMinus size="1em" /> : <MagePlus size="1em" />}
+        </span>
       </button>
     </article>
   );
@@ -94,7 +96,9 @@ export function TestimonialCards({
   if (!testimonials.length) return null;
   return (
     <section className={styles.section} aria-labelledby={headingId}>
-      <h2 id={headingId}>{heading}</h2>
+      <h2 id={headingId} data-mixed-heading>
+        <MixedHeadingText>{heading}</MixedHeadingText>
+      </h2>
       <div className={styles.track}>
         {testimonials.map((item) => (
           <TestimonialCard key={item.id} item={item} />

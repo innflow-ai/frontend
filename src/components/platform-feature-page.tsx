@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { ChevronRight } from "@/components/chevron-right";
 import { ArrowDown as MageArrowDown } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { MarketingPage } from "@/components/page-primitives";
 import { PlatformDirectory } from "@/components/platform-directory";
 import { TrackedLink } from "@/components/tracked-link";
@@ -22,7 +23,9 @@ export function PlatformFeaturePage({ page }: { page: PlatformDetail }) {
           />
           <div className={styles.heroGrid}>
             <div>
-              <h1>{page.headline}</h1>
+              <h1 data-mixed-heading>
+                <MixedHeadingText>{page.headline}</MixedHeadingText>
+              </h1>
               <p>{page.description}</p>
               <div className={styles.actions}>
                 <TrackedLink
@@ -65,7 +68,9 @@ export function PlatformFeaturePage({ page }: { page: PlatformDetail }) {
         <div className="shell">
           <div className={styles.intro}>
             <span className="section-label">{page.title}</span>
-            <h2>{page.intro}</h2>
+            <h2 data-mixed-heading>
+              <MixedHeadingText>{page.intro}</MixedHeadingText>
+            </h2>
           </div>
           <div className={styles.cards}>
             {page.capabilities.map((capability) => (
@@ -76,7 +81,9 @@ export function PlatformFeaturePage({ page }: { page: PlatformDetail }) {
               >
                 <div className={styles.cardCopy}>
                   <span className={styles.label}>{capability.label}</span>
-                  <h3>{capability.title}</h3>
+                  <h3 data-mixed-heading>
+                    <MixedHeadingText>{capability.title}</MixedHeadingText>
+                  </h3>
                   <span className={styles.explore}>
                     Explore{" "}
                     <span aria-hidden="true">
@@ -116,7 +123,9 @@ export function PlatformFeaturePage({ page }: { page: PlatformDetail }) {
               key={capability.id}
             >
               <span className="section-label">{capability.label}</span>
-              <h2>{capability.title}</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>{capability.title}</MixedHeadingText>
+              </h2>
               <p>{capability.body}</p>
               <ul>
                 {capability.points.map((point) => (

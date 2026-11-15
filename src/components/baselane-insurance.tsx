@@ -8,6 +8,7 @@ import {
   ArrowRight as MageArrowRight,
   ShieldCheck,
 } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import styles from "./baselane-insurance.module.css";
 import { InnerPageShell } from "./inner-page-shell";
 
@@ -105,7 +106,11 @@ export function BaselaneInsurance() {
           </div>
         </div>
         <div className={styles.heroCopy} id="property-brief">
-          <h1>A clearer start to your insurance review.</h1>
+          <h1 data-mixed-heading>
+            <MixedHeadingText>
+              A clearer start to your insurance review.
+            </MixedHeadingText>
+          </h1>
           <p>
             Gather the essentials for your rental property and prepare a brief
             for your next conversation.
@@ -157,7 +162,9 @@ export function BaselaneInsurance() {
               tabIndex={-1}
               role="status"
             >
-              <h2>Your brief is ready.</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>Your brief is ready.</MixedHeadingText>
+              </h2>
               <p>{brief.address}</p>
               <p>
                 {brief.email} · {brief.phone}
@@ -185,7 +192,11 @@ export function BaselaneInsurance() {
         ))}
       </div>
       <section className={styles.benefits}>
-        <h2>A little more clarity for your property team.</h2>
+        <h2 data-mixed-heading>
+          <MixedHeadingText>
+            A little more clarity for your property team.
+          </MixedHeadingText>
+        </h2>
         <p>
           Bring the information, the questions, and the next steps into a
           process everyone can follow.
@@ -195,9 +206,9 @@ export function BaselaneInsurance() {
             const Icon = [Files, ShieldCheck, FlowArrow, CheckCircle][i];
             return (
               <article key={title}>
-                <h3>
+                <h3 data-mixed-heading>
                   <Icon size={22} />
-                  {title}
+                  <MixedHeadingText>{title}</MixedHeadingText>
                 </h3>
                 <p>{text}</p>
               </article>
@@ -206,7 +217,11 @@ export function BaselaneInsurance() {
         </div>
       </section>
       <section className={styles.process}>
-        <h2>How your property review comes together.</h2>
+        <h2 data-mixed-heading>
+          <MixedHeadingText>
+            How your property review comes together.
+          </MixedHeadingText>
+        </h2>
         <div className={styles.steps}>
           {steps.map(([photo, title, text], i) => (
             <article key={photo}>
@@ -234,14 +249,18 @@ export function BaselaneInsurance() {
                   </span>
                 </div>
               </div>
-              <h3>{title}</h3>
+              <h3 data-mixed-heading>
+                <MixedHeadingText>{title}</MixedHeadingText>
+              </h3>
               <p>{text}</p>
             </article>
           ))}
         </div>
       </section>
       <section className={styles.comparison}>
-        <h2>Know what comes next.</h2>
+        <h2 data-mixed-heading>
+          <MixedHeadingText>Know what comes next.</MixedHeadingText>
+        </h2>
         <p>A simple framework for a more useful property conversation.</p>
         <section
           className={styles.tableWrap}
@@ -273,7 +292,9 @@ export function BaselaneInsurance() {
         </a>
       </section>
       <section className={styles.examples}>
-        <h2>Keep your team in the picture.</h2>
+        <h2 data-mixed-heading>
+          <MixedHeadingText>Keep your team in the picture.</MixedHeadingText>
+        </h2>
         <p>Connected context for the work behind every property.</p>
         <div className={styles.exampleGrid}>
           {[
@@ -290,15 +311,17 @@ export function BaselaneInsurance() {
                 sizes="(max-width:700px) 80vw, 25vw"
               />
               <span>{title}</span>
-              <h3>
-                {
-                  [
-                    "Find the details you need.",
-                    "Give each question an owner.",
-                    "Make the handoff clear.",
-                    "Keep the work connected.",
-                  ][i]
-                }
+              <h3 data-mixed-heading>
+                <MixedHeadingText>
+                  {
+                    [
+                      "Find the details you need.",
+                      "Give each question an owner.",
+                      "Make the handoff clear.",
+                      "Keep the work connected.",
+                    ][i]
+                  }
+                </MixedHeadingText>
               </h3>
               <small>
                 Explore workflows <MageArrowRight size="1em" />

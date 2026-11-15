@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import styles from "@/app/skills/page.module.css";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { skillColorValue } from "@/lib/skill-colors";
 import type { SkillCategory, SkillSummary } from "@/lib/skills";
 
@@ -101,7 +102,9 @@ function SkillCard({ skill }: { skill: SkillSummary }) {
             <span className={styles.chip}>{skill.category.title}</span>
           ) : null}
         </div>
-        <h3>{skill.name}</h3>
+        <h3 data-mixed-heading>
+          <MixedHeadingText>{skill.name}</MixedHeadingText>
+        </h3>
         {skill.shortDescription ? (
           <p className={styles.excerpt}>{skill.shortDescription}</p>
         ) : null}

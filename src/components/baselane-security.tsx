@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { ChevronRight } from "@/components/chevron-right";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import styles from "./baselane-security.module.css";
 import { InnerPageShell } from "./inner-page-shell";
 
@@ -85,7 +86,11 @@ export function BaselaneSecurity() {
             />
           </picture>
           <div>
-            <h1>Build trust into the way work gets done.</h1>
+            <h1 data-mixed-heading>
+              <MixedHeadingText>
+                Build trust into the way work gets done.
+              </MixedHeadingText>
+            </h1>
             <p>
               Explore access, data handling, and operational governance with
               innflow. Bring your security requirements into the conversation
@@ -94,9 +99,11 @@ export function BaselaneSecurity() {
           </div>
         </section>
         <section className={styles.intro}>
-          <h2>
-            A clear view of the work.
-            <br />A clear view of the controls.
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              A clear view of the work.
+              <br />A clear view of the controls.
+            </MixedHeadingText>
           </h2>
           <nav aria-label="Security topics">
             <a href="#review">
@@ -128,7 +135,9 @@ export function BaselaneSecurity() {
                 />
               </div>
               <div className={styles.copy}>
-                <h2>{section.title}</h2>
+                <h2 data-mixed-heading>
+                  <MixedHeadingText>{section.title}</MixedHeadingText>
+                </h2>
                 <div>
                   {section.items.map(([title, text], i) => (
                     <details key={title} open={i === 0}>
@@ -141,7 +150,11 @@ export function BaselaneSecurity() {
             </section>
             {index === 0 && (
               <section className={styles.policies}>
-                <h2>Understand the terms behind the work.</h2>
+                <h2 data-mixed-heading>
+                  <MixedHeadingText>
+                    Understand the terms behind the work.
+                  </MixedHeadingText>
+                </h2>
                 <p>
                   Review innflow’s published policies and bring your questions
                   to the team.
@@ -163,7 +176,9 @@ export function BaselaneSecurity() {
         ))}
         <section className={styles.contact}>
           <div>
-            <h2>Discuss your requirements.</h2>
+            <h2 data-mixed-heading>
+              <MixedHeadingText>Discuss your requirements.</MixedHeadingText>
+            </h2>
             <p>
               Certification, encryption, and residency requirements are reviewed
               for the proposed implementation.

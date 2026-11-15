@@ -7,6 +7,7 @@ import {
   Plus as MagePlus,
   StarsA as MageStarsA,
 } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
 import {
   getProductDesign,
@@ -139,7 +140,11 @@ export function CalendlyProductPage({
     >
       <div className={styles.centerHeading}>
         <span className={styles.eyebrow}>{content.name} in focus</span>
-        <h2>{content.intro?.[0]?.title ?? content.title}</h2>
+        <h2 data-mixed-heading>
+          <MixedHeadingText>
+            {content.intro?.[0]?.title ?? content.title}
+          </MixedHeadingText>
+        </h2>
       </div>
       <div
         className={styles.spotlightMedia}
@@ -182,7 +187,9 @@ export function CalendlyProductPage({
             </span>
             <span>{content.name}</span>
           </div>
-          <h1>{content.title}</h1>
+          <h1 data-mixed-heading>
+            <MixedHeadingText>{content.title}</MixedHeadingText>
+          </h1>
           <p>{content.description}</p>
           <div className={styles.actions}>
             <TrackedLink
@@ -220,13 +227,19 @@ export function CalendlyProductPage({
             <span className={styles.eyebrow}>
               {content.intro?.[0]?.eyebrow ?? `${content.name} capabilities`}
             </span>
-            <h2>{content.intro?.[0]?.title ?? features[0].title}</h2>
+            <h2 data-mixed-heading>
+              <MixedHeadingText>
+                {content.intro?.[0]?.title ?? features[0].title}
+              </MixedHeadingText>
+            </h2>
             {content.intro?.[0]?.body && <p>{content.intro[0].body}</p>}
             <div className={styles.capabilityRows}>
               {featureStart.map((item) => (
                 <a key={item.id} href={`#${item.id}`}>
-                  <h3>
-                    {item.label ?? item.title}
+                  <h3 data-mixed-heading>
+                    <MixedHeadingText>
+                      {item.label ?? item.title}
+                    </MixedHeadingText>
                     <span aria-hidden="true">
                       <ChevronRight />
                     </span>
@@ -283,14 +296,16 @@ export function CalendlyProductPage({
                   placement={inventory?.cards[index]}
                   compact
                 />
-                <h3>
-                  {item.href ? (
-                    <Link href={item.href}>
-                      {item.title} <ChevronRight />
-                    </Link>
-                  ) : (
-                    item.title
-                  )}
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>
+                    {item.href ? (
+                      <Link href={item.href}>
+                        {item.title} <ChevronRight />
+                      </Link>
+                    ) : (
+                      item.title
+                    )}
+                  </MixedHeadingText>
                 </h3>
                 <p>{item.body}</p>
                 {item.points?.length ? (
@@ -318,7 +333,9 @@ export function CalendlyProductPage({
           <Artwork item={item} placement={inventory?.details[item.id]} />
           <div className={styles.detailCopy}>
             <span className={styles.eyebrow}>{item.label ?? content.name}</span>
-            <h2>{item.title}</h2>
+            <h2 data-mixed-heading>
+              <MixedHeadingText>{item.title}</MixedHeadingText>
+            </h2>
             <p>{item.body}</p>
             {item.points?.length ? (
               <ul>
@@ -374,10 +391,12 @@ export function CalendlyProductPage({
       <section className={styles.related}>
         <div className={styles.centerHeading}>
           <span className={styles.eyebrow}>The Innflow platform</span>
-          <h2>
-            Keep your tools, context,
-            <br />
-            and next steps connected.
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              Keep your tools, context,
+              <br />
+              and next steps connected.
+            </MixedHeadingText>
           </h2>
         </div>
         <div className={styles.relatedRail}>
@@ -401,8 +420,8 @@ export function CalendlyProductPage({
                   </span>
                 )}
               </div>
-              <h3>
-                {route.title}{" "}
+              <h3 data-mixed-heading>
+                <MixedHeadingText>{route.title} </MixedHeadingText>
                 <span aria-hidden="true">
                   <ChevronRight />
                 </span>

@@ -1,3 +1,4 @@
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { FeatureMedia } from "@/components/product-media";
 import type { FeatureStory } from "@/content/home";
 
@@ -17,7 +18,9 @@ export function FeatureSection({
             {story.status}
           </span>
         </div>
-        <h3>{story.title}</h3>
+        <h3 data-mixed-heading>
+          <MixedHeadingText>{story.title}</MixedHeadingText>
+        </h3>
         <dl className="story-details">
           <div>
             <dt>Problem</dt>

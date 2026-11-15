@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ChevronRight } from "@/components/chevron-right";
 import { InnerPageShell } from "@/components/inner-page-shell";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { createPageMetadata } from "@/lib/metadata";
 import styles from "./page.module.css";
 
@@ -213,7 +214,9 @@ export default function ConnectionsPage() {
     <InnerPageShell>
       <div className={styles.directory}>
         <header className={styles.intro}>
-          <h1>Connections</h1>
+          <h1 data-mixed-heading>
+            <MixedHeadingText>Connections</MixedHeadingText>
+          </h1>
           <p>
             Explore Innflow in one place. Find the tools, resources, and
             information you need.

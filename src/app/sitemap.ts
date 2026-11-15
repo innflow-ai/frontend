@@ -168,11 +168,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         changeFrequency: "monthly" as const,
         priority: 0.8,
       })),
-    ...posts.map((post) => ({
-      url: `${siteConfig.marketingOrigin}/blog/${post.slug}`,
-      lastModified: new Date(post.publishedAt),
-      changeFrequency: "monthly" as const,
-      priority: 0.6,
-    })),
+    ...posts
+      .filter(
+        (post) =>
+          Boolean(post.publishedAt) &&
+          new Date(post.publishedAt).getTime() <= Date.now(),
+      )
+      .map((post) => ({
+        url: `${siteConfig.marketingOrigin}/blog/${post.slug}`,
+        lastModified: new Date(post.publishedAt),
+        changeFrequency: "monthly" as const,
+        priority: 0.6,
+      })),
   ];
 }

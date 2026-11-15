@@ -131,3 +131,43 @@
     line-height: var(--section-heading-subtitle-line-mobile);
   }
 }
+
+/* Explicit runs keep page-level font shorthands from changing this pairing. */
+.mixedLead.mixedLead,
+.mixedTail.mixedTail.mixedTail {
+  font-size: inherit;
+  font-style: italic;
+  font-synthesis: none;
+  line-height: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  white-space: normal;
+}
+.mixedLead.mixedLead {
+  font-family: var(--font-archivo-italic), sans-serif;
+  font-weight: 700;
+}
+.mixedTail.mixedTail {
+  font-family: var(--font-source-serif-4), serif;
+  font-weight: 400;
+}
+.mixedTail[data-break="always"],
+.mixedTail[data-break="desktop"] {
+  display: block;
+}
+@media (max-width: 700px) {
+  .mixedTail[data-break="desktop"] {
+    display: inline;
+  }
+}
+
+/* Keep dynamic title content together in headings that use flex layout. */
+.mixedText.mixedText {
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+}

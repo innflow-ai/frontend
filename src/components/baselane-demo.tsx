@@ -5,6 +5,7 @@ import {
   ArrowRight as MageArrowRight,
   Check as MageCheck,
 } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
 import styles from "./baselane-support.module.css";
 import { InnerPageShell } from "./inner-page-shell";
@@ -41,10 +42,12 @@ export function BaselaneDemo() {
           <Photo name="hero" priority />
           <div className={styles.heroCopy}>
             <span>PROPERTY OPERATIONS, CONNECTED</span>
-            <h1>
-              See how
-              <br />
-              innflow works.
+            <h1 data-mixed-heading>
+              <MixedHeadingText>
+                See how
+                <br />
+                innflow works.
+              </MixedHeadingText>
             </h1>
             <p>
               Explore how your team can bring recurring work, property context,
@@ -56,7 +59,11 @@ export function BaselaneDemo() {
           </div>
         </section>
         <section className={styles.intro}>
-          <h2>A clearer workflow is a click away.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              A clearer workflow is a click away.
+            </MixedHeadingText>
+          </h2>
           <p>
             Start with your team’s day-to-day work. See where connected context
             and a clear next step can make a difference.
@@ -87,7 +94,11 @@ export function BaselaneDemo() {
               </strong>
             </div>
             <div className={styles.cardCopy}>
-              <h2>Managing a growing portfolio?</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>
+                  Managing a growing portfolio?
+                </MixedHeadingText>
+              </h2>
               <p>
                 Bring a recurring workflow. We’ll start with the handoffs that
                 matter to your team.
@@ -101,7 +112,9 @@ export function BaselaneDemo() {
             <Photo name="webinar" />
             <span className={styles.eyebrow}>EXPLORE INNFLOW</span>
             <div className={styles.cardCopy}>
-              <h2>Get a closer look.</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>Get a closer look.</MixedHeadingText>
+              </h2>
               <p>
                 Explore self-guided topics on recurring tasks, property records,
                 and the handoffs your team handles every day.
@@ -114,10 +127,12 @@ export function BaselaneDemo() {
         </section>
         <section className={styles.statement}>
           <span>MAKE THE CONVERSATION YOURS</span>
-          <h2>
-            Start with the work
-            <br />
-            you want to simplify.
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              Start with the work
+              <br />
+              you want to simplify.
+            </MixedHeadingText>
           </h2>
           <p>
             A maintenance handoff. A document request. A recurring review. Bring
@@ -136,10 +151,12 @@ export function BaselaneDemo() {
             sizes="100vw"
           />
           <div>
-            <h2>
-              Less chasing.
-              <br />
-              More moving forward.
+            <h2 data-mixed-heading>
+              <MixedHeadingText>
+                Less chasing.
+                <br />
+                More moving forward.
+              </MixedHeadingText>
             </h2>
             <p>Give every recurring request a clear next step.</p>
             <a className={styles.button} href={siteConfig.contactUrl}>

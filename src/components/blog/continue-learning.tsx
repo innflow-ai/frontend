@@ -1,3 +1,4 @@
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
 import type { BlogPostSummary } from "@/lib/sanity";
@@ -11,10 +12,12 @@ export function BlogContinueLearning({
   return (
     <section className={styles.continue} aria-labelledby="continue-learning">
       <p className={styles.metaLabel}>Continue learning</p>
-      <h2 id="continue-learning">
-        {nextPost
-          ? "Keep going with the next field note."
-          : "See how Innflow runs the operation."}
+      <h2 id="continue-learning" data-mixed-heading>
+        <MixedHeadingText>
+          {nextPost
+            ? "Keep going with the next field note."
+            : "See how Innflow runs the operation."}
+        </MixedHeadingText>
       </h2>
       <p>
         {nextPost

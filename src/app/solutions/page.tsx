@@ -1,6 +1,7 @@
 import { BaselineClosing } from "@/app/preview/scroll-showcase/baseline-lower-sections";
 import { IndustryDirectory } from "@/components/industry-pages/industry-directory";
 import styles from "@/components/industry-pages/industry-pages.module.css";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { ShowcaseTheme } from "@/components/showcase-theme";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -16,10 +17,12 @@ export default function SolutionsPage() {
       <main id="main-content" className={styles.page}>
         <header className={styles.directoryHero}>
           <p className={styles.eyebrow}>Industries & solutions</p>
-          <h1>
-            Your industry.
-            <br />
-            Your way of working.
+          <h1 data-mixed-heading>
+            <MixedHeadingText>
+              Your industry.
+              <br />
+              Your way of working.
+            </MixedHeadingText>
           </h1>
           <p>
             Connect the conversations, knowledge and handoffs behind your

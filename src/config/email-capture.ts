@@ -1,6 +1,6 @@
 /**
  * Figma `1fbFIPN1GfSkioiOSUZMaV`: desktop `74:48960`, mobile `74:48980`.
- * Subscribe fill is the `--email-subscribe` token, pending Julian.
+ * Subscribe uses the shared blue primary-button tokens.
  */
 export const emailCaptureCopy = {
   headline: "Get the weekly agent playbook.",
@@ -15,14 +15,15 @@ export const emailCaptureCopy = {
 } as const;
 
 export const emailCapture = {
-  /** Bottom-left newsletter card. The only popup. */
+  /** Bottom-right newsletter card. The only popup. */
   enabled: true,
 };
 
 export const EMAIL_CAPTURE_STORAGE_KEY = "innflow-email-capture";
 export const EMAIL_CAPTURE_SESSION_KEY = "innflow-email-capture-session";
-export const EMAIL_CAPTURE_SCROLL_RATIO = 0.4;
-export const EMAIL_CAPTURE_DELAY_MS = 20_000;
+export const EMAIL_CAPTURE_SCROLL_RATIO = 0.5;
+/** Delay after reaching the scroll threshold, not after loading the page. */
+export const EMAIL_CAPTURE_DELAY_MS = 2_000;
 export const EMAIL_CAPTURE_SUPPRESS_MS = 30 * 24 * 60 * 60 * 1000;
 
 export type EmailCaptureRecord = {

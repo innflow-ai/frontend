@@ -47,6 +47,7 @@ export function EmailCapturePopup() {
     if (isEmailCaptureSuppressed(stored.current, Date.now())) return;
 
     let opened = false;
+    let timer: number | undefined;
     const show = () => {
       if (
         opened ||
@@ -69,10 +70,14 @@ export function EmailCapturePopup() {
           document.documentElement.scrollHeight,
         ) >= EMAIL_CAPTURE_SCROLL_RATIO
       ) {
-        show();
+        if (timer === undefined) {
+          timer = window.setTimeout(show, EMAIL_CAPTURE_DELAY_MS);
+        }
+      } else {
+        window.clearTimeout(timer);
+        timer = undefined;
       }
     };
-    const timer = window.setTimeout(show, EMAIL_CAPTURE_DELAY_MS);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => {

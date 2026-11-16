@@ -1,11 +1,11 @@
 /*
-  Bottom-left newsletter card.
+  Bottom-right newsletter card.
   Figma 1fbFIPN1GfSkioiOSUZMaV, desktop 74:48960, mobile 74:48980.
 */
 .card {
   position: fixed;
   z-index: 80;
-  left: 20px;
+  right: 20px;
   bottom: 20px;
   display: flex;
   flex-direction: column;
@@ -43,8 +43,7 @@
   margin: 0;
 }
 
-.headline,
-.subcopy {
+.headline {
   font-size: 16px;
   line-height: 22px;
 }
@@ -56,7 +55,10 @@
 
 .subcopy {
   color: #7c7b7a;
+  font-family: var(--font-archivo), Arial, sans-serif;
+  font-size: 14px;
   font-weight: 400;
+  line-height: 20px;
 }
 
 .form {
@@ -95,8 +97,7 @@
   background: transparent;
   color: #0f0d0b;
   font:
-    400 14px / 20px var(--font-inter),
-    Inter,
+    400 14px / 20px var(--font-archivo),
     Arial,
     sans-serif;
 }
@@ -112,15 +113,19 @@
   justify-content: center;
   width: 96px;
   height: 34px;
-  border: 0;
+  border: 1px solid var(--button-primary-border);
   border-radius: 6px;
-  background: var(--email-subscribe);
-  color: #19180c;
+  background: var(--button-primary);
+  color: #fff;
   font:
     500 14px / 20px var(--font-archivo),
     Arial,
     sans-serif;
   cursor: pointer;
+}
+
+.submit:hover:not(:disabled) {
+  background: var(--button-primary-hover);
 }
 
 .submit:disabled {
@@ -213,6 +218,14 @@
 .card :is(button, input):focus-visible {
   outline: 2px solid #0f0d0b;
   outline-offset: 2px;
+}
+
+@media (min-width: 701px) {
+  .field {
+    width: 336px;
+    gap: 12px;
+    padding-inline: 20px 6px;
+  }
 }
 
 @media (max-width: 700px) {

@@ -7,6 +7,7 @@ import {
 } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import {
+  EMAIL_CAPTURE_DELAY_MS,
   EMAIL_CAPTURE_SESSION_KEY,
   EMAIL_CAPTURE_STORAGE_KEY,
   isEmailCaptureExcluded,
@@ -81,30 +82,55 @@ it("hides a dismissal or a submission for 30 days", () => {
   ).toBe(false);
 });
 
-it("opens after about half the page is scrolled", () => {
+it("waits two seconds after half the page is scrolled", () => {
   render(<EmailCapturePopup />);
   expect(screen.queryByRole("dialog")).toBeNull();
-  setScroll(390, 800, 1800);
+  setScroll(490, 800, 1800);
   fireEvent.scroll(window);
   expect(screen.queryByRole("dialog")).toBeNull();
-  setScroll(400, 800, 1800);
+  setScroll(500, 800, 1800);
   fireEvent.scroll(window);
+  act(() => vi.advanceTimersByTime(EMAIL_CAPTURE_DELAY_MS - 1));
+  expect(screen.queryByRole("dialog")).toBeNull();
+  // Further scrolling must not restart the pending delay.
+  fireEvent.scroll(window);
+  act(() => vi.advanceTimersByTime(1));
   expect(
     screen.getByRole("dialog", { name: "Get the weekly agent playbook." }),
   ).toBeInTheDocument();
   expect(screen.getByLabelText("Email address")).toBeInTheDocument();
 });
 
-it("opens after 20 seconds when the page has not been scrolled", () => {
+it("stays hidden when the visitor has not scrolled", () => {
   render(<EmailCapturePopup />);
-  act(() => {
-    vi.advanceTimersByTime(19_999);
-  });
+  act(() => vi.advanceTimersByTime(30_000));
   expect(screen.queryByRole("dialog")).toBeNull();
-  act(() => {
-    vi.advanceTimersByTime(1);
-  });
+});
+
+it("cancels the pending appearance when scrolling back above halfway", () => {
+  render(<EmailCapturePopup />);
+  setScroll(600, 800, 1800);
+  fireEvent.scroll(window);
+  act(() => vi.advanceTimersByTime(1_000));
+  setScroll(100, 800, 1800);
+  fireEvent.scroll(window);
+  act(() => vi.advanceTimersByTime(EMAIL_CAPTURE_DELAY_MS));
+  expect(screen.queryByRole("dialog")).toBeNull();
+  expect(sessionStorage.getItem(EMAIL_CAPTURE_SESSION_KEY)).toBeNull();
+  setScroll(600, 800, 1800);
+  fireEvent.scroll(window);
+  act(() => vi.advanceTimersByTime(EMAIL_CAPTURE_DELAY_MS));
   expect(screen.getByRole("dialog")).toBeInTheDocument();
+});
+
+it("cleans up a pending appearance when leaving the page", () => {
+  const view = render(<EmailCapturePopup />);
+  setScroll(600, 800, 1800);
+  fireEvent.scroll(window);
+  view.unmount();
+  act(() => vi.advanceTimersByTime(EMAIL_CAPTURE_DELAY_MS));
+  expect(screen.queryByRole("dialog")).toBeNull();
+  expect(sessionStorage.getItem(EMAIL_CAPTURE_SESSION_KEY)).toBeNull();
 });
 
 it("remembers a dismissal and restores focus on Escape", () => {
@@ -116,6 +142,7 @@ it("remembers a dismissal and restores focus on Escape", () => {
   );
   setScroll(900, 800, 1800);
   fireEvent.scroll(window);
+  act(() => vi.advanceTimersByTime(EMAIL_CAPTURE_DELAY_MS));
   const pageAction = screen.getByRole("button", { name: "Page action" });
   pageAction.focus();
   const email = screen.getByLabelText("Email address");
@@ -137,6 +164,7 @@ it("saves the address through the email capture route and emits one event", asyn
   render(<EmailCapturePopup />);
   setScroll(900, 800, 1800);
   fireEvent.scroll(window);
+  act(() => vi.advanceTimersByTime(EMAIL_CAPTURE_DELAY_MS));
   fireEvent.change(screen.getByLabelText("Email address"), {
     target: { value: "person@example.com" },
   });
@@ -180,6 +208,7 @@ it("does not emit the event when signup fails", async () => {
   render(<EmailCapturePopup />);
   setScroll(900, 800, 1800);
   fireEvent.scroll(window);
+  act(() => vi.advanceTimersByTime(EMAIL_CAPTURE_DELAY_MS));
   fireEvent.change(screen.getByLabelText("Email address"), {
     target: { value: "person@example.com" },
   });
@@ -203,6 +232,7 @@ it("shows at most once in a session", () => {
   const first = render(<EmailCapturePopup />);
   setScroll(900, 800, 1800);
   fireEvent.scroll(window);
+  act(() => vi.advanceTimersByTime(EMAIL_CAPTURE_DELAY_MS));
   expect(screen.getByRole("dialog")).toBeInTheDocument();
   expect(sessionStorage.getItem(EMAIL_CAPTURE_SESSION_KEY)).toBe("1");
   first.unmount();
@@ -237,6 +267,7 @@ it("stacks the card above a fixed bottom banner", () => {
   render(<EmailCapturePopup />);
   setScroll(900, 800, 1800);
   fireEvent.scroll(window);
+  act(() => vi.advanceTimersByTime(EMAIL_CAPTURE_DELAY_MS));
   expect(screen.getByRole("dialog")).toHaveStyle({ bottom: "84px" });
   banner.remove();
 });

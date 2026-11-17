@@ -108,8 +108,8 @@ it("offers Google, email and the general sign-in page", () => {
     ),
   ).toBeVisible();
   expect(
-    screen.getByRole("link", { name: "Sign up with email" }),
-  ).toHaveAttribute("href", siteConfig.signupUrl);
+    screen.queryByRole("link", { name: "Sign up with email" }),
+  ).not.toBeInTheDocument();
   expect(
     screen.queryByText("Scroll to explore, or choose a tab."),
   ).not.toBeInTheDocument();

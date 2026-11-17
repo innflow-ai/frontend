@@ -8,6 +8,8 @@ export const metadata = createPageMetadata({
   description:
     "Bring conversations, AI agents and everyday workflows into one workspace. Connect your team, tools and knowledge across industries.",
   path: "/",
+  image: "/brand/deploy-agents-share.jpg",
+  imageAlt: "Innflow’s blue inflatable mascot above a city street with the words “Deploy Agents”.",
 });
 
 export default function HomePage() {

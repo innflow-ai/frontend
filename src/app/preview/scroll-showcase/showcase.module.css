@@ -64,18 +64,6 @@
 .oauthActions a:hover {
   transform: translateY(-1px);
 }
-.signupNote {
-  display: block;
-  margin-top: 18px;
-  line-height: 18px;
-  color: var(--preview-muted);
-  font-size: 12px;
-}
-.signupNote a {
-  color: inherit;
-  text-decoration: underline;
-  text-underline-offset: 2px;
-}
 .sticky {
   height: 100svh;
   position: sticky;
@@ -269,12 +257,13 @@
 }
 .copy a {
   display: inline-flex;
-  gap: 16px;
-  font-size: 14px;
-  color: var(--preview-ink);
+  align-items: center;
+  width: fit-content;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
   text-decoration: none;
-  padding: 0 0 10px;
-  border-bottom: 1px solid;
+  padding: 5px 12px;
   margin-top: 32px;
 }
 .demo {
@@ -779,7 +768,6 @@
   }
   .copy a {
     margin-top: 16px;
-    padding-bottom: 6px;
   }
   .demo {
     height: 230px;

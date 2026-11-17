@@ -83,7 +83,7 @@
   height: 42px;
   padding: 0 4px 0 16px;
   border: 1px solid #eeeeed;
-  border-radius: 8px;
+  border-radius: 999px;
   background: #fbfbfb;
 }
 
@@ -104,6 +104,20 @@
 
 .input::placeholder {
   color: #7a7a79;
+}
+
+.field:has(.input:focus) {
+  border-color: var(--brand-kit-blue);
+}
+
+@media (forced-colors: active) {
+  .field:has(.input:focus) {
+    border-color: Highlight;
+  }
+}
+
+.input:focus {
+  outline: none;
 }
 
 .submit {
@@ -215,7 +229,7 @@
   height: 12px;
 }
 
-.card :is(button, input):focus-visible {
+.card button:focus-visible {
   outline: 2px solid #0f0d0b;
   outline-offset: 2px;
 }

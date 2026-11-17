@@ -23,14 +23,20 @@
   font-weight: 400;
 }
 
-.headings:global(#main-content) [role="tabpanel"] h2[data-reference-heading],
-.headings:global(#main-content) [role="tabpanel"] h2[data-reference-heading] span {
-  font-style: italic;
-}
-
 .headings:global(#main-content) [data-home-copy],
 .headings:global(#main-content) [data-home-copy] p,
 .headings:global(#main-content) [data-heading-variant] h2 + div > p {
   font-size: 14px;
   line-height: 1.35;
+}
+
+.headings [role="tabpanel"] h2[data-reference-heading] {
+  padding-top: 4px;
+}
+
+.headings:global(#main-content) [role="tabpanel"] [data-home-copy] {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 300;
+  color: #767676;
 }

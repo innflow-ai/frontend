@@ -98,7 +98,7 @@ function PaidPlanCard({
         data-site-cta="primary"
         aria-label={`Continue with Google for ${name}`}
         className={styles.planCta}
-        destination={siteConfig.googleAuthUrl}
+        destination={siteConfig.signupUrl}
         eventLabel={`pricing_${name.toLowerCase()}_signup`}
       >
         <GoogleCtaContent />
@@ -183,7 +183,7 @@ export function PricingConfigurator() {
             data-site-cta="primary"
             aria-label="Continue with Google for Basic"
             className={styles.planCta}
-            destination={siteConfig.googleAuthUrl}
+            destination={siteConfig.signupUrl}
             eventLabel="pricing_free_signup"
           >
             <GoogleCtaContent />

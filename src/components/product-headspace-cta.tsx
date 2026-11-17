@@ -29,7 +29,7 @@ export function ProductHeadspaceCta() {
           Bring your team, your information, and your next steps into one flow.
         </p>
         <div className={styles.actions}>
-          <a href={siteConfig.googleAuthUrl}>
+          <a href={siteConfig.signupUrl}>
             <GoogleCtaContent />
           </a>
           <a data-site-cta="secondary" href={siteConfig.demoUrl} className={styles.demo}>

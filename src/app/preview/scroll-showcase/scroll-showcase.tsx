@@ -317,7 +317,7 @@ export function ScrollShowcase() {
           <TrackedLink
             data-site-cta="primary"
             className={`${googleButtonStyles.button} ${googleButtonStyles.raisedSignIn}`}
-            destination={siteConfig.googleAuthUrl}
+            destination={siteConfig.signupUrl}
             eventLabel="homepage_hero_google"
           >
             <GoogleCtaContent />
@@ -325,7 +325,7 @@ export function ScrollShowcase() {
           <TrackedLink
             data-site-cta="secondary"
             className={`${googleButtonStyles.button} ${googleButtonStyles.raisedSignIn}`}
-            destination={`${siteConfig.appOrigin}/login`}
+            destination={siteConfig.signupUrl}
             eventLabel="homepage_hero_login"
           >
             <span className={googleButtonStyles.content}>

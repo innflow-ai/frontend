@@ -59,7 +59,10 @@ it("keeps direct login links and returns focus to the product disclosure on Esca
   const user = userEvent.setup();
   render(<SiteHeader />);
   for (const link of screen.getAllByRole("link", { name: "Log in" })) {
-    expect(link).toHaveAttribute("href", "https://app.innflow.ai/login");
+    expect(link).toHaveAttribute(
+      "href",
+      "https://app.innflow.ai/signup?callbackURL=%2Fworkflows",
+    );
   }
   const trigger = screen.getByRole("button", { name: "Product" });
   trigger.focus();

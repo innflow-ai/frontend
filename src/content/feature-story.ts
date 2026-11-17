@@ -1,4 +1,6 @@
-export const appSignup = "https://app.innflow.ai";
+import { siteConfig } from "@/config/site";
+
+export const appSignup = siteConfig.signupUrl;
 
 export type StoryLink = {
   label: string;

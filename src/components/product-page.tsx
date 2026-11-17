@@ -25,7 +25,7 @@ import { WorkflowIllustration } from "./workflow-illustration";
 function ctaDestination(cta: ProductCta) {
   if (/\b(?:book|request|see|schedule)\b.*\bdemo\b/i.test(cta.label))
     return siteConfig.demoUrl;
-  if (cta.destination === "signup") return siteConfig.googleAuthUrl;
+  if (cta.destination === "signup") return siteConfig.signupUrl;
   if (cta.destination === "contact") return siteConfig.contactUrl;
   return siteConfig.demoUrl;
 }

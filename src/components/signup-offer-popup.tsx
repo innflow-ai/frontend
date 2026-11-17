@@ -67,7 +67,7 @@ export function SignupOfferPopup({
       <a
         data-site-cta="primary"
         className={styles.signup}
-        href={siteConfig.googleAuthUrl}
+        href={siteConfig.signupUrl}
       >
         Claim 50% off
       </a>

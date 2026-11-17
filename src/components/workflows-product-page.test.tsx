@@ -12,7 +12,10 @@ it("uses the workflows copy and leaves the field note unlinked", () => {
   ).toBeInTheDocument();
   expect(
     screen.getAllByRole("link", { name: "Start for free" })[0],
-  ).toHaveAttribute("href", "https://app.innflow.ai");
+  ).toHaveAttribute(
+    "href",
+    "https://app.innflow.ai/signup?callbackURL=%2Fworkflows",
+  );
   expect(
     screen.getAllByRole("link", { name: "See a launch workflow" })[0],
   ).toHaveAttribute("href", "#launch-workflow");
@@ -23,9 +26,8 @@ it("uses the workflows copy and leaves the field note unlinked", () => {
       name: "A launch needs more than a checklist",
     }),
   ).toBeInTheDocument();
-  expect(screen.getByRole("link", { name: "Read the field note" })).toHaveAttribute(
-    "href",
-    "/blog",
-  );
+  expect(
+    screen.getByRole("link", { name: "Read the field note" }),
+  ).toHaveAttribute("href", "/blog");
   expect(screen.queryByText(/Coming soon|Northwind|Offloop/i)).toBeNull();
 });

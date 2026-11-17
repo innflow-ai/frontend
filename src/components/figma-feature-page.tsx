@@ -182,7 +182,7 @@ export async function FigmaFeaturePage({
               <a
                 data-site-cta="primary"
                 className={`${base.heroGoogle} ${googleStyles.cream}`}
-                href={siteConfig.googleAuthUrl}
+                href={siteConfig.signupUrl}
               >
                 <GoogleCtaContent />
               </a>

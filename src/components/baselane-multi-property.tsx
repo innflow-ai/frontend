@@ -117,7 +117,7 @@ export function BaselaneMultiProperty({
             <a
               data-site-cta="primary"
               className={styles.googleButton}
-              href={siteConfig.googleAuthUrl}
+              href={siteConfig.signupUrl}
             >
               <GoogleCtaContent />
             </a>

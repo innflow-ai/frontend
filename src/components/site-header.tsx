@@ -330,7 +330,7 @@ export function SiteHeader() {
           <a href="/blog">Blog</a>
           <a
             className={styles.mobileLogin}
-            href={`${siteConfig.appOrigin}/login`}
+            href={siteConfig.signupUrl}
           >
             Log in
           </a>
@@ -338,14 +338,14 @@ export function SiteHeader() {
         <div className={styles.headerActions}>
           <a
             className={styles.login}
-            href={`${siteConfig.appOrigin}/login`}
+            href={siteConfig.signupUrl}
           >
             Log in
           </a>
           <TrackedLink
             data-site-cta="primary"
             className={`${styles.darkButton} ${googleButtonStyles.raisedSignIn}`}
-            destination={siteConfig.googleAuthUrl}
+            destination={siteConfig.signupUrl}
             eventLabel="baselane_header_signup"
             aria-label="Continue with Google"
           >
@@ -377,7 +377,7 @@ export function SiteHeader() {
           id="baselane-mobile-overlay"
           className={styles.mobileMenu}
           pricingHref="/pricing"
-          loginHref={`${siteConfig.appOrigin}/login`}
+          loginHref={siteConfig.signupUrl}
         />
       ) : null}
     </div>

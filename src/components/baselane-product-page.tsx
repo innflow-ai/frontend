@@ -49,7 +49,7 @@ function Actions() {
     <div className={styles.actions}>
       <a
         data-site-cta="primary"
-        href={siteConfig.googleAuthUrl}
+        href={siteConfig.signupUrl}
         className={styles.google}
       >
         <GoogleCtaContent />
@@ -174,7 +174,7 @@ export async function BaselaneProductPage({
                 <a
                   data-site-cta="primary"
                   className={`${styles.heroGoogle} ${googleCtaStyles.cream}`}
-                  href={siteConfig.googleAuthUrl}
+                  href={siteConfig.signupUrl}
                 >
                   <GoogleCtaContent />
                 </a>

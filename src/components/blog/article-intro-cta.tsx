@@ -47,7 +47,7 @@ export function BlogArticleIntroCta({
           </span>
         </TrackedLink>
         <TrackedLink
-          destination={siteConfig.googleAuthUrl}
+          destination={siteConfig.signupUrl}
           eventLabel="blog_intro_google_signup"
         >
           <GoogleCtaContent />

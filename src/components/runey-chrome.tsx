@@ -105,10 +105,10 @@ export function RuneyChrome({
             <h2>Get in touch</h2>
             <a href="/contact">Contact us</a>
             <a href={siteConfig.demoUrl}>Request a demo</a>
-            <a href={siteConfig.googleAuthUrl}>
+            <a href={siteConfig.signupUrl}>
               <GoogleCtaContent />
             </a>
-            <a href={siteConfig.appOrigin}>Log in</a>
+            <a href={siteConfig.signupUrl}>Log in</a>
             <CustomerSupportHours />
           </div>
         </div>
@@ -176,7 +176,7 @@ export function RuneyChrome({
             <div className={styles.headerActions}>
               <a
                 className={styles.login}
-                href={siteConfig.appOrigin}
+                href={siteConfig.signupUrl}
               >
                 Log in
               </a>

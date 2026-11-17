@@ -109,7 +109,7 @@ describe("Workspace overview", () => {
     expect(screen.queryByRole("button")).not.toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Get started" })).toHaveAttribute(
       "href",
-      "https://app.innflow.ai/signup",
+      "https://app.innflow.ai/signup?callbackURL=%2Fworkflows",
     );
   });
 

@@ -127,7 +127,7 @@ export function BaselaneUpdates() {
           <a
             data-site-cta="primary"
             className={styles.primary}
-            href={siteConfig.googleAuthUrl}
+            href={siteConfig.signupUrl}
           >
             <GoogleCtaContent />
           </a>

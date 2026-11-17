@@ -354,7 +354,7 @@ export function MobileNavigation({
   id = "editorial-mobile-overlay",
   className = "",
   pricingHref = "/pricing",
-  loginHref = `${siteConfig.appOrigin}/login`,
+  loginHref = siteConfig.signupUrl,
 }: {
   open: boolean;
   onClose: () => void;

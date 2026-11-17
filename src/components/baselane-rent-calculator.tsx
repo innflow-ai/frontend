@@ -229,7 +229,7 @@ export function BaselaneRentCalculator() {
             <a
               data-site-cta="primary"
               className={styles.button}
-              href={siteConfig.googleAuthUrl}
+              href={siteConfig.signupUrl}
             >
               <GoogleCtaContent />
             </a>

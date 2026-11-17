@@ -145,8 +145,8 @@ export function ProductFooter() {
             <h3>Get started</h3>
             <a href={siteConfig.demoUrl}>Book a demo</a>
             <a href="/pricing">Pricing</a>
-            <a href={`${siteConfig.appOrigin}/login`}>Log in</a>
-            <a href={siteConfig.googleAuthUrl}>
+            <a href={siteConfig.signupUrl}>Log in</a>
+            <a href={siteConfig.signupUrl}>
               <GoogleCtaContent />
             </a>
           </div>
@@ -208,8 +208,8 @@ export function SiteFooter() {
             <h3 className={styles.footerSubheading}>Get started</h3>
             <a href={siteConfig.demoUrl}>Book a demo</a>
             <a href="/pricing">Pricing</a>
-            <a href={`${siteConfig.appOrigin}/login`}>Log in</a>
-            <a href={siteConfig.googleAuthUrl}>
+            <a href={siteConfig.signupUrl}>Log in</a>
+            <a href={siteConfig.signupUrl}>
               <GoogleCtaContent />
             </a>
           </div>

@@ -5,11 +5,10 @@ import {
 } from "@portabletext/react";
 import Image from "next/image";
 import type { ReactNode } from "react";
-import { TrackedLink } from "@/components/tracked-link";
+import { siteConfig } from "@/config/site";
 import {
   blockPlainText,
   collectFootnotes,
-  injectInArticleCtas,
   isReferencesHeading,
   italicizeOpeningSentence,
   type LoosePortableBlock,
@@ -26,46 +25,32 @@ type BodyImageValue = {
   asset?: { _ref?: string };
 };
 
-type CtaValue = {
-  label?: string;
-  href?: string;
-};
+function isBookingHref(href: string) {
+  if (href === siteConfig.demoUrl) return true;
+  try {
+    const url = new URL(href, siteConfig.marketingOrigin);
+    const host = url.hostname.toLowerCase();
+    return (
+      host === "cal.com" ||
+      host.endsWith(".cal.com") ||
+      host === "calendly.com" ||
+      host.endsWith(".calendly.com")
+    );
+  } catch {
+    return /cal\.com|calendly\.com/i.test(href);
+  }
+}
 
 function BodyImage({ value }: PortableTextTypeComponentProps<BodyImageValue>) {
   if (!value?.asset?._ref) return null;
-  const src = urlForImage(value).width(1200).auto("format").url();
-  const isDiagram = value.presentation === "diagram";
   const isAssetCta =
     value.presentation === "assetCta" ||
     Boolean(value.ctaTitle && value.ctaHref);
+  // In-body CTA callouts stay in the document but do not render.
+  if (isAssetCta) return null;
 
-  if (isAssetCta) {
-    return (
-      <aside className={styles.assetCard}>
-        <div className={styles.assetCopy}>
-          {value.ctaTitle ? <h3>{value.ctaTitle}</h3> : null}
-          {value.ctaHref ? (
-            <TrackedLink
-              className={styles.ctaButton}
-              destination={value.ctaHref}
-              eventLabel="blog_asset_cta"
-            >
-              {value.ctaLabel || "Learn more"}
-            </TrackedLink>
-          ) : null}
-        </div>
-        <div className={styles.assetMedia}>
-          <Image
-            src={src}
-            alt={value.alt ?? ""}
-            width={720}
-            height={480}
-            sizes="(max-width: 760px) 92vw, 360px"
-          />
-        </div>
-      </aside>
-    );
-  }
+  const src = urlForImage(value).width(1200).auto("format").url();
+  const isDiagram = value.presentation === "diagram";
 
   return (
     <figure className={isDiagram ? styles.diagramCard : styles.bodyImage}>
@@ -80,20 +65,8 @@ function BodyImage({ value }: PortableTextTypeComponentProps<BodyImageValue>) {
   );
 }
 
-function CtaButton({ value }: PortableTextTypeComponentProps<CtaValue>) {
-  const href = value?.href || "#";
-  const label = value?.label || "Continue";
-  return (
-    <p className={styles.inArticleCta}>
-      <TrackedLink
-        className={styles.ctaButton}
-        destination={href}
-        eventLabel="blog_in_article_cta"
-      >
-        {label}
-      </TrackedLink>
-    </p>
-  );
+function CtaButton() {
+  return null;
 }
 
 function FootnoteMark({
@@ -118,7 +91,7 @@ function FootnoteMark({
 }
 
 export function BlogPortableBody({ blocks }: { blocks: LoosePortableBlock[] }) {
-  const decorated = injectInArticleCtas(italicizeOpeningSentence(blocks));
+  const decorated = italicizeOpeningSentence(blocks);
   const footnotes = collectFootnotes(decorated);
   let inReferences = false;
 
@@ -176,6 +149,9 @@ export function BlogPortableBody({ blocks }: { blocks: LoosePortableBlock[] }) {
         value?: { href?: string };
       }) => {
         const href = value?.href ?? "#";
+        // Drop the booking anchor only. The marked words stay so a sentence
+        // is not punched out and a link-only paragraph is not left empty.
+        if (isBookingHref(href)) return <>{children}</>;
         const isExternal = /^https?:\/\//.test(href);
         return (
           <a

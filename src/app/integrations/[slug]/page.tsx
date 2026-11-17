@@ -7,6 +7,7 @@ import {
   IntegrationLogo,
 } from "@/components/integration-card";
 import styles from "@/components/integrations.module.css";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { ShowcaseTheme } from "@/components/showcase-theme";
 import { integrationStatus } from "@/lib/integration-model";
 import { getIntegration, getIntegrations } from "@/lib/integrations";
@@ -84,7 +85,9 @@ export default async function IntegrationPage({ params }: Props) {
             </aside>
             <article className={styles.detailBody}>
               <span className={styles.eyebrow}>Innflow integrations</span>
-              <h1>{item.name}</h1>
+              <h1 data-mixed-heading>
+                <MixedHeadingText>{item.name}</MixedHeadingText>
+              </h1>
               <p className={styles.lead}>{item.shortDescription}</p>
               <div className={styles.statusNote}>
                 <strong>{status.label}</strong>
@@ -93,27 +96,37 @@ export default async function IntegrationPage({ params }: Props) {
               </div>
               {item.overview && (
                 <section>
-                  <h2>About this connection</h2>
+                  <h2 data-mixed-heading>
+                    <MixedHeadingText>About this connection</MixedHeadingText>
+                  </h2>
                   <p>{item.overview}</p>
                 </section>
               )}
               {Boolean(item.useCases?.length) && (
                 <section>
-                  <h2>
-                    {item.status === "available"
-                      ? "What you can do"
-                      : "Planned use cases"}
+                  <h2 data-mixed-heading>
+                    <MixedHeadingText>
+                      {item.status === "available"
+                        ? "What you can do"
+                        : "Planned use cases"}
+                    </MixedHeadingText>
                   </h2>
                   {item.useCases?.map((useCase) => (
                     <div className={styles.useCase} key={useCase._key}>
-                      <h3>{useCase.title}</h3>
+                      <h3 data-mixed-heading>
+                        <MixedHeadingText>{useCase.title}</MixedHeadingText>
+                      </h3>
                       <p>{useCase.description}</p>
                     </div>
                   ))}
                 </section>
               )}
               <section className={styles.nextStep}>
-                <h2>Bring your workflow into the conversation.</h2>
+                <h2 data-mixed-heading>
+                  <MixedHeadingText>
+                    Bring your workflow into the conversation.
+                  </MixedHeadingText>
+                </h2>
                 <p>
                   Tell us what you want to connect, which accounts you use, and
                   where your team needs the next step to happen.
@@ -129,7 +142,9 @@ export default async function IntegrationPage({ params }: Props) {
           {related.length > 0 && (
             <section className={styles.related}>
               <div className={styles.relatedHeading}>
-                <h2>Explore more connections</h2>
+                <h2 data-mixed-heading>
+                  <MixedHeadingText>Explore more connections</MixedHeadingText>
+                </h2>
                 <Link href="/integrations">
                   View all integrations <ChevronRight />
                 </Link>

@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { type BreadcrumbItem, Breadcrumbs } from "@/components/breadcrumbs";
 import { ChevronRight } from "@/components/chevron-right";
 import { Plus as MagePlus } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
 
@@ -41,7 +42,9 @@ export function PageHero({
       <div className="shell subpage-hero-grid">
         <div>
           {breadcrumbs ? <Breadcrumbs items={breadcrumbs} /> : null}
-          <h1>{title}</h1>
+          <h1 data-mixed-heading>
+            <MixedHeadingText>{title}</MixedHeadingText>
+          </h1>
           {status ? (
             <span className={`status-label status-${status.toLowerCase()}`}>
               {status}
@@ -143,7 +146,9 @@ export function ControlsGrid({
         <div className="control-card-grid">
           {items.map((item) => (
             <article key={item.title}>
-              <h3>{item.title}</h3>
+              <h3 data-mixed-heading>
+                <MixedHeadingText>{item.title}</MixedHeadingText>
+              </h3>
               <p>{item.body}</p>
             </article>
           ))}

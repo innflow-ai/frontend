@@ -15,7 +15,6 @@ Canonical site: ${siteConfig.marketingOrigin}
 - ${siteConfig.marketingOrigin}/products/platform
 - ${siteConfig.marketingOrigin}/products/agent-os
 - ${siteConfig.marketingOrigin}/products/ai-agents
-- ${siteConfig.marketingOrigin}/products/agentic-workflows
 - ${siteConfig.marketingOrigin}/products/databases
 - ${siteConfig.marketingOrigin}/features/workflows
 - ${siteConfig.marketingOrigin}/features/assistant

@@ -5,6 +5,7 @@ import {
   CheckCircle,
   Plus as MagePlus,
 } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
 import type {
   FeatureArtwork,
@@ -64,9 +65,9 @@ export async function FigmaFeaturePage({
     <div id="additional-features" className={base.features}>
       {page.features.map(([title, text]) => (
         <article key={title}>
-          <h3>
+          <h3 data-mixed-heading>
             <CheckCircle size={20} weight="thin" />
-            {title}
+            <MixedHeadingText>{title}</MixedHeadingText>
           </h3>
           <p>{text}</p>
         </article>
@@ -100,7 +101,9 @@ export async function FigmaFeaturePage({
       <span className={base.label}>{item.label}</span>
       <Artwork items={item.artwork} />
       <div className={`${base.panelCopy} ${styles.panelCopy}`}>
-        <h3>{item.title}</h3>
+        <h3 data-mixed-heading>
+          <MixedHeadingText>{item.title}</MixedHeadingText>
+        </h3>
         <p>{item.text}</p>
       </div>
     </section>
@@ -171,7 +174,9 @@ export async function FigmaFeaturePage({
                 items={[{ label: "Home", href: "/" }, { label: page.name }]}
               />
             </div>
-            <h1>{page.title}</h1>
+            <h1 data-mixed-heading>
+              <MixedHeadingText>{page.title}</MixedHeadingText>
+            </h1>
             <p>{page.description}</p>
             <div className={styles.heroActions}>
               <a
@@ -193,7 +198,9 @@ export async function FigmaFeaturePage({
           </div>
         </section>
         <section className={base.solutions}>
-          <h2>{page.intro}</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>{page.intro}</MixedHeadingText>
+          </h2>
           <ScrollStory
             layout="stacked"
             steps={page.panels.map((item) => ({
@@ -210,7 +217,9 @@ export async function FigmaFeaturePage({
         <ProductHeadspaceCta />
         {testimonials ?? <FeatureTestimonials />}
         <section className={base.faq}>
-          <h2>{cmsFaqs.heading || "FAQs"}</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>{cmsFaqs.heading || "FAQs"}</MixedHeadingText>
+          </h2>
           <div>
             {cmsFaqs.items.map(([question, answer, faqId]) => (
               <details key={faqId}>

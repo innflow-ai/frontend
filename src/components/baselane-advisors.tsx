@@ -7,6 +7,7 @@ import {
   ArrowRight as MageArrowRight,
   Plus as MagePlus,
 } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
 import styles from "./baselane-advisors.module.css";
 import { InnerPageShell } from "./inner-page-shell";
@@ -38,7 +39,11 @@ export function BaselaneAdvisors() {
       <div className={styles.page}>
         <section className={styles.hero}>
           <div>
-            <h1>Bring clarity to every client conversation.</h1>
+            <h1 data-mixed-heading>
+              <MixedHeadingText>
+                Bring clarity to every client conversation.
+              </MixedHeadingText>
+            </h1>
             <p>
               Coordinate client records, document requests, and review steps in
               innflow. Spend less time chasing context before you give advice.
@@ -95,14 +100,20 @@ export function BaselaneAdvisors() {
               ],
             ].map(([title, text]) => (
               <article key={title}>
-                <h3>{title}</h3>
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>{title}</MixedHeadingText>
+                </h3>
                 <p>{text}</p>
               </article>
             ))}
           </div>
         </section>
         <section className={styles.section}>
-          <h2>Keep the context behind the advice.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              Keep the context behind the advice.
+            </MixedHeadingText>
+          </h2>
           <p>
             Give your team a shared starting point, from the first document
             request through the next action.
@@ -130,7 +141,11 @@ export function BaselaneAdvisors() {
           </div>
         </section>
         <section className={styles.section}>
-          <h2>A stronger working relationship.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              A stronger working relationship.
+            </MixedHeadingText>
+          </h2>
           <div className={styles.benefits}>
             {[
               [
@@ -147,14 +162,18 @@ export function BaselaneAdvisors() {
               ],
             ].map(([title, text]) => (
               <article key={title}>
-                <h3>{title}</h3>
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>{title}</MixedHeadingText>
+                </h3>
                 <p>{text}</p>
               </article>
             ))}
           </div>
         </section>
         <section className={styles.section} id="program-details">
-          <h2>A clear handoff at every stage.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>A clear handoff at every stage.</MixedHeadingText>
+          </h2>
           <p>
             Use innflow to connect the people and supporting records around each
             client engagement.
@@ -234,7 +253,9 @@ export function BaselaneAdvisors() {
               alt="An investor reviewing information on a phone"
             />
             <div>
-              <h2>Choose your next step.</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>Choose your next step.</MixedHeadingText>
+              </h2>
               <div className={styles.accordion}>
                 {[
                   [
@@ -271,7 +292,11 @@ export function BaselaneAdvisors() {
           </div>
         </section>
         <section className={styles.inquiry} id="advisor-inquiry">
-          <h2>Start with the work you want to improve.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              Start with the work you want to improve.
+            </MixedHeadingText>
+          </h2>
           <p>
             Prepare an innflow partnership inquiry. You can review the draft
             before opening your email app; nothing is submitted here.
@@ -404,7 +429,9 @@ export function BaselaneAdvisors() {
           </form>
           {draft && (
             <div className={styles.draft} role="status">
-              <h3>Review your inquiry</h3>
+              <h3 data-mixed-heading>
+                <MixedHeadingText>Review your inquiry</MixedHeadingText>
+              </h3>
               <pre>{draft}</pre>
               <a
                 className={styles.button}

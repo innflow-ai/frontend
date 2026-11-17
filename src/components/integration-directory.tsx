@@ -1,9 +1,10 @@
 "use client";
-import { Search as MageSearch } from '@/components/icons/mage';
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { ChevronRight } from "@/components/chevron-right";
+import { Search as MageSearch } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import {
   filterIntegrations,
   type Integration,
@@ -84,7 +85,9 @@ export function IntegrationDirectory({ items }: { items: Integration[] }) {
         <div className={styles.toolbar}>
           <label className={styles.search}>
             <span className={styles.srOnly}>Search integrations</span>
-            <span aria-hidden="true"><MageSearch size="1em" /></span>
+            <span aria-hidden="true">
+              <MageSearch size="1em" />
+            </span>
             <input
               type="search"
               value={search}
@@ -139,10 +142,12 @@ export function IntegrationDirectory({ items }: { items: Integration[] }) {
         </div>
         {results.length === 0 && (
           <div className={styles.empty}>
-            <h2>
-              {items.length
-                ? "No integrations found"
-                : "More connections are on the way"}
+            <h2 data-mixed-heading>
+              <MixedHeadingText>
+                {items.length
+                  ? "No integrations found"
+                  : "More connections are on the way"}
+              </MixedHeadingText>
             </h2>
             <p>
               {items.length

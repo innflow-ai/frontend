@@ -3,6 +3,7 @@
 import Image from "next/image";
 import type { CSSProperties, ReactNode } from "react";
 import { GoogleCtaContent } from "@/components/google-cta-content";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
 import previewStyles from "./runey-landing.module.css";
 import { RuneyWorkspace } from "./runey-workspace";
@@ -64,9 +65,11 @@ export function BaselaneHomepage({ children }: { children?: ReactNode }) {
                 className={styles.heroPhoto}
               />
               <div className={styles.heroCopy}>
-                <h1>
-                  Operations that give
-                  <br className={styles.desktopBreak} /> you your day back.
+                <h1 data-mixed-heading>
+                  <MixedHeadingText>
+                    Operations that give
+                    <br className={styles.desktopBreak} /> you your day back.
+                  </MixedHeadingText>
                 </h1>
                 <p>
                   Bring your workflows, knowledge, and approvals together.
@@ -130,7 +133,11 @@ export function BaselaneHomepage({ children }: { children?: ReactNode }) {
               id="features"
               className={`${styles.shell} ${styles.products}`}
             >
-              <h2>Operations organized. Mind clear.</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>
+                  Operations organized. Mind clear.
+                </MixedHeadingText>
+              </h2>
               <nav
                 aria-label="Explore product stories"
                 className={styles.storyNav}
@@ -144,7 +151,7 @@ export function BaselaneHomepage({ children }: { children?: ReactNode }) {
                   tag: "WORKFLOWS",
                   title: "Give every handoff a clear next step.",
                   copy: "Bring triggers, connected actions, and review points into a workflow your team can follow.",
-                  href: "/products/agentic-workflows",
+                  href: "/features/workflows",
                   view: "Workflows" as const,
                   note: "From the first request to the final review, keep the right context attached to every step.",
                   foot: "Your team stays in control.",
@@ -167,7 +174,9 @@ export function BaselaneHomepage({ children }: { children?: ReactNode }) {
                 >
                   <div className={styles.storyCopy}>
                     <span className={styles.storyTag}>{story.tag}</span>
-                    <h3>{story.title}</h3>
+                    <h3 data-mixed-heading>
+                      <MixedHeadingText>{story.title}</MixedHeadingText>
+                    </h3>
                     <p>{story.copy}</p>
                     <a className={styles.lightButton} href={story.href}>
                       Explore {story.id}{" "}
@@ -187,13 +196,15 @@ export function BaselaneHomepage({ children }: { children?: ReactNode }) {
               ))}
             </section>
             <section className={`${styles.shell} ${styles.capabilities}`}>
-              <h2>Clarity where it counts.</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>Clarity where it counts.</MixedHeadingText>
+              </h2>
               <div className={styles.capabilityGrid}>
                 {capabilities.map(({ icon, title, text }) => (
                   <div key={title}>
-                    <h3>
+                    <h3 data-mixed-heading>
                       <MageIcon name={icon} size={24} />
-                      {title}
+                      <MixedHeadingText>{title}</MixedHeadingText>
                     </h3>
                     <p>{text}</p>
                   </div>
@@ -201,10 +212,12 @@ export function BaselaneHomepage({ children }: { children?: ReactNode }) {
               </div>
             </section>
             <section className={`${styles.shell} ${styles.support}`}>
-              <h2>
-                Built around
-                <br />
-                your team.
+              <h2 data-mixed-heading>
+                <MixedHeadingText>
+                  Built around
+                  <br />
+                  your team.
+                </MixedHeadingText>
               </h2>
               <div>
                 {[
@@ -222,7 +235,9 @@ export function BaselaneHomepage({ children }: { children?: ReactNode }) {
                   ],
                 ].map(([title, copy]) => (
                   <div className={styles.supportRow} key={title}>
-                    <h3>{title}</h3>
+                    <h3 data-mixed-heading>
+                      <MixedHeadingText>{title}</MixedHeadingText>
+                    </h3>
                     <p>{copy}</p>
                   </div>
                 ))}

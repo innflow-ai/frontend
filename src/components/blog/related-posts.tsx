@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import {
   type BlogPostSummary,
   coverImageUrl,
@@ -12,7 +13,9 @@ export function BlogRelatedPosts({ posts }: { posts: BlogPostSummary[] }) {
 
   return (
     <section className={styles.related} aria-labelledby="related-posts-heading">
-      <h2 id="related-posts-heading">Related posts</h2>
+      <h2 id="related-posts-heading" data-mixed-heading>
+        <MixedHeadingText>Related posts</MixedHeadingText>
+      </h2>
       <div className={styles.relatedTrack}>
         {posts.map((post) => {
           const coverUrl = post.coverImage

@@ -1,5 +1,6 @@
 import Script from "next/script";
 import { createElement } from "react";
+import { MixedHeadingContent } from "@/components/section-heading";
 import styles from "./homepage-agent-showcase.module.css";
 import { TrackedLink } from "./tracked-link";
 
@@ -24,9 +25,11 @@ export function HomepageAgentShowcase() {
       <div className={styles.container}>
         <div className={styles.copy}>
           <header className={styles.heading}>
-            <h2 id="agent-showcase-heading">
-              Let your experts <br />
-              build the agents
+            <h2 id="agent-showcase-heading" data-mixed-heading>
+              <MixedHeadingContent
+                title="Let your experts"
+                emphasis="build the agents"
+              />
             </h2>
           </header>
           <p className={styles.description}>

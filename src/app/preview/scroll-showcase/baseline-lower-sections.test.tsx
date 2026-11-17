@@ -257,7 +257,7 @@ it("matches the baseline two-card infrastructure without extra focus controls", 
   render(<BaselineConnectedInfrastructure />);
   expect(screen.queryByText("Connected infrastructure")).toBeNull();
   expect(screen.getByRole("heading", { level: 2 })).toHaveTextContent(
-    "Connect the toolsbehind your work.",
+    "Connect the tools behind your work.",
   );
   expect(screen.getAllByRole("heading", { level: 3 })).toHaveLength(2);
   expect(

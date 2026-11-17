@@ -9,6 +9,7 @@ import {
   Share,
   StarsA,
 } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { TrackedLink } from "@/components/tracked-link";
 import {
   annualSavingsPercent,
@@ -256,7 +257,9 @@ export function BaselanePricing() {
                 <div className={styles.planTop}>
                   <div>
                     <div className={styles.planTitle}>
-                      <h2>{plan.name}</h2>
+                      <h2 data-mixed-heading>
+                        <MixedHeadingText>{plan.name}</MixedHeadingText>
+                      </h2>
                       {annual &&
                         plan.monthlyPrice !== null &&
                         plan.monthlyPrice > 0 && (
@@ -349,18 +352,22 @@ export function BaselanePricing() {
                   </p>
                   {groups.map((group, groupIndex) => (
                     <div className={styles.featureSection} key={group.title}>
-                      <h3>
-                        <span
-                          className={styles.featureIcon}
-                          data-category={groupIndex}
-                        >
-                          <group.icon size={16} />
-                        </span>
-                        {
-                          ["Workflows", "Data & history", "AI & capabilities"][
-                            groupIndex
-                          ]
-                        }
+                      <h3 data-mixed-heading>
+                        <MixedHeadingText>
+                          <span
+                            className={styles.featureIcon}
+                            data-category={groupIndex}
+                          >
+                            <group.icon size={16} />
+                          </span>
+                          {
+                            [
+                              "Workflows",
+                              "Data & history",
+                              "AI & capabilities",
+                            ][groupIndex]
+                          }
+                        </MixedHeadingText>
                       </h3>
                       <ul>
                         {group.rows.map(([label, key]) => (
@@ -411,7 +418,9 @@ export function BaselanePricing() {
           className={styles.comparison}
           aria-labelledby="comparison-title"
         >
-          <h2 id="comparison-title">Compare features</h2>
+          <h2 id="comparison-title" data-mixed-heading>
+            <MixedHeadingText>Compare features</MixedHeadingText>
+          </h2>
           <div className={styles.compareControls}>
             <button
               className={styles.outline}
@@ -437,7 +446,9 @@ export function BaselanePricing() {
                 <span className={styles.comparePlanLabel}>Find your fit</span>
                 {plans.map((plan) => (
                   <div key={plan.name}>
-                    <h3>{plan.name}</h3>
+                    <h3 data-mixed-heading>
+                      <MixedHeadingText>{plan.name}</MixedHeadingText>
+                    </h3>
                     <p>
                       {value(plan)}
                       {plan.monthlyPrice !== null ? "/mo." : ""}
@@ -583,7 +594,9 @@ export function BaselanePricing() {
           </p>
         </section>
         <section className={styles.faq} aria-labelledby="faq-title">
-          <h2 id="faq-title">Frequently asked questions</h2>
+          <h2 id="faq-title" data-mixed-heading>
+            <MixedHeadingText>Frequently asked questions</MixedHeadingText>
+          </h2>
           <div className={styles.questions}>
             {questions.map(([question, answer]) => (
               <details key={question}>

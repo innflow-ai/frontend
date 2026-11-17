@@ -1,8 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, Geist_Mono, Source_Serif_4 } from "next/font/google";
+import { Archivo, Geist_Mono, Instrument_Sans, Inter } from "next/font/google";
+import localFont from "next/font/local";
 import type { ReactNode } from "react";
 import { ConsentManagedTags } from "@/components/consent-managed-tags";
 import { DeferredAnalytics } from "@/components/deferred-analytics";
+import { EmailCaptureSlot } from "@/components/email-capture-slot";
 import { MarketingPageView } from "@/components/marketing-page-view";
 import { MarketingRuntime } from "@/components/marketing-runtime";
 import type { LatestBlogPostNavItem } from "@/components/mega-menu";
@@ -11,7 +13,13 @@ import { PostHogObservability } from "@/components/posthog-observability";
 import { SiteCloseAndFooter } from "@/components/site-close-and-footer";
 import { SiteHeader } from "@/components/site-header";
 import { SmoothScroll } from "@/components/smooth-scroll";
+import { WebsiteAnnouncementBar } from "@/components/website-announcement";
 import { siteConfig } from "@/config/site";
+import {
+  announcementIdentity,
+  announcementState,
+  websiteAnnouncementBootScript,
+} from "@/config/website-announcement";
 import {
   formatPostDate,
   getLatestAppUpdate,
@@ -19,6 +27,7 @@ import {
   humanizeCategory,
   urlForImage,
 } from "@/lib/sanity";
+import { getWebsiteAnnouncement } from "@/lib/website-announcement";
 import "./globals.css";
 import { getNavigationTestimonial } from "@/lib/testimonials";
 import "lenis/dist/lenis.css";
@@ -32,11 +41,50 @@ const archivo = Archivo({
   display: "swap",
 });
 
-const sourceSerif = Source_Serif_4({
-  subsets: ["latin"],
-  // 400 is the kit regular. 500 stays for serif headings outside this kit.
-  weight: ["400", "500"],
+const sourceSerif = localFont({
+  src: [
+    {
+      path: "./fonts/source-serif-4-normal.woff2",
+      weight: "400 500",
+      style: "normal",
+    },
+    {
+      path: "./fonts/source-serif-4-italic.woff2",
+      weight: "400 500",
+      style: "italic",
+    },
+  ],
   variable: "--font-source-serif-4",
+  display: "swap",
+});
+const archivoItalic = Archivo({
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
+  style: "italic",
+  variable: "--font-archivo-italic",
+  display: "swap",
+});
+const heroHeading = Instrument_Sans({
+  subsets: ["latin"],
+  weight: "500",
+  variable: "--font-hero-heading",
+  display: "swap",
+});
+const heroUi = localFont({
+  src: [
+    {
+      path: "./fonts/host-grotesk-normal.woff2",
+      weight: "400 600",
+      style: "normal",
+    },
+  ],
+  variable: "--font-hero-ui",
+  display: "swap",
+});
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["500", "600"],
+  variable: "--font-inter",
   display: "swap",
 });
 const geistMono = Geist_Mono({
@@ -128,11 +176,17 @@ export default async function RootLayout({
   children: ReactNode;
 }) {
   const experience = { variant: null, measure: false } as const;
-  const [latestPosts, appUpdate, navigationTestimonial] = await Promise.all([
-    getLatestBlogPosts(),
-    getLatestAppUpdate(),
-    getNavigationTestimonial(),
-  ]);
+  const [latestPosts, appUpdate, navigationTestimonial, announcement] =
+    await Promise.all([
+      getLatestBlogPosts(),
+      getLatestAppUpdate(),
+      getNavigationTestimonial(),
+      getWebsiteAnnouncement(),
+    ]);
+  const announcementNow = Date.now();
+  const announcementVisible = announcement
+    ? announcementState(announcement, announcementNow).visible
+    : false;
   const latestUpdate: LatestBlogPostNavItem | null = appUpdate
     ? {
         title: appUpdate.title,
@@ -168,8 +222,9 @@ export default async function RootLayout({
     // root attribute is intentionally different from the static HTML.
     <html
       lang="en"
+      data-website-announcement={announcementVisible ? "visible" : "hidden"}
       data-scroll-behavior="smooth"
-      className={`${archivo.variable} ${sourceSerif.variable} ${geistMono.variable}`}
+      className={`${archivo.variable} ${heroUi.variable} ${heroHeading.variable} ${archivoItalic.variable} ${inter.variable} ${sourceSerif.variable} ${geistMono.variable}`}
       suppressHydrationWarning
     >
       <head>
@@ -178,6 +233,13 @@ export default async function RootLayout({
             __html: `try{var t=localStorage.getItem("innflow-theme");if(t==="dark"||t==="light")document.documentElement.dataset.theme=t;}catch(e){}`,
           }}
         />
+        {announcement && (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: websiteAnnouncementBootScript(announcement),
+            }}
+          />
+        )}
       </head>
       <body>
         <SmoothScroll />
@@ -198,6 +260,13 @@ export default async function RootLayout({
           latestUpdate={latestUpdate}
           testimonial={navigationTestimonial}
         >
+          {announcement && (
+            <WebsiteAnnouncementBar
+              key={announcementIdentity(announcement)}
+              config={announcement}
+              initialNow={announcementNow}
+            />
+          )}
           <SiteHeader />
           {children}
           <SiteCloseAndFooter />
@@ -206,6 +275,7 @@ export default async function RootLayout({
         <MarketingPageView />
         <ConsentManagedTags />
         <PostHogObservability experience={experience} />
+        <EmailCaptureSlot />
         <DeferredAnalytics />
       </body>
     </html>

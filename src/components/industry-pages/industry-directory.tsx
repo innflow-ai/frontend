@@ -1,7 +1,7 @@
-
-import { ArrowRight as MageArrowRight } from '@/components/icons/mage';
 import Link from "next/link";
 import { ChevronRight } from "@/components/chevron-right";
+import { ArrowRight as MageArrowRight } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { industryHref, industryPages } from "@/content/industries";
 import styles from "./industry-pages.module.css";
 
@@ -23,10 +23,12 @@ export function IndustryDirectory({ compact = false }: { compact?: boolean }) {
     >
       <header className={styles.sectionHeading}>
         <p className={styles.eyebrow}>Built around your work</p>
-        <h2 id="industry-directory-heading">
-          Different industries.
-          <br />
-          One connected flow.
+        <h2 id="industry-directory-heading" data-mixed-heading>
+          <MixedHeadingText>
+            Different industries.
+            <br />
+            One connected flow.
+          </MixedHeadingText>
         </h2>
         <p>
           Start with the conversations and handoffs your team knows best.
@@ -36,10 +38,12 @@ export function IndustryDirectory({ compact = false }: { compact?: boolean }) {
       {groups.map((group) => (
         <div key={group} className={styles.directoryGroup}>
           {!compact && (
-            <h3>
-              {group === "industry"
-                ? "Explore by industry"
-                : "Explore by team and use case"}
+            <h3 data-mixed-heading>
+              <MixedHeadingText>
+                {group === "industry"
+                  ? "Explore by industry"
+                  : "Explore by team and use case"}
+              </MixedHeadingText>
             </h3>
           )}
           <div className={styles.directoryGrid}>
@@ -60,11 +64,15 @@ export function IndustryDirectory({ compact = false }: { compact?: boolean }) {
                   >
                     <ChevronRight />
                   </span>
-                  <h3>{page.name}</h3>
+                  <h3 data-mixed-heading>
+                    <MixedHeadingText>{page.name}</MixedHeadingText>
+                  </h3>
                   <p>{page.description}</p>
                   <span className={styles.cardAction}>
                     Explore {page.name}
-                    <span aria-hidden="true"><MageArrowRight size="1em" /></span>
+                    <span aria-hidden="true">
+                      <MageArrowRight size="1em" />
+                    </span>
                   </span>
                 </Link>
               ))}

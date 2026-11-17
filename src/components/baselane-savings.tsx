@@ -4,6 +4,7 @@ import {
   ArrowRight as MageArrowRight,
   Check as MageCheck,
 } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
 import styles from "./baselane-savings.module.css";
 import { InnerPageShell } from "./inner-page-shell";
@@ -92,7 +93,11 @@ export function BaselaneSavings() {
       <div className={styles.page}>
         <section className={styles.hero}>
           <div>
-            <h1>Keep property reserves connected to the plan.</h1>
+            <h1 data-mixed-heading>
+              <MixedHeadingText>
+                Keep property reserves connected to the plan.
+              </MixedHeadingText>
+            </h1>
             <p>
               Bring reserve plans, supporting records, and follow-up tasks into
               innflow. Keep the context behind each property decision within
@@ -122,7 +127,9 @@ export function BaselaneSavings() {
           </span>
         </div>
         <section className={styles.section}>
-          <h2>Start with the details.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>Start with the details.</MixedHeadingText>
+          </h2>
           <div className={styles.steps}>
             {steps.map((step) => (
               <article key={step.image}>
@@ -134,7 +141,9 @@ export function BaselaneSavings() {
                     alt=""
                   />
                 </div>
-                <h3>{step.title}</h3>
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>{step.title}</MixedHeadingText>
+                </h3>
                 <p>{step.text}</p>
               </article>
             ))}
@@ -144,7 +153,11 @@ export function BaselaneSavings() {
           </p>
         </section>
         <section className={styles.section} id="balance-tiers">
-          <h2>Build a repeatable reserve review.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              Build a repeatable reserve review.
+            </MixedHeadingText>
+          </h2>
           <p>
             Make the purpose, supporting information, and next action clear
             before a decision moves forward.
@@ -203,12 +216,16 @@ export function BaselaneSavings() {
         </section>
         <section className={styles.features}>
           <div className={styles.featureInner}>
-            <h2>Look at the whole picture.</h2>
+            <h2 data-mixed-heading>
+              <MixedHeadingText>Look at the whole picture.</MixedHeadingText>
+            </h2>
             <p>Connect the work around your property plans.</p>
             <div className={styles.featureGrid}>
               {features.map((group) => (
                 <article key={group.title}>
-                  <h3>{group.title}</h3>
+                  <h3 data-mixed-heading>
+                    <MixedHeadingText>{group.title}</MixedHeadingText>
+                  </h3>
                   <ul>
                     {group.items.map((item) => (
                       <li key={item}>
@@ -228,7 +245,9 @@ export function BaselaneSavings() {
           </div>
         </section>
         <section className={styles.section} id="fee-review">
-          <h2>Give every follow-up an owner.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>Give every follow-up an owner.</MixedHeadingText>
+          </h2>
           <p>
             Organize the recurring tasks that keep your property plans current,
             from collecting records to closing out a review.
@@ -236,7 +255,9 @@ export function BaselaneSavings() {
           <div className={styles.fees}>
             {fees.map((group) => (
               <article key={group.title}>
-                <h3>{group.title}</h3>
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>{group.title}</MixedHeadingText>
+                </h3>
                 <ul>
                   {group.items.map((item) => (
                     <li key={item}>
@@ -255,7 +276,9 @@ export function BaselaneSavings() {
           </div>
         </section>
         <section className={styles.support}>
-          <h2>Keep the next step clear.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>Keep the next step clear.</MixedHeadingText>
+          </h2>
           <div>
             {[
               [
@@ -272,7 +295,9 @@ export function BaselaneSavings() {
               ],
             ].map(([title, text]) => (
               <article key={title}>
-                <h3>{title}</h3>
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>{title}</MixedHeadingText>
+                </h3>
                 <p>{text}</p>
               </article>
             ))}

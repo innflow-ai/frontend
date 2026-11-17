@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { GoogleCtaContent } from "@/components/google-cta-content";
 import { ArrowRight, Copy } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
 import styles from "./baselane-updates.module.css";
 import { InnerPageShell } from "./inner-page-shell";
@@ -101,7 +102,9 @@ export function BaselaneUpdates() {
       <section className={styles.hero}>
         <div>
           <small>EXPLORE INNFLOW</small>
-          <h1>Product updates</h1>
+          <h1 data-mixed-heading>
+            <MixedHeadingText>Product updates</MixedHeadingText>
+          </h1>
           <p>
             Explore the tools and workflows that bring property operations
             together.
@@ -145,9 +148,13 @@ export function BaselaneUpdates() {
         <div className={styles.entries}>
           {entries.map((e) => (
             <article id={e.id} key={e.id}>
-              <h2>{e.title}</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>{e.title}</MixedHeadingText>
+              </h2>
               <p>{e.text}</p>
-              <h3>{e.heading}</h3>
+              <h3 data-mixed-heading>
+                <MixedHeadingText>{e.heading}</MixedHeadingText>
+              </h3>
               <div className={styles.entryImage}>
                 <Image
                   src={e.image}

@@ -3,9 +3,14 @@ import { type FormEvent, useState } from "react";
 import { siteConfig } from "@/config/site";
 import { GoogleCtaContent } from "./google-cta-content";
 import { LaunchDirectoryMarquee } from "./launch-directory-marquee";
+import { type HeadingVariant, MixedHeadingContent } from "./section-heading";
 import styles from "./site-shell.module.css";
 import { TrackedLink } from "./tracked-link";
-export function SiteCta() {
+export function SiteCta({
+  headingVariant = "mixed-italic",
+}: {
+  headingVariant?: HeadingVariant;
+}) {
   const [signupState, setSignupState] = useState<
     "idle" | "pending" | "success" | "error"
   >("idle");
@@ -49,12 +54,24 @@ export function SiteCta() {
 
   return (
     <div className={styles.page}>
-      <LaunchDirectoryMarquee />
+      <LaunchDirectoryMarquee headingVariant={headingVariant} />
       <div className={styles.closingWrap}>
         <section className={styles.closing}>
-          <h2>
-            A clearer day starts
-            <br className={styles.mobileBreak} /> with a connected flow.
+          <h2
+            data-mixed-heading={headingVariant === "mixed-italic" || undefined}
+          >
+            {headingVariant === "mixed-italic" ? (
+              <MixedHeadingContent
+                title="A clearer day starts"
+                emphasis="with a connected flow."
+                breakAt="desktop"
+              />
+            ) : (
+              <>
+                A clearer day starts
+                <br className={styles.mobileBreak} /> with a connected flow.
+              </>
+            )}
           </h2>
           <p>Bring your team, context, and next steps together.</p>
           <div className={styles.actions}>

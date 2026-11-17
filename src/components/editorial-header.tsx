@@ -266,7 +266,7 @@ export function EditorialHeader({
         <div className={styles.inner}>
           <a className={styles.brand} href="/" aria-label="Innflow home">
             <Image
-              src="/brand/innflow-wordmark.svg"
+              src="/brand/innflow-nav-wordmark.svg"
               className={useLightChrome ? styles.lightWordmark : undefined}
               alt="Innflow"
               width={104}

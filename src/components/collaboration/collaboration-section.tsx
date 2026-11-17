@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { type ReactNode, useEffect, useRef, useState } from "react";
+import { MixedHeadingContent } from "@/components/section-heading";
 import styles from "./collaboration-section.module.css";
 import { useCollaborationScroll } from "./use-collaboration-scroll";
 
@@ -82,9 +83,11 @@ export function CollaborationSection({ demos }: { demos: ReactNode[] }) {
       <div ref={scroll.layoutRef} className={styles.layout}>
         <aside className={styles.copy}>
           <p className={styles.eyebrow}>Collaborate</p>
-          <h2 id="collaboration-heading">
-            Meet your team <br />
-            where they work
+          <h2 id="collaboration-heading" data-mixed-heading>
+            <MixedHeadingContent
+              title="Meet your team"
+              emphasis="where they work"
+            />
           </h2>
           <nav
             className={styles.navigation}

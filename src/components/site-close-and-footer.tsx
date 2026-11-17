@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import { SiteCta } from "./site-cta";
-import { SiteFooter } from "./site-footer";
+import { ProductFooter, SiteFooter } from "./site-footer";
 
 /**
  * Shared marketing footer. Help keeps its own shell: a fixed sidebar, chat
@@ -14,7 +14,7 @@ export function SiteCloseAndFooter() {
   return (
     <>
       <SiteCta />
-      <SiteFooter />
+      {pathname === "/" ? <SiteFooter /> : <ProductFooter />}
     </>
   );
 }

@@ -7,6 +7,7 @@ import {
   ChevronLeft as MageArrowLeft,
   ArrowRight as MageArrowRight,
 } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import styles from "./baselane-forms.module.css";
 import { formGroups } from "./baselane-forms-data";
 import shared from "./baselane-partners.module.css";
@@ -26,7 +27,9 @@ function FormGroup({ group }: { group: (typeof formGroups)[number] }) {
   }
   return (
     <section className={styles.group} id={group.slug}>
-      <h2>{group.title}</h2>
+      <h2 data-mixed-heading>
+        <MixedHeadingText>{group.title}</MixedHeadingText>
+      </h2>
       <section
         className={styles.track}
         ref={track}
@@ -37,7 +40,9 @@ function FormGroup({ group }: { group: (typeof formGroups)[number] }) {
           <article key={slug}>
             <div className={styles.cardTop}>INNFLOW PREPARATION WORKSHEET</div>
             <div className={styles.cardBody}>
-              <h3>{title}</h3>
+              <h3 data-mixed-heading>
+                <MixedHeadingText>{title}</MixedHeadingText>
+              </h3>
               <p>{group.description}</p>
               <a
                 href={`data:text/plain;charset=utf-8,${encodeURIComponent([`innflow — ${title}`, "", group.description, "", "Property:", "Prepared by:", "Review date:", "", "Purpose of this document:", "Supporting records and source links:", "Questions for the reviewer:", "Document provider or adviser:", "Responsible owner:", "Next action and due date:", "Review outcome:", "", "Preparation worksheet only. Have the final document reviewed for your property and circumstances."].join("\n"))}`}
@@ -82,7 +87,11 @@ export function BaselaneForms() {
       <div className={`${shared.page} ${styles.page}`}>
         <section className={shared.hero}>
           <div className={shared.heroCopy}>
-            <h1>Prepare your paperwork. Keep the context.</h1>
+            <h1 data-mixed-heading>
+              <MixedHeadingText>
+                Prepare your paperwork. Keep the context.
+              </MixedHeadingText>
+            </h1>
             <p>
               Use innflow preparation worksheets to organize property details,
               supporting records, and questions before a document review.

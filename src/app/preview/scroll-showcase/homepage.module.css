@@ -568,13 +568,13 @@
   align-items: center;
   margin-top: 32px;
   color: white !important;
-  background: var(--ink);
+  background: var(--button-primary);
   padding: 17px 24px;
   border-radius: 20px;
   font-size: 15px;
 }
 .primaryButton:hover {
-  background: #174367;
+  background: var(--button-primary-hover);
 }
 .closingViewport {
   margin-top: 100px;

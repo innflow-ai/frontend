@@ -1,12 +1,17 @@
 import Image from "next/image";
 import { launchDirectories } from "@/content/launch-directories";
 import styles from "./launch-directory-marquee.module.css";
+import { type HeadingVariant, MixedHeadingContent } from "./section-heading";
 
 const orderedDirectories = [...launchDirectories].sort(
   (a, b) => Number(a.status === "pending") - Number(b.status === "pending"),
 );
 
-export function LaunchDirectoryMarquee() {
+export function LaunchDirectoryMarquee({
+  headingVariant = "mixed-italic",
+}: {
+  headingVariant?: HeadingVariant;
+}) {
   return (
     <section
       id="featured-on"
@@ -14,8 +19,20 @@ export function LaunchDirectoryMarquee() {
       aria-labelledby="directory-heading"
     >
       <div className={styles.heading}>
-        <h2 id="directory-heading" className={styles.title}>
-          Featured on
+        <h2
+          id="directory-heading"
+          className={styles.title}
+          data-mixed-heading={headingVariant === "mixed-italic" || undefined}
+        >
+          {headingVariant === "mixed-italic" ? (
+            <MixedHeadingContent
+              title="Featured"
+              emphasis="on"
+              breakAt="never"
+            />
+          ) : (
+            "Featured on"
+          )}
         </h2>
       </div>
       <div className={styles.viewport}>

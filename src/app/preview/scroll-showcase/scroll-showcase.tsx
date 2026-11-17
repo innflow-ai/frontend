@@ -15,6 +15,7 @@ import {
   Share,
   StarsA,
 } from "@/components/icons/mage";
+import { MixedHeadingContent } from "@/components/section-heading";
 import { siteConfig } from "@/config/site";
 import { BookingCalendar } from "./booking-calendar";
 import { SchedulingAssistant } from "./scheduling-assistant";
@@ -33,6 +34,7 @@ const states = [
     label: "AI agent",
     badge: "",
     title: "Delegate tasks to your AI agent",
+    heading: { title: "Delegate tasks", emphasis: "to your AI agent" },
     body: "Give your agent a focused task and the context it needs. Let it prepare the next step while your team stays in control.",
     accent: "#6bb0ff",
     surface: "#d3e5ff",
@@ -42,6 +44,7 @@ const states = [
     label: "Workflows",
     badge: "",
     title: "Keep work moving across your tools",
+    heading: { title: "Keep work moving", emphasis: "across your tools" },
     body: "Connect the steps behind everyday work. Route requests, coordinate handoffs, and keep your team involved where review is needed.",
     accent: "#daf098",
     surface: "#f1f8dc",
@@ -51,6 +54,7 @@ const states = [
     label: "Sidekick",
     badge: "New",
     title: "Get the help you need in the moment",
+    heading: { title: "Get the help you need", emphasis: "in the moment" },
     body: "Find relevant information, draft a response, and clarify next steps with assistance grounded in your team’s context.",
     accent: "#ba9dff",
     surface: "#eae3f9",
@@ -60,6 +64,7 @@ const states = [
     label: "Insights",
     badge: "New",
     title: "See what needs your attention",
+    heading: { title: "See what needs", emphasis: "your attention" },
     body: "Turn conversations and activity into clear summaries. Spot recurring questions, review open work, and decide where to focus next.",
     accent: "#5aded7",
     surface: "#e5f9f9",
@@ -292,10 +297,11 @@ export function ScrollShowcase() {
   return (
     <div className={styles.page}>
       <header className={styles.intro}>
-        <h1>
-          Turn conversations
-          <br />
-          into completed work.
+        <h1 data-reference-heading data-mixed-heading>
+          <MixedHeadingContent
+            title="Turn conversations"
+            emphasis="into completed work."
+          />
         </h1>
         <p className={styles.subheadline}>
           Connect conversations, delegate tasks, and keep work moving.
@@ -308,7 +314,7 @@ export function ScrollShowcase() {
             <GoogleCtaContent />
           </a>
           <a
-            className={googleButtonStyles.button}
+            className={`${googleButtonStyles.button} ${googleButtonStyles.microsoft}`}
             href={`${siteConfig.appOrigin}/login`}
           >
             <span className={googleButtonStyles.content}>
@@ -421,7 +427,12 @@ export function ScrollShowcase() {
                         <span>{state.label}</span>
                         {state.badge && <small>{state.badge}</small>}
                       </div>
-                      <h2>{state.title}</h2>
+                      <h2 data-reference-heading data-mixed-heading>
+                        <MixedHeadingContent
+                          {...state.heading}
+                          breakAt="never"
+                        />
+                      </h2>
                       <p>{state.body}</p>
                       <a href="/products/platform">
                         Learn more

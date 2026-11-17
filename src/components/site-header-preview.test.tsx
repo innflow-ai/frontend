@@ -24,26 +24,17 @@ afterEach(() => {
   cleanup();
   vi.unstubAllGlobals();
 });
-it("keeps the announcement strip off and the homepage header flat", () => {
+it("keeps the experience strip off without leaving a gap above the nav", () => {
   render(<SiteHeader />);
   expect(
     screen.queryByRole("complementary", { name: "Innflow announcement" }),
   ).toBeNull();
-  expect(
-    screen.queryByRole("link", {
-      name: "Learn more about the new Innflow experience",
-    }),
-  ).toBeNull();
-  expect(
-    screen.queryByRole("button", { name: "Dismiss announcement" }),
-  ).toBeNull();
+  expect(screen.queryByText("Explore the new Innflow experience")).toBeNull();
+  const header = screen.getByRole("banner");
+  expect(header).toHaveAttribute("data-preview-navigation", "flat");
   expect(document.querySelector("[data-preview-chrome]")).toHaveAttribute(
     "data-announcement-dismissed",
     "true",
-  );
-  expect(screen.getByRole("banner")).toHaveAttribute(
-    "data-preview-navigation",
-    "flat",
   );
 });
 it("waits for the overview, responds to reverse scroll and resize, and preserves showcase hiding", () => {

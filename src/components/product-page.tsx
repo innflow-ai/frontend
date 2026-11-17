@@ -2,6 +2,7 @@ import { ChevronRight } from "@/components/chevron-right";
 import { FeatureCardGrid } from "@/components/feature-card";
 import { GoogleCtaContent } from "@/components/google-cta-content";
 import { JsonLd } from "@/components/json-ld";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { FaqList } from "@/components/page-primitives";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
@@ -77,7 +78,9 @@ function Capabilities({
                 href={`#${card.anchor ?? anchors[index] ?? "product-details"}`}
               >
                 <div className={styles.agentCapabilityCopy}>
-                  <h3>{card.title}</h3>
+                  <h3 data-mixed-heading>
+                    <MixedHeadingText>{card.title}</MixedHeadingText>
+                  </h3>
                   <p>{card.body}</p>
                   <span className={styles.agentCapabilityLink}>
                     Explore capability{" "}
@@ -114,7 +117,9 @@ function Capabilities({
                   compact
                 />
                 <div>
-                  <h3>{card.title}</h3>
+                  <h3 data-mixed-heading>
+                    <MixedHeadingText>{card.title}</MixedHeadingText>
+                  </h3>
                   <p>{card.body}</p>
                 </div>
               </article>
@@ -141,7 +146,9 @@ function ProductDetail({ section }: { section: ProductDetailSection }) {
       >
         <div className={styles.detailCopy}>
           <span className={styles.detailEyebrow}>{section.tocLabel}</span>
-          <h2>{section.title}</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>{section.title}</MixedHeadingText>
+          </h2>
           <p>{section.body}</p>
           {section.points.length ? (
             <ul>
@@ -193,7 +200,9 @@ export async function ProductPage({ product }: { product: ProductPageData }) {
       <section className={styles.hero}>
         <div className={`${styles.shell} ${styles.heroInner}`}>
           <div className={styles.heroCopy}>
-            <h1>{product.hero.title}</h1>
+            <h1 data-mixed-heading>
+              <MixedHeadingText>{product.hero.title}</MixedHeadingText>
+            </h1>
             <p>{product.hero.body}</p>
             <div className={styles.ctaRow}>
               <CtaLink cta={product.hero.primaryCta} />

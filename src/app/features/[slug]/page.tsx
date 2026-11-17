@@ -41,7 +41,9 @@ const featureSeo: Record<
 };
 
 export function generateStaticParams() {
-  return allFeatureSlugs.map((slug) => ({ slug }));
+  return allFeatureSlugs
+    .filter((slug) => slug !== "workflows" && slug !== "communications")
+    .map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({

@@ -6,6 +6,7 @@ import {
   ArrowRight as MageArrowRight,
   Check as MageCheck,
 } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
 import styles from "./baselane-company.module.css";
 import { InnerPageShell } from "./inner-page-shell";
@@ -37,9 +38,11 @@ function Workspace() {
       </div>
       <div className={styles.workspaceBody}>
         <span className={styles.label}>PROPERTY OPERATIONS</span>
-        <h3>
-          One request.
-          <br />A clear path forward.
+        <h3 data-mixed-heading>
+          <MixedHeadingText>
+            One request.
+            <br />A clear path forward.
+          </MixedHeadingText>
         </h3>
         <div className={styles.request}>
           <span>01</span>
@@ -98,10 +101,12 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
             />
           </picture>
           <div>
-            <h1>
-              {careers
-                ? "Build what comes next for property operations."
-                : "Property operations, connected by innflow."}
+            <h1 data-mixed-heading>
+              <MixedHeadingText>
+                {careers
+                  ? "Build what comes next for property operations."
+                  : "Property operations, connected by innflow."}
+              </MixedHeadingText>
             </h1>
             <p>
               {careers
@@ -141,7 +146,9 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
               ["History", "Visible execution"],
             ].map(([title, text]) => (
               <div key={title}>
-                <h2>{title}</h2>
+                <h2 data-mixed-heading>
+                  <MixedHeadingText>{title}</MixedHeadingText>
+                </h2>
                 <p>{text}</p>
               </div>
             ))}
@@ -152,10 +159,12 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
             <span className={styles.label}>
               {careers ? "THE PROBLEM WORTH SOLVING" : "WHY WE BUILD"}
             </span>
-            <h2>
-              {careers
-                ? "Behind every property is a team keeping things moving."
-                : "The work between your tools deserves a clearer home."}
+            <h2 data-mixed-heading>
+              <MixedHeadingText>
+                {careers
+                  ? "Behind every property is a team keeping things moving."
+                  : "The work between your tools deserves a clearer home."}
+              </MixedHeadingText>
             </h2>
             <p>
               {careers
@@ -170,10 +179,12 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
         </section>
         {careers ? (
           <section className={styles.careerIntro}>
-            <h2>
-              Build around the people
-              <br />
-              doing the work.
+            <h2 data-mixed-heading>
+              <MixedHeadingText>
+                Build around the people
+                <br />
+                doing the work.
+              </MixedHeadingText>
             </h2>
             <p>Explore the product and the problems we’re working on.</p>
             <div className={styles.panorama}>
@@ -200,7 +211,9 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
                 ],
               ].map(([title, text]) => (
                 <article key={title}>
-                  <h3>{title}</h3>
+                  <h3 data-mixed-heading>
+                    <MixedHeadingText>{title}</MixedHeadingText>
+                  </h3>
                   <p>{text}</p>
                 </article>
               ))}
@@ -217,7 +230,11 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
             />
             <div className={styles.context}>
               <span className={styles.label}>EXAMPLE PROPERTY CONTEXT</span>
-              <h3>Everything for the next step.</h3>
+              <h3 data-mixed-heading>
+                <MixedHeadingText>
+                  Everything for the next step.
+                </MixedHeadingText>
+              </h3>
               <p>
                 Property details{" "}
                 <b>
@@ -239,10 +256,12 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
             </div>
           </div>
           <div className={styles.values}>
-            <h2>
-              {careers
-                ? "Principles worth building around."
-                : "Designed around everyday operations."}
+            <h2 data-mixed-heading>
+              <MixedHeadingText>
+                {careers
+                  ? "Principles worth building around."
+                  : "Designed around everyday operations."}
+              </MixedHeadingText>
             </h2>
             <p>
               {careers
@@ -269,13 +288,17 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
         </section>
         {!careers && (
           <section className={styles.pillars}>
-            <h2>Explore what connects the work.</h2>
+            <h2 data-mixed-heading>
+              <MixedHeadingText>
+                Explore what connects the work.
+              </MixedHeadingText>
+            </h2>
             <div>
               {[
                 [
                   "Workflows",
                   "Give recurring requests a repeatable path.",
-                  "/products/agentic-workflows",
+                  "/features/workflows",
                 ],
                 [
                   "Knowledge",
@@ -289,7 +312,9 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
                 ],
               ].map(([title, text, href]) => (
                 <a href={href} key={title}>
-                  <h3>{title}</h3>
+                  <h3 data-mixed-heading>
+                    <MixedHeadingText>{title}</MixedHeadingText>
+                  </h3>
                   <p>{text}</p>
                   <b>
                     Explore <MageArrowRight size="1em" />
@@ -303,7 +328,9 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
           </section>
         )}
         <section className={styles.linkBand}>
-          <h2>Get to know innflow.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>Get to know innflow.</MixedHeadingText>
+          </h2>
           <div>
             <a href="/about">Our approach</a>
             <a href="/resources">Resources</a>

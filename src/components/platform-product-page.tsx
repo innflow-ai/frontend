@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BotIcon } from "@/components/icons/bot-icon";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
 import { getProductFaqs } from "@/content/product-faqs";
 import { JsonLd } from "./json-ld";
@@ -105,7 +106,7 @@ const features: {
     title: "Turn the request into a plan.",
     body: pieces[1].body,
     points: ["Outline the steps", "Connect resources", "Add review points"],
-    href: "/products/agentic-workflows",
+    href: "/features/workflows",
     link: "Explore agentic workflows",
     media: { kind: "shot", shot: "workflows", edge: "start" },
   },
@@ -279,7 +280,9 @@ function FeatureCopy({ feature }: { feature: (typeof features)[number] }) {
   return (
     <div className={styles.featureCopy}>
       <Eyebrow>{feature.eyebrow}</Eyebrow>
-      <h2 id={`${feature.id}-title`}>{feature.title}</h2>
+      <h2 id={`${feature.id}-title`} data-mixed-heading>
+        <MixedHeadingText>{feature.title}</MixedHeadingText>
+      </h2>
       <p>{feature.body}</p>
       <ul className={styles.points}>
         {feature.points.map((point) => (
@@ -318,7 +321,9 @@ export function PlatformProductPage() {
             </span>
             Platform
           </p>
-          <h1 id="platform-hero-title">Your operation, connected.</h1>
+          <h1 id="platform-hero-title" data-mixed-heading>
+            <MixedHeadingText>Your operation, connected.</MixedHeadingText>
+          </h1>
           <p>
             Bring your team, tools, and knowledge into one flow. Build agents,
             connect your tools, and run workflows with room for people to review
@@ -342,8 +347,10 @@ export function PlatformProductPage() {
       >
         <div className={styles.piecesCopy}>
           <Eyebrow>One workspace</Eyebrow>
-          <h2 id="platform-pieces-title">
-            The pieces that keep your work connected.
+          <h2 id="platform-pieces-title" data-mixed-heading>
+            <MixedHeadingText>
+              The pieces that keep your work connected.
+            </MixedHeadingText>
           </h2>
           <p>
             Start with the way your team works. Connect the right tools, keep
@@ -382,11 +389,13 @@ export function PlatformProductPage() {
                   className={styles.shot}
                 />
               </Link>
-              <h3>
-                <Link href={option.href}>
-                  {option.title}
-                  <Mark name="chevron" className={styles.chevron} />
-                </Link>
+              <h3 data-mixed-heading>
+                <MixedHeadingText>
+                  <Link href={option.href}>
+                    {option.title}
+                    <Mark name="chevron" className={styles.chevron} />
+                  </Link>
+                </MixedHeadingText>
               </h3>
               <p>{option.body}</p>
             </article>

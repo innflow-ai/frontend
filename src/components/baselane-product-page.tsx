@@ -9,6 +9,7 @@ import {
   Plus as MagePlus,
   ShieldCheck,
 } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
 import { getPageFaqTuples } from "@/lib/faqs";
 import {
@@ -87,7 +88,9 @@ export async function BaselaneProductPage({
           {p.label}
         </span>
         <div className={styles.panelCopy}>
-          <h3>{p.title}</h3>
+          <h3 data-mixed-heading>
+            <MixedHeadingText>{p.title}</MixedHeadingText>
+          </h3>
           <p>{p.text}</p>
         </div>
         <div className={styles.product}>
@@ -118,9 +121,9 @@ export async function BaselaneProductPage({
         const Icon = icons[i % icons.length];
         return (
           <article key={title}>
-            <h3>
+            <h3 data-mixed-heading>
               <Icon size={21} />
-              {title}
+              <MixedHeadingText>{title}</MixedHeadingText>
             </h3>
             <p>{text}</p>
           </article>
@@ -158,7 +161,9 @@ export async function BaselaneProductPage({
         <section className={styles.hero}>
           <Scene root={root} name="hero" priority />
           <div className={styles.heroCopy}>
-            <h1>{data.title}</h1>
+            <h1 data-mixed-heading>
+              <MixedHeadingText>{data.title}</MixedHeadingText>
+            </h1>
             <p>{data.description}</p>
             {kind === "rent-collection" ? (
               <>
@@ -191,7 +196,9 @@ export async function BaselaneProductPage({
           </div>
         )}
         <section className={styles.solutions}>
-          <h2>{data.intro}</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>{data.intro}</MixedHeadingText>
+          </h2>
           {kind === "rent-collection" ? (
             <ScrollStory
               layout="stacked"
@@ -216,7 +223,9 @@ export async function BaselaneProductPage({
         <ProductHeadspaceCta />
         <FeatureTestimonials />
         <section className={styles.faq}>
-          <h2>{cmsFaqs.heading || "FAQs"}</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>{cmsFaqs.heading || "FAQs"}</MixedHeadingText>
+          </h2>
           <div>
             {cmsFaqs.items.map(([question, answer, faqId]) => (
               <details key={faqId}>

@@ -11,8 +11,6 @@ export function SmoothScroll() {
   useEffect(() => {
     // Help navigation uses native scrolling for its fixed shell and dialogs.
     if (pathname === "/help") return;
-    const isHomepage =
-      pathname === "/" || pathname === "/preview/scroll-showcase";
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     let lenis: Lenis | undefined;
     let cancelled = false;
@@ -38,8 +36,7 @@ export function SmoothScroll() {
         lenis?.destroy();
         lenis = new LenisRuntime({
           autoRaf: true,
-          // Let homepage wheel motion settle more gently without changing travel.
-          lerp: isHomepage ? 0.08 : 0.12,
+          lerp: 0.12,
           smoothWheel: true,
           syncTouch: false,
           anchors: true,

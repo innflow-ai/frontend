@@ -70,6 +70,10 @@
     opacity 360ms ease-out,
     visibility 0s;
 }
+/* The offer bar scrolls away. While any of it is still on screen, the floating nav sits below it. */
+.header[data-preview-navigation="floating"] {
+  top: calc(16px + var(--announcement-h, 0px));
+}
 .header::before {
   content: "";
   position: absolute;
@@ -648,6 +652,24 @@
 }
 .footerLogo img {
   filter: brightness(0) invert(1);
+}
+.productFooter {
+  background: #202020;
+  color: rgb(255 255 255 / 75%);
+}
+.productFooter .footerLogo img {
+  filter: brightness(0) invert(1);
+}
+.productFooter .footerGrid h3 {
+  color: #fff;
+  border-bottom-color: rgb(255 255 255 / 25%);
+}
+.productFooter .footerGrid a:hover {
+  color: #fff;
+}
+.productFooter .footerBottom,
+.productFooter .legalLinks a {
+  color: rgb(255 255 255 / 70%);
 }
 .footerGrid h3 {
   font-size: 18px;

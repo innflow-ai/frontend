@@ -8,6 +8,7 @@ import {
   ArrowRight as MageArrowRight,
   Plus as MagePlus,
 } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
 import styles from "./baselane-partners.module.css";
 import { InnerPageShell } from "./inner-page-shell";
@@ -133,10 +134,12 @@ function Workflow() {
       </div>
       <div className={styles.workflowBody}>
         <span className={styles.eyebrow}>PROPERTY OPERATIONS</span>
-        <h3>
-          A clear next step.
-          <br />
-          For everyone.
+        <h3 data-mixed-heading>
+          <MixedHeadingText>
+            A clear next step.
+            <br />
+            For everyone.
+          </MixedHeadingText>
         </h3>
         <div className={styles.nodes}>
           {[
@@ -186,10 +189,12 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
       <div className={styles.page}>
         <section className={styles.hero}>
           <div className={styles.heroCopy}>
-            <h1>
-              {referral
-                ? "Good work is worth sharing."
-                : "Partner and build something useful."}
+            <h1 data-mixed-heading>
+              <MixedHeadingText>
+                {referral
+                  ? "Good work is worth sharing."
+                  : "Partner and build something useful."}
+              </MixedHeadingText>
             </h1>
             <p>
               {referral
@@ -231,25 +236,15 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
         {!referral && (
           <>
             <section className={styles.section}>
-              <h2>Who can we work with?</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>Who can we work with?</MixedHeadingText>
+              </h2>
               <div className={styles.cards}>
                 {audience.map(([name, title, text, alt]) => (
                   <article key={name}>
                     <Photo name={name} alt={alt} />
-                    <h3>{title}</h3>
-                    <p>{text}</p>
-                  </article>
-                ))}
-              </div>
-            </section>
-            <section className={styles.section}>
-              <h2>What we can explore</h2>
-              <div className={styles.topics}>
-                {topics.map(([number, title, text]) => (
-                  <article key={title}>
-                    <h3>
-                      <span>{number}</span>
-                      {title}
+                    <h3 data-mixed-heading>
+                      <MixedHeadingText>{title}</MixedHeadingText>
                     </h3>
                     <p>{text}</p>
                   </article>
@@ -257,7 +252,29 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
               </div>
             </section>
             <section className={styles.section}>
-              <h2>Start with the work people do.</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>What we can explore</MixedHeadingText>
+              </h2>
+              <div className={styles.topics}>
+                {topics.map(([number, title, text]) => (
+                  <article key={title}>
+                    <h3 data-mixed-heading>
+                      <MixedHeadingText>
+                        <span>{number}</span>
+                        {title}
+                      </MixedHeadingText>
+                    </h3>
+                    <p>{text}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
+            <section className={styles.section}>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>
+                  Start with the work people do.
+                </MixedHeadingText>
+              </h2>
               <p className={styles.centerCopy}>
                 A useful introduction starts with a real problem. Explore how
                 requests, context, and approvals can come together in one
@@ -283,7 +300,11 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
           id={referral ? "how-it-works" : "partner-inquiry"}
         >
           <div className={styles.stepsCopy}>
-            <h2>{referral ? "How it works" : "Let's start a conversation."}</h2>
+            <h2 data-mixed-heading>
+              <MixedHeadingText>
+                {referral ? "How it works" : "Let's start a conversation."}
+              </MixedHeadingText>
+            </h2>
             <p>
               {referral
                 ? "A simple introduction can be the start of a better workflow. Copy the link, add a little context, and let your colleague explore."
@@ -323,7 +344,11 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
         {referral && (
           <section className={styles.closing}>
             <div>
-              <h2>Know someone who could use innflow?</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>
+                  Know someone who could use innflow?
+                </MixedHeadingText>
+              </h2>
               <p>Share a starting point for clearer, more connected work.</p>
               <a className={styles.button} href={siteConfig.googleAuthUrl}>
                 <GoogleCtaContent />

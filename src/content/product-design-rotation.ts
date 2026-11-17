@@ -11,7 +11,7 @@ export type CalendlyStyle = (typeof calendlyStyles)[number];
 export const productDesignRoutes = [
   { path: "/platform", title: "Platform" },
   { path: "/integrations", title: "Integrations" },
-  { path: "/products/agentic-workflows", title: "Agentic Workflows" },
+  { path: "/features/workflows", title: "Agentic Workflows" },
   { path: "/products/agent-os", title: "Agent OS" },
   { path: "/products/ai-agents", title: "AI Agents" },
   { path: "/products/agent-studio", title: "Agent Studio" },

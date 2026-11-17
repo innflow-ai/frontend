@@ -7,6 +7,7 @@ import {
   ArrowRight as MageArrowRight,
   Search as MagnifyingGlass,
 } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import items from "./baselane-investing-data.json";
 import styles from "./baselane-library.module.css";
 import { InnerPageShell } from "./inner-page-shell";
@@ -63,7 +64,9 @@ export function BaselaneInvesting() {
               onClick={() =>
                 tabs.current?.scrollBy({
                   left: -300,
-                  behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+                  behavior: window.matchMedia(
+                    "(prefers-reduced-motion: reduce)",
+                  ).matches
                     ? "instant"
                     : "smooth",
                 })
@@ -77,7 +80,9 @@ export function BaselaneInvesting() {
               onClick={() =>
                 tabs.current?.scrollBy({
                   left: 300,
-                  behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+                  behavior: window.matchMedia(
+                    "(prefers-reduced-motion: reduce)",
+                  ).matches
                     ? "instant"
                     : "smooth",
                 })
@@ -99,7 +104,9 @@ export function BaselaneInvesting() {
         </div>
       </section>
       <section className={`${styles.collections} ${styles.investing}`}>
-        <h1>{category}</h1>
+        <h1 data-mixed-heading>
+          <MixedHeadingText>{category}</MixedHeadingText>
+        </h1>
         <p className={styles.attribution}>
           Practical tools and workflow guides from innflow, built around the
           day-to-day work of running a property portfolio.
@@ -120,7 +127,9 @@ export function BaselaneInvesting() {
                 <small>{i.category}</small>
               </div>
               <div className={styles.cardCopy}>
-                <h2>{i.title}</h2>
+                <h2 data-mixed-heading>
+                  <MixedHeadingText>{i.title}</MixedHeadingText>
+                </h2>
                 <p>{i.description}</p>
                 <span>
                   Explore with innflow <MageArrowRight size="1em" />
@@ -131,7 +140,9 @@ export function BaselaneInvesting() {
         </div>
         {!filtered.length && (
           <div className={styles.empty}>
-            <h2>No matching resources.</h2>
+            <h2 data-mixed-heading>
+              <MixedHeadingText>No matching resources.</MixedHeadingText>
+            </h2>
             <p>Try another topic or reset your search.</p>
             <button
               type="button"

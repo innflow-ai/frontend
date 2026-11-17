@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ChevronRight } from "@/components/chevron-right";
 import { Check as MageCheck, Plus as MagePlus } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
 import { getPageFaqTuples } from "@/lib/faqs";
 import styles from "./baselane-banking.module.css";
@@ -139,10 +140,12 @@ export async function BaselaneBanking() {
       <section className={styles.hero}>
         <Scene name="hero" priority />
         <div className={styles.heroCopy}>
-          <h1>
-            Built for life with
-            <br />
-            more than one property.
+          <h1 data-mixed-heading>
+            <MixedHeadingText>
+              Built for life with
+              <br />
+              more than one property.
+            </MixedHeadingText>
           </h1>
           <p>
             Bring the moving parts of your portfolio together. Less chasing
@@ -158,9 +161,11 @@ export async function BaselaneBanking() {
         </div>
       </section>
       <section className={styles.solutions}>
-        <h2>
-          Give every next step
-          <br />a clear sense of direction.
+        <h2 data-mixed-heading>
+          <MixedHeadingText>
+            Give every next step
+            <br />a clear sense of direction.
+          </MixedHeadingText>
         </h2>
         <ScrollStory
           steps={sections.map((section) => ({
@@ -171,7 +176,9 @@ export async function BaselaneBanking() {
                 <Scene name={`solutions-${section.image}-bg`} />
                 <span className={styles.cardLabel}>{section.label}</span>
                 <div className={styles.cardCopy}>
-                  <h3>{section.title}</h3>
+                  <h3 data-mixed-heading>
+                    <MixedHeadingText>{section.title}</MixedHeadingText>
+                  </h3>
                   <p>{section.text}</p>
                 </div>
                 <div className={styles.product}>
@@ -210,16 +217,20 @@ export async function BaselaneBanking() {
         />
       </section>
       <section className={styles.features}>
-        <h2>
-          Made for the way
-          <br />
-          your team works.
+        <h2 data-mixed-heading>
+          <MixedHeadingText>
+            Made for the way
+            <br />
+            your team works.
+          </MixedHeadingText>
         </h2>
         <div>
           {features.map(([number, title, text]) => (
             <article key={title}>
               <span>{number}</span>
-              <h3>{title}</h3>
+              <h3 data-mixed-heading>
+                <MixedHeadingText>{title}</MixedHeadingText>
+              </h3>
               <p>{text}</p>
             </article>
           ))}
@@ -234,12 +245,14 @@ export async function BaselaneBanking() {
         />
         <div>
           <span className={styles.eyebrow}>A LITTLE MORE HEADSPACE</span>
-          <h2>
-            Your properties.
-            <br />
-            Your team.
-            <br />
-            One connected flow.
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              Your properties.
+              <br />
+              Your team.
+              <br />
+              One connected flow.
+            </MixedHeadingText>
           </h2>
           <a href={siteConfig.demoUrl} className={styles.button}>
             See what's possible{" "}
@@ -250,10 +263,12 @@ export async function BaselaneBanking() {
         </div>
       </section>
       <section className={styles.useCases}>
-        <h2>
-          From the first request
-          <br />
-          to the final handoff.
+        <h2 data-mixed-heading>
+          <MixedHeadingText>
+            From the first request
+            <br />
+            to the final handoff.
+          </MixedHeadingText>
         </h2>
         <div>
           {[
@@ -262,9 +277,11 @@ export async function BaselaneBanking() {
             "Property onboarding",
             "Team knowledge",
           ].map((title, i) => (
-            <a href="/products/agentic-workflows" key={title}>
+            <a href="/features/workflows" key={title}>
               <span>0{i + 1}</span>
-              <h3>{title}</h3>
+              <h3 data-mixed-heading>
+                <MixedHeadingText>{title}</MixedHeadingText>
+              </h3>
               <span>
                 Explore workflows <ChevronRight />
               </span>
@@ -275,14 +292,16 @@ export async function BaselaneBanking() {
       <ProductHeadspaceCta />
       <FeatureTestimonials />
       <section className={styles.faq}>
-        <h2>
-          {cmsFaqs.heading || (
-            <>
-              A few things
-              <br />
-              you might be wondering.
-            </>
-          )}
+        <h2 data-mixed-heading>
+          <MixedHeadingText>
+            {cmsFaqs.heading || (
+              <>
+                A few things
+                <br />
+                you might be wondering.
+              </>
+            )}
+          </MixedHeadingText>
         </h2>
         <div>
           {cmsFaqs.items.map(([question, answer, faqId]) => (

@@ -14,7 +14,7 @@ const groups = [
       heading: "Features",
       links: [
         { label: "Security", href: "/security" },
-        { label: "Custom workflows", href: "/products/agentic-workflows" },
+        { label: "Custom workflows", href: "/features/workflows" },
         { label: "AI agents", href: "/products/ai-agents" },
         { label: "Integrations", href: "/integrations" },
       ],

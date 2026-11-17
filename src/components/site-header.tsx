@@ -11,7 +11,7 @@ import { MegaphoneA as Megaphone } from "@/components/icons/mage/MegaphoneA";
 import { Multiply as X } from "@/components/icons/mage/Multiply";
 import { siteConfig } from "@/config/site";
 import {
-  ANNOUNCEMENT_STRIP_ENABLED,
+  EXPERIENCE_ANNOUNCEMENT_ENABLED,
   INNER_PAGE_ANNOUNCEMENTS_ENABLED,
 } from "@/lib/marketing-chrome";
 import { isShowcaseHome } from "@/lib/showcase-routes";
@@ -53,9 +53,16 @@ export function SiteHeader() {
     });
   };
   const pathname = usePathname();
+  useEffect(() => {
+    if (pathname === "/") {
+      delete document.documentElement.dataset.logoInk;
+      return;
+    }
+    document.documentElement.dataset.logoInk = "feature";
+  }, [pathname]);
   const [announcementDismissed, setAnnouncementDismissed] = useState(false);
   const announcementHidden =
-    !ANNOUNCEMENT_STRIP_ENABLED ||
+    !EXPERIENCE_ANNOUNCEMENT_ENABLED ||
     announcementDismissed ||
     (!INNER_PAGE_ANNOUNCEMENTS_ENABLED && !isShowcaseHome(pathname));
   const [previewShowcasePassed, setPreviewShowcasePassed] = useState(false);
@@ -250,10 +257,10 @@ export function SiteHeader() {
       >
         <a href="/" className={styles.logo} aria-label="innflow home">
           <Image
-            src="/brand/innflow-wordmark.svg"
+            src="/brand/innflow-nav-wordmark.svg"
             alt="innflow"
-            width={95}
-            height={28}
+            width={110}
+            height={29}
             preload
           />
         </a>

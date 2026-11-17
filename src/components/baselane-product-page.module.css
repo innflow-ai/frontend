@@ -57,7 +57,7 @@
 .actions .google {
   background: var(--button-primary);
   color: white;
-  border: 1px solid var(--button-primary);
+  border: 1px solid var(--button-primary-border);
   box-shadow: none;
 }
 .actions .demo {

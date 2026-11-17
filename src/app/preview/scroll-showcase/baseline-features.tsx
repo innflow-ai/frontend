@@ -19,6 +19,7 @@ import {
   StarsA,
   Users,
 } from "@/components/icons/mage";
+import { MixedHeadingContent } from "@/components/section-heading";
 import styles from "./baseline-features.module.css";
 import storyboards from "./homepage-storyboards.json";
 import { StoryboardArtwork } from "./storyboard-artwork";
@@ -41,6 +42,7 @@ type Feature = {
   node: string;
   label: string;
   title: string;
+  heading: { title: string; emphasis: string };
   reverse?: boolean;
   items: typeof storyboards;
 };
@@ -52,6 +54,7 @@ export const baselineFeatures: Feature[] = [
     node: "350:11199",
     label: "AI agent",
     title: "Get more done\nwith AI agents.",
+    heading: { title: "Get more done", emphasis: "with AI agents." },
     items: storyboards.slice(0, 6),
   },
   {
@@ -59,6 +62,7 @@ export const baselineFeatures: Feature[] = [
     node: "350:11344",
     label: "Workflows",
     title: "Move work forward\nwith less effort.",
+    heading: { title: "Move work forward", emphasis: "with less effort." },
     reverse: true,
     items: storyboards.slice(6, 10),
   },
@@ -67,6 +71,7 @@ export const baselineFeatures: Feature[] = [
     node: "350:11402",
     label: "Assistant",
     title: "Spend less time\nmanaging requests.",
+    heading: { title: "Spend less time", emphasis: "managing requests." },
     items: storyboards.slice(10, 14),
   },
   {
@@ -74,6 +79,7 @@ export const baselineFeatures: Feature[] = [
     node: "350:11485",
     label: "Insights",
     title: "Know where\nto focus next.",
+    heading: { title: "Know where", emphasis: "to focus next." },
     reverse: true,
     items: storyboards.slice(14, 18),
   },
@@ -189,7 +195,9 @@ function BaselineFeature({ feature }: { feature: Feature }) {
               <FeatureIcon size={24} />
               <span>{feature.label}</span>
             </div>
-            <h2 id={`${feature.id}-baseline-heading`}>{feature.title}</h2>
+            <h2 id={`${feature.id}-baseline-heading`} data-mixed-heading>
+              <MixedHeadingContent {...feature.heading} />
+            </h2>
           </header>
           <div ref={channelScroll.windowRef} className={styles.readingWindow}>
             <motion.div

@@ -268,7 +268,7 @@ export function HelpCenter() {
                 Learn how to use Innflow at your own pace with resources and
                 workflow guides.
               </p>
-              <a className={styles.primary} href="/resources">
+              <a data-site-cta="primary" className={styles.primary} href="/resources">
                 <span>Start learning</span>
                 <ChevronRight />
               </a>
@@ -289,7 +289,11 @@ export function HelpCenter() {
                 Build connected workflows with the tools and systems your team
                 already uses.
               </p>
-              <a className={styles.primary} href="/platform/integrations">
+              <a
+                data-site-cta="primary"
+                className={styles.primary}
+                href="/platform/integrations"
+              >
                 <span>Explore integrations</span>
                 <ChevronRight />
               </a>

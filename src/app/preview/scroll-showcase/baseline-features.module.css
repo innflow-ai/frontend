@@ -108,7 +108,7 @@
   margin: 0;
   color: #5f6d77;
   font:
-    400 16px / 22.4px var(--font-geist),
+    400 var(--homepage-body-size, 16px) / 22.4px var(--font-geist),
     sans-serif;
 }
 .arrow {

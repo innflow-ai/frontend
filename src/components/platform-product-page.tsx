@@ -145,10 +145,10 @@ const nextStops = [
     icon: "bot",
   },
   {
-    title: "Features",
-    body: "Look closer at custom workflows, human review, security, and more.",
-    href: "/features",
-    path: "/features",
+    title: "Workflows",
+    body: "Explore how a workflow connects tasks, tools, and human review.",
+    href: "/features/workflows",
+    path: "/features/workflows",
     icon: "list",
   },
   {
@@ -194,10 +194,18 @@ function Eyebrow({ children }: { children: string }) {
 function GradientActions() {
   return (
     <div className={styles.actions}>
-      <a className={styles.primary} href={siteConfig.signupUrl}>
+      <a
+        data-site-cta="primary"
+        className={styles.primary}
+        href={siteConfig.signupUrl}
+      >
         Get started free
       </a>
-      <a className={styles.secondary} href={siteConfig.demoUrl}>
+      <a
+        data-site-cta="secondary"
+        className={styles.secondary}
+        href={siteConfig.demoUrl}
+      >
         Book a demo
       </a>
     </div>

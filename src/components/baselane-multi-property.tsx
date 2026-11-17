@@ -114,10 +114,18 @@ export function BaselaneMultiProperty({
               "Connected workflows and knowledge for multi-property teams who want more control and room to grow."}
           </p>
           <div className={styles.actions}>
-            <a className={styles.googleButton} href={siteConfig.googleAuthUrl}>
+            <a
+              data-site-cta="primary"
+              className={styles.googleButton}
+              href={siteConfig.googleAuthUrl}
+            >
               <GoogleCtaContent />
             </a>
-            <a className={styles.outline} href={siteConfig.demoUrl}>
+            <a
+              data-site-cta="secondary"
+              className={styles.outline}
+              href={siteConfig.demoUrl}
+            >
               See demo <ArrowRight size={18} />
             </a>
           </div>
@@ -274,7 +282,11 @@ export function BaselaneMultiProperty({
               Bring your properties, your team, and your next steps into one
               flow.
             </p>
-            <a className={styles.button} href={siteConfig.demoUrl}>
+            <a
+              data-site-cta="primary"
+              className={styles.button}
+              href={siteConfig.demoUrl}
+            >
               Explore innflow <ArrowRight size={18} />
             </a>
           </div>
@@ -305,7 +317,11 @@ export function BaselaneMultiProperty({
                 {content?.resourceText ??
                   "Explore the workflows, knowledge, and approvals behind innflow."}
               </p>
-              <a className={styles.button} href={siteConfig.demoUrl}>
+              <a
+                data-site-cta="primary"
+                className={styles.button}
+                href={siteConfig.demoUrl}
+              >
                 Book a demo <ArrowRight size={18} />
               </a>
             </div>

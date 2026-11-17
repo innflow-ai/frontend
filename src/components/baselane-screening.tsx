@@ -87,7 +87,11 @@ export function BaselaneScreening() {
                 Keep document requests, review tasks, and team handoffs
                 connected in innflow, alongside your chosen screening provider.
               </p>
-              <a className={styles.button} href="#screening-overview">
+              <a
+                data-site-cta="primary"
+                className={styles.button}
+                href="#screening-overview"
+              >
                 Explore the workflow
               </a>
             </div>
@@ -118,10 +122,11 @@ export function BaselaneScreening() {
             follow-up visible from the start.
           </p>
           <div className={styles.actions}>
-            <a className={styles.button} href={source}>
+            <a data-site-cta="primary" className={styles.button} href={source}>
               See innflow in action <MageArrowRight size="1em" />
             </a>
             <a
+              data-site-cta="secondary"
               className={styles.outline}
               href="/lease-agreement"
               target="_blank"
@@ -300,7 +305,7 @@ export function BaselaneScreening() {
                 <span>Steps selected</span>
                 <strong>{completed} / 3</strong>
               </div>
-              <a className={styles.button} href={source}>
+              <a data-site-cta="primary" className={styles.button} href={source}>
                 Discuss your workflow <MageArrowRight size="1em" />
               </a>
               <p className={styles.note}>
@@ -325,7 +330,7 @@ export function BaselaneScreening() {
                 <h3 data-mixed-heading>
                   <MixedHeadingText>{title}</MixedHeadingText>
                 </h3>
-                <a className={styles.outline} href={href}>
+                <a data-site-cta="secondary" className={styles.outline} href={href}>
                   Explore <MageArrowRight size="1em" />
                 </a>
               </article>
@@ -338,7 +343,11 @@ export function BaselaneScreening() {
                   Bring context into the wider workflow.
                 </MixedHeadingText>
               </h3>
-              <a className={styles.button} href={siteConfig.demoUrl}>
+              <a
+                data-site-cta="primary"
+                className={styles.button}
+                href={siteConfig.demoUrl}
+              >
                 Explore innflow <MageArrowRight size="1em" />
               </a>
             </div>
@@ -401,7 +410,11 @@ export function BaselaneScreening() {
             <MixedHeadingText>Make the next step clear.</MixedHeadingText>
           </h2>
           <p>Explore how innflow can connect your team’s work.</p>
-          <a className={styles.button} href={siteConfig.googleAuthUrl}>
+          <a
+            data-site-cta="primary"
+            className={styles.button}
+            href={siteConfig.googleAuthUrl}
+          >
             <GoogleCtaContent />
           </a>
         </section>

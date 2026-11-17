@@ -76,6 +76,7 @@ export function SiteCta({
           <p>Bring your team, context, and next steps together.</p>
           <div className={styles.actions}>
             <TrackedLink
+              data-site-cta="primary"
               className={styles.darkButton}
               destination={siteConfig.googleAuthUrl}
               eventLabel="baselane_closing_signup"
@@ -123,7 +124,7 @@ export function SiteCta({
                       required
                       maxLength={254}
                     />
-                    <button type="submit">
+                    <button data-site-cta="primary" type="submit">
                       {signupState === "pending" ? "Signing up…" : "Sign up"}
                     </button>
                   </div>

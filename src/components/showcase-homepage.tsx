@@ -1,6 +1,7 @@
+import { BaselineClosing } from "@/app/preview/scroll-showcase/baseline-closing";
+import { SHOW_TESTIMONIAL } from "@/app/preview/scroll-showcase/testimonial-visibility";
 import { BaselineFeatures } from "@/app/preview/scroll-showcase/baseline-features";
 import {
-  BaselineClosing,
   BaselineConnectedInfrastructure,
   BaselineCustomerStories,
 } from "@/app/preview/scroll-showcase/baseline-lower-sections";
@@ -14,7 +15,7 @@ import { getPageTestimonials } from "@/lib/testimonials";
 import typography from "./homepage-typography.module.css";
 
 export async function ShowcaseHomepage() {
-  const stories = await getPageTestimonials("/");
+  const stories = SHOW_TESTIMONIAL ? await getPageTestimonials("/") : null;
   return (
     <main id="main-content" className={`${styles.page} ${typography.headings}`}>
       <ScrollShowcase />
@@ -22,11 +23,13 @@ export async function ShowcaseHomepage() {
         <WorkspaceOverview />
         <HomepageAgentShowcase />
         <BaselineFeatures />
-        <BaselineCustomerStories
-          testimonials={stories.testimonials}
-          heading={stories.heading}
-          previewFallback
-        />
+        {stories && (
+          <BaselineCustomerStories
+            testimonials={stories.testimonials}
+            heading={stories.heading}
+            previewFallback
+          />
+        )}
         <HomepageCollaboration />
         <BaselineConnectedInfrastructure />
         <BaselineClosing />

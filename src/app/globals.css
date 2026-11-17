@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import "tailwindcss" source("../");
 @import "./termly-consent.css";
 
 :root {
@@ -2785,6 +2785,7 @@ p {
   --sky-blue-soft: #e3f0fe;
   /* Approved Figma primary action, node 354:5843. */
   --button-primary: linear-gradient(180deg, #5aaaf8 0%, #0c99ff 100%);
+  --site-button-ink: #fff;
   --button-primary-border: #0680c2f2;
   --announcement-background: linear-gradient(180deg, #00aeef, #0095ff);
   --announcement-radius: 28px;
@@ -2807,6 +2808,31 @@ p {
   --night-border: #1b2c42;
   --night-ink: #f2f7fd;
   --night-muted: #93a5ba;
+}
+
+/* Marketing actions opt in. Both tones use the sign-in pill's rim,
+   upper highlight and drop shadow. Component layouts own their dimensions. */
+@layer site-buttons {
+  :where([data-site-cta], a.button, a:has(> [data-google-cta])) {
+    --cta-fill: var(--button-primary);
+    --cta-hover: var(--button-primary-hover);
+    --cta-rim: var(--button-primary-border);
+    background: var(--cta-fill) !important;
+    border: 1px solid var(--cta-rim) !important;
+    border-radius: 999px !important;
+    box-shadow: inset 0 1px 2px #ffffff70, 0 3px 7px #00000021 !important;
+    color: var(--site-button-ink) !important;
+  }
+
+  :is([data-site-cta="secondary"], a.button-secondary) {
+    --cta-fill: linear-gradient(180deg, #363636, #191919);
+    --cta-hover: linear-gradient(180deg, #454545, #252525);
+    --cta-rim: #111;
+  }
+
+  :is([data-site-cta], a.button, a:has(> [data-google-cta])):hover:not(:disabled):not([aria-disabled="true"]) {
+    background: var(--cta-hover) !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

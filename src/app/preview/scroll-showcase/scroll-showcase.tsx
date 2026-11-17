@@ -17,6 +17,7 @@ import {
 } from "@/components/icons/mage";
 import { MixedHeadingContent } from "@/components/section-heading";
 import { siteConfig } from "@/config/site";
+import { TrackedLink } from "@/components/tracked-link";
 import { BookingCalendar } from "./booking-calendar";
 import { SchedulingAssistant } from "./scheduling-assistant";
 import {
@@ -32,6 +33,7 @@ const states = [
   {
     id: "scheduling",
     label: "AI agent",
+    href: "/products/ai-agents",
     badge: "",
     title: "Delegate tasks to your AI agent",
     heading: { title: "Delegate tasks", emphasis: "to your AI agent" },
@@ -42,6 +44,7 @@ const states = [
   {
     id: "callie",
     label: "Workflows",
+    href: "/features/workflows",
     badge: "",
     title: "Keep work moving across your tools",
     heading: { title: "Keep work moving", emphasis: "across your tools" },
@@ -52,6 +55,7 @@ const states = [
   {
     id: "notetaker",
     label: "Sidekick",
+    href: "#workflows",
     badge: "New",
     title: "Get the help you need in the moment",
     heading: { title: "Get the help you need", emphasis: "in the moment" },
@@ -62,6 +66,7 @@ const states = [
   {
     id: "payments",
     label: "Insights",
+    href: "#insights",
     badge: "New",
     title: "See what needs your attention",
     heading: { title: "See what needs", emphasis: "your attention" },
@@ -304,27 +309,37 @@ export function ScrollShowcase() {
           />
         </h1>
         <p className={styles.subheadline}>
-          Connect conversations, delegate tasks, and keep work moving.
+          {process.env.NEXT_PUBLIC_HOMEPAGE_COPY === "meeting"
+            ? "Turn a meeting request into a scheduled call and a follow-up draft your team can review."
+            : "Connect conversations, delegate tasks, and keep work moving."}
         </p>
         <div className={styles.oauthActions}>
-          <a
-            className={googleButtonStyles.button}
-            href={siteConfig.googleAuthUrl}
+          <TrackedLink
+            data-site-cta="primary"
+            className={`${googleButtonStyles.button} ${googleButtonStyles.raisedSignIn}`}
+            destination={siteConfig.googleAuthUrl}
+            eventLabel="homepage_hero_google"
           >
             <GoogleCtaContent />
-          </a>
-          <a
-            className={`${googleButtonStyles.button} ${googleButtonStyles.microsoft}`}
-            href={`${siteConfig.appOrigin}/login`}
+          </TrackedLink>
+          <TrackedLink
+            data-site-cta="secondary"
+            className={`${googleButtonStyles.button} ${googleButtonStyles.raisedSignIn}`}
+            destination={`${siteConfig.appOrigin}/login`}
+            eventLabel="homepage_hero_login"
           >
             <span className={googleButtonStyles.content}>
-              <Image src="/brand/microsoft.svg" alt="" width={18} height={18} />
-              Continue with Microsoft
+              More sign-in options
             </span>
-          </a>
+          </TrackedLink>
         </div>
         <small className={styles.signupNote}>
-          <a href={siteConfig.signupUrl}>Sign up with email</a>
+          <TrackedLink
+            destination={siteConfig.signupUrl}
+            eventLabel="homepage_hero_email"
+          >
+            Sign up with email
+          </TrackedLink>
         </small>
       </header>
       <section
@@ -353,12 +368,13 @@ export function ScrollShowcase() {
               type="button"
               className={styles.close}
               aria-label="Skip showcase"
-              onClick={() =>
+              onClick={() => {
+                exit.current?.focus({ preventScroll: true });
                 exit.current?.scrollIntoView({
                   behavior: "instant",
                   block: "start",
-                })
-              }
+                });
+              }}
             >
               <MageMultiply size="1em" />
             </button>
@@ -433,14 +449,10 @@ export function ScrollShowcase() {
                           breakAt="never"
                         />
                       </h2>
-                      <p>{state.body}</p>
-                      <a href="/products/platform">
-                        Learn more
+                      <p data-home-copy>{state.body}</p>
+                      <a href={state.href}>
+                        Learn more about {state.label}
                         <ChevronRight />
-                        <span className={styles.srOnly}>
-                          {" "}
-                          about {state.label}
-                        </span>
                       </a>
                     </div>
                     <Illustration
@@ -461,7 +473,7 @@ export function ScrollShowcase() {
           </div>
         </div>
       </section>
-      <div ref={exit} className={styles.exitAnchor} />
+      <div ref={exit} tabIndex={-1} className={styles.exitAnchor} />
     </div>
   );
 }

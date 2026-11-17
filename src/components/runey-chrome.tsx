@@ -174,7 +174,10 @@ export function RuneyChrome({
               })}
             </nav>
             <div className={styles.headerActions}>
-              <a className={styles.login} href={siteConfig.appOrigin}>
+              <a
+                className={styles.login}
+                href={siteConfig.appOrigin}
+              >
                 Log in
               </a>
               <GoogleSignInButton

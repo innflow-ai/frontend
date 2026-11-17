@@ -120,17 +120,23 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
             </p>
             <div className={styles.actions}>
               <TrackedLink
+                data-site-cta="primary"
                 className={styles.primaryButton}
                 destination={siteConfig.googleAuthUrl}
                 eventLabel="hero_get_started"
               >
                 <GoogleCtaContent />
               </TrackedLink>
-              <a className={styles.secondaryButton} href="#features">
+              <a
+                data-site-cta="secondary"
+                className={styles.secondaryButton}
+                href="#features"
+              >
                 See features
               </a>
               {property && (
                 <TrackedLink
+                  data-site-cta="secondary"
                   className={styles.textButton}
                   destination={siteConfig.demoUrl}
                   eventLabel="hero_request_demo"
@@ -324,13 +330,18 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
         </div>
         <div className={styles.actions}>
           <TrackedLink
+            data-site-cta="primary"
             destination="/pricing"
             eventLabel="landing_view_pricing"
             className={styles.primaryButton}
           >
             Explore pricing <ArrowRight size={17} />
           </TrackedLink>
-          <a className={styles.secondaryButton} href="/contact">
+          <a
+            data-site-cta="secondary"
+            className={styles.secondaryButton}
+            href="/contact"
+          >
             Talk to us
           </a>
         </div>
@@ -374,13 +385,18 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
           </p>
           <div className={styles.actions}>
             <TrackedLink
+              data-site-cta="primary"
               destination={siteConfig.googleAuthUrl}
               eventLabel="landing_final_get_started"
               className={styles.primaryButton}
             >
               <GoogleCtaContent />
             </TrackedLink>
-            <a href={siteConfig.demoUrl} className={styles.textButton}>
+            <a
+              data-site-cta="secondary"
+              href={siteConfig.demoUrl}
+              className={styles.textButton}
+            >
               Request demo
             </a>
           </div>

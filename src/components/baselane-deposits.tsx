@@ -127,7 +127,11 @@ function Photo({
 }
 function GoogleAction() {
   return (
-    <a className={shared.button} href={siteConfig.googleAuthUrl}>
+    <a
+      data-site-cta="primary"
+      className={shared.button}
+      href={siteConfig.googleAuthUrl}
+    >
       <GoogleCtaContent />
     </a>
   );
@@ -149,7 +153,11 @@ export async function BaselaneDeposits() {
               move-in and move-out.
             </p>
             <GoogleAction />
-            <a className={styles.secondary} href="#deposit-benefits">
+            <a
+              data-site-cta="secondary"
+              className={styles.secondary}
+              href="#deposit-benefits"
+            >
               Explore the workflow <MageArrowDown size="1em" />
             </a>
           </div>
@@ -320,6 +328,7 @@ export async function BaselaneDeposits() {
                   </MixedHeadingText>
                 </h3>
                 <a
+                  data-site-cta="primary"
                   className={shared.button}
                   href="/free-rental-forms-and-templates-for-landlords"
                 >

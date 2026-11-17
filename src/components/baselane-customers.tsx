@@ -95,10 +95,18 @@ export function BaselaneCustomers() {
               the people keeping property operations moving.
             </p>
             <div className={styles.actions}>
-              <a className={styles.button} href="#team-workflows">
+              <a
+                data-site-cta="primary"
+                className={styles.button}
+                href="#team-workflows"
+              >
                 Explore team workflows
               </a>
-              <a className={styles.outline} href={siteConfig.demoUrl}>
+              <a
+                data-site-cta="secondary"
+                className={styles.outline}
+                href={siteConfig.demoUrl}
+              >
                 Book a demo <MageArrowRight size="1em" />
               </a>
             </div>
@@ -159,7 +167,7 @@ export function BaselaneCustomers() {
                 <MixedHeadingText>{story[1]}</MixedHeadingText>
               </h2>
               <p>{story[2]}</p>
-              <a className={styles.button} href={story[3]}>
+              <a data-site-cta="primary" className={styles.button} href={story[3]}>
                 Explore with innflow <MageArrowRight size="1em" />
               </a>
             </div>

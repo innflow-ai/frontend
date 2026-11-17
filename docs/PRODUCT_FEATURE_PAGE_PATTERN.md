@@ -6,7 +6,7 @@ The user designated `/rent-collection` as the default design pattern for propert
 
 ## Page sequence
 
-1. **Full-width photographic hero.** A single H1 states the main benefit, followed by concise supporting copy, the shared Continue with Google button, and the terms/privacy disclaimer. Use the white button surface (the legacy `cream` variant name) shown on Rent collection and the navbar's responsive button sizing. Keep the image edge-to-edge across the viewport and at the top of the hero.
+1. **Full-width photographic hero.** A single H1 states the main benefit, followed by concise supporting copy, the shared Continue with Google button, and the terms/privacy disclaimer. Use the [primary blue marketing CTA](design-tokens/innflow-brand/BRAND-GUIDELINES.md#marketing-website-ctas) and the navbar's responsive button sizing. Keep the image edge-to-edge across the viewport and at the top of the hero.
 2. **Benefit-led introduction and feature story.** A short H2 introduces the feature. Use typically four primary feature sections, with the count adjusted to the feature. Each contains a small category label, a concise benefit heading, supporting copy, and a relevant product visual. Adjust the subjects to the page rather than copying Rent collection's wording.
 3. **Three to six supporting points.** A clearly defined, compact feature grid follows the main sections. These are supporting benefits for the page as a whole, not three to six additional subsections inside every panel.
 4. **Shared post-feature CTA.** Use `ProductHeadspaceCta` after the feature scroll and supporting points, before testimonials. It uses the beach-and-hammock photograph and copy from CMS Template node `3:273`, with the shared Google signup and demo destinations. Keep this placement in both desktop and mobile flow.
@@ -64,7 +64,7 @@ Build the missing pages represented in the current navbar as complete Figma draf
 - `src/components/baselane-product-page.module.css`: Rent collection's scoped responsive styles.
 - `src/components/baselane-product-content.ts`: page-specific copy and image selection.
 - `src/components/scroll-story.tsx` and its CSS module: stacked progression and fallback behavior.
-- `src/components/google-cta-content.tsx` and `google-cta.module.css`: shared Google button and white surface (legacy cream variant).
+- `src/components/google-cta-content.tsx` and `google-cta.module.css`: shared Google button content and responsive sizing. The marketing CTA surface comes from `src/app/globals.css`.
 - `src/components/page-testimonials.tsx`, `testimonial-cards.tsx`, and its CSS module: CMS selection and cards.
 
 Some of the canonical behavior is currently conditional on `kind === "rent-collection"`. Adding a new content entry alone does not apply all of these styles. When extending the template, deliberately share those behaviors through an explicit reusable variant rather than copying the whole page or silently restyling older routes.

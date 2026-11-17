@@ -8,6 +8,10 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 <!-- END:nextjs-agent-rules -->
 
+## Marketing website CTAs
+
+Use the raised blue pill for primary CTAs and the matching black pill for secondary CTAs. Mark new CTA buttons and links with `data-site-cta="primary"` or `data-site-cta="secondary"`. Navigation, tabs, filters, dismiss buttons, and demo controls keep their own styles. Use the [marketing CTA specification](docs/design-tokens/innflow-brand/BRAND-GUIDELINES.md#marketing-website-ctas) for both tones and their states.
+
 ## Testimonial CMS content
 
 Before creating, importing, updating, or selecting testimonial CMS records, read [sanity/TESTIMONIALS.md](sanity/TESTIMONIALS.md). Apply its field mapping, source accuracy, reuse, and page-selection guidance.
@@ -26,7 +30,7 @@ For blog UI work, use the `innflow-blog-design` skill when available at `/Users/
 
 ## Current visual direction (2026-10-29)
 
-Use [the current brand guidelines](docs/design-tokens/innflow-brand/BRAND-GUIDELINES.md) and `innflow-design-v2`, sourced from Figma frame `328:5`. New shared UI uses Inter, Instrument Serif display, JetBrains Mono, neutral actions, and the documented component corner roles. Homepage headings use Source Serif 4 by explicit user choice on 2026-10-30, superseding the earlier Instrument Sans exception. Preserve existing page layouts, reference artwork, and responsive interactions. Older Calendly, cream/Baselane, and homepage token extractions record implementation history and do not override this source. Apply changes within the requested scope; this guidance does not itself restyle existing pages.
+Use [the current brand guidelines](docs/design-tokens/innflow-brand/BRAND-GUIDELINES.md) and `innflow-design-v2`, sourced from Figma frame `328:5`. New shared UI uses Inter, Instrument Serif display, JetBrains Mono, neutral app actions, and the documented component corner roles. Homepage headings use Source Serif 4 by explicit user choice on 2026-10-30, superseding the earlier Instrument Sans exception. Preserve existing page layouts, reference artwork, and responsive interactions. Older Calendly, cream/Baselane, and homepage token extractions record implementation history and do not override this source. Apply changes within the requested scope; this guidance does not itself restyle existing pages.
 Use strong headings with compact supporting copy: normally 16px body, 14px card
 copy, and 12px metadata, with readable line height. Do not enlarge all supporting
 text to match headings or shrink article prose and form controls indiscriminately.

@@ -49,10 +49,18 @@ export function BaselaneAdvisors() {
               innflow. Spend less time chasing context before you give advice.
             </p>
             <div className={styles.actions}>
-              <a className={styles.button} href="#advisor-inquiry">
+              <a
+                data-site-cta="primary"
+                className={styles.button}
+                href="#advisor-inquiry"
+              >
                 Start a conversation
               </a>
-              <a className={styles.outline} href="#program-details">
+              <a
+                data-site-cta="secondary"
+                className={styles.outline}
+                href="#program-details"
+              >
                 Explore the workflow <MageArrowRight size="1em" />
               </a>
             </div>
@@ -423,7 +431,7 @@ export function BaselaneAdvisors() {
                 <textarea name="workflow" required maxLength={1200} rows={3} />
               </label>
             </div>
-            <button type="submit" className={styles.button}>
+            <button data-site-cta="primary" type="submit" className={styles.button}>
               Prepare inquiry <MageArrowRight size="1em" />
             </button>
           </form>
@@ -434,6 +442,7 @@ export function BaselaneAdvisors() {
               </h3>
               <pre>{draft}</pre>
               <a
+                data-site-cta="primary"
                 className={styles.button}
                 href={`mailto:${siteConfig.supportEmail}?subject=${encodeURIComponent("Advisor partnership inquiry")}&body=${encodeURIComponent(draft)}`}
               >

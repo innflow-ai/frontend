@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
-import { BaselineClosing } from "@/app/preview/scroll-showcase/baseline-lower-sections";
+import { BaselineClosing } from "@/app/preview/scroll-showcase/baseline-closing";
 import { ChevronRight } from "@/components/chevron-right";
 import { ArrowDown as MageArrowDown } from "@/components/icons/mage";
 import { MixedHeadingText } from "@/components/mixed-heading-text";
@@ -32,13 +32,21 @@ export function IndustryPage({ page }: { page: IndustryPageContent }) {
             </h1>
             <p className={styles.intro}>{page.description}</p>
             <div className={styles.actions}>
-              <a className={styles.primary} href={siteConfig.demoUrl}>
-                Explore your workflow{" "}
+              <a
+                data-site-cta="primary"
+                className={styles.primary}
+                href={siteConfig.demoUrl}
+              >
+                Book a workflow demo{" "}
                 <span aria-hidden="true">
                   <ChevronRight />
                 </span>
               </a>
-              <a className={styles.secondary} href="#workflows">
+              <a
+                data-site-cta="secondary"
+                className={styles.secondary}
+                href="#workflows"
+              >
                 See the possibilities{" "}
                 <span aria-hidden="true">
                   <MageArrowDown size="1em" />

@@ -80,13 +80,18 @@ export function BaselaneHomepage({ children }: { children?: ReactNode }) {
               <div className={styles.heroBottom}>
                 <div className={styles.actions}>
                   <TrackedLink
+                    data-site-cta="primary"
                     destination={siteConfig.googleAuthUrl}
                     eventLabel="baselane_hero_signup"
                     className={styles.blueButton}
                   >
                     <GoogleCtaContent />
                   </TrackedLink>
-                  <a className={styles.darkButton} href={siteConfig.demoUrl}>
+                  <a
+                    data-site-cta="secondary"
+                    className={styles.darkButton}
+                    href={siteConfig.demoUrl}
+                  >
                     See demo <MageIcon name="arrow-right" size={19} />
                   </a>
                 </div>
@@ -178,7 +183,11 @@ export function BaselaneHomepage({ children }: { children?: ReactNode }) {
                       <MixedHeadingText>{story.title}</MixedHeadingText>
                     </h3>
                     <p>{story.copy}</p>
-                    <a className={styles.lightButton} href={story.href}>
+                    <a
+                      data-site-cta="primary"
+                      className={styles.lightButton}
+                      href={story.href}
+                    >
                       Explore {story.id}{" "}
                       <MageIcon name="arrow-right" size={16} />
                     </a>

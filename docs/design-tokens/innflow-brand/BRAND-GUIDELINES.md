@@ -4,12 +4,26 @@ Verified 2026-10-29 from [INNFLOW_BRAND_KIT, frame 328:5](https://www.figma.com/
 
 ## Principles and precedence
 
-- Use neutral surfaces, clear hierarchy, compact controls, restrained borders, and purposeful color. Primary actions are neutral, not universally blue.
+- Use neutral surfaces, clear hierarchy, compact controls, restrained borders, and purposeful color. App actions use the neutral palette. Marketing website CTAs use the treatment below.
 - Use actual specimen properties and current variable bindings. Some inherited layer names and brand-signature annotations still mention older fonts. The explicit Typography section and current 406-series variables define the new type roles.
 - Preserve provider colors, agent artwork, tier materials, file icons, cursors, and the decorative grid. Do not recolor identity artwork to make it neutral or add glass around every item.
 - Current user instructions and an explicitly requested reference match override defaults within their scope. A reference-specific treatment is not a new global rule.
 - Do not add decorative numbered section labels. Preserve meaningful data, dates, prices, pagination, and authored sequence numbers.
 - Preserve existing behavior, responsive structure, and content when applying styles. A guideline sync does not migrate or deploy existing products.
+
+## Marketing website CTAs
+
+Approved November 17, 2026 for the Innflow marketing website. Use a raised pill for actions such as signup, booking a demo, or subscribing. The primary CTA is blue. A secondary CTA uses the same finish in black.
+
+| Surface | Primary | Secondary |
+| --- | --- | --- |
+| Fill, top to bottom | `#5aaaf8` to `#0c99ff` | `#363636` to `#191919` |
+| Hover, top to bottom | `#429bf0` to `#008bec` | `#454545` to `#252525` |
+| 1px rim | `#0680c2f2` | `#111` |
+
+Both tones use white text, a 999px radius, and the same highlight and shadow, `inset 0 1px 2px #ffffff70, 0 3px 7px #00000021`. Keep component-specific sizing and visible keyboard focus. In the homepage hero, “Continue with Google” is primary and “More sign-in options” is secondary. The header Google CTA and popup Subscribe button are primary.
+
+On the web, opt in with `data-site-cta="primary"` or `data-site-cta="secondary"` and reuse the shared rules in `src/app/globals.css`. Assign the treatment by the action's purpose. Navigation menus, filters, tabs, accordion toggles, dismiss buttons, and controls inside product demos keep their own component styling.
 
 ## Semantic palette
 

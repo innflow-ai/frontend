@@ -537,6 +537,7 @@ function Cta({
 }) {
   return (
     <TrackedLink
+      data-site-cta={tone === "text" ? undefined : tone}
       className={
         tone === "primary"
           ? styles.primary

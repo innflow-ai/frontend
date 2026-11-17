@@ -129,7 +129,7 @@ export function CollaborationSection({ demos }: { demos: ReactNode[] }) {
                   ))}
                   <span>{platform.title}</span>
                 </span>
-                <span className={styles.description}>
+                <span data-home-copy className={styles.description}>
                   {platform.description}
                 </span>
               </a>

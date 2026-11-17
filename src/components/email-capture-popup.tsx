@@ -213,6 +213,7 @@ export function EmailCapturePopup() {
               }
             />
             <button
+              data-site-cta="primary"
               className={styles.submit}
               type="submit"
               disabled={phase === "pending"}

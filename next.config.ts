@@ -22,6 +22,13 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   async redirects() {
     return [
+      { source: "/features", destination: "/products", permanent: true },
+      {
+        source: "/signup",
+        destination:
+          process.env.NEXT_PUBLIC_SIGNUP_URL ?? `${appOrigin}/signup`,
+        permanent: false,
+      },
       { source: "/BL/BL-about", destination: "/about", permanent: true },
       {
         source: "/BL/BL-advisor-partner-program",

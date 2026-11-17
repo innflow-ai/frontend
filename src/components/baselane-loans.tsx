@@ -109,10 +109,14 @@ export function BaselaneLoans() {
               conversation.
             </p>
             <div className={styles.actions}>
-              <a className={styles.button} href={source}>
+              <a data-site-cta="primary" className={styles.button} href={source}>
                 Explore innflow <MageArrowRight size="1em" />
               </a>
-              <a className={styles.outline} href="#loan-details">
+              <a
+                data-site-cta="secondary"
+                className={styles.outline}
+                href="#loan-details"
+              >
                 Compare loan types
               </a>
             </div>
@@ -167,7 +171,7 @@ export function BaselaneLoans() {
               requests. Give your team a clear record to share with its chosen
               lender.
             </p>
-            <a className={styles.button} href={source}>
+            <a data-site-cta="primary" className={styles.button} href={source}>
               See the workspace <MageArrowRight size="1em" />
             </a>
             <p className={styles.note}>
@@ -226,7 +230,11 @@ export function BaselaneLoans() {
               before starting a conversation. A clear project record gives
               everyone a shared starting point.
             </p>
-            <a className={styles.outline} href={siteConfig.demoUrl}>
+            <a
+              data-site-cta="secondary"
+              className={styles.outline}
+              href={siteConfig.demoUrl}
+            >
               Explore innflow <MageArrowRight size="1em" />
             </a>
           </div>
@@ -341,7 +349,7 @@ export function BaselaneLoans() {
                   </p>
                 </section>
               </div>
-              <a className={styles.button} href={source}>
+              <a data-site-cta="primary" className={styles.button} href={source}>
                 Plan your workflow <MageArrowRight size="1em" />
               </a>
             </div>
@@ -466,7 +474,7 @@ export function BaselaneLoans() {
               </article>
             ))}
           </div>
-          <a className={styles.button} href={source}>
+          <a data-site-cta="primary" className={styles.button} href={source}>
             Explore financing workflows <MageArrowRight size="1em" />
           </a>
         </section>

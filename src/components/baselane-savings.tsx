@@ -103,7 +103,7 @@ export function BaselaneSavings() {
               innflow. Keep the context behind each property decision within
               reach.
             </p>
-            <a className={styles.button} href={source}>
+            <a data-site-cta="primary" className={styles.button} href={source}>
               Explore innflow <MageArrowRight size="1em" />
             </a>
           </div>
@@ -239,7 +239,7 @@ export function BaselaneSavings() {
                 </article>
               ))}
             </div>
-            <a className={styles.button} href={source}>
+            <a data-site-cta="primary" className={styles.button} href={source}>
               See how innflow fits <MageArrowRight size="1em" />
             </a>
           </div>

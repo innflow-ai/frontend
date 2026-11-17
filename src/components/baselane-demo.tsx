@@ -53,7 +53,11 @@ export function BaselaneDemo() {
               Explore how your team can bring recurring work, property context,
               and human approvals into one flow.
             </p>
-            <a className={styles.button} href={siteConfig.demoUrl}>
+            <a
+              data-site-cta="primary"
+              className={styles.button}
+              href={siteConfig.demoUrl}
+            >
               Book a demo <ChevronRight />
             </a>
           </div>
@@ -103,7 +107,11 @@ export function BaselaneDemo() {
                 Bring a recurring workflow. We’ll start with the handoffs that
                 matter to your team.
               </p>
-              <a className={styles.button} href={siteConfig.demoUrl}>
+              <a
+                data-site-cta="primary"
+                className={styles.button}
+                href={siteConfig.demoUrl}
+              >
                 Book a demo <ChevronRight />
               </a>
             </div>
@@ -119,7 +127,7 @@ export function BaselaneDemo() {
                 Explore self-guided topics on recurring tasks, property records,
                 and the handoffs your team handles every day.
               </p>
-              <a className={styles.button} href="/webinars">
+              <a data-site-cta="primary" className={styles.button} href="/webinars">
                 Explore workflow topics <MageArrowRight size="1em" />
               </a>
             </div>
@@ -159,7 +167,11 @@ export function BaselaneDemo() {
               </MixedHeadingText>
             </h2>
             <p>Give every recurring request a clear next step.</p>
-            <a className={styles.button} href={siteConfig.contactUrl}>
+            <a
+              data-site-cta="primary"
+              className={styles.button}
+              href={siteConfig.contactUrl}
+            >
               Talk to the team <ChevronRight />
             </a>
           </div>

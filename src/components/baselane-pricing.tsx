@@ -59,8 +59,7 @@ const groups = [
     ],
   },
 ] as const;
-const workspaceNote =
-  "Workspace availability and limits need confirmation. Enterprise limits shown are starting defaults and can be tailored by agreement.";
+const enterpriseNote = "Enterprise limits can be tailored by agreement.";
 const toolGroups = [
   {
     title: "KNOWLEDGE, AGENTS AND CONNECTED WORK",
@@ -127,6 +126,7 @@ function PlanLink({
   const featured = plan.name === "Pro";
   return (
     <TrackedLink
+      data-site-cta="primary"
       className={`${styles.button} ${compact ? styles.compactButton : ""} ${featured ? styles.primaryButton : ""}`}
       destination={
         enterprise ? siteConfig.contactUrl : siteConfig.googleAuthUrl
@@ -380,7 +380,6 @@ export function BaselanePricing() {
                                 {key === "workspaces" && plan[key] === "1"
                                   ? "workspace"
                                   : label.toLowerCase()}
-                                {key === "workspaces" ? "*" : ""}
                               </>
                             )}
                             {plan[key] === "No" && (
@@ -407,7 +406,8 @@ export function BaselanePricing() {
           <p className={styles.capacityNote}>
             AI and workflow activity consume credits. Credits are not a fixed
             message count.
-            <br />* {workspaceNote}
+            <br />
+            {enterpriseNote}
           </p>
           <a className={styles.compareLink} href="#compare-features">
             Compare all features <MageArrowDown size={18} />
@@ -507,13 +507,7 @@ export function BaselanePricing() {
                             <th scope="row">{label}</th>
                             {plans.map((plan) => (
                               <td key={plan.name}>
-                                <FeatureValue
-                                  value={
-                                    key === "workspaces"
-                                      ? `${plan[key]}*`
-                                      : plan[key]
-                                  }
-                                />
+                                <FeatureValue value={plan[key]} />
                               </td>
                             ))}
                           </tr>
@@ -586,7 +580,7 @@ export function BaselanePricing() {
             </div>
           </section>
           <p className={styles.capacityNote}>
-            * {workspaceNote}
+            {enterpriseNote}
             <br />
             Connected tools require the relevant account permissions. Local
             computer access needs owner approval and the desktop app. Voice

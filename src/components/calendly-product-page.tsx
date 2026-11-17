@@ -193,6 +193,7 @@ export function CalendlyProductPage({
           <p>{content.description}</p>
           <div className={styles.actions}>
             <TrackedLink
+              data-site-cta="primary"
               className={styles.primary}
               destination={primary.href}
               eventLabel={`${content.path}_primary`}
@@ -200,6 +201,7 @@ export function CalendlyProductPage({
               {primary.label}
             </TrackedLink>
             <TrackedLink
+              data-site-cta="secondary"
               className={styles.secondary}
               destination={secondary.href}
               eventLabel={`${content.path}_secondary`}

@@ -151,7 +151,11 @@ export async function BaselaneBanking() {
             Bring the moving parts of your portfolio together. Less chasing
             details. More room to move forward.
           </p>
-          <a className={styles.button} href={siteConfig.demoUrl}>
+          <a
+            data-site-cta="primary"
+            className={styles.button}
+            href={siteConfig.demoUrl}
+          >
             Explore innflow{" "}
             <span>
               <ChevronRight />
@@ -254,7 +258,11 @@ export async function BaselaneBanking() {
               One connected flow.
             </MixedHeadingText>
           </h2>
-          <a href={siteConfig.demoUrl} className={styles.button}>
+          <a
+            data-site-cta="primary"
+            href={siteConfig.demoUrl}
+            className={styles.button}
+          >
             See what's possible{" "}
             <span>
               <ChevronRight />

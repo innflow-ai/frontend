@@ -148,7 +148,6 @@ export function HeaderDropdown({
                       alt={post.imageAlt}
                       width={720}
                       height={512}
-                      quality={100}
                       sizes="(min-width: 1380px) 230px, 250px"
                     />
                   ) : (

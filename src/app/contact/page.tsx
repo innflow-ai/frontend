@@ -122,7 +122,11 @@ export default function ContactPage() {
               </Reveal>
             ))}
           </div>
-          <a className={shellStyles.darkButton} href="#contact-form">
+          <a
+            data-site-cta="primary"
+            className={shellStyles.darkButton}
+            href="#contact-form"
+          >
             Start a conversation
             <ArrowRight aria-hidden="true" size={18} />
           </a>

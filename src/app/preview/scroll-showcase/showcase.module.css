@@ -44,7 +44,7 @@
 .subheadline {
   max-width: 480px;
   margin: 0 auto;
-  font-size: 15px;
+  font-size: var(--homepage-body-size, 15px);
   line-height: 22px;
   color: var(--preview-muted);
   text-wrap: balance;
@@ -131,14 +131,18 @@
   position: absolute;
   top: 32px;
   right: 32px;
+  display: grid;
+  place-items: center;
   width: 50px;
   height: 50px;
-  border: 1px solid #ffffff70;
-  border-radius: 12px;
-  background: #ffffff0d;
+  padding: 0;
+  border: 0;
+  background: transparent;
   color: white;
-  font-size: 30px !important;
-  line-height: 1;
+}
+.close svg {
+  width: 24px;
+  height: 24px;
 }
 .showcase {
   width: min(996px, calc(100% - 96px));
@@ -751,7 +755,6 @@
     right: 12px;
     width: 32px;
     height: 32px;
-    font-size: 23px !important;
   }
   .panel {
     grid-template-columns: 1fr;
@@ -822,7 +825,7 @@
     font-size: clamp(32px, 9vw, 40px);
   }
   .subheadline {
-    font-size: 14px;
+    font-size: var(--homepage-body-size, 14px);
     line-height: 20px;
   }
   .oauthActions {

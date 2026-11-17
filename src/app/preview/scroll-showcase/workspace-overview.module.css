@@ -37,7 +37,7 @@
 .introduction {
   max-width: 560px;
   margin: 16px 0 32px;
-  font-size: var(--marketing-body);
+  font-size: var(--homepage-body-size, var(--marketing-body));
   line-height: 1.4;
   color: #5f6d77;
 }
@@ -319,9 +319,6 @@
   .heading h2 {
     font-size: clamp(32px, 8vw, 44px);
   }
-  .introduction {
-    font-size: 16px;
-  }
   .cards {
     grid-template-columns: 1fr;
     gap: 16px;
@@ -389,9 +386,6 @@
   }
   .heading h2 {
     font-size: clamp(32px, 8vw, 44px);
-  }
-  .introduction {
-    font-size: 16px;
   }
   .cardCopy h3 {
     font-size: 26px;

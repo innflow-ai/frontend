@@ -149,7 +149,9 @@ export function BlogPortableBody({ blocks }: { blocks: LoosePortableBlock[] }) {
         value?: { href?: string };
       }) => {
         const href = value?.href ?? "#";
-        if (isBookingHref(href)) return null;
+        // Drop the booking anchor only. The marked words stay so a sentence
+        // is not punched out and a link-only paragraph is not left empty.
+        if (isBookingHref(href)) return <>{children}</>;
         const isExternal = /^https?:\/\//.test(href);
         return (
           <a

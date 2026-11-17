@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { type CSSProperties, useEffect, useRef, useState } from "react";
-import { ChevronRight } from "@/components/chevron-right";
 import googleButtonStyles from "@/components/google-cta.module.css";
 import { GoogleCtaContent } from "@/components/google-cta-content";
 import { BotIcon } from "@/components/icons/bot-icon";
@@ -333,14 +332,6 @@ export function ScrollShowcase() {
             </span>
           </TrackedLink>
         </div>
-        <small className={styles.signupNote}>
-          <TrackedLink
-            destination={siteConfig.signupUrl}
-            eventLabel="homepage_hero_email"
-          >
-            Sign up with email
-          </TrackedLink>
-        </small>
       </header>
       <section
         ref={section}
@@ -450,9 +441,12 @@ export function ScrollShowcase() {
                         />
                       </h2>
                       <p data-home-copy>{state.body}</p>
-                      <a href={state.href}>
-                        Learn more about {state.label}
-                        <ChevronRight />
+                      <a
+                        href={state.href}
+                        data-site-cta="secondary"
+                        aria-label={`Learn more about ${state.label}`}
+                      >
+                        Learn more
                       </a>
                     </div>
                     <Illustration

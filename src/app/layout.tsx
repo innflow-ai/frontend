@@ -34,9 +34,7 @@ import "lenis/dist/lenis.css";
 
 const archivo = Archivo({
   subsets: ["latin"],
-  // 400, 600, and 700 are the brand kit faces. 500 stays so existing UI
-  // that already asks for medium does not synthesize a weight.
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-archivo",
   display: "swap",
 });

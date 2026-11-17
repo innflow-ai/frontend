@@ -215,7 +215,7 @@ export default async function BlogPostPage({ params }: RouteParams) {
                 </div>
               ) : null}
               <BlogAuthorBio author={author} />
-              <BlogContinueLearning nextPost={related[0] ?? null} />
+              <BlogContinueLearning />
             </div>
           </div>
         </div>

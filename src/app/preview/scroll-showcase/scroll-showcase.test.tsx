@@ -85,7 +85,7 @@ it.each([false, true])(
     if (reduced) expect(pan()).toBe(0);
   },
 );
-it("offers Google sign-in and routes Microsoft through the regular login page", () => {
+it("offers Google, email and the general sign-in page", () => {
   vi.stubGlobal("matchMedia", () => ({
     matches: true,
     addEventListener: vi.fn(),
@@ -118,7 +118,7 @@ it("offers Google sign-in and routes Microsoft through the regular login page", 
     screen.getByRole("link", { name: "Continue with Google" }),
   ).toHaveAttribute("href", siteConfig.googleAuthUrl);
   expect(
-    screen.getByRole("link", { name: "Continue with Microsoft" }),
+    screen.getByRole("link", { name: "More sign-in options" }),
   ).toHaveAttribute("href", `${siteConfig.appOrigin}/login`);
   expect(
     screen.queryByRole("link", { name: "Book a demo" }),
@@ -128,6 +128,19 @@ it("offers Google sign-in and routes Microsoft through the regular login page", 
   ).not.toBeInTheDocument();
   expect(screen.queryByText("Scroll to explore ↓")).not.toBeInTheDocument();
   expect(screen.queryByText(/01 \/ 04/)).not.toBeInTheDocument();
+  const destinations = [
+    ["AI agent", "/products/ai-agents"],
+    ["Workflows", "/features/workflows"],
+    ["Sidekick", "#workflows"],
+    ["Insights", "#insights"],
+  ];
+  for (const [label, href] of destinations) {
+    fireEvent.click(screen.getByRole("tab", { name: label }));
+    expect(
+      screen.getByRole("link", { name: `Learn more about ${label}` }),
+    ).toHaveAttribute("href", href);
+  }
+  fireEvent.click(screen.getByRole("tab", { name: "AI agent" }));
   const scheduling = screen.getByRole("tabpanel", { name: "AI agent" });
   expect(scheduling).toHaveTextContent("Delegate tasks to your AI agent");
   expect(

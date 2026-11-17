@@ -115,6 +115,7 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
             </p>
             <div className={styles.actions}>
               <a
+                data-site-cta="primary"
                 className={styles.button}
                 href={careers ? careerUrl : siteConfig.googleAuthUrl}
               >
@@ -127,7 +128,11 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
                 )}
               </a>
               {!careers && (
-                <a className={styles.outline} href={siteConfig.demoUrl}>
+                <a
+                  data-site-cta="secondary"
+                  className={styles.outline}
+                  href={siteConfig.demoUrl}
+                >
                   See demo <MageArrowRight size="1em" />
                 </a>
               )}
@@ -322,7 +327,7 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
                 </a>
               ))}
             </div>
-            <a className={styles.button} href="/careers">
+            <a data-site-cta="primary" className={styles.button} href="/careers">
               Explore working with us <ChevronRight />
             </a>
           </section>

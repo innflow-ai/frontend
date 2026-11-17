@@ -57,7 +57,11 @@ const faqs = [
 ];
 function Action() {
   return (
-    <a className={shared.button} href={siteConfig.googleAuthUrl}>
+    <a
+      data-site-cta="primary"
+      className={shared.button}
+      href={siteConfig.googleAuthUrl}
+    >
       <GoogleCtaContent />
     </a>
   );
@@ -149,7 +153,11 @@ export async function BaselaneLease() {
                 <p>{text}</p>
               </div>
             ))}
-            <a className={shared.button} href={siteConfig.demoUrl}>
+            <a
+              data-site-cta="primary"
+              className={shared.button}
+              href={siteConfig.demoUrl}
+            >
               Explore the innflow demo
             </a>
           </div>
@@ -233,6 +241,7 @@ export async function BaselaneLease() {
             </h2>
             <p>Browse the forms and checklists in the resource library.</p>
             <a
+              data-site-cta="primary"
               className={shared.button}
               href="/free-rental-forms-and-templates-for-landlords"
             >

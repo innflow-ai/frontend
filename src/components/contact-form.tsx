@@ -139,7 +139,7 @@ export function ContactForm() {
           Your message opens in your default email app so you can review it
           before sending.
         </p>
-        <button type="submit">
+        <button data-site-cta="primary" type="submit">
           Review in email <ArrowRight aria-hidden="true" size={17} />
         </button>
       </div>

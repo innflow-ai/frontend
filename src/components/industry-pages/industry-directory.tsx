@@ -80,7 +80,7 @@ export function IndustryDirectory({ compact = false }: { compact?: boolean }) {
         </div>
       ))}
       {compact && (
-        <Link className={styles.secondary} href="/solutions">
+        <Link data-site-cta="secondary" className={styles.secondary} href="/solutions">
           Explore all industries and solutions{" "}
           <span aria-hidden="true">
             <ChevronRight />

@@ -180,12 +180,17 @@ export async function FigmaFeaturePage({
             <p>{page.description}</p>
             <div className={styles.heroActions}>
               <a
+                data-site-cta="primary"
                 className={`${base.heroGoogle} ${googleStyles.cream}`}
                 href={siteConfig.googleAuthUrl}
               >
                 <GoogleCtaContent />
               </a>
-              <a className={styles.heroDemo} href={siteConfig.demoUrl}>
+              <a
+                data-site-cta="secondary"
+                className={styles.heroDemo}
+                href={siteConfig.demoUrl}
+              >
                 See demo <ArrowRight size={18} aria-hidden="true" />
               </a>
             </div>

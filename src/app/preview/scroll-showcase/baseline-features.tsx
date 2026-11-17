@@ -261,7 +261,7 @@ function BaselineFeature({ feature }: { feature: Feature }) {
                     hidden={!item.body || (!channels && selected !== index)}
                     className={styles.description}
                   >
-                    {item.body && <p>{item.body}</p>}
+                    {item.body && <p data-home-copy>{item.body}</p>}
                     {item.body && (
                       <button
                         type="button"

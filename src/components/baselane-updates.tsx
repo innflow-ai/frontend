@@ -124,7 +124,11 @@ export function BaselaneUpdates() {
       <div className={styles.layout}>
         <aside className={styles.sidebar}>
           <h2>Explore connected property operations with innflow.</h2>
-          <a className={styles.primary} href={siteConfig.googleAuthUrl}>
+          <a
+            data-site-cta="primary"
+            className={styles.primary}
+            href={siteConfig.googleAuthUrl}
+          >
             <GoogleCtaContent />
           </a>
           <div className={styles.share}>

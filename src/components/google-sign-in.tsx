@@ -54,6 +54,7 @@ export function GoogleSignInButton({
     <>
       <button
         {...props}
+        data-site-cta="primary"
         type="button"
         className={`${styles.signInButton} ${ctaStyles.button}${variant === "brand" ? ` ${styles.brandButton}` : ""}${className ? ` ${className}` : ""}`}
         data-marketing-event="marketing_cta_clicked"
@@ -132,6 +133,7 @@ export function GoogleSignInButton({
             One tap with your Google account. No password needed.
           </p>
           <a
+            data-site-cta="primary"
             className={`${styles.continueButton} ${ctaStyles.button}`}
             href={siteConfig.googleAuthUrl}
             data-marketing-event="marketing_cta_clicked"

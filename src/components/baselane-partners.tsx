@@ -180,7 +180,7 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
       Copy link to share
     </button>
   ) : (
-    <a className={styles.button} href="#partner-inquiry">
+    <a data-site-cta="primary" className={styles.button} href="#partner-inquiry">
       Explore a partnership
     </a>
   );
@@ -326,7 +326,7 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
               )}
             </div>
             {!referral && (
-              <a className={styles.button} href={inquiry}>
+              <a data-site-cta="primary" className={styles.button} href={inquiry}>
                 Email a partnership inquiry
               </a>
             )}
@@ -350,7 +350,11 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
                 </MixedHeadingText>
               </h2>
               <p>Share a starting point for clearer, more connected work.</p>
-              <a className={styles.button} href={siteConfig.googleAuthUrl}>
+              <a
+                data-site-cta="primary"
+                className={styles.button}
+                href={siteConfig.googleAuthUrl}
+              >
                 <GoogleCtaContent />
               </a>
               <a className={styles.textLink} href="/partner-with-us">

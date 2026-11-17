@@ -32,7 +32,7 @@ export function ProductHeadspaceCta() {
           <a href={siteConfig.googleAuthUrl}>
             <GoogleCtaContent />
           </a>
-          <a href={siteConfig.demoUrl} className={styles.demo}>
+          <a data-site-cta="secondary" href={siteConfig.demoUrl} className={styles.demo}>
             See demo <ArrowRight size={18} aria-hidden="true" />
           </a>
         </div>

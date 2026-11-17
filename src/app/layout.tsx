@@ -62,12 +62,14 @@ const archivoItalic = Archivo({
   weight: ["600", "700", "800"],
   style: "italic",
   variable: "--font-archivo-italic",
+  preload: false,
   display: "swap",
 });
 const heroHeading = Instrument_Sans({
   subsets: ["latin"],
   weight: "500",
   variable: "--font-hero-heading",
+  preload: false,
   display: "swap",
 });
 const heroUi = localFont({
@@ -90,6 +92,7 @@ const inter = Inter({
 const geistMono = Geist_Mono({
   subsets: ["latin"],
   variable: "--font-geist-mono",
+  preload: false,
   display: "swap",
 });
 
@@ -209,8 +212,8 @@ export default async function RootLayout({
     imageUrl: post.coverImage
       ? urlForImage(post.coverImage)
           .ignoreImageParams()
-          .width(1440)
-          .quality(100)
+          .width(750)
+          .quality(85)
           .auto("format")
           .url()
       : null,

@@ -41,6 +41,7 @@ function CtaLink({
 
   return (
     <TrackedLink
+      data-site-cta={tone}
       className={`${styles.cta} ${tone === "primary" ? styles.ctaPrimary : styles.ctaSecondary}`}
       destination={destination}
       eventLabel={`product_${cta.destination}`}

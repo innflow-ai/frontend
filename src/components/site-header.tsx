@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import googleButtonStyles from "./google-cta.module.css";
 import { GoogleCtaContent } from "@/components/google-cta-content";
 import { ArrowRight } from "@/components/icons/mage/ArrowRight";
 import { ChevronDown as CaretDown } from "@/components/icons/mage/ChevronDown";
@@ -335,11 +336,15 @@ export function SiteHeader() {
           </a>
         </nav>
         <div className={styles.headerActions}>
-          <a className={styles.login} href={`${siteConfig.appOrigin}/login`}>
+          <a
+            className={styles.login}
+            href={`${siteConfig.appOrigin}/login`}
+          >
             Log in
           </a>
           <TrackedLink
-            className={styles.darkButton}
+            data-site-cta="primary"
+            className={`${styles.darkButton} ${googleButtonStyles.raisedSignIn}`}
             destination={siteConfig.googleAuthUrl}
             eventLabel="baselane_header_signup"
             aria-label="Continue with Google"

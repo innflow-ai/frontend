@@ -148,7 +148,7 @@ export function BaselaneInsurance() {
               required
               pattern=".*[0-9].*"
             />
-            <button type="submit" className={styles.primary}>
+            <button data-site-cta="primary" type="submit" className={styles.primary}>
               Prepare property brief
             </button>
             <small>
@@ -287,7 +287,7 @@ export function BaselaneInsurance() {
             </tbody>
           </table>
         </section>
-        <a href="#property-brief" className={styles.primary}>
+        <a data-site-cta="primary" href="#property-brief" className={styles.primary}>
           Prepare property brief
         </a>
       </section>

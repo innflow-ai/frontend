@@ -84,7 +84,6 @@ function MobileLatestPosts({
                   alt={post.imageAlt}
                   width={72}
                   height={46}
-                  quality={100}
                   sizes="72px"
                 />
               ) : (

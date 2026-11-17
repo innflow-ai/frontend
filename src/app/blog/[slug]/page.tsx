@@ -206,7 +206,7 @@ export default async function BlogPostPage({ params }: RouteParams) {
               ) : null}
             </aside>
             <div className={styles.articleMain}>
-              <BlogArticleIntroCta />
+              <BlogArticleIntroCta category={post.category} />
               {post.body ? (
                 <div className={styles.body}>
                   <BlogPortableBody

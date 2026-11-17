@@ -91,7 +91,11 @@ export function TemplateFooter({
             </a>
             <CustomerSupportHours />
           </div>
-          <a className={styles.googleCta} href={siteConfig.googleAuthUrl}>
+          <a
+            data-site-cta="primary"
+            className={styles.googleCta}
+            href={siteConfig.googleAuthUrl}
+          >
             <GoogleCtaContent />
           </a>
         </div>

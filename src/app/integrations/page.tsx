@@ -1,4 +1,4 @@
-import { BaselineClosing } from "@/app/preview/scroll-showcase/baseline-lower-sections";
+import { BaselineClosing } from "@/app/preview/scroll-showcase/baseline-closing";
 import { ArrowDown as MageArrowDown } from "@/components/icons/mage";
 import { IntegrationDirectory } from "@/components/integration-directory";
 import styles from "@/components/integrations.module.css";

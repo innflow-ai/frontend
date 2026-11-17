@@ -47,10 +47,14 @@ function Scene({
 function Actions() {
   return (
     <div className={styles.actions}>
-      <a href={siteConfig.googleAuthUrl} className={styles.google}>
+      <a
+        data-site-cta="primary"
+        href={siteConfig.googleAuthUrl}
+        className={styles.google}
+      >
         <GoogleCtaContent />
       </a>
-      <a href={siteConfig.demoUrl} className={styles.demo}>
+      <a data-site-cta="secondary" href={siteConfig.demoUrl} className={styles.demo}>
         See demo <ArrowRight size={18} />
       </a>
     </div>
@@ -168,6 +172,7 @@ export async function BaselaneProductPage({
             {kind === "rent-collection" ? (
               <>
                 <a
+                  data-site-cta="primary"
                   className={`${styles.heroGoogle} ${googleCtaStyles.cream}`}
                   href={siteConfig.googleAuthUrl}
                 >

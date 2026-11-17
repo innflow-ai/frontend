@@ -131,11 +131,15 @@ export function WorkspaceOverview() {
                 emphasis="work forward."
               />
             </h2>
-            <p className={styles.introduction}>
+            <p data-home-copy className={styles.introduction}>
               Schedule meetings, prepare follow-ups, review decisions, and
               handle billing questions.
             </p>
-            <a className={styles.cta} href={siteConfig.signupUrl}>
+            <a
+              data-site-cta="primary"
+              className={styles.cta}
+              href={siteConfig.signupUrl}
+            >
               Get started
             </a>
           </header>
@@ -189,7 +193,7 @@ export function WorkspaceOverview() {
                         </button>
                       )}
                     </h3>
-                    <div className={styles.description}>
+                    <div data-home-copy className={styles.description}>
                       <p
                         className={styles.summary}
                         aria-hidden={!tablet || active === index}

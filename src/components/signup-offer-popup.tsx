@@ -64,7 +64,11 @@ export function SignupOfferPopup({
       <p className={styles.eyebrow}>Limited-time offer</p>
       <h2 id="signup-offer-title">50% off signup</h2>
       <p>Save 50% on your first three months of Innflow.</p>
-      <a className={styles.signup} href={siteConfig.googleAuthUrl}>
+      <a
+        data-site-cta="primary"
+        className={styles.signup}
+        href={siteConfig.googleAuthUrl}
+      >
         Claim 50% off
       </a>
     </dialog>

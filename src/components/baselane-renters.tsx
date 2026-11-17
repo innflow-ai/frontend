@@ -75,7 +75,11 @@ export function BaselaneRenters() {
             Help your team create a more connected resident experience, with
             requests, property knowledge, and next steps in one flow.
           </p>
-          <a className={styles.darkButton} href={siteConfig.demoUrl}>
+          <a
+            data-site-cta="primary"
+            className={styles.darkButton}
+            href={siteConfig.demoUrl}
+          >
             Explore resident workflows <ArrowRight size={18} />
           </a>
         </div>

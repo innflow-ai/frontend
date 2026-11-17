@@ -1,12 +1,11 @@
+import { BaselineClosing, SHOW_PHOTO_CARDS } from "./baseline-closing";
+import { SHOW_TESTIMONIAL } from "./testimonial-visibility";
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, expect, it, vi } from "vitest";
 import type { Testimonial } from "@/lib/testimonials";
 import {
-  BaselineClosing,
   BaselineConnectedInfrastructure,
   BaselineCustomerStories,
-  SHOW_PHOTO_CARDS,
-  SHOW_TESTIMONIAL,
 } from "./baseline-lower-sections";
 
 const motionPreference = vi.hoisted(() => ({ reduced: false }));

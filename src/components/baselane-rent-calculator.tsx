@@ -226,7 +226,11 @@ export function BaselaneRentCalculator() {
         <div className={styles.articleLayout}>
           <aside>
             <h2>Bring the next step into innflow.</h2>
-            <a className={styles.button} href={siteConfig.googleAuthUrl}>
+            <a
+              data-site-cta="primary"
+              className={styles.button}
+              href={siteConfig.googleAuthUrl}
+            >
               <GoogleCtaContent />
             </a>
             <button className={styles.copy} type="button" onClick={copyLink}>

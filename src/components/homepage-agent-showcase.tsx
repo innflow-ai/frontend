@@ -27,18 +27,19 @@ export function HomepageAgentShowcase() {
           <header className={styles.heading}>
             <h2 id="agent-showcase-heading" data-mixed-heading>
               <MixedHeadingContent
-                title="Let your experts"
+                title="Let experts"
                 emphasis="build the agents"
               />
             </h2>
           </header>
-          <p className={styles.description}>
+          <p data-home-copy className={styles.description}>
             Understanding a task is the only prerequisite to automating it. Let
             your team who already understand the problem build the necessary
             agents. No learning curve involved.
           </p>
           <div className={styles.actions}>
             <TrackedLink
+              data-site-cta="primary"
               destination="/products/ai-agents"
               eventLabel="homepage_agent_showcase_explore"
               className={styles.primaryButton}
@@ -46,6 +47,7 @@ export function HomepageAgentShowcase() {
               Explore agents
             </TrackedLink>
             <TrackedLink
+              data-site-cta="secondary"
               destination="https://docs.innflow.ai"
               eventLabel="homepage_agent_showcase_docs"
               className={styles.secondaryButton}

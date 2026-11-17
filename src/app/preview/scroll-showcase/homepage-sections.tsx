@@ -1,6 +1,10 @@
 "use client";
-import { Check as MageCheck, Minus as MageMinus, Plus as MagePlus, ArrowRight as MageArrowRight } from '@/components/icons/mage';
-
+import {
+  Check as MageCheck,
+  Minus as MageMinus,
+  Plus as MagePlus,
+  ArrowRight as MageArrowRight,
+} from "@/components/icons/mage";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -125,7 +129,9 @@ function StateArtwork({
             <ul>
               {content.slice(2).map((line) => (
                 <li key={line}>
-                  <span aria-hidden="true">{after ? <MageCheck size="1em" /> : "·"}</span>
+                  <span aria-hidden="true">
+                    {after ? <MageCheck size="1em" /> : "·"}
+                  </span>
                   {line}
                 </li>
               ))}
@@ -230,7 +236,11 @@ export function FeatureStory({ section }: { section: FeatureSection }) {
                   </span>
                   {state.title}
                   <span className={styles.rowArrow} aria-hidden="true">
-                    {active === index ? <MageMinus size="1em" /> : <MagePlus size="1em" />}
+                    {active === index ? (
+                      <MageMinus size="1em" />
+                    ) : (
+                      <MagePlus size="1em" />
+                    )}
                   </span>
                 </span>
                 {(active === index || section.id === "channels") && (
@@ -389,7 +399,10 @@ export function ConnectedInfrastructure() {
         </h2>
         <p>Connect your channels, internal data and external systems.</p>
         <Link className={styles.textLink} href="/integrations">
-          View all integrations <span aria-hidden="true"><MageArrowRight size="1em" /></span>
+          View all integrations{" "}
+          <span aria-hidden="true">
+            <MageArrowRight size="1em" />
+          </span>
         </Link>
       </div>
       <fieldset className={styles.focusControls} aria-label="Integration focus">
@@ -521,7 +534,11 @@ export function PreviewClosing() {
           Connect your channels, bring in your context, and build the workflows
           your team needs.
         </p>
-        <a className={styles.primaryButton} href={siteConfig.demoUrl}>
+        <a
+          data-site-cta="primary"
+          className={styles.primaryButton}
+          href={siteConfig.demoUrl}
+        >
           Book an Innflow demo{" "}
           <span aria-hidden="true">
             <ChevronRight />
@@ -563,7 +580,9 @@ export function PreviewClosing() {
                   height={42}
                 />
                 <span>{scene.from}</span>
-                <span aria-hidden="true"><MageArrowRight size="1em" /></span>
+                <span aria-hidden="true">
+                  <MageArrowRight size="1em" />
+                </span>
                 <strong>{scene.to}</strong>
               </div>
             </div>

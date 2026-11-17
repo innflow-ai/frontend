@@ -95,6 +95,7 @@ function PaidPlanCard({
       </div>
 
       <TrackedLink
+        data-site-cta="primary"
         aria-label={`Continue with Google for ${name}`}
         className={styles.planCta}
         destination={siteConfig.googleAuthUrl}
@@ -179,6 +180,7 @@ export function PricingConfigurator() {
             </p>
           </div>
           <TrackedLink
+            data-site-cta="primary"
             aria-label="Continue with Google for Basic"
             className={styles.planCta}
             destination={siteConfig.googleAuthUrl}

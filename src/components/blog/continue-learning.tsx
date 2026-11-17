@@ -6,6 +6,7 @@ export function BlogContinueLearning() {
   return (
     <section className={styles.continue} aria-label="Continue">
       <TrackedLink
+        data-site-cta="primary"
         className={styles.continueButton}
         destination={siteConfig.signupUrl}
         eventLabel="blog_continue_signup"

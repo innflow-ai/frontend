@@ -280,7 +280,11 @@ export function BaselaneLibrary({ kind }: { kind: "articles" | "webinars" }) {
               </div>
             )}
             {!all && (
-              <a className={styles.fullCollection} href="/blog">
+              <a
+                data-site-cta="primary"
+                className={styles.fullCollection}
+                href="/blog"
+              >
                 Read the innflow blog <ArrowRight size={16} />
               </a>
             )}

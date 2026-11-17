@@ -94,7 +94,7 @@ export function TemplateFooter({
           <a
             data-site-cta="primary"
             className={styles.googleCta}
-            href={siteConfig.googleAuthUrl}
+            href={siteConfig.signupUrl}
           >
             <GoogleCtaContent />
           </a>

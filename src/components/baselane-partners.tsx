@@ -353,7 +353,7 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
               <a
                 data-site-cta="primary"
                 className={styles.button}
-                href={siteConfig.googleAuthUrl}
+                href={siteConfig.signupUrl}
               >
                 <GoogleCtaContent />
               </a>

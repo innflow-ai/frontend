@@ -34,12 +34,11 @@ it("keeps signup and demo destinations distinct in header, homepage, and footer"
   expect(signup.length).toBeGreaterThan(0);
   expect(demo.length).toBeGreaterThan(0);
   for (const link of signup) {
-    expect(link).toHaveAttribute("href", siteConfig.googleAuthUrl);
+    expect(link).toHaveAttribute("href", siteConfig.signupUrl);
     expect(link.getAttribute("href")).not.toBe(siteConfig.demoUrl);
   }
   for (const link of demo) {
     expect(link).toHaveAttribute("href", siteConfig.demoUrl);
-    expect(link.getAttribute("href")).not.toBe(siteConfig.googleAuthUrl);
     expect(link.getAttribute("href")).not.toBe(siteConfig.signupUrl);
   }
   vi.unstubAllGlobals();

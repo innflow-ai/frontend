@@ -60,7 +60,7 @@ function Action() {
     <a
       data-site-cta="primary"
       className={shared.button}
-      href={siteConfig.googleAuthUrl}
+      href={siteConfig.signupUrl}
     >
       <GoogleCtaContent />
     </a>

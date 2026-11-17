@@ -93,7 +93,10 @@ describe("EditorialHeader navigation", () => {
     ).toHaveAttribute("href", "/pricing");
     expect(
       within(navigation).getByRole("link", { name: "Login" }),
-    ).toHaveAttribute("href", "https://app.innflow.ai/login");
+    ).toHaveAttribute(
+      "href",
+      "https://app.innflow.ai/signup?callbackURL=%2Fworkflows",
+    );
     expect(
       screen.queryByRole("link", { name: "Book a demo" }),
     ).not.toBeInTheDocument();
@@ -203,7 +206,7 @@ describe("EditorialHeader navigation", () => {
     render(<EditorialHeader latestBlogPosts={latestBlogPosts} />);
 
     expect(
-      screen.getByRole("button", { name: "Continue with Google" }),
+      screen.getByRole("link", { name: "Continue with Google" }),
     ).toBeInTheDocument();
     expect(
       screen.queryByRole("button", { name: "Log in" }),
@@ -273,7 +276,7 @@ describe("EditorialHeader navigation", () => {
     expect(mobile.getByRole("link", { name: "Pricing" })).toBeInTheDocument();
     expect(mobile.getByRole("link", { name: "Blog" })).toBeInTheDocument();
     expect(
-      mobile.getByRole("button", { name: "Continue with Google" }),
+      mobile.getByRole("link", { name: "Continue with Google" }),
     ).toHaveClass(styles.mobileCta);
     expect(
       mobile.queryByRole("link", { name: "Sign Up" }),

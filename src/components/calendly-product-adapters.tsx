@@ -24,7 +24,7 @@ function cta(cta: ProductCta) {
     href: /\b(?:book|request|see|schedule)\b.*\bdemo\b/i.test(cta.label)
       ? siteConfig.demoUrl
       : cta.destination === "signup"
-        ? siteConfig.googleAuthUrl
+        ? siteConfig.signupUrl
         : cta.destination === "contact"
           ? siteConfig.contactUrl
           : siteConfig.demoUrl,
@@ -208,7 +208,7 @@ export async function CalendlyFeaturePage({
         faqHeading: faqs.heading,
         primaryCta: {
           label: "Get started with Google",
-          href: siteConfig.googleAuthUrl,
+          href: siteConfig.signupUrl,
         },
         heroArtwork: (
           <Image

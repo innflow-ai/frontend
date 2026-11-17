@@ -116,10 +116,10 @@ it("offers Google, email and the general sign-in page", () => {
   expect(screen.queryByText("HOMEPAGE MOTION STUDY")).not.toBeInTheDocument();
   expect(
     screen.getByRole("link", { name: "Continue with Google" }),
-  ).toHaveAttribute("href", siteConfig.googleAuthUrl);
+  ).toHaveAttribute("href", siteConfig.signupUrl);
   expect(
     screen.getByRole("link", { name: "More sign-in options" }),
-  ).toHaveAttribute("href", `${siteConfig.appOrigin}/login`);
+  ).toHaveAttribute("href", siteConfig.signupUrl);
   expect(
     screen.queryByRole("link", { name: "Book a demo" }),
   ).not.toBeInTheDocument();

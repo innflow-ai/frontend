@@ -117,7 +117,7 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
               <a
                 data-site-cta="primary"
                 className={styles.button}
-                href={careers ? careerUrl : siteConfig.googleAuthUrl}
+                href={careers ? careerUrl : siteConfig.signupUrl}
               >
                 {careers ? (
                   <>

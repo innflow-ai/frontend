@@ -122,7 +122,7 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
               <TrackedLink
                 data-site-cta="primary"
                 className={styles.primaryButton}
-                destination={siteConfig.googleAuthUrl}
+                destination={siteConfig.signupUrl}
                 eventLabel="hero_get_started"
               >
                 <GoogleCtaContent />
@@ -386,7 +386,7 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
           <div className={styles.actions}>
             <TrackedLink
               data-site-cta="primary"
-              destination={siteConfig.googleAuthUrl}
+              destination={siteConfig.signupUrl}
               eventLabel="landing_final_get_started"
               className={styles.primaryButton}
             >

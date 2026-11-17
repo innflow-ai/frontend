@@ -2,14 +2,19 @@ const appOrigin = (
   process.env.NEXT_PUBLIC_APP_ORIGIN ?? "https://app.innflow.ai"
 ).replace(/\/$/, "");
 
+const signupUrl = new URL(
+  process.env.NEXT_PUBLIC_SIGNUP_URL ?? "/signup",
+  appOrigin,
+);
+signupUrl.pathname = "/signup";
+signupUrl.searchParams.set("callbackURL", "/workflows");
+
 export const siteConfig = {
   name: "Innflow",
   marketingOrigin:
     process.env.NEXT_PUBLIC_MARKETING_ORIGIN ?? "https://innflow.ai",
   appOrigin,
-  signupUrl: process.env.NEXT_PUBLIC_SIGNUP_URL ?? `${appOrigin}/signup`,
-  googleAuthUrl:
-    process.env.NEXT_PUBLIC_GOOGLE_AUTH_URL ?? `${appOrigin}/auth/google`,
+  signupUrl: signupUrl.href,
   demoUrl:
     "https://cal.com/julian-patrick-afu0u2/innflow-demo?overlayCalendar=true",
   contactUrl: process.env.NEXT_PUBLIC_CONTACT_URL ?? "/contact",

@@ -1,8 +1,6 @@
 import type { NextConfig } from "next";
 
-const appOrigin = (
-  process.env.NEXT_PUBLIC_APP_ORIGIN ?? "https://app.innflow.ai"
-).replace(/\/$/, "");
+import { siteConfig } from "./src/config/site";
 
 const nextConfig: NextConfig = {
   images: {
@@ -25,8 +23,7 @@ const nextConfig: NextConfig = {
       { source: "/features", destination: "/products", permanent: true },
       {
         source: "/signup",
-        destination:
-          process.env.NEXT_PUBLIC_SIGNUP_URL ?? `${appOrigin}/signup`,
+        destination: siteConfig.signupUrl,
         permanent: false,
       },
       { source: "/BL/BL-about", destination: "/about", permanent: true },
@@ -192,7 +189,7 @@ const nextConfig: NextConfig = {
 
       {
         source: "/login",
-        destination: `${appOrigin}/login`,
+        destination: siteConfig.signupUrl,
         permanent: false,
       },
       {

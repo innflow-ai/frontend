@@ -81,7 +81,7 @@ export function BaselaneHomepage({ children }: { children?: ReactNode }) {
                 <div className={styles.actions}>
                   <TrackedLink
                     data-site-cta="primary"
-                    destination={siteConfig.googleAuthUrl}
+                    destination={siteConfig.signupUrl}
                     eventLabel="baselane_hero_signup"
                     className={styles.blueButton}
                   >

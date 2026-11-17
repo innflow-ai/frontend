@@ -78,7 +78,7 @@ export function SiteCta({
             <TrackedLink
               data-site-cta="primary"
               className={styles.darkButton}
-              destination={siteConfig.googleAuthUrl}
+              destination={siteConfig.signupUrl}
               eventLabel="baselane_closing_signup"
             >
               <GoogleCtaContent />

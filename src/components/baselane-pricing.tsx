@@ -129,7 +129,7 @@ function PlanLink({
       data-site-cta="primary"
       className={`${styles.button} ${compact ? styles.compactButton : ""} ${featured ? styles.primaryButton : ""}`}
       destination={
-        enterprise ? siteConfig.contactUrl : siteConfig.googleAuthUrl
+        enterprise ? siteConfig.contactUrl : siteConfig.signupUrl
       }
       eventLabel={`pricing_${plan.name === "Basic" ? "free" : plan.name.toLowerCase()}_${enterprise ? "contact" : "signup"}`}
       aria-label={

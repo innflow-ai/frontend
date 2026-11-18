@@ -343,7 +343,7 @@ export function SiteHeader() {
             Log in
           </a>
           <TrackedLink
-            data-site-cta="primary"
+            data-site-cta="secondary"
             className={`${styles.darkButton} ${googleButtonStyles.raisedSignIn}`}
             destination={siteConfig.signupUrl}
             eventLabel="baselane_header_signup"

@@ -2,8 +2,9 @@ import Image from "next/image";
 import { siteConfig } from "@/config/site";
 import { CustomerSupportHours } from "./customer-support-hours";
 import { FooterLegalLinks } from "./footer-legal-links";
+import { FooterNewsletter } from "./footer-newsletter";
 import { GoogleCtaContent } from "./google-cta-content";
-import styles from "./site-shell.module.css";
+import styles from "./site-footer.module.css";
 
 const footerMenus = [
   {
@@ -107,120 +108,105 @@ const productFooterMenus = [
   },
 ];
 
-export function ProductFooter() {
-  return (
-    <div className={styles.page}>
-      <footer className={`${styles.footer} ${styles.productFooter}`}>
-        <div className={styles.footerGrid}>
-          <div>
-            <a href="/" aria-label="innflow home" className={styles.footerLogo}>
-              <Image
-                src="/brand/innflow-wordmark.svg"
-                width={105}
-                height={30}
-                alt="innflow"
-              />
-            </a>
-            <p>
-              Your AI agent workspace.
-              <br />
-              Connected in one place.
-            </p>
-            <a href={`mailto:${siteConfig.supportEmail}`}>
-              {siteConfig.supportEmail}
-            </a>
-            <CustomerSupportHours />
-          </div>
-          {productFooterMenus.map((group) => (
-            <div key={group.label}>
-              <h3>{group.label}</h3>
-              {group.links.map(([label, href]) => (
-                <a href={href} key={label}>
-                  {label}
-                </a>
-              ))}
-            </div>
-          ))}
-          <div>
-            <h3>Get started</h3>
-            <a href={siteConfig.demoUrl}>Book a demo</a>
-            <a href="/pricing">Pricing</a>
-            <a href={siteConfig.signupUrl}>Log in</a>
-            <a href={siteConfig.signupUrl}>
-              <GoogleCtaContent />
-            </a>
-          </div>
-        </div>
-        <div className={styles.footerBottom}>
-          <span>
-            © {new Date().getFullYear()} Innflow. All rights reserved.
-          </span>
-          <nav className={styles.legalLinks} aria-label="Legal">
-            <FooterLegalLinks />
-          </nav>
-        </div>
-      </footer>
-    </div>
-  );
-}
+const getStarted = {
+  label: "Get started",
+  links: [
+    ["Book a demo", siteConfig.demoUrl],
+    ["Pricing", "/pricing"],
+    ["Log in", siteConfig.signupUrl],
+  ],
+};
 
-export function SiteFooter() {
+const propertyTeams = {
+  label: "Property teams",
+  links: [
+    ["Long-term rentals", "/long-term-rentals"],
+    ["Mid-term rentals", "/mid-term-rentals"],
+    ["Short-term rentals", "/short-term-rentals"],
+    ["Resident experiences", "/renters"],
+  ],
+};
+
+const homeColumns = [
+  [footerMenus[0]],
+  [footerMenus[1], propertyTeams],
+  [footerMenus[2], getStarted],
+];
+
+const productColumns = [
+  [productFooterMenus[0]],
+  [productFooterMenus[1]],
+  [productFooterMenus[2], getStarted],
+];
+
+export function SiteFooter({ home = true }: { home?: boolean }) {
+  const columns = home ? homeColumns : productColumns;
+
   return (
-    <div className={styles.page}>
+    <div className={styles.shell}>
       <footer className={styles.footer}>
-        <div className={styles.footerGrid}>
-          <div>
-            <a href="/" aria-label="innflow home" className={styles.footerLogo}>
-              <Image
-                src="/brand/innflow-wordmark.svg"
-                width={105}
-                height={30}
-                alt="innflow"
-              />
-            </a>
-            <p>
-              Your AI agent workspace.
-              <br />
-              Connected in one place.
-            </p>
-            <a href={`mailto:${siteConfig.supportEmail}`}>
-              {siteConfig.supportEmail}
-            </a>
-            <CustomerSupportHours />
-          </div>
-          {footerMenus.map((group) => (
-            <div key={group.label}>
-              <h3>{group.label}</h3>
-              {group.links.map(([label, href]) => (
-                <a href={href} key={label}>
-                  {label}
-                </a>
-              ))}
+        <div className={styles.newsletterPanel}>
+          <FooterNewsletter />
+        </div>
+        <div className={styles.body}>
+          <div className={styles.upper}>
+            <div className={styles.brand}>
+              <a href="/" aria-label="Innflow home">
+                <Image
+                  src="/brand/innflow-wordmark.svg"
+                  width={132}
+                  height={38}
+                  alt="Innflow"
+                />
+              </a>
+              <p>
+                Your AI agent workspace.
+                <br />
+                Connected in one place.
+              </p>
             </div>
-          ))}
-          {/* One column to edit if Property teams is renamed or removed. */}
-          <div>
-            <h3>Property teams</h3>
-            <a href="/long-term-rentals">Long-term rentals</a>
-            <a href="/mid-term-rentals">Mid-term rentals</a>
-            <a href="/short-term-rentals">Short-term rentals</a>
-            <a href="/renters">Resident experiences</a>
-            <h3 className={styles.footerSubheading}>Get started</h3>
-            <a href={siteConfig.demoUrl}>Book a demo</a>
-            <a href="/pricing">Pricing</a>
-            <a href={siteConfig.signupUrl}>Log in</a>
-            <a href={siteConfig.signupUrl}>
+            <nav className={styles.columns} aria-label="Footer navigation">
+              {columns.map((column) => (
+                <div key={column[0].label}>
+                  {column.map((group) => (
+                    <div className={styles.group} key={group.label}>
+                      <h3>{group.label}</h3>
+                      <ul>
+                        {group.links.map(([label, href]) => (
+                          <li key={label}>
+                            <a href={href}>{label}</a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </nav>
+          </div>
+          <div className={styles.contact}>
+            <div>
+              <a href={`mailto:${siteConfig.supportEmail}`}>
+                {siteConfig.supportEmail}
+              </a>
+              <CustomerSupportHours />
+            </div>
+            <a
+              className={styles.googleCta}
+              data-site-cta="primary"
+              href={siteConfig.signupUrl}
+            >
               <GoogleCtaContent />
             </a>
           </div>
-        </div>
-        <div className={styles.footerBottom}>
-          <span>
-            © {new Date().getFullYear()} Innflow. All rights reserved.
-          </span>
-          <nav className={styles.legalLinks} aria-label="Legal">
-            <FooterLegalLinks />
-          </nav>
+          <div className={styles.legal}>
+            <nav aria-label="Legal">
+              <FooterLegalLinks />
+            </nav>
+            <span>
+              © {new Date().getFullYear()} Innflow. All rights reserved.
+            </span>
+          </div>
         </div>
       </footer>
     </div>

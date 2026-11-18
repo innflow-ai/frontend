@@ -15,9 +15,10 @@
   font-weight: 600;
 }
 .hero {
+  --plan-grid-width: 1200px;
   max-width: 1920px;
   margin: 0 24px;
-  padding: 96px max(32px, calc((100% - 1200px) / 2 - 24px)) 80px;
+  padding: 96px 32px 80px;
   background: var(--pricing-cloud);
   border-radius: 64px;
 }
@@ -102,13 +103,12 @@
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px;
   margin: 124px auto 0;
-  max-width: 1200px;
+  max-width: var(--plan-grid-width);
   isolation: isolate;
 }
 .plan {
   position: relative;
   min-width: 0;
-  min-height: 1030px;
   padding: 8px;
   background: var(--pricing-paper);
   border-radius: 48px;
@@ -251,7 +251,7 @@
   white-space: nowrap;
 }
 .page .capacityNote {
-  max-width: 1200px;
+  max-width: var(--plan-grid-width);
   margin: 32px auto 0;
   font-size: 12px;
   line-height: 20px;
@@ -440,11 +440,12 @@
   overscroll-behavior-x: contain;
 }
 .comparisonInner {
+  --feature-column-width: 25.5%;
   min-width: 800px;
 }
 .comparePlans {
   display: grid;
-  grid-template-columns: 25.5% repeat(4, minmax(0, 1fr));
+  grid-template-columns: var(--feature-column-width) repeat(4, minmax(0, 1fr));
   border-bottom: 1px solid var(--pricing-line);
 }
 .comparePlans > div {
@@ -503,6 +504,9 @@
   table-layout: fixed;
   font-size: 14px;
 }
+.tableScroll col:first-child {
+  width: var(--feature-column-width);
+}
 .tableScroll th,
 .tableScroll td {
   height: 53px;
@@ -513,7 +517,6 @@
 }
 .tableScroll th:first-child {
   text-align: left;
-  width: 25.5%;
 }
 .tableScroll td {
   background: linear-gradient(
@@ -613,23 +616,80 @@
     max-width: 1920px;
   }
 }
-@media (max-width: 1199px) {
+@media (width > 700px) {
+  .page .hero > [data-size="hero"] {
+    --section-heading-title-size: clamp(48px, 6vw, 72px);
+    --section-heading-title-line: 1.06;
+  }
+  .planGrid {
+    column-gap: clamp(16px, 2vw, 24px);
+    margin-top: 88px;
+  }
+  .plan {
+    display: grid;
+    /* Share the header, feature groups, and Enterprise note across each card row. */
+    grid-row: span 6;
+    grid-template-rows: subgrid;
+    row-gap: 0;
+  }
+  .planFeatures {
+    display: grid;
+    grid-row: span 5;
+    grid-template-rows: subgrid;
+    row-gap: 0;
+  }
+  .planTop {
+    container-type: inline-size;
+    gap: 24px;
+    min-height: 0;
+    padding-inline: 20px;
+  }
+  .price {
+    min-height: 66px;
+    margin-top: 0;
+  }
+  .price strong {
+    font-size: clamp(46px, 29cqi, 60px);
+  }
+  .price strong .cents {
+    font-size: clamp(20px, 11.5cqi, 26px);
+    line-height: 1;
+  }
+  .price del {
+    font-size: clamp(17px, 9.5cqi, 22px);
+  }
+  .price[data-business="true"] strong {
+    font-size: clamp(42px, 26cqi, 60px);
+  }
+  .price[data-business="true"]:has(del) strong {
+    font-size: clamp(42px, 23cqi, 54px);
+  }
+  .scrollHint {
+    display: none;
+  }
+}
+@media (700px < width < 1100px) {
   .hero {
+    --plan-grid-width: 888px;
     padding: 72px 32px 56px;
   }
   .planGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 64px 24px;
-    margin-top: 96px;
-  }
-  .plan {
-    min-height: 780px;
-  }
-  .planTop {
-    min-height: 368px;
+    row-gap: 40px;
+    margin-top: 72px;
   }
   .comparison {
-    padding: 96px 40px;
+    padding: 96px 24px;
+  }
+  .comparisonInner {
+    min-width: 0;
+  }
+  .tableScroll th,
+  .tableScroll td {
+    padding-inline: 10px;
+  }
+  .page .compactButton {
+    padding-inline: 8px;
   }
 }
 @media (max-width: 700px) {
@@ -670,7 +730,6 @@
     gap: 64px;
   }
   .plan {
-    min-height: 0;
     border-radius: 40px;
   }
   .planTop {

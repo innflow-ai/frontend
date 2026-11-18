@@ -353,13 +353,14 @@ export function BaselanePricing() {
                   {groups.map((group, groupIndex) => (
                     <div className={styles.featureSection} key={group.title}>
                       <h3 data-mixed-heading>
+                        <span
+                          className={styles.featureIcon}
+                          data-category={groupIndex}
+                          aria-hidden="true"
+                        >
+                          <group.icon size={16} />
+                        </span>
                         <MixedHeadingText>
-                          <span
-                            className={styles.featureIcon}
-                            data-category={groupIndex}
-                          >
-                            <group.icon size={16} />
-                          </span>
                           {
                             [
                               "Workflows",
@@ -431,7 +432,11 @@ export function BaselanePricing() {
               {allOpen ? <MageMinus size={16} /> : <MagePlus size={16} />}
             </button>
             <p>
-              All plans in USD. Scroll across to compare on smaller screens.
+              All plans in USD.
+              <span className={styles.scrollHint}>
+                {" "}
+                Scroll across to compare on smaller screens.
+              </span>
             </p>
           </div>
           <section
@@ -491,6 +496,10 @@ export function BaselanePricing() {
                       <caption className={styles.srOnly}>
                         {group.title} by Innflow plan
                       </caption>
+                      <colgroup>
+                        <col />
+                        <col span={plans.length} />
+                      </colgroup>
                       <thead className={styles.srOnly}>
                         <tr>
                           <th scope="col">Feature</th>
@@ -549,6 +558,10 @@ export function BaselanePricing() {
                       <caption className={styles.srOnly}>
                         {group.label} by Innflow plan
                       </caption>
+                      <colgroup>
+                        <col />
+                        <col span={plans.length} />
+                      </colgroup>
                       <thead>
                         <tr>
                           <th scope="col">

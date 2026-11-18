@@ -275,6 +275,7 @@
   margin: 8px 0 20px;
 }
 .page .button {
+  --site-button-ink: #000;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -293,15 +294,8 @@
 .button img {
   flex-shrink: 0;
 }
-.page .primaryButton {
-  background: var(--pricing-ink);
-  color: var(--pricing-paper);
-}
 .page .button:hover {
   background: #e8e7e3;
-}
-.page .primaryButton:hover {
-  background: #244362;
 }
 .planFeatures {
   padding: 24px 16px;
@@ -436,8 +430,6 @@
 }
 .tableScroll {
   position: relative;
-  overflow-x: auto;
-  overscroll-behavior-x: contain;
 }
 .comparisonInner {
   --feature-column-width: 25.5%;
@@ -762,7 +754,8 @@
     max-width: 260px;
   }
   .tableScroll {
-    position: relative;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
     margin-right: -24px;
     padding-right: 24px;
   }

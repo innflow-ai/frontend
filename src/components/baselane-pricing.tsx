@@ -123,11 +123,10 @@ function PlanLink({
   compact?: boolean;
 }) {
   const enterprise = plan.name === "Enterprise";
-  const featured = plan.name === "Pro";
   return (
     <TrackedLink
       data-site-cta="primary"
-      className={`${styles.button} ${compact ? styles.compactButton : ""} ${featured ? styles.primaryButton : ""}`}
+      className={compact ? `${styles.button} ${styles.compactButton}` : styles.button}
       destination={
         enterprise ? siteConfig.contactUrl : siteConfig.signupUrl
       }
@@ -142,7 +141,7 @@ function PlanLink({
       {!compact && (
         // biome-ignore lint/performance/noImgElement: Exact, local Figma control asset.
         <img
-          src={`/pricing/figma/arrow-right${featured ? "-light" : ""}.svg`}
+          src="/pricing/figma/arrow-right.svg"
           alt=""
           width={24}
           height={24}
@@ -444,7 +443,6 @@ export function BaselanePricing() {
             aria-label="Plan feature comparison"
             // biome-ignore lint/a11y/noNoninteractiveTabindex: Keyboard access to horizontal comparison scrolling.
             tabIndex={0}
-            data-lenis-prevent
           >
             <div className={styles.comparisonInner}>
               <div className={styles.comparePlans}>

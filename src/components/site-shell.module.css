@@ -54,12 +54,12 @@
   position: fixed;
   z-index: 90;
   inset: 16px max(40px, calc((100vw - 1320px) / 2)) auto;
-  min-height: 64px;
+  min-height: var(--site-header-height, 54px);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: 10px 32px;
+  padding: 5px 32px;
   border-radius: 45px;
   color: var(--ink);
   isolation: isolate;
@@ -221,12 +221,15 @@
     transform 0.18s;
 }
 .headerActions > :is(.login, .darkButton) {
-  min-height: 48px;
+  min-height: 44px;
   line-height: 20px;
   flex-shrink: 0;
 }
 .headerActions > .login {
-  padding: 12px 22px;
+  padding: 6px 18px;
+}
+.header .headerActions > .darkButton {
+  padding: 6px 18px !important;
 }
 .page .darkButton {
   background: var(--button-primary);
@@ -497,217 +500,6 @@
 .supportRow h3 {
   font-size: 21px;
 }
-.closingWrap {
-  padding: 40px max(24px, calc((100vw - 1360px) / 2)) 0;
-  background: linear-gradient(to bottom, transparent 50%, var(--ink) 50%);
-}
-.closing {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  min-height: 420px;
-  padding: 88px 28px 112px;
-  border: 2px solid rgb(1 34 50 / 65%);
-  border-radius: 28px;
-  background: var(--bl-navy);
-  color: #012232;
-  text-align: center;
-  box-shadow: 0 0 0 1px rgb(255 255 255 / 12%);
-}
-.closing::before {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: url("/brand/blog/apartment-sky-cta.png") center bottom / cover;
-  opacity: 0.92;
-  content: "";
-  pointer-events: none;
-}
-.page .closing h2 {
-  max-width: 800px;
-  margin-inline: auto;
-}
-.page .closing p {
-  max-width: 560px;
-  font-size: 20px;
-  margin: 25px auto 28px;
-}
-.closing .actions {
-  flex-wrap: wrap;
-  gap: 16px;
-}
-.membershipSignup {
-  max-width: 620px;
-  margin: 36px auto 0;
-  padding: 28px;
-  border: 1px solid rgb(1 34 50 / 24%);
-  border-radius: 20px;
-  background: rgb(255 255 255 / 84%);
-  backdrop-filter: blur(16px);
-  text-align: left;
-}
-.page .membershipSignup h3 {
-  font-size: 24px;
-  line-height: 1.2;
-}
-.page .membershipSignup p {
-  margin: 10px 0 22px;
-  font-size: 16px;
-  line-height: 1.5;
-}
-.membershipFields {
-  min-width: 0;
-  margin: 0;
-  padding: 0;
-  border: 0;
-}
-.membershipFields label {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 14px;
-}
-.membershipInputRow {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  gap: 4px;
-  padding: 4px;
-  border: 1px solid rgb(1 34 50 / 35%);
-  border-radius: 999px;
-  background: rgb(255 255 255 / 90%);
-}
-.membershipInputRow:focus-within {
-  outline: 2px solid #012232;
-  outline-offset: 3px;
-}
-.membershipInputRow input {
-  flex: 1;
-  min-width: 0;
-  min-height: 48px;
-  border: 0;
-  border-radius: 999px;
-  background: transparent;
-  padding: 12px 14px;
-  outline: none;
-  color: #012232;
-  font: inherit;
-}
-.membershipInputRow input::placeholder {
-  color: #51606f;
-}
-.membershipInputRow button {
-  display: inline-flex;
-  font-family: var(--font-button, var(--font-sans));
-  line-height: 1.25;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  flex-shrink: 0;
-  min-height: 48px;
-  padding: 12px 20px;
-  border: 0;
-  border-radius: 999px;
-  background: #012232;
-  color: var(--bl-cream);
-}
-.membershipInputRow :disabled {
-  cursor: not-allowed;
-}
-@media (max-width: 600px) {
-  .membershipSignup {
-    padding: 22px 18px;
-  }
-  .membershipInputRow input {
-    padding-inline: 8px;
-    font-size: 16px;
-  }
-  .membershipInputRow button {
-    padding-inline: 12px;
-    white-space: nowrap;
-  }
-}
-@media (max-width: 420px) {
-  .membershipSignup {
-    padding-inline: 12px;
-  }
-  .membershipInputRow button {
-    font-size: 14px;
-  }
-  .membershipInputRow button {
-    padding-inline: 10px;
-  }
-}
-.mobileBreak {
-  display: none;
-}
-.footer {
-  padding: 72px max(40px, calc((100vw - 1320px) / 2)) 30px;
-  background: var(--ink);
-  color: #aec0c7;
-}
-.footerGrid {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
-  gap: 40px;
-}
-.footerLogo img {
-  filter: brightness(0) invert(1);
-}
-.productFooter {
-  background: #202020;
-  color: rgb(255 255 255 / 75%);
-}
-.productFooter .footerLogo img {
-  filter: brightness(0) invert(1);
-}
-.productFooter .footerGrid h3 {
-  color: #fff;
-  border-bottom-color: rgb(255 255 255 / 25%);
-}
-.productFooter .footerGrid a:hover {
-  color: #fff;
-}
-.productFooter .footerBottom,
-.productFooter .legalLinks a {
-  color: rgb(255 255 255 / 70%);
-}
-.footerGrid h3 {
-  font-size: 18px;
-  color: #edf3f4;
-  border-bottom: 1px solid #738690;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
-}
-.footerGrid a {
-  display: block;
-  margin-bottom: 14px;
-}
-.footerGrid a:hover {
-  color: white;
-}
-.footerGrid p {
-  margin: 24px 0;
-}
-.footerBottom {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  padding-top: 50px;
-  font-size: 13px;
-}
-.legalLinks {
-  display: flex;
-  flex: 1 1 640px;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 10px 20px;
-}
-.legalLinks a {
-  overflow-wrap: anywhere;
-}
-.legalLinks a:hover {
-  text-decoration: underline;
-}
 @media (max-width: 1100px) {
   .header {
     gap: 16px;
@@ -742,14 +534,13 @@
 @media (max-width: 1180px) {
   .header {
     inset-inline: 20px;
-    padding: 8px 14px;
-    min-height: 48px;
+    padding: 2px 14px;
   }
-  .header .darkButton {
+  .header .headerActions > .darkButton {
     font-size: 13px;
     line-height: 18px;
-    min-height: 40px;
-    padding: 8px 14px !important;
+    min-height: 44px;
+    padding-inline: 12px !important;
     flex-shrink: 0;
   }
   .header .darkButton > span {
@@ -763,7 +554,10 @@
     display: none;
   }
   .menuToggle {
-    display: flex;
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
     padding: 0;
     border: 0;
     background: none;
@@ -985,37 +779,6 @@
   .supportRow {
     padding-block: 25px;
   }
-  .closingWrap {
-    padding: 24px 16px 0;
-  }
-  .closing {
-    min-height: 400px;
-    padding: 56px 20px 80px;
-    border-radius: 22px;
-  }
-  .page .closing p {
-    font-size: 18px;
-  }
-  .page .closing .membershipSignup p {
-    font-size: 14px;
-  }
-  .mobileBreak {
-    display: block;
-  }
-  .footer {
-    padding: 48px 24px 30px;
-  }
-  .footerGrid {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-  .footerBottom {
-    flex-direction: column;
-  }
-  .legalLinks {
-    flex: auto;
-    justify-content: flex-start;
-  }
 }
 @media (prefers-reduced-motion: reduce) {
   .header {
@@ -1027,9 +790,6 @@
   }
 }
 
-.page .footerSubheading {
-  margin-top: 32px;
-}
 .referenceLinks {
   margin-top: 45px;
   padding-top: 24px;
@@ -1099,7 +859,7 @@
   .header .logo img {
     width: 64px;
   }
-  .header .darkButton {
+  .header .headerActions > .darkButton {
     padding-inline: 8px !important;
     font-size: 12px;
   }
@@ -1107,9 +867,13 @@
 
 /* The open mobile header and menu form one opaque, full-screen surface. */
 @media (max-width: 1180px) {
+  .chromeScope {
+    --mobile-open-header-height: calc(64px + env(safe-area-inset-top));
+  }
+
   .header.mobileOpen {
     inset: 0 0 auto;
-    height: calc(80px + env(safe-area-inset-top));
+    height: var(--mobile-open-header-height);
     padding-top: calc(8px + env(safe-area-inset-top));
     border-radius: 0;
     background: var(--paper);
@@ -1126,14 +890,14 @@
     --sky-muted: #53636a;
     --sky-line: #d8dcda;
     inset: 0;
-    padding-top: calc(80px + env(safe-area-inset-top));
+    padding-top: var(--mobile-open-header-height);
     background: var(--paper);
     color: var(--ink);
     overscroll-behavior: contain;
   }
 
   .mobileMenu nav {
-    min-height: calc(100dvh - 80px - env(safe-area-inset-top));
+    min-height: calc(100dvh - var(--mobile-open-header-height));
     padding-bottom: calc(36px + env(safe-area-inset-bottom));
   }
 
@@ -1283,17 +1047,6 @@
   flex-shrink: 0;
   background: currentColor;
   mask: var(--mage-icon) center / contain no-repeat;
-}
-
-.membershipSuccess {
-  margin-top: 20px;
-  padding: 20px 24px;
-  border: 1px solid var(--bl-navy);
-  border-radius: 16px;
-  background: var(--bl-green);
-  color: var(--bl-navy);
-  font-size: 16px;
-  line-height: 1.5;
 }
 
 .dropdown a[data-browse-all]:is(:hover, :focus-visible) {

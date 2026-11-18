@@ -1,8 +1,8 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { SiteCta } from "./site-cta";
-import { ProductFooter, SiteFooter } from "./site-footer";
+import { LaunchDirectoryMarquee } from "./launch-directory-marquee";
+import { SiteFooter } from "./site-footer";
 
 /**
  * Shared marketing footer. Help keeps its own shell: a fixed sidebar, chat
@@ -13,8 +13,8 @@ export function SiteCloseAndFooter() {
   if (pathname === "/help") return null;
   return (
     <>
-      <SiteCta />
-      {pathname === "/" ? <SiteFooter /> : <ProductFooter />}
+      <LaunchDirectoryMarquee />
+      <SiteFooter home={pathname === "/"} />
     </>
   );
 }

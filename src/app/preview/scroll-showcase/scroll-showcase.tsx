@@ -183,26 +183,61 @@ function Illustration({ index, active }: { index: number; active: boolean }) {
  * Feature introduction on the homepage.
  * Chapters change from the tabs. The section stays in normal document flow
  * so scrolling the page does not pin the card or hide the navigation.
+ * On a phone or short screen, scrolling through the hero shifts its backdrop.
  */
 export function ScrollShowcase() {
+  const section = useRef<HTMLElement>(null);
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
   const [active, setActive] = useState(0);
   const [reduced, setReduced] = useState(false);
   const [isCompact, setIsCompact] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
     const compact = window.matchMedia(
       "(max-width: 800px), (max-height: 650px)",
     );
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const element = section.current;
+      if (!element || media.matches || !compact.matches) {
+        setProgress(0);
+        return;
+      }
+      const top = element.getBoundingClientRect().top;
+      // The unpinned hero travels through the viewport. Scroll shifts its
+      // backdrop only; it does not pin the page or change the chapter.
+      setProgress(
+        Math.max(
+          0,
+          Math.min(
+            1,
+            (window.innerHeight - top) /
+              (element.offsetHeight + window.innerHeight),
+          ),
+        ),
+      );
+    };
+    const requestUpdate = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
     const syncPreference = () => {
       setReduced(media.matches);
       setIsCompact(compact.matches);
+      requestUpdate();
     };
     media.addEventListener("change", syncPreference);
     compact.addEventListener("change", syncPreference);
     syncPreference();
+    update();
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate);
     return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", requestUpdate);
+      window.removeEventListener("resize", requestUpdate);
       media.removeEventListener("change", syncPreference);
       compact.removeEventListener("change", syncPreference);
     };
@@ -248,6 +283,7 @@ export function ScrollShowcase() {
         </div>
       </header>
       <section
+        ref={section}
         className={styles.scrollTrack}
         data-reduced={reduced}
         data-compact={isCompact}
@@ -258,10 +294,11 @@ export function ScrollShowcase() {
             className={styles.stage}
             style={
               {
-                // Tab selection shifts the backdrop. Scroll position does not.
                 "--gradient-progress": reduced
                   ? 0
-                  : (active + 0.5) / states.length,
+                  : isCompact
+                    ? (active + progress) / states.length
+                    : (active + 0.5) / states.length,
                 "--expansion": 1,
               } as CSSProperties
             }

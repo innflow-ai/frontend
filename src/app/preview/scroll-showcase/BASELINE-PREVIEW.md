@@ -12,7 +12,7 @@ available; the preview route now renders the separate baseline modules.
 
 | Section | Implementation | Figma source | Current interaction |
 | --- | --- | --- | --- |
-| Hero motion study | `scroll-showcase.tsx`, `scroll-showcase-motion.ts` | Existing hero plus September 16 recording | Normal-flow tabbed card. Page scrolling does not pin or advance chapters |
+| Hero motion study | `scroll-showcase.tsx`, `scroll-showcase-motion.ts` | Existing hero plus September 16 recording | Normal-flow tabbed card. Page scrolling does not pin or advance chapters. On a phone or short screen, scrolling through the hero shifts its backdrop |
 | One workspace. Every conversation. | `workspace-overview.tsx` | `350:11085`, `385:9888`, `385:9992`, `385:10096` | Four expanding cards; hover, click, focus, arrows, Home/End |
 | Channels | `baseline-features.tsx` | `350:11199`, later `405:*` illustration exports | Six selectable reference illustrations |
 | Agents | `baseline-features.tsx` | `350:11344` | First reference canvas; two explicitly pending illustrations |
@@ -55,8 +55,10 @@ from the overview hover recording.
 
 The hero no longer uses that scroll track. The card stays in normal document
 flow, and the tabs choose the chapter. Page scrolling does not pin the card or
-hide the navigation. The bottom chapter counter, progress bar, scroll hint, and
-skip control are not shown; chapter tabs remain available.
+hide the navigation. On a phone or short screen, scrolling through the hero
+shifts its backdrop without changing the selected chapter. The bottom chapter
+counter, progress bar, scroll hint, and skip control are not shown; chapter
+tabs remain available.
 
 The hero is explicitly a reference motion study. Its Calendly copy and outgoing
 reference links remain placeholders; adding an Innflow sign-in CTA does not

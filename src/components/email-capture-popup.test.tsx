@@ -18,6 +18,7 @@ import { EmailCapturePopup } from "./email-capture-popup";
 import { EmailCaptureSlot } from "./email-capture-slot";
 
 const route = vi.hoisted(() => ({ value: "/" }));
+let popupViewport: EventTarget & { matches: boolean };
 vi.mock("next/navigation", () => ({
   usePathname: () => route.value,
 }));
@@ -39,6 +40,8 @@ function setScroll(scrollY: number, innerHeight: number, scrollHeight: number) {
 
 beforeEach(() => {
   vi.useFakeTimers();
+  popupViewport = Object.assign(new EventTarget(), { matches: false });
+  vi.stubGlobal("matchMedia", () => popupViewport);
   route.value = "/";
   localStorage.clear();
   sessionStorage.clear();
@@ -278,5 +281,45 @@ it("does not load the card on an excluded page", async () => {
   await act(async () => {
     await vi.advanceTimersByTimeAsync(21_000);
   });
+  expect(screen.queryByRole("dialog")).toBeNull();
+});
+
+it("skips mobile viewports and cancels a desktop trigger when switching to mobile", async () => {
+  const setMobile = (mobile: boolean) => {
+    act(() => {
+      popupViewport.matches = mobile;
+      popupViewport.dispatchEvent(new Event("change"));
+    });
+  };
+
+  setMobile(true);
+  setScroll(900, 800, 1800);
+  render(<EmailCaptureSlot />);
+  fireEvent.scroll(window);
+  await act(async () => {
+    await vi.advanceTimersByTimeAsync(EMAIL_CAPTURE_DELAY_MS);
+  });
+  expect(screen.queryByRole("dialog")).toBeNull();
+  expect(sessionStorage.getItem(EMAIL_CAPTURE_SESSION_KEY)).toBeNull();
+
+  setMobile(false);
+  await act(async () => {
+    await vi.advanceTimersByTimeAsync(1);
+    await vi.dynamicImportSettled();
+  });
+  setMobile(true);
+  await act(async () => {
+    await vi.advanceTimersByTimeAsync(EMAIL_CAPTURE_DELAY_MS);
+  });
+  expect(screen.queryByRole("dialog")).toBeNull();
+  expect(sessionStorage.getItem(EMAIL_CAPTURE_SESSION_KEY)).toBeNull();
+
+  setMobile(false);
+  await act(async () => {
+    await vi.advanceTimersByTimeAsync(EMAIL_CAPTURE_DELAY_MS);
+  });
+  expect(screen.getByRole("dialog")).toBeInTheDocument();
+
+  setMobile(true);
   expect(screen.queryByRole("dialog")).toBeNull();
 });

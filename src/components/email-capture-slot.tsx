@@ -1,7 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
 import {
   EMAIL_CAPTURE_SESSION_KEY,
   EMAIL_CAPTURE_STORAGE_KEY,
@@ -14,6 +14,18 @@ import {
 
 type PopupComponent = typeof import("./email-capture-popup").EmailCapturePopup;
 
+const mobilePopupQuery =
+  "(max-width: 700px), (hover: none) and (pointer: coarse)";
+
+function subscribeToPopupViewport(update: () => void) {
+  const media = window.matchMedia(mobilePopupQuery);
+  media.addEventListener("change", update);
+  return () => media.removeEventListener("change", update);
+}
+
+const canShowPopup = () => !window.matchMedia(mobilePopupQuery).matches;
+const canShowPopupOnServer = () => false;
+
 /**
  * Loads the card after first paint, and only when this page is allowed to
  * show it. The form itself stays out of the first-load bundle.
@@ -21,9 +33,15 @@ type PopupComponent = typeof import("./email-capture-popup").EmailCapturePopup;
 export function EmailCaptureSlot() {
   const pathname = usePathname();
   const [Popup, setPopup] = useState<PopupComponent | null>(null);
-
+  const desktop = useSyncExternalStore(
+    subscribeToPopupViewport,
+    canShowPopup,
+    canShowPopupOnServer,
+  );
   useEffect(() => {
-    if (!emailCapture.enabled || isEmailCaptureExcluded(pathname)) return;
+    if (!desktop || !emailCapture.enabled || isEmailCaptureExcluded(pathname)) {
+      return;
+    }
     try {
       if (
         emailCaptureSeenThisSession(
@@ -66,9 +84,14 @@ export function EmailCaptureSlot() {
       if (idle !== undefined) idleWindow.cancelIdleCallback?.(idle);
       if (timer !== undefined) window.clearTimeout(timer);
     };
-  }, [pathname]);
+  }, [desktop, pathname]);
 
-  if (!Popup || !emailCapture.enabled || isEmailCaptureExcluded(pathname)) {
+  if (
+    !desktop ||
+    !Popup ||
+    !emailCapture.enabled ||
+    isEmailCaptureExcluded(pathname)
+  ) {
     return null;
   }
   return <Popup />;

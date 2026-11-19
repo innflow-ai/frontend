@@ -8,22 +8,16 @@ import { BotIcon } from "@/components/icons/bot-icon";
 import {
   Chart,
   Clock as MageClock,
-  Multiply as MageMultiply,
   Users as MageUsers,
   Video as MageVideo,
   Share,
   StarsA,
 } from "@/components/icons/mage";
 import { MixedHeadingContent } from "@/components/section-heading";
-import { siteConfig } from "@/config/site";
 import { TrackedLink } from "@/components/tracked-link";
+import { siteConfig } from "@/config/site";
 import { BookingCalendar } from "./booking-calendar";
 import { SchedulingAssistant } from "./scheduling-assistant";
-import {
-  chapterScrollProgress,
-  hideShowcaseNavigation,
-  showcaseMotion,
-} from "./scroll-showcase-motion";
 import styles from "./showcase.module.css";
 
 const showcaseIcons = [BotIcon, Share, StarsA, Chart];
@@ -185,117 +179,37 @@ function Illustration({ index, active }: { index: number; active: boolean }) {
   );
 }
 
+/**
+ * Feature introduction on the homepage.
+ * Chapters change from the tabs. The section stays in normal document flow
+ * so scrolling the page does not pin the card or hide the navigation.
+ */
 export function ScrollShowcase() {
-  const section = useRef<HTMLElement>(null);
-  const exit = useRef<HTMLDivElement>(null);
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
   const [active, setActive] = useState(0);
   const [reduced, setReduced] = useState(false);
   const [isCompact, setIsCompact] = useState(false);
-  const [progress, setProgress] = useState(0);
-  const motion = showcaseMotion(progress);
 
   useEffect(() => {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
     const compact = window.matchMedia(
       "(max-width: 800px), (max-height: 650px)",
     );
-    const header = document
-      .getElementById("baselane-preview-nav")
-      ?.closest("header");
-    const previousInert = header?.inert ?? false;
-    const previousHidden = header?.getAttribute("aria-hidden");
-    const restoreHeader = () => {
-      header?.removeAttribute("data-showcase-hidden");
-      if (header) {
-        header.inert = previousInert;
-        if (previousHidden === null || previousHidden === undefined)
-          header.removeAttribute("aria-hidden");
-        else header.setAttribute("aria-hidden", previousHidden);
-      }
-    };
     const syncPreference = () => {
       setReduced(media.matches);
       setIsCompact(compact.matches);
-      requestUpdate();
     };
     media.addEventListener("change", syncPreference);
     compact.addEventListener("change", syncPreference);
-    let frame = 0;
-    const update = () => {
-      frame = 0;
-      const element = section.current;
-      if (!element || media.matches) {
-        restoreHeader();
-        return;
-      }
-      const top = element.getBoundingClientRect().top;
-      if (compact.matches) {
-        // The unpinned layout travels through the viewport instead of a tall track.
-        setProgress(
-          Math.max(
-            0,
-            Math.min(
-              1,
-              (window.innerHeight - top) /
-                (element.offsetHeight + window.innerHeight),
-            ),
-          ),
-        );
-        restoreHeader();
-        return;
-      }
-      const range = element.offsetHeight - window.innerHeight;
-      const next = Math.max(0, Math.min(1, -top / Math.max(1, range)));
-      setProgress(next);
-      const state = showcaseMotion(next);
-      setActive(state.chapter);
-      if (
-        header &&
-        hideShowcaseNavigation(
-          next,
-          (
-            document.getElementById("workspace-overview") ?? exit.current
-          )?.getBoundingClientRect().top ??
-            element.getBoundingClientRect().bottom,
-          window.innerHeight,
-        ) &&
-        !header.contains(document.activeElement)
-      ) {
-        header.setAttribute("data-showcase-hidden", "true");
-        header.inert = true;
-        header.setAttribute("aria-hidden", "true");
-      } else restoreHeader();
-    };
-    const requestUpdate = () => {
-      if (!frame) frame = requestAnimationFrame(update);
-    };
     syncPreference();
-    update();
-    window.addEventListener("scroll", requestUpdate, { passive: true });
-    window.addEventListener("resize", requestUpdate);
-    document.addEventListener("focusin", requestUpdate);
     return () => {
-      cancelAnimationFrame(frame);
-      window.removeEventListener("scroll", requestUpdate);
-      window.removeEventListener("resize", requestUpdate);
       media.removeEventListener("change", syncPreference);
       compact.removeEventListener("change", syncPreference);
-      document.removeEventListener("focusin", requestUpdate);
-      restoreHeader();
     };
   }, []);
 
   function select(index: number) {
     setActive(index);
-    if (!section.current || reduced || isCompact) return;
-    const start = section.current.getBoundingClientRect().top + window.scrollY;
-    const range = section.current.offsetHeight - window.innerHeight;
-    // Instant native jump avoids racing the site's Lenis wheel controller.
-    window.scrollTo({
-      top: start + range * chapterScrollProgress(index),
-      behavior: "instant",
-    });
   }
 
   return (
@@ -334,7 +248,6 @@ export function ScrollShowcase() {
         </div>
       </header>
       <section
-        ref={section}
         className={styles.scrollTrack}
         data-reduced={reduced}
         data-compact={isCompact}
@@ -345,30 +258,15 @@ export function ScrollShowcase() {
             className={styles.stage}
             style={
               {
+                // Tab selection shifts the backdrop. Scroll position does not.
                 "--gradient-progress": reduced
                   ? 0
-                  : isCompact
-                    ? (active + progress) / states.length
-                    : motion.chapterProgress,
-                "--expansion": reduced || isCompact ? 1 : motion.expansion,
+                  : (active + 0.5) / states.length,
+                "--expansion": 1,
               } as CSSProperties
             }
           >
             <div className={styles.gradient} aria-hidden="true" />
-            <button
-              type="button"
-              className={styles.close}
-              aria-label="Skip showcase"
-              onClick={() => {
-                exit.current?.focus({ preventScroll: true });
-                exit.current?.scrollIntoView({
-                  behavior: "instant",
-                  block: "start",
-                });
-              }}
-            >
-              <MageMultiply size="1em" />
-            </button>
             <div className={styles.showcase}>
               <div className={styles.tabs} role="tablist" aria-label="Features">
                 {states.map((state, index) => (
@@ -467,7 +365,6 @@ export function ScrollShowcase() {
           </div>
         </div>
       </section>
-      <div ref={exit} tabIndex={-1} className={styles.exitAnchor} />
     </div>
   );
 }

@@ -218,7 +218,7 @@ Center the heading and supporting paragraph where the section calls for it. Work
 
 ### 12. Navigation and announcement
 
-The homepage begins with a flat white navigation area at 70px height and an optional 40px blue announcement strip. The floating header uses a 1320px width calculation, 64px minimum height, 45px corners, translucent white fill, 15px blur, and a subtle shadow. Navigation transitions with the hero rather than remaining a static 64px strip throughout. Dropdowns use 20px corners and stronger blur. Preserve dismissal, menu focus behavior, Escape handling, and mobile navigation. The main mobile navigation breakpoint is 1180px, independent of the content breakpoints.
+The homepage begins with a flat white navigation area at 70px height and an optional 40px blue announcement strip. The floating header uses a 1440px width calculation, 64px minimum height, 45px corners, translucent white fill, 15px blur, and a subtle shadow. Navigation transitions with the hero rather than remaining a static 64px strip throughout. Dropdowns use 20px corners and stronger blur. Preserve dismissal, menu focus behavior, Escape handling, and mobile navigation. The main mobile navigation breakpoint is 1180px, independent of the content breakpoints.
 
 ### 13. Closing product highlights
 
@@ -267,7 +267,7 @@ For new industry and cross-industry pages, adapt the homepage's typography, pale
 
 Breakpoints are literal CSS query values. Custom properties cannot be substituted directly into media-query conditions. Responsive values in the kit do not apply their own queries.
 
-Desktop hero motion uses a 500svh scroll track. Current motion logic reserves the first 12% for entry and begins exit at 84%, splitting the middle range into four chapters. Do not copy obsolete chapter percentages from the old preview README. At widths up to 800px, heights up to 650px, or reduced motion, the stage is unpinned with automatic height. Preserve controls and content reachability in those modes.
+The homepage hero is a normal-height tabbed card. Scrolling the page does not pin the card, advance its chapters, or hide the navigation. Tabs select the chapter. At widths up to 800px, heights up to 650px, or reduced motion, the stage stays in normal flow with automatic height. Preserve controls and content reachability in those modes.
 
 Use 150ms tooltip fades, 250ms tab changes, 280ms panel crossfades, 300ms feature-art fades, and 160ms signup transitions where those source components use them. Story layout-preview transitions use 600ms, reduced to zero for reduced motion. The workspace's old 400ms expansion rule is not a current desktop default; desktop rows override it.
 
@@ -328,7 +328,7 @@ The supplied Calendly folder is a historical extraction, with `tokens.json` meta
 | Hero | Guide describes a two-column split | Centered intro above an immersive tabbed showcase |
 | Footer | Light canvas | Large dark navy panel |
 | Layout | 1200px shell and generic gaps | 1280px lower content shell plus component-specific widths |
-| Motion | Limited behavioral guidance | Scroll chapters, unpinned compact mode, selected artwork, reduced-motion behavior |
+| Motion | Limited behavioral guidance | Tabbed hero chapters, selected artwork, reduced-motion behavior |
 
 Use current Innflow source first, this generated kit second, and historical Calendly material only as a reference. Brand comparisons are not implementation rules; no external brand needs to be imitated to complete an Innflow component. The original Calendly files remain intact at `/Users/ak/Downloads/Calendly_variables/`.
 

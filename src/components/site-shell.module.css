@@ -53,7 +53,8 @@
 .header {
   position: fixed;
   z-index: 90;
-  inset: 16px max(40px, calc((100vw - 1320px) / 2)) auto;
+  /* 1440px is a slight step up from the previous 1320px bar. */
+  inset: 16px max(40px, calc((100vw - 1440px) / 2)) auto;
   min-height: var(--site-header-height, 54px);
   display: flex;
   align-items: center;

@@ -14,23 +14,27 @@ import { ShowcaseTheme } from "@/components/showcase-theme";
 import { getPageTestimonials } from "@/lib/testimonials";
 import typography from "./homepage-typography.module.css";
 
-export async function ShowcaseHomepage() {
+export async function ShowcaseHomepage({
+  previewFallback = false,
+}: {
+  previewFallback?: boolean;
+}) {
   const stories = SHOW_TESTIMONIAL ? await getPageTestimonials("/") : null;
   return (
     <main id="main-content" className={`${styles.page} ${typography.headings}`}>
       <ScrollShowcase />
       <ShowcaseTheme>
         <WorkspaceOverview />
-        <HomepageAgentShowcase />
+        <HomepageCollaboration />
         <BaselineFeatures />
         {stories && (
           <BaselineCustomerStories
             testimonials={stories.testimonials}
             heading={stories.heading}
-            previewFallback
+            previewFallback={previewFallback}
           />
         )}
-        <HomepageCollaboration />
+        <HomepageAgentShowcase />
         <BaselineConnectedInfrastructure />
         <BaselineClosing />
       </ShowcaseTheme>

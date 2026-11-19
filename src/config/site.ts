@@ -15,6 +15,7 @@ export const siteConfig = {
     process.env.NEXT_PUBLIC_MARKETING_ORIGIN ?? "https://innflow.ai",
   appOrigin,
   signupUrl: signupUrl.href,
+  loginUrl: new URL("/login", appOrigin).href,
   demoUrl:
     "https://cal.com/julian-patrick-afu0u2/innflow-demo?overlayCalendar=true",
   contactUrl: process.env.NEXT_PUBLIC_CONTACT_URL ?? "/contact",

@@ -10,5 +10,5 @@ export const metadata = createPageMetadata({
 });
 
 export default function ScrollShowcasePage() {
-  return <ShowcaseHomepage />;
+  return <ShowcaseHomepage previewFallback />;
 }

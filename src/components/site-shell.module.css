@@ -535,18 +535,21 @@
 @media (max-width: 1180px) {
   .header {
     inset-inline: 20px;
-    padding: 2px 14px;
+    padding: 6px 14px;
   }
   .header .headerActions > .darkButton {
-    font-size: 13px;
-    line-height: 18px;
-    min-height: 44px;
-    padding-inline: 12px !important;
+    font-size: 12px;
+    line-height: 16px;
+    min-height: 36px;
+    padding: 4px 10px !important;
     flex-shrink: 0;
   }
   .header .darkButton > span {
-    gap: 8px;
-    line-height: 18px;
+    gap: 6px;
+  }
+  .header .darkButton > span img {
+    width: 16px;
+    height: 16px;
   }
   .headerActions {
     gap: 14px;
@@ -560,9 +563,10 @@
     width: 44px;
     height: 44px;
     padding: 0;
+    padding-inline-end: 8px;
     border: 0;
     background: none;
-    color: var(--ink);
+    color: #000;
   }
   .nav {
     display: none;
@@ -862,7 +866,6 @@
   }
   .header .headerActions > .darkButton {
     padding-inline: 8px !important;
-    font-size: 12px;
   }
 }
 

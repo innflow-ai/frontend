@@ -1,1 +1,1 @@
-export const SHOW_TESTIMONIAL = false;
+export const SHOW_TESTIMONIAL = true;

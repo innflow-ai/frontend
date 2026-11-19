@@ -88,7 +88,7 @@
 }
 @media (max-width: 1180px) {
   .previewScope {
-    --site-header-height: 48px;
+    --site-header-height: 56px;
   }
   .previewScope .flatHeader[data-home-navigation="true"] {
     inset-inline: 20px;

@@ -63,7 +63,10 @@
   gap: 12px;
   margin-top: 16px;
 }
-.oauthActions a:hover {
+.oauthActions > button[data-site-cta] {
+  font: 400 15px/20px var(--font-hero-ui), sans-serif;
+}
+.oauthActions :is(a, button):hover {
   transform: translateY(-1px);
 }
 .sticky {
@@ -1004,10 +1007,19 @@
     line-height: 1;
   }
   .oauthActions {
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: nowrap;
+    gap: 8px;
   }
-  .oauthActions a {
-    min-width: 232px;
+  .oauthActions > :is(a, button)[data-site-cta] {
+    min-height: 44px;
+    padding: 8px 9px !important;
+    font-size: 12px;
+  }
+  .oauthActions [data-google-cta] {
+    gap: 6px;
+  }
+  .oauthActions [data-google-cta] img {
+    width: 16px;
+    height: 16px;
   }
 }

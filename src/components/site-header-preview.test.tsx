@@ -37,64 +37,36 @@ it("keeps the experience strip off without leaving a gap above the nav", () => {
     "true",
   );
 });
-it("waits for the overview, responds to reverse scroll and resize, and preserves showcase hiding", () => {
-  let overviewTop = window.innerHeight + 500;
+it("floats after a short scroll, returns at the top, and preserves showcase hiding", () => {
   render(
     <>
       <SiteHeader />
       <section id="workspace-overview" />
     </>,
   );
-  const overview = document.getElementById("workspace-overview");
-  if (!overview) throw new Error("Missing overview fixture");
-  vi.spyOn(overview, "getBoundingClientRect").mockImplementation(() => ({
-    top: overviewTop,
-    bottom: overviewTop + 500,
-    left: 0,
-    right: 1000,
-    width: 1000,
-    height: 500,
-    x: 0,
-    y: overviewTop,
-    toJSON: () => ({}),
-  }));
   const header = screen.getByRole("banner");
   header.setAttribute("data-showcase-hidden", "true");
   header.inert = true;
   window.scrollY = 120;
   fireEvent.scroll(window);
-  expect(header).toHaveAttribute("data-preview-navigation", "flat");
-  overviewTop = window.innerHeight * 0.75;
-  window.scrollY = 5000;
-  fireEvent.scroll(window);
   expect(header).toHaveAttribute("data-preview-navigation", "floating");
   expect(header).toHaveAttribute("data-showcase-hidden", "true");
   expect(header.inert).toBe(true);
-  overviewTop = window.innerHeight * 0.75 + 1;
-  window.scrollY = 4900;
-  fireEvent.scroll(window);
-  expect(header).toHaveAttribute("data-preview-navigation", "flat");
-  overviewTop = window.innerHeight * 0.75 - 1;
-  fireEvent.resize(window);
-  expect(header).toHaveAttribute("data-preview-navigation", "floating");
-  overviewTop = window.innerHeight + 500;
-  fireEvent.resize(window);
-  expect(header).toHaveAttribute("data-preview-navigation", "flat");
-  expect(header).toHaveAttribute("data-showcase-hidden", "true");
-  expect(header.inert).toBe(true);
-  overviewTop = 0;
   window.scrollY = 0;
   fireEvent.scroll(window);
   expect(header).toHaveAttribute("data-preview-navigation", "flat");
+  window.scrollY = 48;
+  fireEvent.resize(window);
+  expect(header).toHaveAttribute("data-preview-navigation", "floating");
 });
-it("fails safely to flat navigation when the overview is absent", () => {
+it("floats when the overview is absent", () => {
   render(<SiteHeader />);
   window.scrollY = 5000;
   fireEvent.scroll(window);
   fireEvent.resize(window);
   expect(screen.getByRole("banner")).toHaveAttribute(
     "data-preview-navigation",
-    "flat",
+    "floating",
   );
 });
 it("uses homepage navigation on inner pages, including help and nested routes", () => {

@@ -70,18 +70,12 @@ export function SiteHeader() {
   const header = useRef<HTMLElement>(null);
   const toggle = useRef<HTMLButtonElement>(null);
   const hoverClose = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // biome-ignore lint/correctness/useExhaustiveDependencies: Recheck a restored scroll offset after navigation.
   useEffect(() => {
     const update = () => {
-      const followingSection = document.getElementById("workspace-overview");
-      // Keep the initial flat header in the document until the showcase passes.
-      // The floating version returns as the next section enters the lower quarter.
-      setPreviewShowcasePassed(
-        window.scrollY > 16 &&
-          (!isShowcaseHome(pathname) ||
-            (followingSection !== null &&
-              followingSection.getBoundingClientRect().top <=
-                window.innerHeight * 0.75)),
-      );
+      // The flat bar sits in the page. Pin the floating bar as soon as that
+      // bar would scroll away, including on the homepage.
+      setPreviewShowcasePassed(window.scrollY > 16);
     };
     update();
     window.addEventListener("scroll", update, { passive: true });
@@ -90,6 +84,7 @@ export function SiteHeader() {
       window.removeEventListener("scroll", update);
       window.removeEventListener("resize", update);
     };
+    // Recheck after navigation in case the browser restores a scroll offset.
   }, [pathname]);
   const cancelHoverClose = () => {
     if (hoverClose.current) clearTimeout(hoverClose.current);

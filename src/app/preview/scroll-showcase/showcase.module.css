@@ -77,7 +77,8 @@
   width: min(1120px, 100%);
   height: auto;
   min-height: 0;
-  padding: 28px 0 36px;
+  /* Room above the tabs so hover labels clear the clipped stage edge. */
+  padding: 64px 0 36px;
   max-width: none;
   margin: 0 auto;
   border-radius: 40px;
@@ -109,8 +110,6 @@
   transform: translate3d(calc(var(--gradient-progress, 0) * -75%), 0, 0);
   will-change: transform;
   filter: blur(60px);
-}
-.scrollTrack[data-compact="true"] .gradient {
   transition: transform 0.28s ease-out;
 }
 .close {
@@ -955,7 +954,7 @@
     width: 100%;
     height: auto;
     min-height: 0;
-    padding: 24px 0;
+    padding: 64px 0 24px;
   }
 }
 
@@ -965,6 +964,9 @@
   color: var(--preview-ink);
 }
 @media (max-width: 800px) {
+  .stage {
+    padding-top: 24px;
+  }
   .tabs {
     height: 62px;
     gap: 16px;

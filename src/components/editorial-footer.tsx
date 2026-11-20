@@ -28,7 +28,7 @@ export function EditorialFooter() {
           <div className={styles.signupContent}>
             <p className={styles.signupEyebrow}>One suite. Every operation.</p>
             <h2 id="footer-signup-heading">
-              Bring your property operations into one flow.
+              Bring your team and its AI agents into one workspace.
             </h2>
             <p className={styles.signupCopy}>
               Continue with your Google account to get started with Innflow.
@@ -53,8 +53,8 @@ export function EditorialFooter() {
               height={28}
             />
             <p>
-              The all-in-one property operations layer for connected workflows,
-              visible decisions, and human control.
+              The AI agent platform for agentic process automation — connected
+              workflows, visible decisions, and human control.
             </p>
             <div className={styles.brandLinks}>
               <TrackedLink

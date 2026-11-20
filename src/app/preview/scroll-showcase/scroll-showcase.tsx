@@ -14,7 +14,6 @@ import {
   StarsA,
 } from "@/components/icons/mage";
 import { MixedHeadingContent } from "@/components/section-heading";
-import { SignInDialog } from "@/components/sign-in-dialog";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
 import { BookingCalendar } from "./booking-calendar";
@@ -188,7 +187,6 @@ function Illustration({ index, active }: { index: number; active: boolean }) {
  */
 export function ScrollShowcase() {
   const section = useRef<HTMLElement>(null);
-  const signInDialog = useRef<HTMLDialogElement>(null);
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
   const [active, setActive] = useState(0);
   const [reduced, setReduced] = useState(false);
@@ -272,21 +270,16 @@ export function ScrollShowcase() {
           >
             <GoogleCtaContent />
           </TrackedLink>
-          <button
-            type="button"
-            aria-haspopup="dialog"
+          <TrackedLink
             data-site-cta="secondary"
             className={`${googleButtonStyles.button} ${googleButtonStyles.raisedSignIn}`}
-            onClick={(event) => {
-              event.currentTarget.focus({ preventScroll: true });
-              signInDialog.current?.showModal();
-            }}
+            destination={siteConfig.loginUrl}
+            eventLabel="homepage_hero_login"
           >
-            <span className={googleButtonStyles.content}>More options</span>
-          </button>
+            <span className={googleButtonStyles.content}>Log in</span>
+          </TrackedLink>
         </div>
       </header>
-      <SignInDialog ref={signInDialog} />
       <section
         ref={section}
         className={styles.scrollTrack}

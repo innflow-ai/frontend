@@ -119,26 +119,11 @@ it("offers Google, email and the general sign-in page", () => {
   expect(
     screen.getByRole("link", { name: "Continue with Google" }),
   ).toHaveAttribute("href", siteConfig.signupUrl);
-  const options = screen.getByRole("button", { name: "More options" });
-  expect(options).toHaveAttribute("aria-haspopup", "dialog");
-  expect(screen.queryByRole("dialog")).toBeNull();
-  const dialog = screen.getByRole<HTMLDialogElement>("dialog", {
-    hidden: true,
-  });
-  Object.defineProperty(dialog, "showModal", {
-    value: () => {
-      dialog.open = true;
-    },
-  });
-  fireEvent.click(options);
-  const signIn = within(screen.getByRole("dialog", { name: "Get started" }));
-  expect(
-    signIn.getByRole("link", { name: "Continue with Google" }),
-  ).toHaveAttribute("href", siteConfig.signupUrl);
-  expect(signIn.getByRole("link", { name: "Log in" })).toHaveAttribute(
+  expect(screen.getByRole("link", { name: "Log in" })).toHaveAttribute(
     "href",
     siteConfig.loginUrl,
   );
+  expect(screen.queryByRole("dialog", { hidden: true })).toBeNull();
   expect(
     screen.queryByRole("link", { name: "Book a demo" }),
   ).not.toBeInTheDocument();

@@ -30,7 +30,8 @@ export default async function IntegrationsPage() {
             </h1>
             <p>
               Explore connections for the tools your team already uses. Find an
-              integration, see what it does, and check its availability.
+              integration, see what it does, and{" "}
+              <strong>check its availability</strong>.
             </p>
             <a className={styles.browseLink} href="#integration-directory">
               Explore integrations{" "}

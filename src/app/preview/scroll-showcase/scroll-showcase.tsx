@@ -33,7 +33,12 @@ const states = [
       title: <strong>Delegate tasks</strong>,
       emphasis: "to your AI agent",
     },
-    body: "Give your agent a focused task and the context it needs. Let it prepare the next step while your team stays in control.",
+    body: (
+      <>
+        Give your agent a focused task and the context it needs. Let it prepare
+        the next step while <strong>your team stays in control</strong>.
+      </>
+    ),
     accent: "#6bb0ff",
     surface: "#d3e5ff",
   },
@@ -51,7 +56,13 @@ const states = [
         </>
       ),
     },
-    body: "Connect the steps behind everyday work. Route requests, coordinate handoffs, and keep your team involved where review is needed.",
+    body: (
+      <>
+        Connect the steps behind everyday work. Route requests,{" "}
+        <strong>coordinate handoffs</strong>, and keep your team involved where
+        review is needed.
+      </>
+    ),
     accent: "#daf098",
     surface: "#f1f8dc",
   },
@@ -65,7 +76,12 @@ const states = [
       title: "Get the help you need",
       emphasis: <strong>in the moment</strong>,
     },
-    body: "Find relevant information, draft a response, and clarify next steps with assistance grounded in your team’s context.",
+    body: (
+      <>
+        Find relevant information, draft a response, and clarify next steps with
+        assistance grounded in <strong>your team’s context</strong>.
+      </>
+    ),
     accent: "#ba9dff",
     surface: "#eae3f9",
   },
@@ -79,7 +95,13 @@ const states = [
       title: "See what needs",
       emphasis: <strong>your attention</strong>,
     },
-    body: "Turn conversations and activity into clear summaries. Spot recurring questions, review open work, and decide where to focus next.",
+    body: (
+      <>
+        Turn conversations and activity into clear summaries. Spot{" "}
+        <strong>recurring questions</strong>, review open work, and decide where
+        to focus next.
+      </>
+    ),
     accent: "#5aded7",
     surface: "#e5f9f9",
   },

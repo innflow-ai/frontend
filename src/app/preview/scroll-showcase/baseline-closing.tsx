@@ -92,7 +92,13 @@ export function BaselineClosing() {
               to the <strong>follow-up</strong>
             </>
           }
-          subtitle="All of the work around meetings, handled in one place. Book time, capture every discussion, and keep next steps moving without the manual work."
+          subtitle={
+            <>
+              All of the work around meetings, handled{" "}
+              <strong>in one place</strong>. Book time, capture every
+              discussion, and keep next steps moving without the manual work.
+            </>
+          }
         />
         <TrackedLink
           data-site-cta="primary"

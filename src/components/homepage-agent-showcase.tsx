@@ -33,9 +33,9 @@ export function HomepageAgentShowcase() {
             </h2>
           </header>
           <p data-home-copy className={styles.description}>
-            Understanding a task is the only prerequisite to automating it. Let
-            your team who already understand the problem build the necessary
-            agents. No learning curve involved.
+            <strong>Understanding a task</strong> is the only prerequisite to
+            automating it. Let your team who already understand the problem
+            build the necessary agents. No learning curve involved.
           </p>
           <div className={styles.actions}>
             <TrackedLink

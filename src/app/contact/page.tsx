@@ -58,8 +58,8 @@ export default function ContactPage() {
                 <HeroItem>
                   <p className={styles.lede}>
                     Questions about innflow, product support, or a process your
-                    team wants to improve? Send the context and we’ll get it to
-                    the right person.
+                    team wants to improve? <strong>Send the context</strong> and
+                    we’ll get it to the right person.
                   </p>
                 </HeroItem>
                 <HeroItem>

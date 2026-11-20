@@ -132,8 +132,8 @@ export function WorkspaceOverview() {
               />
             </h2>
             <p data-home-copy className={styles.introduction}>
-              Schedule meetings, prepare follow-ups, review decisions, and
-              handle billing questions.
+              Schedule meetings, <strong>prepare follow-ups</strong>, review
+              decisions, and handle billing questions.
             </p>
             <a
               data-site-cta="primary"

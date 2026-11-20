@@ -38,7 +38,7 @@ export type CalendlyPageContent = {
   path: string;
   name: string;
   title: string;
-  description: string;
+  description: ReactNode;
   intro?: { eyebrow?: string; title: string; body?: string }[];
   features?: CalendlyFeature[];
   cards?: CalendlyFeature[];

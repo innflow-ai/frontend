@@ -335,7 +335,13 @@ export function BaselineConnectedInfrastructure() {
           id="baseline-infrastructure-heading"
           title={<strong>Connect the tools</strong>}
           emphasis="behind your work."
-          subtitle="Bring relevant information into the tools your team already uses. Explore supported connections to find the right fit for your workflow."
+          subtitle={
+            <>
+              Bring relevant information into the{" "}
+              <strong>tools your team already uses</strong>. Explore supported
+              connections to find the right fit for your workflow.
+            </>
+          }
         />
         <Link
           data-site-cta="primary"

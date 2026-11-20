@@ -335,6 +335,16 @@ const nextConfig: NextConfig = {
         statusCode: 301,
       },
       {
+        source: "/blog/chatgpt-pro-vs-free-key-differences",
+        destination: "/blog/chatgpt-pro-vs-free-key-differences-explained",
+        statusCode: 301,
+      },
+      {
+        source: "/blog/no-code-ai-tools-the-enterprise-future",
+        destination: "/blog/the-enterprise-no-code-ai-future",
+        statusCode: 301,
+      },
+      {
         source: "/agent-skills",
         destination: "/skills",
         permanent: true,

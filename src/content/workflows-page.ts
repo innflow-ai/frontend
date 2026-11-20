@@ -2,22 +2,23 @@ import { appSignup, type StorySection } from "@/content/feature-story";
 
 export const workflowsPage = {
   path: "/features/workflows",
-  title: "Workflows for multi-agent work | Innflow",
+  title: "Agentic workflows | Innflow",
   description:
-    "Build visual workflows your agents can run and your team can follow, with clear owners, review gates, and a live record of every step.",
+    "Choose what starts a workflow, give agents the steps and tools they need, and decide where a teammate should review the work.",
   sections: [
     {
       id: "hero",
       type: "hero",
       eyebrow: "Workflows",
-      title: "Give every outcome",
-      emphasis: "a path your team can see.",
+      // Draft hero from pages-export-figma-copy-draft.csv (agentic-workflows).
+      title: "Turn recurring work",
+      emphasis: "into workflows your team can review.",
       subtitle:
-        "Build a workflow for the result you want. The owners, the review gates, the progress, and the proof all live in one view.",
+        "Choose what starts a workflow, give agents the steps and tools they need, and decide where a teammate should review the work.",
       lines: [
         {
           role: "You",
-          text: "Build a workflow for the result you want.",
+          text: "Choose the trigger, steps, tools, and review points.",
         },
         {
           role: "Launch owner",

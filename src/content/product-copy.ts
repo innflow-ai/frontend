@@ -9,7 +9,7 @@ import { productStoryCopy } from "./product-story-copy";
 const replacements: ReadonlyArray<readonly [string, string]> = [
   [
     "A single, enterprise-grade solution to create and manage your team of AI agents. Our agentic platform offers a wide array of tools designed to seamlessly transition your organization into an AI-native future.",
-    "Property operations software with AI agents and visual workflows. One workspace to capture a request, attach context, route the next step, and keep a visible record — without replacing the system of record.",
+    "Hand work to an agent in a shared channel. It uses the tools you connect and brings results back with the context your team needs to review them.",
   ],
   [
     "innflow.ai is hosted in the EU and is GDPR-compliant. With ISO 27001 and SOC Type II certifications, we employ all the guardrails necessary to provide a safe and reliable automation experience. The priorities are simple: protect user data and continuously improve security protocols to remain a trustworthy agentic automation platform.",
@@ -97,7 +97,9 @@ export function rewriteVerifiedProductText(value: string): string {
 }
 
 const storyAliases: Record<string, string> = {
-  "AI agent hub": "AI agents hub",
+  "AI agent hub": "Shared workspace",
+  "AI agents hub": "Shared workspace",
+  "Shared workspace": "Shared workspace",
   "AI tools": "Tools",
   "Trigger & embed": "Triggers",
   "Flexible deployment": "Security & privacy",
@@ -124,6 +126,18 @@ const storyAliases: Record<string, string> = {
   "Agents that use the context you attach": "Self-learning",
   "Review and iteration": "Self-learning",
   "Connected tools": "Tools",
+  "Work together in channels": "Shared workspace",
+  "Teach agents your process": "SOPs",
+  "Give each agent a role": "Agent roles",
+  "Carry useful context forward": "Memory system",
+  "Ask for a decision": "Human-in-the-loop",
+  "Defined steps, flexible decisions": "Graph-based execution",
+  "Improve with feedback": "Self-learning",
+  "Approval where it matters": "Human-in-the-loop",
+  "Start on a schedule or event": "Triggers",
+  "Hand work to the next agent": "Multi-agent systems",
+  "Start with your team’s checklist": "Templates",
+  "Find the right reference": "Retrieval",
 };
 
 function rewriteSection(section: ProductPageSection): ProductPageSection {
@@ -189,29 +203,30 @@ const productIntroductions: Record<
   ProductPage["slug"],
   { title: string; body: string }
 > = {
+  // Vision-forward heroes from pages-export-figma-copy-draft.csv drafts.
   platform: {
-    title: "Your operation, connected.",
-    body: "Bring your team, tools, and knowledge into one flow. Build agents, connect your tools, and run workflows with room for people to review what matters.",
+    title: "A shared workspace for your team and its AI agents.",
+    body: "Hand work to an agent in a shared channel. It uses the tools you connect and brings results back with the context your team needs to review them.",
   },
   "agent-os": {
-    title: "Give your agents a clear path to follow.",
-    body: "Connect tools, reusable skills, and review points in one workspace. Turn a request into a workflow your team can understand and guide.",
+    title: "Run dependable workflows with AI agents.",
+    body: "Give agents defined steps, connected tools, and approval points. Use AI where a task calls for judgment and keep the rest of the workflow predictable.",
   },
   "agent-studio": {
     title: "Build the way your team works.",
     body: "Shape an agent around your process. Connect its tools and knowledge, try a task, and refine the steps before handing work over.",
   },
   "ai-agents": {
-    title: "A little more help. A lot less chasing.",
-    body: "Give your agents the context to prepare answers and move routine work forward. Keep your team involved where decisions need a person.",
+    title: "Give your AI agents a job to do.",
+    body: "Assign an agent an outcome, connect the tools it needs, and tell it when to check in. Your team can follow its progress and review the result in the same channel.",
   },
   "agentic-workflows": {
-    title: "Every handoff. One connected flow.",
-    body: "Bring requests, records, and approvals into a clear sequence. Give recurring property work a path from the first trigger to the final follow-up.",
+    title: "Turn recurring work into workflows your team can review.",
+    body: "Choose what starts a workflow, give agents the steps and tools they need, and decide where a teammate should review the work.",
   },
   databases: {
-    title: "Your property knowledge, within reach.",
-    body: "Keep files, tables, and working records together. Give your team and agents the context they need for the next task.",
+    title: "Give agents the context to do the work.",
+    body: "Connect the documents and records your team relies on so agents can look up policies, past decisions, and account details as they work.",
   },
 };
 
@@ -242,8 +257,8 @@ export function applyVerifiedProductCopy(page: ProductPage): ProductPage {
       )
         return {
           ...section,
-          heading: "The pieces that keep your work connected.",
-          body: "Start with the way your team works. Connect the right tools, keep useful context close, and give every handoff a clear next step.",
+          heading: "From a request to a reviewable result.",
+          body: "Connect your tools, teach agents your process, assign clear jobs, and pause for a person when a decision is needed.",
         };
       return rewriteSection(section);
     }),

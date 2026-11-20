@@ -2,46 +2,47 @@ import { appSignup, type StorySection } from "@/content/feature-story";
 
 export const agentsPage = {
   path: "/products/ai-agents",
-  title: "Autonomous AI agents | Innflow",
+  title: "AI agents | Innflow",
   description:
-    "Hand an outcome to an Innflow agent, follow visible progress, and step in when judgment or approval is needed.",
+    "Assign an agent an outcome, connect the tools it needs, and review the result in the same channel — with check-ins when judgment matters.",
   sections: [
     {
       id: "agents-hero",
       type: "hero",
       eyebrow: "Agents",
-      title: "Hand an outcome",
-      emphasis: "to an agent that can keep going.",
+      // Draft hero from pages-export-figma-copy-draft.csv (ai-agents).
+      title: "Give your AI agents",
+      emphasis: "a job to do.",
       lines: [
         {
           role: "You",
-          text: "Tell the agent what done looks like, and where it must stop.",
+          text: "Assign an outcome, connect the tools, and say when to check in.",
         },
         {
           role: "Agent",
-          text: "Watch the run, and review the result in the same workspace.",
+          text: "Follow progress and review the result in the same channel.",
         },
       ],
       chips: ["Brief", "Evidence", "Approval"],
       subtitle:
-        "Tell the agent what done looks like, and where it must stop. Watch the run, step in when a judgment is needed, and review the result in the same workspace.",
+        "Assign an agent an outcome, connect the tools it needs, and tell it when to check in. Your team can follow its progress and review the result in the same channel.",
       primary: { label: "Get started", href: appSignup },
       secondary: { label: "How agents work", href: "#how-agents-work" },
     },
     {
       id: "follow-through",
       type: "features",
-      title: "Stop prompting at every step. Watch the follow-through instead.",
+      title: "From the request to the result",
       subtitle:
-        "The agent keeps authorized work moving inside the limits you set. It does not come back to you after every small step.",
+        "Give an agent a clear job, the tools to do it, and a review step for the decisions your team needs to make.",
       items: [
         {
-          title: "Delegate the finished state, not every click",
-          body: "Describe what must be true when the work is complete. Inside those limits, the agent can keep going without a new prompt after each action.",
+          title: "Give each agent a role",
+          body: "Set an agent up to do a specific job, such as triaging support requests or preparing a weekly account review.",
         },
         {
           title: "Watch the work as it happens",
-          body: "The workspace shows progress as it unfolds. The team can inspect the current state instead of waiting for a final answer with no trail.",
+          body: "Have an agent pull information from connected tools, complete the steps you assign, and bring the result back for review.",
         },
         {
           title: "Send the exception to the right person",

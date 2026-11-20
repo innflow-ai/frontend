@@ -7,7 +7,7 @@ it("uses the workflows copy and leaves the field note unlinked", () => {
   expect(
     screen.getByRole("heading", {
       level: 1,
-      name: /Give every outcome/,
+      name: /Turn recurring work/,
     }),
   ).toBeInTheDocument();
   expect(

@@ -2,27 +2,45 @@ export const productStoryCopy: Record<
   string,
   { title: string; body: string; points: string[] }
 > = {
-  "AI agents hub": {
-    title: "A shared home for your agents.",
-    body: "Keep agent tasks, connected tools, and current work in view. Give your team one place to understand what needs attention.",
+  "Shared workspace": {
+    title: "Work together in channels.",
+    body: "Ask an agent in your team’s channel to pull together the open items for a launch. When the checklist comes back, the team can see what is ready and who owns what’s left.",
     points: [
-      "See current work",
-      "Connect the right tools",
-      "Review the next step",
+      "Assign work in a channel",
+      "Keep context with the request",
+      "Share results with the team",
+    ],
+  },
+  "AI agents hub": {
+    title: "Work together in channels.",
+    body: "Bring an agent into the conversation, assign the next step, and keep the result where everyone in the channel can find it.",
+    points: [
+      "Assign work in a channel",
+      "Keep context with the request",
+      "Share results with the team",
     ],
   },
   "Pre-trained agents": {
-    title: "A shared home for your agents.",
-    body: "Keep agent tasks, connected tools, and current work in view. Give your team one place to understand what needs attention.",
+    title: "Start with a useful example.",
+    body: "Use a template to set up the first pass, then add your team’s instructions, connected tools, and review steps.",
     points: [
-      "See current work",
-      "Connect the right tools",
-      "Review the next step",
+      "Choose a starting point",
+      "Adapt the steps",
+      "Review the setup",
+    ],
+  },
+  "Agent roles": {
+    title: "Give each agent a role.",
+    body: "A support agent can group new requests, prepare draft replies from your guidelines, and flag the cases that need a teammate’s judgment.",
+    points: [
+      "Clear responsibilities",
+      "Drafts for review",
+      "Exceptions for a teammate",
     ],
   },
   "Agentic automation": {
-    title: "Move the work forward.",
-    body: "Connect each task to the next action. Bring the request, supporting records, and review steps along as the workflow progresses.",
+    title: "Run work across tools.",
+    body: "Set up workflows that gather information, take action in connected apps, and pause for a person when a decision is needed.",
     points: ["Attach context", "Assign the next action", "Keep a record"],
   },
   "Agentic execution": {
@@ -56,8 +74,8 @@ export const productStoryCopy: Record<
     points: ["Choose your connections", "Set access", "Keep handoffs clear"],
   },
   Triggers: {
-    title: "Start at the right moment.",
-    body: "Bring a new request or recurring schedule into a workflow. Set the starting conditions so the right work reaches the right process.",
+    title: "Start on a schedule or event.",
+    body: "Run the same process each week or start it when a connected system sends a new request.",
     points: [
       "Capture a request",
       "Set a schedule",
@@ -65,17 +83,17 @@ export const productStoryCopy: Record<
     ],
   },
   Templates: {
-    title: "Start with a useful example.",
-    body: "Choose a workflow template and adapt it to your operation. Update the instructions, tools, and review points before putting it to work.",
+    title: "Start with your team’s checklist.",
+    body: "Use a template to set up the first pass, then add your team’s instructions, connected tools, and review steps.",
     points: ["Choose a starting point", "Adapt the steps", "Review the setup"],
   },
   "Agentic templates": {
-    title: "Start with a useful example.",
-    body: "Choose a workflow template and adapt it to your operation. Update the instructions, tools, and review points before putting it to work.",
+    title: "Start with your team’s checklist.",
+    body: "Use a template to set up the first pass, then add your team’s instructions, connected tools, and review steps.",
     points: ["Choose a starting point", "Adapt the steps", "Review the setup"],
   },
   SOPs: {
-    title: "Make your process part of the work.",
+    title: "Teach agents your process.",
     body: "Give agents the procedures, instructions, and tone your team uses. Keep that guidance current as the way you work changes.",
     points: [
       "Attach procedures",
@@ -102,8 +120,8 @@ export const productStoryCopy: Record<
     ],
   },
   "Graph-based execution": {
-    title: "See how the steps fit together.",
-    body: "Build a visible sequence of actions and decisions. Use a defined path for routine tasks and add AI reasoning where the work needs it.",
+    title: "Defined steps, flexible decisions.",
+    body: "Use fixed steps for actions that follow a rule. Let an agent evaluate the information when it needs to choose a path.",
     points: ["Connect steps", "Set conditions", "Review the path"],
   },
   "Unified building blocks": {
@@ -112,28 +130,28 @@ export const productStoryCopy: Record<
     points: ["Reusable skills", "Connected tools", "Clear triggers"],
   },
   "Multi-agent orchestration": {
-    title: "Give each agent a clear role.",
-    body: "Break a larger process into focused tasks. Connect agents through explicit handoffs so each one has the context for its part of the work.",
+    title: "Hand work to the next agent.",
+    body: "Give each agent a step in the workflow and pass the result along with the context the next agent needs.",
     points: ["Focused responsibilities", "Shared context", "Visible handoffs"],
   },
   "Multi-agent systems": {
-    title: "Give each agent a clear role.",
-    body: "Break a larger process into focused tasks. Connect agents through explicit handoffs so each one has the context for its part of the work.",
+    title: "Hand work to the next agent.",
+    body: "Give each agent a step in the workflow and pass the result along with the context the next agent needs.",
     points: ["Focused responsibilities", "Shared context", "Visible handoffs"],
   },
   "Self-learning": {
-    title: "Make the next run better.",
-    body: "Review what happened, capture feedback, and update the instructions or supporting knowledge. Test the change before using it more widely.",
+    title: "Improve with feedback.",
+    body: "Review where a workflow fell short and use that feedback to refine instructions before the next run.",
     points: ["Review the result", "Record feedback", "Test improvements"],
   },
   "Learning agent": {
-    title: "Make the next run better.",
-    body: "Review what happened, capture feedback, and update the instructions or supporting knowledge. Test the change before using it more widely.",
+    title: "Improve with feedback.",
+    body: "Review where a workflow fell short and use that feedback to refine instructions before the next run.",
     points: ["Review the result", "Record feedback", "Test improvements"],
   },
   "Reflections & observations": {
-    title: "Make the next run better.",
-    body: "Review what happened, capture feedback, and update the instructions or supporting knowledge. Test the change before using it more widely.",
+    title: "Improve with feedback.",
+    body: "Review where a workflow fell short and use that feedback to refine instructions before the next run.",
     points: ["Review the result", "Record feedback", "Test improvements"],
   },
   "Evaluation framework": {
@@ -142,7 +160,7 @@ export const productStoryCopy: Record<
     points: ["Set expectations", "Compare outputs", "Review exceptions"],
   },
   "Human-in-the-loop": {
-    title: "Keep people in the decisions.",
+    title: "Approval where it matters.",
     body: "Pause at the moments that need judgment. Give the reviewer the proposed action and its context before the workflow continues.",
     points: [
       "Choose review points",
@@ -151,7 +169,7 @@ export const productStoryCopy: Record<
     ],
   },
   "Human in the loop": {
-    title: "Keep people in the decisions.",
+    title: "Ask for a decision.",
     body: "Pause at the moments that need judgment. Give the reviewer the proposed action and its context before the workflow continues.",
     points: [
       "Choose review points",
@@ -169,8 +187,8 @@ export const productStoryCopy: Record<
     ],
   },
   "Memory system": {
-    title: "Keep useful context close.",
-    body: "Attach the documents and working records a task depends on. Give agents a clear source to retrieve from and keep that information up to date.",
+    title: "Carry useful context forward.",
+    body: "Give agents the background behind a request, from the current policy to a decision recorded in a previous run.",
     points: [
       "Attach records",
       "Retrieve relevant context",
@@ -178,8 +196,8 @@ export const productStoryCopy: Record<
     ],
   },
   "Agent Context": {
-    title: "Keep useful context close.",
-    body: "Attach the documents and working records a task depends on. Give agents a clear source to retrieve from and keep that information up to date.",
+    title: "Carry useful context forward.",
+    body: "When an agent drafts a renewal, it can look up the account’s terms and your current guidelines before bringing the draft back for review.",
     points: [
       "Attach records",
       "Retrieve relevant context",
@@ -211,8 +229,8 @@ export const productStoryCopy: Record<
     ],
   },
   Retrieval: {
-    title: "Find the context that matters.",
-    body: "Bring relevant files and records into the current task. Keep the source material connected so your team can review the basis for an answer.",
+    title: "Find the right reference.",
+    body: "Let an agent search your knowledge sources for the information it needs to complete a task.",
     points: [
       "Find relevant information",
       "Keep sources close",

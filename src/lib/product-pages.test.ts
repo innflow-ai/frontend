@@ -22,10 +22,10 @@ describe("product page migration fallback", () => {
 
   it("uses the current product copy over the Framer fallback", () => {
     expect(getFallbackProductPage("databases")?.hero.title).toBe(
-      "Your property knowledge, within reach.",
+      "Give agents the context to do the work.",
     );
     expect(getFallbackProductPage("agent-os")?.hero.title).toBe(
-      "Give your agents a clear path to follow.",
+      "Run dependable workflows with AI agents.",
     );
   });
 

@@ -116,7 +116,7 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
             <p>
               {property
                 ? "Connect your workflows, knowledge, and approvals. Give your team a clear next step, and keep your property operations organized in one place."
-                : "Connect workflows, knowledge, and approvals. Keep your property operations moving in one place."}
+                : "Connect workflows, knowledge, and approvals. Keep your operations moving in one place."}
             </p>
             <div className={styles.actions}>
               <TrackedLink
@@ -184,7 +184,7 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
       {!property ? (
         <section
           className={`${styles.shell} ${styles.restoredImageGrid}`}
-          aria-label="Property operations at a glance"
+          aria-label="Operations at a glance"
         >
           {["card", "card-1", "card-2", "card-3", "card-4", "card-5"].map(
             (image) => (

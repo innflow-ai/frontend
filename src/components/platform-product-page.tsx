@@ -330,12 +330,14 @@ export function PlatformProductPage() {
             Platform
           </p>
           <h1 id="platform-hero-title" data-mixed-heading>
-            <MixedHeadingText>Your operation, connected.</MixedHeadingText>
+            <MixedHeadingText>
+              A shared workspace for your team and its AI agents.
+            </MixedHeadingText>
           </h1>
           <p>
-            Bring your team, tools, and knowledge into one flow. Build agents,
-            connect your tools, and run workflows with room for people to review
-            what matters.
+            Hand work to an agent in a shared channel. It uses the tools you
+            connect and brings results back with the context your team needs to
+            review them.
           </p>
           <GradientActions />
           <div className={styles.heroShot}>
@@ -357,12 +359,12 @@ export function PlatformProductPage() {
           <Eyebrow>One workspace</Eyebrow>
           <h2 id="platform-pieces-title" data-mixed-heading>
             <MixedHeadingText>
-              The pieces that keep your work connected.
+              From a request to a reviewable result.
             </MixedHeadingText>
           </h2>
           <p>
-            Start with the way your team works. Connect the right tools, keep
-            useful context close, and give every handoff a clear next step.
+            Connect your tools, teach agents your process, assign clear jobs,
+            and pause for a person when a decision is needed.
           </p>
           <PlatformPiecesAccordion items={[...pieces]} />
         </div>

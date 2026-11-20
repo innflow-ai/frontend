@@ -33,7 +33,7 @@ export const platformDetails: Record<string, PlatformDetail> = {
     title: "Agentic Automation",
     headline: "Give recurring work a clear path forward.",
     description:
-      "Bring AI reasoning, connected tools, and human decisions into the same workflow. Explore a more adaptable way to coordinate the work behind every property.",
+      "Bring AI reasoning, connected tools, and human decisions into the same workflow. Coordinate requests end to end with room for people to review what matters.",
     intro: "From the first request to the final handoff.",
     hero: "/brand/platform/agentic-automation/hero.png",
     capabilities: [
@@ -41,7 +41,7 @@ export const platformDetails: Record<string, PlatformDetail> = {
         id: "reasoning",
         label: "Workflow logic",
         title: "Plan the steps. Make room for judgment.",
-        body: "A maintenance request might need a simple status update or a closer look at an unusual repair. Design clear routes for routine work and review points for the decisions that need context.",
+        body: "A routine request might need a simple status update or a closer look at an unusual exception. Design clear routes for expected work and review points for the decisions that need context.",
         image: automationAsset("reasoning"),
         alt: "Illustration contrasting rule-based steps with agent reasoning",
         points: [
@@ -54,7 +54,7 @@ export const platformDetails: Record<string, PlatformDetail> = {
         id: "variety",
         label: "Different inputs",
         title: "Start with the way information arrives.",
-        body: "Resident emails, vendor documents, and team notes rarely follow one format. Map the information your operation needs, then decide how incomplete or ambiguous inputs should reach the right person.",
+        body: "Emails, documents, and team notes rarely follow one format. Map the information your operation needs, then decide how incomplete or ambiguous inputs should reach the right person.",
         image: automationAsset("variety"),
         alt: "Illustration of varied email and document inputs",
         points: [
@@ -67,7 +67,7 @@ export const platformDetails: Record<string, PlatformDetail> = {
         id: "integrations",
         label: "Connected systems",
         title: "Connect the tools involved in the task.",
-        body: "Plan each handoff around your property system, inbox, and shared records. Confirm the available connections and account permissions before deciding which actions belong in the workflow.",
+        body: "Plan each handoff around your system of record, inbox, and shared files. Confirm the available connections and account permissions before deciding which actions belong in the workflow.",
         image: automationAsset("integrations"),
         alt: "Connected business application icons",
         points: [
@@ -80,7 +80,7 @@ export const platformDetails: Record<string, PlatformDetail> = {
         id: "learning",
         label: "Feedback and learning",
         title: "Use experience to refine the process.",
-        body: "Capture what a reviewer changed and why. Use recurring corrections to improve instructions for the next maintenance request, invoice, or leasing inquiry.",
+        body: "Capture what a reviewer changed and why. Use recurring corrections to improve instructions for the next request, invoice, or customer inquiry.",
         image: automationAsset("learning"),
         alt: "Prompt refinement and testing interface illustration",
         points: [
@@ -106,7 +106,7 @@ export const platformDetails: Record<string, PlatformDetail> = {
         id: "oversight",
         label: "Human oversight",
         title: "Put people at the right decision points.",
-        body: "Give a property manager the context to review a repair estimate or sensitive response. Decide where approval belongs and who takes ownership when a request needs attention.",
+        body: "Give a teammate the context to review an estimate or sensitive response. Decide where approval belongs and who takes ownership when a request needs attention.",
         image: automationAsset("oversight"),
         alt: "Human review and approval workflow illustration",
         points: [
@@ -148,7 +148,7 @@ export const platformDetails: Record<string, PlatformDetail> = {
     title: "Self Learning",
     headline: "Turn everyday feedback into better workflows.",
     description:
-      "Build a repeatable cycle of review, correction, and validation. Bring your team's property expertise into the way agents handle the next task.",
+      "Build a repeatable cycle of review, correction, and validation. Bring your team's working knowledge into the way agents handle the next task.",
     intro: "A clearer path from feedback to improvement.",
     hero: "/brand/platform/self-learning/hero.png",
     capabilities: [
@@ -180,13 +180,13 @@ export const platformDetails: Record<string, PlatformDetail> = {
       },
       {
         id: "domain",
-        label: "Property expertise",
+        label: "Team expertise",
         title: "Bring your team's working knowledge into the process.",
-        body: "A property team knows the difference between a routine request and an urgent exception. Document those distinctions with examples that reflect your portfolio, vendors, and responsibilities.",
+        body: "Your team knows the difference between a routine request and an urgent exception. Document those distinctions with examples that reflect your accounts, partners, and responsibilities.",
         image: learningAsset("domain"),
         alt: "Domain knowledge illustration showing connected concepts",
         points: [
-          "Explain portfolio conventions",
+          "Explain team conventions",
           "Document escalation rules",
           "Use realistic examples",
         ],

@@ -17,9 +17,10 @@ export default function PlatformPage() {
       content={{
         path: "/platform",
         name: "Platform",
-        title: "Your operation, connected.",
+        // Align with product platform draft: shared workspace, not PM-first.
+        title: "A shared workspace for your team and its AI agents.",
         description:
-          "Bring your team, tools, and knowledge into one flow. Give everyday property work a clear path, with room for people to review what matters.",
+          "Hand work to an agent in a shared channel. It uses the tools you connect and brings results back with the context your team needs to review them.",
         heroArtwork: <RuneyWorkspace />,
         cards: platformPages.map((page) => ({
           id: page.slug,

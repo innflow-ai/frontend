@@ -21,8 +21,8 @@ describe("verified product page copy", () => {
     expect(page).not.toBeNull();
     if (!page) return;
     const verified = applyVerifiedProductCopy(page);
-    expect(verified.hero.title).toMatch(/clear path/i);
-    expect(verified.hero.body).toMatch(/review points/i);
+    expect(verified.hero.title).toMatch(/dependable workflows/i);
+    expect(verified.hero.body).toMatch(/approval points/i);
     expect(verified.hero.title).not.toMatch(/self-evolv/i);
   });
 });

@@ -52,7 +52,7 @@ export async function generateMetadata({
   const description =
     post.metaDescription?.trim() ||
     post.excerpt?.trim() ||
-    `Read ${post.title} on the Innflow property operations blog.`;
+    `Read ${post.title} on the Innflow blog.`;
   const canonical = new URL(
     `/blog/${post.slug}`,
     siteConfig.marketingOrigin,

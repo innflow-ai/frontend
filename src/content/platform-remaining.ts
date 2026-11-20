@@ -207,7 +207,7 @@ export const remainingPlatformDetails: Record<string, PlatformDetail> = {
     title: "Integrations",
     headline: "Connect innflow to the systems behind your work.",
     description:
-      "Bring tools, records, and workflow actions together around the operations your property team runs every day.",
+      "Bring tools, records, and workflow actions together around the operations your team runs every day.",
     intro: "Make every connection useful.",
     hero: "/brand/platform/integrations/hero.png",
     heroAlt: "Blue lightning bolt representing connected tools",
@@ -216,7 +216,7 @@ export const remainingPlatformDetails: Record<string, PlatformDetail> = {
         id: "connectors",
         label: "Native connectors",
         title: "Start with the tools your team uses.",
-        body: "Map your inbox, shared files, and property systems to the operation. Confirm the available connector actions before designing each handoff.",
+        body: "Map your inbox, shared files, and systems of record to the operation. Confirm the available connector actions before designing each handoff.",
         points: ["Connected accounts", "Available actions", "System ownership"],
         image: "/brand/platform/integrations/connectors.png",
         alt: "Native connectors interface illustration",

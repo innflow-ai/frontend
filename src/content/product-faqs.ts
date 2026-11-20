@@ -16,9 +16,9 @@ export type ProductFaqSlug = (typeof productFaqSlugs)[number];
 
 const sharedFaqs: ProductFaq[] = [
   {
-    question: "Does innflow replace our property-management system?",
+    question: "Does innflow replace our system of record?",
     answer:
-      "No. innflow coordinates work around the systems your team already uses. The PMS remains the system of record for leases, units, and accounting.",
+      "No. innflow coordinates work around the systems your team already uses. Your CRM, ERP, ticketing tool, or other system of record stays the source of truth for core records.",
   },
   {
     question: "How do humans stay in the loop?",
@@ -115,7 +115,7 @@ const productFaqMap: Record<ProductFaqSlug, ProductFaq[]> = {
     {
       question: "Can agents act without a person in the loop?",
       answer:
-        "Only where you allow it. High-stakes handoffs — messages, money, access, or resident commitments — should keep an approval step. Exact boundaries are set per workflow.",
+        "Only where you allow it. High-stakes handoffs — messages, money, access, or customer commitments — should keep an approval step. Exact boundaries are set per workflow.",
     },
     {
       question: "How do agents use tools and memory?",
@@ -143,7 +143,7 @@ const productFaqMap: Record<ProductFaqSlug, ProductFaq[]> = {
     {
       question: "What should we automate first?",
       answer:
-        "Start with one frequent, bounded handoff whose inputs, exceptions, and approval owner are already understood — a leasing follow-up, a maintenance intake, or a vendor request — then expand.",
+        "Start with one frequent, bounded handoff whose inputs, exceptions, and approval owner are already understood — a support triage, an invoice review, or a vendor request — then expand.",
     },
     ...sharedFaqs,
   ],
@@ -151,7 +151,7 @@ const productFaqMap: Record<ProductFaqSlug, ProductFaq[]> = {
     {
       question: "What do innflow databases store?",
       answer:
-        "Working tables, files, and knowledge the agents and workflows are allowed to retrieve. They support the operation; they are not a replacement for your PMS, CRM, or data warehouse.",
+        "Working tables, files, and knowledge the agents and workflows are allowed to retrieve. They support the operation; they are not a replacement for your CRM, ERP, or data warehouse.",
     },
     {
       question: "How does retrieval work?",
@@ -161,11 +161,11 @@ const productFaqMap: Record<ProductFaqSlug, ProductFaq[]> = {
     {
       question: "Who can see this data?",
       answer:
-        "Access follows workspace permissions and the systems you connect. Share only the sources a workflow needs, and keep approval on steps that expose resident or owner information.",
+        "Access follows workspace permissions and the systems you connect. Share only the sources a workflow needs, and keep approval on steps that expose sensitive customer or account information.",
     },
     ...sharedFaqs.filter((item) =>
       [
-        "Does innflow replace our property-management system?",
+        "Does innflow replace our system of record?",
         "How does innflow handle security?",
       ].includes(item.question),
     ),
@@ -174,22 +174,22 @@ const productFaqMap: Record<ProductFaqSlug, ProductFaq[]> = {
     {
       question: "What is an agent skill?",
       answer:
-        "A reusable bundle of instructions, tools, and workflow logic an agent can run — a leasing follow-up, an intake classification, a report, or a similar bounded job.",
+        "A reusable bundle of instructions, tools, and workflow logic an agent can run — a support triage, an intake classification, a report, or a similar bounded job.",
     },
     {
-      question: "Are all skills live for property operations?",
+      question: "Are all skills production-ready out of the box?",
       answer:
-        "The library includes skills across operations and other functions. Each skill still needs your systems, permissions, and review points before it is production-ready for a portfolio.",
+        "The library includes skills across operations and other functions. Each skill still needs your systems, permissions, and review points before it is production-ready for your team.",
     },
     {
       question: "How do skills use our existing systems?",
       answer:
-        "Point a skill at the connectors and knowledge you already use. Presence in the library does not, by itself, prove a given PMS or inbox integration is ready for your account.",
+        "Point a skill at the connectors and knowledge you already use. Presence in the library does not, by itself, prove a given CRM, inbox, or other integration is ready for your account.",
     },
     ...sharedFaqs.filter((item) =>
       [
         "How do humans stay in the loop?",
-        "Does innflow replace our property-management system?",
+        "Does innflow replace our system of record?",
       ].includes(item.question),
     ),
   ],

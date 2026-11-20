@@ -10,7 +10,7 @@ export const revalidate = 60;
 export const metadata = createPageMetadata({
   title: "Integrations & Roadmap | Innflow",
   description:
-    "Explore Innflow integrations and planned connections. Find the tools your team uses and see what’s available or on the roadmap.",
+    "Connect your CRM, support desk, and file tools. Agents gather details, take configured actions, and send results back to your team.",
   path: "/integrations",
 });
 export default async function IntegrationsPage() {
@@ -23,14 +23,15 @@ export default async function IntegrationsPage() {
             <span className={styles.eyebrow}>Apps & integrations</span>
             <h1 data-mixed-heading>
               <MixedHeadingText>
-                Your tools.
+                Put AI agents to work
                 <br />
-                <span>One connected workflow.</span>
+                <span>in the tools you already use.</span>
               </MixedHeadingText>
             </h1>
             <p>
-              Explore connections for the tools your team already uses. Find an
-              integration, see what it does, and check its availability.
+              Connect your CRM, support desk, and file tools. Agents can gather
+              the details, take the actions you configure, and send the results
+              back to your team.
             </p>
             <a className={styles.browseLink} href="#integration-directory">
               Explore integrations{" "}

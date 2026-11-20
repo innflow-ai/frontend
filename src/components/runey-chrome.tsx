@@ -72,7 +72,7 @@ export function RuneyChrome({
             <p>
               Connected workflows. Clearer handoffs.
               <br />
-              Property operations in one place.
+              Agentic process automation in one place.
             </p>
           </div>
           {footerNavigation.map((column) => (

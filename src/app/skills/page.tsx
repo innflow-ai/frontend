@@ -12,7 +12,7 @@ export const revalidate = 60;
 export const metadata: Metadata = createPageMetadata({
   title: "Agent Skills Library | Innflow",
   description:
-    "Browse 300+ ready-made agent skills for finance, HR, marketing, operations, and more — each one a reusable workflow your AI agents can run.",
+    "Turn a checklist, policy, or writing guide into a reusable skill. Give agents a consistent way to triage requests, draft replies, or prepare reports.",
   path: "/skills",
 });
 
@@ -31,9 +31,10 @@ export default async function SkillsIndexPage() {
       content={{
         path: "/skills",
         name: "Agent Skills",
-        title: "Start with a skill. Make it your own.",
+        // Draft hero from pages-export-figma-copy-draft.csv (skills).
+        title: "Teach agents how your team works.",
         description:
-          "Find a starting point for the work your team repeats. Explore skills for communication, finance, marketing, and operations, then adapt the tools and review steps to your process.",
+          "Turn a checklist, policy, or writing guide into a skill your team can reuse. Give agents a consistent way to triage requests, draft replies, or prepare reports.",
         faqs,
         faqDescription:
           "What a skill is, how review works, and how skills use the systems you already run.",

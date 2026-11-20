@@ -46,7 +46,7 @@ const capabilities = [
     anchor: "templates",
     label: "Template library",
     title: "Start with a repeatable operation",
-    body: "Use a reusable skill as the foundation for your next workflow. Tailor the instructions, knowledge, and approval steps to the way your property team actually works.",
+    body: "Use a reusable skill as the foundation for your next workflow. Tailor the instructions, knowledge, and approval steps to the way your team actually works.",
     points: [
       "Explore reusable skills",
       "Adapt instructions to your process",

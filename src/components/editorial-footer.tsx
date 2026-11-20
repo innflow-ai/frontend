@@ -87,7 +87,7 @@ export function EditorialFooter() {
             <FooterLegalLinks />
           </nav>
           <span className={styles.tagline}>
-            Property operations, connected.
+            Agentic process automation, connected.
           </span>
         </div>
       </footer>

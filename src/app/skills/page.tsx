@@ -12,7 +12,7 @@ export const revalidate = 60;
 export const metadata: Metadata = createPageMetadata({
   title: "Agent Skills Library | Innflow",
   description:
-    "Browse 300+ ready-made agent skills for property operations, finance, HR, marketing, and more — each one a reusable workflow your AI agents can run.",
+    "Browse 300+ ready-made agent skills for finance, HR, marketing, operations, and more — each one a reusable workflow your AI agents can run.",
   path: "/skills",
 });
 
@@ -33,7 +33,7 @@ export default async function SkillsIndexPage() {
         name: "Agent Skills",
         title: "Start with a skill. Make it your own.",
         description:
-          "Find a starting point for the work your team repeats. Explore skills for communication, finance, marketing, and property operations, then adapt the tools and review steps to your process.",
+          "Find a starting point for the work your team repeats. Explore skills for communication, finance, marketing, and operations, then adapt the tools and review steps to your process.",
         faqs,
         faqDescription:
           "What a skill is, how review works, and how skills use the systems you already run.",

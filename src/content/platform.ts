@@ -3,7 +3,7 @@ export const platformPages = [
     slug: "agentic-automation",
     title: "Agentic Automation",
     description:
-      "Explore how agents can coordinate tasks, decisions, and human approvals across property operations.",
+      "Explore how agents can coordinate tasks, decisions, and human approvals across your organization.",
   },
   {
     slug: "self-learning",
@@ -27,7 +27,7 @@ export const platformPages = [
     slug: "integrations",
     title: "Integrations",
     description:
-      "Explore the connections between your property systems, team tools, and agent workflows.",
+      "Explore the connections between your business systems, team tools, and agent workflows.",
   },
   {
     slug: "deployment-options",
@@ -39,7 +39,7 @@ export const platformPages = [
     slug: "security-and-compliance",
     title: "Security and Compliance",
     description:
-      "Explore the access, data handling, and governance requirements behind your property operations.",
+      "Explore the access, data handling, and governance requirements behind your agent workflows.",
   },
 ] as const;
 

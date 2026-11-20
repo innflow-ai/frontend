@@ -148,7 +148,7 @@ const capabilityLinks: MegaMenuLink[] = [
     href: "/features/website",
     icon: Browser,
     title: "AI Website Builder",
-    body: "Build conversion-ready property websites with AI.",
+    body: "Build conversion-ready websites with AI.",
   },
   {
     href: "/products/databases",
@@ -177,7 +177,7 @@ const resourcesLinks: MegaMenuLink[] = [
     icon: Handshake,
 
     title: "Partnerships",
-    body: "Partner with Innflow and help more property teams modernize operations.",
+    body: "Partner with Innflow and help more teams deploy agents that get real work done.",
   },
   {
     href: "/our-customers",

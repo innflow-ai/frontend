@@ -6,6 +6,7 @@ import { FooterNewsletter } from "./footer-newsletter";
 import { GoogleCtaContent } from "./google-cta-content";
 import styles from "./site-footer.module.css";
 
+/** Shared sitewide footer — cross-industry agent platform, not PM-niche. */
 const footerMenus = [
   {
     label: "Why innflow",
@@ -15,66 +16,10 @@ const footerMenus = [
       ["Industry coverage", "/in-the-news"],
       ["Who we help", "/our-customers"],
       ["Security", "/security"],
-      ["Share innflow", "/landlord-referral"],
       ["Partnerships", "/partner-with-us"],
       ["Advisor partnerships", "/advisor-partner-program"],
       ["Workflows", "/features/workflows"],
-      ["AI assistant", "/products/ai-agents"],
-      ["Knowledge", "/platform"],
-      ["Approvals", "/platform/security-and-compliance"],
-    ],
-  },
-  {
-    label: "Solutions",
-    links: [
-      ["Overview", "/"],
-      ["Multi-property investors", "/multi-property-investors"],
-      ["Landlord operations", "/landlord-banking"],
-      ["Rental workflows", "/rent-collection"],
-      ["Rental workflows overview", "/rent-collection-2"],
-      ["Connected property records", "/landlord-accounting"],
-      ["Property review preparation", "/landlord-insurance"],
-      ["Document preparation", "/tax-preparation"],
-      ["Deposit workflows", "/security-deposit-account"],
-      ["Screening workflows", "/tenant-screening-service"],
-      ["Reserve planning", "/landlord-banking-apy"],
-      ["Financing preparation", "/rental-property-loans"],
-      ["Property management", "/property-management"],
-      ["Connected operations", "/platform"],
-      ["Integrations", "/integrations"],
-    ],
-  },
-  {
-    label: "Resources",
-    links: [
-      ["Resource library", "/resources"],
-      ["Document checklists", "/free-rental-forms-and-templates-for-landlords"],
-      ["Rent comparison", "/how-much-should-i-charge-for-rent"],
-      ["Lease workflows", "/lease-agreement"],
-      ["Workflow learning", "/webinars"],
-      ["Investor resources", "/real-estate-investing"],
-      ["Product updates", "/product-updates"],
-      ["Blog", "/blog"],
-      ["Help center", "/help-center"],
-      ["Legal agreements", "/legal-agreements"],
-      ["FAQ", "/faq"],
-      ["Contact", "/contact"],
-    ],
-  },
-];
-const productFooterMenus = [
-  {
-    label: "Why innflow",
-    links: [
-      ["About innflow", "/about"],
-      ["Careers", "/careers"],
-      ["Industry coverage", "/in-the-news"],
-      ["Who we help", "/our-customers"],
-      ["Security", "/security"],
-      ["Partnerships", "/partner-with-us"],
-      ["Advisor partnerships", "/advisor-partner-program"],
-      ["Workflows", "/features/workflows"],
-      ["AI assistant", "/products/ai-agents"],
+      ["AI agents", "/products/ai-agents"],
       ["Knowledge", "/platform"],
       ["Approvals", "/platform/security-and-compliance"],
     ],
@@ -117,30 +62,28 @@ const getStarted = {
   ],
 };
 
-const propertyTeams = {
-  label: "Property teams",
+/** Industries as one vertical among many — not a property-only site niche. */
+const industries = {
+  label: "Industries",
   links: [
-    ["Long-term rentals", "/long-term-rentals"],
-    ["Mid-term rentals", "/mid-term-rentals"],
-    ["Short-term rentals", "/short-term-rentals"],
-    ["Resident experiences", "/renters"],
+    ["Financial services", "/industries/financial-services-banking"],
+    ["Healthcare", "/industries/healthcare"],
+    ["Property & real estate", "/industries/property-real-estate"],
+    ["Technology & software", "/industries/technology-software"],
+    ["Customer service", "/industries/customer-service"],
+    ["Browse all industries", "/solutions"],
   ],
 };
 
-const homeColumns = [
+const columns = [
   [footerMenus[0]],
-  [footerMenus[1], propertyTeams],
+  [footerMenus[1], industries],
   [footerMenus[2], getStarted],
 ];
 
-const productColumns = [
-  [productFooterMenus[0]],
-  [productFooterMenus[1]],
-  [productFooterMenus[2], getStarted],
-];
-
-export function SiteFooter({ home = true }: { home?: boolean }) {
-  const columns = home ? homeColumns : productColumns;
+export function SiteFooter({ home: _home = true }: { home?: boolean }) {
+  // `home` kept for callers; chrome is the same sitewide so we don't niche the homepage.
+  void _home;
 
   return (
     <div className={styles.shell}>
@@ -160,9 +103,9 @@ export function SiteFooter({ home = true }: { home?: boolean }) {
                 />
               </a>
               <p>
-                Your AI agent workspace.
+                The AI agent platform for
                 <br />
-                Connected in one place.
+                agentic process automation.
               </p>
             </div>
             <nav className={styles.columns} aria-label="Footer navigation">

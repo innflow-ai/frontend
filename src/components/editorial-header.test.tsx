@@ -1,11 +1,10 @@
 import { act, cleanup, render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import type { LatestBlogPostNavItem } from "@/components/mega-menu";
+import { siteConfig } from "@/config/site";
 import { BaselaneHomepage } from "./baselane-homepage";
 import { EditorialHeader } from "./editorial-header";
 import styles from "./editorial-header.module.css";
-import { NavigationBlogPostsProvider } from "./navigation-blog-posts";
 import { SiteHeader } from "./site-header";
 
 const { mockPathname, motionFlags } = vi.hoisted(() => ({
@@ -22,55 +21,24 @@ vi.mock("motion/react", async (importOriginal) => {
   return { ...actual, useReducedMotion: () => motionFlags.reduce };
 });
 
-const latestBlogPosts: LatestBlogPostNavItem[] = [
-  {
-    title: "Newest operations guide",
-    href: "/blog/newest-operations-guide",
-    categoryLabel: "Automation",
-    publishedLabel: "August 23, 2026",
-    imageUrl: "https://cdn.sanity.io/images/hnjg8vum/production/example.jpg",
-    imageAlt: "Automation dashboard",
-  },
-  {
-    title: "A calmer approach to property work",
-    href: "/blog/calmer-property-work",
-    categoryLabel: "Property Management",
-    publishedLabel: "August 22, 2026",
-    imageUrl: null,
-    imageAlt: "A calmer approach to property work",
-  },
-];
-
 describe("EditorialHeader navigation", () => {
-  it("shows up to four linked blog previews in BL Resources", async () => {
+  it("orders the menus before Pricing and groups resource links by purpose", async () => {
     const user = userEvent.setup();
-    const posts = Array.from({ length: 5 }, (_, index) => ({
-      ...latestBlogPosts[0],
-      title: `Post ${index + 1}`,
-      href: `/blog/post-${index + 1}`,
-    }));
-    render(
-      <NavigationBlogPostsProvider posts={posts}>
-        <>
-          <SiteHeader />
-          <BaselaneHomepage>
-            <p>BL content</p>
-          </BaselaneHomepage>
-        </>
-      </NavigationBlogPostsProvider>,
+    render(<SiteHeader />);
+    const nav = within(
+      screen.getByRole("navigation", { name: "Primary navigation" }),
     );
-    await user.click(screen.getByRole("button", { name: "Resources" }));
-    const previews = await screen.findByRole("region", {
-      name: "Latest from Innflow",
-    });
-    expect(within(previews).getAllByRole("img")).toHaveLength(4);
     expect(
-      within(previews).getByRole("link", { name: /Post 1/ }),
-    ).toHaveAttribute("href", "/blog/post-1");
-    expect(within(previews).queryByText("Post 5")).not.toBeInTheDocument();
-    expect(
-      within(previews).getByRole("link", { name: "View all posts" }),
-    ).toHaveAttribute("href", "/blog");
+      nav.getAllByRole("button").map((button) => button.textContent),
+    ).toEqual(["Product", "Models", "Solutions", "Resources"]);
+    await user.click(nav.getByRole("button", { name: "Resources" }));
+    for (const name of ["Learn", "Explore", "Get help"])
+      expect(await nav.findByRole("heading", { name })).toBeVisible();
+    expect(nav.getByRole("link", { name: "Blog" })).toHaveAttribute(
+      "href",
+      "/blog",
+    );
+    expect(nav.getAllByRole("link", { name: /View more/ })).toHaveLength(3);
   });
 
   it("shares the homepage accordion with BL and restores scrolling on Escape", async () => {
@@ -93,10 +61,7 @@ describe("EditorialHeader navigation", () => {
     ).toHaveAttribute("href", "/pricing");
     expect(
       within(navigation).getByRole("link", { name: "Login" }),
-    ).toHaveAttribute(
-      "href",
-      "https://app.innflow.ai/signup?callbackURL=%2Fworkflows",
-    );
+    ).toHaveAttribute("href", siteConfig.loginUrl);
     expect(
       screen.queryByRole("link", { name: "Book a demo" }),
     ).not.toBeInTheDocument();
@@ -149,61 +114,21 @@ describe("EditorialHeader navigation", () => {
     vi.stubGlobal("cancelAnimationFrame", vi.fn());
   });
 
-  it("groups platform capabilities and the integration directory under Product on desktop and mobile", async () => {
+  it("opens the seven feature previews under Product and preserves the product directory", async () => {
     const user = userEvent.setup();
     render(<EditorialHeader />);
-    expect(
-      screen.queryByRole("button", { name: "Platform" }),
-    ).not.toBeInTheDocument();
-    const pages = [
-      ["Agentic Automation", "agentic-automation"],
-      ["Self Learning", "self-learning"],
-      ["Evaluations", "evaluations"],
-      ["Analytics and Observability", "analytics-and-observability"],
-      ["Integrations", "integrations"],
-      ["Deployment Options", "deployment-options"],
-      ["Security and Compliance", "security-and-compliance"],
-    ];
     await user.click(screen.getByRole("button", { name: "Product" }));
-    const desktop = within(
-      screen.getByRole("region", { name: "Product menu" }),
-    );
-    for (const [title, slug] of pages) {
-      expect(
-        desktop.getByRole("link", { name: new RegExp(`^${title}`) }),
-      ).toHaveAttribute(
-        "href",
-        slug === "integrations" ? "/integrations" : `/platform/${slug}`,
-      );
-    }
+    expect(screen.getAllByRole("tab")).toHaveLength(7);
+    expect(
+      screen.getByRole("link", { name: /Browse all products/ }),
+    ).toHaveAttribute("href", "/products");
     await user.keyboard("{Escape}");
-    expect(
-      screen.queryByRole("region", { name: "Product menu" }),
-    ).not.toBeInTheDocument();
-    await user.click(screen.getByRole("button", { name: "Open navigation" }));
-    const mobile = within(
-      document.getElementById("editorial-mobile-overlay") as HTMLElement,
-    );
-    await user.click(mobile.getByRole("button", { name: "Product" }));
-    for (const [title, slug] of pages) {
-      expect(
-        mobile.getByRole("link", { name: new RegExp(`^${title}`) }),
-      ).toHaveAttribute(
-        "href",
-        slug === "integrations" ? "/integrations" : `/platform/${slug}`,
-      );
-    }
-    await user.click(
-      mobile.getByRole("link", { name: /^Security and Compliance/ }),
-    );
-    expect(
-      document.getElementById("editorial-mobile-overlay"),
-    ).not.toBeInTheDocument();
+    expect(screen.queryByRole("region", { name: "Product menu" })).toBeNull();
   });
 
-  it("renders the two latest posts in the desktop Resources menu", async () => {
+  it("shows the Figma model directory and preserves the header controls", async () => {
     const user = userEvent.setup();
-    render(<EditorialHeader latestBlogPosts={latestBlogPosts} />);
+    render(<EditorialHeader />);
 
     expect(
       screen.getByRole("link", { name: "Continue with Google" }),
@@ -219,23 +144,13 @@ describe("EditorialHeader navigation", () => {
     ).not.toBeInTheDocument();
     expect(document.querySelector(`.${styles.articleFade}`)).toBeNull();
     expect(document.querySelector(`.${styles.articleBottomFade}`)).toBeNull();
-    await user.click(screen.getByRole("button", { name: "Resources" }));
-
-    expect(
-      screen.getByRole("link", { name: /Newest operations guide/ }),
-    ).toHaveAttribute("href", "/blog/newest-operations-guide");
-    expect(
-      screen.getByRole("link", { name: /A calmer approach to property work/ }),
-    ).toHaveAttribute("href", "/blog/calmer-property-work");
-    expect(
-      screen.getByRole("img", { name: "Automation dashboard" }),
-    ).toHaveAttribute("width", "720");
-    expect(
-      screen.getByRole("img", { name: "Automation dashboard" }),
-    ).toHaveAttribute("height", "512");
-    expect(
-      screen.getByRole("link", { name: /View all posts/ }),
-    ).toHaveAttribute("href", "/blog");
+    await user.click(screen.getByRole("button", { name: "Models" }));
+    const directory = within(
+      screen.getByRole("region", { name: "Models menu" }),
+    );
+    expect(directory.getAllByRole("heading")).toHaveLength(10);
+    expect(directory.getAllByRole("listitem")).toHaveLength(20);
+    expect(directory.getByText("Claude Opus 4.8")).toBeVisible();
   });
 
   it("replaces the property portfolio menu with industry solutions", async () => {
@@ -245,9 +160,9 @@ describe("EditorialHeader navigation", () => {
       screen.queryByRole("button", { name: "Portfolios" }),
     ).not.toBeInTheDocument();
     await user.click(screen.getByRole("button", { name: "Solutions" }));
-    expect(screen.getByRole("link", { name: /^Healthcare/ })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: /^Finance/ })).toHaveAttribute(
       "href",
-      "/industries/healthcare",
+      "/industries/finance",
     );
     expect(
       screen.queryByRole("link", { name: /^Rent Collection/ }),
@@ -256,7 +171,7 @@ describe("EditorialHeader navigation", () => {
 
   it("uses single-open mobile accordions and closes after navigation", async () => {
     const user = userEvent.setup();
-    render(<EditorialHeader latestBlogPosts={latestBlogPosts} />);
+    render(<EditorialHeader />);
 
     await user.click(screen.getByRole("button", { name: "Open navigation" }));
     const overlay = document.getElementById("editorial-mobile-overlay");
@@ -274,7 +189,7 @@ describe("EditorialHeader navigation", () => {
     expect(product).toHaveAttribute("aria-expanded", "false");
     expect(resources).toHaveAttribute("aria-expanded", "false");
     expect(mobile.getByRole("link", { name: "Pricing" })).toBeInTheDocument();
-    expect(mobile.getByRole("link", { name: "Blog" })).toBeInTheDocument();
+    expect(mobile.queryByRole("link", { name: "Blog" })).toBeNull();
     expect(
       mobile.getByRole("link", { name: "Continue with Google" }),
     ).toHaveClass(styles.mobileCta);
@@ -290,9 +205,7 @@ describe("EditorialHeader navigation", () => {
 
     await user.click(resources);
     expect(resources).toHaveAttribute("aria-expanded", "true");
-    expect(
-      mobile.getByRole("link", { name: /Newest operations guide/ }),
-    ).toBeInTheDocument();
+    expect(mobile.getByRole("link", { name: "Blog" })).toBeInTheDocument();
 
     await user.click(product);
     expect(product).toHaveAttribute("aria-expanded", "true");
@@ -301,9 +214,7 @@ describe("EditorialHeader navigation", () => {
     await user.click(product);
     expect(product).toHaveAttribute("aria-expanded", "false");
     await user.click(resources);
-    await user.click(
-      mobile.getByRole("link", { name: /Newest operations guide/ }),
-    );
+    await user.click(mobile.getByRole("link", { name: "Blog" }));
     expect(
       document.getElementById("editorial-mobile-overlay"),
     ).not.toBeInTheDocument();
@@ -442,10 +353,10 @@ describe("SiteHeader mega-menu destinations", () => {
   });
 
   const namedItems: Array<[string, string]> = [
-    ["Healthcare", "/industries/healthcare"],
-    ["Property Management", "/industries/property-management"],
-    ["Technology & Software", "/industries/technology-software"],
-    ["Custom AI Solutions", "/industries/custom-ai-solutions"],
+    ["Customer Service", "/industries/customer-service"],
+    ["Finance", "/industries/finance"],
+    ["Operations", "/operations"],
+    ["Slack", "/integrations/slack"],
   ];
 
   afterEach(() => cleanup());

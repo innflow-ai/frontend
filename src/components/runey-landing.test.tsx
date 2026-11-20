@@ -74,13 +74,13 @@ describe("Runey landing interactions", () => {
     await user.keyboard("{Escape}");
     expect(product).toHaveAttribute("aria-expanded", "false");
     expect(product).toHaveFocus();
-    await user.click(screen.getByRole("button", { name: "Platform" }));
-    expect(screen.getByRole("button", { name: "Platform" })).toHaveAttribute(
+    await user.click(screen.getByRole("button", { name: "Models" }));
+    expect(screen.getByRole("button", { name: "Models" })).toHaveAttribute(
       "aria-expanded",
       "true",
     );
     await user.click(document.body);
-    expect(screen.getByRole("button", { name: "Platform" })).toHaveAttribute(
+    expect(screen.getByRole("button", { name: "Models" })).toHaveAttribute(
       "aria-expanded",
       "false",
     );
@@ -112,14 +112,14 @@ describe("Runey landing interactions", () => {
     });
     expect(navigation).toBeVisible();
     expect(document.body.style.overflow).toBe("hidden");
-    for (const name of ["Product", "Solutions", "Resources"]) {
+    for (const name of ["Product", "Models", "Solutions", "Resources"]) {
       expect(within(navigation).getByRole("button", { name })).toBeVisible();
     }
     await user.click(
       within(navigation).getByRole("button", { name: "Product" }),
     );
     expect(
-      within(navigation).getByRole("link", { name: /^AI Agents/ }),
+      within(navigation).getByRole("link", { name: /^Browse all products/ }),
     ).toBeVisible();
     const link = navigation.querySelector("a");
     expect(link).not.toBeNull();

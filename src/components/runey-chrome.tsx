@@ -10,21 +10,9 @@ import { siteConfig } from "@/config/site";
 import { EditorialHeader } from "./editorial-header";
 import { FooterLegalLinks } from "./footer-legal-links";
 import { GoogleSignInButton } from "./google-sign-in";
-import {
-  type LatestBlogPostNavItem,
-  MegaMenu,
-  productColumns,
-  resourcesColumns,
-  solutionsColumns,
-} from "./mega-menu";
+import { type LatestBlogPostNavItem, MegaMenu } from "./mega-menu";
+import { navigationLabels } from "./navigation-labels";
 import styles from "./runey-landing.module.css";
-
-const homepageGroups = [
-  { label: "Product", columns: productColumns.slice(0, 2) },
-  { label: "Solutions", columns: solutionsColumns },
-  { label: "Platform", columns: productColumns.slice(2) },
-  { label: "Resources", columns: resourcesColumns },
-];
 
 const links = [
   { label: "Product", href: "/#features" },
@@ -143,41 +131,35 @@ export function RuneyChrome({
               />
             </a>
             <nav className={styles.desktopNav} aria-label="Primary navigation">
-              {links.map((link) => {
-                const group =
-                  pathname === "/"
-                    ? homepageGroups.find((group) => group.label === link.label)
-                    : undefined;
-                return group ? (
-                  <MegaMenu
-                    key={link.label}
-                    label={link.label}
-                    columns={group.columns}
-                    compact
-                    showAside={false}
-                    expanded={activeMenu === link.label}
-                    onExpandedChange={(expanded) =>
-                      setActiveMenu((current) =>
-                        expanded
-                          ? link.label
-                          : current === link.label
-                            ? null
-                            : current,
-                      )
-                    }
-                  />
-                ) : (
+              {pathname === "/" ? (
+                <>
+                  {navigationLabels.map((label) => (
+                    <MegaMenu
+                      key={label}
+                      label={label}
+                      navigationLabel={label}
+                      columns={[]}
+                      compact
+                      expanded={activeMenu === label}
+                      onExpandedChange={(open) =>
+                        setActiveMenu((current) =>
+                          open ? label : current === label ? null : current,
+                        )
+                      }
+                    />
+                  ))}
+                  <a href="/pricing">Pricing</a>
+                </>
+              ) : (
+                links.map((link) => (
                   <a href={link.href} key={link.label}>
                     {link.label}
                   </a>
-                );
-              })}
+                ))
+              )}
             </nav>
             <div className={styles.headerActions}>
-              <a
-                className={styles.login}
-                href={siteConfig.signupUrl}
-              >
+              <a className={styles.login} href={siteConfig.signupUrl}>
                 Log in
               </a>
               <GoogleSignInButton

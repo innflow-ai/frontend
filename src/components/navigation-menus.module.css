@@ -1,0 +1,147 @@
+.directory,
+.productFoot {
+  color: #202020;
+  font:
+    400 15px / 1.35 var(--font-hero-ui, Inter),
+    sans-serif;
+  text-align: left;
+}
+.directory h3 {
+  margin: 0 0 8px;
+  line-height: 1.4;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+}
+.directory a,
+.productFoot a {
+  text-decoration: none;
+  color: inherit;
+}
+.directory a:hover,
+.productFoot a:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  padding: 20px 24px 12px;
+}
+.item {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 8px 0;
+  min-height: 44px;
+}
+.item img {
+  flex: none;
+  object-fit: contain;
+}
+.more {
+  display: block;
+  margin-top: 8px;
+  padding: 12px 0 8px;
+  border-top: 1px solid #e6e7e9;
+}
+.heading,
+.chips {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.heading {
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+.heading h3 {
+  margin: 0;
+}
+.departments {
+  padding: 20px 24px 12px;
+}
+.departments .columns {
+  padding: 0;
+}
+.departments .item {
+  min-height: 56px;
+}
+.strip,
+.modelFoot,
+.productFoot {
+  border-top: 1px solid #e6e7e9;
+  padding: 12px 24px;
+}
+.chips {
+  flex-wrap: wrap;
+}
+.chips .item {
+  font-size: 13px;
+  border: 1px solid #e2e4e7;
+  border-radius: 8px;
+  padding: 5px 9px;
+  min-height: 32px;
+  gap: 6px;
+}
+.chips .item img {
+  width: 16px;
+  height: 16px;
+}
+.all {
+  margin-left: auto;
+}
+.providers {
+  padding: 14px 20px;
+  display: grid;
+  grid-template-columns: 1.05fr 0.85fr 1.15fr;
+  gap: 18px 20px;
+  grid-template-areas: "p0 p3 p6" "p1 p4 p7" "p2 p5 p8" ". . p9";
+}
+.provider h3 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.provider ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.provider li {
+  font-size: 14px;
+  padding: 6px 0;
+}
+.modelFoot {
+  margin: 0;
+  font-size: 13px;
+}
+.productFoot {
+  text-align: right;
+  font-size: 14px;
+}
+@media (max-width: 700px) {
+  .columns,
+  .providers {
+    grid-template-columns: 1fr;
+    grid-template-areas: none;
+    gap: 16px;
+  }
+  .providers {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .provider {
+    grid-area: auto !important;
+  }
+  .departments .columns {
+    gap: 0;
+  }
+  .departments .item {
+    min-height: 44px;
+  }
+  .all {
+    margin: 6px 0 0;
+    width: 100%;
+  }
+}

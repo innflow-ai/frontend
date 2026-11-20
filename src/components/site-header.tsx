@@ -16,26 +16,19 @@ import {
   INNER_PAGE_ANNOUNCEMENTS_ENABLED,
 } from "@/lib/marketing-chrome";
 import { isShowcaseHome } from "@/lib/showcase-routes";
-import {
-  useNavigationAppUpdate,
-  useNavigationBlogPosts,
-  useNavigationTestimonial,
-} from "./navigation-blog-posts";
+import { navigationLabels, type NavigationLabel } from "./navigation-labels";
 import previewStyles from "./site-header-preview.module.css";
 import styles from "./site-shell.module.css";
 import { TrackedLink } from "./tracked-link";
 
-const menuLabels = ["Product", "Solutions", "Resources"] as const;
+
 
 // Loaded on open so motion and the menu icon set are not in the first paint.
 type DropdownComponent = typeof import("./site-header-dropdown").HeaderDropdown;
 type MobileNavigationComponent =
   typeof import("./editorial-header").MobileNavigation;
 export function SiteHeader() {
-  const latestBlogPosts = useNavigationBlogPosts();
-  const latestUpdate = useNavigationAppUpdate();
-  const testimonial = useNavigationTestimonial();
-  const [menu, setMenu] = useState<string | null>(null);
+  const [menu, setMenu] = useState<NavigationLabel | null>(null);
   const [mobile, setMobile] = useState(false);
   const [Dropdown, setDropdown] = useState<DropdownComponent | null>(null);
   const [MobileNav, setMobileNav] = useState<MobileNavigationComponent | null>(
@@ -265,7 +258,7 @@ export function SiteHeader() {
           aria-label="Primary navigation"
           className={styles.nav}
         >
-          {menuLabels.map((label) => (
+          {navigationLabels.map((label) => (
             // biome-ignore lint/a11y/useSemanticElements: This groups navigation disclosures, not form fields.
             <div
               className={styles.menuGroup}
@@ -314,15 +307,11 @@ export function SiteHeader() {
                 <Dropdown
                   label={label}
                   closeMenus={closeMenus}
-                  latestBlogPosts={latestBlogPosts}
-                  latestUpdate={latestUpdate}
-                  testimonial={testimonial}
                 />
               ) : null}
             </div>
           ))}
           <a href="/pricing">Pricing</a>
-          <a href="/blog">Blog</a>
           <a
             className={styles.mobileLogin}
             href={siteConfig.signupUrl}
@@ -367,7 +356,6 @@ export function SiteHeader() {
       {mobile && MobileNav ? (
         <MobileNav
           open={mobile}
-          latestBlogPosts={latestBlogPosts}
           onClose={closeMenus}
           id="baselane-mobile-overlay"
           className={styles.mobileMenu}

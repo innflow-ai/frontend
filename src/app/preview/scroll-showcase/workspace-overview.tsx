@@ -128,7 +128,7 @@ export function WorkspaceOverview() {
             <h2 id="workspace-heading" data-mixed-heading>
               <MixedHeadingContent
                 title="Move everyday"
-                emphasis="work forward."
+                emphasis={<strong>work forward.</strong>}
               />
             </h2>
             <p data-home-copy className={styles.introduction}>

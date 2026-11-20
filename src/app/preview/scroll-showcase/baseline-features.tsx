@@ -1,7 +1,13 @@
 "use client";
 
 import { motion } from "motion/react";
-import { type KeyboardEvent, useEffect, useRef, useState } from "react";
+import {
+  type KeyboardEvent,
+  type ReactNode,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { ChevronRight } from "@/components/chevron-right";
 import { BotIcon } from "@/components/icons/bot-icon";
 import {
@@ -42,7 +48,7 @@ type Feature = {
   node: string;
   label: string;
   title: string;
-  heading: { title: string; emphasis: string };
+  heading: { title: ReactNode; emphasis: ReactNode };
   reverse?: boolean;
   items: typeof storyboards;
 };
@@ -54,7 +60,14 @@ export const baselineFeatures: Feature[] = [
     node: "350:11199",
     label: "AI agent",
     title: "Get more done\nwith AI agents.",
-    heading: { title: "Get more done", emphasis: "with AI agents." },
+    heading: {
+      title: "Get more done",
+      emphasis: (
+        <>
+          with <strong>AI agents.</strong>
+        </>
+      ),
+    },
     items: storyboards.slice(0, 6),
   },
   {
@@ -62,7 +75,14 @@ export const baselineFeatures: Feature[] = [
     node: "350:11344",
     label: "Workflows",
     title: "Move work forward\nwith less effort.",
-    heading: { title: "Move work forward", emphasis: "with less effort." },
+    heading: {
+      title: "Move work forward",
+      emphasis: (
+        <>
+          with <strong>less effort.</strong>
+        </>
+      ),
+    },
     reverse: true,
     items: storyboards.slice(6, 10),
   },
@@ -71,7 +91,14 @@ export const baselineFeatures: Feature[] = [
     node: "350:11402",
     label: "Assistant",
     title: "Spend less time\nmanaging requests.",
-    heading: { title: "Spend less time", emphasis: "managing requests." },
+    heading: {
+      title: (
+        <>
+          Spend <strong>less time</strong>
+        </>
+      ),
+      emphasis: "managing requests.",
+    },
     items: storyboards.slice(10, 14),
   },
   {
@@ -79,7 +106,14 @@ export const baselineFeatures: Feature[] = [
     node: "350:11485",
     label: "Insights",
     title: "Know where\nto focus next.",
-    heading: { title: "Know where", emphasis: "to focus next." },
+    heading: {
+      title: "Know where",
+      emphasis: (
+        <>
+          to <strong>focus next.</strong>
+        </>
+      ),
+    },
     reverse: true,
     items: storyboards.slice(14, 18),
   },

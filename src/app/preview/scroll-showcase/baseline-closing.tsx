@@ -87,7 +87,11 @@ export function BaselineClosing() {
           id="baseline-closing-heading"
           eyebrow="Get started"
           title="From the first meeting"
-          emphasis="to the follow-up"
+          emphasis={
+            <>
+              to the <strong>follow-up</strong>
+            </>
+          }
           subtitle="All of the work around meetings, handled in one place. Book time, capture every discussion, and keep next steps moving without the manual work."
         />
         <TrackedLink

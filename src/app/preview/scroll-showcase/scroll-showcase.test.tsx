@@ -119,9 +119,9 @@ it("offers Google, email and the general sign-in page", () => {
   expect(
     screen.getByRole("link", { name: "Continue with Google" }),
   ).toHaveAttribute("href", siteConfig.signupUrl);
-  expect(screen.getByRole("link", { name: "Log in" })).toHaveAttribute(
+  expect(screen.getByRole("link", { name: "Learn more" })).toHaveAttribute(
     "href",
-    siteConfig.loginUrl,
+    "#feature-showcase",
   );
   expect(screen.queryByRole("dialog", { hidden: true })).toBeNull();
   expect(

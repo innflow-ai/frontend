@@ -28,7 +28,7 @@ export function HomepageAgentShowcase() {
             <h2 id="agent-showcase-heading" data-mixed-heading>
               <MixedHeadingContent
                 title="Let experts"
-                emphasis="build the agents"
+                emphasis={<strong>build the agents</strong>}
               />
             </h2>
           </header>

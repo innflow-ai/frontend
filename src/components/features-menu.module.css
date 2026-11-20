@@ -26,7 +26,7 @@
 .list h3 {
   margin: 0 0 8px 4px;
   font:
-    500 13px / 1.3 Inter,
+    500 13px / 1.3 var(--font-sans),
     sans-serif;
 }
 .list > div {
@@ -45,7 +45,7 @@
   border-radius: 6px;
   text-align: left;
   font:
-    500 14px / 1.2 Inter,
+    500 14px / 1.2 var(--font-sans),
     sans-serif;
 }
 .list button[aria-selected="true"] {
@@ -89,7 +89,7 @@
 .copy h3 {
   margin: 0;
   font:
-    600 16px / 1.3 Inter,
+    600 16px / 1.3 var(--font-sans),
     sans-serif;
 }
 .copy a {
@@ -100,7 +100,7 @@
 .copy p {
   margin: 6px 0 0;
   font:
-    400 14px / 1.4 Inter,
+    400 14px / 1.4 var(--font-sans),
     sans-serif;
   color: #505458;
 }

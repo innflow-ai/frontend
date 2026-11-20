@@ -1,4 +1,3 @@
-import { Poppins } from "next/font/google";
 import Image from "next/image";
 import { GoogleCtaContent } from "@/components/google-cta-content";
 import {
@@ -15,11 +14,6 @@ import styles from "./runey-landing.module.css";
 import { RuneyHeroArtwork, RuneyWorkspace } from "./runey-workspace";
 import { TrackedLink } from "./tracked-link";
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
 const features = [
   {
     id: "workflows",
@@ -91,7 +85,7 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
   return (
     <main
       id="main-content"
-      className={`${styles.page} ${property ? poppins.className : styles.blueHome}`}
+      className={`${styles.page} ${property ? "" : styles.blueHome}`}
     >
       <section className={styles.hero} id="home-hero">
         <div className={styles.shell}>

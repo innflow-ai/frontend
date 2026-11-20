@@ -29,7 +29,10 @@ const states = [
     href: "/products/ai-agents",
     badge: "",
     title: "Delegate tasks to your AI agent",
-    heading: { title: "Delegate tasks", emphasis: "to your AI agent" },
+    heading: {
+      title: <strong>Delegate tasks</strong>,
+      emphasis: "to your AI agent",
+    },
     body: "Give your agent a focused task and the context it needs. Let it prepare the next step while your team stays in control.",
     accent: "#6bb0ff",
     surface: "#d3e5ff",
@@ -40,7 +43,14 @@ const states = [
     href: "/features/workflows",
     badge: "",
     title: "Keep work moving across your tools",
-    heading: { title: "Keep work moving", emphasis: "across your tools" },
+    heading: {
+      title: "Keep work moving",
+      emphasis: (
+        <>
+          across <strong>your tools</strong>
+        </>
+      ),
+    },
     body: "Connect the steps behind everyday work. Route requests, coordinate handoffs, and keep your team involved where review is needed.",
     accent: "#daf098",
     surface: "#f1f8dc",
@@ -51,7 +61,10 @@ const states = [
     href: "#workflows",
     badge: "New",
     title: "Get the help you need in the moment",
-    heading: { title: "Get the help you need", emphasis: "in the moment" },
+    heading: {
+      title: "Get the help you need",
+      emphasis: <strong>in the moment</strong>,
+    },
     body: "Find relevant information, draft a response, and clarify next steps with assistance grounded in your team’s context.",
     accent: "#ba9dff",
     surface: "#eae3f9",
@@ -62,7 +75,10 @@ const states = [
     href: "#insights",
     badge: "New",
     title: "See what needs your attention",
-    heading: { title: "See what needs", emphasis: "your attention" },
+    heading: {
+      title: "See what needs",
+      emphasis: <strong>your attention</strong>,
+    },
     body: "Turn conversations and activity into clear summaries. Spot recurring questions, review open work, and decide where to focus next.",
     accent: "#5aded7",
     surface: "#e5f9f9",
@@ -263,7 +279,7 @@ export function ScrollShowcase() {
         </p>
         <div className={styles.oauthActions}>
           <TrackedLink
-            data-site-cta="primary"
+            data-site-cta="secondary"
             className={`${googleButtonStyles.button} ${googleButtonStyles.raisedSignIn}`}
             destination={siteConfig.signupUrl}
             eventLabel="homepage_hero_google"
@@ -271,16 +287,17 @@ export function ScrollShowcase() {
             <GoogleCtaContent />
           </TrackedLink>
           <TrackedLink
-            data-site-cta="secondary"
+            data-site-cta="primary"
             className={`${googleButtonStyles.button} ${googleButtonStyles.raisedSignIn}`}
-            destination={siteConfig.loginUrl}
-            eventLabel="homepage_hero_login"
+            destination="#feature-showcase"
+            eventLabel="homepage_hero_learn_more"
           >
-            <span className={googleButtonStyles.content}>Log in</span>
+            <span className={googleButtonStyles.content}>Learn more</span>
           </TrackedLink>
         </div>
       </header>
       <section
+        id="feature-showcase"
         ref={section}
         className={styles.scrollTrack}
         data-reduced={reduced}

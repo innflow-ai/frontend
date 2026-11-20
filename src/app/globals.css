@@ -2,19 +2,26 @@
 @import "./termly-consent.css";
 
 :root {
-  /* Shared typography approved alongside the Paper pricing refresh. */
-  --font-sans: var(--font-archivo), Arial, sans-serif;
-  /* Source Serif 4 is loaded on <html>. Do not fall through to Georgia. */
-  --font-display: var(--font-source-serif-4), serif;
-  --font-heading-emphasis: var(--font-archivo), Arial, sans-serif;
-  --font-mono: var(--font-geist-mono), monospace;
-  /* Existing components inherit the new families through these aliases. */
-  --font-host-grotesk: var(--font-archivo);
-  --font-manrope: var(--font-archivo);
-  --font-jetbrains-mono: var(--font-geist-mono);
+  --font-sans: var(--font-satoshi), Arial, sans-serif;
+  /* Shared roles and legacy component tokens use the site typeface. */
+  --font-serif: var(--font-sans);
+  --font-display: var(--font-sans);
+  --font-heading-emphasis: var(--font-sans);
+  --font-mono: var(--font-sans);
+  --font-archivo: var(--font-sans);
+  --font-archivo-italic: var(--font-sans);
+  --font-source-serif-4: var(--font-sans);
+  --font-hero-heading: var(--font-sans);
+  --font-hero-ui: var(--font-sans);
+  --font-inter: var(--font-sans);
+  --font-geist: var(--font-sans);
+  --font-geist-mono: var(--font-sans);
+  --font-workspace-contacts: var(--font-sans);
+  --font-host-grotesk: var(--font-sans);
+  --font-manrope: var(--font-sans);
+  --font-jetbrains-mono: var(--font-sans);
   --font-button: var(--font-sans);
   --font-figtree: var(--font-sans);
-  /* Compatibility for components that still reference the previous default. */
   --font-questrial: var(--font-sans);
   /* White/cool neutrals from the supplied Calendly_variables palette.
      Preserve Innflow's existing ink, typography families, and product artwork. */

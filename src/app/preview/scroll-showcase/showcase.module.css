@@ -63,8 +63,9 @@
   gap: 12px;
   margin-top: 16px;
 }
-.oauthActions > button[data-site-cta] {
-  font: 400 15px/20px var(--font-hero-ui), sans-serif;
+.oauthActions > a[data-site-cta] {
+  min-height: 36px;
+  padding: 6px 18px !important;
 }
 .oauthActions :is(a, button):hover {
   transform: translateY(-1px);
@@ -1010,9 +1011,8 @@
     flex-wrap: nowrap;
     gap: 8px;
   }
-  .oauthActions > :is(a, button)[data-site-cta] {
-    min-height: 44px;
-    padding: 8px 9px !important;
+  .oauthActions > a[data-site-cta] {
+    padding: 6px 12px !important;
     font-size: 12px;
   }
   .oauthActions [data-google-cta] {

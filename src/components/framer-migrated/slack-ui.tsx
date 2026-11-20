@@ -344,7 +344,7 @@ const sections = [
   },
 ];
 
-const fontFamily = "'Inter', -apple-system, BlinkMacSystemFont, sans-serif";
+const fontFamily = "var(--font-sans)";
 const easeOut = "cubic-bezier(0.23, 1, 0.32, 1)";
 const blue = "#2563EB";
 const channelById: Record<string, Channel> = Object.fromEntries(

@@ -21,7 +21,7 @@ export function AnnouncementBar({ onDismiss }: { onDismiss: () => void }) {
       }
     >
       <span className={styles.ribbon} aria-hidden="true" />
-      <p className={styles.copy}>Innflow is live for property operations</p>
+      <p className={styles.copy}>Innflow is live for agentic process automation</p>
       <a href={siteConfig.signupUrl}>
         Get started <ArrowRight size={12} aria-hidden="true" />
       </a>

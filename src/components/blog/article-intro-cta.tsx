@@ -10,16 +10,13 @@ export function BlogArticleIntroCta({
 }: {
   category?: string | null;
 }) {
-  const property = category === "property-management";
   const agents = category === "ai-agent";
   const integrations = category === "integrations";
-  const resource = property
-    ? { label: "Explore property management", href: "/property-management" }
-    : agents
-      ? { label: "Explore AI agents", href: "/products/ai-agents" }
-      : integrations
-        ? { label: "Browse integrations", href: "/integrations" }
-        : { label: "Explore workflows", href: "/features/workflows" };
+  const resource = agents
+    ? { label: "Explore AI agents", href: "/products/ai-agents" }
+    : integrations
+      ? { label: "Browse integrations", href: "/integrations" }
+      : { label: "Explore workflows", href: "/features/workflows" };
   return (
     <section className={styles.banner} aria-label="Explore Innflow">
       <h2 data-mixed-heading>
@@ -30,9 +27,8 @@ export function BlogArticleIntroCta({
         </MixedHeadingText>
       </h2>
       <p>
-        {property
-          ? "Bring your property operations into one connected flow."
-          : "Connect the tools, tasks, and people behind your team’s daily work."}
+        Connect the tools, tasks, and people behind your team’s daily work —
+        with agents that bring results back for review.
       </p>
       <div className={styles.actions}>
         <TrackedLink

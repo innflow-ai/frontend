@@ -312,18 +312,12 @@ export function SiteHeader() {
             </div>
           ))}
           <a href="/pricing">Pricing</a>
-          <a
-            className={styles.mobileLogin}
-            href={siteConfig.signupUrl}
-          >
+          <a className={styles.mobileLogin} href={siteConfig.loginUrl}>
             Log in
           </a>
         </nav>
         <div className={styles.headerActions}>
-          <a
-            className={styles.login}
-            href={siteConfig.signupUrl}
-          >
+          <a className={styles.login} href={siteConfig.loginUrl}>
             Log in
           </a>
           <TrackedLink
@@ -360,7 +354,7 @@ export function SiteHeader() {
           id="baselane-mobile-overlay"
           className={styles.mobileMenu}
           pricingHref="/pricing"
-          loginHref={siteConfig.signupUrl}
+          loginHref={siteConfig.loginUrl}
         />
       ) : null}
     </div>

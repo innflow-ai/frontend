@@ -1,6 +1,7 @@
 import { act, cleanup, render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { siteConfig } from "@/config/site";
 import { BaselaneHomepage } from "./baselane-homepage";
 import { EditorialHeader } from "./editorial-header";
 import styles from "./editorial-header.module.css";
@@ -60,10 +61,7 @@ describe("EditorialHeader navigation", () => {
     ).toHaveAttribute("href", "/pricing");
     expect(
       within(navigation).getByRole("link", { name: "Login" }),
-    ).toHaveAttribute(
-      "href",
-      "https://app.innflow.ai/signup?callbackURL=%2Fworkflows",
-    );
+    ).toHaveAttribute("href", siteConfig.loginUrl);
     expect(
       screen.queryByRole("link", { name: "Book a demo" }),
     ).not.toBeInTheDocument();

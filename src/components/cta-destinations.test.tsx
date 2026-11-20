@@ -9,7 +9,7 @@ vi.mock("next/navigation", () => ({ usePathname: () => "/" }));
 
 afterEach(cleanup);
 
-it("keeps signup and demo destinations distinct in header, homepage, and footer", () => {
+it("keeps signup, login, and demo destinations distinct in header, homepage, and footer", () => {
   vi.stubGlobal(
     "matchMedia",
     vi.fn(() => ({
@@ -27,12 +27,16 @@ it("keeps signup and demo destinations distinct in header, homepage, and footer"
   );
 
   const signup = screen.getAllByRole("link", { name: /Continue with Google/ });
+  const login = screen.getAllByRole("link", { name: "Log in" });
   const demo = [
     ...screen.getAllByRole("link", { name: "Book a demo" }),
     ...screen.getAllByRole("link", { name: /See demo/ }),
   ];
   expect(signup.length).toBeGreaterThan(0);
   expect(demo.length).toBeGreaterThan(0);
+  for (const link of login) {
+    expect(link).toHaveAttribute("href", siteConfig.loginUrl);
+  }
   for (const link of signup) {
     expect(link).toHaveAttribute("href", siteConfig.signupUrl);
     expect(link.getAttribute("href")).not.toBe(siteConfig.demoUrl);

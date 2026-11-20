@@ -38,17 +38,23 @@ it.each(["/", "/blog", "/products/ai-agents", "/legal/privacy-policy"])(
   },
 );
 
-it("uses the homepage and inner-page navigation in the same layout", () => {
+it("uses the same cross-industry footer navigation on homepage and inner pages", () => {
   route.pathname = "/";
   const view = render(<SiteCloseAndFooter />);
-  expect(screen.getByRole("heading", { name: "Property teams" })).toBeVisible();
+  expect(screen.getByRole("heading", { name: "Product" })).toBeVisible();
+  expect(screen.getByRole("heading", { name: "Industries" })).toBeVisible();
   expect(
-    screen.getByRole("link", { name: "Long-term rentals" }),
-  ).toHaveAttribute("href", "/long-term-rentals");
+    screen.getByRole("link", { name: "Browse all industries" }),
+  ).toHaveAttribute("href", "/solutions");
+  expect(screen.queryByRole("heading", { name: "Property teams" })).toBeNull();
+  expect(
+    screen.queryByRole("link", { name: "Long-term rentals" }),
+  ).toBeNull();
 
   route.pathname = "/blog";
   view.rerender(<SiteCloseAndFooter />);
   expect(screen.getByRole("heading", { name: "Product" })).toBeVisible();
+  expect(screen.getByRole("heading", { name: "Industries" })).toBeVisible();
   expect(screen.queryByRole("heading", { name: "Property teams" })).toBeNull();
 });
 

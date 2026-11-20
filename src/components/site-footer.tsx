@@ -113,7 +113,7 @@ const getStarted = {
   links: [
     ["Book a demo", siteConfig.demoUrl],
     ["Pricing", "/pricing"],
-    ["Log in", siteConfig.signupUrl],
+    ["Log in", siteConfig.loginUrl],
   ],
 };
 

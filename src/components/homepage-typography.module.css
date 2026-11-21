@@ -42,7 +42,7 @@
 
 .headings:global(#main-content) [role="tabpanel"] [data-home-copy] {
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 300;
   color: #767676;
 }

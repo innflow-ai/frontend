@@ -70,7 +70,7 @@ describe("Workspace overview", () => {
         "aria-expanded",
         "true",
       );
-      expect(screen.getByRole("button", { name: "Connect" })).toHaveAttribute(
+      expect(screen.getByRole("button", { name: "Teach a task" })).toHaveAttribute(
         "aria-expanded",
         "false",
       );
@@ -78,7 +78,7 @@ describe("Workspace overview", () => {
   );
 
   it.each([761, 1100])(
-    "starts with Connect expanded at the %ipx tablet boundary",
+    "starts with Teach a task expanded at the %ipx tablet boundary",
     (width) => {
       viewportWidth = width;
       render(<WorkspaceOverview />);
@@ -130,7 +130,7 @@ describe("Workspace overview", () => {
 
   it("supports arrow, Home and End navigation without losing focus", () => {
     render(<WorkspaceOverview />);
-    const connect = screen.getByRole("button", { name: "Connect" });
+    const connect = screen.getByRole("button", { name: "Teach a task" });
     const deploy = screen.getByRole("button", { name: "Deploy" });
     fireEvent.keyDown(connect, { key: "End" });
     expect(deploy).toHaveFocus();

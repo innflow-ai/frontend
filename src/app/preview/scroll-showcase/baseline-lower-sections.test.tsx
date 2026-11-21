@@ -12,6 +12,7 @@ const motionPreference = vi.hoisted(() => ({ reduced: false }));
 vi.mock("motion/react", async (importOriginal) => ({
   ...(await importOriginal<typeof import("motion/react")>()),
   useReducedMotion: () => motionPreference.reduced,
+  useInView: () => false,
 }));
 
 vi.mock("next/image", () => ({
@@ -252,7 +253,7 @@ itWhenStoriesShown(
     expect(screen.getByText("Second Person")).toBeVisible();
   },
 );
-it("matches the baseline two-card infrastructure without extra focus controls", () => {
+it("shows the integration pillar poster and both infrastructure cards before playback", () => {
   render(<BaselineConnectedInfrastructure />);
   expect(screen.queryByText("Connected infrastructure")).toBeNull();
   expect(screen.getByRole("heading", { level: 2 })).toHaveTextContent(
@@ -262,9 +263,10 @@ it("matches the baseline two-card infrastructure without extra focus controls", 
   expect(
     screen.getByRole("heading", { name: "Support channels" }),
   ).toBeVisible();
-  expect(
-    screen.getAllByRole("img").filter((n) => n.getAttribute("alt")),
-  ).toHaveLength(17);
+  expect(screen.getByRole("group", { name: "Integration pillars" })).toBeVisible();
+  expect(screen.getByRole("img", { name: /^Integrations:/ })).toHaveAttribute(
+    "src", expect.stringContaining("integration-pillars"),
+  );
   expect(screen.queryByRole("button")).toBeNull();
 });
 it("keeps the closing invite and gates the photo-card strip with SHOW_PHOTO_CARDS", () => {

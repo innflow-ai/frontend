@@ -19,7 +19,7 @@
 .directory .eyebrow {
   margin: 0 0 16px;
   color: #586567;
-  font: 11px / 1.5 monospace;
+  font: 11px / 1.5 var(--font-sans);
   letter-spacing: 0.13em;
   text-transform: uppercase;
 }
@@ -202,7 +202,7 @@
 .directory .chip {
   display: inline-block;
   color: #31505e;
-  font: 10px / 1.5 monospace;
+  font: 10px / 1.5 var(--font-sans);
   text-transform: uppercase;
   letter-spacing: 0.09em;
 }

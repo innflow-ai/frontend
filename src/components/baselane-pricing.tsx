@@ -192,7 +192,11 @@ export function BaselanePricing() {
             size="hero"
             title="Pick a plan."
             emphasis="Your AI team is waiting."
-            subtitle="Agents, workflows and knowledge. One workspace."
+            subtitle={
+              <>
+                Agents, workflows and knowledge. <strong>One workspace.</strong>
+              </>
+            }
           >
             <fieldset
               className={styles.billing}

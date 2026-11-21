@@ -186,7 +186,7 @@ export default async function BlogPostPage({ params }: RouteParams) {
           <div className={styles.articleColumns}>
             <aside className={styles.articleAside} aria-label="Article tools">
               <div className={styles.asideCta}>
-                <p>Bring your property operations together with Innflow</p>
+                <p>Put AI agents to work with Innflow</p>
                 <GoogleSignInButton
                   label="Get started"
                   eventLabel="blog_sidebar_get_started"

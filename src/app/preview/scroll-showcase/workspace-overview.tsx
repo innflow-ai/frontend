@@ -6,8 +6,15 @@ import { MixedHeadingContent } from "@/components/section-heading";
 
 const stepIcons = [StarsA, Share, Checklist];
 
-import { type KeyboardEvent, useState, useSyncExternalStore } from "react";
+import {
+  type KeyboardEvent,
+  useEffect,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from "react";
 import { siteConfig } from "@/config/site";
+import { LottieArtwork } from "./lottie-artwork";
 import { WorkspaceCardArtwork } from "./workspace-card-artwork";
 import styles from "./workspace-overview.module.css";
 
@@ -27,16 +34,16 @@ const getServerTabletSnapshot = () => false;
 export const workspaceCards = [
   {
     id: "connect",
-    title: "Connect",
-    summary: "Connect your tools. Add your knowledge.",
+    title: "Teach a task",
+    summary: "Record a task for your agent.",
     description:
-      "Connect the tools you use and add relevant business information, giving your agents the context to get started.",
+      "Show your agent how you export the weekly signup report by recording the steps as you work.",
     steps: [
-      "Connect your tools",
-      "Add your business information",
-      "Give your agents context",
+      "Start recording",
+      "Choose the last 7 days and export the report",
+      "Stop and save the demonstration",
     ],
-    source: "53:1025",
+    source: "393:26359",
   },
   {
     id: "assist",
@@ -78,6 +85,46 @@ export const workspaceCards = [
     source: "53:959",
   },
 ] as const;
+
+function TeachingDemo({ expanded }: { expanded: boolean }) {
+  const host = useRef<HTMLDivElement>(null);
+  const [play, setPlay] = useState(false);
+
+  useEffect(() => {
+    const el = host.current;
+    if (!expanded || !el || typeof IntersectionObserver === "undefined") return;
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let visible = false;
+    const update = () => setPlay(visible && !motion.matches);
+    const observer = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      update();
+    });
+    observer.observe(el);
+    motion.addEventListener("change", update);
+    return () => {
+      observer.disconnect();
+      motion.removeEventListener("change", update);
+      setPlay(false);
+    };
+  }, [expanded]);
+
+  return (
+    <div
+      className={styles.teachingDemo}
+      ref={host}
+      role="img"
+      aria-label="Recording a demonstration of exporting the last seven days of signup data."
+    >
+      <LottieArtwork
+        artwork={`${assets}/teach-weekly-report`}
+        width={580}
+        height={294}
+        play={expanded && play}
+      />
+    </div>
+  );
+}
 
 export function WorkspaceOverview() {
   const [active, setActive] = useState(0);
@@ -128,12 +175,12 @@ export function WorkspaceOverview() {
             <h2 id="workspace-heading" data-mixed-heading>
               <MixedHeadingContent
                 title="Move everyday"
-                emphasis="work forward."
+                emphasis={<strong>work forward.</strong>}
               />
             </h2>
             <p data-home-copy className={styles.introduction}>
-              Schedule meetings, prepare follow-ups, review decisions, and
-              handle billing questions.
+              Schedule meetings, <strong>prepare follow-ups</strong>, review
+              decisions, and handle billing questions.
             </p>
             <a
               data-site-cta="primary"
@@ -225,24 +272,40 @@ export function WorkspaceOverview() {
                       </div>
                     </div>
                   </div>
-                  <div className={styles.artwork} aria-hidden="true">
-                    <Image
-                      className={styles.inactiveArt}
-                      src={`${assets}/${card.id}-inactive.png`}
-                      alt=""
-                      fill
-                      sizes="(max-width: 1100px) 90vw, (max-width: 1328px) 40vw, 480px"
-                    />
-                    <div className={styles.activeArt}>
+                  {index === 0 ? (
+                    <div
+                      className={`${styles.artwork} ${styles.teachingPanel}`}
+                    >
+                      <div className={styles.activeArt} aria-hidden="true">
+                        <Image
+                          src={`${assets}/connect-background.png`}
+                          alt=""
+                          fill
+                          sizes="(max-width: 1100px) 90vw, (max-width: 1328px) 40vw, 480px"
+                        />
+                      </div>
+                      {(!tablet || active === index) && <TeachingDemo expanded />}
+                    </div>
+                  ) : (
+                    <div className={styles.artwork} aria-hidden="true">
                       <Image
-                        src={`${assets}/${card.id}-background.png`}
+                        className={styles.inactiveArt}
+                        src={`${assets}/${card.id}-inactive.png`}
                         alt=""
                         fill
                         sizes="(max-width: 1100px) 90vw, (max-width: 1328px) 40vw, 480px"
                       />
-                      <WorkspaceCardArtwork id={card.id} />
+                      <div className={styles.activeArt}>
+                        <Image
+                          src={`${assets}/${card.id}-background.png`}
+                          alt=""
+                          fill
+                          sizes="(max-width: 1100px) 90vw, (max-width: 1328px) 40vw, 480px"
+                        />
+                        <WorkspaceCardArtwork id={card.id} />
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
               </article>
             ))}

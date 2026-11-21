@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
 import { artworkAssets } from "@/components/product-artwork/inventory";
 import { ProductArtwork } from "@/components/product-artwork/product-artwork";
 import { productArtworkScenes } from "@/content/product-artwork-scenes";
 
-const geist = Geist({ subsets: ["latin"], variable: "--font-geist" });
 export const metadata: Metadata = {
   title: "Product artwork library",
   robots: { index: false, follow: false },
@@ -12,7 +10,6 @@ export const metadata: Metadata = {
 export default function ArtworkLibrary() {
   return (
     <main
-      className={geist.variable}
       style={{
         padding: "120px 24px 48px",
         background: "#fcfbf8",

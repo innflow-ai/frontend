@@ -70,7 +70,7 @@
   text-align: center;
   text-transform: uppercase;
   font:
-    400 2.89333cqw / 1.23 Inter,
+    400 2.89333cqw / 1.23 var(--font-sans),
     sans-serif;
 }
 .insetPanel span {

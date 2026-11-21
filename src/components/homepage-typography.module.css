@@ -10,8 +10,10 @@
   }
 }
 
-/* The hero H1 retains its own two typefaces. Section titles use the local
-   upright Source Serif 4, including their nested text runs. */
+.headings:global(#main-content) h1[data-mixed-heading] span {
+  font-family: var(--font-sans);
+  font-style: normal;
+}
 .headings:global(#main-content) :is(h2, h3, h4, h5, h6),
 .headings:global(#main-content) :is(h2, h3, h4, h5, h6) :is(span, strong, button) {
   font-family: var(--font-homepage-heading), serif;
@@ -21,6 +23,10 @@
 .headings:global(#main-content) [data-mixed-heading]:is(h2, h3) span {
   font-style: normal;
   font-weight: 400;
+}
+
+.headings:global(#main-content) :is([data-mixed-heading], [data-home-copy]) strong {
+  font-weight: 700;
 }
 
 .headings:global(#main-content) [data-home-copy],
@@ -36,7 +42,7 @@
 
 .headings:global(#main-content) [role="tabpanel"] [data-home-copy] {
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 300;
   color: #767676;
 }

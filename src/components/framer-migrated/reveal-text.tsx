@@ -119,7 +119,7 @@ export default function RevealText(props: RevealTextProps) {
     letterSpacing = -3,
     paragraphAlign = "center",
     transitionStartIndex = 22,
-    fontFamily = "Urbanist",
+    fontFamily = "var(--font-sans)",
   } = props;
   const words = text.split(" ");
   const totalWords = words.length;

@@ -73,8 +73,9 @@ export function IndustryPage({ page }: { page: IndustryPageContent }) {
               </MixedHeadingText>
             </h2>
             <p>
-              Explore how connected conversations and human review can shape
-              everyday work in {page.name.toLowerCase()}.
+              Explore how connected conversations and{" "}
+              <strong>human review</strong> can shape everyday work in{" "}
+              {page.name.toLowerCase()}.
             </p>
           </header>
           <nav className={styles.sectionNav} aria-label="Workflow sections">
@@ -173,8 +174,8 @@ export function IndustryPage({ page }: { page: IndustryPageContent }) {
                 <MixedHeadingText>Build around your process</MixedHeadingText>
               </h3>
               <p>
-                Start with one defined workflow and explore the tools and review
-                points it needs.
+                Start with <strong>one defined workflow</strong> and explore the
+                tools and review points it needs.
               </p>
             </article>
           </div>

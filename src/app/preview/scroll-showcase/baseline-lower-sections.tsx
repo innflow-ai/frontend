@@ -20,7 +20,7 @@ import {
 import { SHOW_TESTIMONIAL } from "./testimonial-visibility";
 import type { Testimonial } from "@/lib/testimonials";
 import styles from "./baseline-lower-sections.module.css";
-import { integrationIcons, integrationNames } from "./homepage-content";
+import { IntegrationPillars } from "./integration-pillars";
 
 const assets = "/preview/homepage";
 const lower = `${assets}/baseline-lower`;
@@ -72,7 +72,7 @@ function CustomerStoryLayoutPreview() {
         <h2 id="baseline-stories-heading" data-mixed-heading>
           <MixedHeadingContent
             title="Real customers."
-            emphasis="Real results."
+            emphasis={<strong>Real results.</strong>}
             breakAt="never"
           />
         </h2>
@@ -238,7 +238,11 @@ export function BaselineCustomerStories({
           data-mixed-heading={!!headingRuns || undefined}
         >
           {headingRuns ? (
-            <MixedHeadingContent {...headingRuns} breakAt="never" />
+            <MixedHeadingContent
+              title={headingRuns.title}
+              emphasis={<strong>{headingRuns.emphasis}</strong>}
+              breakAt="never"
+            />
           ) : (
             heading
           )}
@@ -329,12 +333,19 @@ export function BaselineConnectedInfrastructure() {
         <SectionHeading
           variant="mixed-italic"
           id="baseline-infrastructure-heading"
-          title="Connect the tools"
+          title={<strong>Connect the tools</strong>}
           emphasis="behind your work."
-          subtitle="Bring relevant information into the tools your team already uses. Explore supported connections to find the right fit for your workflow."
+          subtitle={
+            <>
+              Bring relevant information into the{" "}
+              <strong>tools your team already uses</strong>. Explore supported
+              connections to find the right fit for your workflow.
+            </>
+          }
         />
         <Link
           data-site-cta="primary"
+          data-cta-compact
           className={styles.directory}
           href="/integrations"
         >
@@ -344,24 +355,7 @@ export function BaselineConnectedInfrastructure() {
           </span>
         </Link>
       </header>
-      <div className={styles.integrations}>
-        {[integrationNames.slice(0, 9), integrationNames.slice(9)].map(
-          (row) => (
-            <div className={styles.integrationRow} key={row[0]}>
-              {row.map((name) => (
-                <div className={styles.integrationTile} key={name}>
-                  <Image
-                    src={integrationIcons[name]}
-                    alt={name}
-                    width={64}
-                    height={64}
-                  />
-                </div>
-              ))}
-            </div>
-          ),
-        )}
-      </div>
+      <IntegrationPillars />
       <div className={styles.infrastructureCards}>
         {cards.map((card) => (
           <Link key={card.title} href={card.href}>

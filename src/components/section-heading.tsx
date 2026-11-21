@@ -55,7 +55,7 @@ type HeadingSize = "hero" | "section" | "h2" | "h3";
 
 /**
  * Shared marketing heading. The `mixed-italic` variant keeps its original name
- * for existing callers and pairs upright Archivo and Source Serif 4.
+ * for existing callers and renders both phrases upright.
  * Sizes, semantic levels, alignment, and color stay independent of typography.
  */
 export function SectionHeading({
@@ -79,7 +79,7 @@ export function SectionHeading({
   eyebrow?: ReactNode;
   /** Opening phrase, or the full title when no explicit split is supplied. */
   title: ReactNode;
-  /** Continuation phrase. Source Serif 4 in the mixed variant. */
+  /** Continuation phrase in the mixed variant. */
   emphasis?: ReactNode;
   subtitle?: ReactNode;
   size?: HeadingSize;

@@ -1,16 +1,4 @@
 /* biome-ignore-all lint/style/noDescendingSpecificity: module-scoped component regions use independent descendant selectors. */
-@font-face {
-  font-family: HelpGeist;
-  src: url("/brand/help/geist.woff2") format("woff2");
-  font-weight: 100 900;
-  font-display: swap;
-}
-@font-face {
-  font-family: HelpDisplay;
-  src: url("/brand/help/display.woff2") format("woff2");
-  font-weight: 100 900;
-  font-display: swap;
-}
 .page {
   --ink: #071a31;
   --muted: #657078;
@@ -21,7 +9,7 @@
   min-height: 100vh;
   background: var(--paper);
   color: var(--ink);
-  font-family: HelpGeist, Arial, sans-serif;
+  font-family: var(--font-sans), Arial, sans-serif;
   font-size: 16px;
   letter-spacing: normal;
   line-height: 1.4;
@@ -54,7 +42,7 @@
 .page h1,
 .page h2,
 .page h3 {
-  font-family: HelpDisplay, Arial, sans-serif;
+  font-family: var(--font-sans), Arial, sans-serif;
   font-weight: 500;
   letter-spacing: -0.035em;
 }
@@ -589,7 +577,7 @@
   border-radius: 48px;
   background: #fff;
   color: var(--ink);
-  font-family: HelpGeist, Arial, sans-serif;
+  font-family: var(--font-sans), Arial, sans-serif;
   box-shadow: 0 20px 80px #071a3130;
   overflow: hidden;
 }
@@ -718,7 +706,7 @@
 }
 .dialogTitle h2 {
   font:
-    500 18px HelpGeist,
+    500 18px var(--font-sans),
     Arial,
     sans-serif;
   letter-spacing: 0;

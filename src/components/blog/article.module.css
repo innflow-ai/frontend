@@ -810,7 +810,7 @@
 }
 .kicker {
   margin: 0;
-  font: 13px / 1.4 monospace;
+  font: 13px / 1.4 var(--font-sans);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #121111;
@@ -863,7 +863,7 @@
   margin-top: 40px;
 }
 .metaLabel {
-  font: 12px / 1.4 monospace;
+  font: 12px / 1.4 var(--font-sans);
   letter-spacing: 0.1em;
   font-weight: 400;
 }

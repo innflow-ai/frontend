@@ -29,9 +29,17 @@ export function NavigationDirectory({
             <MixedHeadingText>Browse all {kind}</MixedHeadingText>
           </h1>
           <p>
-            {kind === "products"
-              ? "Explore the Innflow platform, agents, tools, and integrations."
-              : "Find solutions for property operations, leasing, teams, and finance."}
+            {kind === "products" ? (
+              <>
+                Explore the <strong>Innflow platform</strong>, agents, tools,
+                and integrations.
+              </>
+            ) : (
+              <>
+                Find industry and team solutions for{" "}
+                <strong>agentic workflows</strong> across your organization.
+              </>
+            )}
           </p>
         </header>
         <nav className={styles.groups} aria-label={`${title} directory`}>

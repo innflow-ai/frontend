@@ -9,38 +9,12 @@ import {
   ChevronDown as CaretDown,
   DashMenu,
   Multiply,
-  NoteText as Newspaper,
 } from "@/components/icons/mage";
-import {
-  type LatestBlogPostNavItem,
-  MegaMenu,
-  type MegaMenuColumn,
-  menuBrowseLinks,
-  productColumns,
-  resourcesColumns,
-  solutionsColumns,
-} from "@/components/mega-menu";
-import { TrackedLink } from "@/components/tracked-link";
+import { MegaMenu, type LatestBlogPostNavItem } from "./mega-menu";
+import { NavigationMenu } from "./navigation-menus";
+import { navigationLabels } from "./navigation-labels";
 import { siteConfig } from "@/config/site";
 import styles from "./editorial-header.module.css";
-import {
-  useNavigationAppUpdate,
-  useNavigationTestimonial,
-} from "./navigation-blog-posts";
-import { TestimonialCard } from "./testimonial-cards";
-
-type MobileMenuGroup = {
-  label: string;
-  columns: MegaMenuColumn[];
-};
-
-// Mobile and desktop intentionally consume the same navigation records so
-// labels, destinations, preview badges, icons, and ordering cannot drift.
-const mobileMenuGroups: MobileMenuGroup[] = [
-  { label: "Product", columns: productColumns },
-  { label: "Solutions", columns: solutionsColumns },
-  { label: "Resources", columns: resourcesColumns },
-];
 
 const itemVariants = {
   hidden: { opacity: 0, y: 24 },
@@ -51,72 +25,7 @@ const itemVariants = {
   },
 };
 
-function MobileLatestPosts({
-  posts,
-  onSelect,
-  heading = "Latest from Innflow",
-  showAll = true,
-}: {
-  posts: LatestBlogPostNavItem[];
-  onSelect: () => void;
-  heading?: string;
-  showAll?: boolean;
-}) {
-  const headingId = useId();
-  if (posts.length === 0) return null;
-
-  return (
-    <section className={styles.mobileLatestPosts} aria-labelledby={headingId}>
-      <h3 id={headingId}>{heading}</h3>
-      <div className={styles.mobileLatestPostList}>
-        {posts.map((post) => (
-          <TrackedLink
-            key={post.href}
-            className={styles.mobileLatestPost}
-            destination={post.href}
-            eventLabel="mobile_menu_latest_blog_post"
-            onClick={onSelect}
-          >
-            <span className={styles.mobileLatestPostMedia}>
-              {post.imageUrl ? (
-                <Image
-                  src={post.imageUrl}
-                  alt={post.imageAlt}
-                  width={72}
-                  height={46}
-                  sizes="72px"
-                />
-              ) : (
-                <Newspaper size={18} weight="fill" aria-hidden="true" />
-              )}
-            </span>
-            <span className={styles.mobileLatestPostCopy}>
-              <small>
-                {[post.categoryLabel, post.publishedLabel]
-                  .filter(Boolean)
-                  .join(" · ")}
-              </small>
-              <strong>{post.title}</strong>
-            </span>
-          </TrackedLink>
-        ))}
-      </div>
-      {showAll && (
-        <TrackedLink
-          className={styles.mobileLatestPostsAll}
-          destination="/blog"
-          eventLabel="mobile_menu_all_blog_posts"
-          onClick={onSelect}
-        >
-          View all posts
-        </TrackedLink>
-      )}
-    </section>
-  );
-}
-
 export function EditorialHeader({
-  latestBlogPosts = [],
   desktopHeader,
 }: {
   latestBlogPosts?: LatestBlogPostNavItem[];
@@ -277,33 +186,17 @@ export function EditorialHeader({
           {!desktopHeader && (
             <nav aria-label="Primary navigation">
               <ul className={styles.desktopNav}>
-                <li>
-                  <MegaMenu
-                    label="Product"
-                    columns={productColumns}
-                    showAside={false}
-                  />
-                </li>
-                <li>
-                  <MegaMenu
-                    label="Solutions"
-                    columns={solutionsColumns}
-                    showAside={false}
-                  />
-                </li>
-
-                <li>
-                  <MegaMenu
-                    label="Resources"
-                    columns={resourcesColumns}
-                    latestBlogPosts={latestBlogPosts}
-                  />
-                </li>
+                {navigationLabels.map((label) => (
+                  <li key={label}>
+                    <MegaMenu
+                      label={label}
+                      columns={[]}
+                      navigationLabel={label}
+                    />
+                  </li>
+                ))}
                 <li>
                   <a href="/pricing">Pricing</a>
-                </li>
-                <li>
-                  <a href="/blog">Blog</a>
                 </li>
               </ul>
             </nav>
@@ -337,11 +230,7 @@ export function EditorialHeader({
       {/* Rendered outside the header so the fixed panel can cover the viewport
           below the header without its backdrop-filter changing the containing
           block. */}
-      <MobileNavigation
-        open={mobileOpen}
-        onClose={closeMobile}
-        latestBlogPosts={latestBlogPosts}
-      />
+      <MobileNavigation open={mobileOpen} onClose={closeMobile} />
     </>
   );
 }
@@ -350,7 +239,6 @@ export function EditorialHeader({
 export function MobileNavigation({
   open,
   onClose: closeMobile,
-  latestBlogPosts = [],
   id = "editorial-mobile-overlay",
   className = "",
   pricingHref = "/pricing",
@@ -366,8 +254,6 @@ export function MobileNavigation({
 }) {
   const reduce = useReducedMotion();
   const mobileMenuBaseId = useId();
-  const latestUpdate = useNavigationAppUpdate();
-  const testimonial = useNavigationTestimonial();
   const [openMobileGroup, setOpenMobileGroup] = useState<string | null>(null);
   useEffect(() => {
     if (!open) setOpenMobileGroup(null);
@@ -395,13 +281,13 @@ export function MobileNavigation({
               },
             }}
           >
-            {mobileMenuGroups.map((group) => {
-              const expanded = openMobileGroup === group.label;
-              const panelId = `${mobileMenuBaseId}-${group.label.toLowerCase()}`;
+            {navigationLabels.map((label) => {
+              const expanded = openMobileGroup === label;
+              const panelId = `${mobileMenuBaseId}-${label.toLowerCase()}`;
 
               return (
                 <motion.section
-                  key={group.label}
+                  key={label}
                   className={styles.mobileGroup}
                   variants={reduce ? undefined : itemVariants}
                 >
@@ -410,11 +296,9 @@ export function MobileNavigation({
                     className={styles.mobileGroupTrigger}
                     aria-expanded={expanded}
                     aria-controls={panelId}
-                    onClick={() =>
-                      setOpenMobileGroup(expanded ? null : group.label)
-                    }
+                    onClick={() => setOpenMobileGroup(expanded ? null : label)}
                   >
-                    {group.label}
+                    {label}
                     <CaretDown size={18} weight="bold" aria-hidden="true" />
                   </button>
                   <AnimatePresence initial={false}>
@@ -423,92 +307,14 @@ export function MobileNavigation({
                         id={panelId}
                         className={styles.mobileGroupPanel}
                         role="region"
-                        aria-label={`${group.label} mobile menu`}
+                        aria-label={`${label} mobile menu`}
                         initial={reduce ? false : { height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: reduce ? 0 : 0.2 }}
                       >
                         <div className={styles.mobileGroupContent}>
-                          {group.columns.map((column) => {
-                            return (
-                              <section
-                                key={column.heading}
-                                className={styles.mobileSection}
-                              >
-                                <h2>{column.heading}</h2>
-                                <div className={styles.mobileSectionLinks}>
-                                  {column.links.map((link) => {
-                                    const Icon = link.icon;
-                                    return (
-                                      <a
-                                        key={link.title}
-                                        href={link.href}
-                                        onClick={closeMobile}
-                                        data-browse-all={
-                                          link.browseAll || undefined
-                                        }
-                                      >
-                                        {!link.hideIcon && (
-                                          <span
-                                            className={styles.mobileLinkIcon}
-                                          >
-                                            <Icon size={25} />
-                                          </span>
-                                        )}
-                                        <span className={styles.mobileLinkCopy}>
-                                          <strong>
-                                            {link.title}
-                                            {link.badge ? (
-                                              <span
-                                                className={styles.mobileBadge}
-                                              >
-                                                {link.badge}
-                                              </span>
-                                            ) : null}
-                                          </strong>
-                                          <small>{link.body}</small>
-                                        </span>
-                                      </a>
-                                    );
-                                  })}
-                                </div>
-                              </section>
-                            );
-                          })}
-                          {menuBrowseLinks[group.label] && (
-                            <a
-                              className={styles.browseAll}
-                              data-browse-all
-                              href={menuBrowseLinks[group.label]?.href}
-                              onClick={closeMobile}
-                            >
-                              <span>{menuBrowseLinks[group.label]?.title}</span>
-                            </a>
-                          )}
-                          {group.label === "Solutions" && testimonial && (
-                            <section
-                              className={styles.mobileLatestPosts}
-                              aria-label="Customer testimonial"
-                            >
-                              <h3>In their own words</h3>
-                              <TestimonialCard item={testimonial} />
-                            </section>
-                          )}
-                          {group.label === "Product" && latestUpdate && (
-                            <MobileLatestPosts
-                              posts={[latestUpdate]}
-                              onSelect={closeMobile}
-                              heading="Company updates"
-                              showAll={false}
-                            />
-                          )}
-                          {group.label === "Resources" ? (
-                            <MobileLatestPosts
-                              posts={latestBlogPosts}
-                              onSelect={closeMobile}
-                            />
-                          ) : null}
+                          <NavigationMenu label={label} close={closeMobile} />
                         </div>
                       </motion.div>
                     ) : null}
@@ -523,14 +329,6 @@ export function MobileNavigation({
               onClick={closeMobile}
             >
               Pricing
-            </motion.a>
-            <motion.a
-              href="/blog"
-              className={styles.mobilePrimaryLink}
-              variants={reduce ? undefined : itemVariants}
-              onClick={closeMobile}
-            >
-              Blog
             </motion.a>
             <div className={styles.mobileCtaRow}>
               <a

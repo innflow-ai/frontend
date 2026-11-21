@@ -18,8 +18,13 @@ export default function PlatformPage() {
         path: "/platform",
         name: "Platform",
         title: "Your operation, connected.",
-        description:
-          "Bring your team, tools, and knowledge into one flow. Give everyday property work a clear path, with room for people to review what matters.",
+        description: (
+          <>
+            Bring your <strong>team, tools, and knowledge</strong> into one
+            flow. Give everyday property work a clear path, with room for people
+            to review what matters.
+          </>
+        ),
         heroArtwork: <RuneyWorkspace />,
         cards: platformPages.map((page) => ({
           id: page.slug,

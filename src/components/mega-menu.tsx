@@ -1,6 +1,8 @@
 "use client";
 
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
+import { NavigationMenu } from "./navigation-menus";
+import type { NavigationLabel } from "./navigation-labels";
 import Image from "next/image";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import { ArrowRight } from "@/components/icons/mage/ArrowRight";
@@ -32,6 +34,7 @@ export {
 } from "./mega-menu-content";
 
 type MegaMenuProps = {
+  navigationLabel?: NavigationLabel;
   compact?: boolean;
   expanded?: boolean;
   onExpandedChange?: (expanded: boolean) => void;
@@ -103,7 +106,7 @@ function LatestPostsAside({
         eventLabel="mega_menu_all_blog_posts"
         onClick={onSelect}
       >
-        View all posts <ArrowRight size={13} aria-hidden="true" />
+        View all posts
       </TrackedLink>
     </aside>
   );
@@ -129,6 +132,7 @@ function PromotionalAside({ onSelect }: { onSelect: () => void }) {
 }
 
 export function MegaMenu({
+  navigationLabel,
   compact = false,
   expanded,
   onExpandedChange,
@@ -217,6 +221,7 @@ export function MegaMenu({
     // biome-ignore lint/a11y/noStaticElementInteractions: hover intent only — keyboard access is provided by the trigger button's onFocus/onClick
     <div
       ref={rootRef}
+      data-navigation-menu={navigationLabel}
       className={`${styles.wrap} ${compact ? styles.compact : ""}`}
       onMouseEnter={openMenu}
       onMouseLeave={scheduleClose}
@@ -253,87 +258,93 @@ export function MegaMenu({
             aria-label={`${label} menu`}
             {...panelMotion}
           >
-            <div
-              className={`${styles.grid}${
-                promotionalBanner
-                  ? ` ${styles.gridWithBanner}`
-                  : showAside
-                    ? columns.length === 1
-                      ? ` ${styles.gridSingleWithAside}`
-                      : ""
-                    : ` ${styles.gridWithoutAside}`
-              }`}
-            >
-              {columns.map((column) => (
-                <div key={column.heading} className={styles.column}>
-                  <span className={styles.heading}>{column.heading}</span>
-                  {column.links.map((link) => {
-                    const Icon = link.icon;
-                    return (
-                      <a
-                        key={link.title}
-                        href={link.href}
-                        className={styles.link}
-                        data-hide-icon={link.hideIcon || undefined}
-                        data-browse-all={link.browseAll || undefined}
-                        onClick={closeMenu}
-                      >
-                        {!link.hideIcon && (
-                          <span className={styles.icon}>
-                            <Icon size={24} />
+            {navigationLabel ? (
+              <NavigationMenu label={navigationLabel} close={closeMenu} />
+            ) : (
+              <div
+                className={`${styles.grid}${
+                  promotionalBanner
+                    ? ` ${styles.gridWithBanner}`
+                    : showAside
+                      ? columns.length === 1
+                        ? ` ${styles.gridSingleWithAside}`
+                        : ""
+                      : ` ${styles.gridWithoutAside}`
+                }`}
+              >
+                {columns.map((column) => (
+                  <div key={column.heading} className={styles.column}>
+                    <span className={styles.heading}>{column.heading}</span>
+                    {column.links.map((link) => {
+                      const Icon = link.icon;
+                      return (
+                        <a
+                          key={link.title}
+                          href={link.href}
+                          className={styles.link}
+                          data-hide-icon={link.hideIcon || undefined}
+                          data-browse-all={link.browseAll || undefined}
+                          onClick={closeMenu}
+                        >
+                          {!link.hideIcon && (
+                            <span className={styles.icon}>
+                              <Icon size={24} />
+                            </span>
+                          )}
+                          <span>
+                            <strong>
+                              {link.title}
+                              {"badge" in link && link.badge ? (
+                                <span className={styles.badge}>
+                                  {link.badge}
+                                </span>
+                              ) : null}
+                            </strong>
+                            <small>{link.body}</small>
                           </span>
-                        )}
-                        <span>
-                          <strong>
-                            {link.title}
-                            {"badge" in link && link.badge ? (
-                              <span className={styles.badge}>{link.badge}</span>
-                            ) : null}
-                          </strong>
-                          <small>{link.body}</small>
-                        </span>
-                      </a>
-                    );
-                  })}
-                </div>
-              ))}
-              {menuBrowseLinks[label] && (
-                <a
-                  className={styles.browseAll}
-                  data-browse-all
-                  href={menuBrowseLinks[label].href}
-                  onClick={closeMenu}
-                >
-                  <span>{menuBrowseLinks[label].title}</span>
-                </a>
-              )}
-              {promotionalBanner ? (
-                <TrackedLink
-                  className={styles.promotionalBanner}
-                  destination={promotionalBanner.href}
-                  eventLabel={promotionalBanner.eventLabel}
-                  onClick={closeMenu}
-                >
-                  <Image
-                    alt={promotionalBanner.alt}
-                    className={styles.promotionalBannerImage}
-                    height={776}
-                    sizes="(max-width: 1100px) calc(100vw - 340px), 900px"
-                    src={promotionalBanner.src}
-                    width={2430}
-                  />
-                </TrackedLink>
-              ) : showAside ? (
-                latestBlogPosts?.length ? (
-                  <LatestPostsAside
-                    posts={latestBlogPosts}
-                    onSelect={closeMenu}
-                  />
-                ) : (
-                  <PromotionalAside onSelect={closeMenu} />
-                )
-              ) : null}
-            </div>
+                        </a>
+                      );
+                    })}
+                  </div>
+                ))}
+                {menuBrowseLinks[label] && (
+                  <a
+                    className={styles.browseAll}
+                    data-browse-all
+                    href={menuBrowseLinks[label].href}
+                    onClick={closeMenu}
+                  >
+                    <span>{menuBrowseLinks[label].title}</span>
+                  </a>
+                )}
+                {promotionalBanner ? (
+                  <TrackedLink
+                    className={styles.promotionalBanner}
+                    destination={promotionalBanner.href}
+                    eventLabel={promotionalBanner.eventLabel}
+                    onClick={closeMenu}
+                  >
+                    <Image
+                      alt={promotionalBanner.alt}
+                      className={styles.promotionalBannerImage}
+                      height={776}
+                      sizes="(max-width: 1100px) calc(100vw - 340px), 900px"
+                      src={promotionalBanner.src}
+                      width={2430}
+                    />
+                  </TrackedLink>
+                ) : showAside ? (
+                  latestBlogPosts?.length ? (
+                    <LatestPostsAside
+                      posts={latestBlogPosts}
+                      onSelect={closeMenu}
+                    />
+                  ) : (
+                    <PromotionalAside onSelect={closeMenu} />
+                  )
+                ) : null}
+              </div>
+            )}
           </motion.div>
         )}
       </AnimatePresence>

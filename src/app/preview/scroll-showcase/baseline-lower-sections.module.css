@@ -356,45 +356,39 @@
 .directory {
   display: inline-flex;
   gap: 12px;
+  padding-inline: 14px;
   margin-top: 32px;
   font-size: 16px;
   text-decoration: none;
   color: inherit;
 }
-.integrations {
-  margin-top: 48px;
-}
-.integrationRow {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  padding: 12px 0;
-}
-.integrationTile {
+.pillars {
   position: relative;
-  display: grid;
-  place-items: center;
-  width: 112px;
-  height: 112px;
-  flex-shrink: 0;
-  border-radius: 24px;
-  background: var(--marketing-cloud);
+  width: min(100%, 900px);
+  aspect-ratio: 720 / 365;
+  margin: 40px auto 0;
 }
-.integrationTile:not(:last-child)::after {
-  content: "";
+.pillars img, .pillars canvas {
   position: absolute;
-  left: 100%;
-  top: 35px;
-  width: 24px;
-  height: 42px;
-  background:
-    url("/preview/homepage/baseline-lower/connector.svg") center / 100% 100%
-    no-repeat;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
-.integrationTile img {
-  width: 64px;
-  height: 64px;
-  object-fit: contain;
+.pillarTarget {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  width: 17%;
+  height: 15%;
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  touch-action: pan-y;
+}
+.pillarTarget:focus-visible {
+  background: rgb(72 144 227 / 18%);
 }
 .infrastructureCards {
   display: grid;
@@ -592,14 +586,6 @@
   z-index: 2;
 }
 @media (max-width: 1250px) {
-  .integrationTile {
-    width: calc((100vw - 272px) / 9);
-    height: calc((100vw - 272px) / 9);
-  }
-  .integrationTile img {
-    width: 58%;
-    height: 58%;
-  }
   .sideStory {
     display: none;
   }
@@ -644,19 +630,6 @@
   .infrastructure {
     padding-left: 24px;
     padding-right: 24px;
-  }
-  .integrationRow {
-    flex-wrap: wrap;
-    gap: 12px;
-    padding: 6px 0;
-  }
-  .integrationTile {
-    width: 64px;
-    height: 64px;
-    border-radius: 16px;
-  }
-  .integrationTile:not(:last-child)::after {
-    display: none;
   }
   .infrastructureCards {
     grid-template-columns: 1fr;

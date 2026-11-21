@@ -69,15 +69,15 @@ it.each([false, true])(
     scroll(100);
     expect(pan() > initial).toBe(!reduced);
     const afterScroll = pan();
-    fireEvent.click(screen.getByRole("tab", { name: "Workflows" }));
-    expect(screen.getByRole("tab", { name: "Workflows" })).toHaveAttribute(
+    fireEvent.click(screen.getByRole("tab", { name: "Flow" }));
+    expect(screen.getByRole("tab", { name: "Flow" })).toHaveAttribute(
       "aria-selected",
       "true",
     );
     expect(pan() > afterScroll).toBe(!reduced);
     expect(window.scrollTo).not.toHaveBeenCalled();
     scroll(-100);
-    expect(screen.getByRole("tab", { name: "Workflows" })).toHaveAttribute(
+    expect(screen.getByRole("tab", { name: "Flow" })).toHaveAttribute(
       "aria-selected",
       "true",
     );
@@ -119,26 +119,11 @@ it("offers Google, email and the general sign-in page", () => {
   expect(
     screen.getByRole("link", { name: "Continue with Google" }),
   ).toHaveAttribute("href", siteConfig.signupUrl);
-  const options = screen.getByRole("button", { name: "More options" });
-  expect(options).toHaveAttribute("aria-haspopup", "dialog");
-  expect(screen.queryByRole("dialog")).toBeNull();
-  const dialog = screen.getByRole<HTMLDialogElement>("dialog", {
-    hidden: true,
-  });
-  Object.defineProperty(dialog, "showModal", {
-    value: () => {
-      dialog.open = true;
-    },
-  });
-  fireEvent.click(options);
-  const signIn = within(screen.getByRole("dialog", { name: "Get started" }));
-  expect(
-    signIn.getByRole("link", { name: "Continue with Google" }),
-  ).toHaveAttribute("href", siteConfig.signupUrl);
-  expect(signIn.getByRole("link", { name: "Log in" })).toHaveAttribute(
+  expect(screen.getByRole("link", { name: "Learn more" })).toHaveAttribute(
     "href",
-    siteConfig.loginUrl,
+    "#feature-showcase",
   );
+  expect(screen.queryByRole("dialog", { hidden: true })).toBeNull();
   expect(
     screen.queryByRole("link", { name: "Book a demo" }),
   ).not.toBeInTheDocument();
@@ -148,30 +133,33 @@ it("offers Google, email and the general sign-in page", () => {
   expect(screen.queryByText("Scroll to explore ↓")).not.toBeInTheDocument();
   expect(screen.queryByText(/01 \/ 04/)).not.toBeInTheDocument();
   const destinations = [
-    ["AI agent", "/products/ai-agents"],
-    ["Workflows", "/features/workflows"],
-    ["Sidekick", "#workflows"],
-    ["Insights", "#insights"],
+    ["Bot mode", "/products/ai-agents", "Teach your bot a task."],
+    ["Flow", "/features/workflows", "Track every handoff."],
+    ["Channels", "#workflows", "Bring your bot into the conversation."],
+    ["Computer", "#insights", "Let your bot handle the clicks."],
   ];
-  for (const [label, href] of destinations) {
+  for (const [label, href, heading] of destinations) {
     fireEvent.click(screen.getByRole("tab", { name: label }));
+    const panel = screen.getByRole("tabpanel", { name: label });
+    expect(
+      within(panel).getByRole("heading", {
+        level: 2,
+        name: heading,
+      }),
+    ).toBeVisible();
     expect(
       screen.getByRole("link", { name: `Learn more about ${label}` }),
     ).toHaveAttribute("href", href);
   }
-  fireEvent.click(screen.getByRole("tab", { name: "AI agent" }));
-  const scheduling = screen.getByRole("tabpanel", { name: "AI agent" });
-  expect(scheduling).toHaveTextContent("Delegate tasks to your AI agent");
+  fireEvent.click(screen.getByRole("tab", { name: "Bot mode" }));
+  const bot = screen.getByRole("tabpanel", { name: "Bot mode" });
   expect(
-    scheduling.querySelector("[data-booking-calendar]"),
+    within(bot).getByRole("img", { name: /records a weekly analytics report/ }),
   ).toBeInTheDocument();
-  fireEvent.click(screen.getByRole("tab", { name: "Workflows" }));
-  expect(screen.getByRole("tabpanel", { name: "Workflows" })).toHaveTextContent(
-    "Keep work moving across your tools",
-  );
+  fireEvent.click(screen.getByRole("tab", { name: "Flow" }));
   expect(
     screen.getByRole("img", {
-      name: /AI assistant receives a scheduling request/,
+      name: /influencer outreach workflow/,
     }),
   ).toBeInTheDocument();
 });

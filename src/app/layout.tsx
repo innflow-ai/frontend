@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo, Geist_Mono, Instrument_Sans, Inter } from "next/font/google";
 import localFont from "next/font/local";
 import type { ReactNode } from "react";
 import { ConsentManagedTags } from "@/components/consent-managed-tags";
@@ -32,52 +31,12 @@ import "./globals.css";
 import { getNavigationTestimonial } from "@/lib/testimonials";
 import "lenis/dist/lenis.css";
 
-const archivo = Archivo({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800"],
-  variable: "--font-archivo",
-  display: "swap",
-});
-
-const sourceSerif = localFont({
+const satoshi = localFont({
   src: [
-    {
-      path: "./fonts/source-serif-4-normal.woff2",
-      weight: "400 500",
-      style: "normal",
-    },
+    { path: "./fonts/satoshi-variable.woff2", weight: "300 900", style: "normal" },
+    { path: "./fonts/satoshi-variable-italic.woff2", weight: "300 900", style: "italic" },
   ],
-  variable: "--font-source-serif-4",
-  display: "swap",
-});
-const heroHeading = Instrument_Sans({
-  subsets: ["latin"],
-  weight: "500",
-  variable: "--font-hero-heading",
-  preload: false,
-  display: "swap",
-});
-const heroUi = localFont({
-  src: [
-    {
-      path: "./fonts/host-grotesk-normal.woff2",
-      weight: "400 600",
-      style: "normal",
-    },
-  ],
-  variable: "--font-hero-ui",
-  display: "swap",
-});
-const inter = Inter({
-  subsets: ["latin"],
-  weight: ["500", "600"],
-  variable: "--font-inter",
-  display: "swap",
-});
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-geist-mono",
-  preload: false,
+  variable: "--font-satoshi",
   display: "swap",
 });
 
@@ -212,7 +171,7 @@ export default async function RootLayout({
       lang="en"
       data-website-announcement={announcementVisible ? "visible" : "hidden"}
       data-scroll-behavior="smooth"
-      className={`${archivo.variable} ${heroUi.variable} ${heroHeading.variable} ${inter.variable} ${sourceSerif.variable} ${geistMono.variable}`}
+      className={satoshi.variable}
       suppressHydrationWarning
     >
       <head>

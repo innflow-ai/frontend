@@ -133,16 +133,7 @@ export function NavigationMenu({
   close: () => void;
 }) {
   if (label === "Product")
-    return (
-      <>
-        <FeaturesMenu closeMenu={close} />
-        <div className={styles.productFoot}>
-          <a className={styles.action} href="/products" onClick={close}>
-            Browse all products →
-          </a>
-        </div>
-      </>
-    );
+    return <FeaturesMenu closeMenu={close} />;
   if (label === "Models")
     return (
       <div className={styles.directory}>
@@ -172,9 +163,6 @@ export function NavigationMenu({
             </section>
           ))}
         </div>
-        <p className={styles.modelFoot}>
-          Let Innflow route your work. Explore Fusion
-        </p>
       </div>
     );
   if (label === "Resources")
@@ -198,7 +186,7 @@ export function NavigationMenu({
                 aria-label={"View more: " + group.name}
                 onClick={close}
               >
-                View more →
+                View more
               </a>
             </section>
           ))}
@@ -211,7 +199,7 @@ export function NavigationMenu({
         <div className={styles.heading}>
           <h3>By department</h3>
           <a className={styles.action} href="/solutions" onClick={close}>
-            View all solutions →
+            View all solutions
           </a>
         </div>
         <div className={styles.columns}>
@@ -241,7 +229,7 @@ export function NavigationMenu({
             />
           ))}
           <a className={styles.all} href="/integrations" onClick={close}>
-            View all integrations →
+            View all integrations
           </a>
         </div>
       </section>

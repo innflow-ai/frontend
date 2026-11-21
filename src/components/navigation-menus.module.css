@@ -74,7 +74,6 @@
   padding: 0;
 }
 .strip,
-.modelFoot,
 .productFoot {
   border-top: 1px solid #e6e7e9;
   padding: 12px 24px;
@@ -124,10 +123,6 @@
   composes: option;
   font-size: 14px;
   padding: 6px 4px;
-}
-.modelFoot {
-  margin: 0;
-  font-size: 13px;
 }
 .productFoot {
   text-align: right;

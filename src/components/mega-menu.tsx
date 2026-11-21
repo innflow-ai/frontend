@@ -106,7 +106,7 @@ function LatestPostsAside({
         eventLabel="mega_menu_all_blog_posts"
         onClick={onSelect}
       >
-        View all posts <ArrowRight size={13} aria-hidden="true" />
+        View all posts
       </TrackedLink>
     </aside>
   );

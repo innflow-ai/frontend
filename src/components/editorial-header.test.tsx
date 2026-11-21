@@ -114,14 +114,14 @@ describe("EditorialHeader navigation", () => {
     vi.stubGlobal("cancelAnimationFrame", vi.fn());
   });
 
-  it("opens the seven feature previews under Product and preserves the product directory", async () => {
+  it("opens the seven feature previews under Product without a directory footer", async () => {
     const user = userEvent.setup();
     render(<EditorialHeader />);
     await user.click(screen.getByRole("button", { name: "Product" }));
     expect(screen.getAllByRole("tab")).toHaveLength(7);
     expect(
-      screen.getByRole("link", { name: /Browse all products/ }),
-    ).toHaveAttribute("href", "/products");
+      screen.queryByRole("link", { name: /Browse all products/ }),
+    ).toBeNull();
     await user.keyboard("{Escape}");
     expect(screen.queryByRole("region", { name: "Product menu" })).toBeNull();
   });

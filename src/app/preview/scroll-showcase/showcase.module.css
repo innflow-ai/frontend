@@ -108,12 +108,11 @@
   width: 496%;
   z-index: -1;
   background:
-    #b6e0e6 url("/preview/scroll-showcase/gradient.png") 0% 50% / 100% 100%
+    #b6e0e6 url("/preview/scroll-showcase/hero-background-strip.webp") 0% 50% / 100% 100%
     no-repeat;
   /* Same 4× image crop as before; scroll translates 3 of its 4 viewport widths. */
   transform: translate3d(calc(var(--gradient-progress, 0) * -75%), 0, 0);
   will-change: transform;
-  filter: blur(60px);
   transition: transform 0.28s ease-out;
 }
 .close {
@@ -152,7 +151,7 @@
   height: 56px;
   border: 4px solid white;
   border-radius: 24px;
-  background: #dfe3e7;
+  background: color-mix(in srgb, var(--accent) 55%, white);
   display: grid;
   place-items: center;
   transition: background 0.25s;
@@ -161,14 +160,9 @@
   width: 28px;
   height: 28px;
   object-fit: contain;
-  opacity: 0.35;
-  transition: opacity 0.25s;
 }
 .tabs button[aria-selected="true"] {
   background: var(--accent);
-}
-.tabs :where(button[aria-selected="true"]) img {
-  opacity: 1;
 }
 .tabs button[aria-selected="true"]::after {
   content: "";
@@ -178,21 +172,6 @@
   background: url("/preview/scroll-showcase/bridge.svg") center / 100% 100%;
   left: 8px;
   top: 50px;
-}
-.tooltip {
-  position: absolute;
-  bottom: calc(100% + 12px);
-  background: white;
-  padding: 6px 10px;
-  border-radius: 8px;
-  font-size: 12px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.15s;
-}
-.tabs button:hover .tooltip,
-.tabs button:focus-visible .tooltip {
-  opacity: 1;
 }
 .card {
   display: grid;
@@ -219,6 +198,9 @@
   visibility: visible;
   z-index: 1;
 }
+.copy {
+  align-self: start;
+}
 .label {
   display: flex;
   align-items: center;
@@ -235,7 +217,11 @@
   border-radius: 9px;
   padding: 3px;
 }
+.label[data-demo-label="bot"] img {
+  padding: 5px;
+}
 .label small {
+  line-height: 16px;
   margin-left: 10px;
   padding: 4px 8px;
   font-size: 12px;
@@ -975,7 +961,6 @@
     height: 62px;
     gap: 16px;
   }
-  .tooltip,
   .close {
     display: none;
   }
@@ -1022,4 +1007,25 @@
     width: 16px;
     height: 16px;
   }
+}
+
+
+.heroRiveDemo {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 640 / 354;
+  align-self: center;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #1a1a1a;
+}
+.heroRiveDemo img,
+.heroRiveDemo > div {
+  width: 100%;
+  height: 100%;
+}
+
+.heroRiveDemo > div {
+  position: absolute;
+  inset: 0;
 }

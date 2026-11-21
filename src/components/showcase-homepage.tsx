@@ -12,7 +12,6 @@ import { HomepageCollaboration } from "@/components/collaboration";
 import { HomepageAgentShowcase } from "@/components/homepage-agent-showcase";
 import { ShowcaseTheme } from "@/components/showcase-theme";
 import { getPageTestimonials } from "@/lib/testimonials";
-import { HomepageScheduler } from "./homepage-scheduler";
 import typography from "./homepage-typography.module.css";
 
 export async function ShowcaseHomepage({
@@ -26,7 +25,6 @@ export async function ShowcaseHomepage({
       <ScrollShowcase />
       <ShowcaseTheme>
         <WorkspaceOverview />
-        <HomepageScheduler />
         <HomepageCollaboration />
         <BaselineFeatures />
         {stories && (

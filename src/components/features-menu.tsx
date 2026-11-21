@@ -1,7 +1,7 @@
 "use client";
 
-import type { AnimationItem } from "lottie-web";
-import { useEffect, useId, useRef, useState } from "react";
+import dynamic from "next/dynamic";
+import { useEffect, useId, useState } from "react";
 import styles from "./features-menu.module.css";
 
 const features = [
@@ -48,59 +48,26 @@ const features = [
 
 const assetRoot = "/brand/navigation/features/";
 
+const FeatureRive = dynamic(() => import("./feature-menu-rive"), { ssr: false });
+
 function FeatureArtwork({ slug }: { slug: string }) {
-  const host = useRef<HTMLDivElement>(null);
-  const [ready, setReady] = useState(false);
+  const [play, setPlay] = useState(false);
   useEffect(() => {
     const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
-    let cleanup = () => {};
-    const update = () => {
-      cleanup();
-      setReady(false);
-      const container = host.current;
-      if (preference.matches || !container) return;
-      let active = true;
-      let animation: AnimationItem | undefined;
-      cleanup = () => {
-        active = false;
-        animation?.destroy();
-      };
-      void import("lottie-web")
-        .then(({ default: lottie }) => {
-          if (!active) return;
-          animation = lottie.loadAnimation({
-            container,
-            renderer: "svg",
-            autoplay: false,
-            loop: false,
-            path: assetRoot + slug + ".json",
-          });
-          animation.addEventListener("DOMLoaded", () => {
-            if (!active) return;
-            setReady(true);
-            animation?.play();
-          });
-          const showPoster = () => {
-            if (active) setReady(false);
-          };
-          animation.addEventListener("complete", showPoster);
-          animation.addEventListener("data_failed", showPoster);
-        })
-        .catch(() => {
-          if (active) setReady(false);
-        });
-    };
-    update();
-    preference.addEventListener("change", update);
+    const sync = () => setPlay(!preference.matches && !document.hidden);
+    sync();
+    preference.addEventListener("change", sync);
+    document.addEventListener("visibilitychange", sync);
     return () => {
-      preference.removeEventListener("change", update);
-      cleanup();
+      preference.removeEventListener("change", sync);
+      document.removeEventListener("visibilitychange", sync);
     };
-  }, [slug]);
+  }, []);
+  const file = slug === "computer" ? "local-agents" : slug;
   return (
     <div className={styles.art} aria-hidden="true">
-      <img alt="" src={assetRoot + slug + "-poster.png"} hidden={ready} />
-      <div ref={host} hidden={!ready} />
+      <img alt="" src={assetRoot + slug + "-poster.png"} />
+      {play && <FeatureRive src={assetRoot + file + ".riv"} />}
     </div>
   );
 }

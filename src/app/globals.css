@@ -176,6 +176,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+:where(em, i, cite, dfn, var, address) {
+  font-style: inherit;
+}
+
 html[data-blog-article] body {
   background: var(--marketing-paper);
   color: #121111;

@@ -46,9 +46,8 @@
 
 .headline {
   margin: 0;
-  font-family: var(--font-archivo-italic), var(--font-archivo), Arial, sans-serif;
+  font-family: var(--font-archivo), Arial, sans-serif;
   font-size: 13px;
-  font-style: italic;
   font-weight: 800;
   line-height: 16px;
 }

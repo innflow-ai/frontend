@@ -34,7 +34,7 @@ import "lenis/dist/lenis.css";
 
 const archivo = Archivo({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700", "800"],
   variable: "--font-archivo",
   display: "swap",
 });
@@ -46,21 +46,8 @@ const sourceSerif = localFont({
       weight: "400 500",
       style: "normal",
     },
-    {
-      path: "./fonts/source-serif-4-italic.woff2",
-      weight: "400 500",
-      style: "italic",
-    },
   ],
   variable: "--font-source-serif-4",
-  display: "swap",
-});
-const archivoItalic = Archivo({
-  subsets: ["latin"],
-  weight: ["600", "700", "800"],
-  style: "italic",
-  variable: "--font-archivo-italic",
-  preload: false,
   display: "swap",
 });
 const heroHeading = Instrument_Sans({
@@ -225,7 +212,7 @@ export default async function RootLayout({
       lang="en"
       data-website-announcement={announcementVisible ? "visible" : "hidden"}
       data-scroll-behavior="smooth"
-      className={`${archivo.variable} ${heroUi.variable} ${heroHeading.variable} ${archivoItalic.variable} ${inter.variable} ${sourceSerif.variable} ${geistMono.variable}`}
+      className={`${archivo.variable} ${heroUi.variable} ${heroHeading.variable} ${inter.variable} ${sourceSerif.variable} ${geistMono.variable}`}
       suppressHydrationWarning
     >
       <head>

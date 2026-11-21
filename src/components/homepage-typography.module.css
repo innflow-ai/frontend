@@ -11,7 +11,7 @@
 }
 
 /* The hero H1 retains its own two typefaces. Section titles use the local
-   regular and italic Source Serif 4 faces, including their nested text runs. */
+   upright Source Serif 4, including their nested text runs. */
 .headings:global(#main-content) :is(h2, h3, h4, h5, h6),
 .headings:global(#main-content) :is(h2, h3, h4, h5, h6) :is(span, strong, button) {
   font-family: var(--font-homepage-heading), serif;

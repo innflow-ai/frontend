@@ -149,7 +149,6 @@
 
 .byline a {
   color: var(--blog-ink);
-  font-style: italic;
   font-weight: 600;
   text-decoration: underline;
   text-underline-offset: 3px;
@@ -336,12 +335,6 @@
   font-weight: 600;
 }
 
-.body em,
-.body blockquote,
-.pullQuote {
-  font-style: italic;
-}
-
 .body blockquote,
 .pullQuote {
   margin: 40px 0 0;
@@ -368,7 +361,6 @@
 .bodyLink,
 .referenceLink {
   color: var(--blog-accent);
-  font-style: italic;
   text-decoration: underline;
   text-underline-offset: 4px;
 }
@@ -376,7 +368,6 @@
 .referenceLine,
 .referenceLink {
   color: var(--blog-accent);
-  font-style: italic;
   text-decoration: underline;
   text-underline-offset: 4px;
 }
@@ -529,7 +520,6 @@
   padding-left: 22px;
   color: var(--blog-accent);
   font-size: 18px;
-  font-style: italic;
   line-height: 1.6;
 }
 

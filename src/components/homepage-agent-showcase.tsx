@@ -28,14 +28,14 @@ export function HomepageAgentShowcase() {
             <h2 id="agent-showcase-heading" data-mixed-heading>
               <MixedHeadingContent
                 title="Let experts"
-                emphasis="build the agents"
+                emphasis={<strong>build the agents</strong>}
               />
             </h2>
           </header>
           <p data-home-copy className={styles.description}>
-            Understanding a task is the only prerequisite to automating it. Let
-            your team who already understand the problem build the necessary
-            agents. No learning curve involved.
+            <strong>Understanding a task</strong> is the only prerequisite to
+            automating it. Let your team who already understand the problem
+            build the necessary agents. No learning curve involved.
           </p>
           <div className={styles.actions}>
             <TrackedLink

@@ -1,5 +1,4 @@
 import { BaselineClosing } from "@/app/preview/scroll-showcase/baseline-closing";
-import { SHOW_TESTIMONIAL } from "@/app/preview/scroll-showcase/testimonial-visibility";
 import { BaselineFeatures } from "@/app/preview/scroll-showcase/baseline-features";
 import {
   BaselineConnectedInfrastructure,
@@ -7,11 +6,13 @@ import {
 } from "@/app/preview/scroll-showcase/baseline-lower-sections";
 import styles from "@/app/preview/scroll-showcase/homepage.module.css";
 import { ScrollShowcase } from "@/app/preview/scroll-showcase/scroll-showcase";
+import { SHOW_TESTIMONIAL } from "@/app/preview/scroll-showcase/testimonial-visibility";
 import { WorkspaceOverview } from "@/app/preview/scroll-showcase/workspace-overview";
 import { HomepageCollaboration } from "@/components/collaboration";
 import { HomepageAgentShowcase } from "@/components/homepage-agent-showcase";
 import { ShowcaseTheme } from "@/components/showcase-theme";
 import { getPageTestimonials } from "@/lib/testimonials";
+import { HomepageScheduler } from "./homepage-scheduler";
 import typography from "./homepage-typography.module.css";
 
 export async function ShowcaseHomepage({
@@ -25,6 +26,7 @@ export async function ShowcaseHomepage({
       <ScrollShowcase />
       <ShowcaseTheme>
         <WorkspaceOverview />
+        <HomepageScheduler />
         <HomepageCollaboration />
         <BaselineFeatures />
         {stories && (

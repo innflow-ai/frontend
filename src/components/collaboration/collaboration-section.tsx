@@ -85,7 +85,11 @@ export function CollaborationSection({ demos }: { demos: ReactNode[] }) {
           <p className={styles.eyebrow}>Collaborate</p>
           <h2 id="collaboration-heading" data-mixed-heading>
             <MixedHeadingContent
-              title="Meet your team"
+              title={
+                <>
+                  Meet <strong>your team</strong>
+                </>
+              }
               emphasis="where they work"
             />
           </h2>

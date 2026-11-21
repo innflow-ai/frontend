@@ -68,7 +68,6 @@ export default function FramerMigrationLabPage() {
         <div className={styles.darkCard}>
           <RevealText
             text="Innflow turns recurring operational handoffs into visible, reviewable workflows with the right context attached."
-            fontFamily="Figtree"
             fontSize={36}
             lineHeight={44}
             letterSpacing={-1.2}

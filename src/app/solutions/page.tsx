@@ -25,8 +25,8 @@ export default function SolutionsPage() {
             </MixedHeadingText>
           </h1>
           <p>
-            Connect the conversations, knowledge and handoffs behind your
-            everyday work.
+            Connect the <strong>conversations, knowledge and handoffs</strong>{" "}
+            behind your everyday work.
           </p>
         </header>
         <IndustryDirectory />

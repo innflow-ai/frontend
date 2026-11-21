@@ -135,7 +135,7 @@ export function OfferAnnouncementBar({
         <p className={styles.caption}>ends in</p>
         <Countdown parts={shown} ready={ready} />
       </div>
-      <a data-site-cta="primary" className={styles.cta} href={config.ctaHref}>
+      <a data-cta-compact data-site-cta="primary" className={styles.cta} href={config.ctaHref}>
         {config.ctaLabel}
         <Image
           src="/brand/announcement/arrow.svg"

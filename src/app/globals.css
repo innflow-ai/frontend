@@ -2,19 +2,26 @@
 @import "./termly-consent.css";
 
 :root {
-  /* Shared typography approved alongside the Paper pricing refresh. */
-  --font-sans: var(--font-archivo), Arial, sans-serif;
-  /* Source Serif 4 is loaded on <html>. Do not fall through to Georgia. */
-  --font-display: var(--font-source-serif-4), serif;
-  --font-heading-emphasis: var(--font-archivo), Arial, sans-serif;
-  --font-mono: var(--font-geist-mono), monospace;
-  /* Existing components inherit the new families through these aliases. */
-  --font-host-grotesk: var(--font-archivo);
-  --font-manrope: var(--font-archivo);
-  --font-jetbrains-mono: var(--font-geist-mono);
+  --font-sans: var(--font-satoshi), Arial, sans-serif;
+  /* Shared roles and legacy component tokens use the site typeface. */
+  --font-serif: var(--font-sans);
+  --font-display: var(--font-sans);
+  --font-heading-emphasis: var(--font-sans);
+  --font-mono: var(--font-sans);
+  --font-archivo: var(--font-sans);
+  --font-archivo-italic: var(--font-sans);
+  --font-source-serif-4: var(--font-sans);
+  --font-hero-heading: var(--font-sans);
+  --font-hero-ui: var(--font-sans);
+  --font-inter: var(--font-sans);
+  --font-geist: var(--font-sans);
+  --font-geist-mono: var(--font-sans);
+  --font-workspace-contacts: var(--font-sans);
+  --font-host-grotesk: var(--font-sans);
+  --font-manrope: var(--font-sans);
+  --font-jetbrains-mono: var(--font-sans);
   --font-button: var(--font-sans);
   --font-figtree: var(--font-sans);
-  /* Compatibility for components that still reference the previous default. */
   --font-questrial: var(--font-sans);
   /* White/cool neutrals from the supplied Calendly_variables palette.
      Preserve Innflow's existing ink, typography families, and product artwork. */
@@ -2811,7 +2818,7 @@ p {
 }
 
 /* Marketing actions opt in. Both tones use the sign-in pill's rim,
-   upper highlight and drop shadow. Component layouts own their dimensions. */
+   upper highlight and drop shadow. */
 @layer site-buttons {
   :where([data-site-cta], a.button, a:has(> [data-google-cta])) {
     --cta-fill: var(--button-primary);
@@ -2822,6 +2829,15 @@ p {
     border-radius: 999px !important;
     box-shadow: inset 0 1px 2px #ffffff70, 0 3px 7px #00000021 !important;
     color: var(--site-button-ink) !important;
+  }
+
+  /* Match the homepage hero while allowing longer labels to wrap. */
+  :where([data-site-cta], a.button, a:has(> [data-google-cta])):not([data-cta-compact]) {
+    box-sizing: border-box !important;
+    min-height: 36px !important;
+    height: auto !important;
+    padding-block: 6px !important;
+    line-height: 20px !important;
   }
 
   :is([data-site-cta="secondary"], a.button-secondary) {

@@ -72,7 +72,7 @@ function CustomerStoryLayoutPreview() {
         <h2 id="baseline-stories-heading" data-mixed-heading>
           <MixedHeadingContent
             title="Real customers."
-            emphasis="Real results."
+            emphasis={<strong>Real results.</strong>}
             breakAt="never"
           />
         </h2>
@@ -238,7 +238,11 @@ export function BaselineCustomerStories({
           data-mixed-heading={!!headingRuns || undefined}
         >
           {headingRuns ? (
-            <MixedHeadingContent {...headingRuns} breakAt="never" />
+            <MixedHeadingContent
+              title={headingRuns.title}
+              emphasis={<strong>{headingRuns.emphasis}</strong>}
+              breakAt="never"
+            />
           ) : (
             heading
           )}
@@ -329,12 +333,19 @@ export function BaselineConnectedInfrastructure() {
         <SectionHeading
           variant="mixed-italic"
           id="baseline-infrastructure-heading"
-          title="Connect the tools"
+          title={<strong>Connect the tools</strong>}
           emphasis="behind your work."
-          subtitle="Bring relevant information into the tools your team already uses. Explore supported connections to find the right fit for your workflow."
+          subtitle={
+            <>
+              Bring relevant information into the{" "}
+              <strong>tools your team already uses</strong>. Explore supported
+              connections to find the right fit for your workflow.
+            </>
+          }
         />
         <Link
           data-site-cta="primary"
+          data-cta-compact
           className={styles.directory}
           href="/integrations"
         >

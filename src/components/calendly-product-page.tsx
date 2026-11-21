@@ -1,4 +1,3 @@
-import { Geist } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import type { CSSProperties, ReactNode } from "react";
@@ -25,12 +24,6 @@ import { ProductArtwork } from "./product-artwork/product-artwork";
 import { SectionHeading } from "./section-heading";
 import { TrackedLink } from "./tracked-link";
 
-const geist = Geist({
-  subsets: ["latin"],
-  variable: "--font-geist",
-  display: "swap",
-});
-
 export type CalendlyFeature = {
   id: string;
   label?: string;
@@ -45,7 +38,7 @@ export type CalendlyPageContent = {
   path: string;
   name: string;
   title: string;
-  description: string;
+  description: ReactNode;
   intro?: { eyebrow?: string; title: string; body?: string }[];
   features?: CalendlyFeature[];
   cards?: CalendlyFeature[];
@@ -167,7 +160,7 @@ export function CalendlyProductPage({
   return (
     <main
       id="main-content"
-      className={`${styles.page} ${geist.variable}`}
+      className={styles.page}
       data-product-design={variant}
       data-product-path={content.path}
       style={

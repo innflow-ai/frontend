@@ -128,12 +128,12 @@ export function WorkspaceOverview() {
             <h2 id="workspace-heading" data-mixed-heading>
               <MixedHeadingContent
                 title="Move everyday"
-                emphasis="work forward."
+                emphasis={<strong>work forward.</strong>}
               />
             </h2>
             <p data-home-copy className={styles.introduction}>
-              Schedule meetings, prepare follow-ups, review decisions, and
-              handle billing questions.
+              Schedule meetings, <strong>prepare follow-ups</strong>, review
+              decisions, and handle billing questions.
             </p>
             <a
               data-site-cta="primary"

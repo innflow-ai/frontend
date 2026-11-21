@@ -199,7 +199,11 @@
   z-index: 1;
 }
 .copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   align-self: start;
+  text-align: center;
 }
 .label {
   display: flex;

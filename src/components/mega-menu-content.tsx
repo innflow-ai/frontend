@@ -545,7 +545,6 @@ function featuredColumns(
 export const menuBrowseLinks: Partial<
   Record<string, { href: string; title: string }>
 > = {
-  Product: { href: "/products", title: "Browse all products" },
   Solutions: {
     href: "/solutions",
     title: "Browse all industries and solutions",

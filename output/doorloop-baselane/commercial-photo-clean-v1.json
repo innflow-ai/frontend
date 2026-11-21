@@ -1,0 +1,11 @@
+{
+  "tool": "built-in imagegen",
+  "prompt_summary": "Restore upward view between office towers; remove income/bank cards, text, distorted plates, blue rims/glows and margins. Preserve dark glass tower at right, pale tower left, lower towers, grids, perspective, sky and reflections. Full438:610 portrait, no close crop or added graphics.",
+  "asset": {
+    "reference": "3:93",
+    "photo_node": "36:174",
+    "path": "/Users/ak/innflow-web/output/doorloop-baselane/commercial-photo-clean-v1.png",
+    "image_hash": "66d4222a11c3a6901886856c261f28d5d65debc7"
+  },
+  "verification": "Commercial hero: removed source income/bank cards, distorted backplates, blue rims/glow with built-in imagegen. Applied clean architecture66d4222a11c3a6901886856c261f28d5d65debc7 to36:174 at438x610; native36:175 and36:181 preserved. Screenshot verified clean card edges, continuous tower facades and in-cell bounds. Hidden alternate159:103 retained. Reference-derived draft image, not rights-cleared original."
+}

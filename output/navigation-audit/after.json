@@ -1,0 +1,275 @@
+[
+  {
+    "dropdown": "Product",
+    "category": "Platform and agents",
+    "title": "Platform",
+    "href": "/platform",
+    "icon": "/brand/navigation/mega-menu-items/platform.svg"
+  },
+  {
+    "dropdown": "Product",
+    "category": "Platform and agents",
+    "title": "Agentic Workflows",
+    "href": "/products/agentic-workflows",
+    "icon": "/brand/navigation/mega-menu-items/agentic-workflows.svg"
+  },
+  {
+    "dropdown": "Product",
+    "category": "Platform and agents",
+    "title": "Agent OS",
+    "href": "/products/agent-os",
+    "icon": "/brand/navigation/mega-menu-items/agent-os.svg"
+  },
+  {
+    "dropdown": "Product",
+    "category": "Platform and agents",
+    "title": "AI Agents",
+    "href": "/products/ai-agents",
+    "icon": "/brand/navigation/mega-menu-items/ai-agents.svg"
+  },
+  {
+    "dropdown": "Product",
+    "category": "Build and customize",
+    "title": "Agent Studio",
+    "href": "/products/agent-studio",
+    "icon": "/brand/navigation/mega-menu-items/agent-studio.svg"
+  },
+  {
+    "dropdown": "Product",
+    "category": "Build and customize",
+    "title": "Agent Skills",
+    "href": "/skills",
+    "icon": "/brand/navigation/mega-menu-items/agent-skills.svg"
+  },
+  {
+    "dropdown": "Product",
+    "category": "Build and customize",
+    "title": "AI Website Builder",
+    "href": "/features/website",
+    "icon": "/brand/navigation/mega-menu-items/ai-website-builder.svg"
+  },
+  {
+    "dropdown": "Product",
+    "category": "Build and customize",
+    "title": "Databases",
+    "href": "/products/databases",
+    "icon": "/brand/navigation/mega-menu-items/databases.svg"
+  },
+  {
+    "dropdown": "Product",
+    "category": "Automation and intelligence",
+    "title": "Agentic Automation",
+    "href": "/platform/agentic-automation",
+    "icon": "/brand/navigation/mega-menu-items/agentic-automation.svg"
+  },
+  {
+    "dropdown": "Product",
+    "category": "Automation and intelligence",
+    "title": "Self Learning",
+    "href": "/platform/self-learning",
+    "icon": "/brand/navigation/mega-menu-items/self-learning.svg"
+  },
+  {
+    "dropdown": "Product",
+    "category": "Automation and intelligence",
+    "title": "Evaluations",
+    "href": "/platform/evaluations",
+    "icon": "/brand/navigation/mega-menu-items/evaluations.svg"
+  },
+  {
+    "dropdown": "Product",
+    "category": "Automation and intelligence",
+    "title": "Analytics and Observability",
+    "href": "/platform/analytics-and-observability",
+    "icon": "/brand/navigation/mega-menu-items/analytics-and-observability.svg"
+  },
+  {
+    "dropdown": "Product",
+    "category": "Connections and governance",
+    "title": "Integrations",
+    "href": "/integrations",
+    "icon": "/brand/navigation/mega-menu-items/integrations.svg"
+  },
+  {
+    "dropdown": "Product",
+    "category": "Connections and governance",
+    "title": "Deployment Options",
+    "href": "/platform/deployment-options",
+    "icon": "/brand/navigation/mega-menu-items/deployment-options.svg"
+  },
+  {
+    "dropdown": "Product",
+    "category": "Connections and governance",
+    "title": "Security and Compliance",
+    "href": "/platform/security-and-compliance",
+    "icon": "/brand/navigation/mega-menu-items/security-and-compliance.svg"
+  },
+  {
+    "dropdown": "Solutions",
+    "category": "Operations",
+    "title": "Centralized Operations",
+    "href": "/property-management",
+    "icon": "/brand/navigation/mega-menu-items/centralized-operations.svg"
+  },
+  {
+    "dropdown": "Solutions",
+    "category": "Operations",
+    "title": "Rent Collection",
+    "href": "/rent-collection",
+    "icon": "/brand/navigation/bl-stroke/23-credit-card.svg"
+  },
+  {
+    "dropdown": "Solutions",
+    "category": "Operations",
+    "title": "Delinquency",
+    "href": "/property-management",
+    "icon": "/brand/navigation/bl-stroke/delinquency-alarm.svg"
+  },
+  {
+    "dropdown": "Solutions",
+    "category": "Operations",
+    "title": "Owner Portal",
+    "href": "/property-management",
+    "icon": "/brand/navigation/mega-menu-items/owner-portal.svg"
+  },
+  {
+    "dropdown": "Solutions",
+    "category": "Leasing",
+    "title": "Listings",
+    "href": "/products/agent-os",
+    "icon": "/brand/navigation/mega-menu-items/listings.svg"
+  },
+  {
+    "dropdown": "Solutions",
+    "category": "Leasing",
+    "title": "Advertising",
+    "href": "/products/agent-os",
+    "icon": "/brand/navigation/mega-menu-items/advertising.svg"
+  },
+  {
+    "dropdown": "Solutions",
+    "category": "Leasing",
+    "title": "Application & eSign",
+    "href": "/products/agent-os",
+    "icon": "/brand/navigation/mega-menu-items/application-esign.svg"
+  },
+  {
+    "dropdown": "Solutions",
+    "category": "Leasing",
+    "title": "CRM",
+    "href": "/products/databases",
+    "icon": "/brand/navigation/mega-menu-items/crm.svg"
+  },
+  {
+    "dropdown": "Solutions",
+    "category": "Leasing",
+    "title": "Move-In",
+    "href": "/property-management",
+    "icon": "/brand/navigation/mega-menu-items/move-in.svg"
+  },
+  {
+    "dropdown": "Solutions",
+    "category": "Leasing",
+    "title": "Renewals",
+    "href": "/property-management",
+    "icon": "/brand/navigation/mega-menu-items/renewals.svg"
+  },
+  {
+    "dropdown": "Solutions",
+    "category": "By team",
+    "title": "Owner Operators and Fee Managers",
+    "href": "/property-management",
+    "icon": "/brand/navigation/mega-menu-items/owner-operators-and-fee-managers.svg"
+  },
+  {
+    "dropdown": "Solutions",
+    "category": "By team",
+    "title": "Owners",
+    "href": "/property-management",
+    "icon": "/brand/navigation/mega-menu-items/owners.svg"
+  },
+  {
+    "dropdown": "Solutions",
+    "category": "By team",
+    "title": "Leasing Teams",
+    "href": "/property-management",
+    "icon": "/brand/navigation/bl-stroke/leasing-teams.svg"
+  },
+  {
+    "dropdown": "Portfolios",
+    "category": "Portfolios",
+    "title": "Residential",
+    "href": "/multi-property-investors",
+    "icon": "/brand/navigation/mega-menu-items/residential.svg"
+  },
+  {
+    "dropdown": "Portfolios",
+    "category": "Portfolios",
+    "title": "Multifamily",
+    "href": "/multi-property-investors",
+    "icon": "/brand/navigation/mega-menu-items/multifamily.svg"
+  },
+  {
+    "dropdown": "Portfolios",
+    "category": "Portfolios",
+    "title": "Commercial",
+    "href": "/multi-property-investors",
+    "icon": "/brand/navigation/mega-menu-items/commercial.svg"
+  },
+  {
+    "dropdown": "Portfolios",
+    "category": "Portfolios",
+    "title": "Community Associations",
+    "href": "/multi-property-investors",
+    "icon": "/brand/navigation/mega-menu-items/community-associations.svg"
+  },
+  {
+    "dropdown": "Portfolios",
+    "category": "Portfolios",
+    "title": "Conventional",
+    "href": "/property-management",
+    "icon": "/brand/navigation/mega-menu-items/conventional.svg"
+  },
+  {
+    "dropdown": "Portfolios",
+    "category": "Portfolios",
+    "title": "Student Housing",
+    "href": "/property-management",
+    "icon": "/brand/navigation/mega-menu-items/student-housing.svg"
+  },
+  {
+    "dropdown": "Resources",
+    "category": "Resources",
+    "title": "Page Directory",
+    "href": "/connections",
+    "icon": "/brand/navigation/mega-menu-items/integrations.svg"
+  },
+  {
+    "dropdown": "Resources",
+    "category": "Resources",
+    "title": "Blog",
+    "href": "/blog",
+    "icon": "/brand/navigation/mega-menu-items/blog.svg"
+  },
+  {
+    "dropdown": "Resources",
+    "category": "Resources",
+    "title": "Partnerships",
+    "href": "/partner-with-us",
+    "icon": "/brand/navigation/mega-menu-items/become-an-affiliate.svg"
+  },
+  {
+    "dropdown": "Resources",
+    "category": "Resources",
+    "title": "Customer Stories",
+    "href": "/our-customers",
+    "icon": "/brand/navigation/mega-menu-items/customer-stories.svg"
+  },
+  {
+    "dropdown": "Resources",
+    "category": "Resources",
+    "title": "Resource Library",
+    "href": "/resources",
+    "icon": "/brand/navigation/mega-menu-items/asset-library.svg"
+  }
+]

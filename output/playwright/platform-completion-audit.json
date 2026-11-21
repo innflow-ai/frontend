@@ -1,0 +1,144 @@
+{
+  "pages": [
+    {
+      "slug": "agentic-automation",
+      "status": 200,
+      "h1": 1,
+      "sections": 9,
+      "beamText": false,
+      "overflow": false,
+      "images": [
+        "/brand/platform/agentic-automation/hero.png",
+        "/brand/platform/agentic-automation/reasoning.jpg",
+        "/brand/platform/agentic-automation/variety.jpg",
+        "/brand/platform/agentic-automation/integrations.jpg",
+        "/brand/platform/agentic-automation/learning.jpg",
+        "/brand/platform/agentic-automation/evaluations.jpg",
+        "/brand/platform/agentic-automation/oversight.jpg",
+        "/brand/platform/agentic-automation/orchestration.jpg"
+      ]
+    },
+    {
+      "slug": "self-learning",
+      "status": 200,
+      "h1": 1,
+      "sections": 9,
+      "beamText": false,
+      "overflow": false,
+      "images": [
+        "/brand/platform/self-learning/hero.png",
+        "/brand/platform/self-learning/hub-innflow.png",
+        "/brand/platform/self-learning/process.png",
+        "/brand/platform/self-learning/domain.png",
+        "/brand/platform/self-learning/correction.png",
+        "/brand/platform/self-learning/feedback.png",
+        "/brand/platform/self-learning/validation.png",
+        "/brand/platform/self-learning/tracking.png",
+        "/brand/platform/self-learning/team.png"
+      ]
+    },
+    {
+      "slug": "evaluations",
+      "status": 200,
+      "h1": 1,
+      "sections": 9,
+      "beamText": false,
+      "overflow": false,
+      "images": [
+        "/brand/platform/evaluations/hero.png",
+        "/brand/platform/evaluations/accuracy.png",
+        "/brand/platform/evaluations/benchmarks.png",
+        "/brand/platform/evaluations/retry.png",
+        "/brand/platform/evaluations/criteria.png",
+        "/brand/platform/evaluations/datasets-innflow.png",
+        "/brand/platform/evaluations/feedback.png",
+        "/brand/platform/evaluations/dashboards.png",
+        "/brand/platform/evaluations/reporting.png"
+      ]
+    },
+    {
+      "slug": "analytics-and-observability",
+      "status": 200,
+      "h1": 1,
+      "sections": 9,
+      "beamText": false,
+      "overflow": false,
+      "images": [
+        "/brand/platform/analytics-and-observability/hero.png",
+        "/brand/platform/analytics-and-observability/performance.png",
+        "/brand/platform/analytics-and-observability/accuracy.png",
+        "/brand/platform/analytics-and-observability/traces-innflow.png",
+        "/brand/platform/analytics-and-observability/logs-innflow.png",
+        "/brand/platform/analytics-and-observability/costs.png",
+        "/brand/platform/self-learning/hub-innflow.png",
+        "/brand/platform/analytics-and-observability/fleet-innflow.png",
+        "/brand/platform/analytics-and-observability/metrics-innflow.png"
+      ]
+    },
+    {
+      "slug": "integrations",
+      "status": 200,
+      "h1": 1,
+      "sections": 9,
+      "beamText": false,
+      "overflow": false,
+      "images": [
+        "/brand/platform/integrations/hero.png",
+        "/brand/platform/integrations/connectors.png",
+        "/brand/platform/integrations/custom-innflow.png",
+        "/brand/platform/integrations/authentication.png",
+        "/brand/platform/integrations/browser.png",
+        "/brand/platform/integrations/actions.png",
+        "/brand/platform/integrations/mcp.png",
+        "/brand/platform/integrations/skills.png",
+        "/brand/platform/integrations/permissions-innflow.png"
+      ]
+    },
+    {
+      "slug": "deployment-options",
+      "status": 200,
+      "h1": 1,
+      "sections": 9,
+      "beamText": false,
+      "overflow": false,
+      "images": [
+        "/brand/platform/deployment-options/hero.png",
+        "/brand/platform/deployment-options/cloud.jpg",
+        "/brand/platform/deployment-options/private-innflow.png",
+        "/brand/platform/deployment-options/on-premise-innflow.png",
+        "/brand/platform/deployment-options/models.jpg",
+        "/brand/platform/deployment-options/regions.jpg",
+        "/brand/platform/deployment-options/migration-innflow.png",
+        "/brand/platform/deployment-options/governance.jpg",
+        "/brand/platform/deployment-options/support-innflow.png"
+      ]
+    },
+    {
+      "slug": "security-and-compliance",
+      "status": 200,
+      "h1": 1,
+      "sections": 9,
+      "beamText": false,
+      "overflow": false,
+      "images": [
+        "/brand/platform/security-and-compliance/hero.png",
+        "/brand/platform/security-and-compliance/compliance.png",
+        "/brand/platform/security-and-compliance/privacy.png",
+        "/brand/platform/security-and-compliance/data.png",
+        "/brand/platform/security-and-compliance/access.png",
+        "/brand/platform/security-and-compliance/audit.png",
+        "/brand/platform/security-and-compliance/encryption.png",
+        "/brand/platform/security-and-compliance/ai-security.png",
+        "/brand/platform/security-and-compliance/deployment-innflow.png"
+      ]
+    }
+  ],
+  "uniqueAssets": 61,
+  "remainingBeamTextInImages": "",
+  "checks": {
+    "typecheck": "passed",
+    "focusedLint": "passed",
+    "navigationTests": "8 passed",
+    "desktopAndMobile": "verified"
+  }
+}

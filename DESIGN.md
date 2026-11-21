@@ -1,3 +1,8 @@
+> Current direction, 2026-10-03: white/cool-gray Calendly-aligned surfaces and
+> compact supporting typography supersede the historical cream palette below.
+> Follow AGENTS.md and the `--marketing-*` roles in `src/app/globals.css`.
+> Do not add decorative section or feature-card numbering.
+
 # Innflow marketing design foundation
 
 ## Intent

@@ -1,0 +1,149 @@
+.previewScope {
+  font-family: var(--font-hero-ui), sans-serif;
+  position: relative;
+  background: var(--marketing-paper);
+  --preview-announcement-height: 40px;
+  --site-header-height: 54px;
+}
+.previewScope[data-announcement-dismissed="true"] {
+  --preview-announcement-height: 0px;
+}
+.navSpace {
+  height: var(--site-header-height);
+}
+.announcement {
+  height: 40px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 48px;
+  position: relative;
+  background: #87bdff;
+  color: #071a31;
+  font-size: 13px;
+  line-height: 1.2;
+}
+.announcement > svg {
+  flex-shrink: 0;
+}
+.announcement a {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 5px;
+  background: #ffffff40;
+  border-radius: 5px;
+  padding: 4px 8px;
+  text-decoration: none;
+  color: inherit;
+  font-size: 12px;
+}
+.announcement .homeLearnMore {
+  justify-content: center;
+  text-align: center;
+  line-height: 16px;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.announcement .homeLearnMore:is(:hover, :focus-visible) {
+  text-decoration-line: underline;
+}
+.announcement button {
+  position: absolute;
+  right: 8px;
+  top: 0;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+.announcement :is(button, a):focus-visible {
+  outline: 2px solid #071a31;
+  outline-offset: -2px;
+}
+.previewScope .flatHeader {
+  position: absolute;
+  inset: var(--preview-announcement-height) 0 auto;
+  box-sizing: border-box;
+  min-height: var(--site-header-height);
+  border-radius: 0;
+  background: var(--marketing-paper);
+}
+.previewScope .flatHeader::before {
+  border-radius: 0;
+  background: var(--marketing-paper);
+  box-shadow: none;
+  backdrop-filter: none;
+}
+/* Match the standard header width while retaining the flat homepage surface. */
+.previewScope .flatHeader[data-home-navigation="true"] {
+  inset-inline: max(40px, calc((100vw - 1440px) / 2));
+  padding-inline: 32px;
+}
+@media (max-width: 1180px) {
+  .previewScope {
+    --site-header-height: 56px;
+  }
+  .previewScope .flatHeader[data-home-navigation="true"] {
+    inset-inline: 20px;
+    padding-inline: 14px;
+  }
+}
+@media (max-width: 480px) {
+  .announcement {
+    justify-content: flex-start;
+    gap: 6px;
+    padding: 0 38px 0 12px;
+    font-size: 11px;
+  }
+  .announcement > svg {
+    display: none;
+  }
+  .announcement a {
+    font-size: 10px;
+    padding: 4px 5px;
+  }
+  .announcement button {
+    right: 0;
+    width: 36px;
+  }
+}
+
+@media (max-width: 400px) {
+  .previewScope .flatHeader[data-home-navigation="true"] {
+    inset-inline: 12px;
+    padding-inline: 10px;
+  }
+}
+
+/* Local backing: the page-colored header surface reveals blue at its corners. */
+:global(html[data-website-announcement="visible"]) .previewScope {
+  background: var(--announcement-background);
+}
+:global(html[data-website-announcement="visible"]) .navSpace {
+  background: var(--marketing-paper);
+  border-radius: var(--announcement-radius) var(--announcement-radius) 0 0;
+}
+:global(html[data-website-announcement="visible"]) .flatHeader,
+:global(html[data-website-announcement="visible"]) .flatHeader::before {
+  background: transparent;
+}
+:global(html[data-website-announcement="visible"]) .announcement {
+  display: none;
+}
+:global(html[data-website-announcement="visible"]) .previewScope {
+  --preview-announcement-height: 0px;
+}
+
+@media (min-width: 1181px) {
+  .flatHeader [aria-label="innflow home"] img {
+    width: 110px;
+    height: auto;
+  }
+}

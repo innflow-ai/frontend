@@ -1,0 +1,34 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "creator": {
+    "@type": "Person",
+    "name": "Brandon Griggs"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Brandon Griggs"
+  },
+  "creditText": "Brandon Griggs",
+  "copyrightNotice": "Brandon Griggs",
+  "license": "https://unsplash.com/license",
+  "acquireLicensePage": "https://unsplash.com/photos/white-house-facade-with-a-bright-blue-sky-dfme33ka2WA",
+  "contentLocation": {
+    "@type": "Place",
+    "name": "North Carolina, USA"
+  },
+  "contentUrl": "https://images.unsplash.com/photo-1741720252940-4d7e09386bec?auto=format&fit=crop&q=60&crop=entropy&cs=srgb&fm=jpg&ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzg4NzQ3MDIxfA&ixlib=rb-4.1.0",
+  "thumbnail": {
+    "@type": "ImageObject",
+    "url": "https://images.unsplash.com/photo-1741720252940-4d7e09386bec?auto=format&fit=crop&q=60&crop=entropy&cs=tinysrgb&fm=jpg&ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzg4NzQ3MDIxfA&ixlib=rb-4.1.0&w=200"
+  },
+  "datePublished": "2025-03-11T19:15:33.000Z",
+  "description": "White house facade with a bright blue sky",
+  "name": "White house facade with a bright blue sky",
+  "width": "5464px",
+  "height": "8192px",
+  "isAccessibleForFree": true,
+  "isFamilyFriendly": true,
+  "caption": "White house facade with a bright blue sky",
+  "representativeOfPage": true
+}

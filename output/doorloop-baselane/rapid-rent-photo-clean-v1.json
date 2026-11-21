@@ -1,0 +1,11 @@
+{
+  "tool": "built-in imagegen",
+  "prompt_summary": "Restore silver-haired man at laptop photo; remove autopay/revenue cards, text/icons/plates/glow. Preserve face, sweater, folded arms, held glasses, laptop/papers/lamp/daylight/perspective. Generous windows above, man lower-right, full410:590 portrait, no zoom or added graphics.",
+  "asset": {
+    "reference": "3:133",
+    "photo_node": "58:3",
+    "path": "/Users/ak/innflow-web/output/doorloop-baselane/rapid-rent-photo-clean-v1.png",
+    "image_hash": "bd7ff7911a21a0bfbf931efb26602c03dbd1e919"
+  },
+  "verification": "Rapid Rent hero: removed source autopay/revenue cards, text/icons/plates/glow using built-in imagegen. Applied clean photobd7ff7911a21a0bfbf931efb26602c03dbd1e919 to58:3 at410x590. Preserved native58:8/58:4; moved revenue card y184 to130 to clear portrait in cleaned composition. Screenshot verified visible face, laptop and clean card edges, in-cell bounds. Reference-derived draft photo, not replacement-actor or rights-clearance claim."
+}

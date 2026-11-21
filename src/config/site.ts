@@ -2,21 +2,31 @@ const appOrigin = (
   process.env.NEXT_PUBLIC_APP_ORIGIN ?? "https://app.innflow.ai"
 ).replace(/\/$/, "");
 
+const signupUrl = new URL(
+  process.env.NEXT_PUBLIC_SIGNUP_URL ?? "/signup",
+  appOrigin,
+);
+signupUrl.pathname = "/signup";
+signupUrl.searchParams.set("callbackURL", "/workflows");
+
 export const siteConfig = {
   name: "Innflow",
   marketingOrigin:
     process.env.NEXT_PUBLIC_MARKETING_ORIGIN ?? "https://innflow.ai",
   appOrigin,
-  signupUrl: process.env.NEXT_PUBLIC_SIGNUP_URL ?? `${appOrigin}/signup`,
-  demoUrl: process.env.NEXT_PUBLIC_DEMO_URL ?? appOrigin,
-  contactUrl:
-    process.env.NEXT_PUBLIC_CONTACT_URL ??
-    "mailto:support@innflow.ai?subject=Property%20operations%20demo",
+  signupUrl: signupUrl.href,
+  loginUrl: new URL("/login", appOrigin).href,
+  demoUrl:
+    "https://cal.com/julian-patrick-afu0u2/innflow-demo?overlayCalendar=true",
+  contactUrl: process.env.NEXT_PUBLIC_CONTACT_URL ?? "/contact",
   supportEmail: "support@innflow.ai",
   analytics: {
     termlyResourceBlockerId:
       process.env.NEXT_PUBLIC_TERMLY_RESOURCE_BLOCKER_ID ??
       "414cd1e3-288d-41cd-9efe-871f9f35e9d1",
+    // Production has no env override, so these defaults are the live IDs.
+    // GTM-KBDVHJKF is the only container. Its Google tag is G-V8ZV0QLZB7.
+    // Do not also inject gtag.js for that measurement ID.
     googleTagManagerId:
       process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID ?? "GTM-KBDVHJKF",
     googleAnalyticsId:
@@ -32,8 +42,8 @@ export const siteConfig = {
 } as const;
 
 export const navigation = [
-  { label: "Product", href: "/features/workflows" },
-  { label: "Property management", href: "/property-management" },
+  { label: "Product", href: "/products/platform" },
+  { label: "Solutions", href: "/solutions" },
   { label: "Integrations", href: "/integrations" },
   { label: "Pricing", href: "/pricing" },
 ] as const;
@@ -45,6 +55,9 @@ export const attributionKeys = [
   "utm_term",
   "utm_content",
   "gclid",
+  // Google click IDs used alongside gclid. Signup links must keep them.
+  "gbraid",
+  "wbraid",
   "fbclid",
   "msclkid",
   "landing_page",

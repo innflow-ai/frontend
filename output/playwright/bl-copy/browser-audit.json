@@ -1,0 +1,598 @@
+{
+  "checked": 74,
+  "errors": [],
+  "results": [
+    {
+      "route": "/BL/BL-about",
+      "heading": "Property operations, connected by innflow.",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-advisor-partner-program",
+      "heading": "Bring clarity to every client conversation.",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-careers",
+      "heading": "Build what comes next for property operations.",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-demo",
+      "heading": "See how\ninnflow works.",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-free-rental-forms-and-templates-for-landlords",
+      "heading": "Prepare your paperwork. Keep the context.",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-help-center",
+      "heading": "How can we help?",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-home",
+      "heading": "Operations that give\nyou your day back.",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-how-much-should-i-charge-for-rent",
+      "heading": "How do your comparable rents stack up?",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-in-the-news",
+      "heading": "Industry coverage and perspectives",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-landlord-accounting",
+      "heading": "Keep the details behind every decision together.",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-landlord-banking",
+      "heading": "Built for life with\nmore than one property.",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-landlord-banking-apy",
+      "heading": "Keep property reserves connected to the plan.",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-landlord-insurance",
+      "heading": "A clearer start to your insurance review.",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-landlord-referral",
+      "heading": "Good work is worth sharing.",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-lease-agreement",
+      "heading": "LEASE PAPERWORK. CONNECTED CONTEXT.",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-legal-agreements",
+      "heading": "Legal agreements",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-long-term-rentals",
+      "heading": "Clarity across every rental property.",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-mid-term-rentals",
+      "heading": "A clearer view of every stay.",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-multi-property-investors",
+      "heading": "Property clarity that\ngrows with your portfolio.",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-our-customers",
+      "heading": "Your people. Your properties. One connected flow.",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-partner-with-us",
+      "heading": "Partner and build something useful.",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-pricing",
+      "heading": "Clearer work.\nRoom to grow.",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-privacy-policy",
+      "heading": "Privacy Policy",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-product-updates",
+      "heading": "Product updates",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-real-estate-investing",
+      "heading": "All investor resources",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-rent-collection",
+      "heading": "Keep rental work moving, every month.",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-rent-collection-2",
+      "heading": "Keep rental work moving, every month.",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-rental-property-loans",
+      "heading": "Get your next property project ready.",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-renters",
+      "heading": "More clarity.\nLess back and forth.",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-resources",
+      "heading": "Resources for connected property work",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-security",
+      "heading": "Build trust into the way work gets done.",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-security-deposit-account",
+      "heading": "Bring clarity to deposit-related work.",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-short-term-rentals",
+      "heading": "A clearer day behind every stay.",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-tax-preparation",
+      "heading": "Bring a little order to tax season.",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-tenant-screening-service",
+      "heading": "SCREENING WORKFLOWS.\nKEEP THE NEXT STEP CLEAR.",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-terms-of-use",
+      "heading": "Terms of Service",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-webinars",
+      "heading": "Learn how innflow works",
+      "width": 1440,
+      "documentWidth": 1440,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-about",
+      "heading": "Property operations, connected by innflow.",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-advisor-partner-program",
+      "heading": "Bring clarity to every client conversation.",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-careers",
+      "heading": "Build what comes next for property operations.",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-demo",
+      "heading": "See how\ninnflow works.",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-free-rental-forms-and-templates-for-landlords",
+      "heading": "Prepare your paperwork. Keep the context.",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-help-center",
+      "heading": "How can we help?",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-home",
+      "heading": "Operations that give you your day back.",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-how-much-should-i-charge-for-rent",
+      "heading": "How do your comparable rents stack up?",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-in-the-news",
+      "heading": "Industry coverage and perspectives",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-landlord-accounting",
+      "heading": "Keep the details behind every decision together.",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-landlord-banking",
+      "heading": "Built for life with\nmore than one property.",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-landlord-banking-apy",
+      "heading": "Keep property reserves connected to the plan.",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-landlord-insurance",
+      "heading": "A clearer start to your insurance review.",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-landlord-referral",
+      "heading": "Good work is worth sharing.",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-lease-agreement",
+      "heading": "LEASE PAPERWORK. CONNECTED CONTEXT.",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-legal-agreements",
+      "heading": "Legal agreements",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-long-term-rentals",
+      "heading": "Clarity across every rental property.",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-mid-term-rentals",
+      "heading": "A clearer view of every stay.",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-multi-property-investors",
+      "heading": "Property clarity thatgrows with your portfolio.",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-our-customers",
+      "heading": "Your people. Your properties. One connected flow.",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-partner-with-us",
+      "heading": "Partner and build something useful.",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-pricing",
+      "heading": "Clearer work.\nRoom to grow.",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-privacy-policy",
+      "heading": "Privacy Policy",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-product-updates",
+      "heading": "Product updates",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-real-estate-investing",
+      "heading": "All investor resources",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-rent-collection",
+      "heading": "Keep rental work moving, every month.",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-rent-collection-2",
+      "heading": "Keep rental work moving, every month.",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-rental-property-loans",
+      "heading": "Get your next property project ready.",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-renters",
+      "heading": "More clarity.\nLess back and forth.",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-resources",
+      "heading": "Resources for connected property work",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-security",
+      "heading": "Build trust into the way work gets done.",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-security-deposit-account",
+      "heading": "Bring clarity to deposit-related work.",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-short-term-rentals",
+      "heading": "A clearer day behind every stay.",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-tax-preparation",
+      "heading": "Bring a little order to tax season.",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-tenant-screening-service",
+      "heading": "SCREENING WORKFLOWS.\nKEEP THE NEXT STEP CLEAR.",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-terms-of-use",
+      "heading": "Terms of Service",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    },
+    {
+      "route": "/BL/BL-webinars",
+      "heading": "Learn how innflow works",
+      "width": 390,
+      "documentWidth": 390,
+      "competitorCopy": false,
+      "brokenImages": []
+    }
+  ]
+}

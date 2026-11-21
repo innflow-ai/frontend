@@ -1,0 +1,100 @@
+import { beforeEach, describe, expect, it, vi } from "vitest";
+
+const { fetchMock, unstableCacheMock } = vi.hoisted(() => ({
+  fetchMock: vi.fn(),
+  unstableCacheMock: vi.fn((callback: () => Promise<unknown>) => callback),
+}));
+
+vi.mock("next/cache", () => ({
+  unstable_cache: unstableCacheMock,
+}));
+
+vi.mock("next-sanity", () => ({
+  createClient: () => ({ fetch: fetchMock }),
+}));
+
+vi.mock("@sanity/image-url", () => ({
+  createImageUrlBuilder: () => ({ image: vi.fn() }),
+}));
+
+import {
+  formatPostDateShort,
+  getLatestAppUpdate,
+  getLatestBlogPosts,
+  humanizeCategory,
+} from "./sanity";
+
+const post = {
+  title: "Newest post",
+  slug: "newest-post",
+  excerpt: "Summary",
+  category: "automation",
+  publishedAt: "2026-08-23T12:00:00.000Z",
+  readTime: 4,
+  featured: false,
+  coverImage: null,
+  tags: ["automation"],
+  author: null,
+};
+
+describe("latest Sanity blog posts", () => {
+  beforeEach(() => {
+    fetchMock.mockReset();
+  });
+
+  it("requests five newest published posts and excludes future entries", async () => {
+    fetchMock.mockResolvedValue([post]);
+
+    await expect(getLatestBlogPosts()).resolves.toEqual([post]);
+    expect(fetchMock).toHaveBeenCalledOnce();
+
+    const query = fetchMock.mock.calls[0]?.[0] as string;
+    expect(query).toContain("publishedAt <= now()");
+    expect(query).toContain("order(publishedAt desc)[0...5]");
+    expect(query).toContain("defined(slug.current)");
+  });
+
+  it("uses an isolated 60-second tagged cache", () => {
+    expect(unstableCacheMock).toHaveBeenCalledWith(
+      expect.any(Function),
+      ["latest-blog-posts"],
+      { revalidate: 60, tags: ["blog-posts"] },
+    );
+  });
+
+  it("returns an empty list when Sanity is unavailable", async () => {
+    fetchMock.mockRejectedValue(new Error("Sanity unavailable"));
+    await expect(getLatestBlogPosts()).resolves.toEqual([]);
+  });
+
+  it("formats short article dates without a year", () => {
+    expect(formatPostDateShort("2026-05-21T12:00:00.000Z")).toBe("May 21");
+  });
+
+  it("keeps AI uppercase when humanizing categories", () => {
+    expect(humanizeCategory("ai")).toBe("AI");
+    expect(humanizeCategory("ai-agent")).toBe("AI Agent");
+  });
+});
+
+describe("latest company update", () => {
+  beforeEach(() => {
+    fetchMock.mockReset();
+  });
+
+  it("selects one dated app update rather than a blog post", async () => {
+    fetchMock.mockResolvedValue({ title: "Introducing Copilot Actions" });
+    await expect(getLatestAppUpdate()).resolves.toEqual({
+      title: "Introducing Copilot Actions",
+    });
+    const query = fetchMock.mock.calls[0]?.[0] as string;
+    expect(query).toContain('_type == "appUpdate"');
+    expect(query).toContain("publishedAt <= now()");
+    expect(query).toContain("order(publishedAt desc)[0]");
+  });
+
+  it("keeps navigation available if the updates query fails", async () => {
+    fetchMock.mockRejectedValue(new Error("Sanity unavailable"));
+    await expect(getLatestAppUpdate()).resolves.toBeNull();
+  });
+});

@@ -1,0 +1,471 @@
+- generic [active] [ref=f1e1]:
+  - link "Skip to content" [ref=f1e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f1e5]:
+    - link "innflow home" [ref=f1e6] [cursor=pointer]:
+      - /url: /
+      - img "innflow" [ref=f1e7]
+    - navigation "Primary navigation" [ref=f1e8]:
+      - group "Product" [ref=f1e9]:
+        - button "Product" [ref=f1e10] [cursor=pointer]
+      - group "Solutions" [ref=f1e13]:
+        - button "Solutions" [ref=f1e14] [cursor=pointer]
+      - group "Resources" [ref=f1e17]:
+        - button "Resources" [ref=f1e18] [cursor=pointer]
+      - link "Pricing" [ref=f1e21] [cursor=pointer]:
+        - /url: /pricing
+      - link "Blog" [ref=f1e22] [cursor=pointer]:
+        - /url: /blog
+    - generic [ref=f1e23]:
+      - link "Log in" [ref=f1e24] [cursor=pointer]:
+        - /url: https://app.innflow.ai/login
+      - link "Continue with Google" [ref=f1e25] [cursor=pointer]:
+        - /url: https://app.innflow.ai/auth/google
+  - main [ref=f1e28]:
+    - generic [ref=f1e29]:
+      - generic [ref=f1e31]:
+        - navigation "Breadcrumb" [ref=f1e32]:
+          - list [ref=f1e33]:
+            - listitem [ref=f1e34]:
+              - link "Home" [ref=f1e35] [cursor=pointer]:
+                - /url: /
+              - generic [aria-hidden] [ref=f1e39]: /
+            - listitem [ref=f1e40]:
+              - generic "Blog" [ref=f1e41]
+        - generic [ref=f1e42]:
+          - generic [ref=f1e43]:
+            - paragraph [ref=f1e44]: The Innflow journal
+            - heading "Good ideas. Better property operations." [level=1] [ref=f1e45]: Good ideas.Better property operations.
+          - paragraph [ref=f1e46]: Practical guides, fresh perspectives, and smarter ways to run your properties. Find your next move here.
+        - search [ref=f1e47]:
+          - generic [ref=f1e48]:
+            - generic [ref=f1e49]:
+              - generic [ref=f1e53]: Search the Innflow blog
+              - searchbox "Search the Innflow blog" [ref=f1e54]: automation
+            - generic [ref=f1e55]: Industry
+            - combobox "Industry" [ref=f1e56]:
+              - option "All industries"
+              - option "General" [selected]
+            - button "Search" [ref=f1e57]
+        - navigation "Blog topics" [ref=f1e60]:
+          - list [ref=f1e61]:
+            - listitem [ref=f1e62]:
+              - link "All stories" [ref=f1e63] [cursor=pointer]:
+                - /url: /blog?q=automation&industry=General
+            - listitem [ref=f1e64]:
+              - link "Product & Platform" [ref=f1e65] [cursor=pointer]:
+                - /url: /blog?q=automation&category=product-platform&industry=General
+            - listitem [ref=f1e66]:
+              - link "Company Updates" [ref=f1e67] [cursor=pointer]:
+                - /url: /blog?q=automation&category=company-updates&industry=General
+            - listitem [ref=f1e68]:
+              - link "Automation with Innflow" [ref=f1e69] [cursor=pointer]:
+                - /url: /blog?q=automation&category=automation-with-innflow&industry=General
+            - listitem [ref=f1e70]:
+              - link "AI Agent" [ref=f1e71] [cursor=pointer]:
+                - /url: /blog?q=automation&category=ai-agent&industry=General
+            - listitem [ref=f1e72]:
+              - link "Automation" [ref=f1e73] [cursor=pointer]:
+                - /url: /blog?q=automation&category=automation&industry=General
+            - listitem [ref=f1e74]:
+              - link "Workflow" [ref=f1e75] [cursor=pointer]:
+                - /url: /blog?q=automation&category=workflow&industry=General
+            - listitem [ref=f1e76]:
+              - link "Integrations" [ref=f1e77] [cursor=pointer]:
+                - /url: /blog?q=automation&category=integrations&industry=General
+            - listitem [ref=f1e78]:
+              - link "Comparison" [ref=f1e79] [cursor=pointer]:
+                - /url: /blog?q=automation&category=comparison&industry=General
+            - listitem [ref=f1e80]:
+              - link "Case Study" [ref=f1e81] [cursor=pointer]:
+                - /url: /blog?q=automation&category=case-study&industry=General
+            - listitem [ref=f1e82]:
+              - link "AI" [ref=f1e83] [cursor=pointer]:
+                - /url: /blog?q=automation&category=ai&industry=General
+            - listitem [ref=f1e84]:
+              - link "Maintenance" [ref=f1e85] [cursor=pointer]:
+                - /url: /blog?q=automation&category=maintenance&industry=General
+            - listitem [ref=f1e86]:
+              - link "Property Management" [ref=f1e87] [cursor=pointer]:
+                - /url: /blog?q=automation&category=property-management&industry=General
+            - listitem [ref=f1e88]:
+              - link "Software" [ref=f1e89] [cursor=pointer]:
+                - /url: /blog?q=automation&category=software&industry=General
+            - listitem [ref=f1e90]:
+              - link "Thought Leadership" [ref=f1e91] [cursor=pointer]:
+                - /url: /blog?q=automation&category=thought-leadership&industry=General
+      - region "Blog articles" [ref=f1e92]:
+        - generic [ref=f1e93]:
+          - generic [ref=f1e94]:
+            - heading "Your reading list" [level=2] [ref=f1e95]
+            - generic [ref=f1e96]: 63 stories matching “automation”
+            - link "Clear filters" [ref=f1e97] [cursor=pointer]:
+              - /url: /blog
+          - generic [ref=f1e98]:
+            - 'link "Zapier vs n8n: Choosing a Workflow Automation Platform AI Zapier vs n8n: Choosing a Workflow Automation Platform Zapier vs n8n is a real operator choice. Compare hosting, pricing, and AI, then see why property ops still needs a governed workflow layer for leasing. September 21, 2026 13 min read" [ref=f1e99] [cursor=pointer]':
+              - /url: /blog/zapier-vs-n8n-workflow-automation
+              - 'img "Zapier vs n8n: Choosing a Workflow Automation Platform" [ref=f1e101]'
+              - generic [ref=f1e102]:
+                - generic [ref=f1e103]: AI
+                - 'heading "Zapier vs n8n: Choosing a Workflow Automation Platform" [level=3] [ref=f1e104]'
+                - paragraph [ref=f1e105]: Zapier vs n8n is a real operator choice. Compare hosting, pricing, and AI, then see why property ops still needs a governed workflow layer for leasing.
+                - paragraph [ref=f1e106]:
+                  - time [ref=f1e107]: September 21, 2026
+                  - generic [aria-hidden] [ref=f1e108]: ·
+                  - generic [ref=f1e109]: 13 min read
+            - 'link "Automation-first tables: store, move, and act on ops data AI Automation-first tables: store, move, and act on ops data Automation-first tables store ops data as units of work. Rows move through agents and human review without becoming a second spreadsheet for the team. September 21, 2026 12 min read" [ref=f1e110] [cursor=pointer]':
+              - /url: /blog/automation-first-tables-ops-data
+              - 'img "Automation-first tables: store, move, and act on ops data" [ref=f1e112]'
+              - generic [ref=f1e113]:
+                - generic [ref=f1e114]: AI
+                - 'heading "Automation-first tables: store, move, and act on ops data" [level=3] [ref=f1e115]'
+                - paragraph [ref=f1e116]: Automation-first tables store ops data as units of work. Rows move through agents and human review without becoming a second spreadsheet for the team.
+                - paragraph [ref=f1e117]:
+                  - time [ref=f1e118]: September 21, 2026
+                  - generic [aria-hidden] [ref=f1e119]: ·
+                  - generic [ref=f1e120]: 12 min read
+            - 'link "2026 AI Automation Toolkit: 7 Tools for Teams Product Platform 2026 AI Automation Toolkit: 7 Tools for Teams An AI automation toolkit 2026 for property teams covers system of record, inbox, voice, work orders, books, evals, and a governed workflow layer you can run. September 21, 2026 11 min read" [ref=f1e121] [cursor=pointer]':
+              - /url: /blog/2026-ai-automation-toolkit
+              - 'img "2026 AI Automation Toolkit: 7 Tools for Teams" [ref=f1e123]'
+              - generic [ref=f1e124]:
+                - generic [ref=f1e125]: Product Platform
+                - 'heading "2026 AI Automation Toolkit: 7 Tools for Teams" [level=3] [ref=f1e126]'
+                - paragraph [ref=f1e127]: An AI automation toolkit 2026 for property teams covers system of record, inbox, voice, work orders, books, evals, and a governed workflow layer you can run.
+                - paragraph [ref=f1e128]:
+                  - time [ref=f1e129]: September 21, 2026
+                  - generic [aria-hidden] [ref=f1e130]: ·
+                  - generic [ref=f1e131]: 11 min read
+            - link "5 AI Chatbots Reshaping Workflow Automation AI Agent 5 AI Chatbots Reshaping Workflow Automation AI chatbots workflow automation is easy to overbuy. Compare five chat products, then use agents with tools for property work, not another inbox chatbot. September 21, 2026 11 min read" [ref=f1e132] [cursor=pointer]:
+              - /url: /blog/ai-chatbots-reshaping-workflow-automation
+              - img "5 AI Chatbots Reshaping Workflow Automation" [ref=f1e134]
+              - generic [ref=f1e135]:
+                - generic [ref=f1e136]: AI Agent
+                - heading "5 AI Chatbots Reshaping Workflow Automation" [level=3] [ref=f1e137]
+                - paragraph [ref=f1e138]: AI chatbots workflow automation is easy to overbuy. Compare five chat products, then use agents with tools for property work, not another inbox chatbot.
+                - paragraph [ref=f1e139]:
+                  - time [ref=f1e140]: September 21, 2026
+                  - generic [aria-hidden] [ref=f1e141]: ·
+                  - generic [ref=f1e142]: 11 min read
+            - 'link "Innflow vs Zapier comparison Comparison Innflow vs Zapier: Which Automation Platform Wins Innflow vs Zapier compared honestly: per-task trigger-action automation versus agentic workflows with human oversight, control, and full operational visibility. September 4, 2026 10 min read" [ref=f1e143] [cursor=pointer]':
+              - /url: /blog/innflow-vs-zapier
+              - img "Innflow vs Zapier comparison" [ref=f1e145]
+              - generic [ref=f1e146]:
+                - generic [ref=f1e147]: Comparison
+                - 'heading "Innflow vs Zapier: Which Automation Platform Wins" [level=3] [ref=f1e148]'
+                - paragraph [ref=f1e149]: "Innflow vs Zapier compared honestly: per-task trigger-action automation versus agentic workflows with human oversight, control, and full operational visibility."
+                - paragraph [ref=f1e150]:
+                  - time [ref=f1e151]: September 4, 2026
+                  - generic [aria-hidden] [ref=f1e152]: ·
+                  - generic [ref=f1e153]: 10 min read
+            - 'link "Innflow vs Make comparison Comparison Innflow vs Make: Scenarios vs Agentic Workflows Innflow vs Make: compare visual scenario building with per-operation pricing to agentic AI workflows, human-in-the-loop control, and full observability. September 4, 2026 12 min read" [ref=f1e154] [cursor=pointer]':
+              - /url: /blog/innflow-vs-make
+              - img "Innflow vs Make comparison" [ref=f1e156]
+              - generic [ref=f1e157]:
+                - generic [ref=f1e158]: Comparison
+                - 'heading "Innflow vs Make: Scenarios vs Agentic Workflows" [level=3] [ref=f1e159]'
+                - paragraph [ref=f1e160]: "Innflow vs Make: compare visual scenario building with per-operation pricing to agentic AI workflows, human-in-the-loop control, and full observability."
+                - paragraph [ref=f1e161]:
+                  - time [ref=f1e162]: September 4, 2026
+                  - generic [aria-hidden] [ref=f1e163]: ·
+                  - generic [ref=f1e164]: 12 min read
+            - 'link "Innflow vs n8n comparison Comparison Innflow vs n8n: Self-Hosted Power vs Agentic AI Innflow vs n8n compared: self-hosted, node-based workflow power vs managed agentic AI with human control. See which platform truly fits your team''s goals. September 4, 2026 11 min read" [ref=f1e165] [cursor=pointer]':
+              - /url: /blog/innflow-vs-n8n
+              - img "Innflow vs n8n comparison" [ref=f1e167]
+              - generic [ref=f1e168]:
+                - generic [ref=f1e169]: Comparison
+                - 'heading "Innflow vs n8n: Self-Hosted Power vs Agentic AI" [level=3] [ref=f1e170]'
+                - paragraph [ref=f1e171]: "Innflow vs n8n compared: self-hosted, node-based workflow power vs managed agentic AI with human control. See which platform truly fits your team's goals."
+                - paragraph [ref=f1e172]:
+                  - time [ref=f1e173]: September 4, 2026
+                  - generic [aria-hidden] [ref=f1e174]: ·
+                  - generic [ref=f1e175]: 11 min read
+            - 'link "Shopify Automation With Innflow.ai: Six Workflows Integrations Shopify Automation With Innflow.ai: Six Workflows See how Shopify automation can replace expensive ecommerce ops with six Innflow.ai workflows for research, suppliers, copy, ads, support, and growth. June 15, 2026 5 min read" [ref=f1e176] [cursor=pointer]':
+              - /url: /blog/shopify-automation-with-innflowai-six-workflows
+              - 'img "Shopify Automation With Innflow.ai: Six Workflows" [ref=f1e178]'
+              - generic [ref=f1e179]:
+                - generic [ref=f1e180]: Integrations
+                - 'heading "Shopify Automation With Innflow.ai: Six Workflows" [level=3] [ref=f1e181]'
+                - paragraph [ref=f1e182]: See how Shopify automation can replace expensive ecommerce ops with six Innflow.ai workflows for research, suppliers, copy, ads, support, and growth.
+                - paragraph [ref=f1e183]:
+                  - time [ref=f1e184]: June 15, 2026
+                  - generic [aria-hidden] [ref=f1e185]: ·
+                  - generic [ref=f1e186]: 5 min read
+            - link "3 Ways AI Agents Outperform Traditional Automation (It's Not Even Close) Product Platform 3 Ways AI Agents Outperform Traditional Automation (It's Not Even Close) 3 Ways AI Agents Outperform Traditional Automation (It's Not Even Close) AI agents vs automation — three ways agents decisively outperform traditional automa... May 7, 2026 8 min read" [ref=f1e187] [cursor=pointer]:
+              - /url: /blog/3-ways-ai-agents-outperform-traditional-automation-its-not-even-close
+              - img "3 Ways AI Agents Outperform Traditional Automation (It's Not Even Close)" [ref=f1e189]
+              - generic [ref=f1e190]:
+                - generic [ref=f1e191]: Product Platform
+                - heading "3 Ways AI Agents Outperform Traditional Automation (It's Not Even Close)" [level=3] [ref=f1e192]
+                - paragraph [ref=f1e193]: 3 Ways AI Agents Outperform Traditional Automation (It's Not Even Close) AI agents vs automation — three ways agents decisively outperform traditional automa...
+                - paragraph [ref=f1e194]:
+                  - time [ref=f1e195]: May 7, 2026
+                  - generic [aria-hidden] [ref=f1e196]: ·
+                  - generic [ref=f1e197]: 8 min read
+          - navigation "Blog pagination" [ref=f1e198]:
+            - generic [ref=f1e199]: Previous
+            - paragraph [ref=f1e200]: Page 1 of 7
+            - link "Next" [ref=f1e201] [cursor=pointer]:
+              - /url: /blog?q=automation&industry=General&page=2
+  - generic [ref=f1e204]:
+    - heading "A clearer day starts with a connected flow." [level=2] [ref=f1e205]
+    - paragraph [ref=f1e206]: Bring your team, context, and next steps together.
+    - link "Continue with Google" [ref=f1e208] [cursor=pointer]:
+      - /url: https://app.innflow.ai/auth/google
+    - form [ref=f1e211]:
+      - heading "A little more, just for members." [level=3] [ref=f1e212]
+      - paragraph [ref=f1e213]: Get Innflow updates and member offers by email.
+      - group [ref=f1e214]:
+        - generic [ref=f1e215]: Email address
+        - generic [ref=f1e216]:
+          - textbox "Email address" [ref=f1e217]:
+            - /placeholder: Enter your email
+          - button "Sign up" [ref=f1e218] [cursor=pointer]
+      - status
+  - contentinfo [ref=f1e220]:
+    - generic [ref=f1e221]:
+      - generic [ref=f1e222]:
+        - link "innflow home" [ref=f1e223] [cursor=pointer]:
+          - /url: /
+          - img "innflow" [ref=f1e224]
+        - paragraph [ref=f1e225]: Property operations.Connected in one place.
+        - link "support@innflow.ai" [ref=f1e226] [cursor=pointer]:
+          - /url: mailto:support@innflow.ai
+        - region "Hours of operation" [ref=f1e227]:
+          - strong [ref=f1e228]: Hours of Operation
+          - generic [ref=f1e229]:
+            - generic [ref=f1e230]:
+              - term [ref=f1e231]: Monday–Friday
+              - definition [ref=f1e232]: 9:00 AM–6:00 PM ET
+            - generic [ref=f1e233]:
+              - term [ref=f1e234]: Saturday–Sunday
+              - definition [ref=f1e235]: 10:00 AM–5:00 PM ET
+      - generic [ref=f1e236]:
+        - heading "Why innflow" [level=3] [ref=f1e237]
+        - link "About innflow" [ref=f1e238] [cursor=pointer]:
+          - /url: /about
+        - link "Careers" [ref=f1e239] [cursor=pointer]:
+          - /url: /careers
+        - link "Industry coverage" [ref=f1e240] [cursor=pointer]:
+          - /url: /in-the-news
+        - link "Who we help" [ref=f1e241] [cursor=pointer]:
+          - /url: /our-customers
+        - link "Security" [ref=f1e242] [cursor=pointer]:
+          - /url: /security
+        - link "Share innflow" [ref=f1e243] [cursor=pointer]:
+          - /url: /landlord-referral
+        - link "Partnerships" [ref=f1e244] [cursor=pointer]:
+          - /url: /partner-with-us
+        - link "Advisor partnerships" [ref=f1e245] [cursor=pointer]:
+          - /url: /advisor-partner-program
+        - link "Workflows" [ref=f1e246] [cursor=pointer]:
+          - /url: /products/agentic-workflows
+        - link "AI assistant" [ref=f1e247] [cursor=pointer]:
+          - /url: /products/ai-agents
+        - link "Knowledge" [ref=f1e248] [cursor=pointer]:
+          - /url: /platform
+        - link "Approvals" [ref=f1e249] [cursor=pointer]:
+          - /url: /platform/security-and-compliance
+      - generic [ref=f1e250]:
+        - heading "Solutions" [level=3] [ref=f1e251]
+        - link "Overview" [ref=f1e252] [cursor=pointer]:
+          - /url: /
+        - link "Multi-property investors" [ref=f1e253] [cursor=pointer]:
+          - /url: /multi-property-investors
+        - link "Landlord operations" [ref=f1e254] [cursor=pointer]:
+          - /url: /landlord-banking
+        - link "Rental workflows" [ref=f1e255] [cursor=pointer]:
+          - /url: /rent-collection
+        - link "Rental workflows overview" [ref=f1e256] [cursor=pointer]:
+          - /url: /rent-collection-2
+        - link "Connected property records" [ref=f1e257] [cursor=pointer]:
+          - /url: /landlord-accounting
+        - link "Property review preparation" [ref=f1e258] [cursor=pointer]:
+          - /url: /landlord-insurance
+        - link "Document preparation" [ref=f1e259] [cursor=pointer]:
+          - /url: /tax-preparation
+        - link "Deposit workflows" [ref=f1e260] [cursor=pointer]:
+          - /url: /security-deposit-account
+        - link "Screening workflows" [ref=f1e261] [cursor=pointer]:
+          - /url: /tenant-screening-service
+        - link "Reserve planning" [ref=f1e262] [cursor=pointer]:
+          - /url: /landlord-banking-apy
+        - link "Financing preparation" [ref=f1e263] [cursor=pointer]:
+          - /url: /rental-property-loans
+        - link "Property management" [ref=f1e264] [cursor=pointer]:
+          - /url: /property-management
+        - link "Connected operations" [ref=f1e265] [cursor=pointer]:
+          - /url: /platform
+        - link "Integrations" [ref=f1e266] [cursor=pointer]:
+          - /url: /integrations
+      - generic [ref=f1e267]:
+        - heading "Resources" [level=3] [ref=f1e268]
+        - link "Resource library" [ref=f1e269] [cursor=pointer]:
+          - /url: /resources
+        - link "Document checklists" [ref=f1e270] [cursor=pointer]:
+          - /url: /free-rental-forms-and-templates-for-landlords
+        - link "Rent comparison" [ref=f1e271] [cursor=pointer]:
+          - /url: /how-much-should-i-charge-for-rent
+        - link "Lease workflows" [ref=f1e272] [cursor=pointer]:
+          - /url: /lease-agreement
+        - link "Workflow learning" [ref=f1e273] [cursor=pointer]:
+          - /url: /webinars
+        - link "Investor resources" [ref=f1e274] [cursor=pointer]:
+          - /url: /real-estate-investing
+        - link "Product updates" [ref=f1e275] [cursor=pointer]:
+          - /url: /product-updates
+        - link "Blog" [ref=f1e276] [cursor=pointer]:
+          - /url: /blog
+        - link "Help center" [ref=f1e277] [cursor=pointer]:
+          - /url: /help-center
+        - link "Legal agreements" [ref=f1e278] [cursor=pointer]:
+          - /url: /legal-agreements
+        - link "FAQ" [ref=f1e279] [cursor=pointer]:
+          - /url: /faq
+        - link "Contact" [ref=f1e280] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=f1e281]:
+        - heading "Property teams" [level=3] [ref=f1e282]
+        - link "Long-term rentals" [ref=f1e283] [cursor=pointer]:
+          - /url: /long-term-rentals
+        - link "Mid-term rentals" [ref=f1e284] [cursor=pointer]:
+          - /url: /mid-term-rentals
+        - link "Short-term rentals" [ref=f1e285] [cursor=pointer]:
+          - /url: /short-term-rentals
+        - link "Resident experiences" [ref=f1e286] [cursor=pointer]:
+          - /url: /renters
+        - heading "Get started" [level=3] [ref=f1e287]
+        - link "Book a demo" [ref=f1e288] [cursor=pointer]:
+          - /url: https://cal.com/julian-patrick-afu0u2/innflow-demo?overlayCalendar=true
+        - link "Pricing" [ref=f1e289] [cursor=pointer]:
+          - /url: /pricing
+        - link "Log in" [ref=f1e290] [cursor=pointer]:
+          - /url: https://app.innflow.ai/login
+        - link "Continue with Google" [ref=f1e291] [cursor=pointer]:
+          - /url: https://app.innflow.ai/auth/google
+    - generic [ref=f1e294]:
+      - generic [ref=f1e295]: © 2026 Innflow. All rights reserved.
+      - navigation "Legal" [ref=f1e296]:
+        - link "Privacy Policy" [ref=f1e297] [cursor=pointer]:
+          - /url: /legal/privacy-policy
+        - link "Terms of Service" [ref=f1e298] [cursor=pointer]:
+          - /url: /legal/terms-of-service
+        - link "Cookie Policy" [ref=f1e299] [cursor=pointer]:
+          - /url: /legal/cookie-policy
+        - link "Acceptable Use Policy" [ref=f1e300] [cursor=pointer]:
+          - /url: /legal/acceptable-use-policy
+        - link "EULA" [ref=f1e301] [cursor=pointer]:
+          - /url: /legal/eula
+        - link "Privacy Request" [ref=f1e302] [cursor=pointer]:
+          - /url: /legal/dsar
+        - link "Consent Preferences" [ref=f1e303] [cursor=pointer]:
+          - /url: "#"
+        - link "Do Not Sell or Share My Personal Information" [ref=f1e304] [cursor=pointer]:
+          - /url: https://app.termly.io/notify/d253192a-6c11-4338-9883-67b3307aea2f
+        - link "Limit the Use of My Sensitive Personal Information" [ref=f1e305] [cursor=pointer]:
+          - /url: https://app.termly.io/notify/d253192a-6c11-4338-9883-67b3307aea2f
+    - region [ref=f1e306]:
+      - heading "Featured on" [level=2] [ref=f1e308]
+      - generic [ref=f1e310]:
+        - generic [ref=f1e311]:
+          - link "Visit EarlyHunt (opens in a new tab)" [ref=f1e312] [cursor=pointer]:
+            - /url: https://earlyhunt.com/project/innflow
+            - img "Featured on EarlyHunt" [ref=f1e314]
+          - link "Visit neeed.directory (opens in a new tab)" [ref=f1e315] [cursor=pointer]:
+            - /url: https://neeed.directory/products/innflow?utm_source=innflow
+            - img "Featured on neeed.directory" [ref=f1e317]
+          - link "Visit StartupFA.me (opens in a new tab)" [ref=f1e318] [cursor=pointer]:
+            - /url: https://startupfa.me/s/innflow.ai-345?utm_source=innflow.ai
+            - img "Featured on Startup Fame" [ref=f1e320]
+          - link "Visit TechTrendin (opens in a new tab)" [ref=f1e321] [cursor=pointer]:
+            - /url: https://www.techtrendin.com/products/innflow
+            - img "Featured on TechTrendin" [ref=f1e323]
+          - link "Visit Bowora (opens in a new tab)" [ref=f1e324] [cursor=pointer]:
+            - /url: https://bowora.com/
+            - img "Featured on Bowora" [ref=f1e326]
+          - link "Visit ConfettiSaaS (opens in a new tab)" [ref=f1e327] [cursor=pointer]:
+            - /url: https://confettisaas.com/saas/innflow-ai?ref=badge
+            - img "Innflow on ConfettiSaaS" [ref=f1e329]
+          - link "Visit DodoDirectory (opens in a new tab)" [ref=f1e330] [cursor=pointer]:
+            - /url: https://dododirectory.com
+            - img "Featured on DodoDirectory" [ref=f1e332]
+          - link "Visit Fazier (opens in a new tab)" [ref=f1e333] [cursor=pointer]:
+            - /url: https://fazier.com
+            - img "Fazier badge" [ref=f1e335]
+          - link "Visit findly.tools (opens in a new tab)" [ref=f1e336] [cursor=pointer]:
+            - /url: https://findly.tools
+            - img "Featured on Findly.tools" [ref=f1e338]
+          - link "Visit Huzzler (opens in a new tab)" [ref=f1e339] [cursor=pointer]:
+            - /url: https://huzzler.so
+            - img "Featured on Huzzler" [ref=f1e341]
+          - link "Visit IdeaKiln (opens in a new tab)" [ref=f1e342] [cursor=pointer]:
+            - /url: https://ideakiln.com
+            - img "Featured on Idea Kiln" [ref=f1e344]
+          - link "Visit Indiehunt (opens in a new tab)" [ref=f1e345] [cursor=pointer]:
+            - /url: https://indiehunt.io
+            - img "Featured on IndieHunt" [ref=f1e347]
+          - link "Visit Launch Llama Tools (opens in a new tab)" [ref=f1e348] [cursor=pointer]:
+            - /url: https://tools.launchllama.co?utm_source=badge&utm_medium=referral
+            - img "As seen on Launch Llama Newsletter" [ref=f1e350]
+          - link "Visit SaaSBison (opens in a new tab)" [ref=f1e351] [cursor=pointer]:
+            - /url: https://saasbison.com
+            - img "Featured on SaaSBison" [ref=f1e353]
+          - link "Visit SaaSGrow (opens in a new tab)" [ref=f1e354] [cursor=pointer]:
+            - /url: https://saasgrow.app?ref=innflow.ai
+            - img "Innflow on SaaSGrow" [ref=f1e356]
+          - link "Visit StartupBase (opens in a new tab)" [ref=f1e357] [cursor=pointer]:
+            - /url: https://startupbase.io
+            - img "Featured on StartupBase" [ref=f1e359]
+          - link "Visit startupfa.st (opens in a new tab)" [ref=f1e360] [cursor=pointer]:
+            - /url: https://startupfa.st
+            - img "Powered by Startup Fast" [ref=f1e362]
+          - link "Visit Sumodir (opens in a new tab)" [ref=f1e363] [cursor=pointer]:
+            - /url: https://sumodir.com
+            - img "Featured on SumoDir" [ref=f1e365]
+          - link "Visit Twelve Tools (opens in a new tab)" [ref=f1e366] [cursor=pointer]:
+            - /url: https://twelve.tools
+            - img "Featured on Twelve Tools" [ref=f1e368]
+          - link "Visit Web Review (opens in a new tab)" [ref=f1e369] [cursor=pointer]:
+            - /url: https://web-review.com
+            - img "Featured on Web Review" [ref=f1e371]
+        - generic [aria-hidden] [ref=f1e372]:
+          - link [ref=f1e373] [cursor=pointer]:
+            - /url: https://earlyhunt.com/project/innflow
+          - link [ref=f1e376] [cursor=pointer]:
+            - /url: https://neeed.directory/products/innflow?utm_source=innflow
+          - link [ref=f1e379] [cursor=pointer]:
+            - /url: https://startupfa.me/s/innflow.ai-345?utm_source=innflow.ai
+          - link [ref=f1e382] [cursor=pointer]:
+            - /url: https://www.techtrendin.com/products/innflow
+          - link [ref=f1e385] [cursor=pointer]:
+            - /url: https://bowora.com/
+          - link [ref=f1e388] [cursor=pointer]:
+            - /url: https://confettisaas.com/saas/innflow-ai?ref=badge
+          - link [ref=f1e391] [cursor=pointer]:
+            - /url: https://dododirectory.com
+          - link [ref=f1e394] [cursor=pointer]:
+            - /url: https://fazier.com
+          - link [ref=f1e397] [cursor=pointer]:
+            - /url: https://findly.tools
+          - link [ref=f1e400] [cursor=pointer]:
+            - /url: https://huzzler.so
+          - link [ref=f1e403] [cursor=pointer]:
+            - /url: https://ideakiln.com
+          - link [ref=f1e406] [cursor=pointer]:
+            - /url: https://indiehunt.io
+          - link [ref=f1e409] [cursor=pointer]:
+            - /url: https://tools.launchllama.co?utm_source=badge&utm_medium=referral
+          - link [ref=f1e412] [cursor=pointer]:
+            - /url: https://saasbison.com
+          - link [ref=f1e415] [cursor=pointer]:
+            - /url: https://saasgrow.app?ref=innflow.ai
+          - link [ref=f1e418] [cursor=pointer]:
+            - /url: https://startupbase.io
+          - link [ref=f1e421] [cursor=pointer]:
+            - /url: https://startupfa.st
+          - link [ref=f1e424] [cursor=pointer]:
+            - /url: https://sumodir.com
+          - link [ref=f1e427] [cursor=pointer]:
+            - /url: https://twelve.tools
+          - link [ref=f1e430] [cursor=pointer]:
+            - /url: https://web-review.com
+  - alert [ref=f1e433]

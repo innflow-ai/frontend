@@ -1,0 +1,15 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="15.9855" height="15.9855" viewBox="0 0 15.9855 15.9855" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Mask group">
+<mask id="mask0_0_13" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16">
+<g id="Group">
+<path id="Vector" d="M15.9855 0H0V15.9855H15.9855V0Z" fill="black"/>
+<g id="Group_2">
+<path id="Vector_2" d="M6.49411 12.4887C6.49411 13.4084 5.59949 14.1539 4.49592 14.1539C3.39236 14.1539 2.49773 13.4084 2.49773 12.4887C2.49773 11.569 3.39236 10.8236 4.49592 10.8236C5.59949 10.8236 6.49411 11.569 6.49411 12.4887ZM6.49411 12.4887V4.83477C6.49411 4.23998 6.88842 3.71726 7.46037 3.55389L11.7912 2.31675C12.6422 2.07367 13.4892 2.71264 13.4892 3.59764V10.4906M13.4892 10.4906C13.4892 11.4102 12.5946 12.1557 11.491 12.1557C10.3874 12.1557 9.49286 11.4102 9.49286 10.4906C9.49286 9.57085 10.3874 8.82539 11.491 8.82539C12.5946 8.82539 13.4892 9.57085 13.4892 10.4906Z" stroke-width="0.999094" stroke-linejoin="round" stroke="white"/>
+</g>
+</g>
+</mask>
+<g mask="url(#mask0_0_13)">
+<path id="Vector_3" d="M15.9855 0H0V15.9855H15.9855V0Z" fill="#5F5F68" fill-opacity="0.8"/>
+</g>
+</g>
+</svg>

@@ -1,0 +1,263 @@
+[
+  {
+    "route": "/platform",
+    "status": 200,
+    "headers": 1,
+    "footers": 1,
+    "mains": 1,
+    "ctas": 1,
+    "h1": "Your operation, connected.",
+    "theme": "product-experience-module__KlH2iG__page",
+    "flags": []
+  },
+  {
+    "route": "/products/platform",
+    "status": 200,
+    "headers": 1,
+    "footers": 1,
+    "mains": 1,
+    "ctas": 1,
+    "h1": "One place for the work behind every property.",
+    "theme": "product-experience-module__KlH2iG__page product-page-module__bG4V9a__page",
+    "flags": [],
+    "oldProductArtwork": 0
+  },
+  {
+    "route": "/products/agent-studio",
+    "status": 200,
+    "headers": 1,
+    "footers": 1,
+    "mains": 1,
+    "ctas": 1,
+    "h1": "Build the way your team works.",
+    "theme": "product-experience-module__KlH2iG__page product-page-module__bG4V9a__page product-page-module__bG4V9a__agentOs product-page-module__bG4V9a__agentStudio",
+    "flags": [],
+    "oldProductArtwork": 0
+  },
+  {
+    "route": "/products/agent-os",
+    "status": 200,
+    "headers": 1,
+    "footers": 1,
+    "mains": 1,
+    "ctas": 1,
+    "h1": "Give your agents a clear path to follow.",
+    "theme": "product-experience-module__KlH2iG__page product-page-module__bG4V9a__page product-page-module__bG4V9a__agentOs",
+    "flags": [],
+    "oldProductArtwork": 0
+  },
+  {
+    "route": "/products/ai-agents",
+    "status": 200,
+    "headers": 1,
+    "footers": 1,
+    "mains": 1,
+    "ctas": 1,
+    "h1": "A little more help. A lot less chasing.",
+    "theme": "product-experience-module__KlH2iG__page product-page-module__bG4V9a__page",
+    "flags": [],
+    "oldProductArtwork": 0
+  },
+  {
+    "route": "/products/agentic-workflows",
+    "status": 200,
+    "headers": 1,
+    "footers": 1,
+    "mains": 1,
+    "ctas": 1,
+    "h1": "Every handoff. One connected flow.",
+    "theme": "product-experience-module__KlH2iG__page product-page-module__bG4V9a__page",
+    "flags": [],
+    "oldProductArtwork": 0
+  },
+  {
+    "route": "/platform/agentic-automation",
+    "status": 200,
+    "headers": 1,
+    "footers": 1,
+    "mains": 1,
+    "ctas": 1,
+    "h1": "Give recurring work a clear path forward.",
+    "theme": "product-experience-module__KlH2iG__page",
+    "flags": []
+  },
+  {
+    "route": "/products/databases",
+    "status": 200,
+    "headers": 1,
+    "footers": 1,
+    "mains": 1,
+    "ctas": 1,
+    "h1": "Your property knowledge, within reach.",
+    "theme": "product-experience-module__KlH2iG__page product-page-module__bG4V9a__page",
+    "flags": [],
+    "oldProductArtwork": 0
+  },
+  {
+    "route": "/platform/self-learning",
+    "status": 200,
+    "headers": 1,
+    "footers": 1,
+    "mains": 1,
+    "ctas": 1,
+    "h1": "Turn everyday feedback into better workflows.",
+    "theme": "product-experience-module__KlH2iG__page",
+    "flags": []
+  },
+  {
+    "route": "/platform/evaluations",
+    "status": 200,
+    "headers": 1,
+    "footers": 1,
+    "mains": 1,
+    "ctas": 1,
+    "h1": "Know how well your agents handle the work.",
+    "theme": "product-experience-module__KlH2iG__page",
+    "flags": []
+  },
+  {
+    "route": "/platform/analytics-and-observability",
+    "status": 200,
+    "headers": 1,
+    "footers": 1,
+    "mains": 1,
+    "ctas": 1,
+    "h1": "Understand every step of your agent workflows.",
+    "theme": "product-experience-module__KlH2iG__page",
+    "flags": []
+  },
+  {
+    "route": "/platform/integrations",
+    "status": 200,
+    "headers": 1,
+    "footers": 1,
+    "mains": 1,
+    "ctas": 1,
+    "h1": "Connect innflow to the systems behind your work.",
+    "theme": "product-experience-module__KlH2iG__page",
+    "flags": []
+  },
+  {
+    "route": "/platform/deployment-options",
+    "status": 200,
+    "headers": 1,
+    "footers": 1,
+    "mains": 1,
+    "ctas": 1,
+    "h1": "Plan where and how your agents run.",
+    "theme": "product-experience-module__KlH2iG__page",
+    "flags": []
+  },
+  {
+    "route": "/platform/security-and-compliance",
+    "status": 200,
+    "headers": 1,
+    "footers": 1,
+    "mains": 1,
+    "ctas": 1,
+    "h1": "Build trust into the way work gets done.",
+    "theme": "product-experience-module__KlH2iG__page",
+    "flags": []
+  },
+  {
+    "route": "/features/website",
+    "status": 200,
+    "headers": 1,
+    "footers": 1,
+    "mains": 1,
+    "ctas": 1,
+    "h1": "A better front door for your properties.",
+    "theme": "product-experience-module__KlH2iG__page",
+    "flags": []
+  },
+  {
+    "route": "/integrations",
+    "status": 200,
+    "headers": 1,
+    "footers": 1,
+    "mains": 1,
+    "ctas": 1,
+    "h1": "Keep your tools. Connect the work.",
+    "theme": "product-experience-module__KlH2iG__page",
+    "flags": []
+  },
+  {
+    "route": "/skills",
+    "status": 200,
+    "headers": 1,
+    "footers": 1,
+    "mains": 1,
+    "ctas": 1,
+    "h1": "Start with a skill. Make it your own.",
+    "theme": "product-experience-module__KlH2iG__page",
+    "flags": [
+      "human-like"
+    ]
+  },
+  {
+    "route": "/BL/BL-home",
+    "status": 200,
+    "headers": 1,
+    "footers": 1,
+    "mains": 1,
+    "ctas": 1,
+    "h1": "Operations that give you your day back.",
+    "theme": "",
+    "flags": []
+  },
+  {
+    "route": "/",
+    "status": 200,
+    "headers": 1,
+    "footers": 1,
+    "mains": 1,
+    "ctas": 1,
+    "h1": "Property operations, reimagined.",
+    "theme": "",
+    "flags": []
+  },
+  {
+    "route": "/pricing",
+    "status": 200,
+    "headers": 1,
+    "footers": 1,
+    "mains": 1,
+    "ctas": 1,
+    "h1": "Start small. Grow with your workflows.",
+    "theme": "pricing-module__kvPdYW__page",
+    "flags": []
+  },
+  {
+    "route": "/contact",
+    "status": 200,
+    "headers": 1,
+    "footers": 1,
+    "mains": 1,
+    "ctas": 1,
+    "h1": "Let’s talk about the work.",
+    "theme": "contact-module__swMWYG__page",
+    "flags": []
+  },
+  {
+    "route": "/legal/terms-of-service",
+    "status": 200,
+    "headers": 1,
+    "footers": 1,
+    "mains": 1,
+    "ctas": 1,
+    "h1": "Terms of Service",
+    "theme": "product-experience-module__KlH2iG__page",
+    "flags": []
+  },
+  {
+    "route": "/blog",
+    "status": 200,
+    "headers": 1,
+    "footers": 1,
+    "mains": 1,
+    "ctas": 1,
+    "h1": "Field notes on connected property operations.",
+    "theme": "product-experience-module__KlH2iG__page",
+    "flags": []
+  }
+]

@@ -1,0 +1,2630 @@
+- generic [active] [ref=f12e1]:
+  - link "Skip to content" [ref=f12e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f12e5]:
+    - link "innflow home" [ref=f12e6] [cursor=pointer]:
+      - /url: /
+      - img "innflow" [ref=f12e7]
+    - generic [ref=f12e8]:
+      - link "Continue with Google" [ref=f12e9] [cursor=pointer]:
+        - /url: https://app.innflow.ai/auth/google
+      - button "Open navigation" [ref=f12e12] [cursor=pointer]
+  - main [ref=f12e14]:
+    - generic [ref=f12e16]:
+      - generic [ref=f12e17]: Agent Skills
+      - heading "Start with a skill. Make it your own." [level=1] [ref=f12e23]
+      - paragraph [ref=f12e24]: Find a starting point for the work your team repeats. Explore skills for communication, finance, marketing, and property operations, then adapt the tools and review steps to your process.
+      - generic [ref=f12e25]:
+        - link "Get started" [ref=f12e26] [cursor=pointer]:
+          - /url: https://app.innflow.ai/signup
+        - link "Get a demo" [ref=f12e27] [cursor=pointer]:
+          - /url: https://cal.com/julian-patrick-afu0u2/innflow-demo?overlayCalendar=true
+    - generic [ref=f12e30]:
+      - generic [ref=f12e31]:
+        - generic [ref=f12e32]:
+          - button "All" [pressed] [ref=f12e33] [cursor=pointer]
+          - button "Communication" [ref=f12e34] [cursor=pointer]
+          - button "Customer support" [ref=f12e35] [cursor=pointer]
+          - button "Finance" [ref=f12e36] [cursor=pointer]
+          - button "Health care" [ref=f12e37] [cursor=pointer]
+          - button "Human resources" [ref=f12e38] [cursor=pointer]
+          - button "Marketing" [ref=f12e39] [cursor=pointer]
+          - button "Operations" [ref=f12e40] [cursor=pointer]
+          - button "Product" [ref=f12e41] [cursor=pointer]
+          - button "Sales and product" [ref=f12e42] [cursor=pointer]
+        - searchbox "Search skills" [ref=f12e43]
+      - paragraph [ref=f12e44]: 319 skills
+      - generic [ref=f12e45]:
+        - link "Human resources 1-1 Conversation Planner Crafts structured 1-on-1 conversation guides for coworkers. Built by innflow.ai" [ref=f12e46] [cursor=pointer]:
+          - /url: /skills/1-1-conversation-planner
+          - generic [ref=f12e47]:
+            - generic [ref=f12e48]: Human resources
+            - heading "1-1 Conversation Planner" [level=3] [ref=f12e51]
+            - paragraph [ref=f12e52]: Crafts structured 1-on-1 conversation guides for coworkers.
+            - paragraph [ref=f12e53]: Built by innflow.ai
+        - link "Human resources 1-1 Feedback Structure Tailored feedback plans for effective employee development. Built by innflow.ai" [ref=f12e54] [cursor=pointer]:
+          - /url: /skills/1-1-feedback-structure
+          - generic [ref=f12e55]:
+            - generic [ref=f12e56]: Human resources
+            - heading "1-1 Feedback Structure" [level=3] [ref=f12e59]
+            - paragraph [ref=f12e60]: Tailored feedback plans for effective employee development.
+            - paragraph [ref=f12e61]: Built by innflow.ai
+        - link "Customer support AI Brainstorming Tool Generates creative ideas and questions for brainstorming sessions. Built by innflow.ai" [ref=f12e62] [cursor=pointer]:
+          - /url: /skills/brainstorming
+          - generic [ref=f12e63]:
+            - generic [ref=f12e64]: Customer support
+            - heading "AI Brainstorming Tool" [level=3] [ref=f12e67]
+            - paragraph [ref=f12e68]: Generates creative ideas and questions for brainstorming sessions.
+            - paragraph [ref=f12e69]: Built by innflow.ai
+        - link "Customer support API Documentation Generates comprehensive API documentation automatically from codebase comments. Built by innflow.ai" [ref=f12e70] [cursor=pointer]:
+          - /url: /skills/api-documentation
+          - generic [ref=f12e71]:
+            - generic [ref=f12e72]: Customer support
+            - heading "API Documentation" [level=3] [ref=f12e75]
+            - paragraph [ref=f12e76]: Generates comprehensive API documentation automatically from codebase comments.
+            - paragraph [ref=f12e77]: Built by innflow.ai
+        - link "Customer support Action Item Identifier for Automated Task Tracking Extracts actionable tasks from communications to streamline user workflow. Built by innflow.ai" [ref=f12e78] [cursor=pointer]:
+          - /url: /skills/action-item-identifier
+          - generic [ref=f12e79]:
+            - generic [ref=f12e80]: Customer support
+            - heading "Action Item Identifier for Automated Task Tracking" [level=3] [ref=f12e83]
+            - paragraph [ref=f12e84]: Extracts actionable tasks from communications to streamline user workflow.
+            - paragraph [ref=f12e85]: Built by innflow.ai
+        - link "Marketing Ad Copy Crafts persuasive ad copy for targeted marketing campaigns. Built by innflow.ai" [ref=f12e86] [cursor=pointer]:
+          - /url: /skills/ad-copy
+          - generic [ref=f12e87]:
+            - generic [ref=f12e88]: Marketing
+            - heading "Ad Copy" [level=3] [ref=f12e91]
+            - paragraph [ref=f12e92]: Crafts persuasive ad copy for targeted marketing campaigns.
+            - paragraph [ref=f12e93]: Built by innflow.ai
+        - link "Customer support Agent Use Case Generator Generates actionable AI use cases from conversation context. Built by innflow.ai" [ref=f12e94] [cursor=pointer]:
+          - /url: /skills/agent-use-case-generator
+          - generic [ref=f12e95]:
+            - generic [ref=f12e96]: Customer support
+            - heading "Agent Use Case Generator" [level=3] [ref=f12e99]
+            - paragraph [ref=f12e100]: Generates actionable AI use cases from conversation context.
+            - paragraph [ref=f12e101]: Built by innflow.ai
+        - link "Customer support All Hands Planner Curate detailed plans for seamless corporate all-hands meetings. Built by innflow.ai" [ref=f12e102] [cursor=pointer]:
+          - /url: /skills/all-hands-planner
+          - generic [ref=f12e103]:
+            - generic [ref=f12e104]: Customer support
+            - heading "All Hands Planner" [level=3] [ref=f12e107]
+            - paragraph [ref=f12e108]: Curate detailed plans for seamless corporate all-hands meetings.
+            - paragraph [ref=f12e109]: Built by innflow.ai
+        - link "Customer support Analyse User Feedback Extracts actionable insights from user feedback for product improvement. Built by innflow.ai" [ref=f12e110] [cursor=pointer]:
+          - /url: /skills/analyse-user-feedback
+          - generic [ref=f12e111]:
+            - generic [ref=f12e112]: Customer support
+            - heading "Analyse User Feedback" [level=3] [ref=f12e115]
+            - paragraph [ref=f12e116]: Extracts actionable insights from user feedback for product improvement.
+            - paragraph [ref=f12e117]: Built by innflow.ai
+        - link "Operations Analysis Report Crafts accessible statistical analysis reports for diverse audiences. Built by innflow.ai" [ref=f12e118] [cursor=pointer]:
+          - /url: /skills/analysis-report
+          - generic [ref=f12e119]:
+            - generic [ref=f12e120]: Operations
+            - heading "Analysis Report" [level=3] [ref=f12e123]
+            - paragraph [ref=f12e124]: Crafts accessible statistical analysis reports for diverse audiences.
+            - paragraph [ref=f12e125]: Built by innflow.ai
+        - link "Finance Anti-Money Laundering Manual Tool for comprehensive AML manual for regulatory compliance and training. Built by innflow.ai" [ref=f12e126] [cursor=pointer]:
+          - /url: /skills/anti-money-laundering-manual
+          - generic [ref=f12e127]:
+            - generic [ref=f12e128]: Finance
+            - heading "Anti-Money Laundering Manual" [level=3] [ref=f12e131]
+            - paragraph [ref=f12e132]: Tool for comprehensive AML manual for regulatory compliance and training.
+            - paragraph [ref=f12e133]: Built by innflow.ai
+        - link "Finance Asset Disposal Documentation Precise documentation for asset disposal processes. Built by innflow.ai" [ref=f12e134] [cursor=pointer]:
+          - /url: /skills/asset-disposal-documentation
+          - generic [ref=f12e135]:
+            - generic [ref=f12e136]: Finance
+            - heading "Asset Disposal Documentation" [level=3] [ref=f12e139]
+            - paragraph [ref=f12e140]: Precise documentation for asset disposal processes.
+            - paragraph [ref=f12e141]: Built by innflow.ai
+        - link "Customer support Autonomous Incident Reports Crafts detailed incident reports for customer-related issues. Built by innflow.ai" [ref=f12e142] [cursor=pointer]:
+          - /url: /skills/incident-reports
+          - generic [ref=f12e143]:
+            - generic [ref=f12e144]: Customer support
+            - heading "Autonomous Incident Reports" [level=3] [ref=f12e147]
+            - paragraph [ref=f12e148]: Crafts detailed incident reports for customer-related issues.
+            - paragraph [ref=f12e149]: Built by innflow.ai
+        - link "Operations Behandelnder Arzt AU Extracts attending physician from patient database accurately. Built by innflow.ai" [ref=f12e150] [cursor=pointer]:
+          - /url: /skills/behandelnder-arzt-au
+          - generic [ref=f12e151]:
+            - generic [ref=f12e152]: Operations
+            - heading "Behandelnder Arzt AU" [level=3] [ref=f12e155]
+            - paragraph [ref=f12e156]: Extracts attending physician from patient database accurately.
+            - paragraph [ref=f12e157]: Built by innflow.ai
+        - link "Operations Bin Location Record SOPs Designs efficient bin location records for optimized warehouse storage. Built by innflow.ai" [ref=f12e158] [cursor=pointer]:
+          - /url: /skills/bin-location-record-sops
+          - generic [ref=f12e159]:
+            - generic [ref=f12e160]: Operations
+            - heading "Bin Location Record SOPs" [level=3] [ref=f12e163]
+            - paragraph [ref=f12e164]: Designs efficient bin location records for optimized warehouse storage.
+            - paragraph [ref=f12e165]: Built by innflow.ai
+        - link "Marketing Blog Content Generates captivating content ideas tailored to diverse audiences. Built by innflow.ai" [ref=f12e166] [cursor=pointer]:
+          - /url: /skills/blog-content
+          - generic [ref=f12e167]:
+            - generic [ref=f12e168]: Marketing
+            - heading "Blog Content" [level=3] [ref=f12e171]
+            - paragraph [ref=f12e172]: Generates captivating content ideas tailored to diverse audiences.
+            - paragraph [ref=f12e173]: Built by innflow.ai
+        - link "Marketing Blog Writer Produce engaging, well-researched blog posts for diverse audiences. Built by innflow.ai" [ref=f12e174] [cursor=pointer]:
+          - /url: /skills/blog-writer
+          - generic [ref=f12e175]:
+            - generic [ref=f12e176]: Marketing
+            - heading "Blog Writer" [level=3] [ref=f12e179]
+            - paragraph [ref=f12e180]: Produce engaging, well-researched blog posts for diverse audiences.
+            - paragraph [ref=f12e181]: Built by innflow.ai
+        - link "Finance Board Meeting Financial Updates Comprehensive financial updates for board meetings. Built by innflow.ai" [ref=f12e182] [cursor=pointer]:
+          - /url: /skills/board-meeting-financial-updates
+          - generic [ref=f12e183]:
+            - generic [ref=f12e184]: Finance
+            - heading "Board Meeting Financial Updates" [level=3] [ref=f12e187]
+            - paragraph [ref=f12e188]: Comprehensive financial updates for board meetings.
+            - paragraph [ref=f12e189]: Built by innflow.ai
+        - link "Operations Booking Information Generation Seamless solution for extracting and organizing essential hospitality details Built by innflow.ai" [ref=f12e190] [cursor=pointer]:
+          - /url: /skills/booking-information-generation
+          - generic [ref=f12e191]:
+            - generic [ref=f12e192]: Operations
+            - heading "Booking Information Generation" [level=3] [ref=f12e195]
+            - paragraph [ref=f12e196]: Seamless solution for extracting and organizing essential hospitality details
+            - paragraph [ref=f12e197]: Built by innflow.ai
+        - link "Marketing Brand Awareness Campaign Create brand recognition campaigns. Built by innflow.ai" [ref=f12e198] [cursor=pointer]:
+          - /url: /skills/brand-awareness-campaign
+          - generic [ref=f12e199]:
+            - generic [ref=f12e200]: Marketing
+            - heading "Brand Awareness Campaign" [level=3] [ref=f12e203]
+            - paragraph [ref=f12e204]: Create brand recognition campaigns.
+            - paragraph [ref=f12e205]: Built by innflow.ai
+        - link "Marketing Brand Messaging Brand messaging for product launches. Built by innflow.ai" [ref=f12e206] [cursor=pointer]:
+          - /url: /skills/brand-messaging
+          - generic [ref=f12e207]:
+            - generic [ref=f12e208]: Marketing
+            - heading "Brand Messaging" [level=3] [ref=f12e211]
+            - paragraph [ref=f12e212]: Brand messaging for product launches.
+            - paragraph [ref=f12e213]: Built by innflow.ai
+        - link "Marketing Brand Voice Guidelines Crafts consistent brand voice guidelines for effective communication. Built by innflow.ai" [ref=f12e214] [cursor=pointer]:
+          - /url: /skills/brand-voice-guidelines
+          - generic [ref=f12e215]:
+            - generic [ref=f12e216]: Marketing
+            - heading "Brand Voice Guidelines" [level=3] [ref=f12e219]
+            - paragraph [ref=f12e220]: Crafts consistent brand voice guidelines for effective communication.
+            - paragraph [ref=f12e221]: Built by innflow.ai
+        - link "Finance Budget Proposal Crafts detailed budget proposals for financial planning. Built by innflow.ai" [ref=f12e222] [cursor=pointer]:
+          - /url: /skills/budget-proposal
+          - generic [ref=f12e223]:
+            - generic [ref=f12e224]: Finance
+            - heading "Budget Proposal" [level=3] [ref=f12e227]
+            - paragraph [ref=f12e228]: Crafts detailed budget proposals for financial planning.
+            - paragraph [ref=f12e229]: Built by innflow.ai
+        - link "Customer support Bug Report Analysis Categorizes bug reports, assesses severity, recommends next steps. Built by innflow.ai" [ref=f12e230] [cursor=pointer]:
+          - /url: /skills/bug-report-analysis
+          - generic [ref=f12e231]:
+            - generic [ref=f12e232]: Customer support
+            - heading "Bug Report Analysis" [level=3] [ref=f12e235]
+            - paragraph [ref=f12e236]: Categorizes bug reports, assesses severity, recommends next steps.
+            - paragraph [ref=f12e237]: Built by innflow.ai
+        - link "Sales and product Business Case Crafts persuasive business cases to support product sales efforts. Built by innflow.ai" [ref=f12e238] [cursor=pointer]:
+          - /url: /skills/business-case
+          - generic [ref=f12e239]:
+            - generic [ref=f12e240]: Sales and product
+            - heading "Business Case" [level=3] [ref=f12e243]
+            - paragraph [ref=f12e244]: Crafts persuasive business cases to support product sales efforts.
+            - paragraph [ref=f12e245]: Built by innflow.ai
+        - link "Customer support Business Model Canvas Crafts comprehensive Business Model Canvases for venture success. Built by innflow.ai" [ref=f12e246] [cursor=pointer]:
+          - /url: /skills/business-model-canvas
+          - generic [ref=f12e247]:
+            - generic [ref=f12e248]: Customer support
+            - heading "Business Model Canvas" [level=3] [ref=f12e251]
+            - paragraph [ref=f12e252]: Crafts comprehensive Business Model Canvases for venture success.
+            - paragraph [ref=f12e253]: Built by innflow.ai
+        - link "Marketing Buyer Persona Crafts comprehensive buyer personas for targeted marketing strategies. Built by innflow.ai" [ref=f12e254] [cursor=pointer]:
+          - /url: /skills/buyer-persona
+          - generic [ref=f12e255]:
+            - generic [ref=f12e256]: Marketing
+            - heading "Buyer Persona" [level=3] [ref=f12e259]
+            - paragraph [ref=f12e260]: Crafts comprehensive buyer personas for targeted marketing strategies.
+            - paragraph [ref=f12e261]: Built by innflow.ai
+        - link "Finance Buyer and Seller Information Extraction Extracts client details from order forms efficiently. Built by innflow.ai" [ref=f12e262] [cursor=pointer]:
+          - /url: /skills/buyer-and-seller-information-extraction
+          - generic [ref=f12e263]:
+            - generic [ref=f12e264]: Finance
+            - heading "Buyer and Seller Information Extraction" [level=3] [ref=f12e267]
+            - paragraph [ref=f12e268]: Extracts client details from order forms efficiently.
+            - paragraph [ref=f12e269]: Built by innflow.ai
+        - link "Human resources Candidate Email Outreach Crafts personalized emails to engage potential job candidates. Built by innflow.ai" [ref=f12e270] [cursor=pointer]:
+          - /url: /skills/candidate-email-outreach
+          - generic [ref=f12e271]:
+            - generic [ref=f12e272]: Human resources
+            - heading "Candidate Email Outreach" [level=3] [ref=f12e275]
+            - paragraph [ref=f12e276]: Crafts personalized emails to engage potential job candidates.
+            - paragraph [ref=f12e277]: Built by innflow.ai
+        - link "Human resources Candidate Profile Screening Extracts ideal candidates based on job requirements and qualifications. Built by innflow.ai" [ref=f12e278] [cursor=pointer]:
+          - /url: /skills/candidate-profile-screening
+          - generic [ref=f12e279]:
+            - generic [ref=f12e280]: Human resources
+            - heading "Candidate Profile Screening" [level=3] [ref=f12e283]
+            - paragraph [ref=f12e284]: Extracts ideal candidates based on job requirements and qualifications.
+            - paragraph [ref=f12e285]: Built by innflow.ai
+        - link "Human resources Career Growth Pathway Crafts personalized learning pathways for career advancement. Built by innflow.ai" [ref=f12e286] [cursor=pointer]:
+          - /url: /skills/career-growth-pathway
+          - generic [ref=f12e287]:
+            - generic [ref=f12e288]: Human resources
+            - heading "Career Growth Pathway" [level=3] [ref=f12e291]
+            - paragraph [ref=f12e292]: Crafts personalized learning pathways for career advancement.
+            - paragraph [ref=f12e293]: Built by innflow.ai
+        - link "Human resources Case Study Creation Crafts comprehensive case studies for holistic talent evaluation. Built by innflow.ai" [ref=f12e294] [cursor=pointer]:
+          - /url: /skills/case-study-creation
+          - generic [ref=f12e295]:
+            - generic [ref=f12e296]: Human resources
+            - heading "Case Study Creation" [level=3] [ref=f12e299]
+            - paragraph [ref=f12e300]: Crafts comprehensive case studies for holistic talent evaluation.
+            - paragraph [ref=f12e301]: Built by innflow.ai
+        - link "Human resources Case Study Email Drafting Crafts engaging emails for case study invitations. Built by innflow.ai" [ref=f12e302] [cursor=pointer]:
+          - /url: /skills/case-study-email-drafting
+          - generic [ref=f12e303]:
+            - generic [ref=f12e304]: Human resources
+            - heading "Case Study Email Drafting" [level=3] [ref=f12e307]
+            - paragraph [ref=f12e308]: Crafts engaging emails for case study invitations.
+            - paragraph [ref=f12e309]: Built by innflow.ai
+        - link "Customer support Character Backstories Crafts compelling character backstories for diverse narratives. Built by innflow.ai" [ref=f12e310] [cursor=pointer]:
+          - /url: /skills/character-backstories
+          - generic [ref=f12e311]:
+            - generic [ref=f12e312]: Customer support
+            - heading "Character Backstories" [level=3] [ref=f12e315]
+            - paragraph [ref=f12e316]: Crafts compelling character backstories for diverse narratives.
+            - paragraph [ref=f12e317]: Built by innflow.ai
+        - link "Customer support Chat Script Crafts predefined chat scripts for customer support inquiries. Built by innflow.ai" [ref=f12e318] [cursor=pointer]:
+          - /url: /skills/chat-script
+          - generic [ref=f12e319]:
+            - generic [ref=f12e320]: Customer support
+            - heading "Chat Script" [level=3] [ref=f12e323]
+            - paragraph [ref=f12e324]: Crafts predefined chat scripts for customer support inquiries.
+            - paragraph [ref=f12e325]: Built by innflow.ai
+        - link "Customer support Claim Consolidation Consolidates claim details for accurate and efficient processing. Built by innflow.ai" [ref=f12e326] [cursor=pointer]:
+          - /url: /skills/claim-consolidation
+          - generic [ref=f12e327]:
+            - generic [ref=f12e328]: Customer support
+            - heading "Claim Consolidation" [level=3] [ref=f12e331]
+            - paragraph [ref=f12e332]: Consolidates claim details for accurate and efficient processing.
+            - paragraph [ref=f12e333]: Built by innflow.ai
+        - link "Customer support Claim Decision Evaluates insurance claims for validity and coverage compliance. Built by innflow.ai" [ref=f12e334] [cursor=pointer]:
+          - /url: /skills/claim-decision
+          - generic [ref=f12e335]:
+            - generic [ref=f12e336]: Customer support
+            - heading "Claim Decision" [level=3] [ref=f12e339]
+            - paragraph [ref=f12e340]: Evaluates insurance claims for validity and coverage compliance.
+            - paragraph [ref=f12e341]: Built by innflow.ai
+        - link "Customer support Claim Decision Communication Crafts clear, professional claim decision notifications for users. Built by innflow.ai" [ref=f12e342] [cursor=pointer]:
+          - /url: /skills/claim-decision-communication
+          - generic [ref=f12e343]:
+            - generic [ref=f12e344]: Customer support
+            - heading "Claim Decision Communication" [level=3] [ref=f12e347]
+            - paragraph [ref=f12e348]: Crafts clear, professional claim decision notifications for users.
+            - paragraph [ref=f12e349]: Built by innflow.ai
+        - link "Customer support Claim Report Produce detailed and accurate insurance claim reports. Built by innflow.ai" [ref=f12e350] [cursor=pointer]:
+          - /url: /skills/claim-report
+          - generic [ref=f12e351]:
+            - generic [ref=f12e352]: Customer support
+            - heading "Claim Report" [level=3] [ref=f12e355]
+            - paragraph [ref=f12e356]: Produce detailed and accurate insurance claim reports.
+            - paragraph [ref=f12e357]: Built by innflow.ai
+        - link "Customer support Claim Verification Evaluates insurance claims for accuracy and authenticity. Built by innflow.ai" [ref=f12e358] [cursor=pointer]:
+          - /url: /skills/claim-verification
+          - generic [ref=f12e359]:
+            - generic [ref=f12e360]: Customer support
+            - heading "Claim Verification" [level=3] [ref=f12e363]
+            - paragraph [ref=f12e364]: Evaluates insurance claims for accuracy and authenticity.
+            - paragraph [ref=f12e365]: Built by innflow.ai
+        - link "Customer support Claims Data Extraction Extracts crucial claim details for efficient insurance processing. Built by innflow.ai" [ref=f12e366] [cursor=pointer]:
+          - /url: /skills/claims-data-extraction
+          - generic [ref=f12e367]:
+            - generic [ref=f12e368]: Customer support
+            - heading "Claims Data Extraction" [level=3] [ref=f12e371]
+            - paragraph [ref=f12e372]: Extracts crucial claim details for efficient insurance processing.
+            - paragraph [ref=f12e373]: Built by innflow.ai
+        - link "Customer support Claims Settlement Comprehensive claims settlement documents for fair resolutions. Built by innflow.ai" [ref=f12e374] [cursor=pointer]:
+          - /url: /skills/claims-settlement
+          - generic [ref=f12e375]:
+            - generic [ref=f12e376]: Customer support
+            - heading "Claims Settlement" [level=3] [ref=f12e379]
+            - paragraph [ref=f12e380]: Comprehensive claims settlement documents for fair resolutions.
+            - paragraph [ref=f12e381]: Built by innflow.ai
+        - link "Customer support Classify E-Mail Classifies customer service emails into predefined categories accurately. Built by innflow.ai" [ref=f12e382] [cursor=pointer]:
+          - /url: /skills/classify-e-mail
+          - generic [ref=f12e383]:
+            - generic [ref=f12e384]: Customer support
+            - heading "Classify E-Mail" [level=3] [ref=f12e387]
+            - paragraph [ref=f12e388]: Classifies customer service emails into predefined categories accurately.
+            - paragraph [ref=f12e389]: Built by innflow.ai
+        - link "Customer support Client Contract Crafts tailored client contracts with legal precision and clarity. Built by innflow.ai" [ref=f12e390] [cursor=pointer]:
+          - /url: /skills/client-contract
+          - generic [ref=f12e391]:
+            - generic [ref=f12e392]: Customer support
+            - heading "Client Contract" [level=3] [ref=f12e395]
+            - paragraph [ref=f12e396]: Crafts tailored client contracts with legal precision and clarity.
+            - paragraph [ref=f12e397]: Built by innflow.ai
+        - link "Marketing Client Retention Campaign Crafts personalized client retention campaigns to boost engagement. Built by innflow.ai" [ref=f12e398] [cursor=pointer]:
+          - /url: /skills/client-retention-campaign
+          - generic [ref=f12e399]:
+            - generic [ref=f12e400]: Marketing
+            - heading "Client Retention Campaign" [level=3] [ref=f12e403]
+            - paragraph [ref=f12e404]: Crafts personalized client retention campaigns to boost engagement.
+            - paragraph [ref=f12e405]: Built by innflow.ai
+        - link "Customer support Code Documentation Comprehensive code documentation for enhanced readability and collaboration. Built by innflow.ai" [ref=f12e406] [cursor=pointer]:
+          - /url: /skills/code-documentation
+          - generic [ref=f12e407]:
+            - generic [ref=f12e408]: Customer support
+            - heading "Code Documentation" [level=3] [ref=f12e411]
+            - paragraph [ref=f12e412]: Comprehensive code documentation for enhanced readability and collaboration.
+            - paragraph [ref=f12e413]: Built by innflow.ai
+        - link "Customer support Code Optimisation Suggestions Enhances code efficiency through detailed optimization analysis. Built by innflow.ai" [ref=f12e414] [cursor=pointer]:
+          - /url: /skills/code-optimisation-suggestions
+          - generic [ref=f12e415]:
+            - generic [ref=f12e416]: Customer support
+            - heading "Code Optimisation Suggestions" [level=3] [ref=f12e419]
+            - paragraph [ref=f12e420]: Enhances code efficiency through detailed optimization analysis.
+            - paragraph [ref=f12e421]: Built by innflow.ai
+        - link "Customer support Code Refactoring Enhances code quality through comprehensive refactoring plans. Built by innflow.ai" [ref=f12e422] [cursor=pointer]:
+          - /url: /skills/code-refactoring
+          - generic [ref=f12e423]:
+            - generic [ref=f12e424]: Customer support
+            - heading "Code Refactoring" [level=3] [ref=f12e427]
+            - paragraph [ref=f12e428]: Enhances code quality through comprehensive refactoring plans.
+            - paragraph [ref=f12e429]: Built by innflow.ai
+        - link "Customer support Code Review Assistance Generates comprehensive, constructive code reviews for quality improvement. Built by innflow.ai" [ref=f12e430] [cursor=pointer]:
+          - /url: /skills/code-review-assistance
+          - generic [ref=f12e431]:
+            - generic [ref=f12e432]: Customer support
+            - heading "Code Review Assistance" [level=3] [ref=f12e435]
+            - paragraph [ref=f12e436]: Generates comprehensive, constructive code reviews for quality improvement.
+            - paragraph [ref=f12e437]: Built by innflow.ai
+        - link "Customer support Code Summariser Generates concise overviews of code files or functions. Built by innflow.ai" [ref=f12e438] [cursor=pointer]:
+          - /url: /skills/code-summariser
+          - generic [ref=f12e439]:
+            - generic [ref=f12e440]: Customer support
+            - heading "Code Summariser" [level=3] [ref=f12e443]
+            - paragraph [ref=f12e444]: Generates concise overviews of code files or functions.
+            - paragraph [ref=f12e445]: Built by innflow.ai
+        - link "Customer support Code Translation AI for Modern Development Teams Generates seamless code translations between programming languages. Built by innflow.ai" [ref=f12e446] [cursor=pointer]:
+          - /url: /skills/code-translation
+          - generic [ref=f12e447]:
+            - generic [ref=f12e448]: Customer support
+            - heading "Code Translation AI for Modern Development Teams" [level=3] [ref=f12e451]
+            - paragraph [ref=f12e452]: Generates seamless code translations between programming languages.
+            - paragraph [ref=f12e453]: Built by innflow.ai
+        - link "Sales and product Cold Outreach Email Automation Crafts personalized outreach emails to generate leads effectively. Built by innflow.ai" [ref=f12e454] [cursor=pointer]:
+          - /url: /skills/cold-outreach-email
+          - generic [ref=f12e455]:
+            - generic [ref=f12e456]: Sales and product
+            - heading "Cold Outreach Email Automation" [level=3] [ref=f12e459]
+            - paragraph [ref=f12e460]: Crafts personalized outreach emails to generate leads effectively.
+            - paragraph [ref=f12e461]: Built by innflow.ai
+        - link "Marketing Competitor Analysis AI for Faster Strategic Decisions Generates comprehensive competitor analysis reports for strategic insights. Built by innflow.ai" [ref=f12e462] [cursor=pointer]:
+          - /url: /skills/competitor-analysis
+          - generic [ref=f12e463]:
+            - generic [ref=f12e464]: Marketing
+            - heading "Competitor Analysis AI for Faster Strategic Decisions" [level=3] [ref=f12e467]
+            - paragraph [ref=f12e468]: Generates comprehensive competitor analysis reports for strategic insights.
+            - paragraph [ref=f12e469]: Built by innflow.ai
+        - link "Customer support Compliance Manual Crafts comprehensive compliance manuals for regulatory adherence. Built by innflow.ai" [ref=f12e470] [cursor=pointer]:
+          - /url: /skills/compliance-manual
+          - generic [ref=f12e471]:
+            - generic [ref=f12e472]: Customer support
+            - heading "Compliance Manual" [level=3] [ref=f12e475]
+            - paragraph [ref=f12e476]: Crafts comprehensive compliance manuals for regulatory adherence.
+            - paragraph [ref=f12e477]: Built by innflow.ai
+        - link "Marketing Content Sequencing Crafts detailed outlines for structured and engaging content. Built by innflow.ai" [ref=f12e478] [cursor=pointer]:
+          - /url: /skills/content-sequencing
+          - generic [ref=f12e479]:
+            - generic [ref=f12e480]: Marketing
+            - heading "Content Sequencing" [level=3] [ref=f12e483]
+            - paragraph [ref=f12e484]: Crafts detailed outlines for structured and engaging content.
+            - paragraph [ref=f12e485]: Built by innflow.ai
+        - link "Human resources Corporate Event Planner Unforgettable event plans tailored to company occasions. Built by innflow.ai" [ref=f12e486] [cursor=pointer]:
+          - /url: /skills/corporate-event-planner
+          - generic [ref=f12e487]:
+            - generic [ref=f12e488]: Human resources
+            - heading "Corporate Event Planner" [level=3] [ref=f12e491]
+            - paragraph [ref=f12e492]: Unforgettable event plans tailored to company occasions.
+            - paragraph [ref=f12e493]: Built by innflow.ai
+        - link "Customer support Corporate Governance Manual Crafts comprehensive corporate governance manual for ethical conduct. Built by innflow.ai" [ref=f12e494] [cursor=pointer]:
+          - /url: /skills/corporate-governance-manual
+          - generic [ref=f12e495]:
+            - generic [ref=f12e496]: Customer support
+            - heading "Corporate Governance Manual" [level=3] [ref=f12e499]
+            - paragraph [ref=f12e500]: Crafts comprehensive corporate governance manual for ethical conduct.
+            - paragraph [ref=f12e501]: Built by innflow.ai
+        - link "Customer support Coverage Recommendation Crafts personalized insurance plans for optimal protection. Built by innflow.ai" [ref=f12e502] [cursor=pointer]:
+          - /url: /skills/coverage-recommendation
+          - generic [ref=f12e503]:
+            - generic [ref=f12e504]: Customer support
+            - heading "Coverage Recommendation" [level=3] [ref=f12e507]
+            - paragraph [ref=f12e508]: Crafts personalized insurance plans for optimal protection.
+            - paragraph [ref=f12e509]: Built by innflow.ai
+        - link "Marketing Creative Storyline for Promotional Video Engaging storyboards for promotional brand videos. Built by innflow.ai" [ref=f12e510] [cursor=pointer]:
+          - /url: /skills/creative-storyline-for-promotional-video
+          - generic [ref=f12e511]:
+            - generic [ref=f12e512]: Marketing
+            - heading "Creative Storyline for Promotional Video" [level=3] [ref=f12e515]
+            - paragraph [ref=f12e516]: Engaging storyboards for promotional brand videos.
+            - paragraph [ref=f12e517]: Built by innflow.ai
+        - link "Finance Credit Analysis Report Evaluate detailed, unbiased credit analysis reports for financial assessments. Built by innflow.ai" [ref=f12e518] [cursor=pointer]:
+          - /url: /skills/credit-analysis-report
+          - generic [ref=f12e519]:
+            - generic [ref=f12e520]: Finance
+            - heading "Credit Analysis Report" [level=3] [ref=f12e523]
+            - paragraph [ref=f12e524]: Evaluate detailed, unbiased credit analysis reports for financial assessments.
+            - paragraph [ref=f12e525]: Built by innflow.ai
+        - link "Customer support Curriculum Development Comprehensive, modern, and inclusive curriculum frameworks. Built by innflow.ai" [ref=f12e526] [cursor=pointer]:
+          - /url: /skills/curriculum-development
+          - generic [ref=f12e527]:
+            - generic [ref=f12e528]: Customer support
+            - heading "Curriculum Development" [level=3] [ref=f12e531]
+            - paragraph [ref=f12e532]: Comprehensive, modern, and inclusive curriculum frameworks.
+            - paragraph [ref=f12e533]: Built by innflow.ai
+        - link "Customer support Customer Appointment Reply Writes courteous appointment confirmations based on client preferences. Built by innflow.ai" [ref=f12e534] [cursor=pointer]:
+          - /url: /skills/customer-appointment-reply
+          - generic [ref=f12e535]:
+            - generic [ref=f12e536]: Customer support
+            - heading "Customer Appointment Reply" [level=3] [ref=f12e539]
+            - paragraph [ref=f12e540]: Writes courteous appointment confirmations based on client preferences.
+            - paragraph [ref=f12e541]: Built by innflow.ai
+        - link "Customer support Customer Contracts or Agreements Clear, fair customer service agreements for legal compliance. Built by innflow.ai" [ref=f12e542] [cursor=pointer]:
+          - /url: /skills/customer-contracts-or-agreements
+          - generic [ref=f12e543]:
+            - generic [ref=f12e544]: Customer support
+            - heading "Customer Contracts or Agreements" [level=3] [ref=f12e547]
+            - paragraph [ref=f12e548]: Clear, fair customer service agreements for legal compliance.
+            - paragraph [ref=f12e549]: Built by innflow.ai
+        - link "Customer support Customer Details Request Automation Crafts empathetic, detailed responses for customer refund requests. Built by innflow.ai" [ref=f12e550] [cursor=pointer]:
+          - /url: /skills/customer-details-request
+          - generic [ref=f12e551]:
+            - generic [ref=f12e552]: Customer support
+            - heading "Customer Details Request Automation" [level=3] [ref=f12e555]
+            - paragraph [ref=f12e556]: Crafts empathetic, detailed responses for customer refund requests.
+            - paragraph [ref=f12e557]: Built by innflow.ai
+        - link "Customer support Customer E-Mail Response Generator Draft empathetic, professional customer service email replies. Built by innflow.ai" [ref=f12e558] [cursor=pointer]:
+          - /url: /skills/customer-e-mail-response-generator
+          - generic [ref=f12e559]:
+            - generic [ref=f12e560]: Customer support
+            - heading "Customer E-Mail Response Generator" [level=3] [ref=f12e563]
+            - paragraph [ref=f12e564]: Draft empathetic, professional customer service email replies.
+            - paragraph [ref=f12e565]: Built by innflow.ai
+        - link "Customer support Customer Feedback Form Designs concise feedback forms for actionable customer insights. Built by innflow.ai" [ref=f12e566] [cursor=pointer]:
+          - /url: /skills/customer-feedback-form
+          - generic [ref=f12e567]:
+            - generic [ref=f12e568]: Customer support
+            - heading "Customer Feedback Form" [level=3] [ref=f12e571]
+            - paragraph [ref=f12e572]: Designs concise feedback forms for actionable customer insights.
+            - paragraph [ref=f12e573]: Built by innflow.ai
+        - link "Customer support Customer Information Consolidation Generates concise summaries of customer return requests. Built by innflow.ai" [ref=f12e574] [cursor=pointer]:
+          - /url: /skills/customer-information-consolidation
+          - generic [ref=f12e575]:
+            - generic [ref=f12e576]: Customer support
+            - heading "Customer Information Consolidation" [level=3] [ref=f12e579]
+            - paragraph [ref=f12e580]: Generates concise summaries of customer return requests.
+            - paragraph [ref=f12e581]: Built by innflow.ai
+        - link "Customer support Customer Inquiry Classification Classifies customer inquiries into precise, relevant categories. Built by innflow.ai" [ref=f12e582] [cursor=pointer]:
+          - /url: /skills/customer-inquiry-classification
+          - generic [ref=f12e583]:
+            - generic [ref=f12e584]: Customer support
+            - heading "Customer Inquiry Classification" [level=3] [ref=f12e587]
+            - paragraph [ref=f12e588]: Classifies customer inquiries into precise, relevant categories.
+            - paragraph [ref=f12e589]: Built by innflow.ai
+        - link "Customer support Customer Inquiry Retrieval Crafts accurate responses to customer inquiries using predefined statements. Built by innflow.ai" [ref=f12e590] [cursor=pointer]:
+          - /url: /skills/customer-inquiry-retrieval
+          - generic [ref=f12e591]:
+            - generic [ref=f12e592]: Customer support
+            - heading "Customer Inquiry Retrieval" [level=3] [ref=f12e595]
+            - paragraph [ref=f12e596]: Crafts accurate responses to customer inquiries using predefined statements.
+            - paragraph [ref=f12e597]: Built by innflow.ai
+        - 'link "Customer support Customer Query Correspondence: Revolutionizing Support Through AI Automation Revolutionizing Support Through AI Automation: Crafts precise and professional customer support email responses. Built by innflow.ai" [ref=f12e598] [cursor=pointer]':
+          - /url: /skills/customer-query-correspondence
+          - generic [ref=f12e599]:
+            - generic [ref=f12e600]: Customer support
+            - 'heading "Customer Query Correspondence: Revolutionizing Support Through AI Automation" [level=3] [ref=f12e603]'
+            - paragraph [ref=f12e604]: "Revolutionizing Support Through AI Automation: Crafts precise and professional customer support email responses."
+            - paragraph [ref=f12e605]: Built by innflow.ai
+        - link "Customer support Customer Service Response Generation Crafts automated, personalized customer service responses efficiently. Built by innflow.ai" [ref=f12e606] [cursor=pointer]:
+          - /url: /skills/customer-service-response-generation
+          - generic [ref=f12e607]:
+            - generic [ref=f12e608]: Customer support
+            - heading "Customer Service Response Generation" [level=3] [ref=f12e611]
+            - paragraph [ref=f12e612]: Crafts automated, personalized customer service responses efficiently.
+            - paragraph [ref=f12e613]: Built by innflow.ai
+        - link "Customer support Customer Service SOPs Crafts detailed SOPs for consistent customer service excellence. Built by innflow.ai" [ref=f12e614] [cursor=pointer]:
+          - /url: /skills/customer-service-sops
+          - generic [ref=f12e615]:
+            - generic [ref=f12e616]: Customer support
+            - heading "Customer Service SOPs" [level=3] [ref=f12e619]
+            - paragraph [ref=f12e620]: Crafts detailed SOPs for consistent customer service excellence.
+            - paragraph [ref=f12e621]: Built by innflow.ai
+        - link "Operations Data Extraction Extracts property details for accurate data management and inventory. Built by innflow.ai" [ref=f12e622] [cursor=pointer]:
+          - /url: /skills/data-extraction
+          - generic [ref=f12e623]:
+            - generic [ref=f12e624]: Operations
+            - heading "Data Extraction" [level=3] [ref=f12e627]
+            - paragraph [ref=f12e628]: Extracts property details for accurate data management and inventory.
+            - paragraph [ref=f12e629]: Built by innflow.ai
+        - link "Customer support Data Extraction Verification Ensures data format compliance and identifies missing information. Built by innflow.ai" [ref=f12e630] [cursor=pointer]:
+          - /url: /skills/data-extraction-verification
+          - generic [ref=f12e631]:
+            - generic [ref=f12e632]: Customer support
+            - heading "Data Extraction Verification" [level=3] [ref=f12e635]
+            - paragraph [ref=f12e636]: Ensures data format compliance and identifies missing information.
+            - paragraph [ref=f12e637]: Built by innflow.ai
+        - link "Customer support Data Privacy Policies Comprehensive data privacy policies for companies. Built by innflow.ai" [ref=f12e638] [cursor=pointer]:
+          - /url: /skills/data-privacy-policies
+          - generic [ref=f12e639]:
+            - generic [ref=f12e640]: Customer support
+            - heading "Data Privacy Policies" [level=3] [ref=f12e643]
+            - paragraph [ref=f12e644]: Comprehensive data privacy policies for companies.
+            - paragraph [ref=f12e645]: Built by innflow.ai
+        - link "Customer support Design Helper Produce intuitive designs and insightful user flow questions. Built by innflow.ai" [ref=f12e646] [cursor=pointer]:
+          - /url: /skills/design-helper
+          - generic [ref=f12e647]:
+            - generic [ref=f12e648]: Customer support
+            - heading "Design Helper" [level=3] [ref=f12e651]
+            - paragraph [ref=f12e652]: Produce intuitive designs and insightful user flow questions.
+            - paragraph [ref=f12e653]: Built by innflow.ai
+        - link "Customer support Document Outline Crafts comprehensive report outlines with structured, relevant insights. Built by innflow.ai" [ref=f12e654] [cursor=pointer]:
+          - /url: /skills/document-outline
+          - generic [ref=f12e655]:
+            - generic [ref=f12e656]: Customer support
+            - heading "Document Outline" [level=3] [ref=f12e659]
+            - paragraph [ref=f12e660]: Crafts comprehensive report outlines with structured, relevant insights.
+            - paragraph [ref=f12e661]: Built by innflow.ai
+        - link "Finance Dunning Letter Crafts respectful overdue payment reminders for positive client relations. Built by innflow.ai" [ref=f12e662] [cursor=pointer]:
+          - /url: /skills/dunning-letter
+          - generic [ref=f12e663]:
+            - generic [ref=f12e664]: Finance
+            - heading "Dunning Letter" [level=3] [ref=f12e667]
+            - paragraph [ref=f12e668]: Crafts respectful overdue payment reminders for positive client relations.
+            - paragraph [ref=f12e669]: Built by innflow.ai
+        - link "Customer support E-Mail Response Generator Crafts personalized email replies using database information. Built by innflow.ai" [ref=f12e670] [cursor=pointer]:
+          - /url: /skills/e-mail-response-generator
+          - generic [ref=f12e671]:
+            - generic [ref=f12e672]: Customer support
+            - heading "E-Mail Response Generator" [level=3] [ref=f12e675]
+            - paragraph [ref=f12e676]: Crafts personalized email replies using database information.
+            - paragraph [ref=f12e677]: Built by innflow.ai
+        - link "Customer support Email Database Lookup Extracts customer details accurately from the database. Built by innflow.ai" [ref=f12e678] [cursor=pointer]:
+          - /url: /skills/email-database-lookup
+          - generic [ref=f12e679]:
+            - generic [ref=f12e680]: Customer support
+            - heading "Email Database Lookup" [level=3] [ref=f12e683]
+            - paragraph [ref=f12e684]: Extracts customer details accurately from the database.
+            - paragraph [ref=f12e685]: Built by innflow.ai
+        - link "Customer support Email Intent AI Agent Routes email inquiries by recognizing intent and relevant departments. Built by innflow.ai" [ref=f12e686] [cursor=pointer]:
+          - /url: /skills/email-intent
+          - generic [ref=f12e687]:
+            - generic [ref=f12e688]: Customer support
+            - heading "Email Intent AI Agent" [level=3] [ref=f12e691]
+            - paragraph [ref=f12e692]: Routes email inquiries by recognizing intent and relevant departments.
+            - paragraph [ref=f12e693]: Built by innflow.ai
+        - link "Operations Email Relevance Evaluator Detect relevant emails based on the given criteria Built by innflow.ai" [ref=f12e694] [cursor=pointer]:
+          - /url: /skills/email-relevance-evaluator
+          - generic [ref=f12e695]:
+            - generic [ref=f12e696]: Operations
+            - heading "Email Relevance Evaluator" [level=3] [ref=f12e699]
+            - paragraph [ref=f12e700]: Detect relevant emails based on the given criteria
+            - paragraph [ref=f12e701]: Built by innflow.ai
+        - link "Customer support Email Responder Seamless email replies reflecting context and tone. Built by innflow.ai" [ref=f12e702] [cursor=pointer]:
+          - /url: /skills/email-responder
+          - generic [ref=f12e703]:
+            - generic [ref=f12e704]: Customer support
+            - heading "Email Responder" [level=3] [ref=f12e707]
+            - paragraph [ref=f12e708]: Seamless email replies reflecting context and tone.
+            - paragraph [ref=f12e709]: Built by innflow.ai
+        - link "Customer support Email Source Identification Identifies email sender for accurate communication categorization. Built by innflow.ai" [ref=f12e710] [cursor=pointer]:
+          - /url: /skills/email-source-identification
+          - generic [ref=f12e711]:
+            - generic [ref=f12e712]: Customer support
+            - heading "Email Source Identification" [level=3] [ref=f12e715]
+            - paragraph [ref=f12e716]: Identifies email sender for accurate communication categorization.
+            - paragraph [ref=f12e717]: Built by innflow.ai
+        - link "Communication Email intent identification Extracts email intent and outlines necessary action points. Built by innflow.ai" [ref=f12e718] [cursor=pointer]:
+          - /url: /skills/email-intent-identification
+          - generic [ref=f12e719]:
+            - generic [ref=f12e720]: Communication
+            - heading "Email intent identification" [level=3] [ref=f12e723]
+            - paragraph [ref=f12e724]: Extracts email intent and outlines necessary action points.
+            - paragraph [ref=f12e725]: Built by innflow.ai
+        - link "Customer support Emergency Escalation Generates empathetic emergency responses for customer support escalations. Built by innflow.ai" [ref=f12e726] [cursor=pointer]:
+          - /url: /skills/emergency-escalation
+          - generic [ref=f12e727]:
+            - generic [ref=f12e728]: Customer support
+            - heading "Emergency Escalation" [level=3] [ref=f12e731]
+            - paragraph [ref=f12e732]: Generates empathetic emergency responses for customer support escalations.
+            - paragraph [ref=f12e733]: Built by innflow.ai
+        - link "Human resources Employee Development Plan Personalized learning plans with engaging stories and assessments. Built by innflow.ai" [ref=f12e734] [cursor=pointer]:
+          - /url: /skills/employee-development-plan
+          - generic [ref=f12e735]:
+            - generic [ref=f12e736]: Human resources
+            - heading "Employee Development Plan" [level=3] [ref=f12e739]
+            - paragraph [ref=f12e740]: Personalized learning plans with engaging stories and assessments.
+            - paragraph [ref=f12e741]: Built by innflow.ai
+        - link "Human resources Employee Initiatives Survey Crafts surveys to evaluate workplace improvement initiatives Built by innflow.ai" [ref=f12e742] [cursor=pointer]:
+          - /url: /skills/employee-initiatives-survey
+          - generic [ref=f12e743]:
+            - generic [ref=f12e744]: Human resources
+            - heading "Employee Initiatives Survey" [level=3] [ref=f12e747]
+            - paragraph [ref=f12e748]: Crafts surveys to evaluate workplace improvement initiatives
+            - paragraph [ref=f12e749]: Built by innflow.ai
+        - link "Human resources Employee Onboarder Personalized onboarding documents for new employees. Built by innflow.ai" [ref=f12e750] [cursor=pointer]:
+          - /url: /skills/employee-onboarder
+          - generic [ref=f12e751]:
+            - generic [ref=f12e752]: Human resources
+            - heading "Employee Onboarder" [level=3] [ref=f12e755]
+            - paragraph [ref=f12e756]: Personalized onboarding documents for new employees.
+            - paragraph [ref=f12e757]: Built by innflow.ai
+        - link "Human resources Employee Recognition Message Crafts personalized employee appreciation messages for targeted recognition. Built by innflow.ai" [ref=f12e758] [cursor=pointer]:
+          - /url: /skills/employee-recognition-message
+          - generic [ref=f12e759]:
+            - generic [ref=f12e760]: Human resources
+            - heading "Employee Recognition Message" [level=3] [ref=f12e763]
+            - paragraph [ref=f12e764]: Crafts personalized employee appreciation messages for targeted recognition.
+            - paragraph [ref=f12e765]: Built by innflow.ai
+        - link "Human resources Employee Training Developer Crafts engaging employee training programs for skill enhancement. Built by innflow.ai" [ref=f12e766] [cursor=pointer]:
+          - /url: /skills/employee-training-developer
+          - generic [ref=f12e767]:
+            - generic [ref=f12e768]: Human resources
+            - heading "Employee Training Developer" [level=3] [ref=f12e771]
+            - paragraph [ref=f12e772]: Crafts engaging employee training programs for skill enhancement.
+            - paragraph [ref=f12e773]: Built by innflow.ai
+        - link "Customer support Engineering Solutions Comprehensive engineering solutions with detailed analysis and recommendations. Built by innflow.ai" [ref=f12e774] [cursor=pointer]:
+          - /url: /skills/engineering-solutions
+          - generic [ref=f12e775]:
+            - generic [ref=f12e776]: Customer support
+            - heading "Engineering Solutions" [level=3] [ref=f12e779]
+            - paragraph [ref=f12e780]: Comprehensive engineering solutions with detailed analysis and recommendations.
+            - paragraph [ref=f12e781]: Built by innflow.ai
+        - link "Customer support Error Message User-friendly error messages for quick issue resolution. Built by innflow.ai" [ref=f12e782] [cursor=pointer]:
+          - /url: /skills/error-message
+          - generic [ref=f12e783]:
+            - generic [ref=f12e784]: Customer support
+            - heading "Error Message" [level=3] [ref=f12e787]
+            - paragraph [ref=f12e788]: User-friendly error messages for quick issue resolution.
+            - paragraph [ref=f12e789]: Built by innflow.ai
+        - link "Customer support Evaluates user subscription updates Analyzes subscription data to update user plans accurately. Built by innflow.ai" [ref=f12e790] [cursor=pointer]:
+          - /url: /skills/evaluates-user-subscription-updates
+          - generic [ref=f12e791]:
+            - generic [ref=f12e792]: Customer support
+            - heading "Evaluates user subscription updates" [level=3] [ref=f12e795]
+            - paragraph [ref=f12e796]: Analyzes subscription data to update user plans accurately.
+            - paragraph [ref=f12e797]: Built by innflow.ai
+        - link "Human resources Exit Interview Questions Crafts structured exit interviews to gather valuable employee insights. Built by innflow.ai" [ref=f12e798] [cursor=pointer]:
+          - /url: /skills/exit-interview-questions
+          - generic [ref=f12e799]:
+            - generic [ref=f12e800]: Human resources
+            - heading "Exit Interview Questions" [level=3] [ref=f12e803]
+            - paragraph [ref=f12e804]: Crafts structured exit interviews to gather valuable employee insights.
+            - paragraph [ref=f12e805]: Built by innflow.ai
+        - link "Finance Expense Claim Verification Validates expense claims with automated accuracy and completeness. Built by innflow.ai" [ref=f12e806] [cursor=pointer]:
+          - /url: /skills/expense-claim-verification
+          - generic [ref=f12e807]:
+            - generic [ref=f12e808]: Finance
+            - heading "Expense Claim Verification" [level=3] [ref=f12e811]
+            - paragraph [ref=f12e812]: Validates expense claims with automated accuracy and completeness.
+            - paragraph [ref=f12e813]: Built by innflow.ai
+        - link "Finance Expense Data Extraction Extracts expense claim data with precision and efficiency. Built by innflow.ai" [ref=f12e814] [cursor=pointer]:
+          - /url: /skills/expense-data-extraction
+          - generic [ref=f12e815]:
+            - generic [ref=f12e816]: Finance
+            - heading "Expense Data Extraction" [level=3] [ref=f12e819]
+            - paragraph [ref=f12e820]: Extracts expense claim data with precision and efficiency.
+            - paragraph [ref=f12e821]: Built by innflow.ai
+        - link "Finance Expense Justification Letter Crafts compelling justifications for company expenses to stakeholders. Built by innflow.ai" [ref=f12e822] [cursor=pointer]:
+          - /url: /skills/expense-justification-letter
+          - generic [ref=f12e823]:
+            - generic [ref=f12e824]: Finance
+            - heading "Expense Justification Letter" [level=3] [ref=f12e827]
+            - paragraph [ref=f12e828]: Crafts compelling justifications for company expenses to stakeholders.
+            - paragraph [ref=f12e829]: Built by innflow.ai
+        - link "Marketing Explainer Video Scriptwriter Crafts engaging explainer video scripts with clear narrative arcs. Built by innflow.ai" [ref=f12e830] [cursor=pointer]:
+          - /url: /skills/explainer-video-scriptwriter
+          - generic [ref=f12e831]:
+            - generic [ref=f12e832]: Marketing
+            - heading "Explainer Video Scriptwriter" [level=3] [ref=f12e835]
+            - paragraph [ref=f12e836]: Crafts engaging explainer video scripts with clear narrative arcs.
+            - paragraph [ref=f12e837]: Built by innflow.ai
+        - link "Customer support FE Code Review Tool Provides constructive code feedback for developers with examples. Built by innflow.ai" [ref=f12e838] [cursor=pointer]:
+          - /url: /skills/fe-code-review-tool
+          - generic [ref=f12e839]:
+            - generic [ref=f12e840]: Customer support
+            - heading "FE Code Review Tool" [level=3] [ref=f12e843]
+            - paragraph [ref=f12e844]: Provides constructive code feedback for developers with examples.
+            - paragraph [ref=f12e845]: Built by innflow.ai
+        - link "Product Feature Development Plan Crafts comprehensive feature development plans for efficient execution. Built by innflow.ai" [ref=f12e846] [cursor=pointer]:
+          - /url: /skills/feature-development-plan
+          - generic [ref=f12e847]:
+            - generic [ref=f12e848]: Product
+            - heading "Feature Development Plan" [level=3] [ref=f12e851]
+            - paragraph [ref=f12e852]: Crafts comprehensive feature development plans for efficient execution.
+            - paragraph [ref=f12e853]: Built by innflow.ai
+        - link "Product Feature Ideation Generates product features from BRD for comprehensive PRD creation. Built by innflow.ai" [ref=f12e854] [cursor=pointer]:
+          - /url: /skills/feature-ideation
+          - generic [ref=f12e855]:
+            - generic [ref=f12e856]: Product
+            - heading "Feature Ideation" [level=3] [ref=f12e859]
+            - paragraph [ref=f12e860]: Generates product features from BRD for comprehensive PRD creation.
+            - paragraph [ref=f12e861]: Built by innflow.ai
+        - link "Product Feature Prioritisation Prioritizes product features based on demand, feasibility, and strategy. Built by innflow.ai" [ref=f12e862] [cursor=pointer]:
+          - /url: /skills/feature-prioritisation
+          - generic [ref=f12e863]:
+            - generic [ref=f12e864]: Product
+            - heading "Feature Prioritisation" [level=3] [ref=f12e867]
+            - paragraph [ref=f12e868]: Prioritizes product features based on demand, feasibility, and strategy.
+            - paragraph [ref=f12e869]: Built by innflow.ai
+        - link "Human resources Feedback Analysis Optimizes employee training and well-being through detailed analysis. Built by innflow.ai" [ref=f12e870] [cursor=pointer]:
+          - /url: /skills/feedback-analysis
+          - generic [ref=f12e871]:
+            - generic [ref=f12e872]: Human resources
+            - heading "Feedback Analysis" [level=3] [ref=f12e875]
+            - paragraph [ref=f12e876]: Optimizes employee training and well-being through detailed analysis.
+            - paragraph [ref=f12e877]: Built by innflow.ai
+        - link "Customer support Fetch Database Claim Details Extracts insurance claim details with precision and accuracy. Built by innflow.ai" [ref=f12e878] [cursor=pointer]:
+          - /url: /skills/fetch-database-claim-details
+          - generic [ref=f12e879]:
+            - generic [ref=f12e880]: Customer support
+            - heading "Fetch Database Claim Details" [level=3] [ref=f12e883]
+            - paragraph [ref=f12e884]: Extracts insurance claim details with precision and accuracy.
+            - paragraph [ref=f12e885]: Built by innflow.ai
+        - link "Marketing Filter Information Generation Extracts key details for hospitality locations with precision. Built by innflow.ai" [ref=f12e886] [cursor=pointer]:
+          - /url: /skills/filter-information-generation
+          - generic [ref=f12e887]:
+            - generic [ref=f12e888]: Marketing
+            - heading "Filter Information Generation" [level=3] [ref=f12e891]
+            - paragraph [ref=f12e892]: Extracts key details for hospitality locations with precision.
+            - paragraph [ref=f12e893]: Built by innflow.ai
+        - link "Finance Financial Policy and Procedures Comprehensive financial policies for clarity and compliance. Built by innflow.ai" [ref=f12e894] [cursor=pointer]:
+          - /url: /skills/financial-policy-and-procedures
+          - generic [ref=f12e895]:
+            - generic [ref=f12e896]: Finance
+            - heading "Financial Policy and Procedures" [level=3] [ref=f12e899]
+            - paragraph [ref=f12e900]: Comprehensive financial policies for clarity and compliance.
+            - paragraph [ref=f12e901]: Built by innflow.ai
+        - link "Finance Financial Statement Notes and Disclosures Crafts detailed financial disclosures for annual reports. Built by innflow.ai" [ref=f12e902] [cursor=pointer]:
+          - /url: /skills/financial-statement-notes-and-disclosures
+          - generic [ref=f12e903]:
+            - generic [ref=f12e904]: Finance
+            - heading "Financial Statement Notes and Disclosures" [level=3] [ref=f12e907]
+            - paragraph [ref=f12e908]: Crafts detailed financial disclosures for annual reports.
+            - paragraph [ref=f12e909]: Built by innflow.ai
+        - link "Sales and product Find a Slot For a Call Customized emails to streamline call scheduling efficiently. Built by innflow.ai" [ref=f12e910] [cursor=pointer]:
+          - /url: /skills/find-a-slot-for-a-call
+          - generic [ref=f12e911]:
+            - generic [ref=f12e912]: Sales and product
+            - heading "Find a Slot For a Call" [level=3] [ref=f12e915]
+            - paragraph [ref=f12e916]: Customized emails to streamline call scheduling efficiently.
+            - paragraph [ref=f12e917]: Built by innflow.ai
+        - link "Customer support First Response Techniques Proposition Generates home health detection techniques for user-specific concerns. Built by innflow.ai" [ref=f12e918] [cursor=pointer]:
+          - /url: /skills/first-response-techniques-proposition
+          - generic [ref=f12e919]:
+            - generic [ref=f12e920]: Customer support
+            - heading "First Response Techniques Proposition" [level=3] [ref=f12e923]
+            - paragraph [ref=f12e924]: Generates home health detection techniques for user-specific concerns.
+            - paragraph [ref=f12e925]: Built by innflow.ai
+        - link "Sales and product Follow Up Curate personalized follow-up emails for potential clients. Built by innflow.ai" [ref=f12e926] [cursor=pointer]:
+          - /url: /skills/follow-up
+          - generic [ref=f12e927]:
+            - generic [ref=f12e928]: Sales and product
+            - heading "Follow Up" [level=3] [ref=f12e931]
+            - paragraph [ref=f12e932]: Curate personalized follow-up emails for potential clients.
+            - paragraph [ref=f12e933]: Built by innflow.ai
+        - link "Customer support General Customer Support AI Agent Generate empathetic, professional responses to customer queries. Built by innflow.ai" [ref=f12e934] [cursor=pointer]:
+          - /url: /skills/general-customer-support
+          - generic [ref=f12e935]:
+            - generic [ref=f12e936]: Customer support
+            - heading "General Customer Support AI Agent" [level=3] [ref=f12e939]
+            - paragraph [ref=f12e940]: Generate empathetic, professional responses to customer queries.
+            - paragraph [ref=f12e941]: Built by innflow.ai
+        - link "Operations Generate Shipping Label Generates precise shipping labels for accurate package delivery. Built by innflow.ai" [ref=f12e942] [cursor=pointer]:
+          - /url: /skills/generate-shipping-label
+          - generic [ref=f12e943]:
+            - generic [ref=f12e944]: Operations
+            - heading "Generate Shipping Label" [level=3] [ref=f12e947]
+            - paragraph [ref=f12e948]: Generates precise shipping labels for accurate package delivery.
+            - paragraph [ref=f12e949]: Built by innflow.ai
+        - link "Marketing Go-To-Market (GTM) Strategy Create comprehensive go-to-market strategies for successful product launches. Built by innflow.ai" [ref=f12e950] [cursor=pointer]:
+          - /url: /skills/go-to-market-gtm-strategy
+          - generic [ref=f12e951]:
+            - generic [ref=f12e952]: Marketing
+            - heading "Go-To-Market (GTM) Strategy" [level=3] [ref=f12e955]
+            - paragraph [ref=f12e956]: Create comprehensive go-to-market strategies for successful product launches.
+            - paragraph [ref=f12e957]: Built by innflow.ai
+        - link "Finance Grant And Funding Request Persuasive grant proposals for funding applications. Built by innflow.ai" [ref=f12e958] [cursor=pointer]:
+          - /url: /skills/grant-and-funding-request
+          - generic [ref=f12e959]:
+            - generic [ref=f12e960]: Finance
+            - heading "Grant And Funding Request" [level=3] [ref=f12e963]
+            - paragraph [ref=f12e964]: Persuasive grant proposals for funding applications.
+            - paragraph [ref=f12e965]: Built by innflow.ai
+        - link "Finance IBAN Verification Verifies IBAN accuracy for secure financial transactions. Built by innflow.ai" [ref=f12e966] [cursor=pointer]:
+          - /url: /skills/iban-verification
+          - generic [ref=f12e967]:
+            - generic [ref=f12e968]: Finance
+            - heading "IBAN Verification" [level=3] [ref=f12e971]
+            - paragraph [ref=f12e972]: Verifies IBAN accuracy for secure financial transactions.
+            - paragraph [ref=f12e973]: Built by innflow.ai
+        - link "Marketing ICP Creation Crafts detailed Ideal Customer Profiles for targeted marketing strategies. Built by innflow.ai" [ref=f12e974] [cursor=pointer]:
+          - /url: /skills/icp-creation
+          - generic [ref=f12e975]:
+            - generic [ref=f12e976]: Marketing
+            - heading "ICP Creation" [level=3] [ref=f12e979]
+            - paragraph [ref=f12e980]: Crafts detailed Ideal Customer Profiles for targeted marketing strategies.
+            - paragraph [ref=f12e981]: Built by innflow.ai
+        - link "Operations Identification Information Extraction Extracts detailed data from ID documents accurately. Built by innflow.ai" [ref=f12e982] [cursor=pointer]:
+          - /url: /skills/identification-information-extraction
+          - generic [ref=f12e983]:
+            - generic [ref=f12e984]: Operations
+            - heading "Identification Information Extraction" [level=3] [ref=f12e987]
+            - paragraph [ref=f12e988]: Extracts detailed data from ID documents accurately.
+            - paragraph [ref=f12e989]: Built by innflow.ai
+        - link "Customer support Information Communication Crafts warm access messages for property rental users. Built by innflow.ai" [ref=f12e990] [cursor=pointer]:
+          - /url: /skills/information-communication
+          - generic [ref=f12e991]:
+            - generic [ref=f12e992]: Customer support
+            - heading "Information Communication" [level=3] [ref=f12e995]
+            - paragraph [ref=f12e996]: Crafts warm access messages for property rental users.
+            - paragraph [ref=f12e997]: Built by innflow.ai
+        - link "Customer support Initial Claim Assessment Evaluates insurance claims with precision and efficiency. Built by innflow.ai" [ref=f12e998] [cursor=pointer]:
+          - /url: /skills/initial-claim-assessment
+          - generic [ref=f12e999]:
+            - generic [ref=f12e1000]: Customer support
+            - heading "Initial Claim Assessment" [level=3] [ref=f12e1003]
+            - paragraph [ref=f12e1004]: Evaluates insurance claims with precision and efficiency.
+            - paragraph [ref=f12e1005]: Built by innflow.ai
+        - link "Human resources Initiatives Generation Crafts tailored initiatives for employee development and well-being. Built by innflow.ai" [ref=f12e1006] [cursor=pointer]:
+          - /url: /skills/initiatives-generation
+          - generic [ref=f12e1007]:
+            - generic [ref=f12e1008]: Human resources
+            - heading "Initiatives Generation" [level=3] [ref=f12e1011]
+            - paragraph [ref=f12e1012]: Crafts tailored initiatives for employee development and well-being.
+            - paragraph [ref=f12e1013]: Built by innflow.ai
+        - link "Sales and product Innflow Sales Proposal Crafts comprehensive AI-driven proposals for business automation solutions. Built by innflow.ai" [ref=f12e1014] [cursor=pointer]:
+          - /url: /skills/innflow-sales-proposal
+          - generic [ref=f12e1015]:
+            - generic [ref=f12e1016]: Sales and product
+            - heading "Innflow Sales Proposal" [level=3] [ref=f12e1019]
+            - paragraph [ref=f12e1020]: Crafts comprehensive AI-driven proposals for business automation solutions.
+            - paragraph [ref=f12e1021]: Built by innflow.ai
+        - link "Operations Input Apartment Details Ensures precise, unchanged communication for specific instructions. Built by innflow.ai" [ref=f12e1022] [cursor=pointer]:
+          - /url: /skills/input-apartment-details
+          - generic [ref=f12e1023]:
+            - generic [ref=f12e1024]: Operations
+            - heading "Input Apartment Details" [level=3] [ref=f12e1027]
+            - paragraph [ref=f12e1028]: Ensures precise, unchanged communication for specific instructions.
+            - paragraph [ref=f12e1029]: Built by innflow.ai
+        - link "Customer support Insurance Claim Form Ensures accurate policy management for insurance claims. Built by innflow.ai" [ref=f12e1030] [cursor=pointer]:
+          - /url: /skills/insurance-claim-form
+          - generic [ref=f12e1031]:
+            - generic [ref=f12e1032]: Customer support
+            - heading "Insurance Claim Form" [level=3] [ref=f12e1035]
+            - paragraph [ref=f12e1036]: Ensures accurate policy management for insurance claims.
+            - paragraph [ref=f12e1037]: Built by innflow.ai
+        - link "Customer support Insurance Fraud Detection Detects insurance fraud with advanced machine learning techniques. Built by innflow.ai" [ref=f12e1038] [cursor=pointer]:
+          - /url: /skills/insurance-fraud-detection
+          - generic [ref=f12e1039]:
+            - generic [ref=f12e1040]: Customer support
+            - heading "Insurance Fraud Detection" [level=3] [ref=f12e1043]
+            - paragraph [ref=f12e1044]: Detects insurance fraud with advanced machine learning techniques.
+            - paragraph [ref=f12e1045]: Built by innflow.ai
+        - link "Customer support Insurance Package Selector Selects optimal insurance packages tailored to customer needs. Built by innflow.ai" [ref=f12e1046] [cursor=pointer]:
+          - /url: /skills/insurance-package-selector
+          - generic [ref=f12e1047]:
+            - generic [ref=f12e1048]: Customer support
+            - heading "Insurance Package Selector" [level=3] [ref=f12e1051]
+            - paragraph [ref=f12e1052]: Selects optimal insurance packages tailored to customer needs.
+            - paragraph [ref=f12e1053]: Built by innflow.ai
+        - link "Customer support Insurance Policy Information Detailed insurance policy information for potential customers. Built by innflow.ai" [ref=f12e1054] [cursor=pointer]:
+          - /url: /skills/insurance-policy-information
+          - generic [ref=f12e1055]:
+            - generic [ref=f12e1056]: Customer support
+            - heading "Insurance Policy Information" [level=3] [ref=f12e1059]
+            - paragraph [ref=f12e1060]: Detailed insurance policy information for potential customers.
+            - paragraph [ref=f12e1061]: Built by innflow.ai
+        - link "Finance Internal Audit Report Comprehensive internal audit reports with actionable insights. Built by innflow.ai" [ref=f12e1062] [cursor=pointer]:
+          - /url: /skills/internal-audit-report
+          - generic [ref=f12e1063]:
+            - generic [ref=f12e1064]: Finance
+            - heading "Internal Audit Report" [level=3] [ref=f12e1067]
+            - paragraph [ref=f12e1068]: Comprehensive internal audit reports with actionable insights.
+            - paragraph [ref=f12e1069]: Built by innflow.ai
+        - link "Human resources Interview Question Pool Crafts tailored interview questions to assess diverse candidate skills. Built by innflow.ai" [ref=f12e1070] [cursor=pointer]:
+          - /url: /skills/interview-question-pool
+          - generic [ref=f12e1071]:
+            - generic [ref=f12e1072]: Human resources
+            - heading "Interview Question Pool" [level=3] [ref=f12e1075]
+            - paragraph [ref=f12e1076]: Crafts tailored interview questions to assess diverse candidate skills.
+            - paragraph [ref=f12e1077]: Built by innflow.ai
+        - link "Human resources Interview Report Creation Extracts key insights and themes from interview transcripts. Built by innflow.ai" [ref=f12e1078] [cursor=pointer]:
+          - /url: /skills/interview-report-creation
+          - generic [ref=f12e1079]:
+            - generic [ref=f12e1080]: Human resources
+            - heading "Interview Report Creation" [level=3] [ref=f12e1083]
+            - paragraph [ref=f12e1084]: Extracts key insights and themes from interview transcripts.
+            - paragraph [ref=f12e1085]: Built by innflow.ai
+        - link "Marketing Interview Transcript Generation Engaging, concise, and human-like interview transcripts. Built by innflow.ai" [ref=f12e1086] [cursor=pointer]:
+          - /url: /skills/interview-transcript-generation
+          - generic [ref=f12e1087]:
+            - generic [ref=f12e1088]: Marketing
+            - heading "Interview Transcript Generation" [level=3] [ref=f12e1091]
+            - paragraph [ref=f12e1092]: Engaging, concise, and human-like interview transcripts.
+            - paragraph [ref=f12e1093]: Built by innflow.ai
+        - link "Communication Introduction Email Writer Crafts engaging introductory emails for business professionals. Built by innflow.ai" [ref=f12e1094] [cursor=pointer]:
+          - /url: /skills/introduction-email-writer
+          - generic [ref=f12e1095]:
+            - generic [ref=f12e1096]: Communication
+            - heading "Introduction Email Writer" [level=3] [ref=f12e1099]
+            - paragraph [ref=f12e1100]: Crafts engaging introductory emails for business professionals.
+            - paragraph [ref=f12e1101]: Built by innflow.ai
+        - link "Customer support Inventory Management Add product to inventory Built by innflow.ai" [ref=f12e1102] [cursor=pointer]:
+          - /url: /skills/inventory-management
+          - generic [ref=f12e1103]:
+            - generic [ref=f12e1104]: Customer support
+            - heading "Inventory Management" [level=3] [ref=f12e1107]
+            - paragraph [ref=f12e1108]: Add product to inventory
+            - paragraph [ref=f12e1109]: Built by innflow.ai
+        - link "Operations Inventory Management Plan Crafts tailored inventory management plans for manufacturing businesses. Built by innflow.ai" [ref=f12e1110] [cursor=pointer]:
+          - /url: /skills/inventory-management-plan
+          - generic [ref=f12e1111]:
+            - generic [ref=f12e1112]: Operations
+            - heading "Inventory Management Plan" [level=3] [ref=f12e1115]
+            - paragraph [ref=f12e1116]: Crafts tailored inventory management plans for manufacturing businesses.
+            - paragraph [ref=f12e1117]: Built by innflow.ai
+        - link "Finance Investor Update Email Crafts concise investor updates with key metrics and future plans. Built by innflow.ai" [ref=f12e1118] [cursor=pointer]:
+          - /url: /skills/investor-update-email
+          - generic [ref=f12e1119]:
+            - generic [ref=f12e1120]: Finance
+            - heading "Investor Update Email" [level=3] [ref=f12e1123]
+            - paragraph [ref=f12e1124]: Crafts concise investor updates with key metrics and future plans.
+            - paragraph [ref=f12e1125]: Built by innflow.ai
+        - link "Finance Invoice Details Check Verifies invoice details for precise financial accuracy. Built by innflow.ai" [ref=f12e1126] [cursor=pointer]:
+          - /url: /skills/invoice-details-check
+          - generic [ref=f12e1127]:
+            - generic [ref=f12e1128]: Finance
+            - heading "Invoice Details Check" [level=3] [ref=f12e1131]
+            - paragraph [ref=f12e1132]: Verifies invoice details for precise financial accuracy.
+            - paragraph [ref=f12e1133]: Built by innflow.ai
+        - link "Finance Invoice Details Completion Ensures accurate invoicing by identifying missing critical components. Built by innflow.ai" [ref=f12e1134] [cursor=pointer]:
+          - /url: /skills/invoice-details-completion
+          - generic [ref=f12e1135]:
+            - generic [ref=f12e1136]: Finance
+            - heading "Invoice Details Completion" [level=3] [ref=f12e1139]
+            - paragraph [ref=f12e1140]: Ensures accurate invoicing by identifying missing critical components.
+            - paragraph [ref=f12e1141]: Built by innflow.ai
+        - link "Finance Invoice Details Verification Ensures seamless invoice validation and updates for accuracy. Built by innflow.ai" [ref=f12e1142] [cursor=pointer]:
+          - /url: /skills/invoice-details-verification
+          - generic [ref=f12e1143]:
+            - generic [ref=f12e1144]: Finance
+            - heading "Invoice Details Verification" [level=3] [ref=f12e1147]
+            - paragraph [ref=f12e1148]: Ensures seamless invoice validation and updates for accuracy.
+            - paragraph [ref=f12e1149]: Built by innflow.ai
+        - link "Finance Invoice Insertion Generates precise invoice insertion requests effortlessly. Built by innflow.ai" [ref=f12e1150] [cursor=pointer]:
+          - /url: /skills/invoice-insertion
+          - generic [ref=f12e1151]:
+            - generic [ref=f12e1152]: Finance
+            - heading "Invoice Insertion" [level=3] [ref=f12e1155]
+            - paragraph [ref=f12e1156]: Generates precise invoice insertion requests effortlessly.
+            - paragraph [ref=f12e1157]: Built by innflow.ai
+        - link "Operations Item List Details Extraction Extracts item details from order forms with precision. Built by innflow.ai" [ref=f12e1158] [cursor=pointer]:
+          - /url: /skills/item-list-details-extraction
+          - generic [ref=f12e1159]:
+            - generic [ref=f12e1160]: Operations
+            - heading "Item List Details Extraction" [level=3] [ref=f12e1163]
+            - paragraph [ref=f12e1164]: Extracts item details from order forms with precision.
+            - paragraph [ref=f12e1165]: Built by innflow.ai
+        - link "Marketing Itinerary Details Crafts detailed, sales-focused itineraries for hospitality locations Built by innflow.ai" [ref=f12e1166] [cursor=pointer]:
+          - /url: /skills/itinerary-details
+          - generic [ref=f12e1167]:
+            - generic [ref=f12e1168]: Marketing
+            - heading "Itinerary Details" [level=3] [ref=f12e1171]
+            - paragraph [ref=f12e1172]: Crafts detailed, sales-focused itineraries for hospitality locations
+            - paragraph [ref=f12e1173]: Built by innflow.ai
+        - link "Human resources Job Description Crafts engaging job descriptions for various roles effortlessly. Built by innflow.ai" [ref=f12e1174] [cursor=pointer]:
+          - /url: /skills/job-description
+          - generic [ref=f12e1175]:
+            - generic [ref=f12e1176]: Human resources
+            - heading "Job Description" [level=3] [ref=f12e1179]
+            - paragraph [ref=f12e1180]: Crafts engaging job descriptions for various roles effortlessly.
+            - paragraph [ref=f12e1181]: Built by innflow.ai
+        - link "Human resources Job Description Writing Crafts detailed job descriptions to attract top talent Built by innflow.ai" [ref=f12e1182] [cursor=pointer]:
+          - /url: /skills/job-description-writing
+          - generic [ref=f12e1183]:
+            - generic [ref=f12e1184]: Human resources
+            - heading "Job Description Writing" [level=3] [ref=f12e1187]
+            - paragraph [ref=f12e1188]: Crafts detailed job descriptions to attract top talent
+            - paragraph [ref=f12e1189]: Built by innflow.ai
+        - link "Human resources Job Documentation Creator Creates detailed job documentation with structured company and role insights Built by innflow.ai" [ref=f12e1190] [cursor=pointer]:
+          - /url: /skills/job-documentation-creator
+          - generic [ref=f12e1191]:
+            - generic [ref=f12e1192]: Human resources
+            - heading "Job Documentation Creator" [level=3] [ref=f12e1195]
+            - paragraph [ref=f12e1196]: Creates detailed job documentation with structured company and role insights
+            - paragraph [ref=f12e1197]: Built by innflow.ai
+        - link "Human resources Job Offer Writer Crafts comprehensive, welcoming job offers for candidates. Built by innflow.ai" [ref=f12e1198] [cursor=pointer]:
+          - /url: /skills/job-offer-writer
+          - generic [ref=f12e1199]:
+            - generic [ref=f12e1200]: Human resources
+            - heading "Job Offer Writer" [level=3] [ref=f12e1203]
+            - paragraph [ref=f12e1204]: Crafts comprehensive, welcoming job offers for candidates.
+            - paragraph [ref=f12e1205]: Built by innflow.ai
+        - link "Human resources Job Rejection Sender Crafts empathetic rejection emails maintaining positive brand image. Built by innflow.ai" [ref=f12e1206] [cursor=pointer]:
+          - /url: /skills/job-rejection-sender
+          - generic [ref=f12e1207]:
+            - generic [ref=f12e1208]: Human resources
+            - heading "Job Rejection Sender" [level=3] [ref=f12e1211]
+            - paragraph [ref=f12e1212]: Crafts empathetic rejection emails maintaining positive brand image.
+            - paragraph [ref=f12e1213]: Built by innflow.ai
+        - link "Product Key Characteristics Identification Extracts core functionalities from Product Requirement Documents. Built by innflow.ai" [ref=f12e1214] [cursor=pointer]:
+          - /url: /skills/key-characteristics-identification
+          - generic [ref=f12e1215]:
+            - generic [ref=f12e1216]: Product
+            - heading "Key Characteristics Identification" [level=3] [ref=f12e1219]
+            - paragraph [ref=f12e1220]: Extracts core functionalities from Product Requirement Documents.
+            - paragraph [ref=f12e1221]: Built by innflow.ai
+        - link "Sales and product Leads Extraction Extracts relevant leads matching Ideal Customer Profiles efficiently. Built by innflow.ai" [ref=f12e1222] [cursor=pointer]:
+          - /url: /skills/leads-extraction
+          - generic [ref=f12e1223]:
+            - generic [ref=f12e1224]: Sales and product
+            - heading "Leads Extraction" [level=3] [ref=f12e1227]
+            - paragraph [ref=f12e1228]: Extracts relevant leads matching Ideal Customer Profiles efficiently.
+            - paragraph [ref=f12e1229]: Built by innflow.ai
+        - link "Customer support Learning Accelerator Extracts essential insights to accelerate learning and research. Built by innflow.ai" [ref=f12e1230] [cursor=pointer]:
+          - /url: /skills/learning-accelerator
+          - generic [ref=f12e1231]:
+            - generic [ref=f12e1232]: Customer support
+            - heading "Learning Accelerator" [level=3] [ref=f12e1235]
+            - paragraph [ref=f12e1236]: Extracts essential insights to accelerate learning and research.
+            - paragraph [ref=f12e1237]: Built by innflow.ai
+        - link "Communication LinkedIn Hashtag Generator Generating effective LinkedIn hashtags. Built by innflow.ai" [ref=f12e1238] [cursor=pointer]:
+          - /url: /skills/linkedin-hashtag
+          - generic [ref=f12e1239]:
+            - generic [ref=f12e1240]: Communication
+            - heading "LinkedIn Hashtag Generator" [level=3] [ref=f12e1243]
+            - paragraph [ref=f12e1244]: Generating effective LinkedIn hashtags.
+            - paragraph [ref=f12e1245]: Built by innflow.ai
+        - link "Marketing LinkedIn Writer Write engaging LinkedIn posts to build professional networks. Built by innflow.ai" [ref=f12e1246] [cursor=pointer]:
+          - /url: /skills/linkedin-writer
+          - generic [ref=f12e1247]:
+            - generic [ref=f12e1248]: Marketing
+            - heading "LinkedIn Writer" [level=3] [ref=f12e1251]
+            - paragraph [ref=f12e1252]: Write engaging LinkedIn posts to build professional networks.
+            - paragraph [ref=f12e1253]: Built by innflow.ai
+        - link "Marketing Location Basic Information Crafts detailed hospitality location summaries and activity programs. Built by innflow.ai" [ref=f12e1254] [cursor=pointer]:
+          - /url: /skills/location-basic-information
+          - generic [ref=f12e1255]:
+            - generic [ref=f12e1256]: Marketing
+            - heading "Location Basic Information" [level=3] [ref=f12e1259]
+            - paragraph [ref=f12e1260]: Crafts detailed hospitality location summaries and activity programs.
+            - paragraph [ref=f12e1261]: Built by innflow.ai
+        - link "Sales and product Location Supporting Information Generate comprehensive supporting details about locations to enhance decision-making and planning. Built by innflow.ai" [ref=f12e1262] [cursor=pointer]:
+          - /url: /skills/location-supporting-information
+          - generic [ref=f12e1263]:
+            - generic [ref=f12e1264]: Sales and product
+            - heading "Location Supporting Information" [level=3] [ref=f12e1267]
+            - paragraph [ref=f12e1268]: Generate comprehensive supporting details about locations to enhance decision-making and planning.
+            - paragraph [ref=f12e1269]: Built by innflow.ai
+        - link "Customer support Maintenance Issue Update Crafts professional maintenance update emails with resolution times. Built by innflow.ai" [ref=f12e1270] [cursor=pointer]:
+          - /url: /skills/maintenance-issue-update
+          - generic [ref=f12e1271]:
+            - generic [ref=f12e1272]: Customer support
+            - heading "Maintenance Issue Update" [level=3] [ref=f12e1275]
+            - paragraph [ref=f12e1276]: Crafts professional maintenance update emails with resolution times.
+            - paragraph [ref=f12e1277]: Built by innflow.ai
+        - link "Marketing Market Research Survey Crafts precise, insightful surveys for targeted market research. Built by innflow.ai" [ref=f12e1278] [cursor=pointer]:
+          - /url: /skills/market-research-survey
+          - generic [ref=f12e1279]:
+            - generic [ref=f12e1280]: Marketing
+            - heading "Market Research Survey" [level=3] [ref=f12e1283]
+            - paragraph [ref=f12e1284]: Crafts precise, insightful surveys for targeted market research.
+            - paragraph [ref=f12e1285]: Built by innflow.ai
+        - link "Marketing Marketing Brief Create compelling marketing briefs for targeted campaigns. Built by innflow.ai" [ref=f12e1286] [cursor=pointer]:
+          - /url: /skills/marketing-brief
+          - generic [ref=f12e1287]:
+            - generic [ref=f12e1288]: Marketing
+            - heading "Marketing Brief" [level=3] [ref=f12e1291]
+            - paragraph [ref=f12e1292]: Create compelling marketing briefs for targeted campaigns.
+            - paragraph [ref=f12e1293]: Built by innflow.ai
+        - link "Marketing Marketing Material Writing Crafts persuasive marketing copy tailored to your target audience. Built by innflow.ai" [ref=f12e1294] [cursor=pointer]:
+          - /url: /skills/marketing-material-writing
+          - generic [ref=f12e1295]:
+            - generic [ref=f12e1296]: Marketing
+            - heading "Marketing Material Writing" [level=3] [ref=f12e1299]
+            - paragraph [ref=f12e1300]: Crafts persuasive marketing copy tailored to your target audience.
+            - paragraph [ref=f12e1301]: Built by innflow.ai
+        - link "Customer support Mastering Service Excellence with the Customer Service Training Package Generate comprehensive training materials for customer service excellence. Built by innflow.ai" [ref=f12e1302] [cursor=pointer]:
+          - /url: /skills/customer-service-training-package
+          - generic [ref=f12e1303]:
+            - generic [ref=f12e1304]: Customer support
+            - heading "Mastering Service Excellence with the Customer Service Training Package" [level=3] [ref=f12e1307]
+            - paragraph [ref=f12e1308]: Generate comprehensive training materials for customer service excellence.
+            - paragraph [ref=f12e1309]: Built by innflow.ai
+        - link "Customer support Meeting Agenda Devise well-structured, efficient meeting agendas for successful corporate events. Built by innflow.ai" [ref=f12e1310] [cursor=pointer]:
+          - /url: /skills/meeting-agenda
+          - generic [ref=f12e1311]:
+            - generic [ref=f12e1312]: Customer support
+            - heading "Meeting Agenda" [level=3] [ref=f12e1315]
+            - paragraph [ref=f12e1316]: Devise well-structured, efficient meeting agendas for successful corporate events.
+            - paragraph [ref=f12e1317]: Built by innflow.ai
+        - link "Customer support Meeting Notes Creates structured, concise meeting notes for clear reference. Built by innflow.ai" [ref=f12e1318] [cursor=pointer]:
+          - /url: /skills/meeting-notes
+          - generic [ref=f12e1319]:
+            - generic [ref=f12e1320]: Customer support
+            - heading "Meeting Notes" [level=3] [ref=f12e1323]
+            - paragraph [ref=f12e1324]: Creates structured, concise meeting notes for clear reference.
+            - paragraph [ref=f12e1325]: Built by innflow.ai
+        - link "Customer support Meeting Planner Automate comprehensive, efficient meeting plans for seamless execution. Built by innflow.ai" [ref=f12e1326] [cursor=pointer]:
+          - /url: /skills/meeting-planner
+          - generic [ref=f12e1327]:
+            - generic [ref=f12e1328]: Customer support
+            - heading "Meeting Planner" [level=3] [ref=f12e1331]
+            - paragraph [ref=f12e1332]: Automate comprehensive, efficient meeting plans for seamless execution.
+            - paragraph [ref=f12e1333]: Built by innflow.ai
+        - link "Customer support Memory Aid Generate tailored memorization strategies for diverse audiences. Built by innflow.ai" [ref=f12e1334] [cursor=pointer]:
+          - /url: /skills/memory-aid
+          - generic [ref=f12e1335]:
+            - generic [ref=f12e1336]: Customer support
+            - heading "Memory Aid" [level=3] [ref=f12e1339]
+            - paragraph [ref=f12e1340]: Generate tailored memorization strategies for diverse audiences.
+            - paragraph [ref=f12e1341]: Built by innflow.ai
+        - link "Customer support Message Intent Identification Analyzes customer support messages to identify intent accurately. Built by innflow.ai" [ref=f12e1342] [cursor=pointer]:
+          - /url: /skills/message-intent-identification
+          - generic [ref=f12e1343]:
+            - generic [ref=f12e1344]: Customer support
+            - heading "Message Intent Identification" [level=3] [ref=f12e1347]
+            - paragraph [ref=f12e1348]: Analyzes customer support messages to identify intent accurately.
+            - paragraph [ref=f12e1349]: Built by innflow.ai
+        - link "Communication Module Question Extraction Extracts questions from documents for clear, organized communication. Built by innflow.ai" [ref=f12e1350] [cursor=pointer]:
+          - /url: /skills/module-question-extraction
+          - generic [ref=f12e1351]:
+            - generic [ref=f12e1352]: Communication
+            - heading "Module Question Extraction" [level=3] [ref=f12e1355]
+            - paragraph [ref=f12e1356]: Extracts questions from documents for clear, organized communication.
+            - paragraph [ref=f12e1357]: Built by innflow.ai
+        - link "Customer support NDA Creator Tailored NDAs to protect sensitive company information. Built by innflow.ai" [ref=f12e1358] [cursor=pointer]:
+          - /url: /skills/nda-creator
+          - generic [ref=f12e1359]:
+            - generic [ref=f12e1360]: Customer support
+            - heading "NDA Creator" [level=3] [ref=f12e1363]
+            - paragraph [ref=f12e1364]: Tailored NDAs to protect sensitive company information.
+            - paragraph [ref=f12e1365]: Built by innflow.ai
+        - link "Human resources New Employee Introduction Post Crafts engaging welcome messages for new employees. Built by innflow.ai" [ref=f12e1366] [cursor=pointer]:
+          - /url: /skills/new-employee-introduction-post
+          - generic [ref=f12e1367]:
+            - generic [ref=f12e1368]: Human resources
+            - heading "New Employee Introduction Post" [level=3] [ref=f12e1371]
+            - paragraph [ref=f12e1372]: Crafts engaging welcome messages for new employees.
+            - paragraph [ref=f12e1373]: Built by innflow.ai
+        - link "Marketing Newsletter Ideation Generates engaging newsletter ideas tailored to your audience. Built by innflow.ai" [ref=f12e1374] [cursor=pointer]:
+          - /url: /skills/newsletter-ideation
+          - generic [ref=f12e1375]:
+            - generic [ref=f12e1376]: Marketing
+            - heading "Newsletter Ideation" [level=3] [ref=f12e1379]
+            - paragraph [ref=f12e1380]: Generates engaging newsletter ideas tailored to your audience.
+            - paragraph [ref=f12e1381]: Built by innflow.ai
+        - link "Marketing Newsletter Writer Crafts engaging newsletters tailored to your audience. Built by innflow.ai" [ref=f12e1382] [cursor=pointer]:
+          - /url: /skills/newsletter-writer
+          - generic [ref=f12e1383]:
+            - generic [ref=f12e1384]: Marketing
+            - heading "Newsletter Writer" [level=3] [ref=f12e1387]
+            - paragraph [ref=f12e1388]: Crafts engaging newsletters tailored to your audience.
+            - paragraph [ref=f12e1389]: Built by innflow.ai
+        - link "Operations Onboarding Initiator Generates vendor onboarding credentials and guidelines for smooth integration. Built by innflow.ai" [ref=f12e1390] [cursor=pointer]:
+          - /url: /skills/onboarding-initiator
+          - generic [ref=f12e1391]:
+            - generic [ref=f12e1392]: Operations
+            - heading "Onboarding Initiator" [level=3] [ref=f12e1395]
+            - paragraph [ref=f12e1396]: Generates vendor onboarding credentials and guidelines for smooth integration.
+            - paragraph [ref=f12e1397]: Built by innflow.ai
+        - link "Customer support Onboarding Tutorial Engaging onboarding guides for seamless user experiences. Built by innflow.ai" [ref=f12e1398] [cursor=pointer]:
+          - /url: /skills/onboarding-tutorial
+          - generic [ref=f12e1399]:
+            - generic [ref=f12e1400]: Customer support
+            - heading "Onboarding Tutorial" [level=3] [ref=f12e1403]
+            - paragraph [ref=f12e1404]: Engaging onboarding guides for seamless user experiences.
+            - paragraph [ref=f12e1405]: Built by innflow.ai
+        - link "Operations Order Availability Verification Verifies product availability against predefined database for orders. Built by innflow.ai" [ref=f12e1406] [cursor=pointer]:
+          - /url: /skills/order-availability-verification
+          - generic [ref=f12e1407]:
+            - generic [ref=f12e1408]: Operations
+            - heading "Order Availability Verification" [level=3] [ref=f12e1411]
+            - paragraph [ref=f12e1412]: Verifies product availability against predefined database for orders.
+            - paragraph [ref=f12e1413]: Built by innflow.ai
+        - link "Operations Order Confirmation Document Creation Crafts concise, detailed order confirmation documents efficiently. Built by innflow.ai" [ref=f12e1414] [cursor=pointer]:
+          - /url: /skills/order-confirmation-document-creation
+          - generic [ref=f12e1415]:
+            - generic [ref=f12e1416]: Operations
+            - heading "Order Confirmation Document Creation" [level=3] [ref=f12e1419]
+            - paragraph [ref=f12e1420]: Crafts concise, detailed order confirmation documents efficiently.
+            - paragraph [ref=f12e1421]: Built by innflow.ai
+        - link "Operations Order Data Verification Extracts and verifies seller, buyer, and order data. Built by innflow.ai" [ref=f12e1422] [cursor=pointer]:
+          - /url: /skills/order-data-verification
+          - generic [ref=f12e1423]:
+            - generic [ref=f12e1424]: Operations
+            - heading "Order Data Verification" [level=3] [ref=f12e1427]
+            - paragraph [ref=f12e1428]: Extracts and verifies seller, buyer, and order data.
+            - paragraph [ref=f12e1429]: Built by innflow.ai
+        - link "Operations Order Details Extraction Extracts order details with precision for accurate fulfillment. Built by innflow.ai" [ref=f12e1430] [cursor=pointer]:
+          - /url: /skills/order-details-extraction
+          - generic [ref=f12e1431]:
+            - generic [ref=f12e1432]: Operations
+            - heading "Order Details Extraction" [level=3] [ref=f12e1435]
+            - paragraph [ref=f12e1436]: Extracts order details with precision for accurate fulfillment.
+            - paragraph [ref=f12e1437]: Built by innflow.ai
+        - link "Operations Order Details Verification Verifies order details, ensuring accuracy and completeness. Built by innflow.ai" [ref=f12e1438] [cursor=pointer]:
+          - /url: /skills/order-details-verification
+          - generic [ref=f12e1439]:
+            - generic [ref=f12e1440]: Operations
+            - heading "Order Details Verification" [level=3] [ref=f12e1443]
+            - paragraph [ref=f12e1444]: Verifies order details, ensuring accuracy and completeness.
+            - paragraph [ref=f12e1445]: Built by innflow.ai
+        - link "Operations Order Format Extracts data into structured tables for efficient management. Built by innflow.ai" [ref=f12e1446] [cursor=pointer]:
+          - /url: /skills/order-format
+          - generic [ref=f12e1447]:
+            - generic [ref=f12e1448]: Operations
+            - heading "Order Format" [level=3] [ref=f12e1451]
+            - paragraph [ref=f12e1452]: Extracts data into structured tables for efficient management.
+            - paragraph [ref=f12e1453]: Built by innflow.ai
+        - link "Customer support Order Input Generates precise responses, ensuring consistent communication accuracy. Built by innflow.ai" [ref=f12e1454] [cursor=pointer]:
+          - /url: /skills/order-input
+          - generic [ref=f12e1455]:
+            - generic [ref=f12e1456]: Customer support
+            - heading "Order Input" [level=3] [ref=f12e1459]
+            - paragraph [ref=f12e1460]: Generates precise responses, ensuring consistent communication accuracy.
+            - paragraph [ref=f12e1461]: Built by innflow.ai
+        - link "Operations Order Placement Processes product orders with precision and timely confirmations. Built by innflow.ai" [ref=f12e1462] [cursor=pointer]:
+          - /url: /skills/order-placement
+          - generic [ref=f12e1463]:
+            - generic [ref=f12e1464]: Operations
+            - heading "Order Placement" [level=3] [ref=f12e1467]
+            - paragraph [ref=f12e1468]: Processes product orders with precision and timely confirmations.
+            - paragraph [ref=f12e1469]: Built by innflow.ai
+        - link "Human resources Organization Cultural Messaging Culture-focused communication for employee engagement. Built by innflow.ai" [ref=f12e1470] [cursor=pointer]:
+          - /url: /skills/organization-cultural-messaging
+          - generic [ref=f12e1471]:
+            - generic [ref=f12e1472]: Human resources
+            - heading "Organization Cultural Messaging" [level=3] [ref=f12e1475]
+            - paragraph [ref=f12e1476]: Culture-focused communication for employee engagement.
+            - paragraph [ref=f12e1477]: Built by innflow.ai
+        - link "Human resources Outreach Post Crafts engaging job outbound posts to attract top talent. Built by innflow.ai" [ref=f12e1478] [cursor=pointer]:
+          - /url: /skills/outreach-post
+          - generic [ref=f12e1479]:
+            - generic [ref=f12e1480]: Human resources
+            - heading "Outreach Post" [level=3] [ref=f12e1483]
+            - paragraph [ref=f12e1484]: Crafts engaging job outbound posts to attract top talent.
+            - paragraph [ref=f12e1485]: Built by innflow.ai
+        - link "Sales and product POC Proposal Persuasive POC proposals tailored for B2B clients. Built by innflow.ai" [ref=f12e1486] [cursor=pointer]:
+          - /url: /skills/poc-proposal
+          - generic [ref=f12e1487]:
+            - generic [ref=f12e1488]: Sales and product
+            - heading "POC Proposal" [level=3] [ref=f12e1491]
+            - paragraph [ref=f12e1492]: Persuasive POC proposals tailored for B2B clients.
+            - paragraph [ref=f12e1493]: Built by innflow.ai
+        - link "Operations Packing List Automate detailed shipment packing lists for accurate logistics. Built by innflow.ai" [ref=f12e1494] [cursor=pointer]:
+          - /url: /skills/packing-list
+          - generic [ref=f12e1495]:
+            - generic [ref=f12e1496]: Operations
+            - heading "Packing List" [level=3] [ref=f12e1499]
+            - paragraph [ref=f12e1500]: Automate detailed shipment packing lists for accurate logistics.
+            - paragraph [ref=f12e1501]: Built by innflow.ai
+        - link "Operations Patient Appointment Coordination Schedules medical appointments respecting patient preferences and availability. Built by innflow.ai" [ref=f12e1502] [cursor=pointer]:
+          - /url: /skills/patient-appointment-coordination
+          - generic [ref=f12e1503]:
+            - generic [ref=f12e1504]: Operations
+            - heading "Patient Appointment Coordination" [level=3] [ref=f12e1507]
+            - paragraph [ref=f12e1508]: Schedules medical appointments respecting patient preferences and availability.
+            - paragraph [ref=f12e1509]: Built by innflow.ai
+        - link "Health care Patienten Anfrage AU Identifies medical certificate requests and summarizes patient details. Built by innflow.ai" [ref=f12e1510] [cursor=pointer]:
+          - /url: /skills/patienten-anfrage-au
+          - generic [ref=f12e1511]:
+            - generic [ref=f12e1512]: Health care
+            - heading "Patienten Anfrage AU" [level=3] [ref=f12e1515]
+            - paragraph [ref=f12e1516]: Identifies medical certificate requests and summarizes patient details.
+            - paragraph [ref=f12e1517]: Built by innflow.ai
+        - link "Health care Patienten Information AU Verifies completeness of medical information for sick leave certificates. Built by innflow.ai" [ref=f12e1518] [cursor=pointer]:
+          - /url: /skills/patienten-information-au
+          - generic [ref=f12e1519]:
+            - generic [ref=f12e1520]: Health care
+            - heading "Patienten Information AU" [level=3] [ref=f12e1523]
+            - paragraph [ref=f12e1524]: Verifies completeness of medical information for sick leave certificates.
+            - paragraph [ref=f12e1525]: Built by innflow.ai
+        - link "Human resources Patienten Input Concise medical leave requests from patient’s perspective. Built by innflow.ai" [ref=f12e1526] [cursor=pointer]:
+          - /url: /skills/patienten-input
+          - generic [ref=f12e1527]:
+            - generic [ref=f12e1528]: Human resources
+            - heading "Patienten Input" [level=3] [ref=f12e1531]
+            - paragraph [ref=f12e1532]: Concise medical leave requests from patient’s perspective.
+            - paragraph [ref=f12e1533]: Built by innflow.ai
+        - link "Human resources Performance Improvement Plan Tailored performance improvement plans for employee development. Built by innflow.ai" [ref=f12e1534] [cursor=pointer]:
+          - /url: /skills/performance-improvement-plan
+          - generic [ref=f12e1535]:
+            - generic [ref=f12e1536]: Human resources
+            - heading "Performance Improvement Plan" [level=3] [ref=f12e1539]
+            - paragraph [ref=f12e1540]: Tailored performance improvement plans for employee development.
+            - paragraph [ref=f12e1541]: Built by innflow.ai
+        - link "Operations Performance Monitor Integrator Establishes automated system for vendor performance monitoring. Built by innflow.ai" [ref=f12e1542] [cursor=pointer]:
+          - /url: /skills/performance-monitor-integrator
+          - generic [ref=f12e1543]:
+            - generic [ref=f12e1544]: Operations
+            - heading "Performance Monitor Integrator" [level=3] [ref=f12e1547]
+            - paragraph [ref=f12e1548]: Establishes automated system for vendor performance monitoring.
+            - paragraph [ref=f12e1549]: Built by innflow.ai
+        - link "Human resources Performance Report Generates comprehensive employee performance reports with actionable insights. Built by innflow.ai" [ref=f12e1550] [cursor=pointer]:
+          - /url: /skills/performance-report
+          - generic [ref=f12e1551]:
+            - generic [ref=f12e1552]: Human resources
+            - heading "Performance Report" [level=3] [ref=f12e1555]
+            - paragraph [ref=f12e1556]: Generates comprehensive employee performance reports with actionable insights.
+            - paragraph [ref=f12e1557]: Built by innflow.ai
+        - link "Customer support Personal reservation reminder Crafts personalized, empathetic restaurant reservation reminders. Built by innflow.ai" [ref=f12e1558] [cursor=pointer]:
+          - /url: /skills/personal-reservation-reminder
+          - generic [ref=f12e1559]:
+            - generic [ref=f12e1560]: Customer support
+            - heading "Personal reservation reminder" [level=3] [ref=f12e1563]
+            - paragraph [ref=f12e1564]: Crafts personalized, empathetic restaurant reservation reminders.
+            - paragraph [ref=f12e1565]: Built by innflow.ai
+        - link "Operations Pick Lists Crafts efficient pick lists for streamlined warehouse operations. Built by innflow.ai" [ref=f12e1566] [cursor=pointer]:
+          - /url: /skills/pick-lists
+          - generic [ref=f12e1567]:
+            - generic [ref=f12e1568]: Operations
+            - heading "Pick Lists" [level=3] [ref=f12e1571]
+            - paragraph [ref=f12e1572]: Crafts efficient pick lists for streamlined warehouse operations.
+            - paragraph [ref=f12e1573]: Built by innflow.ai
+        - link "Customer support Policy Explanation Clarifies insurance policy details and claims procedures comprehensively. Built by innflow.ai" [ref=f12e1574] [cursor=pointer]:
+          - /url: /skills/policy-explanation
+          - generic [ref=f12e1575]:
+            - generic [ref=f12e1576]: Customer support
+            - heading "Policy Explanation" [level=3] [ref=f12e1579]
+            - paragraph [ref=f12e1580]: Clarifies insurance policy details and claims procedures comprehensively.
+            - paragraph [ref=f12e1581]: Built by innflow.ai
+        - link "Customer support Premium Calculation Calculates precise insurance premiums using actuarial science. Built by innflow.ai" [ref=f12e1582] [cursor=pointer]:
+          - /url: /skills/premium-calculation
+          - generic [ref=f12e1583]:
+            - generic [ref=f12e1584]: Customer support
+            - heading "Premium Calculation" [level=3] [ref=f12e1587]
+            - paragraph [ref=f12e1588]: Calculates precise insurance premiums using actuarial science.
+            - paragraph [ref=f12e1589]: Built by innflow.ai
+        - link "Customer support Presentation Ideation Creates captivating presentations with compelling stories and visual appeal. Built by innflow.ai" [ref=f12e1590] [cursor=pointer]:
+          - /url: /skills/presentation-ideation
+          - generic [ref=f12e1591]:
+            - generic [ref=f12e1592]: Customer support
+            - heading "Presentation Ideation" [level=3] [ref=f12e1595]
+            - paragraph [ref=f12e1596]: Creates captivating presentations with compelling stories and visual appeal.
+            - paragraph [ref=f12e1597]: Built by innflow.ai
+        - link "Customer support Product Claim Request Generate comprehensive insurance claim. Built by innflow.ai" [ref=f12e1598] [cursor=pointer]:
+          - /url: /skills/product-claim-request
+          - generic [ref=f12e1599]:
+            - generic [ref=f12e1600]: Customer support
+            - heading "Product Claim Request" [level=3] [ref=f12e1603]
+            - paragraph [ref=f12e1604]: Generate comprehensive insurance claim.
+            - paragraph [ref=f12e1605]: Built by innflow.ai
+        - link "Marketing Product Description Write captivating product descriptions to boost conversions. Built by innflow.ai" [ref=f12e1606] [cursor=pointer]:
+          - /url: /skills/product-description
+          - generic [ref=f12e1607]:
+            - generic [ref=f12e1608]: Marketing
+            - heading "Product Description" [level=3] [ref=f12e1611]
+            - paragraph [ref=f12e1612]: Write captivating product descriptions to boost conversions.
+            - paragraph [ref=f12e1613]: Built by innflow.ai
+        - link "Customer support Product Design Guidelines Crafts comprehensive design guidelines for cohesive brand identity. Built by innflow.ai" [ref=f12e1614] [cursor=pointer]:
+          - /url: /skills/product-design-guidelines
+          - generic [ref=f12e1615]:
+            - generic [ref=f12e1616]: Customer support
+            - heading "Product Design Guidelines" [level=3] [ref=f12e1619]
+            - paragraph [ref=f12e1620]: Crafts comprehensive design guidelines for cohesive brand identity.
+            - paragraph [ref=f12e1621]: Built by innflow.ai
+        - link "Operations Product Details Listing Extract and organize order details with precision. Built by innflow.ai" [ref=f12e1622] [cursor=pointer]:
+          - /url: /skills/product-details-listing
+          - generic [ref=f12e1623]:
+            - generic [ref=f12e1624]: Operations
+            - heading "Product Details Listing" [level=3] [ref=f12e1627]
+            - paragraph [ref=f12e1628]: Extract and organize order details with precision.
+            - paragraph [ref=f12e1629]: Built by innflow.ai
+        - link "Customer support Product FAQ Crafts concise FAQs to address common product inquiries. Built by innflow.ai" [ref=f12e1630] [cursor=pointer]:
+          - /url: /skills/product-faq
+          - generic [ref=f12e1631]:
+            - generic [ref=f12e1632]: Customer support
+            - heading "Product FAQ" [level=3] [ref=f12e1635]
+            - paragraph [ref=f12e1636]: Crafts concise FAQs to address common product inquiries.
+            - paragraph [ref=f12e1637]: Built by innflow.ai
+        - link "Operations Product Information Extraction Extracts detailed order information for accurate fulfillment. Built by innflow.ai" [ref=f12e1638] [cursor=pointer]:
+          - /url: /skills/product-information-extraction
+          - generic [ref=f12e1639]:
+            - generic [ref=f12e1640]: Operations
+            - heading "Product Information Extraction" [level=3] [ref=f12e1643]
+            - paragraph [ref=f12e1644]: Extracts detailed order information for accurate fulfillment.
+            - paragraph [ref=f12e1645]: Built by innflow.ai
+        - link "Marketing Product Insights Newsletter Optimizes newsletter content for audience engagement and product promotion. Built by innflow.ai" [ref=f12e1646] [cursor=pointer]:
+          - /url: /skills/product-insights-newsletter
+          - generic [ref=f12e1647]:
+            - generic [ref=f12e1648]: Marketing
+            - heading "Product Insights Newsletter" [level=3] [ref=f12e1651]
+            - paragraph [ref=f12e1652]: Optimizes newsletter content for audience engagement and product promotion.
+            - paragraph [ref=f12e1653]: Built by innflow.ai
+        - link "Customer support Product Insurance Claim Request Crafts detailed, multilingual insurance damage claims. Built by innflow.ai" [ref=f12e1654] [cursor=pointer]:
+          - /url: /skills/product-insurance-claim-request
+          - generic [ref=f12e1655]:
+            - generic [ref=f12e1656]: Customer support
+            - heading "Product Insurance Claim Request" [level=3] [ref=f12e1659]
+            - paragraph [ref=f12e1660]: Crafts detailed, multilingual insurance damage claims.
+            - paragraph [ref=f12e1661]: Built by innflow.ai
+        - link "Product Product Launch Planner Launch strategist and organizer. Built by innflow.ai" [ref=f12e1662] [cursor=pointer]:
+          - /url: /skills/product-launch-planner
+          - generic [ref=f12e1663]:
+            - generic [ref=f12e1664]: Product
+            - heading "Product Launch Planner" [level=3] [ref=f12e1667]
+            - paragraph [ref=f12e1668]: Launch strategist and organizer.
+            - paragraph [ref=f12e1669]: Built by innflow.ai
+        - link "Product Product Naming Crafts memorable product names that resonate with target audiences. Built by innflow.ai" [ref=f12e1670] [cursor=pointer]:
+          - /url: /skills/product-naming
+          - generic [ref=f12e1671]:
+            - generic [ref=f12e1672]: Product
+            - heading "Product Naming" [level=3] [ref=f12e1675]
+            - paragraph [ref=f12e1676]: Crafts memorable product names that resonate with target audiences.
+            - paragraph [ref=f12e1677]: Built by innflow.ai
+        - link "Product Product Requirements Document Crafts detailed PRDs for new features in seconds. Built by innflow.ai" [ref=f12e1678] [cursor=pointer]:
+          - /url: /skills/product-requirements-document
+          - generic [ref=f12e1679]:
+            - generic [ref=f12e1680]: Product
+            - heading "Product Requirements Document" [level=3] [ref=f12e1683]
+            - paragraph [ref=f12e1684]: Crafts detailed PRDs for new features in seconds.
+            - paragraph [ref=f12e1685]: Built by innflow.ai
+        - link "Customer support Product Return Confirmation Validates return requests, generates labels, and crafts receipts. Built by innflow.ai" [ref=f12e1686] [cursor=pointer]:
+          - /url: /skills/product-return-confirmation
+          - generic [ref=f12e1687]:
+            - generic [ref=f12e1688]: Customer support
+            - heading "Product Return Confirmation" [level=3] [ref=f12e1691]
+            - paragraph [ref=f12e1692]: Validates return requests, generates labels, and crafts receipts.
+            - paragraph [ref=f12e1693]: Built by innflow.ai
+        - link "Customer support Product Return Details Extracts customer details accurately from provided email and database. Built by innflow.ai" [ref=f12e1694] [cursor=pointer]:
+          - /url: /skills/product-return-details
+          - generic [ref=f12e1695]:
+            - generic [ref=f12e1696]: Customer support
+            - heading "Product Return Details" [level=3] [ref=f12e1699]
+            - paragraph [ref=f12e1700]: Extracts customer details accurately from provided email and database.
+            - paragraph [ref=f12e1701]: Built by innflow.ai
+        - link "Customer support Product Return Extraction Extracts product return details from customer emails accurately. Built by innflow.ai" [ref=f12e1702] [cursor=pointer]:
+          - /url: /skills/product-return-extraction
+          - generic [ref=f12e1703]:
+            - generic [ref=f12e1704]: Customer support
+            - heading "Product Return Extraction" [level=3] [ref=f12e1707]
+            - paragraph [ref=f12e1708]: Extracts product return details from customer emails accurately.
+            - paragraph [ref=f12e1709]: Built by innflow.ai
+        - link "Customer support Product Return Reply Draft Crafts empathetic product return email responses for customer satisfaction. Built by innflow.ai" [ref=f12e1710] [cursor=pointer]:
+          - /url: /skills/product-return-reply-draft
+          - generic [ref=f12e1711]:
+            - generic [ref=f12e1712]: Customer support
+            - heading "Product Return Reply Draft" [level=3] [ref=f12e1715]
+            - paragraph [ref=f12e1716]: Crafts empathetic product return email responses for customer satisfaction.
+            - paragraph [ref=f12e1717]: Built by innflow.ai
+        - link "Marketing Product Testimonial Construct compelling product testimonials for online shoppers. Built by innflow.ai" [ref=f12e1718] [cursor=pointer]:
+          - /url: /skills/product-testimonial
+          - generic [ref=f12e1719]:
+            - generic [ref=f12e1720]: Marketing
+            - heading "Product Testimonial" [level=3] [ref=f12e1723]
+            - paragraph [ref=f12e1724]: Construct compelling product testimonials for online shoppers.
+            - paragraph [ref=f12e1725]: Built by innflow.ai
+        - link "Product Product Use Case Identifies use cases tailored to customer needs and objectives. Built by innflow.ai" [ref=f12e1726] [cursor=pointer]:
+          - /url: /skills/product-use-case
+          - generic [ref=f12e1727]:
+            - generic [ref=f12e1728]: Product
+            - heading "Product Use Case" [level=3] [ref=f12e1731]
+            - paragraph [ref=f12e1732]: Identifies use cases tailored to customer needs and objectives.
+            - paragraph [ref=f12e1733]: Built by innflow.ai
+        - link "Customer support Productivity Booster Creates prioritized task execution plans for optimal productivity. Built by innflow.ai" [ref=f12e1734] [cursor=pointer]:
+          - /url: /skills/productivity-booster
+          - generic [ref=f12e1735]:
+            - generic [ref=f12e1736]: Customer support
+            - heading "Productivity Booster" [level=3] [ref=f12e1739]
+            - paragraph [ref=f12e1740]: Creates prioritized task execution plans for optimal productivity.
+            - paragraph [ref=f12e1741]: Built by innflow.ai
+        - link "Customer support Project Go-Live Checklist Crafts comprehensive Go-Live checklists for seamless project transitions. Built by innflow.ai" [ref=f12e1742] [cursor=pointer]:
+          - /url: /skills/project-go-live-checklist
+          - generic [ref=f12e1743]:
+            - generic [ref=f12e1744]: Customer support
+            - heading "Project Go-Live Checklist" [level=3] [ref=f12e1747]
+            - paragraph [ref=f12e1748]: Crafts comprehensive Go-Live checklists for seamless project transitions.
+            - paragraph [ref=f12e1749]: Built by innflow.ai
+        - link "Customer support Project Naming Tool Crafts impactful project names that resonate with stakeholders. Built by innflow.ai" [ref=f12e1750] [cursor=pointer]:
+          - /url: /skills/project-naming-tool
+          - generic [ref=f12e1751]:
+            - generic [ref=f12e1752]: Customer support
+            - heading "Project Naming Tool" [level=3] [ref=f12e1755]
+            - paragraph [ref=f12e1756]: Crafts impactful project names that resonate with stakeholders.
+            - paragraph [ref=f12e1757]: Built by innflow.ai
+        - link "Customer support Project Planning Crafts detailed project timelines with prioritized tasks and ETAs. Built by innflow.ai" [ref=f12e1758] [cursor=pointer]:
+          - /url: /skills/project-planning
+          - generic [ref=f12e1759]:
+            - generic [ref=f12e1760]: Customer support
+            - heading "Project Planning" [level=3] [ref=f12e1763]
+            - paragraph [ref=f12e1764]: Crafts detailed project timelines with prioritized tasks and ETAs.
+            - paragraph [ref=f12e1765]: Built by innflow.ai
+        - link "Customer support Project Spec Sheet Crafts detailed project specification sheets for comprehensive project management. Built by innflow.ai" [ref=f12e1766] [cursor=pointer]:
+          - /url: /skills/project-spec-sheet
+          - generic [ref=f12e1767]:
+            - generic [ref=f12e1768]: Customer support
+            - heading "Project Spec Sheet" [level=3] [ref=f12e1771]
+            - paragraph [ref=f12e1772]: Crafts detailed project specification sheets for comprehensive project management.
+            - paragraph [ref=f12e1773]: Built by innflow.ai
+        - link "Customer support Project Vision Document Crafts comprehensive project vision documents for strategic alignment. Built by innflow.ai" [ref=f12e1774] [cursor=pointer]:
+          - /url: /skills/project-vision-document
+          - generic [ref=f12e1775]:
+            - generic [ref=f12e1776]: Customer support
+            - heading "Project Vision Document" [level=3] [ref=f12e1779]
+            - paragraph [ref=f12e1780]: Crafts comprehensive project vision documents for strategic alignment.
+            - paragraph [ref=f12e1781]: Built by innflow.ai
+        - link "Customer support Property Issues Communication Crafts personalized responses for property rental maintenance issues. Built by innflow.ai" [ref=f12e1782] [cursor=pointer]:
+          - /url: /skills/property-issues-communication
+          - generic [ref=f12e1783]:
+            - generic [ref=f12e1784]: Customer support
+            - heading "Property Issues Communication" [level=3] [ref=f12e1787]
+            - paragraph [ref=f12e1788]: Crafts personalized responses for property rental maintenance issues.
+            - paragraph [ref=f12e1789]: Built by innflow.ai
+        - link "Customer support Query Answering Draft empathetic, policy-aligned responses to customer queries. Built by innflow.ai" [ref=f12e1790] [cursor=pointer]:
+          - /url: /skills/query-answering
+          - generic [ref=f12e1791]:
+            - generic [ref=f12e1792]: Customer support
+            - heading "Query Answering" [level=3] [ref=f12e1795]
+            - paragraph [ref=f12e1796]: Draft empathetic, policy-aligned responses to customer queries.
+            - paragraph [ref=f12e1797]: Built by innflow.ai
+        - link "Customer support Questions Generation Generates insightful, open-ended questions for critical thinking. Built by innflow.ai" [ref=f12e1798] [cursor=pointer]:
+          - /url: /skills/questions-generation
+          - generic [ref=f12e1799]:
+            - generic [ref=f12e1800]: Customer support
+            - heading "Questions Generation" [level=3] [ref=f12e1803]
+            - paragraph [ref=f12e1804]: Generates insightful, open-ended questions for critical thinking.
+            - paragraph [ref=f12e1805]: Built by innflow.ai
+        - link "Communication Re Explainer Personalized, engaging explanations for diverse audiences. Built by innflow.ai" [ref=f12e1806] [cursor=pointer]:
+          - /url: /skills/re-explainer
+          - generic [ref=f12e1807]:
+            - generic [ref=f12e1808]: Communication
+            - heading "Re Explainer" [level=3] [ref=f12e1811]
+            - paragraph [ref=f12e1812]: Personalized, engaging explanations for diverse audiences.
+            - paragraph [ref=f12e1813]: Built by innflow.ai
+        - link "Customer support Reason and decider on email reply Analyzes customer inquiries and data for precise email responses. Built by innflow.ai" [ref=f12e1814] [cursor=pointer]:
+          - /url: /skills/reason-and-decider-on-email-reply
+          - generic [ref=f12e1815]:
+            - generic [ref=f12e1816]: Customer support
+            - heading "Reason and decider on email reply" [level=3] [ref=f12e1819]
+            - paragraph [ref=f12e1820]: Analyzes customer inquiries and data for precise email responses.
+            - paragraph [ref=f12e1821]: Built by innflow.ai
+        - link "Customer support Refund Evaluator Evaluates refund eligibility based on purchase details and policies. Built by innflow.ai" [ref=f12e1822] [cursor=pointer]:
+          - /url: /skills/refund-evaluator
+          - generic [ref=f12e1823]:
+            - generic [ref=f12e1824]: Customer support
+            - heading "Refund Evaluator" [level=3] [ref=f12e1827]
+            - paragraph [ref=f12e1828]: Evaluates refund eligibility based on purchase details and policies.
+            - paragraph [ref=f12e1829]: Built by innflow.ai
+        - link "Customer support Regulatory Compliance Check Crafts comprehensive regulatory compliance documents for product adherence. Built by innflow.ai" [ref=f12e1830] [cursor=pointer]:
+          - /url: /skills/regulatory-compliance-check
+          - generic [ref=f12e1831]:
+            - generic [ref=f12e1832]: Customer support
+            - heading "Regulatory Compliance Check" [level=3] [ref=f12e1835]
+            - paragraph [ref=f12e1836]: Crafts comprehensive regulatory compliance documents for product adherence.
+            - paragraph [ref=f12e1837]: Built by innflow.ai
+        - link "Product Release Notes Crafts engaging release notes for product updates. Built by innflow.ai" [ref=f12e1838] [cursor=pointer]:
+          - /url: /skills/release-notes
+          - generic [ref=f12e1839]:
+            - generic [ref=f12e1840]: Product
+            - heading "Release Notes" [level=3] [ref=f12e1843]
+            - paragraph [ref=f12e1844]: Crafts engaging release notes for product updates.
+            - paragraph [ref=f12e1845]: Built by innflow.ai
+        - link "Customer support Replacement Policy Checker Evaluates product condition to decide replacement approval. Built by innflow.ai" [ref=f12e1846] [cursor=pointer]:
+          - /url: /skills/replacement-policy-checker
+          - generic [ref=f12e1847]:
+            - generic [ref=f12e1848]: Customer support
+            - heading "Replacement Policy Checker" [level=3] [ref=f12e1851]
+            - paragraph [ref=f12e1852]: Evaluates product condition to decide replacement approval.
+            - paragraph [ref=f12e1853]: Built by innflow.ai
+        - link "Operations Report Creation Extracts customer data for precise CRM entry and management. Built by innflow.ai" [ref=f12e1854] [cursor=pointer]:
+          - /url: /skills/report-creation
+          - generic [ref=f12e1855]:
+            - generic [ref=f12e1856]: Operations
+            - heading "Report Creation" [level=3] [ref=f12e1859]
+            - paragraph [ref=f12e1860]: Extracts customer data for precise CRM entry and management.
+            - paragraph [ref=f12e1861]: Built by innflow.ai
+        - link "Communication Report Writing Crafts detailed reports from outlines with in-depth analysis. Built by innflow.ai" [ref=f12e1862] [cursor=pointer]:
+          - /url: /skills/report-writing
+          - generic [ref=f12e1863]:
+            - generic [ref=f12e1864]: Communication
+            - heading "Report Writing" [level=3] [ref=f12e1867]
+            - paragraph [ref=f12e1868]: Crafts detailed reports from outlines with in-depth analysis.
+            - paragraph [ref=f12e1869]: Built by innflow.ai
+        - link "Operations Reservation Details Generation Generates precise room pricing, surcharges, and discount details. Built by innflow.ai" [ref=f12e1870] [cursor=pointer]:
+          - /url: /skills/reservation-details-generation
+          - generic [ref=f12e1871]:
+            - generic [ref=f12e1872]: Operations
+            - heading "Reservation Details Generation" [level=3] [ref=f12e1875]
+            - paragraph [ref=f12e1876]: Generates precise room pricing, surcharges, and discount details.
+            - paragraph [ref=f12e1877]: Built by innflow.ai
+        - link "Human resources Response Grouping Groups interview responses by similar questions for insights. Built by innflow.ai" [ref=f12e1878] [cursor=pointer]:
+          - /url: /skills/response-grouping
+          - generic [ref=f12e1879]:
+            - generic [ref=f12e1880]: Human resources
+            - heading "Response Grouping" [level=3] [ref=f12e1883]
+            - paragraph [ref=f12e1884]: Groups interview responses by similar questions for insights.
+            - paragraph [ref=f12e1885]: Built by innflow.ai
+        - link "Human resources Resume Matching Matches resumes to job descriptions for optimal recruitment. Built by innflow.ai" [ref=f12e1886] [cursor=pointer]:
+          - /url: /skills/resume-matching
+          - generic [ref=f12e1887]:
+            - generic [ref=f12e1888]: Human resources
+            - heading "Resume Matching" [level=3] [ref=f12e1891]
+            - paragraph [ref=f12e1892]: Matches resumes to job descriptions for optimal recruitment.
+            - paragraph [ref=f12e1893]: Built by innflow.ai
+        - link "Customer support Return Consolidation Consolidates claim details for accurate financial processing. Built by innflow.ai" [ref=f12e1894] [cursor=pointer]:
+          - /url: /skills/return-consolidation
+          - generic [ref=f12e1895]:
+            - generic [ref=f12e1896]: Customer support
+            - heading "Return Consolidation" [level=3] [ref=f12e1899]
+            - paragraph [ref=f12e1900]: Consolidates claim details for accurate financial processing.
+            - paragraph [ref=f12e1901]: Built by innflow.ai
+        - link "Customer support Risk Assessment Crafts comprehensive risk assessments for insurance policyholders. Built by innflow.ai" [ref=f12e1902] [cursor=pointer]:
+          - /url: /skills/risk-assessment
+          - generic [ref=f12e1903]:
+            - generic [ref=f12e1904]: Customer support
+            - heading "Risk Assessment" [level=3] [ref=f12e1907]
+            - paragraph [ref=f12e1908]: Crafts comprehensive risk assessments for insurance policyholders.
+            - paragraph [ref=f12e1909]: Built by innflow.ai
+        - link "Finance Risk Score Assigner Evaluates vendor risk profiles using predefined criteria. Built by innflow.ai" [ref=f12e1910] [cursor=pointer]:
+          - /url: /skills/risk-score-assigner
+          - generic [ref=f12e1911]:
+            - generic [ref=f12e1912]: Finance
+            - heading "Risk Score Assigner" [level=3] [ref=f12e1915]
+            - paragraph [ref=f12e1916]: Evaluates vendor risk profiles using predefined criteria.
+            - paragraph [ref=f12e1917]: Built by innflow.ai
+        - link "Customer support Roadmap Visualizer Crafts detailed product roadmaps with clear phases and milestones. Built by innflow.ai" [ref=f12e1918] [cursor=pointer]:
+          - /url: /skills/roadmap-visualiser
+          - generic [ref=f12e1919]:
+            - generic [ref=f12e1920]: Customer support
+            - heading "Roadmap Visualizer" [level=3] [ref=f12e1923]
+            - paragraph [ref=f12e1924]: Crafts detailed product roadmaps with clear phases and milestones.
+            - paragraph [ref=f12e1925]: Built by innflow.ai
+        - link "Marketing SEO Optimisation Crafts comprehensive SEO strategies for enhanced online visibility. Built by innflow.ai" [ref=f12e1926] [cursor=pointer]:
+          - /url: /skills/seo-optimisation
+          - generic [ref=f12e1927]:
+            - generic [ref=f12e1928]: Marketing
+            - heading "SEO Optimisation" [level=3] [ref=f12e1931]
+            - paragraph [ref=f12e1932]: Crafts comprehensive SEO strategies for enhanced online visibility.
+            - paragraph [ref=f12e1933]: Built by innflow.ai
+        - link "Customer support SWOT Analysis Generates comprehensive SWOT analyses for strategic business insights. Built by innflow.ai" [ref=f12e1934] [cursor=pointer]:
+          - /url: /skills/swot-analysis
+          - generic [ref=f12e1935]:
+            - generic [ref=f12e1936]: Customer support
+            - heading "SWOT Analysis" [level=3] [ref=f12e1939]
+            - paragraph [ref=f12e1940]: Generates comprehensive SWOT analyses for strategic business insights.
+            - paragraph [ref=f12e1941]: Built by innflow.ai
+        - link "Finance Sales Invoice Generation Generates accurate, formatted sales invoices effortlessly. Built by innflow.ai" [ref=f12e1942] [cursor=pointer]:
+          - /url: /skills/sales-invoice-generation
+          - generic [ref=f12e1943]:
+            - generic [ref=f12e1944]: Finance
+            - heading "Sales Invoice Generation" [level=3] [ref=f12e1947]
+            - paragraph [ref=f12e1948]: Generates accurate, formatted sales invoices effortlessly.
+            - paragraph [ref=f12e1949]: Built by innflow.ai
+        - link "Sales and product Sales Lead Outreach AI Agent Personalized email campaigns for engaging potential leads effectively. Built by innflow.ai" [ref=f12e1950] [cursor=pointer]:
+          - /url: /skills/sales-lead-outreach
+          - generic [ref=f12e1951]:
+            - generic [ref=f12e1952]: Sales and product
+            - heading "Sales Lead Outreach AI Agent" [level=3] [ref=f12e1955]
+            - paragraph [ref=f12e1956]: Personalized email campaigns for engaging potential leads effectively.
+            - paragraph [ref=f12e1957]: Built by innflow.ai
+        - link "Sales and product Sales Outreach Crafts compelling product introduction emails for prospecting and outreach. Built by innflow.ai" [ref=f12e1958] [cursor=pointer]:
+          - /url: /skills/sales-outreach
+          - generic [ref=f12e1959]:
+            - generic [ref=f12e1960]: Sales and product
+            - heading "Sales Outreach" [level=3] [ref=f12e1963]
+            - paragraph [ref=f12e1964]: Crafts compelling product introduction emails for prospecting and outreach.
+            - paragraph [ref=f12e1965]: Built by innflow.ai
+        - link "Sales and product Sales Pitch Crafts persuasive sales pitches tailored to client needs. Built by innflow.ai" [ref=f12e1966] [cursor=pointer]:
+          - /url: /skills/sales-pitch
+          - generic [ref=f12e1967]:
+            - generic [ref=f12e1968]: Sales and product
+            - heading "Sales Pitch" [level=3] [ref=f12e1971]
+            - paragraph [ref=f12e1972]: Crafts persuasive sales pitches tailored to client needs.
+            - paragraph [ref=f12e1973]: Built by innflow.ai
+        - link "Sales and product Sales Proposal Email Crafts persuasive, tailored sales proposal emails for clients. Built by innflow.ai" [ref=f12e1974] [cursor=pointer]:
+          - /url: /skills/sales-proposal-email
+          - generic [ref=f12e1975]:
+            - generic [ref=f12e1976]: Sales and product
+            - heading "Sales Proposal Email" [level=3] [ref=f12e1979]
+            - paragraph [ref=f12e1980]: Crafts persuasive, tailored sales proposal emails for clients.
+            - paragraph [ref=f12e1981]: Built by innflow.ai
+        - link "Marketing Sales Video Brief Create comprehensive video briefs with storyboards and creative storytelling. Built by innflow.ai" [ref=f12e1982] [cursor=pointer]:
+          - /url: /skills/sales-video-brief
+          - generic [ref=f12e1983]:
+            - generic [ref=f12e1984]: Marketing
+            - heading "Sales Video Brief" [level=3] [ref=f12e1987]
+            - paragraph [ref=f12e1988]: Create comprehensive video briefs with storyboards and creative storytelling.
+            - paragraph [ref=f12e1989]: Built by innflow.ai
+        - link "Customer support Search Property Extracts property details for swift issue resolution. Built by innflow.ai" [ref=f12e1990] [cursor=pointer]:
+          - /url: /skills/search-property
+          - generic [ref=f12e1991]:
+            - generic [ref=f12e1992]: Customer support
+            - heading "Search Property" [level=3] [ref=f12e1995]
+            - paragraph [ref=f12e1996]: Extracts property details for swift issue resolution.
+            - paragraph [ref=f12e1997]: Built by innflow.ai
+        - link "Marketing Service Brochures Compelling brochures to boost sales and customer engagement. Built by innflow.ai" [ref=f12e1998] [cursor=pointer]:
+          - /url: /skills/service-brochures
+          - generic [ref=f12e1999]:
+            - generic [ref=f12e2000]: Marketing
+            - heading "Service Brochures" [level=3] [ref=f12e2003]
+            - paragraph [ref=f12e2004]: Compelling brochures to boost sales and customer engagement.
+            - paragraph [ref=f12e2005]: Built by innflow.ai
+        - link "Operations Service Detail Generation Crafts detailed service information for hospitality locations. Built by innflow.ai" [ref=f12e2006] [cursor=pointer]:
+          - /url: /skills/service-detail-generation
+          - generic [ref=f12e2007]:
+            - generic [ref=f12e2008]: Operations
+            - heading "Service Detail Generation" [level=3] [ref=f12e2011]
+            - paragraph [ref=f12e2012]: Crafts detailed service information for hospitality locations.
+            - paragraph [ref=f12e2013]: Built by innflow.ai
+        - link "Customer support Service Request Form Curate detailed service request forms for streamlined customer support. Built by innflow.ai" [ref=f12e2014] [cursor=pointer]:
+          - /url: /skills/service-request-form
+          - generic [ref=f12e2015]:
+            - generic [ref=f12e2016]: Customer support
+            - heading "Service Request Form" [level=3] [ref=f12e2019]
+            - paragraph [ref=f12e2020]: Curate detailed service request forms for streamlined customer support.
+            - paragraph [ref=f12e2021]: Built by innflow.ai
+        - link "Human resources Similar Questions Extraction Extracts recurring questions from multiple interview transcripts accurately. Built by innflow.ai" [ref=f12e2022] [cursor=pointer]:
+          - /url: /skills/similar-questions-extraction
+          - generic [ref=f12e2023]:
+            - generic [ref=f12e2024]: Human resources
+            - heading "Similar Questions Extraction" [level=3] [ref=f12e2027]
+            - paragraph [ref=f12e2028]: Extracts recurring questions from multiple interview transcripts accurately.
+            - paragraph [ref=f12e2029]: Built by innflow.ai
+        - link "Human resources Skill Assessment Crafts precise skill assessments tailored for employee growth. Built by innflow.ai" [ref=f12e2030] [cursor=pointer]:
+          - /url: /skills/skill-assessment
+          - generic [ref=f12e2031]:
+            - generic [ref=f12e2032]: Human resources
+            - heading "Skill Assessment" [level=3] [ref=f12e2035]
+            - paragraph [ref=f12e2036]: Crafts precise skill assessments tailored for employee growth.
+            - paragraph [ref=f12e2037]: Built by innflow.ai
+        - link "Human resources Skill Gap Analysis Identifies skill gaps and recommends strategic training programs. Built by innflow.ai" [ref=f12e2038] [cursor=pointer]:
+          - /url: /skills/skill-gap-analysis
+          - generic [ref=f12e2039]:
+            - generic [ref=f12e2040]: Human resources
+            - heading "Skill Gap Analysis" [level=3] [ref=f12e2043]
+            - paragraph [ref=f12e2044]: Identifies skill gaps and recommends strategic training programs.
+            - paragraph [ref=f12e2045]: Built by innflow.ai
+        - link "Human resources Skill Interview Questions Tailored interview questions to assess candidate suitability. Built by innflow.ai" [ref=f12e2046] [cursor=pointer]:
+          - /url: /skills/skill-interview-questions
+          - generic [ref=f12e2047]:
+            - generic [ref=f12e2048]: Human resources
+            - heading "Skill Interview Questions" [level=3] [ref=f12e2051]
+            - paragraph [ref=f12e2052]: Tailored interview questions to assess candidate suitability.
+            - paragraph [ref=f12e2053]: Built by innflow.ai
+        - link "Human resources Skills Evaluation Crafts comprehensive candidate evaluation criteria for specific job roles. Built by innflow.ai" [ref=f12e2054] [cursor=pointer]:
+          - /url: /skills/skills-evaluation
+          - generic [ref=f12e2055]:
+            - generic [ref=f12e2056]: Human resources
+            - heading "Skills Evaluation" [level=3] [ref=f12e2059]
+            - paragraph [ref=f12e2060]: Crafts comprehensive candidate evaluation criteria for specific job roles.
+            - paragraph [ref=f12e2061]: Built by innflow.ai
+        - link "Marketing Social Media Ad Scriptwriter Crafts engaging social media ad scripts for targeted campaigns. Built by innflow.ai" [ref=f12e2062] [cursor=pointer]:
+          - /url: /skills/social-media-ad-scriptwriter
+          - generic [ref=f12e2063]:
+            - generic [ref=f12e2064]: Marketing
+            - heading "Social Media Ad Scriptwriter" [level=3] [ref=f12e2067]
+            - paragraph [ref=f12e2068]: Crafts engaging social media ad scripts for targeted campaigns.
+            - paragraph [ref=f12e2069]: Built by innflow.ai
+        - link "Marketing Social Media Captioning Engaging social media captions for targeted audiences. Built by innflow.ai" [ref=f12e2070] [cursor=pointer]:
+          - /url: /skills/social-media-captioning
+          - generic [ref=f12e2071]:
+            - generic [ref=f12e2072]: Marketing
+            - heading "Social Media Captioning" [level=3] [ref=f12e2075]
+            - paragraph [ref=f12e2076]: Engaging social media captions for targeted audiences.
+            - paragraph [ref=f12e2077]: Built by innflow.ai
+        - link "Marketing Social Media Content Calendar Engaging social media content calendars for targeted campaigns. Built by innflow.ai" [ref=f12e2078] [cursor=pointer]:
+          - /url: /skills/social-media-content-calendar
+          - generic [ref=f12e2079]:
+            - generic [ref=f12e2080]: Marketing
+            - heading "Social Media Content Calendar" [level=3] [ref=f12e2083]
+            - paragraph [ref=f12e2084]: Engaging social media content calendars for targeted campaigns.
+            - paragraph [ref=f12e2085]: Built by innflow.ai
+        - link "Marketing Social Media Posting Write engaging social media posts tailored to your brand. Built by innflow.ai" [ref=f12e2086] [cursor=pointer]:
+          - /url: /skills/social-media-posting
+          - generic [ref=f12e2087]:
+            - generic [ref=f12e2088]: Marketing
+            - heading "Social Media Posting" [level=3] [ref=f12e2091]
+            - paragraph [ref=f12e2092]: Write engaging social media posts tailored to your brand.
+            - paragraph [ref=f12e2093]: Built by innflow.ai
+        - link "Customer support Software Test Case Crafts comprehensive test cases for code validation. Built by innflow.ai" [ref=f12e2094] [cursor=pointer]:
+          - /url: /skills/software-test-case
+          - generic [ref=f12e2095]:
+            - generic [ref=f12e2096]: Customer support
+            - heading "Software Test Case" [level=3] [ref=f12e2099]
+            - paragraph [ref=f12e2100]: Crafts comprehensive test cases for code validation.
+            - paragraph [ref=f12e2101]: Built by innflow.ai
+        - link "Customer support Spam Detection WIP Identify spam emails through detailed expert analysis Built by innflow.ai" [ref=f12e2102] [cursor=pointer]:
+          - /url: /skills/spam-detection-wip
+          - generic [ref=f12e2103]:
+            - generic [ref=f12e2104]: Customer support
+            - heading "Spam Detection WIP" [level=3] [ref=f12e2107]
+            - paragraph [ref=f12e2108]: Identify spam emails through detailed expert analysis
+            - paragraph [ref=f12e2109]: Built by innflow.ai
+        - link "Communication Speaking Notes Crafts award-winning speeches tailored to captivate and inspire audiences. Built by innflow.ai" [ref=f12e2110] [cursor=pointer]:
+          - /url: /skills/speaking-notes
+          - generic [ref=f12e2111]:
+            - generic [ref=f12e2112]: Communication
+            - heading "Speaking Notes" [level=3] [ref=f12e2115]
+            - paragraph [ref=f12e2116]: Crafts award-winning speeches tailored to captivate and inspire audiences.
+            - paragraph [ref=f12e2117]: Built by innflow.ai
+        - link "Operations Specific Usecase Search Extracts relevant data from databases for specific use cases. Built by innflow.ai" [ref=f12e2118] [cursor=pointer]:
+          - /url: /skills/specific-usecase-search
+          - generic [ref=f12e2119]:
+            - generic [ref=f12e2120]: Operations
+            - heading "Specific Usecase Search" [level=3] [ref=f12e2123]
+            - paragraph [ref=f12e2124]: Extracts relevant data from databases for specific use cases.
+            - paragraph [ref=f12e2125]: Built by innflow.ai
+        - link "Customer support Stakeholder Persona Crafts detailed stakeholder personas for strategic project success. Built by innflow.ai" [ref=f12e2126] [cursor=pointer]:
+          - /url: /skills/stakeholder-persona
+          - generic [ref=f12e2127]:
+            - generic [ref=f12e2128]: Customer support
+            - heading "Stakeholder Persona" [level=3] [ref=f12e2131]
+            - paragraph [ref=f12e2132]: Crafts detailed stakeholder personas for strategic project success.
+            - paragraph [ref=f12e2133]: Built by innflow.ai
+        - link "Communication Stakeholder Update Message Crafts flawless stakeholder update emails with business insights. Built by innflow.ai" [ref=f12e2134] [cursor=pointer]:
+          - /url: /skills/stakeholder-update-message
+          - generic [ref=f12e2135]:
+            - generic [ref=f12e2136]: Communication
+            - heading "Stakeholder Update Message" [level=3] [ref=f12e2139]
+            - paragraph [ref=f12e2140]: Crafts flawless stakeholder update emails with business insights.
+            - paragraph [ref=f12e2141]: Built by innflow.ai
+        - link "Customer support Step by Step Guide Step-by-step guides for tailored problem-solving solutions. Built by innflow.ai" [ref=f12e2142] [cursor=pointer]:
+          - /url: /skills/step-by-step-guide
+          - generic [ref=f12e2143]:
+            - generic [ref=f12e2144]: Customer support
+            - heading "Step by Step Guide" [level=3] [ref=f12e2147]
+            - paragraph [ref=f12e2148]: Step-by-step guides for tailored problem-solving solutions.
+            - paragraph [ref=f12e2149]: Built by innflow.ai
+        - link "Customer support Story Arc Development Compelling story arcs for immersive narratives. Built by innflow.ai" [ref=f12e2150] [cursor=pointer]:
+          - /url: /skills/story-arc-development
+          - generic [ref=f12e2151]:
+            - generic [ref=f12e2152]: Customer support
+            - heading "Story Arc Development" [level=3] [ref=f12e2155]
+            - paragraph [ref=f12e2156]: Compelling story arcs for immersive narratives.
+            - paragraph [ref=f12e2157]: Built by innflow.ai
+        - link "Customer support Stripe Payments Processes Stripe payment transactions based on claim status. Built by innflow.ai" [ref=f12e2158] [cursor=pointer]:
+          - /url: /skills/stripe-payments
+          - generic [ref=f12e2159]:
+            - generic [ref=f12e2160]: Customer support
+            - heading "Stripe Payments" [level=3] [ref=f12e2163]
+            - paragraph [ref=f12e2164]: Processes Stripe payment transactions based on claim status.
+            - paragraph [ref=f12e2165]: Built by innflow.ai
+        - link "Customer support Subscription Cancellation Confirmation Crafts empathetic subscription cancellation confirmations with detailed receipts. Built by innflow.ai" [ref=f12e2166] [cursor=pointer]:
+          - /url: /skills/subscription-cancellation-confirmation
+          - generic [ref=f12e2167]:
+            - generic [ref=f12e2168]: Customer support
+            - heading "Subscription Cancellation Confirmation" [level=3] [ref=f12e2171]
+            - paragraph [ref=f12e2172]: Crafts empathetic subscription cancellation confirmations with detailed receipts.
+            - paragraph [ref=f12e2173]: Built by innflow.ai
+        - link "Customer support Subscription Cancellation Draft Crafts empathetic subscription cancellation confirmation emails for customers. Built by innflow.ai" [ref=f12e2174] [cursor=pointer]:
+          - /url: /skills/subscription-cancellation-draft
+          - generic [ref=f12e2175]:
+            - generic [ref=f12e2176]: Customer support
+            - heading "Subscription Cancellation Draft" [level=3] [ref=f12e2179]
+            - paragraph [ref=f12e2180]: Crafts empathetic subscription cancellation confirmation emails for customers.
+            - paragraph [ref=f12e2181]: Built by innflow.ai
+        - link "Communication Summarizer Extracts concise summaries from extensive documents efficiently. Built by innflow.ai" [ref=f12e2182] [cursor=pointer]:
+          - /url: /skills/summarizer
+          - generic [ref=f12e2183]:
+            - generic [ref=f12e2184]: Communication
+            - heading "Summarizer" [level=3] [ref=f12e2187]
+            - paragraph [ref=f12e2188]: Extracts concise summaries from extensive documents efficiently.
+            - paragraph [ref=f12e2189]: Built by innflow.ai
+        - link "Customer support Supplier Agreement Crafts comprehensive supplier agreements for seamless procurement processes. Built by innflow.ai" [ref=f12e2190] [cursor=pointer]:
+          - /url: /skills/supplier-agreement
+          - generic [ref=f12e2191]:
+            - generic [ref=f12e2192]: Customer support
+            - heading "Supplier Agreement" [level=3] [ref=f12e2195]
+            - paragraph [ref=f12e2196]: Crafts comprehensive supplier agreements for seamless procurement processes.
+            - paragraph [ref=f12e2197]: Built by innflow.ai
+        - link "Operations Supplier Onboarding SOP Comprehensive supplier onboarding SOP for seamless integration. Built by innflow.ai" [ref=f12e2198] [cursor=pointer]:
+          - /url: /skills/supplier-onboarding-sop
+          - generic [ref=f12e2199]:
+            - generic [ref=f12e2200]: Operations
+            - heading "Supplier Onboarding SOP" [level=3] [ref=f12e2203]
+            - paragraph [ref=f12e2204]: Comprehensive supplier onboarding SOP for seamless integration.
+            - paragraph [ref=f12e2205]: Built by innflow.ai
+        - link "Customer support Supply Chain Compliance Documentation Comprehensive compliance documentation for supply chain processes. Built by innflow.ai" [ref=f12e2206] [cursor=pointer]:
+          - /url: /skills/supply-chain-compliance-documentation
+          - generic [ref=f12e2207]:
+            - generic [ref=f12e2208]: Customer support
+            - heading "Supply Chain Compliance Documentation" [level=3] [ref=f12e2211]
+            - paragraph [ref=f12e2212]: Comprehensive compliance documentation for supply chain processes.
+            - paragraph [ref=f12e2213]: Built by innflow.ai
+        - link "Operations Supply Chain Risk Assessment Identifies supply chain risks and categorizes them effectively. Built by innflow.ai" [ref=f12e2214] [cursor=pointer]:
+          - /url: /skills/supply-chain-risk-assessment
+          - generic [ref=f12e2215]:
+            - generic [ref=f12e2216]: Operations
+            - heading "Supply Chain Risk Assessment" [level=3] [ref=f12e2219]
+            - paragraph [ref=f12e2220]: Identifies supply chain risks and categorizes them effectively.
+            - paragraph [ref=f12e2221]: Built by innflow.ai
+        - link "Marketing Synopsis Writing Engaging film synopses to captivate target audiences. Built by innflow.ai" [ref=f12e2222] [cursor=pointer]:
+          - /url: /skills/synopsis-writing
+          - generic [ref=f12e2223]:
+            - generic [ref=f12e2224]: Marketing
+            - heading "Synopsis Writing" [level=3] [ref=f12e2227]
+            - paragraph [ref=f12e2228]: Engaging film synopses to captivate target audiences.
+            - paragraph [ref=f12e2229]: Built by innflow.ai
+        - link "Marketing Tagline Ideas Crafts memorable taglines that capture brand essence and value. Built by innflow.ai" [ref=f12e2230] [cursor=pointer]:
+          - /url: /skills/tagline-ideas
+          - generic [ref=f12e2231]:
+            - generic [ref=f12e2232]: Marketing
+            - heading "Tagline Ideas" [level=3] [ref=f12e2235]
+            - paragraph [ref=f12e2236]: Crafts memorable taglines that capture brand essence and value.
+            - paragraph [ref=f12e2237]: Built by innflow.ai
+        - link "Marketing Target Market Identifier Identifies target audience through comprehensive market research analysis. Built by innflow.ai" [ref=f12e2238] [cursor=pointer]:
+          - /url: /skills/target-market-identifier
+          - generic [ref=f12e2239]:
+            - generic [ref=f12e2240]: Marketing
+            - heading "Target Market Identifier" [level=3] [ref=f12e2243]
+            - paragraph [ref=f12e2244]: Identifies target audience through comprehensive market research analysis.
+            - paragraph [ref=f12e2245]: Built by innflow.ai
+        - link "Customer support Task Planner Creates step-by-step task lists for achieving complex goals. Built by innflow.ai" [ref=f12e2246] [cursor=pointer]:
+          - /url: /skills/task-planner
+          - generic [ref=f12e2247]:
+            - generic [ref=f12e2248]: Customer support
+            - heading "Task Planner" [level=3] [ref=f12e2251]
+            - paragraph [ref=f12e2252]: Creates step-by-step task lists for achieving complex goals.
+            - paragraph [ref=f12e2253]: Built by innflow.ai
+        - link "Finance Tax Compliance Checklist Crafts comprehensive tax compliance checklists for accurate documentation. Built by innflow.ai" [ref=f12e2254] [cursor=pointer]:
+          - /url: /skills/tax-compliance-checklist
+          - generic [ref=f12e2255]:
+            - generic [ref=f12e2256]: Finance
+            - heading "Tax Compliance Checklist" [level=3] [ref=f12e2259]
+            - paragraph [ref=f12e2260]: Crafts comprehensive tax compliance checklists for accurate documentation.
+            - paragraph [ref=f12e2261]: Built by innflow.ai
+        - link "Communication Team Communication Crafts professional team emails tailored to organizational goals. Built by innflow.ai" [ref=f12e2262] [cursor=pointer]:
+          - /url: /skills/team-communication
+          - generic [ref=f12e2263]:
+            - generic [ref=f12e2264]: Communication
+            - heading "Team Communication" [level=3] [ref=f12e2267]
+            - paragraph [ref=f12e2268]: Crafts professional team emails tailored to organizational goals.
+            - paragraph [ref=f12e2269]: Built by innflow.ai
+        - link "Customer support Technical Requirement Generation Crafts detailed technical requirements for efficient project planning. Built by innflow.ai" [ref=f12e2270] [cursor=pointer]:
+          - /url: /skills/technical-requirement-generation
+          - generic [ref=f12e2271]:
+            - generic [ref=f12e2272]: Customer support
+            - heading "Technical Requirement Generation" [level=3] [ref=f12e2275]
+            - paragraph [ref=f12e2276]: Crafts detailed technical requirements for efficient project planning.
+            - paragraph [ref=f12e2277]: Built by innflow.ai
+        - link "Customer support Terms of Service Precise, legally sound terms of service documents. Built by innflow.ai" [ref=f12e2278] [cursor=pointer]:
+          - /url: /skills/terms-of-service
+          - generic [ref=f12e2279]:
+            - generic [ref=f12e2280]: Customer support
+            - heading "Terms of Service" [level=3] [ref=f12e2283]
+            - paragraph [ref=f12e2284]: Precise, legally sound terms of service documents.
+            - paragraph [ref=f12e2285]: Built by innflow.ai
+        - link "Communication Text Translator Produce accurate, culturally relevant translations for effective communication. Built by innflow.ai" [ref=f12e2286] [cursor=pointer]:
+          - /url: /skills/text-translator
+          - generic [ref=f12e2287]:
+            - generic [ref=f12e2288]: Communication
+            - heading "Text Translator" [level=3] [ref=f12e2291]
+            - paragraph [ref=f12e2292]: Produce accurate, culturally relevant translations for effective communication.
+            - paragraph [ref=f12e2293]: Built by innflow.ai
+        - link "Customer support Theme Extraction Extracts key themes and takeaways from interview transcripts. Built by innflow.ai" [ref=f12e2294] [cursor=pointer]:
+          - /url: /skills/theme-extraction
+          - generic [ref=f12e2295]:
+            - generic [ref=f12e2296]: Customer support
+            - heading "Theme Extraction" [level=3] [ref=f12e2299]
+            - paragraph [ref=f12e2300]: Extracts key themes and takeaways from interview transcripts.
+            - paragraph [ref=f12e2301]: Built by innflow.ai
+        - link "Customer support Ticket Creation Update Crafts timely maintenance ticket emails for property issue resolution. Built by innflow.ai" [ref=f12e2302] [cursor=pointer]:
+          - /url: /skills/ticket-creation-update
+          - generic [ref=f12e2303]:
+            - generic [ref=f12e2304]: Customer support
+            - heading "Ticket Creation Update" [level=3] [ref=f12e2307]
+            - paragraph [ref=f12e2308]: Crafts timely maintenance ticket emails for property issue resolution.
+            - paragraph [ref=f12e2309]: Built by innflow.ai
+        - link "Customer support Train Reservation API Crafts clear insurance policy details for informed decisions. Built by innflow.ai" [ref=f12e2310] [cursor=pointer]:
+          - /url: /skills/train-reservation-api
+          - generic [ref=f12e2311]:
+            - generic [ref=f12e2312]: Customer support
+            - heading "Train Reservation API" [level=3] [ref=f12e2315]
+            - paragraph [ref=f12e2316]: Crafts clear insurance policy details for informed decisions.
+            - paragraph [ref=f12e2317]: Built by innflow.ai
+        - link "Human resources Training Module Crafts personalized training modules for employee skill development. Built by innflow.ai" [ref=f12e2318] [cursor=pointer]:
+          - /url: /skills/training-module
+          - generic [ref=f12e2319]:
+            - generic [ref=f12e2320]: Human resources
+            - heading "Training Module" [level=3] [ref=f12e2323]
+            - paragraph [ref=f12e2324]: Crafts personalized training modules for employee skill development.
+            - paragraph [ref=f12e2325]: Built by innflow.ai
+        - link "Human resources Training Modules Assessment Crafts comprehensive assessments to measure training course mastery Built by innflow.ai" [ref=f12e2326] [cursor=pointer]:
+          - /url: /skills/training-modules-assessment
+          - generic [ref=f12e2327]:
+            - generic [ref=f12e2328]: Human resources
+            - heading "Training Modules Assessment" [level=3] [ref=f12e2331]
+            - paragraph [ref=f12e2332]: Crafts comprehensive assessments to measure training course mastery
+            - paragraph [ref=f12e2333]: Built by innflow.ai
+        - link "Human resources Training Program Crafts tailored training plans to enhance employee skills. Built by innflow.ai" [ref=f12e2334] [cursor=pointer]:
+          - /url: /skills/training-program
+          - generic [ref=f12e2335]:
+            - generic [ref=f12e2336]: Human resources
+            - heading "Training Program" [level=3] [ref=f12e2339]
+            - paragraph [ref=f12e2340]: Crafts tailored training plans to enhance employee skills.
+            - paragraph [ref=f12e2341]: Built by innflow.ai
+        - link "Human resources Training Session Plan Designs engaging, activity-based professional development workshops. Built by innflow.ai" [ref=f12e2342] [cursor=pointer]:
+          - /url: /skills/training-session-plan
+          - generic [ref=f12e2343]:
+            - generic [ref=f12e2344]: Human resources
+            - heading "Training Session Plan" [level=3] [ref=f12e2347]
+            - paragraph [ref=f12e2348]: Designs engaging, activity-based professional development workshops.
+            - paragraph [ref=f12e2349]: Built by innflow.ai
+        - link "Customer support Transcript Input Ensures consistent, unaltered message delivery, regardless of input. Built by innflow.ai" [ref=f12e2350] [cursor=pointer]:
+          - /url: /skills/transcript-input
+          - generic [ref=f12e2351]:
+            - generic [ref=f12e2352]: Customer support
+            - heading "Transcript Input" [level=3] [ref=f12e2355]
+            - paragraph [ref=f12e2356]: Ensures consistent, unaltered message delivery, regardless of input.
+            - paragraph [ref=f12e2357]: Built by innflow.ai
+        - link "Customer support Troubleshooting Guides Clear troubleshooting guides for common product issues. Built by innflow.ai" [ref=f12e2358] [cursor=pointer]:
+          - /url: /skills/troubleshooting-guides
+          - generic [ref=f12e2359]:
+            - generic [ref=f12e2360]: Customer support
+            - heading "Troubleshooting Guides" [level=3] [ref=f12e2363]
+            - paragraph [ref=f12e2364]: Clear troubleshooting guides for common product issues.
+            - paragraph [ref=f12e2365]: Built by innflow.ai
+        - link "Customer support UPS Status check Generates shipment status updates for UPS tracking numbers. Built by innflow.ai" [ref=f12e2366] [cursor=pointer]:
+          - /url: /skills/ups-status-check
+          - generic [ref=f12e2367]:
+            - generic [ref=f12e2368]: Customer support
+            - heading "UPS Status check" [level=3] [ref=f12e2371]
+            - paragraph [ref=f12e2372]: Generates shipment status updates for UPS tracking numbers.
+            - paragraph [ref=f12e2373]: Built by innflow.ai
+        - link "Marketing USP Writing Write compelling USPs for diverse products and services. Built by innflow.ai" [ref=f12e2374] [cursor=pointer]:
+          - /url: /skills/usp-writing
+          - generic [ref=f12e2375]:
+            - generic [ref=f12e2376]: Marketing
+            - heading "USP Writing" [level=3] [ref=f12e2379]
+            - paragraph [ref=f12e2380]: Write compelling USPs for diverse products and services.
+            - paragraph [ref=f12e2381]: Built by innflow.ai
+        - link "Customer support Understand E-Mail Inquiry Extracts customer email details for structured next steps. Built by innflow.ai" [ref=f12e2382] [cursor=pointer]:
+          - /url: /skills/understand-e-mail-inquiry
+          - generic [ref=f12e2383]:
+            - generic [ref=f12e2384]: Customer support
+            - heading "Understand E-Mail Inquiry" [level=3] [ref=f12e2387]
+            - paragraph [ref=f12e2388]: Extracts customer email details for structured next steps.
+            - paragraph [ref=f12e2389]: Built by innflow.ai
+        - link "Customer support Understand Scheduling Request Creates detailed, actionable scheduling plans from requests. Built by innflow.ai" [ref=f12e2390] [cursor=pointer]:
+          - /url: /skills/understand-scheduling-request
+          - generic [ref=f12e2391]:
+            - generic [ref=f12e2392]: Customer support
+            - heading "Understand Scheduling Request" [level=3] [ref=f12e2395]
+            - paragraph [ref=f12e2396]: Creates detailed, actionable scheduling plans from requests.
+            - paragraph [ref=f12e2397]: Built by innflow.ai
+        - link "Customer support Usability Testing Scenario Crafts realistic usability testing scenarios for diverse user interactions. Built by innflow.ai" [ref=f12e2398] [cursor=pointer]:
+          - /url: /skills/usability-testing-scenario
+          - generic [ref=f12e2399]:
+            - generic [ref=f12e2400]: Customer support
+            - heading "Usability Testing Scenario" [level=3] [ref=f12e2403]
+            - paragraph [ref=f12e2404]: Crafts realistic usability testing scenarios for diverse user interactions.
+            - paragraph [ref=f12e2405]: Built by innflow.ai
+        - link "Customer support Use Cases for Customers Analyzes customer needs to propose tailored business solutions. Built by innflow.ai" [ref=f12e2406] [cursor=pointer]:
+          - /url: /skills/use-cases-for-customers
+          - generic [ref=f12e2407]:
+            - generic [ref=f12e2408]: Customer support
+            - heading "Use Cases for Customers" [level=3] [ref=f12e2411]
+            - paragraph [ref=f12e2412]: Analyzes customer needs to propose tailored business solutions.
+            - paragraph [ref=f12e2413]: Built by innflow.ai
+        - link "Product User Goals Extracts user goals for tailored product development. Built by innflow.ai" [ref=f12e2414] [cursor=pointer]:
+          - /url: /skills/user-goals
+          - generic [ref=f12e2415]:
+            - generic [ref=f12e2416]: Product
+            - heading "User Goals" [level=3] [ref=f12e2419]
+            - paragraph [ref=f12e2420]: Extracts user goals for tailored product development.
+            - paragraph [ref=f12e2421]: Built by innflow.ai
+        - link "Product User Personas Detailed user personas for effective product development Built by innflow.ai" [ref=f12e2422] [cursor=pointer]:
+          - /url: /skills/user-personas
+          - generic [ref=f12e2423]:
+            - generic [ref=f12e2424]: Product
+            - heading "User Personas" [level=3] [ref=f12e2427]
+            - paragraph [ref=f12e2428]: Detailed user personas for effective product development
+            - paragraph [ref=f12e2429]: Built by innflow.ai
+        - link "Customer support User Roles Manage user roles effectively Built by innflow.ai" [ref=f12e2430] [cursor=pointer]:
+          - /url: /skills/user-roles
+          - generic [ref=f12e2431]:
+            - generic [ref=f12e2432]: Customer support
+            - heading "User Roles" [level=3] [ref=f12e2435]
+            - paragraph [ref=f12e2436]: Manage user roles effectively
+            - paragraph [ref=f12e2437]: Built by innflow.ai
+        - link "Product User Stories Crafts concise user stories with clear acceptance criteria. Built by innflow.ai" [ref=f12e2438] [cursor=pointer]:
+          - /url: /skills/user-stories
+          - generic [ref=f12e2439]:
+            - generic [ref=f12e2440]: Product
+            - heading "User Stories" [level=3] [ref=f12e2443]
+            - paragraph [ref=f12e2444]: Crafts concise user stories with clear acceptance criteria.
+            - paragraph [ref=f12e2445]: Built by innflow.ai
+        - link "Product User Story Description Crafts comprehensive user story descriptions for feature development. Built by innflow.ai" [ref=f12e2446] [cursor=pointer]:
+          - /url: /skills/user-story-description
+          - generic [ref=f12e2447]:
+            - generic [ref=f12e2448]: Product
+            - heading "User Story Description" [level=3] [ref=f12e2451]
+            - paragraph [ref=f12e2452]: Crafts comprehensive user story descriptions for feature development.
+            - paragraph [ref=f12e2453]: Built by innflow.ai
+        - link "Marketing Value Proposition Compose compelling value propositions for diverse products and services. Built by innflow.ai" [ref=f12e2454] [cursor=pointer]:
+          - /url: /skills/value-proposition
+          - generic [ref=f12e2455]:
+            - generic [ref=f12e2456]: Marketing
+            - heading "Value Proposition" [level=3] [ref=f12e2459]
+            - paragraph [ref=f12e2460]: Compose compelling value propositions for diverse products and services.
+            - paragraph [ref=f12e2461]: Built by innflow.ai
+        - link "Finance Vendor Agreement Drafts Legally compliant vendor agreements tailored to specific needs. Built by innflow.ai" [ref=f12e2462] [cursor=pointer]:
+          - /url: /skills/vendor-agreement-drafts
+          - generic [ref=f12e2463]:
+            - generic [ref=f12e2464]: Finance
+            - heading "Vendor Agreement Drafts" [level=3] [ref=f12e2467]
+            - paragraph [ref=f12e2468]: Legally compliant vendor agreements tailored to specific needs.
+            - paragraph [ref=f12e2469]: Built by innflow.ai
+        - link "Operations Vendor Approval Decider Evaluates vendor risk for informed onboarding decisions. Built by innflow.ai" [ref=f12e2470] [cursor=pointer]:
+          - /url: /skills/vendor-approval-decider
+          - generic [ref=f12e2471]:
+            - generic [ref=f12e2472]: Operations
+            - heading "Vendor Approval Decider" [level=3] [ref=f12e2475]
+            - paragraph [ref=f12e2476]: Evaluates vendor risk for informed onboarding decisions.
+            - paragraph [ref=f12e2477]: Built by innflow.ai
+        - link "Operations Vendor Compliance Check Ensures vendor compliance through meticulous data verification. Built by innflow.ai" [ref=f12e2478] [cursor=pointer]:
+          - /url: /skills/vendor-compliance-check
+          - generic [ref=f12e2479]:
+            - generic [ref=f12e2480]: Operations
+            - heading "Vendor Compliance Check" [level=3] [ref=f12e2483]
+            - paragraph [ref=f12e2484]: Ensures vendor compliance through meticulous data verification.
+            - paragraph [ref=f12e2485]: Built by innflow.ai
+        - link "Operations Vendor Information Validation Ensures vendor data compliance with meticulous verification. Built by innflow.ai" [ref=f12e2486] [cursor=pointer]:
+          - /url: /skills/vendor-information-validation
+          - generic [ref=f12e2487]:
+            - generic [ref=f12e2488]: Operations
+            - heading "Vendor Information Validation" [level=3] [ref=f12e2491]
+            - paragraph [ref=f12e2492]: Ensures vendor data compliance with meticulous verification.
+            - paragraph [ref=f12e2493]: Built by innflow.ai
+        - link "Finance Vendor Risk Profiler Evaluates vendor data to identify and mitigate potential risks. Built by innflow.ai" [ref=f12e2494] [cursor=pointer]:
+          - /url: /skills/vendor-risk-profiler
+          - generic [ref=f12e2495]:
+            - generic [ref=f12e2496]: Finance
+            - heading "Vendor Risk Profiler" [level=3] [ref=f12e2499]
+            - paragraph [ref=f12e2500]: Evaluates vendor data to identify and mitigate potential risks.
+            - paragraph [ref=f12e2501]: Built by innflow.ai
+        - link "Operations Verified Order Consolidation Generates consolidated CSVs for product, buyer, and seller data. Built by innflow.ai" [ref=f12e2502] [cursor=pointer]:
+          - /url: /skills/verified-order-consolidation
+          - generic [ref=f12e2503]:
+            - generic [ref=f12e2504]: Operations
+            - heading "Verified Order Consolidation" [level=3] [ref=f12e2507]
+            - paragraph [ref=f12e2508]: Generates consolidated CSVs for product, buyer, and seller data.
+            - paragraph [ref=f12e2509]: Built by innflow.ai
+        - link "Marketing Video Content Idea Generates engaging video content ideas for diverse platforms. Built by innflow.ai" [ref=f12e2510] [cursor=pointer]:
+          - /url: /skills/video-content-idea
+          - generic [ref=f12e2511]:
+            - generic [ref=f12e2512]: Marketing
+            - heading "Video Content Idea" [level=3] [ref=f12e2515]
+            - paragraph [ref=f12e2516]: Generates engaging video content ideas for diverse platforms.
+            - paragraph [ref=f12e2517]: Built by innflow.ai
+        - link "Marketing Video Scripts Crafts engaging YouTube scripts for captivating visual storytelling. Built by innflow.ai" [ref=f12e2518] [cursor=pointer]:
+          - /url: /skills/video-scripts
+          - generic [ref=f12e2519]:
+            - generic [ref=f12e2520]: Marketing
+            - heading "Video Scripts" [level=3] [ref=f12e2523]
+            - paragraph [ref=f12e2524]: Crafts engaging YouTube scripts for captivating visual storytelling.
+            - paragraph [ref=f12e2525]: Built by innflow.ai
+        - link "Marketing Walkthrough Video Scriptwriter Crafts engaging and informative video walkthrough scripts. Built by innflow.ai" [ref=f12e2526] [cursor=pointer]:
+          - /url: /skills/walkthrough-video-scriptwriter
+          - generic [ref=f12e2527]:
+            - generic [ref=f12e2528]: Marketing
+            - heading "Walkthrough Video Scriptwriter" [level=3] [ref=f12e2531]
+            - paragraph [ref=f12e2532]: Crafts engaging and informative video walkthrough scripts.
+            - paragraph [ref=f12e2533]: Built by innflow.ai
+        - link "Operations Warehouse SOP Creates comprehensive SOPs for efficient warehouse management Built by innflow.ai" [ref=f12e2534] [cursor=pointer]:
+          - /url: /skills/warehouse-sop
+          - generic [ref=f12e2535]:
+            - generic [ref=f12e2536]: Operations
+            - heading "Warehouse SOP" [level=3] [ref=f12e2539]
+            - paragraph [ref=f12e2540]: Creates comprehensive SOPs for efficient warehouse management
+            - paragraph [ref=f12e2541]: Built by innflow.ai
+        - link "Marketing Web Content Ideation Generates innovative content ideas tailored to website goals. Built by innflow.ai" [ref=f12e2542] [cursor=pointer]:
+          - /url: /skills/web-content-ideation
+          - generic [ref=f12e2543]:
+            - generic [ref=f12e2544]: Marketing
+            - heading "Web Content Ideation" [level=3] [ref=f12e2547]
+            - paragraph [ref=f12e2548]: Generates innovative content ideas tailored to website goals.
+            - paragraph [ref=f12e2549]: Built by innflow.ai
+        - link "Customer support Website Scrapping Extracts website data efficiently, ensuring accuracy and clarity. Built by innflow.ai" [ref=f12e2550] [cursor=pointer]:
+          - /url: /skills/website-scrapping
+          - generic [ref=f12e2551]:
+            - generic [ref=f12e2552]: Customer support
+            - heading "Website Scrapping" [level=3] [ref=f12e2555]
+            - paragraph [ref=f12e2556]: Extracts website data efficiently, ensuring accuracy and clarity.
+            - paragraph [ref=f12e2557]: Built by innflow.ai
+        - link "Finance Wise Payments Generates accurate payment receipts for Wise transactions. Built by innflow.ai" [ref=f12e2558] [cursor=pointer]:
+          - /url: /skills/wise-payments
+          - generic [ref=f12e2559]:
+            - generic [ref=f12e2560]: Finance
+            - heading "Wise Payments" [level=3] [ref=f12e2563]
+            - paragraph [ref=f12e2564]: Generates accurate payment receipts for Wise transactions.
+            - paragraph [ref=f12e2565]: Built by innflow.ai
+        - link "Customer support Worker Seamless task instructions for improved performance. Built by innflow.ai" [ref=f12e2566] [cursor=pointer]:
+          - /url: /skills/worker
+          - generic [ref=f12e2567]:
+            - generic [ref=f12e2568]: Customer support
+            - heading "Worker" [level=3] [ref=f12e2571]
+            - paragraph [ref=f12e2572]: Seamless task instructions for improved performance.
+            - paragraph [ref=f12e2573]: Built by innflow.ai
+        - link "Communication Write Better Emails With Email Content Cleaning Refine and polish your email communication Built by innflow.ai" [ref=f12e2574] [cursor=pointer]:
+          - /url: /skills/email-content-cleaning
+          - generic [ref=f12e2575]:
+            - generic [ref=f12e2576]: Communication
+            - heading "Write Better Emails With Email Content Cleaning" [level=3] [ref=f12e2579]
+            - paragraph [ref=f12e2580]: Refine and polish your email communication
+            - paragraph [ref=f12e2581]: Built by innflow.ai
+        - link "Communication Writing Feedback Provides constructive feedback to improve writing quality. Built by innflow.ai" [ref=f12e2582] [cursor=pointer]:
+          - /url: /skills/writing-feedback
+          - generic [ref=f12e2583]:
+            - generic [ref=f12e2584]: Communication
+            - heading "Writing Feedback" [level=3] [ref=f12e2587]
+            - paragraph [ref=f12e2588]: Provides constructive feedback to improve writing quality.
+            - paragraph [ref=f12e2589]: Built by innflow.ai
+        - link "Marketing YouTube Scripts Produce engaging YouTube scripts for captivating visual presentations. Built by innflow.ai" [ref=f12e2590] [cursor=pointer]:
+          - /url: /skills/youtube-scripts
+          - generic [ref=f12e2591]:
+            - generic [ref=f12e2592]: Marketing
+            - heading "YouTube Scripts" [level=3] [ref=f12e2595]
+            - paragraph [ref=f12e2596]: Produce engaging YouTube scripts for captivating visual presentations.
+            - paragraph [ref=f12e2597]: Built by innflow.ai
+    - generic [ref=f12e2598]:
+      - heading "Questions about agent skills." [level=2] [ref=f12e2599]
+      - paragraph [ref=f12e2600]: What a skill is, how review works, and how skills use the systems you already run.
+      - generic [ref=f12e2601]:
+        - group [ref=f12e2602]:
+          - generic "What is an agent skill?" [ref=f12e2603] [cursor=pointer]
+        - group [ref=f12e2606]:
+          - generic "Are all skills live for property operations?" [ref=f12e2607] [cursor=pointer]
+        - group [ref=f12e2610]:
+          - generic "How do skills use our existing systems?" [ref=f12e2611] [cursor=pointer]
+        - group [ref=f12e2614]:
+          - generic "Does innflow replace our property-management system?" [ref=f12e2615] [cursor=pointer]
+        - group [ref=f12e2618]:
+          - generic "How do humans stay in the loop?" [ref=f12e2619] [cursor=pointer]
+    - generic [ref=f12e2622]:
+      - generic [ref=f12e2623]:
+        - generic [ref=f12e2624]: The Innflow platform
+        - heading "Keep your tools, context, and next steps connected." [level=2] [ref=f12e2625]: Keep your tools, context,and next steps connected.
+      - generic [ref=f12e2626]:
+        - link [ref=f12e2627] [cursor=pointer]:
+          - /url: /platform
+          - 'img "Illustrative Platform product thumbnail: A compact workspace overview linking agents, tools and shared knowledge." [ref=f12e2629]':
+            - generic [ref=f12e2632]:
+              - generic [ref=f12e2633]: Shared context
+              - generic [ref=f12e2637]:
+                - generic [ref=f12e2646]:
+                  - strong [ref=f12e2647]: Agents
+                  - generic [ref=f12e2648]: Team roles
+                - generic [ref=f12e2659]:
+                  - strong [ref=f12e2660]: Tools
+                  - generic [ref=f12e2661]: Scoped actions
+                - generic [ref=f12e2673]:
+                  - strong [ref=f12e2674]: Knowledge
+                  - generic [ref=f12e2675]: Working sources
+          - heading "Platform" [level=3] [ref=f12e2680]
+        - link [ref=f12e2684] [cursor=pointer]:
+          - /url: /integrations
+          - 'img "Illustrative Integrations product thumbnail: A central Innflow node connected to a small set of tool tiles." [ref=f12e2686]':
+            - generic [ref=f12e2688]:
+              - generic [ref=f12e2692]:
+                - strong [ref=f12e2694]: Gmail
+                - generic [ref=f12e2695]: Read inbox
+              - generic [ref=f12e2696]:
+                - strong [ref=f12e2698]: Drive
+                - generic [ref=f12e2699]: Find context
+              - generic [ref=f12e2700]:
+                - strong [ref=f12e2702]: Slack
+                - generic [ref=f12e2703]: Notify team
+              - generic [ref=f12e2704]:
+                - strong [ref=f12e2706]: Sheets
+                - generic [ref=f12e2707]: Update record
+          - heading "Integrations" [level=3] [ref=f12e2708]
+        - link [ref=f12e2712] [cursor=pointer]:
+          - /url: /products/agentic-workflows
+          - 'img "Illustrative Agentic Workflows product thumbnail: A compact workflow canvas with trigger, branch and action nodes." [ref=f12e2714]':
+            - generic [ref=f12e2716]:
+              - generic [ref=f12e2725]: New request
+              - generic [ref=f12e2730]:
+                - strong [ref=f12e2733]: Set condition
+                - generic [ref=f12e2734]:
+                  - text: If
+                  - generic [ref=f12e2735]: Priority is Urgent
+                  - generic [ref=f12e2739]: Else
+              - generic [ref=f12e2741]:
+                - strong [ref=f12e2747]: Assign to user
+                - generic [ref=f12e2748]: Laura Kim
+              - generic [ref=f12e2751]:
+                - strong [ref=f12e2754]: Assign to agent
+                - generic [ref=f12e2755]: AI Agent
+          - heading "Agentic Workflows" [level=3] [ref=f12e2757]
+        - link [ref=f12e2761] [cursor=pointer]:
+          - /url: /products/agent-os
+          - 'img "Illustrative Agent OS product thumbnail: A small orchestration graph connecting agents and shared memory." [ref=f12e2763]':
+            - generic [ref=f12e2766]:
+              - generic [ref=f12e2772]:
+                - strong [ref=f12e2773]: Research agent
+                - generic [ref=f12e2774]: Find evidence
+              - generic [ref=f12e2781]:
+                - strong [ref=f12e2782]: Drafting agent
+                - generic [ref=f12e2783]: Prepare answer
+              - generic [ref=f12e2793]:
+                - strong [ref=f12e2794]: Reviewer
+                - generic [ref=f12e2795]: Check the result
+          - heading "Agent OS" [level=3] [ref=f12e2800]
+        - link [ref=f12e2804] [cursor=pointer]:
+          - /url: /products/ai-agents
+          - 'img "Illustrative AI Agents product thumbnail: An agent task card with linked evidence and a proposed next action." [ref=f12e2806]':
+            - generic [ref=f12e2810]:
+              - strong [ref=f12e2813]: A useful next action
+              - generic [ref=f12e2814]:
+                - generic [ref=f12e2815]:
+                  - generic [ref=f12e2820]:
+                    - strong [ref=f12e2821]: Request
+                    - generic [ref=f12e2822]: Prepare a reply
+                  - generic [ref=f12e2829]:
+                    - strong [ref=f12e2830]: Evidence
+                    - generic [ref=f12e2831]: Team handbook
+                - generic [ref=f12e2835]:
+                  - strong [ref=f12e2836]: Laura Kim
+                  - generic [ref=f12e2837]: Assigned reviewer
+                - generic [ref=f12e2839]:
+                  - generic [ref=f12e2840]: Approve
+                  - generic [ref=f12e2843]: Request revision
+          - heading "AI Agents" [level=3] [ref=f12e2844]
+    - generic [ref=f12e2848]:
+      - heading "Make space for what matters." [level=2] [ref=f12e2849]
+      - paragraph [ref=f12e2850]: Bring your team, context, and next steps together.
+      - generic [ref=f12e2851]:
+        - link "Get started" [ref=f12e2852] [cursor=pointer]:
+          - /url: https://app.innflow.ai/signup
+        - link "Get a demo" [ref=f12e2853] [cursor=pointer]:
+          - /url: https://cal.com/julian-patrick-afu0u2/innflow-demo?overlayCalendar=true
+  - contentinfo [ref=f12e2855]:
+    - generic [ref=f12e2856]:
+      - generic [ref=f12e2857]:
+        - link "innflow home" [ref=f12e2858] [cursor=pointer]:
+          - /url: /
+          - img "innflow" [ref=f12e2859]
+        - paragraph [ref=f12e2860]: Property operations.Connected in one place.
+        - link "support@innflow.ai" [ref=f12e2861] [cursor=pointer]:
+          - /url: mailto:support@innflow.ai
+        - region "Hours of operation" [ref=f12e2862]:
+          - strong [ref=f12e2863]: Hours of Operation
+          - generic [ref=f12e2864]:
+            - generic [ref=f12e2865]:
+              - term [ref=f12e2866]: Monday–Friday
+              - definition [ref=f12e2867]: 9:00 AM–6:00 PM ET
+            - generic [ref=f12e2868]:
+              - term [ref=f12e2869]: Saturday–Sunday
+              - definition [ref=f12e2870]: 10:00 AM–5:00 PM ET
+      - generic [ref=f12e2871]:
+        - heading "Why innflow" [level=3] [ref=f12e2872]
+        - link "About innflow" [ref=f12e2873] [cursor=pointer]:
+          - /url: /about
+        - link "Careers" [ref=f12e2874] [cursor=pointer]:
+          - /url: /careers
+        - link "Industry coverage" [ref=f12e2875] [cursor=pointer]:
+          - /url: /in-the-news
+        - link "Who we help" [ref=f12e2876] [cursor=pointer]:
+          - /url: /our-customers
+        - link "Security" [ref=f12e2877] [cursor=pointer]:
+          - /url: /security
+        - link "Share innflow" [ref=f12e2878] [cursor=pointer]:
+          - /url: /landlord-referral
+        - link "Partnerships" [ref=f12e2879] [cursor=pointer]:
+          - /url: /partner-with-us
+        - link "Advisor partnerships" [ref=f12e2880] [cursor=pointer]:
+          - /url: /advisor-partner-program
+        - link "Workflows" [ref=f12e2881] [cursor=pointer]:
+          - /url: /products/agentic-workflows
+        - link "AI assistant" [ref=f12e2882] [cursor=pointer]:
+          - /url: /products/ai-agents
+        - link "Knowledge" [ref=f12e2883] [cursor=pointer]:
+          - /url: /platform
+        - link "Approvals" [ref=f12e2884] [cursor=pointer]:
+          - /url: /platform/security-and-compliance
+      - generic [ref=f12e2885]:
+        - heading "Solutions" [level=3] [ref=f12e2886]
+        - link "Overview" [ref=f12e2887] [cursor=pointer]:
+          - /url: /
+        - link "Multi-property investors" [ref=f12e2888] [cursor=pointer]:
+          - /url: /multi-property-investors
+        - link "Landlord operations" [ref=f12e2889] [cursor=pointer]:
+          - /url: /landlord-banking
+        - link "Rental workflows" [ref=f12e2890] [cursor=pointer]:
+          - /url: /rent-collection
+        - link "Rental workflows overview" [ref=f12e2891] [cursor=pointer]:
+          - /url: /rent-collection-2
+        - link "Connected property records" [ref=f12e2892] [cursor=pointer]:
+          - /url: /landlord-accounting
+        - link "Property review preparation" [ref=f12e2893] [cursor=pointer]:
+          - /url: /landlord-insurance
+        - link "Document preparation" [ref=f12e2894] [cursor=pointer]:
+          - /url: /tax-preparation
+        - link "Deposit workflows" [ref=f12e2895] [cursor=pointer]:
+          - /url: /security-deposit-account
+        - link "Screening workflows" [ref=f12e2896] [cursor=pointer]:
+          - /url: /tenant-screening-service
+        - link "Reserve planning" [ref=f12e2897] [cursor=pointer]:
+          - /url: /landlord-banking-apy
+        - link "Financing preparation" [ref=f12e2898] [cursor=pointer]:
+          - /url: /rental-property-loans
+        - link "Property management" [ref=f12e2899] [cursor=pointer]:
+          - /url: /property-management
+        - link "Connected operations" [ref=f12e2900] [cursor=pointer]:
+          - /url: /platform
+        - link "Integrations" [ref=f12e2901] [cursor=pointer]:
+          - /url: /integrations
+      - generic [ref=f12e2902]:
+        - heading "Resources" [level=3] [ref=f12e2903]
+        - link "Resource library" [ref=f12e2904] [cursor=pointer]:
+          - /url: /resources
+        - link "Document checklists" [ref=f12e2905] [cursor=pointer]:
+          - /url: /free-rental-forms-and-templates-for-landlords
+        - link "Rent comparison" [ref=f12e2906] [cursor=pointer]:
+          - /url: /how-much-should-i-charge-for-rent
+        - link "Lease workflows" [ref=f12e2907] [cursor=pointer]:
+          - /url: /lease-agreement
+        - link "Workflow learning" [ref=f12e2908] [cursor=pointer]:
+          - /url: /webinars
+        - link "Investor resources" [ref=f12e2909] [cursor=pointer]:
+          - /url: /real-estate-investing
+        - link "Product updates" [ref=f12e2910] [cursor=pointer]:
+          - /url: /product-updates
+        - link "Blog" [ref=f12e2911] [cursor=pointer]:
+          - /url: /blog
+        - link "Help center" [ref=f12e2912] [cursor=pointer]:
+          - /url: /help-center
+        - link "Legal agreements" [ref=f12e2913] [cursor=pointer]:
+          - /url: /legal-agreements
+        - link "FAQ" [ref=f12e2914] [cursor=pointer]:
+          - /url: /faq
+        - link "Contact" [ref=f12e2915] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=f12e2916]:
+        - heading "Property teams" [level=3] [ref=f12e2917]
+        - link "Long-term rentals" [ref=f12e2918] [cursor=pointer]:
+          - /url: /long-term-rentals
+        - link "Mid-term rentals" [ref=f12e2919] [cursor=pointer]:
+          - /url: /mid-term-rentals
+        - link "Short-term rentals" [ref=f12e2920] [cursor=pointer]:
+          - /url: /short-term-rentals
+        - link "Resident experiences" [ref=f12e2921] [cursor=pointer]:
+          - /url: /renters
+        - heading "Get started" [level=3] [ref=f12e2922]
+        - link "Book a demo" [ref=f12e2923] [cursor=pointer]:
+          - /url: https://cal.com/julian-patrick-afu0u2/innflow-demo?overlayCalendar=true
+        - link "Pricing" [ref=f12e2924] [cursor=pointer]:
+          - /url: /pricing
+        - link "Log in" [ref=f12e2925] [cursor=pointer]:
+          - /url: https://app.innflow.ai/login
+        - link "Continue with Google" [ref=f12e2926] [cursor=pointer]:
+          - /url: https://app.innflow.ai/auth/google
+    - generic [ref=f12e2929]:
+      - generic [ref=f12e2930]: © 2026 Innflow. All rights reserved.
+      - navigation "Legal" [ref=f12e2931]:
+        - link "Privacy Policy" [ref=f12e2932] [cursor=pointer]:
+          - /url: /legal/privacy-policy
+        - link "Terms of Service" [ref=f12e2933] [cursor=pointer]:
+          - /url: /legal/terms-of-service
+        - link "Cookie Policy" [ref=f12e2934] [cursor=pointer]:
+          - /url: /legal/cookie-policy
+        - link "Acceptable Use Policy" [ref=f12e2935] [cursor=pointer]:
+          - /url: /legal/acceptable-use-policy
+        - link "EULA" [ref=f12e2936] [cursor=pointer]:
+          - /url: /legal/eula
+        - link "Privacy Request" [ref=f12e2937] [cursor=pointer]:
+          - /url: /legal/dsar
+        - link "Consent Preferences" [ref=f12e2938] [cursor=pointer]:
+          - /url: "#"
+        - link "Do Not Sell or Share My Personal Information" [ref=f12e2939] [cursor=pointer]:
+          - /url: https://app.termly.io/notify/d253192a-6c11-4338-9883-67b3307aea2f
+        - link "Limit the Use of My Sensitive Personal Information" [ref=f12e2940] [cursor=pointer]:
+          - /url: https://app.termly.io/notify/d253192a-6c11-4338-9883-67b3307aea2f
+    - region [ref=f12e2941]:
+      - heading "Featured on" [level=2] [ref=f12e2943]
+      - generic [ref=f12e2945]:
+        - generic [ref=f12e2946]:
+          - link "Visit EarlyHunt (opens in a new tab)" [ref=f12e2947] [cursor=pointer]:
+            - /url: https://earlyhunt.com/project/innflow
+            - img "Featured on EarlyHunt" [ref=f12e2949]
+          - link "Visit neeed.directory (opens in a new tab)" [ref=f12e2950] [cursor=pointer]:
+            - /url: https://neeed.directory/products/innflow?utm_source=innflow
+            - img "Featured on neeed.directory" [ref=f12e2952]
+          - link "Visit StartupFA.me (opens in a new tab)" [ref=f12e2953] [cursor=pointer]:
+            - /url: https://startupfa.me/s/innflow.ai-345?utm_source=innflow.ai
+            - img "Featured on Startup Fame" [ref=f12e2955]
+          - link "Visit TechTrendin (opens in a new tab)" [ref=f12e2956] [cursor=pointer]:
+            - /url: https://www.techtrendin.com/products/innflow
+            - img "Featured on TechTrendin" [ref=f12e2958]
+          - link "Visit Bowora (opens in a new tab)" [ref=f12e2959] [cursor=pointer]:
+            - /url: https://bowora.com/
+            - img "Featured on Bowora" [ref=f12e2961]
+          - link "Visit ConfettiSaaS (opens in a new tab)" [ref=f12e2962] [cursor=pointer]:
+            - /url: https://confettisaas.com/saas/innflow-ai?ref=badge
+            - img "Innflow on ConfettiSaaS" [ref=f12e2964]
+          - link "Visit DodoDirectory (opens in a new tab)" [ref=f12e2965] [cursor=pointer]:
+            - /url: https://dododirectory.com
+            - img "Featured on DodoDirectory" [ref=f12e2967]
+          - link "Visit Fazier (opens in a new tab)" [ref=f12e2968] [cursor=pointer]:
+            - /url: https://fazier.com
+            - img "Fazier badge" [ref=f12e2970]
+          - link "Visit findly.tools (opens in a new tab)" [ref=f12e2971] [cursor=pointer]:
+            - /url: https://findly.tools
+            - img "Featured on Findly.tools" [ref=f12e2973]
+          - link "Visit Huzzler (opens in a new tab)" [ref=f12e2974] [cursor=pointer]:
+            - /url: https://huzzler.so
+            - img "Featured on Huzzler" [ref=f12e2976]
+          - link "Visit IdeaKiln (opens in a new tab)" [ref=f12e2977] [cursor=pointer]:
+            - /url: https://ideakiln.com
+            - img "Featured on Idea Kiln" [ref=f12e2979]
+          - link "Visit Indiehunt (opens in a new tab)" [ref=f12e2980] [cursor=pointer]:
+            - /url: https://indiehunt.io
+            - img "Featured on IndieHunt" [ref=f12e2982]
+          - link "Visit Launch Llama Tools (opens in a new tab)" [ref=f12e2983] [cursor=pointer]:
+            - /url: https://tools.launchllama.co?utm_source=badge&utm_medium=referral
+            - img "As seen on Launch Llama Newsletter" [ref=f12e2985]
+          - link "Visit SaaSBison (opens in a new tab)" [ref=f12e2986] [cursor=pointer]:
+            - /url: https://saasbison.com
+            - img "Featured on SaaSBison" [ref=f12e2988]
+          - link "Visit SaaSGrow (opens in a new tab)" [ref=f12e2989] [cursor=pointer]:
+            - /url: https://saasgrow.app?ref=innflow.ai
+            - img "Innflow on SaaSGrow" [ref=f12e2991]
+          - link "Visit StartupBase (opens in a new tab)" [ref=f12e2992] [cursor=pointer]:
+            - /url: https://startupbase.io
+            - img "Featured on StartupBase" [ref=f12e2994]
+          - link "Visit startupfa.st (opens in a new tab)" [ref=f12e2995] [cursor=pointer]:
+            - /url: https://startupfa.st
+            - img "Powered by Startup Fast" [ref=f12e2997]
+          - link "Visit Sumodir (opens in a new tab)" [ref=f12e2998] [cursor=pointer]:
+            - /url: https://sumodir.com
+            - img "Featured on SumoDir" [ref=f12e3000]
+          - link "Visit Twelve Tools (opens in a new tab)" [ref=f12e3001] [cursor=pointer]:
+            - /url: https://twelve.tools
+            - img "Featured on Twelve Tools" [ref=f12e3003]
+          - link "Visit Web Review (opens in a new tab)" [ref=f12e3004] [cursor=pointer]:
+            - /url: https://web-review.com
+            - img "Featured on Web Review" [ref=f12e3006]
+        - generic [aria-hidden] [ref=f12e3007]:
+          - link [ref=f12e3008] [cursor=pointer]:
+            - /url: https://earlyhunt.com/project/innflow
+          - link [ref=f12e3011] [cursor=pointer]:
+            - /url: https://neeed.directory/products/innflow?utm_source=innflow
+          - link [ref=f12e3014] [cursor=pointer]:
+            - /url: https://startupfa.me/s/innflow.ai-345?utm_source=innflow.ai
+          - link [ref=f12e3017] [cursor=pointer]:
+            - /url: https://www.techtrendin.com/products/innflow
+          - link [ref=f12e3020] [cursor=pointer]:
+            - /url: https://bowora.com/
+          - link [ref=f12e3023] [cursor=pointer]:
+            - /url: https://confettisaas.com/saas/innflow-ai?ref=badge
+          - link [ref=f12e3026] [cursor=pointer]:
+            - /url: https://dododirectory.com
+          - link [ref=f12e3029] [cursor=pointer]:
+            - /url: https://fazier.com
+          - link [ref=f12e3032] [cursor=pointer]:
+            - /url: https://findly.tools
+          - link [ref=f12e3035] [cursor=pointer]:
+            - /url: https://huzzler.so
+          - link [ref=f12e3038] [cursor=pointer]:
+            - /url: https://ideakiln.com
+          - link [ref=f12e3041] [cursor=pointer]:
+            - /url: https://indiehunt.io
+          - link [ref=f12e3044] [cursor=pointer]:
+            - /url: https://tools.launchllama.co?utm_source=badge&utm_medium=referral
+          - link [ref=f12e3047] [cursor=pointer]:
+            - /url: https://saasbison.com
+          - link [ref=f12e3050] [cursor=pointer]:
+            - /url: https://saasgrow.app?ref=innflow.ai
+          - link [ref=f12e3053] [cursor=pointer]:
+            - /url: https://startupbase.io
+          - link [ref=f12e3056] [cursor=pointer]:
+            - /url: https://startupfa.st
+          - link [ref=f12e3059] [cursor=pointer]:
+            - /url: https://sumodir.com
+          - link [ref=f12e3062] [cursor=pointer]:
+            - /url: https://twelve.tools
+          - link [ref=f12e3065] [cursor=pointer]:
+            - /url: https://web-review.com
+  - alert [ref=f12e3068]

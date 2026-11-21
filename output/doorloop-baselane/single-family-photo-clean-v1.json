@@ -1,0 +1,11 @@
+{
+  "tool": "built-in imagegen",
+  "prompt_summary": "Restore three ornate Victorian houses and trees; remove metric cards, text/icons, plates/glow/margins. Preserve houses/colors/trim/windows/roof ornaments/trees/sunlight/frontal perspective. Generous sky above, full430:584 portrait, no crop/zoom or new graphics.",
+  "asset": {
+    "reference": "3:125",
+    "photo_node": "41:169",
+    "path": "/Users/ak/innflow-web/output/doorloop-baselane/single-family-photo-clean-v1.png",
+    "image_hash": "38a38f538034e13bfbe185120ebe463b931abe38"
+  },
+  "verification": "Single Family hero: removed baked metrics, backplates/glow with built-in imagegen; applied clean Victorian-house photo38a38f538034e13bfbe185120ebe463b931abe38 to41:169 at430x584. Retained three native cards41:170/41:173/41:176 and hidden alternate165:222. Screenshot verified clean sky/card edges, house detail and in-cell bounds. Card metrics remain illustrative draft UI. Reference-derived photo, not rights-cleared original."
+}

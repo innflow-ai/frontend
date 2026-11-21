@@ -1,0 +1,764 @@
+- generic [active] [ref=f24e1]:
+  - link "Skip to content" [ref=f24e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f24e5]:
+    - link "innflow home" [ref=f24e6] [cursor=pointer]:
+      - /url: /
+      - img "innflow" [ref=f24e7]
+    - generic [ref=f24e8]:
+      - link "Continue with Google" [ref=f24e9] [cursor=pointer]:
+        - /url: https://app.innflow.ai/auth/google
+      - button "Open navigation" [ref=f24e12] [cursor=pointer]
+  - main [ref=f24e15]:
+    - generic [ref=f24e17]:
+      - generic [ref=f24e18]: Apps & integrations
+      - heading "Your tools. One connected workflow." [level=1] [ref=f24e19]: Your tools.One connected workflow.
+      - paragraph [ref=f24e20]: Explore connections for the tools your team already uses. Find an integration, see what it does, and check its availability.
+      - link "Explore integrations" [ref=f24e21] [cursor=pointer]:
+        - /url: "#integration-directory"
+    - region "Integration directory" [ref=f24e25]:
+      - complementary [ref=f24e26]:
+        - generic [ref=f24e27]:
+          - heading "Categories" [level=2] [ref=f24e28]
+          - generic [ref=f24e29]:
+            - button "All integrations 385" [pressed] [ref=f24e30] [cursor=pointer]:
+              - text: All integrations
+              - generic [ref=f24e31]: "385"
+            - button "AI Providers 18" [ref=f24e32] [cursor=pointer]:
+              - text: AI Providers
+              - generic [ref=f24e33]: "18"
+            - button "AI/ML 20" [ref=f24e34] [cursor=pointer]:
+              - text: AI/ML
+              - generic [ref=f24e35]: "20"
+            - button "Analytics 11" [ref=f24e36] [cursor=pointer]:
+              - text: Analytics
+              - generic [ref=f24e37]: "11"
+            - button "Atlassian 3" [ref=f24e38] [cursor=pointer]:
+              - text: Atlassian
+              - generic [ref=f24e39]: "3"
+            - button "Authentication 11" [ref=f24e40] [cursor=pointer]:
+              - text: Authentication
+              - generic [ref=f24e41]: "11"
+            - button "Automation 7" [ref=f24e42] [cursor=pointer]:
+              - text: Automation
+              - generic [ref=f24e43]: "7"
+            - button "AWS 18" [ref=f24e44] [cursor=pointer]:
+              - text: AWS
+              - generic [ref=f24e45]: "18"
+            - button "Cloud Storage 2" [ref=f24e46] [cursor=pointer]:
+              - text: Cloud Storage
+              - generic [ref=f24e47]: "2"
+            - button "CMS 1" [ref=f24e48] [cursor=pointer]:
+              - text: CMS
+              - generic [ref=f24e49]: "1"
+            - button "Communication 15" [ref=f24e50] [cursor=pointer]:
+              - text: Communication
+              - generic [ref=f24e51]: "15"
+            - button "CRM 11" [ref=f24e52] [cursor=pointer]:
+              - text: CRM
+              - generic [ref=f24e53]: "11"
+            - button "Data & reporting 1" [ref=f24e54] [cursor=pointer]:
+              - text: Data & reporting
+              - generic [ref=f24e55]: "1"
+            - button "Data Sources 2" [ref=f24e56] [cursor=pointer]:
+              - text: Data Sources
+              - generic [ref=f24e57]: "2"
+            - button "Data Tools 5" [ref=f24e58] [cursor=pointer]:
+              - text: Data Tools
+              - generic [ref=f24e59]: "5"
+            - button "Database 16" [ref=f24e60] [cursor=pointer]:
+              - text: Database
+              - generic [ref=f24e61]: "16"
+            - button "Developer Tools 18" [ref=f24e62] [cursor=pointer]:
+              - text: Developer Tools
+              - generic [ref=f24e63]: "18"
+            - button "E-commerce 1" [ref=f24e64] [cursor=pointer]:
+              - text: E-commerce
+              - generic [ref=f24e65]: "1"
+            - button "Email 9" [ref=f24e66] [cursor=pointer]:
+              - text: Email
+              - generic [ref=f24e67]: "9"
+            - button "Email Marketing 3" [ref=f24e68] [cursor=pointer]:
+              - text: Email Marketing
+              - generic [ref=f24e69]: "3"
+            - button "File Transfer 1" [ref=f24e70] [cursor=pointer]:
+              - text: File Transfer
+              - generic [ref=f24e71]: "1"
+            - button "Forms 3" [ref=f24e72] [cursor=pointer]:
+              - text: Forms
+              - generic [ref=f24e73]: "3"
+            - button "Google Cloud 4" [ref=f24e74] [cursor=pointer]:
+              - text: Google Cloud
+              - generic [ref=f24e75]: "4"
+            - button "Google Workspace 12" [ref=f24e76] [cursor=pointer]:
+              - text: Google Workspace
+              - generic [ref=f24e77]: "12"
+            - button "Integration Protocol 2" [ref=f24e78] [cursor=pointer]:
+              - text: Integration Protocol
+              - generic [ref=f24e79]: "2"
+            - button "IT Service 2" [ref=f24e80] [cursor=pointer]:
+              - text: IT Service
+              - generic [ref=f24e81]: "2"
+            - button "Knowledge & documents 3" [ref=f24e82] [cursor=pointer]:
+              - text: Knowledge & documents
+              - generic [ref=f24e83]: "3"
+            - button "Media 5" [ref=f24e84] [cursor=pointer]:
+              - text: Media
+              - generic [ref=f24e85]: "5"
+            - button "Meetings 6" [ref=f24e86] [cursor=pointer]:
+              - text: Meetings
+              - generic [ref=f24e87]: "6"
+            - button "Microsoft 365 6" [ref=f24e88] [cursor=pointer]:
+              - text: Microsoft 365
+              - generic [ref=f24e89]: "6"
+            - button "Monitoring 12" [ref=f24e90] [cursor=pointer]:
+              - text: Monitoring
+              - generic [ref=f24e91]: "12"
+            - button "Operations 11" [ref=f24e92] [cursor=pointer]:
+              - text: Operations
+              - generic [ref=f24e93]: "11"
+            - button "Payments 9" [ref=f24e94] [cursor=pointer]:
+              - text: Payments
+              - generic [ref=f24e95]: "9"
+            - button "Productivity 19" [ref=f24e96] [cursor=pointer]:
+              - text: Productivity
+              - generic [ref=f24e97]: "19"
+            - button "Project management 6" [ref=f24e98] [cursor=pointer]:
+              - text: Project management
+              - generic [ref=f24e99]: "6"
+            - button "Property Management 20" [ref=f24e100] [cursor=pointer]:
+              - text: Property Management
+              - generic [ref=f24e101]: "20"
+            - button "Research 1" [ref=f24e102] [cursor=pointer]:
+              - text: Research
+              - generic [ref=f24e103]: "1"
+            - button "Sales Tools 27" [ref=f24e104] [cursor=pointer]:
+              - text: Sales Tools
+              - generic [ref=f24e105]: "27"
+            - button "Scheduling 2" [ref=f24e106] [cursor=pointer]:
+              - text: Scheduling
+              - generic [ref=f24e107]: "2"
+            - button "Search 7" [ref=f24e108] [cursor=pointer]:
+              - text: Search
+              - generic [ref=f24e109]: "7"
+            - button "Search & Research 3" [ref=f24e110] [cursor=pointer]:
+              - text: Search & Research
+              - generic [ref=f24e111]: "3"
+            - button "Search/Database 1" [ref=f24e112] [cursor=pointer]:
+              - text: Search/Database
+              - generic [ref=f24e113]: "1"
+            - button "SEO Tools 2" [ref=f24e114] [cursor=pointer]:
+              - text: SEO Tools
+              - generic [ref=f24e115]: "2"
+            - button "Social Media 9" [ref=f24e116] [cursor=pointer]:
+              - text: Social Media
+              - generic [ref=f24e117]: "9"
+            - button "Support 3" [ref=f24e118] [cursor=pointer]:
+              - text: Support
+              - generic [ref=f24e119]: "3"
+            - button "Trading 2" [ref=f24e120] [cursor=pointer]:
+              - text: Trading
+              - generic [ref=f24e121]: "2"
+            - button "Triggers 4" [ref=f24e122] [cursor=pointer]:
+              - text: Triggers
+              - generic [ref=f24e123]: "4"
+            - button "Utility 6" [ref=f24e124] [cursor=pointer]:
+              - text: Utility
+              - generic [ref=f24e125]: "6"
+            - button "Web Development 3" [ref=f24e126] [cursor=pointer]:
+              - text: Web Development
+              - generic [ref=f24e127]: "3"
+            - button "Web Scraping 2" [ref=f24e128] [cursor=pointer]:
+              - text: Web Scraping
+              - generic [ref=f24e129]: "2"
+            - button "Workflow Components 20" [ref=f24e130] [cursor=pointer]:
+              - text: Workflow Components
+              - generic [ref=f24e131]: "20"
+        - generic [ref=f24e132]:
+          - heading "Missing a connection?" [level=3] [ref=f24e133]
+          - paragraph [ref=f24e134]: Tell us which tool belongs in your workflow.
+          - link "Request an integration" [ref=f24e135] [cursor=pointer]:
+            - /url: /contact
+      - generic [ref=f24e138]:
+        - generic [ref=f24e139]:
+          - generic [ref=f24e140]:
+            - generic [ref=f24e141]: Search integrations
+            - searchbox "Search integrations" [ref=f24e146]
+          - generic [ref=f24e147]:
+            - generic [ref=f24e148]: Availability
+            - combobox "Availability" [ref=f24e149]:
+              - option "All statuses" [selected]
+              - option "Available"
+              - option "In development"
+              - option "Planned"
+        - status [ref=f24e151]: 385 integrations to explore
+        - generic [ref=f24e152]:
+          - link "Available 1Password Explore 1Password for your Innflow workflows. Authentication" [ref=f24e153] [cursor=pointer]:
+            - /url: /integrations/1password
+            - generic [ref=f24e154]:
+              - generic [aria-hidden] [ref=f24e156]: 1P
+              - generic [ref=f24e157]: Available
+            - heading "1Password" [level=3] [ref=f24e158]
+            - paragraph [ref=f24e162]: Explore 1Password for your Innflow workflows.
+            - generic [ref=f24e163]: Authentication
+          - link "Available A2A Explore A2A for your Innflow workflows. Integration Protocol" [ref=f24e164] [cursor=pointer]:
+            - /url: /integrations/a2a
+            - generic [ref=f24e165]:
+              - generic [aria-hidden] [ref=f24e167]: A2
+              - generic [ref=f24e168]: Available
+            - heading "A2A" [level=3] [ref=f24e169]
+            - paragraph [ref=f24e173]: Explore A2A for your Innflow workflows.
+            - generic [ref=f24e174]: Integration Protocol
+          - link "Available A2A Agent Explore A2A Agent for your Innflow workflows. AI Providers" [ref=f24e175] [cursor=pointer]:
+            - /url: /integrations/a2a-agent
+            - generic [ref=f24e176]:
+              - generic [aria-hidden] [ref=f24e178]: A2
+              - generic [ref=f24e179]: Available
+            - heading "A2A Agent" [level=3] [ref=f24e180]
+            - paragraph [ref=f24e184]: Explore A2A Agent for your Innflow workflows.
+            - generic [ref=f24e185]: AI Providers
+          - link "Available AI Agent Explore AI Agent for your Innflow workflows. AI Providers" [ref=f24e186] [cursor=pointer]:
+            - /url: /integrations/ai-agent
+            - generic [ref=f24e187]:
+              - generic [aria-hidden] [ref=f24e189]: AI
+              - generic [ref=f24e190]: Available
+            - heading "AI Agent" [level=3] [ref=f24e191]
+            - paragraph [ref=f24e195]: Explore AI Agent for your Innflow workflows.
+            - generic [ref=f24e196]: AI Providers
+          - link "Available API Explore API for your Innflow workflows. Workflow Components" [ref=f24e197] [cursor=pointer]:
+            - /url: /integrations/api
+            - generic [ref=f24e198]:
+              - generic [aria-hidden] [ref=f24e200]: AP
+              - generic [ref=f24e201]: Available
+            - heading "API" [level=3] [ref=f24e202]
+            - paragraph [ref=f24e206]: Explore API for your Innflow workflows.
+            - generic [ref=f24e207]: Workflow Components
+          - link "Available AWS AppConfig Explore AWS AppConfig for your Innflow workflows. AWS" [ref=f24e208] [cursor=pointer]:
+            - /url: /integrations/aws-appconfig
+            - generic [ref=f24e209]:
+              - generic [aria-hidden] [ref=f24e211]: AW
+              - generic [ref=f24e212]: Available
+            - heading "AWS AppConfig" [level=3] [ref=f24e213]
+            - paragraph [ref=f24e217]: Explore AWS AppConfig for your Innflow workflows.
+            - generic [ref=f24e218]: AWS
+          - link "Available AWS IAM Explore AWS IAM for your Innflow workflows. AWS" [ref=f24e219] [cursor=pointer]:
+            - /url: /integrations/aws-iam
+            - generic [ref=f24e220]:
+              - generic [aria-hidden] [ref=f24e222]: AW
+              - generic [ref=f24e223]: Available
+            - heading "AWS IAM" [level=3] [ref=f24e224]
+            - paragraph [ref=f24e228]: Explore AWS IAM for your Innflow workflows.
+            - generic [ref=f24e229]: AWS
+          - link "Available AWS Identity Center Explore AWS Identity Center for your Innflow workflows. AWS" [ref=f24e230] [cursor=pointer]:
+            - /url: /integrations/aws-identity-center
+            - generic [ref=f24e231]:
+              - generic [aria-hidden] [ref=f24e233]: AW
+              - generic [ref=f24e234]: Available
+            - heading "AWS Identity Center" [level=3] [ref=f24e235]
+            - paragraph [ref=f24e239]: Explore AWS Identity Center for your Innflow workflows.
+            - generic [ref=f24e240]: AWS
+          - link "Available AWS SES Explore AWS SES for your Innflow workflows. AWS" [ref=f24e241] [cursor=pointer]:
+            - /url: /integrations/aws-ses
+            - generic [ref=f24e242]:
+              - generic [aria-hidden] [ref=f24e244]: AW
+              - generic [ref=f24e245]: Available
+            - heading "AWS SES" [level=3] [ref=f24e246]
+            - paragraph [ref=f24e250]: Explore AWS SES for your Innflow workflows.
+            - generic [ref=f24e251]: AWS
+          - link "Available AWS STS Explore AWS STS for your Innflow workflows. AWS" [ref=f24e252] [cursor=pointer]:
+            - /url: /integrations/aws-sts
+            - generic [ref=f24e253]:
+              - generic [aria-hidden] [ref=f24e255]: AW
+              - generic [ref=f24e256]: Available
+            - heading "AWS STS" [level=3] [ref=f24e257]
+            - paragraph [ref=f24e261]: Explore AWS STS for your Innflow workflows.
+            - generic [ref=f24e262]: AWS
+          - link "Available AWS Secrets Manager Explore AWS Secrets Manager for your Innflow workflows. AWS" [ref=f24e263] [cursor=pointer]:
+            - /url: /integrations/aws-secrets-manager
+            - generic [ref=f24e264]:
+              - generic [aria-hidden] [ref=f24e266]: AW
+              - generic [ref=f24e267]: Available
+            - heading "AWS Secrets Manager" [level=3] [ref=f24e268]
+            - paragraph [ref=f24e272]: Explore AWS Secrets Manager for your Innflow workflows.
+            - generic [ref=f24e273]: AWS
+          - link "Available AWS Systems Manager Explore AWS Systems Manager for your Innflow workflows. AWS" [ref=f24e274] [cursor=pointer]:
+            - /url: /integrations/aws-systems-manager
+            - generic [ref=f24e275]:
+              - generic [aria-hidden] [ref=f24e277]: AW
+              - generic [ref=f24e278]: Available
+            - heading "AWS Systems Manager" [level=3] [ref=f24e279]
+            - paragraph [ref=f24e283]: Explore AWS Systems Manager for your Innflow workflows.
+            - generic [ref=f24e284]: AWS
+          - link "Available AWS Textract Explore AWS Textract for your Innflow workflows. AWS" [ref=f24e285] [cursor=pointer]:
+            - /url: /integrations/aws-textract
+            - generic [ref=f24e286]:
+              - generic [aria-hidden] [ref=f24e288]: AW
+              - generic [ref=f24e289]: Available
+            - heading "AWS Textract" [level=3] [ref=f24e290]
+            - paragraph [ref=f24e294]: Explore AWS Textract for your Innflow workflows.
+            - generic [ref=f24e295]: AWS
+          - link "Available Affinity Explore Affinity for your Innflow workflows. CRM" [ref=f24e296] [cursor=pointer]:
+            - /url: /integrations/affinity
+            - generic [ref=f24e297]:
+              - generic [aria-hidden] [ref=f24e299]: Af
+              - generic [ref=f24e300]: Available
+            - heading "Affinity" [level=3] [ref=f24e301]
+            - paragraph [ref=f24e305]: Explore Affinity for your Innflow workflows.
+            - generic [ref=f24e306]: CRM
+          - link "Available Agent Explore Agent for your Innflow workflows. Workflow Components" [ref=f24e307] [cursor=pointer]:
+            - /url: /integrations/agent
+            - generic [ref=f24e308]:
+              - generic [aria-hidden] [ref=f24e310]: Ag
+              - generic [ref=f24e311]: Available
+            - heading "Agent" [level=3] [ref=f24e312]
+            - paragraph [ref=f24e316]: Explore Agent for your Innflow workflows.
+            - generic [ref=f24e317]: Workflow Components
+          - link "Available AgentMail Explore AgentMail for your Innflow workflows. Email" [ref=f24e318] [cursor=pointer]:
+            - /url: /integrations/agentmail
+            - generic [ref=f24e319]:
+              - generic [aria-hidden] [ref=f24e321]: Ag
+              - generic [ref=f24e322]: Available
+            - heading "AgentMail" [level=3] [ref=f24e323]
+            - paragraph [ref=f24e327]: Explore AgentMail for your Innflow workflows.
+            - generic [ref=f24e328]: Email
+          - link "Available AgentPhone Explore AgentPhone for your Innflow workflows. Communication" [ref=f24e329] [cursor=pointer]:
+            - /url: /integrations/agentphone
+            - generic [ref=f24e330]:
+              - generic [aria-hidden] [ref=f24e332]: Ag
+              - generic [ref=f24e333]: Available
+            - heading "AgentPhone" [level=3] [ref=f24e334]
+            - paragraph [ref=f24e338]: Explore AgentPhone for your Innflow workflows.
+            - generic [ref=f24e339]: Communication
+          - link "Available Agiloft Explore Agiloft for your Innflow workflows. Productivity" [ref=f24e340] [cursor=pointer]:
+            - /url: /integrations/agiloft
+            - generic [ref=f24e341]:
+              - generic [aria-hidden] [ref=f24e343]: Ag
+              - generic [ref=f24e344]: Available
+            - heading "Agiloft" [level=3] [ref=f24e345]
+            - paragraph [ref=f24e349]: Explore Agiloft for your Innflow workflows.
+            - generic [ref=f24e350]: Productivity
+          - link "Available Ahrefs Explore Ahrefs for your Innflow workflows. SEO Tools" [ref=f24e351] [cursor=pointer]:
+            - /url: /integrations/ahrefs
+            - generic [ref=f24e352]:
+              - generic [aria-hidden] [ref=f24e354]: Ah
+              - generic [ref=f24e355]: Available
+            - heading "Ahrefs" [level=3] [ref=f24e356]
+            - paragraph [ref=f24e360]: Explore Ahrefs for your Innflow workflows.
+            - generic [ref=f24e361]: SEO Tools
+          - link "Available Airtable Explore Airtable for your Innflow workflows. Productivity" [ref=f24e362] [cursor=pointer]:
+            - /url: /integrations/airtable
+            - generic [ref=f24e363]:
+              - generic [aria-hidden] [ref=f24e365]: Ai
+              - generic [ref=f24e366]: Available
+            - heading "Airtable" [level=3] [ref=f24e367]
+            - paragraph [ref=f24e371]: Explore Airtable for your Innflow workflows.
+            - generic [ref=f24e372]: Productivity
+          - link "Available Airweave Explore Airweave for your Innflow workflows. Search" [ref=f24e373] [cursor=pointer]:
+            - /url: /integrations/airweave
+            - generic [ref=f24e374]:
+              - generic [aria-hidden] [ref=f24e376]: Ai
+              - generic [ref=f24e377]: Available
+            - heading "Airweave" [level=3] [ref=f24e378]
+            - paragraph [ref=f24e382]: Explore Airweave for your Innflow workflows.
+            - generic [ref=f24e383]: Search
+          - link "Available Algolia Explore Algolia for your Innflow workflows. Search" [ref=f24e384] [cursor=pointer]:
+            - /url: /integrations/algolia
+            - generic [ref=f24e385]:
+              - generic [aria-hidden] [ref=f24e387]: Al
+              - generic [ref=f24e388]: Available
+            - heading "Algolia" [level=3] [ref=f24e389]
+            - paragraph [ref=f24e393]: Explore Algolia for your Innflow workflows.
+            - generic [ref=f24e394]: Search
+          - link "Available Amazon DynamoDB Explore Amazon DynamoDB for your Innflow workflows. AWS" [ref=f24e395] [cursor=pointer]:
+            - /url: /integrations/amazon-dynamodb
+            - generic [ref=f24e396]:
+              - generic [aria-hidden] [ref=f24e398]: Am
+              - generic [ref=f24e399]: Available
+            - heading "Amazon DynamoDB" [level=3] [ref=f24e400]
+            - paragraph [ref=f24e404]: Explore Amazon DynamoDB for your Innflow workflows.
+            - generic [ref=f24e405]: AWS
+          - link "Available Amazon RDS Explore Amazon RDS for your Innflow workflows. AWS" [ref=f24e406] [cursor=pointer]:
+            - /url: /integrations/amazon-rds
+            - generic [ref=f24e407]:
+              - generic [aria-hidden] [ref=f24e409]: Am
+              - generic [ref=f24e410]: Available
+            - heading "Amazon RDS" [level=3] [ref=f24e411]
+            - paragraph [ref=f24e415]: Explore Amazon RDS for your Innflow workflows.
+            - generic [ref=f24e416]: AWS
+        - button "Show more integrations" [ref=f24e417] [cursor=pointer]
+    - region [ref=f24e418]:
+      - generic [ref=f24e419]:
+        - generic [ref=f24e420]: Get started
+        - heading "From the first meeting to the follow-up" [level=2] [ref=f24e421]: From the first meetingto the follow-up
+        - paragraph [ref=f24e422]: All of the work around meetings, handled in one place. Book time, capture every discussion, and keep next steps moving without the manual work.
+        - link "Start for free" [ref=f24e423] [cursor=pointer]:
+          - /url: https://app.innflow.ai/signup
+      - region "Product highlights. Scroll horizontally to explore." [ref=f24e424]:
+        - generic [ref=f24e425]:
+          - generic [ref=f24e429]:
+            - generic [aria-hidden] [ref=f24e430]:
+              - generic [ref=f24e431]: Insights
+              - strong [ref=f24e432]: Uncovered
+            - generic [ref=f24e433]:
+              - generic [ref=f24e439]: Insights
+              - strong [ref=f24e440]: Uncovered
+          - generic [ref=f24e444]:
+            - generic [aria-hidden] [ref=f24e445]:
+              - generic [ref=f24e446]: Discovery
+              - strong [ref=f24e447]: Scheduled
+            - generic [ref=f24e448]:
+              - generic [ref=f24e457]: Discovery
+              - strong [ref=f24e458]: Scheduled
+          - generic [ref=f24e462]:
+            - generic [aria-hidden] [ref=f24e463]:
+              - generic [ref=f24e464]: Workflows
+              - strong [ref=f24e465]: Connected
+            - generic [ref=f24e466]:
+              - generic [ref=f24e472]: Workflows
+              - strong [ref=f24e473]: Connected
+          - generic [ref=f24e477]:
+            - generic [aria-hidden] [ref=f24e478]:
+              - generic [ref=f24e479]: Sidekick
+              - strong [ref=f24e480]: Ready
+            - generic [ref=f24e481]:
+              - generic [ref=f24e488]: Sidekick
+              - strong [ref=f24e489]: Ready
+  - contentinfo [ref=f24e491]:
+    - generic [ref=f24e492]:
+      - generic [ref=f24e493]:
+        - link "Innflow home" [ref=f24e494] [cursor=pointer]:
+          - /url: /
+          - img "Innflow" [ref=f24e495]
+        - paragraph [ref=f24e496]: Bring your work together.
+      - navigation "Footer navigation" [ref=f24e497]:
+        - generic [ref=f24e498]:
+          - generic [ref=f24e499]:
+            - heading "Product" [level=3] [ref=f24e500]
+            - list [ref=f24e501]:
+              - listitem [ref=f24e502]:
+                - link "Platform" [ref=f24e503] [cursor=pointer]:
+                  - /url: /platform
+              - listitem [ref=f24e504]:
+                - link "Agent OS" [ref=f24e505] [cursor=pointer]:
+                  - /url: /products/agent-os
+              - listitem [ref=f24e506]:
+                - link "Agent Studio" [ref=f24e507] [cursor=pointer]:
+                  - /url: /products/agent-studio
+              - listitem [ref=f24e508]:
+                - link "AI Agents" [ref=f24e509] [cursor=pointer]:
+                  - /url: /products/ai-agents
+              - listitem [ref=f24e510]:
+                - link "Copilot" [ref=f24e511] [cursor=pointer]:
+                  - /url: /products/agent-os
+              - listitem [ref=f24e512]:
+                - link "Agentic Workflows" [ref=f24e513] [cursor=pointer]:
+                  - /url: /products/agentic-workflows
+              - listitem [ref=f24e514]:
+                - link "Agent Skills" [ref=f24e515] [cursor=pointer]:
+                  - /url: /skills
+              - listitem [ref=f24e516]:
+                - link "AI Website Builder" [ref=f24e517] [cursor=pointer]:
+                  - /url: /features/website
+              - listitem [ref=f24e518]:
+                - link "Databases" [ref=f24e519] [cursor=pointer]:
+                  - /url: /products/databases
+              - listitem [ref=f24e520]:
+                - link "Templates" [ref=f24e521] [cursor=pointer]:
+                  - /url: /skills
+          - generic [ref=f24e522]:
+            - heading "Features" [level=3] [ref=f24e523]
+            - list [ref=f24e524]:
+              - listitem [ref=f24e525]:
+                - link "Security" [ref=f24e526] [cursor=pointer]:
+                  - /url: /security
+              - listitem [ref=f24e527]:
+                - link "Custom workflows" [ref=f24e528] [cursor=pointer]:
+                  - /url: /products/agentic-workflows
+              - listitem [ref=f24e529]:
+                - link "AI agents" [ref=f24e530] [cursor=pointer]:
+                  - /url: /products/ai-agents
+              - listitem [ref=f24e531]:
+                - link "Integrations" [ref=f24e532] [cursor=pointer]:
+                  - /url: /integrations
+        - generic [ref=f24e533]:
+          - generic [ref=f24e534]:
+            - heading "Industries" [level=3] [ref=f24e535]
+            - list [ref=f24e536]:
+              - listitem [ref=f24e537]:
+                - link "Financial Services & Banking" [ref=f24e538] [cursor=pointer]:
+                  - /url: /industries/financial-services-banking
+              - listitem [ref=f24e539]:
+                - link "Finance" [ref=f24e540] [cursor=pointer]:
+                  - /url: /industries/finance
+              - listitem [ref=f24e541]:
+                - link "Banking" [ref=f24e542] [cursor=pointer]:
+                  - /url: /industries/banking
+              - listitem [ref=f24e543]:
+                - link "Insurance" [ref=f24e544] [cursor=pointer]:
+                  - /url: /industries/insurance
+              - listitem [ref=f24e545]:
+                - link "Healthcare" [ref=f24e546] [cursor=pointer]:
+                  - /url: /industries/healthcare
+              - listitem [ref=f24e547]:
+                - link "Retail & eCommerce" [ref=f24e548] [cursor=pointer]:
+                  - /url: /industries/retail-ecommerce
+              - listitem [ref=f24e549]:
+                - link "Property & Real Estate" [ref=f24e550] [cursor=pointer]:
+                  - /url: /industries/property-real-estate
+              - listitem [ref=f24e551]:
+                - link "Property Management" [ref=f24e552] [cursor=pointer]:
+                  - /url: /industries/property-management
+              - listitem [ref=f24e553]:
+                - link "Manufacturing" [ref=f24e554] [cursor=pointer]:
+                  - /url: /industries/manufacturing
+              - listitem [ref=f24e555]:
+                - link "Telecommunications" [ref=f24e556] [cursor=pointer]:
+                  - /url: /industries/telecommunications
+              - listitem [ref=f24e557]:
+                - link "Professional Services" [ref=f24e558] [cursor=pointer]:
+                  - /url: /industries/professional-services
+              - listitem [ref=f24e559]:
+                - link "Business Process Outsourcing" [ref=f24e560] [cursor=pointer]:
+                  - /url: /industries/business-process-outsourcing
+              - listitem [ref=f24e561]:
+                - link "Public Sector" [ref=f24e562] [cursor=pointer]:
+                  - /url: /industries/public-sector
+              - listitem [ref=f24e563]:
+                - link "Energy & Utilities" [ref=f24e564] [cursor=pointer]:
+                  - /url: /industries/energy-utilities
+              - listitem [ref=f24e565]:
+                - link "Construction" [ref=f24e566] [cursor=pointer]:
+                  - /url: /industries/construction
+              - listitem [ref=f24e567]:
+                - link "Supply Chain & Logistics" [ref=f24e568] [cursor=pointer]:
+                  - /url: /industries/supply-chain-logistics
+              - listitem [ref=f24e569]:
+                - link "Hospitality & Travel" [ref=f24e570] [cursor=pointer]:
+                  - /url: /industries/hospitality-travel
+              - listitem [ref=f24e571]:
+                - link "Pharmaceutical" [ref=f24e572] [cursor=pointer]:
+                  - /url: /industries/pharmaceutical
+              - listitem [ref=f24e573]:
+                - link "Technology & Software" [ref=f24e574] [cursor=pointer]:
+                  - /url: /industries/technology-software
+              - listitem [ref=f24e575]:
+                - link "Private Equity" [ref=f24e576] [cursor=pointer]:
+                  - /url: /industries/private-equity
+              - listitem [ref=f24e577]:
+                - link "Cross-industry" [ref=f24e578] [cursor=pointer]:
+                  - /url: /industries/cross-industry
+          - generic [ref=f24e579]:
+            - heading "Teams & use cases" [level=3] [ref=f24e580]
+            - list [ref=f24e581]:
+              - listitem [ref=f24e582]:
+                - link "HR & Recruitment" [ref=f24e583] [cursor=pointer]:
+                  - /url: /industries/hr-recruitment
+              - listitem [ref=f24e584]:
+                - link "Customer Service" [ref=f24e585] [cursor=pointer]:
+                  - /url: /industries/customer-service
+              - listitem [ref=f24e586]:
+                - link "Debt Collection" [ref=f24e587] [cursor=pointer]:
+                  - /url: /industries/debt-collection
+              - listitem [ref=f24e588]:
+                - link "Talent Acquisition" [ref=f24e589] [cursor=pointer]:
+                  - /url: /industries/talent-acquisition
+              - listitem [ref=f24e590]:
+                - link "Custom AI Solutions" [ref=f24e591] [cursor=pointer]:
+                  - /url: /industries/custom-ai-solutions
+        - generic [ref=f24e592]:
+          - generic [ref=f24e593]:
+            - heading "Resources" [level=3] [ref=f24e594]
+            - list [ref=f24e595]:
+              - listitem [ref=f24e596]:
+                - link "Integrations" [ref=f24e597] [cursor=pointer]:
+                  - /url: /integrations
+              - listitem [ref=f24e598]:
+                - link "Pricing" [ref=f24e599] [cursor=pointer]:
+                  - /url: /pricing
+              - listitem [ref=f24e600]:
+                - link "Contact us" [ref=f24e601] [cursor=pointer]:
+                  - /url: /contact
+              - listitem [ref=f24e602]:
+                - link "Blog" [ref=f24e603] [cursor=pointer]:
+                  - /url: /blog
+              - listitem [ref=f24e604]:
+                - link "Become an Affiliate" [ref=f24e605] [cursor=pointer]:
+                  - /url: /demo
+              - listitem [ref=f24e606]:
+                - link "Customer Stories" [ref=f24e607] [cursor=pointer]:
+                  - /url: /blog
+              - listitem [ref=f24e608]:
+                - link "Asset Library" [ref=f24e609] [cursor=pointer]:
+                  - /url: /blog
+          - generic [ref=f24e610]:
+            - heading "Support" [level=3] [ref=f24e611]
+            - list [ref=f24e612]:
+              - listitem [ref=f24e613]:
+                - link "Help center" [ref=f24e614] [cursor=pointer]:
+                  - /url: /help-center
+              - listitem [ref=f24e615]:
+                - link "Contact support" [ref=f24e616] [cursor=pointer]:
+                  - /url: /contact
+              - listitem [ref=f24e617]:
+                - link "Contact sales" [ref=f24e618] [cursor=pointer]:
+                  - /url: /contact
+          - generic [ref=f24e619]:
+            - heading "Company" [level=3] [ref=f24e620]
+            - list [ref=f24e621]:
+              - listitem [ref=f24e622]:
+                - link "About us" [ref=f24e623] [cursor=pointer]:
+                  - /url: /about
+              - listitem [ref=f24e624]:
+                - link "Careers" [ref=f24e625] [cursor=pointer]:
+                  - /url: /careers
+              - listitem [ref=f24e626]:
+                - link "Become a partner" [ref=f24e627] [cursor=pointer]:
+                  - /url: /partner-with-us
+              - listitem [ref=f24e628]:
+                - link "Blog" [ref=f24e629] [cursor=pointer]:
+                  - /url: /blog
+    - generic [ref=f24e630]:
+      - generic [ref=f24e631]:
+        - paragraph [ref=f24e632]: Let’s build together
+        - link "support@innflow.ai" [ref=f24e633] [cursor=pointer]:
+          - /url: mailto:support@innflow.ai
+        - region "Hours of operation" [ref=f24e634]:
+          - strong [ref=f24e635]: Hours of Operation
+          - generic [ref=f24e636]:
+            - generic [ref=f24e637]:
+              - term [ref=f24e638]: Monday–Friday
+              - definition [ref=f24e639]: 9:00 AM–6:00 PM ET
+            - generic [ref=f24e640]:
+              - term [ref=f24e641]: Saturday–Sunday
+              - definition [ref=f24e642]: 10:00 AM–5:00 PM ET
+      - link "Continue with Google" [ref=f24e643] [cursor=pointer]:
+        - /url: https://app.innflow.ai/auth/google
+    - generic [ref=f24e646]:
+      - generic [ref=f24e647]: English
+      - generic [ref=f24e648]:
+        - link "Privacy Policy" [ref=f24e649] [cursor=pointer]:
+          - /url: /legal/privacy-policy
+        - link "Terms of Service" [ref=f24e650] [cursor=pointer]:
+          - /url: /legal/terms-of-service
+        - link "Cookie Policy" [ref=f24e651] [cursor=pointer]:
+          - /url: /legal/cookie-policy
+        - link "Acceptable Use Policy" [ref=f24e652] [cursor=pointer]:
+          - /url: /legal/acceptable-use-policy
+        - link "EULA" [ref=f24e653] [cursor=pointer]:
+          - /url: /legal/eula
+        - link "Privacy Request" [ref=f24e654] [cursor=pointer]:
+          - /url: /legal/dsar
+        - link "Consent Preferences" [ref=f24e655] [cursor=pointer]:
+          - /url: "#"
+        - link "Do Not Sell or Share My Personal Information" [ref=f24e656] [cursor=pointer]:
+          - /url: https://app.termly.io/notify/d253192a-6c11-4338-9883-67b3307aea2f
+        - link "Limit the Use of My Sensitive Personal Information" [ref=f24e657] [cursor=pointer]:
+          - /url: https://app.termly.io/notify/d253192a-6c11-4338-9883-67b3307aea2f
+      - generic [ref=f24e658]: © 2026 Innflow
+    - region [ref=f24e659]:
+      - heading "Featured on" [level=2] [ref=f24e661]
+      - generic [ref=f24e663]:
+        - generic [ref=f24e664]:
+          - link "Visit EarlyHunt (opens in a new tab)" [ref=f24e665] [cursor=pointer]:
+            - /url: https://earlyhunt.com/project/innflow
+            - img "Featured on EarlyHunt" [ref=f24e667]
+          - link "Visit neeed.directory (opens in a new tab)" [ref=f24e668] [cursor=pointer]:
+            - /url: https://neeed.directory/products/innflow?utm_source=innflow
+            - img "Featured on neeed.directory" [ref=f24e670]
+          - link "Visit StartupFA.me (opens in a new tab)" [ref=f24e671] [cursor=pointer]:
+            - /url: https://startupfa.me/s/innflow.ai-345?utm_source=innflow.ai
+            - img "Featured on Startup Fame" [ref=f24e673]
+          - link "Visit TechTrendin (opens in a new tab)" [ref=f24e674] [cursor=pointer]:
+            - /url: https://www.techtrendin.com/products/innflow
+            - img "Featured on TechTrendin" [ref=f24e676]
+          - link "Visit Bowora (opens in a new tab)" [ref=f24e677] [cursor=pointer]:
+            - /url: https://bowora.com/
+            - img "Featured on Bowora" [ref=f24e679]
+          - link "Visit ConfettiSaaS (opens in a new tab)" [ref=f24e680] [cursor=pointer]:
+            - /url: https://confettisaas.com/saas/innflow-ai?ref=badge
+            - img "Innflow on ConfettiSaaS" [ref=f24e682]
+          - link "Visit DodoDirectory (opens in a new tab)" [ref=f24e683] [cursor=pointer]:
+            - /url: https://dododirectory.com
+            - img "Featured on DodoDirectory" [ref=f24e685]
+          - link "Visit Fazier (opens in a new tab)" [ref=f24e686] [cursor=pointer]:
+            - /url: https://fazier.com
+            - img "Fazier badge" [ref=f24e688]
+          - link "Visit findly.tools (opens in a new tab)" [ref=f24e689] [cursor=pointer]:
+            - /url: https://findly.tools
+            - img "Featured on Findly.tools" [ref=f24e691]
+          - link "Visit Huzzler (opens in a new tab)" [ref=f24e692] [cursor=pointer]:
+            - /url: https://huzzler.so
+            - img "Featured on Huzzler" [ref=f24e694]
+          - link "Visit IdeaKiln (opens in a new tab)" [ref=f24e695] [cursor=pointer]:
+            - /url: https://ideakiln.com
+            - img "Featured on Idea Kiln" [ref=f24e697]
+          - link "Visit Indiehunt (opens in a new tab)" [ref=f24e698] [cursor=pointer]:
+            - /url: https://indiehunt.io
+            - img "Featured on IndieHunt" [ref=f24e700]
+          - link "Visit Launch Llama Tools (opens in a new tab)" [ref=f24e701] [cursor=pointer]:
+            - /url: https://tools.launchllama.co?utm_source=badge&utm_medium=referral
+            - img "As seen on Launch Llama Newsletter" [ref=f24e703]
+          - link "Visit SaaSBison (opens in a new tab)" [ref=f24e704] [cursor=pointer]:
+            - /url: https://saasbison.com
+            - img "Featured on SaaSBison" [ref=f24e706]
+          - link "Visit SaaSGrow (opens in a new tab)" [ref=f24e707] [cursor=pointer]:
+            - /url: https://saasgrow.app?ref=innflow.ai
+            - img "Innflow on SaaSGrow" [ref=f24e709]
+          - link "Visit StartupBase (opens in a new tab)" [ref=f24e710] [cursor=pointer]:
+            - /url: https://startupbase.io
+            - img "Featured on StartupBase" [ref=f24e712]
+          - link "Visit startupfa.st (opens in a new tab)" [ref=f24e713] [cursor=pointer]:
+            - /url: https://startupfa.st
+            - img "Powered by Startup Fast" [ref=f24e715]
+          - link "Visit Sumodir (opens in a new tab)" [ref=f24e716] [cursor=pointer]:
+            - /url: https://sumodir.com
+            - img "Featured on SumoDir" [ref=f24e718]
+          - link "Visit Twelve Tools (opens in a new tab)" [ref=f24e719] [cursor=pointer]:
+            - /url: https://twelve.tools
+            - img "Featured on Twelve Tools" [ref=f24e721]
+          - link "Visit Web Review (opens in a new tab)" [ref=f24e722] [cursor=pointer]:
+            - /url: https://web-review.com
+            - img "Featured on Web Review" [ref=f24e724]
+        - generic [aria-hidden] [ref=f24e725]:
+          - link [ref=f24e726] [cursor=pointer]:
+            - /url: https://earlyhunt.com/project/innflow
+          - link [ref=f24e729] [cursor=pointer]:
+            - /url: https://neeed.directory/products/innflow?utm_source=innflow
+          - link [ref=f24e732] [cursor=pointer]:
+            - /url: https://startupfa.me/s/innflow.ai-345?utm_source=innflow.ai
+          - link [ref=f24e735] [cursor=pointer]:
+            - /url: https://www.techtrendin.com/products/innflow
+          - link [ref=f24e738] [cursor=pointer]:
+            - /url: https://bowora.com/
+          - link [ref=f24e741] [cursor=pointer]:
+            - /url: https://confettisaas.com/saas/innflow-ai?ref=badge
+          - link [ref=f24e744] [cursor=pointer]:
+            - /url: https://dododirectory.com
+          - link [ref=f24e747] [cursor=pointer]:
+            - /url: https://fazier.com
+          - link [ref=f24e750] [cursor=pointer]:
+            - /url: https://findly.tools
+          - link [ref=f24e753] [cursor=pointer]:
+            - /url: https://huzzler.so
+          - link [ref=f24e756] [cursor=pointer]:
+            - /url: https://ideakiln.com
+          - link [ref=f24e759] [cursor=pointer]:
+            - /url: https://indiehunt.io
+          - link [ref=f24e762] [cursor=pointer]:
+            - /url: https://tools.launchllama.co?utm_source=badge&utm_medium=referral
+          - link [ref=f24e765] [cursor=pointer]:
+            - /url: https://saasbison.com
+          - link [ref=f24e768] [cursor=pointer]:
+            - /url: https://saasgrow.app?ref=innflow.ai
+          - link [ref=f24e771] [cursor=pointer]:
+            - /url: https://startupbase.io
+          - link [ref=f24e774] [cursor=pointer]:
+            - /url: https://startupfa.st
+          - link [ref=f24e777] [cursor=pointer]:
+            - /url: https://sumodir.com
+          - link [ref=f24e780] [cursor=pointer]:
+            - /url: https://twelve.tools
+          - link [ref=f24e783] [cursor=pointer]:
+            - /url: https://web-review.com
+  - button "Open Next.js Dev Tools" [ref=f24e791] [cursor=pointer]
+  - alert [ref=f24e795]

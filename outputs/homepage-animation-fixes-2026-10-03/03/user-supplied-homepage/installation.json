@@ -1,0 +1,15 @@
+{
+  "source": "/Users/ak/Documents/03_-_put_ai_to_work_your_way.riv",
+  "installed": "public/brand/homepage/03.riv",
+  "bytes": 925372,
+  "sha256": "1bc39da9e4c50cca039b71e28340881d22d799ed9b13bc7f387867427fa79eb9",
+  "aiAgentDisplayOrder": [
+    3,
+    2,
+    1,
+    4,
+    5,
+    6
+  ],
+  "editablePairedWithExactRuntime": true
+}

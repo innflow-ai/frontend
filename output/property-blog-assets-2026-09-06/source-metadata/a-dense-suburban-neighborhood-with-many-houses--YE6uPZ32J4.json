@@ -1,0 +1,34 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "creator": {
+    "@type": "Person",
+    "name": "Albert Stoynov"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Albert Stoynov"
+  },
+  "creditText": "Albert Stoynov",
+  "copyrightNotice": "Albert Stoynov",
+  "license": "https://unsplash.com/license",
+  "acquireLicensePage": "https://unsplash.com/photos/a-dense-suburban-neighborhood-with-many-houses--YE6uPZ32J4",
+  "contentLocation": {
+    "@type": "Place",
+    "name": "Vancouver, BC, Canada"
+  },
+  "contentUrl": "https://images.unsplash.com/photo-1767658587049-33f3de7df008?auto=format&fit=crop&q=60&crop=entropy&cs=srgb&fm=jpg&ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzg4NzQ3MDE4fA&ixlib=rb-4.1.0",
+  "thumbnail": {
+    "@type": "ImageObject",
+    "url": "https://images.unsplash.com/photo-1767658587049-33f3de7df008?auto=format&fit=crop&q=60&crop=entropy&cs=tinysrgb&fm=jpg&ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzg4NzQ3MDE4fA&ixlib=rb-4.1.0&w=200"
+  },
+  "datePublished": "2026-01-06T01:22:02.000Z",
+  "description": "A dense suburban neighborhood with many houses",
+  "name": "A dense suburban neighborhood with many houses",
+  "width": "8032px",
+  "height": "5355px",
+  "isAccessibleForFree": true,
+  "isFamilyFriendly": true,
+  "caption": "Neighbourhood of houses",
+  "representativeOfPage": true
+}

@@ -3,26 +3,18 @@
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { type ReactNode, useEffect, useId, useRef, useState } from "react";
+import { GoogleSignInButton } from "@/components/google-sign-in";
 import {
-  MegaMenu,
-  productColumns,
-  resourcesColumns,
-} from "@/components/mega-menu";
-import { TrackedLink } from "@/components/tracked-link";
+  ChevronDown as CaretDown,
+  DashMenu,
+  Multiply,
+} from "@/components/icons/mage";
+import { MegaMenu, type LatestBlogPostNavItem } from "./mega-menu";
+import { NavigationMenu } from "./navigation-menus";
+import { navigationLabels } from "./navigation-labels";
 import { siteConfig } from "@/config/site";
 import styles from "./editorial-header.module.css";
-
-const MotionTrackedLink = motion.create(TrackedLink);
-
-// Route-based so the menu works from every page (the header is app-wide).
-const mobileLinks = [
-  { href: "/features/workflows", label: "Product" },
-  { href: "/property-management", label: "Property management" },
-  { href: "/integrations", label: "Integrations" },
-  { href: "/pricing", label: "Pricing" },
-  { href: "/blog", label: "Blog" },
-] as const;
 
 const itemVariants = {
   hidden: { opacity: 0, y: 24 },
@@ -33,214 +25,330 @@ const itemVariants = {
   },
 };
 
-export function EditorialHeader() {
+export function EditorialHeader({
+  desktopHeader,
+}: {
+  latestBlogPosts?: LatestBlogPostNavItem[];
+  desktopHeader?: ReactNode;
+}) {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [pastHomeHero, setPastHomeHero] = useState(false);
+  const [showSolidHeader, setShowSolidHeader] = useState(false);
+  const [headerHidden, setHeaderHidden] = useState(false);
   const pathname = usePathname();
   const reduce = useReducedMotion();
+  const mobileToggleRef = useRef<HTMLButtonElement>(null);
   const isHome = pathname === "/";
-  const useLightChrome = isHome && !pastHomeHero;
+  const isBlogArticle = /^\/blog\/.+/.test(pathname);
+  // Articles start with white chrome over their dark canvas. Once scrolled,
+  // all subpages use the selected theme's opaque surface and matching chrome.
+  const useLightChrome = isHome && !showSolidHeader && !mobileOpen;
+  const useDarkTransparentChrome =
+    !isHome && !isBlogArticle && !showSolidHeader && !mobileOpen;
 
-  // Keep the homepage header transparent over the hero, then switch to the
-  // solid navigation treatment once the hero has passed beneath it.
+  // Become opaque on the first scroll pixel, including within the home hero.
+  // biome-ignore lint/correctness/useExhaustiveDependencies: Recheck restored scroll position on navigation.
   useEffect(() => {
-    if (!isHome) {
-      setPastHomeHero(false);
-      return;
-    }
-
-    let frame = 0;
     const syncHeader = () => {
-      cancelAnimationFrame(frame);
-      frame = requestAnimationFrame(() => {
-        const hero = document.getElementById("home-hero");
-        setPastHomeHero(
-          hero ? hero.getBoundingClientRect().bottom <= 70 : window.scrollY > 0,
-        );
-      });
+      setShowSolidHeader(window.scrollY > 0);
     };
 
     syncHeader();
     window.addEventListener("scroll", syncHeader, { passive: true });
     window.addEventListener("resize", syncHeader);
     return () => {
-      cancelAnimationFrame(frame);
       window.removeEventListener("scroll", syncHeader);
       window.removeEventListener("resize", syncHeader);
     };
-  }, [isHome]);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!isBlogArticle || reduce) {
+      setHeaderHidden(false);
+      return;
+    }
+
+    let last = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      if (mobileOpen || y < 72) {
+        setHeaderHidden(false);
+        last = y;
+        return;
+      }
+      if (y > last + 6) setHeaderHidden(true);
+      else if (y < last - 6) setHeaderHidden(false);
+      last = y;
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [isBlogArticle, mobileOpen, reduce]);
 
   // Escape closes the mobile overlay.
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setMobileOpen(false);
+      if (event.key === "Escape" && !document.querySelector("dialog[open]")) {
+        setMobileOpen(false);
+        if (mobileOpen) mobileToggleRef.current?.focus();
+      }
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
-  }, []);
+  }, [mobileOpen]);
 
   // Lock body scroll while the mobile overlay is open.
   useEffect(() => {
-    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    if (!mobileOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const background = Array.from(
+      document.querySelectorAll<HTMLElement>("main, footer"),
+    );
+    const previousInert = background.map((element) => element.inert);
+    for (const element of background) element.inert = true;
+
+    const containFocus = (event: KeyboardEvent) => {
+      if (event.key !== "Tab" || document.querySelector("dialog[open]")) return;
+      const focusable = Array.from(
+        document.querySelectorAll<HTMLElement>(
+          "header a[href], header button, #editorial-mobile-overlay a[href], #editorial-mobile-overlay button",
+        ),
+      ).filter(
+        (element) =>
+          element.getClientRects().length > 0 &&
+          !element.hasAttribute("disabled"),
+      );
+      const first = focusable[0];
+      const last = focusable.at(-1);
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last?.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first?.focus();
+      }
+    };
+    document.addEventListener("keydown", containFocus);
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = previousOverflow;
+      background.forEach((element, index) => {
+        element.inert = previousInert[index];
+      });
+      document.removeEventListener("keydown", containFocus);
     };
   }, [mobileOpen]);
 
   // Close the mobile menu when crossing into the desktop layout, so the
   // body scroll lock never leaks out of mobile view on viewport resize.
   useEffect(() => {
-    const mq = window.matchMedia("(min-width: 981px)");
+    const mq = window.matchMedia("(min-width: 1181px)");
     const onChange = (event: MediaQueryListEvent) => {
-      if (event.matches) setMobileOpen(false);
+      if (event.matches) {
+        setMobileOpen(false);
+      }
     };
     mq.addEventListener("change", onChange);
     return () => mq.removeEventListener("change", onChange);
   }, []);
 
-  const closeMobile = () => setMobileOpen(false);
+  const closeMobile = () => {
+    setMobileOpen(false);
+  };
+
+  const toggleMobile = () => {
+    setMobileOpen((open) => !open);
+  };
 
   return (
     <>
+      {desktopHeader ? (
+        <div className={styles.desktopReplacement}>{desktopHeader}</div>
+      ) : null}
       <header
-        className={`${styles.header}${isHome ? ` ${styles.homeHeader}` : ""}${
+        className={`${styles.header}${isBlogArticle ? ` ${styles.articleHeader}` : ""}${desktopHeader ? ` ${styles.mobileOnly}` : ""}${isHome ? ` ${styles.homeHeader}` : ""}${
           useLightChrome ? ` ${styles.homeTop}` : ""
-        }`}
+        }${useDarkTransparentChrome ? ` ${styles.pageTop}` : ""}${
+          mobileOpen ? ` ${styles.menuOpen}` : ""
+        }${headerHidden ? ` ${styles.headerHidden}` : ""}`}
       >
         <div className={styles.inner}>
           <a className={styles.brand} href="/" aria-label="Innflow home">
             <Image
-              src={
-                useLightChrome
-                  ? "/brand/innflow_white_logo_set_bold.svg"
-                  : "/brand/innflow_logo_set_B.svg"
-              }
+              src="/brand/innflow-nav-wordmark.svg"
+              className={useLightChrome ? styles.lightWordmark : undefined}
               alt="Innflow"
-              width={139}
-              height={useLightChrome ? 29 : 28}
+              width={104}
+              height={28}
               priority
             />
           </a>
 
-          <nav aria-label="Primary navigation">
-            <ul className={styles.desktopNav}>
-              <li>
-                <MegaMenu label="Product" columns={productColumns} />
-              </li>
-              <li>
-                <MegaMenu label="Portfolios" />
-              </li>
-              <li>
-                <MegaMenu label="Resources" columns={resourcesColumns} />
-              </li>
-              <li>
-                <a href="/pricing">Pricing</a>
-              </li>
-              <li>
-                <a href="/blog">Blog</a>
-              </li>
-            </ul>
-          </nav>
+          {!desktopHeader && (
+            <nav aria-label="Primary navigation">
+              <ul className={styles.desktopNav}>
+                {navigationLabels.map((label) => (
+                  <li key={label}>
+                    <MegaMenu
+                      label={label}
+                      columns={[]}
+                      navigationLabel={label}
+                    />
+                  </li>
+                ))}
+                <li>
+                  <a href="/pricing">Pricing</a>
+                </li>
+              </ul>
+            </nav>
+          )}
 
           <div className={styles.actions}>
-            <TrackedLink
-              destination={`${siteConfig.appOrigin}/login`}
-              eventLabel="header_login"
-            >
-              Login
-            </TrackedLink>
-            <TrackedLink
-              className={`${styles.button} ${styles.buttonBrand} ${styles.headerCta}`}
-              destination={siteConfig.demoUrl}
-              eventLabel="header_demo"
-            >
-              Sign up now
-            </TrackedLink>
+            <GoogleSignInButton
+              className={`${styles.button} ${styles.headerCta}`}
+              eventLabel="header_continue_google"
+              label="Continue with Google"
+              variant="brand"
+            />
             <button
+              ref={mobileToggleRef}
               type="button"
               className={styles.hamburger}
               aria-expanded={mobileOpen}
               aria-controls="editorial-mobile-overlay"
               aria-label={mobileOpen ? "Close navigation" : "Open navigation"}
-              onClick={() => setMobileOpen((open) => !open)}
+              onClick={toggleMobile}
             >
-              <Image
-                className={styles.menuIcon}
-                src={
-                  mobileOpen
-                    ? `/brand/navigation/Close_X_${
-                        useLightChrome ? "white" : "black"
-                      }.svg`
-                    : `/brand/navigation/HamburgerMenu_${
-                        useLightChrome ? "white" : "black"
-                      }.svg`
-                }
-                alt=""
-                width={mobileOpen ? 25 : 27}
-                height={mobileOpen ? 25 : 27}
-                unoptimized
-              />
+              {mobileOpen ? (
+                <Multiply className={styles.menuIcon} size={25} />
+              ) : (
+                <DashMenu className={styles.menuIcon} size={27} />
+              )}
             </button>
           </div>
         </div>
       </header>
-
       {/* Rendered outside the header so the fixed panel can cover the viewport
           below the header without its backdrop-filter changing the containing
           block. */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            id="editorial-mobile-overlay"
-            className={styles.mobileOverlay}
-            initial={reduce ? false : { opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: reduce ? 0 : 0.18 }}
+      <MobileNavigation open={mobileOpen} onClose={closeMobile} />
+    </>
+  );
+}
+
+/** Shared homepage and BL mobile navigation. */
+export function MobileNavigation({
+  open,
+  onClose: closeMobile,
+  id = "editorial-mobile-overlay",
+  className = "",
+  pricingHref = "/pricing",
+  loginHref = siteConfig.signupUrl,
+}: {
+  open: boolean;
+  onClose: () => void;
+  latestBlogPosts?: LatestBlogPostNavItem[];
+  id?: string;
+  className?: string;
+  pricingHref?: string;
+  loginHref?: string;
+}) {
+  const reduce = useReducedMotion();
+  const mobileMenuBaseId = useId();
+  const [openMobileGroup, setOpenMobileGroup] = useState<string | null>(null);
+  useEffect(() => {
+    if (!open) setOpenMobileGroup(null);
+  }, [open]);
+  return (
+    <AnimatePresence>
+      {open && (
+        <motion.div
+          id={id}
+          className={`${styles.mobileOverlay} ${className}`}
+          initial={reduce ? false : { opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: reduce ? 0 : 0.18 }}
+        >
+          <motion.nav
+            aria-label="Mobile navigation"
+            className={styles.mobileLinks}
+            initial={reduce ? undefined : "hidden"}
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: {
+                transition: { staggerChildren: 0.06, delayChildren: 0.08 },
+              },
+            }}
           >
-            <motion.nav
-              aria-label="Mobile navigation"
-              className={styles.mobileLinks}
-              initial={reduce ? undefined : "hidden"}
-              animate="visible"
-              variants={{
-                hidden: {},
-                visible: {
-                  transition: { staggerChildren: 0.06, delayChildren: 0.08 },
-                },
-              }}
-            >
-              {mobileLinks.map((link) => (
-                <motion.a
-                  key={link.href}
-                  href={link.href}
+            {navigationLabels.map((label) => {
+              const expanded = openMobileGroup === label;
+              const panelId = `${mobileMenuBaseId}-${label.toLowerCase()}`;
+
+              return (
+                <motion.section
+                  key={label}
+                  className={styles.mobileGroup}
                   variants={reduce ? undefined : itemVariants}
-                  onClick={closeMobile}
                 >
-                  {link.label}
-                </motion.a>
-              ))}
-              <MotionTrackedLink
-                destination={`${siteConfig.appOrigin}/login`}
-                eventLabel="mobile_login"
-                variants={reduce ? undefined : itemVariants}
+                  <button
+                    type="button"
+                    className={styles.mobileGroupTrigger}
+                    aria-expanded={expanded}
+                    aria-controls={panelId}
+                    onClick={() => setOpenMobileGroup(expanded ? null : label)}
+                  >
+                    {label}
+                    <CaretDown size={18} weight="bold" aria-hidden="true" />
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {expanded ? (
+                      <motion.div
+                        id={panelId}
+                        className={styles.mobileGroupPanel}
+                        role="region"
+                        aria-label={`${label} mobile menu`}
+                        initial={reduce ? false : { height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: reduce ? 0 : 0.2 }}
+                      >
+                        <div className={styles.mobileGroupContent}>
+                          <NavigationMenu label={label} close={closeMobile} />
+                        </div>
+                      </motion.div>
+                    ) : null}
+                  </AnimatePresence>
+                </motion.section>
+              );
+            })}
+            <motion.a
+              href={pricingHref}
+              className={styles.mobilePrimaryLink}
+              variants={reduce ? undefined : itemVariants}
+              onClick={closeMobile}
+            >
+              Pricing
+            </motion.a>
+            <div className={styles.mobileCtaRow}>
+              <a
+                href={loginHref}
+                className={`${styles.button} ${styles.mobileLoginButton}`}
                 onClick={closeMobile}
               >
                 Login
-              </MotionTrackedLink>
-              <MotionTrackedLink
-                className={`${styles.button} ${styles.buttonBrand} ${styles.mobileCta}`}
-                destination={siteConfig.demoUrl}
-                eventLabel="mobile_demo"
-                variants={reduce ? undefined : itemVariants}
-                onClick={closeMobile}
-              >
-                Sign up now
-              </MotionTrackedLink>
-            </motion.nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </>
+              </a>
+              <GoogleSignInButton
+                className={`${styles.button} ${styles.mobileCta}`}
+                eventLabel="mobile_continue_google"
+                label="Continue with Google"
+                variant="brand"
+                iconSize={20}
+              />
+            </div>
+          </motion.nav>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }

@@ -1,6 +1,7 @@
 import type { PortableTextBlock } from "@portabletext/react";
 import type { SanityImageSource } from "@sanity/image-url";
-import imageUrlBuilder from "@sanity/image-url";
+import { createImageUrlBuilder } from "@sanity/image-url";
+import { unstable_cache } from "next/cache";
 import { createClient } from "next-sanity";
 
 export const sanityProjectId = process.env.SANITY_PROJECT_ID ?? "hnjg8vum";
@@ -17,7 +18,7 @@ export const sanityClient = createClient({
   perspective: "published",
 });
 
-const builder = imageUrlBuilder(sanityClient);
+const builder = createImageUrlBuilder(sanityClient);
 
 export function urlForImage(source: SanityImageSource) {
   return builder.image(source);
@@ -40,6 +41,14 @@ export function coverImageUrl(
   );
 }
 
+export type BlogAuthor = {
+  name: string;
+  slug: string | null;
+  role: string | null;
+  bio: string | null;
+  image: (SanityImageSource & { alt?: string }) | null;
+};
+
 export type BlogPostSummary = {
   title: string;
   slug: string;
@@ -50,11 +59,14 @@ export type BlogPostSummary = {
   featured: boolean;
   coverImage: (SanityImageSource & { alt?: string }) | null;
   tags: string[] | null;
+  industries: string[] | null;
+  author: BlogAuthor | null;
 };
 
 export type BlogPost = BlogPostSummary & {
   metaDescription: string | null;
   body: PortableTextBlock[] | null;
+  audioUrl: string | null;
 };
 
 const postFields = `
@@ -66,10 +78,30 @@ const postFields = `
   readTime,
   "featured": coalesce(featured, false),
   coverImage,
-  tags
+  tags,
+  industries,
+  "author": coalesce(
+    author->,
+    *[_type == "author" && _id == "author.ari-khan"][0]
+  ){
+    name,
+    "slug": slug.current,
+    role,
+    bio,
+    image
+  }
 `;
 
 const postsQuery = `*[_type == "post" && defined(slug.current)] | order(publishedAt desc) {
+  ${postFields}
+}`;
+
+const latestPostsQuery = `*[
+  _type == "post" &&
+  defined(slug.current) &&
+  defined(publishedAt) &&
+  publishedAt <= now()
+] | order(publishedAt desc)[0...5] {
   ${postFields}
 }`;
 
@@ -78,7 +110,29 @@ const postSlugsQuery = `*[_type == "post" && defined(slug.current)].slug.current
 const postBySlugQuery = `*[_type == "post" && slug.current == $slug][0] {
   ${postFields},
   metaDescription,
+  audioUrl,
   body
+}`;
+
+const relatedPostsQuery = `*[
+  _type == "post" &&
+  defined(slug.current) &&
+  slug.current != $slug &&
+  category == $category &&
+  defined(publishedAt) &&
+  publishedAt <= now()
+] | order(publishedAt desc)[0...3] {
+  ${postFields}
+}`;
+
+const relatedFallbackQuery = `*[
+  _type == "post" &&
+  defined(slug.current) &&
+  slug.current != $slug &&
+  defined(publishedAt) &&
+  publishedAt <= now()
+] | order(publishedAt desc)[0...3] {
+  ${postFields}
 }`;
 
 export async function getBlogPosts(): Promise<BlogPostSummary[]> {
@@ -86,6 +140,47 @@ export async function getBlogPosts(): Promise<BlogPostSummary[]> {
     return await sanityClient.fetch<BlogPostSummary[]>(postsQuery);
   } catch {
     return [];
+  }
+}
+
+const fetchLatestBlogPosts = unstable_cache(
+  () => sanityClient.fetch<BlogPostSummary[]>(latestPostsQuery),
+  ["latest-blog-posts"],
+  { revalidate: 60, tags: ["blog-posts"] },
+);
+
+export async function getLatestBlogPosts(): Promise<BlogPostSummary[]> {
+  try {
+    return await fetchLatestBlogPosts();
+  } catch {
+    return [];
+  }
+}
+
+export type AppUpdate = {
+  title: string;
+  publishedAt: string;
+  image: (SanityImageSource & { alt?: string }) | null;
+  button: { href: string; label: string } | null;
+  footerText: string | null;
+};
+
+const fetchLatestAppUpdate = unstable_cache(
+  () =>
+    sanityClient.fetch<AppUpdate | null>(`*[
+      _type == "appUpdate" && defined(publishedAt) && publishedAt <= now()
+    ] | order(publishedAt desc)[0] {
+      title, publishedAt, image, button, footerText
+    }`),
+  ["latest-app-update"],
+  { revalidate: 60, tags: ["app-updates"] },
+);
+
+export async function getLatestAppUpdate(): Promise<AppUpdate | null> {
+  try {
+    return await fetchLatestAppUpdate();
+  } catch {
+    return null;
   }
 }
 
@@ -107,14 +202,33 @@ export async function getBlogPost(slug: string): Promise<BlogPost | null> {
   }
 }
 
-// Categories are stored as slugs (e.g. "property-management"); humanize for display.
-export function humanizeCategory(category: string | null | undefined): string {
-  if (!category) return "Blog";
-  return category
-    .split("-")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
+export async function getRelatedBlogPosts(
+  slug: string,
+  category: string,
+): Promise<BlogPostSummary[]> {
+  try {
+    const sameCategory = await sanityClient.fetch<BlogPostSummary[]>(
+      relatedPostsQuery,
+      { slug, category },
+    );
+    if (sameCategory.length >= 3) return sameCategory;
+
+    const fallback = await sanityClient.fetch<BlogPostSummary[]>(
+      relatedFallbackQuery,
+      { slug },
+    );
+    const seen = new Set(sameCategory.map((post) => post.slug));
+    return [
+      ...sameCategory,
+      ...fallback.filter((post) => !seen.has(post.slug)),
+    ].slice(0, 3);
+  } catch {
+    return [];
+  }
 }
+
+// Categories are stored as slugs (e.g. "property-management"); humanize for display.
+export { humanizeCategory } from "./blog-labels";
 
 export function formatPostDate(publishedAt: string | null | undefined): string {
   if (!publishedAt) return "";
@@ -124,6 +238,19 @@ export function formatPostDate(publishedAt: string | null | undefined): string {
     month: "long",
     day: "numeric",
     year: "numeric",
+    timeZone: "UTC",
+  }).format(date);
+}
+
+export function formatPostDateShort(
+  publishedAt: string | null | undefined,
+): string {
+  if (!publishedAt) return "";
+  const date = new Date(publishedAt);
+  if (Number.isNaN(date.getTime())) return "";
+  return new Intl.DateTimeFormat("en-US", {
+    month: "long",
+    day: "numeric",
     timeZone: "UTC",
   }).format(date);
 }

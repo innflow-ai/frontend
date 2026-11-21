@@ -1,0 +1,2364 @@
+Reading prompt from stdin...
+OpenAI Codex v0.154.0
+--------
+workdir: /Users/ak/innflow-web
+model: gpt-6-astra
+provider: openai
+approval: on-request
+sandbox: workspace-write [workdir, /tmp, $TMPDIR]
+reasoning effort: medium
+reasoning summaries: none
+session id: 01a0a44e-5388-74b2-a998-869ec8aadf6f
+--------
+user
+Mobile homepage hero cleanup for innflow.ai (innflow-web). Screenshot attached: .codex-inbox-hero-cleanup.png (Instagram in-app browser, red circle = cluttered hero).
+
+Do these UI changes only — no unrelated refactors:
+
+1. KEEP the "Continue with Google" button (leave it as a primary CTA in the hero / flow). Do not remove Google auth CTA.
+2. REMOVE the "See demo" button from the hero.
+3. Change the footer CTA (the email/member signup card at the bottom of the hero — "A little more, just for members" / Sign up now) — simplify that CTA control so it fits mobile better (keep signup working). REMOVE the text below that CTA (the privacy / marketing disclaimer under Sign up now).
+4. Make the "Get Innflow updates and member offers by email" copy smaller on mobile only.
+
+Success criteria:
+- Mobile first fold: no "See demo"; Google CTA remains; member email subtitle smaller on mobile; footer/email CTA text-under-button gone.
+- Desktop should still look sane (don't break larger breakpoints).
+- Prefer minimal diffs in the homepage/hero components.
+
+2026-09-15T09:03:12.263929Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when AuthRequired(AuthRequiredError { www_authenticate_header: "Bearer realm=\"motion\", resource_metadata=\"https://mcp.motion.dev/.well-known/oauth-protected-resource/plus\"" })
+2026-09-15T09:03:12.300260Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when AuthRequired(AuthRequiredError { www_authenticate_header: "Bearer resource_metadata=\"https://mcp.innflow.ai/.well-known/oauth-protected-resource/mcp\", scope=\"mcp:read mcp:execute mcp:manage\"" })
+2026-09-15T09:03:12.518435Z ERROR codex_memories_write::phase2: Phase 2 no changes
+2026-09-15T09:03:13.078848Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when AuthRequired(AuthRequiredError { www_authenticate_header: "Bearer realm=\"motion\", resource_metadata=\"https://mcp.motion.dev/.well-known/oauth-protected-resource/plus\"" })
+2026-09-15T09:03:13.083457Z ERROR rmcp::transport::worker: worker quit with fatal: Transport channel closed, when AuthRequired(AuthRequiredError { www_authenticate_header: "Bearer resource_metadata=\"https://mcp.innflow.ai/.well-known/oauth-protected-resource/mcp\", scope=\"mcp:read mcp:execute mcp:manage\"" })
+warning: Skill descriptions were shortened to fit the skills context budget. Codex can still see every skill, but some descriptions are shorter. Disable unused skills or plugins to leave more room for the rest.
+codex
+I’ll locate the hero and signup card, make the scoped UI changes, and check the mobile and desktop layouts.
+exec
+/bin/zsh -lc "rg -n 'hero|repository identity' /Users/ak/.codex/memories/MEMORY.md" in /Users/ak/innflow-web
+ succeeded in 0ms:
+1:# Task Group: Innflow web repository identity and rename preparation from /Users/ak/innflow-web
+82:- rollout_summaries/2026-08-26T02-15-47-5uL9-innflow_git_lock_recovery_and_hero_height_audit.md (cwd=/Users/ak, rollout_path=/Users/ak/.codex/sessions/2026/08/25/rollout-2026-08-25T22-15-47-01a03bda-25dd-7f13-8808-9858db61c44b.jsonl, updated_at=2026-08-26T03:40:12+00:00, thread_id=01a03bda-25dd-7f13-8808-9858db61c44b, stale lock recovered; review-branch audit passed)
+106:# Task Group: Innflow homepage hero-height verification from /Users/ak/innflow-web
+108:scope: Adjust and verify the homepage hero's desktop/mobile height and footer visual in the Innflow frontend; use for closely related CSS presentation changes, not to generalize a one-off size to other pages.
+111:## Task 1: Increase homepage hero height, success
+115:- rollout_summaries/2026-08-26T02-15-47-5uL9-innflow_git_lock_recovery_and_hero_height_audit.md (cwd=/Users/ak, rollout_path=/Users/ak/.codex/sessions/2026/08/25/rollout-2026-08-25T22-15-47-01a03bda-25dd-7f13-8808-9858db61c44b.jsonl, updated_at=2026-08-26T03:40:12+00:00, thread_id=01a03bda-25dd-7f13-8808-9858db61c44b, browser and focused checks passed)
+119:- innflow-web, src/app/page.module.css, min-height, 112svh, 132svh, hero height, property-operations-one-flow.webp, Turbopack HMR panic, npm run typecheck
+123:- The recorded update in `/Users/ak/innflow-web/src/app/page.module.css` set hero `min-height` to `calc(112svh - 70px)` on desktop and `calc(132svh - 70px)` on mobile; the footer signup image became `/brand/property-operations-one-flow.webp`. [Task 1]
+
+exec
+/bin/zsh -lc "pwd; git remote -v; git status --short; git branch --show-current; rg -n 'A little more|Get Innflow updates|A clearer day|See demo|By signing up' src; rg --files node_modules/next/dist/docs | head -15" in /Users/ak/innflow-web
+ succeeded in 24ms:
+src/components/baselane-homepage.tsx:87:                    See demo <MageIcon name="arrow-right" size={19} />
+src/components/baselane-insurance.tsx:183:        <h2>A little more clarity for your property team.</h2>
+src/components/baselane-company.tsx:114:                  See demo →
+src/components/runey-landing.tsx:340:            A clearer day starts
+src/components/baselane-product-page.tsx:52:        See demo <ArrowRight size={18} />
+src/components/baselane-multi-property.tsx:118:              See demo <ArrowRight size={18} />
+src/components/product-headspace-cta.tsx:33:            See demo <ArrowRight size={18} aria-hidden="true" />
+src/content/product-copy.ts:205:    title: "A little more help. A lot less chasing.",
+src/components/site-cta.tsx:55:            A clearer day starts
+src/components/site-cta.tsx:61:              See demo <ArrowRight size={18} />
+src/components/site-cta.tsx:81:                : "A little more, just for members."}
+src/components/site-cta.tsx:85:                <p>Get Innflow updates and member offers by email.</p>
+src/components/site-cta.tsx:120:                  By signing up, you agree to receive marketing emails from
+src/components/baselane-rental-content.ts:3:    title: "A clearer day behind every stay.",
+src/components/blog/article-intro-cta.tsx:21:          See demo <span aria-hidden="true">→</span>
+src/app/page.tsx:15:    : "A clearer day in property operations | Innflow",
+node_modules/next/dist/docs/01-app/03-api-reference/01-directives/use-cache.md
+node_modules/next/dist/docs/01-app/03-api-reference/01-directives/use-cache-private.md
+node_modules/next/dist/docs/01-app/03-api-reference/01-directives/index.md
+node_modules/next/dist/docs/01-app/03-api-reference/01-directives/use-cache-remote.md
+node_modules/next/dist/docs/01-app/03-api-reference/01-directives/use-server.md
+node_modules/next/dist/docs/01-app/03-api-reference/01-directives/use-client.md
+node_modules/next/dist/docs/01-app/03-api-reference/02-components/font.md
+node_modules/next/dist/docs/01-app/03-api-reference/02-components/link.md
+node_modules/next/dist/docs/01-app/03-api-reference/02-components/index.md
+node_modules/next/dist/docs/01-app/03-api-reference/02-components/script.md
+node_modules/next/dist/docs/01-app/03-api-reference/02-components/image.md
+node_modules/next/dist/docs/01-app/03-api-reference/02-components/form.md
+node_modules/next/dist/docs/01-app/03-api-reference/08-turbopack.md
+node_modules/next/dist/docs/01-app/03-api-reference/07-adapters/05-routing-with-next-routing.md
+node_modules/next/dist/docs/01-app/03-api-reference/07-adapters/03-api-reference.md
+
+exec
+/bin/zsh -lc "cat src/components/site-cta.tsx; cat src/components/site-cta.module.css; cat src/app/page.tsx; cat package.json; rg -n 'SiteCta|See demo|Google' src/components/baselane-homepage.tsx src/components/runey-landing.tsx; cat node_modules/next/dist/docs/01-app/03-api-reference/01-directives/use-client.md; sed -n '119,128p' /Users/ak/.codex/memories/MEMORY.md" in /Users/ak/innflow-web
+ succeeded in 0ms:
+"use client";
+import { ArrowRight } from "@phosphor-icons/react";
+import { type FormEvent, useState } from "react";
+import { siteConfig } from "@/config/site";
+import { GoogleCtaContent } from "./google-cta-content";
+import styles from "./site-shell.module.css";
+import { TrackedLink } from "./tracked-link";
+export function SiteCta() {
+  const [signupState, setSignupState] = useState<
+    "idle" | "pending" | "success" | "error"
+  >("idle");
+  const [signupMessage, setSignupMessage] = useState("");
+
+  async function subscribe(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    if (signupState === "pending" || signupState === "success") return;
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    setSignupState("pending");
+    setSignupMessage("");
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: data.get("email"),
+          website: data.get("website"),
+        }),
+        signal: AbortSignal.timeout(25000),
+      });
+      const result = await response.json();
+      if (!response.ok || result.success !== true) {
+        throw new Error(result.error || "Signup failed. Please try again.");
+      }
+      setSignupState("success");
+      setSignupMessage(
+        "You’re on the list. Look out for Innflow updates and member offers in your inbox.",
+      );
+      form.reset();
+    } catch (error) {
+      setSignupState("error");
+      setSignupMessage(
+        error instanceof Error && error.name !== "TimeoutError"
+          ? error.message
+          : "Signup failed. Please try again.",
+      );
+    }
+  }
+
+  return (
+    <div className={styles.page}>
+      <div className={styles.closingWrap}>
+        <section className={styles.closing}>
+          <h2>
+            A clearer day starts
+            <br className={styles.mobileBreak} /> with a connected flow.
+          </h2>
+          <p>Bring your team, context, and next steps together.</p>
+          <div className={styles.actions}>
+            <a className={styles.outlineButton} href={siteConfig.demoUrl}>
+              See demo <ArrowRight size={18} />
+            </a>
+            <TrackedLink
+              className={styles.darkButton}
+              destination={siteConfig.googleAuthUrl}
+              eventLabel="baselane_closing_signup"
+            >
+              <GoogleCtaContent />
+            </TrackedLink>
+          </div>
+          <form
+            className={styles.membershipSignup}
+            aria-labelledby="membership-signup-heading"
+            aria-describedby="membership-signup-status"
+            onSubmit={subscribe}
+            aria-busy={signupState === "pending"}
+          >
+            <h3 id="membership-signup-heading">
+              {signupState === "success"
+                ? "Welcome to the Innflow family!"
+                : "A little more, just for members."}
+            </h3>
+            {signupState !== "success" && (
+              <>
+                <p>Get Innflow updates and member offers by email.</p>
+                <div hidden aria-hidden="true">
+                  <label htmlFor="membership-website">Website</label>
+                  <input
+                    id="membership-website"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                </div>
+                <fieldset
+                  disabled={signupState === "pending"}
+                  className={styles.membershipFields}
+                >
+                  <label htmlFor="membership-email">Email address</label>
+                  <div className={styles.membershipInputRow}>
+                    <input
+                      id="membership-email"
+                      name="email"
+                      type="email"
+                      autoComplete="email"
+                      inputMode="email"
+                      placeholder="Enter your email"
+                      required
+                      maxLength={254}
+                    />
+                    <button type="submit">
+                      {signupState === "pending"
+                        ? "Signing up…"
+                        : "Sign up now"}{" "}
+                      <ArrowRight size={18} aria-hidden="true" />
+                    </button>
+                  </div>
+                </fieldset>
+                <small>
+                  By signing up, you agree to receive marketing emails from
+                  Innflow. Unsubscribe anytime.{" "}
+                  <a href="/legal/privacy-policy">Privacy policy</a>
+                </small>
+              </>
+            )}
+            <div
+              className={
+                signupState === "success" ? styles.membershipSuccess : undefined
+              }
+              id="membership-signup-status"
+              role="status"
+              aria-live="polite"
+            >
+              {signupMessage}
+            </div>
+          </form>
+        </section>
+      </div>
+    </div>
+  );
+}
+cat: src/components/site-cta.module.css: No such file or directory
+import type { Metadata } from "next";
+import { AuthenticatedHomeRedirect } from "@/components/authenticated-home-redirect";
+import { BaselaneHomepage } from "@/components/baselane-homepage";
+import { FigmaFeaturePage } from "@/components/figma-feature-page";
+import { siteConfig } from "@/config/site";
+import { getFeaturePageDesign } from "@/content/feature-pages";
+
+// Temporary homepage swap. Set to false to restore the original homepage.
+const TEMPORARY_LISTING_HOMEPAGE = true;
+const listingPage = getFeaturePageDesign("listing-and-advertising");
+
+export const metadata: Metadata = {
+  title: TEMPORARY_LISTING_HOMEPAGE
+    ? `${listingPage.name} | Innflow`
+    : "A clearer day in property operations | Innflow",
+  description: TEMPORARY_LISTING_HOMEPAGE
+    ? listingPage.description
+    : "Connect property workflows, knowledge, and approvals in one Innflow workspace.",
+  alternates: { canonical: "/" },
+};
+
+export default function HomePage() {
+  return (
+    <>
+      <AuthenticatedHomeRedirect
+        appOrigin={siteConfig.appOrigin}
+        marketingOrigin={siteConfig.marketingOrigin}
+      />
+      {TEMPORARY_LISTING_HOMEPAGE ? (
+        <FigmaFeaturePage page={listingPage} />
+      ) : (
+        <BaselaneHomepage />
+      )}
+    </>
+  );
+}
+{
+  "name": "innflow-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build --turbopack",
+    "start": "next start",
+    "lint": "biome check .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "test:run": "vitest run",
+    "audit:site": "node scripts/audit-site.mjs",
+    "audit:bundle": "node scripts/check-bundle-budget.mjs",
+    "inventory:legacy": "node scripts/inventory-legacy-routes.mjs",
+    "products:assets": "python3 scripts/resolve-product-assets.py --output scripts/data/product-asset-map.json",
+    "products:import": "node scripts/import-product-pages.mjs"
+  },
+  "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
+    "@portabletext/react": "^8.0.1",
+    "@sanity/image-url": "^2.1.1",
+    "lenis": "^1.3.26",
+    "motion": "^12.43.0",
+    "next": "^16.2.11",
+    "next-sanity": "^13.3.3",
+    "posthog-js": "^1.422.2",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.5",
+    "@sanity/vision": "^6.10.1",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/node": "^25.2.3",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "jsdom": "^28.0.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.10"
+  }
+}
+src/components/runey-landing.tsx:4:import { GoogleCtaContent } from "@/components/google-cta-content";
+src/components/runey-landing.tsx:120:                <GoogleCtaContent />
+src/components/runey-landing.tsx:354:              <GoogleCtaContent />
+src/components/baselane-homepage.tsx:5:import { GoogleCtaContent } from "@/components/google-cta-content";
+src/components/baselane-homepage.tsx:84:                    <GoogleCtaContent />
+src/components/baselane-homepage.tsx:87:                    See demo <MageIcon name="arrow-right" size={19} />
+---
+title: use client
+description: Learn how to use the use client directive to render a component on the client.
+---
+
+The `'use client'` directive declares an entry point for the components to be rendered on the **client side** and should be used when creating interactive user interfaces (UI) that require client-side JavaScript capabilities, such as state management, event handling, and access to browser APIs. This is a React feature.
+
+> **Good to know:**
+>
+> You do not need to add the `'use client'` directive to every file that contains Client Components. You only need to add it to the files whose components you want to render directly within Server Components. The `'use client'` directive defines the client-server [boundary](https://nextjs.org/docs/app/building-your-application/rendering#network-boundary), and the components exported from such a file serve as entry points to the client.
+
+## Usage
+
+To declare an entry point for the Client Components, add the `'use client'` directive **at the top of the file**, before any imports:
+
+```tsx filename="app/components/counter.tsx" highlight={1} switcher
+'use client'
+
+import { useState } from 'react'
+
+export default function Counter() {
+  const [count, setCount] = useState(0)
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  )
+}
+```
+
+```jsx filename="app/components/counter.js" highlight={1} switcher
+'use client'
+
+import { useState } from 'react'
+
+export default function Counter() {
+  const [count, setCount] = useState(0)
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  )
+}
+```
+
+When using the `'use client'` directive, the props of the Client Components must be [serializable](https://react.dev/reference/rsc/use-client#serializable-types). This means the props need to be in a format that React can serialize when sending data from the server to the client.
+
+```tsx filename="app/components/counter.tsx" highlight={4} switcher
+'use client'
+
+export default function Counter({
+  onClick /* ❌ Function is not serializable */,
+}) {
+  return (
+    <div>
+      <button onClick={onClick}>Increment</button>
+    </div>
+  )
+}
+```
+
+```jsx filename="app/components/counter.js" highlight={4} switcher
+'use client'
+
+export default function Counter({
+  onClick /* ❌ Function is not serializable */,
+}) {
+  return (
+    <div>
+      <button onClick={onClick}>Increment</button>
+    </div>
+  )
+}
+```
+
+## Nesting Client Components within Server Components
+
+Combining Server and Client Components allows you to build applications that are both performant and interactive:
+
+1. **Server Components**: Use for static content, data fetching, and SEO-friendly elements.
+2. **Client Components**: Use for interactive elements that require state, effects, or browser APIs.
+3. **Component composition**: Nest Client Components within Server Components as needed for a clear separation of server and client logic.
+
+In the following example:
+
+- `Header` is a Server Component handling static content.
+- `Counter` is a Client Component enabling interactivity within the page.
+
+```tsx filename="app/page.tsx" highlight={2,8} switcher
+import Header from './header'
+import Counter from './counter' // This is a Client Component
+
+export default function Page() {
+  return (
+    <div>
+      <Header />
+      <Counter />
+    </div>
+  )
+}
+```
+
+```jsx filename="app/page.js" highlight={2,8} switcher
+import Header from './header'
+import Counter from './counter' // This is a Client Component
+
+export default function Page() {
+  return (
+    <div>
+      <Header />
+      <Counter />
+    </div>
+  )
+}
+```
+
+## Reference
+
+See the [React documentation](https://react.dev/reference/rsc/use-client) for more information on `'use client'`.
+- innflow-web, src/app/page.module.css, min-height, 112svh, 132svh, hero height, property-operations-one-flow.webp, Turbopack HMR panic, npm run typecheck
+
+## Reusable knowledge
+
+- The recorded update in `/Users/ak/innflow-web/src/app/page.module.css` set hero `min-height` to `calc(112svh - 70px)` on desktop and `calc(132svh - 70px)` on mobile; the footer signup image became `/brand/property-operations-one-flow.webp`. [Task 1]
+- Verify presentation changes in the browser at desktop and mobile sizes as well as with `npx biome check src/app/page.module.css`, `npm run typecheck`, and the focused suite. This run measured about 1,050px desktop and 1,044px mobile; foreground/CTA layering was unchanged, and 10 test files/41 tests passed. [Task 1]
+
+## Failures and how to do differently
+
+- Symptom: preview emits a Turbopack HMR panic or cross-origin development-resource warnings. Cause: dev-server tooling/runtime noise during this preview. Fix: do not treat it as evidence the CSS change failed unless it reproduces after a clean restart; close stale preview sessions after verification. [Task 1]
+
+exec
+/bin/zsh -lc "rg -n 'membership|closing|@media' src/components/site-shell.module.css; rg -n 'SiteCta|See demo|demoUrl' src/components/figma-feature-page.tsx src/app/layout.tsx src/components/site-shell.tsx; rg --files | rg '(site-cta|newsletter).*test|AGENTS.md'; sed -n '1250,1490p' src/components/site-shell.module.css; cat /Users/ak/.codex/skills/playwright/SKILL.md; lsof -nP -iTCP:3000 -sTCP:LISTEN" in /Users/ak/innflow-web
+ exited 1 in 0ms:
+161:@media (min-width: 1181px) {
+487:.closingWrap {
+491:.closing {
+504:.closing::before {
+513:.page .closing h2 {
+517:.page .closing p {
+522:.closing .actions {
+526:.membershipSignup {
+536:.page .membershipSignup h3 {
+540:.page .membershipSignup p {
+545:.membershipFields {
+551:.membershipFields label {
+556:.membershipInputRow {
+566:.membershipInputRow:focus-within {
+570:.membershipInputRow input {
+582:.membershipInputRow input::placeholder {
+585:.membershipInputRow button {
+600:.membershipInputRow :disabled {
+603:.page .membershipSignup small {
+610:.page .membershipSignup small a {
+614:@media (max-width: 600px) {
+615:  .membershipSignup {
+618:  .membershipInputRow input {
+621:  .membershipInputRow button {
+626:@media (max-width: 420px) {
+627:  .membershipSignup {
+630:  .membershipInputRow input,
+631:  .membershipInputRow button {
+634:  .membershipInputRow button {
+637:  .membershipInputRow button > :where(svg) {
+694:@media (max-width: 1100px) {
+725:@media (max-width: 1180px) {
+806:@media (max-width: 850px) {
+873:@media (max-width: 520px) {
+971:  .closingWrap {
+974:  .closing {
+979:  .page .closing p {
+1000:@media (prefers-reduced-motion: reduce) {
+1049:@media (max-width: 700px) {
+1056:@media (max-width: 400px) {
+1069:@media (max-width: 360px) {
+1086:@media (max-width: 1180px) {
+1137:@media (min-width: 1181px) {
+1235:@media (min-width: 1380px) {
+1262:.membershipSuccess {
+1297:@media (min-width: 1181px) {
+rg: src/components/site-shell.tsx: No such file or directory (os error 2)
+src/app/layout.tsx:9:import { SiteCta } from "@/components/site-cta";
+src/app/layout.tsx:175:          <SiteCta />
+src/app/api/newsletter/route.test.ts
+AGENTS.md
+.page :is(.darkButton, .blueButton):hover {
+  background: var(--button-primary-hover);
+  color: #fff;
+}
+
+.mageIcon {
+  display: inline-block;
+  flex-shrink: 0;
+  background: currentColor;
+  mask: var(--mage-icon) center / contain no-repeat;
+}
+
+.membershipSuccess {
+  margin-top: 20px;
+  padding: 20px 24px;
+  border: 1px solid var(--bl-navy);
+  border-radius: 16px;
+  background: var(--bl-green);
+  color: var(--bl-navy);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.dropdown a[data-browse-all]:is(:hover, :focus-visible) {
+  background: transparent;
+}
+
+.dropdown a[data-browse-all]:is(:hover, :focus-visible) > span {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.browseAll {
+  grid-column: 1 / -1;
+  justify-self: start;
+  margin-top: 8px;
+  padding: 10px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.browseAll:is(:hover, :focus-visible) {
+  background: transparent;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (min-width: 1181px) {
+  .dropdownWithUpdate {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(230px, 1.25fr);
+  }
+
+  .menuUpdateSection {
+    grid-column: 5;
+    grid-row: 1 / span 2;
+    min-width: 0;
+    padding-left: 20px;
+    border-left: 1px solid rgb(1 34 50 / 12%);
+  }
+
+  .menuUpdateSection h3 {
+    margin: 0 0 12px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+
+  .dropdownWithUpdate .browseAll {
+    grid-column: 1 / 5;
+  }
+}
+
+.menuUpdateSection .menuBlogCard > span:last-child {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+---
+name: "playwright"
+description: "Use when the task requires automating a real browser from the terminal (navigation, form filling, snapshots, screenshots, data extraction, UI-flow debugging) via `playwright-cli` or the bundled wrapper script."
+---
+
+
+# Playwright CLI Skill
+
+Drive a real browser from the terminal using `playwright-cli`. Prefer the bundled wrapper script so the CLI works even when it is not globally installed.
+Treat this skill as CLI-first automation. Do not pivot to `@playwright/test` unless the user explicitly asks for test files.
+
+## Prerequisite check (required)
+
+Before proposing commands, check whether `npx` is available (the wrapper depends on it):
+
+```bash
+command -v npx >/dev/null 2>&1
+```
+
+If it is not available, pause and ask the user to install Node.js/npm (which provides `npx`). Provide these steps verbatim:
+
+```bash
+# Verify Node/npm are installed
+node --version
+npm --version
+
+# If missing, install Node.js/npm, then:
+npm install -g @playwright/cli@latest
+playwright-cli --help
+```
+
+Once `npx` is present, proceed with the wrapper script. A global install of `playwright-cli` is optional.
+
+## Skill path (set once)
+
+```bash
+export CODEX_HOME="${CODEX_HOME:-$HOME/.codex}"
+export PWCLI="$CODEX_HOME/skills/playwright/scripts/playwright_cli.sh"
+```
+
+User-scoped skills install under `$CODEX_HOME/skills` (default: `~/.codex/skills`).
+
+## Quick start
+
+Use the wrapper script:
+
+```bash
+"$PWCLI" open https://playwright.dev --headed
+"$PWCLI" snapshot
+"$PWCLI" click e15
+"$PWCLI" type "Playwright"
+"$PWCLI" press Enter
+"$PWCLI" screenshot
+```
+
+If the user prefers a global install, this is also valid:
+
+```bash
+npm install -g @playwright/cli@latest
+playwright-cli --help
+```
+
+## Core workflow
+
+1. Open the page.
+2. Snapshot to get stable element refs.
+3. Interact using refs from the latest snapshot.
+4. Re-snapshot after navigation or significant DOM changes.
+5. Capture artifacts (screenshot, pdf, traces) when useful.
+
+Minimal loop:
+
+```bash
+"$PWCLI" open https://example.com
+"$PWCLI" snapshot
+"$PWCLI" click e3
+"$PWCLI" snapshot
+```
+
+## When to snapshot again
+
+Snapshot again after:
+
+- navigation
+- clicking elements that change the UI substantially
+- opening/closing modals or menus
+- tab switches
+
+Refs can go stale. When a command fails due to a missing ref, snapshot again.
+
+## Recommended patterns
+
+### Form fill and submit
+
+```bash
+"$PWCLI" open https://example.com/form
+"$PWCLI" snapshot
+"$PWCLI" fill e1 "user@example.com"
+"$PWCLI" fill e2 "password123"
+"$PWCLI" click e3
+"$PWCLI" snapshot
+```
+
+### Debug a UI flow with traces
+
+```bash
+"$PWCLI" open https://example.com --headed
+"$PWCLI" tracing-start
+# ...interactions...
+"$PWCLI" tracing-stop
+```
+
+### Multi-tab work
+
+```bash
+"$PWCLI" tab-new https://example.com
+"$PWCLI" tab-list
+"$PWCLI" tab-select 0
+"$PWCLI" snapshot
+```
+
+## Wrapper script
+
+The wrapper script uses `npx --package @playwright/cli playwright-cli` so the CLI can run without a global install:
+
+```bash
+"$PWCLI" --help
+```
+
+Prefer the wrapper unless the repository already standardizes on a global install.
+
+## References
+
+Open only what you need:
+
+- CLI command reference: `references/cli.md`
+- Practical workflows and troubleshooting: `references/workflows.md`
+
+## Guardrails
+
+- Always snapshot before referencing element ids like `e12`.
+- Re-snapshot when refs seem stale.
+- Prefer explicit commands over `eval` and `run-code` unless needed.
+- When you do not have a fresh snapshot, use placeholder refs like `eX` and say why; do not bypass refs with `run-code`.
+- Use `--headed` when a visual check will help.
+- When capturing artifacts in this repo, use `output/playwright/` and avoid introducing new top-level artifact folders.
+- Default to CLI commands and workflows, not Playwright test specs.
+
+codex
+The screenshot shows the shared closing CTA and member signup card. I’ll remove its demo button and disclaimer, shorten the signup button label, and reduce the subtitle on mobile. I’m using the Playwright skill to check the layout and signup interaction.
+exec
+/bin/zsh -lc "sed -n '487,645p' src/components/site-shell.module.css; sed -n '966,990p' src/components/site-shell.module.css; command -v npx; cat /Users/ak/.codex/skills/playwright/references/cli.md" in /Users/ak/innflow-web
+ succeeded in 0ms:
+.closingWrap {
+  padding: 40px max(24px, calc((100vw - 1360px) / 2)) 0;
+  background: linear-gradient(to bottom, transparent 50%, var(--ink) 50%);
+}
+.closing {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 420px;
+  padding: 88px 28px 112px;
+  border: 2px solid rgb(1 34 50 / 65%);
+  border-radius: 28px;
+  background: var(--bl-navy);
+  color: #012232;
+  text-align: center;
+  box-shadow: 0 0 0 1px rgb(255 255 255 / 12%);
+}
+.closing::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: url("/brand/blog/apartment-sky-cta.png") center bottom / cover;
+  opacity: 0.92;
+  content: "";
+  pointer-events: none;
+}
+.page .closing h2 {
+  max-width: 800px;
+  margin-inline: auto;
+}
+.page .closing p {
+  max-width: 560px;
+  font-size: 20px;
+  margin: 25px auto 28px;
+}
+.closing .actions {
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.membershipSignup {
+  max-width: 620px;
+  margin: 36px auto 0;
+  padding: 28px;
+  border: 1px solid rgb(1 34 50 / 24%);
+  border-radius: 20px;
+  background: rgb(255 251 244 / 84%);
+  backdrop-filter: blur(16px);
+  text-align: left;
+}
+.page .membershipSignup h3 {
+  font-size: 24px;
+  line-height: 1.2;
+}
+.page .membershipSignup p {
+  margin: 10px 0 22px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.membershipFields {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.membershipFields label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+.membershipInputRow {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid rgb(1 34 50 / 35%);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 90%);
+}
+.membershipInputRow:focus-within {
+  outline: 2px solid #012232;
+  outline-offset: 3px;
+}
+.membershipInputRow input {
+  flex: 1;
+  min-width: 0;
+  min-height: 48px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  padding: 12px 14px;
+  outline: none;
+  color: #012232;
+  font: inherit;
+}
+.membershipInputRow input::placeholder {
+  color: #51606f;
+}
+.membershipInputRow button {
+  display: inline-flex;
+  font-family: var(--font-button, var(--font-sans));
+  line-height: 1.25;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+  min-height: 48px;
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 999px;
+  background: #012232;
+  color: var(--bl-cream);
+}
+.membershipInputRow :disabled {
+  cursor: not-allowed;
+}
+.page .membershipSignup small {
+  display: block;
+  margin-top: 14px;
+  color: #344e5b;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.page .membershipSignup small a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media (max-width: 600px) {
+  .membershipSignup {
+    padding: 22px 18px;
+  }
+  .membershipInputRow input {
+    padding-inline: 8px;
+  }
+  .membershipInputRow button {
+    padding-inline: 12px;
+    white-space: nowrap;
+  }
+}
+@media (max-width: 420px) {
+  .membershipSignup {
+    padding-inline: 12px;
+  }
+  .membershipInputRow input,
+  .membershipInputRow button {
+    font-size: 12px;
+  }
+  .membershipInputRow button {
+    padding-inline: 10px;
+  }
+  .membershipInputRow button > :where(svg) {
+    display: none;
+  }
+}
+.mobileBreak {
+  display: none;
+}
+.footer {
+  padding: 72px max(40px, calc((100vw - 1320px) / 2)) 30px;
+    margin-bottom: 35px;
+  }
+  .supportRow {
+    padding-block: 25px;
+  }
+  .closingWrap {
+    padding: 24px 16px 0;
+  }
+  .closing {
+    min-height: 400px;
+    padding: 56px 20px 80px;
+    border-radius: 22px;
+  }
+  .page .closing p {
+    font-size: 18px;
+  }
+  .mobileBreak {
+    display: block;
+  }
+  .footer {
+    padding: 48px 24px 30px;
+  }
+  .footerGrid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+/opt/homebrew/bin/npx
+# Playwright CLI Reference
+
+Use the wrapper script unless the CLI is already installed globally:
+
+```bash
+export CODEX_HOME="${CODEX_HOME:-$HOME/.codex}"
+export PWCLI="$CODEX_HOME/skills/playwright/scripts/playwright_cli.sh"
+"$PWCLI" --help
+```
+
+User-scoped skills install under `$CODEX_HOME/skills` (default: `~/.codex/skills`).
+
+Optional convenience alias:
+
+```bash
+alias pwcli="$PWCLI"
+```
+
+## Core
+
+```bash
+pwcli open https://example.com
+pwcli close
+pwcli snapshot
+pwcli click e3
+pwcli dblclick e7
+pwcli type "search terms"
+pwcli press Enter
+pwcli fill e5 "user@example.com"
+pwcli drag e2 e8
+pwcli hover e4
+pwcli select e9 "option-value"
+pwcli upload ./document.pdf
+pwcli check e12
+pwcli uncheck e12
+pwcli eval "document.title"
+pwcli eval "el => el.textContent" e5
+pwcli dialog-accept
+pwcli dialog-accept "confirmation text"
+pwcli dialog-dismiss
+pwcli resize 1920 1080
+```
+
+## Navigation
+
+```bash
+pwcli go-back
+pwcli go-forward
+pwcli reload
+```
+
+## Keyboard
+
+```bash
+pwcli press Enter
+pwcli press ArrowDown
+pwcli keydown Shift
+pwcli keyup Shift
+```
+
+## Mouse
+
+```bash
+pwcli mousemove 150 300
+pwcli mousedown
+pwcli mousedown right
+pwcli mouseup
+pwcli mouseup right
+pwcli mousewheel 0 100
+```
+
+## Save as
+
+```bash
+pwcli screenshot
+pwcli screenshot e5
+pwcli pdf
+```
+
+## Tabs
+
+```bash
+pwcli tab-list
+pwcli tab-new
+pwcli tab-new https://example.com/page
+pwcli tab-close
+pwcli tab-close 2
+pwcli tab-select 0
+```
+
+## DevTools
+
+```bash
+pwcli console
+pwcli console warning
+pwcli network
+pwcli run-code "await page.waitForTimeout(1000)"
+pwcli tracing-start
+pwcli tracing-stop
+```
+
+## Sessions
+
+Use a named session to isolate work:
+
+```bash
+pwcli --session todo open https://demo.playwright.dev/todomvc
+pwcli --session todo snapshot
+```
+
+Or set an environment variable once:
+
+```bash
+export PLAYWRIGHT_CLI_SESSION=todo
+pwcli open https://demo.playwright.dev/todomvc
+```
+
+apply patch
+patch: completed
+/Users/ak/innflow-web/src/components/site-cta.tsx
+/Users/ak/innflow-web/src/components/site-shell.module.css
+diff --git a/src/components/site-cta.tsx b/src/components/site-cta.tsx
+index b3c8994ca6176fab7a872b897172875b5d3cb17f..064851fa29c0b623f7ee908a7a9e824f830126ed
+--- a/src/components/site-cta.tsx
++++ b/src/components/site-cta.tsx
+@@ -1,5 +1,4 @@
+ "use client";
+-import { ArrowRight } from "@phosphor-icons/react";
+ import { type FormEvent, useState } from "react";
+ import { siteConfig } from "@/config/site";
+ import { GoogleCtaContent } from "./google-cta-content";
+@@ -57,9 +56,6 @@
+           </h2>
+           <p>Bring your team, context, and next steps together.</p>
+           <div className={styles.actions}>
+-            <a className={styles.outlineButton} href={siteConfig.demoUrl}>
+-              See demo <ArrowRight size={18} />
+-            </a>
+             <TrackedLink
+               className={styles.darkButton}
+               destination={siteConfig.googleAuthUrl}
+@@ -111,16 +107,10 @@
+                     <button type="submit">
+                       {signupState === "pending"
+                         ? "Signing up…"
+-                        : "Sign up now"}{" "}
+-                      <ArrowRight size={18} aria-hidden="true" />
++                        : "Sign up"}
+                     </button>
+                   </div>
+                 </fieldset>
+-                <small>
+-                  By signing up, you agree to receive marketing emails from
+-                  Innflow. Unsubscribe anytime.{" "}
+-                  <a href="/legal/privacy-policy">Privacy policy</a>
+-                </small>
+               </>
+             )}
+             <div
+diff --git a/src/components/site-shell.module.css b/src/components/site-shell.module.css
+index 221f9c26358d3424c69ec3a22f66b9b41607bc56..1932f3f30b13ea25633d84407be3aa167a468fe0
+--- a/src/components/site-shell.module.css
++++ b/src/components/site-shell.module.css
+@@ -600,23 +600,13 @@
+ .membershipInputRow :disabled {
+   cursor: not-allowed;
+ }
+-.page .membershipSignup small {
+-  display: block;
+-  margin-top: 14px;
+-  color: #344e5b;
+-  font-size: 13px;
+-  line-height: 1.5;
+-}
+-.page .membershipSignup small a {
+-  text-decoration: underline;
+-  text-underline-offset: 3px;
+-}
+ @media (max-width: 600px) {
+   .membershipSignup {
+     padding: 22px 18px;
+   }
+   .membershipInputRow input {
+     padding-inline: 8px;
++    font-size: 16px;
+   }
+   .membershipInputRow button {
+     padding-inline: 12px;
+@@ -627,15 +617,11 @@
+   .membershipSignup {
+     padding-inline: 12px;
+   }
+-  .membershipInputRow input,
+   .membershipInputRow button {
+-    font-size: 12px;
++    font-size: 14px;
+   }
+   .membershipInputRow button {
+     padding-inline: 10px;
+-  }
+-  .membershipInputRow button > :where(svg) {
+-    display: none;
+   }
+ }
+ .mobileBreak {
+@@ -979,6 +965,9 @@
+   .page .closing p {
+     font-size: 18px;
+   }
++  .page .closing .membershipSignup p {
++    font-size: 14px;
++  }
+   .mobileBreak {
+     display: block;
+   }
+
+exec
+/bin/zsh -lc 'npm run dev -- --port 3000' in /Users/ak/innflow-web
+ exited 1 in 1143ms:
+npm notice run innflow-web@0.1.0 dev
+npm notice run next dev --turbopack --port 3000
+⨯ Failed to start server
+Error: listen EPERM: operation not permitted 0.0.0.0:3000
+    at <unknown> (Error: listen EPERM: operation not permitted 0.0.0.0:3000)
+    at new Promise (<anonymous>) {
+  code: 'EPERM',
+  errno: -1,
+  syscall: 'listen',
+  address: '0.0.0.0',
+  port: 3000
+}
+[?25h
+
+exec
+/bin/zsh -lc '/Users/ak/.codex/skills/playwright/scripts/playwright_cli.sh --session hero-cleanup open http://localhost:3000' in /Users/ak/innflow-web
+diff --git a/src/components/site-cta.tsx b/src/components/site-cta.tsx
+index b3c8994ca6176fab7a872b897172875b5d3cb17f..064851fa29c0b623f7ee908a7a9e824f830126ed
+--- a/src/components/site-cta.tsx
++++ b/src/components/site-cta.tsx
+@@ -1,5 +1,4 @@
+ "use client";
+-import { ArrowRight } from "@phosphor-icons/react";
+ import { type FormEvent, useState } from "react";
+ import { siteConfig } from "@/config/site";
+ import { GoogleCtaContent } from "./google-cta-content";
+@@ -57,9 +56,6 @@
+           </h2>
+           <p>Bring your team, context, and next steps together.</p>
+           <div className={styles.actions}>
+-            <a className={styles.outlineButton} href={siteConfig.demoUrl}>
+-              See demo <ArrowRight size={18} />
+-            </a>
+             <TrackedLink
+               className={styles.darkButton}
+               destination={siteConfig.googleAuthUrl}
+@@ -111,16 +107,10 @@
+                     <button type="submit">
+                       {signupState === "pending"
+                         ? "Signing up…"
+-                        : "Sign up now"}{" "}
+-                      <ArrowRight size={18} aria-hidden="true" />
++                        : "Sign up"}
+                     </button>
+                   </div>
+                 </fieldset>
+-                <small>
+-                  By signing up, you agree to receive marketing emails from
+-                  Innflow. Unsubscribe anytime.{" "}
+-                  <a href="/legal/privacy-policy">Privacy policy</a>
+-                </small>
+               </>
+             )}
+             <div
+diff --git a/src/components/site-shell.module.css b/src/components/site-shell.module.css
+index 221f9c26358d3424c69ec3a22f66b9b41607bc56..1932f3f30b13ea25633d84407be3aa167a468fe0
+--- a/src/components/site-shell.module.css
++++ b/src/components/site-shell.module.css
+@@ -600,23 +600,13 @@
+ .membershipInputRow :disabled {
+   cursor: not-allowed;
+ }
+-.page .membershipSignup small {
+-  display: block;
+-  margin-top: 14px;
+-  color: #344e5b;
+-  font-size: 13px;
+-  line-height: 1.5;
+-}
+-.page .membershipSignup small a {
+-  text-decoration: underline;
+-  text-underline-offset: 3px;
+-}
+ @media (max-width: 600px) {
+   .membershipSignup {
+     padding: 22px 18px;
+   }
+   .membershipInputRow input {
+     padding-inline: 8px;
++    font-size: 16px;
+   }
+   .membershipInputRow button {
+     padding-inline: 12px;
+@@ -627,15 +617,11 @@
+   .membershipSignup {
+     padding-inline: 12px;
+   }
+-  .membershipInputRow input,
+   .membershipInputRow button {
+-    font-size: 12px;
++    font-size: 14px;
+   }
+   .membershipInputRow button {
+     padding-inline: 10px;
+-  }
+-  .membershipInputRow button > :where(svg) {
+-    display: none;
+   }
+ }
+ .mobileBreak {
+@@ -979,6 +965,9 @@
+   .page .closing p {
+     font-size: 18px;
+   }
++  .page .closing .membershipSignup p {
++    font-size: 14px;
++  }
+   .mobileBreak {
+     display: block;
+   }
+
+exec
+/bin/zsh -lc 'npm run dev -- --hostname 127.0.0.1 --port 3000' in /Users/ak/innflow-web
+exec
+/bin/zsh -lc 'npx biome check src/components/site-cta.tsx src/components/site-shell.module.css; npm run typecheck; npm run test:run -- src/app/api/newsletter/route.test.ts' in /Users/ak/innflow-web
+ exited 1 in 1424ms:
+▲ Next.js 16.3.0 (Turbopack)
+- Local:         http://127.0.0.1:3000
+- Network:       http://127.0.0.1:3000
+- Environments: .env.local, .env
+✓ Ready in 187ms
+✓ Running next.config.ts took 68ms
+⨯ Another next dev server is already running.
+
+- Local:        http://localhost:3015
+- PID:          43455
+- Dir:          /Users/ak/innflow-web
+- Log:          .next/dev/logs/next-development.log
+
+You can access the existing server at http://localhost:3015,
+or run kill 43455 to stop it and start a new one.
+[?25h
+
+ succeeded in 3394ms:
+npm notice run innflow-web@0.1.0 npx
+npm notice run 'biome' check src/components/site-cta.tsx src/components/site-shell.module.css
+src/components/site-cta.tsx format ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Formatter would have printed the following content:
+  
+    106 106 │                       />
+    107 107 │                       <button type="submit">
+    108     │ - ······················{signupState·===·"pending"
+    109     │ - ························?·"Signing·up…"
+    110     │ - ························:·"Sign·up"}
+        108 │ + ······················{signupState·===·"pending"·?·"Signing·up…"·:·"Sign·up"}
+    111 109 │                       </button>
+    112 110 │                     </div>
+  
+
+Checked 2 files in 42ms. No fixes applied.
+Found 1 error.
+check ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  × Some errors were emitted while running checks.
+  
+
+npm notice run innflow-web@0.1.0 typecheck
+npm notice run tsc --noEmit
+npm notice run innflow-web@0.1.0 test:run
+npm notice run vitest run src/app/api/newsletter/route.test.ts
+
+ RUN  v4.1.10 /Users/ak/innflow-web
+
+
+ Test Files  1 passed (1)
+      Tests  6 passed (6)
+   Start at  05:04:29
+   Duration  146ms (transform 16ms, setup 60ms, import 9ms, tests 12ms, environment 0ms)
+
+
+diff --git a/src/components/site-cta.tsx b/src/components/site-cta.tsx
+index b3c8994ca6176fab7a872b897172875b5d3cb17f..064851fa29c0b623f7ee908a7a9e824f830126ed
+--- a/src/components/site-cta.tsx
++++ b/src/components/site-cta.tsx
+@@ -1,5 +1,4 @@
+ "use client";
+-import { ArrowRight } from "@phosphor-icons/react";
+ import { type FormEvent, useState } from "react";
+ import { siteConfig } from "@/config/site";
+ import { GoogleCtaContent } from "./google-cta-content";
+@@ -57,9 +56,6 @@
+           </h2>
+           <p>Bring your team, context, and next steps together.</p>
+           <div className={styles.actions}>
+-            <a className={styles.outlineButton} href={siteConfig.demoUrl}>
+-              See demo <ArrowRight size={18} />
+-            </a>
+             <TrackedLink
+               className={styles.darkButton}
+               destination={siteConfig.googleAuthUrl}
+@@ -111,16 +107,10 @@
+                     <button type="submit">
+                       {signupState === "pending"
+                         ? "Signing up…"
+-                        : "Sign up now"}{" "}
+-                      <ArrowRight size={18} aria-hidden="true" />
++                        : "Sign up"}
+                     </button>
+                   </div>
+                 </fieldset>
+-                <small>
+-                  By signing up, you agree to receive marketing emails from
+-                  Innflow. Unsubscribe anytime.{" "}
+-                  <a href="/legal/privacy-policy">Privacy policy</a>
+-                </small>
+               </>
+             )}
+             <div
+diff --git a/src/components/site-shell.module.css b/src/components/site-shell.module.css
+index 221f9c26358d3424c69ec3a22f66b9b41607bc56..1932f3f30b13ea25633d84407be3aa167a468fe0
+--- a/src/components/site-shell.module.css
++++ b/src/components/site-shell.module.css
+@@ -600,23 +600,13 @@
+ .membershipInputRow :disabled {
+   cursor: not-allowed;
+ }
+-.page .membershipSignup small {
+-  display: block;
+-  margin-top: 14px;
+-  color: #344e5b;
+-  font-size: 13px;
+-  line-height: 1.5;
+-}
+-.page .membershipSignup small a {
+-  text-decoration: underline;
+-  text-underline-offset: 3px;
+-}
+ @media (max-width: 600px) {
+   .membershipSignup {
+     padding: 22px 18px;
+   }
+   .membershipInputRow input {
+     padding-inline: 8px;
++    font-size: 16px;
+   }
+   .membershipInputRow button {
+     padding-inline: 12px;
+@@ -627,15 +617,11 @@
+   .membershipSignup {
+     padding-inline: 12px;
+   }
+-  .membershipInputRow input,
+   .membershipInputRow button {
+-    font-size: 12px;
++    font-size: 14px;
+   }
+   .membershipInputRow button {
+     padding-inline: 10px;
+-  }
+-  .membershipInputRow button > :where(svg) {
+-    display: none;
+   }
+ }
+ .mobileBreak {
+@@ -979,6 +965,9 @@
+   .page .closing p {
+     font-size: 18px;
+   }
++  .page .closing .membershipSignup p {
++    font-size: 14px;
++  }
+   .mobileBreak {
+     display: block;
+   }
+
+exec
+/bin/zsh -lc 'npx biome check --write src/components/site-cta.tsx src/components/site-shell.module.css' in /Users/ak/innflow-web
+ succeeded in 178ms:
+npm notice run innflow-web@0.1.0 npx
+npm notice run 'biome' check --write src/components/site-cta.tsx src/components/site-shell.module.css
+Checked 2 files in 10ms. Fixed 1 file.
+
+diff --git a/src/components/site-cta.tsx b/src/components/site-cta.tsx
+index b3c8994ca6176fab7a872b897172875b5d3cb17f..064851fa29c0b623f7ee908a7a9e824f830126ed
+--- a/src/components/site-cta.tsx
++++ b/src/components/site-cta.tsx
+@@ -1,5 +1,4 @@
+ "use client";
+-import { ArrowRight } from "@phosphor-icons/react";
+ import { type FormEvent, useState } from "react";
+ import { siteConfig } from "@/config/site";
+ import { GoogleCtaContent } from "./google-cta-content";
+@@ -57,9 +56,6 @@
+           </h2>
+           <p>Bring your team, context, and next steps together.</p>
+           <div className={styles.actions}>
+-            <a className={styles.outlineButton} href={siteConfig.demoUrl}>
+-              See demo <ArrowRight size={18} />
+-            </a>
+             <TrackedLink
+               className={styles.darkButton}
+               destination={siteConfig.googleAuthUrl}
+@@ -111,16 +107,10 @@
+                     <button type="submit">
+                       {signupState === "pending"
+                         ? "Signing up…"
+-                        : "Sign up now"}{" "}
+-                      <ArrowRight size={18} aria-hidden="true" />
++                        : "Sign up"}
+                     </button>
+                   </div>
+                 </fieldset>
+-                <small>
+-                  By signing up, you agree to receive marketing emails from
+-                  Innflow. Unsubscribe anytime.{" "}
+-                  <a href="/legal/privacy-policy">Privacy policy</a>
+-                </small>
+               </>
+             )}
+             <div
+diff --git a/src/components/site-shell.module.css b/src/components/site-shell.module.css
+index 221f9c26358d3424c69ec3a22f66b9b41607bc56..1932f3f30b13ea25633d84407be3aa167a468fe0
+--- a/src/components/site-shell.module.css
++++ b/src/components/site-shell.module.css
+@@ -600,23 +600,13 @@
+ .membershipInputRow :disabled {
+   cursor: not-allowed;
+ }
+-.page .membershipSignup small {
+-  display: block;
+-  margin-top: 14px;
+-  color: #344e5b;
+-  font-size: 13px;
+-  line-height: 1.5;
+-}
+-.page .membershipSignup small a {
+-  text-decoration: underline;
+-  text-underline-offset: 3px;
+-}
+ @media (max-width: 600px) {
+   .membershipSignup {
+     padding: 22px 18px;
+   }
+   .membershipInputRow input {
+     padding-inline: 8px;
++    font-size: 16px;
+   }
+   .membershipInputRow button {
+     padding-inline: 12px;
+@@ -627,15 +617,11 @@
+   .membershipSignup {
+     padding-inline: 12px;
+   }
+-  .membershipInputRow input,
+   .membershipInputRow button {
+-    font-size: 12px;
++    font-size: 14px;
+   }
+   .membershipInputRow button {
+     padding-inline: 10px;
+-  }
+-  .membershipInputRow button > :where(svg) {
+-    display: none;
+   }
+ }
+ .mobileBreak {
+@@ -979,6 +965,9 @@
+   .page .closing p {
+     font-size: 18px;
+   }
++  .page .closing .membershipSignup p {
++    font-size: 14px;
++  }
+   .mobileBreak {
+     display: block;
+   }
+
+mcp: playwright/browser_navigate started
+mcp: playwright/browser_navigate (failed)
+diff --git a/src/components/site-cta.tsx b/src/components/site-cta.tsx
+index b3c8994ca6176fab7a872b897172875b5d3cb17f..064851fa29c0b623f7ee908a7a9e824f830126ed
+--- a/src/components/site-cta.tsx
++++ b/src/components/site-cta.tsx
+@@ -1,5 +1,4 @@
+ "use client";
+-import { ArrowRight } from "@phosphor-icons/react";
+ import { type FormEvent, useState } from "react";
+ import { siteConfig } from "@/config/site";
+ import { GoogleCtaContent } from "./google-cta-content";
+@@ -57,9 +56,6 @@
+           </h2>
+           <p>Bring your team, context, and next steps together.</p>
+           <div className={styles.actions}>
+-            <a className={styles.outlineButton} href={siteConfig.demoUrl}>
+-              See demo <ArrowRight size={18} />
+-            </a>
+             <TrackedLink
+               className={styles.darkButton}
+               destination={siteConfig.googleAuthUrl}
+@@ -111,16 +107,10 @@
+                     <button type="submit">
+                       {signupState === "pending"
+                         ? "Signing up…"
+-                        : "Sign up now"}{" "}
+-                      <ArrowRight size={18} aria-hidden="true" />
++                        : "Sign up"}
+                     </button>
+                   </div>
+                 </fieldset>
+-                <small>
+-                  By signing up, you agree to receive marketing emails from
+-                  Innflow. Unsubscribe anytime.{" "}
+-                  <a href="/legal/privacy-policy">Privacy policy</a>
+-                </small>
+               </>
+             )}
+             <div
+diff --git a/src/components/site-shell.module.css b/src/components/site-shell.module.css
+index 221f9c26358d3424c69ec3a22f66b9b41607bc56..1932f3f30b13ea25633d84407be3aa167a468fe0
+--- a/src/components/site-shell.module.css
++++ b/src/components/site-shell.module.css
+@@ -600,23 +600,13 @@
+ .membershipInputRow :disabled {
+   cursor: not-allowed;
+ }
+-.page .membershipSignup small {
+-  display: block;
+-  margin-top: 14px;
+-  color: #344e5b;
+-  font-size: 13px;
+-  line-height: 1.5;
+-}
+-.page .membershipSignup small a {
+-  text-decoration: underline;
+-  text-underline-offset: 3px;
+-}
+ @media (max-width: 600px) {
+   .membershipSignup {
+     padding: 22px 18px;
+   }
+   .membershipInputRow input {
+     padding-inline: 8px;
++    font-size: 16px;
+   }
+   .membershipInputRow button {
+     padding-inline: 12px;
+@@ -627,15 +617,11 @@
+   .membershipSignup {
+     padding-inline: 12px;
+   }
+-  .membershipInputRow input,
+   .membershipInputRow button {
+-    font-size: 12px;
++    font-size: 14px;
+   }
+   .membershipInputRow button {
+     padding-inline: 10px;
+-  }
+-  .membershipInputRow button > :where(svg) {
+-    display: none;
+   }
+ }
+ .mobileBreak {
+@@ -979,6 +965,9 @@
+   .page .closing p {
+     font-size: 18px;
+   }
++  .page .closing .membershipSignup p {
++    font-size: 14px;
++  }
+   .mobileBreak {
+     display: block;
+   }
+
+codex
+The UI changes are in place. TypeScript and all six newsletter API tests pass. I also found why the subtitle looked oversized: a later mobile rule overrode its font size. It now has an explicit 14px mobile size, and the signup button reads “Sign up.”
+exec
+/bin/zsh -lc "curl -I http://127.0.0.1:3000; rg --files /Users/ak/.cache /Users/ak/.npm 2>/dev/null | rg '/(playwright/cli.js|playwright-core/package.json|playwright-cli.js)"'$'"' | head -10" in /Users/ak/innflow-web
+ succeeded in 554ms:
+/Users/ak/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/cli.js
+/Users/ak/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/package.json
+/Users/ak/.npm/_npx/bbb8a2c4738e2b0c/node_modules/playwright/cli.js
+/Users/ak/.npm/_npx/bbb8a2c4738e2b0c/node_modules/playwright-core/package.json
+/Users/ak/.npm/_npx/cbf1b8a072280925/node_modules/playwright/cli.js
+/Users/ak/.npm/_npx/cbf1b8a072280925/node_modules/playwright-core/package.json
+/Users/ak/.npm/_npx/e41f203b7505f1fb/node_modules/playwright/cli.js
+/Users/ak/.npm/_npx/e41f203b7505f1fb/node_modules/playwright-core/package.json
+/Users/ak/.npm/_npx/31e32ef8478fbf80/node_modules/playwright/cli.js
+/Users/ak/.npm/_npx/31e32ef8478fbf80/node_modules/playwright-core/package.json
+
+diff --git a/src/components/site-cta.tsx b/src/components/site-cta.tsx
+index b3c8994ca6176fab7a872b897172875b5d3cb17f..064851fa29c0b623f7ee908a7a9e824f830126ed
+--- a/src/components/site-cta.tsx
++++ b/src/components/site-cta.tsx
+@@ -1,5 +1,4 @@
+ "use client";
+-import { ArrowRight } from "@phosphor-icons/react";
+ import { type FormEvent, useState } from "react";
+ import { siteConfig } from "@/config/site";
+ import { GoogleCtaContent } from "./google-cta-content";
+@@ -57,9 +56,6 @@
+           </h2>
+           <p>Bring your team, context, and next steps together.</p>
+           <div className={styles.actions}>
+-            <a className={styles.outlineButton} href={siteConfig.demoUrl}>
+-              See demo <ArrowRight size={18} />
+-            </a>
+             <TrackedLink
+               className={styles.darkButton}
+               destination={siteConfig.googleAuthUrl}
+@@ -111,16 +107,10 @@
+                     <button type="submit">
+                       {signupState === "pending"
+                         ? "Signing up…"
+-                        : "Sign up now"}{" "}
+-                      <ArrowRight size={18} aria-hidden="true" />
++                        : "Sign up"}
+                     </button>
+                   </div>
+                 </fieldset>
+-                <small>
+-                  By signing up, you agree to receive marketing emails from
+-                  Innflow. Unsubscribe anytime.{" "}
+-                  <a href="/legal/privacy-policy">Privacy policy</a>
+-                </small>
+               </>
+             )}
+             <div
+diff --git a/src/components/site-shell.module.css b/src/components/site-shell.module.css
+index 221f9c26358d3424c69ec3a22f66b9b41607bc56..1932f3f30b13ea25633d84407be3aa167a468fe0
+--- a/src/components/site-shell.module.css
++++ b/src/components/site-shell.module.css
+@@ -600,23 +600,13 @@
+ .membershipInputRow :disabled {
+   cursor: not-allowed;
+ }
+-.page .membershipSignup small {
+-  display: block;
+-  margin-top: 14px;
+-  color: #344e5b;
+-  font-size: 13px;
+-  line-height: 1.5;
+-}
+-.page .membershipSignup small a {
+-  text-decoration: underline;
+-  text-underline-offset: 3px;
+-}
+ @media (max-width: 600px) {
+   .membershipSignup {
+     padding: 22px 18px;
+   }
+   .membershipInputRow input {
+     padding-inline: 8px;
++    font-size: 16px;
+   }
+   .membershipInputRow button {
+     padding-inline: 12px;
+@@ -627,15 +617,11 @@
+   .membershipSignup {
+     padding-inline: 12px;
+   }
+-  .membershipInputRow input,
+   .membershipInputRow button {
+-    font-size: 12px;
++    font-size: 14px;
+   }
+   .membershipInputRow button {
+     padding-inline: 10px;
+-  }
+-  .membershipInputRow button > :where(svg) {
+-    display: none;
+   }
+ }
+ .mobileBreak {
+@@ -979,6 +965,9 @@
+   .page .closing p {
+     font-size: 18px;
+   }
++  .page .closing .membershipSignup p {
++    font-size: 14px;
++  }
+   .mobileBreak {
+     display: block;
+   }
+
+mcp: playwright/browser_navigate started
+mcp: playwright/browser_navigate (completed)
+diff --git a/src/components/site-cta.tsx b/src/components/site-cta.tsx
+index b3c8994ca6176fab7a872b897172875b5d3cb17f..064851fa29c0b623f7ee908a7a9e824f830126ed
+--- a/src/components/site-cta.tsx
++++ b/src/components/site-cta.tsx
+@@ -1,5 +1,4 @@
+ "use client";
+-import { ArrowRight } from "@phosphor-icons/react";
+ import { type FormEvent, useState } from "react";
+ import { siteConfig } from "@/config/site";
+ import { GoogleCtaContent } from "./google-cta-content";
+@@ -57,9 +56,6 @@
+           </h2>
+           <p>Bring your team, context, and next steps together.</p>
+           <div className={styles.actions}>
+-            <a className={styles.outlineButton} href={siteConfig.demoUrl}>
+-              See demo <ArrowRight size={18} />
+-            </a>
+             <TrackedLink
+               className={styles.darkButton}
+               destination={siteConfig.googleAuthUrl}
+@@ -111,16 +107,10 @@
+                     <button type="submit">
+                       {signupState === "pending"
+                         ? "Signing up…"
+-                        : "Sign up now"}{" "}
+-                      <ArrowRight size={18} aria-hidden="true" />
++                        : "Sign up"}
+                     </button>
+                   </div>
+                 </fieldset>
+-                <small>
+-                  By signing up, you agree to receive marketing emails from
+-                  Innflow. Unsubscribe anytime.{" "}
+-                  <a href="/legal/privacy-policy">Privacy policy</a>
+-                </small>
+               </>
+             )}
+             <div
+diff --git a/src/components/site-shell.module.css b/src/components/site-shell.module.css
+index 221f9c26358d3424c69ec3a22f66b9b41607bc56..1932f3f30b13ea25633d84407be3aa167a468fe0
+--- a/src/components/site-shell.module.css
++++ b/src/components/site-shell.module.css
+@@ -600,23 +600,13 @@
+ .membershipInputRow :disabled {
+   cursor: not-allowed;
+ }
+-.page .membershipSignup small {
+-  display: block;
+-  margin-top: 14px;
+-  color: #344e5b;
+-  font-size: 13px;
+-  line-height: 1.5;
+-}
+-.page .membershipSignup small a {
+-  text-decoration: underline;
+-  text-underline-offset: 3px;
+-}
+ @media (max-width: 600px) {
+   .membershipSignup {
+     padding: 22px 18px;
+   }
+   .membershipInputRow input {
+     padding-inline: 8px;
++    font-size: 16px;
+   }
+   .membershipInputRow button {
+     padding-inline: 12px;
+@@ -627,15 +617,11 @@
+   .membershipSignup {
+     padding-inline: 12px;
+   }
+-  .membershipInputRow input,
+   .membershipInputRow button {
+-    font-size: 12px;
++    font-size: 14px;
+   }
+   .membershipInputRow button {
+     padding-inline: 10px;
+-  }
+-  .membershipInputRow button > :where(svg) {
+-    display: none;
+   }
+ }
+ .mobileBreak {
+@@ -979,6 +965,9 @@
+   .page .closing p {
+     font-size: 18px;
+   }
++  .page .closing .membershipSignup p {
++    font-size: 14px;
++  }
+   .mobileBreak {
+     display: block;
+   }
+
+mcp: playwright/browser_run_code_unsafe started
+mcp: playwright/browser_run_code_unsafe (completed)
+diff --git a/src/components/site-cta.tsx b/src/components/site-cta.tsx
+index b3c8994ca6176fab7a872b897172875b5d3cb17f..064851fa29c0b623f7ee908a7a9e824f830126ed
+--- a/src/components/site-cta.tsx
++++ b/src/components/site-cta.tsx
+@@ -1,5 +1,4 @@
+ "use client";
+-import { ArrowRight } from "@phosphor-icons/react";
+ import { type FormEvent, useState } from "react";
+ import { siteConfig } from "@/config/site";
+ import { GoogleCtaContent } from "./google-cta-content";
+@@ -57,9 +56,6 @@
+           </h2>
+           <p>Bring your team, context, and next steps together.</p>
+           <div className={styles.actions}>
+-            <a className={styles.outlineButton} href={siteConfig.demoUrl}>
+-              See demo <ArrowRight size={18} />
+-            </a>
+             <TrackedLink
+               className={styles.darkButton}
+               destination={siteConfig.googleAuthUrl}
+@@ -111,16 +107,10 @@
+                     <button type="submit">
+                       {signupState === "pending"
+                         ? "Signing up…"
+-                        : "Sign up now"}{" "}
+-                      <ArrowRight size={18} aria-hidden="true" />
++                        : "Sign up"}
+                     </button>
+                   </div>
+                 </fieldset>
+-                <small>
+-                  By signing up, you agree to receive marketing emails from
+-                  Innflow. Unsubscribe anytime.{" "}
+-                  <a href="/legal/privacy-policy">Privacy policy</a>
+-                </small>
+               </>
+             )}
+             <div
+diff --git a/src/components/site-shell.module.css b/src/components/site-shell.module.css
+index 221f9c26358d3424c69ec3a22f66b9b41607bc56..1932f3f30b13ea25633d84407be3aa167a468fe0
+--- a/src/components/site-shell.module.css
++++ b/src/components/site-shell.module.css
+@@ -600,23 +600,13 @@
+ .membershipInputRow :disabled {
+   cursor: not-allowed;
+ }
+-.page .membershipSignup small {
+-  display: block;
+-  margin-top: 14px;
+-  color: #344e5b;
+-  font-size: 13px;
+-  line-height: 1.5;
+-}
+-.page .membershipSignup small a {
+-  text-decoration: underline;
+-  text-underline-offset: 3px;
+-}
+ @media (max-width: 600px) {
+   .membershipSignup {
+     padding: 22px 18px;
+   }
+   .membershipInputRow input {
+     padding-inline: 8px;
++    font-size: 16px;
+   }
+   .membershipInputRow button {
+     padding-inline: 12px;
+@@ -627,15 +617,11 @@
+   .membershipSignup {
+     padding-inline: 12px;
+   }
+-  .membershipInputRow input,
+   .membershipInputRow button {
+-    font-size: 12px;
++    font-size: 14px;
+   }
+   .membershipInputRow button {
+     padding-inline: 10px;
+-  }
+-  .membershipInputRow button > :where(svg) {
+-    display: none;
+   }
+ }
+ .mobileBreak {
+@@ -979,6 +965,9 @@
+   .page .closing p {
+     font-size: 18px;
+   }
++  .page .closing .membershipSignup p {
++    font-size: 14px;
++  }
+   .mobileBreak {
+     display: block;
+   }
+
+ exited 1 in 70712ms:
+npm error code ENOTFOUND
+npm error syscall getaddrinfo
+npm error errno ENOTFOUND
+npm error network request to https://registry.npmjs.org/@playwright%2fcli failed, reason: getaddrinfo ENOTFOUND registry.npmjs.org
+npm error network This is a problem related to network connectivity.
+npm error network In most cases you are behind a proxy or have bad network settings.
+npm error network
+npm error network If you are behind a proxy, please make sure that the 'proxy' config is set properly.  See: 'npm help config'
+npm error Log files were not written due to an error writing to the directory: /Users/ak/.npm/_logs
+npm error You can rerun the command with `--loglevel=verbose` to see the logs in your terminal
+
+mcp: playwright/browser_resize started
+mcp: playwright/browser_resize (completed)
+mcp: playwright/browser_run_code_unsafe started
+mcp: playwright/browser_run_code_unsafe (completed)
+mcp: playwright/browser_take_screenshot started
+mcp: playwright/browser_take_screenshot (completed)
+diff --git a/src/components/site-cta.tsx b/src/components/site-cta.tsx
+index b3c8994ca6176fab7a872b897172875b5d3cb17f..064851fa29c0b623f7ee908a7a9e824f830126ed
+--- a/src/components/site-cta.tsx
++++ b/src/components/site-cta.tsx
+@@ -1,5 +1,4 @@
+ "use client";
+-import { ArrowRight } from "@phosphor-icons/react";
+ import { type FormEvent, useState } from "react";
+ import { siteConfig } from "@/config/site";
+ import { GoogleCtaContent } from "./google-cta-content";
+@@ -57,9 +56,6 @@
+           </h2>
+           <p>Bring your team, context, and next steps together.</p>
+           <div className={styles.actions}>
+-            <a className={styles.outlineButton} href={siteConfig.demoUrl}>
+-              See demo <ArrowRight size={18} />
+-            </a>
+             <TrackedLink
+               className={styles.darkButton}
+               destination={siteConfig.googleAuthUrl}
+@@ -111,16 +107,10 @@
+                     <button type="submit">
+                       {signupState === "pending"
+                         ? "Signing up…"
+-                        : "Sign up now"}{" "}
+-                      <ArrowRight size={18} aria-hidden="true" />
++                        : "Sign up"}
+                     </button>
+                   </div>
+                 </fieldset>
+-                <small>
+-                  By signing up, you agree to receive marketing emails from
+-                  Innflow. Unsubscribe anytime.{" "}
+-                  <a href="/legal/privacy-policy">Privacy policy</a>
+-                </small>
+               </>
+             )}
+             <div
+diff --git a/src/components/site-shell.module.css b/src/components/site-shell.module.css
+index 221f9c26358d3424c69ec3a22f66b9b41607bc56..1932f3f30b13ea25633d84407be3aa167a468fe0
+--- a/src/components/site-shell.module.css
++++ b/src/components/site-shell.module.css
+@@ -600,23 +600,13 @@
+ .membershipInputRow :disabled {
+   cursor: not-allowed;
+ }
+-.page .membershipSignup small {
+-  display: block;
+-  margin-top: 14px;
+-  color: #344e5b;
+-  font-size: 13px;
+-  line-height: 1.5;
+-}
+-.page .membershipSignup small a {
+-  text-decoration: underline;
+-  text-underline-offset: 3px;
+-}
+ @media (max-width: 600px) {
+   .membershipSignup {
+     padding: 22px 18px;
+   }
+   .membershipInputRow input {
+     padding-inline: 8px;
++    font-size: 16px;
+   }
+   .membershipInputRow button {
+     padding-inline: 12px;
+@@ -627,15 +617,11 @@
+   .membershipSignup {
+     padding-inline: 12px;
+   }
+-  .membershipInputRow input,
+   .membershipInputRow button {
+-    font-size: 12px;
++    font-size: 14px;
+   }
+   .membershipInputRow button {
+     padding-inline: 10px;
+-  }
+-  .membershipInputRow button > :where(svg) {
+-    display: none;
+   }
+ }
+ .mobileBreak {
+@@ -979,6 +965,9 @@
+   .page .closing p {
+     font-size: 18px;
+   }
++  .page .closing .membershipSignup p {
++    font-size: 14px;
++  }
+   .mobileBreak {
+     display: block;
+   }
+
+mcp: playwright/browser_run_code_unsafe started
+mcp: playwright/browser_run_code_unsafe (completed)
+mcp: playwright/browser_take_screenshot started
+mcp: playwright/browser_take_screenshot (completed)
+mcp: playwright/browser_run_code_unsafe started
+mcp: playwright/browser_run_code_unsafe (completed)
+exec
+/bin/zsh -lc 'git diff --check; git diff --stat; git status --short; npx biome check src/components/site-cta.tsx src/components/site-shell.module.css' in /Users/ak/innflow-web
+ succeeded in 498ms:
+ src/components/site-cta.tsx          | 14 +-------------
+ src/components/site-shell.module.css | 21 +++++----------------
+ 2 files changed, 6 insertions(+), 29 deletions(-)
+ M src/components/site-cta.tsx
+ M src/components/site-shell.module.css
+?? .codex-hero-cleanup.log
+?? .codex-inbox-hero-cleanup.png
+?? .codex-prompt-hero-cleanup.md
+?? .codex-run-hero-cleanup.sh
+?? .playwright-mcp/
+npm notice run innflow-web@0.1.0 npx
+npm notice run 'biome' check src/components/site-cta.tsx src/components/site-shell.module.css
+Checked 2 files in 53ms. No fixes applied.
+
+diff --git a/src/components/site-cta.tsx b/src/components/site-cta.tsx
+index b3c8994ca6176fab7a872b897172875b5d3cb17f..064851fa29c0b623f7ee908a7a9e824f830126ed
+--- a/src/components/site-cta.tsx
++++ b/src/components/site-cta.tsx
+@@ -1,5 +1,4 @@
+ "use client";
+-import { ArrowRight } from "@phosphor-icons/react";
+ import { type FormEvent, useState } from "react";
+ import { siteConfig } from "@/config/site";
+ import { GoogleCtaContent } from "./google-cta-content";
+@@ -57,9 +56,6 @@
+           </h2>
+           <p>Bring your team, context, and next steps together.</p>
+           <div className={styles.actions}>
+-            <a className={styles.outlineButton} href={siteConfig.demoUrl}>
+-              See demo <ArrowRight size={18} />
+-            </a>
+             <TrackedLink
+               className={styles.darkButton}
+               destination={siteConfig.googleAuthUrl}
+@@ -111,16 +107,10 @@
+                     <button type="submit">
+                       {signupState === "pending"
+                         ? "Signing up…"
+-                        : "Sign up now"}{" "}
+-                      <ArrowRight size={18} aria-hidden="true" />
++                        : "Sign up"}
+                     </button>
+                   </div>
+                 </fieldset>
+-                <small>
+-                  By signing up, you agree to receive marketing emails from
+-                  Innflow. Unsubscribe anytime.{" "}
+-                  <a href="/legal/privacy-policy">Privacy policy</a>
+-                </small>
+               </>
+             )}
+             <div
+diff --git a/src/components/site-shell.module.css b/src/components/site-shell.module.css
+index 221f9c26358d3424c69ec3a22f66b9b41607bc56..1932f3f30b13ea25633d84407be3aa167a468fe0
+--- a/src/components/site-shell.module.css
++++ b/src/components/site-shell.module.css
+@@ -600,23 +600,13 @@
+ .membershipInputRow :disabled {
+   cursor: not-allowed;
+ }
+-.page .membershipSignup small {
+-  display: block;
+-  margin-top: 14px;
+-  color: #344e5b;
+-  font-size: 13px;
+-  line-height: 1.5;
+-}
+-.page .membershipSignup small a {
+-  text-decoration: underline;
+-  text-underline-offset: 3px;
+-}
+ @media (max-width: 600px) {
+   .membershipSignup {
+     padding: 22px 18px;
+   }
+   .membershipInputRow input {
+     padding-inline: 8px;
++    font-size: 16px;
+   }
+   .membershipInputRow button {
+     padding-inline: 12px;
+@@ -627,15 +617,11 @@
+   .membershipSignup {
+     padding-inline: 12px;
+   }
+-  .membershipInputRow input,
+   .membershipInputRow button {
+-    font-size: 12px;
++    font-size: 14px;
+   }
+   .membershipInputRow button {
+     padding-inline: 10px;
+-  }
+-  .membershipInputRow button > :where(svg) {
+-    display: none;
+   }
+ }
+ .mobileBreak {
+@@ -979,6 +965,9 @@
+   .page .closing p {
+     font-size: 18px;
+   }
++  .page .closing .membershipSignup p {
++    font-size: 14px;
++  }
+   .mobileBreak {
+     display: block;
+   }
+
+codex
+The updated card fits at widths from 320px through 1440px with no horizontal overflow. Google remains visible, the demo button and disclaimer are gone, and a mocked signup submission reaches the success state. I’m checking the desktop appearance before wrapping up.
+mcp: playwright/browser_navigate started
+mcp: playwright/browser_navigate (completed)
+mcp: playwright/browser_resize started
+mcp: playwright/browser_resize (completed)
+mcp: playwright/browser_run_code_unsafe started
+mcp: playwright/browser_run_code_unsafe (completed)
+mcp: playwright/browser_take_screenshot started
+mcp: playwright/browser_take_screenshot (completed)
+diff --git a/src/components/site-cta.tsx b/src/components/site-cta.tsx
+index b3c8994ca6176fab7a872b897172875b5d3cb17f..064851fa29c0b623f7ee908a7a9e824f830126ed
+--- a/src/components/site-cta.tsx
++++ b/src/components/site-cta.tsx
+@@ -1,5 +1,4 @@
+ "use client";
+-import { ArrowRight } from "@phosphor-icons/react";
+ import { type FormEvent, useState } from "react";
+ import { siteConfig } from "@/config/site";
+ import { GoogleCtaContent } from "./google-cta-content";
+@@ -57,9 +56,6 @@
+           </h2>
+           <p>Bring your team, context, and next steps together.</p>
+           <div className={styles.actions}>
+-            <a className={styles.outlineButton} href={siteConfig.demoUrl}>
+-              See demo <ArrowRight size={18} />
+-            </a>
+             <TrackedLink
+               className={styles.darkButton}
+               destination={siteConfig.googleAuthUrl}
+@@ -111,16 +107,10 @@
+                     <button type="submit">
+                       {signupState === "pending"
+                         ? "Signing up…"
+-                        : "Sign up now"}{" "}
+-                      <ArrowRight size={18} aria-hidden="true" />
++                        : "Sign up"}
+                     </button>
+                   </div>
+                 </fieldset>
+-                <small>
+-                  By signing up, you agree to receive marketing emails from
+-                  Innflow. Unsubscribe anytime.{" "}
+-                  <a href="/legal/privacy-policy">Privacy policy</a>
+-                </small>
+               </>
+             )}
+             <div
+diff --git a/src/components/site-shell.module.css b/src/components/site-shell.module.css
+index 221f9c26358d3424c69ec3a22f66b9b41607bc56..1932f3f30b13ea25633d84407be3aa167a468fe0
+--- a/src/components/site-shell.module.css
++++ b/src/components/site-shell.module.css
+@@ -600,23 +600,13 @@
+ .membershipInputRow :disabled {
+   cursor: not-allowed;
+ }
+-.page .membershipSignup small {
+-  display: block;
+-  margin-top: 14px;
+-  color: #344e5b;
+-  font-size: 13px;
+-  line-height: 1.5;
+-}
+-.page .membershipSignup small a {
+-  text-decoration: underline;
+-  text-underline-offset: 3px;
+-}
+ @media (max-width: 600px) {
+   .membershipSignup {
+     padding: 22px 18px;
+   }
+   .membershipInputRow input {
+     padding-inline: 8px;
++    font-size: 16px;
+   }
+   .membershipInputRow button {
+     padding-inline: 12px;
+@@ -627,15 +617,11 @@
+   .membershipSignup {
+     padding-inline: 12px;
+   }
+-  .membershipInputRow input,
+   .membershipInputRow button {
+-    font-size: 12px;
++    font-size: 14px;
+   }
+   .membershipInputRow button {
+     padding-inline: 10px;
+-  }
+-  .membershipInputRow button > :where(svg) {
+-    display: none;
+   }
+ }
+ .mobileBreak {
+@@ -979,6 +965,9 @@
+   .page .closing p {
+     font-size: 18px;
+   }
++  .page .closing .membershipSignup p {
++    font-size: 14px;
++  }
+   .mobileBreak {
+     display: block;
+   }
+
+codex
+Implemented in the shared closing CTA shown in your screenshot:
+
+- Kept “Continue with Google.”
+- Removed “See demo.”
+- Simplified signup to “Sign up” without the arrow.
+- Removed the marketing/privacy disclaimer.
+- Reduced the mobile subtitle to 14px.
+
+Verified layouts from 320–1440px, mocked signup success, TypeScript, lint, and six newsletter tests. Only two source files changed. Not published.
+
+
+diff --git a/src/components/site-cta.tsx b/src/components/site-cta.tsx
+index b3c8994ca6176fab7a872b897172875b5d3cb17f..064851fa29c0b623f7ee908a7a9e824f830126ed
+--- a/src/components/site-cta.tsx
++++ b/src/components/site-cta.tsx
+@@ -1,5 +1,4 @@
+ "use client";
+-import { ArrowRight } from "@phosphor-icons/react";
+ import { type FormEvent, useState } from "react";
+ import { siteConfig } from "@/config/site";
+ import { GoogleCtaContent } from "./google-cta-content";
+@@ -57,9 +56,6 @@
+           </h2>
+           <p>Bring your team, context, and next steps together.</p>
+           <div className={styles.actions}>
+-            <a className={styles.outlineButton} href={siteConfig.demoUrl}>
+-              See demo <ArrowRight size={18} />
+-            </a>
+             <TrackedLink
+               className={styles.darkButton}
+               destination={siteConfig.googleAuthUrl}
+@@ -111,16 +107,10 @@
+                     <button type="submit">
+                       {signupState === "pending"
+                         ? "Signing up…"
+-                        : "Sign up now"}{" "}
+-                      <ArrowRight size={18} aria-hidden="true" />
++                        : "Sign up"}
+                     </button>
+                   </div>
+                 </fieldset>
+-                <small>
+-                  By signing up, you agree to receive marketing emails from
+-                  Innflow. Unsubscribe anytime.{" "}
+-                  <a href="/legal/privacy-policy">Privacy policy</a>
+-                </small>
+               </>
+             )}
+             <div
+diff --git a/src/components/site-shell.module.css b/src/components/site-shell.module.css
+index 221f9c26358d3424c69ec3a22f66b9b41607bc56..1932f3f30b13ea25633d84407be3aa167a468fe0
+--- a/src/components/site-shell.module.css
++++ b/src/components/site-shell.module.css
+@@ -600,23 +600,13 @@
+ .membershipInputRow :disabled {
+   cursor: not-allowed;
+ }
+-.page .membershipSignup small {
+-  display: block;
+-  margin-top: 14px;
+-  color: #344e5b;
+-  font-size: 13px;
+-  line-height: 1.5;
+-}
+-.page .membershipSignup small a {
+-  text-decoration: underline;
+-  text-underline-offset: 3px;
+-}
+ @media (max-width: 600px) {
+   .membershipSignup {
+     padding: 22px 18px;
+   }
+   .membershipInputRow input {
+     padding-inline: 8px;
++    font-size: 16px;
+   }
+   .membershipInputRow button {
+     padding-inline: 12px;
+@@ -627,15 +617,11 @@
+   .membershipSignup {
+     padding-inline: 12px;
+   }
+-  .membershipInputRow input,
+   .membershipInputRow button {
+-    font-size: 12px;
++    font-size: 14px;
+   }
+   .membershipInputRow button {
+     padding-inline: 10px;
+-  }
+-  .membershipInputRow button > :where(svg) {
+-    display: none;
+   }
+ }
+ .mobileBreak {
+@@ -979,6 +965,9 @@
+   .page .closing p {
+     font-size: 18px;
+   }
++  .page .closing .membershipSignup p {
++    font-size: 14px;
++  }
+   .mobileBreak {
+     display: block;
+   }
+
+tokens used
+42,258
+Implemented in the shared closing CTA shown in your screenshot:
+
+- Kept “Continue with Google.”
+- Removed “See demo.”
+- Simplified signup to “Sign up” without the arrow.
+- Removed the marketing/privacy disclaimer.
+- Reduced the mobile subtitle to 14px.
+
+Verified layouts from 320–1440px, mocked signup success, TypeScript, lint, and six newsletter tests. Only two source files changed. Not published.
+
+

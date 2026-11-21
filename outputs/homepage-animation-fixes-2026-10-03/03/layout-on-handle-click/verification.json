@@ -1,0 +1,24 @@
+{
+  "handleHoverFrames": [
+    408,
+    419
+  ],
+  "handlePressFrame": 426,
+  "layoutStartsFrame": 426,
+  "layoutSettlesFrame": 463,
+  "nextStepMenuRevealFrames": [
+    470,
+    480
+  ],
+  "cursorFollowsPressedHandleThroughLayout": true,
+  "duration": 27.6,
+  "runtimeBytes": 926028,
+  "runtimeSha256": "e74a8f23049b7fe467a7fd4b39198a0ab99676d9ad4c06263291a5a22e1ecc01",
+  "editableBytes": 4976136,
+  "fullPlaybackLoopCompleted": true,
+  "openingClosingPixelsIdentical": true,
+  "pressBeforeLayoutVerified": true,
+  "nextStepMenuAfterLayoutVerified": true,
+  "testsPassed": 8,
+  "deployed": false
+}

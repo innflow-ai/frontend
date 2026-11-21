@@ -1,0 +1,11 @@
+{
+  "tool": "built-in imagegen",
+  "prompt_summary": "Restore white residential building with teal bay windows and curved roofline; remove screening/work-order cards, text/UI/glows/plates. Preserve architecture, window grids, upward perspective, sky and daylight; full456:563 photo with no close crop, margins or added graphics.",
+  "asset": {
+    "reference": "3:78",
+    "photo_node": "35:169",
+    "path": "/Users/ak/innflow-web/output/doorloop-baselane/affordable-housing-photo-clean-v1.png",
+    "image_hash": "cad8c405ceef19d8beb46e2c00464b1f6fd1ba22"
+  },
+  "verification": "Hero3:78 photo35:169: removed baked screening/work-order cards, backplates/glow using built-in imagegen. Applied clean architecture image cad8c405ceef19d8beb46e2c00464b1f6fd1ba22 at456x563, retaining native35:170/35:181. Screenshot verified roofline, windows, clean sky and card edges, plus in-cell bounds. Original hidden alternate155:2 retained. Reference-derived draft photograph, not rights-cleared original."
+}

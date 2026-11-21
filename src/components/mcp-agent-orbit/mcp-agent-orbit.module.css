@@ -1,0 +1,15 @@
+.root {
+  position: relative;
+  width: 100%;
+  max-width: 771px;
+  aspect-ratio: 771 / 830;
+  overflow: hidden;
+  border-radius: 7.24% / 6.73%;
+}
+.canvas {
+  position: absolute;
+  width: 771px;
+  height: 830px;
+  transform: scale(var(--scene-scale, 1));
+  transform-origin: top left;
+}

@@ -1,0 +1,301 @@
+{
+  "figmaFile": "2Z3sb6KNdrFVBy0aO9O8EU",
+  "section": "66:380",
+  "artwork": {
+    "connect": "57:248",
+    "train": "57:367",
+    "assign": "57:437",
+    "deploy": "61:380"
+  },
+  "notes": "Artwork only. Homepage heading and Connect, Train, Assign, Deploy copy retained. Existing card backgrounds match the source asset filenames in the parent sources.json. SVG assets retain intrinsic dimensions; their composition scales together on narrow screens.",
+  "assets": [
+    {
+      "file": "00848.svg",
+      "references": [
+        {
+          "state": "53:1023",
+          "layerAsset": "imgGroup2"
+        }
+      ]
+    },
+    {
+      "file": "00bdf.svg",
+      "references": [
+        {
+          "state": "53:1023",
+          "layerAsset": "imgVector8"
+        }
+      ]
+    },
+    {
+      "file": "04b20.png",
+      "references": [
+        {
+          "state": "53:710",
+          "layerAsset": "imgPortrait1"
+        }
+      ]
+    },
+    {
+      "file": "0a9d9.svg",
+      "references": [
+        {
+          "state": "53:710",
+          "layerAsset": "imgSelectedIcon"
+        }
+      ]
+    },
+    {
+      "file": "14e35.svg",
+      "references": [
+        {
+          "state": "53:1023",
+          "layerAsset": "imgNotionNativeSvg"
+        }
+      ]
+    },
+    {
+      "file": "1687c.svg",
+      "references": [
+        {
+          "state": "53:1023",
+          "layerAsset": "imgVector11"
+        }
+      ]
+    },
+    {
+      "file": "21fd6.png",
+      "references": [
+        {
+          "state": "53:918",
+          "layerAsset": "imgOriginalYourAiLogo"
+        }
+      ]
+    },
+    {
+      "file": "2221c.png",
+      "references": [
+        {
+          "state": "53:710",
+          "layerAsset": "imgPortrait2"
+        }
+      ]
+    },
+    {
+      "file": "38e89.svg",
+      "references": [
+        {
+          "state": "53:1023",
+          "layerAsset": "imgVector2"
+        }
+      ]
+    },
+    {
+      "file": "43320.svg",
+      "references": [
+        {
+          "state": "53:1023",
+          "layerAsset": "imgGroup3"
+        }
+      ]
+    },
+    {
+      "file": "4adff.png",
+      "references": [
+        {
+          "state": "53:710",
+          "layerAsset": "imgPortrait4"
+        }
+      ]
+    },
+    {
+      "file": "505d0.svg",
+      "references": [
+        {
+          "state": "53:710",
+          "layerAsset": "imgFilterIcon"
+        }
+      ]
+    },
+    {
+      "file": "5312c.svg",
+      "references": [
+        {
+          "state": "53:1023",
+          "layerAsset": "imgGmail2026NativeSvg"
+        }
+      ]
+    },
+    {
+      "file": "54aa0.svg",
+      "references": [
+        {
+          "state": "53:1023",
+          "layerAsset": "imgMst"
+        }
+      ]
+    },
+    {
+      "file": "64413.svg",
+      "references": [
+        {
+          "state": "53:710",
+          "layerAsset": "imgChevronDown"
+        }
+      ]
+    },
+    {
+      "file": "6bdfd.png",
+      "references": [
+        {
+          "state": "53:710",
+          "layerAsset": "imgPortrait3"
+        }
+      ]
+    },
+    {
+      "file": "7b0f0.svg",
+      "references": [
+        {
+          "state": "53:1023",
+          "layerAsset": "imgVector7"
+        }
+      ]
+    },
+    {
+      "file": "81e21.svg",
+      "references": [
+        {
+          "state": "53:1023",
+          "layerAsset": "imgHubSpotNativeSvg"
+        }
+      ]
+    },
+    {
+      "file": "82f21.svg",
+      "references": [
+        {
+          "state": "53:1023",
+          "layerAsset": "imgVector9"
+        }
+      ]
+    },
+    {
+      "file": "8d7e1.svg",
+      "references": [
+        {
+          "state": "53:1023",
+          "layerAsset": "imgVector6"
+        }
+      ]
+    },
+    {
+      "file": "90992.svg",
+      "references": [
+        {
+          "state": "53:1023",
+          "layerAsset": "imgLtGroupGt"
+        }
+      ]
+    },
+    {
+      "file": "9e6a1.svg",
+      "references": [
+        {
+          "state": "53:1023",
+          "layerAsset": "imgVector5"
+        }
+      ]
+    },
+    {
+      "file": "a37db.svg",
+      "references": [
+        {
+          "state": "53:1023",
+          "layerAsset": "imgZoomCurrentNativeVector"
+        }
+      ]
+    },
+    {
+      "file": "ab48f.svg",
+      "references": [
+        {
+          "state": "53:1023",
+          "layerAsset": "imgGroup1"
+        }
+      ]
+    },
+    {
+      "file": "b8564.svg",
+      "references": [
+        {
+          "state": "53:1023",
+          "layerAsset": "imgGroup4"
+        }
+      ]
+    },
+    {
+      "file": "c174b.svg",
+      "references": [
+        {
+          "state": "53:1023",
+          "layerAsset": "imgGroup"
+        }
+      ]
+    },
+    {
+      "file": "c359f.svg",
+      "references": [
+        {
+          "state": "53:918",
+          "layerAsset": "imgSwitchThumbOn"
+        }
+      ]
+    },
+    {
+      "file": "c4189.png",
+      "references": [
+        {
+          "state": "53:710",
+          "layerAsset": "imgPortrait"
+        }
+      ]
+    },
+    {
+      "file": "d2028.svg",
+      "references": [
+        {
+          "state": "53:1023",
+          "layerAsset": "imgVector3"
+        }
+      ]
+    },
+    {
+      "file": "d9cdd.svg",
+      "references": [
+        {
+          "state": "53:814",
+          "layerAsset": "imgCallieIcon"
+        }
+      ]
+    },
+    {
+      "file": "e052f.svg",
+      "references": [
+        {
+          "state": "53:1023",
+          "layerAsset": "imgVector10"
+        }
+      ]
+    },
+    {
+      "file": "ecd41.svg",
+      "references": [
+        {
+          "state": "53:1023",
+          "layerAsset": "imgVector4"
+        }
+      ]
+    }
+  ]
+}

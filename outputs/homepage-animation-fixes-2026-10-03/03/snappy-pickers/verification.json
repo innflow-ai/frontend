@@ -1,0 +1,14 @@
+{
+  "duration": 27.6,
+  "openDurationMs": 200,
+  "closeDurationMs": 200,
+  "nativeFieldExpansionVerified": true,
+  "headersAndDownChevronsRemainVisible": true,
+  "selectedAgent": "Research Riley",
+  "slackTriggerVerified": true,
+  "fullPlaybackLoopCompleted": true,
+  "openingClosingPixelsIdentical": true,
+  "runtimeSha256": "1124456bffd3ceb73deabc762c8f32341d05ec5ff83ed4944da7bc68362a4208",
+  "testsPassed": 8,
+  "deployed": false
+}

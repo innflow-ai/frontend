@@ -1,5 +1,5 @@
-import { Sparkle } from "@phosphor-icons/react/dist/ssr";
 import type { ReactNode } from "react";
+import { StarsA as Sparkle } from "@/components/icons/mage";
 import styles from "./tag.module.css";
 
 type TagProps = {

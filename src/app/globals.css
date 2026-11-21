@@ -1,9 +1,39 @@
-@import "tailwindcss";
+@import "tailwindcss" source("../");
+@import "./termly-consent.css";
 
 :root {
-  /* Brand kit v1 (Paper) — cool sky palette replaces the warm editorial set. */
-  --canvas: #ffffff;
-  --canvas-warm: #f4f8fc;
+  --font-sans: var(--font-satoshi), Arial, sans-serif;
+  /* Shared roles and legacy component tokens use the site typeface. */
+  --font-serif: var(--font-sans);
+  --font-display: var(--font-sans);
+  --font-heading-emphasis: var(--font-sans);
+  --font-mono: var(--font-sans);
+  --font-archivo: var(--font-sans);
+  --font-archivo-italic: var(--font-sans);
+  --font-source-serif-4: var(--font-sans);
+  --font-hero-heading: var(--font-sans);
+  --font-hero-ui: var(--font-sans);
+  --font-inter: var(--font-sans);
+  --font-geist: var(--font-sans);
+  --font-geist-mono: var(--font-sans);
+  --font-workspace-contacts: var(--font-sans);
+  --font-host-grotesk: var(--font-sans);
+  --font-manrope: var(--font-sans);
+  --font-jetbrains-mono: var(--font-sans);
+  --font-button: var(--font-sans);
+  --font-figtree: var(--font-sans);
+  --font-questrial: var(--font-sans);
+  /* White/cool neutrals from the supplied Calendly_variables palette.
+     Preserve Innflow's existing ink, typography families, and product artwork. */
+  --marketing-paper: #ffffff;
+  --marketing-cloud: #f8f9fb;
+  --marketing-pebble: #f0f3f8;
+  --marketing-hairline: #d4e0ed;
+  --marketing-body: 16px;
+  --marketing-body-small: 14px;
+  --marketing-caption: 12px;
+  --canvas: var(--marketing-paper);
+  --canvas-warm: var(--marketing-cloud);
   --surface: #ffffff;
   --surface-soft: #eef4fa;
   --ink: #0c1b2a;
@@ -15,6 +45,7 @@
   --brand-hover: #0095db;
   --brand-soft: #e0f4ff;
   --brand-kit-blue: #5aaaf8;
+  /* Lime subscribe action on the email card. Pending Julian. */
   --deep: #070909;
   --deep-surface: #121515;
   --deep-border: #2a2f2e;
@@ -35,6 +66,26 @@
     0 30px 80px rgba(19, 29, 35, 0.12), 0 2px 8px rgba(19, 29, 35, 0.06);
   --shell: 1280px;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  /* Product-page category gradients. Each token is the stop list only, so a
+     page can write linear-gradient(to bottom, var(--token)). Stop 0 is the
+     top. Heroes in automation-intelligence and connections-governance should
+     use to top, so the dark stop sits under white text. Other pages are not
+     restyled by defining these tokens. */
+  --gradient-platform-agents:
+    #4fb2ff 5%, #69bbff 18%, #b0e5ff 32%, #aee9f1 49%, #7acced 68%, #2184cf 85%,
+    #004077 100%;
+  --gradient-build-customize:
+    #315fa5 0%, #8295da 15%, #f4c2e5 36%, #ffe1df 48%, #ffc9e7 65%, #e4a9ee 82%,
+    #cba8f3 100%;
+  --gradient-automation-intelligence:
+    #b8d9fa 0%, #e4f5e8 42%, #3dcab0 65%, #062d36 100%;
+  --gradient-connections-governance:
+    #f5f7df 0%, #f4f1d5 14%, #f4dcb6 25%,
+    #efb7a3 35%, #dd8fa9 52%, #d896ba 69%, #7a94d5 86%, #5b8edd 100%;
+}
+
+html[data-logo-ink="feature"] header img[src*="innflow-wordmark.svg"] {
+  filter: brightness(0) invert(12.55%);
 }
 
 * {
@@ -47,16 +98,94 @@ html {
   color-scheme: light;
 }
 
+/* Shared scrollbar treatment for the viewport and every nested scroll area. */
+html {
+  --page-scrollbar-thumb: #31505e;
+  --page-scrollbar-hover: #012232;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--page-scrollbar-thumb) transparent;
+}
+
+html[data-theme="dark"] {
+  --page-scrollbar-thumb: #78909b;
+  --page-scrollbar-hover: #a1b5bf;
+}
+
+/* Explicit site themes win; otherwise follow the device preference. */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]):not([data-theme="dark"]) {
+    --page-scrollbar-thumb: #78909b;
+    --page-scrollbar-hover: #a1b5bf;
+  }
+}
+
+/* Pixel sizing in Chromium/Safari; Firefox uses the thin fallback above. */
+@supports selector(::-webkit-scrollbar) {
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: auto;
+  }
+
+  *::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  *::-webkit-scrollbar-track,
+  *::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: var(--page-scrollbar-thumb);
+    border-radius: 999px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: var(--page-scrollbar-hover);
+  }
+}
+
+html.lenis {
+  scroll-behavior: auto;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --canvas: #070909;
+  --canvas-warm: #101418;
+  --surface: #121515;
+  --surface-soft: #1a1f24;
+  --ink: #f2f7fd;
+  --ink-strong: #ffffff;
+  --ink-muted: #93a5ba;
+  --border: #1b2c42;
+  --border-quiet: #162233;
+}
+
+html[data-blog-article] {
+  color-scheme: light;
+}
+
 body {
   margin: 0;
   background: var(--canvas);
   color: var(--ink);
-  font-family: var(--font-figtree), "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-sans);
   font-size: 16px;
+  letter-spacing: 0.02em;
   line-height: 1.65;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html[data-blog-article] body {
+  background: var(--marketing-paper);
+  color: #121111;
 }
 
 ::selection {
@@ -66,8 +195,11 @@ body {
 
 body,
 button,
+input,
+select,
+textarea,
 a {
-  font-family: var(--font-figtree), "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-sans);
 }
 
 button,
@@ -100,10 +232,24 @@ h1,
 h2,
 h3 {
   color: var(--ink-strong);
-  font-weight: 560;
-  letter-spacing: -0.045em;
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.005em;
   line-height: 1.04;
   text-wrap: balance;
+}
+
+/* Use semantic emphasis to mix Archivo Bold into serif headings. */
+:is(h1, h2, h3) :is(strong, b) {
+  font-family: var(--font-heading-emphasis);
+  font-weight: 700;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: var(--font-mono);
 }
 
 p {
@@ -284,7 +430,7 @@ p {
   align-items: center;
   gap: 8px;
   color: var(--brand);
-  font-family: var(--font-figtree), sans-serif;
+  font-family: var(--font-sans);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -353,7 +499,7 @@ p {
   border-bottom: 1px solid var(--border-quiet);
   padding: 0 16px;
   color: #747773;
-  font-family: var(--font-figtree), sans-serif;
+  font-family: var(--font-sans);
   font-size: 11px;
   font-weight: 600;
   letter-spacing: 0.03em;
@@ -453,7 +599,7 @@ p {
 .node-kicker {
   display: block;
   color: var(--brand);
-  font-family: var(--font-figtree), sans-serif;
+  font-family: var(--font-sans);
   font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -560,7 +706,7 @@ p {
 
 .assistant-panel > p {
   color: var(--ink-strong);
-  font-size: 18px;
+  font-size: var(--marketing-body);
   font-weight: 560;
   line-height: 1.45;
 }
@@ -624,7 +770,7 @@ p {
 .proof-inner > p {
   max-width: 18ch;
   color: #555854;
-  font-family: var(--font-figtree), sans-serif;
+  font-family: var(--font-sans);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -698,7 +844,7 @@ p {
 
 .platform-flow li > span {
   color: var(--brand);
-  font-family: var(--font-figtree), sans-serif;
+  font-family: var(--font-sans);
   font-size: 12px;
   font-weight: 700;
 }
@@ -804,7 +950,7 @@ p {
 
 .story-details dt {
   color: #555854;
-  font-family: var(--font-figtree), sans-serif;
+  font-family: var(--font-sans);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -1648,6 +1794,69 @@ p {
   line-height: 1.75;
 }
 
+.faq-page-hero {
+  border-top: none;
+  padding-top: 56px;
+}
+
+.faq-intro h1 {
+  margin-top: 20px;
+  font-size: clamp(40px, 4.1vw, 60px);
+}
+
+.faq-intro .section-label {
+  display: inline-block;
+  margin-top: 24px;
+}
+
+.faq-still,
+.faq-policies {
+  margin-top: 32px;
+}
+
+.faq-still h2,
+.faq-policies h2 {
+  color: var(--ink-strong);
+  font-size: 16px;
+  font-weight: 650;
+}
+
+.faq-still p {
+  margin-top: 8px;
+  color: var(--ink-muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.faq-policy-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.faq-policy-links a {
+  color: var(--ink-muted);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.faq-policy-links a:hover {
+  color: var(--ink-strong);
+  text-decoration: underline;
+}
+
+.faq-still a {
+  color: var(--brand);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.faq-still a:hover {
+  text-decoration: underline;
+}
+
 .final-cta-section {
   background: var(--deep);
   padding-block: 112px;
@@ -2189,7 +2398,7 @@ p {
 .legal-hero p,
 .not-found-section p {
   color: var(--ink-muted);
-  font-size: 18px;
+  font-size: var(--marketing-body);
   line-height: 1.7;
 }
 
@@ -2222,7 +2431,7 @@ p {
 
 .evidence-grid > p {
   color: var(--ink-muted);
-  font-family: var(--font-figtree), sans-serif;
+  font-family: var(--font-sans);
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.09em;
@@ -2267,29 +2476,18 @@ p {
   line-height: 1.7;
 }
 
-.numbered-list {
+.operating-list {
   border-top: 1px solid var(--border);
 }
 
-.numbered-list li {
-  display: grid;
-  grid-template-columns: 64px 1fr;
-  gap: 24px;
+.operating-list li {
   border-bottom: 1px solid var(--border);
   padding: 28px 0;
 }
 
-.numbered-list span {
-  color: var(--brand);
-  font-family: var(--font-figtree), sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-}
-
-.numbered-list p {
+.operating-list p {
   max-width: 720px;
-  font-size: 18px;
+  font-size: var(--marketing-body);
   line-height: 1.55;
 }
 
@@ -2346,7 +2544,7 @@ p {
 .portfolio-links article > span {
   grid-row: 1 / span 3;
   color: var(--brand);
-  font-family: var(--font-figtree), sans-serif;
+  font-family: var(--font-sans);
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -2545,7 +2743,7 @@ p {
     padding-inline: 0;
   }
 
-  .numbered-list li,
+  .operating-list li,
   .portfolio-links article {
     grid-template-columns: 46px 1fr;
   }
@@ -2582,7 +2780,7 @@ p {
    Existing tokens above remain the system for pricing, integrations,
    features, legal, and demo pages. See DESIGN.md. */
 :root {
-  --sky-canvas: #ffffff;
+  --sky-canvas: var(--marketing-paper);
   --sky-soft: #f4f8fc;
   --sky-line: #e3ecf4;
   --sky-ink: #0c1b2a;
@@ -2592,8 +2790,15 @@ p {
   --sky-blue-hover: #0095db;
   --sky-blue-bright: var(--brand-kit-blue);
   --sky-blue-soft: #e3f0fe;
-  --gradient-cta: linear-gradient(180deg, #5aaaf8 0%, #00aeff 100%);
-  --gradient-cta-hover: linear-gradient(180deg, #4b9ef7 0%, #009ef0 100%);
+  /* Approved Figma primary action, node 354:5843. */
+  --button-primary: linear-gradient(180deg, #5aaaf8 0%, #0c99ff 100%);
+  --site-button-ink: #fff;
+  --button-primary-border: #0680c2f2;
+  --announcement-background: linear-gradient(180deg, #00aeef, #0095ff);
+  --announcement-radius: 28px;
+  --button-primary-hover: linear-gradient(180deg, #429bf0, #008bec);
+  --gradient-cta: var(--button-primary);
+  --gradient-cta-hover: var(--button-primary-hover);
   --sky-radius-pill: 999px;
   --sky-radius-card: 20px;
   --sky-radius-image: 22px;
@@ -2610,6 +2815,40 @@ p {
   --night-border: #1b2c42;
   --night-ink: #f2f7fd;
   --night-muted: #93a5ba;
+}
+
+/* Marketing actions opt in. Both tones use the sign-in pill's rim,
+   upper highlight and drop shadow. */
+@layer site-buttons {
+  :where([data-site-cta], a.button, a:has(> [data-google-cta])) {
+    --cta-fill: var(--button-primary);
+    --cta-hover: var(--button-primary-hover);
+    --cta-rim: var(--button-primary-border);
+    background: var(--cta-fill) !important;
+    border: 1px solid var(--cta-rim) !important;
+    border-radius: 999px !important;
+    box-shadow: inset 0 1px 2px #ffffff70, 0 3px 7px #00000021 !important;
+    color: var(--site-button-ink) !important;
+  }
+
+  /* Match the homepage hero while allowing longer labels to wrap. */
+  :where([data-site-cta], a.button, a:has(> [data-google-cta])):not([data-cta-compact]) {
+    box-sizing: border-box !important;
+    min-height: 36px !important;
+    height: auto !important;
+    padding-block: 6px !important;
+    line-height: 20px !important;
+  }
+
+  :is([data-site-cta="secondary"], a.button-secondary) {
+    --cta-fill: linear-gradient(180deg, #363636, #191919);
+    --cta-hover: linear-gradient(180deg, #454545, #252525);
+    --cta-rim: #111;
+  }
+
+  :is([data-site-cta], a.button, a:has(> [data-google-cta])):hover:not(:disabled):not([aria-disabled="true"]) {
+    background: var(--cta-hover) !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

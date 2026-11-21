@@ -1,0 +1,11 @@
+{
+  "tool": "built-in imagegen",
+  "prompt_summary": "Restore man working at laptop photo; remove campaign/delivery cards, text/icons/glow/plates/margins. Preserve man, face, beard, shirt, watch, hands, laptop, desk, notebooks and daylight. Full portrait420:560 with pale wall above and man at right; no zoom or crop.",
+  "asset": {
+    "reference": "3:48",
+    "photo_node": "52:3",
+    "path": "/Users/ak/innflow-web/output/doorloop-baselane/communication-photo-clean-v1.png",
+    "image_hash": "c5a169a16253040284caec18d4835bbed3ff60af"
+  },
+  "verification": "Hero 3:48: removed baked campaign and delivery cards, plates/glow from underlying photograph with built-in imagegen. Applied c5a169a16253040284caec18d4835bbed3ff60af to existing 52:3. Restored full 420x560 portrait scene instead of previous420x346.5 crop; root52:2 now600x604, campaign52:4 at8,210, delivery52:8 at350,78. Native overlays preserved. Close-up and fullsheet14:2 screenshot verified; auto-layout cell15:2 expanded to740x695 and sheet rows remain within bounds. Reference-derived draft photo, not a replacement-actor or rights-clearance claim."
+}

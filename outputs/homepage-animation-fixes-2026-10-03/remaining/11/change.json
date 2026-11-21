@@ -1,0 +1,19 @@
+{
+  "success": true,
+  "shapes": [
+    {
+      "id": "0-5267",
+      "pathId": "0-5268",
+      "name": "Close icon diagonal 0",
+      "primitive": "rectangle",
+      "parentId": "0-4583"
+    },
+    {
+      "id": "0-5271",
+      "pathId": "0-5272",
+      "name": "Close icon diagonal 1",
+      "primitive": "rectangle",
+      "parentId": "0-4583"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "Empty draft_blog field": 184,
+  "Templated or planning description": 155,
+  "No desktop attachment": 216,
+  "No story attachment": 244,
+  "Description reused across active records": 61,
+  "Broad repeated target keyword": 153,
+  "Title contains ellipsis": 30,
+  "Repeated topic template": 11,
+  "No slug": 26,
+  "No author in either author field": 35,
+  "Broad topic has property audience": 51,
+  "Security/deployment wording needs evidence": 95
+}

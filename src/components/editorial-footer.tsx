@@ -1,78 +1,96 @@
 import Image from "next/image";
+import { ThemeSwitcher } from "@/components/blog/theme-switcher";
+import { CustomerSupportHours } from "@/components/customer-support-hours";
+import { GoogleSignInButton } from "@/components/google-sign-in";
 import { TrackedLink } from "@/components/tracked-link";
+import { footerNavigation } from "@/config/footer-navigation";
 import { siteConfig } from "@/config/site";
 import styles from "./editorial-footer.module.css";
+import { FooterLegalLinks } from "./footer-legal-links";
 
 export function EditorialFooter() {
   return (
-    <footer className={styles.footer} id="resources">
-      <div className={`${styles.shell} ${styles.grid}`}>
-        <div className={styles.brand}>
+    <>
+      <section
+        className={styles.signupSection}
+        aria-labelledby="footer-signup-heading"
+      >
+        <div className={`${styles.shell} ${styles.signupPanel}`}>
           <Image
-            src="/brand/innflow_white_logo_set_bold.svg"
-            alt="Innflow"
-            width={135}
-            height={28}
+            src="/brand/property-operations-one-flow.webp"
+            alt=""
+            fill
+            quality={100}
+            sizes="(max-width: 720px) calc(100vw - 32px), min(calc(100vw - 48px), 1200px)"
+            className={styles.signupImage}
           />
-          <p>
-            The all-in-one property operations layer for connected workflows,
-            visible decisions, and human control.
-          </p>
+          <div className={styles.signupOverlay} aria-hidden="true" />
+          <div className={styles.signupContent}>
+            <p className={styles.signupEyebrow}>One suite. Every operation.</p>
+            <h2 id="footer-signup-heading">
+              Bring your team and its AI agents into one workspace.
+            </h2>
+            <p className={styles.signupCopy}>
+              Continue with your Google account to get started with Innflow.
+            </p>
+            <div className={styles.signupForm}>
+              <GoogleSignInButton
+                label="Continue with Google"
+                eventLabel="footer_signup_google"
+              />
+            </div>
+            <p className={styles.signupNote}>No credit card required.</p>
+          </div>
         </div>
-        <div>
-          <strong>Product</strong>
-          <a href="/#features">Features</a>
-          <a href="/features/workflows">Workflows</a>
-          <a href="/features/assistant">Assistant</a>
-          <a href="/integrations">Integrations</a>
-          <a href="/pricing">Pricing</a>
+      </section>
+      <footer className={styles.footer} id="resources">
+        <div className={`${styles.shell} ${styles.grid}`}>
+          <div className={styles.brand}>
+            <Image
+              src="/brand/innflow_white_logo_set_bold.svg"
+              alt="Innflow"
+              width={135}
+              height={28}
+            />
+            <p>
+              The AI agent platform for agentic process automation — connected
+              workflows, visible decisions, and human control.
+            </p>
+            <div className={styles.brandLinks}>
+              <TrackedLink
+                destination={siteConfig.demoUrl}
+                eventLabel="footer_demo"
+              >
+                Book a demo
+              </TrackedLink>
+              <GoogleSignInButton eventLabel="footer_login" label="Log in" />
+            </div>
+            <ThemeSwitcher className={styles.themeToggle} showLabel />
+            <CustomerSupportHours />
+          </div>
+          {footerNavigation.map((column) => (
+            <div key={column.heading}>
+              <strong>{column.heading}</strong>
+              {column.links.map((link) => (
+                <a key={`${link.label}-${link.href}`} href={link.href}>
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          ))}
         </div>
-        <div>
-          <strong>Solutions</strong>
-          <a href="/#portfolios">Residential</a>
-          <a href="/#portfolios">Single-Family</a>
-          <a href="/#portfolios">Multifamily</a>
-          <a href="/#portfolios">Commercial</a>
-          <a href="/#portfolios">Community Associations</a>
-          <a href="/#portfolios">Affordable Housing</a>
+        <div className={`${styles.shell} ${styles.bottom}`}>
+          <span>
+            © {new Date().getFullYear()} Innflow. All rights reserved.
+          </span>
+          <nav className={styles.legalLinks} aria-label="Legal">
+            <FooterLegalLinks />
+          </nav>
+          <span className={styles.tagline}>
+            Property operations, connected.
+          </span>
         </div>
-        <div>
-          <strong>Resources</strong>
-          <a href="/property-management">Property management</a>
-          <a href="/integrations">Integration guide</a>
-          <a href="/#faq">FAQs</a>
-          <a href={`mailto:${siteConfig.supportEmail}`}>Contact</a>
-        </div>
-        <div>
-          <strong>Company</strong>
-          <a href="/legal/privacy-policy">Privacy</a>
-          <a href="/legal/terms-of-service">Terms</a>
-          <a href="/legal/cookie-policy">Cookies</a>
-          <a href="/legal/acceptable-use-policy">Acceptable use</a>
-          <a href="/legal/eula">EULA</a>
-          <a href="/legal/dsar">Privacy request</a>
-          <TrackedLink
-            destination={`${siteConfig.appOrigin}/login`}
-            eventLabel="footer_login"
-          >
-            Login
-          </TrackedLink>
-        </div>
-      </div>
-      <div className={`${styles.shell} ${styles.bottom}`}>
-        <span>© {new Date().getFullYear()} Innflow. All rights reserved.</span>
-        {/* biome-ignore lint/a11y/useValidAnchor: Termly requires href="#" for its preferences trigger. */}
-        <a href="#" className="termly-display-preferences">
-          Consent Preferences
-        </a>
-        <a href="https://app.termly.io/notify/d253192a-6c11-4338-9883-67b3307aea2f">
-          Do Not Sell or Share My Personal Information
-        </a>
-        <a href="https://app.termly.io/notify/d253192a-6c11-4338-9883-67b3307aea2f">
-          Limit the Use Of My Sensitive Personal Information
-        </a>
-        <span>Property operations, connected.</span>
-      </div>
-    </footer>
+      </footer>
+    </>
   );
 }

@@ -1,0 +1,19 @@
+{
+  "duration": 12.0,
+  "bytes": 2458546,
+  "sha256": "eb4350441fe316c81649034c0e4494b0b0b65b713376ad6c844daf655881e133",
+  "htmlPreviewUserApproved": true,
+  "htmlPlaybackLoopsObservedAtLeast": 14,
+  "nativeTimelineLoopsObservedAtLeast": 6,
+  "nativeExpandedStateVisuallyChecked": true,
+  "editorEndpointPngByteMatch": true,
+  "endpointMethod": "Editor-rendered sampled settled keyframe poses; distinct from runtime playback checks.",
+  "skillPackagesValidated": 2,
+  "deliveryFilesMatch": true,
+  "nativeRenderingDifference": "Glass inset light uses native layered highlights rather than CSS blur.",
+  "deployment": "not performed",
+  "focusedTests": {
+    "files": 2,
+    "passed": 10
+  }
+}

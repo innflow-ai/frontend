@@ -1,0 +1,11 @@
+{
+  "tool": "built-in imagegen",
+  "asset": {
+    "reference": "3:191",
+    "photo_node": "32:167",
+    "path": "/Users/ak/innflow-web/output/doorloop-baselane/websites-photo-clean-v1.png",
+    "image_hash": "eac18ffc2b69acd4fa14cddf6a14faae2b52ab8e"
+  },
+  "verified_at": "2026-09-12T13:21:03.502320+00:00",
+  "verification": "Removed embedded rental/template cards and screen UI; preserved laptop/hands scene. Native gallery72:53 rescaled0.62, transparent with glass cleared and perspective fitted inside physical display.32:168/146:127 now18px corners and soft shadows with old outlines cleared. Screenshot32:166 verified clean edges and gallery fit."
+}

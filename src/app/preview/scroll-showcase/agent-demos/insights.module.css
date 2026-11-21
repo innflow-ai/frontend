@@ -1,0 +1,119 @@
+.demo {
+  display: grid;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  background: transparent;
+  font-family: var(--font-geist), sans-serif;
+  color: #071a31;
+}
+.composition {
+  width: calc(100% - 40px);
+  max-width: 440px;
+  margin: 20px auto;
+}
+.disclaimer {
+  font-size: 11px;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  color: #5f6d77;
+  margin: 0 0 12px 6px;
+}
+.summaryWrap,
+.rowsWrap {
+  position: relative;
+}
+.summaryWrap {
+  margin-bottom: 14px;
+}
+.glass {
+  position: absolute;
+  inset: -6px;
+  border: 0.1px solid #ffffffe6;
+  border-radius: 22px;
+  background: #ffffff26;
+  backdrop-filter: blur(10px);
+  box-shadow:
+    inset 0 1.3px 8px #ffffffb8,
+    0 12px 32px -5px #637d9e29;
+  pointer-events: none;
+}
+.summary {
+  position: relative;
+  margin: 0;
+  padding: 20px;
+  min-height: 66px;
+  box-sizing: border-box;
+  background: white;
+  border-radius: 16px;
+  font-size: 13px;
+  line-height: 1.45;
+}
+.rows {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background: white;
+  border-radius: 16px;
+}
+.row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 14px 68px minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+  min-height: 49px;
+  padding: 10px 18px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ececf0;
+  font-size: 12px;
+  line-height: 1.35;
+}
+.row:last-child {
+  border-bottom: 0;
+}
+.highlight {
+  position: absolute;
+  inset: 0;
+  background: #4890e3;
+  pointer-events: none;
+}
+.logo {
+  position: relative;
+  display: block;
+  width: 14px;
+  height: 14px;
+  overflow: hidden;
+}
+.sourceArtwork {
+  position: absolute;
+  left: -56.67px;
+  width: 386.656px;
+  height: 219.994px;
+}
+.sourceArtwork img {
+  object-fit: cover;
+}
+.company,
+.issue {
+  position: relative;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 480px) {
+  .composition {
+    width: calc(100% - 28px);
+  }
+  .summary {
+    padding: 16px;
+    font-size: 12px;
+  }
+  .row {
+    grid-template-columns: 14px 57px minmax(0, 1fr);
+    padding: 11px 12px;
+    gap: 8px;
+    font-size: 11px;
+  }
+}

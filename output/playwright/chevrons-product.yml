@@ -1,0 +1,826 @@
+- generic [active] [ref=f1e1]:
+  - region "Cookie Consent Prompt" [ref=f1e1281]:
+    - generic [ref=f1e1283]:
+      - generic [ref=f1e1284]:
+        - text: We use essential cookies to make our site work. With your consent, we may also use non-essential cookies to improve user experience, personalize advertisements, and analyze web traffic. For these reasons, we may share your site usage data with our advertising and analytics partners. By clicking “Accept,” you agree to our website's cookie use as described in our
+        - button "Cookie Policy" [ref=f1e1285] [cursor=pointer]
+        - text: . You can change your cookie settings at any time by clicking “
+        - button "Preferences" [ref=f1e1286] [cursor=pointer]
+        - text: .”
+      - generic [ref=f1e1287]:
+        - button "Preferences" [ref=f1e1288] [cursor=pointer]
+        - button "Decline" [ref=f1e1289] [cursor=pointer]
+        - button "Accept" [ref=f1e1290] [cursor=pointer]
+  - link "Skip to content" [ref=f1e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f1e3]:
+    - link "innflow home" [ref=f1e4] [cursor=pointer]:
+      - /url: /
+      - img "innflow" [ref=f1e5]
+    - navigation "Primary navigation" [ref=f1e6]:
+      - group "Product" [ref=f1e7]:
+        - button "Product" [ref=f1e8] [cursor=pointer]
+      - group "Solutions" [ref=f1e11]:
+        - button "Solutions" [ref=f1e12] [cursor=pointer]
+      - group "Resources" [ref=f1e15]:
+        - button "Resources" [ref=f1e16] [cursor=pointer]
+      - link "Pricing" [ref=f1e19] [cursor=pointer]:
+        - /url: /pricing
+      - link "Blog" [ref=f1e20] [cursor=pointer]:
+        - /url: /blog
+    - generic [ref=f1e21]:
+      - link "Log in" [ref=f1e22] [cursor=pointer]:
+        - /url: https://app.innflow.ai/login
+      - link "Continue with Google" [ref=f1e23] [cursor=pointer]:
+        - /url: https://app.innflow.ai/auth/google
+  - main [ref=f1e26]:
+    - generic [ref=f1e28]:
+      - generic [ref=f1e29]:
+        - generic [aria-hidden] [ref=f1e30]: ✳
+        - generic [ref=f1e31]: AI Agents
+      - heading "A little more help. A lot less chasing." [level=1] [ref=f1e32]
+      - paragraph [ref=f1e33]: Give your agents the context to prepare answers and move routine work forward. Keep your team involved where decisions need a person.
+      - generic [ref=f1e34]:
+        - link "Book a demo" [ref=f1e35] [cursor=pointer]:
+          - /url: https://cal.com/julian-patrick-afu0u2/innflow-demo?overlayCalendar=true
+        - link "Continue with Google" [ref=f1e36] [cursor=pointer]:
+          - /url: https://app.innflow.ai/auth/google
+    - region "AI Agents capabilities" [ref=f1e37]:
+      - generic [ref=f1e38]:
+        - generic [ref=f1e39]: Agentic automation
+        - heading "The pieces that keep your work connected." [level=2] [ref=f1e40]
+        - paragraph [ref=f1e41]: Start with the way your team works. Connect the right tools, keep useful context close, and give every handoff a clear next step.
+        - generic [ref=f1e42]:
+          - link [ref=f1e43] [cursor=pointer]:
+            - /url: "#problem-solver"
+            - heading "Problem solver" [level=3] [ref=f1e44]
+            - paragraph [ref=f1e48]: Give an agent a question and the information behind it. Let it prepare a response or next step for your team to review.
+          - link [ref=f1e49] [cursor=pointer]:
+            - /url: "#intelligent-planning"
+            - heading "Intelligent planning" [level=3] [ref=f1e50]
+            - paragraph [ref=f1e54]: Break the task into clear steps. Connect the tools and information needed at each stage, and decide where a person should review the work.
+          - link [ref=f1e55] [cursor=pointer]:
+            - /url: "#agentic-execution"
+            - heading "Agentic execution" [level=3] [ref=f1e56]
+            - paragraph [ref=f1e60]: Connect each task to the next action. Bring the request, supporting records, and review steps along as the workflow progresses.
+          - link [ref=f1e61] [cursor=pointer]:
+            - /url: "#integrations-tools"
+            - heading "Integrations & tools" [level=3] [ref=f1e62]
+            - paragraph [ref=f1e66]: Connect the systems involved in a task. Choose the information and actions the workflow needs, with access managed through your connected accounts.
+      - 'img "Illustrative AI Agents / Problem Solver: An incoming business question, linked evidence cards and a draft answer ready for review." [ref=f1e68]':
+        - generic [ref=f1e70]:
+          - generic [ref=f1e73]:
+            - generic [ref=f1e74]:
+              - generic [ref=f1e77]: What should happen next?
+              - generic [ref=f1e78]: ↵
+            - generic [ref=f1e79]:
+              - generic [ref=f1e80]:
+                - generic [ref=f1e81]:
+                  - strong [ref=f1e84]: Customer request
+                  - generic [ref=f1e85]: "[1]"
+                - paragraph [ref=f1e86]: Original question
+              - generic [ref=f1e88]:
+                - generic [ref=f1e89]:
+                  - strong [ref=f1e92]: Team handbook
+                  - generic [ref=f1e93]: "[2]"
+                - paragraph [ref=f1e94]: Relevant guidance
+          - generic [ref=f1e97]:
+            - strong [ref=f1e100]: Draft answer
+            - paragraph [ref=f1e101]: Ready for review
+            - generic [ref=f1e102]:
+              - generic [ref=f1e103]: Source 1
+              - generic [ref=f1e106]: Source 2
+          - generic [ref=f1e109]: Review the evidence behind the answer
+    - region "AI Agents features" [ref=f1e111]:
+      - generic [ref=f1e112]:
+        - generic [ref=f1e113]: Your options
+        - heading "More ways to move your work forward." [level=2] [ref=f1e114]: More ways to moveyour work forward.
+      - region "Explore product capabilities" [ref=f1e115]:
+        - article [ref=f1e116]:
+          - 'img "Illustrative AI Agents / Problem Solver: An incoming business question, linked evidence cards and a draft answer ready for review." [ref=f1e118]':
+            - generic [ref=f1e120]:
+              - generic [ref=f1e123]:
+                - generic [ref=f1e124]:
+                  - generic [ref=f1e127]: What should happen next?
+                  - generic [ref=f1e128]: ↵
+                - generic [ref=f1e129]:
+                  - generic [ref=f1e130]:
+                    - generic [ref=f1e131]:
+                      - strong [ref=f1e134]: Customer request
+                      - generic [ref=f1e135]: "[1]"
+                    - paragraph [ref=f1e136]: Original question
+                  - generic [ref=f1e138]:
+                    - generic [ref=f1e139]:
+                      - strong [ref=f1e142]: Team handbook
+                      - generic [ref=f1e143]: "[2]"
+                    - paragraph [ref=f1e144]: Relevant guidance
+              - generic [ref=f1e147]:
+                - strong [ref=f1e150]: Draft answer
+                - paragraph [ref=f1e151]: Ready for review
+          - generic [ref=f1e152]: "01"
+          - heading "Make room for a clearer answer." [level=3] [ref=f1e153]
+          - paragraph [ref=f1e154]: Give an agent a question and the information behind it. Let it prepare a response or next step for your team to review.
+        - article [ref=f1e155]:
+          - 'img "Illustrative AI Agents / Intelligent Planning: A request turning into an ordered plan with dependencies and a human review step." [ref=f1e157]':
+            - generic [ref=f1e160]:
+              - generic [ref=f1e166]:
+                - strong [ref=f1e167]: Gather context
+                - generic [ref=f1e168]: Request and records
+              - generic [ref=f1e175]:
+                - strong [ref=f1e176]: Prepare response
+                - generic [ref=f1e177]: Depends on context
+              - generic [ref=f1e186]:
+                - strong [ref=f1e187]: Human review
+                - generic [ref=f1e188]: Before sending
+          - generic [ref=f1e192]: "02"
+          - heading "Turn the request into a plan." [level=3] [ref=f1e193]
+          - paragraph [ref=f1e194]: Break the task into clear steps. Connect the tools and information needed at each stage, and decide where a person should review the work.
+        - article [ref=f1e195]:
+          - 'img "Illustrative AI Agents / Integrations Tools: An agent connecting to an inbox, shared files and a record system through scoped tool cards." [ref=f1e197]':
+            - generic [ref=f1e199]:
+              - generic [ref=f1e203]:
+                - strong [ref=f1e205]: Gmail
+                - generic [ref=f1e206]: Read request
+              - generic [ref=f1e207]:
+                - strong [ref=f1e209]: Drive
+                - generic [ref=f1e210]: Find document
+              - generic [ref=f1e211]:
+                - strong [ref=f1e213]: Slack
+                - generic [ref=f1e214]: Ask reviewer
+              - generic [ref=f1e215]:
+                - strong [ref=f1e217]: Sheets
+                - generic [ref=f1e218]: Update record
+          - generic [ref=f1e219]: "03"
+          - heading "Keep your tools in the flow." [level=3] [ref=f1e220]
+          - paragraph [ref=f1e221]: Connect the systems involved in a task. Choose the information and actions the workflow needs, with access managed through your connected accounts.
+        - article [ref=f1e222]:
+          - 'img "Illustrative AI Agents / Agentic Execution: An agent task progressing through a tool action, status update and reviewed completion." [ref=f1e224]':
+            - generic [ref=f1e227]:
+              - generic [ref=f1e233]:
+                - strong [ref=f1e234]: Tool action
+                - generic [ref=f1e235]: Retrieve record
+              - generic [ref=f1e242]:
+                - strong [ref=f1e243]: Prepare update
+                - generic [ref=f1e244]: Draft change
+              - generic [ref=f1e253]:
+                - strong [ref=f1e254]: Confirm outcome
+                - generic [ref=f1e255]: Review complete
+          - generic [ref=f1e259]: "04"
+          - heading "Move the work forward." [level=3] [ref=f1e260]
+          - paragraph [ref=f1e261]: Connect each task to the next action. Bring the request, supporting records, and review steps along as the workflow progresses.
+        - article [ref=f1e262]:
+          - 'img "Illustrative AI Agents / Agent Character: An agent settings panel with its role, instructions and boundaries beside a matching draft response." [ref=f1e264]':
+            - generic [ref=f1e268]:
+              - strong [ref=f1e273]: Define the agent's role
+              - generic [ref=f1e274]:
+                - generic [ref=f1e275]:
+                  - generic [ref=f1e276]:
+                    - generic [ref=f1e277]: Role
+                    - generic [ref=f1e278]: Prepare helpful replies
+                  - generic [ref=f1e281]:
+                    - generic [ref=f1e282]: Instructions
+                    - generic [ref=f1e283]: Use approved sources
+                - generic [ref=f1e286]: Review settings
+          - generic [ref=f1e288]: "05"
+          - heading "Make your process part of the work." [level=3] [ref=f1e289]
+          - paragraph [ref=f1e290]: Give agents the procedures, instructions, and tone your team uses. Keep that guidance current as the way you work changes.
+        - article [ref=f1e291]:
+          - 'img "Illustrative AI Agents / Templates: A template picker with one reusable agent example expanded into editable steps." [ref=f1e293]':
+            - generic [ref=f1e296]:
+              - generic [ref=f1e303]:
+                - strong [ref=f1e304]: Support reply
+                - generic [ref=f1e305]: Draft and review
+              - generic [ref=f1e315]:
+                - strong [ref=f1e316]: Research brief
+                - generic [ref=f1e317]: Sources attached
+              - generic [ref=f1e327]:
+                - strong [ref=f1e328]: Team follow-up
+                - generic [ref=f1e329]: Clear next steps
+          - generic [ref=f1e333]: "06"
+          - heading "Start with a useful example." [level=3] [ref=f1e334]
+          - paragraph [ref=f1e335]: Choose a workflow template and adapt it to your operation. Update the instructions, tools, and review points before putting it to work.
+        - article [ref=f1e336]:
+          - 'img "Illustrative AI Agents / Learning Agent: A corrected result becoming a proposed instruction update before a comparison test." [ref=f1e338]':
+            - generic [ref=f1e340]:
+              - generic [ref=f1e341]:
+                - generic [ref=f1e343]:
+                  - generic [ref=f1e344]: Original
+                  - generic [ref=f1e348]:
+                    - strong [ref=f1e349]: Incomplete answer
+                    - generic [ref=f1e350]: Reference
+                - generic [ref=f1e352]:
+                  - generic [ref=f1e353]: Feedback
+                  - generic [ref=f1e357]:
+                    - strong [ref=f1e358]: Add source context
+                    - generic [ref=f1e359]: Review result
+              - generic [ref=f1e365]:
+                - strong [ref=f1e366]: Proposed update
+                - generic [ref=f1e367]: Retest instruction
+          - generic [ref=f1e370]: "07"
+          - heading "Make the next run better." [level=3] [ref=f1e371]
+          - paragraph [ref=f1e372]: Review what happened, capture feedback, and update the instructions or supporting knowledge. Test the change before using it more widely.
+        - article [ref=f1e373]:
+          - 'img "Illustrative AI Agents / Human In The Loop: A person reviewing an agent proposal with context and an explicit approval control." [ref=f1e375]':
+            - generic [ref=f1e379]:
+              - strong [ref=f1e382]: Review the proposal
+              - generic [ref=f1e383]:
+                - generic [ref=f1e384]:
+                  - generic [ref=f1e389]:
+                    - strong [ref=f1e390]: Proposed action
+                    - generic [ref=f1e391]: Update account record
+                  - generic [ref=f1e396]:
+                    - strong [ref=f1e397]: Evidence
+                    - generic [ref=f1e398]: Original request
+                - generic [ref=f1e400]:
+                  - strong [ref=f1e401]: Laura Kim
+                  - generic [ref=f1e402]: Assigned reviewer
+                - generic [ref=f1e404]:
+                  - generic [ref=f1e405]: Approve
+                  - generic [ref=f1e408]: Request revision
+          - generic [ref=f1e409]: "08"
+          - heading "Keep people in the decisions." [level=3] [ref=f1e410]
+          - paragraph [ref=f1e411]: Pause at the moments that need judgment. Give the reviewer the proposed action and its context before the workflow continues.
+    - region "AI Agents overview" [ref=f1e412]:
+      - generic [ref=f1e413]:
+        - generic [ref=f1e414]: AI Agents in focus
+        - heading "The pieces that keep your work connected." [level=2] [ref=f1e415]
+      - region "Illustrative Innflow assistant preview" [ref=f1e418]:
+        - complementary [aria-hidden] [ref=f1e419]:
+          - generic [ref=f1e420]: i
+          - generic [ref=f1e433]: A
+        - generic [ref=f1e434]:
+          - generic [ref=f1e435]:
+            - generic [ref=f1e436]: Workspace / Assistant
+            - generic [ref=f1e437]: Illustrative preview
+          - generic [ref=f1e438]:
+            - generic [ref=f1e439]:
+              - text: YOUR OPERATIONS, CONNECTED
+              - heading "The right context. A clearer answer." [level=3] [ref=f1e440]
+              - paragraph [ref=f1e441]: Ask a question. Review the next step.
+            - generic [ref=f1e442]: Example workspace
+          - generic [ref=f1e444]:
+            - generic [ref=f1e445]: What needs review for this maintenance request?
+            - generic [ref=f1e449]:
+              - strong [ref=f1e450]: Here’s the context for your review.
+              - paragraph [ref=f1e451]: The request, property record, and maintenance procedure are attached. Confirm the proposed vendor handoff before the workflow proceeds.
+              - generic [ref=f1e452]:
+                - generic [ref=f1e453]: Maintenance procedure
+                - generic [ref=f1e456]: Property record
+              - generic [ref=f1e459]: "Next step: review the handoff"
+            - generic [ref=f1e462]:
+              - text: Ask about your operations…
+              - generic [ref=f1e463]: ↑
+          - generic [ref=f1e464]:
+            - generic [ref=f1e465]: Connected context
+            - generic [ref=f1e468]: Innflow · Product illustration
+    - generic [ref=f1e469]:
+      - 'img "Illustrative AI Agents / Problem Solver: An incoming business question, linked evidence cards and a draft answer ready for review." [ref=f1e471]':
+        - generic [ref=f1e473]:
+          - generic [ref=f1e476]:
+            - generic [ref=f1e477]:
+              - generic [ref=f1e480]: What should happen next?
+              - generic [ref=f1e481]: ↵
+            - generic [ref=f1e482]:
+              - generic [ref=f1e483]:
+                - generic [ref=f1e484]:
+                  - strong [ref=f1e487]: Customer request
+                  - generic [ref=f1e488]: "[1]"
+                - paragraph [ref=f1e489]: Original question
+              - generic [ref=f1e491]:
+                - generic [ref=f1e492]:
+                  - strong [ref=f1e495]: Team handbook
+                  - generic [ref=f1e496]: "[2]"
+                - paragraph [ref=f1e497]: Relevant guidance
+          - generic [ref=f1e500]:
+            - strong [ref=f1e503]: Draft answer
+            - paragraph [ref=f1e504]: Ready for review
+            - generic [ref=f1e505]:
+              - generic [ref=f1e506]: Source 1
+              - generic [ref=f1e509]: Source 2
+          - generic [ref=f1e512]: Review the evidence behind the answer
+      - generic [ref=f1e514]:
+        - generic [ref=f1e515]: Problem solver
+        - heading "Make room for a clearer answer." [level=2] [ref=f1e516]
+        - paragraph [ref=f1e517]: Give an agent a question and the information behind it. Let it prepare a response or next step for your team to review.
+        - list [ref=f1e518]:
+          - listitem [ref=f1e519]: Frame the question
+          - listitem [ref=f1e520]: Attach the context
+          - listitem [ref=f1e521]: Review the response
+        - link "Get started" [ref=f1e522] [cursor=pointer]:
+          - /url: https://cal.com/julian-patrick-afu0u2/innflow-demo?overlayCalendar=true
+    - generic [ref=f1e526]:
+      - 'img "Illustrative AI Agents / Intelligent Planning: A request turning into an ordered plan with dependencies and a human review step." [ref=f1e528]':
+        - generic [ref=f1e530]:
+          - generic [ref=f1e531]: Prepare a customer follow-up
+          - generic [ref=f1e534]:
+            - generic [ref=f1e540]:
+              - strong [ref=f1e541]: Gather context
+              - generic [ref=f1e542]: Request and records
+            - generic [ref=f1e549]:
+              - strong [ref=f1e550]: Prepare response
+              - generic [ref=f1e551]: Depends on context
+            - generic [ref=f1e560]:
+              - strong [ref=f1e561]: Human review
+              - generic [ref=f1e562]: Before sending
+          - generic [ref=f1e566]: An ordered plan
+      - generic [ref=f1e568]:
+        - generic [ref=f1e569]: Intelligent planning
+        - heading "Turn the request into a plan." [level=2] [ref=f1e570]
+        - paragraph [ref=f1e571]: Break the task into clear steps. Connect the tools and information needed at each stage, and decide where a person should review the work.
+        - list [ref=f1e572]:
+          - listitem [ref=f1e573]: Outline the steps
+          - listitem [ref=f1e574]: Connect resources
+          - listitem [ref=f1e575]: Add review points
+        - link "Get started" [ref=f1e576] [cursor=pointer]:
+          - /url: https://cal.com/julian-patrick-afu0u2/innflow-demo?overlayCalendar=true
+    - generic [ref=f1e580]:
+      - 'img "Illustrative AI Agents / Agentic Execution: An agent task progressing through a tool action, status update and reviewed completion." [ref=f1e582]':
+        - generic [ref=f1e584]:
+          - generic [ref=f1e585]: Run a reviewed task
+          - generic [ref=f1e588]:
+            - generic [ref=f1e594]:
+              - strong [ref=f1e595]: Tool action
+              - generic [ref=f1e596]: Retrieve record
+            - generic [ref=f1e603]:
+              - strong [ref=f1e604]: Prepare update
+              - generic [ref=f1e605]: Draft change
+            - generic [ref=f1e614]:
+              - strong [ref=f1e615]: Confirm outcome
+              - generic [ref=f1e616]: Review complete
+          - generic [ref=f1e620]: A visible execution path
+      - generic [ref=f1e622]:
+        - generic [ref=f1e623]: Agentic execution
+        - heading "Move the work forward." [level=2] [ref=f1e624]
+        - paragraph [ref=f1e625]: Connect each task to the next action. Bring the request, supporting records, and review steps along as the workflow progresses.
+        - list [ref=f1e626]:
+          - listitem [ref=f1e627]: Attach context
+          - listitem [ref=f1e628]: Assign the next action
+          - listitem [ref=f1e629]: Keep a record
+        - link "Get started" [ref=f1e630] [cursor=pointer]:
+          - /url: https://cal.com/julian-patrick-afu0u2/innflow-demo?overlayCalendar=true
+    - generic [ref=f1e634]:
+      - 'img "Illustrative AI Agents / Integrations Tools: An agent connecting to an inbox, shared files and a record system through scoped tool cards." [ref=f1e636]':
+        - generic [ref=f1e638]:
+          - generic [ref=f1e642]:
+            - strong [ref=f1e644]: Gmail
+            - generic [ref=f1e645]: Read request
+          - generic [ref=f1e646]:
+            - strong [ref=f1e648]: Drive
+            - generic [ref=f1e649]: Find document
+          - generic [ref=f1e650]:
+            - strong [ref=f1e652]: Slack
+            - generic [ref=f1e653]: Ask reviewer
+          - generic [ref=f1e654]:
+            - strong [ref=f1e656]: Sheets
+            - generic [ref=f1e657]: Update record
+          - generic [ref=f1e658]: Access stays scoped
+      - generic [ref=f1e659]:
+        - generic [ref=f1e660]: Integrations & tools
+        - heading "Keep your tools in the flow." [level=2] [ref=f1e661]
+        - paragraph [ref=f1e662]: Connect the systems involved in a task. Choose the information and actions the workflow needs, with access managed through your connected accounts.
+        - list [ref=f1e663]:
+          - listitem [ref=f1e664]: Choose your connections
+          - listitem [ref=f1e665]: Set access
+          - listitem [ref=f1e666]: Keep handoffs clear
+        - link "Get started" [ref=f1e667] [cursor=pointer]:
+          - /url: https://cal.com/julian-patrick-afu0u2/innflow-demo?overlayCalendar=true
+    - generic [ref=f1e671]:
+      - 'img "Illustrative AI Agents / Agent Character: An agent settings panel with its role, instructions and boundaries beside a matching draft response." [ref=f1e673]':
+        - generic [ref=f1e675]:
+          - generic [ref=f1e677]:
+            - strong [ref=f1e682]: Define the agent's role
+            - generic [ref=f1e683]:
+              - generic [ref=f1e684]: Customer support agent
+              - generic [ref=f1e685]:
+                - generic [ref=f1e686]:
+                  - generic [ref=f1e687]: Role
+                  - generic [ref=f1e688]: Prepare helpful replies
+                - generic [ref=f1e691]:
+                  - generic [ref=f1e692]: Instructions
+                  - generic [ref=f1e693]: Use approved sources
+                - generic [ref=f1e696]:
+                  - generic [ref=f1e697]: Boundary
+                  - generic [ref=f1e698]: Ask before sending
+              - generic [ref=f1e701]:
+                - generic [ref=f1e702]: Draft configuration
+                - generic [ref=f1e705]: Review settings
+          - generic [ref=f1e706]: Draft follows the instructions
+      - generic [ref=f1e708]:
+        - generic [ref=f1e709]: Agent character
+        - heading "Make your process part of the work." [level=2] [ref=f1e710]
+        - paragraph [ref=f1e711]: Give agents the procedures, instructions, and tone your team uses. Keep that guidance current as the way you work changes.
+        - list [ref=f1e712]:
+          - listitem [ref=f1e713]: Attach procedures
+          - listitem [ref=f1e714]: Set clear instructions
+          - listitem [ref=f1e715]: Update shared guidance
+        - link "Get started" [ref=f1e716] [cursor=pointer]:
+          - /url: https://cal.com/julian-patrick-afu0u2/innflow-demo?overlayCalendar=true
+    - generic [ref=f1e720]:
+      - 'img "Illustrative AI Agents / Templates: A template picker with one reusable agent example expanded into editable steps." [ref=f1e722]':
+        - generic [ref=f1e724]:
+          - generic [ref=f1e725]: Agent templates
+          - generic [ref=f1e728]:
+            - generic [ref=f1e735]:
+              - strong [ref=f1e736]: Support reply
+              - generic [ref=f1e737]: Draft and review
+            - generic [ref=f1e747]:
+              - strong [ref=f1e748]: Research brief
+              - generic [ref=f1e749]: Sources attached
+            - generic [ref=f1e759]:
+              - strong [ref=f1e760]: Team follow-up
+              - generic [ref=f1e761]: Clear next steps
+          - generic [ref=f1e765]: Customize the selected example
+      - generic [ref=f1e767]:
+        - generic [ref=f1e768]: Templates
+        - heading "Start with a useful example." [level=2] [ref=f1e769]
+        - paragraph [ref=f1e770]: Choose a workflow template and adapt it to your operation. Update the instructions, tools, and review points before putting it to work.
+        - list [ref=f1e771]:
+          - listitem [ref=f1e772]: Choose a starting point
+          - listitem [ref=f1e773]: Adapt the steps
+          - listitem [ref=f1e774]: Review the setup
+        - link "Get started" [ref=f1e775] [cursor=pointer]:
+          - /url: https://cal.com/julian-patrick-afu0u2/innflow-demo?overlayCalendar=true
+    - generic [ref=f1e779]:
+      - 'img "Illustrative AI Agents / Learning Agent: A corrected result becoming a proposed instruction update before a comparison test." [ref=f1e781]':
+        - generic [ref=f1e783]:
+          - generic [ref=f1e784]: A reviewed improvement
+          - generic [ref=f1e787]:
+            - generic [ref=f1e789]:
+              - generic [ref=f1e790]: Original
+              - generic [ref=f1e794]:
+                - strong [ref=f1e798]: Incomplete answer
+                - generic [ref=f1e799]: Reference
+            - generic [ref=f1e801]:
+              - generic [ref=f1e802]: Feedback
+              - generic [ref=f1e806]:
+                - strong [ref=f1e810]: Add source context
+                - generic [ref=f1e811]: Review result
+          - generic [ref=f1e817]:
+            - strong [ref=f1e818]: Proposed update
+            - generic [ref=f1e819]: Retest instruction
+          - generic [ref=f1e822]: Validate before accepting
+      - generic [ref=f1e824]:
+        - generic [ref=f1e825]: Learning agent
+        - heading "Make the next run better." [level=2] [ref=f1e826]
+        - paragraph [ref=f1e827]: Review what happened, capture feedback, and update the instructions or supporting knowledge. Test the change before using it more widely.
+        - list [ref=f1e828]:
+          - listitem [ref=f1e829]: Review the result
+          - listitem [ref=f1e830]: Record feedback
+          - listitem [ref=f1e831]: Test improvements
+        - link "Get started" [ref=f1e832] [cursor=pointer]:
+          - /url: https://cal.com/julian-patrick-afu0u2/innflow-demo?overlayCalendar=true
+    - generic [ref=f1e836]:
+      - 'img "Illustrative AI Agents / Human In The Loop: A person reviewing an agent proposal with context and an explicit approval control." [ref=f1e838]':
+        - generic [ref=f1e840]:
+          - generic [ref=f1e841]: Source context attached
+          - generic [ref=f1e845]:
+            - generic [ref=f1e846]:
+              - strong [ref=f1e848]: Review the proposal
+              - generic [ref=f1e849]: Review
+            - generic [ref=f1e850]:
+              - generic [ref=f1e851]: Action awaiting approval
+              - generic [ref=f1e852]:
+                - generic [ref=f1e857]:
+                  - strong [ref=f1e858]: Proposed action
+                  - generic [ref=f1e859]: Update account record
+                - generic [ref=f1e866]:
+                  - strong [ref=f1e867]: Evidence
+                  - generic [ref=f1e868]: Original request
+                - generic [ref=f1e875]:
+                  - strong [ref=f1e876]: Reviewer
+                  - generic [ref=f1e877]: Laura Kim
+              - generic [ref=f1e881]:
+                - strong [ref=f1e882]: Laura Kim
+                - generic [ref=f1e883]: Assigned reviewer
+              - generic [ref=f1e885]:
+                - generic [ref=f1e886]: Approve
+                - generic [ref=f1e889]: Request revision
+          - generic [ref=f1e890]: A person makes the decision
+      - generic [ref=f1e892]:
+        - generic [ref=f1e893]: Human in the loop
+        - heading "Keep people in the decisions." [level=2] [ref=f1e894]
+        - paragraph [ref=f1e895]: Pause at the moments that need judgment. Give the reviewer the proposed action and its context before the workflow continues.
+        - list [ref=f1e896]:
+          - listitem [ref=f1e897]: Choose review points
+          - listitem [ref=f1e898]: Prepare the context
+          - listitem [ref=f1e899]: Approve the next action
+        - link "Get started" [ref=f1e900] [cursor=pointer]:
+          - /url: https://cal.com/julian-patrick-afu0u2/innflow-demo?overlayCalendar=true
+    - region [ref=f1e905]:
+      - heading "Trusted by 1,260+ real estate professionals" [level=2] [ref=f1e906]
+      - generic [ref=f1e907]:
+        - article [ref=f1e908]:
+          - img "Portrait of Elena Morales" [ref=f1e909]
+          - generic [ref=f1e911]:
+            - generic [ref=f1e912]: Elena Morales
+            - paragraph [ref=f1e913]:
+              - generic [aria-hidden] [ref=f1e914]: “
+              - text: More focus on people, less on admin.
+          - button "Read Elena Morales’s testimonial" [ref=f1e915] [cursor=pointer]:
+            - text: Read story
+            - generic [aria-hidden] [ref=f1e916]: +
+        - article [ref=f1e917]:
+          - img "AI-edited portrait of Meera Shah" [ref=f1e918]
+          - generic [ref=f1e920]:
+            - generic [ref=f1e921]: Meera Shah
+            - paragraph [ref=f1e922]:
+              - generic [aria-hidden] [ref=f1e923]: “
+              - text: The next step always feels clearer.
+          - button "Read Meera Shah’s testimonial" [ref=f1e924] [cursor=pointer]:
+            - text: Read story
+            - generic [aria-hidden] [ref=f1e925]: +
+        - article [ref=f1e926]:
+          - img "Portrait of Daniel Cho" [ref=f1e927]
+          - generic [ref=f1e929]:
+            - generic [ref=f1e930]: Daniel Cho
+            - paragraph [ref=f1e931]:
+              - generic [aria-hidden] [ref=f1e932]: “
+              - text: Rental admin feels much less overwhelming.
+          - button "Read Daniel Cho’s testimonial" [ref=f1e933] [cursor=pointer]:
+            - text: Read story
+            - generic [aria-hidden] [ref=f1e934]: +
+        - article [ref=f1e935]:
+          - img "Portrait of Marcus Reed" [ref=f1e936]
+          - generic [ref=f1e938]:
+            - generic [ref=f1e939]: Marcus Reed
+            - paragraph [ref=f1e940]:
+              - generic [aria-hidden] [ref=f1e941]: “
+              - text: I start each day with direction.
+          - button "Read Marcus Reed’s testimonial" [ref=f1e942] [cursor=pointer]:
+            - text: Read story
+            - generic [aria-hidden] [ref=f1e943]: +
+    - generic [ref=f1e944]:
+      - heading "Frequently asked questions" [level=2] [ref=f1e945]
+      - paragraph [ref=f1e946]: Direct answers on agents, memory, human review, deployment, and security, and fitting innflow into your operation.
+      - generic [ref=f1e947]:
+        - group [ref=f1e948]:
+          - generic "What is an innflow AI agent?" [ref=f1e949] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f1e950]: +
+            - text: What is an innflow AI agent?
+        - group [ref=f1e951]:
+          - generic "Do agents learn on their own?" [ref=f1e952] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f1e953]: +
+            - text: Do agents learn on their own?
+        - group [ref=f1e954]:
+          - generic "Can agents act without a person in the loop?" [ref=f1e955] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f1e956]: +
+            - text: Can agents act without a person in the loop?
+        - group [ref=f1e957]:
+          - generic "How do agents use tools and memory?" [ref=f1e958] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f1e959]: +
+            - text: How do agents use tools and memory?
+        - group [ref=f1e960]:
+          - generic "How is innflow deployed?" [ref=f1e961] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f1e962]: +
+            - text: How is innflow deployed?
+        - group [ref=f1e963]:
+          - generic "How does innflow handle security?" [ref=f1e964] [cursor=pointer]:
+            - generic [aria-hidden] [ref=f1e965]: +
+            - text: How does innflow handle security?
+    - generic [ref=f1e966]:
+      - generic [ref=f1e967]:
+        - generic [ref=f1e968]: The Innflow platform
+        - heading "Keep your tools, context, and next steps connected." [level=2] [ref=f1e969]: Keep your tools, context,and next steps connected.
+      - generic [ref=f1e970]:
+        - link [ref=f1e971] [cursor=pointer]:
+          - /url: /platform
+          - 'img "Illustrative Platform product thumbnail: A compact workspace overview linking agents, tools and shared knowledge." [ref=f1e973]':
+            - generic [ref=f1e976]:
+              - generic [ref=f1e977]: Shared context
+              - generic [ref=f1e980]:
+                - generic [ref=f1e986]:
+                  - strong [ref=f1e987]: Agents
+                  - generic [ref=f1e988]: Team roles
+                - generic [ref=f1e997]:
+                  - strong [ref=f1e998]: Tools
+                  - generic [ref=f1e999]: Scoped actions
+                - generic [ref=f1e1008]:
+                  - strong [ref=f1e1009]: Knowledge
+                  - generic [ref=f1e1010]: Working sources
+          - heading "Platform" [level=3] [ref=f1e1014]
+        - link [ref=f1e1018] [cursor=pointer]:
+          - /url: /integrations
+          - 'img "Illustrative Integrations product thumbnail: A central Innflow node connected to a small set of tool tiles." [ref=f1e1020]':
+            - generic [ref=f1e1022]:
+              - generic [ref=f1e1026]:
+                - strong [ref=f1e1028]: Gmail
+                - generic [ref=f1e1029]: Read inbox
+              - generic [ref=f1e1030]:
+                - strong [ref=f1e1032]: Drive
+                - generic [ref=f1e1033]: Find context
+              - generic [ref=f1e1034]:
+                - strong [ref=f1e1036]: Slack
+                - generic [ref=f1e1037]: Notify team
+              - generic [ref=f1e1038]:
+                - strong [ref=f1e1040]: Sheets
+                - generic [ref=f1e1041]: Update record
+          - heading "Integrations" [level=3] [ref=f1e1042]
+        - link [ref=f1e1046] [cursor=pointer]:
+          - /url: /products/agentic-workflows
+          - 'img "Illustrative Agentic Workflows product thumbnail: A compact workflow canvas with trigger, branch and action nodes." [ref=f1e1048]':
+            - generic [ref=f1e1050]:
+              - generic [ref=f1e1059]: New request
+              - generic [ref=f1e1064]:
+                - strong [ref=f1e1067]: Set condition
+                - generic [ref=f1e1068]:
+                  - text: If
+                  - generic [ref=f1e1069]: Priority is Urgent
+                  - generic [ref=f1e1073]: Else
+              - generic [ref=f1e1075]:
+                - strong [ref=f1e1080]: Assign to user
+                - generic [ref=f1e1081]: Laura Kim
+              - generic [ref=f1e1084]:
+                - strong [ref=f1e1087]: Assign to agent
+                - generic [ref=f1e1088]: AI Agent
+          - heading "Agentic Workflows" [level=3] [ref=f1e1090]
+        - link [ref=f1e1094] [cursor=pointer]:
+          - /url: /products/agent-os
+          - 'img "Illustrative Agent OS product thumbnail: A small orchestration graph connecting agents and shared memory." [ref=f1e1096]':
+            - generic [ref=f1e1099]:
+              - generic [ref=f1e1105]:
+                - strong [ref=f1e1106]: Research agent
+                - generic [ref=f1e1107]: Find evidence
+              - generic [ref=f1e1114]:
+                - strong [ref=f1e1115]: Drafting agent
+                - generic [ref=f1e1116]: Prepare answer
+              - generic [ref=f1e1125]:
+                - strong [ref=f1e1126]: Reviewer
+                - generic [ref=f1e1127]: Check the result
+          - heading "Agent OS" [level=3] [ref=f1e1131]
+        - link [ref=f1e1135] [cursor=pointer]:
+          - /url: /products/agent-studio
+          - 'img "Illustrative Agent Studio product thumbnail: A miniature visual editor with configurable workflow nodes." [ref=f1e1137]':
+            - generic [ref=f1e1139]:
+              - generic [ref=f1e1141]:
+                - generic [ref=f1e1142]: Build it your way
+                - generic [ref=f1e1150]:
+                  - generic [ref=f1e1151]:
+                    - generic [ref=f1e1152]:
+                      - strong [ref=f1e1156]: Trigger
+                      - generic [ref=f1e1157]: New message
+                    - generic [ref=f1e1158]:
+                      - strong [ref=f1e1160]: Action
+                      - generic [ref=f1e1161]: Prepare draft
+                    - generic [ref=f1e1162]:
+                      - strong [ref=f1e1166]: Review
+                      - generic [ref=f1e1167]: Assign to user
+                  - generic [ref=f1e1168]:
+                    - text: −
+                    - generic [ref=f1e1169]: 100%
+                    - text: +
+              - generic [ref=f1e1171]:
+                - strong [ref=f1e1176]: Action
+                - generic [ref=f1e1177]: Configuration
+                - generic [ref=f1e1178]: Prepare draft
+                - generic [ref=f1e1181]: Next step
+                - generic [ref=f1e1182]: Assign to user
+          - heading "Agent Studio" [level=3] [ref=f1e1185]
+    - generic [ref=f1e1189]:
+      - 'heading "AI Agents: A Human-Like Workforce for Your Organization" [level=2] [ref=f1e1190]'
+      - paragraph [ref=f1e1191]: AI agents are versatile problem solvers that learn and improve over time. Their goal oriented approach allows them to tackle even the most complex and dynamic workflows.
+      - link "Start today" [ref=f1e1193] [cursor=pointer]:
+        - /url: https://cal.com/julian-patrick-afu0u2/innflow-demo?overlayCalendar=true
+  - contentinfo [ref=f1e1195]:
+    - generic [ref=f1e1196]:
+      - generic [ref=f1e1197]:
+        - link "innflow home" [ref=f1e1198] [cursor=pointer]:
+          - /url: /
+          - img "innflow" [ref=f1e1199]
+        - paragraph [ref=f1e1200]: Property operations.Connected in one place.
+        - link "support@innflow.ai" [ref=f1e1201] [cursor=pointer]:
+          - /url: mailto:support@innflow.ai
+        - region "Hours of operation" [ref=f1e1202]:
+          - strong [ref=f1e1203]: Hours of Operation
+          - generic [ref=f1e1204]:
+            - generic [ref=f1e1205]:
+              - term [ref=f1e1206]: Monday–Friday
+              - definition [ref=f1e1207]: 9:00 AM–6:00 PM ET
+            - generic [ref=f1e1208]:
+              - term [ref=f1e1209]: Saturday–Sunday
+              - definition [ref=f1e1210]: 10:00 AM–5:00 PM ET
+      - generic [ref=f1e1211]:
+        - heading "Why innflow" [level=3] [ref=f1e1212]
+        - link "About innflow" [ref=f1e1213] [cursor=pointer]:
+          - /url: /about
+        - link "Careers" [ref=f1e1214] [cursor=pointer]:
+          - /url: /careers
+        - link "Industry coverage" [ref=f1e1215] [cursor=pointer]:
+          - /url: /in-the-news
+        - link "Who we help" [ref=f1e1216] [cursor=pointer]:
+          - /url: /our-customers
+        - link "Security" [ref=f1e1217] [cursor=pointer]:
+          - /url: /security
+        - link "Share innflow" [ref=f1e1218] [cursor=pointer]:
+          - /url: /landlord-referral
+        - link "Partnerships" [ref=f1e1219] [cursor=pointer]:
+          - /url: /partner-with-us
+        - link "Advisor partnerships" [ref=f1e1220] [cursor=pointer]:
+          - /url: /advisor-partner-program
+        - link "Workflows" [ref=f1e1221] [cursor=pointer]:
+          - /url: /products/agentic-workflows
+        - link "AI assistant" [ref=f1e1222] [cursor=pointer]:
+          - /url: /products/ai-agents
+        - link "Knowledge" [ref=f1e1223] [cursor=pointer]:
+          - /url: /platform
+        - link "Approvals" [ref=f1e1224] [cursor=pointer]:
+          - /url: /platform/security-and-compliance
+      - generic [ref=f1e1225]:
+        - heading "Solutions" [level=3] [ref=f1e1226]
+        - link "Overview" [ref=f1e1227] [cursor=pointer]:
+          - /url: /
+        - link "Multi-property investors" [ref=f1e1228] [cursor=pointer]:
+          - /url: /multi-property-investors
+        - link "Landlord operations" [ref=f1e1229] [cursor=pointer]:
+          - /url: /landlord-banking
+        - link "Rental workflows" [ref=f1e1230] [cursor=pointer]:
+          - /url: /rent-collection
+        - link "Rental workflows overview" [ref=f1e1231] [cursor=pointer]:
+          - /url: /rent-collection-2
+        - link "Connected property records" [ref=f1e1232] [cursor=pointer]:
+          - /url: /landlord-accounting
+        - link "Property review preparation" [ref=f1e1233] [cursor=pointer]:
+          - /url: /landlord-insurance
+        - link "Document preparation" [ref=f1e1234] [cursor=pointer]:
+          - /url: /tax-preparation
+        - link "Deposit workflows" [ref=f1e1235] [cursor=pointer]:
+          - /url: /security-deposit-account
+        - link "Screening workflows" [ref=f1e1236] [cursor=pointer]:
+          - /url: /tenant-screening-service
+        - link "Reserve planning" [ref=f1e1237] [cursor=pointer]:
+          - /url: /landlord-banking-apy
+        - link "Financing preparation" [ref=f1e1238] [cursor=pointer]:
+          - /url: /rental-property-loans
+        - link "Property management" [ref=f1e1239] [cursor=pointer]:
+          - /url: /property-management
+        - link "Connected operations" [ref=f1e1240] [cursor=pointer]:
+          - /url: /platform
+        - link "Integrations" [ref=f1e1241] [cursor=pointer]:
+          - /url: /integrations
+      - generic [ref=f1e1242]:
+        - heading "Resources" [level=3] [ref=f1e1243]
+        - link "Resource library" [ref=f1e1244] [cursor=pointer]:
+          - /url: /resources
+        - link "Document checklists" [ref=f1e1245] [cursor=pointer]:
+          - /url: /free-rental-forms-and-templates-for-landlords
+        - link "Rent comparison" [ref=f1e1246] [cursor=pointer]:
+          - /url: /how-much-should-i-charge-for-rent
+        - link "Lease workflows" [ref=f1e1247] [cursor=pointer]:
+          - /url: /lease-agreement
+        - link "Workflow learning" [ref=f1e1248] [cursor=pointer]:
+          - /url: /webinars
+        - link "Investor resources" [ref=f1e1249] [cursor=pointer]:
+          - /url: /real-estate-investing
+        - link "Product updates" [ref=f1e1250] [cursor=pointer]:
+          - /url: /product-updates
+        - link "Blog" [ref=f1e1251] [cursor=pointer]:
+          - /url: /blog
+        - link "Help center" [ref=f1e1252] [cursor=pointer]:
+          - /url: /help-center
+        - link "Legal agreements" [ref=f1e1253] [cursor=pointer]:
+          - /url: /legal-agreements
+        - link "FAQ" [ref=f1e1254] [cursor=pointer]:
+          - /url: /faq
+        - link "Contact" [ref=f1e1255] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=f1e1256]:
+        - heading "Property teams" [level=3] [ref=f1e1257]
+        - link "Long-term rentals" [ref=f1e1258] [cursor=pointer]:
+          - /url: /long-term-rentals
+        - link "Mid-term rentals" [ref=f1e1259] [cursor=pointer]:
+          - /url: /mid-term-rentals
+        - link "Short-term rentals" [ref=f1e1260] [cursor=pointer]:
+          - /url: /short-term-rentals
+        - link "Resident experiences" [ref=f1e1261] [cursor=pointer]:
+          - /url: /renters
+        - heading "Get started" [level=3] [ref=f1e1262]
+        - link "Book a demo" [ref=f1e1263] [cursor=pointer]:
+          - /url: https://cal.com/julian-patrick-afu0u2/innflow-demo?overlayCalendar=true
+        - link "Pricing" [ref=f1e1264] [cursor=pointer]:
+          - /url: /pricing
+        - link "Log in" [ref=f1e1265] [cursor=pointer]:
+          - /url: https://app.innflow.ai/login
+        - link "Continue with Google" [ref=f1e1266] [cursor=pointer]:
+          - /url: https://app.innflow.ai/auth/google
+    - generic [ref=f1e1269]:
+      - generic [ref=f1e1270]: © 2026 Innflow. All rights reserved.
+      - navigation "Legal" [ref=f1e1271]:
+        - link "Privacy Policy" [ref=f1e1272] [cursor=pointer]:
+          - /url: /legal/privacy-policy
+        - link "Terms of Service" [ref=f1e1273] [cursor=pointer]:
+          - /url: /legal/terms-of-service
+        - link "Cookie Policy" [ref=f1e1274] [cursor=pointer]:
+          - /url: /legal/cookie-policy
+        - link "Acceptable Use Policy" [ref=f1e1275] [cursor=pointer]:
+          - /url: /legal/acceptable-use-policy
+        - link "EULA" [ref=f1e1276] [cursor=pointer]:
+          - /url: /legal/eula
+        - link "Privacy Request" [ref=f1e1277] [cursor=pointer]:
+          - /url: /legal/dsar
+        - link "Consent Preferences" [ref=f1e1278] [cursor=pointer]:
+          - /url: "#"
+        - link "Do Not Sell or Share My Personal Information" [ref=f1e1279] [cursor=pointer]:
+          - /url: https://app.termly.io/notify/d253192a-6c11-4338-9883-67b3307aea2f
+        - link "Limit the Use of My Sensitive Personal Information" [ref=f1e1280] [cursor=pointer]:
+          - /url: https://app.termly.io/notify/d253192a-6c11-4338-9883-67b3307aea2f
+  - button "Open Next.js Dev Tools" [ref=f1e1296] [cursor=pointer]
+  - alert [ref=f1e1300]

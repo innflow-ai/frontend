@@ -1,0 +1,13 @@
+{
+  "fileKey": "JkJnW5Q1AIVAqgoV2AqAyb",
+  "sourceNodes": ["350:11559", "350:11630", "350:11820"],
+  "assets": {
+    "stories-background.png": "408:9907",
+    "card-google.png": "350:11795",
+    "card-microsoft.png": "350:11809",
+    "connector.svg": "350:11654",
+    "closing-four-background.png": "350:11882",
+    "closing-four-person.png": "350:11885"
+  },
+  "notes": "Exact Figma-exported artwork. No reference customer portraits, quotations, names or metrics imported. Existing approved CMS props remain the only testimonial source. Provider examples are not verification of availability."
+}

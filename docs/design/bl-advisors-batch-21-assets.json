@@ -1,0 +1,44 @@
+[
+  {
+    "file": "public/brand/baselane-inspired/advisors/hero.webp",
+    "source": "https://cdn.prod.website-files.com/67d7c19efde3196be25abb1f/6a4286efcc1528632be55170_advior-hero-image.webp",
+    "downloadFile": "pages/22-blue-get.baselane.com--advisor-lp/6a4286efcc1528632be55170_advior-hero-image--8f3d7f46.webp",
+    "sourceRow": 23,
+    "sha256": "8f3d7f460faf267c043e18b4c1d1faff99de62f491252e0538837a8743eb07aa"
+  },
+  {
+    "file": "public/brand/baselane-inspired/advisors/nick.webp",
+    "source": "https://cdn.prod.website-files.com/67d7c19efde3196be25abb1f/6a428956f89a78017822f036_nick-aiola.webp",
+    "downloadFile": "pages/22-blue-get.baselane.com--advisor-lp/6a428956f89a78017822f036_nick-aiola--5631565c.webp",
+    "sourceRow": 23,
+    "sha256": "5631565c8bcd7054421a909bb732a4316a89d173d971da82966fdeaad860673d"
+  },
+  {
+    "file": "public/brand/baselane-inspired/advisors/lawrence.webp",
+    "source": "https://cdn.prod.website-files.com/67d7c19efde3196be25abb1f/6a42895e0b438fbf63e80c5b_lawrence-courtien.webp",
+    "downloadFile": "pages/22-blue-get.baselane.com--advisor-lp/6a42895e0b438fbf63e80c5b_lawrence-courtien--ba0918d7.webp",
+    "sourceRow": 23,
+    "sha256": "ba0918d704f839a5706bcf85a0b8a8d3399ed5846172d3ff0000dab777ffd054"
+  },
+  {
+    "file": "public/brand/baselane-inspired/advisors/phillip.webp",
+    "source": "https://cdn.prod.website-files.com/67d7c19efde3196be25abb1f/69e24bf6346fb38658b9a441_deaef22fb09c7069c5e054fa4e368a90_Phillip%20Munoz%402x.webp",
+    "downloadFile": "pages/22-blue-get.baselane.com--advisor-lp/69e24bf6346fb38658b9a441_deaef22fb09c7069c5e054fa4e368a90_Phillip-Munoz-2x--224f6b34.webp",
+    "sourceRow": 23,
+    "sha256": "224f6b347ea8e69fdcf0001db30a11dbf7aada10820229d16f1f380c264eebf8"
+  },
+  {
+    "file": "public/brand/baselane-inspired/advisors/benefits.webp",
+    "source": "https://cdn.prod.website-files.com/67d7c19efde3196be25abb1f/6a428ff0e3441ab2549dfa4b_benefits-image-step.webp",
+    "downloadFile": "pages/22-blue-get.baselane.com--advisor-lp/6a428ff0e3441ab2549dfa4b_benefits-image-step--0ee87ef6.webp",
+    "sourceRow": 23,
+    "sha256": "0ee87ef621edb56d7e110b7f8cad7fa57e59569b9ebd24befc08f3bb7acd72b1"
+  },
+  {
+    "file": "public/brand/baselane-inspired/advisors/investors.webp",
+    "source": "https://cdn.prod.website-files.com/67d7c19efde3196be25abb1f/6a1a8e85929285f0a65a6472_thumb-for-investors.webp",
+    "downloadFile": "pages/22-blue-get.baselane.com--advisor-lp/6a1a8e85929285f0a65a6472_thumb-for-investors--1b93934b.webp",
+    "sourceRow": 23,
+    "sha256": "1b93934bf7f4158aaafdfb3f6ce71f2aa8bd9f2b4500da295116fee2ffa1c8ef"
+  }
+]

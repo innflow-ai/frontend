@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "creator": {
+    "@type": "Person",
+    "name": "T"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "T"
+  },
+  "creditText": "T",
+  "copyrightNotice": "T",
+  "license": "https://unsplash.com/license",
+  "acquireLicensePage": "https://unsplash.com/photos/row-of-houses-on-a-foggy-morning-EmTHXFPQ1yM",
+  "contentUrl": "https://images.unsplash.com/photo-1768383236002-f834f86971ea?auto=format&fit=crop&q=60&crop=entropy&cs=srgb&fm=jpg&ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzg4NzQ3MDIzfA&ixlib=rb-4.1.0",
+  "thumbnail": {
+    "@type": "ImageObject",
+    "url": "https://images.unsplash.com/photo-1768383236002-f834f86971ea?auto=format&fit=crop&q=60&crop=entropy&cs=tinysrgb&fm=jpg&ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzg4NzQ3MDIzfA&ixlib=rb-4.1.0&w=200"
+  },
+  "datePublished": "2026-01-14T09:35:06.000Z",
+  "description": "Row of houses on a foggy morning",
+  "name": "Row of houses on a foggy morning",
+  "width": "2976px",
+  "height": "1984px",
+  "isAccessibleForFree": true,
+  "isFamilyFriendly": true,
+  "caption": "Row of houses on a foggy morning",
+  "representativeOfPage": true
+}

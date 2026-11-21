@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "creator": {
+    "@type": "Person",
+    "name": "Alexander Mass"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Alexander Mass"
+  },
+  "creditText": "Alexander Mass",
+  "copyrightNotice": "Alexander Mass",
+  "license": "https://unsplash.com/license",
+  "acquireLicensePage": "https://unsplash.com/photos/a-white-house-surrounded-by-trees-and-bushes-t3Z1a4A5DZ0",
+  "contentUrl": "https://images.unsplash.com/photo-1703695751038-747623dd90a7?auto=format&fit=crop&q=60&crop=entropy&cs=srgb&fm=jpg&ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzg4NzQ3MDIyfA&ixlib=rb-4.1.0",
+  "thumbnail": {
+    "@type": "ImageObject",
+    "url": "https://images.unsplash.com/photo-1703695751038-747623dd90a7?auto=format&fit=crop&q=60&crop=entropy&cs=tinysrgb&fm=jpg&ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzg4NzQ3MDIyfA&ixlib=rb-4.1.0&w=200"
+  },
+  "datePublished": "2023-12-27T16:51:21.000Z",
+  "description": "a white house surrounded by trees and bushes",
+  "name": "a white house surrounded by trees and bushes",
+  "width": "4160px",
+  "height": "6240px",
+  "isAccessibleForFree": true,
+  "isFamilyFriendly": true,
+  "caption": "a white house surrounded by trees and bushes",
+  "representativeOfPage": true
+}

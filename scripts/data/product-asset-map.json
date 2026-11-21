@@ -1,0 +1,532 @@
+{
+  "platform": [
+    {
+      "role": "hero",
+      "src": "https://framerusercontent.com/images/JY5OXNKvl3Laz7mlrXcj2osAa8.png",
+      "alt": "AI agent platform",
+      "localPath": "Agentic_Platform/imgi_94_WYstm54X3BJM8GQykKpLv97fEmc.png",
+      "score": 0.00194,
+      "closestPath": "Agentic_Platform/imgi_94_WYstm54X3BJM8GQykKpLv97fEmc.png"
+    },
+    {
+      "role": "spiral:top-wide",
+      "src": "https://framerusercontent.com/images/klyz5GhburSXejbrzhYNspNLp0.webp",
+      "alt": "",
+      "localPath": "Agentic_Platform/imgi_139_C70ijI1eSXgIUV83RBcoM02lgfA.webp",
+      "score": 0.00026,
+      "closestPath": "Agentic_Platform/imgi_139_C70ijI1eSXgIUV83RBcoM02lgfA.webp"
+    },
+    {
+      "role": "spiral:top-tall",
+      "src": "https://framerusercontent.com/images/gSCGeC2OMVSod3mkXkTn9Ma3LU.webp",
+      "alt": "",
+      "localPath": "Agentic_Platform/imgi_42_TrAFx7X9NMKM9iERFJDuWKzs1s.webp",
+      "score": 0.00022,
+      "closestPath": "Agentic_Platform/imgi_42_TrAFx7X9NMKM9iERFJDuWKzs1s.webp"
+    },
+    {
+      "role": "spiral:bottom-tall",
+      "src": "https://framerusercontent.com/images/jte0uYi6LG0LuAhz8kodg1yXbk.webp",
+      "alt": "",
+      "localPath": "Agentic_Platform/imgi_2_DRv7iz3uRgACSokxLN8n5EM7Nzk.webp",
+      "score": 0.00023,
+      "closestPath": "Agentic_Platform/imgi_2_DRv7iz3uRgACSokxLN8n5EM7Nzk.webp"
+    },
+    {
+      "role": "spiral:middle",
+      "src": "https://framerusercontent.com/images/KkHrnVRBJ8LOkinHQF0HvsYUiVM.webp",
+      "alt": "",
+      "localPath": "Agentic_Platform/imgi_100_yT3PJ6m8dizyBUTU7Xe6iMj0s4.webp",
+      "score": 0.00018,
+      "closestPath": "Agentic_Platform/imgi_100_yT3PJ6m8dizyBUTU7Xe6iMj0s4.webp"
+    },
+    {
+      "role": "spiral:bottom-wide",
+      "src": "https://framerusercontent.com/images/6a0qRhhTOETLh3qfmAgKTbCOgtw.webp",
+      "alt": "",
+      "localPath": "Agentic_Platform/imgi_103_Jn8PfuIeL56ac1HLSxievhDTDE.webp",
+      "score": 0.00023,
+      "closestPath": "Agentic_Platform/imgi_103_Jn8PfuIeL56ac1HLSxievhDTDE.webp"
+    },
+    {
+      "role": "mosaic:top",
+      "src": "https://framerusercontent.com/images/PIx1B0sCOovwDx5uZuXg74k0uA.webp",
+      "alt": "Pre-trained agents",
+      "localPath": "Agentic_Platform/imgi_106_UIH5SgsZZPazAHWtsveAXhHyhs.webp",
+      "score": 0.0,
+      "closestPath": "Agentic_Platform/imgi_106_UIH5SgsZZPazAHWtsveAXhHyhs.webp"
+    },
+    {
+      "role": "mosaic:bottom-right",
+      "src": "https://framerusercontent.com/images/OYG8xKYrVb9txMZIeFU3xVHJ1LA.webp",
+      "alt": "",
+      "localPath": "Agentic_Platform/imgi_109_657bB5QvBDnmriA2fDkHXNEhHk.webp",
+      "score": 0.0,
+      "closestPath": "Agentic_Platform/imgi_109_657bB5QvBDnmriA2fDkHXNEhHk.webp"
+    },
+    {
+      "role": "mosaic:bottom-left",
+      "src": "https://framerusercontent.com/images/KMifOClUQcmXwuyYckCOuNSF2A.webp",
+      "alt": "Flexible deployment",
+      "localPath": "Agentic_Platform/imgi_142_UpGqmSYepuuifm0ce8E9XzpA2Ko.webp",
+      "score": 0.00043,
+      "closestPath": "Agentic_Platform/imgi_142_UpGqmSYepuuifm0ce8E9XzpA2Ko.webp"
+    },
+    {
+      "role": "detail:1",
+      "src": "https://framerusercontent.com/images/dHYqw5sIW2gPX495ccO3vV9Yy7U.png",
+      "alt": "AI agent hub",
+      "localPath": "Agentic_Platform/imgi_103_Jn8PfuIeL56ac1HLSxievhDTDE.webp",
+      "score": 0.0845,
+      "closestPath": "Agentic_Platform/imgi_103_Jn8PfuIeL56ac1HLSxievhDTDE.webp"
+    },
+    {
+      "role": "detail:2",
+      "src": "https://framerusercontent.com/images/UVKJuWV23n2DC8tSwoMCZnt4Gg.png",
+      "alt": "Agentic automation",
+      "localPath": "Agentic_Platform/imgi_9_YpFPaExZ9qwM5O9OM234zNmrGbY.png",
+      "score": 0.0025,
+      "closestPath": "Agentic_Platform/imgi_9_YpFPaExZ9qwM5O9OM234zNmrGbY.png"
+    },
+    {
+      "role": "detail:3",
+      "src": "https://framerusercontent.com/images/dJY76M6t00efQMmuWPOzWf8.png",
+      "alt": "Integrations",
+      "localPath": "Agentic_Platform/imgi_118_J871NhRqgnfWop7VKDM1i9eI.png",
+      "score": 0.00161,
+      "closestPath": "Agentic_Platform/imgi_118_J871NhRqgnfWop7VKDM1i9eI.png"
+    },
+    {
+      "role": "detail:4",
+      "src": "https://framerusercontent.com/images/M8mK7L7HLVP8JPmXVTH6StLREJA.png",
+      "alt": "Tools",
+      "localPath": "Agentic_Platform/imgi_121_xfYEWYqjyOEadju5y7cfix9Z5c.png",
+      "score": 0.002,
+      "closestPath": "Agentic_Platform/imgi_121_xfYEWYqjyOEadju5y7cfix9Z5c.png"
+    },
+    {
+      "role": "detail:5",
+      "src": "https://framerusercontent.com/images/8dzF1CYbLpIAerWCSrV7AgM.png",
+      "alt": "Triggers",
+      "localPath": "Agentic_Platform/imgi_124_XjG5MUbeS83iNq38DXaFFhCes.png",
+      "score": 0.00178,
+      "closestPath": "Agentic_Platform/imgi_124_XjG5MUbeS83iNq38DXaFFhCes.png"
+    },
+    {
+      "role": "detail:6",
+      "src": "https://framerusercontent.com/images/5xaPb52IUoFm3NGCJnFEPQK1cGY.png",
+      "alt": "Agent templates",
+      "localPath": "Agentic_Platform/imgi_129_Ir9bWHfukGtKYFch2CU1kELS2s.webp",
+      "score": 0.00198,
+      "closestPath": "Agentic_Platform/imgi_129_Ir9bWHfukGtKYFch2CU1kELS2s.webp"
+    },
+    {
+      "role": "detail:7",
+      "src": "https://framerusercontent.com/images/3JguDs4kr8yTIXXdeD4qd9szd8.png",
+      "alt": "Train on your SOPs",
+      "localPath": "Agentic_Platform/imgi_15_oWKMEKDkf6fVw51JZ7VUc7Grw.png",
+      "score": 0.0016,
+      "closestPath": "Agentic_Platform/imgi_15_oWKMEKDkf6fVw51JZ7VUc7Grw.png"
+    },
+    {
+      "role": "detail:8",
+      "src": "https://framerusercontent.com/images/TRQdFxfsKEp2t64wgGIAkHKw.png",
+      "alt": "Security and privacy",
+      "localPath": "Agentic_Platform/imgi_145_eDk9EdpCFIqienkBIsLzX7h2eq8.png",
+      "score": 0.00301,
+      "closestPath": "Agentic_Platform/imgi_145_eDk9EdpCFIqienkBIsLzX7h2eq8.png"
+    }
+  ],
+  "agent-os": [
+    {
+      "role": "hero",
+      "src": "https://framerusercontent.com/images/An6lSlgF9t4d2abgXkttxcOU5Q.png",
+      "alt": "Agent OS",
+      "localPath": null,
+      "score": 0.24703,
+      "closestPath": "Agent OS _ Beam AI/imgi_76_6XJhdpAGxbqlgflaP3InB3xaCdc.png"
+    },
+    {
+      "role": "spiral:top-wide",
+      "src": "https://framerusercontent.com/images/nUJIbWGZg3rwGsEIGx255RQips.jpg",
+      "alt": "Reliable graph-based execution",
+      "localPath": "Agent OS _ Beam AI/imgi_10_hX7h76z3oMSQqEg2W3ZHsjack.webp",
+      "score": 0.07442,
+      "closestPath": "Agent OS _ Beam AI/imgi_10_hX7h76z3oMSQqEg2W3ZHsjack.webp"
+    },
+    {
+      "role": "spiral:top-tall",
+      "src": "https://framerusercontent.com/images/GUGElvIwzHeg3mFNidMBxaPw7NU.png",
+      "alt": "1500+ skills and actions ready to use",
+      "localPath": "Agent OS _ Beam AI/imgi_4_6XJhdpAGxbqlgflaP3InB3xaCdc.png",
+      "score": 0.08408,
+      "closestPath": "Agent OS _ Beam AI/imgi_4_6XJhdpAGxbqlgflaP3InB3xaCdc.png"
+    },
+    {
+      "role": "spiral:bottom-tall",
+      "src": "https://framerusercontent.com/images/JPgVdvjvV8LWoSKWdmQl3wiQOOo.png",
+      "alt": "Multi-agent orchestration at scale",
+      "localPath": "Agent OS _ Beam AI/imgi_76_6XJhdpAGxbqlgflaP3InB3xaCdc.webp",
+      "score": 0.05464,
+      "closestPath": "Agent OS _ Beam AI/imgi_76_6XJhdpAGxbqlgflaP3InB3xaCdc.webp"
+    },
+    {
+      "role": "spiral:middle",
+      "src": "https://framerusercontent.com/images/jmZxVBYXT9Gub3O0ksCtdXTslRQ.jpg",
+      "alt": "Agents that learn from every interaction",
+      "localPath": "Agent OS _ Beam AI/imgi_10_hX7h76z3oMSQqEg2W3ZHsjack.webp",
+      "score": 0.09438,
+      "closestPath": "Agent OS _ Beam AI/imgi_10_hX7h76z3oMSQqEg2W3ZHsjack.webp"
+    },
+    {
+      "role": "spiral:bottom-wide",
+      "src": "https://framerusercontent.com/images/1PrDRaavFuuEEGg2KASo3X96nWw.jpg",
+      "alt": "Built-in accuracy tracking",
+      "localPath": null,
+      "score": 0.12689,
+      "closestPath": "Agent OS _ Beam AI/imgi_10_hX7h76z3oMSQqEg2W3ZHsjack.webp"
+    },
+    {
+      "role": "mosaic:top",
+      "src": "https://framerusercontent.com/images/7MVVewEu2w1R8WuMSS8OszQBU.jpg",
+      "alt": "Humans in control when it matters",
+      "localPath": "Agent OS _ Beam AI/imgi_10_hX7h76z3oMSQqEg2W3ZHsjack.webp",
+      "score": 0.10824,
+      "closestPath": "Agent OS _ Beam AI/imgi_10_hX7h76z3oMSQqEg2W3ZHsjack.webp"
+    },
+    {
+      "role": "mosaic:bottom-right",
+      "src": "https://framerusercontent.com/images/PGpxOkffVOnzmbiMpfj9rkPexk.jpg",
+      "alt": "Any LLM, no lock-in",
+      "localPath": null,
+      "score": 0.12041,
+      "closestPath": "Agent OS _ Beam AI/imgi_10_hX7h76z3oMSQqEg2W3ZHsjack.webp"
+    },
+    {
+      "role": "mosaic:bottom-left",
+      "src": "https://framerusercontent.com/images/bHfmEokhx53qIDtGJ6VyN6tfo.jpg",
+      "alt": "Persistent memory across tasks",
+      "localPath": "Agent OS _ Beam AI/imgi_10_hX7h76z3oMSQqEg2W3ZHsjack.webp",
+      "score": 0.11788,
+      "closestPath": "Agent OS _ Beam AI/imgi_10_hX7h76z3oMSQqEg2W3ZHsjack.webp"
+    },
+    {
+      "role": "detail:2",
+      "src": "https://framerusercontent.com/images/lP41dIWz9VjhPFLo0KmM8eLOvsc.jpg",
+      "alt": "Unified building blocks",
+      "localPath": "Agent OS _ Beam AI/imgi_10_hX7h76z3oMSQqEg2W3ZHsjack.webp",
+      "score": 0.07461,
+      "closestPath": "Agent OS _ Beam AI/imgi_10_hX7h76z3oMSQqEg2W3ZHsjack.webp"
+    },
+    {
+      "role": "detail:3",
+      "src": "https://framerusercontent.com/images/XteoDAOF2E5MmKWknaYkHfI.jpg",
+      "alt": "Multi-agent orchestration",
+      "localPath": "Agent OS _ Beam AI/imgi_10_hX7h76z3oMSQqEg2W3ZHsjack.webp",
+      "score": 0.0703,
+      "closestPath": "Agent OS _ Beam AI/imgi_10_hX7h76z3oMSQqEg2W3ZHsjack.webp"
+    }
+  ],
+  "ai-agents": [
+    {
+      "role": "hero",
+      "src": "https://framerusercontent.com/images/qHwgXz9FTAiWsh9tXojrzxqFcA.png",
+      "alt": "Gradient",
+      "localPath": "AI Agents for Agentic Automation _ Beam AI/imgi_69_xTzVAVrXkSK9vwx0nTNzjJX9ZE.png",
+      "score": 0.00214,
+      "closestPath": "AI Agents for Agentic Automation _ Beam AI/imgi_69_xTzVAVrXkSK9vwx0nTNzjJX9ZE.png"
+    },
+    {
+      "role": "spiral:top-wide",
+      "src": "https://framerusercontent.com/images/Lx6C3x3BzEZhB5GhTbK4Tm5YSTc.png",
+      "alt": "Agents as general problem solvers",
+      "localPath": "AI Agents for Agentic Automation _ Beam AI/imgi_2_KMYu9cmNBjdfDRgNn9SYNsFqTA4.png",
+      "score": 0.00203,
+      "closestPath": "AI Agents for Agentic Automation _ Beam AI/imgi_2_KMYu9cmNBjdfDRgNn9SYNsFqTA4.png"
+    },
+    {
+      "role": "spiral:top-tall",
+      "src": "https://framerusercontent.com/images/WOBP00ODmPAzYEee42dmCqSeHQU.png",
+      "alt": "Intelligent task planning",
+      "localPath": "AI Agents for Agentic Automation _ Beam AI/imgi_73_9mVKTBuwLuAJdWvi0vglOyOlcY.png",
+      "score": 0.00261,
+      "closestPath": "AI Agents for Agentic Automation _ Beam AI/imgi_73_9mVKTBuwLuAJdWvi0vglOyOlcY.png"
+    },
+    {
+      "role": "spiral:bottom-tall",
+      "src": "https://framerusercontent.com/images/ZUPxWiefkdPfrkfRYHU51HxwucM.png",
+      "alt": "Tools, integrations and triggers",
+      "localPath": "AI Agents for Agentic Automation _ Beam AI/imgi_4_tkbm6gWhThGmE6cdORYa7Hrzto.webp",
+      "score": 0.00239,
+      "closestPath": "AI Agents for Agentic Automation _ Beam AI/imgi_4_tkbm6gWhThGmE6cdORYa7Hrzto.webp"
+    },
+    {
+      "role": "spiral:middle",
+      "src": "https://framerusercontent.com/images/xog6d9EqaTPjKs19ygh2I1CPZEE.png",
+      "alt": "Agentic workflow execution",
+      "localPath": "AI Agents for Agentic Automation _ Beam AI/imgi_26_cDMejx49AOuqnLzabqcdb1OKw.png",
+      "score": 0.00213,
+      "closestPath": "AI Agents for Agentic Automation _ Beam AI/imgi_26_cDMejx49AOuqnLzabqcdb1OKw.png"
+    },
+    {
+      "role": "spiral:bottom-wide",
+      "src": "https://framerusercontent.com/images/t6N3oXNViMvfirqpGW4wgUV9o.png",
+      "alt": "Agent character",
+      "localPath": "AI Agents for Agentic Automation _ Beam AI/imgi_6_im8IeoDPUK2AG9hlZ0oqZGA6c4.png",
+      "score": 0.00297,
+      "closestPath": "AI Agents for Agentic Automation _ Beam AI/imgi_6_im8IeoDPUK2AG9hlZ0oqZGA6c4.png"
+    },
+    {
+      "role": "mosaic:top",
+      "src": "https://framerusercontent.com/images/fPeYBwHpqwUDSFXofj34nTg14.png",
+      "alt": "Pre-trained AI agents",
+      "localPath": "AI Agents for Agentic Automation _ Beam AI/imgi_7_2WKxP1Gh0z8WFWVTUhQ7YTSsWCM.png",
+      "score": 0.00295,
+      "closestPath": "AI Agents for Agentic Automation _ Beam AI/imgi_7_2WKxP1Gh0z8WFWVTUhQ7YTSsWCM.png"
+    },
+    {
+      "role": "mosaic:bottom-right",
+      "src": "https://framerusercontent.com/images/iusZSHxTz9GwwsmktFJn7iocRM.png",
+      "alt": "Learning agent",
+      "localPath": "AI Agents for Agentic Automation _ Beam AI/imgi_8_FE9ZSK3yP5qVIuChhaNcHeRhQHA.png",
+      "score": 0.00274,
+      "closestPath": "AI Agents for Agentic Automation _ Beam AI/imgi_8_FE9ZSK3yP5qVIuChhaNcHeRhQHA.png"
+    },
+    {
+      "role": "mosaic:bottom-left",
+      "src": "https://framerusercontent.com/images/MqTWOBcsOsV7SSprMLvCy5Fk4.png",
+      "alt": "Human in the loop",
+      "localPath": "AI Agents for Agentic Automation _ Beam AI/imgi_10_0yUaKJnCD5keS2kASV0Nnmbuk.png",
+      "score": 0.00242,
+      "closestPath": "AI Agents for Agentic Automation _ Beam AI/imgi_10_0yUaKJnCD5keS2kASV0Nnmbuk.png"
+    },
+    {
+      "role": "detail:1",
+      "src": "https://framerusercontent.com/images/WJTXmO4bS7iS3ibGuJMur4ls.png",
+      "alt": "General problem solver",
+      "localPath": "AI Agents for Agentic Automation _ Beam AI/imgi_19_1MuBronwUB5btZRFJn2VQ2ohAY.png",
+      "score": 0.00236,
+      "closestPath": "AI Agents for Agentic Automation _ Beam AI/imgi_19_1MuBronwUB5btZRFJn2VQ2ohAY.png"
+    },
+    {
+      "role": "detail:2",
+      "src": "https://framerusercontent.com/images/22iEXAkuvxWGMhQP2Vw29EuTE0U.png",
+      "alt": "Intelligent task planning",
+      "localPath": "AI Agents for Agentic Automation _ Beam AI/imgi_13_NX58CKCxstSL7r0pqysPqeWNlcA.png",
+      "score": 0.0038,
+      "closestPath": "AI Agents for Agentic Automation _ Beam AI/imgi_13_NX58CKCxstSL7r0pqysPqeWNlcA.png"
+    },
+    {
+      "role": "detail:4",
+      "src": "https://framerusercontent.com/images/8dzF1CYbLpIAerWCSrV7AgM.png",
+      "alt": "Integrations, tools and triggers",
+      "localPath": "AI Agents for Agentic Automation _ Beam AI/imgi_104_XjG5MUbeS83iNq38DXaFFhCes.png",
+      "score": 0.0018,
+      "closestPath": "AI Agents for Agentic Automation _ Beam AI/imgi_104_XjG5MUbeS83iNq38DXaFFhCes.png"
+    },
+    {
+      "role": "detail:8",
+      "src": "https://framerusercontent.com/images/o9kGGthZ5pMbYaO1WGxAcLoO4.png",
+      "alt": "Human in the loop",
+      "localPath": "AI Agents for Agentic Automation _ Beam AI/imgi_15_SPu6IZFwt3SZnsCLzXSHxCK8U.png",
+      "score": 0.00288,
+      "closestPath": "AI Agents for Agentic Automation _ Beam AI/imgi_15_SPu6IZFwt3SZnsCLzXSHxCK8U.png"
+    }
+  ],
+  "agentic-workflows": [
+    {
+      "role": "hero",
+      "src": "https://framerusercontent.com/images/ZvoGOXDYeMPdpWpCzVPk2RQPcks.png",
+      "alt": "Agentic workflows",
+      "localPath": "Agentic Workflows_ Definition, Tools & Platform _ Beam AI/imgi_79_8zCPJmFDWoG2OXLmhukQ9uJv6oI.png",
+      "score": 0.00353,
+      "closestPath": "Agentic Workflows_ Definition, Tools & Platform _ Beam AI/imgi_79_8zCPJmFDWoG2OXLmhukQ9uJv6oI.png"
+    },
+    {
+      "role": "spiral:top-wide",
+      "src": "https://framerusercontent.com/images/nEuEgVr7lywhBucCwYf3Porx4.png",
+      "alt": "AI reasoning for complex tasks",
+      "localPath": "Agentic Workflows_ Definition, Tools & Platform _ Beam AI/imgi_82_VZRSvxwviQ6FeNwjXAB1zD6oMo.png",
+      "score": 0.00248,
+      "closestPath": "Agentic Workflows_ Definition, Tools & Platform _ Beam AI/imgi_82_VZRSvxwviQ6FeNwjXAB1zD6oMo.png"
+    },
+    {
+      "role": "spiral:top-tall",
+      "src": "https://framerusercontent.com/images/38nqpPKMKZQVQm8YbD8t9zt1Ckc.png",
+      "alt": "Agentic execution",
+      "localPath": "Agentic Workflows_ Definition, Tools & Platform _ Beam AI/imgi_3_fahWKwMDZc0eNkmfECam2GEF3vM.png",
+      "score": 0.00237,
+      "closestPath": "Agentic Workflows_ Definition, Tools & Platform _ Beam AI/imgi_3_fahWKwMDZc0eNkmfECam2GEF3vM.png"
+    },
+    {
+      "role": "spiral:bottom-tall",
+      "src": "https://framerusercontent.com/images/HUUHYfhRyC51xoQth9QupEfl1ZI.png",
+      "alt": "Reflection and observations",
+      "localPath": "Agentic Workflows_ Definition, Tools & Platform _ Beam AI/imgi_4_tm4nmXW8lk63zabiDCLsWuGflY.webp",
+      "score": 0.00224,
+      "closestPath": "Agentic Workflows_ Definition, Tools & Platform _ Beam AI/imgi_4_tm4nmXW8lk63zabiDCLsWuGflY.webp"
+    },
+    {
+      "role": "spiral:middle",
+      "src": "https://framerusercontent.com/images/hl85YvzYALaAjCagxhp6AiIEchI.png",
+      "alt": "AI tools",
+      "localPath": "Agentic Workflows_ Definition, Tools & Platform _ Beam AI/imgi_39_U2c9n79mByvy333aNAiGk33PbY.png",
+      "score": 0.02663,
+      "closestPath": "Agentic Workflows_ Definition, Tools & Platform _ Beam AI/imgi_39_U2c9n79mByvy333aNAiGk33PbY.png"
+    },
+    {
+      "role": "spiral:bottom-wide",
+      "src": "https://framerusercontent.com/images/m2wRMGsPPLM9LZVC9kBkMk5Cfi0.png",
+      "alt": "Multi-agent by default",
+      "localPath": "Agentic Workflows_ Definition, Tools & Platform _ Beam AI/imgi_6_U2c9n79mByvy333aNAiGk33PbY.png",
+      "score": 0.00187,
+      "closestPath": "Agentic Workflows_ Definition, Tools & Platform _ Beam AI/imgi_6_U2c9n79mByvy333aNAiGk33PbY.png"
+    },
+    {
+      "role": "mosaic:top",
+      "src": "https://framerusercontent.com/images/T4OuAqKKpiWOxBy86OZnDjuMsk.png",
+      "alt": "Train agents on SOPs",
+      "localPath": "Agentic Workflows_ Definition, Tools & Platform _ Beam AI/imgi_93_jZ5kQpQHS76TZlLV2P1HmEAQ5oA.png",
+      "score": 0.00216,
+      "closestPath": "Agentic Workflows_ Definition, Tools & Platform _ Beam AI/imgi_93_jZ5kQpQHS76TZlLV2P1HmEAQ5oA.png"
+    },
+    {
+      "role": "detail:1",
+      "src": "https://framerusercontent.com/images/LmNGN3oAG77h2XYKyni69luI9mo.png",
+      "alt": "Agentic workflow planning",
+      "localPath": "Agentic Workflows_ Definition, Tools & Platform _ Beam AI/imgi_96_3LDStI4uoye4oeF0NatGoSUyCXo.png",
+      "score": 0.00241,
+      "closestPath": "Agentic Workflows_ Definition, Tools & Platform _ Beam AI/imgi_96_3LDStI4uoye4oeF0NatGoSUyCXo.png"
+    },
+    {
+      "role": "detail:2",
+      "src": "https://framerusercontent.com/images/32TJmcYa8zJYwNT509ZxWs0.png",
+      "alt": "Workflow execution",
+      "localPath": "Agentic Workflows_ Definition, Tools & Platform _ Beam AI/imgi_26_JNZPby1MBrESJFknUY1Qw5rXiQ.webp",
+      "score": 0.00264,
+      "closestPath": "Agentic Workflows_ Definition, Tools & Platform _ Beam AI/imgi_26_JNZPby1MBrESJFknUY1Qw5rXiQ.webp"
+    },
+    {
+      "role": "detail:3",
+      "src": "https://framerusercontent.com/images/PkwVMW7nvIG9oQj6wsQOd6QA.png",
+      "alt": "Reflections and observations",
+      "localPath": "Agentic Workflows_ Definition, Tools & Platform _ Beam AI/imgi_102_NbZpOH2gxooSEdEIK2i05stX7M.png",
+      "score": 0.00216,
+      "closestPath": "Agentic Workflows_ Definition, Tools & Platform _ Beam AI/imgi_102_NbZpOH2gxooSEdEIK2i05stX7M.png"
+    },
+    {
+      "role": "detail:4",
+      "src": "https://framerusercontent.com/images/pm0i5xTKX57YK8YZ7HbDRIRdGgw.png",
+      "alt": "AI-native tools",
+      "localPath": "Agentic Workflows_ Definition, Tools & Platform _ Beam AI/imgi_103_RuWWolzAjJ2Zq2GTC0q1r5AZHo.png",
+      "score": 0.00262,
+      "closestPath": "Agentic Workflows_ Definition, Tools & Platform _ Beam AI/imgi_103_RuWWolzAjJ2Zq2GTC0q1r5AZHo.png"
+    },
+    {
+      "role": "detail:5",
+      "src": "https://framerusercontent.com/images/sntoFHSdrx3ezxNtt69zqzgWDc.png",
+      "alt": "Multi-agent systems",
+      "localPath": "Agentic Workflows_ Definition, Tools & Platform _ Beam AI/imgi_107_7UzuRErkysgM98nzr1WjEd7xBPE.png",
+      "score": 0.00276,
+      "closestPath": "Agentic Workflows_ Definition, Tools & Platform _ Beam AI/imgi_107_7UzuRErkysgM98nzr1WjEd7xBPE.png"
+    },
+    {
+      "role": "detail:6",
+      "src": "https://framerusercontent.com/images/0NRtjR0s8ep69BQqzHR9wPhXg.png",
+      "alt": "Agentic workflow templates",
+      "localPath": "Agentic Workflows_ Definition, Tools & Platform _ Beam AI/imgi_110_vAZW1cO54vC0mjxpFL4etCNxFI.png",
+      "score": 0.00305,
+      "closestPath": "Agentic Workflows_ Definition, Tools & Platform _ Beam AI/imgi_110_vAZW1cO54vC0mjxpFL4etCNxFI.png"
+    }
+  ],
+  "databases": [
+    {
+      "role": "hero",
+      "src": "https://framerusercontent.com/images/cubJCLEToycnA1ALCcOmn1yY1Ug.png",
+      "alt": "RAG Graphic",
+      "localPath": "Databases _ Beam AI/imgi_53_9ePU3AHFf8vbOX9PtefEOBMpJs.png",
+      "score": 0.00162,
+      "closestPath": "Databases _ Beam AI/imgi_53_9ePU3AHFf8vbOX9PtefEOBMpJs.png"
+    },
+    {
+      "role": "spiral:top-wide",
+      "src": "https://framerusercontent.com/images/9qFJCnENBTC8KIa1aHUX6ToR8.png",
+      "alt": "State of the Art Retrieval",
+      "localPath": "Databases _ Beam AI/imgi_2_0i9Y6th8fI5BviDCN35j1CaF4.png",
+      "score": 0.00184,
+      "closestPath": "Databases _ Beam AI/imgi_2_0i9Y6th8fI5BviDCN35j1CaF4.png"
+    },
+    {
+      "role": "spiral:top-tall",
+      "src": "https://framerusercontent.com/images/u5FFFJ3L7SMTvkR1vHW4MI2WE.png",
+      "alt": "Agentic Retrieval Augmented Generation",
+      "localPath": "Databases _ Beam AI/imgi_3_i0c0Anizxerr4ANJUUrKrBBr0.png",
+      "score": 0.00235,
+      "closestPath": "Databases _ Beam AI/imgi_3_i0c0Anizxerr4ANJUUrKrBBr0.png"
+    },
+    {
+      "role": "spiral:bottom-tall",
+      "src": "https://framerusercontent.com/images/mOIyNfRgQ1EJSE3UpOrXKPFTgEI.png",
+      "alt": "Understands All File Types",
+      "localPath": "Databases _ Beam AI/imgi_4_9GGM2u1Avyf1Vm18t1RyKlbbw.png",
+      "score": 0.00126,
+      "closestPath": "Databases _ Beam AI/imgi_4_9GGM2u1Avyf1Vm18t1RyKlbbw.png"
+    },
+    {
+      "role": "spiral:middle",
+      "src": "https://framerusercontent.com/images/uTDjinVdIb1JYwmI9lhfbiCQ4.png",
+      "alt": "Agent Context",
+      "localPath": "Databases _ Beam AI/imgi_62_Mk89YfwvmSKjlRtVYMq8Z8zYc.png",
+      "score": 0.00245,
+      "closestPath": "Databases _ Beam AI/imgi_62_Mk89YfwvmSKjlRtVYMq8Z8zYc.png"
+    },
+    {
+      "role": "spiral:bottom-wide",
+      "src": "https://framerusercontent.com/images/XB4B81xpbxZ0WZDKiZ8giUPP0.png",
+      "alt": "Databases",
+      "localPath": "Databases _ Beam AI/imgi_6_sE3tNEDyP2ynBMJVtew9Odb16U.png",
+      "score": 0.00218,
+      "closestPath": "Databases _ Beam AI/imgi_6_sE3tNEDyP2ynBMJVtew9Odb16U.png"
+    },
+    {
+      "role": "detail:1",
+      "src": "https://framerusercontent.com/images/ntAR6spuBkcVHZBcj1C7ddY5w.png",
+      "alt": "Agentic Retrieval Augmented Generation",
+      "localPath": "Databases _ Beam AI/imgi_14_hLkh6Dq4RZYFHrCFLUazmyHDA.png",
+      "score": 0.00237,
+      "closestPath": "Databases _ Beam AI/imgi_14_hLkh6Dq4RZYFHrCFLUazmyHDA.png"
+    },
+    {
+      "role": "detail:2",
+      "src": "https://framerusercontent.com/images/Q5nefP6JbWrLBydlU2f9VDVMM.png",
+      "alt": "Understands All File Types",
+      "localPath": "Databases _ Beam AI/imgi_71_oS0dFoa0oTHmlZVGwQ2PuFSg.png",
+      "score": 0.00116,
+      "closestPath": "Databases _ Beam AI/imgi_71_oS0dFoa0oTHmlZVGwQ2PuFSg.png"
+    },
+    {
+      "role": "detail:3",
+      "src": "https://framerusercontent.com/images/imBgKdMxq1IXNfNRbd2RntJrtU4.webp",
+      "alt": "Databases",
+      "localPath": "Databases _ Beam AI/imgi_13_sE3tNEDyP2ynBMJVtew9Odb16U.webp",
+      "score": 0.00018,
+      "closestPath": "Databases _ Beam AI/imgi_13_sE3tNEDyP2ynBMJVtew9Odb16U.webp"
+    },
+    {
+      "role": "detail:4",
+      "src": "https://framerusercontent.com/images/dPgS9ootRL5xeZboFlHtHV1vLwE.webp",
+      "alt": "Agent Context",
+      "localPath": "Databases _ Beam AI/imgi_12_Mk89YfwvmSKjlRtVYMq8Z8zYc.webp",
+      "score": 0.00037,
+      "closestPath": "Databases _ Beam AI/imgi_12_Mk89YfwvmSKjlRtVYMq8Z8zYc.webp"
+    },
+    {
+      "role": "detail:5",
+      "src": "https://framerusercontent.com/images/eTQfWoafrw2TzX3Rjlwxy36P1Do.webp",
+      "alt": "State of the Art Retrieval",
+      "localPath": "Databases _ Beam AI/imgi_11_0i9Y6th8fI5BviDCN35j1CaF4.webp",
+      "score": 0.00017,
+      "closestPath": "Databases _ Beam AI/imgi_11_0i9Y6th8fI5BviDCN35j1CaF4.webp"
+    }
+  ]
+}

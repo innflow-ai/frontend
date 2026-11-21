@@ -1,0 +1,601 @@
+[
+  {
+    "route": "/about",
+    "file": "src/app/about/page.tsx",
+    "components": [
+      "@/components/baselane-company"
+    ]
+  },
+  {
+    "route": "/advisor-partner-program",
+    "file": "src/app/advisor-partner-program/page.tsx",
+    "components": [
+      "@/components/baselane-advisors"
+    ]
+  },
+  {
+    "route": "/affordable-housing",
+    "file": "src/app/affordable-housing/page.tsx",
+    "components": [
+      "@/components/figma-feature-page"
+    ]
+  },
+  {
+    "route": "/bank-sync",
+    "file": "src/app/bank-sync/page.tsx",
+    "components": [
+      "@/components/figma-feature-page"
+    ]
+  },
+  {
+    "route": "/blog",
+    "file": "src/app/blog/page.tsx",
+    "components": [
+      "@/components/blog/author-card",
+      "@/components/breadcrumbs",
+      "@/components/chevron-right",
+      "@/components/icons/mage",
+      "@/components/page-primitives"
+    ]
+  },
+  {
+    "route": "/bookkeeping",
+    "file": "src/app/bookkeeping/page.tsx",
+    "components": [
+      "@/components/figma-feature-page"
+    ]
+  },
+  {
+    "route": "/careers",
+    "file": "src/app/careers/page.tsx",
+    "components": [
+      "@/components/baselane-company"
+    ]
+  },
+  {
+    "route": "/commercial",
+    "file": "src/app/commercial/page.tsx",
+    "components": [
+      "@/components/figma-feature-page"
+    ]
+  },
+  {
+    "route": "/communication-tools",
+    "file": "src/app/communication-tools/page.tsx",
+    "components": [
+      "@/components/figma-feature-page"
+    ]
+  },
+  {
+    "route": "/community-associations",
+    "file": "src/app/community-associations/page.tsx",
+    "components": [
+      "@/components/figma-feature-page"
+    ]
+  },
+  {
+    "route": "/connections",
+    "file": "src/app/connections/page.tsx",
+    "components": [
+      "@/components/chevron-right",
+      "@/components/inner-page-shell"
+    ]
+  },
+  {
+    "route": "/contact",
+    "file": "src/app/contact/page.tsx",
+    "components": [
+      "@/components/contact-form",
+      "@/components/icons/mage",
+      "@/components/motion",
+      "@/components/site-shell.module.css"
+    ]
+  },
+  {
+    "route": "/crm",
+    "file": "src/app/crm/page.tsx",
+    "components": [
+      "@/components/figma-feature-page"
+    ]
+  },
+  {
+    "route": "/demo",
+    "file": "src/app/demo/page.tsx",
+    "components": [
+      "@/components/baselane-demo"
+    ]
+  },
+  {
+    "route": "/faq",
+    "file": "src/app/faq/page.tsx",
+    "components": [
+      "@/components/breadcrumbs",
+      "@/components/json-ld",
+      "@/components/page-primitives"
+    ]
+  },
+  {
+    "route": "/features/website",
+    "file": "src/app/features/website/page.tsx",
+    "components": [
+      "@/components/calendly-product-adapters"
+    ]
+  },
+  {
+    "route": "/files-and-documents",
+    "file": "src/app/files-and-documents/page.tsx",
+    "components": [
+      "@/components/calendly-product-adapters"
+    ]
+  },
+  {
+    "route": "/free-rental-forms-and-templates-for-landlords",
+    "file": "src/app/free-rental-forms-and-templates-for-landlords/page.tsx",
+    "components": [
+      "@/components/baselane-forms"
+    ]
+  },
+  {
+    "route": "/help",
+    "file": "src/app/help/page.tsx",
+    "components": [
+      "@/components/help-center"
+    ]
+  },
+  {
+    "route": "/help-center",
+    "file": "src/app/help-center/page.tsx",
+    "components": [
+      "@/components/baselane-help"
+    ]
+  },
+  {
+    "route": "/how-much-should-i-charge-for-rent",
+    "file": "src/app/how-much-should-i-charge-for-rent/page.tsx",
+    "components": [
+      "@/components/baselane-rent-calculator"
+    ]
+  },
+  {
+    "route": "/in-the-news",
+    "file": "src/app/in-the-news/page.tsx",
+    "components": [
+      "@/components/baselane-news"
+    ]
+  },
+  {
+    "route": "/industries",
+    "file": "src/app/industries/page.tsx",
+    "components": []
+  },
+  {
+    "route": "/inspections",
+    "file": "src/app/inspections/page.tsx",
+    "components": [
+      "@/components/figma-feature-page"
+    ]
+  },
+  {
+    "route": "/integrations",
+    "file": "src/app/integrations/page.tsx",
+    "components": [
+      "@/components/icons/mage",
+      "@/components/integration-directory",
+      "@/components/integrations.module.css",
+      "@/components/showcase-theme"
+    ]
+  },
+  {
+    "route": "/landlord-accounting",
+    "file": "src/app/landlord-accounting/page.tsx",
+    "components": [
+      "@/components/figma-feature-page"
+    ]
+  },
+  {
+    "route": "/landlord-banking",
+    "file": "src/app/landlord-banking/page.tsx",
+    "components": [
+      "@/components/baselane-banking"
+    ]
+  },
+  {
+    "route": "/landlord-banking-apy",
+    "file": "src/app/landlord-banking-apy/page.tsx",
+    "components": [
+      "@/components/baselane-savings"
+    ]
+  },
+  {
+    "route": "/landlord-insurance",
+    "file": "src/app/landlord-insurance/page.tsx",
+    "components": [
+      "@/components/baselane-insurance"
+    ]
+  },
+  {
+    "route": "/landlord-referral",
+    "file": "src/app/landlord-referral/page.tsx",
+    "components": [
+      "@/components/baselane-partners"
+    ]
+  },
+  {
+    "route": "/lease-agreement",
+    "file": "src/app/lease-agreement/page.tsx",
+    "components": [
+      "@/components/baselane-lease"
+    ]
+  },
+  {
+    "route": "/leasing",
+    "file": "src/app/leasing/page.tsx",
+    "components": [
+      "@/components/figma-feature-page"
+    ]
+  },
+  {
+    "route": "/legal/acceptable-use-policy",
+    "file": "src/app/legal/acceptable-use-policy/page.tsx",
+    "components": [
+      "@/components/legal-policy-page"
+    ]
+  },
+  {
+    "route": "/legal/cookie-policy",
+    "file": "src/app/legal/cookie-policy/page.tsx",
+    "components": [
+      "@/components/legal-policy-page"
+    ]
+  },
+  {
+    "route": "/legal/dsar",
+    "file": "src/app/legal/dsar/page.tsx",
+    "components": [
+      "@/components/chevron-right",
+      "@/components/page-primitives"
+    ]
+  },
+  {
+    "route": "/legal/eula",
+    "file": "src/app/legal/eula/page.tsx",
+    "components": [
+      "@/components/legal-policy-page"
+    ]
+  },
+  {
+    "route": "/legal/privacy-policy",
+    "file": "src/app/legal/privacy-policy/page.tsx",
+    "components": [
+      "@/components/legal-policy-page"
+    ]
+  },
+  {
+    "route": "/legal/terms-of-service",
+    "file": "src/app/legal/terms-of-service/page.tsx",
+    "components": [
+      "@/components/legal-policy-page"
+    ]
+  },
+  {
+    "route": "/legal-agreements",
+    "file": "src/app/legal-agreements/page.tsx",
+    "components": [
+      "@/components/baselane-legal"
+    ]
+  },
+  {
+    "route": "/listing-and-advertising",
+    "file": "src/app/listing-and-advertising/page.tsx",
+    "components": [
+      "@/components/figma-feature-page"
+    ]
+  },
+  {
+    "route": "/long-term-rentals",
+    "file": "src/app/long-term-rentals/page.tsx",
+    "components": [
+      "@/components/baselane-multi-property"
+    ]
+  },
+  {
+    "route": "/mid-term-rentals",
+    "file": "src/app/mid-term-rentals/page.tsx",
+    "components": [
+      "@/components/baselane-multi-property"
+    ]
+  },
+  {
+    "route": "/mobile-apps",
+    "file": "src/app/mobile-apps/page.tsx",
+    "components": [
+      "@/components/figma-feature-page"
+    ]
+  },
+  {
+    "route": "/mobile-home",
+    "file": "src/app/mobile-home/page.tsx",
+    "components": [
+      "@/components/figma-feature-page"
+    ]
+  },
+  {
+    "route": "/multi-property-investors",
+    "file": "src/app/multi-property-investors/page.tsx",
+    "components": [
+      "@/components/baselane-multi-property"
+    ]
+  },
+  {
+    "route": "/multifamily",
+    "file": "src/app/multifamily/page.tsx",
+    "components": [
+      "@/components/figma-feature-page"
+    ]
+  },
+  {
+    "route": "/operations",
+    "file": "src/app/operations/page.tsx",
+    "components": [
+      "@/components/figma-feature-page"
+    ]
+  },
+  {
+    "route": "/our-customers",
+    "file": "src/app/our-customers/page.tsx",
+    "components": [
+      "@/components/baselane-customers"
+    ]
+  },
+  {
+    "route": "/owners",
+    "file": "src/app/owners/page.tsx",
+    "components": [
+      "@/components/figma-feature-page"
+    ]
+  },
+  {
+    "route": "/",
+    "file": "src/app/page.tsx",
+    "components": [
+      "@/components/authenticated-home-redirect",
+      "@/components/showcase-homepage"
+    ]
+  },
+  {
+    "route": "/partner-with-us",
+    "file": "src/app/partner-with-us/page.tsx",
+    "components": [
+      "@/components/baselane-partners"
+    ]
+  },
+  {
+    "route": "/platform",
+    "file": "src/app/platform/page.tsx",
+    "components": [
+      "@/components/calendly-product-page",
+      "@/components/platform-directory",
+      "@/components/runey-workspace"
+    ]
+  },
+  {
+    "route": "/pricing",
+    "file": "src/app/pricing/page.tsx",
+    "components": [
+      "@/components/baselane-pricing"
+    ]
+  },
+  {
+    "route": "/product-updates",
+    "file": "src/app/product-updates/page.tsx",
+    "components": [
+      "@/components/baselane-updates"
+    ]
+  },
+  {
+    "route": "/products/agentic-workflows",
+    "file": "src/app/products/agentic-workflows/page.tsx",
+    "components": [
+      "@/components/calendly-product-adapters"
+    ]
+  },
+  {
+    "route": "/products",
+    "file": "src/app/products/page.tsx",
+    "components": [
+      "@/components/navigation-directory"
+    ]
+  },
+  {
+    "route": "/property-management",
+    "file": "src/app/property-management/page.tsx",
+    "components": [
+      "@/components/figma-feature-page"
+    ]
+  },
+  {
+    "route": "/quickbooks-online-integration",
+    "file": "src/app/quickbooks-online-integration/page.tsx",
+    "components": [
+      "@/components/figma-feature-page"
+    ]
+  },
+  {
+    "route": "/rapid-rent",
+    "file": "src/app/rapid-rent/page.tsx",
+    "components": [
+      "@/components/figma-feature-page"
+    ]
+  },
+  {
+    "route": "/real-estate-investing",
+    "file": "src/app/real-estate-investing/page.tsx",
+    "components": [
+      "@/components/baselane-investing"
+    ]
+  },
+  {
+    "route": "/rent-collection",
+    "file": "src/app/rent-collection/page.tsx",
+    "components": [
+      "@/components/baselane-product-page"
+    ]
+  },
+  {
+    "route": "/rent-collection-2",
+    "file": "src/app/rent-collection-2/page.tsx",
+    "components": [
+      "@/components/baselane-product-page"
+    ]
+  },
+  {
+    "route": "/rental-applications",
+    "file": "src/app/rental-applications/page.tsx",
+    "components": [
+      "@/components/figma-feature-page"
+    ]
+  },
+  {
+    "route": "/rental-property-loans",
+    "file": "src/app/rental-property-loans/page.tsx",
+    "components": [
+      "@/components/baselane-loans"
+    ]
+  },
+  {
+    "route": "/renters",
+    "file": "src/app/renters/page.tsx",
+    "components": [
+      "@/components/baselane-renters"
+    ]
+  },
+  {
+    "route": "/reports",
+    "file": "src/app/reports/page.tsx",
+    "components": [
+      "@/components/figma-feature-page"
+    ]
+  },
+  {
+    "route": "/residential",
+    "file": "src/app/residential/page.tsx",
+    "components": [
+      "@/components/figma-feature-page"
+    ]
+  },
+  {
+    "route": "/residents",
+    "file": "src/app/residents/page.tsx",
+    "components": [
+      "@/components/figma-feature-page"
+    ]
+  },
+  {
+    "route": "/resources",
+    "file": "src/app/resources/page.tsx",
+    "components": [
+      "@/components/baselane-library"
+    ]
+  },
+  {
+    "route": "/security",
+    "file": "src/app/security/page.tsx",
+    "components": [
+      "@/components/baselane-security"
+    ]
+  },
+  {
+    "route": "/security-deposit-account",
+    "file": "src/app/security-deposit-account/page.tsx",
+    "components": [
+      "@/components/baselane-deposits"
+    ]
+  },
+  {
+    "route": "/self-storage",
+    "file": "src/app/self-storage/page.tsx",
+    "components": [
+      "@/components/figma-feature-page"
+    ]
+  },
+  {
+    "route": "/short-term-rentals",
+    "file": "src/app/short-term-rentals/page.tsx",
+    "components": [
+      "@/components/baselane-multi-property"
+    ]
+  },
+  {
+    "route": "/showings",
+    "file": "src/app/showings/page.tsx",
+    "components": [
+      "@/components/figma-feature-page"
+    ]
+  },
+  {
+    "route": "/single-family",
+    "file": "src/app/single-family/page.tsx",
+    "components": [
+      "@/components/figma-feature-page"
+    ]
+  },
+  {
+    "route": "/skills",
+    "file": "src/app/skills/page.tsx",
+    "components": [
+      "@/components/calendly-product-page",
+      "@/components/skills-library"
+    ]
+  },
+  {
+    "route": "/solutions",
+    "file": "src/app/solutions/page.tsx",
+    "components": [
+      "@/components/industry-pages/industry-directory",
+      "@/components/industry-pages/industry-pages.module.css",
+      "@/components/showcase-theme"
+    ]
+  },
+  {
+    "route": "/student-housing",
+    "file": "src/app/student-housing/page.tsx",
+    "components": [
+      "@/components/figma-feature-page"
+    ]
+  },
+  {
+    "route": "/tax-preparation",
+    "file": "src/app/tax-preparation/page.tsx",
+    "components": [
+      "@/components/baselane-product-page"
+    ]
+  },
+  {
+    "route": "/tenant-management",
+    "file": "src/app/tenant-management/page.tsx",
+    "components": [
+      "@/components/figma-feature-page"
+    ]
+  },
+  {
+    "route": "/tenant-screening-service",
+    "file": "src/app/tenant-screening-service/page.tsx",
+    "components": [
+      "@/components/figma-feature-page"
+    ]
+  },
+  {
+    "route": "/webinars",
+    "file": "src/app/webinars/page.tsx",
+    "components": [
+      "@/components/baselane-library"
+    ]
+  },
+  {
+    "route": "/work-orders",
+    "file": "src/app/work-orders/page.tsx",
+    "components": [
+      "@/components/figma-feature-page"
+    ]
+  }
+]

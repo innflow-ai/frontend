@@ -1,0 +1,130 @@
+.demo {
+  width: 100%;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  color: #071a31;
+  font-family: var(--font-geist, var(--font-host-grotesk, sans-serif));
+  background: transparent;
+}
+.scene {
+  width: 78%;
+  max-width: 440px;
+}
+.sources {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.channel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 10px 5px;
+  border: 1px solid #ffffff;
+  border-radius: 13px;
+  background: #fffffff2;
+  box-shadow: 0 4px 12px #3d607d0a;
+  font-size: clamp(11px, 1.1vw, 13px);
+}
+.channel img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+.connector {
+  width: 1px;
+  height: 28px;
+  margin: 0 auto;
+  background: #ffffff;
+  transform-origin: top;
+}
+.panel {
+  position: relative;
+}
+.glass {
+  position: absolute;
+  inset: -7px;
+  border-radius: 30px;
+  border: 1px solid #ffffffe6;
+  background: #ffffff26;
+  box-shadow:
+    inset 0 1px 8px #ffffffb8,
+    0 12px 32px -5px #637d9e29;
+  pointer-events: none;
+}
+.card {
+  position: relative;
+  padding: 19px;
+  border-radius: 23px;
+  background: #ffffff;
+  border: 1px solid #ececf0;
+}
+.header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 8px;
+  padding-bottom: 13px;
+}
+.header strong {
+  font-size: clamp(13px, 1.4vw, 16px);
+  font-weight: 550;
+}
+.header p {
+  margin: 4px 0 0;
+  font-size: 11px;
+  color: #5f6d77;
+}
+.connected {
+  border-radius: 20px;
+  padding: 5px 8px;
+  background: #e5f6ed;
+  color: #23664b;
+  font-size: 10px;
+}
+.message {
+  padding: 10px 0;
+  border-top: 1px solid #ececf0;
+}
+.source {
+  color: #5f6d77;
+  font-size: 10px;
+}
+.message p {
+  font-size: clamp(11px, 1.1vw, 13px);
+  line-height: 1.45;
+  margin: 4px 0 0;
+}
+.note {
+  display: block;
+  margin-top: 18px;
+  color: #ffffff;
+  text-align: center;
+  font-size: 10px;
+}
+@media (max-width: 480px) {
+  .scene {
+    width: 82%;
+  }
+  .card {
+    padding: 12px;
+  }
+  .channel {
+    padding: 7px 3px;
+    gap: 5px;
+  }
+  .sources {
+    gap: 5px;
+  }
+  .message {
+    padding: 7px 0;
+  }
+  .connector {
+    height: 21px;
+  }
+  .header {
+    padding-bottom: 10px;
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "tool": "built-in imagegen",
+  "prompt_summary": "Restore leasing handshake meeting photograph; remove availability and rental-channel cards/logos, plates and glow. Preserve smiling teal-suit man, seated man with glasses, lavender sleeve handshake, faces/hands/table/stationery, warm daylight and perspective. Full390:520 portrait, no crop, margins, frame or new graphics.",
+  "asset": {
+    "reference": "3:63",
+    "photo_node": "49:356",
+    "path": "/Users/ak/innflow-web/output/doorloop-baselane/leasing-photo-clean-v1.png",
+    "image_hash": "f4de06ffba4095a4e9499a270b770c6cf0ac40b7"
+  },
+  "verification": "Hero 3:63: removed baked availability/channel cards, translucent backplates and glow with built-in imagegen. Applied f4de06ffba4095a4e9499a270b770c6cf0ac40b7 to existing photo49:356. Retained native Ready for lease49:357 and channels121:32; shifted availability card x65 to34 to clear face. Screenshot verified visible handshake, unobscured face, clean card edges and in-cell bounds. Reference-derived draft photo, not replacement-actor or rights-clearance claim."
+}

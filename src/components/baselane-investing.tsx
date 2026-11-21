@@ -1,0 +1,161 @@
+"use client";
+import Image from "next/image";
+import { useRef, useState } from "react";
+import {
+  ChevronLeft as ArrowLeft,
+  ArrowRight,
+  ArrowRight as MageArrowRight,
+  Search as MagnifyingGlass,
+} from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
+import items from "./baselane-investing-data.json";
+import styles from "./baselane-library.module.css";
+import { InnerPageShell } from "./inner-page-shell";
+
+const categories = [
+  "All investor resources",
+  "Property operations",
+  "Records & reviews",
+  "Planning tools",
+  "Team workflows",
+];
+export function BaselaneInvesting() {
+  const [search, setSearch] = useState("");
+  const [category, setCategory] = useState(categories[0]);
+  const tabs = useRef<HTMLElement>(null);
+  const filtered = items.filter(
+    (i) =>
+      (category === categories[0] || i.category === category) &&
+      `${i.title} ${i.category}`
+        .toLowerCase()
+        .includes(search.trim().toLowerCase()),
+  );
+  return (
+    <InnerPageShell>
+      <div className={styles.categoryTop} />
+      <section
+        className={styles.filterBar}
+        aria-label="Browse investing resources"
+      >
+        <div className={styles.filters}>
+          <nav
+            className={styles.tabs}
+            ref={tabs}
+            aria-label="Investing categories"
+          >
+            <a className={styles.allLink} href="/resources">
+              All resources
+            </a>
+            {categories.map((cat) => (
+              <button
+                type="button"
+                key={cat}
+                aria-pressed={cat === category}
+                onClick={() => setCategory(cat)}
+              >
+                {cat}
+              </button>
+            ))}
+          </nav>
+          <div className={styles.tabArrows}>
+            <button
+              type="button"
+              aria-label="Previous categories"
+              onClick={() =>
+                tabs.current?.scrollBy({
+                  left: -300,
+                  behavior: window.matchMedia(
+                    "(prefers-reduced-motion: reduce)",
+                  ).matches
+                    ? "instant"
+                    : "smooth",
+                })
+              }
+            >
+              <ArrowLeft size={18} />
+            </button>
+            <button
+              type="button"
+              aria-label="More categories"
+              onClick={() =>
+                tabs.current?.scrollBy({
+                  left: 300,
+                  behavior: window.matchMedia(
+                    "(prefers-reduced-motion: reduce)",
+                  ).matches
+                    ? "instant"
+                    : "smooth",
+                })
+              }
+            >
+              <ArrowRight size={18} />
+            </button>
+          </div>
+          <label className={styles.search}>
+            <MagnifyingGlass size={20} />
+            <input
+              type="search"
+              placeholder="Search..."
+              aria-label="Search investor resources"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+            />
+          </label>
+        </div>
+      </section>
+      <section className={`${styles.collections} ${styles.investing}`}>
+        <h1 data-mixed-heading>
+          <MixedHeadingText>{category}</MixedHeadingText>
+        </h1>
+        <p className={styles.attribution}>
+          Practical tools and workflow guides from innflow, built around the
+          day-to-day work of running a property portfolio.
+        </p>
+        <p className={styles.results} role="status">
+          {filtered.length} {filtered.length === 1 ? "resource" : "resources"}
+        </p>
+        <div className={styles.cards}>
+          {filtered.map((i) => (
+            <a href={i.href} key={i.href} className={styles.card}>
+              <div className={styles.cardImage}>
+                <Image
+                  src={i.image}
+                  alt=""
+                  fill
+                  sizes="(max-width:700px) 100vw, 33vw"
+                />
+                <small>{i.category}</small>
+              </div>
+              <div className={styles.cardCopy}>
+                <h2 data-mixed-heading>
+                  <MixedHeadingText>{i.title}</MixedHeadingText>
+                </h2>
+                <p>{i.description}</p>
+                <span>
+                  Explore with innflow <MageArrowRight size="1em" />
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
+        {!filtered.length && (
+          <div className={styles.empty}>
+            <h2 data-mixed-heading>
+              <MixedHeadingText>No matching resources.</MixedHeadingText>
+            </h2>
+            <p>Try another topic or reset your search.</p>
+            <button
+              type="button"
+              onClick={() => {
+                setSearch("");
+                setCategory(categories[0]);
+              }}
+            >
+              Reset filters
+            </button>
+          </div>
+        )}
+      </section>
+    </InnerPageShell>
+  );
+}

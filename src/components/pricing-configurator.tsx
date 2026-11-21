@@ -2,96 +2,44 @@
 
 import { useState } from "react";
 import styles from "@/app/pricing/pricing.module.css";
+import { GoogleCtaContent } from "@/components/google-cta-content";
+import {
+  ArrowDown as MageArrowDown,
+  Check as MageCheck,
+} from "@/components/icons/mage";
 import { TrackedLink } from "@/components/tracked-link";
+import { maxAnnualSavingsPercent, pricingCatalog } from "@/config/pricing";
 import { siteConfig } from "@/config/site";
 
-type BillingCycle = "annual" | "monthly";
+type BillingCycle = "commitment" | "monthly";
 
-type PricingStop = {
-  credits: string;
-  monthlyPrice: number;
-  label: string;
-};
-
-const PRO_STOPS: readonly PricingStop[] = [
-  { credits: "5,000", monthlyPrice: 24.99, label: "5K" },
-  { credits: "8,500", monthlyPrice: 39.99, label: "8.5K" },
-  { credits: "12,500", monthlyPrice: 54.99, label: "12.5K" },
-  { credits: "16,500", monthlyPrice: 69.99, label: "16.5K" },
-  { credits: "21,000", monthlyPrice: 84.99, label: "21K" },
-  { credits: "26,000", monthlyPrice: 99.99, label: "26K" },
-];
-
-const MAX_STOPS: readonly PricingStop[] = [
-  { credits: "70,000", monthlyPrice: 249.99, label: "70K" },
-  { credits: "120,000", monthlyPrice: 399.99, label: "120K" },
-  { credits: "175,000", monthlyPrice: 549.99, label: "175K" },
-  { credits: "250,000", monthlyPrice: 749.99, label: "250K" },
-  { credits: "350,000", monthlyPrice: 999.99, label: "350K" },
-  { credits: "470,000", monthlyPrice: 1299.99, label: "470K" },
-];
+const { free, pro, business } = pricingCatalog.plans;
 
 const PRO_FEATURES = [
-  "100–520 daily credit refresh",
-  "150–400 sync runs per minute",
-  "1,500–4,000 async runs per minute",
-  "50–200GB file storage",
-  "3–6 workspaces",
-  "500–2,000 copilot messages per month",
-  "CLI access",
+  `${pro.workspaces} workspaces`,
+  `${pro.deployedWorkflows.toLowerCase()} deployed workflows`,
+  `${pro.tables} tables`,
+  `${pro.rowsPerTable} rows per table`,
+  `${pro.runHistory} of run history`,
+  "Premium workflow nodes",
 ] as const;
 
-const MAX_FEATURES = [
-  "1,400–9,400 daily credit refresh",
-  "5–15 seats in a shared workspace",
-  "1,250–3,000 sync runs per minute",
-  "8,600–20,000 async runs per minute",
-  "2TB pooled file storage and up",
-  "Dedicated Slack channel",
-  "Priority support",
+const BUSINESS_FEATURES = [
+  `${business.workspaces} workspaces`,
+  `${business.deployedWorkflows.toLowerCase()} deployed workflows`,
+  `${business.tables.toLowerCase()} tables`,
+  `${business.rowsPerTable} rows per table`,
+  `${business.runHistory} of run history`,
+  "Premium workflow nodes and exclusive AI models",
 ] as const;
 
-function displayPrice(price: number, billing: BillingCycle) {
-  const billedPrice = billing === "annual" ? price * 0.8 : price;
+function displayPrice(price: number) {
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
-  }).format(billedPrice);
-}
-
-function TierRange({
-  id,
-  stops,
-  value,
-  onChange,
-}: {
-  id: string;
-  stops: readonly PricingStop[];
-  value: number;
-  onChange: (value: number) => void;
-}) {
-  return (
-    <div className={styles.rangeWrap}>
-      <input
-        aria-label={`${id} credit tier`}
-        className={styles.range}
-        id={id}
-        max={stops.length - 1}
-        min={0}
-        onChange={(event) => onChange(Number(event.currentTarget.value))}
-        step={1}
-        type="range"
-        value={value}
-      />
-      <div className={styles.rangeLabels} aria-hidden="true">
-        {stops.map((stop) => (
-          <span key={stop.label}>{stop.label}</span>
-        ))}
-      </div>
-    </div>
-  );
+  }).format(price);
 }
 
 function PaidPlanCard({
@@ -101,55 +49,67 @@ function PaidPlanCard({
   description,
   features,
   name,
-  stops,
+  monthlyCredits,
+  monthlyPrice,
+  commitmentMonthlyPrice,
 }: {
   accent: "blue" | "gold";
   badge: string;
   billing: BillingCycle;
   description: string;
   features: readonly string[];
-  name: string;
-  stops: readonly PricingStop[];
+  name: "Pro" | "Business";
+  monthlyCredits: string;
+  monthlyPrice: number;
+  commitmentMonthlyPrice: number;
 }) {
-  const [tier, setTier] = useState(0);
-  const stop = stops[tier];
-  const rangeId = `${name.toLowerCase()}-credits`;
+  const price =
+    billing === "commitment" ? commitmentMonthlyPrice : monthlyPrice;
 
   return (
-    <article className={`${styles.planCard} ${styles[accent]}`}>
-      <span className={styles.badge}>{badge}</span>
+    <article
+      id={`plan-${name.toLowerCase()}`}
+      className={`${styles.planCard} ${styles[accent]}`}
+    >
       <div className={styles.planHeader}>
-        <p className={styles.planEyebrow}>{name}</p>
-        <h2>{name === "Pro" ? "Basic" : "Business"}</h2>
-        <p className={styles.billingNote}>
-          {billing === "annual" ? "Billed annually" : "Billed monthly"}
-        </p>
-        <div className={styles.priceLine} aria-live="polite">
-          <strong>{displayPrice(stop.monthlyPrice, billing)}</strong>
-          <span>/ month</span>
+        <div className={styles.planTitleRow}>
+          <h2>{name}</h2>
+          <span className={styles.badge}>{badge}</span>
         </div>
         <p className={styles.planDescription}>{description}</p>
+        <div className={styles.priceLine} aria-live="polite" aria-atomic="true">
+          <strong>{displayPrice(price)}</strong>
+          <span>/ month</span>
+        </div>
+        <p className={styles.billingNote}>
+          {billing === "commitment"
+            ? "Annual plan, billed yearly upfront"
+            : "Month to month"}
+        </p>
       </div>
 
       <div className={styles.creditBlock}>
         <p>
-          <strong>{stop.credits}</strong> monthly credits
+          <strong>{monthlyCredits}</strong> monthly credits
         </p>
-        <TierRange id={rangeId} stops={stops} value={tier} onChange={setTier} />
       </div>
 
       <TrackedLink
+        data-site-cta="primary"
+        aria-label={`Continue with Google for ${name}`}
         className={styles.planCta}
         destination={siteConfig.signupUrl}
         eventLabel={`pricing_${name.toLowerCase()}_signup`}
       >
-        Get started <span aria-hidden="true">↗</span>
+        <GoogleCtaContent />
       </TrackedLink>
 
       <ul className={styles.featureList}>
         {features.map((feature) => (
           <li key={feature}>
-            <span aria-hidden="true">✓</span>
+            <span aria-hidden="true">
+              <MageCheck size="1em" />
+            </span>
             {feature}
           </li>
         ))}
@@ -159,20 +119,22 @@ function PaidPlanCard({
 }
 
 export function PricingConfigurator() {
-  const [billing, setBilling] = useState<BillingCycle>("annual");
+  const [billing, setBilling] = useState<BillingCycle>("commitment");
 
   return (
     <>
       <fieldset className={styles.billingToggle}>
         <legend className={styles.visuallyHidden}>Billing frequency</legend>
         <button
-          aria-pressed={billing === "annual"}
-          className={billing === "annual" ? styles.activeBilling : undefined}
-          onClick={() => setBilling("annual")}
+          aria-pressed={billing === "commitment"}
+          className={
+            billing === "commitment" ? styles.activeBilling : undefined
+          }
+          onClick={() => setBilling("commitment")}
           type="button"
         >
-          Annually
-          <span>Save 20%</span>
+          Annual plan
+          <span>Save up to {maxAnnualSavingsPercent}%</span>
         </button>
         <button
           aria-pressed={billing === "monthly"}
@@ -184,43 +146,60 @@ export function PricingConfigurator() {
         </button>
       </fieldset>
 
+      <p className={styles.billingExplanation}>
+        {billing === "commitment"
+          ? `Save up to ${maxAnnualSavingsPercent}% with an annual plan. Pay upfront for 12 months.`
+          : "Monthly pricing, with no annual commitment."}
+        <span>All prices in USD.</span>
+      </p>
+      <nav className={styles.planJumpNav} aria-label="Jump to a plan">
+        <a href="#plan-free">Basic</a>
+        <a href="#plan-pro">Pro</a>
+        <a href="#plan-business">Business</a>
+      </nav>
+
       <div className={styles.planGrid}>
-        <article className={`${styles.planCard} ${styles.free}`}>
+        <article id="plan-free" className={`${styles.planCard} ${styles.free}`}>
           <div className={styles.planHeader}>
-            <p className={styles.planEyebrow}>Starter</p>
-            <h2>Free</h2>
+            <div className={styles.planTitleRow}>
+              <h2>Basic</h2>
+            </div>
+            <p className={styles.planDescription}>
+              Explore Innflow and build your first workflows with a focused
+              monthly credit allowance.
+            </p>
             <div className={styles.priceLine}>
               <strong>$0</strong>
               <span>/ month</span>
             </div>
-            <p className={styles.planDescription}>
-              For individuals exploring Innflow with a focused monthly credit
-              allowance.
-            </p>
+            <p className={styles.billingNote}>No paid plan required</p>
           </div>
           <div className={styles.creditBlock}>
             <p>
-              <strong>400</strong> monthly credits
+              <strong>{free.monthlyCredits}</strong> monthly credits
             </p>
           </div>
           <TrackedLink
+            data-site-cta="primary"
+            aria-label="Continue with Google for Basic"
             className={styles.planCta}
             destination={siteConfig.signupUrl}
             eventLabel="pricing_free_signup"
           >
-            Get started <span aria-hidden="true">↗</span>
+            <GoogleCtaContent />
           </TrackedLink>
           <ul className={styles.featureList}>
             {[
-              "50-credit daily refresh",
-              "5-minute sync run limit",
-              "5GB file storage",
-              "Public template access",
-              "24-hour log retention",
-              "CLI access",
+              `${free.workspaces} workspace`,
+              `${free.deployedWorkflows} deployed workflows`,
+              `${free.tables} tables`,
+              `${free.rowsPerTable} rows per table`,
+              `${free.runHistory} of run history`,
             ].map((feature) => (
               <li key={feature}>
-                <span aria-hidden="true">✓</span>
+                <span aria-hidden="true">
+                  <MageCheck size="1em" />
+                </span>
                 {feature}
               </li>
             ))}
@@ -231,22 +210,32 @@ export function PricingConfigurator() {
           accent="blue"
           badge="Most popular"
           billing={billing}
-          description="For solo operators and growing teams scaling complex workflows across their operation."
+          description="For individual operators and growing teams putting recurring workflows into action."
           features={PRO_FEATURES}
           name="Pro"
-          stops={PRO_STOPS}
+          monthlyCredits={pro.monthlyCredits}
+          monthlyPrice={pro.monthlyPrice}
+          commitmentMonthlyPrice={pro.commitmentMonthlyPrice}
         />
 
         <PaidPlanCard
           accent="gold"
           badge="Best value"
           billing={billing}
-          description="For teams running automation at scale with pooled credits, shared workspaces, and dedicated support."
-          features={MAX_FEATURES}
-          name="Max"
-          stops={MAX_STOPS}
+          description="For teams running higher-volume automation with more capacity and advanced AI capabilities."
+          features={BUSINESS_FEATURES}
+          name="Business"
+          monthlyCredits={business.monthlyCredits}
+          monthlyPrice={business.monthlyPrice}
+          commitmentMonthlyPrice={business.commitmentMonthlyPrice}
         />
       </div>
+      <a className={styles.compareLink} href="#compare-plans">
+        Compare all features{" "}
+        <span aria-hidden="true">
+          <MageArrowDown size="1em" />
+        </span>
+      </a>
     </>
   );
 }

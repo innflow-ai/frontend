@@ -1,0 +1,50 @@
+[
+  {
+    "id": "3ea0ac1b-d32e-8117-9c5e-c988dea246d7",
+    "title": "Zapier Vs. Tray.AI Comparison: Enterprise Automation",
+    "url": "https://app.notion.com/p/Zapier-Vs-Tray-AI-Comparison-Enterprise-Automation-3ea0ac1bd32e81179c5ec988dea246d7",
+    "before": "Comparison (w/o innflow)",
+    "after": "Comparison (w/o innflow)",
+    "reason": "Head-to-head Zapier and Tray.ai comparison; Innflow is not an evaluated option."
+  },
+  {
+    "id": "3e90ac1b-d32e-8188-ac9d-cbb3ac7f6cff",
+    "title": "Innflow + Gmail: 7 Tips for Inbox Triage and Better Reply Drafts",
+    "url": "https://app.notion.com/p/Innflow-Gmail-7-Tips-for-Inbox-Triage-and-Better-Reply-Drafts-3e90ac1bd32e8188ac9dcbb3ac7f6cff",
+    "before": "Integration",
+    "after": "Integration",
+    "reason": "The main deliverable is connecting Gmail to Innflow for inbox triage and drafts."
+  },
+  {
+    "id": "3d40ac1b-d32e-81f0-996f-d6ec9bb6fbd4",
+    "title": "AI Features vs AI Operations for Property Managers",
+    "url": "https://app.notion.com/p/AI-Features-vs-AI-Operations-for-Property-Managers-3d40ac1bd32e81f0996fd6ec9bb6fbd4",
+    "before": "Uncatagorized",
+    "after": "Comparison",
+    "reason": "The article explicitly contrasts PMS-native AI with the cross-system operating approach that Innflow represents; its supplied visual brief is a comparison matrix."
+  },
+  {
+    "id": "3d10ac1b-d32e-810d-ad2d-f0bd0e8365d5",
+    "title": "Governed AI tools for property ops: what Innflow agents can and cannot do",
+    "url": "https://app.notion.com/p/Governed-AI-tools-for-property-ops-what-Innflow-agents-can-and-cannot-do-3d10ac1bd32e810dad2df0bd0e8365d5",
+    "before": "Uncatagorized",
+    "after": "Security & Governance",
+    "reason": "Permissions, human review gates, prohibited autonomous actions, and auditability are the main subject."
+  },
+  {
+    "id": "3d10ac1b-d32e-816f-b99a-e56752a173ee",
+    "title": "Model flexibility without lock-in for property automation stacks",
+    "url": "https://app.notion.com/p/Model-flexibility-without-lock-in-for-property-automation-stacks-3d10ac1bd32e816fb99ae56752a173ee",
+    "before": "Uncatagorized",
+    "after": "AI Models",
+    "reason": "Model portability and changing providers without rebuilding workflows are the main subject."
+  },
+  {
+    "id": "3d10ac1b-d32e-817f-8ece-e6b9280af50e",
+    "title": "Giving AI agents reliable app access (MCP-style) for property workflows",
+    "url": "https://app.notion.com/p/Giving-AI-agents-reliable-app-access-MCP-style-for-property-workflows-3d10ac1bd32e817f8ecee6b9280af50e",
+    "before": "Uncatagorized",
+    "after": "Integration",
+    "reason": "Named MCP-style app actions and reliable access to connected systems are the main subject."
+  }
+]

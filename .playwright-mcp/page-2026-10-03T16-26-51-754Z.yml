@@ -1,0 +1,470 @@
+- generic [active] [ref=f5e1]:
+  - link "Skip to content" [ref=f5e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - banner [ref=f5e5]:
+    - link "innflow home" [ref=f5e6] [cursor=pointer]:
+      - /url: /
+      - img "innflow" [ref=f5e7]
+    - navigation "Primary navigation" [ref=f5e8]:
+      - group "Product" [ref=f5e9]:
+        - button "Product" [ref=f5e10] [cursor=pointer]
+      - group "Solutions" [ref=f5e13]:
+        - button "Solutions" [ref=f5e14] [cursor=pointer]
+      - group "Resources" [ref=f5e17]:
+        - button "Resources" [ref=f5e18] [cursor=pointer]
+      - link "Pricing" [ref=f5e21] [cursor=pointer]:
+        - /url: /pricing
+      - link "Blog" [ref=f5e22] [cursor=pointer]:
+        - /url: /blog
+    - generic [ref=f5e23]:
+      - link "Log in" [ref=f5e24] [cursor=pointer]:
+        - /url: https://app.innflow.ai/login
+      - link "Continue with Google" [ref=f5e25] [cursor=pointer]:
+        - /url: https://app.innflow.ai/auth/google
+  - main [ref=f5e28]:
+    - generic [ref=f5e29]:
+      - generic [ref=f5e31]:
+        - navigation "Breadcrumb" [ref=f5e32]:
+          - list [ref=f5e33]:
+            - listitem [ref=f5e34]:
+              - link "Home" [ref=f5e35] [cursor=pointer]:
+                - /url: /
+              - generic [aria-hidden] [ref=f5e39]: /
+            - listitem [ref=f5e40]:
+              - generic "Blog" [ref=f5e41]
+        - generic [ref=f5e42]:
+          - generic [ref=f5e43]:
+            - paragraph [ref=f5e44]: The Innflow journal
+            - heading "Good ideas. Better property operations." [level=1] [ref=f5e45]: Good ideas.Better property operations.
+          - paragraph [ref=f5e46]: Practical guides, fresh perspectives, and smarter ways to run your properties. Find your next move here.
+        - search [ref=f5e47]:
+          - generic [ref=f5e48]:
+            - generic [ref=f5e49]:
+              - generic [ref=f5e53]: Search the Innflow blog
+              - searchbox "Search the Innflow blog" [ref=f5e54]
+            - generic [ref=f5e55]: Industry
+            - combobox "Industry" [ref=f5e56]:
+              - option "All industries" [selected]
+              - option "General"
+            - button "Search" [ref=f5e57]
+        - navigation "Blog topics" [ref=f5e60]:
+          - list [ref=f5e61]:
+            - listitem [ref=f5e62]:
+              - link "All stories" [ref=f5e63] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=f5e64]:
+              - link "Product & Platform" [ref=f5e65] [cursor=pointer]:
+                - /url: /blog?category=product-platform
+            - listitem [ref=f5e66]:
+              - link "Company Updates" [ref=f5e67] [cursor=pointer]:
+                - /url: /blog?category=company-updates
+            - listitem [ref=f5e68]:
+              - link "Automation with Innflow" [ref=f5e69] [cursor=pointer]:
+                - /url: /blog?category=automation-with-innflow
+            - listitem [ref=f5e70]:
+              - link "AI Agent" [ref=f5e71] [cursor=pointer]:
+                - /url: /blog?category=ai-agent
+            - listitem [ref=f5e72]:
+              - link "Automation" [ref=f5e73] [cursor=pointer]:
+                - /url: /blog?category=automation
+            - listitem [ref=f5e74]:
+              - link "Workflow" [ref=f5e75] [cursor=pointer]:
+                - /url: /blog?category=workflow
+            - listitem [ref=f5e76]:
+              - link "Integrations" [ref=f5e77] [cursor=pointer]:
+                - /url: /blog?category=integrations
+            - listitem [ref=f5e78]:
+              - link "Comparison" [ref=f5e79] [cursor=pointer]:
+                - /url: /blog?category=comparison
+            - listitem [ref=f5e80]:
+              - link "Case Study" [ref=f5e81] [cursor=pointer]:
+                - /url: /blog?category=case-study
+            - listitem [ref=f5e82]:
+              - link "AI" [ref=f5e83] [cursor=pointer]:
+                - /url: /blog?category=ai
+            - listitem [ref=f5e84]:
+              - link "Maintenance" [ref=f5e85] [cursor=pointer]:
+                - /url: /blog?category=maintenance
+            - listitem [ref=f5e86]:
+              - link "Property Management" [ref=f5e87] [cursor=pointer]:
+                - /url: /blog?category=property-management
+            - listitem [ref=f5e88]:
+              - link "Software" [ref=f5e89] [cursor=pointer]:
+                - /url: /blog?category=software
+            - listitem [ref=f5e90]:
+              - link "Thought Leadership" [ref=f5e91] [cursor=pointer]:
+                - /url: /blog?category=thought-leadership
+      - region "Blog articles" [ref=f5e92]:
+        - generic [ref=f5e93]:
+          - generic [ref=f5e94]:
+            - heading "Fresh perspectives" [level=2] [ref=f5e95]
+            - generic [ref=f5e96]: 189 stories to explore
+          - generic [ref=f5e97]:
+            - 'link "What Do HOA Secretary Duties Look Like? Case Study What Do HOA Secretary Duties Look Like? innflow guide to What Do HOA Secretary Duties Look Like?: operator playbook, metrics, and AI agent workflows for property teams. September 15, 2026 9 min read" [ref=f5e98] [cursor=pointer]':
+              - /url: /blog/hoa-secretary-duties
+              - img "What Do HOA Secretary Duties Look Like?" [ref=f5e100]
+              - generic [ref=f5e101]:
+                - generic [ref=f5e102]: Case Study
+                - heading "What Do HOA Secretary Duties Look Like?" [level=3] [ref=f5e103]
+                - paragraph [ref=f5e104]: "innflow guide to What Do HOA Secretary Duties Look Like?: operator playbook, metrics, and AI agent workflows for property teams."
+                - paragraph [ref=f5e105]:
+                  - time [ref=f5e106]: September 15, 2026
+                  - generic [aria-hidden] [ref=f5e107]: ·
+                  - generic [ref=f5e108]: 9 min read
+            - 'link "What Do HOA President Duties Look Like? Case Study What Do HOA President Duties Look Like? innflow guide to What Do HOA President Duties Look Like?: operator playbook, metrics, and AI agent workflows for property teams. September 15, 2026 9 min read" [ref=f5e109] [cursor=pointer]':
+              - /url: /blog/hoa-president-duties
+              - img "What Do HOA President Duties Look Like?" [ref=f5e111]
+              - generic [ref=f5e112]:
+                - generic [ref=f5e113]: Case Study
+                - heading "What Do HOA President Duties Look Like?" [level=3] [ref=f5e114]
+                - paragraph [ref=f5e115]: "innflow guide to What Do HOA President Duties Look Like?: operator playbook, metrics, and AI agent workflows for property teams."
+                - paragraph [ref=f5e116]:
+                  - time [ref=f5e117]: September 15, 2026
+                  - generic [aria-hidden] [ref=f5e118]: ·
+                  - generic [ref=f5e119]: 9 min read
+            - 'link "Welcome New Tenants: 9 Tips for a Smooth Move-In Property Management Welcome New Tenants: 9 Tips for a Smooth Move-In innflow guide to Welcome New Tenants: 9 Tips for a Smooth Move-In: operator playbook, metrics, and AI agent workflows for property teams. September 15, 2026 9 min read" [ref=f5e120] [cursor=pointer]':
+              - /url: /blog/tips-for-a-smooth-new-tenant-move-in
+              - 'img "Welcome New Tenants: 9 Tips for a Smooth Move-In" [ref=f5e122]'
+              - generic [ref=f5e123]:
+                - generic [ref=f5e124]: Property Management
+                - 'heading "Welcome New Tenants: 9 Tips for a Smooth Move-In" [level=3] [ref=f5e125]'
+                - paragraph [ref=f5e126]: "innflow guide to Welcome New Tenants: 9 Tips for a Smooth Move-In: operator playbook, metrics, and AI agent workflows for property teams."
+                - paragraph [ref=f5e127]:
+                  - time [ref=f5e128]: September 15, 2026
+                  - generic [aria-hidden] [ref=f5e129]: ·
+                  - generic [ref=f5e130]: 9 min read
+            - 'link "Vacation Rental Cleaning: A Comprehensive Checklist for Landlords Property Management Vacation Rental Cleaning: A Comprehensive Checklist for Landlords innflow guide to Vacation Rental Cleaning: A Comprehensive Checklis: operator playbook, metrics, and AI agent workflows for property teams. September 15, 2026 9 min read" [ref=f5e131] [cursor=pointer]':
+              - /url: /blog/vacation-rental-cleaning-a-comprehensive-checklist-for-landlords
+              - 'img "Vacation Rental Cleaning: A Comprehensive Checklist for Landlords" [ref=f5e133]'
+              - generic [ref=f5e134]:
+                - generic [ref=f5e135]: Property Management
+                - 'heading "Vacation Rental Cleaning: A Comprehensive Checklist for Landlords" [level=3] [ref=f5e136]'
+                - paragraph [ref=f5e137]: "innflow guide to Vacation Rental Cleaning: A Comprehensive Checklis: operator playbook, metrics, and AI agent workflows for property teams."
+                - paragraph [ref=f5e138]:
+                  - time [ref=f5e139]: September 15, 2026
+                  - generic [aria-hidden] [ref=f5e140]: ·
+                  - generic [ref=f5e141]: 9 min read
+            - 'link "The Top 7 Most Important Tips for Better Tenant Management Case Study The Top 7 Most Important Tips for Better Tenant Management innflow guide to The Top 7 Most Important Tips for Better Tenant Ma: operator playbook, metrics, and AI agent workflows for property teams. September 15, 2026 9 min read" [ref=f5e142] [cursor=pointer]':
+              - /url: /blog/tenant-management-tips
+              - img "The Top 7 Most Important Tips for Better Tenant Management" [ref=f5e144]
+              - generic [ref=f5e145]:
+                - generic [ref=f5e146]: Case Study
+                - heading "The Top 7 Most Important Tips for Better Tenant Management" [level=3] [ref=f5e147]
+                - paragraph [ref=f5e148]: "innflow guide to The Top 7 Most Important Tips for Better Tenant Ma: operator playbook, metrics, and AI agent workflows for property teams."
+                - paragraph [ref=f5e149]:
+                  - time [ref=f5e150]: September 15, 2026
+                  - generic [aria-hidden] [ref=f5e151]: ·
+                  - generic [ref=f5e152]: 9 min read
+            - 'link "The Pros and Cons of Using For-Rent Signs for Your Properties Case Study The Pros and Cons of Using For-Rent Signs for Your Properties innflow guide to The Pros and Cons of Using For-Rent Signs for Your: operator playbook, metrics, and AI agent workflows for property teams. September 15, 2026 9 min read" [ref=f5e153] [cursor=pointer]':
+              - /url: /blog/for-rent-signs
+              - img "The Pros and Cons of Using For-Rent Signs for Your Properties" [ref=f5e155]
+              - generic [ref=f5e156]:
+                - generic [ref=f5e157]: Case Study
+                - heading "The Pros and Cons of Using For-Rent Signs for Your Properties" [level=3] [ref=f5e158]
+                - paragraph [ref=f5e159]: "innflow guide to The Pros and Cons of Using For-Rent Signs for Your: operator playbook, metrics, and AI agent workflows for property teams."
+                - paragraph [ref=f5e160]:
+                  - time [ref=f5e161]: September 15, 2026
+                  - generic [aria-hidden] [ref=f5e162]: ·
+                  - generic [ref=f5e163]: 9 min read
+            - 'link "The Importance of Vendor Relationship Management for Landlords Property Management The Importance of Vendor Relationship Management for Landlords innflow guide to The Importance of Vendor Relationship Management f: operator playbook, metrics, and AI agent workflows for property teams. September 14, 2026 9 min read" [ref=f5e164] [cursor=pointer]':
+              - /url: /blog/the-importance-of-vendor-relationship-management-for-landlords
+              - img "The Importance of Vendor Relationship Management for Landlords" [ref=f5e166]
+              - generic [ref=f5e167]:
+                - generic [ref=f5e168]: Property Management
+                - heading "The Importance of Vendor Relationship Management for Landlords" [level=3] [ref=f5e169]
+                - paragraph [ref=f5e170]: "innflow guide to The Importance of Vendor Relationship Management f: operator playbook, metrics, and AI agent workflows for property teams."
+                - paragraph [ref=f5e171]:
+                  - time [ref=f5e172]: September 14, 2026
+                  - generic [aria-hidden] [ref=f5e173]: ·
+                  - generic [ref=f5e174]: 9 min read
+            - 'link "The Complete Apartment Maintenance Checklist (Including Downloadable Checklist) Property Management The Complete Apartment Maintenance Checklist (Including Downloadable Checklist) innflow guide to The Complete Apartment Maintenance Checklist (Incl: operator playbook, metrics, and AI agent workflows for property teams. September 14, 2026 9 min read" [ref=f5e175] [cursor=pointer]':
+              - /url: /blog/apartment-maintenance-checklist
+              - img "The Complete Apartment Maintenance Checklist (Including Downloadable Checklist)" [ref=f5e177]
+              - generic [ref=f5e178]:
+                - generic [ref=f5e179]: Property Management
+                - heading "The Complete Apartment Maintenance Checklist (Including Downloadable Checklist)" [level=3] [ref=f5e180]
+                - paragraph [ref=f5e181]: "innflow guide to The Complete Apartment Maintenance Checklist (Incl: operator playbook, metrics, and AI agent workflows for property teams."
+                - paragraph [ref=f5e182]:
+                  - time [ref=f5e183]: September 14, 2026
+                  - generic [aria-hidden] [ref=f5e184]: ·
+                  - generic [ref=f5e185]: 9 min read
+            - 'link "The 11 Elements of Great Property Management Property Management The 11 Elements of Great Property Management innflow guide to The 11 Elements of Great Property Management: operator playbook, metrics, and AI agent workflows for property teams. September 14, 2026 9 min read" [ref=f5e186] [cursor=pointer]':
+              - /url: /blog/elements-of-great-property-management
+              - img "The 11 Elements of Great Property Management" [ref=f5e188]
+              - generic [ref=f5e189]:
+                - generic [ref=f5e190]: Property Management
+                - heading "The 11 Elements of Great Property Management" [level=3] [ref=f5e191]
+                - paragraph [ref=f5e192]: "innflow guide to The 11 Elements of Great Property Management: operator playbook, metrics, and AI agent workflows for property teams."
+                - paragraph [ref=f5e193]:
+                  - time [ref=f5e194]: September 14, 2026
+                  - generic [aria-hidden] [ref=f5e195]: ·
+                  - generic [ref=f5e196]: 9 min read
+          - navigation "Blog pagination" [ref=f5e197]:
+            - link "Previous" [ref=f5e198] [cursor=pointer]:
+              - /url: /blog
+            - paragraph [ref=f5e199]: Page 2 of 21
+            - link "Next" [ref=f5e200] [cursor=pointer]:
+              - /url: /blog?page=3
+  - generic [ref=f5e203]:
+    - heading "A clearer day starts with a connected flow." [level=2] [ref=f5e204]
+    - paragraph [ref=f5e205]: Bring your team, context, and next steps together.
+    - link "Continue with Google" [ref=f5e207] [cursor=pointer]:
+      - /url: https://app.innflow.ai/auth/google
+    - form [ref=f5e210]:
+      - heading "A little more, just for members." [level=3] [ref=f5e211]
+      - paragraph [ref=f5e212]: Get Innflow updates and member offers by email.
+      - group [ref=f5e213]:
+        - generic [ref=f5e214]: Email address
+        - generic [ref=f5e215]:
+          - textbox "Email address" [ref=f5e216]:
+            - /placeholder: Enter your email
+          - button "Sign up" [ref=f5e217] [cursor=pointer]
+      - status
+  - contentinfo [ref=f5e219]:
+    - generic [ref=f5e220]:
+      - generic [ref=f5e221]:
+        - link "innflow home" [ref=f5e222] [cursor=pointer]:
+          - /url: /
+          - img "innflow" [ref=f5e223]
+        - paragraph [ref=f5e224]: Property operations.Connected in one place.
+        - link "support@innflow.ai" [ref=f5e225] [cursor=pointer]:
+          - /url: mailto:support@innflow.ai
+        - region "Hours of operation" [ref=f5e226]:
+          - strong [ref=f5e227]: Hours of Operation
+          - generic [ref=f5e228]:
+            - generic [ref=f5e229]:
+              - term [ref=f5e230]: Monday–Friday
+              - definition [ref=f5e231]: 9:00 AM–6:00 PM ET
+            - generic [ref=f5e232]:
+              - term [ref=f5e233]: Saturday–Sunday
+              - definition [ref=f5e234]: 10:00 AM–5:00 PM ET
+      - generic [ref=f5e235]:
+        - heading "Why innflow" [level=3] [ref=f5e236]
+        - link "About innflow" [ref=f5e237] [cursor=pointer]:
+          - /url: /about
+        - link "Careers" [ref=f5e238] [cursor=pointer]:
+          - /url: /careers
+        - link "Industry coverage" [ref=f5e239] [cursor=pointer]:
+          - /url: /in-the-news
+        - link "Who we help" [ref=f5e240] [cursor=pointer]:
+          - /url: /our-customers
+        - link "Security" [ref=f5e241] [cursor=pointer]:
+          - /url: /security
+        - link "Share innflow" [ref=f5e242] [cursor=pointer]:
+          - /url: /landlord-referral
+        - link "Partnerships" [ref=f5e243] [cursor=pointer]:
+          - /url: /partner-with-us
+        - link "Advisor partnerships" [ref=f5e244] [cursor=pointer]:
+          - /url: /advisor-partner-program
+        - link "Workflows" [ref=f5e245] [cursor=pointer]:
+          - /url: /products/agentic-workflows
+        - link "AI assistant" [ref=f5e246] [cursor=pointer]:
+          - /url: /products/ai-agents
+        - link "Knowledge" [ref=f5e247] [cursor=pointer]:
+          - /url: /platform
+        - link "Approvals" [ref=f5e248] [cursor=pointer]:
+          - /url: /platform/security-and-compliance
+      - generic [ref=f5e249]:
+        - heading "Solutions" [level=3] [ref=f5e250]
+        - link "Overview" [ref=f5e251] [cursor=pointer]:
+          - /url: /
+        - link "Multi-property investors" [ref=f5e252] [cursor=pointer]:
+          - /url: /multi-property-investors
+        - link "Landlord operations" [ref=f5e253] [cursor=pointer]:
+          - /url: /landlord-banking
+        - link "Rental workflows" [ref=f5e254] [cursor=pointer]:
+          - /url: /rent-collection
+        - link "Rental workflows overview" [ref=f5e255] [cursor=pointer]:
+          - /url: /rent-collection-2
+        - link "Connected property records" [ref=f5e256] [cursor=pointer]:
+          - /url: /landlord-accounting
+        - link "Property review preparation" [ref=f5e257] [cursor=pointer]:
+          - /url: /landlord-insurance
+        - link "Document preparation" [ref=f5e258] [cursor=pointer]:
+          - /url: /tax-preparation
+        - link "Deposit workflows" [ref=f5e259] [cursor=pointer]:
+          - /url: /security-deposit-account
+        - link "Screening workflows" [ref=f5e260] [cursor=pointer]:
+          - /url: /tenant-screening-service
+        - link "Reserve planning" [ref=f5e261] [cursor=pointer]:
+          - /url: /landlord-banking-apy
+        - link "Financing preparation" [ref=f5e262] [cursor=pointer]:
+          - /url: /rental-property-loans
+        - link "Property management" [ref=f5e263] [cursor=pointer]:
+          - /url: /property-management
+        - link "Connected operations" [ref=f5e264] [cursor=pointer]:
+          - /url: /platform
+        - link "Integrations" [ref=f5e265] [cursor=pointer]:
+          - /url: /integrations
+      - generic [ref=f5e266]:
+        - heading "Resources" [level=3] [ref=f5e267]
+        - link "Resource library" [ref=f5e268] [cursor=pointer]:
+          - /url: /resources
+        - link "Document checklists" [ref=f5e269] [cursor=pointer]:
+          - /url: /free-rental-forms-and-templates-for-landlords
+        - link "Rent comparison" [ref=f5e270] [cursor=pointer]:
+          - /url: /how-much-should-i-charge-for-rent
+        - link "Lease workflows" [ref=f5e271] [cursor=pointer]:
+          - /url: /lease-agreement
+        - link "Workflow learning" [ref=f5e272] [cursor=pointer]:
+          - /url: /webinars
+        - link "Investor resources" [ref=f5e273] [cursor=pointer]:
+          - /url: /real-estate-investing
+        - link "Product updates" [ref=f5e274] [cursor=pointer]:
+          - /url: /product-updates
+        - link "Blog" [ref=f5e275] [cursor=pointer]:
+          - /url: /blog
+        - link "Help center" [ref=f5e276] [cursor=pointer]:
+          - /url: /help-center
+        - link "Legal agreements" [ref=f5e277] [cursor=pointer]:
+          - /url: /legal-agreements
+        - link "FAQ" [ref=f5e278] [cursor=pointer]:
+          - /url: /faq
+        - link "Contact" [ref=f5e279] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=f5e280]:
+        - heading "Property teams" [level=3] [ref=f5e281]
+        - link "Long-term rentals" [ref=f5e282] [cursor=pointer]:
+          - /url: /long-term-rentals
+        - link "Mid-term rentals" [ref=f5e283] [cursor=pointer]:
+          - /url: /mid-term-rentals
+        - link "Short-term rentals" [ref=f5e284] [cursor=pointer]:
+          - /url: /short-term-rentals
+        - link "Resident experiences" [ref=f5e285] [cursor=pointer]:
+          - /url: /renters
+        - heading "Get started" [level=3] [ref=f5e286]
+        - link "Book a demo" [ref=f5e287] [cursor=pointer]:
+          - /url: https://cal.com/julian-patrick-afu0u2/innflow-demo?overlayCalendar=true
+        - link "Pricing" [ref=f5e288] [cursor=pointer]:
+          - /url: /pricing
+        - link "Log in" [ref=f5e289] [cursor=pointer]:
+          - /url: https://app.innflow.ai/login
+        - link "Continue with Google" [ref=f5e290] [cursor=pointer]:
+          - /url: https://app.innflow.ai/auth/google
+    - generic [ref=f5e293]:
+      - generic [ref=f5e294]: © 2026 Innflow. All rights reserved.
+      - navigation "Legal" [ref=f5e295]:
+        - link "Privacy Policy" [ref=f5e296] [cursor=pointer]:
+          - /url: /legal/privacy-policy
+        - link "Terms of Service" [ref=f5e297] [cursor=pointer]:
+          - /url: /legal/terms-of-service
+        - link "Cookie Policy" [ref=f5e298] [cursor=pointer]:
+          - /url: /legal/cookie-policy
+        - link "Acceptable Use Policy" [ref=f5e299] [cursor=pointer]:
+          - /url: /legal/acceptable-use-policy
+        - link "EULA" [ref=f5e300] [cursor=pointer]:
+          - /url: /legal/eula
+        - link "Privacy Request" [ref=f5e301] [cursor=pointer]:
+          - /url: /legal/dsar
+        - link "Consent Preferences" [ref=f5e302] [cursor=pointer]:
+          - /url: "#"
+        - link "Do Not Sell or Share My Personal Information" [ref=f5e303] [cursor=pointer]:
+          - /url: https://app.termly.io/notify/d253192a-6c11-4338-9883-67b3307aea2f
+        - link "Limit the Use of My Sensitive Personal Information" [ref=f5e304] [cursor=pointer]:
+          - /url: https://app.termly.io/notify/d253192a-6c11-4338-9883-67b3307aea2f
+    - region [ref=f5e305]:
+      - heading "Featured on" [level=2] [ref=f5e307]
+      - generic [ref=f5e309]:
+        - generic [ref=f5e310]:
+          - link "Visit EarlyHunt (opens in a new tab)" [ref=f5e311] [cursor=pointer]:
+            - /url: https://earlyhunt.com/project/innflow
+            - img "Featured on EarlyHunt" [ref=f5e313]
+          - link "Visit neeed.directory (opens in a new tab)" [ref=f5e314] [cursor=pointer]:
+            - /url: https://neeed.directory/products/innflow?utm_source=innflow
+            - img "Featured on neeed.directory" [ref=f5e316]
+          - link "Visit StartupFA.me (opens in a new tab)" [ref=f5e317] [cursor=pointer]:
+            - /url: https://startupfa.me/s/innflow.ai-345?utm_source=innflow.ai
+            - img "Featured on Startup Fame" [ref=f5e319]
+          - link "Visit TechTrendin (opens in a new tab)" [ref=f5e320] [cursor=pointer]:
+            - /url: https://www.techtrendin.com/products/innflow
+            - img "Featured on TechTrendin" [ref=f5e322]
+          - link "Visit Bowora (opens in a new tab)" [ref=f5e323] [cursor=pointer]:
+            - /url: https://bowora.com/
+            - img "Featured on Bowora" [ref=f5e325]
+          - link "Visit ConfettiSaaS (opens in a new tab)" [ref=f5e326] [cursor=pointer]:
+            - /url: https://confettisaas.com/saas/innflow-ai?ref=badge
+            - img "Innflow on ConfettiSaaS" [ref=f5e328]
+          - link "Visit DodoDirectory (opens in a new tab)" [ref=f5e329] [cursor=pointer]:
+            - /url: https://dododirectory.com
+            - img "Featured on DodoDirectory" [ref=f5e331]
+          - link "Visit Fazier (opens in a new tab)" [ref=f5e332] [cursor=pointer]:
+            - /url: https://fazier.com
+            - img "Fazier badge" [ref=f5e334]
+          - link "Visit findly.tools (opens in a new tab)" [ref=f5e335] [cursor=pointer]:
+            - /url: https://findly.tools
+            - img "Featured on Findly.tools" [ref=f5e337]
+          - link "Visit Huzzler (opens in a new tab)" [ref=f5e338] [cursor=pointer]:
+            - /url: https://huzzler.so
+            - img "Featured on Huzzler" [ref=f5e340]
+          - link "Visit IdeaKiln (opens in a new tab)" [ref=f5e341] [cursor=pointer]:
+            - /url: https://ideakiln.com
+            - img "Featured on Idea Kiln" [ref=f5e343]
+          - link "Visit Indiehunt (opens in a new tab)" [ref=f5e344] [cursor=pointer]:
+            - /url: https://indiehunt.io
+            - img "Featured on IndieHunt" [ref=f5e346]
+          - link "Visit Launch Llama Tools (opens in a new tab)" [ref=f5e347] [cursor=pointer]:
+            - /url: https://tools.launchllama.co?utm_source=badge&utm_medium=referral
+            - img "As seen on Launch Llama Newsletter" [ref=f5e349]
+          - link "Visit SaaSBison (opens in a new tab)" [ref=f5e350] [cursor=pointer]:
+            - /url: https://saasbison.com
+            - img "Featured on SaaSBison" [ref=f5e352]
+          - link "Visit SaaSGrow (opens in a new tab)" [ref=f5e353] [cursor=pointer]:
+            - /url: https://saasgrow.app?ref=innflow.ai
+            - img "Innflow on SaaSGrow" [ref=f5e355]
+          - link "Visit StartupBase (opens in a new tab)" [ref=f5e356] [cursor=pointer]:
+            - /url: https://startupbase.io
+            - img "Featured on StartupBase" [ref=f5e358]
+          - link "Visit startupfa.st (opens in a new tab)" [ref=f5e359] [cursor=pointer]:
+            - /url: https://startupfa.st
+            - img "Powered by Startup Fast" [ref=f5e361]
+          - link "Visit Sumodir (opens in a new tab)" [ref=f5e362] [cursor=pointer]:
+            - /url: https://sumodir.com
+            - img "Featured on SumoDir" [ref=f5e364]
+          - link "Visit Twelve Tools (opens in a new tab)" [ref=f5e365] [cursor=pointer]:
+            - /url: https://twelve.tools
+            - img "Featured on Twelve Tools" [ref=f5e367]
+          - link "Visit Web Review (opens in a new tab)" [ref=f5e368] [cursor=pointer]:
+            - /url: https://web-review.com
+            - img "Featured on Web Review" [ref=f5e370]
+        - generic [aria-hidden] [ref=f5e371]:
+          - link [ref=f5e372] [cursor=pointer]:
+            - /url: https://earlyhunt.com/project/innflow
+          - link [ref=f5e375] [cursor=pointer]:
+            - /url: https://neeed.directory/products/innflow?utm_source=innflow
+          - link [ref=f5e378] [cursor=pointer]:
+            - /url: https://startupfa.me/s/innflow.ai-345?utm_source=innflow.ai
+          - link [ref=f5e381] [cursor=pointer]:
+            - /url: https://www.techtrendin.com/products/innflow
+          - link [ref=f5e384] [cursor=pointer]:
+            - /url: https://bowora.com/
+          - link [ref=f5e387] [cursor=pointer]:
+            - /url: https://confettisaas.com/saas/innflow-ai?ref=badge
+          - link [ref=f5e390] [cursor=pointer]:
+            - /url: https://dododirectory.com
+          - link [ref=f5e393] [cursor=pointer]:
+            - /url: https://fazier.com
+          - link [ref=f5e396] [cursor=pointer]:
+            - /url: https://findly.tools
+          - link [ref=f5e399] [cursor=pointer]:
+            - /url: https://huzzler.so
+          - link [ref=f5e402] [cursor=pointer]:
+            - /url: https://ideakiln.com
+          - link [ref=f5e405] [cursor=pointer]:
+            - /url: https://indiehunt.io
+          - link [ref=f5e408] [cursor=pointer]:
+            - /url: https://tools.launchllama.co?utm_source=badge&utm_medium=referral
+          - link [ref=f5e411] [cursor=pointer]:
+            - /url: https://saasbison.com
+          - link [ref=f5e414] [cursor=pointer]:
+            - /url: https://saasgrow.app?ref=innflow.ai
+          - link [ref=f5e417] [cursor=pointer]:
+            - /url: https://startupbase.io
+          - link [ref=f5e420] [cursor=pointer]:
+            - /url: https://startupfa.st
+          - link [ref=f5e423] [cursor=pointer]:
+            - /url: https://sumodir.com
+          - link [ref=f5e426] [cursor=pointer]:
+            - /url: https://twelve.tools
+          - link [ref=f5e429] [cursor=pointer]:
+            - /url: https://web-review.com
+  - alert [ref=f5e432]

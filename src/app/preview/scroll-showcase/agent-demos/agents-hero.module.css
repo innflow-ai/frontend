@@ -1,0 +1,137 @@
+.demo {
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  display: grid;
+  align-items: center;
+  background: transparent;
+}
+.canvas {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 793.33 / 450;
+  container-type: inline-size;
+  overflow: clip;
+  background: transparent;
+}
+.connector {
+  position: absolute;
+  left: 49.92%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+}
+.connectionPulse {
+  position: absolute;
+  left: calc(49.92% - 2px);
+  top: 2%;
+  width: 4px;
+  height: 9%;
+  border-radius: 4px;
+  background: #10cd78;
+}
+.agentGroup {
+  position: absolute;
+  left: 38.445%;
+  top: 13.333%;
+  width: 22.941%;
+  height: 74.222%;
+}
+.glass {
+  position: absolute;
+  inset: -2.4% -4.4%;
+  border: 0.1px solid #ffffffe6;
+  border-radius: 6.81cqw;
+  background: #ffffff26;
+  box-shadow:
+    inset 0 1.3px 8px #ffffffb8,
+    0 12px 32px -5px #637d9e29;
+  backdrop-filter: blur(10px);
+}
+.shell {
+  position: absolute;
+  inset: 0;
+  background: white;
+  border: 1px solid #e7ddc8;
+  border-radius: 5.8cqw;
+}
+.upperTile {
+  position: absolute;
+  left: 11.54%;
+  top: 6.287%;
+  width: 76.374%;
+  height: 41.617%;
+  border: 1px solid #e7ddc8;
+  border-radius: 3.9cqw;
+  background: #f7f7f9;
+}
+.duck {
+  position: absolute;
+  left: 1.648%;
+  top: 8.38%;
+  width: 70.33%;
+  height: 37.126%;
+  border-radius: 3.15cqw;
+  overflow: hidden;
+}
+.duck img {
+  object-fit: cover;
+}
+.lowerTile {
+  position: absolute;
+  left: 12.088%;
+  top: 52.395%;
+  width: 75.824%;
+  height: 41.317%;
+  box-sizing: border-box;
+  background: white;
+  border: 1px solid #10cd78;
+  border-radius: 3.53cqw;
+}
+.innflow {
+  position: absolute;
+  left: 2.898%;
+  top: 6.123%;
+  width: 92.754%;
+  height: 89.207%;
+}
+.node {
+  position: absolute;
+  left: 46.43%;
+  top: var(--node-top);
+  width: 7.143%;
+  height: 3.892%;
+}
+.greenTile {
+  position: absolute;
+  left: -7.25%;
+  top: 38.4%;
+  width: 14.62%;
+  height: 23.33%;
+  background: #10cd78;
+  border-radius: 3.03cqw;
+}
+.cubeTile {
+  position: absolute;
+  left: 14.36%;
+  top: 27.2%;
+  width: 15.63%;
+  height: 27.56%;
+}
+.diagonalTile {
+  position: absolute;
+  left: 63.014%;
+  top: 24%;
+  width: 19.143%;
+  height: 33.748%;
+}
+.radialTile {
+  position: absolute;
+  left: 84.434%;
+  top: 40.222%;
+  width: 15.63%;
+  height: 37.868%;
+}
+.canvas img {
+  object-fit: contain;
+}

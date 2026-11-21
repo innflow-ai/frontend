@@ -2,16 +2,16 @@ import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/json-ld";
 import {
   ControlsGrid,
-  EvidenceBlock,
   FaqList,
-  FinalCta,
   MarketingPage,
   OperatingSteps,
   PageHero,
 } from "@/components/page-primitives";
 import { FeatureMedia } from "@/components/product-media";
+import { SectionHeading } from "@/components/section-heading";
 import { siteConfig } from "@/config/site";
 import { allFeatureSlugs, featurePages } from "@/content/marketing";
+import { getPageFaqs } from "@/lib/faqs";
 import { createPageMetadata } from "@/lib/metadata";
 
 const featureSeo: Record<
@@ -41,7 +41,9 @@ const featureSeo: Record<
 };
 
 export function generateStaticParams() {
-  return allFeatureSlugs.map((slug) => ({ slug }));
+  return allFeatureSlugs
+    .filter((slug) => slug !== "workflows" && slug !== "communications")
+    .map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -70,6 +72,10 @@ export default async function FeaturePage({
   const content = featurePages[slug as keyof typeof featurePages];
   if (!content) notFound();
 
+  const { items: faqs, heading: faqHeading } = await getPageFaqs(
+    `/features/${content.slug}`,
+    content.faq,
+  );
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -105,21 +111,20 @@ export default async function FeaturePage({
         breadcrumbs={[
           { label: "Home", href: "/" },
           { label: "Features", href: "/#features" },
-          { label: content.title },
+          { label: content.eyebrow },
         ]}
       >
         <FeatureMedia type={content.media} />
       </PageHero>
-      <EvidenceBlock items={content.evidence} />
       <section className="section">
         <div className="shell statement-grid">
           <span className="section-label">The operational problem</span>
-          <h2>{content.problem}</h2>
+          <SectionHeading align="start" title={content.problem} />
         </div>
       </section>
       <OperatingSteps
-        title="A bounded path from input to visible work."
-        intro="The exact systems, permissions, exceptions, and recovery behavior are confirmed during workflow discovery."
+        title="From the first request to the next step."
+        intro="Bring your tools and your current process. Together, we’ll shape the handoffs and review points around your team."
         steps={content.operatingModel}
       />
       <ControlsGrid
@@ -129,13 +134,15 @@ export default async function FeaturePage({
       <section className="section faq-section">
         <div className="shell faq-layout">
           <div className="faq-intro">
-            <span className="section-label">Feature boundaries</span>
-            <h2>What this page does—and does not—promise.</h2>
+            <SectionHeading
+              align="start"
+              eyebrow="Your questions"
+              title={faqHeading || "A clearer picture before you begin."}
+            />
           </div>
-          <FaqList items={content.faq} />
+          <FaqList items={faqs} />
         </div>
       </section>
-      <FinalCta />
       <JsonLd value={breadcrumbSchema} />
     </MarketingPage>
   );

@@ -1,11 +1,21 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { type BreadcrumbItem, Breadcrumbs } from "@/components/breadcrumbs";
+import { ChevronRight } from "@/components/chevron-right";
+import { Plus as MagePlus } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
 
+import experience from "./product-experience.module.css";
+import { SectionHeading } from "./section-heading";
+
 export function MarketingPage({ children }: { children: ReactNode }) {
-  return <main id="main-content">{children}</main>;
+  return (
+    <main id="main-content" className={experience.page}>
+      {children}
+    </main>
+  );
 }
 
 export function PageHero({
@@ -14,6 +24,8 @@ export function PageHero({
   description,
   status,
   breadcrumbs,
+  secondaryHref = "/property-management",
+  mediaId,
   children,
 }: {
   eyebrow: string;
@@ -21,6 +33,8 @@ export function PageHero({
   description: string;
   status?: string;
   breadcrumbs?: BreadcrumbItem[];
+  secondaryHref?: string;
+  mediaId?: string;
   children?: ReactNode;
 }) {
   return (
@@ -28,15 +42,14 @@ export function PageHero({
       <div className="shell subpage-hero-grid">
         <div>
           {breadcrumbs ? <Breadcrumbs items={breadcrumbs} /> : null}
-          <div className="eyebrow-row">
-            <span className="section-label">{eyebrow}</span>
-            {status ? (
-              <span className={`status-label status-${status.toLowerCase()}`}>
-                {status}
-              </span>
-            ) : null}
-          </div>
-          <h1>{title}</h1>
+          <h1 data-mixed-heading>
+            <MixedHeadingText>{title}</MixedHeadingText>
+          </h1>
+          {status ? (
+            <span className={`status-label status-${status.toLowerCase()}`}>
+              {status}
+            </span>
+          ) : null}
         </div>
         <div className="subpage-hero-copy">
           <p>{description}</p>
@@ -47,16 +60,20 @@ export function PageHero({
               eventLabel={`${eyebrow.toLowerCase().replaceAll(" ", "_")}_demo`}
             >
               {siteConfig.primaryCta}
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true">
+                <ChevronRight />
+              </span>
             </TrackedLink>
-            <a className="button button-secondary" href="/property-management">
+            <a className="button button-secondary" href={secondaryHref}>
               See the property workflow
             </a>
           </div>
         </div>
       </div>
       {children ? (
-        <div className="shell subpage-hero-media">{children}</div>
+        <div id={mediaId} className="shell subpage-hero-media">
+          {children}
+        </div>
       ) : null}
     </section>
   );
@@ -95,19 +112,19 @@ export function OperatingSteps({
   return (
     <section className="section">
       <div className="shell editorial-grid">
-        <div className="editorial-intro">
-          <span className="section-label">Operating model</span>
-          <h2>{title}</h2>
-          <p>{intro}</p>
-        </div>
-        <ol className="numbered-list">
-          {steps.map((step, index) => (
+        <SectionHeading
+          align="start"
+          eyebrow="Operating model"
+          title={title}
+          subtitle={intro}
+        />
+        <ul className="operating-list">
+          {steps.map((step) => (
             <li key={step}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
               <p>{step}</p>
             </li>
           ))}
-        </ol>
+        </ul>
       </div>
     </section>
   );
@@ -125,14 +142,13 @@ export function ControlsGrid({
   return (
     <section className="section quiet-section">
       <div className="shell">
-        <div className="section-intro compact-intro">
-          <span className="section-label">{eyebrow}</span>
-          <h2>{title}</h2>
-        </div>
+        <SectionHeading eyebrow={eyebrow} title={title} />
         <div className="control-card-grid">
           {items.map((item) => (
             <article key={item.title}>
-              <h3>{item.title}</h3>
+              <h3 data-mixed-heading>
+                <MixedHeadingText>{item.title}</MixedHeadingText>
+              </h3>
               <p>{item.body}</p>
             </article>
           ))}
@@ -145,46 +161,22 @@ export function ControlsGrid({
 export function FaqList({
   items,
 }: {
-  items: readonly { question: string; answer: string }[];
+  items: readonly { id?: string; question: string; answer: string }[];
 }) {
   return (
     <div className="faq-list">
       {items.map((item, index) => (
-        <details key={item.question} open={index === 0}>
+        <details key={item.id || item.question} open={index === 0}>
           <summary>
             <span>{item.question}</span>
-            <i aria-hidden="true">+</i>
+            <i aria-hidden="true">
+              <MagePlus size="1em" />
+            </i>
           </summary>
-          <p>{item.answer}</p>
+          <p style={{ whiteSpace: "pre-line" }}>{item.answer}</p>
         </details>
       ))}
     </div>
-  );
-}
-
-export function FinalCta({
-  title = "Start with one operation worth making repeatable.",
-  body = "Bring one workflow and the systems it touches. We’ll separate what is available, what requires configuration, and what remains a preview.",
-}: {
-  title?: string;
-  body?: string;
-}) {
-  return (
-    <section className="final-cta-section">
-      <div className="shell final-cta">
-        <span className="section-label label-dark">One clear next step</span>
-        <h2>{title}</h2>
-        <p>{body}</p>
-        <TrackedLink
-          className="button button-light"
-          destination={siteConfig.demoUrl}
-          eventLabel="supporting_page_final_demo"
-        >
-          {siteConfig.primaryCta}
-          <span aria-hidden="true">↗</span>
-        </TrackedLink>
-      </div>
-    </section>
   );
 }
 

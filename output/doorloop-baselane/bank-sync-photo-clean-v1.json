@@ -1,0 +1,11 @@
+{
+  "tool": "built-in imagegen",
+  "prompt_summary": "Restore underlying office photo; remove account card, bank logo grid, text, glows, plates and margins. Preserve woman, face, glasses, checked jacket, orange shirt, pose, hands, tablet, warm light and perspective. Head upper-left/tablet lower-right, full-bleed 360:483 portrait.",
+  "asset": {
+    "reference": "3:27",
+    "photo_node": "49:328",
+    "path": "/Users/ak/innflow-web/output/doorloop-baselane/bank-sync-photo-clean-v1.png",
+    "image_hash": "b68b533faa7a72b6613017f1f1c6174f51bd745c"
+  },
+  "verification": "Hero 3:27: cleaned source photo using built-in imagegen to remove baked account card, bank logo grid, blue glow and translucent backplates. Applied b68b533faa7a72b6613017f1f1c6174f51bd745c to existing photo 49:328, preserving editable 49:344 and 108:2. Close-up screenshot verified full person/tablet scene and no duplicate source UI edges. Reference-derived draft photo, not a replacement-actor or rights-clearance claim."
+}

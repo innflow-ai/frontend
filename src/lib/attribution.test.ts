@@ -6,12 +6,12 @@ describe("appendAttribution", () => {
     const result = appendAttribution(
       "https://app.innflow.ai/signup",
       new URLSearchParams(
-        "utm_source=search&utm_campaign=property-ops&gclid=abc123",
+        "utm_source=search&utm_campaign=property-ops&gclid=abc123&gbraid=gb123&wbraid=wb123",
       ),
     );
 
     expect(result).toBe(
-      "https://app.innflow.ai/signup?utm_source=search&utm_campaign=property-ops&gclid=abc123",
+      "https://app.innflow.ai/signup?utm_source=search&utm_campaign=property-ops&gclid=abc123&gbraid=gb123&wbraid=wb123",
     );
   });
 

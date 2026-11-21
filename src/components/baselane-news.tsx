@@ -1,0 +1,196 @@
+"use client";
+
+import Image from "next/image";
+import { useRef } from "react";
+import { ChevronRight } from "@/components/chevron-right";
+import {
+  ChevronLeft as MageArrowLeft,
+  ArrowRight as MageArrowRight,
+} from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
+import styles from "./baselane-news.module.css";
+import { InnerPageShell } from "./inner-page-shell";
+
+const coverage = [
+  [
+    "forbes",
+    "Forbes",
+    "A changing rental market",
+    "Independent perspectives on evolving investor priorities.",
+    "https://www.forbes.com/councils/forbesbusinesscouncil/2023/09/21/guide-to-rental-property-investing-trends-and-developments/?streamIndex=0",
+  ],
+  [
+    "financial-brand",
+    "The Financial Brand",
+    "The shift toward digital rent payments",
+    "Industry reading on technology in rental transactions.",
+    "https://thefinancialbrand.com/news/payments-trends/how-chase-plans-to-revolutionize-rent-payments-with-a-digital-solution-155501",
+  ],
+  [
+    "nasdaq",
+    "Nasdaq",
+    "Understanding deposit accounts",
+    "Background reading on organizing rental deposits.",
+    "https://www.nasdaq.com/articles/how-to-open-a-security-deposit-account-to-hold-rental-deposits",
+  ],
+];
+const root = "/brand/baselane-inspired/news";
+const featurePhotoSizes =
+  "(max-width: 700px) calc(100vw - 48px), (max-width: 900px) calc((100vw - 104px) * 0.524), (max-width: 1440px) calc((100vw - 164px) * 0.524), 669px";
+
+export function BaselaneNews() {
+  const track = useRef<HTMLElement>(null);
+  function move(direction: number) {
+    const element = track.current;
+    if (!element) return;
+    element.scrollBy({
+      left: direction * element.clientWidth,
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "instant"
+        : "smooth",
+    });
+  }
+  return (
+    <InnerPageShell>
+      <div className={styles.page}>
+        <header className={styles.intro}>
+          <h1 data-mixed-heading>
+            <MixedHeadingText>
+              Industry coverage and perspectives
+            </MixedHeadingText>
+          </h1>
+          <p>
+            Explore independent reporting on the property market and the tools
+            around it, alongside practical ways to connect your work with
+            innflow.
+          </p>
+        </header>
+        <div className={styles.press}>
+          <section
+            ref={track}
+            className={styles.track}
+            aria-label="Media coverage"
+            // biome-ignore lint/a11y/noNoninteractiveTabindex: This horizontal region supports keyboard scrolling.
+            tabIndex={0}
+          >
+            {coverage.map(([logo, publisher, title, description, href]) => (
+              <article className={styles.card} key={logo}>
+                <div className={styles.logo}>
+                  <Image
+                    src={`${root}/${logo}.svg`}
+                    alt={publisher}
+                    width={220}
+                    height={42}
+                  />
+                </div>
+                <div className={styles.body}>
+                  <h2 data-mixed-heading>
+                    <MixedHeadingText>{title}</MixedHeadingText>
+                  </h2>
+                  <p>{description}</p>
+                  <a href={href} target="_blank" rel="noopener noreferrer">
+                    Read the article{" "}
+                    <span aria-hidden="true">
+                      <ChevronRight />
+                    </span>
+                  </a>
+                </div>
+              </article>
+            ))}
+          </section>
+          <div className={styles.controls}>
+            <button
+              type="button"
+              onClick={() => move(-1)}
+              aria-label="Previous articles"
+            >
+              <MageArrowLeft size="1em" />
+            </button>
+            <button
+              type="button"
+              onClick={() => move(1)}
+              aria-label="Next articles"
+            >
+              <MageArrowRight size="1em" />
+            </button>
+          </div>
+        </div>
+        <section className={styles.features}>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              A closer look at connected property work
+            </MixedHeadingText>
+          </h2>
+          <article className={styles.feature}>
+            <div className={styles.visual}>
+              <Image
+                className={styles.photo}
+                src={`${root}/banking.webp`}
+                alt="An investor reviewing paperwork"
+                width={1160}
+                height={1000}
+                sizes={featurePhotoSizes}
+              />
+            </div>
+            <div className={styles.copy}>
+              <span>EXPLORE INNFLOW</span>
+              <h3 data-mixed-heading>
+                <MixedHeadingText>
+                  Operations organized around your properties
+                </MixedHeadingText>
+              </h3>
+              <p>
+                Bring recurring requests, team ownership, and property context
+                into one connected flow.
+              </p>
+              <a href="/landlord-banking">
+                Explore property operations <MageArrowRight size="1em" />
+              </a>
+            </div>
+          </article>
+          <article className={styles.feature}>
+            <div className={styles.visual}>
+              <Image
+                className={styles.photo}
+                src={`${root}/plumbing.webp`}
+                alt="A plumbing professional at work"
+                width={740}
+                height={648}
+                sizes={featurePhotoSizes}
+              />
+            </div>
+            <div className={styles.copy}>
+              <span>EXPLORE INNFLOW</span>
+              <h3 data-mixed-heading>
+                <MixedHeadingText>
+                  Keep the records behind the work together
+                </MixedHeadingText>
+              </h3>
+              <p>
+                Connect supporting documents and review notes to the requests
+                and decisions they belong to.
+              </p>
+              <a href="/landlord-accounting">
+                Explore connected records <MageArrowRight size="1em" />
+              </a>
+            </div>
+          </article>
+        </section>
+        <section className={styles.closing}>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              More perspectives on property technology
+            </MixedHeadingText>
+          </h2>
+          <p>
+            Visit the innflow blog for ideas on workflows, AI agents, and the
+            day-to-day work of running a property operation.
+          </p>
+          <a href="/blog">
+            Read the innflow blog <MageArrowRight size="1em" />
+          </a>
+        </section>
+      </div>
+    </InnerPageShell>
+  );
+}

@@ -1,0 +1,498 @@
+[
+  {
+    "source": "imgi_2_SeeUKd90Qmk0V3B6P0pE7ubxq0.png",
+    "file": "public/brand/platform/agentic-automation/hero.png",
+    "size": [
+      1152,
+      1152
+    ]
+  },
+  {
+    "source": "imgi_61_OTWLMvU6tczjdLlX8Uh0kswwUTg.jpg",
+    "file": "public/brand/platform/agentic-automation/reasoning.jpg",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_11_mn0XNnBPsUh0q22z5m1DLdP02wQ.jpg",
+    "file": "public/brand/platform/agentic-automation/variety.jpg",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_12_HaFpYX6UMairVPFzJoeUZScLys.jpg",
+    "file": "public/brand/platform/agentic-automation/integrations.jpg",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_68_FHh07HabfbgDQ2SmOsYs3Q.jpg",
+    "file": "public/brand/platform/agentic-automation/learning.jpg",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_71_tCmaFGJYtHdo46bWd0S4zqQIizw.jpg",
+    "file": "public/brand/platform/agentic-automation/evaluations.jpg",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_74_O8Omk6DY79CuNnRFfpxV3PgsQ.jpg",
+    "file": "public/brand/platform/agentic-automation/oversight.jpg",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_77_qYWofGRMpcvcqv7jFHdtmw0lUQ.jpg",
+    "file": "public/brand/platform/agentic-automation/orchestration.jpg",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_2_8scfsnlFjEbpSmZVGABpvQKLk.png",
+    "file": "public/brand/platform/self-learning/hero.png",
+    "size": [
+      1152,
+      1152
+    ]
+  },
+  {
+    "source": "imgi_8_z4KcGZHMox3urQVQPlSuXwliDU.png",
+    "file": "public/brand/platform/self-learning/hub.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_77_mMcXsCM3QksW6UNBRWqFUffYAQc.png",
+    "file": "public/brand/platform/self-learning/process.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_83_mfwIxxWJ08BtgD7hQYMfLp1JcQc.png",
+    "file": "public/brand/platform/self-learning/domain.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_12_4W8981KF9mBiW9eDrkZVZtcCsJE.png",
+    "file": "public/brand/platform/self-learning/correction.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_68_DlUGoSYA6VLMLPD0EyEJTX6JQ.png",
+    "file": "public/brand/platform/self-learning/feedback.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_71_u0QEjE4bfkNtVDI2klpg86nCg.png",
+    "file": "public/brand/platform/self-learning/validation.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_10_m1SOef2WjPx6FAs5TOaTnZf1rM.png",
+    "file": "public/brand/platform/self-learning/tracking.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_13_CAo8FZ9gdn5WOWQmU6XtFWBMUrU.png",
+    "file": "public/brand/platform/self-learning/team.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_58_PTUoNoKkL2R2nmHiP7Ad5HWo40.png",
+    "file": "public/brand/platform/evaluations/accuracy.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_80_uvHPCMmtjcqx4aG0crNzkzWPr0.png",
+    "file": "public/brand/platform/evaluations/benchmarks.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_12_i35GKFYhCSkvpuqUozBr5OqUui0.png",
+    "file": "public/brand/platform/evaluations/retry.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_71_ph0M1OQKALkul3c9G17FSpbvg.png",
+    "file": "public/brand/platform/evaluations/criteria.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_68_4uIoDF1YqbKoK8Wp6p2btecHo.png",
+    "file": "public/brand/platform/evaluations/datasets.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_9_hZUF42qcFJUbX6xu8keXPpbGAgc.png",
+    "file": "public/brand/platform/evaluations/feedback.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_65_8Sptlna1tBeOdbuyP2xUeC96XS8.png",
+    "file": "public/brand/platform/evaluations/dashboards.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_10_j1KNk3TWb7SlxyVoKFwdAwoE4.png",
+    "file": "public/brand/platform/evaluations/reporting.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_2_WcCdNw3vonpCoktWEQ6FntXuGoI.png",
+    "file": "public/brand/platform/evaluations/hero.png",
+    "size": [
+      1152,
+      1152
+    ]
+  },
+  {
+    "source": "imgi_58_QlagiWSd2ybdFc7SFFdiL6p8yKs.png",
+    "file": "public/brand/platform/analytics-and-observability/performance.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_80_VndK88wVB3LAubXueTt1fQR4kD4.png",
+    "file": "public/brand/platform/analytics-and-observability/accuracy.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_83_Xo8CqU0Cs1SgcfjCDDBwk4WFXg.png",
+    "file": "public/brand/platform/analytics-and-observability/traces.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_6_gR3V0iCCIhEepnXqyymsgR3Q.png",
+    "file": "public/brand/platform/analytics-and-observability/logs.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_68_3jh9pgSGJCGGS2BgQi0mNKjIclI.png",
+    "file": "public/brand/platform/analytics-and-observability/costs.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_71_WiSMmLzS9kDPO1xsfwlj8nrqg.png",
+    "file": "public/brand/platform/analytics-and-observability/learning.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_74_OI6B1ATTjrfPwm361Uw2zQ0krWo.png",
+    "file": "public/brand/platform/analytics-and-observability/fleet.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_77_OmPYpuN4CZpG58FYdH0vd0fVigE.png",
+    "file": "public/brand/platform/analytics-and-observability/metrics.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_2_bUzRUrPKAcH6Bn7KnLFMKSPx0Cs.png",
+    "file": "public/brand/platform/analytics-and-observability/hero.png",
+    "size": [
+      1152,
+      1152
+    ]
+  },
+  {
+    "source": "imgi_3_TpNLnIZ2RvSB1uyIE8ZIRZ23nQo.png",
+    "file": "public/brand/platform/integrations/connectors.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_90_IeWx0KtcyvEOZEGXA7rSkkoBPA.png",
+    "file": "public/brand/platform/integrations/custom.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_93_FUVyNwDbcMNa0oCR0az9FJyG5h8.png",
+    "file": "public/brand/platform/integrations/authentication.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_7_HNuNb71ShDK6pYS3CxLUi6n2rl4.png",
+    "file": "public/brand/platform/integrations/browser.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_8_GiWLnGKeZWk3SJuyUvoDkEjQds.png",
+    "file": "public/brand/platform/integrations/actions.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_9_IzbaoW1ThULPOI56l1cyw617sqM.png",
+    "file": "public/brand/platform/integrations/mcp.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_13_bKhCYlp2wMtR0rNViwFJBpCEYZc.png",
+    "file": "public/brand/platform/integrations/skills.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_14_jtvPyV6kONM9NGyKTmLhOtJLaYY.png",
+    "file": "public/brand/platform/integrations/permissions.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_65_j7lw4brnhqw2gzwYskFpoW8FOI.png",
+    "file": "public/brand/platform/integrations/hero.png",
+    "size": [
+      1152,
+      1152
+    ]
+  },
+  {
+    "source": "imgi_3_b6s7vI1x38tNaDZiJGVcpOHLgNk.jpg",
+    "file": "public/brand/platform/deployment-options/cloud.jpg",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_5_Qt97jETxxMmeeweeio58D9yBJc.jpg",
+    "file": "public/brand/platform/deployment-options/private.jpg",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_6_DIPo040DM4Qhb5JzUPRfbObNTus.jpg",
+    "file": "public/brand/platform/deployment-options/on-premise.jpg",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_9_rc4zQI8QK5hgODyZIwYB7nIViI.jpg",
+    "file": "public/brand/platform/deployment-options/models.jpg",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_73_NFxAzMfyJGBZtmqj1S7DPW86x9Q.jpg",
+    "file": "public/brand/platform/deployment-options/regions.jpg",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_85_bC0lLGrILGR5i0GuFRRwK0QI.jpg",
+    "file": "public/brand/platform/deployment-options/migration.jpg",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_8_7L3k1RXhSRWZ2SUCAMARELX9c.jpg",
+    "file": "public/brand/platform/deployment-options/governance.jpg",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_82_KKos534SNoLOFNOf64TBtiMK8.jpg",
+    "file": "public/brand/platform/deployment-options/support.jpg",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_2_x59uK1KSTP4nsiiZMQMMdHGzsc.png",
+    "file": "public/brand/platform/deployment-options/hero.png",
+    "size": [
+      1152,
+      1152
+    ]
+  },
+  {
+    "source": "imgi_3_thwWGFR7sEQe8aRcQ0vpXEHTYA.png",
+    "file": "public/brand/platform/security-and-compliance/compliance.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_11_zaMEYkauPsLkUL5AARenBU8im8.png",
+    "file": "public/brand/platform/security-and-compliance/privacy.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_12_g63bwY9E6X6XLwZj3F4GGIw5Wo.png",
+    "file": "public/brand/platform/security-and-compliance/data.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_71_sl109h8z13jg9DYeKtWQP90razI.png",
+    "file": "public/brand/platform/security-and-compliance/access.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_10_CieF9BtntIyqrZeHxULK97A1g8.png",
+    "file": "public/brand/platform/security-and-compliance/audit.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_80_C1z04wzfBg0KulkfB5wNmGL3o.png",
+    "file": "public/brand/platform/security-and-compliance/encryption.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_74_u8CBEymdDSwOHqafmicna9gCy8.png",
+    "file": "public/brand/platform/security-and-compliance/ai-security.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_77_OWAt1kKCEk7JSkL9tLAgmFtYI9k.png",
+    "file": "public/brand/platform/security-and-compliance/deployment.png",
+    "size": [
+      1600,
+      600
+    ]
+  },
+  {
+    "source": "imgi_2_Aq10KbYJyBdiiNLkNImBZTA1jk.png",
+    "file": "public/brand/platform/security-and-compliance/hero.png",
+    "size": [
+      1152,
+      1152
+    ]
+  }
+]

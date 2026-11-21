@@ -1,0 +1,11 @@
+{
+  "tool": "built-in imagegen",
+  "asset": {
+    "reference": "3:184",
+    "photo_node": "59:15",
+    "path": "/Users/ak/innflow-web/output/doorloop-baselane/storage-photo-clean-v1.png",
+    "image_hash": "63787d53c6a3da6923198e9fbee9be06e04bd371"
+  },
+  "verified_at": "2026-09-12T13:21:03.502320+00:00",
+  "verification": "Removed embedded file-type/upload cards and screen UI; preserved hands and full laptop photograph. Native library59:16 rescaled0.88, transparent with glass cleared, fitted inside blank physical display;59:36/59:43 now18px corners and soft shadows. Screenshot59:14 verified."
+}

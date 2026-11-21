@@ -1,0 +1,5263 @@
+{
+  "success": true,
+  "objects": [
+    {
+      "id": "3-20",
+      "types": [
+        "Node"
+      ],
+      "name": "R06_34"
+    },
+    {
+      "id": "3-884",
+      "types": [
+        "Node"
+      ],
+      "name": "R06_27"
+    },
+    {
+      "id": "3-1649",
+      "types": [
+        "Node"
+      ],
+      "name": "R06_20"
+    },
+    {
+      "id": "3-2356",
+      "types": [
+        "Node"
+      ],
+      "name": "R06_13"
+    },
+    {
+      "id": "3-3173",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle"
+    },
+    {
+      "id": "3-3177",
+      "types": [
+        "ClippingShape"
+      ],
+      "name": "R06_12 Dynamic clip"
+    },
+    {
+      "id": "3-3178",
+      "types": [
+        "Shape"
+      ],
+      "name": "R06_13 Dynamic clip"
+    },
+    {
+      "id": "3-3180",
+      "types": [
+        "Shape"
+      ],
+      "name": "R06_20 Dynamic clip"
+    },
+    {
+      "id": "3-3182",
+      "types": [
+        "Shape"
+      ],
+      "name": "R06_27 Dynamic clip"
+    },
+    {
+      "id": "3-3184",
+      "types": [
+        "Shape"
+      ],
+      "name": "R06_34 Dynamic clip"
+    },
+    {
+      "id": "3-19",
+      "types": [
+        "Node"
+      ],
+      "name": "R06_12",
+      "children": [
+        "3-20",
+        "3-884",
+        "3-1649",
+        "3-2356",
+        "3-3173",
+        "3-3177",
+        "3-3178",
+        "3-3180",
+        "3-3182",
+        "3-3184"
+      ]
+    },
+    {
+      "id": "3-3187",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle"
+    },
+    {
+      "id": "3-3191",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle"
+    },
+    {
+      "id": "3-3186",
+      "types": [
+        "Node"
+      ],
+      "name": "R06_11",
+      "children": [
+        "3-3187",
+        "3-3191"
+      ]
+    },
+    {
+      "id": "3-3196",
+      "types": [
+        "Node"
+      ],
+      "name": "R06_10"
+    },
+    {
+      "id": "3-3201",
+      "types": [
+        "Node"
+      ],
+      "name": "R06_9"
+    },
+    {
+      "id": "3-3206",
+      "types": [
+        "Shape"
+      ],
+      "name": "R06_8"
+    },
+    {
+      "id": "3-4401",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle"
+    },
+    {
+      "id": "3-4405",
+      "types": [
+        "ClippingShape"
+      ],
+      "name": "R06_7 Dynamic clip"
+    },
+    {
+      "id": "3-3195",
+      "types": [
+        "Node"
+      ],
+      "name": "R06_7",
+      "children": [
+        "3-3196",
+        "3-3201",
+        "3-3206",
+        "3-4401",
+        "3-4405"
+      ]
+    },
+    {
+      "id": "3-4407",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle"
+    },
+    {
+      "id": "3-4411",
+      "types": [
+        "Shape"
+      ],
+      "name": "Rectangle"
+    },
+    {
+      "id": "3-4406",
+      "types": [
+        "Node"
+      ],
+      "name": "R06_6",
+      "children": [
+        "3-4407",
+        "3-4411"
+      ]
+    },
+    {
+      "id": "3-4416",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-4415",
+      "types": [
+        "Shape"
+      ],
+      "name": "R06_7 Dynamic clip",
+      "children": [
+        "3-4416"
+      ]
+    },
+    {
+      "id": "3-4418",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "3-4417",
+      "types": [
+        "Shape"
+      ],
+      "name": "R06_12 Dynamic clip",
+      "children": [
+        "3-4418"
+      ]
+    },
+    {
+      "id": "3-18",
+      "types": [
+        "Node"
+      ],
+      "name": "R06_0",
+      "children": [
+        "3-19",
+        "3-3186",
+        "3-3195",
+        "3-4406",
+        "3-4415",
+        "3-4417"
+      ]
+    },
+    {
+      "id": "3-17",
+      "types": [
+        "Node"
+      ],
+      "name": "06 Native recurring issues",
+      "children": [
+        "3-18"
+      ]
+    },
+    {
+      "id": "3-4421",
+      "types": [
+        "SolidColor"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "3-4420",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "3-4421"
+      ],
+      "paint": {
+        "colorType": "solid",
+        "color": "#00000000"
+      }
+    },
+    {
+      "id": "0-7",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-8",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-9",
+        "stops": [
+          {
+            "id": "0-10",
+            "color": "#fff6e0b7",
+            "position": 0.0
+          },
+          {
+            "id": "0-11",
+            "color": "#fff7daad",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-12",
+            "color": "#fff8d5a4",
+            "position": 25.0
+          },
+          {
+            "id": "0-13",
+            "color": "#fff8d5a4",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-14",
+            "color": "#fff8d5a4",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-15",
+            "color": "#fff0caa1",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-16",
+            "color": "#ffc9b2ba",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-17",
+            "color": "#ff335f9d",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-6",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 64",
+      "children": [
+        "0-7",
+        "0-8"
+      ]
+    },
+    {
+      "id": "0-19",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-20",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-21",
+        "stops": [
+          {
+            "id": "0-22",
+            "color": "#fff6e1b8",
+            "position": 0.0
+          },
+          {
+            "id": "0-23",
+            "color": "#fff7dbae",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-24",
+            "color": "#fff8d5a4",
+            "position": 25.0
+          },
+          {
+            "id": "0-25",
+            "color": "#fff8d4a4",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-26",
+            "color": "#fff7d4a4",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-27",
+            "color": "#ffefc9a2",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-28",
+            "color": "#ffc8b1bb",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-29",
+            "color": "#ff34609e",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-18",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 63",
+      "children": [
+        "0-19",
+        "0-20"
+      ]
+    },
+    {
+      "id": "0-31",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-32",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-33",
+        "stops": [
+          {
+            "id": "0-34",
+            "color": "#fff6e1b9",
+            "position": 0.0
+          },
+          {
+            "id": "0-35",
+            "color": "#fff7dbaf",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-36",
+            "color": "#fff8d5a5",
+            "position": 25.0
+          },
+          {
+            "id": "0-37",
+            "color": "#fff8d4a4",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-38",
+            "color": "#fff7d3a4",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-39",
+            "color": "#ffefc8a2",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-40",
+            "color": "#ffc7b1bb",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-41",
+            "color": "#ff34619f",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-30",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 62",
+      "children": [
+        "0-31",
+        "0-32"
+      ]
+    },
+    {
+      "id": "0-43",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-44",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-45",
+        "stops": [
+          {
+            "id": "0-46",
+            "color": "#fff6e1b9",
+            "position": 0.0
+          },
+          {
+            "id": "0-47",
+            "color": "#fff7dbaf",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-48",
+            "color": "#fff8d5a5",
+            "position": 25.0
+          },
+          {
+            "id": "0-49",
+            "color": "#fff8d3a4",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-50",
+            "color": "#fff7d2a4",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-51",
+            "color": "#ffefc7a2",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-52",
+            "color": "#ffc6b0bb",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-53",
+            "color": "#ff3561a0",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-42",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 61",
+      "children": [
+        "0-43",
+        "0-44"
+      ]
+    },
+    {
+      "id": "0-55",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-56",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-57",
+        "stops": [
+          {
+            "id": "0-58",
+            "color": "#fff6e2ba",
+            "position": 0.0
+          },
+          {
+            "id": "0-59",
+            "color": "#fff7dcb0",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-60",
+            "color": "#fff8d5a5",
+            "position": 25.0
+          },
+          {
+            "id": "0-61",
+            "color": "#fff7d3a4",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-62",
+            "color": "#fff6d1a4",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-63",
+            "color": "#ffeec6a3",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-64",
+            "color": "#ffc4b0bc",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-65",
+            "color": "#ff3662a1",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-54",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 60",
+      "children": [
+        "0-55",
+        "0-56"
+      ]
+    },
+    {
+      "id": "0-67",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-68",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-69",
+        "stops": [
+          {
+            "id": "0-70",
+            "color": "#fff6e2ba",
+            "position": 0.0
+          },
+          {
+            "id": "0-71",
+            "color": "#fff7dcb0",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-72",
+            "color": "#fff8d6a6",
+            "position": 25.0
+          },
+          {
+            "id": "0-73",
+            "color": "#fff7d2a4",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-74",
+            "color": "#fff6d0a4",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-75",
+            "color": "#ffeec6a3",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-76",
+            "color": "#ffc3afbc",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-77",
+            "color": "#ff3663a2",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-66",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 59",
+      "children": [
+        "0-67",
+        "0-68"
+      ]
+    },
+    {
+      "id": "0-79",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-80",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-81",
+        "stops": [
+          {
+            "id": "0-82",
+            "color": "#fff6e2bb",
+            "position": 0.0
+          },
+          {
+            "id": "0-83",
+            "color": "#fff7dcb1",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-84",
+            "color": "#fff8d6a6",
+            "position": 25.0
+          },
+          {
+            "id": "0-85",
+            "color": "#fff7d2a4",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-86",
+            "color": "#fff5cfa5",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-87",
+            "color": "#ffeec5a4",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-88",
+            "color": "#ffc2afbd",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-89",
+            "color": "#ff3764a3",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-78",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 58",
+      "children": [
+        "0-79",
+        "0-80"
+      ]
+    },
+    {
+      "id": "0-91",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-92",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-93",
+        "stops": [
+          {
+            "id": "0-94",
+            "color": "#fff6e3bc",
+            "position": 0.0
+          },
+          {
+            "id": "0-95",
+            "color": "#fff7ddb2",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-96",
+            "color": "#fff8d6a6",
+            "position": 25.0
+          },
+          {
+            "id": "0-97",
+            "color": "#fff7d1a4",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-98",
+            "color": "#fff5cea5",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-99",
+            "color": "#ffedc4a4",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-100",
+            "color": "#ffc1aebd",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-101",
+            "color": "#ff3764a4",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-90",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 57",
+      "children": [
+        "0-91",
+        "0-92"
+      ]
+    },
+    {
+      "id": "0-103",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-104",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-105",
+        "stops": [
+          {
+            "id": "0-106",
+            "color": "#fff6e3bc",
+            "position": 0.0
+          },
+          {
+            "id": "0-107",
+            "color": "#fff7ddb2",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-108",
+            "color": "#fff7d6a6",
+            "position": 25.0
+          },
+          {
+            "id": "0-109",
+            "color": "#fff7d1a4",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-110",
+            "color": "#fff4cda5",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-111",
+            "color": "#ffedc3a4",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-112",
+            "color": "#ffbfaebe",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-113",
+            "color": "#ff3865a5",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-102",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 56",
+      "children": [
+        "0-103",
+        "0-104"
+      ]
+    },
+    {
+      "id": "0-115",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-116",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-117",
+        "stops": [
+          {
+            "id": "0-118",
+            "color": "#fff6e3bd",
+            "position": 0.0
+          },
+          {
+            "id": "0-119",
+            "color": "#fff7ddb3",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-120",
+            "color": "#fff7d6a7",
+            "position": 25.0
+          },
+          {
+            "id": "0-121",
+            "color": "#fff7d1a4",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-122",
+            "color": "#fff4cca5",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-123",
+            "color": "#ffecc2a5",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-124",
+            "color": "#ffbeaebe",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-125",
+            "color": "#ff3966a6",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-114",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 55",
+      "children": [
+        "0-115",
+        "0-116"
+      ]
+    },
+    {
+      "id": "0-127",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-128",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-129",
+        "stops": [
+          {
+            "id": "0-130",
+            "color": "#fff6e4be",
+            "position": 0.0
+          },
+          {
+            "id": "0-131",
+            "color": "#fff7deb4",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-132",
+            "color": "#fff7d6a7",
+            "position": 25.0
+          },
+          {
+            "id": "0-133",
+            "color": "#fff7d0a4",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-134",
+            "color": "#fff4caa5",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-135",
+            "color": "#ffecc1a5",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-136",
+            "color": "#ffbdadbe",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-137",
+            "color": "#ff3967a7",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-126",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 54",
+      "children": [
+        "0-127",
+        "0-128"
+      ]
+    },
+    {
+      "id": "0-139",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-140",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-141",
+        "stops": [
+          {
+            "id": "0-142",
+            "color": "#fff6e4be",
+            "position": 0.0
+          },
+          {
+            "id": "0-143",
+            "color": "#fff6deb4",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-144",
+            "color": "#fff7d6a7",
+            "position": 25.0
+          },
+          {
+            "id": "0-145",
+            "color": "#fff6d0a4",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-146",
+            "color": "#fff3c9a5",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-147",
+            "color": "#ffecc1a6",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-148",
+            "color": "#ffbcadbf",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-149",
+            "color": "#ff3a67a8",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-138",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 53",
+      "children": [
+        "0-139",
+        "0-140"
+      ]
+    },
+    {
+      "id": "0-151",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-152",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-153",
+        "stops": [
+          {
+            "id": "0-154",
+            "color": "#fff6e5bf",
+            "position": 0.0
+          },
+          {
+            "id": "0-155",
+            "color": "#fff6dfb5",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-156",
+            "color": "#fff7d6a8",
+            "position": 25.0
+          },
+          {
+            "id": "0-157",
+            "color": "#fff6cfa4",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-158",
+            "color": "#fff3c8a5",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-159",
+            "color": "#ffebc0a6",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-160",
+            "color": "#ffbaacbf",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-161",
+            "color": "#ff3b68a9",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-150",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 52",
+      "children": [
+        "0-151",
+        "0-152"
+      ]
+    },
+    {
+      "id": "0-163",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-164",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-165",
+        "stops": [
+          {
+            "id": "0-166",
+            "color": "#fff6e5bf",
+            "position": 0.0
+          },
+          {
+            "id": "0-167",
+            "color": "#fff6dfb5",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-168",
+            "color": "#fff7d6a8",
+            "position": 25.0
+          },
+          {
+            "id": "0-169",
+            "color": "#fff6cfa4",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-170",
+            "color": "#fff2c7a5",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-171",
+            "color": "#ffebbfa6",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-172",
+            "color": "#ffb9acc0",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-173",
+            "color": "#ff3b69aa",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-162",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 51",
+      "children": [
+        "0-163",
+        "0-164"
+      ]
+    },
+    {
+      "id": "0-175",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-176",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-177",
+        "stops": [
+          {
+            "id": "0-178",
+            "color": "#fff6e5c0",
+            "position": 0.0
+          },
+          {
+            "id": "0-179",
+            "color": "#fff6dfb6",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-180",
+            "color": "#fff7d7a8",
+            "position": 25.0
+          },
+          {
+            "id": "0-181",
+            "color": "#fff6cea4",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-182",
+            "color": "#fff2c6a5",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-183",
+            "color": "#ffebbea7",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-184",
+            "color": "#ffb8abc0",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-185",
+            "color": "#ff3c6aab",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-174",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 50",
+      "children": [
+        "0-175",
+        "0-176"
+      ]
+    },
+    {
+      "id": "0-187",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-188",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-189",
+        "stops": [
+          {
+            "id": "0-190",
+            "color": "#fff6e6c1",
+            "position": 0.0
+          },
+          {
+            "id": "0-191",
+            "color": "#fff6e0b7",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-192",
+            "color": "#fff7d7a8",
+            "position": 25.0
+          },
+          {
+            "id": "0-193",
+            "color": "#fff6cea4",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-194",
+            "color": "#fff1c5a5",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-195",
+            "color": "#ffeabda7",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-196",
+            "color": "#ffb7abc1",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-197",
+            "color": "#ff3d6aac",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-186",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 49",
+      "children": [
+        "0-187",
+        "0-188"
+      ]
+    },
+    {
+      "id": "0-199",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-200",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-201",
+        "stops": [
+          {
+            "id": "0-202",
+            "color": "#fff6e6c1",
+            "position": 0.0
+          },
+          {
+            "id": "0-203",
+            "color": "#fff6e0b7",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-204",
+            "color": "#fff7d7a9",
+            "position": 25.0
+          },
+          {
+            "id": "0-205",
+            "color": "#fff6cda4",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-206",
+            "color": "#fff1c4a5",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-207",
+            "color": "#ffeabda7",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-208",
+            "color": "#ffb5aac1",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-209",
+            "color": "#ff3d6bad",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-198",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 48",
+      "children": [
+        "0-199",
+        "0-200"
+      ]
+    },
+    {
+      "id": "0-211",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-212",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-213",
+        "stops": [
+          {
+            "id": "0-214",
+            "color": "#fff6e6c2",
+            "position": 0.0
+          },
+          {
+            "id": "0-215",
+            "color": "#fff6e0b8",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-216",
+            "color": "#fff7d7a9",
+            "position": 25.0
+          },
+          {
+            "id": "0-217",
+            "color": "#fff6cda4",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-218",
+            "color": "#fff1c3a5",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-219",
+            "color": "#ffe9bca8",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-220",
+            "color": "#ffb4aac1",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-221",
+            "color": "#ff3e6cae",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-210",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 47",
+      "children": [
+        "0-211",
+        "0-212"
+      ]
+    },
+    {
+      "id": "0-223",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-224",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-225",
+        "stops": [
+          {
+            "id": "0-226",
+            "color": "#fff6e7c3",
+            "position": 0.0
+          },
+          {
+            "id": "0-227",
+            "color": "#fff6e1b9",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-228",
+            "color": "#fff7d7a9",
+            "position": 25.0
+          },
+          {
+            "id": "0-229",
+            "color": "#fff5cca4",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-230",
+            "color": "#fff0c1a5",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-231",
+            "color": "#ffe9bba8",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-232",
+            "color": "#ffb3a9c2",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-233",
+            "color": "#ff3e6caf",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-222",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 46",
+      "children": [
+        "0-223",
+        "0-224"
+      ]
+    },
+    {
+      "id": "0-235",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-236",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-237",
+        "stops": [
+          {
+            "id": "0-238",
+            "color": "#fff6e7c3",
+            "position": 0.0
+          },
+          {
+            "id": "0-239",
+            "color": "#fff6e1b9",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-240",
+            "color": "#fff7d7a9",
+            "position": 25.0
+          },
+          {
+            "id": "0-241",
+            "color": "#fff5cca4",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-242",
+            "color": "#fff0c0a6",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-243",
+            "color": "#ffe9baa9",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-244",
+            "color": "#ffb2a9c2",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-245",
+            "color": "#ff3f6db0",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-234",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 45",
+      "children": [
+        "0-235",
+        "0-236"
+      ]
+    },
+    {
+      "id": "0-247",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-248",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-249",
+        "stops": [
+          {
+            "id": "0-250",
+            "color": "#fff6e7c4",
+            "position": 0.0
+          },
+          {
+            "id": "0-251",
+            "color": "#fff6e1ba",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-252",
+            "color": "#fff7d7aa",
+            "position": 25.0
+          },
+          {
+            "id": "0-253",
+            "color": "#fff5cba4",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-254",
+            "color": "#ffefbfa6",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-255",
+            "color": "#ffe8b9a9",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-256",
+            "color": "#ffb0a8c3",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-257",
+            "color": "#ff406eb1",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-246",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 44",
+      "children": [
+        "0-247",
+        "0-248"
+      ]
+    },
+    {
+      "id": "0-259",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-260",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-261",
+        "stops": [
+          {
+            "id": "0-262",
+            "color": "#fff6e8c4",
+            "position": 0.0
+          },
+          {
+            "id": "0-263",
+            "color": "#fff6e2ba",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-264",
+            "color": "#fff7d7aa",
+            "position": 25.0
+          },
+          {
+            "id": "0-265",
+            "color": "#fff5cba4",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-266",
+            "color": "#ffefbea6",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-267",
+            "color": "#ffe8b9a9",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-268",
+            "color": "#ffafa8c3",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-269",
+            "color": "#ff406fb2",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-258",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 43",
+      "children": [
+        "0-259",
+        "0-260"
+      ]
+    },
+    {
+      "id": "0-271",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-272",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-273",
+        "stops": [
+          {
+            "id": "0-274",
+            "color": "#fff6e8c5",
+            "position": 0.0
+          },
+          {
+            "id": "0-275",
+            "color": "#fff6e2bb",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-276",
+            "color": "#fff7d7aa",
+            "position": 25.0
+          },
+          {
+            "id": "0-277",
+            "color": "#fff5caa4",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-278",
+            "color": "#ffefbda6",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-279",
+            "color": "#ffe8b8aa",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-280",
+            "color": "#ffaea7c3",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-281",
+            "color": "#ff416fb3",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-270",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 42",
+      "children": [
+        "0-271",
+        "0-272"
+      ]
+    },
+    {
+      "id": "0-283",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-284",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-285",
+        "stops": [
+          {
+            "id": "0-286",
+            "color": "#fff6e8c6",
+            "position": 0.0
+          },
+          {
+            "id": "0-287",
+            "color": "#fff6e2bc",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-288",
+            "color": "#fff7d8ab",
+            "position": 25.0
+          },
+          {
+            "id": "0-289",
+            "color": "#fff5caa4",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-290",
+            "color": "#ffeebca6",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-291",
+            "color": "#ffe7b7aa",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-292",
+            "color": "#ffada7c4",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-293",
+            "color": "#ff4270b4",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-282",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 41",
+      "children": [
+        "0-283",
+        "0-284"
+      ]
+    },
+    {
+      "id": "0-295",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-296",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-297",
+        "stops": [
+          {
+            "id": "0-298",
+            "color": "#fff6e9c6",
+            "position": 0.0
+          },
+          {
+            "id": "0-299",
+            "color": "#fff6e3bc",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-300",
+            "color": "#fff6d8ab",
+            "position": 25.0
+          },
+          {
+            "id": "0-301",
+            "color": "#fff5caa4",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-302",
+            "color": "#ffeebba6",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-303",
+            "color": "#ffe7b6ab",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-304",
+            "color": "#ffaba7c4",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-305",
+            "color": "#ff4271b5",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-294",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 40",
+      "children": [
+        "0-295",
+        "0-296"
+      ]
+    },
+    {
+      "id": "0-307",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-308",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-309",
+        "stops": [
+          {
+            "id": "0-310",
+            "color": "#fff6e9c7",
+            "position": 0.0
+          },
+          {
+            "id": "0-311",
+            "color": "#fff6e3bd",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-312",
+            "color": "#fff6d8ab",
+            "position": 25.0
+          },
+          {
+            "id": "0-313",
+            "color": "#fff4c9a4",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-314",
+            "color": "#ffedbaa6",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-315",
+            "color": "#ffe6b5ab",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-316",
+            "color": "#ffaaa6c5",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-317",
+            "color": "#ff4372b6",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-306",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 39",
+      "children": [
+        "0-307",
+        "0-308"
+      ]
+    },
+    {
+      "id": "0-319",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-320",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-321",
+        "stops": [
+          {
+            "id": "0-322",
+            "color": "#fff6eac8",
+            "position": 0.0
+          },
+          {
+            "id": "0-323",
+            "color": "#fff6e4be",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-324",
+            "color": "#fff6d8ab",
+            "position": 25.0
+          },
+          {
+            "id": "0-325",
+            "color": "#fff4c9a4",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-326",
+            "color": "#ffedb9a6",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-327",
+            "color": "#ffe6b4ab",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-328",
+            "color": "#ffa9a6c5",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-329",
+            "color": "#ff4372b7",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-318",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 38",
+      "children": [
+        "0-319",
+        "0-320"
+      ]
+    },
+    {
+      "id": "0-331",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-332",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-333",
+        "stops": [
+          {
+            "id": "0-334",
+            "color": "#fff6eac8",
+            "position": 0.0
+          },
+          {
+            "id": "0-335",
+            "color": "#fff6e4be",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-336",
+            "color": "#fff6d8ac",
+            "position": 25.0
+          },
+          {
+            "id": "0-337",
+            "color": "#fff4c8a4",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-338",
+            "color": "#ffecb8a6",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-339",
+            "color": "#ffe6b4ac",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-340",
+            "color": "#ffa8a5c6",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-341",
+            "color": "#ff4473b8",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-330",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 37",
+      "children": [
+        "0-331",
+        "0-332"
+      ]
+    },
+    {
+      "id": "0-343",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-344",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-345",
+        "stops": [
+          {
+            "id": "0-346",
+            "color": "#fff6eac9",
+            "position": 0.0
+          },
+          {
+            "id": "0-347",
+            "color": "#fff6e4bf",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-348",
+            "color": "#fff6d8ac",
+            "position": 25.0
+          },
+          {
+            "id": "0-349",
+            "color": "#fff4c8a4",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-350",
+            "color": "#ffecb6a6",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-351",
+            "color": "#ffe5b3ac",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-352",
+            "color": "#ffa6a5c6",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-353",
+            "color": "#ff4574b9",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-342",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 36",
+      "children": [
+        "0-343",
+        "0-344"
+      ]
+    },
+    {
+      "id": "0-355",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-356",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-357",
+        "stops": [
+          {
+            "id": "0-358",
+            "color": "#fff6ebc9",
+            "position": 0.0
+          },
+          {
+            "id": "0-359",
+            "color": "#fff6e5bf",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-360",
+            "color": "#fff6d8ac",
+            "position": 25.0
+          },
+          {
+            "id": "0-361",
+            "color": "#fff4c7a4",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-362",
+            "color": "#ffecb5a6",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-363",
+            "color": "#ffe5b2ad",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-364",
+            "color": "#ffa5a4c6",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-365",
+            "color": "#ff4575ba",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-354",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 35",
+      "children": [
+        "0-355",
+        "0-356"
+      ]
+    },
+    {
+      "id": "0-367",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-368",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-369",
+        "stops": [
+          {
+            "id": "0-370",
+            "color": "#fff6ebca",
+            "position": 0.0
+          },
+          {
+            "id": "0-371",
+            "color": "#fff6e5c0",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-372",
+            "color": "#fff6d8ad",
+            "position": 25.0
+          },
+          {
+            "id": "0-373",
+            "color": "#fff4c7a4",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-374",
+            "color": "#ffebb4a6",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-375",
+            "color": "#ffe5b1ad",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-376",
+            "color": "#ffa4a4c7",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-377",
+            "color": "#ff4675bb",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-366",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 34",
+      "children": [
+        "0-367",
+        "0-368"
+      ]
+    },
+    {
+      "id": "0-379",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-380",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-381",
+        "stops": [
+          {
+            "id": "0-382",
+            "color": "#fff6ebcb",
+            "position": 0.0
+          },
+          {
+            "id": "0-383",
+            "color": "#fff6e5c1",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-384",
+            "color": "#fff6d8ad",
+            "position": 25.0
+          },
+          {
+            "id": "0-385",
+            "color": "#fff4c6a4",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-386",
+            "color": "#ffebb3a6",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-387",
+            "color": "#ffe4b0ad",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-388",
+            "color": "#ffa3a3c7",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-389",
+            "color": "#ff4776bc",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-378",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 33",
+      "children": [
+        "0-379",
+        "0-380"
+      ]
+    },
+    {
+      "id": "0-391",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-392",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-393",
+        "stops": [
+          {
+            "id": "0-394",
+            "color": "#fff5eccb",
+            "position": 0.0
+          },
+          {
+            "id": "0-395",
+            "color": "#fff5e6c1",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-396",
+            "color": "#fff6d9ad",
+            "position": 25.0
+          },
+          {
+            "id": "0-397",
+            "color": "#fff3c6a3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-398",
+            "color": "#ffeab2a7",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-399",
+            "color": "#ffe4b0ae",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-400",
+            "color": "#ffa1a3c8",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-401",
+            "color": "#ff4777bd",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-390",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 32",
+      "children": [
+        "0-391",
+        "0-392"
+      ]
+    },
+    {
+      "id": "0-403",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-404",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-405",
+        "stops": [
+          {
+            "id": "0-406",
+            "color": "#fff5eccc",
+            "position": 0.0
+          },
+          {
+            "id": "0-407",
+            "color": "#fff5e6c2",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-408",
+            "color": "#fff6d9ad",
+            "position": 25.0
+          },
+          {
+            "id": "0-409",
+            "color": "#fff3c5a3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-410",
+            "color": "#ffeab1a7",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-411",
+            "color": "#ffe3afae",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-412",
+            "color": "#ffa0a2c8",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-413",
+            "color": "#ff4878be",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-402",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 31",
+      "children": [
+        "0-403",
+        "0-404"
+      ]
+    },
+    {
+      "id": "0-415",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-416",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-417",
+        "stops": [
+          {
+            "id": "0-418",
+            "color": "#fff5eccd",
+            "position": 0.0
+          },
+          {
+            "id": "0-419",
+            "color": "#fff5e6c3",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-420",
+            "color": "#fff6d9ae",
+            "position": 25.0
+          },
+          {
+            "id": "0-421",
+            "color": "#fff3c5a3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-422",
+            "color": "#ffe9b0a7",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-423",
+            "color": "#ffe3aeae",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-424",
+            "color": "#ff9fa2c9",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-425",
+            "color": "#ff4878bf",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-414",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 30",
+      "children": [
+        "0-415",
+        "0-416"
+      ]
+    },
+    {
+      "id": "0-427",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-428",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-429",
+        "stops": [
+          {
+            "id": "0-430",
+            "color": "#fff5edcd",
+            "position": 0.0
+          },
+          {
+            "id": "0-431",
+            "color": "#fff5e7c3",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-432",
+            "color": "#fff6d9ae",
+            "position": 25.0
+          },
+          {
+            "id": "0-433",
+            "color": "#fff3c4a3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-434",
+            "color": "#ffe9afa7",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-435",
+            "color": "#ffe3adaf",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-436",
+            "color": "#ff9ea1c9",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-437",
+            "color": "#ff4979c0",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-426",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 29",
+      "children": [
+        "0-427",
+        "0-428"
+      ]
+    },
+    {
+      "id": "0-439",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-440",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-441",
+        "stops": [
+          {
+            "id": "0-442",
+            "color": "#fff5edce",
+            "position": 0.0
+          },
+          {
+            "id": "0-443",
+            "color": "#fff5e7c4",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-444",
+            "color": "#fff6d9ae",
+            "position": 25.0
+          },
+          {
+            "id": "0-445",
+            "color": "#fff3c4a3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-446",
+            "color": "#ffe9ada7",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-447",
+            "color": "#ffe2acaf",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-448",
+            "color": "#ff9ca1c9",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-449",
+            "color": "#ff4a7ac1",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-438",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 28",
+      "children": [
+        "0-439",
+        "0-440"
+      ]
+    },
+    {
+      "id": "0-451",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-452",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-453",
+        "stops": [
+          {
+            "id": "0-454",
+            "color": "#fff5edce",
+            "position": 0.0
+          },
+          {
+            "id": "0-455",
+            "color": "#fff5e7c4",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-456",
+            "color": "#fff6d9af",
+            "position": 25.0
+          },
+          {
+            "id": "0-457",
+            "color": "#fff3c3a3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-458",
+            "color": "#ffe8aca7",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-459",
+            "color": "#ffe2acb0",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-460",
+            "color": "#ff9ba0ca",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-461",
+            "color": "#ff4a7ac2",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-450",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 27",
+      "children": [
+        "0-451",
+        "0-452"
+      ]
+    },
+    {
+      "id": "0-463",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-464",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-465",
+        "stops": [
+          {
+            "id": "0-466",
+            "color": "#fff5eecf",
+            "position": 0.0
+          },
+          {
+            "id": "0-467",
+            "color": "#fff5e8c5",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-468",
+            "color": "#fff6d9af",
+            "position": 25.0
+          },
+          {
+            "id": "0-469",
+            "color": "#fff3c3a3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-470",
+            "color": "#ffe8aba7",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-471",
+            "color": "#ffe2abb0",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-472",
+            "color": "#ff9aa0ca",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-473",
+            "color": "#ff4b7bc3",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-462",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 26",
+      "children": [
+        "0-463",
+        "0-464"
+      ]
+    },
+    {
+      "id": "0-475",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-476",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-477",
+        "stops": [
+          {
+            "id": "0-478",
+            "color": "#fff5eed0",
+            "position": 0.0
+          },
+          {
+            "id": "0-479",
+            "color": "#fff5e8c6",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-480",
+            "color": "#fff6d9af",
+            "position": 25.0
+          },
+          {
+            "id": "0-481",
+            "color": "#fff2c2a3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-482",
+            "color": "#ffe7aaa7",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-483",
+            "color": "#ffe1aab0",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-484",
+            "color": "#ff999fcb",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-485",
+            "color": "#ff4c7cc4",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-474",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 25",
+      "children": [
+        "0-475",
+        "0-476"
+      ]
+    },
+    {
+      "id": "0-487",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-488",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-489",
+        "stops": [
+          {
+            "id": "0-490",
+            "color": "#fff5efd0",
+            "position": 0.0
+          },
+          {
+            "id": "0-491",
+            "color": "#fff5e9c6",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-492",
+            "color": "#fff5d9af",
+            "position": 25.0
+          },
+          {
+            "id": "0-493",
+            "color": "#fff2c2a3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-494",
+            "color": "#ffe7a9a7",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-495",
+            "color": "#ffe1a9b1",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-496",
+            "color": "#ff979fcb",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-497",
+            "color": "#ff4c7dc5",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-486",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 24",
+      "children": [
+        "0-487",
+        "0-488"
+      ]
+    },
+    {
+      "id": "0-499",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-500",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-501",
+        "stops": [
+          {
+            "id": "0-502",
+            "color": "#fff5efd1",
+            "position": 0.0
+          },
+          {
+            "id": "0-503",
+            "color": "#fff5e9c7",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-504",
+            "color": "#fff5dab0",
+            "position": 25.0
+          },
+          {
+            "id": "0-505",
+            "color": "#fff2c2a3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-506",
+            "color": "#ffe6a8a7",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-507",
+            "color": "#ffe0a8b1",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-508",
+            "color": "#ff969fcc",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-509",
+            "color": "#ff4d7dc6",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-498",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 23",
+      "children": [
+        "0-499",
+        "0-500"
+      ]
+    },
+    {
+      "id": "0-511",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-512",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-513",
+        "stops": [
+          {
+            "id": "0-514",
+            "color": "#fff5efd2",
+            "position": 0.0
+          },
+          {
+            "id": "0-515",
+            "color": "#fff5e9c8",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-516",
+            "color": "#fff5dab0",
+            "position": 25.0
+          },
+          {
+            "id": "0-517",
+            "color": "#fff2c1a3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-518",
+            "color": "#ffe6a7a7",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-519",
+            "color": "#ffe0a7b2",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-520",
+            "color": "#ff959ecc",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-521",
+            "color": "#ff4d7ec7",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-510",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 22",
+      "children": [
+        "0-511",
+        "0-512"
+      ]
+    },
+    {
+      "id": "0-523",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-524",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-525",
+        "stops": [
+          {
+            "id": "0-526",
+            "color": "#fff5f0d2",
+            "position": 0.0
+          },
+          {
+            "id": "0-527",
+            "color": "#fff5eac8",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-528",
+            "color": "#fff5dab0",
+            "position": 25.0
+          },
+          {
+            "id": "0-529",
+            "color": "#fff2c1a3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-530",
+            "color": "#ffe6a6a7",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-531",
+            "color": "#ffe0a7b2",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-532",
+            "color": "#ff949ecc",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-533",
+            "color": "#ff4e7fc8",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-522",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 21",
+      "children": [
+        "0-523",
+        "0-524"
+      ]
+    },
+    {
+      "id": "0-535",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-536",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-537",
+        "stops": [
+          {
+            "id": "0-538",
+            "color": "#fff5f0d3",
+            "position": 0.0
+          },
+          {
+            "id": "0-539",
+            "color": "#fff5eac9",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-540",
+            "color": "#fff5dab1",
+            "position": 25.0
+          },
+          {
+            "id": "0-541",
+            "color": "#fff2c0a3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-542",
+            "color": "#ffe5a5a7",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-543",
+            "color": "#ffdfa6b2",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-544",
+            "color": "#ff929dcd",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-545",
+            "color": "#ff4f80c9",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-534",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 20",
+      "children": [
+        "0-535",
+        "0-536"
+      ]
+    },
+    {
+      "id": "0-547",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-548",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-549",
+        "stops": [
+          {
+            "id": "0-550",
+            "color": "#fff5f0d3",
+            "position": 0.0
+          },
+          {
+            "id": "0-551",
+            "color": "#fff5eac9",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-552",
+            "color": "#fff5dab1",
+            "position": 25.0
+          },
+          {
+            "id": "0-553",
+            "color": "#fff2c0a3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-554",
+            "color": "#ffe5a4a8",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-555",
+            "color": "#ffdfa5b3",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-556",
+            "color": "#ff919dcd",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-557",
+            "color": "#ff4f80ca",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-546",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 19",
+      "children": [
+        "0-547",
+        "0-548"
+      ]
+    },
+    {
+      "id": "0-559",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-560",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-561",
+        "stops": [
+          {
+            "id": "0-562",
+            "color": "#fff5f1d4",
+            "position": 0.0
+          },
+          {
+            "id": "0-563",
+            "color": "#fff5ebca",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-564",
+            "color": "#fff5dab1",
+            "position": 25.0
+          },
+          {
+            "id": "0-565",
+            "color": "#fff1bfa3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-566",
+            "color": "#ffe4a2a8",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-567",
+            "color": "#ffdfa4b3",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-568",
+            "color": "#ff909cce",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-569",
+            "color": "#ff5081cb",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-558",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 18",
+      "children": [
+        "0-559",
+        "0-560"
+      ]
+    },
+    {
+      "id": "0-571",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-572",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-573",
+        "stops": [
+          {
+            "id": "0-574",
+            "color": "#fff5f1d5",
+            "position": 0.0
+          },
+          {
+            "id": "0-575",
+            "color": "#fff5ebcb",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-576",
+            "color": "#fff5dab1",
+            "position": 25.0
+          },
+          {
+            "id": "0-577",
+            "color": "#fff1bfa3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-578",
+            "color": "#ffe4a1a8",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-579",
+            "color": "#ffdea3b4",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-580",
+            "color": "#ff8f9cce",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-581",
+            "color": "#ff5182cc",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-570",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 17",
+      "children": [
+        "0-571",
+        "0-572"
+      ]
+    },
+    {
+      "id": "0-583",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-584",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-585",
+        "stops": [
+          {
+            "id": "0-586",
+            "color": "#fff5f1d5",
+            "position": 0.0
+          },
+          {
+            "id": "0-587",
+            "color": "#fff5ebcb",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-588",
+            "color": "#fff5dab2",
+            "position": 25.0
+          },
+          {
+            "id": "0-589",
+            "color": "#fff1bea3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-590",
+            "color": "#ffe4a0a8",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-591",
+            "color": "#ffdea3b4",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-592",
+            "color": "#ff8d9bce",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-593",
+            "color": "#ff5183cd",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-582",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 16",
+      "children": [
+        "0-583",
+        "0-584"
+      ]
+    },
+    {
+      "id": "0-595",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-596",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-597",
+        "stops": [
+          {
+            "id": "0-598",
+            "color": "#fff5f2d6",
+            "position": 0.0
+          },
+          {
+            "id": "0-599",
+            "color": "#fff5eccc",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-600",
+            "color": "#fff5dab2",
+            "position": 25.0
+          },
+          {
+            "id": "0-601",
+            "color": "#fff1bea3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-602",
+            "color": "#ffe39fa8",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-603",
+            "color": "#ffdda2b4",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-604",
+            "color": "#ff8c9bcf",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-605",
+            "color": "#ff5283ce",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-594",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 15",
+      "children": [
+        "0-595",
+        "0-596"
+      ]
+    },
+    {
+      "id": "0-607",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-608",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-609",
+        "stops": [
+          {
+            "id": "0-610",
+            "color": "#fff5f2d7",
+            "position": 0.0
+          },
+          {
+            "id": "0-611",
+            "color": "#fff5eccd",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-612",
+            "color": "#fff5dbb2",
+            "position": 25.0
+          },
+          {
+            "id": "0-613",
+            "color": "#fff1bda3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-614",
+            "color": "#ffe39ea8",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-615",
+            "color": "#ffdda1b5",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-616",
+            "color": "#ff8b9acf",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-617",
+            "color": "#ff5284cf",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-606",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 14",
+      "children": [
+        "0-607",
+        "0-608"
+      ]
+    },
+    {
+      "id": "0-619",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-620",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-621",
+        "stops": [
+          {
+            "id": "0-622",
+            "color": "#fff5f2d7",
+            "position": 0.0
+          },
+          {
+            "id": "0-623",
+            "color": "#fff5eccd",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-624",
+            "color": "#fff5dbb2",
+            "position": 25.0
+          },
+          {
+            "id": "0-625",
+            "color": "#fff1bda3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-626",
+            "color": "#ffe29da8",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-627",
+            "color": "#ffdda0b5",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-628",
+            "color": "#ff8a9ad0",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-629",
+            "color": "#ff5385d0",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-618",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 13",
+      "children": [
+        "0-619",
+        "0-620"
+      ]
+    },
+    {
+      "id": "0-631",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-632",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-633",
+        "stops": [
+          {
+            "id": "0-634",
+            "color": "#fff5f3d8",
+            "position": 0.0
+          },
+          {
+            "id": "0-635",
+            "color": "#fff5edce",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-636",
+            "color": "#fff5dbb3",
+            "position": 25.0
+          },
+          {
+            "id": "0-637",
+            "color": "#fff1bca3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-638",
+            "color": "#ffe29ca8",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-639",
+            "color": "#ffdc9fb5",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-640",
+            "color": "#ff8899d0",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-641",
+            "color": "#ff5485d1",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-630",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 12",
+      "children": [
+        "0-631",
+        "0-632"
+      ]
+    },
+    {
+      "id": "0-643",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-644",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-645",
+        "stops": [
+          {
+            "id": "0-646",
+            "color": "#fff5f3d8",
+            "position": 0.0
+          },
+          {
+            "id": "0-647",
+            "color": "#fff4edce",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-648",
+            "color": "#fff5dbb3",
+            "position": 25.0
+          },
+          {
+            "id": "0-649",
+            "color": "#fff0bca3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-650",
+            "color": "#ffe19ba8",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-651",
+            "color": "#ffdc9fb6",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-652",
+            "color": "#ff8799d1",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-653",
+            "color": "#ff5486d2",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-642",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 11",
+      "children": [
+        "0-643",
+        "0-644"
+      ]
+    },
+    {
+      "id": "0-655",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-656",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-657",
+        "stops": [
+          {
+            "id": "0-658",
+            "color": "#fff5f4d9",
+            "position": 0.0
+          },
+          {
+            "id": "0-659",
+            "color": "#fff4eecf",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-660",
+            "color": "#fff5dbb3",
+            "position": 25.0
+          },
+          {
+            "id": "0-661",
+            "color": "#fff0bba3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-662",
+            "color": "#ffe199a8",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-663",
+            "color": "#ffdc9eb6",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-664",
+            "color": "#ff8698d1",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-665",
+            "color": "#ff5587d3",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-654",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 10",
+      "children": [
+        "0-655",
+        "0-656"
+      ]
+    },
+    {
+      "id": "0-667",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-668",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-669",
+        "stops": [
+          {
+            "id": "0-670",
+            "color": "#fff5f4da",
+            "position": 0.0
+          },
+          {
+            "id": "0-671",
+            "color": "#fff4eed0",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-672",
+            "color": "#fff5dbb4",
+            "position": 25.0
+          },
+          {
+            "id": "0-673",
+            "color": "#fff0bba3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-674",
+            "color": "#ffe198a8",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-675",
+            "color": "#ffdb9db7",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-676",
+            "color": "#ff8598d1",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-677",
+            "color": "#ff5688d4",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-666",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 09",
+      "children": [
+        "0-667",
+        "0-668"
+      ]
+    },
+    {
+      "id": "0-679",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-680",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-681",
+        "stops": [
+          {
+            "id": "0-682",
+            "color": "#fff5f4da",
+            "position": 0.0
+          },
+          {
+            "id": "0-683",
+            "color": "#fff4eed0",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-684",
+            "color": "#fff4dbb4",
+            "position": 25.0
+          },
+          {
+            "id": "0-685",
+            "color": "#fff0bba3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-686",
+            "color": "#ffe097a8",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-687",
+            "color": "#ffdb9cb7",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-688",
+            "color": "#ff8398d2",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-689",
+            "color": "#ff5688d5",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-678",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 08",
+      "children": [
+        "0-679",
+        "0-680"
+      ]
+    },
+    {
+      "id": "0-691",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-692",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-693",
+        "stops": [
+          {
+            "id": "0-694",
+            "color": "#fff5f5db",
+            "position": 0.0
+          },
+          {
+            "id": "0-695",
+            "color": "#fff4efd1",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-696",
+            "color": "#fff4dbb4",
+            "position": 25.0
+          },
+          {
+            "id": "0-697",
+            "color": "#fff0baa3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-698",
+            "color": "#ffe096a8",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-699",
+            "color": "#ffda9bb7",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-700",
+            "color": "#ff8297d2",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-701",
+            "color": "#ff5789d6",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-690",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 07",
+      "children": [
+        "0-691",
+        "0-692"
+      ]
+    },
+    {
+      "id": "0-703",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-704",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-705",
+        "stops": [
+          {
+            "id": "0-706",
+            "color": "#fff5f5dc",
+            "position": 0.0
+          },
+          {
+            "id": "0-707",
+            "color": "#fff4efd2",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-708",
+            "color": "#fff4dbb4",
+            "position": 25.0
+          },
+          {
+            "id": "0-709",
+            "color": "#fff0baa3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-710",
+            "color": "#ffdf95a9",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-711",
+            "color": "#ffda9ab8",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-712",
+            "color": "#ff8197d3",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-713",
+            "color": "#ff588ad7",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-702",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 06",
+      "children": [
+        "0-703",
+        "0-704"
+      ]
+    },
+    {
+      "id": "0-715",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-716",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-717",
+        "stops": [
+          {
+            "id": "0-718",
+            "color": "#fff5f5dc",
+            "position": 0.0
+          },
+          {
+            "id": "0-719",
+            "color": "#fff4efd2",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-720",
+            "color": "#fff4dcb5",
+            "position": 25.0
+          },
+          {
+            "id": "0-721",
+            "color": "#fff0b9a3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-722",
+            "color": "#ffdf94a9",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-723",
+            "color": "#ffda9ab8",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-724",
+            "color": "#ff8096d3",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-725",
+            "color": "#ff588bd8",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-714",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 05",
+      "children": [
+        "0-715",
+        "0-716"
+      ]
+    },
+    {
+      "id": "0-727",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-728",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-729",
+        "stops": [
+          {
+            "id": "0-730",
+            "color": "#fff5f6dd",
+            "position": 0.0
+          },
+          {
+            "id": "0-731",
+            "color": "#fff4f0d3",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-732",
+            "color": "#fff4dcb5",
+            "position": 25.0
+          },
+          {
+            "id": "0-733",
+            "color": "#ffefb9a3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-734",
+            "color": "#ffde93a9",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-735",
+            "color": "#ffd999b9",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-736",
+            "color": "#ff7e96d4",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-737",
+            "color": "#ff598bd9",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-726",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 04",
+      "children": [
+        "0-727",
+        "0-728"
+      ]
+    },
+    {
+      "id": "0-739",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-740",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-741",
+        "stops": [
+          {
+            "id": "0-742",
+            "color": "#fff5f6dd",
+            "position": 0.0
+          },
+          {
+            "id": "0-743",
+            "color": "#fff4f0d3",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-744",
+            "color": "#fff4dcb5",
+            "position": 25.0
+          },
+          {
+            "id": "0-745",
+            "color": "#ffefb8a3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-746",
+            "color": "#ffde92a9",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-747",
+            "color": "#ffd998b9",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-748",
+            "color": "#ff7d95d4",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-749",
+            "color": "#ff598cda",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-738",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 03",
+      "children": [
+        "0-739",
+        "0-740"
+      ]
+    },
+    {
+      "id": "0-751",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-752",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-753",
+        "stops": [
+          {
+            "id": "0-754",
+            "color": "#fff5f6de",
+            "position": 0.0
+          },
+          {
+            "id": "0-755",
+            "color": "#fff4f0d4",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-756",
+            "color": "#fff4dcb6",
+            "position": 25.0
+          },
+          {
+            "id": "0-757",
+            "color": "#ffefb8a3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-758",
+            "color": "#ffde91a9",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-759",
+            "color": "#ffd997b9",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-760",
+            "color": "#ff7c95d4",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-761",
+            "color": "#ff5a8ddb",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-750",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 02",
+      "children": [
+        "0-751",
+        "0-752"
+      ]
+    },
+    {
+      "id": "0-763",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path"
+    },
+    {
+      "id": "0-764",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-765",
+        "stops": [
+          {
+            "id": "0-766",
+            "color": "#fff5f7df",
+            "position": 0.0
+          },
+          {
+            "id": "0-767",
+            "color": "#fff4f1d5",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-768",
+            "color": "#fff4dcb6",
+            "position": 25.0
+          },
+          {
+            "id": "0-769",
+            "color": "#ffefb7a3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-770",
+            "color": "#ffdd90a9",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-771",
+            "color": "#ffd896ba",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-772",
+            "color": "#ff7b94d5",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-773",
+            "color": "#ff5b8edc",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-762",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar horizontal blend / 01",
+      "children": [
+        "0-763",
+        "0-764"
+      ]
+    },
+    {
+      "id": "0-5",
+      "types": [
+        "Node"
+      ],
+      "name": "Warm side blend",
+      "children": [
+        "0-6",
+        "0-18",
+        "0-30",
+        "0-42",
+        "0-54",
+        "0-66",
+        "0-78",
+        "0-90",
+        "0-102",
+        "0-114",
+        "0-126",
+        "0-138",
+        "0-150",
+        "0-162",
+        "0-174",
+        "0-186",
+        "0-198",
+        "0-210",
+        "0-222",
+        "0-234",
+        "0-246",
+        "0-258",
+        "0-270",
+        "0-282",
+        "0-294",
+        "0-306",
+        "0-318",
+        "0-330",
+        "0-342",
+        "0-354",
+        "0-366",
+        "0-378",
+        "0-390",
+        "0-402",
+        "0-414",
+        "0-426",
+        "0-438",
+        "0-450",
+        "0-462",
+        "0-474",
+        "0-486",
+        "0-498",
+        "0-510",
+        "0-522",
+        "0-534",
+        "0-546",
+        "0-558",
+        "0-570",
+        "0-582",
+        "0-594",
+        "0-606",
+        "0-618",
+        "0-630",
+        "0-642",
+        "0-654",
+        "0-666",
+        "0-678",
+        "0-690",
+        "0-702",
+        "0-714",
+        "0-726",
+        "0-738",
+        "0-750",
+        "0-762"
+      ]
+    },
+    {
+      "id": "0-775",
+      "types": [
+        "Rectangle"
+      ],
+      "name": "Path",
+      "children": []
+    },
+    {
+      "id": "0-777",
+      "types": [
+        "LinearGradient"
+      ],
+      "name": "Component"
+    },
+    {
+      "id": "0-776",
+      "types": [
+        "Fill"
+      ],
+      "name": "Fill 1",
+      "children": [
+        "0-777"
+      ],
+      "paint": {
+        "colorType": "linear",
+        "gradientId": "0-777",
+        "stops": [
+          {
+            "id": "0-778",
+            "color": "#fff5f7df",
+            "position": 0.0
+          },
+          {
+            "id": "0-779",
+            "color": "#fff4f1d5",
+            "position": 13.793103396892548
+          },
+          {
+            "id": "0-780",
+            "color": "#fff4dcb6",
+            "position": 25.0
+          },
+          {
+            "id": "0-781",
+            "color": "#ffefb7a3",
+            "position": 34.48275923728943
+          },
+          {
+            "id": "0-782",
+            "color": "#ffdd8fa9",
+            "position": 51.724135875701904
+          },
+          {
+            "id": "0-783",
+            "color": "#ffd896ba",
+            "position": 68.96551847457886
+          },
+          {
+            "id": "0-784",
+            "color": "#ff7a94d5",
+            "position": 86.20689511299133
+          },
+          {
+            "id": "0-785",
+            "color": "#ff5b8edd",
+            "position": 100.0
+          }
+        ],
+        "startX": 0.0,
+        "startY": -415.0,
+        "endX": 0.0,
+        "endY": 415.0
+      }
+    },
+    {
+      "id": "0-774",
+      "types": [
+        "Shape"
+      ],
+      "name": "Solar / Rose to blue base",
+      "children": [
+        "0-775",
+        "0-776"
+      ]
+    },
+    {
+      "id": "0-4",
+      "types": [
+        "Node"
+      ],
+      "name": "Shared gradient / Solar / CMS template",
+      "children": [
+        "0-5",
+        "0-774"
+      ]
+    },
+    {
+      "id": "3-4419",
+      "types": [
+        "LayoutComponentStyle"
+      ],
+      "name": "Layout Style"
+    },
+    {
+      "id": "3-16",
+      "types": [
+        "Artboard"
+      ],
+      "name": "06 / Learn what keeps coming up / Final cut",
+      "children": [
+        "3-17",
+        "3-4420",
+        "0-4",
+        "3-4419"
+      ]
+    }
+  ]
+}

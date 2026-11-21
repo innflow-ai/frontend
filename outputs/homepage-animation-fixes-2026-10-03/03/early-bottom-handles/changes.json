@@ -1,0 +1,27 @@
+{
+  "fileId": 2626295,
+  "handles": [
+    "0-9054",
+    "0-9047"
+  ],
+  "revealFrames": [
+    209,
+    228
+  ],
+  "previousRevealFrames": [
+    340,
+    367
+  ],
+  "orientationDegrees": 90,
+  "bottomHandlesVisibleBeforeReorder": true,
+  "reorderFrames": [
+    426,
+    463
+  ],
+  "duration": 27.6,
+  "keyframesAdded": 948,
+  "keyframesDeleted": 156,
+  "runtimeBytes": 915023,
+  "runtimeSha256": "8092d95ad1acb441ee047d44418cc9871a5695dc29ce8b2c1832fc87572650bc",
+  "editableBytes": 4953054
+}

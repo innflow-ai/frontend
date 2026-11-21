@@ -1,0 +1,50 @@
+[
+  {
+    "id": "3ea0ac1b-d32e-8117-9c5e-c988dea246d7",
+    "title": "Zapier Vs. Tray.AI Comparison: Enterprise Automation",
+    "before": "Comparison (w/o innflow)",
+    "after": "Comparison (w/o innflow)",
+    "changed": false,
+    "verified": true
+  },
+  {
+    "id": "3e90ac1b-d32e-8188-ac9d-cbb3ac7f6cff",
+    "title": "Innflow + Gmail: 7 Tips for Inbox Triage and Better Reply Drafts",
+    "before": "Integration",
+    "after": "Integration",
+    "changed": false,
+    "verified": true
+  },
+  {
+    "id": "3d40ac1b-d32e-81f0-996f-d6ec9bb6fbd4",
+    "title": "AI Features vs AI Operations for Property Managers",
+    "before": "Uncatagorized",
+    "after": "Comparison",
+    "changed": true,
+    "verified": true
+  },
+  {
+    "id": "3d10ac1b-d32e-810d-ad2d-f0bd0e8365d5",
+    "title": "Governed AI tools for property ops: what Innflow agents can and cannot do",
+    "before": "Uncatagorized",
+    "after": "Security & Governance",
+    "changed": true,
+    "verified": true
+  },
+  {
+    "id": "3d10ac1b-d32e-816f-b99a-e56752a173ee",
+    "title": "Model flexibility without lock-in for property automation stacks",
+    "before": "Uncatagorized",
+    "after": "AI Models",
+    "changed": true,
+    "verified": true
+  },
+  {
+    "id": "3d10ac1b-d32e-817f-8ece-e6b9280af50e",
+    "title": "Giving AI agents reliable app access (MCP-style) for property workflows",
+    "before": "Uncatagorized",
+    "after": "Integration",
+    "changed": true,
+    "verified": true
+  }
+]

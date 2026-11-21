@@ -1,0 +1,16 @@
+{
+  "tool": "built-in imagegen",
+  "asset": {
+    "reference": "3:36",
+    "photo_node": "139:2",
+    "path": "/Users/ak/innflow-web/output/doorloop-baselane/inspections-hands-clean-v1.png",
+    "image_hash": "71caabeb5fab00255c87ad5026537b20159f8703",
+    "foreground_nodes": [
+      "141:2",
+      "141:3"
+    ]
+  },
+  "verified_at": "2026-09-12T13:39:07.338644+00:00",
+  "verification": "Inspection phones reference3:36: cleaned baked source background phones and central UI, restored hands/blank phone on sage background. Updated139:2 and hand masks141:2/141:3 with clean hash; tightened left hand vector silhouette. Retained editable five phone interfaces and raised condition selector. Close-up18:188 verified old blue/source UI fragments removed; full sheet placement inspected. Minor hand-edge antialiasing remains for final visual review.",
+  "limitation": "Reference-derived photo cleanup, no actor replacement or rights-clearance claim."
+}

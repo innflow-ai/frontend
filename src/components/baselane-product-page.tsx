@@ -1,0 +1,251 @@
+import Image from "next/image";
+import googleCtaStyles from "@/components/google-cta.module.css";
+import { GoogleCtaContent } from "@/components/google-cta-content";
+import {
+  ArrowRight,
+  CheckCircle,
+  FileRecords as Files,
+  Share as FlowArrow,
+  Plus as MagePlus,
+  ShieldCheck,
+} from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
+import { siteConfig } from "@/config/site";
+import { getPageFaqTuples } from "@/lib/faqs";
+import {
+  type ProductPageKind,
+  productContent,
+} from "./baselane-product-content";
+import styles from "./baselane-product-page.module.css";
+import { InnerPageShell } from "./inner-page-shell";
+import { FeatureTestimonials } from "./page-testimonials";
+import { ProductHeadspaceCta } from "./product-headspace-cta";
+import { ScrollStory } from "./scroll-story";
+
+function Scene({
+  root,
+  name,
+  priority = false,
+}: {
+  root: string;
+  name: string;
+  priority?: boolean;
+}) {
+  return (
+    <picture className={styles.scene}>
+      <source media="(max-width:700px)" srcSet={`${root}${name}-mobile.webp`} />
+      <Image
+        src={`${root}${name}-desktop.webp`}
+        alt=""
+        fill
+        sizes="100vw"
+        preload={priority}
+      />
+    </picture>
+  );
+}
+function Actions() {
+  return (
+    <div className={styles.actions}>
+      <a
+        data-site-cta="primary"
+        href={siteConfig.signupUrl}
+        className={styles.google}
+      >
+        <GoogleCtaContent />
+      </a>
+      <a data-site-cta="secondary" href={siteConfig.demoUrl} className={styles.demo}>
+        See demo <ArrowRight size={18} />
+      </a>
+    </div>
+  );
+}
+export async function BaselaneProductPage({
+  kind,
+  showBand = true,
+}: {
+  kind: ProductPageKind;
+  showBand?: boolean;
+}) {
+  const data = productContent[kind];
+  const cmsFaqs = await getPageFaqTuples(
+    kind === "accounting" ? "/landlord-accounting" : `/${kind}`,
+    data.faqs,
+  );
+  const root = `/brand/baselane-inspired/${kind}/`;
+  const icons = [FlowArrow, CheckCircle, Files, ShieldCheck];
+  const renderPanel = (
+    p: (typeof data.panels)[number],
+    i: number,
+    includeId = true,
+  ) => {
+    const Icon = icons[i];
+    return (
+      <section
+        id={includeId ? p.id : undefined}
+        key={p.id}
+        className={styles.panel}
+      >
+        <Scene root={root} name={`solutions-${p.image}-bg`} />
+        <span className={styles.label}>
+          <Icon size={15} />
+          {p.label}
+        </span>
+        <div className={styles.panelCopy}>
+          <h3 data-mixed-heading>
+            <MixedHeadingText>{p.title}</MixedHeadingText>
+          </h3>
+          <p>{p.text}</p>
+        </div>
+        <div className={styles.product}>
+          <small>ILLUSTRATIVE WORKSPACE</small>
+          <h4>{p.preview}</h4>
+          {p.rows.map((row, j) => (
+            <div className={styles.productRow} key={row}>
+              <span>{j + 1}</span>
+              <p>{row}</p>
+              <CheckCircle size={18} />
+            </div>
+          ))}
+          <div className={styles.productFoot}>
+            <span>Connected to your team</span>
+            <FlowArrow size={17} />
+          </div>
+        </div>
+      </section>
+    );
+  };
+  const additionalFeatures = (
+    <div
+      id="additional-features"
+      key="additional-features"
+      className={styles.features}
+    >
+      {data.features.map(([title, text], i) => {
+        const Icon = icons[i % icons.length];
+        return (
+          <article key={title}>
+            <h3 data-mixed-heading>
+              <Icon size={21} />
+              <MixedHeadingText>{title}</MixedHeadingText>
+            </h3>
+            <p>{text}</p>
+          </article>
+        );
+      })}
+    </div>
+  );
+  const staticSolutions = (
+    <div className={styles.solutionLayout}>
+      <nav aria-label="On this page" className={styles.sectionNav}>
+        {data.panels.map((p) => (
+          <a key={p.id} href={`#${p.id}`}>
+            {p.label}
+            <ArrowRight size={16} />
+          </a>
+        ))}
+        <a href="#additional-features">
+          Additional features
+          <ArrowRight size={16} />
+        </a>
+      </nav>
+      <div className={styles.panels}>
+        {data.panels.map((p, i) => renderPanel(p, i))}
+        {additionalFeatures}
+      </div>
+    </div>
+  );
+  return (
+    <InnerPageShell>
+      <div
+        className={
+          kind === "rent-collection" ? styles.rentCollection : undefined
+        }
+      >
+        <section className={styles.hero}>
+          <Scene root={root} name="hero" priority />
+          <div className={styles.heroCopy}>
+            <h1 data-mixed-heading>
+              <MixedHeadingText>{data.title}</MixedHeadingText>
+            </h1>
+            <p>{data.description}</p>
+            {kind === "rent-collection" ? (
+              <>
+                <a
+                  data-site-cta="primary"
+                  className={`${styles.heroGoogle} ${googleCtaStyles.cream}`}
+                  href={siteConfig.signupUrl}
+                >
+                  <GoogleCtaContent />
+                </a>
+                <small className={styles.heroDisclaimer}>
+                  By continuing, you agree to our{" "}
+                  <a href="/legal/terms-of-service">Terms of Service</a> and
+                  acknowledge our{" "}
+                  <a href="/legal/privacy-policy">Privacy Policy</a>.
+                </small>
+              </>
+            ) : (
+              <Actions />
+            )}
+          </div>
+        </section>
+        {data.band && showBand && (
+          <div className={styles.band}>
+            <a href="/short-term-rentals">
+              Explore short-term rental workflows <ArrowRight size={16} />
+            </a>
+            <span>Property context</span>
+            <span>Clear handoffs</span>
+            <span>Human approvals</span>
+          </div>
+        )}
+        <section className={styles.solutions}>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>{data.intro}</MixedHeadingText>
+          </h2>
+          {kind === "rent-collection" ? (
+            <ScrollStory
+              layout="stacked"
+              navClassName={`${styles.sectionNav} ${styles.progressNav}`}
+              steps={data.panels.map((p, i) => ({
+                id: p.id,
+                label: p.label,
+                content: renderPanel(p, i, false),
+              }))}
+              fallback={staticSolutions}
+              after={additionalFeatures}
+              navFooter={
+                <a key="additional-features-link" href="#additional-features">
+                  Additional features <ArrowRight size={16} />
+                </a>
+              }
+            />
+          ) : (
+            staticSolutions
+          )}
+        </section>
+        <ProductHeadspaceCta />
+        <FeatureTestimonials />
+        <section className={styles.faq}>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>{cmsFaqs.heading || "FAQs"}</MixedHeadingText>
+          </h2>
+          <div>
+            {cmsFaqs.items.map(([question, answer, faqId]) => (
+              <details key={faqId}>
+                <summary>
+                  {question}
+                  <span>
+                    <MagePlus size="1em" />
+                  </span>
+                </summary>
+                <p style={{ whiteSpace: "pre-line" }}>{answer}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+      </div>
+    </InnerPageShell>
+  );
+}

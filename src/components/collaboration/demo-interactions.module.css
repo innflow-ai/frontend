@@ -1,0 +1,226 @@
+.control {
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+}
+.control:focus-visible,
+.emailSummary:focus-visible,
+.composer input:focus-visible,
+.composer button:focus-visible,
+.replyHeading button:focus-visible {
+  outline: 2px solid #006bff;
+  outline-offset: -2px;
+}
+.channelButton.channelButton {
+  border: 0;
+  background: transparent;
+}
+.channelButton.channelButton[aria-pressed="true"] {
+  background: #f0f1f3;
+}
+.channelButton:hover {
+  box-shadow: inset 0 0 0 1px #d9d9de;
+}
+.channelButton[aria-pressed="false"] [data-node-id="39:4337"] {
+  display: none;
+}
+.channelButton:where([aria-pressed="false"]) p {
+  color: #5f5f68;
+}
+.thread {
+  width: 100%;
+  min-width: 0;
+}
+.threadButton {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  color: #076cc4;
+  font-size: 12px;
+  width: 100%;
+}
+.threadPanel {
+  padding: 12px;
+  margin: 8px 0;
+  border-left: 2px solid #006bff;
+  background: #f4f4f5;
+  border-radius: 0 8px 8px 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.threadPanel > p {
+  margin: 6px 0 12px;
+}
+.salesConversation {
+  padding: 16px;
+  width: 100%;
+}
+.sampleMessage {
+  margin-bottom: 24px;
+  font-size: 14px;
+  line-height: 20px;
+}
+.sampleMessage strong {
+  font-weight: 500;
+}
+.sampleMessage small {
+  font-size: 12px;
+  font-weight: 400;
+  color: #6b6d73;
+}
+.sampleMessage p {
+  margin: 4px 0;
+}
+.sampleMessage span {
+  color: #076cc4;
+}
+.emailRow.emailRow {
+  display: block;
+  padding: 0;
+}
+.emailSummary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 16px;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+.emailSummary:hover {
+  background: #f4f4f5;
+}
+.emailBody.emailBody {
+  margin: 0;
+  padding: 4px 16px 16px 50px;
+  font-size: 13px;
+  line-height: 20px;
+  color: #18191b;
+  white-space: normal;
+}
+.emailReply {
+  position: absolute;
+  bottom: 56px;
+  left: 16px;
+  right: 16px;
+  z-index: 3;
+  padding: 16px;
+  border: 1px solid #e2e3e6;
+  border-radius: 12px;
+  background: white;
+  box-shadow: 0 8px 24px #00000012;
+}
+.replyHeading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+.replyHeading button {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 4px 10px;
+  font-size: 20px;
+}
+.composer {
+  flex-shrink: 0;
+  width: 100%;
+  min-width: 0;
+  padding: 10px 12px;
+}
+.composer form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 8px 5px 12px;
+  border: 1px solid #e2e3e6;
+  border-radius: 8px;
+  background: #fcfcfc;
+}
+.composer input {
+  width: 100%;
+  min-width: 0;
+  padding: 4px 0;
+  background: transparent;
+  border: 0;
+  font:
+    12px / 20px var(--font-geist),
+    sans-serif;
+  color: #18191b;
+}
+.composer button {
+  flex-shrink: 0;
+  cursor: pointer;
+  border: 0;
+  border-radius: 6px;
+  padding: 4px 10px;
+  background: #006bff;
+  color: white;
+  font:
+    500 12px / 20px var(--font-geist),
+    sans-serif;
+}
+.composer button:disabled {
+  background: #e2e3e6;
+  color: #6b6d73;
+  cursor: default;
+}
+.composer[data-imessage="true"] form {
+  border-radius: 20px;
+}
+.composer[data-imessage="true"] button {
+  border-radius: 50%;
+}
+.localMessages {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  max-height: 100px;
+  overflow-y: auto;
+  margin-bottom: 8px;
+}
+.localMessages p {
+  max-width: 90%;
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 18px;
+  overflow-wrap: anywhere;
+  color: #18191b;
+  background: #f0f1f3;
+}
+.localMessages small {
+  display: block;
+  font-size: 10px;
+  color: #6b6d73;
+}
+.composer[data-imessage="true"] .localMessages p {
+  background: #1e8cff;
+  color: white;
+}
+.composer[data-imessage="true"] .localMessages small {
+  color: #ffffffcc;
+}
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+@media (max-width: 640px) {
+  .composer input {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "creator": {
+    "@type": "Person",
+    "name": "Compagnons"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Compagnons"
+  },
+  "creditText": "Compagnons",
+  "copyrightNotice": "Compagnons",
+  "license": "https://unsplash.com/license",
+  "acquireLicensePage": "https://unsplash.com/photos/an-aerial-view-of-a-neighborhood-in-the-fall-8R2JZPBt45o",
+  "contentUrl": "https://images.unsplash.com/photo-1637119106056-4a20093bd913?auto=format&fit=crop&q=60&crop=entropy&cs=srgb&fm=jpg&ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzg4NzQ3MDE5fA&ixlib=rb-4.1.0",
+  "thumbnail": {
+    "@type": "ImageObject",
+    "url": "https://images.unsplash.com/photo-1637119106056-4a20093bd913?auto=format&fit=crop&q=60&crop=entropy&cs=tinysrgb&fm=jpg&ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzg4NzQ3MDE5fA&ixlib=rb-4.1.0&w=200"
+  },
+  "datePublished": "2021-11-17T03:18:59.000Z",
+  "description": "an aerial view of a neighborhood in the fall",
+  "name": "an aerial view of a neighborhood in the fall",
+  "width": "5184px",
+  "height": "3456px",
+  "isAccessibleForFree": true,
+  "isFamilyFriendly": true,
+  "caption": "an aerial view of a neighborhood in the fall",
+  "representativeOfPage": true
+}

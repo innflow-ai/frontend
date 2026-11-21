@@ -1,0 +1,1316 @@
+{
+  "fileKey": "TI7hq816ZzDMvvTd3HjyIS",
+  "nodeId": "328:5",
+  "verified": "2026-10-29",
+  "variables": [
+    {
+      "id": "VariableID:406:6",
+      "name": "color-innflow-light-canvas",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 0.9725490212440491,
+          "g": 0.9725490212440491,
+          "b": 0.9725490212440491,
+          "a": 0.9607843160629272
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:7",
+      "name": "color-innflow-light-surface",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:8",
+      "name": "color-innflow-light-subtle",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 0.9764705896377563,
+          "g": 0.9764705896377563,
+          "b": 0.9764705896377563,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:9",
+      "name": "color-innflow-light-sidebar",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 0.9686274528503418,
+          "g": 0.9686274528503418,
+          "b": 0.9686274528503418,
+          "a": 0.7019608020782471
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:10",
+      "name": "color-innflow-light-text",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 0.10196078568696976,
+          "g": 0.10196078568696976,
+          "b": 0.10196078568696976,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:11",
+      "name": "color-innflow-light-text-secondary",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 0.3019607961177826,
+          "g": 0.3019607961177826,
+          "b": 0.3019607961177826,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:12",
+      "name": "color-innflow-light-text-muted",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 0.5058823823928833,
+          "g": 0.5137255191802979,
+          "b": 0.529411792755127,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:13",
+      "name": "color-innflow-light-border",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 0.054901961237192154,
+          "g": 0.12941177189350128,
+          "b": 0.24313725531101227,
+          "a": 0.10196078568696976
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:14",
+      "name": "color-innflow-light-action",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 0.125490203499794,
+          "g": 0.125490203499794,
+          "b": 0.125490203499794,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:15",
+      "name": "color-innflow-light-on-action",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:16",
+      "name": "color-innflow-dark-canvas",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 0.03921568766236305,
+          "g": 0.03921568766236305,
+          "b": 0.04313725605607033,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:17",
+      "name": "color-innflow-dark-surface",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 0.13725490868091583,
+          "g": 0.14509804546833038,
+          "b": 0.1568627506494522,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:18",
+      "name": "color-innflow-dark-dialog",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 0.14509804546833038,
+          "g": 0.14509804546833038,
+          "b": 0.14509804546833038,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:19",
+      "name": "color-innflow-dark-text",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 0.886274516582489,
+          "g": 0.886274516582489,
+          "b": 0.886274516582489,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:20",
+      "name": "color-innflow-dark-text-secondary",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 0.7450980544090271,
+          "g": 0.7450980544090271,
+          "b": 0.7490196228027344,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:21",
+      "name": "color-innflow-dark-text-muted",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 0.4901960790157318,
+          "g": 0.501960813999176,
+          "b": 0.5215686559677124,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:22",
+      "name": "color-innflow-dark-action",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 0.9882352948188782,
+          "g": 0.9882352948188782,
+          "b": 0.9882352948188782,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:23",
+      "name": "color-innflow-dark-on-action",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 0.10588235408067703,
+          "g": 0.10588235408067703,
+          "b": 0.10588235408067703,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:24",
+      "name": "color-innflow-dark-glass",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 0.8877480030059814,
+          "g": 0.9397033452987671,
+          "b": 1,
+          "a": 0.04500000178813934
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:25",
+      "name": "color-innflow-dark-border",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 0.8877480030059814,
+          "g": 0.9397033452987671,
+          "b": 1,
+          "a": 0.07999999821186066
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:26",
+      "name": "color-innflow-dark-control",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 0.8877480030059814,
+          "g": 0.9397033452987671,
+          "b": 1,
+          "a": 0.10000000149011612
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:27",
+      "name": "color-innflow-dark-message",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 0.16862745583057404,
+          "g": 0.18039216101169586,
+          "b": 0.19607843458652496,
+          "a": 0.6000000238418579
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:28",
+      "name": "color-innflow-light-control",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 0.9490196108818054,
+          "g": 0.95686274766922,
+          "b": 0.9725490212440491,
+          "a": 0.3490196168422699
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:29",
+      "name": "color-innflow-light-selection",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 1,
+          "g": 1,
+          "b": 1,
+          "a": 0.800000011920929
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:30",
+      "name": "color-innflow-agent-badge",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 0.9176470637321472,
+          "g": 0.95686274766922,
+          "b": 0.9960784316062927,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:31",
+      "name": "color-innflow-agent-label",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 0.14901961386203766,
+          "g": 0.45098039507865906,
+          "b": 0.7215686440467834,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:32",
+      "name": "color-innflow-activity-mint",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 0.47058823704719543,
+          "g": 0.6823529601097107,
+          "b": 0.6431372761726379,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:33",
+      "name": "color-innflow-activity-blue",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 0.054901961237192154,
+          "g": 0.33725491166114807,
+          "b": 0.5568627715110779,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:34",
+      "name": "color-innflow-ambient-1",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 0.8588235378265381,
+          "g": 0.8901960849761963,
+          "b": 0.8156862854957581,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:35",
+      "name": "color-innflow-ambient-2",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 0.5529412031173706,
+          "g": 0.7215686440467834,
+          "b": 0.6549019813537598,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:36",
+      "name": "color-innflow-ambient-3",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 0.1764705926179886,
+          "g": 0.5568627715110779,
+          "b": 0.6039215922355652,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:37",
+      "name": "color-innflow-ambient-4",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 0.027450980618596077,
+          "g": 0.3921568691730499,
+          "b": 0.572549045085907,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:38",
+      "name": "color-innflow-ambient-5",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 0.08235294371843338,
+          "g": 0.25882354378700256,
+          "b": 0.5333333611488342,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:39",
+      "name": "color-innflow-ambient-6",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "r": 0.14901961386203766,
+          "g": 0.1725490242242813,
+          "b": 0.5058823823928833,
+          "a": 1
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:40",
+      "name": "color-innflow-canvas",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:406:6"
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:41",
+      "name": "color-innflow-surface",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:406:7"
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:42",
+      "name": "color-innflow-text",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:406:10"
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:43",
+      "name": "color-innflow-text-secondary",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:406:11"
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:44",
+      "name": "color-innflow-border",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:406:13"
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:45",
+      "name": "color-innflow-action",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:406:14"
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:46",
+      "name": "color-innflow-on-action",
+      "type": "COLOR",
+      "values": {
+        "406:0": {
+          "type": "VARIABLE_ALIAS",
+          "id": "VariableID:406:15"
+        }
+      }
+    },
+    {
+      "id": "VariableID:406:47",
+      "name": "font-innflow-ui",
+      "type": "STRING",
+      "values": {
+        "406:0": "Inter"
+      }
+    },
+    {
+      "id": "VariableID:406:48",
+      "name": "font-innflow-display",
+      "type": "STRING",
+      "values": {
+        "406:0": "Instrument Serif"
+      }
+    },
+    {
+      "id": "VariableID:406:49",
+      "name": "font-innflow-mono",
+      "type": "STRING",
+      "values": {
+        "406:0": "JetBrains Mono"
+      }
+    }
+  ],
+  "sections": {
+    "329:49": [
+      "Workspace themes",
+      "Offloop surface and action roles; Innflow identity and category colors stay distinct.",
+      "Light \u00b7 neutral",
+      "canvas",
+      "#F8F8F8F5",
+      "surface",
+      "#FFFFFF",
+      "control",
+      "#F2F4F859",
+      "canvas",
+      "#f8f9fb",
+      "surface",
+      "#ffffff",
+      "control",
+      "#f0f3f8",
+      "ink",
+      "#1A1A1A",
+      "secondary text",
+      "#4D4D4D",
+      "divider",
+      "#0E213E1A",
+      "ink",
+      "#0b3558",
+      "muted",
+      "#476788",
+      "divider",
+      "#d4e0ed",
+      "primary-ink",
+      "#FFFFFF",
+      "action",
+      "#202020",
+      "Hover text",
+      "hover / secondary",
+      "#4D4D4D",
+      "status-success",
+      "#9AF2BE",
+      "status-warning",
+      "#FFE6A3",
+      "status-danger",
+      "#FFB1B5",
+      "Workflows",
+      "Create workflow",
+      "brand accent",
+      "#01AEFF",
+      "brand accent hover",
+      "#0C7CBB",
+      "secondary-ink",
+      "#FFFFFF",
+      "Previous blue foundations",
+      "Dark \u00b7 neutral",
+      "canvas",
+      "#0A0A0B",
+      "surface",
+      "#232528",
+      "control",
+      "cool white / 10%",
+      "canvas",
+      "#101c2a",
+      "surface",
+      "#17283b",
+      "control",
+      "#20354c",
+      "ink",
+      "#E2E2E2",
+      "secondary text",
+      "#BEBEBF",
+      "divider",
+      "cool white / 8%",
+      "ink",
+      "#edf4fc",
+      "muted",
+      "#b0c5dc",
+      "divider",
+      "#344e6c",
+      "action",
+      "#FCFCFC",
+      "Hover text",
+      "hover / secondary",
+      "#E2E2E2",
+      "primary-ink",
+      "#1B1B1B",
+      "status-success",
+      "#9AF2BE",
+      "status-warning",
+      "#FFE6A3",
+      "status-danger",
+      "#FFB1B5",
+      "Workflows",
+      "Create workflow",
+      "brand accent",
+      "#01AEFF",
+      "brand accent hover",
+      "#0C7CBB",
+      "secondary-ink",
+      "#FFFFFF",
+      "Previous blue foundations"
+    ],
+    "329:253": [
+      {
+        "id": "329:255",
+        "text": "Typography",
+        "font": {
+          "family": "Inter",
+          "style": "Medium",
+          "variationSettings": {
+            "wght": 500,
+            "slnt": 0
+          }
+        },
+        "size": 24,
+        "line": {
+          "unit": "PIXELS",
+          "value": 30
+        },
+        "tracking": {
+          "unit": "PIXELS",
+          "value": -0.47999998927116394
+        }
+      },
+      {
+        "id": "329:256",
+        "text": "Inter for UI \u00b7 Instrument Serif for display",
+        "font": {
+          "family": "Inter",
+          "style": "Regular",
+          "variationSettings": {
+            "wght": 400,
+            "slnt": 0
+          }
+        },
+        "size": 14,
+        "line": {
+          "unit": "PIXELS",
+          "value": 21
+        },
+        "tracking": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      {
+        "id": "329:258",
+        "text": "Display",
+        "font": {
+          "family": "Inter",
+          "style": "Regular",
+          "variationSettings": {
+            "wght": 400,
+            "slnt": 0
+          }
+        },
+        "size": 11,
+        "line": {
+          "unit": "PIXELS",
+          "value": 15.399999618530273
+        },
+        "tracking": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      {
+        "id": "329:259",
+        "text": "Build something useful",
+        "font": {
+          "family": "Instrument Serif",
+          "style": "Regular"
+        },
+        "size": 48,
+        "line": {
+          "unit": "PIXELS",
+          "value": 50.400001525878906
+        },
+        "tracking": {
+          "unit": "PERCENT",
+          "value": -2
+        }
+      },
+      {
+        "id": "329:261",
+        "text": "Body",
+        "font": {
+          "family": "Inter",
+          "style": "Regular",
+          "variationSettings": {
+            "wght": 400,
+            "slnt": 0
+          }
+        },
+        "size": 11,
+        "line": {
+          "unit": "PIXELS",
+          "value": 15.399999618530273
+        },
+        "tracking": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      {
+        "id": "329:262",
+        "text": "Agents and workflows, working together.",
+        "font": {
+          "family": "Inter",
+          "style": "Regular",
+          "variationSettings": {
+            "wght": 400,
+            "slnt": 0
+          }
+        },
+        "size": 14,
+        "line": {
+          "unit": "PIXELS",
+          "value": 21
+        },
+        "tracking": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      {
+        "id": "329:264",
+        "text": "Control",
+        "font": {
+          "family": "Inter",
+          "style": "Regular",
+          "variationSettings": {
+            "wght": 400,
+            "slnt": 0
+          }
+        },
+        "size": 11,
+        "line": {
+          "unit": "PIXELS",
+          "value": 15.399999618530273
+        },
+        "tracking": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      {
+        "id": "329:265",
+        "text": "Create workflow",
+        "font": {
+          "family": "Inter",
+          "style": "Medium",
+          "variationSettings": {
+            "wght": 500,
+            "slnt": 0
+          }
+        },
+        "size": 14,
+        "line": {
+          "unit": "PIXELS",
+          "value": 20
+        },
+        "tracking": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      {
+        "id": "329:267",
+        "text": "Caption",
+        "font": {
+          "family": "Inter",
+          "style": "Regular",
+          "variationSettings": {
+            "wght": 400,
+            "slnt": 0
+          }
+        },
+        "size": 11,
+        "line": {
+          "unit": "PIXELS",
+          "value": 15.399999618530273
+        },
+        "tracking": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      {
+        "id": "329:268",
+        "text": "Updated a moment ago",
+        "font": {
+          "family": "Inter",
+          "style": "Regular",
+          "variationSettings": {
+            "wght": 400,
+            "slnt": 0
+          }
+        },
+        "size": 12,
+        "line": {
+          "unit": "PIXELS",
+          "value": 16
+        },
+        "tracking": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      {
+        "id": "329:270",
+        "text": "Code",
+        "font": {
+          "family": "Inter",
+          "style": "Regular",
+          "variationSettings": {
+            "wght": 400,
+            "slnt": 0
+          }
+        },
+        "size": 11,
+        "line": {
+          "unit": "PIXELS",
+          "value": 15.399999618530273
+        },
+        "tracking": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      {
+        "id": "329:271",
+        "text": "workflow.run()",
+        "font": {
+          "family": "JetBrains Mono",
+          "style": "Regular",
+          "variationSettings": {
+            "wght": 400
+          }
+        },
+        "size": 13,
+        "line": {
+          "unit": "PIXELS",
+          "value": 19.5
+        },
+        "tracking": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      {
+        "id": "329:273",
+        "text": "Metadata",
+        "font": {
+          "family": "Inter",
+          "style": "Regular",
+          "variationSettings": {
+            "wght": 400,
+            "slnt": 0
+          }
+        },
+        "size": 11,
+        "line": {
+          "unit": "PIXELS",
+          "value": 15.399999618530273
+        },
+        "tracking": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      {
+        "id": "329:274",
+        "text": "run_2026_10_04",
+        "font": {
+          "family": "JetBrains Mono",
+          "style": "Medium",
+          "variationSettings": {
+            "wght": 500
+          }
+        },
+        "size": 11,
+        "line": {
+          "unit": "PIXELS",
+          "value": 15.399999618530273
+        },
+        "tracking": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      {
+        "id": "329:275",
+        "text": "Inter 12\u201324px UI \u00b7 Serif 48px display \u00b7 JetBrains Mono code",
+        "font": {
+          "family": "Inter",
+          "style": "Regular",
+          "variationSettings": {
+            "wght": 400,
+            "slnt": 0
+          }
+        },
+        "size": 11,
+        "line": {
+          "unit": "PIXELS",
+          "value": 15.399999618530273
+        },
+        "tracking": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      {
+        "id": "329:277",
+        "text": "Spacing & corners",
+        "font": {
+          "family": "Inter",
+          "style": "Medium",
+          "variationSettings": {
+            "wght": 500,
+            "slnt": 0
+          }
+        },
+        "size": 24,
+        "line": {
+          "unit": "PIXELS",
+          "value": 30
+        },
+        "tracking": {
+          "unit": "PIXELS",
+          "value": -0.47999998927116394
+        }
+      },
+      {
+        "id": "329:278",
+        "text": "4 / 6 / 8 tight gaps \u00b7 12 / 16 padding \u00b7 20 / 24 groups",
+        "font": {
+          "family": "Inter",
+          "style": "Regular",
+          "variationSettings": {
+            "wght": 400,
+            "slnt": 0
+          }
+        },
+        "size": 14,
+        "line": {
+          "unit": "PIXELS",
+          "value": 21
+        },
+        "tracking": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      {
+        "id": "329:282",
+        "text": "4",
+        "font": {
+          "family": "Inter",
+          "style": "Regular",
+          "variationSettings": {
+            "wght": 400,
+            "slnt": 0
+          }
+        },
+        "size": 11,
+        "line": {
+          "unit": "PIXELS",
+          "value": 15.399999618530273
+        },
+        "tracking": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      {
+        "id": "329:285",
+        "text": "8",
+        "font": {
+          "family": "Inter",
+          "style": "Regular",
+          "variationSettings": {
+            "wght": 400,
+            "slnt": 0
+          }
+        },
+        "size": 11,
+        "line": {
+          "unit": "PIXELS",
+          "value": 15.399999618530273
+        },
+        "tracking": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      {
+        "id": "329:288",
+        "text": "12",
+        "font": {
+          "family": "Inter",
+          "style": "Regular",
+          "variationSettings": {
+            "wght": 400,
+            "slnt": 0
+          }
+        },
+        "size": 11,
+        "line": {
+          "unit": "PIXELS",
+          "value": 15.399999618530273
+        },
+        "tracking": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      {
+        "id": "329:291",
+        "text": "16",
+        "font": {
+          "family": "Inter",
+          "style": "Regular",
+          "variationSettings": {
+            "wght": 400,
+            "slnt": 0
+          }
+        },
+        "size": 11,
+        "line": {
+          "unit": "PIXELS",
+          "value": 15.399999618530273
+        },
+        "tracking": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      {
+        "id": "329:294",
+        "text": "24",
+        "font": {
+          "family": "Inter",
+          "style": "Regular",
+          "variationSettings": {
+            "wght": 400,
+            "slnt": 0
+          }
+        },
+        "size": 11,
+        "line": {
+          "unit": "PIXELS",
+          "value": 15.399999618530273
+        },
+        "tracking": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      {
+        "id": "329:297",
+        "text": "32",
+        "font": {
+          "family": "Inter",
+          "style": "Regular",
+          "variationSettings": {
+            "wght": 400,
+            "slnt": 0
+          }
+        },
+        "size": 11,
+        "line": {
+          "unit": "PIXELS",
+          "value": 15.399999618530273
+        },
+        "tracking": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      {
+        "id": "329:300",
+        "text": "48",
+        "font": {
+          "family": "Inter",
+          "style": "Regular",
+          "variationSettings": {
+            "wght": 400,
+            "slnt": 0
+          }
+        },
+        "size": 11,
+        "line": {
+          "unit": "PIXELS",
+          "value": 15.399999618530273
+        },
+        "tracking": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      {
+        "id": "329:303",
+        "text": "64",
+        "font": {
+          "family": "Inter",
+          "style": "Regular",
+          "variationSettings": {
+            "wght": 400,
+            "slnt": 0
+          }
+        },
+        "size": 11,
+        "line": {
+          "unit": "PIXELS",
+          "value": 15.399999618530273
+        },
+        "tracking": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      {
+        "id": "329:307",
+        "text": "4px / cell",
+        "font": {
+          "family": "Inter",
+          "style": "Regular",
+          "variationSettings": {
+            "wght": 400,
+            "slnt": 0
+          }
+        },
+        "size": 11,
+        "line": {
+          "unit": "PIXELS",
+          "value": 15.399999618530273
+        },
+        "tracking": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      {
+        "id": "329:310",
+        "text": "12px / control",
+        "font": {
+          "family": "Inter",
+          "style": "Regular",
+          "variationSettings": {
+            "wght": 400,
+            "slnt": 0
+          }
+        },
+        "size": 11,
+        "line": {
+          "unit": "PIXELS",
+          "value": 15.399999618530273
+        },
+        "tracking": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      {
+        "id": "329:313",
+        "text": "16px / action",
+        "font": {
+          "family": "Inter",
+          "style": "Regular",
+          "variationSettings": {
+            "wght": 400,
+            "slnt": 0
+          }
+        },
+        "size": 11,
+        "line": {
+          "unit": "PIXELS",
+          "value": 15.399999618530273
+        },
+        "tracking": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      {
+        "id": "329:316",
+        "text": "30px / panel",
+        "font": {
+          "family": "Inter",
+          "style": "Regular",
+          "variationSettings": {
+            "wght": 400,
+            "slnt": 0
+          }
+        },
+        "size": 11,
+        "line": {
+          "unit": "PIXELS",
+          "value": 15.399999618530273
+        },
+        "tracking": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      {
+        "id": "329:319",
+        "text": "40px / dialog",
+        "font": {
+          "family": "Inter",
+          "style": "Regular",
+          "variationSettings": {
+            "wght": 400,
+            "slnt": 0
+          }
+        },
+        "size": 11,
+        "line": {
+          "unit": "PIXELS",
+          "value": 15.399999618530273
+        },
+        "tracking": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      },
+      {
+        "id": "329:320",
+        "text": "Controls 36px \u00b7 dialog actions 40px \u00b7 hairlines 0.5px",
+        "font": {
+          "family": "Inter",
+          "style": "Medium",
+          "variationSettings": {
+            "wght": 500,
+            "slnt": 0
+          }
+        },
+        "size": 13,
+        "line": {
+          "unit": "PIXELS",
+          "value": 19.5
+        },
+        "tracking": {
+          "unit": "PIXELS",
+          "value": 0
+        }
+      }
+    ],
+    "409:133": [
+      "Dialogs & floating surfaces",
+      "Inter 24/32 semibold titles \u00b7 14/20 body \u00b7 12px shell padding \u00b7 16px action gap \u00b7 40px actions",
+      "Make this channel public?",
+      "Workspace members will be able to find this channel, read its history and join the conversation. This does not create an external share.",
+      "Cancel",
+      "Make public",
+      "Make this channel public?",
+      "Workspace members will be able to find this channel, read its history and join the conversation. This does not create an external share.",
+      "Cancel",
+      "Make public",
+      "Use secondary text for essential copy. Preserve Innflow\u2019s brand marks, category artwork, file icons, cursors and grid treatments."
+    ],
+    "329:526": [
+      "Motion",
+      "150ms \u00b7 cubic-bezier(0.4, 0, 0.2, 1)",
+      "Elevation",
+      "Flat actions; layered shadows for floating UI."
+    ]
+  }
+}

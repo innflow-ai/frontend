@@ -1,0 +1,24 @@
+[
+  {
+    "page": "Portfolio Multifamily",
+    "asset": {
+      "reference": "3:109",
+      "photo_node": "39:11",
+      "path": "/Users/ak/innflow-web/output/doorloop-baselane/home-multifamily-clean-v1.png",
+      "image_hash": "8163fbbb7862f70b9388837be12def36647e8dc0",
+      "reused_from_node": "44:166"
+    },
+    "verification": "Photo cleanup reuse: verified Multifamily reference uses same architectural scene as cleaned Home asset. Applied existing clean hash 8163fbbb7862f70b9388837be12def36647e8dc0 from 44:166 to 39:11 with FILL, preserving native overlays and hidden original alternate. Close-up screenshot verified clean photo/card edges and in-cell bounds. No duplicate image generation. Reference-derived draft photo."
+  },
+  {
+    "page": "Portfolio Residential",
+    "asset": {
+      "reference": "3:117",
+      "photo_node": "40:180",
+      "path": "/Users/ak/innflow-web/output/doorloop-baselane/home-residential-clean-v1.png",
+      "image_hash": "58224f0d469b5e0afea83989bb64a54525253914",
+      "reused_from_node": "44:160"
+    },
+    "verification": "Photo cleanup reuse: verified Residential reference uses same architectural scene as cleaned Home asset. Applied existing clean hash 58224f0d469b5e0afea83989bb64a54525253914 from 44:160 to 40:180 with FILL, preserving native overlays and hidden original alternate. Close-up screenshot verified clean photo/card edges and in-cell bounds. No duplicate image generation. Reference-derived draft photo."
+  }
+]

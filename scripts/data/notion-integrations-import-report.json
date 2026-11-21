@@ -1,0 +1,1992 @@
+{
+  "mode": "write",
+  "project": "hnjg8vum",
+  "dataset": "production",
+  "source": "https://app.notion.com/3120ac1bd32e81c7b24bd81fa262dad9",
+  "sourceRows": 2773,
+  "distinctNames": 384,
+  "matched": [
+    "Gmail",
+    "Google Drive",
+    "Google Sheets",
+    "Microsoft Teams",
+    "Notion",
+    "Outlook",
+    "SharePoint",
+    "Slack"
+  ],
+  "newIntegrations": 376,
+  "newCategories": [
+    "Authentication",
+    "Integration Protocol",
+    "AI Providers",
+    "CRM",
+    "Workflow Components",
+    "Email",
+    "Productivity",
+    "SEO Tools",
+    "Search",
+    "AWS",
+    "Analytics",
+    "Automation",
+    "Sales Tools",
+    "Property Management",
+    "Research",
+    "Operations",
+    "Database",
+    "Developer Tools",
+    "Google Cloud",
+    "Cloud Storage",
+    "Payments",
+    "Web Scraping",
+    "Social Media",
+    "Scheduling",
+    "Meetings",
+    "AI/ML",
+    "Web Development",
+    "Utility",
+    "Atlassian",
+    "Search & Research",
+    "Data Tools",
+    "Monitoring",
+    "Search/Database",
+    "Media",
+    "Support",
+    "Google Workspace",
+    "Triggers",
+    "Email Marketing",
+    "Forms",
+    "Trading",
+    "IT Service",
+    "Microsoft 365",
+    "Data Sources",
+    "File Transfer",
+    "E-commerce",
+    "CMS"
+  ],
+  "verifiedTotal": 385,
+  "verifiedMapped": 384,
+  "existingRecordsUnchanged": true,
+  "mapping": [
+    {
+      "name": "1Password",
+      "id": "integration.notion-d58fc8daf00e9bc3e284c853",
+      "slug": "1password"
+    },
+    {
+      "name": "A2A",
+      "id": "integration.notion-ee307d3dce4d0e393b344e13",
+      "slug": "a2a"
+    },
+    {
+      "name": "A2A Agent",
+      "id": "integration.notion-922ee5ed13f2edd52f14301a",
+      "slug": "a2a-agent"
+    },
+    {
+      "name": "Affinity",
+      "id": "integration.notion-74283e22161afdd18270d1ae",
+      "slug": "affinity"
+    },
+    {
+      "name": "Agent",
+      "id": "integration.notion-d4f0bc5a29de06b510f9aa42",
+      "slug": "agent"
+    },
+    {
+      "name": "AgentMail",
+      "id": "integration.notion-befc92b3a019d04cffb46eae",
+      "slug": "agentmail"
+    },
+    {
+      "name": "AgentPhone",
+      "id": "integration.notion-e1f6745c5c62c898e830837a",
+      "slug": "agentphone"
+    },
+    {
+      "name": "Agiloft",
+      "id": "integration.notion-c815d2dc249989f683716f98",
+      "slug": "agiloft"
+    },
+    {
+      "name": "Ahrefs",
+      "id": "integration.notion-50b7110eceb6157fbb15dcef",
+      "slug": "ahrefs"
+    },
+    {
+      "name": "AI Agent",
+      "id": "integration.notion-ee662f0a4316976d226a3faf",
+      "slug": "ai-agent"
+    },
+    {
+      "name": "Airtable",
+      "id": "integration.notion-40c57bb53c07338bae1af8eb",
+      "slug": "airtable"
+    },
+    {
+      "name": "Airweave",
+      "id": "integration.notion-6b6320f8a08c415066cebd0d",
+      "slug": "airweave"
+    },
+    {
+      "name": "Algolia",
+      "id": "integration.notion-d6a5baeb9c2e75459ba95fd4",
+      "slug": "algolia"
+    },
+    {
+      "name": "Amazon DynamoDB",
+      "id": "integration.notion-f6fce77d4a6f6d04547ac6d5",
+      "slug": "amazon-dynamodb"
+    },
+    {
+      "name": "Amazon RDS",
+      "id": "integration.notion-961451ce0a13fb70d4d7fcc0",
+      "slug": "amazon-rds"
+    },
+    {
+      "name": "Amazon SQS",
+      "id": "integration.notion-0ad8c3795bf9c8301d860c1c",
+      "slug": "amazon-sqs"
+    },
+    {
+      "name": "Amplitude",
+      "id": "integration.notion-4fea05be302d325b69a315f0",
+      "slug": "amplitude"
+    },
+    {
+      "name": "Anthropic",
+      "id": "integration.notion-c70eca6b0f88f44d81a41311",
+      "slug": "anthropic"
+    },
+    {
+      "name": "API",
+      "id": "integration.notion-14c2529eb4498c5d1ffd6915",
+      "slug": "api"
+    },
+    {
+      "name": "Apify",
+      "id": "integration.notion-954f775230679543d69509c2",
+      "slug": "apify"
+    },
+    {
+      "name": "Apollo",
+      "id": "integration.notion-8d3aa1a6f227d714692a9d5a",
+      "slug": "apollo"
+    },
+    {
+      "name": "AppFolio",
+      "id": "integration.notion-e459bb89f8caa9528e47d445",
+      "slug": "appfolio"
+    },
+    {
+      "name": "AppWork",
+      "id": "integration.notion-f1e44781324088356abfd6a3",
+      "slug": "appwork"
+    },
+    {
+      "name": "ArXiv",
+      "id": "integration.notion-93112796882f0bfb0b1e8964",
+      "slug": "arxiv"
+    },
+    {
+      "name": "Asana",
+      "id": "integration.notion-4de4a07ad031569c0eb27436",
+      "slug": "asana"
+    },
+    {
+      "name": "Ashby",
+      "id": "integration.notion-3b3516aad1d9e72e7d091dba",
+      "slug": "ashby"
+    },
+    {
+      "name": "Athena",
+      "id": "integration.notion-084328c53a9de563b83b23b6",
+      "slug": "athena"
+    },
+    {
+      "name": "Attio",
+      "id": "integration.notion-5b7f832dd957f6b32686aabf",
+      "slug": "attio"
+    },
+    {
+      "name": "AWS AppConfig",
+      "id": "integration.notion-317275bc43dc371b9dbc39d3",
+      "slug": "aws-appconfig"
+    },
+    {
+      "name": "AWS IAM",
+      "id": "integration.notion-fce41f3f1e31002f3dc65e88",
+      "slug": "aws-iam"
+    },
+    {
+      "name": "AWS Identity Center",
+      "id": "integration.notion-9b342923efb93359d6e9211d",
+      "slug": "aws-identity-center"
+    },
+    {
+      "name": "AWS Secrets Manager",
+      "id": "integration.notion-6e24371ddae31773fd429481",
+      "slug": "aws-secrets-manager"
+    },
+    {
+      "name": "AWS SES",
+      "id": "integration.notion-35010213e48ed745c2ca512e",
+      "slug": "aws-ses"
+    },
+    {
+      "name": "AWS STS",
+      "id": "integration.notion-2166ad52d7dd35fb5d09d9bb",
+      "slug": "aws-sts"
+    },
+    {
+      "name": "AWS Systems Manager",
+      "id": "integration.notion-f37a3464fdc3dd3d71c8308b",
+      "slug": "aws-systems-manager"
+    },
+    {
+      "name": "AWS Textract",
+      "id": "integration.notion-5e33a1dbcb272c02ffe9cb92",
+      "slug": "aws-textract"
+    },
+    {
+      "name": "Azure AD",
+      "id": "integration.notion-61cdb98914b843541812d3c4",
+      "slug": "azure-ad"
+    },
+    {
+      "name": "Azure Data Explorer",
+      "id": "integration.notion-8a6027a32b1f3a5e7bcac07d",
+      "slug": "azure-data-explorer"
+    },
+    {
+      "name": "Azure DevOps",
+      "id": "integration.notion-39e07d47d4782aaf5ea71ac5",
+      "slug": "azure-devops"
+    },
+    {
+      "name": "Baseten",
+      "id": "integration.notion-add1d262225075c0374aa05c",
+      "slug": "baseten"
+    },
+    {
+      "name": "BCompliant",
+      "id": "integration.notion-84e972a32cf07b93ae414ebd",
+      "slug": "bcompliant"
+    },
+    {
+      "name": "BigQuery",
+      "id": "integration.notion-764a51ba6de8ebf2dbe25f3f",
+      "slug": "bigquery"
+    },
+    {
+      "name": "Bitbucket",
+      "id": "integration.notion-490414ac86e4c55e14cef632",
+      "slug": "bitbucket"
+    },
+    {
+      "name": "Box",
+      "id": "integration.notion-26f8567f2569182294c3fa5b",
+      "slug": "box"
+    },
+    {
+      "name": "Brandfetch",
+      "id": "integration.notion-0573125c96f92d182a885e25",
+      "slug": "brandfetch"
+    },
+    {
+      "name": "Brex",
+      "id": "integration.notion-9db728d18b9d39baa098ec44",
+      "slug": "brex"
+    },
+    {
+      "name": "Bright Data",
+      "id": "integration.notion-d5dd4c3ebd80327ddddfc8d9",
+      "slug": "bright-data"
+    },
+    {
+      "name": "Browser Use",
+      "id": "integration.notion-846b78efd75e9c9ada9190d2",
+      "slug": "browser-use"
+    },
+    {
+      "name": "Buffer",
+      "id": "integration.notion-d0ca8c2ac0dab879bf27bfb5",
+      "slug": "buffer"
+    },
+    {
+      "name": "Buildium",
+      "id": "integration.notion-9ec53301a24475f8fa937a9e",
+      "slug": "buildium"
+    },
+    {
+      "name": "Cal.com",
+      "id": "integration.notion-b1ac2dfbb02120c41a0c2678",
+      "slug": "cal-com"
+    },
+    {
+      "name": "Calendly",
+      "id": "integration.notion-59e223bd8ec2ed14cd23fcab",
+      "slug": "calendly"
+    },
+    {
+      "name": "Canva",
+      "id": "integration.notion-3db1f560db626918c55619d6",
+      "slug": "canva"
+    },
+    {
+      "name": "CB Insights",
+      "id": "integration.notion-93f50d4d26ac9508739e5bf2",
+      "slug": "cb-insights"
+    },
+    {
+      "name": "Chat Trigger",
+      "id": "integration.notion-f455c9e55e9c880d7bad7a04",
+      "slug": "chat-trigger"
+    },
+    {
+      "name": "ChatGPT Ads",
+      "id": "integration.notion-2a2f57afbe3cd39b4e05bca7",
+      "slug": "chatgpt-ads"
+    },
+    {
+      "name": "Circleback",
+      "id": "integration.notion-49e51c5c96a06c77b6825ddb",
+      "slug": "circleback"
+    },
+    {
+      "name": "Claude Managed Agents",
+      "id": "integration.notion-9c8b085466a8a4aaced5e586",
+      "slug": "claude-managed-agents"
+    },
+    {
+      "name": "Clay",
+      "id": "integration.notion-06363555054de198a87c4c74",
+      "slug": "clay"
+    },
+    {
+      "name": "Clerk",
+      "id": "integration.notion-c40dc72b0228e5850d8b173f",
+      "slug": "clerk"
+    },
+    {
+      "name": "ClickHouse",
+      "id": "integration.notion-7e099f39b84ea79559b3e85e",
+      "slug": "clickhouse"
+    },
+    {
+      "name": "ClickUp",
+      "id": "integration.notion-c0d67255424148d869b8c00b",
+      "slug": "clickup"
+    },
+    {
+      "name": "Clio",
+      "id": "integration.notion-c38c694be0201b1fe5ab1dd8",
+      "slug": "clio"
+    },
+    {
+      "name": "Cloudflare",
+      "id": "integration.notion-738e22f0acab814cc0c6a9df",
+      "slug": "cloudflare"
+    },
+    {
+      "name": "CloudFormation",
+      "id": "integration.notion-d15fb2ad4498b628746af908",
+      "slug": "cloudformation"
+    },
+    {
+      "name": "CloudTrail",
+      "id": "integration.notion-a5cbf52bf83941ae0f3acf81",
+      "slug": "cloudtrail"
+    },
+    {
+      "name": "CloudWatch",
+      "id": "integration.notion-561cb7fae9dc47c22250f3f9",
+      "slug": "cloudwatch"
+    },
+    {
+      "name": "Coda",
+      "id": "integration.notion-66c8aec217cac5fa9829e4e3",
+      "slug": "coda"
+    },
+    {
+      "name": "Code",
+      "id": "integration.notion-5694d08a2e53ffcae0c3103e",
+      "slug": "code"
+    },
+    {
+      "name": "CodePipeline",
+      "id": "integration.notion-9c9a8963bd8ff1efe3781c89",
+      "slug": "codepipeline"
+    },
+    {
+      "name": "Cohere",
+      "id": "integration.notion-72e8088a05b38ae3cffbc126",
+      "slug": "cohere"
+    },
+    {
+      "name": "Condition",
+      "id": "integration.notion-596d40a4ed24c02a31b19d6e",
+      "slug": "condition"
+    },
+    {
+      "name": "Confluence",
+      "id": "integration.notion-9c1c934e33089936612ec2b8",
+      "slug": "confluence"
+    },
+    {
+      "name": "Context.dev",
+      "id": "integration.notion-8332d80f05d81917ceccc4d3",
+      "slug": "context-dev"
+    },
+    {
+      "name": "Convex",
+      "id": "integration.notion-f804ff2fd8efd8445b745ff6",
+      "slug": "convex"
+    },
+    {
+      "name": "CrowdStrike",
+      "id": "integration.notion-101958dadd6e2fb541d15585",
+      "slug": "crowdstrike"
+    },
+    {
+      "name": "Crunchbase",
+      "id": "integration.notion-43849aa943bc78f4b2d9578b",
+      "slug": "crunchbase"
+    },
+    {
+      "name": "CSV Export",
+      "id": "integration.notion-41eec158e76d1c4d957f4d74",
+      "slug": "csv-export"
+    },
+    {
+      "name": "Cursor",
+      "id": "integration.notion-46a4eebd20d881ecfc0ecb54",
+      "slug": "cursor"
+    },
+    {
+      "name": "Dagster",
+      "id": "integration.notion-1f6bc2d1c36c2733a9839394",
+      "slug": "dagster"
+    },
+    {
+      "name": "Databricks",
+      "id": "integration.notion-2dc010636b9dce91b7328ecb",
+      "slug": "databricks"
+    },
+    {
+      "name": "Datadog",
+      "id": "integration.notion-4d8bd97f03109ac1ffd4f208",
+      "slug": "datadog"
+    },
+    {
+      "name": "Datagma",
+      "id": "integration.notion-6c0b3e415cf03151b94741b0",
+      "slug": "datagma"
+    },
+    {
+      "name": "Daytona",
+      "id": "integration.notion-ffad923c7afc100d1155fb4d",
+      "slug": "daytona"
+    },
+    {
+      "name": "DeepSeek",
+      "id": "integration.notion-6f7ac1823da81d2e52d1a154",
+      "slug": "deepseek"
+    },
+    {
+      "name": "Devin",
+      "id": "integration.notion-5792d2981981be5a2677cd35",
+      "slug": "devin"
+    },
+    {
+      "name": "Discord",
+      "id": "integration.notion-e1ba4807a15d8579f79cfd90",
+      "slug": "discord"
+    },
+    {
+      "name": "DocuSign",
+      "id": "integration.notion-24415532349ddf70d3550bba",
+      "slug": "docusign"
+    },
+    {
+      "name": "DoorLoop",
+      "id": "integration.notion-85827f4b5f4d2bc988fae208",
+      "slug": "doorloop"
+    },
+    {
+      "name": "Downdetector",
+      "id": "integration.notion-91d574d84bd766813b9b08ab",
+      "slug": "downdetector"
+    },
+    {
+      "name": "DripJobs",
+      "id": "integration.notion-3fb649be1f17b52aedce0ea3",
+      "slug": "dripjobs"
+    },
+    {
+      "name": "Dropbox",
+      "id": "integration.notion-75170593d559f227f37d4220",
+      "slug": "dropbox"
+    },
+    {
+      "name": "Dropcontact",
+      "id": "integration.notion-d5145fc18515204a594aa697",
+      "slug": "dropcontact"
+    },
+    {
+      "name": "DSPy",
+      "id": "integration.notion-5e990a9d7965a852a4fae78e",
+      "slug": "dspy"
+    },
+    {
+      "name": "Dub",
+      "id": "integration.notion-5da6a35996d008b7c15fc897",
+      "slug": "dub"
+    },
+    {
+      "name": "DuckDuckGo",
+      "id": "integration.notion-5b8eeb90771c2031be0b865d",
+      "slug": "duckduckgo"
+    },
+    {
+      "name": "Dynatrace",
+      "id": "integration.notion-9e1d80b47a177fc629bef2b6",
+      "slug": "dynatrace"
+    },
+    {
+      "name": "Elasticsearch",
+      "id": "integration.notion-ae1b8c8635429669ca198749",
+      "slug": "elasticsearch"
+    },
+    {
+      "name": "ElevenLabs",
+      "id": "integration.notion-e853b4e183ed08708fa41b2f",
+      "slug": "elevenlabs"
+    },
+    {
+      "name": "Email Bison",
+      "id": "integration.notion-d239d52d0d2d047d28791b35",
+      "slug": "email-bison"
+    },
+    {
+      "name": "Embeddings",
+      "id": "integration.notion-302049d75567a9b3a1f9a359",
+      "slug": "embeddings"
+    },
+    {
+      "name": "Engrain",
+      "id": "integration.notion-47d19f2c03f58a46f03187c1",
+      "slug": "engrain"
+    },
+    {
+      "name": "Enrich",
+      "id": "integration.notion-9e7ef9e260ae8c4eb700cf95",
+      "slug": "enrich"
+    },
+    {
+      "name": "Enrow",
+      "id": "integration.notion-b1b48892862fb6198e3e017b",
+      "slug": "enrow"
+    },
+    {
+      "name": "Entrata",
+      "id": "integration.notion-e0c77422067349c136999175",
+      "slug": "entrata"
+    },
+    {
+      "name": "Evaluator",
+      "id": "integration.notion-27f6343f980c4c0ab821d9c7",
+      "slug": "evaluator"
+    },
+    {
+      "name": "Exa",
+      "id": "integration.notion-4968d0cf3b24d26d1d37f6f9",
+      "slug": "exa"
+    },
+    {
+      "name": "Excalidraw",
+      "id": "integration.notion-6a9508c203e0ac2108a10bdc",
+      "slug": "excalidraw"
+    },
+    {
+      "name": "Extend",
+      "id": "integration.notion-bf0bb4ee60e2cd5a1a5283c4",
+      "slug": "extend"
+    },
+    {
+      "name": "Fal.ai",
+      "id": "integration.notion-461508b765d627ae86330e2b",
+      "slug": "fal-ai"
+    },
+    {
+      "name": "Fathom",
+      "id": "integration.notion-a663a6e8a46ccc0de36b1dc6",
+      "slug": "fathom"
+    },
+    {
+      "name": "Figma",
+      "id": "integration.notion-5b79d0d574eedd091c026920",
+      "slug": "figma"
+    },
+    {
+      "name": "File",
+      "id": "integration.notion-3b9c358f36f0a31b6ad3e14f",
+      "slug": "file"
+    },
+    {
+      "name": "Findymail",
+      "id": "integration.notion-a39abc3adc96b06806f554b6",
+      "slug": "findymail"
+    },
+    {
+      "name": "Firebase",
+      "id": "integration.notion-618b8c8de24c7b03f7a150fa",
+      "slug": "firebase"
+    },
+    {
+      "name": "Firecrawl",
+      "id": "integration.notion-702a4da344e2103ebc7ccc9d",
+      "slug": "firecrawl"
+    },
+    {
+      "name": "Fireflies",
+      "id": "integration.notion-161c26cc674bc61b2f4f0e96",
+      "slug": "fireflies"
+    },
+    {
+      "name": "Fireworks",
+      "id": "integration.notion-0caee180da9d0f3f29af4cd0",
+      "slug": "fireworks"
+    },
+    {
+      "name": "Flint",
+      "id": "integration.notion-06cca3daa6a7169f98b52c40",
+      "slug": "flint"
+    },
+    {
+      "name": "Freshdesk",
+      "id": "integration.notion-ec53b05ca72354ddca6a708f",
+      "slug": "freshdesk"
+    },
+    {
+      "name": "Function",
+      "id": "integration.notion-78f9ac018e55436506910835",
+      "slug": "function"
+    },
+    {
+      "name": "Funnel Leasing",
+      "id": "integration.notion-41ffd92836d44bd82f2d6d70",
+      "slug": "funnel-leasing"
+    },
+    {
+      "name": "Gamma",
+      "id": "integration.notion-be9d587defa1f0c09ef49eb1",
+      "slug": "gamma"
+    },
+    {
+      "name": "Gemini",
+      "id": "integration.notion-5d72436256ada53828b51895",
+      "slug": "gemini"
+    },
+    {
+      "name": "GitHub",
+      "id": "integration.notion-c0b0109d9439de57fe3cf03a",
+      "slug": "github"
+    },
+    {
+      "name": "GitLab",
+      "id": "integration.notion-9d96d9d5b1addd7e7e6119a2",
+      "slug": "gitlab"
+    },
+    {
+      "name": "Gmail",
+      "id": "Bo1cKnbv98UhB4xezjc8mS",
+      "slug": "gmail"
+    },
+    {
+      "name": "Gong",
+      "id": "integration.notion-cb37790a8586667fe9d52fbf",
+      "slug": "gong"
+    },
+    {
+      "name": "Google Ads",
+      "id": "integration.notion-62fa52b9d94790dcbd2d6d92",
+      "slug": "google-ads"
+    },
+    {
+      "name": "Google AppSheet",
+      "id": "integration.notion-2de6a2fefc2ae7e38f07d035",
+      "slug": "google-appsheet"
+    },
+    {
+      "name": "Google Books",
+      "id": "integration.notion-d8e69d52dd62fecf5a34daa1",
+      "slug": "google-books"
+    },
+    {
+      "name": "Google Calendar",
+      "id": "integration.notion-bcdd9220f8626357599d5088",
+      "slug": "google-calendar"
+    },
+    {
+      "name": "Google Cloud",
+      "id": "integration.notion-d9b1d7819af92e77de646423",
+      "slug": "google-cloud"
+    },
+    {
+      "name": "Google Contacts",
+      "id": "integration.notion-6937da3330ea6171027ecccf",
+      "slug": "google-contacts"
+    },
+    {
+      "name": "Google Docs",
+      "id": "integration.notion-77fe460fd5b42382396d3ad0",
+      "slug": "google-docs"
+    },
+    {
+      "name": "Google Drive",
+      "id": "Bo1cKnbv98UhB4xezjc9rG",
+      "slug": "google-drive"
+    },
+    {
+      "name": "Google Form Trigger",
+      "id": "integration.notion-7d716833e82fa86248496bb6",
+      "slug": "google-form-trigger"
+    },
+    {
+      "name": "Google Forms",
+      "id": "integration.notion-3cab3406e6cf9c51c22afae9",
+      "slug": "google-forms"
+    },
+    {
+      "name": "Google Groups",
+      "id": "integration.notion-57c357df8225cbf1a6352c4c",
+      "slug": "google-groups"
+    },
+    {
+      "name": "Google Maps",
+      "id": "integration.notion-227d712732a30555ffa0d5bf",
+      "slug": "google-maps"
+    },
+    {
+      "name": "Google Meet",
+      "id": "integration.notion-e6f7f04f5a43e53f4df97947",
+      "slug": "google-meet"
+    },
+    {
+      "name": "Google PageSpeed",
+      "id": "integration.notion-feecfab1c9cbd4c8e6be2754",
+      "slug": "google-pagespeed"
+    },
+    {
+      "name": "Google Search",
+      "id": "integration.notion-426d27def7eef69afd58ab52",
+      "slug": "google-search"
+    },
+    {
+      "name": "Google Sheets",
+      "id": "kKb9zo81APf4LctPEFc67k",
+      "slug": "google-sheets"
+    },
+    {
+      "name": "Google Slides",
+      "id": "integration.notion-cef9ac934fa8514be9b89b17",
+      "slug": "google-slides"
+    },
+    {
+      "name": "Google Tasks",
+      "id": "integration.notion-15d66f5da0792db7362cbb75",
+      "slug": "google-tasks"
+    },
+    {
+      "name": "Google Vault",
+      "id": "integration.notion-63c3ef94369d06827959a92a",
+      "slug": "google-vault"
+    },
+    {
+      "name": "Grafana",
+      "id": "integration.notion-cace491b69555e8d0f77747d",
+      "slug": "grafana"
+    },
+    {
+      "name": "Grain",
+      "id": "integration.notion-2c2240217b64aa2d2b96eaaf",
+      "slug": "grain"
+    },
+    {
+      "name": "Granola",
+      "id": "integration.notion-89601a2c41e3b6bc691048f6",
+      "slug": "granola"
+    },
+    {
+      "name": "Greenhouse",
+      "id": "integration.notion-f300f10844ecfc75f12a0deb",
+      "slug": "greenhouse"
+    },
+    {
+      "name": "Greptile",
+      "id": "integration.notion-b282d274ebe2e68dc04d2884",
+      "slug": "greptile"
+    },
+    {
+      "name": "Grok",
+      "id": "integration.notion-add92b9cde2bdbf3daaf65a0",
+      "slug": "grok"
+    },
+    {
+      "name": "Guardrails",
+      "id": "integration.notion-5dc897f81321d2bafc2dc70f",
+      "slug": "guardrails"
+    },
+    {
+      "name": "Harmonic",
+      "id": "integration.notion-3354dbc82ee33f3b3165af4c",
+      "slug": "harmonic"
+    },
+    {
+      "name": "Hex",
+      "id": "integration.notion-128df13c1e54ffaaafcc9d07",
+      "slug": "hex"
+    },
+    {
+      "name": "HeyGen",
+      "id": "integration.notion-5ffdc8c7e252fc2893c10408",
+      "slug": "heygen"
+    },
+    {
+      "name": "HighLevel",
+      "id": "integration.notion-d79059c6efd7e41920f52bce",
+      "slug": "highlevel"
+    },
+    {
+      "name": "HTTP Request",
+      "id": "integration.notion-48ecf00c953627fcf6be5aab",
+      "slug": "http-request"
+    },
+    {
+      "name": "HubSpot",
+      "id": "integration.notion-91b6da07adf530f8a9710301",
+      "slug": "hubspot"
+    },
+    {
+      "name": "Hugging Face",
+      "id": "integration.notion-e3ce9cc5efa9354c42b30704",
+      "slug": "hugging-face"
+    },
+    {
+      "name": "Human in the Loop",
+      "id": "integration.notion-f48b4ff85cbb5107d72b9246",
+      "slug": "human-in-the-loop"
+    },
+    {
+      "name": "Hunter.io",
+      "id": "integration.notion-c7176d42e1876b03aeae5ce4",
+      "slug": "hunter-io"
+    },
+    {
+      "name": "Icypeas",
+      "id": "integration.notion-9d40a78a55bb6189e2c88dee",
+      "slug": "icypeas"
+    },
+    {
+      "name": "Image Generator",
+      "id": "integration.notion-06061f3a890be0992593c168",
+      "slug": "image-generator"
+    },
+    {
+      "name": "IMAP Email",
+      "id": "integration.notion-43abde1145f2f350588d3313",
+      "slug": "imap-email"
+    },
+    {
+      "name": "incident.io",
+      "id": "integration.notion-70b93d3608313cd23978569c",
+      "slug": "incident-io"
+    },
+    {
+      "name": "Infisical",
+      "id": "integration.notion-2ce1d14038a732cc4f5b3843",
+      "slug": "infisical"
+    },
+    {
+      "name": "Input Trigger",
+      "id": "integration.notion-6c456c8de666e04819814ab0",
+      "slug": "input-trigger"
+    },
+    {
+      "name": "Inspectr",
+      "id": "integration.notion-61ca7b67b0eb0135dc8a46ee",
+      "slug": "inspectr"
+    },
+    {
+      "name": "Instagram",
+      "id": "integration.notion-5ede56738376a8c53a7c99bf",
+      "slug": "instagram"
+    },
+    {
+      "name": "Instantly",
+      "id": "integration.notion-cbcf6dfcd8154efc7f557a87",
+      "slug": "instantly"
+    },
+    {
+      "name": "insured.ai",
+      "id": "integration.notion-bc8cb9f448467ef3f7a193ea",
+      "slug": "insured-ai"
+    },
+    {
+      "name": "Intercom",
+      "id": "integration.notion-c47b618e17c75f06e90df082",
+      "slug": "intercom"
+    },
+    {
+      "name": "Jina",
+      "id": "integration.notion-665e05102ac943a0667937bc",
+      "slug": "jina"
+    },
+    {
+      "name": "Jira",
+      "id": "integration.notion-1e32847769dc4a1588004a1d",
+      "slug": "jira"
+    },
+    {
+      "name": "Jira Service Management",
+      "id": "integration.notion-0abd5ecf1c88d6b2dd6c97c0",
+      "slug": "jira-service-management"
+    },
+    {
+      "name": "Jobber",
+      "id": "integration.notion-571e574d94a43847302185ec",
+      "slug": "jobber"
+    },
+    {
+      "name": "Jotform",
+      "id": "integration.notion-a8bc6c15e09fd43bc7fb6199",
+      "slug": "jotform"
+    },
+    {
+      "name": "Jupyter",
+      "id": "integration.notion-9916a5fb8a8d51c1412e88ae",
+      "slug": "jupyter"
+    },
+    {
+      "name": "Kalshi",
+      "id": "integration.notion-b064bbfa28ec04400367d89b",
+      "slug": "kalshi"
+    },
+    {
+      "name": "Ketch",
+      "id": "integration.notion-c85851fb6bf1e5ac32f4c0b6",
+      "slug": "ketch"
+    },
+    {
+      "name": "Kimi",
+      "id": "integration.notion-e4f9c522e1c89280e9561b82",
+      "slug": "kimi"
+    },
+    {
+      "name": "Knowledge",
+      "id": "integration.notion-e0f895872d65b2528feec973",
+      "slug": "knowledge"
+    },
+    {
+      "name": "Knowledge Base",
+      "id": "integration.notion-7a91b817158e1953642d8b12",
+      "slug": "knowledge-base"
+    },
+    {
+      "name": "Label Fields",
+      "id": "integration.notion-274cce1119f40621a399968e",
+      "slug": "label-fields"
+    },
+    {
+      "name": "Lambda",
+      "id": "integration.notion-554e79e652b29f3a01dcf98e",
+      "slug": "lambda"
+    },
+    {
+      "name": "LangSmith",
+      "id": "integration.notion-41a24366212bb5c169dec92c",
+      "slug": "langsmith"
+    },
+    {
+      "name": "LaTeX",
+      "id": "integration.notion-60e5f258a91a88dd4a57ec0f",
+      "slug": "latex"
+    },
+    {
+      "name": "LaunchDarkly",
+      "id": "integration.notion-031ac995a40ff061cf0585e1",
+      "slug": "launchdarkly"
+    },
+    {
+      "name": "LeadMagic",
+      "id": "integration.notion-9fee8d4bbba24a0fcba6615d",
+      "slug": "leadmagic"
+    },
+    {
+      "name": "LegalMate",
+      "id": "integration.notion-5f706b62a4d6ce5bd38de731",
+      "slug": "legalmate"
+    },
+    {
+      "name": "Lemlist",
+      "id": "integration.notion-fc2fa57686de0f0111d38a9d",
+      "slug": "lemlist"
+    },
+    {
+      "name": "Lemlist Trigger",
+      "id": "integration.notion-b9011cfe70ef4671e245f6aa",
+      "slug": "lemlist-trigger"
+    },
+    {
+      "name": "Linear",
+      "id": "integration.notion-7f2fe580edb35154041fa3d4",
+      "slug": "linear"
+    },
+    {
+      "name": "LinkedIn",
+      "id": "integration.notion-84308bea454057aa509a12fb",
+      "slug": "linkedin"
+    },
+    {
+      "name": "Linkup",
+      "id": "integration.notion-3b157db12dcbd930640f29f5",
+      "slug": "linkup"
+    },
+    {
+      "name": "Linq",
+      "id": "integration.notion-aa105eae7db87d85d33cea8f",
+      "slug": "linq"
+    },
+    {
+      "name": "Logfire",
+      "id": "integration.notion-7132d58321c372dc1d0d561e",
+      "slug": "logfire"
+    },
+    {
+      "name": "LogRocket",
+      "id": "integration.notion-2101da9e997f9220ebb94634",
+      "slug": "logrocket"
+    },
+    {
+      "name": "Loop",
+      "id": "integration.notion-254637f72efcddb6a545bccb",
+      "slug": "loop"
+    },
+    {
+      "name": "Loops",
+      "id": "integration.notion-4162e845a2d0111f2772826a",
+      "slug": "loops"
+    },
+    {
+      "name": "Luma",
+      "id": "integration.notion-53009c20073f1d96f75d46db",
+      "slug": "luma"
+    },
+    {
+      "name": "Mailchimp",
+      "id": "integration.notion-d56d16d88324bdc4f441ca0a",
+      "slug": "mailchimp"
+    },
+    {
+      "name": "Mailgun",
+      "id": "integration.notion-b555592a1435e0a9bd23daf7",
+      "slug": "mailgun"
+    },
+    {
+      "name": "Make",
+      "id": "integration.notion-d05aa2a15fb3c40efeeb03be",
+      "slug": "make"
+    },
+    {
+      "name": "ManageEngine ServiceDesk Plus",
+      "id": "integration.notion-35c223845ed689f749abab69",
+      "slug": "manageengine-servicedesk-plus"
+    },
+    {
+      "name": "Manual Trigger",
+      "id": "integration.notion-dcec662dc6473632eeb7e91e",
+      "slug": "manual-trigger"
+    },
+    {
+      "name": "MCP",
+      "id": "integration.notion-10182ab855ff772753c05b2f",
+      "slug": "mcp"
+    },
+    {
+      "name": "MCP Tool",
+      "id": "integration.notion-24e8d31206f707ada9780ebd",
+      "slug": "mcp-tool"
+    },
+    {
+      "name": "MemO",
+      "id": "integration.notion-9c225a950b92172f8c2afe8b",
+      "slug": "memo"
+    },
+    {
+      "name": "Memory",
+      "id": "integration.notion-c064fbca9d9de8dd9bb06249",
+      "slug": "memory"
+    },
+    {
+      "name": "Meta",
+      "id": "integration.notion-ea3bd73e2b506e00527232b3",
+      "slug": "meta"
+    },
+    {
+      "name": "Microsoft Dataverse",
+      "id": "integration.notion-7bca45311f54102215d69f67",
+      "slug": "microsoft-dataverse"
+    },
+    {
+      "name": "Microsoft Dynamics 365 CRM",
+      "id": "integration.notion-5f6dc944afad611290d1d920",
+      "slug": "microsoft-dynamics-365-crm"
+    },
+    {
+      "name": "Microsoft Excel",
+      "id": "integration.notion-b45dfaa7fc8f1653e03f4db0",
+      "slug": "microsoft-excel"
+    },
+    {
+      "name": "Microsoft Planner",
+      "id": "integration.notion-ba0f99268036b23bcd0c5b9e",
+      "slug": "microsoft-planner"
+    },
+    {
+      "name": "Microsoft SQL Server",
+      "id": "integration.notion-ed346bb14786b438c48a1633",
+      "slug": "microsoft-sql-server"
+    },
+    {
+      "name": "Microsoft Teams",
+      "id": "kKb9zo81APf4LctPEFc5Pi",
+      "slug": "microsoft-teams"
+    },
+    {
+      "name": "Microsoft Word",
+      "id": "integration.notion-32ff1080ac1d49a929060721",
+      "slug": "microsoft-word"
+    },
+    {
+      "name": "Microsoft(Legacy)",
+      "id": "integration.notion-9368b967f44440f667a15adc",
+      "slug": "microsoft-legacy"
+    },
+    {
+      "name": "MillionVerifier",
+      "id": "integration.notion-5e8bf108492dfd58e25eeae3",
+      "slug": "millionverifier"
+    },
+    {
+      "name": "Mintlify",
+      "id": "integration.notion-8bc74bb8d4df992b138d76ac",
+      "slug": "mintlify"
+    },
+    {
+      "name": "Mistral Parser",
+      "id": "integration.notion-2bc3d71731b2b98454530a12",
+      "slug": "mistral-parser"
+    },
+    {
+      "name": "Mixpanel",
+      "id": "integration.notion-6c51a29724410569cd66bb47",
+      "slug": "mixpanel"
+    },
+    {
+      "name": "Modal",
+      "id": "integration.notion-c5803a6e4daa6af400e8af0a",
+      "slug": "modal"
+    },
+    {
+      "name": "Monday",
+      "id": "integration.notion-d618fb157a4b382e92fcd4a8",
+      "slug": "monday"
+    },
+    {
+      "name": "MongoDB",
+      "id": "integration.notion-1cc9a79bdaf09793062750a1",
+      "slug": "mongodb"
+    },
+    {
+      "name": "Motion",
+      "id": "integration.notion-305238273bb0fac2a73b4325",
+      "slug": "motion"
+    },
+    {
+      "name": "MRI",
+      "id": "integration.notion-86b37331530f5e63d29e1297",
+      "slug": "mri"
+    },
+    {
+      "name": "MySQL",
+      "id": "integration.notion-430005175c4c7810996d3481",
+      "slug": "mysql"
+    },
+    {
+      "name": "Neo4j",
+      "id": "integration.notion-13fd9e770be366985fd7e0ca",
+      "slug": "neo4j"
+    },
+    {
+      "name": "Neon",
+      "id": "integration.notion-1b6405d1ef5a816105210b20",
+      "slug": "neon"
+    },
+    {
+      "name": "NeverBounce",
+      "id": "integration.notion-9344fd3b18e1fcbc8b4643a1",
+      "slug": "neverbounce"
+    },
+    {
+      "name": "New Relic",
+      "id": "integration.notion-a82261cfdc8e115556a19ed8",
+      "slug": "new-relic"
+    },
+    {
+      "name": "Note",
+      "id": "integration.notion-edb465624291e4053c6c5ea4",
+      "slug": "note"
+    },
+    {
+      "name": "Notion",
+      "id": "kKb9zo81APf4LctPEFc5fr",
+      "slug": "notion"
+    },
+    {
+      "name": "Notion Trigger",
+      "id": "integration.notion-cb9cde8a43d97dc5632ef1a3",
+      "slug": "notion-trigger"
+    },
+    {
+      "name": "Obsidian",
+      "id": "integration.notion-4e2295dd929e424aa1afde70",
+      "slug": "obsidian"
+    },
+    {
+      "name": "Okta",
+      "id": "integration.notion-65819e198c32566ae994e481",
+      "slug": "okta"
+    },
+    {
+      "name": "Ollama Cloud",
+      "id": "integration.notion-54a7e668cd7e18b6697fc888",
+      "slug": "ollama-cloud"
+    },
+    {
+      "name": "OneDrive",
+      "id": "integration.notion-567781541aa1d043041ec08b",
+      "slug": "onedrive"
+    },
+    {
+      "name": "OpenAI",
+      "id": "integration.notion-7d3194f79e645c42e4396dda",
+      "slug": "openai"
+    },
+    {
+      "name": "OpenClaw",
+      "id": "integration.notion-96a4bc2602655473120fcc57",
+      "slug": "openclaw"
+    },
+    {
+      "name": "OpenRouter",
+      "id": "integration.notion-7f871cbf905f6e0cd598b116",
+      "slug": "openrouter"
+    },
+    {
+      "name": "Oracle NetSuite",
+      "id": "integration.notion-89069c6d12741a4d7fa83012",
+      "slug": "oracle-netsuite"
+    },
+    {
+      "name": "Outlook",
+      "id": "kKb9zo81APf4LctPEFc52E",
+      "slug": "outlook"
+    },
+    {
+      "name": "Oyster",
+      "id": "integration.notion-f08689f14e3421bb12d709df",
+      "slug": "oyster"
+    },
+    {
+      "name": "PagerDuty",
+      "id": "integration.notion-1c6cda31110c57fa525ac0e1",
+      "slug": "pagerduty"
+    },
+    {
+      "name": "Paper",
+      "id": "integration.notion-382635c9325bf3273d195ff1",
+      "slug": "paper"
+    },
+    {
+      "name": "Parallel",
+      "id": "integration.notion-83a00300ad6a2502c3fd8f04",
+      "slug": "parallel"
+    },
+    {
+      "name": "Parallel AI",
+      "id": "integration.notion-a9cfbaeab72041e912e6dd71",
+      "slug": "parallel-ai"
+    },
+    {
+      "name": "PayPal",
+      "id": "integration.notion-afe4d16f403a383f07814bbe",
+      "slug": "paypal"
+    },
+    {
+      "name": "People Data Labs",
+      "id": "integration.notion-ce41b64622d88af5946b94f9",
+      "slug": "people-data-labs"
+    },
+    {
+      "name": "Perplexity",
+      "id": "integration.notion-45d780f82c9247fc1142f8b6",
+      "slug": "perplexity"
+    },
+    {
+      "name": "Persona",
+      "id": "integration.notion-5e815286bca594454b291f3b",
+      "slug": "persona"
+    },
+    {
+      "name": "Pinecone",
+      "id": "integration.notion-e2fde0483fc8158ca118f4a1",
+      "slug": "pinecone"
+    },
+    {
+      "name": "Pipedream",
+      "id": "integration.notion-ff29cc984c48b2dd04fb0ecc",
+      "slug": "pipedream"
+    },
+    {
+      "name": "Pipedrive",
+      "id": "integration.notion-d7ccdd668ce4b5192dc67bac",
+      "slug": "pipedrive"
+    },
+    {
+      "name": "PitchBook",
+      "id": "integration.notion-867c417409822d9d2949c678",
+      "slug": "pitchbook"
+    },
+    {
+      "name": "Plaid",
+      "id": "integration.notion-45cd2fb5a170129204e68c2d",
+      "slug": "plaid"
+    },
+    {
+      "name": "Polymarket",
+      "id": "integration.notion-b0c5fbfcb887122f06c7655a",
+      "slug": "polymarket"
+    },
+    {
+      "name": "Post Bridge",
+      "id": "integration.notion-fc040a1d63a8ee913a407ad4",
+      "slug": "post-bridge"
+    },
+    {
+      "name": "PostgreSQL",
+      "id": "integration.notion-a478b4566be5cb007a5d8ae5",
+      "slug": "postgresql"
+    },
+    {
+      "name": "PostHog",
+      "id": "integration.notion-67e5a3025bc013d09e3a1e66",
+      "slug": "posthog"
+    },
+    {
+      "name": "Profound",
+      "id": "integration.notion-d750f652e8f2dd920abb4826",
+      "slug": "profound"
+    },
+    {
+      "name": "Property Meld",
+      "id": "integration.notion-e42b793eef5287e6bfc897d7",
+      "slug": "property-meld"
+    },
+    {
+      "name": "Propertyware",
+      "id": "integration.notion-7cbfe988b83bf89a73d5eb78",
+      "slug": "propertyware"
+    },
+    {
+      "name": "Propexo",
+      "id": "integration.notion-209f4c97de9a8af5b2623426",
+      "slug": "propexo"
+    },
+    {
+      "name": "Prospeo",
+      "id": "integration.notion-7ff8e44441c0050a60176f5e",
+      "slug": "prospeo"
+    },
+    {
+      "name": "Pulse",
+      "id": "integration.notion-41b589ea15f2d94a20fbdde8",
+      "slug": "pulse"
+    },
+    {
+      "name": "Qdrant",
+      "id": "integration.notion-cfc35d18e7332fde265d7754",
+      "slug": "qdrant"
+    },
+    {
+      "name": "Quartr",
+      "id": "integration.notion-6a49660b2a2eb32824259443",
+      "slug": "quartr"
+    },
+    {
+      "name": "QuickBooks",
+      "id": "integration.notion-58b4537b616e657203a685e8",
+      "slug": "quickbooks"
+    },
+    {
+      "name": "Quiver",
+      "id": "integration.notion-c59435a1e9474332701fdc4c",
+      "slug": "quiver"
+    },
+    {
+      "name": "Qwen",
+      "id": "integration.notion-67f2d22514622d1be30c14ee",
+      "slug": "qwen"
+    },
+    {
+      "name": "RabbitMQ",
+      "id": "integration.notion-7b173343f539cdc4641952d5",
+      "slug": "rabbitmq"
+    },
+    {
+      "name": "Railway",
+      "id": "integration.notion-e34d1c9011e06204d0540f17",
+      "slug": "railway"
+    },
+    {
+      "name": "RB2B",
+      "id": "integration.notion-78943b031cc7e995ad8edc3f",
+      "slug": "rb2b"
+    },
+    {
+      "name": "RealPage",
+      "id": "integration.notion-27ee715bb5f69a8a51ffb3bd",
+      "slug": "realpage"
+    },
+    {
+      "name": "Reddit",
+      "id": "integration.notion-2e183f2a7a70de1c10044f4e",
+      "slug": "reddit"
+    },
+    {
+      "name": "Redis",
+      "id": "integration.notion-34fb46c847bb9df96e5205a3",
+      "slug": "redis"
+    },
+    {
+      "name": "Reducto",
+      "id": "integration.notion-30ceaf6d90b3d6edf47d3f67",
+      "slug": "reducto"
+    },
+    {
+      "name": "Relay.app",
+      "id": "integration.notion-76932d682ceecff748a8b33d",
+      "slug": "relay-app"
+    },
+    {
+      "name": "Rent Manager",
+      "id": "integration.notion-6e40281af7a97666e46e3d59",
+      "slug": "rent-manager"
+    },
+    {
+      "name": "Resend",
+      "id": "integration.notion-6de1be36afd7a16d2e4fb504",
+      "slug": "resend"
+    },
+    {
+      "name": "ResiDesk",
+      "id": "integration.notion-163927beeafd8c73bae8670f",
+      "slug": "residesk"
+    },
+    {
+      "name": "ResMan",
+      "id": "integration.notion-eef1b57b6913b20028cac314",
+      "slug": "resman"
+    },
+    {
+      "name": "Response",
+      "id": "integration.notion-a9f4b3d22a523fdada41c85c",
+      "slug": "response"
+    },
+    {
+      "name": "RevenueCat",
+      "id": "integration.notion-5e711eb71db00b1f8bfba2cb",
+      "slug": "revenuecat"
+    },
+    {
+      "name": "Rippling",
+      "id": "integration.notion-462084cbbb1ea5b220b932a7",
+      "slug": "rippling"
+    },
+    {
+      "name": "Rocketlane",
+      "id": "integration.notion-d16140eb7681ce82e9ba16da",
+      "slug": "rocketlane"
+    },
+    {
+      "name": "Rootly",
+      "id": "integration.notion-a1cd60928ef9ca19c33f0cdc",
+      "slug": "rootly"
+    },
+    {
+      "name": "Router",
+      "id": "integration.notion-74c95604043427f0bee1d0e1",
+      "slug": "router"
+    },
+    {
+      "name": "RSS Feed",
+      "id": "integration.notion-e58733fee8796f6faca8a0ff",
+      "slug": "rss-feed"
+    },
+    {
+      "name": "S3",
+      "id": "integration.notion-41242b9fae56fad4e6e77dfe",
+      "slug": "s3"
+    },
+    {
+      "name": "SailPoint",
+      "id": "integration.notion-aae2a2996fca1e1652a705fa",
+      "slug": "sailpoint"
+    },
+    {
+      "name": "Salesforce",
+      "id": "integration.notion-3ccbd9105a45d8fcd4a0101c",
+      "slug": "salesforce"
+    },
+    {
+      "name": "SAP Concur",
+      "id": "integration.notion-9387e476d00b54f039a5b849",
+      "slug": "sap-concur"
+    },
+    {
+      "name": "SAP S4HANA",
+      "id": "integration.notion-bc3974cde43d4c946e4b9312",
+      "slug": "sap-s4hana"
+    },
+    {
+      "name": "Schedule",
+      "id": "integration.notion-5f72005e81c4ecbd5aa3588e",
+      "slug": "schedule"
+    },
+    {
+      "name": "Scheduler",
+      "id": "integration.notion-a02ba163f3a02db22fdd14b3",
+      "slug": "scheduler"
+    },
+    {
+      "name": "Search",
+      "id": "integration.notion-2419329067823cab5b4e5ac5",
+      "slug": "search"
+    },
+    {
+      "name": "Semrush",
+      "id": "integration.notion-20fe945b1d4a1481d5e9a994",
+      "slug": "semrush"
+    },
+    {
+      "name": "Sendblue",
+      "id": "integration.notion-99f2a340bebb69bf712c96ad",
+      "slug": "sendblue"
+    },
+    {
+      "name": "SendGrid",
+      "id": "integration.notion-9f4d422f361728816036982f",
+      "slug": "sendgrid"
+    },
+    {
+      "name": "Sentry",
+      "id": "integration.notion-0cf6855c1a3c323bfb9d788f",
+      "slug": "sentry"
+    },
+    {
+      "name": "Serper",
+      "id": "integration.notion-c65a92835ae694ae76f1813c",
+      "slug": "serper"
+    },
+    {
+      "name": "ServiceNow",
+      "id": "integration.notion-b5738c169b693bee89e1b74e",
+      "slug": "servicenow"
+    },
+    {
+      "name": "SFTP",
+      "id": "integration.notion-224ab2a03cfa58059b7be114",
+      "slug": "sftp"
+    },
+    {
+      "name": "SharePoint",
+      "id": "kKb9zo81APf4LctPEFc6Zd",
+      "slug": "sharepoint"
+    },
+    {
+      "name": "Shopify",
+      "id": "integration.notion-8a72266588ef612e2a307a78",
+      "slug": "shopify"
+    },
+    {
+      "name": "Similarweb",
+      "id": "integration.notion-242e9ecf321408d9d429260b",
+      "slug": "similarweb"
+    },
+    {
+      "name": "Sixtyfour AI",
+      "id": "integration.notion-79aa97588cc987c76c78a73e",
+      "slug": "sixtyfour-ai"
+    },
+    {
+      "name": "Slack",
+      "id": "Bo1cKnbv98UhB4xezjc8yl",
+      "slug": "slack"
+    },
+    {
+      "name": "Smartlead",
+      "id": "integration.notion-41fa7f1079d885a83c5fb40a",
+      "slug": "smartlead"
+    },
+    {
+      "name": "SMTP",
+      "id": "integration.notion-4ae524ef0a54bc56e3844482",
+      "slug": "smtp"
+    },
+    {
+      "name": "Snowflake",
+      "id": "integration.notion-de5a1adf4fedcce1533915ed",
+      "slug": "snowflake"
+    },
+    {
+      "name": "Speech-to-Text",
+      "id": "integration.notion-f9b954eac601921695659e64",
+      "slug": "speech-to-text"
+    },
+    {
+      "name": "Splunk",
+      "id": "integration.notion-101e21bef69a3df68f36ca31",
+      "slug": "splunk"
+    },
+    {
+      "name": "Sportmonks",
+      "id": "integration.notion-1d6548c434e348a7a3f7dbad",
+      "slug": "sportmonks"
+    },
+    {
+      "name": "Spotify",
+      "id": "integration.notion-2b78da3dc866654e6ea7cb2f",
+      "slug": "spotify"
+    },
+    {
+      "name": "Square",
+      "id": "integration.notion-4ba3e8e3765f2970eb37fae5",
+      "slug": "square"
+    },
+    {
+      "name": "SSH",
+      "id": "integration.notion-7f5a55cf3f88be936fb94402",
+      "slug": "ssh"
+    },
+    {
+      "name": "Stagehand",
+      "id": "integration.notion-725b707a076952fe59d873d9",
+      "slug": "stagehand"
+    },
+    {
+      "name": "Stripe",
+      "id": "integration.notion-2bed2032ed3d8300b7714ff7",
+      "slug": "stripe"
+    },
+    {
+      "name": "Stripe Trigger",
+      "id": "integration.notion-883dd13271eac63f6ee685bc",
+      "slug": "stripe-trigger"
+    },
+    {
+      "name": "Supabase",
+      "id": "integration.notion-4d7594e57f7d03f35ede2d31",
+      "slug": "supabase"
+    },
+    {
+      "name": "Tables",
+      "id": "integration.notion-d98a034f5cb8a0e3f07d5d8b",
+      "slug": "tables"
+    },
+    {
+      "name": "Tailscale",
+      "id": "integration.notion-795b104abe3e4134960ca245",
+      "slug": "tailscale"
+    },
+    {
+      "name": "Tavily",
+      "id": "integration.notion-5e2d82cbc971f731d22f59e8",
+      "slug": "tavily"
+    },
+    {
+      "name": "Telegram",
+      "id": "integration.notion-3f40462915a3e6026a4d7901",
+      "slug": "telegram"
+    },
+    {
+      "name": "Temporal",
+      "id": "integration.notion-e4540a7c8404b1becfed2f0c",
+      "slug": "temporal"
+    },
+    {
+      "name": "Text-to-Speech",
+      "id": "integration.notion-d9d9b5ed516e738f836c0137",
+      "slug": "text-to-speech"
+    },
+    {
+      "name": "Thrive",
+      "id": "integration.notion-8365f8634d0fc7e6f87b95c7",
+      "slug": "thrive"
+    },
+    {
+      "name": "TikTok",
+      "id": "integration.notion-5beeafeac2e27eae5d4ba625",
+      "slug": "tiktok"
+    },
+    {
+      "name": "Tinybird",
+      "id": "integration.notion-4bb388b057f583019ae954ee",
+      "slug": "tinybird"
+    },
+    {
+      "name": "TinyFish",
+      "id": "integration.notion-46b52e5d021692a988203b35",
+      "slug": "tinyfish"
+    },
+    {
+      "name": "Together AI",
+      "id": "integration.notion-3feb1417824fbc3483e8f60c",
+      "slug": "together-ai"
+    },
+    {
+      "name": "Transform Array",
+      "id": "integration.notion-6ccd67ca68882daf1db50c0b",
+      "slug": "transform-array"
+    },
+    {
+      "name": "Translate",
+      "id": "integration.notion-7fd690e20d081646429b8b6a",
+      "slug": "translate"
+    },
+    {
+      "name": "Trello",
+      "id": "integration.notion-1768c21fc46884dfc50dda89",
+      "slug": "trello"
+    },
+    {
+      "name": "Trigger.dev",
+      "id": "integration.notion-6ac3282588b8ffe34574f8be",
+      "slug": "trigger-dev"
+    },
+    {
+      "name": "Triple Session",
+      "id": "integration.notion-d51b16eb4756541e2b36d7b2",
+      "slug": "triple-session"
+    },
+    {
+      "name": "Twilio SMS",
+      "id": "integration.notion-73ef3dcac590cc75648383f7",
+      "slug": "twilio-sms"
+    },
+    {
+      "name": "Twilio Voice",
+      "id": "integration.notion-c201488a424c2f325fc99127",
+      "slug": "twilio-voice"
+    },
+    {
+      "name": "Typeform",
+      "id": "integration.notion-55f430c031f1f2f7c0397541",
+      "slug": "typeform"
+    },
+    {
+      "name": "Typeform Trigger",
+      "id": "integration.notion-ee2a2058dd88af50818de47c",
+      "slug": "typeform-trigger"
+    },
+    {
+      "name": "TypeSafe",
+      "id": "integration.notion-bc74d4c225d5b7d9149b370a",
+      "slug": "typesafe"
+    },
+    {
+      "name": "Upstash",
+      "id": "integration.notion-99d211b2dd6f2f4ff227e412",
+      "slug": "upstash"
+    },
+    {
+      "name": "UptimeRobot",
+      "id": "integration.notion-27ea561d1816969de4328fa7",
+      "slug": "uptimerobot"
+    },
+    {
+      "name": "Vanta",
+      "id": "integration.notion-58c2655d4845c1862432d38c",
+      "slug": "vanta"
+    },
+    {
+      "name": "Variables",
+      "id": "integration.notion-7af0b3e47c35820fabef69cc",
+      "slug": "variables"
+    },
+    {
+      "name": "Vercel",
+      "id": "integration.notion-9d3508a8484ee2520ca5fe0e",
+      "slug": "vercel"
+    },
+    {
+      "name": "Vertex AI",
+      "id": "integration.notion-631958784f5c4667b7b7ba37",
+      "slug": "vertex-ai"
+    },
+    {
+      "name": "Video Generator",
+      "id": "integration.notion-2926ab83c9cf814518e4aa1d",
+      "slug": "video-generator"
+    },
+    {
+      "name": "Vision",
+      "id": "integration.notion-5944ae849448011ca08c3785",
+      "slug": "vision"
+    },
+    {
+      "name": "Wait",
+      "id": "integration.notion-716ecabb45ac6a88a049398f",
+      "slug": "wait"
+    },
+    {
+      "name": "Wealthbox",
+      "id": "integration.notion-246fe46a7e2ea7f480cc5efc",
+      "slug": "wealthbox"
+    },
+    {
+      "name": "Webflow",
+      "id": "integration.notion-77e5604feeaf6e01a08279bc",
+      "slug": "webflow"
+    },
+    {
+      "name": "Webhook",
+      "id": "integration.notion-9fd09dc33545f9cc19b81ebd",
+      "slug": "webhook"
+    },
+    {
+      "name": "Webhook Action",
+      "id": "integration.notion-2436d834979da14bbf504e9e",
+      "slug": "webhook-action"
+    },
+    {
+      "name": "WhatsApp",
+      "id": "integration.notion-ec8202b6f9fb16f9e26b6636",
+      "slug": "whatsapp"
+    },
+    {
+      "name": "Wikipedia",
+      "id": "integration.notion-bf11ba3f487c384138273c17",
+      "slug": "wikipedia"
+    },
+    {
+      "name": "Windchill",
+      "id": "integration.notion-00b8f867ccfbef628f06b706",
+      "slug": "windchill"
+    },
+    {
+      "name": "Wispr Flow",
+      "id": "integration.notion-261615e946be1227f6f04e19",
+      "slug": "wispr-flow"
+    },
+    {
+      "name": "Wiza",
+      "id": "integration.notion-b9d75bc636687507709619d4",
+      "slug": "wiza"
+    },
+    {
+      "name": "WordPress",
+      "id": "integration.notion-576473d6a73d7f55ed882786",
+      "slug": "wordpress"
+    },
+    {
+      "name": "Workday",
+      "id": "integration.notion-4e44ddffb6dae60735fb4353",
+      "slug": "workday"
+    },
+    {
+      "name": "Workflow",
+      "id": "integration.notion-da7f739f627198465eeab537",
+      "slug": "workflow"
+    },
+    {
+      "name": "X (Twitter)",
+      "id": "integration.notion-298d460de0f085734648aa2b",
+      "slug": "x-twitter"
+    },
+    {
+      "name": "Xero",
+      "id": "integration.notion-1dd8cb03d5dc9395eb21d998",
+      "slug": "xero"
+    },
+    {
+      "name": "Yardi",
+      "id": "integration.notion-3aefbc1f9c45ed9bb1548ed4",
+      "slug": "yardi"
+    },
+    {
+      "name": "YouTube",
+      "id": "integration.notion-24e6654bfd1ab85bebb1f721",
+      "slug": "youtube"
+    },
+    {
+      "name": "Z.ai",
+      "id": "integration.notion-f7a386a451b796273cf99ef8",
+      "slug": "z-ai"
+    },
+    {
+      "name": "Zapier",
+      "id": "integration.notion-d21800cafd9b39d7f59922f7",
+      "slug": "zapier"
+    },
+    {
+      "name": "Zendesk",
+      "id": "integration.notion-e473f24d4325d51a933cc181",
+      "slug": "zendesk"
+    },
+    {
+      "name": "Zep",
+      "id": "integration.notion-19278a5fa603eea3986ddfae",
+      "slug": "zep"
+    },
+    {
+      "name": "ZeroBounce",
+      "id": "integration.notion-fc5f45028e93eecbcf9675b5",
+      "slug": "zerobounce"
+    },
+    {
+      "name": "Zillow",
+      "id": "integration.notion-5a08fbb37039e825f9111dfe",
+      "slug": "zillow"
+    },
+    {
+      "name": "Zoho CRM",
+      "id": "integration.notion-92e944d92bd0cc1d2dacb076",
+      "slug": "zoho-crm"
+    },
+    {
+      "name": "Zoho Desk",
+      "id": "integration.notion-08c35eb44a3bd9818409f161",
+      "slug": "zoho-desk"
+    },
+    {
+      "name": "Zoom",
+      "id": "integration.notion-d21bb537725d603ee2dbadf9",
+      "slug": "zoom"
+    },
+    {
+      "name": "ZoomInfo",
+      "id": "integration.notion-ca4920e00543273f1b6189ff",
+      "slug": "zoominfo"
+    }
+  ]
+}

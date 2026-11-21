@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "creator": {
+    "@type": "Person",
+    "name": "T"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "T"
+  },
+  "creditText": "T",
+  "copyrightNotice": "T",
+  "license": "https://unsplash.com/license",
+  "acquireLicensePage": "https://unsplash.com/photos/row-of-houses-on-a-street-WbBHgiKFWCw",
+  "contentUrl": "https://images.unsplash.com/photo-1753808644215-873b262cec52?auto=format&fit=crop&q=60&crop=entropy&cs=srgb&fm=jpg&ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzg4NzQ3MDIzfA&ixlib=rb-4.1.0",
+  "thumbnail": {
+    "@type": "ImageObject",
+    "url": "https://images.unsplash.com/photo-1753808644215-873b262cec52?auto=format&fit=crop&q=60&crop=entropy&cs=tinysrgb&fm=jpg&ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzg4NzQ3MDIzfA&ixlib=rb-4.1.0&w=200"
+  },
+  "datePublished": "2025-07-29T17:06:59.000Z",
+  "description": "Row of houses on a street",
+  "name": "Row of houses on a street",
+  "width": "4210px",
+  "height": "6348px",
+  "isAccessibleForFree": true,
+  "isFamilyFriendly": true,
+  "caption": "Row of houses on a street",
+  "representativeOfPage": true
+}

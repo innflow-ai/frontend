@@ -159,43 +159,63 @@ export const portfolioFits = [
 
 export const faqs = [
   {
-    question: "Does Innflow replace my property-management software?",
+    question: "What is innflow?",
     answer:
-      "No. This homepage positions Innflow as the operational coordination layer around your existing systems of record. Any claim of replacing accounting, leasing, screening, or maintenance software requires separate product validation.",
+      "innflow is an AI agent platform for agentic process automation. It helps teams assign work to agents, connect the tools those agents need, and keep a visible record with review points — around the systems you already use.",
   },
   {
-    question: "What can I automate first?",
+    question: "How does innflow work?",
     answer:
-      "Start with one frequent, bounded handoff: an incoming request, a recurring report, a document review, or an approval path. The demo is used to confirm the systems, data, exceptions, and human review needed before a workflow is proposed.",
+      "You model a recurring operation as a workflow: trigger, conditions, connected actions, and review points. Agents can use tools and knowledge inside that flow. Communications and Website remain preview concepts until they are approved as generally available.",
   },
   {
-    question: "Who sets up and maintains workflows?",
+    question: "Who uses innflow?",
     answer:
-      "The ownership model is finalized during discovery. Innflow supports visual workflow configuration, but this phase does not promise a specific implementation service or maintenance package.",
+      "innflow is built for operations, support, finance, people, and industry teams that need shared process visibility — from request intake to a reviewable result across tools and teammates.",
   },
   {
-    question: "How are approvals and permissions handled?",
+    question: "Does innflow replace our existing systems of record?",
     answer:
-      "The product includes approval requests and execution views. Exact role, permission, and escalation behavior should be confirmed for the proposed workflow before purchase.",
+      "No. innflow coordinates operational work around the systems you already use. Source records stay where they belong; agents gather context, take configured actions, and bring results back for review.",
   },
   {
-    question: "Which integrations are available?",
+    question: "Can innflow integrate with the tools we already use?",
     answer:
-      "The product repository includes the connector paths shown above and an API surface. Production readiness, account prerequisites, scopes, and depth should be verified for each buyer’s specific stack.",
+      "Connector paths exist in the product. Presence in the directory does not, by itself, prove production readiness, scopes, or account-specific compatibility. Each implementation still needs permissions, data contracts, and review.",
   },
   {
-    question: "How long does a realistic first workflow take?",
+    question: "What kinds of work can agents handle?",
     answer:
-      "There is no public setup-time promise in this phase. Timing depends on scope, access to systems and data, exception handling, and the required review process.",
+      "Workflows can collect, classify, and route recurring work so the right owner sees the next step. Outbound messages and any live chat or voice path stay behind human review unless you explicitly configure otherwise — Communications is a preview, not a general-availability channel list.",
   },
   {
-    question: "What happens when a workflow fails?",
+    question: "Is innflow a chatbot?",
     answer:
-      "Innflow exposes execution history for review. Retry, alerting, and recovery behavior should be designed and tested for the specific workflow rather than assumed from a generic guarantee.",
+      "No. innflow is an agent platform with visual workflows. Agents use tools, follow explicit steps, and can pause for approval. Chat is not listed as a live homepage capability.",
   },
   {
-    question: "How is usage priced?",
+    question: "How do humans stay in the loop?",
     answer:
-      "The application currently uses credit-based plan configuration. Public packaging, plan names, and property-management implementation scope still need approval, so this homepage keeps the buying motion demo-led.",
+      "Place an approval before consequential handoffs. Agents prepare the action and attach context; a person reviews, edits, or rejects it. Exact review boundaries are set per workflow.",
+  },
+  {
+    question: "How do agents use memory and context?",
+    answer:
+      "Agents retrieve the files, tables, knowledge, and records you attach to the task. Accuracy depends on that governed context — not on agents quietly rewriting themselves after every run.",
+  },
+  {
+    question: "How is innflow deployed?",
+    answer:
+      "Start in the innflow workspace with one operation and the systems it touches. Custom or private deployment is scoped with the innflow team. This site does not promise setup time, VPC, or on-prem by default.",
+  },
+  {
+    question: "How does innflow handle security?",
+    answer:
+      "Access follows workspace permissions, connected-account scopes, and workflow approvals. Certification, encryption, and residency claims are confirmed per implementation rather than published as blanket coverage.",
+  },
+  {
+    question: "Where can I read innflow’s policies?",
+    answer:
+      "Use the Privacy, Terms, Cookies, EULA, and DSAR links below. Short URLs /privacy, /terms, /cookies, /eula, and /dsar also redirect to those same policy pages.",
   },
 ] as const;

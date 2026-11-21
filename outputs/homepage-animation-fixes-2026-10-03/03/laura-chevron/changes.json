@@ -1,0 +1,19 @@
+{
+  "removedDelayedShiftFrames": [
+    878,
+    905
+  ],
+  "stableSelectedPosition": [
+    206.858,
+    13.078
+  ],
+  "stableUntilFrame": 1581,
+  "resetDuringFade": [
+    1581,
+    1608
+  ],
+  "duration": 27.6,
+  "runtimeBytes": 923887,
+  "runtimeSha256": "5411ab02ea4cf28b5eaf31bae162da23c89a6e33966835bf0155b4178454c00b",
+  "chevronPixelsStableAfterSelection": true
+}

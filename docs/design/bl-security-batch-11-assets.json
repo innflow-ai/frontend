@@ -1,0 +1,32 @@
+[
+  {
+    "file": "public/brand/baselane-inspired/security/hero-desktop.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6a26c8bbb6741c457abc76b0_security-hero-image.webp",
+    "downloadFile": "pages/29-blue-security/6a26c8bbb6741c457abc76b0_security-hero-image--9076d7f5.webp",
+    "sourceRow": 30
+  },
+  {
+    "file": "public/brand/baselane-inspired/security/hero-mobile.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6a26c8c46aecba7c66046145_security-hero-image-mobile.webp",
+    "downloadFile": "pages/29-blue-security/6a26c8c46aecba7c66046145_security-hero-image-mobile--c0fef4b0.webp",
+    "sourceRow": 30
+  },
+  {
+    "file": "public/brand/baselane-inspired/security/review.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6a26c9fe22fa6439e8e2488a_funds-safe-hero.webp",
+    "downloadFile": "pages/29-blue-security/6a26c9fe22fa6439e8e2488a_funds-safe-hero--19bbec30.webp",
+    "sourceRow": 30
+  },
+  {
+    "file": "public/brand/baselane-inspired/security/access.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6a26ccff6b646ca87af5322a_secure-your-data.webp",
+    "downloadFile": "pages/29-blue-security/6a26ccff6b646ca87af5322a_secure-your-data--097f2e21.webp",
+    "sourceRow": 30
+  },
+  {
+    "file": "public/brand/baselane-inspired/security/data.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6a26ccff7b076149ccb8fd25_protect-your-acount.webp",
+    "downloadFile": "pages/29-blue-security/6a26ccff7b076149ccb8fd25_protect-your-acount--8885f9a7.webp",
+    "sourceRow": 30
+  }
+]

@@ -1,0 +1,274 @@
+.shell {
+  background: var(--marketing-paper);
+  padding: 24px;
+  color: var(--marketing-paper);
+}
+.footer {
+  color: var(--marketing-paper);
+  background: #071a31;
+  border-radius: 64px;
+}
+.body {
+  padding: 96px max(40px, calc((100vw - 1248px) / 2)) 64px;
+  font-family: var(--font-host-grotesk), sans-serif;
+}
+.newsletterPanel {
+  --signup-ink: #012232;
+  padding: 48px 24px;
+  border-start-start-radius: inherit;
+  border-start-end-radius: inherit;
+  background:
+    #c7e3fc url("/brand/blog/apartment-sky-cta.png") center 65% / cover;
+  color: var(--signup-ink);
+}
+.membershipSignup {
+  max-width: 620px;
+  margin-inline: auto;
+  padding: 28px;
+  border: 1px solid rgb(1 34 50 / 24%);
+  border-radius: 20px;
+  background: rgb(255 255 255 / 84%);
+  backdrop-filter: blur(16px);
+  text-align: left;
+}
+.membershipSignup h2 {
+  font-size: 24px;
+  line-height: 1.2;
+  color: inherit;
+}
+.membershipSignup p {
+  margin: 10px 0 22px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.membershipFields {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.membershipFields label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+.membershipInputRow {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid rgb(1 34 50 / 35%);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 90%);
+}
+.membershipInputRow:focus-within {
+  outline: 2px solid var(--signup-ink);
+  outline-offset: 3px;
+}
+.membershipInputRow input {
+  flex: 1;
+  min-width: 0;
+  min-height: 48px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  padding: 12px 14px;
+  outline: none;
+  color: var(--signup-ink);
+  font: inherit;
+}
+.membershipInputRow input::placeholder {
+  color: #51606f;
+}
+.membershipInputRow button {
+  display: inline-flex;
+  font-family: var(--font-button, var(--font-sans));
+  line-height: 1.25;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-shrink: 0;
+  min-height: 48px;
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 999px;
+}
+.membershipInputRow :disabled {
+  cursor: not-allowed;
+}
+.membershipSuccess {
+  margin-top: 20px;
+  padding: 20px 24px;
+  border: 1px solid var(--signup-ink);
+  border-radius: 16px;
+  background: #cbffd6;
+  font-size: 16px;
+  line-height: 1.5;
+}
+@media (max-width: 600px) {
+  .newsletterPanel {
+    padding: 24px 16px;
+  }
+  .membershipSignup {
+    padding: 20px 16px;
+  }
+}
+@media (max-width: 420px) {
+  .membershipInputRow {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    gap: 8px;
+  }
+  .membershipInputRow input {
+    border: 1px solid rgb(1 34 50 / 35%);
+    background: white;
+    font-size: 16px;
+  }
+}
+.footer a {
+  color: inherit;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.footer a:focus-visible {
+  outline: 2px solid #6bb0ff;
+  outline-offset: 5px;
+  border-radius: 4px;
+}
+.upper {
+  display: grid;
+  grid-template-columns: minmax(240px, 1fr) minmax(0, 664px);
+  gap: 64px;
+}
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+.brand p {
+  color: var(--marketing-paper);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.4;
+  max-width: 240px;
+  margin: 0;
+}
+.brand img {
+  width: 132px;
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+.columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+.group {
+  padding: 32px 0 0;
+}
+.group h3 {
+  color: var(--marketing-paper);
+  font-size: 18px;
+  line-height: 26px;
+  margin: 0 0 8px;
+  font-weight: 500;
+}
+.group ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.group li {
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0 0 8px;
+  color: #d0d7df;
+}
+.contact {
+  border-top: 1px solid #ffffff33;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 80px;
+  padding: 48px 0;
+  gap: 24px;
+}
+.contact a {
+  font-size: 16px;
+}
+.googleCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 12px 20px;
+}
+.googleCta:hover {
+  text-decoration: none;
+}
+.legal {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  font-size: 12px;
+  color: #d0d7df;
+}
+.legal nav {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+}
+@media (max-width: 1100px) {
+  .body {
+    padding: 48px 32px;
+  }
+  .upper {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+@media (max-width: 600px) {
+  .shell {
+    padding: 12px;
+  }
+  .footer {
+    border-radius: 32px;
+  }
+  .body {
+    padding: 40px 24px;
+  }
+  .columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .columns > div:last-child {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .contact {
+    margin-top: 48px;
+    padding: 32px 0;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .legal {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .legal nav {
+    justify-content: flex-start;
+  }
+}

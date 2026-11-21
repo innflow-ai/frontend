@@ -1,0 +1,245 @@
+import Image from "next/image";
+import type { CSSProperties, ReactNode } from "react";
+import {
+  ArrowRight,
+  CheckCircle,
+  Plus as MagePlus,
+} from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
+import { siteConfig } from "@/config/site";
+import type {
+  FeatureArtwork,
+  FeaturePageContent,
+} from "@/content/feature-pages";
+import { getPageFaqTuples } from "@/lib/faqs";
+import base from "./baselane-product-page.module.css";
+import { Breadcrumbs } from "./breadcrumbs";
+import styles from "./figma-feature-page.module.css";
+import googleStyles from "./google-cta.module.css";
+import { GoogleCtaContent } from "./google-cta-content";
+import { InnerPageShell } from "./inner-page-shell";
+import { ListingHeroArtwork } from "./listing-hero-artwork";
+import { FeatureTestimonials } from "./page-testimonials";
+import { ProductHeadspaceCta } from "./product-headspace-cta";
+import { ScrollStory } from "./scroll-story";
+
+function Artwork({
+  items,
+  hero = false,
+}: {
+  items: FeatureArtwork[];
+  hero?: boolean;
+}) {
+  return items.map((item) => (
+    <Image
+      key={item.id}
+      src={item.src}
+      alt=""
+      width={Math.round(item.width)}
+      height={Math.round(item.height)}
+      unoptimized
+      className={hero ? styles.heroArtwork : styles.panelArtwork}
+      style={
+        hero
+          ? {
+              left: `${(item.x / 2017.333) * 100}%`,
+              top: `${(item.y / 650) * 100}%`,
+              width: `${(item.width / 2017.333) * 100}%`,
+              height: `${(item.height / 650) * 100}%`,
+            }
+          : ({ "--art-ratio": item.width / item.height } as CSSProperties)
+      }
+    />
+  ));
+}
+
+export async function FigmaFeaturePage({
+  page,
+  testimonials,
+}: {
+  page: FeaturePageContent;
+  testimonials?: ReactNode;
+}) {
+  const cmsFaqs = await getPageFaqTuples(page.path, page.faqs);
+  const features = (
+    <div id="additional-features" className={base.features}>
+      {page.features.map(([title, text]) => (
+        <article key={title}>
+          <h3 data-mixed-heading>
+            <CheckCircle size={20} weight="thin" />
+            <MixedHeadingText>{title}</MixedHeadingText>
+          </h3>
+          <p>{text}</p>
+        </article>
+      ))}
+    </div>
+  );
+  const panel = (
+    item: FeaturePageContent["panels"][number],
+    includeId: boolean,
+  ) => (
+    <section
+      key={item.id}
+      id={includeId ? item.id : undefined}
+      className={`${base.panel} ${styles.panel}`}
+    >
+      <div className={base.scene}>
+        <Image
+          src={item.image}
+          alt=""
+          fill
+          sizes="(max-width: 850px) 100vw, 75vw"
+          className={styles.panelImage}
+          style={
+            {
+              "--panel-focus": `${item.imageFocus}% center`,
+              objectPosition: "var(--responsive-panel-focus, 50% center)",
+            } as CSSProperties
+          }
+        />
+      </div>
+      <span className={base.label}>{item.label}</span>
+      <Artwork items={item.artwork} />
+      <div className={`${base.panelCopy} ${styles.panelCopy}`}>
+        <h3 data-mixed-heading>
+          <MixedHeadingText>{item.title}</MixedHeadingText>
+        </h3>
+        <p>{item.text}</p>
+      </div>
+    </section>
+  );
+  const footerLink = (
+    <a href="#additional-features">
+      Supporting features <ArrowRight size={16} />
+    </a>
+  );
+  const fallback = (
+    <div className={`${base.solutionLayout} ${styles.solutionLayout}`}>
+      <nav
+        aria-label="On this page"
+        className={`${base.sectionNav} ${styles.mobileNav}`}
+      >
+        {page.panels.map((item) => (
+          <a key={item.id} href={`#${item.id}`}>
+            {item.label}
+            <ArrowRight size={16} />
+          </a>
+        ))}
+        {footerLink}
+      </nav>
+      <div className={base.panels}>
+        {page.panels.map((item) => panel(item, true))}
+        {features}
+      </div>
+    </div>
+  );
+  return (
+    <InnerPageShell>
+      <div
+        className={`${base.rentCollection} ${styles.page} ${page.key === "accounting" ? styles.accounting : ""} ${page.key === "listing-and-advertising" ? styles.listing : ""}`}
+      >
+        <section className={`${base.hero} ${styles.hero}`}>
+          <div
+            className={styles.heroVisual}
+            style={{ "--hero-focus": `${page.heroFocus}%` } as CSSProperties}
+          >
+            {page.key === "listing-and-advertising" ? (
+              <ListingHeroArtwork />
+            ) : (
+              <div className={styles.heroCanvas}>
+                <Image
+                  src={page.hero}
+                  alt=""
+                  fill
+                  sizes="100vw"
+                  preload
+                  className={styles.heroPhoto}
+                />
+                <Artwork items={page.heroArtwork} hero />
+                {page.key === "accounting" && (
+                  <Image
+                    src="/brand/feature-pages/accounting/foreground.png"
+                    alt=""
+                    width={622}
+                    height={558}
+                    className={styles.foreground}
+                  />
+                )}
+              </div>
+            )}
+          </div>
+          <div className={`${base.heroCopy} ${styles.heroCopy}`}>
+            <div className={styles.breadcrumbs}>
+              <Breadcrumbs
+                items={[{ label: "Home", href: "/" }, { label: page.name }]}
+              />
+            </div>
+            <h1 data-mixed-heading>
+              <MixedHeadingText>{page.title}</MixedHeadingText>
+            </h1>
+            <p>{page.description}</p>
+            <div className={styles.heroActions}>
+              <a
+                data-site-cta="primary"
+                className={`${base.heroGoogle} ${googleStyles.cream}`}
+                href={siteConfig.signupUrl}
+              >
+                <GoogleCtaContent />
+              </a>
+              <a
+                data-site-cta="secondary"
+                className={styles.heroDemo}
+                href={siteConfig.demoUrl}
+              >
+                See demo <ArrowRight size={18} aria-hidden="true" />
+              </a>
+            </div>
+            <small className={base.heroDisclaimer}>
+              By continuing, you agree to our{" "}
+              <a href="/legal/terms-of-service">Terms of Service</a> and
+              acknowledge our <a href="/legal/privacy-policy">Privacy Policy</a>
+              .
+            </small>
+          </div>
+        </section>
+        <section className={base.solutions}>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>{page.intro}</MixedHeadingText>
+          </h2>
+          <ScrollStory
+            layout="stacked"
+            steps={page.panels.map((item) => ({
+              id: item.id,
+              label: item.label,
+              content: panel(item, false),
+            }))}
+            navClassName={`${base.sectionNav} ${base.progressNav}`}
+            fallback={fallback}
+            after={features}
+            navFooter={footerLink}
+          />
+        </section>
+        <ProductHeadspaceCta />
+        {testimonials ?? <FeatureTestimonials />}
+        <section className={base.faq}>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>{cmsFaqs.heading || "FAQs"}</MixedHeadingText>
+          </h2>
+          <div>
+            {cmsFaqs.items.map(([question, answer, faqId]) => (
+              <details key={faqId}>
+                <summary>
+                  {question}
+                  <span>
+                    <MagePlus size="1em" />
+                  </span>
+                </summary>
+                <p style={{ whiteSpace: "pre-line" }}>{answer}</p>
+              </details>
+            ))}
+          </div>
+        </section>
+      </div>
+    </InnerPageShell>
+  );
+}

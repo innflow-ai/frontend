@@ -1,0 +1,11 @@
+{
+  "tool": "built-in imagegen",
+  "asset": {
+    "reference": "3:45",
+    "photo_node": "133:3",
+    "path": "/Users/ak/innflow-web/output/doorloop-baselane/mobile-inspection-photo-clean-v1.png",
+    "image_hash": "232aec4ce9638fdc3629d2f4fdd0da1a1e8f0fb9"
+  },
+  "verified_at": "2026-09-12T13:58:50.473174+00:00",
+  "verification": "Reference3:45 phone photo cleaned to blank physical display.21:252 rescaled0.8, transparent with glass/stroke cleared, perspective fitted inside bezel;133:5 foreground finger uses clean asset, old133:4 hidden.133:3 radius30 removes corner artifacts. Close-up and full sheet verified. All five source/art mappings exist, visible and in20:2."
+}

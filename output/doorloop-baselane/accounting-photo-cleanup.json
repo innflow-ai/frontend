@@ -1,0 +1,17 @@
+{
+  "tool": "built-in imagegen",
+  "prompt": "Extract and restore just the full rectangular photograph of the woman using her phone in a bright home. Remove both floating UI cards, transaction/chart text, shadows, blue glows and translucent backplates. Reconstruct home background and clothing obscured by cards. Preserve face, glasses, hair, earbuds, pose, phone, hands, clothing, camera angle, lighting and placement. Full-bleed 410:522 portrait, no outside margins, rounded frame, text or graphics.",
+  "assets": [
+    {
+      "reference": "3:4",
+      "photo_node": "48:52",
+      "path": "/Users/ak/innflow-web/output/doorloop-baselane/accounting-photo-clean-v1.png",
+      "image_hash": "fe7866491cb4473cd7e5bd07daa698550c70e47a"
+    }
+  ],
+  "foreground_nodes": [
+    "180:2",
+    "180:3"
+  ],
+  "verification": "Figma close-up inspected after photo fill and native silhouette updates."
+}

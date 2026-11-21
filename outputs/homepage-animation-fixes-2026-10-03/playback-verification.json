@@ -1,0 +1,271 @@
+{
+  "renderer": "Installed @rive-app/webgl2 runtime in Chrome",
+  "checks": [
+    {
+      "number": 1,
+      "fullLoopObserved": true,
+      "openingClosingFramesIdentical": true
+    },
+    {
+      "number": 2,
+      "fullLoopObserved": true,
+      "openingClosingFramesIdentical": true
+    },
+    {
+      "number": 3,
+      "fullLoopObserved": true,
+      "openingClosingFramesIdentical": true,
+      "duration": 27.6,
+      "contextMenusInsideConnectedGlassNodes": false,
+      "menuStatesInspected": [
+        "blue shorter stub with white plus",
+        "white enlarged hover",
+        "menu opens with every label",
+        "full-width If and Else loading fields",
+        "user shell at finished size",
+        "expanded agent picker",
+        "Alex hover",
+        "Laura hover",
+        "Laura light-blue click",
+        "Laura selected after click",
+        "all context menu click states",
+        "agent picker blue click"
+      ],
+      "sha256": "e74a8f23049b7fe467a7fd4b39198a0ab99676d9ad4c06263291a5a22e1ecc01",
+      "stableIfElseLoadingWidths": true,
+      "menuTextLoadedTogether": true,
+      "stubLength": 52,
+      "firstMenuWidth": 480,
+      "firstMenuToNodeWidthRatio": 0.90068,
+      "startToFirstMenuGap": 108.986,
+      "conditionContentsRevealDuringExpansion": true,
+      "prematureSelectedContentHidden": true,
+      "userOrder": [
+        "Alex Morgan",
+        "Laura Kim",
+        "Priya Shah",
+        "Jordan Brooks",
+        "Sophie Bennett"
+      ],
+      "dropdownHoverAndBlueClickVerified": true,
+      "contextMenuTextSqueezeRemoved": true,
+      "contextMenuSkeletonsVerified": [
+        "Start menu options",
+        "If menu options",
+        "Else menu options"
+      ],
+      "skeletonAfterStubClick": true,
+      "postSelectionSkeletonsRemoved": true,
+      "menuIconsVerified": 18,
+      "agentMenuIcon": "Transparent eye cutouts - Outline.svg",
+      "blueRestWhitePlusVerified": true,
+      "whiteHoverBluePlusVerified": true,
+      "handleScale": {
+        "rest": 80,
+        "hover": 110
+      },
+      "componentStyle": "Dub white surfaces with Innflow #00AEFF accents",
+      "contextMenusInsideConnectedNodes": true,
+      "dubRestyleStatesVerified": [
+        "menu skeleton",
+        "menu press",
+        "condition fields",
+        "user picker press",
+        "agent picker press"
+      ],
+      "bottomLayoutVerified": true,
+      "agentPicker": "Canonical Dropbox SVGs; Follow-up Fred selected; field-width menu opens downward",
+      "loopEndpointPixelsIdentical": true,
+      "snappyFieldPickers": {
+        "duration": 27.6,
+        "openDurationMs": 200,
+        "closeDurationMs": 200,
+        "nativeFieldExpansionVerified": true,
+        "headersAndDownChevronsRemainVisible": true,
+        "selectedAgent": "Research Riley",
+        "slackTriggerVerified": true,
+        "fullPlaybackLoopCompleted": true,
+        "openingClosingPixelsIdentical": true,
+        "runtimeSha256": "1124456bffd3ceb73deabc762c8f32341d05ec5ff83ed4944da7bc68362a4208",
+        "testsPassed": 8,
+        "deployed": false
+      },
+      "agentSvgFit": {
+        "sourceFileId": 2626295,
+        "duration": 27.6,
+        "menuWidth": 320,
+        "menuHeight": 344,
+        "canonicalDropboxIcons": 7,
+        "selectedAgent": "Research Riley",
+        "iconSize": 24,
+        "expandedFieldAlignmentVerified": true,
+        "headerAndDownChevronVisible": true,
+        "allSevenRowsInsideMenu": true,
+        "fullPlaybackLoopCompleted": true,
+        "openingClosingPixelsIdentical": true,
+        "runtimeSha256": "b0ed3650acc7e4c4b87de01003324511ac3b709fb8c6f37962b9301ffbb205e7",
+        "runtimeBytes": 905739,
+        "editableBytes": 4930960,
+        "testsPassed": 8,
+        "deployed": false
+      },
+      "earlyBottomHandles": {
+        "fileId": 2626295,
+        "handles": [
+          "0-9054",
+          "0-9047"
+        ],
+        "revealFrames": [
+          209,
+          228
+        ],
+        "previousRevealFrames": [
+          340,
+          367
+        ],
+        "orientationDegrees": 90,
+        "bottomHandlesVisibleBeforeReorder": true,
+        "reorderFrames": [
+          426,
+          463
+        ],
+        "duration": 27.6,
+        "keyframesAdded": 948,
+        "keyframesDeleted": 156,
+        "runtimeBytes": 915023,
+        "runtimeSha256": "8092d95ad1acb441ee047d44418cc9871a5695dc29ce8b2c1832fc87572650bc",
+        "editableBytes": 4953054,
+        "firstRevealVerified": true,
+        "bottomAttachmentThroughReorderVerified": true,
+        "fullPlaybackLoopCompleted": true,
+        "openingClosingPixelsIdentical": true,
+        "testsPassed": 8,
+        "deployed": false
+      },
+      "fredNarrowPicker": {
+        "fileId": 2626295,
+        "menuWidth": 231.8579960235129,
+        "menuHeight": 332,
+        "rowHeight": 40,
+        "fieldAndMenuWidthsMatch": true,
+        "nativeFieldExpandsDownwardOnly": true,
+        "nodeStationaryWhilePickerOpen": true,
+        "selectedAgent": "Follow-up Fred",
+        "selectedIcon": "1-23452",
+        "selectedLabel": "1-23206",
+        "selectionRow": 2,
+        "openDurationMs": 200,
+        "closeDurationMs": 200,
+        "duration": 27.6,
+        "canonicalIcons": 7,
+        "runtimeBytes": 923871,
+        "runtimeSha256": "c987942d450b86ac3d4fbab842c5dda9bdf51ab01a611a55cfa1d489ba7533a1",
+        "editableBytes": 4970369,
+        "fieldWidthMenuVerified": true,
+        "allSevenRowsInsideMenu": true,
+        "fixedHeaderAndDownChevronVerified": true,
+        "fredHoverAndBluePressVerified": true,
+        "fredSelectedIconAndLabelVerified": true,
+        "fullPlaybackLoopCompleted": true,
+        "openingClosingPixelsIdentical": true,
+        "testsPassed": 8,
+        "deployed": false
+      },
+      "lauraChevron": {
+        "removedDelayedShiftFrames": [
+          878,
+          905
+        ],
+        "stableSelectedPosition": [
+          206.858,
+          13.078
+        ],
+        "stableUntilFrame": 1581,
+        "resetDuringFade": [
+          1581,
+          1608
+        ],
+        "duration": 27.6,
+        "runtimeBytes": 923887,
+        "runtimeSha256": "5411ab02ea4cf28b5eaf31bae162da23c89a6e33966835bf0155b4178454c00b",
+        "chevronPixelsStableAfterSelection": true,
+        "fullPlaybackLoopCompleted": true,
+        "testsPassed": 8,
+        "deployed": false
+      },
+      "edgeLayering": {
+        "connectorLayersBehindCards": [
+          "1-13323",
+          "1-13317",
+          "1-13311",
+          "1-870",
+          "1-864",
+          "1-858",
+          "0-2364",
+          "0-4645",
+          "0-4673",
+          "0-4682",
+          "0-10074",
+          "0-12358"
+        ],
+        "startHandlePreparationFrames": [
+          400,
+          426
+        ],
+        "rightMidpointAnchorFrames": [
+          426,
+          1581
+        ],
+        "startPortAtReorderEnd": [
+          230.05305014240494,
+          180.12317151132095
+        ],
+        "duration": 27.6,
+        "runtimeBytes": 925372,
+        "runtimeSha256": "1bc39da9e4c50cca039b71e28340881d22d799ed9b13bc7f387867427fa79eb9",
+        "editableBytes": 4974178,
+        "routeHandoffFrames": [
+          394,
+          400
+        ],
+        "returnResetSmoothed": true,
+        "fullPlaybackLoopCompleted": true,
+        "openingClosingPixelsIdentical": true,
+        "startRightMidpointDuringShrinkVerified": true,
+        "linesBehindCardsVerified": true,
+        "testsPassed": 8,
+        "deployed": false
+      },
+      "layoutOnHandleClick": {
+        "handleHoverFrames": [
+          408,
+          419
+        ],
+        "handlePressFrame": 426,
+        "layoutStartsFrame": 426,
+        "layoutSettlesFrame": 463,
+        "nextStepMenuRevealFrames": [
+          470,
+          480
+        ],
+        "cursorFollowsPressedHandleThroughLayout": true,
+        "duration": 27.6,
+        "runtimeBytes": 926028,
+        "runtimeSha256": "e74a8f23049b7fe467a7fd4b39198a0ab99676d9ad4c06263291a5a22e1ecc01",
+        "editableBytes": 4976136,
+        "fullPlaybackLoopCompleted": true,
+        "openingClosingPixelsIdentical": true,
+        "pressBeforeLayoutVerified": true,
+        "nextStepMenuAfterLayoutVerified": true,
+        "testsPassed": 8,
+        "deployed": false
+      }
+    }
+  ],
+  "focusedTests": {
+    "file": "src/app/preview/scroll-showcase/baseline-features.test.tsx",
+    "passed": 8
+  },
+  "installedLocally": true,
+  "deployed": false
+}

@@ -1,0 +1,413 @@
+.page {
+  min-height: 100vh;
+  color: var(--sky-ink);
+  background: #fff;
+}
+
+.hero {
+  position: relative;
+  min-height: 760px;
+  overflow: hidden;
+  padding: 88px 24px 96px;
+}
+
+.heroImage {
+  z-index: 0;
+  object-fit: cover;
+}
+
+.heroOverlay {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(4, 15, 27, 0.82),
+      rgba(4, 15, 27, 0.3) 58%,
+      rgba(4, 15, 27, 0.42)
+    ),
+    linear-gradient(180deg, rgba(4, 15, 27, 0.12), rgba(4, 15, 27, 0.38));
+}
+
+.heroInner {
+  position: relative;
+  z-index: 2;
+  width: min(100%, var(--sky-shell-wide));
+  margin: 0 auto;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+}
+
+.heroCopy {
+  max-width: 570px;
+}
+
+.hero .heroTag {
+  border-color: rgba(255, 255, 255, 0.56);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(8px);
+}
+
+.hero h1 {
+  margin: 28px 0 0;
+  color: #fff;
+  font-size: clamp(44px, 5.2vw, 72px);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+  text-wrap: balance;
+  text-shadow: 0 8px 40px rgba(4, 15, 27, 0.4);
+}
+
+.lede {
+  max-width: 540px;
+  margin: 26px 0 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 18px;
+  line-height: 1.65;
+  text-shadow: 0 2px 18px rgba(4, 15, 27, 0.45);
+}
+
+.emailLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  margin-top: 38px;
+  padding: 8px 16px 8px 8px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: var(--sky-radius-pill);
+  color: #fff;
+  background: rgba(5, 18, 32, 0.48);
+  box-shadow: 0 16px 36px rgba(3, 13, 24, 0.2);
+  backdrop-filter: blur(16px);
+  transition:
+    transform 160ms ease,
+    background 160ms ease;
+}
+
+.emailLink:hover {
+  background: rgba(5, 18, 32, 0.72);
+  transform: translateY(-2px);
+}
+
+.emailLink > span:nth-child(2) {
+  display: grid;
+  gap: 1px;
+  min-width: 0;
+  font-size: 14px;
+}
+
+.emailLink small {
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.emailIcon {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--sky-ink);
+  background: #fff;
+}
+
+.formCard {
+  scroll-margin-top: 112px;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.48);
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 32px 80px rgba(3, 13, 24, 0.32);
+  backdrop-filter: blur(22px);
+}
+
+.form {
+  display: grid;
+  gap: 22px;
+  padding: 34px;
+  border-radius: 23px;
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.formHeading > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--sky-blue);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.formHeading h2 {
+  margin: 8px 0 0;
+  color: var(--sky-ink);
+  font-size: clamp(30px, 3vw, 42px);
+  letter-spacing: -0.035em;
+}
+
+.formHeading p {
+  max-width: 500px;
+  margin: 10px 0 0;
+  color: var(--sky-muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.fieldGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+  color: var(--sky-ink);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.field small {
+  color: var(--sky-muted);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  border: 1px solid var(--sky-line);
+  border-radius: 13px;
+  color: var(--sky-ink);
+  background: #fff;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease;
+}
+
+.field input,
+.field select {
+  height: 52px;
+  padding: 0 15px;
+}
+
+.field textarea {
+  min-height: 148px;
+  padding: 14px 15px;
+  line-height: 1.55;
+  resize: vertical;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #8b9aac;
+}
+
+.field input:hover,
+.field select:hover,
+.field textarea:hover {
+  border-color: #b9c9d8;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--sky-blue);
+  box-shadow: 0 0 0 4px rgba(0, 174, 255, 0.12);
+}
+
+.formFooter {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.formFooter p {
+  max-width: 310px;
+  color: var(--sky-muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.formFooter button {
+  display: inline-flex;
+  min-height: 50px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 13px 22px;
+  border: 0;
+  border-radius: var(--sky-radius-pill);
+  color: #fff;
+  background: var(--gradient-cta);
+  box-shadow: 0 12px 28px rgba(0, 174, 255, 0.22);
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease;
+}
+
+.formFooter button:hover {
+  box-shadow: 0 16px 34px rgba(0, 174, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.support {
+  padding: 72px 24px;
+}
+
+.supportInner {
+  display: grid;
+  justify-items: center;
+  gap: 50px;
+  width: min(100%, 1136px);
+  margin-inline: auto;
+}
+
+.supportHeading {
+  display: grid;
+  justify-items: center;
+  gap: 20px;
+  text-align: center;
+}
+
+.support .supportHeading h2 {
+  font-size: clamp(32px, 3.5vw, 40px);
+  line-height: 1.2;
+}
+
+.supportHeading p {
+  max-width: 360px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.audiences {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 50px;
+  width: min(100%, 990px);
+}
+
+.audience {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+.audience img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 470 / 324;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 32px;
+}
+
+.support .audience h3 {
+  font-size: 22px;
+  line-height: 1.25;
+}
+
+.support .audience p {
+  max-width: 350px;
+  margin-top: 12px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+@media (max-width: 1020px) {
+  .hero {
+    padding-top: 72px;
+  }
+
+  .heroGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .heroCopy {
+    max-width: 680px;
+  }
+
+  .formCard {
+    scroll-margin-top: 112px;
+    max-width: 680px;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero {
+    padding: 56px 20px 64px;
+  }
+
+  .hero h1 {
+    font-size: clamp(40px, 10.5vw, 56px);
+  }
+
+  .form {
+    padding: 26px 20px;
+  }
+
+  .fieldGrid,
+  .audiences {
+    grid-template-columns: 1fr;
+  }
+
+  .formFooter {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .formFooter p {
+    max-width: none;
+  }
+
+  .formFooter button {
+    width: 100%;
+  }
+
+  .emailLink {
+    max-width: 100%;
+  }
+
+  .support {
+    padding: 56px 20px;
+  }
+
+  .supportInner,
+  .audiences {
+    gap: 36px;
+  }
+
+  .audiences {
+    max-width: 470px;
+  }
+
+  .audience img {
+    margin-bottom: 24px;
+  }
+}

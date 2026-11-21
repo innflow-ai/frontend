@@ -11,6 +11,11 @@ type AnalyticsWindow = Window & {
   ) => void;
   posthog?: {
     capture: (event: string, properties?: Record<string, unknown>) => void;
+    has_opted_out_capturing?: () => boolean;
+    opt_in_capturing?: () => void;
+    opt_out_capturing?: () => void;
+    startSessionRecording?: () => void;
+    stopSessionRecording?: () => void;
   };
 };
 

@@ -1,0 +1,25 @@
+{
+  "duration": 27.6,
+  "userOrder": [
+    "Alex Morgan",
+    "Laura Kim",
+    "Priya Shah",
+    "Jordan Brooks",
+    "Sophie Bennett"
+  ],
+  "alexHoverFrame": 749,
+  "lauraHoverFrame": 781,
+  "lauraPressFrame": 798,
+  "lauraSelectedFrame": 838,
+  "preventPrematureSelection": [
+    "Laura Kim",
+    "AI Agent"
+  ],
+  "feedbackMenus": [
+    "first context menu",
+    "If context menu",
+    "Else context menu",
+    "user picker",
+    "agent picker"
+  ]
+}

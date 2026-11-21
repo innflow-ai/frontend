@@ -1,0 +1,176 @@
+"use client";
+
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { type ReactNode, useEffect, useState } from "react";
+import { CustomerSupportHours } from "@/components/customer-support-hours";
+import { GoogleCtaContent } from "@/components/google-cta-content";
+import { footerNavigation } from "@/config/footer-navigation";
+import { siteConfig } from "@/config/site";
+import { EditorialHeader } from "./editorial-header";
+import { FooterLegalLinks } from "./footer-legal-links";
+import { GoogleSignInButton } from "./google-sign-in";
+import { type LatestBlogPostNavItem, MegaMenu } from "./mega-menu";
+import { navigationLabels } from "./navigation-labels";
+import styles from "./runey-landing.module.css";
+
+const links = [
+  { label: "Product", href: "/#features" },
+  { label: "Solutions", href: "/property-management" },
+  { label: "Platform", href: "/platform" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Resources", href: "/blog" },
+];
+
+export function RuneyChrome({
+  slot,
+  children,
+  latestBlogPosts = [],
+}: {
+  slot: "header" | "footer";
+  children: ReactNode;
+  latestBlogPosts?: LatestBlogPostNavItem[];
+}) {
+  const pathname = usePathname();
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
+  // biome-ignore lint/correctness/useExhaustiveDependencies: Recheck restored scroll position on navigation.
+  useEffect(() => {
+    const syncScroll = () => setScrolled(window.scrollY > 0);
+    syncScroll();
+    window.addEventListener("scroll", syncScroll, { passive: true });
+    return () => window.removeEventListener("scroll", syncScroll);
+  }, [pathname]);
+  if (pathname !== "/" && pathname !== "/property-management") return children;
+  if (slot === "footer")
+    return (
+      <footer
+        className={`${styles.footer} ${pathname === "/" ? styles.blueChrome : ""}`}
+      >
+        <div className={styles.footerGrid}>
+          <div>
+            <a href="/" aria-label="Innflow home">
+              <Image
+                src="/brand/innflow_logo_set_B.svg"
+                alt="Innflow"
+                width={132}
+                height={28}
+              />
+            </a>
+            <p>
+              Connected workflows. Clearer handoffs.
+              <br />
+              Property operations in one place.
+            </p>
+          </div>
+          {footerNavigation.map((column) => (
+            <div key={column.heading}>
+              <h2>{column.heading}</h2>
+              {column.heading === "Product" && (
+                <a href="/#features">Features</a>
+              )}
+              {column.links.map((link) => (
+                <a key={link.label} href={link.href}>
+                  {link.label}
+                </a>
+              ))}
+              {column.heading === "Product" && (
+                <>
+                  <a href="/integrations">Integrations</a>
+                  <a href="/pricing">Pricing</a>
+                </>
+              )}
+            </div>
+          ))}
+          <div>
+            <h2>Explore</h2>
+            <a href="/property-management">Property management</a>
+            <a href="/skills">Skills library</a>
+            <a href="/blog">Blog</a>
+            <a href="/faq">FAQ</a>
+          </div>
+          <div>
+            <h2>Get in touch</h2>
+            <a href="/contact">Contact us</a>
+            <a href={siteConfig.demoUrl}>Request a demo</a>
+            <a href={siteConfig.signupUrl}>
+              <GoogleCtaContent />
+            </a>
+            <a href={siteConfig.signupUrl}>Log in</a>
+            <CustomerSupportHours />
+          </div>
+        </div>
+        <div className={styles.footerBottom}>
+          <span>
+            © {new Date().getFullYear()} Innflow. All rights reserved.
+          </span>
+          <nav className={styles.footerLegal} aria-label="Legal">
+            <FooterLegalLinks />
+          </nav>
+        </div>
+        <div className={styles.wordmark} aria-hidden="true">
+          innflow
+        </div>
+      </footer>
+    );
+  return (
+    <EditorialHeader
+      latestBlogPosts={latestBlogPosts}
+      desktopHeader={
+        <header
+          className={`${styles.header}${pathname === "/" ? ` ${styles.homeHeader}` : ""}${!scrolled ? ` ${styles.headerTop}${pathname === "/" ? ` ${styles.headerLight}` : ""}` : ""}`}
+        >
+          <div className={styles.headerInner}>
+            <a href="/" aria-label="Innflow home">
+              <Image
+                src="/brand/innflow-nav-wordmark.svg"
+                alt="Innflow"
+                width={122}
+                height={33}
+                preload
+              />
+            </a>
+            <nav className={styles.desktopNav} aria-label="Primary navigation">
+              {pathname === "/" ? (
+                <>
+                  {navigationLabels.map((label) => (
+                    <MegaMenu
+                      key={label}
+                      label={label}
+                      navigationLabel={label}
+                      columns={[]}
+                      compact
+                      expanded={activeMenu === label}
+                      onExpandedChange={(open) =>
+                        setActiveMenu((current) =>
+                          open ? label : current === label ? null : current,
+                        )
+                      }
+                    />
+                  ))}
+                  <a href="/pricing">Pricing</a>
+                </>
+              ) : (
+                links.map((link) => (
+                  <a href={link.href} key={link.label}>
+                    {link.label}
+                  </a>
+                ))
+              )}
+            </nav>
+            <div className={styles.headerActions}>
+              <a className={styles.login} href={siteConfig.signupUrl}>
+                Log in
+              </a>
+              <GoogleSignInButton
+                className={styles.primaryButton}
+                label="Continue with Google"
+                eventLabel="header_continue_google"
+              />
+            </div>
+          </div>
+        </header>
+      }
+    />
+  );
+}

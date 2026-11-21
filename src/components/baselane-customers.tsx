@@ -1,0 +1,202 @@
+"use client";
+
+import Image from "next/image";
+import { useState } from "react";
+import {
+  ChevronLeft as MageArrowLeft,
+  ArrowRight as MageArrowRight,
+} from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
+import { siteConfig } from "@/config/site";
+import styles from "./baselane-customers.module.css";
+import { InnerPageShell } from "./inner-page-shell";
+
+const workflows = [
+  [
+    "Maintenance coordination",
+    "Connect the request, property details, and assigned owner before the next handoff.",
+    "/property-management",
+  ],
+  [
+    "Resident follow-up",
+    "Keep questions and supporting context together so your team can prepare a useful response.",
+    "/renters",
+  ],
+  [
+    "Document preparation",
+    "Gather missing records and track the review steps before sharing a prepared package.",
+    "/tax-preparation",
+  ],
+  [
+    "Recurring property work",
+    "Give routine tasks a consistent path with visible ownership and human review.",
+    "/rent-collection",
+  ],
+  [
+    "Portfolio context",
+    "Keep each property’s records close to its requests, decisions, and next actions.",
+    "/multi-property-investors",
+  ],
+  [
+    "Advisor handoffs",
+    "Bring open questions and supporting documents into the same client conversation.",
+    "/advisor-partner-program",
+  ],
+];
+const scenarios = [
+  [
+    "A new maintenance request",
+    "From request to assigned work",
+    "A resident reports an issue. Bring the property record and relevant procedure alongside the request, assign the next step, and include a review where a decision is needed.",
+    "/property-management",
+  ],
+  [
+    "A document review",
+    "Prepare a handoff your advisor can follow",
+    "Start with the property checklist. Gather supporting records, give missing items an owner, and keep the team’s review notes with the prepared information.",
+    "/tax-preparation",
+  ],
+  [
+    "A growing portfolio",
+    "Keep context as the work expands",
+    "Organize requests around the right property. Give recurring processes consistent steps so your team can follow progress across the portfolio.",
+    "/multi-property-investors",
+  ],
+  [
+    "A recurring resident question",
+    "Start with the information you already have",
+    "Connect your procedures and working records to the question. Use that context to prepare a response and let the responsible person review the next action.",
+    "/renters",
+  ],
+];
+
+export function BaselaneCustomers() {
+  const [caseIndex, setCaseIndex] = useState(0);
+  const story = scenarios[caseIndex];
+  return (
+    <InnerPageShell>
+      <div className={styles.page}>
+        <section className={styles.hero}>
+          <Image
+            src="/brand/baselane-inspired/hero.webp"
+            alt="A person kayaking on clear water"
+            fill
+            priority
+            sizes="100vw"
+          />
+          <div className={styles.heroCopy}>
+            <h1 data-mixed-heading>
+              <MixedHeadingText>
+                Your people. Your properties. One connected flow.
+              </MixedHeadingText>
+            </h1>
+            <p>
+              innflow brings workflows, knowledge, and approvals together for
+              the people keeping property operations moving.
+            </p>
+            <div className={styles.actions}>
+              <a
+                data-site-cta="primary"
+                className={styles.button}
+                href="#team-workflows"
+              >
+                Explore team workflows
+              </a>
+              <a
+                data-site-cta="secondary"
+                className={styles.outline}
+                href={siteConfig.demoUrl}
+              >
+                Book a demo <MageArrowRight size="1em" />
+              </a>
+            </div>
+          </div>
+        </section>
+        <div className={styles.band}>
+          <span>Clear ownership. Shared context. Visible progress.</span>
+          <a href="/multi-property-investors">
+            Explore portfolio operations <MageArrowRight size="1em" />
+          </a>
+        </div>
+        <section className={styles.section} id="team-workflows">
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              Built around the work on your team’s desk.
+            </MixedHeadingText>
+          </h2>
+          <p className={styles.lead}>
+            Start with a recurring process. Connect the information behind it
+            and make the next handoff clear.
+          </p>
+          <div className={styles.reviews}>
+            {workflows.map(([title, text, href]) => (
+              <article key={title}>
+                <span className={styles.eyebrow}>WORKFLOW</span>
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>{title}</MixedHeadingText>
+                </h3>
+                <p>{text}</p>
+                <a href={href}>
+                  Explore the workflow <MageArrowRight size="1em" />
+                </a>
+              </article>
+            ))}
+          </div>
+        </section>
+        <section
+          className={styles.caseSection}
+          id="case-studies"
+          aria-label="Example property workflows"
+        >
+          <div className={styles.case} aria-live="polite">
+            <div className={styles.casePhoto}>
+              <Image
+                src="/brand/baselane-inspired/loans/property.webp"
+                alt="A property owner reviewing information on a phone"
+                fill
+                sizes="(max-width:700px) 100vw, 50vw"
+              />
+              <div className={styles.caseBadge}>
+                <strong>{story[0]}</strong>
+                <span>Illustrative workflow</span>
+              </div>
+            </div>
+            <div className={styles.caseCopy}>
+              <span className={styles.eyebrow}>HOW THE WORK CONNECTS</span>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>{story[1]}</MixedHeadingText>
+              </h2>
+              <p>{story[2]}</p>
+              <a data-site-cta="primary" className={styles.button} href={story[3]}>
+                Explore with innflow <MageArrowRight size="1em" />
+              </a>
+            </div>
+          </div>
+          <div className={styles.controls}>
+            <button
+              type="button"
+              aria-label="Previous workflow"
+              onClick={() =>
+                setCaseIndex(
+                  (caseIndex + scenarios.length - 1) % scenarios.length,
+                )
+              }
+            >
+              <MageArrowLeft size="1em" />
+            </button>
+            <span aria-live="polite">
+              {caseIndex + 1} / {scenarios.length}
+            </span>
+            <button
+              type="button"
+              aria-label="Next workflow"
+              onClick={() => setCaseIndex((caseIndex + 1) % scenarios.length)}
+            >
+              <MageArrowRight size="1em" />
+            </button>
+          </div>
+        </section>
+      </div>
+    </InnerPageShell>
+  );
+}

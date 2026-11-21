@@ -1,0 +1,12 @@
+{
+  "tool": "built-in imagegen",
+  "asset": {
+    "reference": "3:140",
+    "photo_node": "58:16",
+    "path": "/Users/ak/innflow-web/output/doorloop-baselane/quickbooks-photo-clean-v1.png",
+    "image_hash": "89016e6102bfd2e56cb69016163b86938e2595b8"
+  },
+  "verified_at": "2026-09-12T12:55:01.251970+00:00",
+  "verification": "Figma hero 58:15 screenshot; native report fits cleaned laptop; separate connection overlays",
+  "prompt_summary": "Remove source floating logo tiles and all screen UI, preserve full office portrait and blank physical laptop display."
+}

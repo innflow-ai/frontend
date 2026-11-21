@@ -1,0 +1,11 @@
+{
+  "tool": "built-in imagegen",
+  "prompt_summary": "Restore pale green/cream rowhouses and blue sky; remove messages/campaign cards, text/UI/plates/rims/glows. Preserve peaked roofs, rounded bay towers, trim, windows, upward perspective and warm light. Full430:570 portrait, no zoom or added graphics.",
+  "asset": {
+    "reference": "3:101",
+    "photo_node": "38:175",
+    "path": "/Users/ak/innflow-web/output/doorloop-baselane/community-photo-clean-v1.png",
+    "image_hash": "414157d27f0991643bbe8b25279e75972c09b0b2"
+  },
+  "verification": "Community hero: removed baked messages/campaign cards, plates/glows/rims with built-in imagegen. Applied clean rowhouse photograph414157d27f0991643bbe8b25279e75972c09b0b2 to38:175 at430x570, preserving native38:176/38:180 and approved community-guidelines draft copy. Screenshot verified roofline, clean sky/card edges and in-cell bounds. Hidden alternate162:83 retained. Reference-derived draft image, not rights-cleared original."
+}

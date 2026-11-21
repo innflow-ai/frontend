@@ -1,0 +1,44 @@
+[
+  {
+    "file": "public/brand/baselane-inspired/loans/hero.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6a27bb2a5779c3193f1f52ed_loans-hero-image.webp",
+    "downloadFile": "pages/43-blue-rental-property-loans/6a27bb2a5779c3193f1f52ed_loans-hero-image--65d0cb3d.webp",
+    "sourceRow": 44,
+    "sha256": "65d0cb3d79fdfd13c681a1e8622e5ef069b90da3a19bfdf8dd8c2793f53b8bf5"
+  },
+  {
+    "file": "public/brand/baselane-inspired/loans/map.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6a27cfeecb6bf77e8cc3fbd6_map.webp",
+    "downloadFile": "pages/43-blue-rental-property-loans/6a27cfeecb6bf77e8cc3fbd6_map--f2e5d191.webp",
+    "sourceRow": 44,
+    "sha256": "f2e5d191b6722cf40b8cfaedca3c4633e8ec86d6b4d4c0a2a76254aab7f391ce"
+  },
+  {
+    "file": "public/brand/baselane-inspired/loans/property.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6a27f9969cf2628126c01793_real-estate-loans-image.webp",
+    "downloadFile": "pages/43-blue-rental-property-loans/6a27f9969cf2628126c01793_real-estate-loans-image--758bcd21.webp",
+    "sourceRow": 44,
+    "sha256": "758bcd21c2bedb2736821a9cb2a0e7fa667149e5e6f91904952c740cada50f7f"
+  },
+  {
+    "file": "public/brand/baselane-inspired/loans/values.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6a27f99642f3e40bc891aa2a_our-core-values-image.webp",
+    "downloadFile": "pages/43-blue-rental-property-loans/6a27f99642f3e40bc891aa2a_our-core-values-image--ed595c54.webp",
+    "sourceRow": 44,
+    "sha256": "ed595c54873a52eb3fa5c1a126c153007fa51454e4b6f7f4fc1df0909ee54e85"
+  },
+  {
+    "file": "public/brand/baselane-inspired/loans/new.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6a290bfca53224c08f8d6e8c_for-newer-investors-image.webp",
+    "downloadFile": "pages/43-blue-rental-property-loans/6a290bfca53224c08f8d6e8c_for-newer-investors-image--85baf993.webp",
+    "sourceRow": 44,
+    "sha256": "85baf99356669e46f820f5ccbe10f0a64244add9076fed0ce80a92851630f70a"
+  },
+  {
+    "file": "public/brand/baselane-inspired/loans/experienced.webp",
+    "source": "https://cdn.prod.website-files.com/682db4934265432d4c302617/6a290bfca53224c08f8d6e90_for-seasoned-image.webp",
+    "downloadFile": "pages/43-blue-rental-property-loans/6a290bfca53224c08f8d6e90_for-seasoned-image--ee9a5e39.webp",
+    "sourceRow": 44,
+    "sha256": "ee9a5e39ae204a1fb7ada01a6373e48c5ea6f8c4bc43798a6a7271eeb927d9db"
+  }
+]

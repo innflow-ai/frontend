@@ -1,26 +1,37 @@
-import {
-  PortableText,
-  type PortableTextComponents,
-  type PortableTextTypeComponentProps,
-} from "@portabletext/react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import type { ReactNode } from "react";
-import { Breadcrumbs } from "@/components/breadcrumbs";
+import styles from "@/components/blog/article.module.css";
+import { BlogArticleIntroCta } from "@/components/blog/article-intro-cta";
+import { BlogAuthorBio } from "@/components/blog/author-bio";
+import { BlogAuthorCard } from "@/components/blog/author-card";
+import { BlogContinueLearning } from "@/components/blog/continue-learning";
+import { BlogListenPlayer } from "@/components/blog/listen-player";
+import { BlogPortableBody } from "@/components/blog/portable-body";
+import { BlogRelatedPosts } from "@/components/blog/related-posts";
+import { BlogShareBar } from "@/components/blog/share-bar";
+import { BlogTaxonomy } from "@/components/blog/taxonomy";
+import { GoogleSignInButton } from "@/components/google-sign-in";
+import { ChevronLeft as MageArrowLeft } from "@/components/icons/mage";
 import { JsonLd } from "@/components/json-ld";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { MarketingPage } from "@/components/page-primitives";
 import { siteConfig } from "@/config/site";
+import {
+  blockPlainText,
+  industriesForPost,
+  type LoosePortableBlock,
+  portableTextToPlain,
+} from "@/lib/blog";
 import { createPageMetadata } from "@/lib/metadata";
 import {
   coverImageUrl,
-  formatPostDate,
+  formatPostDateShort,
   getBlogPost,
   getBlogSlugs,
+  getRelatedBlogPosts,
   humanizeCategory,
-  urlForImage,
 } from "@/lib/sanity";
-import styles from "./page.module.css";
 
 export const revalidate = 60;
 
@@ -51,6 +62,7 @@ export async function generateMetadata({
     : "/opengraph-image.png";
   const imageAlt = post.coverImage?.alt ?? post.title;
   const title = `${post.title} | Innflow`;
+  const authorName = post.author?.name ?? "Ari Khan";
   const baseMetadata = createPageMetadata({
     title,
     description,
@@ -59,6 +71,7 @@ export async function generateMetadata({
 
   return {
     ...baseMetadata,
+    authors: [{ name: authorName }],
     openGraph: {
       title,
       description,
@@ -79,72 +92,25 @@ export async function generateMetadata({
   };
 }
 
-type BodyImageValue = {
-  alt?: string;
-  asset?: { _ref?: string };
-};
-
-function BodyImage({ value }: PortableTextTypeComponentProps<BodyImageValue>) {
-  if (!value?.asset?._ref) return null;
-  const src = urlForImage(value).width(1200).auto("format").url();
-  return (
-    <figure className={styles.bodyImage}>
-      <Image
-        src={src}
-        alt={value.alt ?? ""}
-        width={1200}
-        height={675}
-        sizes="(max-width: 760px) 92vw, 760px"
-      />
-      {value.alt ? <figcaption>{value.alt}</figcaption> : null}
-    </figure>
-  );
-}
-
-const portableTextComponents: PortableTextComponents = {
-  types: {
-    image: BodyImage,
-  },
-  block: {
-    h2: ({ children }: { children?: ReactNode }) => <h2>{children}</h2>,
-    h3: ({ children }: { children?: ReactNode }) => <h3>{children}</h3>,
-    blockquote: ({ children }: { children?: ReactNode }) => (
-      <blockquote>{children}</blockquote>
-    ),
-  },
-  marks: {
-    code: ({ children }: { children?: ReactNode }) => <code>{children}</code>,
-    link: ({
-      children,
-      value,
-    }: {
-      children?: ReactNode;
-      value?: { href?: string };
-    }) => {
-      const href = value?.href ?? "#";
-      const isExternal = /^https?:\/\//.test(href);
-      return (
-        <a
-          href={href}
-          target={isExternal ? "_blank" : undefined}
-          rel={isExternal ? "noreferrer noopener" : undefined}
-        >
-          {children}
-        </a>
-      );
-    },
-  },
-};
-
 export default async function BlogPostPage({ params }: RouteParams) {
   const { slug } = await params;
   const post = await getBlogPost(slug);
   if (!post) notFound();
 
+  const related = await getRelatedBlogPosts(post.slug, post.category);
   const coverUrl = post.coverImage
     ? coverImageUrl(post.coverImage, 1600, 900)
     : null;
-  const date = formatPostDate(post.publishedAt);
+  const date = formatPostDateShort(post.publishedAt);
+  const authorName = post.author?.name ?? "Ari Khan";
+  const canonical = new URL(
+    `/blog/${post.slug}`,
+    siteConfig.marketingOrigin,
+  ).toString();
+  const listenText = portableTextToPlain(
+    (post.body ?? []) as LoosePortableBlock[],
+  );
+  const industries = industriesForPost(post.industries);
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -154,64 +120,114 @@ export default async function BlogPostPage({ params }: RouteParams) {
     datePublished: post.publishedAt,
     image: coverUrl ?? undefined,
     author: {
-      "@type": "Organization",
-      name: siteConfig.name,
-      url: siteConfig.marketingOrigin,
+      "@type": "Person",
+      name: authorName,
     },
+  };
+
+  const headings = ((post.body ?? []) as LoosePortableBlock[])
+    .filter((block) => block._type === "block" && block.style === "h2")
+    .map((block) => ({
+      id: `section-${block._key}`,
+      title: blockPlainText(block),
+    }));
+  const author = post.author ?? {
+    name: authorName,
+    slug: null,
+    role: null,
+    bio: null,
+    image: null,
   };
 
   return (
     <MarketingPage>
       <JsonLd value={articleSchema} />
-      <section className={styles.hero}>
-        <div className={`shell ${styles.article}`}>
-          <Breadcrumbs
-            items={[
-              { label: "Home", href: "/" },
-              { label: "Blog", href: "/blog" },
-              { label: post.title },
-            ]}
-          />
-          <span className={styles.chip}>{humanizeCategory(post.category)}</span>
-          <h1>{post.title}</h1>
-          <p className={styles.meta}>
-            {date ? <time dateTime={post.publishedAt}>{date}</time> : null}
-            {date && post.readTime ? <span aria-hidden="true">·</span> : null}
-            {post.readTime ? <span>{post.readTime} min read</span> : null}
-          </p>
-          {coverUrl ? (
-            <div className={styles.cover}>
-              <Image
-                src={coverUrl}
-                alt={post.coverImage?.alt ?? post.title}
-                width={1600}
-                height={900}
-                sizes="(max-width: 760px) 92vw, 760px"
-                priority
-              />
+      <article className={styles.page}>
+        <div className={styles.shell}>
+          <header className={styles.articleHero}>
+            <div
+              className={coverUrl ? styles.heroMedia : styles.heroMediaFallback}
+            >
+              {coverUrl ? (
+                <Image
+                  src={coverUrl}
+                  alt={post.coverImage?.alt ?? post.title}
+                  fill
+                  sizes="(max-width: 760px) calc(100vw - 40px), 1136px"
+                  priority
+                  className={styles.heroImage}
+                />
+              ) : null}
+              <BlogAuthorCard author={author} className={styles.heroAuthor} />
             </div>
-          ) : null}
+            <div className={styles.heroCopy}>
+              <p className={styles.kicker}>
+                {date ? (
+                  <time dateTime={post.publishedAt}>Published: {date}</time>
+                ) : null}
+                {date && post.readTime ? (
+                  <span aria-hidden="true">▪</span>
+                ) : null}
+                {post.readTime ? <span>{post.readTime} min read</span> : null}
+              </p>
+              <h1 className={styles.title} data-mixed-heading>
+                <MixedHeadingText>{post.title}</MixedHeadingText>
+              </h1>
+              <div className={styles.articleExtras}>
+                <BlogListenPlayer text={listenText} audioUrl={post.audioUrl} />
+                <BlogTaxonomy
+                  category={post.category}
+                  industries={industries}
+                  tags={post.tags ?? []}
+                />
+              </div>
+            </div>
+          </header>
+          <div className={styles.articleColumns}>
+            <aside className={styles.articleAside} aria-label="Article tools">
+              <div className={styles.asideCta}>
+                <p>Put AI agents to work with Innflow</p>
+                <GoogleSignInButton
+                  label="Get started"
+                  eventLabel="blog_sidebar_get_started"
+                  className={styles.ctaButton}
+                />
+              </div>
+              <BlogShareBar url={canonical} title={post.title} />
+              {headings.length > 0 ? (
+                <nav className={styles.toc} aria-label="In this article">
+                  <p className={styles.metaLabel}>In this article:</p>
+                  {headings.map((heading) => (
+                    <a key={heading.id} href={`#${heading.id}`}>
+                      {heading.title}
+                    </a>
+                  ))}
+                </nav>
+              ) : null}
+            </aside>
+            <div className={styles.articleMain}>
+              <BlogArticleIntroCta category={post.category} />
+              {post.body ? (
+                <div className={styles.body}>
+                  <BlogPortableBody
+                    blocks={post.body as unknown as LoosePortableBlock[]}
+                  />
+                </div>
+              ) : null}
+              <BlogAuthorBio author={author} />
+              <BlogContinueLearning />
+            </div>
+          </div>
         </div>
-      </section>
-      {post.body ? (
-        <div className={`shell ${styles.body}`}>
-          <PortableText value={post.body} components={portableTextComponents} />
+        <div className={styles.shell}>
+          <BlogRelatedPosts posts={related.slice(0, 3)} />
+          <div className={styles.footerNav}>
+            <a className={styles.backLink} href="/blog">
+              <MageArrowLeft size="1em" /> Back to blog
+            </a>
+          </div>
         </div>
-      ) : null}
-      {post.tags && post.tags.length > 0 ? (
-        <div className={`shell ${styles.tags}`}>
-          {post.tags.map((tag) => (
-            <span key={tag} className={styles.tag}>
-              {tag}
-            </span>
-          ))}
-        </div>
-      ) : null}
-      <div className={`shell ${styles.footerNav}`}>
-        <a className={styles.backLink} href="/blog">
-          <span aria-hidden="true">←</span> Back to blog
-        </a>
-      </div>
+      </article>
     </MarketingPage>
   );
 }

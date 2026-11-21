@@ -21,6 +21,9 @@
 }
 
 .link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   color: var(--ink-muted);
   text-decoration: none;
   transition: color 160ms ease;
@@ -38,8 +41,46 @@
   white-space: nowrap;
 }
 
+.homeLabel {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
 .separator {
   color: var(--border);
+}
+
+.article {
+  margin: 18px 0 8px;
+  color: rgb(255 255 255 / 72%);
+}
+
+.article .link {
+  color: rgb(255 255 255 / 72%);
+}
+
+.article .link:hover {
+  color: #00aeff;
+}
+
+.article .current {
+  max-width: min(52vw, 280px);
+  color: #fff;
+}
+
+.article .separator {
+  color: rgb(255 255 255 / 28%);
+}
+
+@media (max-width: 720px) {
+  .article .current {
+    max-width: 42vw;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

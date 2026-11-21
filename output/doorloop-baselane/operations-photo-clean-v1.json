@@ -1,0 +1,11 @@
+{
+  "tool": "built-in imagegen",
+  "prompt_summary": "Restore three colleagues in glass office photo; remove request/donut UI, plates/glow/margins. Preserve standing woman beige blazer, seated bearded man and blue-shirt colleague, faces/clothes/poses, mullions/reflections, desks and daylight. Full420:560 portrait, no crop/zoom or added graphics.",
+  "asset": {
+    "reference": "3:71",
+    "photo_node": "56:33",
+    "path": "/Users/ak/innflow-web/output/doorloop-baselane/operations-photo-clean-v1.png",
+    "image_hash": "b9e3e5f160f7deddde60b8a77028e7c26eb563b5"
+  },
+  "verification": "Hero 3:71: built-in imagegen removed baked request-count and donut cards, text/graphics, backplates/glow. Applied clean photo b9e3e5f160f7deddde60b8a77028e7c26eb563b5 to56:33 at420x560. Preserved native request57:2 and funnel57:5. Screenshot verified three-person scene, clean card edges, visible faces and in-cell bounds. Reference-derived draft photo, not replacement-actor or rights-clearance claim."
+}

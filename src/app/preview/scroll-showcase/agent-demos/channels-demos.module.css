@@ -1,0 +1,41 @@
+.stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  isolation: isolate;
+  background: transparent;
+}
+.layer {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(18px) scale(0.985);
+  transition:
+    opacity 320ms ease,
+    transform 420ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s linear 420ms;
+}
+:where(.stage[data-entered="true"]) .layer[data-selected="true"] {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+  transition-delay: 0s;
+}
+.artwork {
+  width: 580px;
+  height: 580px;
+  transform: scale(var(--graphic-scale, 1));
+  transform-origin: top left;
+}
+@media (prefers-reduced-motion: reduce) {
+  .layer {
+    transition: none;
+    transform: none;
+  }
+  .layer[data-selected="true"] {
+    opacity: 1;
+    visibility: visible;
+  }
+}

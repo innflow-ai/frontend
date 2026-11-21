@@ -1,73 +1,49 @@
-import Image from "next/image";
-import {
-  EvidenceBlock,
-  FinalCta,
-  MarketingPage,
-  PageHero,
-} from "@/components/page-primitives";
-import { integrations } from "@/content/home";
+import { BaselineClosing } from "@/app/preview/scroll-showcase/baseline-closing";
+import { ArrowDown as MageArrowDown } from "@/components/icons/mage";
+import { IntegrationDirectory } from "@/components/integration-directory";
+import styles from "@/components/integrations.module.css";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
+import { ShowcaseTheme } from "@/components/showcase-theme";
+import { getIntegrations } from "@/lib/integrations";
 import { createPageMetadata } from "@/lib/metadata";
-
+export const revalidate = 60;
 export const metadata = createPageMetadata({
-  title: "Property Management Software Integrations | Innflow",
+  title: "Integrations & Roadmap | Innflow",
   description:
-    "Connect Innflow with the property management tools your team uses and coordinate data, approvals, and operational workflows across systems.",
+    "Explore Innflow integrations and planned connections. Find the tools your team uses and see what’s available or on the roadmap.",
   path: "/integrations",
 });
-
-export default function IntegrationsPage() {
+export default async function IntegrationsPage() {
+  const items = await getIntegrations();
   return (
-    <MarketingPage>
-      <PageHero
-        eyebrow="Integrations"
-        title="Connect the systems involved in the operation."
-        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Integrations" }]}
-        description="The marks below correspond to connector paths in the product repository. Presence in code does not, by itself, prove production readiness, scope, or account-specific compatibility."
-      />
-      <EvidenceBlock
-        items={[
-          "Approved integration marks",
-          "Product connector routes",
-          "API and custom implementation path",
-          "No customer endorsement implied",
-        ]}
-      />
-      <section className="section">
-        <div className="shell integration-directory">
-          <div className="section-intro compact-intro">
-            <span className="section-label">Connector directory</span>
-            <h2>Evidence first, readiness second.</h2>
+    <ShowcaseTheme>
+      <main id="main-content" className={styles.page}>
+        <header className={styles.hero}>
+          <div className="shell">
+            <span className={styles.eyebrow}>Apps & integrations</span>
+            <h1 data-mixed-heading>
+              <MixedHeadingText>
+                Your tools.
+                <br />
+                <span>One connected workflow.</span>
+              </MixedHeadingText>
+            </h1>
             <p>
-              Each implementation still requires account prerequisites, scopes,
-              data contracts, error handling, and security review.
+              Explore connections for the tools your team already uses. Find an
+              integration, see what it does, and{" "}
+              <strong>check its availability</strong>.
             </p>
+            <a className={styles.browseLink} href="#integration-directory">
+              Explore integrations{" "}
+              <span aria-hidden="true">
+                <MageArrowDown size="1em" />
+              </span>
+            </a>
           </div>
-          <div className="integration-grid integration-grid-large">
-            {integrations.map((integration) => (
-              <article className="integration-card" key={integration.name}>
-                <Image src={integration.asset} alt="" width={40} height={40} />
-                <strong>{integration.name}</strong>
-                <small>{integration.status}</small>
-              </article>
-            ))}
-            <article className="integration-card api-card">
-              <span className="api-mark">API</span>
-              <strong>Custom path</strong>
-              <small>Scoping and implementation required</small>
-            </article>
-          </div>
-        </div>
-      </section>
-      <section className="section quiet-section">
-        <div className="shell statement-grid">
-          <span className="section-label">Before implementation</span>
-          <h2>
-            Confirm permissions, data direction, retry behavior, ownership, and
-            the system of record for every connection.
-          </h2>
-        </div>
-      </section>
-      <FinalCta title="Map one operation and the systems it touches." />
-    </MarketingPage>
+        </header>
+        <IntegrationDirectory items={items} />
+        <BaselineClosing />
+      </main>
+    </ShowcaseTheme>
   );
 }

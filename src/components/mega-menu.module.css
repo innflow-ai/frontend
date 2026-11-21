@@ -28,15 +28,16 @@
 }
 
 .caret {
-  display: inline-block;
-  font-size: 11px;
-  line-height: 1;
-  transform: translateY(-1px);
+  display: block;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+  transform-origin: center;
   transition: transform 180ms ease;
 }
 
 .trigger[aria-expanded="true"] .caret {
-  transform: translateY(-1px) rotate(180deg);
+  transform: rotate(180deg);
 }
 
 /* Full-viewport-width panel, centered regardless of the nearest
@@ -48,6 +49,8 @@
   width: 100vw;
   margin-left: -50vw;
   z-index: 70;
+  max-height: calc(100dvh - 71px);
+  overflow-y: auto;
   border-bottom: 1px solid var(--sky-line);
   background: #fff;
   box-shadow: var(--sky-shadow-panel);
@@ -71,6 +74,21 @@
   gap: 12px 28px;
   margin-inline: auto;
   padding: 28px 0 32px;
+}
+
+.gridWithoutAside {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px 28px;
+}
+
+.gridWithBanner {
+  grid-template-columns: minmax(220px, 0.72fr) minmax(0, 2.28fr);
+  align-items: stretch;
+}
+
+.gridSingleWithAside {
+  grid-template-columns: minmax(280px, 0.9fr) minmax(520px, 1.35fr);
+  align-items: stretch;
 }
 
 .column {
@@ -100,6 +118,10 @@
   transition:
     background 160ms ease,
     color 160ms ease;
+}
+
+.link[data-hide-icon] {
+  grid-template-columns: minmax(0, 1fr);
 }
 
 .link:hover {
@@ -144,8 +166,14 @@
   height: 36px;
   place-items: center;
   border-radius: 10px;
-  background: var(--sky-blue-soft);
   color: var(--sky-blue);
+}
+
+.customIcon {
+  display: block;
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
 }
 
 .aside {
@@ -169,7 +197,7 @@
   line-height: 1.45;
 }
 
-.aside a {
+.aside > a {
   display: inline-flex;
   width: fit-content;
   align-items: center;
@@ -180,8 +208,118 @@
   font-weight: 700;
 }
 
-.aside a:hover {
+.aside > a:hover {
   color: var(--sky-blue-hover);
+}
+
+.latestAside {
+  gap: 20px;
+}
+
+.latestAside .heading {
+  margin-bottom: 0;
+}
+
+.latestPostList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.latestPostCard {
+  display: grid;
+  width: 100%;
+  min-width: 0;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+  border-radius: 12px;
+  padding: 10px;
+  color: inherit;
+  font-weight: inherit;
+  transition:
+    background 160ms ease,
+    color 160ms ease;
+}
+
+.latestPostCard:hover {
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.latestPostMedia {
+  display: grid;
+  width: 100%;
+  min-height: 48px;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--sky-blue-soft);
+  color: var(--sky-blue);
+  overflow: hidden;
+}
+
+.latestPostMedia img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+.latestPostCopy,
+.latestPostCopy small,
+.latestPostCopy strong {
+  display: block;
+  min-width: 0;
+}
+
+.latestPostCopy small {
+  margin-bottom: 3px;
+  color: var(--sky-muted);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.latestPostCopy strong {
+  display: -webkit-box;
+  color: var(--sky-ink);
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.aside .latestPostsAll {
+  margin-top: auto;
+}
+
+.promotionalBanner {
+  display: block;
+  align-self: center;
+  overflow: hidden;
+  border: 1px solid rgba(0, 174, 255, 0.2);
+  border-radius: 16px;
+  background: #061321;
+  box-shadow: 0 18px 42px rgba(6, 19, 33, 0.16);
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.promotionalBanner:hover {
+  box-shadow: 0 22px 52px rgba(6, 19, 33, 0.22);
+  transform: translateY(-2px);
+}
+
+.promotionalBannerImage {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 @media (max-width: 1100px) {
@@ -190,7 +328,19 @@
     gap: 20px 24px;
   }
 
-  .aside {
+  .gridWithoutAside {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gridWithBanner {
+    grid-template-columns: minmax(210px, 0.75fr) minmax(0, 1.75fr);
+  }
+
+  .gridSingleWithAside {
+    grid-template-columns: minmax(240px, 0.85fr) minmax(0, 1.2fr);
+  }
+
+  .grid:not(.gridSingleWithAside) .aside {
     grid-column: 1 / -1;
   }
 }
@@ -204,7 +354,98 @@
 @media (prefers-reduced-motion: reduce) {
   .trigger,
   .link,
+  .latestPostCard,
+  .promotionalBanner,
   .caret {
     transition: none;
   }
+}
+
+/* Optional contained panel for the homepage's light navigation. */
+.compact .trigger {
+  color: var(--runey-nav-color, #657183);
+  font-weight: 400;
+  min-height: 44px;
+}
+.compact .trigger:hover,
+.compact .trigger[aria-expanded="true"] {
+  color: var(--header-nav-hover, #245a9a);
+}
+.compact .panel {
+  width: min(900px, calc(100vw - 48px));
+  margin-left: 0;
+  translate: -50% 0;
+  max-height: calc(100dvh - 100px);
+  border: 1px solid #e2e9f2;
+  border-radius: 18px;
+  background: rgb(255 255 255 / 98%);
+  box-shadow:
+    0 20px 55px rgb(30 58 94 / 14%),
+    0 3px 10px rgb(30 58 94 / 5%);
+}
+.compact .grid {
+  width: 100%;
+  padding: 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+.compact .column:only-child {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.compact .column:only-child .heading {
+  grid-column: 1 / -1;
+}
+.compact .link {
+  text-decoration: none;
+}
+.compact .link:hover {
+  background: #f0f6fd;
+}
+.compact .link small {
+  color: #657183;
+}
+.compact .customIcon {
+  filter: none;
+}
+@media (min-width: 761px) and (max-width: 860px) {
+  .compact .panel {
+    display: block;
+  }
+}
+
+.link[data-browse-all]:is(:hover, :focus-visible) {
+  background: transparent;
+}
+
+.link[data-browse-all]:is(:hover, :focus-visible) strong {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.browseAll {
+  grid-column: 1 / -1;
+  justify-self: start;
+  margin-top: 8px;
+  padding: 10px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.browseAll:is(:hover, :focus-visible) {
+  background: transparent;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+ .wrap[data-navigation-menu] .panel {
+  width: min(620px, 94vw);
+  margin-left: 0;
+  translate: -50% 0;
+  border: 1px solid #e4e5e7;
+  border-radius: 16px;
+}
+.wrap:is([data-navigation-menu="Resources"],[data-navigation-menu="Solutions"]) .panel {
+  width: min(876px, 94vw);
 }

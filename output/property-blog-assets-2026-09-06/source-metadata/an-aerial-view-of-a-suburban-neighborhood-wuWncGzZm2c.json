@@ -1,0 +1,30 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ImageObject",
+  "creator": {
+    "@type": "Person",
+    "name": "Thaddious Thomas"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Thaddious Thomas"
+  },
+  "creditText": "Thaddious Thomas",
+  "copyrightNotice": "Thaddious Thomas",
+  "license": "https://unsplash.com/license",
+  "acquireLicensePage": "https://unsplash.com/photos/an-aerial-view-of-a-suburban-neighborhood-wuWncGzZm2c",
+  "contentUrl": "https://images.unsplash.com/photo-1687178941585-89d6fea55051?auto=format&fit=crop&q=60&crop=entropy&cs=srgb&fm=jpg&ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzg4NzQ3MDE4fA&ixlib=rb-4.1.0",
+  "thumbnail": {
+    "@type": "ImageObject",
+    "url": "https://images.unsplash.com/photo-1687178941585-89d6fea55051?auto=format&fit=crop&q=60&crop=entropy&cs=tinysrgb&fm=jpg&ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzg4NzQ3MDE4fA&ixlib=rb-4.1.0&w=200"
+  },
+  "datePublished": "2023-06-19T12:59:21.000Z",
+  "description": "an aerial view of a suburban neighborhood",
+  "name": "an aerial view of a suburban neighborhood",
+  "width": "4000px",
+  "height": "3000px",
+  "isAccessibleForFree": true,
+  "isFamilyFriendly": true,
+  "caption": "an aerial view of a suburban neighborhood",
+  "representativeOfPage": true
+}

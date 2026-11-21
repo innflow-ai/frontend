@@ -181,9 +181,9 @@ export const featurePages: Record<
   website: {
     slug: "website",
     eyebrow: "Website",
-    title: "Bridge a customer-facing page to a governed operation.",
+    title: "A better front door for your properties.",
     description:
-      "A preview concept for structured web experiences and request paths connected to the team responsible for fulfillment.",
+      "Explore our website builder preview: property pages and request forms connected to the people doing the work.",
     status: "Preview",
     media: "website",
     problem:
@@ -197,15 +197,15 @@ export const featurePages: Record<
     controls: [
       {
         title: "Preview boundary",
-        body: "Website is not presented as generally available.",
+        body: "Explore the concept with our team while the website builder is in preview.",
       },
       {
         title: "Publishing control",
-        body: "No site should publish or replace an existing domain without explicit approval.",
+        body: "Review your pages and choose when they are ready to publish.",
       },
       {
         title: "Content ownership",
-        body: "Approved copy, claims, legal text, and operational destinations remain required inputs.",
+        body: "Keep your property information current and give each request a clear destination.",
       },
     ],
     evidence: [

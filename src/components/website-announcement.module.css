@@ -10,8 +10,7 @@
   padding: 7px 48px 7px 24px;
   background: var(--announcement-background);
   color: white;
-  font-family: var(--font-archivo-italic), sans-serif;
-  font-style: italic;
+  font-family: var(--font-archivo), sans-serif;
   font-weight: 600;
   font-size: 13px;
   line-height: 20px;
@@ -82,12 +81,12 @@
 }
 .exclusive {
   font:
-    italic 400 15px / 20px var(--font-source-serif-4),
+    400 15px / 20px var(--font-source-serif-4),
     serif;
 }
 .exclusive b {
   font:
-    italic 700 16px / 20px var(--font-archivo-italic),
+    700 16px / 20px var(--font-archivo),
     sans-serif;
 }
 .timer {

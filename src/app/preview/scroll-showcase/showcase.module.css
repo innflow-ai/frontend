@@ -38,7 +38,6 @@
   font-size: clamp(40px, 5.75vw, 84px);
   letter-spacing: -0.03522em;
   line-height: 0.861;
-  font-style: italic;
   margin: 0 0 14px;
 }
 .subheadline {

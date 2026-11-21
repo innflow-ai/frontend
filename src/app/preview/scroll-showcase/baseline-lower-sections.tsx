@@ -345,6 +345,7 @@ export function BaselineConnectedInfrastructure() {
         />
         <Link
           data-site-cta="primary"
+          data-cta-compact
           className={styles.directory}
           href="/integrations"
         >

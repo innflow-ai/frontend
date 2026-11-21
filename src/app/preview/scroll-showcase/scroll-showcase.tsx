@@ -416,6 +416,7 @@ export function ScrollShowcase() {
                       <a
                         href={state.href}
                         data-site-cta="secondary"
+                        data-cta-compact
                         aria-label={`Learn more about ${state.label}`}
                       >
                         Learn more

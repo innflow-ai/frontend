@@ -118,6 +118,7 @@ export function FeaturesMenu({ closeMenu }: { closeMenu: () => void }) {
             <button
               type="button"
               key={item.slug}
+              className={styles.featureOption}
               role="tab"
               id={id + "-" + index}
               tabIndex={index === selected ? 0 : -1}

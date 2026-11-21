@@ -79,15 +79,14 @@ const providers = [
       "Gemini 4 Argon",
     ],
   },
-  { name: "xAI", models: ["Grok 4.5"] },
+  { name: "xAI", models: ["Grok 4.7", "Grok 4.6"] },
   {
     name: "Anthropic",
-    models: ["Claude Opus 4.8", "Claude Fable 5", "Claude Sonnet 5"],
+    models: ["Claude Fable 5.2", "Claude Opus 5.5", "Claude Sonnet 5.5", "Claude Haiku 5.5"],
   },
   { name: "Moonshot AI", models: ["Kimi K3.1 Pro"] },
-  { name: "ByteDance", models: ["Seedream 5.5"] },
-  { name: "DeepSeek", models: ["DeepSeek V4 Pro", "DeepSeek V4.1 Flash 1017"] },
-  { name: "Z.ai", models: ["GLM 5.2"] },
+  { name: "DeepSeek", models: ["DeepSeek V4.1 Flash 1017", "DeepSeek V4 Pro 0813"] },
+  { name: "Z.ai", models: ["GLM-5.3", "GLM-5.3-Flash", "GLM-5.3-FlashX"] },
   { name: "Tencent", models: ["Hunyuan 4"] },
   { name: "Alibaba Cloud", models: ["Qwen4-Max"] },
 ];
@@ -138,7 +137,7 @@ export function NavigationMenu({
       <>
         <FeaturesMenu closeMenu={close} />
         <div className={styles.productFoot}>
-          <a href="/products" onClick={close}>
+          <a className={styles.action} href="/products" onClick={close}>
             Browse all products →
           </a>
         </div>
@@ -155,7 +154,7 @@ export function NavigationMenu({
               style={{ gridArea: "p" + index }}
             >
               <h3>
-                {!["ByteDance", "Alibaba Cloud"].includes(provider.name) && (
+                {provider.name !== "Alibaba Cloud" && (
                   <img
                     alt=""
                     width="16"
@@ -167,7 +166,7 @@ export function NavigationMenu({
               </h3>
               <ul>
                 {provider.models.map((name) => (
-                  <li key={name}>{name}</li>
+                  <li className={styles.model} key={name}>{name}</li>
                 ))}
               </ul>
             </section>
@@ -211,7 +210,7 @@ export function NavigationMenu({
       <div className={styles.departments}>
         <div className={styles.heading}>
           <h3>By department</h3>
-          <a href="/solutions" onClick={close}>
+          <a className={styles.action} href="/solutions" onClick={close}>
             View all solutions →
           </a>
         </div>

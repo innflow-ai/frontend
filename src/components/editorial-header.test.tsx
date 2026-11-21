@@ -148,9 +148,16 @@ describe("EditorialHeader navigation", () => {
     const directory = within(
       screen.getByRole("region", { name: "Models menu" }),
     );
-    expect(directory.getAllByRole("heading")).toHaveLength(10);
-    expect(directory.getAllByRole("listitem")).toHaveLength(20);
-    expect(directory.getByText("Claude Opus 4.8")).toBeVisible();
+    expect(directory.getAllByRole("heading")).toHaveLength(9);
+    expect(directory.queryByRole("heading", { name: "ByteDance" })).toBeNull();
+    for (const model of [
+      "Grok 4.7", "Grok 4.6",
+      "Claude Fable 5.2", "Claude Opus 5.5", "Claude Sonnet 5.5", "Claude Haiku 5.5",
+      "DeepSeek V4.1 Flash 1017", "DeepSeek V4 Pro 0813",
+      "GLM-5.3", "GLM-5.3-Flash", "GLM-5.3-FlashX",
+    ]) {
+      expect(directory.getByText(model)).toBeVisible();
+    }
   });
 
   it("replaces the property portfolio menu with industry solutions", async () => {

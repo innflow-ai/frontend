@@ -2,9 +2,14 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import {
+  ChevronLeft as MageArrowLeft,
+  ArrowRight as MageArrowRight,
+} from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
 import styles from "./baselane-customers.module.css";
-import { BaselaneHomepage } from "./baselane-homepage";
+import { InnerPageShell } from "./inner-page-shell";
 
 const workflows = [
   [
@@ -69,7 +74,7 @@ export function BaselaneCustomers() {
   const [caseIndex, setCaseIndex] = useState(0);
   const story = scenarios[caseIndex];
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={styles.page}>
         <section className={styles.hero}>
           <Image
@@ -80,27 +85,45 @@ export function BaselaneCustomers() {
             sizes="100vw"
           />
           <div className={styles.heroCopy}>
-            <h1>Your people. Your properties. One connected flow.</h1>
+            <h1 data-mixed-heading>
+              <MixedHeadingText>
+                Your people. Your properties. One connected flow.
+              </MixedHeadingText>
+            </h1>
             <p>
               innflow brings workflows, knowledge, and approvals together for
               the people keeping property operations moving.
             </p>
             <div className={styles.actions}>
-              <a className={styles.button} href="#team-workflows">
+              <a
+                data-site-cta="primary"
+                className={styles.button}
+                href="#team-workflows"
+              >
                 Explore team workflows
               </a>
-              <a className={styles.outline} href={siteConfig.demoUrl}>
-                Book a demo →
+              <a
+                data-site-cta="secondary"
+                className={styles.outline}
+                href={siteConfig.demoUrl}
+              >
+                Book a demo <MageArrowRight size="1em" />
               </a>
             </div>
           </div>
         </section>
         <div className={styles.band}>
           <span>Clear ownership. Shared context. Visible progress.</span>
-          <a href="/multi-property-investors">Explore portfolio operations →</a>
+          <a href="/multi-property-investors">
+            Explore portfolio operations <MageArrowRight size="1em" />
+          </a>
         </div>
         <section className={styles.section} id="team-workflows">
-          <h2>Built around the work on your team’s desk.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              Built around the work on your team’s desk.
+            </MixedHeadingText>
+          </h2>
           <p className={styles.lead}>
             Start with a recurring process. Connect the information behind it
             and make the next handoff clear.
@@ -109,9 +132,13 @@ export function BaselaneCustomers() {
             {workflows.map(([title, text, href]) => (
               <article key={title}>
                 <span className={styles.eyebrow}>WORKFLOW</span>
-                <h3>{title}</h3>
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>{title}</MixedHeadingText>
+                </h3>
                 <p>{text}</p>
-                <a href={href}>Explore the workflow →</a>
+                <a href={href}>
+                  Explore the workflow <MageArrowRight size="1em" />
+                </a>
               </article>
             ))}
           </div>
@@ -136,10 +163,12 @@ export function BaselaneCustomers() {
             </div>
             <div className={styles.caseCopy}>
               <span className={styles.eyebrow}>HOW THE WORK CONNECTS</span>
-              <h2>{story[1]}</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>{story[1]}</MixedHeadingText>
+              </h2>
               <p>{story[2]}</p>
-              <a className={styles.button} href={story[3]}>
-                Explore with innflow →
+              <a data-site-cta="primary" className={styles.button} href={story[3]}>
+                Explore with innflow <MageArrowRight size="1em" />
               </a>
             </div>
           </div>
@@ -153,7 +182,7 @@ export function BaselaneCustomers() {
                 )
               }
             >
-              ←
+              <MageArrowLeft size="1em" />
             </button>
             <span aria-live="polite">
               {caseIndex + 1} / {scenarios.length}
@@ -163,11 +192,11 @@ export function BaselaneCustomers() {
               aria-label="Next workflow"
               onClick={() => setCaseIndex((caseIndex + 1) % scenarios.length)}
             >
-              →
+              <MageArrowRight size="1em" />
             </button>
           </div>
         </section>
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

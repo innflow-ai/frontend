@@ -1,7 +1,7 @@
 "use client";
 
-import { Moon, Sun } from "@phosphor-icons/react";
 import { useEffect, useState } from "react";
+import { Moon, Sun } from "@/components/icons/mage";
 import styles from "./article.module.css";
 
 type Theme = "light" | "dark";

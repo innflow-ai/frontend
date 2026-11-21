@@ -1,7 +1,11 @@
-import { ArrowRight, CheckCircle } from "@phosphor-icons/react/dist/ssr";
-import { Poppins } from "next/font/google";
 import Image from "next/image";
 import { GoogleCtaContent } from "@/components/google-cta-content";
+import {
+  ArrowRight,
+  CheckCircle,
+  Plus as MagePlus,
+} from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
 import { faqs } from "@/content/home";
 import { HomepageMedia } from "./homepage-media";
@@ -10,11 +14,6 @@ import styles from "./runey-landing.module.css";
 import { RuneyHeroArtwork, RuneyWorkspace } from "./runey-workspace";
 import { TrackedLink } from "./tracked-link";
 
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
 const features = [
   {
     id: "workflows",
@@ -30,7 +29,7 @@ const features = [
       "Context beside the work",
     ],
     view: "Workflows" as const,
-    href: "/products/agentic-workflows",
+    href: "/features/workflows",
   },
   {
     id: "assistant",
@@ -86,25 +85,27 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
   return (
     <main
       id="main-content"
-      className={`${styles.page} ${property ? poppins.className : styles.blueHome}`}
+      className={`${styles.page} ${property ? "" : styles.blueHome}`}
     >
       <section className={styles.hero} id="home-hero">
         <div className={styles.shell}>
           <div className={styles.heroCopy}>
-            <h1>
-              {property ? (
-                <>
-                  Run your property work
-                  <br />
-                  in one place.
-                </>
-              ) : (
-                <>
-                  Run your operations
-                  <br />
-                  in one place.
-                </>
-              )}
+            <h1 data-mixed-heading>
+              <MixedHeadingText>
+                {property ? (
+                  <>
+                    Run your property work
+                    <br />
+                    in one place.
+                  </>
+                ) : (
+                  <>
+                    Run your operations
+                    <br />
+                    in one place.
+                  </>
+                )}
+              </MixedHeadingText>
             </h1>
             <p>
               {property
@@ -113,17 +114,23 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
             </p>
             <div className={styles.actions}>
               <TrackedLink
+                data-site-cta="primary"
                 className={styles.primaryButton}
-                destination={siteConfig.googleAuthUrl}
+                destination={siteConfig.signupUrl}
                 eventLabel="hero_get_started"
               >
                 <GoogleCtaContent />
               </TrackedLink>
-              <a className={styles.secondaryButton} href="#features">
+              <a
+                data-site-cta="secondary"
+                className={styles.secondaryButton}
+                href="#features"
+              >
                 See features
               </a>
               {property && (
                 <TrackedLink
+                  data-site-cta="secondary"
                   className={styles.textButton}
                   destination={siteConfig.demoUrl}
                   eventLabel="hero_request_demo"
@@ -160,7 +167,9 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
             },
           ].map((item) => (
             <div key={item.title}>
-              <h2>{item.title}</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>{item.title}</MixedHeadingText>
+              </h2>
               <p>{item.body}</p>
             </div>
           ))}
@@ -211,7 +220,9 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
                 unoptimized={!property}
                 sizes="(max-width: 640px) 75vw, 27vw"
               />
-              <h2>{title}</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>{title}</MixedHeadingText>
+              </h2>
               <ArrowRight size={19} />
             </a>
           ))}
@@ -220,10 +231,12 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
       <section className={styles.features} id="features">
         <div className={styles.sectionHeading}>
           <span>Features</span>
-          <h2>
-            Everything you need
-            <br />
-            to keep work moving.
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              Everything you need
+              <br />
+              to keep work moving.
+            </MixedHeadingText>
           </h2>
           <p>
             From the first request to the final review — connected in one place.
@@ -238,7 +251,9 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
             >
               <div className={styles.featureCopy}>
                 <span>{feature.label}</span>
-                <h2>{feature.title}</h2>
+                <h2 data-mixed-heading>
+                  <MixedHeadingText>{feature.title}</MixedHeadingText>
+                </h2>
                 <p>{feature.body}</p>
                 <ul>
                   {feature.bullets.map((bullet) => (
@@ -264,10 +279,12 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
       <section className={`${styles.shell} ${styles.process}`}>
         <div className={styles.sectionHeading}>
           <span>How it works</span>
-          <h2>
-            Start with one workflow.
-            <br />
-            Build from there.
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              Start with one workflow.
+              <br />
+              Build from there.
+            </MixedHeadingText>
           </h2>
         </div>
         <div className={styles.processGrid}>
@@ -287,7 +304,9 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
           ].map((step, i) => (
             <div key={step.title}>
               <span>0{i + 1}</span>
-              <h3>{step.title}</h3>
+              <h3 data-mixed-heading>
+                <MixedHeadingText>{step.title}</MixedHeadingText>
+              </h3>
               <p>{step.body}</p>
             </div>
           ))}
@@ -296,20 +315,27 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
       <section className={styles.pricing}>
         <div className={styles.sectionHeading}>
           <span>Built for your team</span>
-          <h2>A plan for the way you operate.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>A plan for the way you operate.</MixedHeadingText>
+          </h2>
           <p>
             Explore Innflow’s plans and configure the right fit for your team.
           </p>
         </div>
         <div className={styles.actions}>
           <TrackedLink
+            data-site-cta="primary"
             destination="/pricing"
             eventLabel="landing_view_pricing"
             className={styles.primaryButton}
           >
             Explore pricing <ArrowRight size={17} />
           </TrackedLink>
-          <a className={styles.secondaryButton} href="/contact">
+          <a
+            data-site-cta="secondary"
+            className={styles.secondaryButton}
+            href="/contact"
+          >
             Talk to us
           </a>
         </div>
@@ -317,14 +343,18 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
       <section className={styles.faq} id="faq">
         <div className={styles.sectionHeading}>
           <span>FAQ</span>
-          <h2>Frequently asked questions</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>Frequently asked questions</MixedHeadingText>
+          </h2>
         </div>
         <div className={styles.faqList}>
           {faqs.slice(0, 6).map((faq) => (
             <details key={faq.question}>
               <summary>
                 {faq.question}
-                <span aria-hidden="true">+</span>
+                <span aria-hidden="true">
+                  <MagePlus size="1em" />
+                </span>
               </summary>
               <p>{faq.answer}</p>
             </details>
@@ -336,10 +366,12 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
       </section>
       <section className={styles.finalCta}>
         <div className={styles.ctaCopy}>
-          <h2>
-            A clearer day starts
-            <br />
-            with a connected flow.
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              A clearer day starts
+              <br />
+              with a connected flow.
+            </MixedHeadingText>
           </h2>
           <p>
             Bring your team, context, and next steps together. Let’s make your
@@ -347,13 +379,18 @@ export function RuneyLanding({ property = false }: { property?: boolean }) {
           </p>
           <div className={styles.actions}>
             <TrackedLink
-              destination={siteConfig.googleAuthUrl}
+              data-site-cta="primary"
+              destination={siteConfig.signupUrl}
               eventLabel="landing_final_get_started"
               className={styles.primaryButton}
             >
               <GoogleCtaContent />
             </TrackedLink>
-            <a href={siteConfig.demoUrl} className={styles.textButton}>
+            <a
+              data-site-cta="secondary"
+              href={siteConfig.demoUrl}
+              className={styles.textButton}
+            >
               Request demo
             </a>
           </div>

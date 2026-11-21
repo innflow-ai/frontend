@@ -1,13 +1,37 @@
-import { NavigationDirectory } from "@/components/navigation-directory";
+import { BaselineClosing } from "@/app/preview/scroll-showcase/baseline-closing";
+import { IndustryDirectory } from "@/components/industry-pages/industry-directory";
+import styles from "@/components/industry-pages/industry-pages.module.css";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
+import { ShowcaseTheme } from "@/components/showcase-theme";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
-  title: "Browse All Solutions | Innflow",
+  title: "Industries & Solutions | Innflow",
   description:
-    "Find solutions for property operations, leasing, teams, and finance.",
+    "Explore AI workflow ideas for financial services, healthcare, retail, property management, technology and more. Find a starting point for your team.",
   path: "/solutions",
 });
-
 export default function SolutionsPage() {
-  return <NavigationDirectory kind="solutions" />;
+  return (
+    <ShowcaseTheme>
+      <main id="main-content" className={styles.page}>
+        <header className={styles.directoryHero}>
+          <p className={styles.eyebrow}>Industries & solutions</p>
+          <h1 data-mixed-heading>
+            <MixedHeadingText>
+              Your industry.
+              <br />
+              Your way of working.
+            </MixedHeadingText>
+          </h1>
+          <p>
+            Connect the <strong>conversations, knowledge and handoffs</strong>{" "}
+            behind your everyday work.
+          </p>
+        </header>
+        <IndustryDirectory />
+        <BaselineClosing />
+      </main>
+    </ShowcaseTheme>
+  );
 }

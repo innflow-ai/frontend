@@ -2,11 +2,14 @@
 
 import Image from "next/image";
 import { type FormEvent, useRef, useState } from "react";
+import { ChevronRight } from "@/components/chevron-right";
 import { GoogleCtaContent } from "@/components/google-cta-content";
+import { ArrowRight as MageArrowRight } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
 import { summarizeRents } from "@/lib/rent-comparison";
-import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-rent-calculator.module.css";
+import { InnerPageShell } from "./inner-page-shell";
 
 const source = siteConfig.demoUrl;
 const money = (n: number) =>
@@ -34,6 +37,7 @@ export function BaselaneRentCalculator() {
   const form = useRef<HTMLFormElement>(null);
   function analyze(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (!event.currentTarget.reportValidity()) return;
     const data = new FormData(event.currentTarget);
     try {
       const summary = summarizeRents(String(data.get("rents")));
@@ -48,7 +52,11 @@ export function BaselaneRentCalculator() {
         report.current?.scrollIntoView({ block: "start", behavior: "instant" });
       });
     } catch (e) {
+      setResult(null);
       setError(e instanceof Error ? e.message : "Check the rent values.");
+      (
+        event.currentTarget.elements.namedItem("rents") as HTMLTextAreaElement
+      )?.focus();
     }
   }
   async function copyLink() {
@@ -62,21 +70,35 @@ export function BaselaneRentCalculator() {
     }
   }
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={styles.page}>
         <section className={styles.hero}>
           <div>
-            <h1>How do your comparable rents stack up?</h1>
+            <h1 data-mixed-heading>
+              <MixedHeadingText>
+                How do your comparable rents stack up?
+              </MixedHeadingText>
+            </h1>
             <p className={styles.intro}>
               Summarize rents you have researched. This calculator uses your
               entries; it does not look up local listings.
             </p>
-            <form ref={form} onSubmit={analyze} className={styles.form}>
+            <form
+              ref={form}
+              onSubmit={analyze}
+              onChange={() => {
+                // A report only represents the exact inputs submitted for it.
+                setResult(null);
+                setError("");
+              }}
+              className={styles.form}
+            >
               <label>
                 Property address
                 <input
                   name="address"
                   required
+                  pattern=".*\S.*"
                   maxLength={200}
                   placeholder="Enter the property address"
                 />
@@ -123,6 +145,7 @@ export function BaselaneRentCalculator() {
                   rows={3}
                   placeholder="1800, 1900, 2000, 2100, 2200"
                   aria-describedby="rent-input-help rent-error"
+                  aria-invalid={Boolean(error)}
                 />
               </label>
               <p id="rent-input-help" className={styles.note}>
@@ -138,7 +161,8 @@ export function BaselaneRentCalculator() {
               </button>
             </form>
             <a className={styles.sourceLink} href={source}>
-              Connect your research workflow with innflow →
+              Connect your research workflow with innflow{" "}
+              <MageArrowRight size="1em" />
             </a>
           </div>
           <picture>
@@ -164,7 +188,9 @@ export function BaselaneRentCalculator() {
             aria-label="Your comparable rent report"
           >
             <span className={styles.eyebrow}>YOUR COMPARABLE RENT REPORT</span>
-            <h2>{result.address}</h2>
+            <h2 data-mixed-heading>
+              <MixedHeadingText>{result.address}</MixedHeadingText>
+            </h2>
             <p>{result.details}</p>
             <div className={styles.metrics}>
               {[
@@ -200,11 +226,15 @@ export function BaselaneRentCalculator() {
         <div className={styles.articleLayout}>
           <aside>
             <h2>Bring the next step into innflow.</h2>
-            <a className={styles.button} href={siteConfig.googleAuthUrl}>
+            <a
+              data-site-cta="primary"
+              className={styles.button}
+              href={siteConfig.signupUrl}
+            >
               <GoogleCtaContent />
             </a>
             <button className={styles.copy} type="button" onClick={copyLink}>
-              Copy page link ↗
+              Copy page link <ChevronRight />
             </button>
             <p role="status">{copied}</p>
             <nav aria-label="In this guide">
@@ -222,7 +252,9 @@ export function BaselaneRentCalculator() {
               This worksheet helps organize that review.
             </p>
             <section id="comparable-rentals">
-              <h2>Compare similar rentals</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>Compare similar rentals</MixedHeadingText>
+              </h2>
               <p>
                 Record the source, date, location, size, and condition of each
                 comparable. Use the calculator to summarize the monthly rents in
@@ -239,16 +271,22 @@ export function BaselaneRentCalculator() {
               </ul>
             </section>
             <section id="local-rules">
-              <h2>Check local requirements</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>Check local requirements</MixedHeadingText>
+              </h2>
               <p>
                 Review the rules that apply to the property before making a
                 pricing decision. Keep the official sources and your adviser’s
                 review notes alongside the property record.
               </p>
-              <a href="/lease-agreement">Explore document review workflows →</a>
+              <a href="/lease-agreement">
+                Explore document review workflows <MageArrowRight size="1em" />
+              </a>
             </section>
             <section id="operating-costs">
-              <h2>Account for expenses</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>Account for expenses</MixedHeadingText>
+              </h2>
               <p>
                 Keep a separate record of recurring expenses and planned work. A
                 comparison of rents does not calculate the property’s costs or
@@ -266,7 +304,9 @@ export function BaselaneRentCalculator() {
               </div>
             </section>
             <section id="amenities">
-              <h2>Consider the property</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>Consider the property</MixedHeadingText>
+              </h2>
               <p>
                 Document the features that distinguish the property from the
                 sample. Review whether each comparison includes similar space,
@@ -274,18 +314,21 @@ export function BaselaneRentCalculator() {
               </p>
             </section>
             <section id="timing">
-              <h2>Review the timing</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>Review the timing</MixedHeadingText>
+              </h2>
               <p>
                 Save the date of your research. Revisit the inputs when listings
                 or property circumstances change.
               </p>
               <a href={source}>
-                Bring your research into an innflow workflow →
+                Bring your research into an innflow workflow{" "}
+                <MageArrowRight size="1em" />
               </a>
             </section>
           </article>
         </div>
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

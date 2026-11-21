@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ChevronRight } from "@/components/chevron-right";
 import { type Integration, integrationStatus } from "@/lib/integration-model";
 import styles from "./integrations.module.css";
 export function IntegrationLogo({ item }: { item: Integration }) {
@@ -25,15 +26,24 @@ export function IntegrationCard({ item }: { item: Integration }) {
     <Link className={styles.card} href={`/integrations/${item.slug}`}>
       <div className={styles.cardTop}>
         <IntegrationLogo item={item} />
-        <span className={styles.badge} data-status={item.status}>
-          {integrationStatus(item.status).label}
-        </span>
+        {item.status !== "planned" && (
+          <span className={styles.badge} data-status={item.status}>
+            {integrationStatus(item.status).label}
+          </span>
+        )}
       </div>
       <h3>
         {item.name}
-        <span aria-hidden="true">↗</span>
+        <span aria-hidden="true">
+          <ChevronRight />
+        </span>
       </h3>
-      <p>{item.shortDescription}</p>
+      <p>
+        {item.shortDescription ===
+        `${item.name} is planned for Innflow workflows. Explore this connection on our roadmap.`
+          ? `Explore ${item.name} for your Innflow workflows.`
+          : item.shortDescription}
+      </p>
       <span className={styles.categoryLabel}>
         {item.category?.title ?? "Other"}
       </span>

@@ -1,10 +1,15 @@
 import Image from "next/image";
 import { GoogleCtaContent } from "@/components/google-cta-content";
+import {
+  ArrowRight as MageArrowRight,
+  Plus as MagePlus,
+} from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
 import { getPageFaqTuples } from "@/lib/faqs";
-import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-lease.module.css";
 import shared from "./baselane-partners.module.css";
+import { InnerPageShell } from "./inner-page-shell";
 
 const steps = [
   [
@@ -52,7 +57,11 @@ const faqs = [
 ];
 function Action() {
   return (
-    <a className={shared.button} href={siteConfig.googleAuthUrl}>
+    <a
+      data-site-cta="primary"
+      className={shared.button}
+      href={siteConfig.signupUrl}
+    >
       <GoogleCtaContent />
     </a>
   );
@@ -60,12 +69,16 @@ function Action() {
 export async function BaselaneLease() {
   const cmsFaqs = await getPageFaqTuples("/lease-agreement", faqs);
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={`${shared.page} ${styles.page}`}>
         <div className={styles.dark}>
           <section className={shared.hero}>
             <div className={shared.heroCopy}>
-              <h1>Lease paperwork. Connected context.</h1>
+              <h1 data-mixed-heading>
+                <MixedHeadingText>
+                  Lease paperwork. Connected context.
+                </MixedHeadingText>
+              </h1>
               <p>
                 Bring property details, document reviews, and team handoffs into
                 a clearer process.
@@ -77,7 +90,7 @@ export async function BaselaneLease() {
                 target="_blank"
                 rel="noreferrer"
               >
-                Explore innflow workflows →
+                Explore innflow workflows <MageArrowRight size="1em" />
               </a>
             </div>
             <figure>
@@ -114,7 +127,9 @@ export async function BaselaneLease() {
             ].map(([n, title, text]) => (
               <article key={title}>
                 <span>{n}</span>
-                <h3>{title}</h3>
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>{title}</MixedHeadingText>
+                </h3>
                 <p>{text}</p>
               </article>
             ))}
@@ -122,17 +137,27 @@ export async function BaselaneLease() {
         </section>
         <section className={shared.steps}>
           <div className={styles.stepsCopy}>
-            <h2>A clearer lease-document workflow.</h2>
+            <h2 data-mixed-heading>
+              <MixedHeadingText>
+                A clearer lease-document workflow.
+              </MixedHeadingText>
+            </h2>
             <p>
               Keep the information and people involved connected at each stage.
             </p>
             {steps.map(([title, text]) => (
               <div key={title}>
-                <h3>{title}</h3>
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>{title}</MixedHeadingText>
+                </h3>
                 <p>{text}</p>
               </div>
             ))}
-            <a className={shared.button} href={siteConfig.demoUrl}>
+            <a
+              data-site-cta="primary"
+              className={shared.button}
+              href={siteConfig.demoUrl}
+            >
               Explore the innflow demo
             </a>
           </div>
@@ -150,7 +175,11 @@ export async function BaselaneLease() {
         <section className={styles.tinted}>
           <div className={styles.why}>
             <div>
-              <h2>Keep the work around the agreement organized.</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>
+                  Keep the work around the agreement organized.
+                </MixedHeadingText>
+              </h2>
               <Action />
             </div>
             <div className={styles.four}>
@@ -174,7 +203,9 @@ export async function BaselaneLease() {
               ].map(([title, text], i) => (
                 <article key={title}>
                   <span>0{i + 1}</span>
-                  <h3>{title}</h3>
+                  <h3 data-mixed-heading>
+                    <MixedHeadingText>{title}</MixedHeadingText>
+                  </h3>
                   <p>{text}</p>
                 </article>
               ))}
@@ -182,14 +213,18 @@ export async function BaselaneLease() {
           </div>
         </section>
         <section className={styles.why}>
-          <h2>{cmsFaqs.heading || "Frequently asked questions"}</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              {cmsFaqs.heading || "Frequently asked questions"}
+            </MixedHeadingText>
+          </h2>
           <div className={shared.accordion}>
             {cmsFaqs.items.map(([title, text, faqId], i) => (
               <details key={faqId} open={i === 0}>
                 <summary>
                   {title}
                   <span className={shared.plus} aria-hidden="true">
-                    +
+                    <MagePlus size="1em" />
                   </span>
                 </summary>
                 <p style={{ whiteSpace: "pre-line" }}>{text}</p>
@@ -199,9 +234,14 @@ export async function BaselaneLease() {
         </section>
         <section className={`${shared.closing} ${styles.dark}`}>
           <div>
-            <h2>Prepare for the next document review.</h2>
+            <h2 data-mixed-heading>
+              <MixedHeadingText>
+                Prepare for the next document review.
+              </MixedHeadingText>
+            </h2>
             <p>Browse the forms and checklists in the resource library.</p>
             <a
+              data-site-cta="primary"
               className={shared.button}
               href="/free-rental-forms-and-templates-for-landlords"
             >
@@ -210,6 +250,6 @@ export async function BaselaneLease() {
           </div>
         </section>
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

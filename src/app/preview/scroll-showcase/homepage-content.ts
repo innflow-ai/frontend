@@ -156,7 +156,7 @@ export const features: readonly FeatureSection[] = [
     label: "Workflows",
     title: "Automate the work\nbetween conversations.",
     source: "350:11402",
-    href: "/products/agentic-workflows",
+    href: "/features/workflows",
     accent: "#ba9dff",
     states: [
       {
@@ -420,7 +420,7 @@ export const infrastructureCards = [
     label: "Workflows",
     title: "Turn context into action",
     body: "Connect the tools and people involved without losing the context that makes work move.",
-    href: "/products/agentic-workflows",
+    href: "/features/workflows",
     source: "441:10245",
   },
   {

@@ -150,6 +150,22 @@ describe("dropThirdPartyExceptions", () => {
     expect(dropThirdPartyExceptions(event)).toBe(event);
   });
 
+  it("keeps an exception raised by a same-origin script outside /_next/", () => {
+    const event = exceptionEvent(`${window.location.origin}/scripts/widget.js`);
+    expect(dropThirdPartyExceptions(event)).toBe(event);
+  });
+
+  it("drops an iOS in-app browser exception that reports the page URL", () => {
+    expect(
+      dropThirdPartyExceptions(exceptionEvent(`${window.location.origin}/`)),
+    ).toBeNull();
+    expect(
+      dropThirdPartyExceptions(
+        exceptionEvent(`${window.location.origin}/pricing?gclid=abc`),
+      ),
+    ).toBeNull();
+  });
+
   it("drops an exception with no resolvable filename", () => {
     expect(dropThirdPartyExceptions(exceptionEvent(undefined))).toBeNull();
   });

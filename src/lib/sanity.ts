@@ -228,16 +228,7 @@ export async function getRelatedBlogPosts(
 }
 
 // Categories are stored as slugs (e.g. "property-management"); humanize for display.
-export function humanizeCategory(category: string | null | undefined): string {
-  if (!category) return "Blog";
-  return category
-    .split("-")
-    .map((word) => {
-      if (word.toLowerCase() === "ai") return "AI";
-      return word.charAt(0).toUpperCase() + word.slice(1);
-    })
-    .join(" ");
-}
+export { humanizeCategory } from "./blog-labels";
 
 export function formatPostDate(publishedAt: string | null | undefined): string {
   if (!publishedAt) return "";

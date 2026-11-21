@@ -12,7 +12,9 @@ import { BlogRelatedPosts } from "@/components/blog/related-posts";
 import { BlogShareBar } from "@/components/blog/share-bar";
 import { BlogTaxonomy } from "@/components/blog/taxonomy";
 import { GoogleSignInButton } from "@/components/google-sign-in";
+import { ChevronLeft as MageArrowLeft } from "@/components/icons/mage";
 import { JsonLd } from "@/components/json-ld";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { MarketingPage } from "@/components/page-primitives";
 import { siteConfig } from "@/config/site";
 import {
@@ -168,7 +170,9 @@ export default async function BlogPostPage({ params }: RouteParams) {
                 ) : null}
                 {post.readTime ? <span>{post.readTime} min read</span> : null}
               </p>
-              <h1 className={styles.title}>{post.title}</h1>
+              <h1 className={styles.title} data-mixed-heading>
+                <MixedHeadingText>{post.title}</MixedHeadingText>
+              </h1>
               <div className={styles.articleExtras}>
                 <BlogListenPlayer text={listenText} audioUrl={post.audioUrl} />
                 <BlogTaxonomy
@@ -182,7 +186,7 @@ export default async function BlogPostPage({ params }: RouteParams) {
           <div className={styles.articleColumns}>
             <aside className={styles.articleAside} aria-label="Article tools">
               <div className={styles.asideCta}>
-                <p>Bring your property operations together with Innflow</p>
+                <p>Put AI agents to work with Innflow</p>
                 <GoogleSignInButton
                   label="Get started"
                   eventLabel="blog_sidebar_get_started"
@@ -202,7 +206,7 @@ export default async function BlogPostPage({ params }: RouteParams) {
               ) : null}
             </aside>
             <div className={styles.articleMain}>
-              <BlogArticleIntroCta />
+              <BlogArticleIntroCta category={post.category} />
               {post.body ? (
                 <div className={styles.body}>
                   <BlogPortableBody
@@ -211,7 +215,7 @@ export default async function BlogPostPage({ params }: RouteParams) {
                 </div>
               ) : null}
               <BlogAuthorBio author={author} />
-              <BlogContinueLearning nextPost={related[0] ?? null} />
+              <BlogContinueLearning />
             </div>
           </div>
         </div>
@@ -219,7 +223,7 @@ export default async function BlogPostPage({ params }: RouteParams) {
           <BlogRelatedPosts posts={related.slice(0, 3)} />
           <div className={styles.footerNav}>
             <a className={styles.backLink} href="/blog">
-              ← Back to blog
+              <MageArrowLeft size="1em" /> Back to blog
             </a>
           </div>
         </div>

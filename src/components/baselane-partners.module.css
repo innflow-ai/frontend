@@ -182,10 +182,6 @@
   border-radius: 12px;
   background: white;
 }
-.nodes span:first-child {
-  color: #477fa5;
-  font-size: 12px;
-}
 .nodes span:last-child {
   margin-left: auto;
 }
@@ -240,10 +236,6 @@
 }
 .accordion summary::-webkit-details-marker {
   display: none;
-}
-.accordion summary > span:first-child {
-  color: #4d7e9f;
-  font-size: 13px;
 }
 .plus {
   margin-left: auto;

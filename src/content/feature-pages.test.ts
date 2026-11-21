@@ -1,23 +1,21 @@
 import { existsSync, readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import {
-  portfolioColumns,
-  productColumns,
-  solutionsColumns,
-} from "@/components/mega-menu";
+import { solutionsColumns } from "@/components/mega-menu";
 import { featurePageRoutes } from "./feature-page-routes";
 import { featurePageDesigns } from "./feature-pages";
 
 describe("Figma feature page handoff", () => {
-  it("makes every implemented design reachable from the shared navigation", () => {
-    const destinations = new Set(
-      [...portfolioColumns, ...productColumns, ...solutionsColumns].flatMap(
-        (column) => column.links.map((link) => link.href),
-      ),
-    );
-    for (const page of featurePageDesigns)
-      expect(destinations.has(page.path), page.path).toBe(true);
+  it("keeps property feature routes available outside the industry navigation", () => {
+    for (const page of featurePageDesigns) {
+      expect(existsSync(`src/app${page.path}/page.tsx`), page.path).toBe(true);
+    }
+    expect(
+      solutionsColumns
+        .flatMap((column) => column.links)
+        .every((link) => link.href.startsWith("/industries/")),
+    ).toBe(true);
   });
+
   it("provides a unique route and assigned hero for each design", () => {
     expect(featurePageDesigns).toHaveLength(33);
     expect(new Set(featurePageDesigns.map((page) => page.path)).size).toBe(33);
@@ -31,7 +29,25 @@ describe("Figma feature page handoff", () => {
       expect(new Set(page.panels.map((panel) => panel.id)).size).toBe(4);
       expect(page.features.length).toBeGreaterThanOrEqual(3);
       expect(page.faqs).toHaveLength(4);
-      expect(page.heroArtwork.length).toBeGreaterThan(0);
+      // Listing uses its dedicated layered hero instead of generic overlay data.
+      if (page.key === "listing-and-advertising") {
+        expect(page.heroArtwork).toEqual([]);
+        for (const asset of [
+          "porch-bordered.png",
+          "listing-channels.svg",
+          "couple.png",
+          "unit-status.svg",
+        ]) {
+          expect(
+            existsSync(
+              `public/brand/feature-pages/listing-and-advertising/${asset}`,
+            ),
+            asset,
+          ).toBe(true);
+        }
+      } else {
+        expect(page.heroArtwork.length).toBeGreaterThan(0);
+      }
       const images = [page.hero, ...page.heroArtwork.map((art) => art.src)];
       for (const panel of page.panels) {
         expect(panel.artwork.length).toBeGreaterThan(0);

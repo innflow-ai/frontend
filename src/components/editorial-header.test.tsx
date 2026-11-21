@@ -1,11 +1,10 @@
 import { act, cleanup, render, screen, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import type { LatestBlogPostNavItem } from "@/components/mega-menu";
+import { siteConfig } from "@/config/site";
 import { BaselaneHomepage } from "./baselane-homepage";
 import { EditorialHeader } from "./editorial-header";
 import styles from "./editorial-header.module.css";
-import { NavigationBlogPostsProvider } from "./navigation-blog-posts";
 import { SiteHeader } from "./site-header";
 
 const { mockPathname, motionFlags } = vi.hoisted(() => ({
@@ -22,55 +21,24 @@ vi.mock("motion/react", async (importOriginal) => {
   return { ...actual, useReducedMotion: () => motionFlags.reduce };
 });
 
-const latestBlogPosts: LatestBlogPostNavItem[] = [
-  {
-    title: "Newest operations guide",
-    href: "/blog/newest-operations-guide",
-    categoryLabel: "Automation",
-    publishedLabel: "August 23, 2026",
-    imageUrl: "https://cdn.sanity.io/images/hnjg8vum/production/example.jpg",
-    imageAlt: "Automation dashboard",
-  },
-  {
-    title: "A calmer approach to property work",
-    href: "/blog/calmer-property-work",
-    categoryLabel: "Property Management",
-    publishedLabel: "August 22, 2026",
-    imageUrl: null,
-    imageAlt: "A calmer approach to property work",
-  },
-];
-
 describe("EditorialHeader navigation", () => {
-  it("shows up to four linked blog previews in BL Resources", async () => {
+  it("orders the menus before Pricing and groups resource links by purpose", async () => {
     const user = userEvent.setup();
-    const posts = Array.from({ length: 5 }, (_, index) => ({
-      ...latestBlogPosts[0],
-      title: `Post ${index + 1}`,
-      href: `/blog/post-${index + 1}`,
-    }));
-    render(
-      <NavigationBlogPostsProvider posts={posts}>
-        <>
-          <SiteHeader />
-          <BaselaneHomepage>
-            <p>BL content</p>
-          </BaselaneHomepage>
-        </>
-      </NavigationBlogPostsProvider>,
+    render(<SiteHeader />);
+    const nav = within(
+      screen.getByRole("navigation", { name: "Primary navigation" }),
     );
-    await user.click(screen.getByRole("button", { name: "Resources" }));
-    const previews = screen.getByRole("region", {
-      name: "Latest from Innflow",
-    });
-    expect(within(previews).getAllByRole("img")).toHaveLength(4);
     expect(
-      within(previews).getByRole("link", { name: /Post 1/ }),
-    ).toHaveAttribute("href", "/blog/post-1");
-    expect(within(previews).queryByText("Post 5")).not.toBeInTheDocument();
-    expect(
-      within(previews).getByRole("link", { name: "View all posts" }),
-    ).toHaveAttribute("href", "/blog");
+      nav.getAllByRole("button").map((button) => button.textContent),
+    ).toEqual(["Product", "Models", "Solutions", "Resources"]);
+    await user.click(nav.getByRole("button", { name: "Resources" }));
+    for (const name of ["Learn", "Explore", "Get help"])
+      expect(await nav.findByRole("heading", { name })).toBeVisible();
+    expect(nav.getByRole("link", { name: "Blog" })).toHaveAttribute(
+      "href",
+      "/blog",
+    );
+    expect(nav.getAllByRole("link", { name: /View more/ })).toHaveLength(3);
   });
 
   it("shares the homepage accordion with BL and restores scrolling on Escape", async () => {
@@ -91,15 +59,18 @@ describe("EditorialHeader navigation", () => {
     expect(
       within(navigation).getByRole("link", { name: "Pricing" }),
     ).toHaveAttribute("href", "/pricing");
-    await user.click(
-      within(navigation).getByRole("button", { name: "Log in" }),
-    );
     expect(
-      within(navigation).getByRole("link", { name: "Landlord login" }),
-    ).toHaveAttribute("href", "https://app.innflow.ai/login");
+      within(navigation).getByRole("link", { name: "Login" }),
+    ).toHaveAttribute("href", siteConfig.loginUrl);
     expect(
-      within(navigation).getByRole("link", { name: "Tenant login Beta" }),
-    ).toHaveAttribute("href", "https://app.innflow.ai/login");
+      screen.queryByRole("link", { name: "Book a demo" }),
+    ).not.toBeInTheDocument();
+    expect(
+      within(navigation).queryByText("Landlord login"),
+    ).not.toBeInTheDocument();
+    expect(
+      within(navigation).queryByText("Tenant login"),
+    ).not.toBeInTheDocument();
     await user.click(
       within(navigation).getByRole("button", { name: "Product" }),
     );
@@ -143,64 +114,24 @@ describe("EditorialHeader navigation", () => {
     vi.stubGlobal("cancelAnimationFrame", vi.fn());
   });
 
-  it("groups platform capabilities and the integration directory under Product on desktop and mobile", async () => {
+  it("opens the seven feature previews under Product without a directory footer", async () => {
     const user = userEvent.setup();
     render(<EditorialHeader />);
-    expect(
-      screen.queryByRole("button", { name: "Platform" }),
-    ).not.toBeInTheDocument();
-    const pages = [
-      ["Agentic Automation", "agentic-automation"],
-      ["Self Learning", "self-learning"],
-      ["Evaluations", "evaluations"],
-      ["Analytics and Observability", "analytics-and-observability"],
-      ["Integrations", "integrations"],
-      ["Deployment Options", "deployment-options"],
-      ["Security and Compliance", "security-and-compliance"],
-    ];
     await user.click(screen.getByRole("button", { name: "Product" }));
-    const desktop = within(
-      screen.getByRole("region", { name: "Product menu" }),
-    );
-    for (const [title, slug] of pages) {
-      expect(
-        desktop.getByRole("link", { name: new RegExp(`^${title}`) }),
-      ).toHaveAttribute(
-        "href",
-        slug === "integrations" ? "/integrations" : `/platform/${slug}`,
-      );
-    }
+    expect(screen.getAllByRole("tab")).toHaveLength(7);
+    expect(
+      screen.queryByRole("link", { name: /Browse all products/ }),
+    ).toBeNull();
     await user.keyboard("{Escape}");
-    expect(
-      screen.queryByRole("region", { name: "Product menu" }),
-    ).not.toBeInTheDocument();
-    await user.click(screen.getByRole("button", { name: "Open navigation" }));
-    const mobile = within(
-      document.getElementById("editorial-mobile-overlay") as HTMLElement,
-    );
-    await user.click(mobile.getByRole("button", { name: "Product" }));
-    for (const [title, slug] of pages) {
-      expect(
-        mobile.getByRole("link", { name: new RegExp(`^${title}`) }),
-      ).toHaveAttribute(
-        "href",
-        slug === "integrations" ? "/integrations" : `/platform/${slug}`,
-      );
-    }
-    await user.click(
-      mobile.getByRole("link", { name: /^Security and Compliance/ }),
-    );
-    expect(
-      document.getElementById("editorial-mobile-overlay"),
-    ).not.toBeInTheDocument();
+    expect(screen.queryByRole("region", { name: "Product menu" })).toBeNull();
   });
 
-  it("renders the two latest posts in the desktop Resources menu", async () => {
+  it("shows the Figma model directory and preserves the header controls", async () => {
     const user = userEvent.setup();
-    render(<EditorialHeader latestBlogPosts={latestBlogPosts} />);
+    render(<EditorialHeader />);
 
     expect(
-      screen.getByRole("button", { name: "Continue with Google" }),
+      screen.getByRole("link", { name: "Continue with Google" }),
     ).toBeInTheDocument();
     expect(
       screen.queryByRole("button", { name: "Log in" }),
@@ -213,44 +144,41 @@ describe("EditorialHeader navigation", () => {
     ).not.toBeInTheDocument();
     expect(document.querySelector(`.${styles.articleFade}`)).toBeNull();
     expect(document.querySelector(`.${styles.articleBottomFade}`)).toBeNull();
-    await user.click(screen.getByRole("button", { name: "Resources" }));
-
-    expect(
-      screen.getByRole("link", { name: /Newest operations guide/ }),
-    ).toHaveAttribute("href", "/blog/newest-operations-guide");
-    expect(
-      screen.getByRole("link", { name: /A calmer approach to property work/ }),
-    ).toHaveAttribute("href", "/blog/calmer-property-work");
-    expect(
-      screen.getByRole("img", { name: "Automation dashboard" }),
-    ).toHaveAttribute("width", "720");
-    expect(
-      screen.getByRole("img", { name: "Automation dashboard" }),
-    ).toHaveAttribute("height", "512");
-    expect(
-      screen.getByRole("link", { name: /View all posts/ }),
-    ).toHaveAttribute("href", "/blog");
+    await user.click(screen.getByRole("button", { name: "Models" }));
+    const directory = within(
+      screen.getByRole("region", { name: "Models menu" }),
+    );
+    expect(directory.getAllByRole("heading")).toHaveLength(9);
+    expect(directory.queryByRole("heading", { name: "ByteDance" })).toBeNull();
+    for (const model of [
+      "Grok 4.7", "Grok 4.6",
+      "Claude Fable 5.2", "Claude Opus 5.5", "Claude Sonnet 5.5", "Claude Haiku 5.5",
+      "DeepSeek V4.1 Flash 1017", "DeepSeek V4 Pro 0813",
+      "GLM-5.3", "GLM-5.3-Flash", "GLM-5.3-FlashX",
+    ]) {
+      expect(directory.getByText(model)).toBeVisible();
+    }
   });
 
-  it("shows the sales banner in the desktop Portfolios menu", async () => {
+  it("replaces the property portfolio menu with industry solutions", async () => {
     const user = userEvent.setup();
     render(<EditorialHeader />);
-
-    await user.click(screen.getByRole("button", { name: "Portfolios" }));
-
-    const banner = screen.getByRole("link", {
-      name: /Interested in our product.*Talk to sales/i,
-    });
-    expect(banner).toHaveAttribute("href", "/contact");
-    expect(within(banner).getByRole("img")).toHaveAttribute(
-      "src",
-      expect.stringContaining("ico-banner-real.png"),
+    expect(
+      screen.queryByRole("button", { name: "Portfolios" }),
+    ).not.toBeInTheDocument();
+    await user.click(screen.getByRole("button", { name: "Solutions" }));
+    expect(screen.getByRole("link", { name: /^Finance/ })).toHaveAttribute(
+      "href",
+      "/industries/finance",
     );
+    expect(
+      screen.queryByRole("link", { name: /^Rent Collection/ }),
+    ).not.toBeInTheDocument();
   });
 
   it("uses single-open mobile accordions and closes after navigation", async () => {
     const user = userEvent.setup();
-    render(<EditorialHeader latestBlogPosts={latestBlogPosts} />);
+    render(<EditorialHeader />);
 
     await user.click(screen.getByRole("button", { name: "Open navigation" }));
     const overlay = document.getElementById("editorial-mobile-overlay");
@@ -259,7 +187,7 @@ describe("EditorialHeader navigation", () => {
     expect(document.querySelector("header")).toHaveClass(styles.menuOpen);
     expect(screen.getByRole("img", { name: "Innflow" })).toHaveAttribute(
       "src",
-      expect.stringContaining("innflow-wordmark.svg"),
+      expect.stringContaining("innflow-nav-wordmark.svg"),
     );
     const mobile = within(overlay as HTMLElement);
     const product = mobile.getByRole("button", { name: "Product" });
@@ -268,9 +196,9 @@ describe("EditorialHeader navigation", () => {
     expect(product).toHaveAttribute("aria-expanded", "false");
     expect(resources).toHaveAttribute("aria-expanded", "false");
     expect(mobile.getByRole("link", { name: "Pricing" })).toBeInTheDocument();
-    expect(mobile.getByRole("link", { name: "Blog" })).toBeInTheDocument();
+    expect(mobile.queryByRole("link", { name: "Blog" })).toBeNull();
     expect(
-      mobile.getByRole("button", { name: "Continue with Google" }),
+      mobile.getByRole("link", { name: "Continue with Google" }),
     ).toHaveClass(styles.mobileCta);
     expect(
       mobile.queryByRole("link", { name: "Sign Up" }),
@@ -284,9 +212,7 @@ describe("EditorialHeader navigation", () => {
 
     await user.click(resources);
     expect(resources).toHaveAttribute("aria-expanded", "true");
-    expect(
-      mobile.getByRole("link", { name: /Newest operations guide/ }),
-    ).toBeInTheDocument();
+    expect(mobile.getByRole("link", { name: "Blog" })).toBeInTheDocument();
 
     await user.click(product);
     expect(product).toHaveAttribute("aria-expanded", "true");
@@ -295,9 +221,7 @@ describe("EditorialHeader navigation", () => {
     await user.click(product);
     expect(product).toHaveAttribute("aria-expanded", "false");
     await user.click(resources);
-    await user.click(
-      mobile.getByRole("link", { name: /Newest operations guide/ }),
-    );
+    await user.click(mobile.getByRole("link", { name: "Blog" }));
     expect(
       document.getElementById("editorial-mobile-overlay"),
     ).not.toBeInTheDocument();
@@ -311,7 +235,7 @@ describe("EditorialHeader navigation", () => {
     const header = document.querySelector("header");
     expect(screen.getByRole("img", { name: "Innflow" })).toHaveAttribute(
       "src",
-      expect.stringContaining("innflow-wordmark.svg"),
+      expect.stringContaining("innflow-nav-wordmark.svg"),
     );
     expect(header).not.toHaveClass(styles.homeTop);
     expect(header).not.toHaveClass(styles.pageTop);
@@ -390,7 +314,7 @@ describe("EditorialHeader navigation", () => {
 
     expect(screen.getByRole("img", { name: "Innflow" })).toHaveAttribute(
       "src",
-      expect.stringContaining("innflow-wordmark.svg"),
+      expect.stringContaining("innflow-nav-wordmark.svg"),
     );
 
     await user.click(screen.getByRole("button", { name: "Open navigation" }));
@@ -399,13 +323,13 @@ describe("EditorialHeader navigation", () => {
     expect(header).not.toHaveClass(styles.homeTop);
     expect(screen.getByRole("img", { name: "Innflow" })).toHaveAttribute(
       "src",
-      expect.stringContaining("innflow-wordmark.svg"),
+      expect.stringContaining("innflow-nav-wordmark.svg"),
     );
     expect(
       screen
         .getByRole("button", { name: "Close navigation" })
-        .querySelector("img"),
-    ).toHaveAttribute("src", expect.stringContaining("Close_X_black.svg"));
+        .querySelector("svg path"),
+    ).toHaveAttribute("stroke", "currentColor");
   });
 
   it("keeps the blog index on the transparent dark-chrome default", () => {
@@ -417,7 +341,57 @@ describe("EditorialHeader navigation", () => {
     expect(header).not.toHaveClass(styles.homeTop);
     expect(screen.getByRole("img", { name: "Innflow" })).toHaveAttribute(
       "src",
-      expect.stringContaining("innflow-wordmark.svg"),
+      expect.stringContaining("innflow-nav-wordmark.svg"),
     );
+  });
+});
+
+describe("SiteHeader mega-menu destinations", () => {
+  beforeEach(() => {
+    mockPathname.current = "/";
+    Object.defineProperty(window, "matchMedia", {
+      configurable: true,
+      value: vi.fn().mockReturnValue({
+        matches: false,
+        addEventListener: vi.fn(),
+        removeEventListener: vi.fn(),
+      }),
+    });
+  });
+
+  const namedItems: Array<[string, string]> = [
+    ["Customer Service", "/industries/customer-service"],
+    ["Finance", "/industries/finance"],
+    ["Operations", "/operations"],
+    ["Slack", "/integrations/slack"],
+  ];
+
+  afterEach(() => cleanup());
+
+  it("uses specific routes for named items on desktop and mobile", async () => {
+    const user = userEvent.setup();
+    render(<SiteHeader />);
+    await user.click(screen.getByRole("button", { name: "Solutions" }));
+    const desktop = screen.getByRole("group", { name: "Solutions" });
+    for (const [title, href] of namedItems) {
+      expect(
+        await within(desktop).findByRole("link", {
+          name: new RegExp(`^${title}`),
+        }),
+      ).toHaveAttribute("href", href);
+      expect(href).not.toBe("/property-management");
+      expect(href).not.toBe("/products/agent-os");
+    }
+    await user.keyboard("{Escape}");
+    await user.click(screen.getByRole("button", { name: "Open navigation" }));
+    const mobile = within(
+      await screen.findByRole("navigation", { name: "Mobile navigation" }),
+    );
+    await user.click(mobile.getByRole("button", { name: "Solutions" }));
+    for (const [title, href] of namedItems) {
+      expect(
+        mobile.getByRole("link", { name: new RegExp(`^${title}`) }),
+      ).toHaveAttribute("href", href);
+    }
   });
 });

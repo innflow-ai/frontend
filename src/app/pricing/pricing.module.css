@@ -504,14 +504,21 @@
 }
 
 .faqList summary::after {
-  content: "+";
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  background-color: currentColor;
+  mask: url("/brand/mage/plus.svg") center / contain no-repeat;
   color: var(--sky-blue);
   font-size: 24px;
   font-weight: 400;
 }
 
 .faqList details[open] summary::after {
-  content: "–";
+  content: "";
+  mask-image: url("/brand/mage/minus.svg");
 }
 
 .faqList p {

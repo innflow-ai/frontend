@@ -1,13 +1,93 @@
-import { cleanup, render, screen } from "@testing-library/react";
+import {
+  act,
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+  within,
+} from "@testing-library/react";
 import { afterEach, expect, it, vi } from "vitest";
 import { siteConfig } from "@/config/site";
 import { ScrollShowcase } from "./scroll-showcase";
 
 afterEach(() => {
   cleanup();
+  vi.restoreAllMocks();
   vi.unstubAllGlobals();
 });
-it("offers configured Google sign-in and disabled Microsoft sign-in without a progress strip", () => {
+
+it.each([false, true])(
+  "shifts the compact hero backdrop with scroll and keeps the chapter on the tab (%s)",
+  (reduced) => {
+    vi.stubGlobal("matchMedia", (query: string) => ({
+      matches: query.includes("prefers-reduced-motion") ? reduced : true,
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
+    }));
+    let frame: FrameRequestCallback | undefined;
+    vi.stubGlobal("requestAnimationFrame", (callback: FrameRequestCallback) => {
+      frame = callback;
+      return 1;
+    });
+    vi.stubGlobal("cancelAnimationFrame", vi.fn());
+    vi.stubGlobal("scrollTo", vi.fn());
+    vi.stubGlobal("innerHeight", 844);
+    vi.stubGlobal(
+      "IntersectionObserver",
+      class {
+        observe() {}
+        unobserve() {}
+        disconnect() {}
+      },
+    );
+    let top = 400;
+    vi.spyOn(HTMLElement.prototype, "getBoundingClientRect").mockImplementation(
+      () => ({ top }) as DOMRect,
+    );
+    vi.spyOn(HTMLElement.prototype, "offsetHeight", "get").mockReturnValue(700);
+    const { container } = render(<ScrollShowcase />);
+    const track = screen.getByRole("region", {
+      name: "Interactive feature showcase",
+    });
+    const stage = container.querySelector<HTMLElement>(
+      '[style*="--gradient-progress"]',
+    );
+    const pan = () =>
+      Number(stage?.style.getPropertyValue("--gradient-progress"));
+    const scroll = (nextTop: number) => {
+      top = nextTop;
+      act(() => {
+        fireEvent.scroll(window);
+        frame?.(0);
+      });
+    };
+
+    expect(track).toHaveAttribute("data-compact", "true");
+    expect(track).toHaveAttribute("data-reduced", String(reduced));
+    expect(screen.queryByRole("button", { name: "Skip showcase" })).toBeNull();
+    const initial = pan();
+    scroll(100);
+    expect(pan() > initial).toBe(!reduced);
+    const afterScroll = pan();
+    fireEvent.click(screen.getByRole("tab", { name: "Flow" }));
+    expect(screen.getByRole("tab", { name: "Flow" })).toHaveAttribute(
+      "aria-selected",
+      "true",
+    );
+    expect(pan() > afterScroll).toBe(!reduced);
+    expect(window.scrollTo).not.toHaveBeenCalled();
+    scroll(-100);
+    expect(screen.getByRole("tab", { name: "Flow" })).toHaveAttribute(
+      "aria-selected",
+      "true",
+    );
+    const forwards = pan();
+    scroll(100);
+    expect(pan() < forwards).toBe(!reduced);
+    if (reduced) expect(pan()).toBe(0);
+  },
+);
+it("offers Google, email and the general sign-in page", () => {
   vi.stubGlobal("matchMedia", () => ({
     matches: true,
     addEventListener: vi.fn(),
@@ -25,39 +105,61 @@ it("offers configured Google sign-in and disabled Microsoft sign-in without a pr
   );
   render(<ScrollShowcase />);
   expect(
-    screen.getByText(/Bring conversations, AI agents, and workflows/),
+    screen.getByText(
+      /Connect conversations, delegate tasks, and keep work moving/,
+    ),
   ).toBeVisible();
   expect(
-    screen.getByRole("link", { name: "Sign up with email" }),
-  ).toHaveAttribute("href", siteConfig.signupUrl);
-  expect(screen.getByText(/No credit card required/)).toBeVisible();
+    screen.queryByRole("link", { name: "Sign up with email" }),
+  ).not.toBeInTheDocument();
   expect(
     screen.queryByText("Scroll to explore, or choose a tab."),
   ).not.toBeInTheDocument();
   expect(screen.queryByText("HOMEPAGE MOTION STUDY")).not.toBeInTheDocument();
   expect(
     screen.getByRole("link", { name: "Continue with Google" }),
-  ).toHaveAttribute("href", siteConfig.googleAuthUrl);
+  ).toHaveAttribute("href", siteConfig.signupUrl);
+  expect(screen.getByRole("link", { name: "Learn more" })).toHaveAttribute(
+    "href",
+    "#feature-showcase",
+  );
+  expect(screen.queryByRole("dialog", { hidden: true })).toBeNull();
   expect(
-    screen.getByRole("button", { name: "Continue with Microsoft" }),
-  ).toBeDisabled();
+    screen.queryByRole("link", { name: "Book a demo" }),
+  ).not.toBeInTheDocument();
   expect(
-    screen.getByRole("button", { name: "Continue with Microsoft" }),
-  ).toHaveAccessibleDescription("Microsoft sign-in link pending");
+    screen.queryByText("Microsoft sign-in link pending"),
+  ).not.toBeInTheDocument();
   expect(screen.queryByText("Scroll to explore ↓")).not.toBeInTheDocument();
   expect(screen.queryByText(/01 \/ 04/)).not.toBeInTheDocument();
-  const scheduling = screen.getByRole("tabpanel", { name: "Scheduling" });
-  expect(scheduling).toHaveTextContent(
-    "Turn conversations into scheduled meetings",
-  );
-  expect(scheduling).not.toHaveTextContent(
-    /Calendly|Meeting confirmed|#1 scheduling/,
-  );
-  expect(scheduling.querySelector("a")).toHaveAttribute(
-    "href",
-    "/products/platform",
-  );
+  const destinations = [
+    ["Bot mode", "/products/ai-agents", "Teach your bot a task."],
+    ["Flow", "/features/workflows", "Track every handoff."],
+    ["Channels", "#workflows", "Bring your bot into the conversation."],
+    ["Computer", "#insights", "Let your bot handle the clicks."],
+  ];
+  for (const [label, href, heading] of destinations) {
+    fireEvent.click(screen.getByRole("tab", { name: label }));
+    const panel = screen.getByRole("tabpanel", { name: label });
+    expect(
+      within(panel).getByRole("heading", {
+        level: 2,
+        name: heading,
+      }),
+    ).toBeVisible();
+    expect(
+      screen.getByRole("link", { name: `Learn more about ${label}` }),
+    ).toHaveAttribute("href", href);
+  }
+  fireEvent.click(screen.getByRole("tab", { name: "Bot mode" }));
+  const bot = screen.getByRole("tabpanel", { name: "Bot mode" });
   expect(
-    scheduling.querySelector("[data-calendar-storyboard]"),
+    within(bot).getByRole("img", { name: /records a weekly analytics report/ }),
+  ).toBeInTheDocument();
+  fireEvent.click(screen.getByRole("tab", { name: "Flow" }));
+  expect(
+    screen.getByRole("img", {
+      name: /influencer outreach workflow/,
+    }),
   ).toBeInTheDocument();
 });

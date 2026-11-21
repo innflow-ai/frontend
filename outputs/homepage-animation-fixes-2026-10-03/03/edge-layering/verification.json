@@ -1,0 +1,43 @@
+{
+  "connectorLayersBehindCards": [
+    "1-13323",
+    "1-13317",
+    "1-13311",
+    "1-870",
+    "1-864",
+    "1-858",
+    "0-2364",
+    "0-4645",
+    "0-4673",
+    "0-4682",
+    "0-10074",
+    "0-12358"
+  ],
+  "startHandlePreparationFrames": [
+    400,
+    426
+  ],
+  "rightMidpointAnchorFrames": [
+    426,
+    1581
+  ],
+  "startPortAtReorderEnd": [
+    230.05305014240494,
+    180.12317151132095
+  ],
+  "duration": 27.6,
+  "runtimeBytes": 925372,
+  "runtimeSha256": "1bc39da9e4c50cca039b71e28340881d22d799ed9b13bc7f387867427fa79eb9",
+  "editableBytes": 4974178,
+  "routeHandoffFrames": [
+    394,
+    400
+  ],
+  "returnResetSmoothed": true,
+  "fullPlaybackLoopCompleted": true,
+  "openingClosingPixelsIdentical": true,
+  "startRightMidpointDuringShrinkVerified": true,
+  "linesBehindCardsVerified": true,
+  "testsPassed": 8,
+  "deployed": false
+}

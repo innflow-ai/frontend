@@ -1,0 +1,524 @@
+{
+  "version": 2,
+  "date": "2026-10-04",
+  "data_source_id": "91d0ac1b-d32e-824a-9362-87c81b3e5a97",
+  "scope": "All records audited by title and metadata; only Queued page values changed.",
+  "categories": [
+    {
+      "name": "Uncatagorized",
+      "key": "needs-review",
+      "description": "Unresolved or insufficient source material. Do not generate artwork until a real Split is selected.",
+      "visual_family": "hold-for-review",
+      "evidence": [],
+      "new": false,
+      "color": null,
+      "notion_option_id": "af073e3e-00a5-4be8-ba02-208109870961"
+    },
+    {
+      "name": "Property Management",
+      "key": "property-management",
+      "description": "Property operations, leasing, maintenance, accounting, housing rules, and landlord guidance when no more specific editorial format applies. Property context alone does not override an integration or comparison.",
+      "visual_family": "property-photograph-and-one-relevant-ops-card",
+      "evidence": [
+        {
+          "title": "Commercial NNN Reconciliation and Rent Escalation Billing Workflows",
+          "url": "https://app.notion.com/p/Commercial-NNN-Reconciliation-and-Rent-Escalation-Billing-Workflows-3ed0ac1bd32e814bbe79f54ec10bd54c",
+          "status": "Not started"
+        },
+        {
+          "title": "Vendor Compliance Workflows: W-9, 1099 Thresholds, and COI Renewals for Property Management Companies",
+          "url": "https://app.notion.com/p/Vendor-Compliance-Workflows-W-9-1099-Thresholds-and-COI-Renewals-for-Property-Management-Companie-3ec0ac1bd32e81db957fed32e9fcd4b6",
+          "status": "Not started"
+        },
+        {
+          "title": "After-Hours Maintenance Emergency Triage Workflows for Multifamily Ops",
+          "url": "https://app.notion.com/p/After-Hours-Maintenance-Emergency-Triage-Workflows-for-Multifamily-Ops-3eb0ac1bd32e813ba033e5b977b90ca0",
+          "status": "Not started"
+        }
+      ],
+      "new": false,
+      "color": null,
+      "notion_option_id": "1feb7439-c336-4d64-98c0-aa548fd88c79"
+    },
+    {
+      "name": "Integration",
+      "key": "integration",
+      "description": "Connecting named apps, APIs, MCP tools, or data between systems. A coding-agent runtime itself belongs in Harness. Mentioning an app incidentally does not make a post an integration.",
+      "visual_family": "connected-app-tiles-or-one-app-action-card",
+      "evidence": [
+        {
+          "title": "Innflow + Gmail: 7 Tips for Inbox Triage and Better Reply Drafts",
+          "url": "https://app.notion.com/p/Innflow-Gmail-7-Tips-for-Inbox-Triage-and-Better-Reply-Drafts-3e90ac1bd32e8188ac9dcbb3ac7f6cff",
+          "status": "Queued"
+        },
+        {
+          "title": "Innflow + Slack: Build a Daily Digest Your Team Will Actually Read",
+          "url": "https://app.notion.com/p/Innflow-Slack-Build-a-Daily-Digest-Your-Team-Will-Actually-Read-3e90ac1bd32e810fbd39f26f0d1f3297",
+          "status": "Pending"
+        },
+        {
+          "title": "Giving AI agents reliable app access (MCP-style) for property workflows",
+          "url": "https://app.notion.com/p/Giving-AI-agents-reliable-app-access-MCP-style-for-property-workflows-3d10ac1bd32e817f8ecee6b9280af50e",
+          "status": "Queued"
+        }
+      ],
+      "new": false,
+      "color": null,
+      "notion_option_id": "775fdc9a-e7a2-44ac-bb86-3cf74fee67e6"
+    },
+    {
+      "name": "Harness",
+      "key": "harness",
+      "description": "Agent execution environments, coding-agent tools, runtime architecture, memory, planning, and orchestration. Distinct from the underlying model, app connections, and step-by-step business workflow recipes.",
+      "visual_family": "one-agent-runtime-or-orchestration-component",
+      "evidence": [
+        {
+          "title": "innflow VS Code Integration for Property Workflows",
+          "url": "https://app.notion.com/p/innflow-VS-Code-Integration-for-Property-Workflows-3ea0ac1bd32e810faedadb49493688d5",
+          "status": "Pending"
+        },
+        {
+          "title": "innflow Claude Code Integration for Property Teams",
+          "url": "https://app.notion.com/p/innflow-Claude-Code-Integration-for-Property-Teams-3ea0ac1bd32e816f85b1e8d652a52aac",
+          "status": "Pending"
+        },
+        {
+          "title": "Agent Workflow Memory: 2026 Guide To AI Agents That Remember",
+          "url": "https://app.notion.com/p/Agent-Workflow-Memory-2026-Guide-To-AI-Agents-That-Remember-3d80ac1bd32e819081d8fbe69ca47594",
+          "status": "Draft"
+        }
+      ],
+      "new": false,
+      "color": null,
+      "notion_option_id": "79d60c59-449b-4924-959a-93ac78c6d22c"
+    },
+    {
+      "name": "General",
+      "key": "general",
+      "description": "Broad automation explainers, adoption, strategy, and productivity that do not fit a more specific Split. Use only after checking the specific categories.",
+      "visual_family": "one-focused-explainer-component",
+      "evidence": [
+        {
+          "title": "What Is an AI Agent? A Plain Explainer for Ops Teams",
+          "url": "https://app.notion.com/p/What-Is-an-AI-Agent-A-Plain-Explainer-for-Ops-Teams-3eb0ac1bd32e8198b6c7e8eefbf19098",
+          "status": "Draft"
+        },
+        {
+          "title": "What Is An AI Readiness Assessment? A Guide For Mid- ...",
+          "url": "https://app.notion.com/p/What-Is-An-AI-Readiness-Assessment-A-Guide-For-Mid-3ea0ac1bd32e81979be9fd65e67239e2",
+          "status": "Pending"
+        },
+        {
+          "title": "What Is AI Automation? A Complete Guide For 2026",
+          "url": "https://app.notion.com/p/What-Is-AI-Automation-A-Complete-Guide-For-2026-3d10ac1bd32e815885dbc8e601337046",
+          "status": "Draft"
+        }
+      ],
+      "new": false,
+      "color": null,
+      "notion_option_id": "5d8a5ac0-ea1d-431b-b800-ed8ed1806dfb"
+    },
+    {
+      "name": "Comparison",
+      "key": "comparison-innflow",
+      "description": "An actual comparison with Innflow or its operating approach as a central evaluated option. A generic Innflow CTA does not qualify. Quantitative model benchmark analysis belongs in Benchmarks & Evaluations.",
+      "visual_family": "balanced-comparison-with-innflow",
+      "evidence": [
+        {
+          "title": "AI Features vs AI Operations for Property Managers",
+          "url": "https://app.notion.com/p/AI-Features-vs-AI-Operations-for-Property-Managers-3d40ac1bd32e81f0996fd6ec9bb6fbd4",
+          "status": "Queued"
+        },
+        {
+          "title": "n8n vs Innflow: A Detailed Comparison of Self-Hosted and Cloud Automation Solutions",
+          "url": "https://app.notion.com/p/n8n-vs-Innflow-A-Detailed-Comparison-of-Self-Hosted-and-Cloud-Automation-Solutions-3c20ac1bd32e81d3b6f3df64e460f8d5",
+          "status": "Archived"
+        },
+        {
+          "title": "n8n vs Innflow: Why Teams Switch",
+          "url": "https://app.notion.com/p/n8n-vs-Innflow-Why-Teams-Switch-3c20ac1bd32e81639dcfeacc51fce422",
+          "status": "Archived"
+        }
+      ],
+      "new": false,
+      "color": null,
+      "notion_option_id": "2672ff51-6c54-45c6-990b-2df4e1abccba"
+    },
+    {
+      "name": "Comparison (w/o innflow)",
+      "key": "comparison-external",
+      "description": "Comparing two or more external products, providers, plans, or shortlisted tools, with no substantive Innflow comparison. Use neutral criteria and only evidenced claims.",
+      "visual_family": "balanced-external-comparison",
+      "evidence": [
+        {
+          "title": "Zapier Vs. Tray.AI Comparison: Enterprise Automation",
+          "url": "https://app.notion.com/p/Zapier-Vs-Tray-AI-Comparison-Enterprise-Automation-3ea0ac1bd32e81179c5ec988dea246d7",
+          "status": "Queued"
+        },
+        {
+          "title": "Google vs Zapier: Choosing an AI and Automation Ecosystem",
+          "url": "https://app.notion.com/p/Google-vs-Zapier-Choosing-an-AI-and-Automation-Ecosystem-3d50ac1bd32e81139406f59227493458",
+          "status": "Draft"
+        },
+        {
+          "title": "Google Gemini vs Claude vs ChatGPT: An AI Assistant Comparison",
+          "url": "https://app.notion.com/p/Google-Gemini-vs-Claude-vs-ChatGPT-An-AI-Assistant-Comparison-3d50ac1bd32e81bba8f0c389918fe3c9",
+          "status": "Draft"
+        }
+      ],
+      "new": false,
+      "color": null,
+      "notion_option_id": "b44462bf-b9d2-4a27-b90e-29bf0d74d07f"
+    },
+    {
+      "name": "AI Models",
+      "key": "ai-models",
+      "description": "Evergreen model capabilities, providers, model selection, and model portability. Dated model launches belong in Model Releases; score-led testing belongs in Benchmarks & Evaluations; execution environments belong in Harness.",
+      "visual_family": "model-provider-tiles-or-model-router",
+      "evidence": [
+        {
+          "title": "Model flexibility without lock-in for property automation stacks",
+          "url": "https://app.notion.com/p/Model-flexibility-without-lock-in-for-property-automation-stacks-3d10ac1bd32e816fb99ae56752a173ee",
+          "status": "Queued"
+        }
+      ],
+      "new": true,
+      "color": "purple",
+      "notion_option_id": "6db83f0e-b51e-4f29-9c1d-e10b0caf3dc8"
+    },
+    {
+      "name": "Benchmarks & Evaluations",
+      "key": "benchmarks-evaluations",
+      "description": "Model or agent benchmarks, leaderboards, test methodology, evals, and observability of quality. Scores and rankings must be sourced; never invent decorative performance numbers.",
+      "visual_family": "evaluation-table-or-supported-results-card",
+      "evidence": [
+        {
+          "title": "Scale's Seal Leaderboards",
+          "url": "https://app.notion.com/p/Scale-s-Seal-Leaderboards-3ef0ac1bd32e8151b1d7e8e25f534ebe",
+          "status": "Pending"
+        },
+        {
+          "title": "Evaluating Models On Adaptive Reasoning, Sat Questions & Real-World Classification Tasks",
+          "url": "https://app.notion.com/p/Evaluating-Models-On-Adaptive-Reasoning-Sat-Questions-Real-World-Classification-Tasks-3ef0ac1bd32e81f1bf05f95a5df5a418",
+          "status": "Pending"
+        },
+        {
+          "title": "AI Observability 2026: Tracing And Measuring Quality",
+          "url": "https://app.notion.com/p/AI-Observability-2026-Tracing-And-Measuring-Quality-3ee0ac1bd32e812b8aede2ff038d8169",
+          "status": "Pending"
+        },
+        {
+          "title": "Aa-Briefcase: Agentic Knowledge Work Benchmark",
+          "url": "https://app.notion.com/p/Aa-Briefcase-Agentic-Knowledge-Work-Benchmark-3ee0ac1bd32e81838fc9f0f96cd5c2b6",
+          "status": "Pending"
+        },
+        {
+          "title": "Why Public AI Coding Benchmarks Mislead: A Structured Analysis of Contamination, Verifiers, and DeepSWE",
+          "url": "https://app.notion.com/p/Why-Public-AI-Coding-Benchmarks-Mislead-A-Structured-Analysis-of-Contamination-Verifiers-and-Deep-3c20ac1bd32e815ea823d06b2b21d347",
+          "status": "Draft"
+        }
+      ],
+      "new": true,
+      "color": "blue",
+      "notion_option_id": "0bb88c65-cd34-4539-94d3-b4ae91e03932"
+    },
+    {
+      "name": "Security & Governance",
+      "key": "security-governance",
+      "description": "AI/app permissions, approval gates, privacy, access control, and auditability. General housing and landlord law stays Property Management unless AI system governance is the main subject.",
+      "visual_family": "permission-gate-or-audit-card",
+      "evidence": [
+        {
+          "title": "What Is Security Automation? A Complete Guide For 2026",
+          "url": "https://app.notion.com/p/What-Is-Security-Automation-A-Complete-Guide-For-2026-3ef0ac1bd32e81c38e2cfba44653a210",
+          "status": "Pending"
+        },
+        {
+          "title": "How to Add a Human Approval Step to a Workflow",
+          "url": "https://app.notion.com/p/How-to-Add-a-Human-Approval-Step-to-a-Workflow-3eb0ac1bd32e810fb070d48a1b0ff7a7",
+          "status": "Draft"
+        },
+        {
+          "title": "Governed AI tools for property ops: what Innflow agents can and cannot do",
+          "url": "https://app.notion.com/p/Governed-AI-tools-for-property-ops-what-Innflow-agents-can-and-cannot-do-3d10ac1bd32e810dad2df0bd0e8365d5",
+          "status": "Queued"
+        },
+        {
+          "title": "4 AI Security Mistakes and How to Avoid Them",
+          "url": "https://app.notion.com/p/4-AI-Security-Mistakes-and-How-to-Avoid-Them-3c20ac1bd32e815892d9c189582d2352",
+          "status": "Draft"
+        },
+        {
+          "title": "10 Best Practices for AI Workflow Security",
+          "url": "https://app.notion.com/p/10-Best-Practices-for-AI-Workflow-Security-3c20ac1bd32e8174a33cf7eb73d0cb9c",
+          "status": "Draft"
+        }
+      ],
+      "new": true,
+      "color": "red",
+      "notion_option_id": "0d9219ae-d714-45c4-9365-1f359e5cb709"
+    },
+    {
+      "name": "Workflow Guides",
+      "key": "workflow-guides",
+      "description": "Actionable business workflow recipes, implementation steps, troubleshooting, and reusable operational patterns. A named app connection, security control, or downloadable template takes its more specific Split.",
+      "visual_family": "one-workflow-component-with-clear-steps",
+      "evidence": [
+        {
+          "title": "The 9 Best Agentic Workflow Patterns In 2026",
+          "url": "https://app.notion.com/p/The-9-Best-Agentic-Workflow-Patterns-In-2026-3d30ac1bd32e813c8fb5edcab6e27beb",
+          "status": "Draft"
+        },
+        {
+          "title": "5 AI Workflows to Reclaim Time Each Week",
+          "url": "https://app.notion.com/p/5-AI-Workflows-to-Reclaim-Time-Each-Week-3c20ac1bd32e81a1bdacc140ae6bc41c",
+          "status": "Draft"
+        },
+        {
+          "title": "AI Workflow Troubleshooting Guide",
+          "url": "https://app.notion.com/p/AI-Workflow-Troubleshooting-Guide-3c20ac1bd32e812ebdbffb33d9d610c9",
+          "status": "Draft"
+        },
+        {
+          "title": "Build Your First AI Workflow in Under 30 Minutes (No Code Required)",
+          "url": "https://app.notion.com/p/Build-Your-First-AI-Workflow-in-Under-30-Minutes-No-Code-Required-3c20ac1bd32e8172885df4572b60319b",
+          "status": "Draft"
+        }
+      ],
+      "new": true,
+      "color": "green",
+      "notion_option_id": "9ff9519f-ead0-4191-adc4-5741fb26cf05"
+    },
+    {
+      "name": "Software Reviews",
+      "key": "software-reviews",
+      "description": "A substantive review of one software product: features, pricing, suitability, and limitations. Multiple evaluated alternatives belong in a Comparison Split; a product launch belongs in News & Updates.",
+      "visual_family": "single-product-card-with-review-criteria",
+      "evidence": [
+        {
+          "title": "Zillow Rental Manager Review: User Feedback, Features & Pricing",
+          "url": "https://app.notion.com/p/Zillow-Rental-Manager-Review-User-Feedback-Features-Pricing-3b90ac1bd32e817d9de4c38a099593a1",
+          "status": "Archived"
+        },
+        {
+          "title": "The Complete Yardi Breeze Property Management Software Review (2026 Edition)",
+          "url": "https://app.notion.com/p/The-Complete-Yardi-Breeze-Property-Management-Software-Review-2026-Edition-3b90ac1bd32e811d9783f5669eddbec0",
+          "status": "Archived"
+        },
+        {
+          "title": "TenantCloud Reviews: Pricing, Features, and Alternatives",
+          "url": "https://app.notion.com/p/TenantCloud-Reviews-Pricing-Features-and-Alternatives-3b90ac1bd32e8143af99e839a6bcdaa5",
+          "status": "Archived"
+        },
+        {
+          "title": "Buildium Property Management Software Review",
+          "url": "https://app.notion.com/p/Buildium-Property-Management-Software-Review-3b90ac1bd32e81a59500ead737d860fb",
+          "status": "Archived"
+        }
+      ],
+      "new": true,
+      "color": "orange",
+      "notion_option_id": "e237df47-71a0-46f6-b927-236be19fe05f"
+    },
+    {
+      "name": "Templates & Calculators",
+      "key": "templates-calculators",
+      "description": "An actual reusable template, form, letter, checklist, spreadsheet, or calculator is the main deliverable. A generic guide containing a short checklist is not sufficient.",
+      "visual_family": "one-document-form-or-calculator-component",
+      "evidence": [
+        {
+          "title": "Rental Property Calculators for Real Estate Investment",
+          "url": "https://app.notion.com/p/Rental-Property-Calculators-for-Real-Estate-Investment-3b90ac1bd32e818ca436dabc2bbd41a5",
+          "status": "Archived"
+        },
+        {
+          "title": "Property Management Chart of Accounts (Free Sample Template)",
+          "url": "https://app.notion.com/p/Property-Management-Chart-of-Accounts-Free-Sample-Template-3b90ac1bd32e815ea528c4b04b8e7675",
+          "status": "Archived"
+        },
+        {
+          "title": "Free Tenant Move-Out Checklist For Property Managers (Word/PDF)",
+          "url": "https://app.notion.com/p/Free-Tenant-Move-Out-Checklist-For-Property-Managers-Word-PDF-3b90ac1bd32e814fbdd4f03a412f5ecb",
+          "status": "Archived"
+        },
+        {
+          "title": "Free Rent Receipt Template (Print, PDF, Excel, & Word)",
+          "url": "https://app.notion.com/p/Free-Rent-Receipt-Template-Print-PDF-Excel-Word-3b90ac1bd32e81e287b5e5d219339919",
+          "status": "Archived"
+        },
+        {
+          "title": "Complete Guide to Using a Cap Rate Calculator",
+          "url": "https://app.notion.com/p/Complete-Guide-to-Using-a-Cap-Rate-Calculator-3b90ac1bd32e812a99fcf9d9d13d93e4",
+          "status": "Archived"
+        }
+      ],
+      "new": true,
+      "color": "pink",
+      "notion_option_id": "f15848e3-699c-4f16-b218-8f15a3b7cb3b"
+    },
+    {
+      "name": "Market Insights",
+      "key": "market-insights",
+      "description": "Geographic market reports, housing trends, investment-market data, and economic statistics. AI model testing belongs in Benchmarks & Evaluations; company announcements belong in News & Updates.",
+      "visual_family": "location-photograph-with-sourced-data-card",
+      "evidence": [
+        {
+          "title": "The Washington D.C Real Estate Market: Everything You Need to Know",
+          "url": "https://app.notion.com/p/The-Washington-D-C-Real-Estate-Market-Everything-You-Need-to-Know-3b90ac1bd32e811da52cef60d8c34213",
+          "status": "Archived"
+        },
+        {
+          "title": "The U.S. Housing Market Predictions and Forecast for 2026",
+          "url": "https://app.notion.com/p/The-U-S-Housing-Market-Predictions-and-Forecast-for-2026-3b90ac1bd32e811aa1d2d33b5805e180",
+          "status": "Archived"
+        },
+        {
+          "title": "Rental Vacancy Rates by City and State: Current Data & Historical Trends (1965-2026)",
+          "url": "https://app.notion.com/p/Rental-Vacancy-Rates-by-City-and-State-Current-Data-Historical-Trends-1965-2026-3b90ac1bd32e818599a5e3dea9b4f2b9",
+          "status": "Archived"
+        },
+        {
+          "title": "Landlord Stats & Trends: Rent, Costs & Investment Outlook",
+          "url": "https://app.notion.com/p/Landlord-Stats-Trends-Rent-Costs-Investment-Outlook-3b90ac1bd32e8140b6c1ee2cdec12189",
+          "status": "Archived"
+        }
+      ],
+      "new": true,
+      "color": "brown",
+      "notion_option_id": "2303d1d0-a43e-491d-90dc-9f9bf2ba8b93"
+    },
+    {
+      "name": "News & Updates",
+      "key": "news-updates",
+      "description": "Dated industry developments, company announcements, product releases, funding, and research-report coverage. Model releases and benchmark reports use their dedicated Splits.",
+      "visual_family": "one-announcement-or-source-summary-card",
+      "evidence": [
+        {
+          "title": "Langchain 2026 State Of Agent Engineering Report ...",
+          "url": "https://app.notion.com/p/Langchain-2026-State-Of-Agent-Engineering-Report-3ef0ac1bd32e817687bfc8a7cefcd097",
+          "status": "Pending"
+        },
+        {
+          "title": "Startups Weekly: Mercury More Than Doubled Its Valuation ...",
+          "url": "https://app.notion.com/p/Startups-Weekly-Mercury-More-Than-Doubled-Its-Valuation-3eb0ac1bd32e8135a318e57ed877e6f5",
+          "status": "Pending"
+        },
+        {
+          "title": "Introducing Branches: Build On The Side, Merge When You Are Ready",
+          "url": "https://app.notion.com/p/Introducing-Branches-Build-On-The-Side-Merge-When-You-Are-Ready-3e90ac1bd32e81dcb1fbe283477801c7",
+          "status": "Pending"
+        },
+        {
+          "title": "Introducing Innflow v0.69: OpenClaw, Shopify, LinkedIn, Instagram & ElevenLabs",
+          "url": "https://app.notion.com/p/Introducing-Innflow-v0-69-OpenClaw-Shopify-LinkedIn-Instagram-ElevenLabs-3c20ac1bd32e811aaeb6dd0b49aa8d39",
+          "status": "Archived"
+        },
+        {
+          "title": "Property Ops raises $10M on the runaway success of its property management software",
+          "url": "https://app.notion.com/p/Property-Ops-raises-10M-on-the-runaway-success-of-its-property-management-software-3b90ac1bd32e810da47cefb72c10b930",
+          "status": "Archived"
+        }
+      ],
+      "new": true,
+      "color": "yellow",
+      "notion_option_id": "cf3ccd9b-bd73-4984-9080-69e657ca6d78"
+    },
+    {
+      "name": "Model Releases",
+      "key": "model-releases",
+      "description": "Dated launches, previews, version updates, and availability changes for AI models. Use a model/provider announcement component. Evergreen model strategy stays AI Models; benchmark-led analysis stays Benchmarks & Evaluations.",
+      "visual_family": "model-provider-announcement-card",
+      "evidence": [
+        {
+          "title": "SWE-2 Pushes Cognition's Coding Model Forward",
+          "url": "https://app.notion.com/p/SWE-2-Pushes-Cognition-s-Coding-Model-Forward-3ea0ac1bd32e81b59ab2ffa4637bc45d",
+          "status": "Pending"
+        },
+        {
+          "title": "GPT-Live-1 Brings Full-Duplex Voice to the API",
+          "url": "https://app.notion.com/p/GPT-Live-1-Brings-Full-Duplex-Voice-to-the-API-3ea0ac1bd32e819f881ae41fac2bc6b5",
+          "status": "Pending"
+        },
+        {
+          "title": "Claude Opus 5.5: What’s New for AI Agents",
+          "url": "https://app.notion.com/p/Claude-Opus-5-5-What-s-New-for-AI-Agents-3e90ac1bd32e81e09b62f6419a8dec1a",
+          "status": "Draft"
+        }
+      ],
+      "new": true,
+      "color": "purple",
+      "notion_option_id": "0fc18f82-a819-4c82-ac4d-141dec19f25d"
+    }
+  ],
+  "decision_rules": [
+    "Read the title, description, visual brief, and article where available. Classify the central reader promise, not every noun or an incidental Innflow CTA.",
+    "Evidence-led model testing takes Benchmarks & Evaluations even if the title says versus. A buyer comparison takes the appropriate Comparison option.",
+    "Use Comparison only when Innflow or its operating approach is a substantive evaluated option. Otherwise use Comparison (w/o innflow).",
+    "A primary downloadable artifact takes Templates & Calculators; a geographic market report takes Market Insights; a single-product review takes Software Reviews.",
+    "Model capability, provider choice, and portability take AI Models. Dated model launches, previews, and version changes take Model Releases. A coding-agent execution environment takes Harness, including articles about connecting that harness to Innflow.",
+    "For AI implementation articles, choose the dominant mechanism: permissions and gates = Security & Governance; app or protocol access = Integration; agent runtime and orchestration = Harness; operational steps = Workflow Guides.",
+    "Property context remains in Audience and Topic. It does not force every AI integration or comparison into Property Management. Use Property Management for property operations without a more specific editorial format.",
+    "News & Updates requires a dated development or report. Evergreen strategy and definitions fall back to General.",
+    "Blank, test, truncated, or ambiguous records remain Uncatagorized for review. General is not a substitute for missing evidence."
+  ],
+  "queued_assignments": [
+    {
+      "id": "3ea0ac1b-d32e-8117-9c5e-c988dea246d7",
+      "title": "Zapier Vs. Tray.AI Comparison: Enterprise Automation",
+      "url": "https://app.notion.com/p/Zapier-Vs-Tray-AI-Comparison-Enterprise-Automation-3ea0ac1bd32e81179c5ec988dea246d7",
+      "before": "Comparison (w/o innflow)",
+      "after": "Comparison (w/o innflow)",
+      "reason": "Head-to-head Zapier and Tray.ai comparison; Innflow is not an evaluated option."
+    },
+    {
+      "id": "3e90ac1b-d32e-8188-ac9d-cbb3ac7f6cff",
+      "title": "Innflow + Gmail: 7 Tips for Inbox Triage and Better Reply Drafts",
+      "url": "https://app.notion.com/p/Innflow-Gmail-7-Tips-for-Inbox-Triage-and-Better-Reply-Drafts-3e90ac1bd32e8188ac9dcbb3ac7f6cff",
+      "before": "Integration",
+      "after": "Integration",
+      "reason": "The main deliverable is connecting Gmail to Innflow for inbox triage and drafts."
+    },
+    {
+      "id": "3d40ac1b-d32e-81f0-996f-d6ec9bb6fbd4",
+      "title": "AI Features vs AI Operations for Property Managers",
+      "url": "https://app.notion.com/p/AI-Features-vs-AI-Operations-for-Property-Managers-3d40ac1bd32e81f0996fd6ec9bb6fbd4",
+      "before": "Uncatagorized",
+      "after": "Comparison",
+      "reason": "The article explicitly contrasts PMS-native AI with the cross-system operating approach that Innflow represents; its supplied visual brief is a comparison matrix."
+    },
+    {
+      "id": "3d10ac1b-d32e-810d-ad2d-f0bd0e8365d5",
+      "title": "Governed AI tools for property ops: what Innflow agents can and cannot do",
+      "url": "https://app.notion.com/p/Governed-AI-tools-for-property-ops-what-Innflow-agents-can-and-cannot-do-3d10ac1bd32e810dad2df0bd0e8365d5",
+      "before": "Uncatagorized",
+      "after": "Security & Governance",
+      "reason": "Permissions, human review gates, prohibited autonomous actions, and auditability are the main subject."
+    },
+    {
+      "id": "3d10ac1b-d32e-816f-b99a-e56752a173ee",
+      "title": "Model flexibility without lock-in for property automation stacks",
+      "url": "https://app.notion.com/p/Model-flexibility-without-lock-in-for-property-automation-stacks-3d10ac1bd32e816fb99ae56752a173ee",
+      "before": "Uncatagorized",
+      "after": "AI Models",
+      "reason": "Model portability and changing providers without rebuilding workflows are the main subject."
+    },
+    {
+      "id": "3d10ac1b-d32e-817f-8ece-e6b9280af50e",
+      "title": "Giving AI agents reliable app access (MCP-style) for property workflows",
+      "url": "https://app.notion.com/p/Giving-AI-agents-reliable-app-access-MCP-style-for-property-workflows-3d10ac1bd32e817f8ecee6b9280af50e",
+      "before": "Uncatagorized",
+      "after": "Integration",
+      "reason": "Named MCP-style app actions and reliable access to connected systems are the main subject."
+    }
+  ],
+  "image_routing": {
+    "status": "Taxonomy and visual-family contract only; generator not wired in this task",
+    "key": "Persisted Notion Split option ID mapped to a stable category key",
+    "background": "Use a versioned approved asset manifest per category. Choose by stable page ID, never random order or execution time. Persist chosen Figma node IDs before rendering.",
+    "property_context": "Retain an explicit property/real-estate context when selecting approved photos for property and market visuals. Specialized integration/comparison artwork still uses its Split composition.",
+    "source": "https://www.figma.com/design/WnHFwxKUKL8UuGwEkpJago/?node-id=1242-103",
+    "overrides": "An explicitly approved per-blog background wins over the category default.",
+    "fallback": "Hold unknown Split IDs or missing approved assets for review; never silently swap categories.",
+    "foreground": "Reuse editable Innflow source components; one focal component unless comparison or integration requires a paired assembly."
+  }
+}

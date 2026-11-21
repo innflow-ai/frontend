@@ -1,3 +1,5 @@
+
+import { Check as MageCheck } from '@/components/icons/mage';
 import styles from "./workflow-illustration.module.css";
 
 /** A schematic, not a screenshot of live customer data. */
@@ -30,7 +32,7 @@ export function WorkflowIllustration({
             <span className={styles.number}>{index + 1}</span>
             <span>{step}</span>
             <span className={styles.check} aria-hidden="true">
-              ✓
+              <MageCheck size="1em" />
             </span>
           </div>
         ))}

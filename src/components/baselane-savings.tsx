@@ -1,7 +1,13 @@
 import Image from "next/image";
+import { ChevronRight } from "@/components/chevron-right";
+import {
+  ArrowRight as MageArrowRight,
+  Check as MageCheck,
+} from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
-import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-savings.module.css";
+import { InnerPageShell } from "./inner-page-shell";
 
 const source = siteConfig.demoUrl;
 const steps = [
@@ -83,18 +89,22 @@ const fees = [
 
 export function BaselaneSavings() {
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={styles.page}>
         <section className={styles.hero}>
           <div>
-            <h1>Keep property reserves connected to the plan.</h1>
+            <h1 data-mixed-heading>
+              <MixedHeadingText>
+                Keep property reserves connected to the plan.
+              </MixedHeadingText>
+            </h1>
             <p>
               Bring reserve plans, supporting records, and follow-up tasks into
               innflow. Keep the context behind each property decision within
               reach.
             </p>
-            <a className={styles.button} href={source}>
-              Explore innflow →
+            <a data-site-cta="primary" className={styles.button} href={source}>
+              Explore innflow <MageArrowRight size="1em" />
             </a>
           </div>
           <Image
@@ -106,12 +116,20 @@ export function BaselaneSavings() {
           />
         </section>
         <div className={styles.band}>
-          <span>✓ Review the terms</span>
-          <span>✓ Understand the conditions</span>
-          <span>✓ Keep a record</span>
+          <span>
+            <MageCheck size="1em" /> Review the terms
+          </span>
+          <span>
+            <MageCheck size="1em" /> Understand the conditions
+          </span>
+          <span>
+            <MageCheck size="1em" /> Keep a record
+          </span>
         </div>
         <section className={styles.section}>
-          <h2>Start with the details.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>Start with the details.</MixedHeadingText>
+          </h2>
           <div className={styles.steps}>
             {steps.map((step) => (
               <article key={step.image}>
@@ -123,7 +141,9 @@ export function BaselaneSavings() {
                     alt=""
                   />
                 </div>
-                <h3>{step.title}</h3>
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>{step.title}</MixedHeadingText>
+                </h3>
                 <p>{step.text}</p>
               </article>
             ))}
@@ -133,12 +153,21 @@ export function BaselaneSavings() {
           </p>
         </section>
         <section className={styles.section} id="balance-tiers">
-          <h2>Build a repeatable reserve review.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              Build a repeatable reserve review.
+            </MixedHeadingText>
+          </h2>
           <p>
             Make the purpose, supporting information, and next action clear
             before a decision moves forward.
           </p>
-          <div className={styles.tableWrap}>
+          <section
+            className={styles.tableWrap}
+            aria-label="Example reserve review checklist"
+            // biome-ignore lint/a11y/noNoninteractiveTabindex: Enables keyboard scrolling of the comparison table.
+            tabIndex={0}
+          >
             <table>
               <caption>Example reserve review checklist</caption>
               <thead>
@@ -179,7 +208,7 @@ export function BaselaneSavings() {
                 ))}
               </tbody>
             </table>
-          </div>
+          </section>
           <p className={styles.note}>
             Keep your existing bank accounts. innflow supports the records,
             review steps, and follow-ups around your reserve planning.
@@ -187,16 +216,22 @@ export function BaselaneSavings() {
         </section>
         <section className={styles.features}>
           <div className={styles.featureInner}>
-            <h2>Look at the whole picture.</h2>
+            <h2 data-mixed-heading>
+              <MixedHeadingText>Look at the whole picture.</MixedHeadingText>
+            </h2>
             <p>Connect the work around your property plans.</p>
             <div className={styles.featureGrid}>
               {features.map((group) => (
                 <article key={group.title}>
-                  <h3>{group.title}</h3>
+                  <h3 data-mixed-heading>
+                    <MixedHeadingText>{group.title}</MixedHeadingText>
+                  </h3>
                   <ul>
                     {group.items.map((item) => (
                       <li key={item}>
-                        <span aria-hidden="true">✓</span>
+                        <span aria-hidden="true">
+                          <MageCheck size="1em" />
+                        </span>
                         {item}
                       </li>
                     ))}
@@ -204,13 +239,15 @@ export function BaselaneSavings() {
                 </article>
               ))}
             </div>
-            <a className={styles.button} href={source}>
-              See how innflow fits →
+            <a data-site-cta="primary" className={styles.button} href={source}>
+              See how innflow fits <MageArrowRight size="1em" />
             </a>
           </div>
         </section>
         <section className={styles.section} id="fee-review">
-          <h2>Give every follow-up an owner.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>Give every follow-up an owner.</MixedHeadingText>
+          </h2>
           <p>
             Organize the recurring tasks that keep your property plans current,
             from collecting records to closing out a review.
@@ -218,21 +255,30 @@ export function BaselaneSavings() {
           <div className={styles.fees}>
             {fees.map((group) => (
               <article key={group.title}>
-                <h3>{group.title}</h3>
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>{group.title}</MixedHeadingText>
+                </h3>
                 <ul>
                   {group.items.map((item) => (
                     <li key={item}>
-                      <a href={source}>{item} ↗</a>
+                      <a href={source}>
+                        {item} <ChevronRight />
+                      </a>
                     </li>
                   ))}
                 </ul>
-                <a href={source}>Explore {group.title.toLowerCase()} →</a>
+                <a href={source}>
+                  Explore {group.title.toLowerCase()}{" "}
+                  <MageArrowRight size="1em" />
+                </a>
               </article>
             ))}
           </div>
         </section>
         <section className={styles.support}>
-          <h2>Keep the next step clear.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>Keep the next step clear.</MixedHeadingText>
+          </h2>
           <div>
             {[
               [
@@ -249,13 +295,15 @@ export function BaselaneSavings() {
               ],
             ].map(([title, text]) => (
               <article key={title}>
-                <h3>{title}</h3>
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>{title}</MixedHeadingText>
+                </h3>
                 <p>{text}</p>
               </article>
             ))}
           </div>
         </section>
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

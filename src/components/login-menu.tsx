@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { ChevronDown } from "@/components/icons/mage";
 import { useEffect, useId, useRef } from "react";
 import styles from "./login-menu.module.css";
 
@@ -78,21 +79,7 @@ export function LoginMenu({
         }}
       >
         Log in
-        <svg
-          width="14"
-          height="14"
-          viewBox="0 0 24 24"
-          fill="none"
-          aria-hidden="true"
-        >
-          <path
-            d="m6 9 6 6 6-6"
-            stroke="currentColor"
-            strokeWidth="1"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
+        <ChevronDown size={14} />
       </button>
       {open && (
         <div id={id} className={styles.panel}>

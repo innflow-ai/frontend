@@ -1,0 +1,44 @@
+[
+  {
+    "number": "01",
+    "size": [
+      439,
+      473
+    ],
+    "identical": true,
+    "meanDifference": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "method": "Browser screenshot of rendered WebGL2 canvas, opening versus final timestamp"
+  },
+  {
+    "number": "02",
+    "size": [
+      439,
+      473
+    ],
+    "identical": true,
+    "meanDifference": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "method": "Browser screenshot of rendered WebGL2 canvas, opening versus final timestamp"
+  },
+  {
+    "number": "03",
+    "size": [
+      376,
+      405
+    ],
+    "identical": true,
+    "meanDifference": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "method": "Browser screenshot of rendered WebGL2 canvas, opening versus final timestamp"
+  }
+]

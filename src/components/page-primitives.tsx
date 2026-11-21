@@ -1,10 +1,14 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { type BreadcrumbItem, Breadcrumbs } from "@/components/breadcrumbs";
+import { ChevronRight } from "@/components/chevron-right";
+import { Plus as MagePlus } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
 
 import experience from "./product-experience.module.css";
+import { SectionHeading } from "./section-heading";
 
 export function MarketingPage({ children }: { children: ReactNode }) {
   return (
@@ -38,7 +42,9 @@ export function PageHero({
       <div className="shell subpage-hero-grid">
         <div>
           {breadcrumbs ? <Breadcrumbs items={breadcrumbs} /> : null}
-          <h1>{title}</h1>
+          <h1 data-mixed-heading>
+            <MixedHeadingText>{title}</MixedHeadingText>
+          </h1>
           {status ? (
             <span className={`status-label status-${status.toLowerCase()}`}>
               {status}
@@ -54,7 +60,9 @@ export function PageHero({
               eventLabel={`${eyebrow.toLowerCase().replaceAll(" ", "_")}_demo`}
             >
               {siteConfig.primaryCta}
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true">
+                <ChevronRight />
+              </span>
             </TrackedLink>
             <a className="button button-secondary" href={secondaryHref}>
               See the property workflow
@@ -104,19 +112,19 @@ export function OperatingSteps({
   return (
     <section className="section">
       <div className="shell editorial-grid">
-        <div className="editorial-intro">
-          <span className="section-label">Operating model</span>
-          <h2>{title}</h2>
-          <p>{intro}</p>
-        </div>
-        <ol className="numbered-list">
-          {steps.map((step, index) => (
+        <SectionHeading
+          align="start"
+          eyebrow="Operating model"
+          title={title}
+          subtitle={intro}
+        />
+        <ul className="operating-list">
+          {steps.map((step) => (
             <li key={step}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
               <p>{step}</p>
             </li>
           ))}
-        </ol>
+        </ul>
       </div>
     </section>
   );
@@ -134,14 +142,13 @@ export function ControlsGrid({
   return (
     <section className="section quiet-section">
       <div className="shell">
-        <div className="section-intro compact-intro">
-          <span className="section-label">{eyebrow}</span>
-          <h2>{title}</h2>
-        </div>
+        <SectionHeading eyebrow={eyebrow} title={title} />
         <div className="control-card-grid">
           {items.map((item) => (
             <article key={item.title}>
-              <h3>{item.title}</h3>
+              <h3 data-mixed-heading>
+                <MixedHeadingText>{item.title}</MixedHeadingText>
+              </h3>
               <p>{item.body}</p>
             </article>
           ))}
@@ -162,7 +169,9 @@ export function FaqList({
         <details key={item.id || item.question} open={index === 0}>
           <summary>
             <span>{item.question}</span>
-            <i aria-hidden="true">+</i>
+            <i aria-hidden="true">
+              <MagePlus size="1em" />
+            </i>
           </summary>
           <p style={{ whiteSpace: "pre-line" }}>{item.answer}</p>
         </details>

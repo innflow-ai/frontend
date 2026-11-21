@@ -1,6 +1,8 @@
+import { ChevronRight } from "@/components/chevron-right";
 import { FeatureCardGrid } from "@/components/feature-card";
 import { GoogleCtaContent } from "@/components/google-cta-content";
 import { JsonLd } from "@/components/json-ld";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { FaqList } from "@/components/page-primitives";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
@@ -17,12 +19,13 @@ import { FeatureTestimonials } from "./page-testimonials";
 import { ProductHeadspaceCta } from "./product-headspace-cta";
 import styles from "./product-page.module.css";
 import { RuneyWorkspace } from "./runey-workspace";
+import { SectionHeading } from "./section-heading";
 import { WorkflowIllustration } from "./workflow-illustration";
 
 function ctaDestination(cta: ProductCta) {
   if (/\b(?:book|request|see|schedule)\b.*\bdemo\b/i.test(cta.label))
     return siteConfig.demoUrl;
-  if (cta.destination === "signup") return siteConfig.googleAuthUrl;
+  if (cta.destination === "signup") return siteConfig.signupUrl;
   if (cta.destination === "contact") return siteConfig.contactUrl;
   return siteConfig.demoUrl;
 }
@@ -38,6 +41,7 @@ function CtaLink({
 
   return (
     <TrackedLink
+      data-site-cta={tone}
       className={`${styles.cta} ${tone === "primary" ? styles.ctaPrimary : styles.ctaSecondary}`}
       destination={destination}
       eventLabel={`product_${cta.destination}`}
@@ -75,10 +79,15 @@ function Capabilities({
                 href={`#${card.anchor ?? anchors[index] ?? "product-details"}`}
               >
                 <div className={styles.agentCapabilityCopy}>
-                  <h3>{card.title}</h3>
+                  <h3 data-mixed-heading>
+                    <MixedHeadingText>{card.title}</MixedHeadingText>
+                  </h3>
                   <p>{card.body}</p>
                   <span className={styles.agentCapabilityLink}>
-                    Explore capability <span aria-hidden="true">↗</span>
+                    Explore capability{" "}
+                    <span aria-hidden="true">
+                      <ChevronRight />
+                    </span>
                   </span>
                 </div>
                 <div className={styles.agentCapabilityMedia}>
@@ -109,7 +118,9 @@ function Capabilities({
                   compact
                 />
                 <div>
-                  <h3>{card.title}</h3>
+                  <h3 data-mixed-heading>
+                    <MixedHeadingText>{card.title}</MixedHeadingText>
+                  </h3>
                   <p>{card.body}</p>
                 </div>
               </article>
@@ -136,7 +147,9 @@ function ProductDetail({ section }: { section: ProductDetailSection }) {
       >
         <div className={styles.detailCopy}>
           <span className={styles.detailEyebrow}>{section.tocLabel}</span>
-          <h2>{section.title}</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>{section.title}</MixedHeadingText>
+          </h2>
           <p>{section.body}</p>
           {section.points.length ? (
             <ul>
@@ -188,7 +201,9 @@ export async function ProductPage({ product }: { product: ProductPageData }) {
       <section className={styles.hero}>
         <div className={`${styles.shell} ${styles.heroInner}`}>
           <div className={styles.heroCopy}>
-            <h1>{product.hero.title}</h1>
+            <h1 data-mixed-heading>
+              <MixedHeadingText>{product.hero.title}</MixedHeadingText>
+            </h1>
             <p>{product.hero.body}</p>
             <div className={styles.ctaRow}>
               <CtaLink cta={product.hero.primaryCta} />
@@ -215,13 +230,11 @@ export async function ProductPage({ product }: { product: ProductPageData }) {
         if (section._type === "productIntroSection") {
           return (
             <section className={styles.intro} key={section._key}>
-              <div className={styles.introInner}>
-                {section.eyebrow ? (
-                  <span className={styles.eyebrow}>{section.eyebrow}</span>
-                ) : null}
-                <h2>{section.heading}</h2>
-                <p>{section.body}</p>
-              </div>
+              <SectionHeading
+                eyebrow={section.eyebrow || undefined}
+                title={section.heading}
+                subtitle={section.body}
+              />
             </section>
           );
         }
@@ -292,14 +305,11 @@ export async function ProductPage({ product }: { product: ProductPageData }) {
           aria-label="Frequently asked questions"
         >
           <div className={`${styles.shell} ${styles.faqInner}`}>
-            <div className={styles.faqIntro}>
-              <span className={styles.eyebrow}>FAQ</span>
-              <h2>{faqHeading || `Questions about ${product.title}.`}</h2>
-              <p>
-                Direct answers on agents, memory, human review, deployment, and
-                security, and fitting innflow into your operation.
-              </p>
-            </div>
+            <SectionHeading
+              eyebrow="FAQ"
+              title={faqHeading || `Questions about ${product.title}.`}
+              subtitle="Direct answers on agents, memory, human review, deployment, and security, and fitting innflow into your operation."
+            />
             <FaqList items={faqs} />
           </div>
         </section>

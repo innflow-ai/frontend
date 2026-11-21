@@ -137,12 +137,12 @@ export const agentStudioPage: ProductPage = {
   seo: {
     title: "Agent Studio — Build, test, and manage AI workflows | innflow",
     description:
-      "Explore Agent Studio: a visual workspace for building, testing, and refining AI workflows for property operations.",
+      "Explore Agent Studio: a visual workspace for building, testing, and refining AI agent workflows.",
     noIndex: false,
   },
   hero: {
     title: "Build, test, and ship AI agents in one workspace",
-    body: "Turn everyday property operations into connected workflows. Start with a reusable skill, describe what you need, or build visually. Review each step, test the handoffs, and keep your team in control as work moves forward.",
+    body: "Turn everyday operations into connected agent workflows. Start with a reusable skill, describe what you need, or build visually. Review each step, test the handoffs, and keep your team in control as work moves forward.",
     image: asset(
       "studio-hero",
       "Modular blue building blocks for Agent Studio",

@@ -1,9 +1,16 @@
 "use client";
+
 import Image from "next/image";
 import { useState } from "react";
+import { ChevronRight } from "@/components/chevron-right";
+import {
+  ArrowRight as MageArrowRight,
+  Plus as MagePlus,
+} from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
 import styles from "./baselane-advisors.module.css";
-import { BaselaneHomepage } from "./baselane-homepage";
+import { InnerPageShell } from "./inner-page-shell";
 
 const source = "#advisor-inquiry";
 const topics = [
@@ -28,21 +35,33 @@ export function BaselaneAdvisors() {
   const [advisorType, setAdvisorType] = useState("");
   const [draft, setDraft] = useState("");
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={styles.page}>
         <section className={styles.hero}>
           <div>
-            <h1>Bring clarity to every client conversation.</h1>
+            <h1 data-mixed-heading>
+              <MixedHeadingText>
+                Bring clarity to every client conversation.
+              </MixedHeadingText>
+            </h1>
             <p>
               Coordinate client records, document requests, and review steps in
               innflow. Spend less time chasing context before you give advice.
             </p>
             <div className={styles.actions}>
-              <a className={styles.button} href="#advisor-inquiry">
+              <a
+                data-site-cta="primary"
+                className={styles.button}
+                href="#advisor-inquiry"
+              >
                 Start a conversation
               </a>
-              <a className={styles.outline} href="#program-details">
-                Explore the workflow →
+              <a
+                data-site-cta="secondary"
+                className={styles.outline}
+                href="#program-details"
+              >
+                Explore the workflow <MageArrowRight size="1em" />
               </a>
             </div>
             <p className={styles.note}>
@@ -89,14 +108,20 @@ export function BaselaneAdvisors() {
               ],
             ].map(([title, text]) => (
               <article key={title}>
-                <h3>{title}</h3>
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>{title}</MixedHeadingText>
+                </h3>
                 <p>{text}</p>
               </article>
             ))}
           </div>
         </section>
         <section className={styles.section}>
-          <h2>Keep the context behind the advice.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              Keep the context behind the advice.
+            </MixedHeadingText>
+          </h2>
           <p>
             Give your team a shared starting point, from the first document
             request through the next action.
@@ -107,7 +132,9 @@ export function BaselaneAdvisors() {
                 <details key={title} name="advisor-topics" open={i === 0}>
                   <summary>
                     {title}
-                    <span aria-hidden="true">+</span>
+                    <span aria-hidden="true">
+                      <MagePlus size="1em" />
+                    </span>
                   </summary>
                   <p>{text}</p>
                 </details>
@@ -122,7 +149,11 @@ export function BaselaneAdvisors() {
           </div>
         </section>
         <section className={styles.section}>
-          <h2>A stronger working relationship.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              A stronger working relationship.
+            </MixedHeadingText>
+          </h2>
           <div className={styles.benefits}>
             {[
               [
@@ -139,19 +170,28 @@ export function BaselaneAdvisors() {
               ],
             ].map(([title, text]) => (
               <article key={title}>
-                <h3>{title}</h3>
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>{title}</MixedHeadingText>
+                </h3>
                 <p>{text}</p>
               </article>
             ))}
           </div>
         </section>
         <section className={styles.section} id="program-details">
-          <h2>A clear handoff at every stage.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>A clear handoff at every stage.</MixedHeadingText>
+          </h2>
           <p>
             Use innflow to connect the people and supporting records around each
             client engagement.
           </p>
-          <div className={styles.tableWrap}>
+          <section
+            className={styles.tableWrap}
+            aria-label="Example client coordination workflow"
+            // biome-ignore lint/a11y/noNoninteractiveTabindex: Enables keyboard scrolling of the comparison table.
+            tabIndex={0}
+          >
             <table>
               <caption>Example client coordination workflow</caption>
               <thead>
@@ -206,7 +246,7 @@ export function BaselaneAdvisors() {
                 ))}
               </tbody>
             </table>
-          </div>
+          </section>
           <p className={styles.note}>
             Tell us how your firm works with property teams. We can discuss
             workflow fit, required connections, and the next steps together.
@@ -221,7 +261,9 @@ export function BaselaneAdvisors() {
               alt="An investor reviewing information on a phone"
             />
             <div>
-              <h2>Choose your next step.</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>Choose your next step.</MixedHeadingText>
+              </h2>
               <div className={styles.accordion}>
                 {[
                   [
@@ -243,10 +285,14 @@ export function BaselaneAdvisors() {
                   <details key={title} name="advisor-next" open={i === 0}>
                     <summary>
                       {title}
-                      <span aria-hidden="true">+</span>
+                      <span aria-hidden="true">
+                        <MagePlus size="1em" />
+                      </span>
                     </summary>
                     <p>{text}</p>
-                    <a href={href}>Continue →</a>
+                    <a href={href}>
+                      Continue <MageArrowRight size="1em" />
+                    </a>
                   </details>
                 ))}
               </div>
@@ -254,16 +300,42 @@ export function BaselaneAdvisors() {
           </div>
         </section>
         <section className={styles.inquiry} id="advisor-inquiry">
-          <h2>Start with the work you want to improve.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              Start with the work you want to improve.
+            </MixedHeadingText>
+          </h2>
           <p>
             Prepare an innflow partnership inquiry. You can review the draft
             before opening your email app; nothing is submitted here.
           </p>
           <form
-            onInput={() => setDraft("")}
+            onInput={(event) => {
+              setDraft("");
+              const field = event.target;
+              if (
+                field instanceof HTMLInputElement ||
+                field instanceof HTMLTextAreaElement
+              )
+                field.setCustomValidity("");
+            }}
             onSubmit={(event) => {
               event.preventDefault();
-              const data = new FormData(event.currentTarget);
+              const form = event.currentTarget;
+              for (const field of form.querySelectorAll<
+                HTMLInputElement | HTMLTextAreaElement
+              >("input[required], textarea[required]")) {
+                field.setCustomValidity(
+                  field.value.trim()
+                    ? ""
+                    : "Please enter a value, not just spaces.",
+                );
+              }
+              if (!form.reportValidity()) return;
+              const data = new FormData(form);
+              for (const [key, value] of data.entries()) {
+                if (typeof value === "string") data.set(key, value.trim());
+              }
               setDraft(
                 [
                   `Name: ${data.get("firstName")} ${data.get("lastName")}`,
@@ -359,19 +431,22 @@ export function BaselaneAdvisors() {
                 <textarea name="workflow" required maxLength={1200} rows={3} />
               </label>
             </div>
-            <button type="submit" className={styles.button}>
-              Prepare inquiry →
+            <button data-site-cta="primary" type="submit" className={styles.button}>
+              Prepare inquiry <MageArrowRight size="1em" />
             </button>
           </form>
           {draft && (
             <div className={styles.draft} role="status">
-              <h3>Review your inquiry</h3>
+              <h3 data-mixed-heading>
+                <MixedHeadingText>Review your inquiry</MixedHeadingText>
+              </h3>
               <pre>{draft}</pre>
               <a
+                data-site-cta="primary"
                 className={styles.button}
                 href={`mailto:${siteConfig.supportEmail}?subject=${encodeURIComponent("Advisor partnership inquiry")}&body=${encodeURIComponent(draft)}`}
               >
-                Open email draft ↗
+                Open email draft <ChevronRight />
               </a>
               <p>
                 Addressed to {siteConfig.supportEmail}. Send from your email app
@@ -381,6 +456,6 @@ export function BaselaneAdvisors() {
           )}
         </section>
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

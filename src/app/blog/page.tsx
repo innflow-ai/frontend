@@ -1,10 +1,23 @@
-import { ArrowUpRight, MagnifyingGlass } from "@phosphor-icons/react/dist/ssr";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { BlogAuthorCard } from "@/components/blog/author-card";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { ChevronRight } from "@/components/chevron-right";
+import { Search as MagnifyingGlass } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { MarketingPage } from "@/components/page-primitives";
-import { BLOG_CATEGORIES, matchesBlogQuery } from "@/lib/blog";
+import {
+  BLOG_CATEGORIES,
+  industriesForPost,
+  matchesBlogQuery,
+} from "@/lib/blog";
+import {
+  type BlogSearchParams,
+  blogFilterValue,
+  blogListingHref,
+  paginateItems,
+  parseBlogPage,
+} from "@/lib/blog-listing";
 import { createPageMetadata } from "@/lib/metadata";
 import {
   type BlogPostSummary,
@@ -59,7 +72,9 @@ function PostCard({ post }: { post: BlogPostSummary }) {
       ) : null}
       <div className={styles.cardBody}>
         <span className={styles.chip}>{humanizeCategory(post.category)}</span>
-        <h3>{post.title}</h3>
+        <h3 data-mixed-heading>
+          <MixedHeadingText>{post.title}</MixedHeadingText>
+        </h3>
         {post.excerpt ? <p className={styles.excerpt}>{post.excerpt}</p> : null}
         <PostMeta post={post} />
       </div>
@@ -97,13 +112,15 @@ function FeaturedPost({ post }: { post: BlogPostSummary }) {
       </div>
       <div className={styles.featuredCopy}>
         <span className={styles.chip}>{humanizeCategory(post.category)}</span>
-        <h2>
-          <a href={`/blog/${post.slug}`}>{post.title}</a>
+        <h2 data-mixed-heading>
+          <MixedHeadingText>
+            <a href={`/blog/${post.slug}`}>{post.title}</a>
+          </MixedHeadingText>
         </h2>
         {post.excerpt ? <p className={styles.excerpt}>{post.excerpt}</p> : null}
         <PostMeta post={post} />
         <a className={styles.readStory} href={`/blog/${post.slug}`}>
-          Read the story <ArrowUpRight size={16} aria-hidden="true" />
+          Read the story <ChevronRight size={16} aria-hidden="true" />
         </a>
       </div>
     </article>
@@ -113,9 +130,12 @@ function FeaturedPost({ post }: { post: BlogPostSummary }) {
 export default async function BlogIndexPage({
   searchParams,
 }: {
-  searchParams: Promise<{ q?: string; category?: string; industry?: string }>;
+  searchParams: Promise<BlogSearchParams>;
 }) {
-  const { q = "", category = "", industry = "" } = await searchParams;
+  const params = await searchParams;
+  const q = blogFilterValue(params.q);
+  const category = blogFilterValue(params.category);
+  const industry = blogFilterValue(params.industry);
   const posts = await getBlogPosts();
   const filtered = posts.filter((post) => {
     const matchesQuery = matchesBlogQuery(
@@ -124,35 +144,30 @@ export default async function BlogIndexPage({
     );
     const matchesCategory = category ? post.category === category : true;
     const matchesIndustry = industry
-      ? (post.industries ?? ["General"]).includes(industry)
+      ? industriesForPost(post.industries).includes(industry)
       : true;
     return matchesQuery && matchesCategory && matchesIndustry;
   });
-  const featured =
-    q || category || industry
-      ? undefined
-      : (filtered.find((post) => post.featured) ?? filtered[0]);
-  const rest = featured
-    ? filtered.filter((post) => post.slug !== featured.slug)
-    : filtered;
-
   const hasFilters = Boolean(q || category || industry);
-  const latest = featured ? rest.slice(0, 2) : [];
-  const remaining = featured ? rest.slice(2) : rest;
+  const requestedPage = parseBlogPage(params.page);
+  const spotlight = hasFilters
+    ? undefined
+    : (filtered.find((post) => post.featured) ?? filtered[0]);
+  const rest = spotlight
+    ? filtered.filter((post) => post.slug !== spotlight.slug)
+    : filtered;
+  const latestAll = spotlight ? rest.slice(0, 2) : [];
+  const catalog = spotlight ? rest.slice(2) : rest;
+  const listing = paginateItems(catalog, requestedPage);
+  const featured = listing.page === 1 ? spotlight : undefined;
+  const latest = listing.page === 1 ? latestAll : [];
+  const remaining = listing.items;
+  const filters = { q, category, industry };
   const industries = [
-    ...new Set(
-      posts.flatMap((post) =>
-        post.industries?.length ? post.industries : ["General"],
-      ),
-    ),
+    ...new Set(posts.flatMap((post) => industriesForPost(post.industries))),
   ].sort();
-  const categoryHref = (value: string) => {
-    const params = new URLSearchParams();
-    if (q) params.set("q", q);
-    if (industry) params.set("industry", industry);
-    if (value) params.set("category", value);
-    return `/blog${params.size ? `?${params}` : ""}`;
-  };
+  const categoryHref = (value: string) =>
+    blogListingHref({ q, industry, category: value });
 
   return (
     <MarketingPage>
@@ -165,10 +180,12 @@ export default async function BlogIndexPage({
             <div className={styles.intro}>
               <div>
                 <p className={styles.eyebrow}>The Innflow journal</p>
-                <h1>
-                  Good ideas.
-                  <br />
-                  Better property operations.
+                <h1 data-mixed-heading>
+                  <MixedHeadingText>
+                    Good ideas.
+                    <br />
+                    Better property operations.
+                  </MixedHeadingText>
                 </h1>
               </div>
               <p className={styles.heroSubline}>
@@ -210,7 +227,7 @@ export default async function BlogIndexPage({
                   ))}
                 </select>
                 <button type="submit">
-                  Search <ArrowUpRight size={16} aria-hidden="true" />
+                  Search <ChevronRight size={16} aria-hidden="true" />
                 </button>
               </form>
             </search>
@@ -249,7 +266,11 @@ export default async function BlogIndexPage({
         <section className={styles.listing} aria-label="Blog articles">
           <div className={styles.shell}>
             <div className={styles.sectionHeading}>
-              <h2>{hasFilters ? "Your reading list" : "Fresh perspectives"}</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>
+                  {hasFilters ? "Your reading list" : "Fresh perspectives"}
+                </MixedHeadingText>
+              </h2>
               <span>
                 {filtered.length} {filtered.length === 1 ? "story" : "stories"}
                 {q ? ` matching “${q}”` : " to explore"}
@@ -263,10 +284,12 @@ export default async function BlogIndexPage({
             {filtered.length === 0 ? (
               <div className={styles.empty}>
                 <MagnifyingGlass size={32} aria-hidden="true" />
-                <h3>
-                  {hasFilters
-                    ? "No stories found just yet."
-                    : "New perspectives are on the way."}
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>
+                    {hasFilters
+                      ? "No stories found just yet."
+                      : "New perspectives are on the way."}
+                  </MixedHeadingText>
                 </h3>
                 <p>
                   {hasFilters
@@ -276,7 +299,7 @@ export default async function BlogIndexPage({
                 {hasFilters ? (
                   <a href="/blog" className={styles.readStory}>
                     Explore all stories{" "}
-                    <ArrowUpRight size={16} aria-hidden="true" />
+                    <ChevronRight size={16} aria-hidden="true" />
                   </a>
                 ) : null}
               </div>
@@ -299,7 +322,9 @@ export default async function BlogIndexPage({
                   <>
                     {featured ? (
                       <div className={styles.sectionHeading}>
-                        <h2>Keep exploring</h2>
+                        <h2 data-mixed-heading>
+                          <MixedHeadingText>Keep exploring</MixedHeadingText>
+                        </h2>
                         <span>More ideas for your everyday</span>
                       </div>
                     ) : null}
@@ -308,6 +333,40 @@ export default async function BlogIndexPage({
                         <PostCard key={post.slug} post={post} />
                       ))}
                     </div>
+                    {listing.totalPages > 1 ? (
+                      <nav
+                        className={styles.pagination}
+                        aria-label="Blog pagination"
+                      >
+                        {listing.hasPrev ? (
+                          <a
+                            href={blogListingHref({
+                              ...filters,
+                              page: listing.page - 1,
+                            })}
+                          >
+                            Previous
+                          </a>
+                        ) : (
+                          <span aria-disabled="true">Previous</span>
+                        )}
+                        <p>
+                          Page {listing.page} of {listing.totalPages}
+                        </p>
+                        {listing.hasNext ? (
+                          <a
+                            href={blogListingHref({
+                              ...filters,
+                              page: listing.page + 1,
+                            })}
+                          >
+                            Next
+                          </a>
+                        ) : (
+                          <span aria-disabled="true">Next</span>
+                        )}
+                      </nav>
+                    ) : null}
                   </>
                 ) : null}
               </>

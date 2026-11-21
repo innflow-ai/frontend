@@ -1,5 +1,5 @@
 .directory {
-  background: #fffbf4;
+  background: var(--marketing-paper);
   color: #012232;
 }
 .shell {
@@ -19,7 +19,7 @@
 .directory .eyebrow {
   margin: 0 0 16px;
   color: #586567;
-  font: 11px / 1.5 monospace;
+  font: 11px / 1.5 var(--font-sans);
   letter-spacing: 0.13em;
   text-transform: uppercase;
 }
@@ -202,7 +202,7 @@
 .directory .chip {
   display: inline-block;
   color: #31505e;
-  font: 10px / 1.5 monospace;
+  font: 10px / 1.5 var(--font-sans);
   text-transform: uppercase;
   letter-spacing: 0.09em;
 }
@@ -261,6 +261,26 @@
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 44px 28px;
+}
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin: 48px 0 8px;
+  font-size: 14px;
+}
+.pagination a,
+.pagination span {
+  min-width: 88px;
+  text-align: center;
+}
+.pagination a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.pagination span[aria-disabled="true"] {
+  color: #9aa7ab;
 }
 .card {
   display: flex;

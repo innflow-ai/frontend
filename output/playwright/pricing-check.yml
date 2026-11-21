@@ -1,0 +1,478 @@
+- generic [ref=f9e1]:
+  - region "Cookie Consent Prompt" [ref=f9e369]:
+    - generic [ref=f9e371]:
+      - generic [ref=f9e372]:
+        - text: We use essential cookies to make our site work. With your consent, we may also use non-essential cookies to improve user experience, personalize advertisements, and analyze web traffic. For these reasons, we may share your site usage data with our advertising and analytics partners. By clicking “Accept,” you agree to our website's cookie use as described in our
+        - button "Cookie Policy" [ref=f9e373] [cursor=pointer]
+        - text: . You can change your cookie settings at any time by clicking “
+        - button "Preferences" [ref=f9e374] [cursor=pointer]
+        - text: .”
+      - generic [ref=f9e375]:
+        - button "Preferences" [ref=f9e376] [cursor=pointer]
+        - button "Decline" [ref=f9e377] [cursor=pointer]
+        - button "Accept" [ref=f9e378] [cursor=pointer]
+  - link "Skip to content" [ref=f9e2] [cursor=pointer]:
+    - /url: "#main-content"
+  - generic:
+    - dialog [ref=f9e379]:
+      - button "Dismiss offer" [active] [ref=f9e380] [cursor=pointer]
+      - paragraph [ref=f9e383]: Limited-time offer
+      - heading "50% off signup" [level=2] [ref=f9e384]
+      - paragraph [ref=f9e385]: Save 50% on your first three months of Innflow.
+      - link "Claim 50% off" [ref=f9e386] [cursor=pointer]:
+        - /url: https://app.innflow.ai/auth/google
+    - banner [ref=f9e3]:
+      - link "innflow home" [ref=f9e4] [cursor=pointer]:
+        - /url: /
+        - img "innflow" [ref=f9e5]
+      - navigation "Primary navigation" [ref=f9e387]:
+        - group "Product" [ref=f9e388]:
+          - button "Product" [ref=f9e389] [cursor=pointer]
+        - group "Solutions" [ref=f9e392]:
+          - button "Solutions" [ref=f9e393] [cursor=pointer]
+        - group "Resources" [ref=f9e396]:
+          - button "Resources" [ref=f9e397] [cursor=pointer]
+        - link "Pricing" [ref=f9e400] [cursor=pointer]:
+          - /url: /pricing
+        - link "Blog" [ref=f9e401] [cursor=pointer]:
+          - /url: /blog
+      - generic [ref=f9e6]:
+        - link "Log in" [ref=f9e402] [cursor=pointer]:
+          - /url: https://app.innflow.ai/login
+        - link "Continue with Google" [ref=f9e403] [cursor=pointer]:
+          - /url: https://app.innflow.ai/auth/google
+  - main [ref=f9e12]:
+    - generic [ref=f9e13]:
+      - region [ref=f9e14]:
+        - generic [ref=f9e15]:
+          - generic [ref=f9e16]:
+            - generic [ref=f9e17]: INNFLOW PRICING
+            - heading "Less busywork. More possibilities." [level=1] [ref=f9e18]: Less busywork.More possibilities.
+          - generic [ref=f9e19]:
+            - paragraph [ref=f9e20]: Start with your first workflow. Find the right plan to connect your tools, automate everyday work, and grow with your team.
+            - group "Billing term" [ref=f9e21]:
+              - generic [ref=f9e23] [cursor=pointer]:
+                - radio "Monthly" [checked] [ref=f9e24]
+                - text: Monthly
+              - generic [ref=f9e25] [cursor=pointer]:
+                - radio "Annual plan" [ref=f9e26]
+                - text: Annual plan
+              - generic [ref=f9e27]: Save 15%
+            - paragraph [ref=f9e28]: No annual commitment. All prices in USD.
+        - generic [ref=f9e34]:
+          - article "Free plan" [ref=f9e35]:
+            - generic [ref=f9e36]:
+              - heading "Free" [level=2] [ref=f9e37]
+              - paragraph [ref=f9e38]: Build your first workflows and see what’s possible.
+              - generic [ref=f9e39]:
+                - strong [ref=f9e40]: $0
+                - generic [ref=f9e41]: /month
+              - paragraph [ref=f9e42]: Free to get started
+              - link "Get started with Free" [ref=f9e43] [cursor=pointer]:
+                - /url: https://app.innflow.ai/auth/google
+                - text: Get started
+                - generic [aria-hidden] [ref=f9e44]: →
+            - generic [ref=f9e45]:
+              - paragraph [ref=f9e46]: "The essentials to get started:"
+              - heading "Workflow automation" [level=3] [ref=f9e47]
+              - list [ref=f9e48]:
+                - listitem [ref=f9e49]:
+                  - text: ✓
+                  - strong [ref=f9e50]: 1,200
+                  - text: monthly credits
+                - listitem [ref=f9e51]: ✓ 1 workspace
+                - listitem [ref=f9e52]: ✓ 2 deployed workflows
+                - listitem [ref=f9e53]: ✓ 3 tables
+                - listitem [ref=f9e54]: ✓ 1,000 rows per table
+                - listitem [ref=f9e55]: ✓ 1 day of run history
+          - article "Pro plan" [ref=f9e56]:
+            - generic [ref=f9e57]: MOST POPULAR
+            - generic [ref=f9e58]:
+              - heading "Pro" [level=2] [ref=f9e59]
+              - paragraph [ref=f9e60]: Put everyday work on autopilot, with room to grow.
+              - generic [ref=f9e61]:
+                - strong [ref=f9e62]: $19.99
+                - generic [ref=f9e63]: /month
+              - paragraph [ref=f9e64]: Billed monthly
+              - link "Get started with Pro" [ref=f9e65] [cursor=pointer]:
+                - /url: https://app.innflow.ai/auth/google
+                - text: Get started
+                - generic [aria-hidden] [ref=f9e66]: →
+            - generic [ref=f9e67]:
+              - paragraph [ref=f9e68]: "More capacity, plus premium nodes:"
+              - heading "Workflow automation" [level=3] [ref=f9e69]
+              - list [ref=f9e70]:
+                - listitem [ref=f9e71]:
+                  - text: ✓
+                  - strong [ref=f9e72]: 10,000
+                  - text: monthly credits
+                - listitem [ref=f9e73]: ✓ 3 workspaces
+                - listitem [ref=f9e74]: ✓ Unlimited deployed workflows
+                - listitem [ref=f9e75]: ✓ 25 tables
+                - listitem [ref=f9e76]: ✓ 5,000 rows per table
+                - listitem [ref=f9e77]: ✓ 30 days of run history
+                - listitem [ref=f9e78]: ✓ Premium workflow nodes
+          - article "Business plan" [ref=f9e79]:
+            - generic [ref=f9e80]:
+              - heading "Business" [level=2] [ref=f9e81]
+              - paragraph [ref=f9e82]: Scale connected workflows across your team.
+              - generic [ref=f9e83]:
+                - strong [ref=f9e84]: $199.99
+                - generic [ref=f9e85]: /month
+              - paragraph [ref=f9e86]: Billed monthly
+              - link "Get started with Business" [ref=f9e87] [cursor=pointer]:
+                - /url: https://app.innflow.ai/auth/google
+                - text: Get started
+                - generic [aria-hidden] [ref=f9e88]: →
+            - generic [ref=f9e89]:
+              - paragraph [ref=f9e90]: "Higher limits, plus advanced AI:"
+              - heading "Workflow automation" [level=3] [ref=f9e91]
+              - list [ref=f9e92]:
+                - listitem [ref=f9e93]:
+                  - text: ✓
+                  - strong [ref=f9e94]: 140,000
+                  - text: monthly credits
+                - listitem [ref=f9e95]: ✓ Unlimited workspaces
+                - listitem [ref=f9e96]: ✓ Unlimited deployed workflows
+                - listitem [ref=f9e97]: ✓ Unlimited tables
+                - listitem [ref=f9e98]: ✓ 50,000 rows per table
+                - listitem [ref=f9e99]: ✓ 90 days of run history
+                - listitem [ref=f9e100]: ✓ Premium workflow nodes
+                - listitem [ref=f9e101]: ✓ Exclusive AI models
+          - article "Enterprise plan" [ref=f9e102]:
+            - generic [ref=f9e103]:
+              - heading "Enterprise" [level=2] [ref=f9e104]
+              - paragraph [ref=f9e105]: Shape a plan around your organization’s needs.
+              - strong [ref=f9e107]: Custom
+              - paragraph [ref=f9e108]: Let’s find the right fit
+              - link "Talk to sales about Enterprise" [ref=f9e109] [cursor=pointer]:
+                - /url: /contact
+                - text: Talk to sales
+                - generic [aria-hidden] [ref=f9e110]: →
+            - generic [ref=f9e111]:
+              - paragraph [ref=f9e112]: "A plan built around your team:"
+              - heading "Custom capacity" [level=3] [ref=f9e113]
+              - list [ref=f9e114]:
+                - listitem [ref=f9e115]: ✓ Custom monthly credits
+                - listitem [ref=f9e116]: ✓ Custom workflow and data capacity
+                - listitem [ref=f9e117]: ✓ Security and deployment requirements
+                - listitem [ref=f9e118]: ✓ Onboarding and service levels
+        - link "Compare all features" [ref=f9e119] [cursor=pointer]:
+          - /url: "#compare-features"
+          - text: Compare all features
+          - generic [aria-hidden] [ref=f9e120]: ↓
+      - generic [ref=f9e121]:
+        - heading "Compare features" [level=2] [ref=f9e122]
+        - generic [ref=f9e123]:
+          - button "Collapse all features" [ref=f9e124] [cursor=pointer]
+          - paragraph [ref=f9e125]: Scroll across on smaller screens to compare all four plans.
+        - generic [ref=f9e126]:
+          - button "WORKFLOW CAPACITY" [expanded] [ref=f9e127] [cursor=pointer]:
+            - text: WORKFLOW CAPACITY
+            - generic [aria-hidden] [ref=f9e128]: −
+          - region "workflow capacity comparison" [ref=f9e130]:
+            - table [ref=f9e131]:
+              - caption [ref=f9e132]: WORKFLOW CAPACITY by innflow plan
+              - rowgroup [ref=f9e133]:
+                - row [ref=f9e134]:
+                  - columnheader "Feature" [ref=f9e135]
+                  - columnheader "Free $0/mo." [ref=f9e136]:
+                    - text: Free
+                    - generic [ref=f9e137]: $0/mo.
+                  - columnheader "Pro $19.99/mo." [ref=f9e138]:
+                    - text: Pro
+                    - generic [ref=f9e139]: $19.99/mo.
+                  - columnheader "Business $199.99/mo." [ref=f9e140]:
+                    - text: Business
+                    - generic [ref=f9e141]: $199.99/mo.
+                  - columnheader "Enterprise Custom" [ref=f9e142]:
+                    - text: Enterprise
+                    - generic [ref=f9e143]: Custom
+              - rowgroup [ref=f9e144]:
+                - row [ref=f9e145]:
+                  - rowheader "Monthly credits" [ref=f9e146]
+                  - cell "1,200" [ref=f9e147]
+                  - cell "10,000" [ref=f9e148]
+                  - cell "140,000" [ref=f9e149]
+                  - cell "Custom" [ref=f9e150]
+                - row [ref=f9e151]:
+                  - rowheader "Workspaces" [ref=f9e152]
+                  - cell "1" [ref=f9e153]
+                  - cell "3" [ref=f9e154]
+                  - cell "Unlimited" [ref=f9e155]
+                  - cell "Custom" [ref=f9e156]
+                - row [ref=f9e157]:
+                  - rowheader "Deployed workflows" [ref=f9e158]
+                  - cell "2" [ref=f9e159]
+                  - cell "Unlimited" [ref=f9e160]
+                  - cell "Unlimited" [ref=f9e161]
+                  - cell "Custom" [ref=f9e162]
+        - generic [ref=f9e163]:
+          - button "DATA AND HISTORY" [expanded] [ref=f9e164] [cursor=pointer]:
+            - text: DATA AND HISTORY
+            - generic [aria-hidden] [ref=f9e165]: −
+          - region "data and history comparison" [ref=f9e167]:
+            - table [ref=f9e168]:
+              - caption [ref=f9e169]: DATA AND HISTORY by innflow plan
+              - rowgroup [ref=f9e170]:
+                - row [ref=f9e171]:
+                  - columnheader "Feature" [ref=f9e172]
+                  - columnheader "Free $0/mo." [ref=f9e173]:
+                    - text: Free
+                    - generic [ref=f9e174]: $0/mo.
+                  - columnheader "Pro $19.99/mo." [ref=f9e175]:
+                    - text: Pro
+                    - generic [ref=f9e176]: $19.99/mo.
+                  - columnheader "Business $199.99/mo." [ref=f9e177]:
+                    - text: Business
+                    - generic [ref=f9e178]: $199.99/mo.
+                  - columnheader "Enterprise Custom" [ref=f9e179]:
+                    - text: Enterprise
+                    - generic [ref=f9e180]: Custom
+              - rowgroup [ref=f9e181]:
+                - row [ref=f9e182]:
+                  - rowheader "Tables" [ref=f9e183]
+                  - cell "3" [ref=f9e184]
+                  - cell "25" [ref=f9e185]
+                  - cell "Unlimited" [ref=f9e186]
+                  - cell "Custom" [ref=f9e187]
+                - row [ref=f9e188]:
+                  - rowheader "Rows per table" [ref=f9e189]
+                  - cell "1,000" [ref=f9e190]
+                  - cell "5,000" [ref=f9e191]
+                  - cell "50,000" [ref=f9e192]
+                  - cell "Custom" [ref=f9e193]
+                - row [ref=f9e194]:
+                  - rowheader "Run history" [ref=f9e195]
+                  - cell "1 day" [ref=f9e196]
+                  - cell "30 days" [ref=f9e197]
+                  - cell "90 days" [ref=f9e198]
+                  - cell "Custom" [ref=f9e199]
+        - generic [ref=f9e200]:
+          - button "ADVANCED CAPABILITIES" [expanded] [ref=f9e201] [cursor=pointer]:
+            - text: ADVANCED CAPABILITIES
+            - generic [aria-hidden] [ref=f9e202]: −
+          - region "advanced capabilities comparison" [ref=f9e204]:
+            - table [ref=f9e205]:
+              - caption [ref=f9e206]: ADVANCED CAPABILITIES by innflow plan
+              - rowgroup [ref=f9e207]:
+                - row [ref=f9e208]:
+                  - columnheader "Feature" [ref=f9e209]
+                  - columnheader "Free $0/mo." [ref=f9e210]:
+                    - text: Free
+                    - generic [ref=f9e211]: $0/mo.
+                  - columnheader "Pro $19.99/mo." [ref=f9e212]:
+                    - text: Pro
+                    - generic [ref=f9e213]: $19.99/mo.
+                  - columnheader "Business $199.99/mo." [ref=f9e214]:
+                    - text: Business
+                    - generic [ref=f9e215]: $199.99/mo.
+                  - columnheader "Enterprise Custom" [ref=f9e216]:
+                    - text: Enterprise
+                    - generic [ref=f9e217]: Custom
+              - rowgroup [ref=f9e218]:
+                - row [ref=f9e219]:
+                  - rowheader "Premium workflow nodes" [ref=f9e220]
+                  - cell "No" [ref=f9e221]
+                  - cell "Yes" [ref=f9e222]
+                  - cell "Yes" [ref=f9e223]
+                  - cell "Yes" [ref=f9e224]
+                - row [ref=f9e225]:
+                  - rowheader "Exclusive AI models" [ref=f9e226]
+                  - cell "No" [ref=f9e227]
+                  - cell "No" [ref=f9e228]
+                  - cell "Yes" [ref=f9e229]
+                  - cell "Yes" [ref=f9e230]
+      - generic [ref=f9e231]:
+        - heading "Simple, transparent choices." [level=2] [ref=f9e232]
+        - paragraph [ref=f9e233]: Know what your plan covers before you start.
+        - generic [ref=f9e234]:
+          - article [ref=f9e235]:
+            - heading "Monthly plans" [level=3] [ref=f9e236]
+            - paragraph [ref=f9e237]: Pay the standard monthly rate without choosing an annual plan.
+          - article [ref=f9e238]:
+            - heading "Annual plans" [level=3] [ref=f9e239]
+            - paragraph [ref=f9e240]: Choose an annual commitment, billed monthly at the lower annual rate.
+          - article [ref=f9e241]:
+            - heading "Usage" [level=3] [ref=f9e242]
+            - paragraph [ref=f9e243]: Credits reflect workflow and AI actions. Different actions can use different amounts.
+          - article [ref=f9e244]:
+            - heading "Enterprise" [level=3] [ref=f9e245]
+            - paragraph [ref=f9e246]: Discuss custom requirements and service levels directly with the team.
+      - generic [ref=f9e247]:
+        - generic [ref=f9e248]:
+          - generic [ref=f9e249]: A LITTLE MORE CLARITY
+          - heading "Frequently asked questions" [level=2] [ref=f9e250]
+          - paragraph [ref=f9e251]:
+            - text: Need help choosing?
+            - link "Talk to our team." [ref=f9e252] [cursor=pointer]:
+              - /url: /contact
+        - generic [ref=f9e253]:
+          - group [ref=f9e254]:
+            - generic "What are innflow credits? +" [ref=f9e255] [cursor=pointer]
+          - group [ref=f9e256]:
+            - generic "How does annual pricing work? +" [ref=f9e257] [cursor=pointer]
+          - group [ref=f9e258]:
+            - generic "Can I change plans later? +" [ref=f9e259] [cursor=pointer]
+          - group [ref=f9e260]:
+            - generic "When should I choose Business? +" [ref=f9e261] [cursor=pointer]
+          - group [ref=f9e262]:
+            - generic "What is included with Enterprise? +" [ref=f9e263] [cursor=pointer]
+  - generic [ref=f9e266]:
+    - heading "A clearer day starts with a connected flow." [level=2] [ref=f9e267]
+    - paragraph [ref=f9e268]: Bring your team, context, and next steps together.
+    - link "Continue with Google" [ref=f9e270] [cursor=pointer]:
+      - /url: https://app.innflow.ai/auth/google
+    - form [ref=f9e273]:
+      - heading "A little more, just for members." [level=3] [ref=f9e274]
+      - paragraph [ref=f9e275]: Get Innflow updates and member offers by email.
+      - group [ref=f9e276]:
+        - generic [ref=f9e277]: Email address
+        - generic [ref=f9e278]:
+          - textbox "Email address" [ref=f9e279]:
+            - /placeholder: Enter your email
+          - button "Sign up" [ref=f9e280] [cursor=pointer]
+      - status
+  - contentinfo [ref=f9e282]:
+    - generic [ref=f9e283]:
+      - generic [ref=f9e284]:
+        - link "innflow home" [ref=f9e285] [cursor=pointer]:
+          - /url: /
+          - img "innflow" [ref=f9e286]
+        - paragraph [ref=f9e287]: Property operations.Connected in one place.
+        - link "support@innflow.ai" [ref=f9e288] [cursor=pointer]:
+          - /url: mailto:support@innflow.ai
+        - region "Hours of operation" [ref=f9e289]:
+          - strong [ref=f9e290]: Hours of Operation
+          - generic [ref=f9e291]:
+            - generic [ref=f9e292]:
+              - term [ref=f9e293]: Monday–Friday
+              - definition [ref=f9e294]: 9:00 AM–6:00 PM ET
+            - generic [ref=f9e295]:
+              - term [ref=f9e296]: Saturday–Sunday
+              - definition [ref=f9e297]: 10:00 AM–5:00 PM ET
+      - generic [ref=f9e298]:
+        - heading "Why innflow" [level=3] [ref=f9e299]
+        - link "About innflow" [ref=f9e300] [cursor=pointer]:
+          - /url: /about
+        - link "Careers" [ref=f9e301] [cursor=pointer]:
+          - /url: /careers
+        - link "Industry coverage" [ref=f9e302] [cursor=pointer]:
+          - /url: /in-the-news
+        - link "Who we help" [ref=f9e303] [cursor=pointer]:
+          - /url: /our-customers
+        - link "Security" [ref=f9e304] [cursor=pointer]:
+          - /url: /security
+        - link "Share innflow" [ref=f9e305] [cursor=pointer]:
+          - /url: /landlord-referral
+        - link "Partnerships" [ref=f9e306] [cursor=pointer]:
+          - /url: /partner-with-us
+        - link "Advisor partnerships" [ref=f9e307] [cursor=pointer]:
+          - /url: /advisor-partner-program
+        - link "Workflows" [ref=f9e308] [cursor=pointer]:
+          - /url: /products/agentic-workflows
+        - link "AI assistant" [ref=f9e309] [cursor=pointer]:
+          - /url: /products/ai-agents
+        - link "Knowledge" [ref=f9e310] [cursor=pointer]:
+          - /url: /platform
+        - link "Approvals" [ref=f9e311] [cursor=pointer]:
+          - /url: /platform/security-and-compliance
+      - generic [ref=f9e312]:
+        - heading "Solutions" [level=3] [ref=f9e313]
+        - link "Overview" [ref=f9e314] [cursor=pointer]:
+          - /url: /
+        - link "Multi-property investors" [ref=f9e315] [cursor=pointer]:
+          - /url: /multi-property-investors
+        - link "Landlord operations" [ref=f9e316] [cursor=pointer]:
+          - /url: /landlord-banking
+        - link "Rental workflows" [ref=f9e317] [cursor=pointer]:
+          - /url: /rent-collection
+        - link "Rental workflows overview" [ref=f9e318] [cursor=pointer]:
+          - /url: /rent-collection-2
+        - link "Connected property records" [ref=f9e319] [cursor=pointer]:
+          - /url: /landlord-accounting
+        - link "Property review preparation" [ref=f9e320] [cursor=pointer]:
+          - /url: /landlord-insurance
+        - link "Document preparation" [ref=f9e321] [cursor=pointer]:
+          - /url: /tax-preparation
+        - link "Deposit workflows" [ref=f9e322] [cursor=pointer]:
+          - /url: /security-deposit-account
+        - link "Screening workflows" [ref=f9e323] [cursor=pointer]:
+          - /url: /tenant-screening-service
+        - link "Reserve planning" [ref=f9e324] [cursor=pointer]:
+          - /url: /landlord-banking-apy
+        - link "Financing preparation" [ref=f9e325] [cursor=pointer]:
+          - /url: /rental-property-loans
+        - link "Property management" [ref=f9e326] [cursor=pointer]:
+          - /url: /property-management
+        - link "Connected operations" [ref=f9e327] [cursor=pointer]:
+          - /url: /platform
+        - link "Integrations" [ref=f9e328] [cursor=pointer]:
+          - /url: /integrations
+      - generic [ref=f9e329]:
+        - heading "Resources" [level=3] [ref=f9e330]
+        - link "Resource library" [ref=f9e331] [cursor=pointer]:
+          - /url: /resources
+        - link "Document checklists" [ref=f9e332] [cursor=pointer]:
+          - /url: /free-rental-forms-and-templates-for-landlords
+        - link "Rent comparison" [ref=f9e333] [cursor=pointer]:
+          - /url: /how-much-should-i-charge-for-rent
+        - link "Lease workflows" [ref=f9e334] [cursor=pointer]:
+          - /url: /lease-agreement
+        - link "Workflow learning" [ref=f9e335] [cursor=pointer]:
+          - /url: /webinars
+        - link "Investor resources" [ref=f9e336] [cursor=pointer]:
+          - /url: /real-estate-investing
+        - link "Product updates" [ref=f9e337] [cursor=pointer]:
+          - /url: /product-updates
+        - link "Blog" [ref=f9e338] [cursor=pointer]:
+          - /url: /blog
+        - link "Help center" [ref=f9e339] [cursor=pointer]:
+          - /url: /help-center
+        - link "Legal agreements" [ref=f9e340] [cursor=pointer]:
+          - /url: /legal-agreements
+        - link "FAQ" [ref=f9e341] [cursor=pointer]:
+          - /url: /faq
+        - link "Contact" [ref=f9e342] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=f9e343]:
+        - heading "Property teams" [level=3] [ref=f9e344]
+        - link "Long-term rentals" [ref=f9e345] [cursor=pointer]:
+          - /url: /long-term-rentals
+        - link "Mid-term rentals" [ref=f9e346] [cursor=pointer]:
+          - /url: /mid-term-rentals
+        - link "Short-term rentals" [ref=f9e347] [cursor=pointer]:
+          - /url: /short-term-rentals
+        - link "Resident experiences" [ref=f9e348] [cursor=pointer]:
+          - /url: /renters
+        - heading "Get started" [level=3] [ref=f9e349]
+        - link "Book a demo" [ref=f9e350] [cursor=pointer]:
+          - /url: https://cal.com/julian-patrick-afu0u2/innflow-demo?overlayCalendar=true
+        - link "Pricing" [ref=f9e351] [cursor=pointer]:
+          - /url: /pricing
+        - link "Log in" [ref=f9e352] [cursor=pointer]:
+          - /url: https://app.innflow.ai/login
+        - link "Continue with Google" [ref=f9e353] [cursor=pointer]:
+          - /url: https://app.innflow.ai/auth/google
+    - generic [ref=f9e356]:
+      - generic [ref=f9e357]: © 2026 Innflow. All rights reserved.
+      - navigation "Legal" [ref=f9e358]:
+        - link "Privacy Policy" [ref=f9e359] [cursor=pointer]:
+          - /url: /legal/privacy-policy
+        - link "Terms of Service" [ref=f9e360] [cursor=pointer]:
+          - /url: /legal/terms-of-service
+        - link "Cookie Policy" [ref=f9e361] [cursor=pointer]:
+          - /url: /legal/cookie-policy
+        - link "Acceptable Use Policy" [ref=f9e362] [cursor=pointer]:
+          - /url: /legal/acceptable-use-policy
+        - link "EULA" [ref=f9e363] [cursor=pointer]:
+          - /url: /legal/eula
+        - link "Privacy Request" [ref=f9e364] [cursor=pointer]:
+          - /url: /legal/dsar
+        - link "Consent Preferences" [ref=f9e365] [cursor=pointer]:
+          - /url: "#"
+        - link "Do Not Sell or Share My Personal Information" [ref=f9e366] [cursor=pointer]:
+          - /url: https://app.termly.io/notify/d253192a-6c11-4338-9883-67b3307aea2f
+        - link "Limit the Use of My Sensitive Personal Information" [ref=f9e367] [cursor=pointer]:
+          - /url: https://app.termly.io/notify/d253192a-6c11-4338-9883-67b3307aea2f
+  - alert [ref=f9e368]

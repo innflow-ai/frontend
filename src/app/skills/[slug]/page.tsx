@@ -8,7 +8,9 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { ChevronLeft as MageArrowLeft } from "@/components/icons/mage";
 import { JsonLd } from "@/components/json-ld";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { MarketingPage } from "@/components/page-primitives";
 import { siteConfig } from "@/config/site";
 import { createPageMetadata } from "@/lib/metadata";
@@ -164,7 +166,9 @@ export default async function SkillDetailPage({ params }: RouteParams) {
               { label: skill.name },
             ]}
           />
-          <h1>{skill.name}</h1>
+          <h1 data-mixed-heading>
+            <MixedHeadingText>{skill.name}</MixedHeadingText>
+          </h1>
           {skill.shortDescription ? (
             <p className={styles.lede}>{skill.shortDescription}</p>
           ) : null}
@@ -194,7 +198,9 @@ export default async function SkillDetailPage({ params }: RouteParams) {
       ) : null}
       <section className={styles.cta}>
         <div className={`shell ${styles.article}`}>
-          <h2>Put this skill to work.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>Put this skill to work.</MixedHeadingText>
+          </h2>
           <p>
             See how Innflow agents run skills like this one against your real
             systems and workflows.
@@ -211,7 +217,10 @@ export default async function SkillDetailPage({ params }: RouteParams) {
       </section>
       <div className={`shell ${styles.footerNav}`}>
         <a className={styles.backLink} href="/skills">
-          <span aria-hidden="true">←</span> Back to skills
+          <span aria-hidden="true">
+            <MageArrowLeft size="1em" />
+          </span>{" "}
+          Back to skills
         </a>
       </div>
     </MarketingPage>

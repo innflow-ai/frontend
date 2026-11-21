@@ -8,11 +8,19 @@ import {
 } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
-import { type CSSProperties, useEffect, useId, useRef, useState } from "react";
-import { siteConfig } from "@/config/site";
+import { useEffect, useId, useRef, useState } from "react";
+import { ChevronRight } from "@/components/chevron-right";
+import { ArrowRight as MageArrowRight } from "@/components/icons/mage";
+import {
+  MixedHeadingContent,
+  SectionHeading,
+  splitHeading,
+} from "@/components/section-heading";
+
+import { SHOW_TESTIMONIAL } from "./testimonial-visibility";
 import type { Testimonial } from "@/lib/testimonials";
 import styles from "./baseline-lower-sections.module.css";
-import { integrationIcons, integrationNames } from "./homepage-content";
+import { IntegrationPillars } from "./integration-pillars";
 
 const assets = "/preview/homepage";
 const lower = `${assets}/baseline-lower`;
@@ -61,7 +69,13 @@ function CustomerStoryLayoutPreview() {
       data-motion={reducedMotion ? "reduced" : "shared-layout"}
     >
       <header className={styles.heading}>
-        <h2 id="baseline-stories-heading">Real customers. Real results.</h2>
+        <h2 id="baseline-stories-heading" data-mixed-heading>
+          <MixedHeadingContent
+            title="Real customers."
+            emphasis={<strong>Real results.</strong>}
+            breakAt="never"
+          />
+        </h2>
       </header>
       <LayoutGroup id={layoutId}>
         <div className={`${styles.storyStage} ${styles.previewStoryStage}`}>
@@ -131,7 +145,7 @@ function CustomerStoryLayoutPreview() {
                   alt=""
                   fill
                   sizes="(max-width: 700px) 85vw, 361px"
-                  loading="eager"
+                  loading="lazy"
                 />
                 {selected && (
                   <span className={styles.photoDisclaimer}>
@@ -185,13 +199,27 @@ function CustomerStoryLayoutPreview() {
 export function BaselineCustomerStories({
   testimonials,
   heading,
+  headingSplitAfter,
   previewFallback = false,
 }: {
   testimonials: Testimonial[];
   heading: string;
+  headingSplitAfter?: string;
   previewFallback?: boolean;
 }) {
   const [active, setActive] = useState(0);
+  const headingRuns = splitHeading(
+    heading,
+    headingSplitAfter ??
+      (heading === "In their own words."
+        ? "In their"
+        : heading === "Real customers. Real results."
+          ? "Real customers."
+          : undefined),
+  );
+  // One switch hides the whole band, including its padding, so the sections
+  // above and below meet with their own spacing and no empty slot remains.
+  if (!SHOW_TESTIMONIAL) return null;
   const selected = testimonials[active % Math.max(1, testimonials.length)];
   // Empty CMS selections remain empty: never replace customer evidence with reference endorsements.
   if (!selected) return previewFallback ? <CustomerStoryLayoutPreview /> : null;
@@ -205,7 +233,20 @@ export function BaselineCustomerStories({
       data-source-node="350:11559"
     >
       <header className={styles.heading}>
-        <h2 id="baseline-stories-heading">{heading}</h2>
+        <h2
+          id="baseline-stories-heading"
+          data-mixed-heading={!!headingRuns || undefined}
+        >
+          {headingRuns ? (
+            <MixedHeadingContent
+              title={headingRuns.title}
+              emphasis={<strong>{headingRuns.emphasis}</strong>}
+              breakAt="never"
+            />
+          ) : (
+            heading
+          )}
+        </h2>
       </header>
       <div className={styles.storyStage}>
         {neighbors.map((item, i) => (
@@ -289,37 +330,32 @@ export function BaselineConnectedInfrastructure() {
       data-source-node="350:11630"
     >
       <header className={styles.heading}>
-        <h2 id="baseline-infrastructure-heading">
-          Build on the tools
-          <br />
-          you already use
-        </h2>
-        <p>
-          Keep customer conversations connected to the information and tools
-          behind your work.
-        </p>
-        <Link className={styles.directory} href="/integrations">
-          View all integrations <span aria-hidden="true">→</span>
+        <SectionHeading
+          variant="mixed-italic"
+          id="baseline-infrastructure-heading"
+          title={<strong>Connect the tools</strong>}
+          emphasis="behind your work."
+          subtitle={
+            <>
+              Bring relevant information into the{" "}
+              <strong>tools your team already uses</strong>. Explore supported
+              connections to find the right fit for your workflow.
+            </>
+          }
+        />
+        <Link
+          data-site-cta="primary"
+          data-cta-compact
+          className={styles.directory}
+          href="/integrations"
+        >
+          View all integrations{" "}
+          <span aria-hidden="true">
+            <MageArrowRight size="1em" />
+          </span>
         </Link>
       </header>
-      <div className={styles.integrations}>
-        {[integrationNames.slice(0, 9), integrationNames.slice(9)].map(
-          (row) => (
-            <div className={styles.integrationRow} key={row[0]}>
-              {row.map((name) => (
-                <div className={styles.integrationTile} key={name}>
-                  <Image
-                    src={integrationIcons[name]}
-                    alt={name}
-                    width={64}
-                    height={64}
-                  />
-                </div>
-              ))}
-            </div>
-          ),
-        )}
-      </div>
+      <IntegrationPillars />
       <div className={styles.infrastructureCards}>
         {cards.map((card) => (
           <Link key={card.title} href={card.href}>
@@ -330,10 +366,12 @@ export function BaselineConnectedInfrastructure() {
                 height={24}
                 alt=""
               />
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true">
+                <ChevronRight />
+              </span>
             </div>
             <h3>{card.title}</h3>
-            <p>{card.body}</p>
+            <p data-home-copy>{card.body}</p>
           </Link>
         ))}
       </div>
@@ -341,128 +379,6 @@ export function BaselineConnectedInfrastructure() {
         Connection examples from the design. Check the directory for
         availability.
       </p>
-    </section>
-  );
-}
-
-const scenes = [
-  {
-    person: `${assets}/closing-imgImage.png`,
-    background: `${assets}/closing-imgContainer.png`,
-    label: "Request resolved",
-    stripe: "#f2f8de",
-  },
-  {
-    person: `${assets}/closing-imgImage2.png`,
-    background: `${assets}/closing-imgContainer1.png`,
-    label: "Product highlight 2",
-    stripe: "#d4c2ff",
-  },
-  {
-    person: `${assets}/closing-imgImage3.png`,
-    background: `${assets}/closing-imgContainer2.png`,
-    label: "Product highlight 3",
-    stripe: "#6bb1ff",
-  },
-  {
-    person: `${lower}/closing-four-person.png`,
-    background: `${lower}/closing-four-background.png`,
-    label: "Product highlight 4",
-    stripe: "#baf0ec",
-  },
-];
-
-export function BaselineClosing() {
-  const [active, setActive] = useState(0);
-  // Manual by default: static source artwork does not establish an observed autoplay timeline.
-  return (
-    <section
-      className={styles.closing}
-      aria-labelledby="baseline-closing-heading"
-      data-source-node="350:11820"
-    >
-      <header className={styles.heading}>
-        <h2 id="baseline-closing-heading">
-          Bring your team
-          <br />
-          and AI together.
-        </h2>
-        <p>
-          See how Innflow brings conversations, agents and workflows into one
-          workspace. Start with the work your team handles every day.
-        </p>
-        <a className={styles.cta} href={siteConfig.demoUrl}>
-          Book an Innflow demo
-        </a>
-      </header>
-      <div className={styles.closingViewport}>
-        <div className={styles.closingTrack}>
-          {[-1, 0, 1].map((offset) => {
-            const index = (active + offset + scenes.length) % scenes.length;
-            const scene = scenes[index];
-            return (
-              <div
-                key={offset}
-                className={styles.scene}
-                data-active={offset === 0}
-                aria-hidden={offset !== 0}
-                style={{ "--stripe": scene.stripe } as CSSProperties}
-              >
-                <div className={styles.sceneBackdrop}>
-                  <Image src={scene.background} alt="" fill sizes="656px" />
-                  <div />
-                </div>
-                <Image
-                  className={styles.scenePerson}
-                  src={scene.person}
-                  alt=""
-                  fill
-                  sizes="(max-width: 700px) 85vw, 593px"
-                />
-                {index === 0 && (
-                  <div className={styles.sceneBadge}>
-                    <Image
-                      src={`${assets}/innflow-mark.png`}
-                      alt=""
-                      width={42}
-                      height={42}
-                    />
-                    <span>Request</span>
-                    <strong>Resolved</strong>
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
-      </div>
-      <fieldset className={styles.controls} aria-label="Closing highlights">
-        <button
-          type="button"
-          onClick={() => setActive((active + 3) % 4)}
-          aria-label="Previous highlight"
-        >
-          ←
-        </button>
-        {scenes.map((scene, i) => (
-          <button
-            type="button"
-            key={scene.label}
-            aria-label={scene.label}
-            aria-pressed={active === i}
-            onClick={() => setActive(i)}
-          >
-            <span />
-          </button>
-        ))}
-        <button
-          type="button"
-          onClick={() => setActive((active + 1) % 4)}
-          aria-label="Next highlight"
-        >
-          →
-        </button>
-      </fieldset>
     </section>
   );
 }

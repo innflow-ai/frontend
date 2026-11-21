@@ -1,10 +1,17 @@
 "use client";
+
 import Image from "next/image";
 import { useRef } from "react";
+import {
+  ArrowDown as MageArrowDown,
+  ChevronLeft as MageArrowLeft,
+  ArrowRight as MageArrowRight,
+} from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import styles from "./baselane-forms.module.css";
 import { formGroups } from "./baselane-forms-data";
-import { BaselaneHomepage } from "./baselane-homepage";
 import shared from "./baselane-partners.module.css";
+import { InnerPageShell } from "./inner-page-shell";
 
 function FormGroup({ group }: { group: (typeof formGroups)[number] }) {
   const track = useRef<HTMLElement>(null);
@@ -20,7 +27,9 @@ function FormGroup({ group }: { group: (typeof formGroups)[number] }) {
   }
   return (
     <section className={styles.group} id={group.slug}>
-      <h2>{group.title}</h2>
+      <h2 data-mixed-heading>
+        <MixedHeadingText>{group.title}</MixedHeadingText>
+      </h2>
       <section
         className={styles.track}
         ref={track}
@@ -31,7 +40,9 @@ function FormGroup({ group }: { group: (typeof formGroups)[number] }) {
           <article key={slug}>
             <div className={styles.cardTop}>INNFLOW PREPARATION WORKSHEET</div>
             <div className={styles.cardBody}>
-              <h3>{title}</h3>
+              <h3 data-mixed-heading>
+                <MixedHeadingText>{title}</MixedHeadingText>
+              </h3>
               <p>{group.description}</p>
               <a
                 href={`data:text/plain;charset=utf-8,${encodeURIComponent([`innflow — ${title}`, "", group.description, "", "Property:", "Prepared by:", "Review date:", "", "Purpose of this document:", "Supporting records and source links:", "Questions for the reviewer:", "Document provider or adviser:", "Responsible owner:", "Next action and due date:", "Review outcome:", "", "Preparation worksheet only. Have the final document reviewed for your property and circumstances."].join("\n"))}`}
@@ -40,7 +51,7 @@ function FormGroup({ group }: { group: (typeof formGroups)[number] }) {
                 rel="noreferrer"
                 aria-label={`Download ${title.toLowerCase()} preparation worksheet`}
               >
-                Download worksheet ↓
+                Download worksheet <MageArrowDown size="1em" />
               </a>
             </div>
           </article>
@@ -48,7 +59,7 @@ function FormGroup({ group }: { group: (typeof formGroups)[number] }) {
       </section>
       <div className={styles.controls}>
         <a href="/lease-agreement" target="_blank" rel="noreferrer">
-          Explore document workflows →
+          Explore document workflows <MageArrowRight size="1em" />
         </a>
         <div>
           <button
@@ -56,14 +67,14 @@ function FormGroup({ group }: { group: (typeof formGroups)[number] }) {
             onClick={() => move(-1)}
             aria-label={`Previous ${group.title.toLowerCase()}`}
           >
-            ←
+            <MageArrowLeft size="1em" />
           </button>
           <button
             type="button"
             onClick={() => move(1)}
             aria-label={`Next ${group.title.toLowerCase()}`}
           >
-            →
+            <MageArrowRight size="1em" />
           </button>
         </div>
       </div>
@@ -72,11 +83,15 @@ function FormGroup({ group }: { group: (typeof formGroups)[number] }) {
 }
 export function BaselaneForms() {
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={`${shared.page} ${styles.page}`}>
         <section className={shared.hero}>
           <div className={shared.heroCopy}>
-            <h1>Prepare your paperwork. Keep the context.</h1>
+            <h1 data-mixed-heading>
+              <MixedHeadingText>
+                Prepare your paperwork. Keep the context.
+              </MixedHeadingText>
+            </h1>
             <p>
               Use innflow preparation worksheets to organize property details,
               supporting records, and questions before a document review.
@@ -94,7 +109,7 @@ export function BaselaneForms() {
         <nav className={styles.categoryNav} aria-label="Form categories">
           {formGroups.map((g) => (
             <a key={g.slug} href={`#${g.slug}`}>
-              {g.title} ↓
+              {g.title} <MageArrowDown size="1em" />
             </a>
           ))}
         </nav>
@@ -107,6 +122,6 @@ export function BaselaneForms() {
           <FormGroup key={group.slug} group={group} />
         ))}
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

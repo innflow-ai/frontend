@@ -1,5 +1,8 @@
 import Image from "next/image";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { ChevronRight } from "@/components/chevron-right";
+import { ArrowDown as MageArrowDown } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { MarketingPage } from "@/components/page-primitives";
 import { PlatformDirectory } from "@/components/platform-directory";
 import { TrackedLink } from "@/components/tracked-link";
@@ -20,7 +23,9 @@ export function PlatformFeaturePage({ page }: { page: PlatformDetail }) {
           />
           <div className={styles.heroGrid}>
             <div>
-              <h1>{page.headline}</h1>
+              <h1 data-mixed-heading>
+                <MixedHeadingText>{page.headline}</MixedHeadingText>
+              </h1>
               <p>{page.description}</p>
               <div className={styles.actions}>
                 <TrackedLink
@@ -28,10 +33,16 @@ export function PlatformFeaturePage({ page }: { page: PlatformDetail }) {
                   destination="/contact"
                   eventLabel={`${page.slug}_contact`}
                 >
-                  Talk to our team <span aria-hidden="true">↗</span>
+                  Talk to our team{" "}
+                  <span aria-hidden="true">
+                    <ChevronRight />
+                  </span>
                 </TrackedLink>
                 <a className="button button-secondary" href="#capabilities">
-                  Explore capabilities <span aria-hidden="true">↓</span>
+                  Explore capabilities{" "}
+                  <span aria-hidden="true">
+                    <MageArrowDown size="1em" />
+                  </span>
                 </a>
               </div>
             </div>
@@ -57,22 +68,27 @@ export function PlatformFeaturePage({ page }: { page: PlatformDetail }) {
         <div className="shell">
           <div className={styles.intro}>
             <span className="section-label">{page.title}</span>
-            <h2>{page.intro}</h2>
+            <h2 data-mixed-heading>
+              <MixedHeadingText>{page.intro}</MixedHeadingText>
+            </h2>
           </div>
           <div className={styles.cards}>
-            {page.capabilities.map((capability, index) => (
+            {page.capabilities.map((capability) => (
               <a
                 className={styles.card}
                 href={`#${capability.id}`}
                 key={capability.id}
               >
                 <div className={styles.cardCopy}>
-                  <span className={styles.number}>
-                    {String(index + 1).padStart(2, "0")} / {capability.label}
-                  </span>
-                  <h3>{capability.title}</h3>
+                  <span className={styles.label}>{capability.label}</span>
+                  <h3 data-mixed-heading>
+                    <MixedHeadingText>{capability.title}</MixedHeadingText>
+                  </h3>
                   <span className={styles.explore}>
-                    Explore <span aria-hidden="true">↗</span>
+                    Explore{" "}
+                    <span aria-hidden="true">
+                      <ChevronRight />
+                    </span>
                   </span>
                 </div>
                 <Image
@@ -100,21 +116,23 @@ export function PlatformFeaturePage({ page }: { page: PlatformDetail }) {
           ))}
         </nav>
         <div className={styles.sections}>
-          {page.capabilities.map((capability, index) => (
+          {page.capabilities.map((capability) => (
             <section
               className={styles.detail}
               id={capability.id}
               key={capability.id}
             >
-              <span className="section-label">
-                {String(index + 1).padStart(2, "0")} / {capability.label}
-              </span>
-              <h2>{capability.title}</h2>
+              <span className="section-label">{capability.label}</span>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>{capability.title}</MixedHeadingText>
+              </h2>
               <p>{capability.body}</p>
               <ul>
                 {capability.points.map((point) => (
                   <li key={point}>
-                    <span aria-hidden="true">↗</span>
+                    <span aria-hidden="true">
+                      <ChevronRight />
+                    </span>
                     {point}
                   </li>
                 ))}

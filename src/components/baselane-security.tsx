@@ -1,6 +1,8 @@
 import Image from "next/image";
-import { BaselaneHomepage } from "./baselane-homepage";
+import { ChevronRight } from "@/components/chevron-right";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import styles from "./baselane-security.module.css";
+import { InnerPageShell } from "./inner-page-shell";
 
 const sections = [
   {
@@ -67,7 +69,7 @@ const sections = [
 ];
 export function BaselaneSecurity() {
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={styles.page}>
         <section className={styles.hero}>
           <picture>
@@ -84,7 +86,11 @@ export function BaselaneSecurity() {
             />
           </picture>
           <div>
-            <h1>Build trust into the way work gets done.</h1>
+            <h1 data-mixed-heading>
+              <MixedHeadingText>
+                Build trust into the way work gets done.
+              </MixedHeadingText>
+            </h1>
             <p>
               Explore access, data handling, and operational governance with
               innflow. Bring your security requirements into the conversation
@@ -93,9 +99,11 @@ export function BaselaneSecurity() {
           </div>
         </section>
         <section className={styles.intro}>
-          <h2>
-            A clear view of the work.
-            <br />A clear view of the controls.
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              A clear view of the work.
+              <br />A clear view of the controls.
+            </MixedHeadingText>
           </h2>
           <nav aria-label="Security topics">
             <a href="#review">
@@ -127,7 +135,9 @@ export function BaselaneSecurity() {
                 />
               </div>
               <div className={styles.copy}>
-                <h2>{section.title}</h2>
+                <h2 data-mixed-heading>
+                  <MixedHeadingText>{section.title}</MixedHeadingText>
+                </h2>
                 <div>
                   {section.items.map(([title, text], i) => (
                     <details key={title} open={i === 0}>
@@ -140,15 +150,25 @@ export function BaselaneSecurity() {
             </section>
             {index === 0 && (
               <section className={styles.policies}>
-                <h2>Understand the terms behind the work.</h2>
+                <h2 data-mixed-heading>
+                  <MixedHeadingText>
+                    Understand the terms behind the work.
+                  </MixedHeadingText>
+                </h2>
                 <p>
                   Review innflow’s published policies and bring your questions
                   to the team.
                 </p>
                 <div>
-                  <a href="/legal/privacy-policy">Privacy Policy ↗</a>
-                  <a href="/legal/terms-of-service">Terms of Service ↗</a>
-                  <a href="/legal-agreements">All agreements ↗</a>
+                  <a href="/legal/privacy-policy">
+                    Privacy Policy <ChevronRight />
+                  </a>
+                  <a href="/legal/terms-of-service">
+                    Terms of Service <ChevronRight />
+                  </a>
+                  <a href="/legal-agreements">
+                    All agreements <ChevronRight />
+                  </a>
                 </div>
               </section>
             )}
@@ -156,15 +176,19 @@ export function BaselaneSecurity() {
         ))}
         <section className={styles.contact}>
           <div>
-            <h2>Discuss your requirements.</h2>
+            <h2 data-mixed-heading>
+              <MixedHeadingText>Discuss your requirements.</MixedHeadingText>
+            </h2>
             <p>
               Certification, encryption, and residency requirements are reviewed
               for the proposed implementation.
             </p>
           </div>
-          <a href="/contact">Talk to the team ↗</a>
+          <a href="/contact">
+            Talk to the team <ChevronRight />
+          </a>
         </section>
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

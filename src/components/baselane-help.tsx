@@ -1,14 +1,29 @@
 "use client";
+
 import { useState } from "react";
+import { ChevronRight } from "@/components/chevron-right";
+import {
+  ArrowRight as MageArrowRight,
+  Box3d as MageBox3d,
+  ChevronDown as MageChevronDown,
+  Email as MageEmail,
+  Home as MageHome,
+  Phone as MagePhone,
+  Play as MagePlay,
+  Search as MageSearch,
+  StarsA as MageStarsA,
+  UserCircle as MageUserCircle,
+} from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
 import { faqs } from "@/content/home";
-import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-support.module.css";
+import { InnerPageShell } from "./inner-page-shell";
 
 const topics = [
   {
     title: "Getting started with innflow",
-    icon: "↗",
+    icon: <ChevronRight />,
     links: [
       ["How innflow works", "/platform"],
       ["Explore a demo", siteConfig.demoUrl],
@@ -17,7 +32,7 @@ const topics = [
   },
   {
     title: "Property operations",
-    icon: "⌂",
+    icon: <MageHome size="1em" />,
     links: [
       ["Multi-property workflows", "/multi-property-investors"],
       ["Recurring work", "/rent-collection-2"],
@@ -26,7 +41,7 @@ const topics = [
   },
   {
     title: "Residents and requests",
-    icon: "☺",
+    icon: <MageUserCircle size="1em" />,
     links: [
       ["Renter experience", "/renters"],
       ["Long-term rentals", "/long-term-rentals"],
@@ -35,7 +50,7 @@ const topics = [
   },
   {
     title: "Connections and security",
-    icon: "◇",
+    icon: <MageBox3d size="1em" />,
     links: [
       ["Integrations", "/integrations"],
       ["Security and compliance", "/platform/security-and-compliance"],
@@ -53,12 +68,16 @@ export function BaselaneHelp() {
     .flatMap((topic) => topic.links)
     .filter(([label]) => label.toLowerCase().includes(term));
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={styles.help}>
         <section className={styles.helpHero}>
-          <h1>How can we help?</h1>
+          <h1 data-mixed-heading>
+            <MixedHeadingText>How can we help?</MixedHeadingText>
+          </h1>
           <label className={styles.search}>
-            <span aria-hidden="true">⌕</span>
+            <span aria-hidden="true">
+              <MageSearch size="1em" />
+            </span>
             <input
               type="search"
               aria-label="Search innflow help"
@@ -71,7 +90,9 @@ export function BaselaneHelp() {
         {term ? (
           <section className={styles.results}>
             <div className={styles.resultHeading}>
-              <h2>Search results</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>Search results</MixedHeadingText>
+              </h2>
               <button type="button" onClick={() => setQuery("")}>
                 Clear search
               </button>
@@ -81,7 +102,7 @@ export function BaselaneHelp() {
             </p>
             {links.map(([label, href]) => (
               <a className={styles.resultLink} key={href} href={href}>
-                {label} →
+                {label} <MageArrowRight size="1em" />
               </a>
             ))}
             {answers.map((item) => (
@@ -100,18 +121,28 @@ export function BaselaneHelp() {
         ) : (
           <>
             <section className={styles.helpSection}>
-              <h2>Contact us</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>Contact us</MixedHeadingText>
+              </h2>
               <div className={styles.contactGrid}>
                 <a href={`mailto:${siteConfig.supportEmail}`}>
-                  <span>✉</span>
-                  <h3>Email support</h3>
+                  <span>
+                    <MageEmail size="1em" />
+                  </span>
+                  <h3 data-mixed-heading>
+                    <MixedHeadingText>Email support</MixedHeadingText>
+                  </h3>
                   <p>
                     Share your question and the details our team needs to help.
                   </p>
                 </a>
                 <a href={siteConfig.contactUrl}>
-                  <span>☏</span>
-                  <h3>Talk to our team</h3>
+                  <span>
+                    <MagePhone size="1em" />
+                  </span>
+                  <h3 data-mixed-heading>
+                    <MixedHeadingText>Talk to our team</MixedHeadingText>
+                  </h3>
                   <p>
                     Discuss your property workflows and the next step for your
                     team.
@@ -120,26 +151,34 @@ export function BaselaneHelp() {
                 <a
                   href={`mailto:${siteConfig.supportEmail}?subject=Feature%20request`}
                 >
-                  <span>✧</span>
-                  <h3>Suggest a feature</h3>
+                  <span>
+                    <MageStarsA size="1em" />
+                  </span>
+                  <h3 data-mixed-heading>
+                    <MixedHeadingText>Suggest a feature</MixedHeadingText>
+                  </h3>
                   <p>Tell us what would make your day-to-day work easier.</p>
                 </a>
               </div>
             </section>
             <section className={styles.helpSection}>
-              <h2>Browse topics</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>Browse topics</MixedHeadingText>
+              </h2>
               <div className={styles.topicGrid}>
                 {topics.map((topic) => (
                   <details key={topic.title}>
                     <summary>
                       <span className={styles.topicIcon}>{topic.icon}</span>
                       {topic.title}
-                      <span className={styles.chevron}>⌄</span>
+                      <span className={styles.chevron}>
+                        <MageChevronDown size="1em" />
+                      </span>
                     </summary>
                     <div>
                       {topic.links.map(([label, href]) => (
                         <a key={href} href={href}>
-                          {label} →
+                          {label} <MageArrowRight size="1em" />
                         </a>
                       ))}
                     </div>
@@ -148,22 +187,30 @@ export function BaselaneHelp() {
               </div>
             </section>
             <section className={styles.helpSection}>
-              <h2>Popular resources</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>Popular resources</MixedHeadingText>
+              </h2>
               <a className={styles.resource} href="/webinars">
-                <span>▷</span>
+                <span>
+                  <MagePlay size="1em" />
+                </span>
                 <div>
-                  <h3>Workflow learning</h3>
+                  <h3 data-mixed-heading>
+                    <MixedHeadingText>Workflow learning</MixedHeadingText>
+                  </h3>
                   <p>
                     Explore innflow workflow topics for property teams, from
                     recurring requests to document reviews.
                   </p>
                 </div>
-                <span>→</span>
+                <span>
+                  <MageArrowRight size="1em" />
+                </span>
               </a>
             </section>
           </>
         )}
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

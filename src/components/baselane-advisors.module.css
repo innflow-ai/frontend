@@ -58,7 +58,7 @@
 .page .button {
   background: var(--button-primary);
   color: white;
-  border: 1px solid var(--button-primary);
+  border: 1px solid var(--button-primary-border);
 }
 .page .outline {
   border: 1px solid var(--bl-navy);
@@ -206,6 +206,10 @@
 .tableWrap {
   overflow-x: auto;
   margin-top: 50px;
+}
+.tableWrap:focus-visible {
+  outline: 3px solid #177ead;
+  outline-offset: 4px;
 }
 .tableWrap table {
   width: 100%;

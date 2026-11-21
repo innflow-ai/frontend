@@ -1,16 +1,17 @@
 "use client";
 
-import {
-  ArrowLeft,
-  ArrowRight,
-  Buildings,
-  HouseLine,
-  Key,
-  UsersThree,
-  Warehouse,
-} from "@phosphor-icons/react";
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  ChevronLeft as ArrowLeft,
+  ArrowRight,
+  BuildingB as Buildings,
+  Home as HouseLine,
+  Key,
+  Users as UsersThree,
+  BuildingA as Warehouse,
+} from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import styles from "./portfolio-carousel.module.css";
 
 const portfolioTypes = [
@@ -160,7 +161,9 @@ export function PortfolioCarousel() {
                 <span className={styles.icon}>
                   <Icon size={20} weight="duotone" aria-hidden="true" />
                 </span>
-                <h3>{title}</h3>
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>{title}</MixedHeadingText>
+                </h3>
                 <p>{body}</p>
               </div>
             </article>

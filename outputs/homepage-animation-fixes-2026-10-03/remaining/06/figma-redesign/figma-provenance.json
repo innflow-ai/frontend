@@ -1,0 +1,18 @@
+{
+  "fileKey": "JkJnW5Q1AIVAqgoV2AqAyb",
+  "page": "1234:3465",
+  "pageName": "Rive-test",
+  "references": {
+    "recurringIssue": "1620:24948",
+    "adminPanel": "1585:3834",
+    "automaticTriage": "1620:36337"
+  },
+  "companyArtwork": {
+    "Cedar": "1620:24962",
+    "Flowbit": "1620:24969",
+    "Ollo": "1620:24976"
+  },
+  "approvedPreview": "preview.html",
+  "font": "Geist from public/brand/help/geist.woff2; static TTF conversion at 400 and 600",
+  "nativeRenderingNote": "Native glass uses layered rim highlights; CSS blur and inset shadow are not identical renderer effects."
+}

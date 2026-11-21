@@ -1,0 +1,72 @@
+import type { MageIconProps } from "./types";
+/** Mage Icons stroke, Apache-2.0. Source: ChecklistIcon.js. */
+export function Checklist({
+  size = 24,
+  weight: _weight,
+  mirrored = false,
+  style,
+  ...props
+}: MageIconProps) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+      focusable="false"
+      style={{
+        display: "inline-block",
+        verticalAlign: "-0.125em",
+        flexShrink: 0,
+        ...(mirrored ? { transform: "scaleX(-1)" } : {}),
+        ...style,
+      }}
+      {...props}
+    >
+      <path
+        d={"M3 6L4 7L6 5"}
+        stroke={"currentColor"}
+        strokeWidth={"1.5"}
+        strokeLinecap={"round"}
+        strokeLinejoin={"round"}
+      ></path>
+      <path
+        d={"M3 12L4 13L6 11"}
+        stroke={"currentColor"}
+        strokeWidth={"1.5"}
+        strokeLinecap={"round"}
+        strokeLinejoin={"round"}
+      ></path>
+      <path
+        d={"M3 18L4 19L6 17"}
+        stroke={"currentColor"}
+        strokeWidth={"1.5"}
+        strokeLinecap={"round"}
+        strokeLinejoin={"round"}
+      ></path>
+      <path
+        d={"M9 6H21"}
+        stroke={"currentColor"}
+        strokeWidth={"1.5"}
+        strokeLinecap={"round"}
+        strokeLinejoin={"round"}
+      ></path>
+      <path
+        d={"M9 12H21"}
+        stroke={"currentColor"}
+        strokeWidth={"1.5"}
+        strokeLinecap={"round"}
+        strokeLinejoin={"round"}
+      ></path>
+      <path
+        d={"M9 18H21"}
+        stroke={"currentColor"}
+        strokeWidth={"1.5"}
+        strokeLinecap={"round"}
+        strokeLinejoin={"round"}
+      ></path>
+    </svg>
+  );
+}

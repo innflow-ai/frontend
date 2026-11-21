@@ -1,188 +1,184 @@
 "use client";
 
 import { motion } from "motion/react";
-import dynamic from "next/dynamic";
-import Image from "next/image";
-import { type KeyboardEvent, useRef, useState } from "react";
-import { ChannelsDemos } from "./agent-demos/channels-demos";
+import {
+  type KeyboardEvent,
+  type ReactNode,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+import { ChevronRight } from "@/components/chevron-right";
+import { BotIcon } from "@/components/icons/bot-icon";
+import {
+  Chart,
+  ChartUp,
+  CheckCircle,
+  Inbox,
+  Link,
+  Minus as MageMinus,
+  Plus as MagePlus,
+  MessageConversation,
+  NoteText,
+  Settings,
+  Share,
+  StarsA,
+  Users,
+} from "@/components/icons/mage";
+import { MixedHeadingContent } from "@/components/section-heading";
 import styles from "./baseline-features.module.css";
-import { features as preparedFeatures } from "./homepage-content";
+import storyboards from "./homepage-storyboards.json";
+import { StoryboardArtwork } from "./storyboard-artwork";
 import { useChannelsScroll } from "./use-channels-scroll";
 
-const root = "/preview/homepage/baseline-features";
-const AgentStoryboard = dynamic(() =>
-  import("./agent-demos/agent-ring").then((mod) => mod.AgentStoryboardPreview),
-);
-type Item = { title: string; icon: string; body?: string };
+const featureIcons = {
+  channels: BotIcon,
+  agents: Share,
+  workflows: StarsA,
+  insights: Chart,
+};
+const itemIcons = {
+  channels: [MessageConversation, Users, Settings, Link, Inbox, ChartUp],
+  agents: [Share, StarsA, Inbox, CheckCircle],
+  workflows: [StarsA, Users, CheckCircle, NoteText],
+  insights: [ChartUp, MessageConversation, NoteText, Chart],
+};
 type Feature = {
-  id: string;
+  id: keyof typeof featureIcons;
   node: string;
   label: string;
-  badge?: string;
   title: string;
+  heading: { title: ReactNode; emphasis: ReactNode };
   reverse?: boolean;
-  glyph: string;
-  items: Item[];
+  items: typeof storyboards;
 };
-
-function preparedBody(featureId: string, title: string): string {
-  const state = preparedFeatures
-    .find((feature) => feature.id === featureId)
-    ?.states.find((item) => item.title === title);
-  if (!state)
-    throw new Error(`Missing prepared feature copy: ${featureId}/${title}`);
-  return state.body;
-}
-
-// Preview copy: one clear action per item, matched to the corresponding demo.
+// Keep the existing section anchors and scroll interaction; the storyboard numbers
+// are the source of truth for which file belongs to each accordion item.
 export const baselineFeatures: Feature[] = [
   {
     id: "channels",
     node: "350:11199",
-    label: "Channels",
-    title: "10x with agent",
-    glyph: "imgVector.svg",
-    items: [
-      {
-        title: "Orchestrate actions",
-        icon: "imgTemplate.svg",
-        body: "Give every handoff a clear owner. Route Priority IS Urgent to a teammate and everything else to an agent.",
-      },
-      {
-        title: "All your channels, connected",
-        icon: "imgImage.png",
-        body: "Bring messages from your connected channels into one workspace, with the customer context your team needs to respond.",
-      },
-      {
-        title: "An assistant for your team",
-        icon: "imgTextCaption.svg",
-        body: "Find relevant information, draft a response and review the next step without piecing together separate conversations.",
-      },
-      {
-        title: "AI agents, working together",
-        icon: "imgWindmill.svg",
-        body: "Choose an agent for the task and give it the context to get started. Keep your team involved in the decisions that matter.",
-      },
-      {
-        title: "Workflows that take action",
-        icon: "imgTemplate.svg",
-        body: "Turn a request into a clear next step: assign an owner, notify the right team or trigger a connected workflow.",
-      },
-      {
-        title: "Insights from every interaction",
-        icon: "imgApps.svg",
-        body: "Group related feedback, spot recurring questions and see which issues deserve your team's attention.",
-      },
-      {
-        title: "Flexible, API-first building blocks",
-        icon: "imgUsersGroup.svg",
-        body: "Use APIs and connected tools to shape the workflow around your product, your data and the way your team works.",
-      },
-    ],
+    label: "AI agent",
+    title: "Get more done\nwith AI agents.",
+    heading: {
+      title: "Get more done",
+      emphasis: (
+        <>
+          with <strong>AI agents.</strong>
+        </>
+      ),
+    },
+    items: storyboards.slice(0, 6),
   },
   {
     id: "agents",
     node: "350:11344",
-    label: "Agents",
-    badge: "AI",
-    title: "Your agents.\nOne workspace.",
+    label: "Workflows",
+    title: "Move work forward\nwith less effort.",
+    heading: {
+      title: "Move work forward",
+      emphasis: (
+        <>
+          with <strong>less effort.</strong>
+        </>
+      ),
+    },
     reverse: true,
-    glyph: "imgContainer.svg",
-    items: [
-      {
-        title: "Bring your agents together",
-        icon: "imgIcon1.svg",
-        body: "Choose the right agent for each task. Keep its instructions, context and results together in Innflow.",
-      },
-      {
-        title: "Delegate a task. Review the result.",
-        icon: "imgImage.png",
-        body: preparedBody("agents", "Delegate a task. Review the result."),
-      },
-      {
-        title: "Build your own agents",
-        icon: "imgMessages.svg",
-        body: preparedBody("agents", "Build your own agents"),
-      },
-    ],
+    items: storyboards.slice(6, 10),
   },
   {
     id: "workflows",
     node: "350:11402",
-    label: "Workflows",
-    badge: "Platform",
-    title: "Automate the work\nbetween conversations",
-    glyph: "imgVector.svg",
-    items: [
-      {
-        title: "Connect external systems",
-        icon: "imgList.svg",
-        body: "Carry conversation details into your connected tools. Create a task, send a team update or call your own API.",
-      },
-      {
-        title: "Route by context",
-        icon: "imgContract.svg",
-        body: preparedBody("workflows", "Route by context"),
-      },
-      {
-        title: "Auto-triage requests",
-        icon: "imgApps.svg",
-        body: preparedBody("workflows", "Auto-triage requests"),
-      },
-      {
-        title: "Keep thread summaries current",
-        icon: "imgSparkles.svg",
-        body: preparedBody("workflows", "Keep thread summaries current"),
-      },
-    ],
+    label: "Assistant",
+    title: "Spend less time\nmanaging requests.",
+    heading: {
+      title: (
+        <>
+          Spend <strong>less time</strong>
+        </>
+      ),
+      emphasis: "managing requests.",
+    },
+    items: storyboards.slice(10, 14),
   },
   {
     id: "insights",
     node: "350:11485",
     label: "Insights",
-    badge: "Platform",
-    title: "Learn from your customers",
+    title: "Know where\nto focus next.",
+    heading: {
+      title: "Know where",
+      emphasis: (
+        <>
+          to <strong>focus next.</strong>
+        </>
+      ),
+    },
     reverse: true,
-    glyph: "imgVector.svg",
-    items: [
-      {
-        title: "Detect trends",
-        icon: "imgImage.png",
-        body: "See which questions and issues keep coming up. Review related conversations together to understand the pattern.",
-      },
-      {
-        title: "Catch up instantly",
-        icon: "imgCube.svg",
-        body: preparedBody("insights", "Catch up instantly"),
-      },
-      {
-        title: "Daily summaries",
-        icon: "imgReceipt.svg",
-        body: preparedBody("insights", "Daily summaries"),
-      },
-      {
-        title: "Product insights",
-        icon: "imgLink.svg",
-        body: preparedBody("insights", "Product insights"),
-      },
-    ],
+    items: storyboards.slice(14, 18),
   },
 ];
 
 function BaselineFeature({ feature }: { feature: Feature }) {
   const [selected, setSelected] = useState(0);
+  const [mobile, setMobile] = useState(false);
+  useEffect(() => {
+    const query = window.matchMedia("(max-width: 800px)");
+    const sync = () => setMobile(query.matches);
+    sync();
+    query.addEventListener("change", sync);
+    return () => query.removeEventListener("change", sync);
+  }, []);
   const buttons = useRef<(HTMLButtonElement | null)[]>([]);
   const channels = feature.id === "channels";
+  const mobileStory = channels && mobile;
   const channelScroll = useChannelsScroll(channels, setSelected);
-  const select = channels ? channelScroll.select : setSelected;
-  const asset = (name: string) => `${root}/${feature.id}-${name}`;
-  const pending = feature.id === "agents" && selected > 0;
-  const artwork =
-    channels && selected > 0
-      ? `/preview/homepage/channels-${selected + 1}.png`
-      : selected > 0 && !pending
-        ? `${root}/${feature.id}-${selected}.png`
-        : asset("imgCanvas.png");
+  useEffect(() => {
+    if (!mobileStory) return;
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const rows = channelScroll.rowsRef.current?.children;
+      if (!rows?.length) return;
+      const focus = window.innerHeight * 0.5;
+      let nearest = 0;
+      let distance = Infinity;
+      Array.from(rows).forEach((row, index) => {
+        const rect = row.getBoundingClientRect();
+        const next = Math.abs(rect.top + rect.height / 2 - focus);
+        if (next < distance) {
+          nearest = index;
+          distance = next;
+        }
+      });
+      setSelected(nearest);
+    };
+    const requestUpdate = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    window.addEventListener("scroll", requestUpdate, { passive: true });
+    window.addEventListener("resize", requestUpdate);
+    const observer = new ResizeObserver(requestUpdate);
+    if (channelScroll.rowsRef.current)
+      observer.observe(channelScroll.rowsRef.current);
+    requestUpdate();
+    return () => {
+      cancelAnimationFrame(frame);
+      observer.disconnect();
+      window.removeEventListener("scroll", requestUpdate);
+      window.removeEventListener("resize", requestUpdate);
+    };
+  }, [mobileStory, channelScroll.rowsRef]);
+  function select(index: number) {
+    if (mobileStory) {
+      setSelected(index);
+      channelScroll.rowsRef.current?.children[index]?.scrollIntoView({
+        block: "start",
+        behavior: "instant",
+      });
+    } else if (channels) channelScroll.select(index);
+    else setSelected(index);
+  }
   function navigate(event: KeyboardEvent<HTMLButtonElement>, index: number) {
     const last = feature.items.length - 1;
     const next =
@@ -200,6 +196,19 @@ function BaselineFeature({ feature }: { feature: Feature }) {
     select(next);
     buttons.current[next]?.focus({ preventScroll: channelScroll.enabled });
   }
+  const FeatureIcon = featureIcons[feature.id as keyof typeof featureIcons];
+  const visual = (
+    <div
+      ref={channelScroll.visualRef}
+      className={`${styles.visual} ${feature.id === "agents" ? styles.workflowVisual : ""}`}
+      id={`${feature.id}-baseline-visual`}
+    >
+      <StoryboardArtwork
+        key={feature.items[selected].number}
+        storyboard={feature.items[selected]}
+      />
+    </div>
+  );
   return (
     <section
       id={feature.id}
@@ -216,7 +225,13 @@ function BaselineFeature({ feature }: { feature: Feature }) {
       >
         <div className={styles.copy}>
           <header className={styles.heading}>
-            <h2 id={`${feature.id}-baseline-heading`}>{feature.title}</h2>
+            <div className={styles.sectionTag}>
+              <FeatureIcon size={24} />
+              <span>{feature.label}</span>
+            </div>
+            <h2 id={`${feature.id}-baseline-heading`} data-mixed-heading>
+              <MixedHeadingContent {...feature.heading} />
+            </h2>
           </header>
           <div ref={channelScroll.windowRef} className={styles.readingWindow}>
             <motion.div
@@ -250,17 +265,28 @@ function BaselineFeature({ feature }: { feature: Feature }) {
                       }
                       onClick={() => select(index)}
                       onFocus={() => {
-                        if (channelScroll.enabled) select(index);
+                        if (channelScroll.enabled || mobileStory) select(index);
                       }}
                       onKeyDown={(event) => navigate(event, index)}
                     >
-                      <Image
-                        src={asset(item.icon)}
-                        alt=""
-                        width={24}
-                        height={24}
-                      />
+                      {(() => {
+                        const ItemIcon =
+                          itemIcons[feature.id as keyof typeof itemIcons][
+                            index
+                          ];
+                        return <ItemIcon size={24} />;
+                      })()}
                       <span>{item.title}</span>
+                      <span
+                        className={styles.mobileIndicator}
+                        aria-hidden="true"
+                      >
+                        {mobileStory || selected === index ? (
+                          <MageMinus size="1em" />
+                        ) : (
+                          <MagePlus size="1em" />
+                        )}
+                      </span>
                     </button>
                   </h3>
                   <section
@@ -269,14 +295,15 @@ function BaselineFeature({ feature }: { feature: Feature }) {
                     hidden={!item.body || (!channels && selected !== index)}
                     className={styles.description}
                   >
-                    {item.body && <p>{item.body}</p>}
+                    {item.body && <p data-home-copy>{item.body}</p>}
                     {item.body && (
                       <button
                         type="button"
                         className={styles.arrow}
                         aria-label={`Show ${item.title}`}
                         onFocus={() => {
-                          if (channelScroll.enabled) select(index);
+                          if (channelScroll.enabled || mobileStory)
+                            select(index);
                         }}
                         onClick={() => {
                           select(index);
@@ -285,51 +312,26 @@ function BaselineFeature({ feature }: { feature: Feature }) {
                           });
                         }}
                       >
-                        <Image
-                          src={asset("imgArrowUpRight.svg")}
-                          alt=""
-                          width={16}
-                          height={16}
-                        />
+                        <ChevronRight size={16} />
                       </button>
                     )}
                   </section>
+                  {mobileStory ? (
+                    <div
+                      className={styles.visual}
+                      id={`${feature.id}-baseline-visual-${index}`}
+                    >
+                      <StoryboardArtwork storyboard={item} />
+                    </div>
+                  ) : (
+                    mobile && selected === index && visual
+                  )}
                 </div>
               ))}
             </motion.div>
           </div>
         </div>
-        <div
-          ref={channelScroll.visualRef}
-          className={styles.visual}
-          id={`${feature.id}-baseline-visual`}
-        >
-          <div className={styles.imageFrame} data-pending={pending}>
-            {channels ? (
-              <ChannelsDemos selected={selected} />
-            ) : feature.id === "agents" && selected === 0 ? (
-              <AgentStoryboard />
-            ) : (
-              <Image
-                key={artwork}
-                src={artwork}
-                alt={`${feature.label} — reference product illustration`}
-                fill
-                sizes="(max-width: 800px) calc(100vw - 48px), (max-width: 1280px) 46vw, 580px"
-              />
-            )}
-          </div>
-          {pending && (
-            <div className={styles.pending} role="status">
-              <span>Reference pending</span>
-              <h3>{feature.items[selected].title}</h3>
-              <p>
-                Expanded artwork for this state is not supplied in the baseline
-                yet.
-              </p>
-            </div>
-          )}
-        </div>
+        {!mobile && visual}
       </div>
     </section>
   );

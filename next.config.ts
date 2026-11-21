@@ -1,8 +1,6 @@
 import type { NextConfig } from "next";
 
-const appOrigin = (
-  process.env.NEXT_PUBLIC_APP_ORIGIN ?? "https://app.innflow.ai"
-).replace(/\/$/, "");
+import { siteConfig } from "./src/config/site";
 
 const nextConfig: NextConfig = {
   images: {
@@ -22,6 +20,12 @@ const nextConfig: NextConfig = {
   poweredByHeader: false,
   async redirects() {
     return [
+      { source: "/features", destination: "/products", permanent: true },
+      {
+        source: "/signup",
+        destination: siteConfig.signupUrl,
+        permanent: false,
+      },
       { source: "/BL/BL-about", destination: "/about", permanent: true },
       {
         source: "/BL/BL-advisor-partner-program",
@@ -185,7 +189,7 @@ const nextConfig: NextConfig = {
 
       {
         source: "/login",
-        destination: `${appOrigin}/login`,
+        destination: siteConfig.signupUrl,
         permanent: false,
       },
       {
@@ -195,8 +199,18 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/product/agentic-workflows",
-        destination: "/products/agentic-workflows",
-        permanent: true,
+        destination: "/features/workflows",
+        statusCode: 301,
+      },
+      {
+        source: "/products/agentic-workflows",
+        destination: "/features/workflows",
+        statusCode: 301,
+      },
+      {
+        source: "/products/workflows",
+        destination: "/features/workflows",
+        statusCode: 301,
       },
       {
         source: "/product/ai-agents",
@@ -292,6 +306,43 @@ const nextConfig: NextConfig = {
         source: "/blog_deprecated/:slug*",
         destination: "/blog/:slug*",
         permanent: true,
+      },
+      // Duplicate posts. statusCode 301 (not permanent) because Next maps
+      // permanent: true to 308, and these aliases must return an exact 301.
+      {
+        source: "/blog/pm-1031-exchange-timeline",
+        destination: "/blog/1031-exchange-timeline",
+        statusCode: 301,
+      },
+      {
+        source: "/blog/2026-ai-automation-toolkit-7-tools-for-teams",
+        destination: "/blog/2026-ai-automation-toolkit",
+        statusCode: 301,
+      },
+      {
+        source: "/blog/5-ai-chatbots-reshaping-workflow-automation",
+        destination: "/blog/ai-chatbots-reshaping-workflow-automation",
+        statusCode: 301,
+      },
+      {
+        source: "/blog/pm-best-commercial-property-management-software",
+        destination: "/blog/best-commercial-property-management-software",
+        statusCode: 301,
+      },
+      {
+        source: "/blog/build-a-custom-ai-co-pilot-in-under-a-week",
+        destination: "/blog/build-a-custom-ai-copilot-in-under-a-week",
+        statusCode: 301,
+      },
+      {
+        source: "/blog/chatgpt-pro-vs-free-key-differences",
+        destination: "/blog/chatgpt-pro-vs-free-key-differences-explained",
+        statusCode: 301,
+      },
+      {
+        source: "/blog/no-code-ai-tools-the-enterprise-future",
+        destination: "/blog/the-enterprise-no-code-ai-future",
+        statusCode: 301,
       },
       {
         source: "/agent-skills",

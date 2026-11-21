@@ -34,7 +34,7 @@ The historical keys `firstQuote` and `secondQuote` are intentional: they now mea
 Creating a testimonial does not automatically put it on a page.
 
 1. Complete and publish the Testimonial record when its content is ready.
-2. For Rent collection, Landlord banking, Landlord accounting, or Tax preparation, open **Page testimonials**. Edit the existing selection for that page, or create one if none exists. There should be only one selection document per page.
+2. For the Homepage, Rent collection, Landlord banking, Landlord accounting, or Tax preparation, open **Page testimonials**. Edit the existing selection for that page, or create one if none exists. There should be only one selection document per page. The Homepage selection uses `/` and also supplies the scroll-showcase preview.
 3. Set **Page**, optionally customize **Section heading**, and add references in **Testimonials**. Drag the references into the desired display order. Four cards are a useful starting point, but the collection supports up to twelve; four is not a requirement.
 4. For a route under `/products/`, use that **Product page → Testimonials** field instead. Do not create a Page testimonials document for it.
 5. Publish the changed selection or Product page when ready. Both the testimonial and its containing selection must be published to appear on the website.

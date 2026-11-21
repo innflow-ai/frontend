@@ -1,6 +1,6 @@
 "use client";
 
-import Lenis from "lenis";
+import type Lenis from "lenis";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
@@ -8,10 +8,12 @@ export function SmoothScroll() {
   const pathname = usePathname();
 
   // Recreate on navigation so momentum cannot carry into the next page.
-  // biome-ignore lint/correctness/useExhaustiveDependencies: pathname intentionally resets the scroll controller.
   useEffect(() => {
+    // Help navigation uses native scrolling for its fixed shell and dialogs.
+    if (pathname === "/help") return;
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     let lenis: Lenis | undefined;
+    let cancelled = false;
 
     const syncScrollLock = () => {
       if (!lenis) return;
@@ -28,16 +30,21 @@ export function SmoothScroll() {
       lenis = undefined;
       if (reducedMotion.matches) return;
 
-      lenis = new Lenis({
-        autoRaf: true,
-        lerp: 0.12,
-        smoothWheel: true,
-        syncTouch: false,
-        anchors: true,
-        allowNestedScroll: true,
-        stopInertiaOnNavigate: true,
+      // Lenis only changes scroll feel after paint, so it can load then.
+      void import("lenis").then(({ default: LenisRuntime }) => {
+        if (cancelled || reducedMotion.matches) return;
+        lenis?.destroy();
+        lenis = new LenisRuntime({
+          autoRaf: true,
+          lerp: 0.12,
+          smoothWheel: true,
+          syncTouch: false,
+          anchors: true,
+          allowNestedScroll: true,
+          stopInertiaOnNavigate: true,
+        });
+        syncScrollLock();
       });
-      syncScrollLock();
     };
 
     // Existing dialogs and the mobile menu lock scrolling on the body.
@@ -50,6 +57,7 @@ export function SmoothScroll() {
     syncMotionPreference();
 
     return () => {
+      cancelled = true;
       observer.disconnect();
       reducedMotion.removeEventListener("change", syncMotionPreference);
       lenis?.destroy();

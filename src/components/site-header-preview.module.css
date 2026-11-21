@@ -1,13 +1,15 @@
 .previewScope {
+  font-family: var(--font-hero-ui), sans-serif;
   position: relative;
-  background: #fcfbf8;
+  background: var(--marketing-paper);
   --preview-announcement-height: 40px;
+  --site-header-height: 54px;
 }
 .previewScope[data-announcement-dismissed="true"] {
   --preview-announcement-height: 0px;
 }
 .navSpace {
-  height: 70px;
+  height: var(--site-header-height);
 }
 .announcement {
   height: 40px;
@@ -38,6 +40,16 @@
   color: inherit;
   font-size: 12px;
 }
+.announcement .homeLearnMore {
+  justify-content: center;
+  text-align: center;
+  line-height: 16px;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.announcement .homeLearnMore:is(:hover, :focus-visible) {
+  text-decoration-line: underline;
+}
 .announcement button {
   position: absolute;
   right: 8px;
@@ -59,21 +71,28 @@
   position: absolute;
   inset: var(--preview-announcement-height) 0 auto;
   box-sizing: border-box;
-  height: 70px;
-  min-height: 70px;
-  padding: 10px 40px;
+  min-height: var(--site-header-height);
   border-radius: 0;
-  background: #fcfbf8;
+  background: var(--marketing-paper);
 }
 .previewScope .flatHeader::before {
   border-radius: 0;
-  background: #fcfbf8;
+  background: var(--marketing-paper);
   box-shadow: none;
   backdrop-filter: none;
 }
+/* Match the standard header width while retaining the flat homepage surface. */
+.previewScope .flatHeader[data-home-navigation="true"] {
+  inset-inline: max(40px, calc((100vw - 1440px) / 2));
+  padding-inline: 32px;
+}
 @media (max-width: 1180px) {
-  .previewScope .flatHeader {
-    padding: 8px 20px;
+  .previewScope {
+    --site-header-height: 56px;
+  }
+  .previewScope .flatHeader[data-home-navigation="true"] {
+    inset-inline: 20px;
+    padding-inline: 14px;
   }
 }
 @media (max-width: 480px) {
@@ -94,7 +113,37 @@
     right: 0;
     width: 36px;
   }
-  .previewScope .flatHeader {
-    padding-inline: 12px;
+}
+
+@media (max-width: 400px) {
+  .previewScope .flatHeader[data-home-navigation="true"] {
+    inset-inline: 12px;
+    padding-inline: 10px;
+  }
+}
+
+/* Local backing: the page-colored header surface reveals blue at its corners. */
+:global(html[data-website-announcement="visible"]) .previewScope {
+  background: var(--announcement-background);
+}
+:global(html[data-website-announcement="visible"]) .navSpace {
+  background: var(--marketing-paper);
+  border-radius: var(--announcement-radius) var(--announcement-radius) 0 0;
+}
+:global(html[data-website-announcement="visible"]) .flatHeader,
+:global(html[data-website-announcement="visible"]) .flatHeader::before {
+  background: transparent;
+}
+:global(html[data-website-announcement="visible"]) .announcement {
+  display: none;
+}
+:global(html[data-website-announcement="visible"]) .previewScope {
+  --preview-announcement-height: 0px;
+}
+
+@media (min-width: 1181px) {
+  .flatHeader [aria-label="innflow home"] img {
+    width: 110px;
+    height: auto;
   }
 }

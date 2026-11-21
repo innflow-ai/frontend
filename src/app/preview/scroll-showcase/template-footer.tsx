@@ -1,5 +1,8 @@
 import Image from "next/image";
+import { CustomerSupportHours } from "@/components/customer-support-hours";
 import { FooterLegalLinks } from "@/components/footer-legal-links";
+import { GoogleCtaContent } from "@/components/google-cta-content";
+import { LaunchDirectoryMarquee } from "@/components/launch-directory-marquee";
 import { footerNavigation } from "@/config/footer-navigation";
 import { siteConfig } from "@/config/site";
 import styles from "./template-footer.module.css";
@@ -11,7 +14,7 @@ const groups = [
       heading: "Features",
       links: [
         { label: "Security", href: "/security" },
-        { label: "Custom workflows", href: "/products/agentic-workflows" },
+        { label: "Custom workflows", href: "/features/workflows" },
         { label: "AI agents", href: "/products/ai-agents" },
         { label: "Integrations", href: "/integrations" },
       ],
@@ -25,7 +28,7 @@ const groups = [
       links: [
         { label: "Help center", href: "/help-center" },
         { label: "Contact support", href: "/contact" },
-        { label: "Contact sales", href: siteConfig.demoUrl },
+        { label: "Contact sales", href: siteConfig.contactUrl },
       ],
     },
     {
@@ -40,17 +43,17 @@ const groups = [
   ],
 ];
 
-export function TemplateFooter() {
+export function TemplateFooter({
+  featuredOn = true,
+}: {
+  featuredOn?: boolean;
+}) {
   return (
     <div className={styles.shell}>
+      {featuredOn && <LaunchDirectoryMarquee />}
       <footer className={styles.footer} data-source-node="350:11986">
         <div className={styles.upper}>
           <div className={styles.brand}>
-            <h2>
-              Build support
-              <br />
-              your own way.
-            </h2>
             <a href="/" aria-label="Innflow home">
               <Image
                 src="/brand/innflow-wordmark.svg"
@@ -59,6 +62,7 @@ export function TemplateFooter() {
                 height={38}
               />
             </a>
+            <p>Bring your work together.</p>
           </div>
           <nav className={styles.columns} aria-label="Footer navigation">
             {groups.map((column) => (
@@ -85,9 +89,14 @@ export function TemplateFooter() {
             <a href={`mailto:${siteConfig.supportEmail}`}>
               {siteConfig.supportEmail}
             </a>
+            <CustomerSupportHours />
           </div>
-          <a href={siteConfig.demoUrl}>
-            Book an Innflow demo <span aria-hidden="true">↗</span>
+          <a
+            data-site-cta="primary"
+            className={styles.googleCta}
+            href={siteConfig.signupUrl}
+          >
+            <GoogleCtaContent />
           </a>
         </div>
         <div className={styles.legal}>

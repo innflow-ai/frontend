@@ -1,4 +1,4 @@
-import { FigmaFeaturePage } from "@/components/figma-feature-page";
+import { CalendlyFeaturePage } from "@/components/calendly-product-adapters";
 import { getFeaturePageDesign } from "@/content/feature-pages";
 import { createPageMetadata } from "@/lib/metadata";
 
@@ -10,5 +10,5 @@ export const metadata = createPageMetadata({
 });
 
 export default function Page() {
-  return <FigmaFeaturePage page={page} />;
+  return <CalendlyFeaturePage page={page} />;
 }

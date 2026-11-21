@@ -1,27 +1,41 @@
-"use client";
-
 import Image from "next/image";
-import { useState } from "react";
 import { launchDirectories } from "@/content/launch-directories";
 import styles from "./launch-directory-marquee.module.css";
+import { type HeadingVariant, MixedHeadingContent } from "./section-heading";
 
-export function LaunchDirectoryMarquee() {
-  const [paused, setPaused] = useState(false);
+const orderedDirectories = [...launchDirectories].sort(
+  (a, b) => Number(a.status === "pending") - Number(b.status === "pending"),
+);
 
+export function LaunchDirectoryMarquee({
+  headingVariant = "mixed-italic",
+}: {
+  headingVariant?: HeadingVariant;
+}) {
   return (
-    <section className={styles.section} aria-label="Launch directories">
+    <section
+      id="featured-on"
+      className={styles.section}
+      aria-labelledby="directory-heading"
+    >
       <div className={styles.heading}>
-        <p>Launch directories</p>
-        <button
-          type="button"
-          aria-pressed={paused}
-          aria-label="Pause directory animation"
-          onClick={() => setPaused(!paused)}
+        <h2
+          id="directory-heading"
+          className={styles.title}
+          data-mixed-heading={headingVariant === "mixed-italic" || undefined}
         >
-          {paused ? "Resume" : "Pause"}
-        </button>
+          {headingVariant === "mixed-italic" ? (
+            <MixedHeadingContent
+              title="Featured"
+              emphasis="on"
+              breakAt="never"
+            />
+          ) : (
+            "Featured on"
+          )}
+        </h2>
       </div>
-      <div className={styles.viewport} data-paused={paused}>
+      <div className={styles.viewport}>
         <div className={styles.track}>
           {[0, 1].map((copy) => (
             <div
@@ -29,25 +43,33 @@ export function LaunchDirectoryMarquee() {
               key={copy}
               aria-hidden={copy === 1 || undefined}
             >
-              {launchDirectories.map((directory) => (
-                <a
-                  key={directory.name}
-                  className={styles.badge}
-                  href={directory.href}
-                  target="_blank"
-                  rel={`noopener noreferrer${directory.nofollow ? " nofollow" : ""}`}
-                  tabIndex={copy === 1 ? -1 : undefined}
-                  aria-label={`Visit ${directory.name} (opens in a new tab)`}
-                >
-                  <Image
-                    src={directory.src}
-                    alt={directory.name}
-                    width={directory.width}
-                    height={directory.height}
-                    unoptimized
-                  />
-                </a>
-              ))}
+              {orderedDirectories.map((directory) => {
+                const artwork = (
+                  <span key={directory.name} className={styles.artwork}>
+                    <Image
+                      src={directory.src}
+                      alt={directory.alt}
+                      width={directory.width}
+                      height={directory.height}
+                      loading="eager"
+                      unoptimized
+                    />
+                  </span>
+                );
+                return (
+                  <a
+                    key={directory.name}
+                    className={styles.badge}
+                    href={directory.href}
+                    target="_blank"
+                    rel={directory.rel}
+                    tabIndex={copy === 1 ? -1 : undefined}
+                    aria-label={`Visit ${directory.name} (opens in a new tab)`}
+                  >
+                    {artwork}
+                  </a>
+                );
+              })}
             </div>
           ))}
         </div>

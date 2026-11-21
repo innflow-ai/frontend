@@ -10,14 +10,14 @@ Styling follows these frames and the supplied Calendly_variables token files, wi
 
 ## Motion
 
-- A 500svh track gives four scroll chapters, switching at 23%, 46%, and 69% of the available sticky scroll range.
-- Content crossfades over 280ms inside one shared card. The background shifts over 1.4s with a slow independent drift.
-- Each newly activated illustration restarts its own animation; scrolling does not scrub its timeline.
-- The last 8% contracts the stage slightly before sticky positioning releases.
-- Tab clicks jump to chapter centers. Arrow keys, Home and End navigate tabs. Close skips to the Channels section.
-- Reduced motion removes pinning and animation, leaving a directly selectable tabbed card.
+- The hero card sits in normal document flow. Page scrolling does not pin it, hide the navigation, or change the active chapter.
+- On screens up to 800px wide or 650px tall, scrolling through the hero shifts its backdrop. Choosing a tab still selects the chapter and shifts the backdrop further.
+- Content crossfades over 280ms inside one shared card. Choosing a tab shifts the background.
+- Each newly activated illustration restarts its own animation.
+- Arrow keys, Home and End navigate tabs.
+- Reduced motion removes animation, leaving a directly selectable tabbed card.
 
-Timings and small illustration sequences are approximations from the supplied recordings; screenshots alone do not encode the original motion. Tuning lives in `scroll-showcase.tsx` (chapter thresholds) and `showcase.module.css` (track length, transitions, keyframes).
+Timings and small illustration sequences are approximations from the supplied recordings; screenshots alone do not encode the original motion. Tuning lives in `scroll-showcase.tsx` and `showcase.module.css` (transitions, keyframes).
 
 ## Homepage continuation (2026-09-16)
 

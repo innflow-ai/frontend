@@ -1,7 +1,14 @@
 import Image from "next/image";
+import { ChevronRight } from "@/components/chevron-right";
+import {
+  ArrowDown as MageArrowDown,
+  ArrowRight as MageArrowRight,
+  Check as MageCheck,
+} from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
-import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-support.module.css";
+import { InnerPageShell } from "./inner-page-shell";
 
 const root = "/brand/baselane-inspired/demo/";
 function Photo({
@@ -29,28 +36,38 @@ function Photo({
 }
 export function BaselaneDemo() {
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={styles.demo}>
         <section className={styles.hero}>
           <Photo name="hero" priority />
           <div className={styles.heroCopy}>
             <span>PROPERTY OPERATIONS, CONNECTED</span>
-            <h1>
-              See how
-              <br />
-              innflow works.
+            <h1 data-mixed-heading>
+              <MixedHeadingText>
+                See how
+                <br />
+                innflow works.
+              </MixedHeadingText>
             </h1>
             <p>
               Explore how your team can bring recurring work, property context,
               and human approvals into one flow.
             </p>
-            <a className={styles.button} href={siteConfig.demoUrl}>
-              Book a demo ↗
+            <a
+              data-site-cta="primary"
+              className={styles.button}
+              href={siteConfig.demoUrl}
+            >
+              Book a demo <ChevronRight />
             </a>
           </div>
         </section>
         <section className={styles.intro}>
-          <h2>A clearer workflow is a click away.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              A clearer workflow is a click away.
+            </MixedHeadingText>
+          </h2>
           <p>
             Start with your team’s day-to-day work. See where connected context
             and a clear next step can make a difference.
@@ -66,21 +83,36 @@ export function BaselaneDemo() {
             <div className={styles.workflow}>
               <small>EXAMPLE · MAINTENANCE REQUEST</small>
               <strong>New request received</strong>
-              <span>↓</span>
+              <span>
+                <MageArrowDown size="1em" />
+              </span>
               <strong>Property context attached</strong>
-              <span>↓</span>
+              <span>
+                <MageArrowDown size="1em" />
+              </span>
               <strong>
-                Ready for team review <b>✓</b>
+                Ready for team review{" "}
+                <b>
+                  <MageCheck size="1em" />
+                </b>
               </strong>
             </div>
             <div className={styles.cardCopy}>
-              <h2>Managing a growing portfolio?</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>
+                  Managing a growing portfolio?
+                </MixedHeadingText>
+              </h2>
               <p>
                 Bring a recurring workflow. We’ll start with the handoffs that
                 matter to your team.
               </p>
-              <a className={styles.button} href={siteConfig.demoUrl}>
-                Book a demo ↗
+              <a
+                data-site-cta="primary"
+                className={styles.button}
+                href={siteConfig.demoUrl}
+              >
+                Book a demo <ChevronRight />
               </a>
             </div>
           </article>
@@ -88,30 +120,36 @@ export function BaselaneDemo() {
             <Photo name="webinar" />
             <span className={styles.eyebrow}>EXPLORE INNFLOW</span>
             <div className={styles.cardCopy}>
-              <h2>Get a closer look.</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>Get a closer look.</MixedHeadingText>
+              </h2>
               <p>
                 Explore self-guided topics on recurring tasks, property records,
                 and the handoffs your team handles every day.
               </p>
-              <a className={styles.button} href="/webinars">
-                Explore workflow topics →
+              <a data-site-cta="primary" className={styles.button} href="/webinars">
+                Explore workflow topics <MageArrowRight size="1em" />
               </a>
             </div>
           </article>
         </section>
         <section className={styles.statement}>
           <span>MAKE THE CONVERSATION YOURS</span>
-          <h2>
-            Start with the work
-            <br />
-            you want to simplify.
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              Start with the work
+              <br />
+              you want to simplify.
+            </MixedHeadingText>
           </h2>
           <p>
             A maintenance handoff. A document request. A recurring review. Bring
             a real example, and we can discuss the context, people, and
             approvals it needs.
           </p>
-          <a href="/multi-property-investors">Explore property operations →</a>
+          <a href="/multi-property-investors">
+            Explore property operations <MageArrowRight size="1em" />
+          </a>
         </section>
         <section className={styles.ocean}>
           <Image
@@ -121,18 +159,24 @@ export function BaselaneDemo() {
             sizes="100vw"
           />
           <div>
-            <h2>
-              Less chasing.
-              <br />
-              More moving forward.
+            <h2 data-mixed-heading>
+              <MixedHeadingText>
+                Less chasing.
+                <br />
+                More moving forward.
+              </MixedHeadingText>
             </h2>
             <p>Give every recurring request a clear next step.</p>
-            <a className={styles.button} href={siteConfig.contactUrl}>
-              Talk to the team ↗
+            <a
+              data-site-cta="primary"
+              className={styles.button}
+              href={siteConfig.contactUrl}
+            >
+              Talk to the team <ChevronRight />
             </a>
           </div>
         </section>
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

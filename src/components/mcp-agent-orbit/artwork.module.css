@@ -1,0 +1,2220 @@
+.artwork {
+  width: 771px;
+  height: 830px;
+  position: relative;
+}
+.artwork,
+.artwork * {
+  box-sizing: border-box;
+}
+.artwork p {
+  margin: 0;
+}
+.f0 {
+  position: absolute;
+  inset: 19.51%;
+}
+.f1 {
+  position: absolute;
+  display: block;
+  inset: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f2 {
+  overflow: hidden;
+  position: relative;
+  border-radius: 55.829px;
+  width: 100%;
+  height: 100%;
+  background-color: #fdf8f5;
+}
+.f3 {
+  position: absolute;
+  backdrop-filter: blur(0px);
+  height: 830px;
+  left: 0;
+  top: 0;
+  width: 771px;
+}
+.f4 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: -576.31px;
+  width: 1924.625px;
+  height: 1924.625px;
+  top: 229.69px;
+}
+.f5 {
+  flex: none;
+  rotate: 0.14deg;
+}
+.f6 {
+  position: relative;
+  width: 1920px;
+  height: 1920px;
+}
+.f7 {
+  position: absolute;
+  left: 904px;
+  width: 112px;
+  height: 112px;
+  top: 24px;
+}
+.f8 {
+  position: absolute;
+  inset: -2.44% -9.76% -17.07% -9.76%;
+}
+.f9 {
+  display: block;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f10 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 1065.83px;
+  width: 131.698px;
+  height: 131.698px;
+  top: 31.06px;
+}
+.f11 {
+  flex: none;
+  rotate: 11.25deg;
+}
+.f12 {
+  border-width: 0.82px;
+  border-color: rgba(255, 255, 255, 0.92);
+  border-style: solid;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 23.22px;
+  box-shadow: 0px 8.195px 17.756px -6.829px rgba(13, 26, 41, 0.1);
+  width: 112px;
+  height: 112px;
+}
+.f13 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 23.22px;
+  background-color: rgba(255, 255, 255, 0.66);
+}
+.f14 {
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  width: 68.293px;
+  height: 68.293px;
+}
+.f15 {
+  position: absolute;
+  display: contents;
+  inset: 0.26% 0;
+}
+.f16 {
+  position: absolute;
+  display: contents;
+  inset: 0.26% 0 0.26% -0.06%;
+}
+.f17 {
+  position: absolute;
+  inset: 0.26% 0 24.16% -0.06%;
+  mask-mode: alpha;
+  mask-composite: intersect;
+  mask-clip: no-clip;
+  mask-repeat: no-repeat;
+  mask-position: -3.183px 0.008px;
+  mask-size: 80.363px 80.088px;
+}
+.f18 {
+  position: absolute;
+  display: block;
+  inset: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f19 {
+  position: absolute;
+  inset: 24.16% 0 0.26% -0.06%;
+  mask-mode: alpha;
+  mask-composite: intersect;
+  mask-clip: no-clip;
+  mask-repeat: no-repeat;
+  mask-position: 0.04px -15.996px;
+  mask-size: 80.363px 80.088px;
+}
+.f20 {
+  position: absolute;
+  inset: -11.03% -8.33%;
+}
+.f21 {
+  display: block;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f22 {
+  position: absolute;
+  inset: 0.26% 0 0.26% 68.75%;
+  mask-mode: alpha;
+  mask-composite: intersect;
+  mask-clip: no-clip;
+  mask-repeat: no-repeat;
+  mask-position: -46.025px -9.27px;
+  mask-size: 80.363px 80.088px;
+}
+.f23 {
+  position: absolute;
+  inset: -8.38% -26.67%;
+}
+.f24 {
+  display: block;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f25 {
+  position: absolute;
+  inset: 0.26% 0.06% 0.26% -0.06%;
+  mask-mode: alpha;
+  mask-composite: intersect;
+  mask-clip: no-clip;
+  mask-repeat: no-repeat;
+  mask-position: 0.041px 0.008px;
+  mask-size: 80.363px 80.088px;
+  mix-blend-mode: overlay;
+}
+.f26 {
+  position: absolute;
+  display: block;
+  inset: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f27 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0px 0.683px 1.366px 0px rgba(255, 255, 255, 0.9);
+}
+.f28 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 1223.59px;
+  width: 146.335px;
+  height: 146.335px;
+  top: 73.82px;
+}
+.f29 {
+  flex: none;
+  rotate: 22.5deg;
+}
+.f30 {
+  border-width: 0.82px;
+  border-color: rgba(255, 255, 255, 0.92);
+  border-style: solid;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 23.22px;
+  box-shadow: 0px 8.195px 17.756px -6.829px rgba(13, 26, 41, 0.1);
+  width: 112px;
+  height: 112px;
+}
+.f31 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 23.22px;
+  background-color: rgba(255, 255, 255, 0.66);
+}
+.f32 {
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  width: 68.293px;
+  height: 68.293px;
+}
+.f33 {
+  position: absolute;
+  left: -21.31px;
+  width: 110.908px;
+  height: 110.908px;
+  top: -21.31px;
+}
+.f34 {
+  position: absolute;
+  display: block;
+  inset: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f35 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0px 0.683px 1.366px 0px rgba(255, 255, 255, 0.9);
+}
+.f36 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 1371.23px;
+  width: 155.348px;
+  height: 155.348px;
+  top: 150.63px;
+}
+.f37 {
+  flex: none;
+  rotate: 33.75deg;
+}
+.f38 {
+  border-width: 0.82px;
+  border-color: rgba(255, 255, 255, 0.92);
+  border-style: solid;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 23.22px;
+  box-shadow: 0px 8.195px 17.756px -6.829px rgba(13, 26, 41, 0.1);
+  width: 112px;
+  height: 112px;
+}
+.f39 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 23.22px;
+  background-color: rgba(255, 255, 255, 0.66);
+}
+.f40 {
+  height: 68.293px;
+  position: relative;
+  flex-shrink: 0;
+  width: 59.766px;
+}
+.f41 {
+  position: absolute;
+  display: block;
+  inset: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f42 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0px 0.683px 1.366px 0px rgba(255, 255, 255, 0.9);
+}
+.f43 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 1503.06px;
+  width: 158.392px;
+  height: 158.392px;
+  top: 258.55px;
+}
+.f44 {
+  flex: none;
+  rotate: 45deg;
+}
+.f45 {
+  position: relative;
+  width: 112px;
+  height: 112px;
+}
+.f46 {
+  position: absolute;
+  inset: -2.44% -9.76% -17.07% -9.76%;
+}
+.f47 {
+  display: block;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f48 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 1614.02px;
+  width: 155.348px;
+  height: 155.348px;
+  top: 393.42px;
+}
+.f49 {
+  flex: none;
+  rotate: 56.25deg;
+}
+.f50 {
+  border-width: 0.82px;
+  border-color: rgba(255, 255, 255, 0.92);
+  border-style: solid;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 23.22px;
+  box-shadow: 0px 8.195px 17.756px -6.829px rgba(13, 26, 41, 0.1);
+  width: 112px;
+  height: 112px;
+}
+.f51 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 23.22px;
+  background-color: rgba(255, 255, 255, 0.66);
+}
+.f52 {
+  height: 68.296px;
+  position: relative;
+  flex-shrink: 0;
+  width: 59.52px;
+}
+.f53 {
+  position: absolute;
+  display: block;
+  inset: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f54 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0px 0.683px 1.366px 0px rgba(255, 255, 255, 0.9);
+}
+.f55 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 1699.85px;
+  width: 146.335px;
+  height: 146.335px;
+  top: 550.07px;
+}
+.f56 {
+  flex: none;
+  rotate: 67.5deg;
+}
+.f57 {
+  border-width: 0.82px;
+  border-color: rgba(255, 255, 255, 0.92);
+  border-style: solid;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 23.22px;
+  box-shadow: 0px 8.195px 17.756px -6.829px rgba(13, 26, 41, 0.1);
+  width: 112px;
+  height: 112px;
+}
+.f58 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 23.22px;
+  background-color: rgba(255, 255, 255, 0.66);
+}
+.f59 {
+  position: relative;
+  flex-shrink: 0;
+  width: 112px;
+  height: 112px;
+}
+.f60 {
+  position: absolute;
+  inset: 0;
+  max-width: none;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+.f61 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0px 0.683px 1.366px 0px rgba(255, 255, 255, 0.9);
+}
+.f62 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 1757.24px;
+  width: 131.698px;
+  height: 131.698px;
+  top: 722.47px;
+}
+.f63 {
+  flex: none;
+  rotate: 78.75deg;
+}
+.f64 {
+  border-width: 0.82px;
+  border-color: rgba(255, 255, 255, 0.92);
+  border-style: solid;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 23.22px;
+  box-shadow: 0px 8.195px 17.756px -6.829px rgba(13, 26, 41, 0.1);
+  width: 112px;
+  height: 112px;
+}
+.f65 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 23.22px;
+  background-color: rgba(255, 255, 255, 0.66);
+}
+.f66 {
+  position: relative;
+  flex-shrink: 0;
+  width: 112px;
+  height: 112px;
+}
+.f67 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0px 0.683px 1.366px 0px rgba(255, 255, 255, 0.9);
+}
+.f68 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 1783px;
+  width: 112px;
+  height: 112px;
+  top: 904px;
+}
+.f69 {
+  flex: none;
+  rotate: 90deg;
+}
+.f70 {
+  position: relative;
+  width: 112px;
+  height: 112px;
+}
+.f71 {
+  position: absolute;
+  inset: -1.63% -6.52% -11.41% -6.52%;
+}
+.f72 {
+  display: block;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f73 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 1757.24px;
+  width: 131.698px;
+  height: 131.698px;
+  top: 1065.83px;
+}
+.f74 {
+  flex: none;
+  rotate: 101.25deg;
+}
+.f75 {
+  border-width: 0.82px;
+  border-color: rgba(255, 255, 255, 0.92);
+  border-style: solid;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 23.22px;
+  box-shadow: 0px 8.195px 17.756px -6.829px rgba(13, 26, 41, 0.1);
+  width: 112px;
+  height: 112px;
+}
+.f76 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 23.22px;
+  background-color: rgba(255, 255, 255, 0.66);
+}
+.f77 {
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  width: 68.293px;
+  height: 68.293px;
+}
+.f78 {
+  position: absolute;
+  display: contents;
+  inset: 0.26% 0;
+}
+.f79 {
+  position: absolute;
+  display: contents;
+  inset: 0.26% 0 0.26% -0.06%;
+}
+.f80 {
+  position: absolute;
+  inset: 0.26% 0 24.16% -0.06%;
+  mask-mode: alpha;
+  mask-composite: intersect;
+  mask-clip: no-clip;
+  mask-repeat: no-repeat;
+  mask-position: -16.006px -3.185px;
+  mask-size: 80.088px 80.363px;
+}
+.f81 {
+  position: absolute;
+  display: block;
+  inset: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f82 {
+  position: absolute;
+  inset: 24.16% 0 0.26% -0.06%;
+  mask-mode: alpha;
+  mask-composite: intersect;
+  mask-clip: no-clip;
+  mask-repeat: no-repeat;
+  mask-position: -0.002px 0.038px;
+  mask-size: 80.088px 80.363px;
+}
+.f83 {
+  position: absolute;
+  inset: -11.03% -8.33%;
+}
+.f84 {
+  display: block;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f85 {
+  position: absolute;
+  inset: 0.26% 0 0.26% 68.75%;
+  mask-mode: alpha;
+  mask-composite: intersect;
+  mask-clip: no-clip;
+  mask-repeat: no-repeat;
+  mask-position: -0.001px -46.027px;
+  mask-size: 80.088px 80.363px;
+}
+.f86 {
+  position: absolute;
+  inset: -8.38% -26.67%;
+}
+.f87 {
+  display: block;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f88 {
+  position: absolute;
+  inset: 0.26% 0.06% 0.26% -0.06%;
+  mask-mode: alpha;
+  mask-composite: intersect;
+  mask-clip: no-clip;
+  mask-repeat: no-repeat;
+  mask-position: -0.01px 0.039px;
+  mask-size: 80.088px 80.363px;
+  mix-blend-mode: overlay;
+}
+.f89 {
+  position: absolute;
+  display: block;
+  inset: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f90 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0px 0.683px 1.366px 0px rgba(255, 255, 255, 0.9);
+}
+.f91 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 1699.85px;
+  width: 146.335px;
+  height: 146.335px;
+  top: 1223.59px;
+}
+.f92 {
+  flex: none;
+  rotate: 112.5deg;
+}
+.f93 {
+  border-width: 0.82px;
+  border-color: rgba(255, 255, 255, 0.92);
+  border-style: solid;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 23.22px;
+  box-shadow: 0px 8.195px 17.756px -6.829px rgba(13, 26, 41, 0.1);
+  width: 112px;
+  height: 112px;
+}
+.f94 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 23.22px;
+  background-color: rgba(255, 255, 255, 0.66);
+}
+.f95 {
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  width: 68.293px;
+  height: 68.293px;
+}
+.f96 {
+  position: absolute;
+  left: -21.31px;
+  width: 110.908px;
+  height: 110.908px;
+  top: -21.31px;
+}
+.f97 {
+  position: absolute;
+  display: block;
+  inset: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f98 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0px 0.683px 1.366px 0px rgba(255, 255, 255, 0.9);
+}
+.f99 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 1614.02px;
+  width: 155.348px;
+  height: 155.348px;
+  top: 1371.23px;
+}
+.f100 {
+  flex: none;
+  rotate: 123.75deg;
+}
+.f101 {
+  border-width: 0.82px;
+  border-color: rgba(255, 255, 255, 0.92);
+  border-style: solid;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 23.22px;
+  box-shadow: 0px 8.195px 17.756px -6.829px rgba(13, 26, 41, 0.1);
+  width: 112px;
+  height: 112px;
+}
+.f102 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 23.22px;
+  background-color: rgba(255, 255, 255, 0.66);
+}
+.f103 {
+  height: 68.293px;
+  position: relative;
+  flex-shrink: 0;
+  width: 59.766px;
+}
+.f104 {
+  position: absolute;
+  display: block;
+  inset: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f105 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0px 0.683px 1.366px 0px rgba(255, 255, 255, 0.9);
+}
+.f106 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 1503.06px;
+  width: 158.392px;
+  height: 158.392px;
+  top: 1503.06px;
+}
+.f107 {
+  flex: none;
+  rotate: 135deg;
+}
+.f108 {
+  position: relative;
+  width: 112px;
+  height: 112px;
+}
+.f109 {
+  position: absolute;
+  inset: -2.44% -9.76% -17.07% -9.76%;
+}
+.f110 {
+  display: block;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f111 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 1371.23px;
+  width: 155.348px;
+  height: 155.348px;
+  top: 1614.02px;
+}
+.f112 {
+  flex: none;
+  rotate: 146.25deg;
+}
+.f113 {
+  border-width: 0.82px;
+  border-color: rgba(255, 255, 255, 0.92);
+  border-style: solid;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 23.22px;
+  box-shadow: 0px 8.195px 17.756px -6.829px rgba(13, 26, 41, 0.1);
+  width: 112px;
+  height: 112px;
+}
+.f114 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 23.22px;
+  background-color: rgba(255, 255, 255, 0.66);
+}
+.f115 {
+  height: 68.296px;
+  position: relative;
+  flex-shrink: 0;
+  width: 59.52px;
+}
+.f116 {
+  position: absolute;
+  display: block;
+  inset: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f117 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0px 0.683px 1.366px 0px rgba(255, 255, 255, 0.9);
+}
+.f118 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 1223.59px;
+  width: 146.335px;
+  height: 146.335px;
+  top: 1699.85px;
+}
+.f119 {
+  flex: none;
+  rotate: 157.5deg;
+}
+.f120 {
+  border-width: 0.82px;
+  border-color: rgba(255, 255, 255, 0.92);
+  border-style: solid;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 23.22px;
+  box-shadow: 0px 8.195px 17.756px -6.829px rgba(13, 26, 41, 0.1);
+  width: 112px;
+  height: 112px;
+}
+.f121 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 23.22px;
+  background-color: rgba(255, 255, 255, 0.66);
+}
+.f122 {
+  position: relative;
+  flex-shrink: 0;
+  width: 112px;
+  height: 112px;
+}
+.f123 {
+  position: absolute;
+  inset: 0;
+  max-width: none;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+.f124 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0px 0.683px 1.366px 0px rgba(255, 255, 255, 0.9);
+}
+.f125 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 1065.83px;
+  width: 131.698px;
+  height: 131.698px;
+  top: 1757.24px;
+}
+.f126 {
+  flex: none;
+  rotate: 168.75deg;
+}
+.f127 {
+  border-width: 0.82px;
+  border-color: rgba(255, 255, 255, 0.92);
+  border-style: solid;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 23.22px;
+  box-shadow: 0px 8.195px 17.756px -6.829px rgba(13, 26, 41, 0.1);
+  width: 112px;
+  height: 112px;
+}
+.f128 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 23.22px;
+  background-color: rgba(255, 255, 255, 0.66);
+}
+.f129 {
+  position: relative;
+  flex-shrink: 0;
+  width: 112px;
+  height: 112px;
+}
+.f130 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0px 0.683px 1.366px 0px rgba(255, 255, 255, 0.9);
+}
+.f131 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 904px;
+  width: 112px;
+  height: 112px;
+  top: 1784px;
+}
+.f132 {
+  flex: none;
+  rotate: 180deg;
+}
+.f133 {
+  position: relative;
+  width: 112px;
+  height: 112px;
+}
+.f134 {
+  position: absolute;
+  inset: -2.44% -9.76% -17.07% -9.76%;
+}
+.f135 {
+  display: block;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f136 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 722.47px;
+  width: 131.698px;
+  height: 131.698px;
+  top: 1757.24px;
+}
+.f137 {
+  flex: none;
+  rotate: -168.75deg;
+}
+.f138 {
+  border-width: 0.82px;
+  border-color: rgba(255, 255, 255, 0.92);
+  border-style: solid;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 23.22px;
+  box-shadow: 0px 8.195px 17.756px -6.829px rgba(13, 26, 41, 0.1);
+  width: 112px;
+  height: 112px;
+}
+.f139 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 23.22px;
+  background-color: rgba(255, 255, 255, 0.66);
+}
+.f140 {
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  width: 68.293px;
+  height: 68.293px;
+}
+.f141 {
+  position: absolute;
+  display: contents;
+  inset: 0.26% 0;
+}
+.f142 {
+  position: absolute;
+  display: contents;
+  inset: 0.26% 0 0.26% -0.06%;
+}
+.f143 {
+  position: absolute;
+  inset: 0.26% 0 24.16% -0.06%;
+  mask-mode: alpha;
+  mask-composite: intersect;
+  mask-clip: no-clip;
+  mask-repeat: no-repeat;
+  mask-position: 0px -16.004px;
+  mask-size: 80.363px 80.088px;
+}
+.f144 {
+  position: absolute;
+  display: block;
+  inset: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f145 {
+  position: absolute;
+  inset: 24.16% 0 0.26% -0.06%;
+  mask-mode: alpha;
+  mask-composite: intersect;
+  mask-clip: no-clip;
+  mask-repeat: no-repeat;
+  mask-position: -3.223px 0px;
+  mask-size: 80.363px 80.088px;
+}
+.f146 {
+  position: absolute;
+  inset: -11.03% -8.33%;
+}
+.f147 {
+  display: block;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f148 {
+  position: absolute;
+  inset: 0.26% 0 0.26% 68.75%;
+  mask-mode: alpha;
+  mask-composite: intersect;
+  mask-clip: no-clip;
+  mask-repeat: no-repeat;
+  mask-position: -0.001px -0.001px;
+  mask-size: 80.363px 80.088px;
+}
+.f149 {
+  position: absolute;
+  inset: -8.38% -26.67%;
+}
+.f150 {
+  display: block;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f151 {
+  position: absolute;
+  inset: 0.26% 0.06% 0.26% -0.06%;
+  mask-mode: alpha;
+  mask-composite: intersect;
+  mask-clip: no-clip;
+  mask-repeat: no-repeat;
+  mask-position: -0.041px -0.008px;
+  mask-size: 80.363px 80.088px;
+  mix-blend-mode: overlay;
+}
+.f152 {
+  position: absolute;
+  display: block;
+  inset: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f153 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0px 0.683px 1.366px 0px rgba(255, 255, 255, 0.9);
+}
+.f154 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 550.07px;
+  width: 146.335px;
+  height: 146.335px;
+  top: 1699.85px;
+}
+.f155 {
+  flex: none;
+  rotate: -157.5deg;
+}
+.f156 {
+  border-width: 0.82px;
+  border-color: rgba(255, 255, 255, 0.92);
+  border-style: solid;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 23.22px;
+  box-shadow: 0px 8.195px 17.756px -6.829px rgba(13, 26, 41, 0.1);
+  width: 112px;
+  height: 112px;
+}
+.f157 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 23.22px;
+  background-color: rgba(255, 255, 255, 0.66);
+}
+.f158 {
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  width: 68.293px;
+  height: 68.293px;
+}
+.f159 {
+  position: absolute;
+  left: -21.31px;
+  width: 110.908px;
+  height: 110.908px;
+  top: -21.31px;
+}
+.f160 {
+  position: absolute;
+  display: block;
+  inset: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f161 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0px 0.683px 1.366px 0px rgba(255, 255, 255, 0.9);
+}
+.f162 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 393.42px;
+  width: 155.348px;
+  height: 155.348px;
+  top: 1614.02px;
+}
+.f163 {
+  flex: none;
+  rotate: -146.25deg;
+}
+.f164 {
+  border-width: 0.82px;
+  border-color: rgba(255, 255, 255, 0.92);
+  border-style: solid;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 23.22px;
+  box-shadow: 0px 8.195px 17.756px -6.829px rgba(13, 26, 41, 0.1);
+  width: 112px;
+  height: 112px;
+}
+.f165 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 23.22px;
+  background-color: rgba(255, 255, 255, 0.66);
+}
+.f166 {
+  height: 68.293px;
+  position: relative;
+  flex-shrink: 0;
+  width: 59.766px;
+}
+.f167 {
+  position: absolute;
+  display: block;
+  inset: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f168 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0px 0.683px 1.366px 0px rgba(255, 255, 255, 0.9);
+}
+.f169 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 258.55px;
+  width: 158.392px;
+  height: 158.392px;
+  top: 1503.06px;
+}
+.f170 {
+  rotate: -135deg;
+  flex: none;
+}
+.f171 {
+  position: relative;
+  width: 112px;
+  height: 112px;
+}
+.f172 {
+  position: absolute;
+  inset: -2.44% -9.76% -17.07% -9.76%;
+}
+.f173 {
+  display: block;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f174 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 150.63px;
+  width: 155.348px;
+  height: 155.348px;
+  top: 1371.23px;
+}
+.f175 {
+  flex: none;
+  rotate: -123.75deg;
+}
+.f176 {
+  border-width: 0.82px;
+  border-color: rgba(255, 255, 255, 0.92);
+  border-style: solid;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 23.22px;
+  box-shadow: 0px 8.195px 17.756px -6.829px rgba(13, 26, 41, 0.1);
+  width: 112px;
+  height: 112px;
+}
+.f177 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 23.22px;
+  background-color: rgba(255, 255, 255, 0.66);
+}
+.f178 {
+  height: 68.296px;
+  position: relative;
+  flex-shrink: 0;
+  width: 59.52px;
+}
+.f179 {
+  position: absolute;
+  display: block;
+  inset: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f180 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0px 0.683px 1.366px 0px rgba(255, 255, 255, 0.9);
+}
+.f181 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 73.82px;
+  width: 146.335px;
+  height: 146.335px;
+  top: 1223.59px;
+}
+.f182 {
+  flex: none;
+  rotate: -112.5deg;
+}
+.f183 {
+  border-width: 0.82px;
+  border-color: rgba(255, 255, 255, 0.92);
+  border-style: solid;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 23.22px;
+  box-shadow: 0px 8.195px 17.756px -6.829px rgba(13, 26, 41, 0.1);
+  width: 112px;
+  height: 112px;
+}
+.f184 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 23.22px;
+  background-color: rgba(255, 255, 255, 0.66);
+}
+.f185 {
+  position: relative;
+  flex-shrink: 0;
+  width: 112px;
+  height: 112px;
+}
+.f186 {
+  position: absolute;
+  inset: 0;
+  max-width: none;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+.f187 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0px 0.683px 1.366px 0px rgba(255, 255, 255, 0.9);
+}
+.f188 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 31.06px;
+  width: 131.698px;
+  height: 131.698px;
+  top: 1065.83px;
+}
+.f189 {
+  flex: none;
+  rotate: -101.25deg;
+}
+.f190 {
+  border-width: 0.82px;
+  border-color: rgba(255, 255, 255, 0.92);
+  border-style: solid;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 23.22px;
+  box-shadow: 0px 8.195px 17.756px -6.829px rgba(13, 26, 41, 0.1);
+  width: 112px;
+  height: 112px;
+}
+.f191 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 23.22px;
+  background-color: rgba(255, 255, 255, 0.66);
+}
+.f192 {
+  position: relative;
+  flex-shrink: 0;
+  width: 112px;
+  height: 112px;
+}
+.f193 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0px 0.683px 1.366px 0px rgba(255, 255, 255, 0.9);
+}
+.f194 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 24px;
+  width: 112px;
+  height: 112px;
+  top: 904px;
+}
+.f195 {
+  rotate: -90deg;
+  flex: none;
+}
+.f196 {
+  position: relative;
+  width: 112px;
+  height: 112px;
+}
+.f197 {
+  position: absolute;
+  inset: -2.44% -9.76% -17.07% -9.76%;
+}
+.f198 {
+  display: block;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f199 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 31.06px;
+  width: 131.698px;
+  height: 131.698px;
+  top: 722.47px;
+}
+.f200 {
+  flex: none;
+  rotate: -78.75deg;
+}
+.f201 {
+  border-width: 0.82px;
+  border-color: rgba(255, 255, 255, 0.92);
+  border-style: solid;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 23.22px;
+  box-shadow: 0px 8.195px 17.756px -6.829px rgba(13, 26, 41, 0.1);
+  width: 112px;
+  height: 112px;
+}
+.f202 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 23.22px;
+  background-color: rgba(255, 255, 255, 0.66);
+}
+.f203 {
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  width: 68.293px;
+  height: 68.293px;
+}
+.f204 {
+  position: absolute;
+  display: contents;
+  inset: 0.26% 0;
+}
+.f205 {
+  position: absolute;
+  display: contents;
+  inset: 0.26% 0 0.26% -0.06%;
+}
+.f206 {
+  position: absolute;
+  inset: 0.26% 0 24.16% -0.06%;
+  mask-mode: alpha;
+  mask-composite: intersect;
+  mask-clip: no-clip;
+  mask-repeat: no-repeat;
+  mask-position: 0.01px 0.002px;
+  mask-size: 80.088px 80.363px;
+}
+.f207 {
+  position: absolute;
+  display: block;
+  inset: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f208 {
+  position: absolute;
+  inset: 24.16% 0 0.26% -0.06%;
+  mask-mode: alpha;
+  mask-composite: intersect;
+  mask-clip: no-clip;
+  mask-repeat: no-repeat;
+  mask-position: -15.994px -3.221px;
+  mask-size: 80.088px 80.363px;
+}
+.f209 {
+  position: absolute;
+  inset: -11.03% -8.33%;
+}
+.f210 {
+  display: block;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f211 {
+  position: absolute;
+  inset: 0.26% 0 0.26% 68.75%;
+  mask-mode: alpha;
+  mask-composite: intersect;
+  mask-clip: no-clip;
+  mask-repeat: no-repeat;
+  mask-position: -9.27px 0.001px;
+  mask-size: 80.088px 80.363px;
+}
+.f212 {
+  position: absolute;
+  inset: -8.38% -26.67%;
+}
+.f213 {
+  display: block;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f214 {
+  position: absolute;
+  inset: 0.26% 0.06% 0.26% -0.06%;
+  mask-mode: alpha;
+  mask-composite: intersect;
+  mask-clip: no-clip;
+  mask-repeat: no-repeat;
+  mask-position: 0.01px -0.039px;
+  mask-size: 80.088px 80.363px;
+  mix-blend-mode: overlay;
+}
+.f215 {
+  position: absolute;
+  display: block;
+  inset: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f216 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0px 0.683px 1.366px 0px rgba(255, 255, 255, 0.9);
+}
+.f217 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 73.82px;
+  width: 146.335px;
+  height: 146.335px;
+  top: 550.07px;
+}
+.f218 {
+  flex: none;
+  rotate: -67.5deg;
+}
+.f219 {
+  border-width: 0.82px;
+  border-color: rgba(255, 255, 255, 0.92);
+  border-style: solid;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 23.22px;
+  box-shadow: 0px 8.195px 17.756px -6.829px rgba(13, 26, 41, 0.1);
+  width: 112px;
+  height: 112px;
+}
+.f220 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 23.22px;
+  background-color: rgba(255, 255, 255, 0.66);
+}
+.f221 {
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  width: 68.293px;
+  height: 68.293px;
+}
+.f222 {
+  position: absolute;
+  left: -21.31px;
+  width: 110.908px;
+  height: 110.908px;
+  top: -21.31px;
+}
+.f223 {
+  position: absolute;
+  display: block;
+  inset: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f224 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0px 0.683px 1.366px 0px rgba(255, 255, 255, 0.9);
+}
+.f225 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 150.63px;
+  width: 155.348px;
+  height: 155.348px;
+  top: 393.42px;
+}
+.f226 {
+  flex: none;
+  rotate: -56.25deg;
+}
+.f227 {
+  border-width: 0.82px;
+  border-color: rgba(255, 255, 255, 0.92);
+  border-style: solid;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 23.22px;
+  box-shadow: 0px 8.195px 17.756px -6.829px rgba(13, 26, 41, 0.1);
+  width: 112px;
+  height: 112px;
+}
+.f228 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 23.22px;
+  background-color: rgba(255, 255, 255, 0.66);
+}
+.f229 {
+  height: 68.293px;
+  position: relative;
+  flex-shrink: 0;
+  width: 59.766px;
+}
+.f230 {
+  position: absolute;
+  display: block;
+  inset: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f231 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0px 0.683px 1.366px 0px rgba(255, 255, 255, 0.9);
+}
+.f232 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 258.55px;
+  width: 158.392px;
+  height: 158.392px;
+  top: 258.55px;
+}
+.f233 {
+  rotate: -45deg;
+  flex: none;
+}
+.f234 {
+  position: relative;
+  width: 112px;
+  height: 112px;
+}
+.f235 {
+  position: absolute;
+  inset: -2.44% -9.76% -17.07% -9.76%;
+}
+.f236 {
+  display: block;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f237 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 393.42px;
+  width: 155.348px;
+  height: 155.348px;
+  top: 150.63px;
+}
+.f238 {
+  flex: none;
+  rotate: -33.75deg;
+}
+.f239 {
+  border-width: 0.82px;
+  border-color: rgba(255, 255, 255, 0.92);
+  border-style: solid;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 23.22px;
+  box-shadow: 0px 8.195px 17.756px -6.829px rgba(13, 26, 41, 0.1);
+  width: 112px;
+  height: 112px;
+}
+.f240 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 23.22px;
+  background-color: rgba(255, 255, 255, 0.66);
+}
+.f241 {
+  height: 68.296px;
+  position: relative;
+  flex-shrink: 0;
+  width: 59.52px;
+}
+.f242 {
+  position: absolute;
+  display: block;
+  inset: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f243 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0px 0.683px 1.366px 0px rgba(255, 255, 255, 0.9);
+}
+.f244 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 550.07px;
+  width: 146.335px;
+  height: 146.335px;
+  top: 73.82px;
+}
+.f245 {
+  flex: none;
+  rotate: -22.5deg;
+}
+.f246 {
+  border-width: 0.82px;
+  border-color: rgba(255, 255, 255, 0.92);
+  border-style: solid;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 23.22px;
+  box-shadow: 0px 8.195px 17.756px -6.829px rgba(13, 26, 41, 0.1);
+  width: 112px;
+  height: 112px;
+}
+.f247 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 23.22px;
+  background-color: rgba(255, 255, 255, 0.66);
+}
+.f248 {
+  position: relative;
+  flex-shrink: 0;
+  width: 112px;
+  height: 112px;
+}
+.f249 {
+  position: absolute;
+  inset: 0;
+  max-width: none;
+  object-fit: cover;
+  pointer-events: none;
+  width: 100%;
+  height: 100%;
+}
+.f250 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0px 0.683px 1.366px 0px rgba(255, 255, 255, 0.9);
+}
+.f251 {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 722.47px;
+  width: 131.698px;
+  height: 131.698px;
+  top: 31.06px;
+}
+.f252 {
+  flex: none;
+  rotate: -11.25deg;
+}
+.f253 {
+  border-width: 0.82px;
+  border-color: rgba(255, 255, 255, 0.92);
+  border-style: solid;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 23.22px;
+  box-shadow: 0px 8.195px 17.756px -6.829px rgba(13, 26, 41, 0.1);
+  width: 112px;
+  height: 112px;
+}
+.f254 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 23.22px;
+  background-color: rgba(255, 255, 255, 0.66);
+}
+.f255 {
+  position: relative;
+  flex-shrink: 0;
+  width: 112px;
+  height: 112px;
+}
+.f256 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0px 0.683px 1.366px 0px rgba(255, 255, 255, 0.9);
+}
+.f257 {
+  position: absolute;
+  border-width: 1.466px;
+  border-color: rgba(229, 226, 213, 0);
+  border-style: solid;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 46.963px;
+  height: 453.065px;
+  align-items: center;
+  left: 262px;
+  padding-bottom: 39.731px;
+  padding-top: 42.28px;
+  padding-left: 28.675px;
+  padding-right: 28.675px;
+  border-radius: 63.722px;
+  top: 188px;
+  width: 247.88px;
+}
+.f258 {
+  position: absolute;
+  height: 453.065px;
+  left: -1.47px;
+  top: -1.47px;
+  width: 247.88px;
+}
+.f259 {
+  position: absolute;
+  inset: -2.32% -8.27% -6.73% -8.27%;
+}
+.f260 {
+  display: block;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f261 {
+  border-color: #9dceff;
+  border-width: 1.246px;
+  border-style: solid;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 33.582px;
+  flex-shrink: 0;
+  width: 161.408px;
+  height: 161.408px;
+}
+.f262 {
+  border-color: #9dceff;
+  border-width: 1.246px;
+  border-style: solid;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  height: 129.452px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 18.416px;
+  flex-shrink: 0;
+  width: 130.535px;
+}
+.f263 {
+  border-color: #9dceff;
+  border-width: 1.246px;
+  border-style: solid;
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 31.957px;
+  flex-shrink: 0;
+  width: 161.408px;
+  height: 161.408px;
+  background-color: #edf9fc;
+}
+.f264 {
+  align-content: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  border-radius: 25.457px;
+  flex-shrink: 0;
+  width: 148.409px;
+  height: 148.409px;
+  background-image: linear-gradient(180deg, #5aaaf8, #00aeff);
+}
+.f265 {
+  height: 60.382px;
+  position: relative;
+  flex-shrink: 0;
+  width: 99.244px;
+}
+.f266 {
+  position: absolute;
+  display: block;
+  inset: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f267 {
+  border-color: #9dceff;
+  border-width: 1.246px;
+  border-style: solid;
+  overflow: hidden;
+  position: relative;
+  border-top-left-radius: 18.416px;
+  border-top-right-radius: 18.416px;
+  width: 100%;
+  height: 100%;
+  background-color: #e2f2fe;
+}
+.f268 {
+  translate: -50% 0;
+  word-break: break-word;
+  position: absolute;
+  background-clip: text;
+  font-family: inherit;
+  font-weight: 400;
+  line-height: 0;
+  left: 63.75px;
+  font-style: normal;
+  font-size: 18.957px;
+  color: transparent;
+  text-align: center;
+  top: 28.25px;
+  white-space: nowrap;
+  background-image: linear-gradient(180deg, #5aaaf8, #00aeff);
+}
+.f269 {
+  line-height: 23.29px;
+  margin-bottom: 0;
+}
+.f270 {
+  line-height: 23.29px;
+  margin-bottom: 0;
+}
+.f271 {
+  line-height: 23.29px;
+}
+.f272 {
+  position: absolute;
+  left: 10.13px;
+  width: 5.416px;
+  height: 5.416px;
+  top: 11.21px;
+}
+.f273 {
+  position: absolute;
+  display: block;
+  inset: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f274 {
+  position: absolute;
+  left: 111.96px;
+  width: 5.416px;
+  height: 5.416px;
+  top: 11.21px;
+}
+.f275 {
+  position: absolute;
+  display: block;
+  inset: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f276 {
+  position: absolute;
+  left: 10.13px;
+  width: 5.416px;
+  height: 5.416px;
+  top: 109.79px;
+}
+.f277 {
+  position: absolute;
+  display: block;
+  inset: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f278 {
+  position: absolute;
+  left: 111.96px;
+  width: 5.416px;
+  height: 5.416px;
+  top: 109.79px;
+}
+.f279 {
+  position: absolute;
+  display: block;
+  inset: 0;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+}
+.f-reusable-claude {
+  position: relative;
+  width: 112px;
+  height: 112px;
+}
+
+/* Canonical Dropbox wordmark, centered in the original brand tile. */
+.f266 {
+  height: 20.602px;
+  top: 19.89px;
+}

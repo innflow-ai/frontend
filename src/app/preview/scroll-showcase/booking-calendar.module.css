@@ -1,0 +1,125 @@
+.viewport {
+  min-height: 0;
+}
+.calendar {
+  transform-origin: top left;
+}
+.waveBar {
+  position: absolute;
+  top: 0;
+  width: 48px;
+  height: 108px;
+  overflow: hidden;
+  transform-origin: center;
+}
+.waveBar img {
+  position: absolute;
+  top: 0;
+  width: 516px;
+  height: 108px;
+  max-width: none;
+}
+.selectedDate {
+  position: absolute;
+  left: 95px;
+  top: 129px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #6bb0ff;
+}
+.times {
+  position: absolute;
+  left: 309.2px;
+  top: 66px;
+  width: 148px;
+  height: 202px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  color: #071a31;
+}
+.selectedDay {
+  height: 46px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.selectedDay strong {
+  font-size: 13px;
+  line-height: normal;
+  font-weight: 500;
+}
+.selectedDay span {
+  color: #8695a4;
+  font-size: 9px;
+  line-height: normal;
+}
+.timeRow {
+  position: relative;
+  width: 148px;
+  height: 36px;
+  flex-shrink: 0;
+  overflow: hidden;
+  font-size: 12px;
+  font-weight: 500;
+}
+.time,
+.chipLabel,
+.book {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+}
+.time {
+  border-radius: 7px;
+  background: #edf5ff;
+}
+.chipSurface {
+  position: absolute;
+  inset: 0;
+  border-radius: 7px;
+  transform-origin: left;
+}
+.chipLabel {
+  position: absolute;
+  inset: 0;
+}
+.book {
+  position: absolute;
+  top: 0;
+  left: 78px;
+  width: 70px;
+  border-radius: 7px;
+  background: #8496f4;
+  color: white;
+}
+.controls {
+  position: absolute;
+  bottom: 8px;
+  right: 10px;
+  display: flex;
+  gap: 8px;
+}
+.controls button {
+  padding: 5px 9px;
+  border: 1px solid #071a3126;
+  border-radius: 7px;
+  color: #071a31;
+  background: #ffffffdf;
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+}
+.controls button:focus-visible {
+  outline: 2px solid #2987ff;
+  outline-offset: 2px;
+}
+.controls button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}

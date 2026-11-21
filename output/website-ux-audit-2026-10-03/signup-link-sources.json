@@ -1,0 +1,21 @@
+[
+  {
+    "route": "/blog/master-ai-driven-crm-automation-close-30-more-deals",
+    "matches": [
+      "<a class=\"article-module__pfAF_a__bodyLink\" href=\"https://innflow.ai/signup\" target=\"_blank\" rel=\"noreferrer noopener\">Try Innflow for free today</a>"
+    ]
+  },
+  {
+    "route": "/blog/shopify-automation-with-innflowai-six-workflows",
+    "matches": [
+      "<a class=\"article-module__pfAF_a__bodyLink\" href=\"https://innflow.ai/signup\" target=\"_blank\" rel=\"noreferrer noopener\">innflow.ai/signup</a>"
+    ]
+  },
+  {
+    "route": "/blog/unlock-ai-orchestration-automate-90-of-manual-work",
+    "matches": [
+      "<a class=\"article-module__pfAF_a__bodyLink\" href=\"https://innflow.ai/signup\" target=\"_blank\" rel=\"noreferrer noopener\">Try Innflow today</a>",
+      "<a class=\"article-module__pfAF_a__bodyLink\" href=\"https://innflow.ai/signup\" target=\"_blank\" rel=\"noreferrer noopener\">try Innflow today</a>"
+    ]
+  }
+]

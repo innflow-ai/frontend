@@ -3,9 +3,14 @@
 import Image from "next/image";
 import { useState } from "react";
 import { GoogleCtaContent } from "@/components/google-cta-content";
+import {
+  ArrowRight as MageArrowRight,
+  Plus as MagePlus,
+} from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
-import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-screening.module.css";
+import { InnerPageShell } from "./inner-page-shell";
 
 const source = siteConfig.demoUrl;
 const topics = [
@@ -66,21 +71,27 @@ export function BaselaneScreening() {
   const [selected, setSelected] = useState<boolean[]>([false, false, false]);
   const completed = selected.filter(Boolean).length;
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={styles.page}>
         <div className={styles.dark}>
           <section className={styles.hero}>
             <div>
-              <h1>
-                <span>Screening workflows.</span>
-                <br />
-                Keep the next step clear.
+              <h1 data-mixed-heading>
+                <MixedHeadingText>
+                  <span>Screening workflows.</span>
+                  <br />
+                  Keep the next step clear.
+                </MixedHeadingText>
               </h1>
               <p>
                 Keep document requests, review tasks, and team handoffs
                 connected in innflow, alongside your chosen screening provider.
               </p>
-              <a className={styles.button} href="#screening-overview">
+              <a
+                data-site-cta="primary"
+                className={styles.button}
+                href="#screening-overview"
+              >
                 Explore the workflow
               </a>
             </div>
@@ -101,44 +112,50 @@ export function BaselaneScreening() {
           </p>
         </div>
         <section className={styles.section} id="screening-overview">
-          <h2>Start with the information behind the report.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              Start with the information behind the report.
+            </MixedHeadingText>
+          </h2>
           <p className={styles.lead}>
             Connect the property context, assign a reviewer, and keep the
             follow-up visible from the start.
           </p>
           <div className={styles.actions}>
-            <a className={styles.button} href={source}>
-              See innflow in action →
+            <a data-site-cta="primary" className={styles.button} href={source}>
+              See innflow in action <MageArrowRight size="1em" />
             </a>
             <a
+              data-site-cta="secondary"
               className={styles.outline}
               href="/lease-agreement"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Explore lease workflows →
+              Explore lease workflows <MageArrowRight size="1em" />
             </a>
           </div>
           <div className={styles.three}>
             {[
-              ["01", "Report scope", "See which information is included."],
-              [
-                "02",
-                "Verification",
-                "Review the provider’s verification methods.",
-              ],
-              ["03", "Next steps", "Connect the work that follows the report."],
-            ].map(([number, title, text]) => (
+              ["Report scope", "See which information is included."],
+              ["Verification", "Review the provider’s verification methods."],
+              ["Next steps", "Connect the work that follows the report."],
+            ].map(([title, text]) => (
               <article key={title}>
-                <span className={styles.number}>{number}</span>
-                <h3>{title}</h3>
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>{title}</MixedHeadingText>
+                </h3>
                 <p>{text}</p>
               </article>
             ))}
           </div>
         </section>
         <section className={styles.section}>
-          <h2>Compare the details that matter.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              Compare the details that matter.
+            </MixedHeadingText>
+          </h2>
           <p className={styles.lead}>
             Use a shared checklist to clarify what your team needs from its
             provider and who is responsible for the next action.
@@ -202,7 +219,9 @@ export function BaselaneScreening() {
           </div>
         </section>
         <section className={styles.section}>
-          <h2>Explore the report sections.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>Explore the report sections.</MixedHeadingText>
+          </h2>
           <p className={styles.lead}>
             Keep each review area connected to the supporting records.
           </p>
@@ -222,8 +241,12 @@ export function BaselaneScreening() {
               <div className={styles.topicList}>
                 {topics.slice(group * 3, group * 3 + 3).map((topic) => (
                   <div key={topic}>
-                    <h3>{topic}</h3>
-                    <a href="/lease-agreement">Connect the next handoff →</a>
+                    <h3 data-mixed-heading>
+                      <MixedHeadingText>{topic}</MixedHeadingText>
+                    </h3>
+                    <a href="/lease-agreement">
+                      Connect the next handoff <MageArrowRight size="1em" />
+                    </a>
                   </div>
                 ))}
               </div>
@@ -234,14 +257,22 @@ export function BaselaneScreening() {
           className={`${styles.section} ${styles.pricing}`}
           id="report-options"
         >
-          <h2>Plan the handoffs around screening.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              Plan the handoffs around screening.
+            </MixedHeadingText>
+          </h2>
           <p className={styles.lead}>
             Select the steps you want to connect with innflow.
           </p>
           <div className={styles.priceGrid}>
             <article>
               <span>YOUR STARTING POINT</span>
-              <h3>A process your team can follow</h3>
+              <h3 data-mixed-heading>
+                <MixedHeadingText>
+                  A process your team can follow
+                </MixedHeadingText>
+              </h3>
               <ul>
                 <li>Property and request context</li>
                 <li>A responsible reviewer</li>
@@ -274,8 +305,8 @@ export function BaselaneScreening() {
                 <span>Steps selected</span>
                 <strong>{completed} / 3</strong>
               </div>
-              <a className={styles.button} href={source}>
-                Discuss your workflow →
+              <a data-site-cta="primary" className={styles.button} href={source}>
+                Discuss your workflow <MageArrowRight size="1em" />
               </a>
               <p className={styles.note}>
                 Use this checklist to prepare for a demo. Your selections stay
@@ -285,34 +316,47 @@ export function BaselaneScreening() {
           </div>
         </section>
         <section className={styles.section}>
-          <h2>Keep the next steps connected.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>Keep the next steps connected.</MixedHeadingText>
+          </h2>
           <div className={styles.three}>
             {[
               ["screen", "Plan your screening workflow", source],
               ["lease", "Explore lease workflows", "/lease-agreement"],
               ["rent", "Explore rental workflows", "/rent-collection"],
-            ].map(([image, title, href], index) => (
+            ].map(([image, title, href]) => (
               <article key={image}>
                 <Photo name={image} alt={`Illustrative ${image} workflow`} />
-                <span className={styles.number}>{index + 1}</span>
-                <h3>{title}</h3>
-                <a className={styles.outline} href={href}>
-                  Explore →
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>{title}</MixedHeadingText>
+                </h3>
+                <a data-site-cta="secondary" className={styles.outline} href={href}>
+                  Explore <MageArrowRight size="1em" />
                 </a>
               </article>
             ))}
           </div>
           <div className={styles.productBand}>
             <div>
-              <h3>Bring context into the wider workflow.</h3>
-              <a className={styles.button} href={siteConfig.demoUrl}>
-                Explore innflow →
+              <h3 data-mixed-heading>
+                <MixedHeadingText>
+                  Bring context into the wider workflow.
+                </MixedHeadingText>
+              </h3>
+              <a
+                data-site-cta="primary"
+                className={styles.button}
+                href={siteConfig.demoUrl}
+              >
+                Explore innflow <MageArrowRight size="1em" />
               </a>
             </div>
           </div>
         </section>
         <section className={styles.section}>
-          <h2>A clearer process for everyone.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>A clearer process for everyone.</MixedHeadingText>
+          </h2>
           <div className={styles.audiences}>
             {[
               [
@@ -336,7 +380,9 @@ export function BaselaneScreening() {
                   }
                 />
                 <div>
-                  <h3>{title}</h3>
+                  <h3 data-mixed-heading>
+                    <MixedHeadingText>{title}</MixedHeadingText>
+                  </h3>
                   <p>{text}</p>
                 </div>
               </article>
@@ -344,25 +390,35 @@ export function BaselaneScreening() {
           </div>
         </section>
         <section className={styles.faq}>
-          <h2>Frequently asked questions</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>Frequently asked questions</MixedHeadingText>
+          </h2>
           {faqs.map(([q, a]) => (
             <details key={q}>
               <summary>
                 {q}
-                <span aria-hidden="true">+</span>
+                <span aria-hidden="true">
+                  <MagePlus size="1em" />
+                </span>
               </summary>
               <p>{a}</p>
             </details>
           ))}
         </section>
         <section className={styles.closing}>
-          <h2>Make the next step clear.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>Make the next step clear.</MixedHeadingText>
+          </h2>
           <p>Explore how innflow can connect your team’s work.</p>
-          <a className={styles.button} href={siteConfig.googleAuthUrl}>
+          <a
+            data-site-cta="primary"
+            className={styles.button}
+            href={siteConfig.signupUrl}
+          >
             <GoogleCtaContent />
           </a>
         </section>
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

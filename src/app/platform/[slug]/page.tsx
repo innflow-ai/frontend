@@ -1,16 +1,21 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { CalendlyPlatformPage } from "@/components/calendly-product-adapters";
+import { ChevronRight } from "@/components/chevron-right";
 import { MarketingPage, PageHero } from "@/components/page-primitives";
 import { PlatformDirectory } from "@/components/platform-directory";
 import { PlatformFeaturePage } from "@/components/platform-feature-page";
 import { getPlatformPage, platformPages } from "@/content/platform";
 import { getPlatformDetail } from "@/content/platform-details";
+import { getProductDesign } from "@/content/product-design-rotation";
 import { createPageMetadata } from "@/lib/metadata";
 
 type PlatformRouteProps = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
-  return platformPages.map(({ slug }) => ({ slug }));
+  return platformPages
+    .filter(({ slug }) => slug !== "integrations")
+    .map(({ slug }) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: PlatformRouteProps) {
@@ -32,6 +37,8 @@ export default async function PlatformDetailPage({
   if (!page) notFound();
 
   const detail = getPlatformDetail(slug);
+  if (detail && getProductDesign(`/platform/${slug}`))
+    return <CalendlyPlatformPage page={detail} />;
   if (detail) return <PlatformFeaturePage page={detail} />;
 
   return (
@@ -50,7 +57,10 @@ export default async function PlatformDetailPage({
         <section className="section">
           <div className="shell">
             <Link className="button button-secondary" href="/integrations">
-              Browse the integration directory <span aria-hidden="true">↗</span>
+              Browse the integration directory{" "}
+              <span aria-hidden="true">
+                <ChevronRight />
+              </span>
             </Link>
           </div>
         </section>

@@ -12,7 +12,7 @@ available; the preview route now renders the separate baseline modules.
 
 | Section | Implementation | Figma source | Current interaction |
 | --- | --- | --- | --- |
-| Hero motion study | `scroll-showcase.tsx`, `scroll-showcase-motion.ts` | Existing hero plus September 16 recording | Inset entrance, four pinned chapters, inset release; static/manual on compact screens or reduced motion |
+| Hero motion study | `scroll-showcase.tsx`, `scroll-showcase-motion.ts` | Existing hero plus September 16 recording | Normal-flow tabbed card. Page scrolling does not pin or advance chapters. On a phone or short screen, scrolling through the hero shifts its backdrop |
 | One workspace. Every conversation. | `workspace-overview.tsx` | `350:11085`, `385:9888`, `385:9992`, `385:10096` | Four expanding cards; hover, click, focus, arrows, Home/End |
 | Channels | `baseline-features.tsx` | `350:11199`, later `405:*` illustration exports | Six selectable reference illustrations |
 | Agents | `baseline-features.tsx` | `350:11344` | First reference canvas; two explicitly pending illustrations |
@@ -53,20 +53,16 @@ The September 16 recording at 10:54 AM is the newer reference for hero entrance,
 immersive chapters, contraction and navigation reappearance. It is separate
 from the overview hover recording.
 
-The hero expands over the first 12% of its scroll track, holds its four chapters
-through 84%, then contracts. These are implementation proportions, not source
-video timestamps. Navigation stays hidden through contraction and returns when
-the overview crosses 75% of viewport height. Skip, reduced motion and component
-cleanup restore the navigation. Screens at most 800px wide or 650px high use
-manual, unpinned chapters. The bottom chapter counter, progress bar and scroll
-hint have been removed at the user's request; chapter tabs remain available.
+The hero no longer uses that scroll track. The card stays in normal document
+flow, and the tabs choose the chapter. Page scrolling does not pin the card or
+hide the navigation. On a phone or short screen, scrolling through the hero
+shifts its backdrop without changing the selected chapter. The bottom chapter
+counter, progress bar, scroll hint, and skip control are not shown; chapter
+tabs remain available.
 
 The hero is explicitly a reference motion study. Its Calendly copy and outgoing
 reference links remain placeholders; adding an Innflow sign-in CTA does not
-make the illustrated vendor features verified Innflow features. The existing
-Google sign-in destination comes from `siteConfig.googleAuthUrl`. Microsoft is
-a disabled, visibly labeled placeholder until its destination is supplied;
-this pass does not implement or change any authentication backend.
+make the illustrated vendor features verified Innflow features. The hero sign-in and email actions all use `siteConfig.signupUrl`, which opens signup with a callback to `/workflows`.
 
 ## Verification
 

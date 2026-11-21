@@ -7,7 +7,7 @@
   padding: 20px;
   border: 0;
   border-radius: 12px;
-  background: rgb(255 251 244 / 94%);
+  background: rgb(255 255 255 / 94%);
   box-shadow: 0 24px 48px -12px rgb(0 0 0 / 28%);
   color: #012232;
   text-decoration: none;
@@ -18,8 +18,8 @@
   .card {
     background: linear-gradient(
       135deg,
-      rgb(255 251 244 / 40%),
-      rgb(255 251 244 / 28%)
+      rgb(255 255 255 / 40%),
+      rgb(255 255 255 / 28%)
     );
     -webkit-backdrop-filter: blur(6px) saturate(115%);
     backdrop-filter: blur(6px) saturate(115%);

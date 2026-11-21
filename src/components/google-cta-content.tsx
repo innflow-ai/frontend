@@ -3,7 +3,7 @@ import styles from "./google-cta.module.css";
 
 export function GoogleCtaContent({ mobileLabel }: { mobileLabel?: string }) {
   return (
-    <span className={styles.content}>
+    <span className={styles.content} data-google-cta>
       <Image
         src="/brand/google-g.svg"
         alt=""

@@ -161,7 +161,7 @@ export const faqs = [
   {
     question: "What is innflow?",
     answer:
-      "innflow is property operations software with AI agents and visual workflows. It helps housing teams capture a request, attach the right context, route the next step, and keep a visible record — around the systems they already use.",
+      "innflow is an AI agent platform for agentic process automation. It helps teams assign work to agents, connect the tools those agents need, and keep a visible record with review points — around the systems you already use.",
   },
   {
     question: "How does innflow work?",
@@ -171,22 +171,22 @@ export const faqs = [
   {
     question: "Who uses innflow?",
     answer:
-      "innflow is built for multifamily operators, owners, property managers, fee managers, and owner-operators who need shared process visibility across units, residents, and vendors.",
+      "innflow is built for operations, support, finance, people, and industry teams that need shared process visibility — from request intake to a reviewable result across tools and teammates.",
   },
   {
-    question: "Does innflow replace our property-management system?",
+    question: "Does innflow replace our existing systems of record?",
     answer:
-      "No. innflow coordinates operational work around the existing system of record. Leases, units, and accounting stay in your PMS.",
+      "No. innflow coordinates operational work around the systems you already use. Source records stay where they belong; agents gather context, take configured actions, and bring results back for review.",
   },
   {
-    question: "Can innflow integrate with property management software (PMS)?",
+    question: "Can innflow integrate with the tools we already use?",
     answer:
       "Connector paths exist in the product. Presence in the directory does not, by itself, prove production readiness, scopes, or account-specific compatibility. Each implementation still needs permissions, data contracts, and review.",
   },
   {
-    question: "Does innflow handle leasing and maintenance work?",
+    question: "What kinds of work can agents handle?",
     answer:
-      "Workflows can collect, classify, and route leasing follow-up or maintenance intake so the right owner sees the next step. Outbound messages and any live chat or voice path stay behind human review unless you explicitly configure otherwise — Communications is a preview, not a general-availability channel list.",
+      "Workflows can collect, classify, and route recurring work so the right owner sees the next step. Outbound messages and any live chat or voice path stay behind human review unless you explicitly configure otherwise — Communications is a preview, not a general-availability channel list.",
   },
   {
     question: "Is innflow a chatbot?",

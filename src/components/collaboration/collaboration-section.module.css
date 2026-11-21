@@ -1,0 +1,321 @@
+.section {
+  --demo-scale: 1;
+  padding: 64px 40px;
+  background: var(--marketing-paper, white);
+  color: #18191b;
+  font-family: var(--font-geist), sans-serif;
+}
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 900fr) minmax(0, 440fr);
+  align-items: start;
+  gap: 20px;
+  max-width: 1360px;
+  margin: 0 auto;
+}
+.copy {
+  grid-column: 2;
+  grid-row: 1;
+  position: sticky;
+  top: 120px;
+  padding-left: 32px;
+}
+.eyebrow {
+  margin: 0 0 16px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #5f5f68;
+}
+.copy h2 {
+  color: #18191b;
+  margin: 0;
+  font:
+    500 36px / 1.25 var(--font-geist),
+    sans-serif;
+  letter-spacing: -0.9px;
+}
+.navigation {
+  display: flex;
+  flex-direction: column;
+  margin: 32px -16px 0;
+}
+.navigation a {
+  padding: 16px;
+  border-radius: 8px;
+  color: #5f5f68;
+  text-decoration: none;
+  transition:
+    background 180ms,
+    color 180ms;
+}
+.navigation a:hover {
+  background: #f8f9fb;
+  color: #18191b;
+}
+.navigation a:focus-visible {
+  outline: 2px solid #006bff;
+  outline-offset: 3px;
+}
+.navigation a[aria-current] {
+  background: #f3f3f6;
+  color: #18191b;
+}
+.platformTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 500;
+}
+.platformTitle img {
+  flex: 0 0 16px;
+  object-fit: contain;
+}
+.description {
+  display: none;
+  padding-top: 8px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #5f5f68;
+}
+.navigation a[aria-current] .description {
+  display: block;
+}
+.demos {
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
+  display: grid;
+  gap: 60px;
+}
+.demo {
+  margin: 0;
+  min-width: 0;
+  scroll-margin-top: 120px;
+}
+.section[data-scroll="true"] .layout {
+  min-height: var(--collaboration-scroll-height, 2600px);
+}
+.section[data-scroll="true"] .demos {
+  position: sticky;
+  top: 120px;
+  display: block;
+}
+.demo[hidden] {
+  display: none;
+}
+.section[data-scroll="true"] .demo:not([hidden]) {
+  animation: revealPlatform 220ms ease-out;
+}
+@keyframes revealPlatform {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.viewport {
+  position: relative;
+  aspect-ratio: 900 / 587.5;
+}
+.stage {
+  width: 900px;
+  height: 587.5px;
+  transform: scale(var(--demo-scale));
+  transform-origin: top left;
+}
+.stage p {
+  margin: 0;
+}
+.stage div {
+  box-sizing: border-box;
+}
+.stage [data-node-id="39:4079"],
+.stage [data-node-id="39:4495"],
+.stage [data-node-id="39:4838"] {
+  overflow-y: auto;
+  overflow-x: clip;
+}
+.stage [data-node-id="39:4478"] {
+  width: auto;
+}
+.mobileCaption {
+  display: none;
+}
+@media (max-width: 1100px) and (min-width: 801px) {
+  .section {
+    padding: 64px 32px;
+  }
+  .layout {
+    grid-template-columns: minmax(0, 1.75fr) minmax(0, 1fr);
+  }
+  .copy {
+    padding-left: 16px;
+  }
+  .copy h2 {
+    font-size: 30px;
+  }
+  .platformTitle {
+    font-size: 16px;
+  }
+}
+@media (max-width: 800px) {
+  .section {
+    padding: 64px 24px;
+  }
+  .layout {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+  .copy {
+    position: static;
+    padding: 0;
+    width: 100%;
+  }
+  .copy h2 {
+    font-size: 34px;
+  }
+  .navigation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+    margin: 24px 0 0;
+  }
+  .navigation a {
+    padding: 12px;
+  }
+  .navigation a[aria-current] .description {
+    display: none;
+  }
+  .platformTitle {
+    font-size: 15px;
+    gap: 6px;
+  }
+  .demos {
+    width: 100%;
+    gap: 32px;
+  }
+  .demo {
+    scroll-margin-top: 100px;
+  }
+  .mobileCaption {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+@media (max-width: 640px) {
+  .section {
+    padding: 48px 20px;
+  }
+  .viewport {
+    aspect-ratio: auto;
+  }
+  .stage {
+    width: 100%;
+    height: auto;
+    transform: none;
+  }
+  .stage > div {
+    width: 100%;
+    padding-bottom: 0;
+    height: auto;
+  }
+  .stage [data-name="Container"],
+  .stage [data-name="InnflowBrandAppWindow"] {
+    max-width: 100%;
+  }
+  .stage [data-name="InnflowBrandAppWindow.Sidebar"] {
+    display: none;
+  }
+  .stage [data-name="InnflowBrandAppWindow.Main"] {
+    width: 100%;
+    min-width: 0;
+    flex: 1;
+  }
+  .stage [data-name="InnflowBrandAppWindow.HeaderLeading"] {
+    display: none;
+  }
+  .stage [data-name="InnflowBrandAppWindow.Search"] {
+    width: 100%;
+  }
+  .stage [data-name="InnflowBrandAppWindow.Search:align"] {
+    min-width: 0;
+    flex: 1;
+  }
+  .stage p {
+    max-width: 100%;
+  }
+  .stage [data-name="Paragraph"] {
+    max-width: 100%;
+    height: auto;
+    white-space: normal;
+  }
+  .stage [data-name="Paragraph"] > p {
+    white-space: normal;
+  }
+  .stage [data-node-id="39:4826"] {
+    flex: 1;
+    min-width: 0;
+  }
+  .stage [data-node-id="39:4828"] {
+    display: none;
+  }
+  .stage [data-node-id="39:4830"] {
+    flex: 0 0 16px;
+  }
+  .stage [data-node-id="39:5037"] {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .stage [data-node-id="39:8515"],
+  .stage [data-node-id="39:8517"] {
+    white-space: normal;
+  }
+  .stage [data-node-id="39:5070"],
+  .stage [data-node-id="39:5071"] {
+    height: auto;
+  }
+  .stage [data-node-id="39:5062"],
+  .stage [data-node-id="39:5073"] {
+    left: auto;
+    right: -6px;
+    top: auto;
+    bottom: 0;
+  }
+  .stage [data-node-id="39:5063"],
+  .stage [data-node-id="39:5076"] {
+    left: auto;
+    right: -10px;
+    top: auto;
+    bottom: 0;
+  }
+  .stage [data-node-id="39:5067"],
+  .stage [data-node-id="39:5068"] {
+    top: auto;
+    bottom: 0;
+  }
+  .stage [data-node-id="39:4931"],
+  .stage [data-node-id="39:4932"],
+  .stage [data-node-id="39:4933"],
+  .stage [data-node-id="39:5017"] {
+    height: auto;
+    min-height: 585px;
+  }
+  .stage [data-node-id="39:5055"] {
+    flex: 1 0 auto;
+    overflow: visible;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .navigation a {
+    transition: none;
+  }
+}

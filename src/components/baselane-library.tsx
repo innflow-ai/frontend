@@ -1,12 +1,17 @@
 "use client";
-
-import { ArrowLeft, ArrowRight, MagnifyingGlass } from "@phosphor-icons/react";
 import Image from "next/image";
 import { useRef, useState } from "react";
+import {
+  ChevronLeft as ArrowLeft,
+  ArrowRight,
+  ArrowRight as MageArrowRight,
+  Search as MagnifyingGlass,
+} from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
-import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-library.module.css";
 import data from "./baselane-library-data.json";
+import { InnerPageShell } from "./inner-page-shell";
 
 type Item = (typeof data.articles)[number];
 const articleCategories = [
@@ -27,7 +32,9 @@ function Cards({ title, items }: { title: string; items: Item[] }) {
   const shown = expanded ? items : items.slice(page * 3, page * 3 + 3);
   return (
     <section className={styles.collection} aria-label={title}>
-      <h2>{title}</h2>
+      <h2 data-mixed-heading>
+        <MixedHeadingText>{title}</MixedHeadingText>
+      </h2>
       <div className={styles.cards}>
         {shown.map((item) => (
           <a key={item.href} href={item.href} className={styles.card}>
@@ -43,9 +50,13 @@ function Cards({ title, items }: { title: string; items: Item[] }) {
               )}
             </div>
             <div className={styles.cardCopy}>
-              <h3>{item.title}</h3>
+              <h3 data-mixed-heading>
+                <MixedHeadingText>{item.title}</MixedHeadingText>
+              </h3>
               <p>{item.description}</p>
-              <span>Explore with innflow →</span>
+              <span>
+                Explore with innflow <MageArrowRight size="1em" />
+              </span>
             </div>
           </a>
         ))}
@@ -108,12 +119,14 @@ export function BaselaneLibrary({ kind }: { kind: "articles" | "webinars" }) {
     .slice(0, 3)
     .map((item) => [item.category, item.title, item.href]);
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <section className={styles.featured}>
-        <h1>
-          {isWebinar
-            ? "Learn how innflow works"
-            : "Resources for connected property work"}
+        <h1 data-mixed-heading>
+          <MixedHeadingText>
+            {isWebinar
+              ? "Learn how innflow works"
+              : "Resources for connected property work"}
+          </MixedHeadingText>
         </h1>
         <p className={styles.attribution}>
           Explore{" "}
@@ -137,10 +150,12 @@ export function BaselaneLibrary({ kind }: { kind: "articles" | "webinars" }) {
               <small>
                 {isWebinar ? "WORKFLOW WALKTHROUGH" : "FEATURED RESOURCE"}
               </small>
-              <h2>
-                {isWebinar
-                  ? "Start with your team’s real work"
-                  : "One place for your property operations"}
+              <h2 data-mixed-heading>
+                <MixedHeadingText>
+                  {isWebinar
+                    ? "Start with your team’s real work"
+                    : "One place for your property operations"}
+                </MixedHeadingText>
               </h2>
               {!isWebinar && (
                 <p>
@@ -158,7 +173,9 @@ export function BaselaneLibrary({ kind }: { kind: "articles" | "webinars" }) {
             {featured.map(([label, title, href]) => (
               <a href={href} key={href}>
                 <small>{label}</small>
-                <h2>{title}</h2>
+                <h2 data-mixed-heading>
+                  <MixedHeadingText>{title}</MixedHeadingText>
+                </h2>
                 <span>
                   <ArrowRight size={20} />
                 </span>
@@ -186,7 +203,14 @@ export function BaselaneLibrary({ kind }: { kind: "articles" | "webinars" }) {
               type="button"
               aria-label="Previous categories"
               onClick={() =>
-                tabs.current?.scrollBy({ left: -300, behavior: "smooth" })
+                tabs.current?.scrollBy({
+                  left: -300,
+                  behavior: window.matchMedia(
+                    "(prefers-reduced-motion: reduce)",
+                  ).matches
+                    ? "instant"
+                    : "smooth",
+                })
               }
             >
               <ArrowLeft size={18} />
@@ -195,7 +219,14 @@ export function BaselaneLibrary({ kind }: { kind: "articles" | "webinars" }) {
               type="button"
               aria-label="More categories"
               onClick={() =>
-                tabs.current?.scrollBy({ left: 300, behavior: "smooth" })
+                tabs.current?.scrollBy({
+                  left: 300,
+                  behavior: window.matchMedia(
+                    "(prefers-reduced-motion: reduce)",
+                  ).matches
+                    ? "instant"
+                    : "smooth",
+                })
               }
             >
               <ArrowRight size={18} />
@@ -231,7 +262,9 @@ export function BaselaneLibrary({ kind }: { kind: "articles" | "webinars" }) {
               />
             ) : (
               <div className={styles.empty}>
-                <h2>No matching resources.</h2>
+                <h2 data-mixed-heading>
+                  <MixedHeadingText>No matching resources.</MixedHeadingText>
+                </h2>
                 <p>
                   Try another category or search, or visit the full collection.
                 </p>
@@ -247,7 +280,11 @@ export function BaselaneLibrary({ kind }: { kind: "articles" | "webinars" }) {
               </div>
             )}
             {!all && (
-              <a className={styles.fullCollection} href="/blog">
+              <a
+                data-site-cta="primary"
+                className={styles.fullCollection}
+                href="/blog"
+              >
                 Read the innflow blog <ArrowRight size={16} />
               </a>
             )}
@@ -269,6 +306,6 @@ export function BaselaneLibrary({ kind }: { kind: "articles" | "webinars" }) {
           ))
         )}
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

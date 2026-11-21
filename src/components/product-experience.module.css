@@ -1,5 +1,5 @@
 .page {
-  --canvas: #fffbf4;
+  --canvas: var(--marketing-paper);
   --canvas-warm: #f1f7fb;
   --surface: #fff;
   --surface-soft: #e7f1f7;
@@ -41,7 +41,12 @@
 .page > section:first-child {
   padding-top: 160px;
   padding-bottom: 88px;
-  background: linear-gradient(150deg, #d8ecfa, #eef6fb 65%, #fffbf4);
+  background: linear-gradient(
+    150deg,
+    #d8ecfa,
+    #eef6fb 65%,
+    var(--marketing-paper)
+  );
   border-bottom: 0;
 }
 .page :global(.shell) {

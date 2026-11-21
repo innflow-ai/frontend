@@ -9,7 +9,7 @@
 }
 
 .page {
-  --blog-bg: #fffbf4;
+  --blog-bg: var(--marketing-paper);
   --blog-ink: #121111;
   --blog-muted: #63635f;
   --blog-accent: #00303e;
@@ -609,6 +609,36 @@
   margin-top: 24px;
 }
 
+.continueButton {
+  box-sizing: border-box;
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  margin: 0;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    var(--brand-kit-blue) 0%,
+    var(--sky-blue) 100%
+  );
+  padding: 16px 31.5px;
+  box-shadow: none;
+  color: #ffffff;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  text-decoration: none;
+  transition: opacity 160ms ease;
+}
+
+.continueButton:hover {
+  opacity: 0.92;
+}
+
 .related {
   width: min(100%, 1080px);
   margin: 88px auto 0;
@@ -748,7 +778,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   .search button,
-  .ctaButton {
+  .ctaButton,
+  .continueButton {
     transition: none;
   }
 }
@@ -789,7 +820,7 @@
 }
 .kicker {
   margin: 0;
-  font: 13px / 1.4 monospace;
+  font: 13px / 1.4 var(--font-sans);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: #121111;
@@ -842,7 +873,7 @@
   margin-top: 40px;
 }
 .metaLabel {
-  font: 12px / 1.4 monospace;
+  font: 12px / 1.4 var(--font-sans);
   letter-spacing: 0.1em;
   font-weight: 400;
 }

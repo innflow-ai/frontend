@@ -2,8 +2,14 @@
 
 import Image from "next/image";
 import { useRef } from "react";
-import { BaselaneHomepage } from "./baselane-homepage";
+import { ChevronRight } from "@/components/chevron-right";
+import {
+  ChevronLeft as MageArrowLeft,
+  ArrowRight as MageArrowRight,
+} from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import styles from "./baselane-news.module.css";
+import { InnerPageShell } from "./inner-page-shell";
 
 const coverage = [
   [
@@ -29,6 +35,8 @@ const coverage = [
   ],
 ];
 const root = "/brand/baselane-inspired/news";
+const featurePhotoSizes =
+  "(max-width: 700px) calc(100vw - 48px), (max-width: 900px) calc((100vw - 104px) * 0.524), (max-width: 1440px) calc((100vw - 164px) * 0.524), 669px";
 
 export function BaselaneNews() {
   const track = useRef<HTMLElement>(null);
@@ -43,10 +51,14 @@ export function BaselaneNews() {
     });
   }
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={styles.page}>
         <header className={styles.intro}>
-          <h1>Industry coverage and perspectives</h1>
+          <h1 data-mixed-heading>
+            <MixedHeadingText>
+              Industry coverage and perspectives
+            </MixedHeadingText>
+          </h1>
           <p>
             Explore independent reporting on the property market and the tools
             around it, alongside practical ways to connect your work with
@@ -72,10 +84,15 @@ export function BaselaneNews() {
                   />
                 </div>
                 <div className={styles.body}>
-                  <h2>{title}</h2>
+                  <h2 data-mixed-heading>
+                    <MixedHeadingText>{title}</MixedHeadingText>
+                  </h2>
                   <p>{description}</p>
                   <a href={href} target="_blank" rel="noopener noreferrer">
-                    Read the article <span aria-hidden="true">↗</span>
+                    Read the article{" "}
+                    <span aria-hidden="true">
+                      <ChevronRight />
+                    </span>
                   </a>
                 </div>
               </article>
@@ -87,19 +104,23 @@ export function BaselaneNews() {
               onClick={() => move(-1)}
               aria-label="Previous articles"
             >
-              ←
+              <MageArrowLeft size="1em" />
             </button>
             <button
               type="button"
               onClick={() => move(1)}
               aria-label="Next articles"
             >
-              →
+              <MageArrowRight size="1em" />
             </button>
           </div>
         </div>
         <section className={styles.features}>
-          <h2>A closer look at connected property work</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              A closer look at connected property work
+            </MixedHeadingText>
+          </h2>
           <article className={styles.feature}>
             <div className={styles.visual}>
               <Image
@@ -108,16 +129,23 @@ export function BaselaneNews() {
                 alt="An investor reviewing paperwork"
                 width={1160}
                 height={1000}
+                sizes={featurePhotoSizes}
               />
             </div>
             <div className={styles.copy}>
               <span>EXPLORE INNFLOW</span>
-              <h3>Operations organized around your properties</h3>
+              <h3 data-mixed-heading>
+                <MixedHeadingText>
+                  Operations organized around your properties
+                </MixedHeadingText>
+              </h3>
               <p>
                 Bring recurring requests, team ownership, and property context
                 into one connected flow.
               </p>
-              <a href="/landlord-banking">Explore property operations →</a>
+              <a href="/landlord-banking">
+                Explore property operations <MageArrowRight size="1em" />
+              </a>
             </div>
           </article>
           <article className={styles.feature}>
@@ -128,28 +156,41 @@ export function BaselaneNews() {
                 alt="A plumbing professional at work"
                 width={740}
                 height={648}
+                sizes={featurePhotoSizes}
               />
             </div>
             <div className={styles.copy}>
               <span>EXPLORE INNFLOW</span>
-              <h3>Keep the records behind the work together</h3>
+              <h3 data-mixed-heading>
+                <MixedHeadingText>
+                  Keep the records behind the work together
+                </MixedHeadingText>
+              </h3>
               <p>
                 Connect supporting documents and review notes to the requests
                 and decisions they belong to.
               </p>
-              <a href="/landlord-accounting">Explore connected records →</a>
+              <a href="/landlord-accounting">
+                Explore connected records <MageArrowRight size="1em" />
+              </a>
             </div>
           </article>
         </section>
         <section className={styles.closing}>
-          <h2>More perspectives on property technology</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              More perspectives on property technology
+            </MixedHeadingText>
+          </h2>
           <p>
             Visit the innflow blog for ideas on workflows, AI agents, and the
             day-to-day work of running a property operation.
           </p>
-          <a href="/blog">Read the innflow blog →</a>
+          <a href="/blog">
+            Read the innflow blog <MageArrowRight size="1em" />
+          </a>
         </section>
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

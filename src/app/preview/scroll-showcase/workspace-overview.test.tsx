@@ -19,15 +19,18 @@ vi.mock("next/image", () => ({
   ),
 }));
 
-let tablet = false;
+let viewportWidth = 900;
 let mediaListeners: Set<() => void>;
 beforeEach(() => {
-  tablet = false;
+  viewportWidth = 900;
   mediaListeners = new Set();
   vi.stubGlobal(
     "matchMedia",
-    vi.fn(() => ({
-      matches: tablet,
+    vi.fn((query: string) => ({
+      matches:
+        query === "(min-width: 761px) and (max-width: 1100px)" &&
+        viewportWidth >= 761 &&
+        viewportWidth <= 1100,
       addEventListener: (_event: string, listener: () => void) =>
         mediaListeners.add(listener),
       removeEventListener: (_event: string, listener: () => void) =>
@@ -41,52 +44,73 @@ afterEach(() => {
 });
 
 describe("Workspace overview", () => {
-  it("shows static headings and every detail on tablet, then restores the active card on exit", () => {
-    render(<WorkspaceOverview />);
-    fireEvent.click(screen.getByRole("button", { name: "Assist" }));
-    act(() => {
-      tablet = true;
-      for (const notify of mediaListeners) notify();
-    });
-    for (const card of workspaceCards) {
-      expect(screen.getByRole("heading", { name: card.title })).toBeVisible();
-      expect(
-        screen.queryByRole("button", { name: card.title }),
-      ).not.toBeInTheDocument();
-      expect(
-        document.getElementById(`workspace-${card.id}-details`),
-      ).toHaveAttribute("aria-hidden", "false");
-    }
-    act(() => {
-      tablet = false;
-      for (const notify of mediaListeners) notify();
-    });
-    expect(screen.getByRole("button", { name: "Assist" })).toHaveAttribute(
-      "aria-expanded",
-      "true",
-    );
-    expect(screen.getByRole("button", { name: "Connect" })).toHaveAttribute(
-      "aria-expanded",
-      "false",
-    );
-  });
-
-  it("starts with Connect expanded and exposes all four cards", () => {
-    render(<WorkspaceOverview />);
-    expect(
-      screen.queryByText("Support infrastructure"),
-    ).not.toBeInTheDocument();
-    for (const [index, card] of workspaceCards.entries()) {
-      expect(screen.getByRole("button", { name: card.title })).toHaveAttribute(
+  it.each([390, 760, 1101, 1440, 1920])(
+    "shows all details at %ipx and restores the selected tablet card on resize",
+    (width) => {
+      render(<WorkspaceOverview />);
+      fireEvent.click(screen.getByRole("button", { name: "Train" }));
+      act(() => {
+        viewportWidth = width;
+        for (const notify of mediaListeners) notify();
+      });
+      for (const card of workspaceCards) {
+        expect(screen.getByRole("heading", { name: card.title })).toBeVisible();
+        expect(
+          screen.queryByRole("button", { name: card.title }),
+        ).not.toBeInTheDocument();
+        expect(
+          document.getElementById(`workspace-${card.id}-details`),
+        ).toHaveAttribute("aria-hidden", "false");
+      }
+      act(() => {
+        viewportWidth = 900;
+        for (const notify of mediaListeners) notify();
+      });
+      expect(screen.getByRole("button", { name: "Train" })).toHaveAttribute(
         "aria-expanded",
-        String(index === 0),
+        "true",
       );
+      expect(screen.getByRole("button", { name: "Teach a task" })).toHaveAttribute(
+        "aria-expanded",
+        "false",
+      );
+    },
+  );
+
+  it.each([761, 1100])(
+    "starts with Teach a task expanded at the %ipx tablet boundary",
+    (width) => {
+      viewportWidth = width;
+      render(<WorkspaceOverview />);
+      expect(
+        screen.queryByText("Support infrastructure"),
+      ).not.toBeInTheDocument();
+      for (const [index, card] of workspaceCards.entries()) {
+        expect(
+          screen.getByRole("button", { name: card.title }),
+        ).toHaveAttribute("aria-expanded", String(index === 0));
+      }
+      expect(
+        screen.getByRole("heading", {
+          name: "Move everyday work forward.",
+        }),
+      ).toBeVisible();
+    },
+  );
+
+  it("keeps desktop cards fully expanded when hovered and exposes the signup link", () => {
+    viewportWidth = 1440;
+    render(<WorkspaceOverview />);
+    const cards = screen.getAllByRole("article");
+    fireEvent.pointerEnter(cards[2], { pointerType: "mouse" });
+    for (const card of cards) {
+      expect(card).toHaveAttribute("data-active", "true");
     }
-    expect(
-      screen.getByRole("heading", {
-        name: "One workspace. Every conversation.",
-      }),
-    ).toBeVisible();
+    expect(screen.queryByRole("button")).not.toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Get started" })).toHaveAttribute(
+      "href",
+      "https://app.innflow.ai/signup?callbackURL=%2Fworkflows",
+    );
   });
 
   it("makes every state reachable by touch/click without relying on hover", () => {
@@ -106,16 +130,16 @@ describe("Workspace overview", () => {
 
   it("supports arrow, Home and End navigation without losing focus", () => {
     render(<WorkspaceOverview />);
-    const connect = screen.getByRole("button", { name: "Connect" });
-    const learn = screen.getByRole("button", { name: "Learn" });
+    const connect = screen.getByRole("button", { name: "Teach a task" });
+    const deploy = screen.getByRole("button", { name: "Deploy" });
     fireEvent.keyDown(connect, { key: "End" });
-    expect(learn).toHaveFocus();
-    expect(learn).toHaveAttribute("aria-expanded", "true");
-    fireEvent.keyDown(learn, { key: "ArrowRight" });
+    expect(deploy).toHaveFocus();
+    expect(deploy).toHaveAttribute("aria-expanded", "true");
+    fireEvent.keyDown(deploy, { key: "ArrowRight" });
     expect(connect).toHaveFocus();
     fireEvent.keyDown(connect, { key: "ArrowLeft" });
-    expect(learn).toHaveFocus();
-    fireEvent.keyDown(learn, { key: "Home" });
+    expect(deploy).toHaveFocus();
+    fireEvent.keyDown(deploy, { key: "Home" });
     expect(connect).toHaveFocus();
   });
 });

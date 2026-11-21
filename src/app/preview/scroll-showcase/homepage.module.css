@@ -2,7 +2,7 @@
   --ink: #071a31;
   --muted: #5d6d7b;
   color: var(--ink);
-  background: #fcfbf8;
+  background: var(--marketing-paper);
   font-family: var(--font-host-grotesk), sans-serif;
 }
 .page button {
@@ -568,13 +568,13 @@
   align-items: center;
   margin-top: 32px;
   color: white !important;
-  background: var(--ink);
+  background: var(--button-primary);
   padding: 17px 24px;
   border-radius: 20px;
   font-size: 15px;
 }
 .primaryButton:hover {
-  background: #174367;
+  background: var(--button-primary-hover);
 }
 .closingViewport {
   margin-top: 100px;
@@ -642,7 +642,7 @@
   letter-spacing: -0.04em;
 }
 .sceneBadge > strong {
-  font-family: Georgia, serif;
+  font-family: var(--font-source-serif-4), serif;
 }
 .sceneBadge > span:nth-of-type(2) {
   background: #ffffff80;

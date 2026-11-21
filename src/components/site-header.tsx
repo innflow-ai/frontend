@@ -1,77 +1,74 @@
 "use client";
 
-import {
-  ArrowRight,
-  CaretDown,
-  List,
-  Megaphone,
-  Newspaper,
-  X,
-} from "@phosphor-icons/react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import googleButtonStyles from "./google-cta.module.css";
 import { GoogleCtaContent } from "@/components/google-cta-content";
-import { LoginMenu } from "@/components/login-menu";
-import {
-  menuBrowseLinks,
-  portfolioColumns as originalPortfolioColumns,
-  productColumns,
-  resourcesColumns,
-  solutionsColumns,
-} from "@/components/mega-menu";
+import { ArrowRight } from "@/components/icons/mage/ArrowRight";
+import { ChevronDown as CaretDown } from "@/components/icons/mage/ChevronDown";
+import { DashMenu as List } from "@/components/icons/mage/DashMenu";
+import { MegaphoneA as Megaphone } from "@/components/icons/mage/MegaphoneA";
+import { Multiply as X } from "@/components/icons/mage/Multiply";
 import { siteConfig } from "@/config/site";
-import { blMenuIcons } from "./bl-menu-icons";
-import { MobileNavigation } from "./editorial-header";
 import {
-  useNavigationAppUpdate,
-  useNavigationBlogPosts,
-  useNavigationTestimonial,
-} from "./navigation-blog-posts";
+  EXPERIENCE_ANNOUNCEMENT_ENABLED,
+  INNER_PAGE_ANNOUNCEMENTS_ENABLED,
+} from "@/lib/marketing-chrome";
+import { isShowcaseHome } from "@/lib/showcase-routes";
+import { navigationLabels, type NavigationLabel } from "./navigation-labels";
 import previewStyles from "./site-header-preview.module.css";
 import styles from "./site-shell.module.css";
-import { TestimonialCard } from "./testimonial-cards";
 import { TrackedLink } from "./tracked-link";
 
-const portfolioColumns = originalPortfolioColumns.map((column) => ({
-  ...column,
-  links: column.links.map((link) => ({
-    ...link,
-    href: link.href === "/#portfolios" ? "/property-management" : link.href,
-  })),
-}));
 
-const menus = [
-  { label: "Product", columns: productColumns },
-  { label: "Solutions", columns: solutionsColumns },
-  { label: "Portfolios", columns: portfolioColumns },
-  { label: "Resources", columns: resourcesColumns },
-];
+
+// Loaded on open so motion and the menu icon set are not in the first paint.
+type DropdownComponent = typeof import("./site-header-dropdown").HeaderDropdown;
+type MobileNavigationComponent =
+  typeof import("./editorial-header").MobileNavigation;
 export function SiteHeader() {
-  const latestBlogPosts = useNavigationBlogPosts();
-  const latestUpdate = useNavigationAppUpdate();
-  const testimonial = useNavigationTestimonial();
-  const [menu, setMenu] = useState<string | null>(null);
+  const [menu, setMenu] = useState<NavigationLabel | null>(null);
   const [mobile, setMobile] = useState(false);
+  const [Dropdown, setDropdown] = useState<DropdownComponent | null>(null);
+  const [MobileNav, setMobileNav] = useState<MobileNavigationComponent | null>(
+    null,
+  );
+  const loadDropdown = () => {
+    if (Dropdown) return;
+    void import("./site-header-dropdown").then((mod) => {
+      setDropdown(() => mod.HeaderDropdown);
+    });
+  };
+  const loadMobileNav = () => {
+    if (MobileNav) return;
+    void import("./editorial-header").then((mod) => {
+      setMobileNav(() => mod.MobileNavigation);
+    });
+  };
   const pathname = usePathname();
-  const isShowcasePreview = pathname === "/preview/scroll-showcase";
+  useEffect(() => {
+    if (pathname === "/") {
+      delete document.documentElement.dataset.logoInk;
+      return;
+    }
+    document.documentElement.dataset.logoInk = "feature";
+  }, [pathname]);
   const [announcementDismissed, setAnnouncementDismissed] = useState(false);
+  const announcementHidden =
+    !EXPERIENCE_ANNOUNCEMENT_ENABLED ||
+    announcementDismissed ||
+    (!INNER_PAGE_ANNOUNCEMENTS_ENABLED && !isShowcaseHome(pathname));
   const [previewShowcasePassed, setPreviewShowcasePassed] = useState(false);
   const header = useRef<HTMLElement>(null);
   const toggle = useRef<HTMLButtonElement>(null);
   const hoverClose = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // biome-ignore lint/correctness/useExhaustiveDependencies: Recheck a restored scroll offset after navigation.
   useEffect(() => {
-    if (!isShowcasePreview) return;
     const update = () => {
-      const followingSection = document.getElementById("workspace-overview");
-      // Keep the initial flat header in the document until the showcase passes.
-      // The floating version returns as the next section enters the lower quarter.
-      setPreviewShowcasePassed(
-        window.scrollY > 16 &&
-          followingSection !== null &&
-          followingSection.getBoundingClientRect().top <=
-            window.innerHeight * 0.75,
-      );
+      // The flat bar sits in the page. Pin the floating bar as soon as that
+      // bar would scroll away, including on the homepage.
+      setPreviewShowcasePassed(window.scrollY > 16);
     };
     update();
     window.addEventListener("scroll", update, { passive: true });
@@ -80,7 +77,8 @@ export function SiteHeader() {
       window.removeEventListener("scroll", update);
       window.removeEventListener("resize", update);
     };
-  }, [isShowcasePreview]);
+    // Recheck after navigation in case the browser restores a scroll offset.
+  }, [pathname]);
   const cancelHoverClose = () => {
     if (hoverClose.current) clearTimeout(hoverClose.current);
     hoverClose.current = null;
@@ -191,15 +189,14 @@ export function SiteHeader() {
     setMenu(null);
     setMobile(false);
   };
+
   return (
     <div
-      className={`${styles.page} ${styles.chromeScope}${isShowcasePreview ? ` ${previewStyles.previewScope}` : ""}`}
-      data-preview-chrome={isShowcasePreview || undefined}
-      data-announcement-dismissed={
-        isShowcasePreview ? announcementDismissed : undefined
-      }
+      className={`${styles.page} ${styles.chromeScope} ${previewStyles.previewScope}`}
+      data-preview-chrome
+      data-announcement-dismissed={announcementHidden}
     >
-      {isShowcasePreview && !announcementDismissed && (
+      {!announcementHidden && (
         <aside
           className={previewStyles.announcement}
           aria-label="Innflow announcement"
@@ -207,10 +204,20 @@ export function SiteHeader() {
           <Megaphone size={16} aria-hidden="true" />
           <span>Explore the new Innflow experience</span>
           <a
-            href="#workspace-overview"
+            href={
+              isShowcaseHome(pathname)
+                ? "#workspace-overview"
+                : "/#workspace-overview"
+            }
+            className={
+              isShowcaseHome(pathname) ? previewStyles.homeLearnMore : undefined
+            }
             aria-label="Learn more about the new Innflow experience"
           >
-            Learn more <ArrowRight size={12} aria-hidden="true" />
+            Learn more
+            {!isShowcaseHome(pathname) && (
+              <ArrowRight size={12} aria-hidden="true" />
+            )}
           </a>
           <button
             type="button"
@@ -228,26 +235,21 @@ export function SiteHeader() {
           </button>
         </aside>
       )}
-      {isShowcasePreview && (
-        <div className={previewStyles.navSpace} aria-hidden="true" />
-      )}
+      <div className={previewStyles.navSpace} aria-hidden="true" />
       <header
         ref={header}
+        data-home-navigation
         data-preview-navigation={
-          isShowcasePreview
-            ? previewShowcasePassed || mobile
-              ? "floating"
-              : "flat"
-            : undefined
+          previewShowcasePassed || mobile ? "floating" : "flat"
         }
-        className={`${styles.header}${mobile ? ` ${styles.mobileOpen}` : ""}${isShowcasePreview && !previewShowcasePassed && !mobile ? ` ${previewStyles.flatHeader}` : ""}`}
+        className={`${styles.header}${mobile ? ` ${styles.mobileOpen}` : ""}${!previewShowcasePassed && !mobile ? ` ${previewStyles.flatHeader}` : ""}`}
       >
         <a href="/" className={styles.logo} aria-label="innflow home">
           <Image
-            src="/brand/innflow-wordmark.svg"
+            src="/brand/innflow-nav-wordmark.svg"
             alt="innflow"
-            width={95}
-            height={28}
+            width={110}
+            height={29}
             preload
           />
         </a>
@@ -256,13 +258,13 @@ export function SiteHeader() {
           aria-label="Primary navigation"
           className={styles.nav}
         >
-          {menus.map((group) => (
+          {navigationLabels.map((label) => (
             // biome-ignore lint/a11y/useSemanticElements: This groups navigation disclosures, not form fields.
             <div
               className={styles.menuGroup}
-              key={group.label}
+              key={label}
               role="group"
-              aria-label={group.label}
+              aria-label={label}
               onPointerEnter={(event) => {
                 if (
                   event.pointerType !== "mouse" ||
@@ -271,219 +273,57 @@ export function SiteHeader() {
                 )
                   return;
                 cancelHoverClose();
-                setMenu(group.label);
+                loadDropdown();
+                setMenu(label);
               }}
               onPointerLeave={(event) => {
                 if (event.pointerType !== "mouse" || mobile) return;
                 cancelHoverClose();
                 hoverClose.current = setTimeout(() => {
-                  setMenu((current) =>
-                    current === group.label ? null : current,
-                  );
+                  setMenu((current) => (current === label ? null : current));
                 }, 180);
               }}
               onBlur={(event) => {
                 if (!event.currentTarget.contains(event.relatedTarget)) {
                   cancelHoverClose();
-                  setMenu((current) =>
-                    current === group.label ? null : current,
-                  );
+                  setMenu((current) => (current === label ? null : current));
                 }
               }}
             >
               <button
                 type="button"
-                aria-expanded={menu === group.label}
-                aria-controls={`baselane-${group.label.replaceAll(" ", "-")}`}
+                aria-expanded={menu === label}
+                aria-controls={`baselane-${label.replaceAll(" ", "-")}`}
                 onClick={() => {
                   cancelHoverClose();
-                  setMenu(menu === group.label ? null : group.label);
+                  loadDropdown();
+                  setMenu(menu === label ? null : label);
                 }}
               >
-                {group.label}
+                {label}
                 <CaretDown size={13} />
               </button>
-              {menu === group.label && (
-                <div
-                  id={`baselane-${group.label.replaceAll(" ", "-")}`}
-                  className={`${styles.dropdown}${group.label === "Portfolios" ? ` ${styles.dropdownWithBanner}` : ""}${group.label === "Resources" && latestBlogPosts.length ? ` ${styles.dropdownWithPosts}` : ""}${(group.label === "Product" && latestUpdate) || (group.label === "Solutions" && testimonial) ? ` ${styles.dropdownWithUpdate}` : ""}`}
-                >
-                  {group.columns.map((column) => (
-                    <div className={styles.dropdownColumn} key={column.heading}>
-                      <h3>{column.heading}</h3>
-                      {column.links.map((link) => (
-                        <a
-                          key={link.title}
-                          href={link.href}
-                          onClick={closeMenus}
-                          data-browse-all={link.browseAll || undefined}
-                        >
-                          {!link.hideIcon && (
-                            <Image
-                              className={styles.menuItemIcon}
-                              src={
-                                blMenuIcons[link.title] ??
-                                link.iconSrc ??
-                                "/brand/navigation/bl-stroke/01-laptop.svg"
-                              }
-                              alt=""
-                              width={28}
-                              height={28}
-                              unoptimized
-                            />
-                          )}
-                          <span>{link.title}</span>
-                          {link.badge ? <small>{link.badge}</small> : null}
-                        </a>
-                      ))}
-                    </div>
-                  ))}
-                  {group.label === "Solutions" && testimonial && (
-                    <section
-                      className={styles.menuUpdateSection}
-                      aria-label="Customer testimonial"
-                    >
-                      <h3>In their own words</h3>
-                      <TestimonialCard item={testimonial} />
-                    </section>
-                  )}
-                  {group.label === "Product" && latestUpdate && (
-                    <section
-                      className={styles.menuUpdateSection}
-                      aria-label="Company updates"
-                    >
-                      <h3>Company updates</h3>
-                      <TrackedLink
-                        destination={latestUpdate.href}
-                        eventLabel="product_menu_latest_update"
-                        className={styles.menuBlogCard}
-                        onClick={closeMenus}
-                      >
-                        <span className={styles.menuBlogMedia}>
-                          {latestUpdate.imageUrl ? (
-                            <Image
-                              src={latestUpdate.imageUrl}
-                              alt={latestUpdate.imageAlt}
-                              width={720}
-                              height={389}
-                              sizes="300px"
-                            />
-                          ) : (
-                            <Newspaper size={28} aria-hidden="true" />
-                          )}
-                        </span>
-                        <span className={styles.menuBlogMeta}>
-                          {latestUpdate.publishedLabel}
-                        </span>
-                        <strong>{latestUpdate.title}</strong>
-                        <span>
-                          {latestUpdate.actionLabel}{" "}
-                          <ArrowRight size={14} aria-hidden="true" />
-                        </span>
-                      </TrackedLink>
-                    </section>
-                  )}
-                  {menuBrowseLinks[group.label] && (
-                    <a
-                      className={styles.browseAll}
-                      data-browse-all
-                      href={menuBrowseLinks[group.label]?.href}
-                      onClick={closeMenus}
-                    >
-                      <span>{menuBrowseLinks[group.label]?.title}</span>
-                    </a>
-                  )}
-                  {group.label === "Resources" &&
-                    latestBlogPosts.length > 0 && (
-                      <section
-                        className={styles.menuBlogSection}
-                        aria-label="Latest from Innflow"
-                      >
-                        <div className={styles.menuBlogHeading}>
-                          <h3>Latest from Innflow</h3>
-                          <a href="/blog" onClick={closeMenus}>
-                            View all posts{" "}
-                            <ArrowRight size={14} aria-hidden="true" />
-                          </a>
-                        </div>
-                        <div className={styles.menuBlogGrid}>
-                          {latestBlogPosts.slice(0, 4).map((post) => (
-                            <TrackedLink
-                              key={post.href}
-                              destination={post.href}
-                              eventLabel="baselane_menu_latest_blog_post"
-                              className={styles.menuBlogCard}
-                              onClick={closeMenus}
-                            >
-                              <span className={styles.menuBlogMedia}>
-                                {post.imageUrl ? (
-                                  <Image
-                                    src={post.imageUrl}
-                                    alt={post.imageAlt}
-                                    width={720}
-                                    height={512}
-                                    quality={100}
-                                    sizes="(min-width: 1380px) 230px, 250px"
-                                  />
-                                ) : (
-                                  <Newspaper size={32} aria-hidden="true" />
-                                )}
-                              </span>
-                              <span className={styles.menuBlogMeta}>
-                                {[post.categoryLabel, post.publishedLabel]
-                                  .filter(Boolean)
-                                  .join(" · ")}
-                              </span>
-                              <strong>{post.title}</strong>
-                            </TrackedLink>
-                          ))}
-                        </div>
-                      </section>
-                    )}
-                  {group.label === "Portfolios" && (
-                    <TrackedLink
-                      className={styles.dropdownBanner}
-                      destination="/contact"
-                      eventLabel="baselane_menu_portfolio_talk_to_sales"
-                      onClick={closeMenus}
-                    >
-                      <Image
-                        src="/brand/navigation/ico-banner-real.png"
-                        alt="Interested in our product? Contact us to discuss becoming a customer and finding solutions for your needs. Talk to sales."
-                        width={2430}
-                        height={776}
-                        sizes="(min-width: 1181px) 900px, 1px"
-                      />
-                    </TrackedLink>
-                  )}
-                </div>
-              )}
+              {menu === label && Dropdown ? (
+                <Dropdown
+                  label={label}
+                  closeMenus={closeMenus}
+                />
+              ) : null}
             </div>
           ))}
           <a href="/pricing">Pricing</a>
-          <a href="/blog">Blog</a>
-          <a
-            className={styles.mobileLogin}
-            href={`${siteConfig.appOrigin}/login`}
-          >
+          <a className={styles.mobileLogin} href={siteConfig.loginUrl}>
             Log in
           </a>
         </nav>
         <div className={styles.headerActions}>
-          <LoginMenu
-            href={`${siteConfig.appOrigin}/login`}
-            open={menu === "Log in"}
-            onOpenChange={(open) => {
-              cancelHoverClose();
-              setMenu((current) =>
-                open ? "Log in" : current === "Log in" ? null : current,
-              );
-            }}
-            onSelect={closeMenus}
-          />
+          <a className={styles.login} href={siteConfig.loginUrl}>
+            Log in
+          </a>
           <TrackedLink
-            className={styles.darkButton}
-            destination={siteConfig.googleAuthUrl}
+            data-site-cta="secondary"
+            className={`${styles.darkButton} ${googleButtonStyles.raisedSignIn}`}
+            destination={siteConfig.signupUrl}
             eventLabel="baselane_header_signup"
             aria-label="Continue with Google"
           >
@@ -497,7 +337,9 @@ export function SiteHeader() {
             aria-expanded={mobile}
             aria-controls="baselane-mobile-overlay"
             onClick={() => {
-              setMobile(!mobile);
+              const next = !mobile;
+              if (next) loadMobileNav();
+              setMobile(next);
               setMenu(null);
             }}
           >
@@ -505,16 +347,16 @@ export function SiteHeader() {
           </button>
         </div>
       </header>
-      <MobileNavigation
-        open={mobile}
-        latestBlogPosts={latestBlogPosts}
-        onClose={closeMenus}
-        iconOverrides={blMenuIcons}
-        id="baselane-mobile-overlay"
-        className={styles.mobileMenu}
-        pricingHref="/pricing"
-        loginHref={`${siteConfig.appOrigin}/login`}
-      />
+      {mobile && MobileNav ? (
+        <MobileNav
+          open={mobile}
+          onClose={closeMenus}
+          id="baselane-mobile-overlay"
+          className={styles.mobileMenu}
+          pricingHref="/pricing"
+          loginHref={siteConfig.loginUrl}
+        />
+      ) : null}
     </div>
   );
 }

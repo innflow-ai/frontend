@@ -527,6 +527,22 @@
     padding-top: 28px;
   }
 
+  /* More specific than the shell rule that paints primary menu actions
+     white, so the outline stays readable on the light menu in both themes. */
+  .mobileCtaRow > .mobileLoginButton {
+    width: 100%;
+    min-width: 0;
+    padding-inline: 16px;
+    border: 1px solid var(--sky-ink, var(--ink));
+    background: transparent;
+    color: var(--sky-ink, var(--ink));
+  }
+
+  :global(html[data-theme="dark"]) .mobileCtaRow > .mobileLoginButton {
+    border-color: var(--sky-ink, var(--ink));
+    color: var(--sky-ink, var(--ink));
+  }
+
   .mobileCta {
     width: 100%;
     min-width: 0;
@@ -623,7 +639,7 @@
     box-shadow:
       inset 0 1px 2px #ffffff70,
       0 3px 7px #0002;
-    border: 1px solid var(--button-primary);
+    border: 1px solid var(--button-primary-border);
     text-shadow: none;
   }
 
@@ -641,7 +657,7 @@
   margin: 16px auto 0;
   border: 0;
   border-radius: 999px;
-  background: #fffbf4;
+  background: var(--marketing-paper);
   box-shadow: 0 3px 12px #002b3814;
 }
 .articleHeader .inner {

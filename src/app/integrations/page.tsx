@@ -1,7 +1,9 @@
-import { Breadcrumbs } from "@/components/breadcrumbs";
+import { BaselineClosing } from "@/app/preview/scroll-showcase/baseline-closing";
+import { ArrowDown as MageArrowDown } from "@/components/icons/mage";
 import { IntegrationDirectory } from "@/components/integration-directory";
 import styles from "@/components/integrations.module.css";
-import { MarketingPage } from "@/components/page-primitives";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
+import { ShowcaseTheme } from "@/components/showcase-theme";
 import { getIntegrations } from "@/lib/integrations";
 import { createPageMetadata } from "@/lib/metadata";
 export const revalidate = 60;
@@ -14,29 +16,34 @@ export const metadata = createPageMetadata({
 export default async function IntegrationsPage() {
   const items = await getIntegrations();
   return (
-    <MarketingPage>
-      <header className={styles.hero}>
-        <div className="shell">
-          <Breadcrumbs
-            items={[{ label: "Home", href: "/" }, { label: "Integrations" }]}
-          />
-          <span className={styles.eyebrow}>The integration directory</span>
-          <h1>
-            Your tools.
-            <br />
-            <span>One connected workflow.</span>
-          </h1>
-          <p>
-            Explore connections for the tools your team already uses, and the
-            ones we’re planning next.
-          </p>
-          <div className={styles.heroNote}>
-            <span aria-hidden="true">◎</span> Every integration includes its
-            current availability.
+    <ShowcaseTheme>
+      <main id="main-content" className={styles.page}>
+        <header className={styles.hero}>
+          <div className="shell">
+            <span className={styles.eyebrow}>Apps & integrations</span>
+            <h1 data-mixed-heading>
+              <MixedHeadingText>
+                Your tools.
+                <br />
+                <span>One connected workflow.</span>
+              </MixedHeadingText>
+            </h1>
+            <p>
+              Explore connections for the tools your team already uses. Find an
+              integration, see what it does, and{" "}
+              <strong>check its availability</strong>.
+            </p>
+            <a className={styles.browseLink} href="#integration-directory">
+              Explore integrations{" "}
+              <span aria-hidden="true">
+                <MageArrowDown size="1em" />
+              </span>
+            </a>
           </div>
-        </div>
-      </header>
-      <IntegrationDirectory items={items} />
-    </MarketingPage>
+        </header>
+        <IntegrationDirectory items={items} />
+        <BaselineClosing />
+      </main>
+    </ShowcaseTheme>
   );
 }

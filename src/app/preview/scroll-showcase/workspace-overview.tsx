@@ -1,8 +1,21 @@
 "use client";
 
 import Image from "next/image";
-import { type KeyboardEvent, useState, useSyncExternalStore } from "react";
+import { Checklist, Share, StarsA } from "@/components/icons/mage";
+import { MixedHeadingContent } from "@/components/section-heading";
+
+const stepIcons = [StarsA, Share, Checklist];
+
+import {
+  type KeyboardEvent,
+  useEffect,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from "react";
 import { siteConfig } from "@/config/site";
+import { LottieArtwork } from "./lottie-artwork";
+import { WorkspaceCardArtwork } from "./workspace-card-artwork";
 import styles from "./workspace-overview.module.css";
 
 const assets = "/preview/homepage/workspace-overview";
@@ -21,57 +34,97 @@ const getServerTabletSnapshot = () => false;
 export const workspaceCards = [
   {
     id: "connect",
-    title: "Connect",
-    summary: "Bring every support channel together.",
+    title: "Teach a task",
+    summary: "Record a task for your agent.",
     description:
-      "Keep customer messages and their context together so your team can pick up the conversation without starting over.",
+      "Show your agent how you export the weekly signup report by recording the steps as you work.",
     steps: [
-      "Connect your support channels",
-      "Keep customer context together",
-      "Respond from one workspace",
+      "Start recording",
+      "Choose the last 7 days and export the report",
+      "Stop and save the demonstration",
     ],
-    source: "350:11101",
+    source: "393:26359",
   },
   {
     id: "assist",
-    title: "Assist",
-    summary: "Find context. Prepare a helpful reply.",
+    title: "Train",
+    summary: "Show your agents how you work.",
     description:
-      "Let an assistant gather relevant information and prepare a response. Your team reviews it before sending.",
+      "Share your preferences, processes, and instructions so your agents know how you want the work handled.",
     steps: [
-      "Find the context you need",
-      "Draft a helpful response",
-      "Review before sending",
+      "Share your preferences",
+      "Define your processes",
+      "Give clear instructions",
     ],
-    source: "385:9888",
+    source: "53:725",
   },
   {
     id: "automate",
-    title: "Automate",
-    summary: "Route requests and run your workflows.",
+    title: "Assign",
+    summary: "Hand off the work.",
     description:
-      "Give each request a clear path, from identifying the issue to assigning the next step and tracking the outcome.",
+      "Give your agents a focused task, with clear responsibilities and review points for your team.",
     steps: [
-      "Identify the request",
-      "Run the right workflow",
-      "Track the result",
+      "Assign a focused task",
+      "Set clear responsibilities",
+      "Choose where approval is needed",
     ],
-    source: "385:9992",
+    source: "53:842",
   },
   {
     id: "learn",
-    title: "Learn",
-    summary: "Find patterns in every conversation.",
+    title: "Deploy",
+    summary: "Put your agents to work. Review progress.",
     description:
-      "Bring related feedback together to understand recurring questions and decide what to improve next.",
+      "Put your agents to work and follow their progress from one workspace.",
     steps: [
-      "Spot recurring questions",
-      "Review conversation patterns",
-      "Improve your knowledge base",
+      "Put your agents to work",
+      "Follow their progress",
+      "Manage work from one workspace",
     ],
-    source: "385:10096",
+    source: "53:959",
   },
 ] as const;
+
+function TeachingDemo({ expanded }: { expanded: boolean }) {
+  const host = useRef<HTMLDivElement>(null);
+  const [play, setPlay] = useState(false);
+
+  useEffect(() => {
+    const el = host.current;
+    if (!expanded || !el || typeof IntersectionObserver === "undefined") return;
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let visible = false;
+    const update = () => setPlay(visible && !motion.matches);
+    const observer = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      update();
+    });
+    observer.observe(el);
+    motion.addEventListener("change", update);
+    return () => {
+      observer.disconnect();
+      motion.removeEventListener("change", update);
+      setPlay(false);
+    };
+  }, [expanded]);
+
+  return (
+    <div
+      className={styles.teachingDemo}
+      ref={host}
+      role="img"
+      aria-label="Recording a demonstration of exporting the last seven days of signup data."
+    >
+      <LottieArtwork
+        artwork={`${assets}/teach-weekly-report`}
+        width={580}
+        height={294}
+        play={expanded && play}
+      />
+    </div>
+  );
+}
 
 export function WorkspaceOverview() {
   const [active, setActive] = useState(0);
@@ -114,29 +167,27 @@ export function WorkspaceOverview() {
       className={styles.section}
       id="workspace-overview"
       aria-labelledby="workspace-heading"
-      data-source-node="350:11085"
+      data-source-node="66:380"
     >
       <div className={styles.surface}>
-        <Image
-          className={styles.backdrop}
-          src={`${assets}/section-background.png`}
-          alt=""
-          fill
-          sizes="100vw"
-        />
         <div className={styles.content}>
           <header className={styles.heading}>
-            <h2 id="workspace-heading">
-              One workspace. <br />
-              Every conversation.
+            <h2 id="workspace-heading" data-mixed-heading>
+              <MixedHeadingContent
+                title="Move everyday"
+                emphasis={<strong>work forward.</strong>}
+              />
             </h2>
-            <p className={styles.introduction}>
-              Bring customer conversations, AI assistance and team workflows
-              together. Keep the context from the first message to the next
-              step.
+            <p data-home-copy className={styles.introduction}>
+              Schedule meetings, <strong>prepare follow-ups</strong>, review
+              decisions, and handle billing questions.
             </p>
-            <a className={styles.cta} href={siteConfig.signupUrl}>
-              Start for free
+            <a
+              data-site-cta="primary"
+              className={styles.cta}
+              href={siteConfig.signupUrl}
+            >
+              Get started
             </a>
           </header>
 
@@ -145,11 +196,14 @@ export function WorkspaceOverview() {
               <article
                 key={card.id}
                 className={styles.card}
-                data-active={tablet || active === index}
+                data-active={!tablet || active === index}
                 data-source-node={card.source}
                 onPointerEnter={(event) => {
                   if (
-                    !tablet &&
+                    tablet &&
+                    !event.currentTarget.parentElement?.querySelector(
+                      ":focus-visible",
+                    ) &&
                     (event.pointerType === "mouse" ||
                       event.pointerType === "pen")
                   ) {
@@ -169,7 +223,7 @@ export function WorkspaceOverview() {
                 <div className={styles.cardSurface}>
                   <div className={styles.cardCopy}>
                     <h3>
-                      {tablet ? (
+                      {!tablet ? (
                         card.title
                       ) : (
                         <button
@@ -186,17 +240,17 @@ export function WorkspaceOverview() {
                         </button>
                       )}
                     </h3>
-                    <div className={styles.description}>
+                    <div data-home-copy className={styles.description}>
                       <p
                         className={styles.summary}
-                        aria-hidden={tablet || active === index}
+                        aria-hidden={!tablet || active === index}
                       >
                         {card.summary}
                       </p>
                       <div
                         className={styles.details}
                         id={`workspace-${card.id}-details`}
-                        aria-hidden={!tablet && active !== index}
+                        aria-hidden={tablet && active !== index}
                       >
                         <p>{card.description}</p>
                         <ul>
@@ -206,19 +260,10 @@ export function WorkspaceOverview() {
                                 className={styles.stepIcon}
                                 aria-hidden="true"
                               >
-                                <Image
-                                  src={`${assets}/step-${stepIndex + 1}-background.svg`}
-                                  alt=""
-                                  width={20}
-                                  height={20}
-                                />
-                                <Image
-                                  className={styles.stepGlyph}
-                                  src={`${assets}/step-${stepIndex + 1}-icon.svg`}
-                                  alt=""
-                                  width={14}
-                                  height={14}
-                                />
+                                {(() => {
+                                  const StepIcon = stepIcons[stepIndex];
+                                  return <StepIcon size={20} />;
+                                })()}
                               </span>
                               {step}
                             </li>
@@ -227,38 +272,40 @@ export function WorkspaceOverview() {
                       </div>
                     </div>
                   </div>
-                  <div className={styles.artwork} aria-hidden="true">
-                    <Image
-                      className={styles.inactiveArt}
-                      src={`${assets}/${card.id}-inactive.png`}
-                      alt=""
-                      fill
-                      sizes="(max-width: 700px) 90vw, 384px"
-                    />
-                    <div className={styles.activeArt}>
-                      <Image
-                        src={`${assets}/${card.id}-background.png`}
-                        alt=""
-                        fill
-                        sizes="(max-width: 700px) 90vw, 384px"
-                      />
-                      {card.id === "connect" ? (
+                  {index === 0 ? (
+                    <div
+                      className={`${styles.artwork} ${styles.teachingPanel}`}
+                    >
+                      <div className={styles.activeArt} aria-hidden="true">
                         <Image
-                          className={styles.connectForeground}
-                          src={`${assets}/connect-foreground.png`}
+                          src={`${assets}/connect-background.png`}
                           alt=""
                           fill
-                          sizes="(max-width: 700px) 90vw, 384px"
+                          sizes="(max-width: 1100px) 90vw, (max-width: 1328px) 40vw, 480px"
                         />
-                      ) : (
-                        <div className={styles.draftDetail}>
-                          {card.steps.map((step) => (
-                            <p key={step}>{step}</p>
-                          ))}
-                        </div>
-                      )}
+                      </div>
+                      {(!tablet || active === index) && <TeachingDemo expanded />}
                     </div>
-                  </div>
+                  ) : (
+                    <div className={styles.artwork} aria-hidden="true">
+                      <Image
+                        className={styles.inactiveArt}
+                        src={`${assets}/${card.id}-inactive.png`}
+                        alt=""
+                        fill
+                        sizes="(max-width: 1100px) 90vw, (max-width: 1328px) 40vw, 480px"
+                      />
+                      <div className={styles.activeArt}>
+                        <Image
+                          src={`${assets}/${card.id}-background.png`}
+                          alt=""
+                          fill
+                          sizes="(max-width: 1100px) 90vw, (max-width: 1328px) 40vw, 480px"
+                        />
+                        <WorkspaceCardArtwork id={card.id} />
+                      </div>
+                    </div>
+                  )}
                 </div>
               </article>
             ))}

@@ -24,95 +24,82 @@ afterEach(() => {
   cleanup();
   vi.unstubAllGlobals();
 });
-it("reserves preview-only chrome and dismisses the announcement with focus restored", () => {
+it("keeps the experience strip off without leaving a gap above the nav", () => {
   render(<SiteHeader />);
-  expect(
-    screen.getByRole("complementary", { name: "Innflow announcement" }),
-  ).toBeVisible();
-  expect(
-    screen.getByRole("link", {
-      name: "Learn more about the new Innflow experience",
-    }),
-  ).toHaveAttribute("href", "#workspace-overview");
-  const header = screen.getByRole("banner");
-  expect(header).toHaveAttribute("data-preview-navigation", "flat");
-  fireEvent.click(screen.getByRole("button", { name: "Dismiss announcement" }));
   expect(
     screen.queryByRole("complementary", { name: "Innflow announcement" }),
   ).toBeNull();
+  expect(screen.queryByText("Explore the new Innflow experience")).toBeNull();
+  const header = screen.getByRole("banner");
+  expect(header).toHaveAttribute("data-preview-navigation", "flat");
   expect(document.querySelector("[data-preview-chrome]")).toHaveAttribute(
     "data-announcement-dismissed",
     "true",
   );
-  expect(screen.getByRole("link", { name: "innflow home" })).toHaveFocus();
 });
-it("waits for the overview, responds to reverse scroll and resize, and preserves showcase hiding", () => {
-  let overviewTop = window.innerHeight + 500;
+it("floats after a short scroll, returns at the top, and preserves showcase hiding", () => {
   render(
     <>
       <SiteHeader />
       <section id="workspace-overview" />
     </>,
   );
-  const overview = document.getElementById("workspace-overview");
-  if (!overview) throw new Error("Missing overview fixture");
-  vi.spyOn(overview, "getBoundingClientRect").mockImplementation(() => ({
-    top: overviewTop,
-    bottom: overviewTop + 500,
-    left: 0,
-    right: 1000,
-    width: 1000,
-    height: 500,
-    x: 0,
-    y: overviewTop,
-    toJSON: () => ({}),
-  }));
   const header = screen.getByRole("banner");
   header.setAttribute("data-showcase-hidden", "true");
   header.inert = true;
   window.scrollY = 120;
   fireEvent.scroll(window);
-  expect(header).toHaveAttribute("data-preview-navigation", "flat");
-  overviewTop = window.innerHeight * 0.75;
-  window.scrollY = 5000;
-  fireEvent.scroll(window);
   expect(header).toHaveAttribute("data-preview-navigation", "floating");
   expect(header).toHaveAttribute("data-showcase-hidden", "true");
   expect(header.inert).toBe(true);
-  overviewTop = window.innerHeight * 0.75 + 1;
-  window.scrollY = 4900;
-  fireEvent.scroll(window);
-  expect(header).toHaveAttribute("data-preview-navigation", "flat");
-  overviewTop = window.innerHeight * 0.75 - 1;
-  fireEvent.resize(window);
-  expect(header).toHaveAttribute("data-preview-navigation", "floating");
-  overviewTop = window.innerHeight + 500;
-  fireEvent.resize(window);
-  expect(header).toHaveAttribute("data-preview-navigation", "flat");
-  expect(header).toHaveAttribute("data-showcase-hidden", "true");
-  expect(header.inert).toBe(true);
-  overviewTop = 0;
   window.scrollY = 0;
   fireEvent.scroll(window);
   expect(header).toHaveAttribute("data-preview-navigation", "flat");
+  window.scrollY = 48;
+  fireEvent.resize(window);
+  expect(header).toHaveAttribute("data-preview-navigation", "floating");
 });
-it("fails safely to flat navigation when the overview is absent", () => {
+it("floats when the overview is absent", () => {
   render(<SiteHeader />);
   window.scrollY = 5000;
   fireEvent.scroll(window);
   fireEvent.resize(window);
   expect(screen.getByRole("banner")).toHaveAttribute(
     "data-preview-navigation",
-    "flat",
+    "floating",
   );
 });
-it("preserves default header on other routes and similarly prefixed paths", () => {
-  for (const path of ["/", "/pricing", "/preview/scroll-showcase/other"]) {
+it("uses homepage navigation on inner pages, including help and nested routes", () => {
+  for (const path of [
+    "/rent-collection",
+    "/pricing",
+    "/help",
+    "/blog/example",
+    "/legal/privacy-policy",
+    "/preview/scroll-showcase/other",
+  ]) {
     route.value = path;
     const view = render(<SiteHeader />);
-    expect(document.querySelector("[data-preview-chrome]")).toBeNull();
-    expect(screen.getByRole("banner")).not.toHaveAttribute(
+    expect(document.querySelector("[data-preview-chrome]")).not.toBeNull();
+    expect(screen.getByRole("banner")).toHaveAttribute(
       "data-preview-navigation",
+      "flat",
+    );
+    expect(
+      screen.getByRole("link", { name: "Continue with Google" }),
+    ).toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: "Get started" })).toBeNull();
+    window.scrollY = 100;
+    fireEvent.scroll(window);
+    expect(screen.getByRole("banner")).toHaveAttribute(
+      "data-preview-navigation",
+      "floating",
+    );
+    window.scrollY = 0;
+    fireEvent.scroll(window);
+    expect(screen.getByRole("banner")).toHaveAttribute(
+      "data-preview-navigation",
+      "flat",
     );
     expect(screen.queryByText("Explore the new Innflow experience")).toBeNull();
     view.unmount();

@@ -2,9 +2,11 @@ import Image from "next/image";
 import { siteConfig } from "@/config/site";
 import { CustomerSupportHours } from "./customer-support-hours";
 import { FooterLegalLinks } from "./footer-legal-links";
+import { FooterNewsletter } from "./footer-newsletter";
 import { GoogleCtaContent } from "./google-cta-content";
-import styles from "./site-shell.module.css";
+import styles from "./site-footer.module.css";
 
+/** Shared sitewide footer — cross-industry agent platform, not PM-niche. */
 const footerMenus = [
   {
     label: "Why innflow",
@@ -14,44 +16,33 @@ const footerMenus = [
       ["Industry coverage", "/in-the-news"],
       ["Who we help", "/our-customers"],
       ["Security", "/security"],
-      ["Share innflow", "/landlord-referral"],
       ["Partnerships", "/partner-with-us"],
       ["Advisor partnerships", "/advisor-partner-program"],
-      ["Workflows", "/products/agentic-workflows"],
-      ["AI assistant", "/products/ai-agents"],
+      ["Workflows", "/features/workflows"],
+      ["AI agents", "/products/ai-agents"],
       ["Knowledge", "/platform"],
       ["Approvals", "/platform/security-and-compliance"],
     ],
   },
   {
-    label: "Solutions",
+    label: "Product",
     links: [
-      ["Overview", "/"],
-      ["Multi-property investors", "/multi-property-investors"],
-      ["Landlord operations", "/landlord-banking"],
-      ["Rental workflows", "/rent-collection"],
-      ["Rental workflows overview", "/rent-collection-2"],
-      ["Connected property records", "/landlord-accounting"],
-      ["Property review preparation", "/landlord-insurance"],
-      ["Document preparation", "/tax-preparation"],
-      ["Deposit workflows", "/security-deposit-account"],
-      ["Screening workflows", "/tenant-screening-service"],
-      ["Reserve planning", "/landlord-banking-apy"],
-      ["Financing preparation", "/rental-property-loans"],
-      ["Property management", "/property-management"],
-      ["Connected operations", "/platform"],
+      ["Platform", "/platform"],
+      ["Agent OS", "/products/agent-os"],
+      ["Agent Studio", "/products/agent-studio"],
+      ["AI Agents", "/products/ai-agents"],
+      ["Agentic Workflows", "/features/workflows"],
+      ["Databases", "/products/databases"],
+      ["AI Website Builder", "/features/website"],
       ["Integrations", "/integrations"],
+      ["Agent Skills", "/skills"],
     ],
   },
   {
     label: "Resources",
     links: [
       ["Resource library", "/resources"],
-      ["Document checklists", "/free-rental-forms-and-templates-for-landlords"],
-      ["Rent comparison", "/how-much-should-i-charge-for-rent"],
-      ["Lease workflows", "/lease-agreement"],
       ["Workflow learning", "/webinars"],
-      ["Investor resources", "/real-estate-investing"],
       ["Product updates", "/product-updates"],
       ["Blog", "/blog"],
       ["Help center", "/help-center"],
@@ -61,62 +52,104 @@ const footerMenus = [
     ],
   },
 ];
-export function SiteFooter() {
+
+const getStarted = {
+  label: "Get started",
+  links: [
+    ["Book a demo", siteConfig.demoUrl],
+    ["Pricing", "/pricing"],
+    ["Log in", siteConfig.loginUrl],
+  ],
+};
+
+/** Industries as one vertical among many — not a property-only site niche. */
+const industries = {
+  label: "Industries",
+  links: [
+    ["Financial services", "/industries/financial-services-banking"],
+    ["Healthcare", "/industries/healthcare"],
+    ["Property & real estate", "/industries/property-real-estate"],
+    ["Technology & software", "/industries/technology-software"],
+    ["Customer service", "/industries/customer-service"],
+    ["Browse all industries", "/solutions"],
+  ],
+};
+
+const columns = [
+  [footerMenus[0]],
+  [footerMenus[1], industries],
+  [footerMenus[2], getStarted],
+];
+
+export function SiteFooter({ home: _home = true }: { home?: boolean }) {
+  // `home` kept for callers; chrome is the same sitewide so we don't niche the homepage.
+  void _home;
+
   return (
-    <div className={styles.page}>
+    <div className={styles.shell}>
       <footer className={styles.footer}>
-        <div className={styles.footerGrid}>
-          <div>
-            <a href="/" aria-label="innflow home" className={styles.footerLogo}>
-              <Image
-                src="/brand/innflow-wordmark.svg"
-                width={105}
-                height={30}
-                alt="innflow"
-              />
-            </a>
-            <p>
-              Property operations.
-              <br />
-              Connected in one place.
-            </p>
-            <a href={`mailto:${siteConfig.supportEmail}`}>
-              {siteConfig.supportEmail}
-            </a>
-            <CustomerSupportHours />
-          </div>
-          {footerMenus.map((group) => (
-            <div key={group.label}>
-              <h3>{group.label}</h3>
-              {group.links.map(([label, href]) => (
-                <a href={href} key={label}>
-                  {label}
-                </a>
-              ))}
+        <div className={styles.newsletterPanel}>
+          <FooterNewsletter />
+        </div>
+        <div className={styles.body}>
+          <div className={styles.upper}>
+            <div className={styles.brand}>
+              <a href="/" aria-label="Innflow home">
+                <Image
+                  src="/brand/innflow-wordmark.svg"
+                  width={132}
+                  height={38}
+                  alt="Innflow"
+                />
+              </a>
+              <p>
+                The AI agent platform for
+                <br />
+                agentic process automation.
+              </p>
             </div>
-          ))}
-          <div>
-            <h3>Property teams</h3>
-            <a href="/long-term-rentals">Long-term rentals</a>
-            <a href="/mid-term-rentals">Mid-term rentals</a>
-            <a href="/short-term-rentals">Short-term rentals</a>
-            <a href="/renters">Resident experiences</a>
-            <h3 className={styles.footerSubheading}>Get started</h3>
-            <a href={siteConfig.demoUrl}>Book a demo</a>
-            <a href="/pricing">Pricing</a>
-            <a href={`${siteConfig.appOrigin}/login`}>Log in</a>
-            <a href={siteConfig.googleAuthUrl}>
+            <nav className={styles.columns} aria-label="Footer navigation">
+              {columns.map((column) => (
+                <div key={column[0].label}>
+                  {column.map((group) => (
+                    <div className={styles.group} key={group.label}>
+                      <h3>{group.label}</h3>
+                      <ul>
+                        {group.links.map(([label, href]) => (
+                          <li key={label}>
+                            <a href={href}>{label}</a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </nav>
+          </div>
+          <div className={styles.contact}>
+            <div>
+              <a href={`mailto:${siteConfig.supportEmail}`}>
+                {siteConfig.supportEmail}
+              </a>
+              <CustomerSupportHours />
+            </div>
+            <a
+              className={styles.googleCta}
+              data-site-cta="primary"
+              href={siteConfig.signupUrl}
+            >
               <GoogleCtaContent />
             </a>
           </div>
-        </div>
-        <div className={styles.footerBottom}>
-          <span>
-            © {new Date().getFullYear()} Innflow. All rights reserved.
-          </span>
-          <nav className={styles.legalLinks} aria-label="Legal">
-            <FooterLegalLinks />
-          </nav>
+          <div className={styles.legal}>
+            <nav aria-label="Legal">
+              <FooterLegalLinks />
+            </nav>
+            <span>
+              © {new Date().getFullYear()} Innflow. All rights reserved.
+            </span>
+          </div>
         </div>
       </footer>
     </div>

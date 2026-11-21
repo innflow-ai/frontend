@@ -1,4 +1,4 @@
-import { House } from "@phosphor-icons/react/dist/ssr";
+import { Home as House } from "@/components/icons/mage";
 import { JsonLd } from "@/components/json-ld";
 import { siteConfig } from "@/config/site";
 import styles from "./breadcrumbs.module.css";

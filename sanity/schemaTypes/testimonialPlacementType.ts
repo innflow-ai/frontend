@@ -12,6 +12,7 @@ export const testimonialPlacementType = defineType({
       type: "string",
       options: {
         list: [
+          { title: "Homepage", value: "/" },
           { title: "Rent collection", value: "/rent-collection" },
           { title: "Landlord banking", value: "/landlord-banking" },
           ...featurePageRoutes,

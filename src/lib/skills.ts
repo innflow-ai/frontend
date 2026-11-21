@@ -93,29 +93,4 @@ export async function getSkillCategories(): Promise<SkillCategory[]> {
   }
 }
 
-// Framer color enums migrated from the old skills library, mapped to CSS
-// accents for card borders/dots. Unknown values fall back to the site brand.
-const skillColorMap: Record<string, string> = {
-  "Sky Blue": "#38bdf8",
-  "Soft Indigo": "#818cf8",
-  "Violet Blue": "#6d5bff",
-  Magenta: "#d946ef",
-  "Hot Pink": "#ec4899",
-  "Coral Orange": "#fb7a55",
-  "Gold Amber": "#f5b53f",
-  "Fresh Green": "#34c47c",
-  Teal: "#2bb5a0",
-};
-
-export const skillColorFallback = "#00aeff";
-
-export function skillColorValue(
-  color: string | null | undefined,
-  cardColor?: string | null,
-): string {
-  return (
-    skillColorMap[color ?? ""] ??
-    skillColorMap[cardColor ?? ""] ??
-    skillColorFallback
-  );
-}
+export { skillColorFallback, skillColorValue } from "./skill-colors";

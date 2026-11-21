@@ -2,317 +2,192 @@
 
 import Image from "next/image";
 import { type CSSProperties, useEffect, useRef, useState } from "react";
+import googleButtonStyles from "@/components/google-cta.module.css";
+import { GoogleCtaContent } from "@/components/google-cta-content";
+import { MixedHeadingContent } from "@/components/section-heading";
+import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
-import { CalendarStoryboard } from "./calendar-storyboard";
-import {
-  chapterScrollProgress,
-  hideShowcaseNavigation,
-  showcaseMotion,
-} from "./scroll-showcase-motion";
+import { HeroRiveDemo } from "./hero-rive-demo";
 import styles from "./showcase.module.css";
 
 const assets = "/preview/scroll-showcase";
 const states = [
   {
+    demo: "bot",
     id: "scheduling",
-    label: "Scheduling",
+    label: "Bot mode",
+    heading: "Teach your bot a task.",
+    icon: "bot-mode-head.svg",
+    href: "/products/ai-agents",
     badge: "",
-    title: "Turn conversations into scheduled meetings",
-    body: "Make scheduling part of your workflow. Bring conversations, AI agents, and meeting coordination together in Innflow.",
-    accent: "#6bb0ff",
+    body: (
+      <>
+        Give your agent a focused task and the context it needs. Let it prepare
+        the next step while <strong>your team stays in control</strong>.
+      </>
+    ),
+    accent: "#cc9435",
     surface: "#d3e5ff",
   },
   {
+    demo: "flow",
     id: "callie",
-    label: "Callie",
-    badge: "Beta",
-    title: "Introducing your 24/7 AI scheduling assistant",
-    body: "Add Callie to any email thread to coordinate scheduling on your behalf without switching tools or sacrificing control.",
-    accent: "#daf098",
+    label: "Flow",
+    heading: "Track every handoff.",
+    icon: "flow.svg",
+    href: "/features/workflows",
+    badge: "",
+    body: (
+      <>
+        Follow each handoff, see <strong>who owns the next step</strong>, and
+        spot work waiting for approval.
+      </>
+    ),
+    accent: "#a173a0",
     surface: "#f1f8dc",
   },
   {
+    demo: "channels",
     id: "notetaker",
-    label: "Notetaker",
+    label: "Channels",
+    heading: "Bring your bot into the conversation.",
+    icon: "channels.svg",
+    href: "#workflows",
     badge: "New",
-    title: "Actionable, shareable recaps for every meeting",
-    body: "Finish the day knowing every meeting was captured, next steps were tracked, and follow-ups were handled.",
-    accent: "#ba9dff",
+    body: (
+      <>
+        Keep <strong>files and decisions</strong> in the conversation so
+        teammates and agents can pick up where you left off.
+      </>
+    ),
+    accent: "#c68150",
     surface: "#eae3f9",
   },
   {
+    demo: "computer",
     id: "payments",
-    label: "Payments",
+    label: "Computer",
+    heading: "Let your bot handle the clicks.",
+    icon: "computer.svg",
+    href: "#insights",
     badge: "New",
-    title: "Flexible, built-in payment tools",
-    body: "Charge upfront for meetings, sell packages, and send invoices with payment features that make it easy to get paid.",
-    accent: "#5aded7",
+    body: (
+      <>
+        Let your bot use <strong>the sites you authorize</strong> to look things
+        up and fill out forms.
+      </>
+    ),
+    accent: "#688c9b",
     surface: "#e5f9f9",
   },
 ] as const;
-const waveBars = Array.from({ length: 24 }, (_, i) => ({
-  id: `bar-${i}`,
-  height: 50 + ((i * 37) % 64),
-}));
-const recapLines = [92, 81, 96, 88, 84];
-
-function Portrait({ name, size = 36 }: { name: string; size?: number }) {
-  return (
-    <Image
-      src={`${assets}/${name}.png`}
-      width={size}
-      height={size}
-      alt=""
-      className={styles.portrait}
-      unoptimized
-    />
-  );
-}
-
-function Illustration({ index, active }: { index: number; active: boolean }) {
-  if (index === 0)
-    return (
-      <div className={styles.demo}>
-        <CalendarStoryboard active={active} />
-      </div>
-    );
-  return (
-    <div className={styles.demo} aria-hidden="true">
-      <div className={styles.wave}>
-        {waveBars.map((bar) => (
-          <i key={bar.id} style={{ height: bar.height }} />
-        ))}
-      </div>
-      {index === 1 && (
-        <div className={styles.email}>
-          <div className={styles.sender}>
-            <Portrait name="dominic" />
-            <div>
-              <strong>Dominic Mills</strong>
-              <small>To Callie, Tori Mathers ▾</small>
-            </div>
-          </div>
-          <p className={styles.typing}>
-            Hi Callie, find a time for us to connect next week.
-          </p>
-          <div className={styles.reply}>
-            <Image src={`${assets}/callie.svg`} width={18} height={18} alt="" />{" "}
-            I’ll take care of the scheduling.
-          </div>
-        </div>
-      )}
-      {index === 2 && (
-        <div className={styles.recap}>
-          <div className={styles.participants}>
-            <Portrait name="participant-one" size={100} />
-            <Portrait name="participant-two" size={100} />
-          </div>
-          <div className={styles.notes}>
-            <strong>Q2 Hiring Review ♧</strong>
-            <p>Recap</p>
-            <div className={styles.lines}>
-              {recapLines.map((width, i) => (
-                <i
-                  key={width}
-                  style={{
-                    width: `${width}%`,
-                    animationDelay: `${0.2 + i * 0.18}s`,
-                  }}
-                />
-              ))}
-            </div>
-            <p>
-              Action Items <b>4</b>
-            </p>
-            <div className={styles.lines}>
-              {recapLines.map((width, i) => (
-                <i
-                  key={width}
-                  style={{
-                    width: `${width - 4}%`,
-                    animationDelay: `${1.3 + i * 0.18}s`,
-                  }}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-      )}
-      {index === 3 && (
-        <div className={styles.payment}>
-          <Portrait name="dominic" size={54} />
-          <strong>Consultation</strong>
-          <b>$100</b>
-          <span>
-            Powered by <strong>stripe</strong>
-          </span>
-          <p>
-            ◷ 45 min <span>▰ Zoom</span>
-          </p>
-          <div className={styles.paymentSettings}>
-            <div>
-              Require payment{" "}
-              <span className={styles.toggle}>
-                <i />
-              </span>
-            </div>
-            <small>Amount</small>
-            <div className={styles.amount}>
-              $ <span>100</span>
-              <small>USD</small>
-            </div>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
-
+/**
+ * Feature introduction on the homepage.
+ * Chapters change from the tabs. The section stays in normal document flow
+ * so scrolling the page does not pin the card or hide the navigation.
+ * On a phone or short screen, scrolling through the hero shifts its backdrop.
+ */
 export function ScrollShowcase() {
   const section = useRef<HTMLElement>(null);
-  const exit = useRef<HTMLDivElement>(null);
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
   const [active, setActive] = useState(0);
   const [reduced, setReduced] = useState(false);
+  const [isCompact, setIsCompact] = useState(false);
   const [progress, setProgress] = useState(0);
-  const motion = showcaseMotion(progress);
 
   useEffect(() => {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
     const compact = window.matchMedia(
       "(max-width: 800px), (max-height: 650px)",
     );
-    const header = document
-      .getElementById("baselane-preview-nav")
-      ?.closest("header");
-    const previousInert = header?.inert ?? false;
-    const previousHidden = header?.getAttribute("aria-hidden");
-    const restoreHeader = () => {
-      header?.removeAttribute("data-showcase-hidden");
-      if (header) {
-        header.inert = previousInert;
-        if (previousHidden === null || previousHidden === undefined)
-          header.removeAttribute("aria-hidden");
-        else header.setAttribute("aria-hidden", previousHidden);
-      }
-    };
-    const syncPreference = () => {
-      setReduced(media.matches || compact.matches);
-      requestUpdate();
-    };
-    media.addEventListener("change", syncPreference);
-    compact.addEventListener("change", syncPreference);
     let frame = 0;
     const update = () => {
       frame = 0;
       const element = section.current;
-      if (!element || media.matches || compact.matches) {
-        restoreHeader();
+      if (!element || media.matches || !compact.matches) {
+        setProgress(0);
         return;
       }
       const top = element.getBoundingClientRect().top;
-      const range = element.offsetHeight - window.innerHeight;
-      const next = Math.max(0, Math.min(1, -top / Math.max(1, range)));
-      setProgress(next);
-      const state = showcaseMotion(next);
-      setActive(state.chapter);
-      if (
-        header &&
-        hideShowcaseNavigation(
-          next,
-          (
-            document.getElementById("workspace-overview") ?? exit.current
-          )?.getBoundingClientRect().top ??
-            element.getBoundingClientRect().bottom,
-          window.innerHeight,
-        ) &&
-        !header.contains(document.activeElement)
-      ) {
-        header.setAttribute("data-showcase-hidden", "true");
-        header.inert = true;
-        header.setAttribute("aria-hidden", "true");
-      } else restoreHeader();
+      // The unpinned hero travels through the viewport. Scroll shifts its
+      // backdrop only; it does not pin the page or change the chapter.
+      setProgress(
+        Math.max(
+          0,
+          Math.min(
+            1,
+            (window.innerHeight - top) /
+              (element.offsetHeight + window.innerHeight),
+          ),
+        ),
+      );
     };
     const requestUpdate = () => {
       if (!frame) frame = requestAnimationFrame(update);
     };
+    const syncPreference = () => {
+      setReduced(media.matches);
+      setIsCompact(compact.matches);
+      requestUpdate();
+    };
+    media.addEventListener("change", syncPreference);
+    compact.addEventListener("change", syncPreference);
     syncPreference();
     update();
     window.addEventListener("scroll", requestUpdate, { passive: true });
     window.addEventListener("resize", requestUpdate);
-    document.addEventListener("focusin", requestUpdate);
     return () => {
       cancelAnimationFrame(frame);
       window.removeEventListener("scroll", requestUpdate);
       window.removeEventListener("resize", requestUpdate);
       media.removeEventListener("change", syncPreference);
       compact.removeEventListener("change", syncPreference);
-      document.removeEventListener("focusin", requestUpdate);
-      restoreHeader();
     };
   }, []);
 
   function select(index: number) {
     setActive(index);
-    if (!section.current || reduced) return;
-    const start = section.current.getBoundingClientRect().top + window.scrollY;
-    const range = section.current.offsetHeight - window.innerHeight;
-    // Instant native jump avoids racing the site's Lenis wheel controller.
-    window.scrollTo({
-      top: start + range * chapterScrollProgress(index),
-      behavior: "instant",
-    });
   }
 
   return (
     <div className={styles.page}>
       <header className={styles.intro}>
-        <h1>
-          One flow.
-          <br />
-          Four possibilities.
+        <h1 data-reference-heading data-mixed-heading>
+          <MixedHeadingContent
+            title="Turn conversations"
+            emphasis="into completed work."
+          />
         </h1>
         <p className={styles.subheadline}>
-          Bring conversations, AI agents, and workflows together—so your team
-          can get more done with less coordination.
+          {process.env.NEXT_PUBLIC_HOMEPAGE_COPY === "meeting"
+            ? "Turn a meeting request into a scheduled call and a follow-up draft your team can review."
+            : "Connect conversations, delegate tasks, and keep work moving."}
         </p>
         <div className={styles.oauthActions}>
-          <a href={siteConfig.googleAuthUrl}>
-            <Image
-              src="/preview/homepage/baseline-lower/card-google.png"
-              alt=""
-              width={24}
-              height={24}
-            />
-            Continue with Google
-          </a>
-          <button
-            type="button"
-            disabled
-            aria-describedby="hero-microsoft-pending"
-            title="Microsoft sign-in link pending"
+          <TrackedLink
+            data-site-cta="secondary"
+            className={`${googleButtonStyles.button} ${googleButtonStyles.raisedSignIn}`}
+            destination={siteConfig.signupUrl}
+            eventLabel="homepage_hero_google"
           >
-            <Image
-              src="/preview/homepage/baseline-lower/card-microsoft.png"
-              alt=""
-              width={24}
-              height={24}
-            />
-            Continue with Microsoft
-          </button>
+            <GoogleCtaContent />
+          </TrackedLink>
+          <TrackedLink
+            data-site-cta="primary"
+            className={`${googleButtonStyles.button} ${googleButtonStyles.raisedSignIn}`}
+            destination="#feature-showcase"
+            eventLabel="homepage_hero_learn_more"
+          >
+            <span className={googleButtonStyles.content}>Learn more</span>
+          </TrackedLink>
         </div>
-        <small className={styles.signupNote}>
-          <a href={siteConfig.signupUrl}>Sign up with email</a>
-          {" · "}No credit card required
-        </small>
-        <span id="hero-microsoft-pending" className={styles.srOnly}>
-          Microsoft sign-in link pending
-        </span>
       </header>
       <section
+        id="feature-showcase"
         ref={section}
         className={styles.scrollTrack}
         data-reduced={reduced}
+        data-compact={isCompact}
         aria-label="Interactive feature showcase"
       >
         <div className={styles.sticky}>
@@ -320,25 +195,16 @@ export function ScrollShowcase() {
             className={styles.stage}
             style={
               {
-                "--gradient-progress": reduced ? 0 : motion.chapterProgress,
-                "--expansion": reduced ? 1 : motion.expansion,
+                "--gradient-progress": reduced
+                  ? 0
+                  : isCompact
+                    ? (active + progress) / states.length
+                    : (active + 0.5) / states.length,
+                "--expansion": 1,
               } as CSSProperties
             }
           >
             <div className={styles.gradient} aria-hidden="true" />
-            <button
-              type="button"
-              className={styles.close}
-              aria-label="Skip showcase"
-              onClick={() =>
-                exit.current?.scrollIntoView({
-                  behavior: "instant",
-                  block: "start",
-                })
-              }
-            >
-              ×
-            </button>
             <div className={styles.showcase}>
               <div className={styles.tabs} role="tablist" aria-label="Features">
                 {states.map((state, index) => (
@@ -370,12 +236,11 @@ export function ScrollShowcase() {
                     }}
                   >
                     <Image
-                      src={`${assets}/${state.id}.svg`}
+                      src={`${assets}/${state.icon}`}
+                      alt=""
                       width={28}
                       height={28}
-                      alt=""
                     />
-                    <span className={styles.tooltip}>{state.label}</span>
                   </button>
                 ))}
               </div>
@@ -398,47 +263,32 @@ export function ScrollShowcase() {
                     }
                   >
                     <div className={styles.copy}>
-                      <div className={styles.label}>
+                      <div className={styles.label} data-demo-label={state.demo}>
                         <Image
-                          src={`${assets}/${state.id}.svg`}
+                          src={`${assets}/${state.icon}`}
+                          alt=""
                           width={24}
                           height={24}
-                          alt=""
                         />
                         <span>{state.label}</span>
                         {state.badge && <small>{state.badge}</small>}
                       </div>
-                      <h2>{state.title}</h2>
-                      <p>{state.body}</p>
+                      <h2 data-reference-heading>{state.heading}</h2>
+                      <p data-home-copy>{state.body}</p>
                       <a
-                        href={
-                          index === 0
-                            ? "/products/platform"
-                            : "https://calendly.com"
-                        }
-                        target={index === 0 ? undefined : "_blank"}
-                        rel={index === 0 ? undefined : "noreferrer"}
+                        href={state.href}
+                        data-site-cta="secondary"
+                        data-cta-compact
+                        aria-label={`Learn more about ${state.label}`}
                       >
-                        {index === 0 ? "Explore Innflow" : "Learn more"}{" "}
-                        <span aria-hidden="true">→</span>
-                        <span className={styles.srOnly}>
-                          {" "}
-                          {index === 0
-                            ? "and its connected platform"
-                            : `about ${state.label} on Calendly (opens a new tab)`}
-                        </span>
+                        Learn more
                       </a>
                     </div>
-                    <Illustration
-                      key={
-                        index === 0
-                          ? "calendar"
-                          : active === index
-                            ? "active"
-                            : "idle"
-                      }
-                      index={index}
+                    <HeroRiveDemo
+                      demo={state.demo}
+                      artboard={state.label}
                       active={active === index}
+                      play={active === index && !reduced}
                     />
                   </section>
                 ))}
@@ -447,7 +297,6 @@ export function ScrollShowcase() {
           </div>
         </div>
       </section>
-      <div ref={exit} className={styles.exitAnchor} />
     </div>
   );
 }

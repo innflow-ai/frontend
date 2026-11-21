@@ -267,10 +267,16 @@
 .partialStar::before {
   position: absolute;
   inset: 0;
-  width: 60%;
+  clip-path: inset(0 40% 0 0);
   overflow: hidden;
   color: #f1ee46;
-  content: "★";
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  background-color: currentColor;
+  mask: url("/brand/mage/star.svg") center / contain no-repeat;
 }
 
 .heroProof p {

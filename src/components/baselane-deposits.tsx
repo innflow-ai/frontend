@@ -1,10 +1,17 @@
 import Image from "next/image";
 import { GoogleCtaContent } from "@/components/google-cta-content";
+import {
+  ArrowDown as MageArrowDown,
+  ArrowRight as MageArrowRight,
+  Check as MageCheck,
+  Plus as MagePlus,
+} from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
 import { getPageFaqTuples } from "@/lib/faqs";
 import styles from "./baselane-deposits.module.css";
-import { BaselaneHomepage } from "./baselane-homepage";
 import shared from "./baselane-partners.module.css";
+import { InnerPageShell } from "./inner-page-shell";
 
 const benefits = [
   {
@@ -120,7 +127,11 @@ function Photo({
 }
 function GoogleAction() {
   return (
-    <a className={shared.button} href={siteConfig.googleAuthUrl}>
+    <a
+      data-site-cta="primary"
+      className={shared.button}
+      href={siteConfig.signupUrl}
+    >
       <GoogleCtaContent />
     </a>
   );
@@ -128,18 +139,26 @@ function GoogleAction() {
 export async function BaselaneDeposits() {
   const cmsFaqs = await getPageFaqTuples("/security-deposit-account", faqs);
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={`${shared.page} ${styles.page}`}>
         <section className={shared.hero}>
           <div className={shared.heroCopy}>
-            <h1>Bring clarity to deposit-related work.</h1>
+            <h1 data-mixed-heading>
+              <MixedHeadingText>
+                Bring clarity to deposit-related work.
+              </MixedHeadingText>
+            </h1>
             <p>
               Connect the records, questions, and review steps behind every
               move-in and move-out.
             </p>
             <GoogleAction />
-            <a className={styles.secondary} href="#deposit-benefits">
-              Explore the workflow ↓
+            <a
+              data-site-cta="secondary"
+              className={styles.secondary}
+              href="#deposit-benefits"
+            >
+              Explore the workflow <MageArrowDown size="1em" />
             </a>
           </div>
           <Photo
@@ -151,12 +170,16 @@ export async function BaselaneDeposits() {
         <div className={styles.band}>
           {["Property context", "Connected documents", "Human review"].map(
             (text) => (
-              <span key={text}>✓ {text}</span>
+              <span key={text}>
+                <MageCheck size="1em" /> {text}
+              </span>
             ),
           )}
         </div>
         <section className={shared.section} id="deposit-benefits">
-          <h2>A clearer process for everyone.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>A clearer process for everyone.</MixedHeadingText>
+          </h2>
           <p className={shared.centerCopy}>
             Keep the supporting information together, from the first inspection
             to the final handoff.
@@ -168,14 +191,16 @@ export async function BaselaneDeposits() {
             key={section.title}
           >
             <div className={shared.stepsCopy}>
-              <h2>{section.title}</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>{section.title}</MixedHeadingText>
+              </h2>
               <div className={shared.accordion}>
                 {section.items.map(([title, text], i) => (
                   <details key={title} open={i === 0}>
                     <summary>
                       {title}
                       <span className={shared.plus} aria-hidden="true">
-                        +
+                        <MagePlus size="1em" />
                       </span>
                     </summary>
                     <p>{text}</p>
@@ -187,7 +212,11 @@ export async function BaselaneDeposits() {
           </section>
         ))}
         <section className={shared.section}>
-          <h2>Connect the work around each deposit.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              Connect the work around each deposit.
+            </MixedHeadingText>
+          </h2>
           <p className={shared.centerCopy}>
             Keep the process organized while your chosen financial provider
             handles the funds.
@@ -195,14 +224,18 @@ export async function BaselaneDeposits() {
           <div className={styles.features}>
             {features.map(([title, text]) => (
               <article key={title}>
-                <h3>{title}</h3>
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>{title}</MixedHeadingText>
+                </h3>
                 <p>{text}</p>
               </article>
             ))}
           </div>
         </section>
         <section className={shared.section}>
-          <h2>Essentials for every property.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>Essentials for every property.</MixedHeadingText>
+          </h2>
           <p className={shared.centerCopy}>
             Follow the information through the rest of your team's work.
           </p>
@@ -229,10 +262,12 @@ export async function BaselaneDeposits() {
             ].map(([image, title, text, href]) => (
               <article key={title}>
                 <Photo name={image} alt="" />
-                <h3>{title}</h3>
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>{title}</MixedHeadingText>
+                </h3>
                 <p>{text}</p>
                 <a className={shared.textLink} href={href}>
-                  Explore {title.toLowerCase()} →
+                  Explore {title.toLowerCase()} <MageArrowRight size="1em" />
                 </a>
               </article>
             ))}
@@ -240,7 +275,9 @@ export async function BaselaneDeposits() {
         </section>
         <section className={styles.start}>
           <div>
-            <h2>Start with a clear next step.</h2>
+            <h2 data-mixed-heading>
+              <MixedHeadingText>Start with a clear next step.</MixedHeadingText>
+            </h2>
             <GoogleAction />
           </div>
           <div>
@@ -259,14 +296,20 @@ export async function BaselaneDeposits() {
               ],
             ].map(([title, text]) => (
               <article key={title}>
-                <h3>{title}</h3>
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>{title}</MixedHeadingText>
+                </h3>
                 <p>{text}</p>
               </article>
             ))}
           </div>
         </section>
         <section className={shared.section}>
-          <h2>Keep the requirements with the property.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              Keep the requirements with the property.
+            </MixedHeadingText>
+          </h2>
           <p className={shared.centerCopy}>
             Use innflow to connect source documents, review notes, and the
             person responsible for each follow-up. Confirm applicable
@@ -279,12 +322,17 @@ export async function BaselaneDeposits() {
                 alt="Two windows on the side of a white house"
               />
               <div className={styles.resourceCopy}>
-                <h3>Prepare a deposit-document handoff</h3>
+                <h3 data-mixed-heading>
+                  <MixedHeadingText>
+                    Prepare a deposit-document handoff
+                  </MixedHeadingText>
+                </h3>
                 <a
+                  data-site-cta="primary"
                   className={shared.button}
                   href="/free-rental-forms-and-templates-for-landlords"
                 >
-                  Explore preparation worksheets →
+                  Explore preparation worksheets <MageArrowRight size="1em" />
                 </a>
               </div>
             </article>
@@ -296,21 +344,26 @@ export async function BaselaneDeposits() {
               ].map(([title, href]) => (
                 <a key={href} href={href}>
                   <small>INNFLOW WORKFLOW</small>
-                  <h3>{title} →</h3>
+                  <h3 data-mixed-heading>
+                    <MixedHeadingText>{title} </MixedHeadingText>
+                    <MageArrowRight size="1em" />
+                  </h3>
                 </a>
               ))}
             </div>
           </div>
         </section>
         <section className={styles.start}>
-          <h2>{cmsFaqs.heading || "FAQs"}</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>{cmsFaqs.heading || "FAQs"}</MixedHeadingText>
+          </h2>
           <div className={shared.accordion}>
             {cmsFaqs.items.map(([title, text, faqId]) => (
               <details key={faqId}>
                 <summary>
                   {title}
                   <span className={shared.plus} aria-hidden="true">
-                    +
+                    <MagePlus size="1em" />
                   </span>
                 </summary>
                 <p style={{ whiteSpace: "pre-line" }}>{text}</p>
@@ -319,6 +372,6 @@ export async function BaselaneDeposits() {
           </div>
         </section>
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

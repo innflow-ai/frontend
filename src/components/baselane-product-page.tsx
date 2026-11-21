@@ -1,21 +1,23 @@
-import {
-  ArrowRight,
-  CheckCircle,
-  Files,
-  FlowArrow,
-  ShieldCheck,
-} from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import googleCtaStyles from "@/components/google-cta.module.css";
 import { GoogleCtaContent } from "@/components/google-cta-content";
+import {
+  ArrowRight,
+  CheckCircle,
+  FileRecords as Files,
+  Share as FlowArrow,
+  Plus as MagePlus,
+  ShieldCheck,
+} from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
 import { getPageFaqTuples } from "@/lib/faqs";
-import { BaselaneHomepage } from "./baselane-homepage";
 import {
   type ProductPageKind,
   productContent,
 } from "./baselane-product-content";
 import styles from "./baselane-product-page.module.css";
+import { InnerPageShell } from "./inner-page-shell";
 import { FeatureTestimonials } from "./page-testimonials";
 import { ProductHeadspaceCta } from "./product-headspace-cta";
 import { ScrollStory } from "./scroll-story";
@@ -45,10 +47,14 @@ function Scene({
 function Actions() {
   return (
     <div className={styles.actions}>
-      <a href={siteConfig.googleAuthUrl} className={styles.google}>
+      <a
+        data-site-cta="primary"
+        href={siteConfig.signupUrl}
+        className={styles.google}
+      >
         <GoogleCtaContent />
       </a>
-      <a href={siteConfig.demoUrl} className={styles.demo}>
+      <a data-site-cta="secondary" href={siteConfig.demoUrl} className={styles.demo}>
         See demo <ArrowRight size={18} />
       </a>
     </div>
@@ -86,7 +92,9 @@ export async function BaselaneProductPage({
           {p.label}
         </span>
         <div className={styles.panelCopy}>
-          <h3>{p.title}</h3>
+          <h3 data-mixed-heading>
+            <MixedHeadingText>{p.title}</MixedHeadingText>
+          </h3>
           <p>{p.text}</p>
         </div>
         <div className={styles.product}>
@@ -117,9 +125,9 @@ export async function BaselaneProductPage({
         const Icon = icons[i % icons.length];
         return (
           <article key={title}>
-            <h3>
+            <h3 data-mixed-heading>
               <Icon size={21} />
-              {title}
+              <MixedHeadingText>{title}</MixedHeadingText>
             </h3>
             <p>{text}</p>
           </article>
@@ -148,7 +156,7 @@ export async function BaselaneProductPage({
     </div>
   );
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div
         className={
           kind === "rent-collection" ? styles.rentCollection : undefined
@@ -157,13 +165,16 @@ export async function BaselaneProductPage({
         <section className={styles.hero}>
           <Scene root={root} name="hero" priority />
           <div className={styles.heroCopy}>
-            <h1>{data.title}</h1>
+            <h1 data-mixed-heading>
+              <MixedHeadingText>{data.title}</MixedHeadingText>
+            </h1>
             <p>{data.description}</p>
             {kind === "rent-collection" ? (
               <>
                 <a
+                  data-site-cta="primary"
                   className={`${styles.heroGoogle} ${googleCtaStyles.cream}`}
-                  href={siteConfig.googleAuthUrl}
+                  href={siteConfig.signupUrl}
                 >
                   <GoogleCtaContent />
                 </a>
@@ -190,7 +201,9 @@ export async function BaselaneProductPage({
           </div>
         )}
         <section className={styles.solutions}>
-          <h2>{data.intro}</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>{data.intro}</MixedHeadingText>
+          </h2>
           {kind === "rent-collection" ? (
             <ScrollStory
               layout="stacked"
@@ -215,13 +228,17 @@ export async function BaselaneProductPage({
         <ProductHeadspaceCta />
         <FeatureTestimonials />
         <section className={styles.faq}>
-          <h2>{cmsFaqs.heading || "FAQs"}</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>{cmsFaqs.heading || "FAQs"}</MixedHeadingText>
+          </h2>
           <div>
             {cmsFaqs.items.map(([question, answer, faqId]) => (
               <details key={faqId}>
                 <summary>
                   {question}
-                  <span>+</span>
+                  <span>
+                    <MagePlus size="1em" />
+                  </span>
                 </summary>
                 <p style={{ whiteSpace: "pre-line" }}>{answer}</p>
               </details>
@@ -229,6 +246,6 @@ export async function BaselaneProductPage({
           </div>
         </section>
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

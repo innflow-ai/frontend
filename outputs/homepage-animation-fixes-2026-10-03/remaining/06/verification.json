@@ -1,0 +1,19 @@
+{
+  "duration": 12.0,
+  "bytes": 2379354,
+  "sha256": "8bf3598811482e963f8f1805153fabdcba2d3416dec4d616d7b599368164943f",
+  "htmlPreviewBrowserChecked": true,
+  "htmlPauseReplayChecked": true,
+  "nativeTimelineLoopsObservedAtLeast": 5,
+  "nativeExpandedPoseChecked": true,
+  "editorEndpointPngByteMatch": true,
+  "endpointMethod": "Editor render of sampled authored keys at settled endpoints; separate from runtime loop playback.",
+  "namedArtboardStateMachineLoad": "passed",
+  "defaultArtboardStateMachineLoad": "fails: empty auto-generated default artboard remains in runtime export despite removing starter from source",
+  "focusedTests": {
+    "files": 2,
+    "passed": 10
+  },
+  "deliveryRivRevHashesMatch": true,
+  "deployment": "not performed"
+}

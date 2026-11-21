@@ -1,0 +1,629 @@
+{
+  "success": true,
+  "keyframes": {
+    "0-2327": [
+      {
+        "objectId": "0-2564",
+        "propertyKey": 21,
+        "propertyName": "height",
+        "frame": 0,
+        "type": "double",
+        "value": 136.0,
+        "keyframeId": "0-2682",
+        "interpolationType": "hold"
+      },
+      {
+        "objectId": "0-2564",
+        "propertyKey": 21,
+        "propertyName": "height",
+        "frame": 24,
+        "type": "double",
+        "value": 136.0,
+        "keyframeId": "0-2683",
+        "interpolationType": "cubic",
+        "interpolatorId": "0-2684"
+      },
+      {
+        "objectId": "0-2564",
+        "propertyKey": 21,
+        "propertyName": "height",
+        "frame": 54,
+        "type": "double",
+        "value": 354.0,
+        "keyframeId": "0-2685",
+        "interpolationType": "cubic",
+        "interpolatorId": "0-2686"
+      },
+      {
+        "objectId": "0-2564",
+        "propertyKey": 21,
+        "propertyName": "height",
+        "frame": 70,
+        "type": "double",
+        "value": 344.0,
+        "keyframeId": "0-2687",
+        "interpolationType": "hold"
+      },
+      {
+        "objectId": "0-2564",
+        "propertyKey": 21,
+        "propertyName": "height",
+        "frame": 306,
+        "type": "double",
+        "value": 344.0,
+        "keyframeId": "0-2688",
+        "interpolationType": "cubic",
+        "interpolatorId": "0-2689"
+      },
+      {
+        "objectId": "0-2564",
+        "propertyKey": 21,
+        "propertyName": "height",
+        "frame": 348,
+        "type": "double",
+        "value": 136.0,
+        "keyframeId": "0-2690",
+        "interpolationType": "hold"
+      },
+      {
+        "objectId": "0-2564",
+        "propertyKey": 21,
+        "propertyName": "height",
+        "frame": 360,
+        "type": "double",
+        "value": 136.0,
+        "keyframeId": "0-2691",
+        "interpolationType": "linear"
+      },
+      {
+        "objectId": "0-2560",
+        "propertyKey": 21,
+        "propertyName": "height",
+        "frame": 0,
+        "type": "double",
+        "value": 112.0,
+        "keyframeId": "0-2671",
+        "interpolationType": "hold"
+      },
+      {
+        "objectId": "0-2560",
+        "propertyKey": 21,
+        "propertyName": "height",
+        "frame": 24,
+        "type": "double",
+        "value": 112.0,
+        "keyframeId": "0-2672",
+        "interpolationType": "cubic",
+        "interpolatorId": "0-2673"
+      },
+      {
+        "objectId": "0-2560",
+        "propertyKey": 21,
+        "propertyName": "height",
+        "frame": 54,
+        "type": "double",
+        "value": 330.0,
+        "keyframeId": "0-2674",
+        "interpolationType": "cubic",
+        "interpolatorId": "0-2675"
+      },
+      {
+        "objectId": "0-2560",
+        "propertyKey": 21,
+        "propertyName": "height",
+        "frame": 70,
+        "type": "double",
+        "value": 320.0,
+        "keyframeId": "0-2676",
+        "interpolationType": "hold"
+      },
+      {
+        "objectId": "0-2560",
+        "propertyKey": 21,
+        "propertyName": "height",
+        "frame": 306,
+        "type": "double",
+        "value": 320.0,
+        "keyframeId": "0-2677",
+        "interpolationType": "cubic",
+        "interpolatorId": "0-2678"
+      },
+      {
+        "objectId": "0-2560",
+        "propertyKey": 21,
+        "propertyName": "height",
+        "frame": 348,
+        "type": "double",
+        "value": 112.0,
+        "keyframeId": "0-2679",
+        "interpolationType": "hold"
+      },
+      {
+        "objectId": "0-2560",
+        "propertyKey": 21,
+        "propertyName": "height",
+        "frame": 360,
+        "type": "double",
+        "value": 112.0,
+        "keyframeId": "0-2680",
+        "interpolationType": "linear"
+      },
+      {
+        "objectId": "0-2559",
+        "propertyKey": 14,
+        "propertyName": "y",
+        "frame": 0,
+        "type": "double",
+        "value": 316.0,
+        "keyframeId": "0-2606",
+        "interpolationType": "hold"
+      },
+      {
+        "objectId": "0-2559",
+        "propertyKey": 14,
+        "propertyName": "y",
+        "frame": 24,
+        "type": "double",
+        "value": 316.0,
+        "keyframeId": "0-2607",
+        "interpolationType": "cubic",
+        "interpolatorId": "0-2608"
+      },
+      {
+        "objectId": "0-2559",
+        "propertyKey": 14,
+        "propertyName": "y",
+        "frame": 54,
+        "type": "double",
+        "value": 425.0,
+        "keyframeId": "0-2609",
+        "interpolationType": "cubic",
+        "interpolatorId": "0-2610"
+      },
+      {
+        "objectId": "0-2559",
+        "propertyKey": 14,
+        "propertyName": "y",
+        "frame": 70,
+        "type": "double",
+        "value": 420.0,
+        "keyframeId": "0-2611",
+        "interpolationType": "hold"
+      },
+      {
+        "objectId": "0-2559",
+        "propertyKey": 14,
+        "propertyName": "y",
+        "frame": 306,
+        "type": "double",
+        "value": 420.0,
+        "keyframeId": "0-2612",
+        "interpolationType": "cubic",
+        "interpolatorId": "0-2613"
+      },
+      {
+        "objectId": "0-2559",
+        "propertyKey": 14,
+        "propertyName": "y",
+        "frame": 348,
+        "type": "double",
+        "value": 316.0,
+        "keyframeId": "0-2614",
+        "interpolationType": "hold"
+      },
+      {
+        "objectId": "0-2559",
+        "propertyKey": 14,
+        "propertyName": "y",
+        "frame": 360,
+        "type": "double",
+        "value": 316.0,
+        "keyframeId": "0-2615",
+        "interpolationType": "linear"
+      },
+      {
+        "objectId": "0-2535",
+        "propertyKey": 18,
+        "propertyName": "opacity",
+        "frame": 0,
+        "type": "double",
+        "value": 0.0,
+        "keyframeId": "0-2638",
+        "interpolationType": "hold"
+      },
+      {
+        "objectId": "0-2535",
+        "propertyKey": 18,
+        "propertyName": "opacity",
+        "frame": 76,
+        "type": "double",
+        "value": 0.0,
+        "keyframeId": "0-2639",
+        "interpolationType": "cubic",
+        "interpolatorId": "0-2640"
+      },
+      {
+        "objectId": "0-2535",
+        "propertyKey": 18,
+        "propertyName": "opacity",
+        "frame": 100,
+        "type": "double",
+        "value": 100.0,
+        "keyframeId": "0-2641",
+        "interpolationType": "hold"
+      },
+      {
+        "objectId": "0-2535",
+        "propertyKey": 18,
+        "propertyName": "opacity",
+        "frame": 286,
+        "type": "double",
+        "value": 100.0,
+        "keyframeId": "0-2642",
+        "interpolationType": "cubic",
+        "interpolatorId": "0-2643"
+      },
+      {
+        "objectId": "0-2535",
+        "propertyKey": 18,
+        "propertyName": "opacity",
+        "frame": 304,
+        "type": "double",
+        "value": 0.0,
+        "keyframeId": "0-2644",
+        "interpolationType": "hold"
+      },
+      {
+        "objectId": "0-2535",
+        "propertyKey": 18,
+        "propertyName": "opacity",
+        "frame": 360,
+        "type": "double",
+        "value": 0.0,
+        "keyframeId": "0-2645",
+        "interpolationType": "linear"
+      },
+      {
+        "objectId": "0-2535",
+        "propertyKey": 14,
+        "propertyName": "y",
+        "frame": 0,
+        "type": "double",
+        "value": 12.0,
+        "keyframeId": "0-2647",
+        "interpolationType": "hold"
+      },
+      {
+        "objectId": "0-2535",
+        "propertyKey": 14,
+        "propertyName": "y",
+        "frame": 76,
+        "type": "double",
+        "value": 12.0,
+        "keyframeId": "0-2648",
+        "interpolationType": "cubic",
+        "interpolatorId": "0-2649"
+      },
+      {
+        "objectId": "0-2535",
+        "propertyKey": 14,
+        "propertyName": "y",
+        "frame": 100,
+        "type": "double",
+        "value": 0.0,
+        "keyframeId": "0-2650",
+        "interpolationType": "hold"
+      },
+      {
+        "objectId": "0-2535",
+        "propertyKey": 14,
+        "propertyName": "y",
+        "frame": 286,
+        "type": "double",
+        "value": 0.0,
+        "keyframeId": "0-2651",
+        "interpolationType": "cubic",
+        "interpolatorId": "0-2652"
+      },
+      {
+        "objectId": "0-2535",
+        "propertyKey": 14,
+        "propertyName": "y",
+        "frame": 304,
+        "type": "double",
+        "value": -7.0,
+        "keyframeId": "0-2653",
+        "interpolationType": "hold"
+      },
+      {
+        "objectId": "0-2535",
+        "propertyKey": 14,
+        "propertyName": "y",
+        "frame": 348,
+        "type": "double",
+        "value": -7.0,
+        "keyframeId": "0-2654",
+        "interpolationType": "hold"
+      },
+      {
+        "objectId": "0-2535",
+        "propertyKey": 14,
+        "propertyName": "y",
+        "frame": 360,
+        "type": "double",
+        "value": 12.0,
+        "keyframeId": "0-2655",
+        "interpolationType": "linear"
+      },
+      {
+        "objectId": "0-2563",
+        "propertyKey": 14,
+        "propertyName": "y",
+        "frame": 0,
+        "type": "double",
+        "value": 316.0,
+        "keyframeId": "0-2582",
+        "interpolationType": "hold"
+      },
+      {
+        "objectId": "0-2563",
+        "propertyKey": 14,
+        "propertyName": "y",
+        "frame": 24,
+        "type": "double",
+        "value": 316.0,
+        "keyframeId": "0-2583",
+        "interpolationType": "cubic",
+        "interpolatorId": "0-2584"
+      },
+      {
+        "objectId": "0-2563",
+        "propertyKey": 14,
+        "propertyName": "y",
+        "frame": 54,
+        "type": "double",
+        "value": 425.0,
+        "keyframeId": "0-2585",
+        "interpolationType": "cubic",
+        "interpolatorId": "0-2586"
+      },
+      {
+        "objectId": "0-2563",
+        "propertyKey": 14,
+        "propertyName": "y",
+        "frame": 70,
+        "type": "double",
+        "value": 420.0,
+        "keyframeId": "0-2587",
+        "interpolationType": "hold"
+      },
+      {
+        "objectId": "0-2563",
+        "propertyKey": 14,
+        "propertyName": "y",
+        "frame": 306,
+        "type": "double",
+        "value": 420.0,
+        "keyframeId": "0-2588",
+        "interpolationType": "cubic",
+        "interpolatorId": "0-2589"
+      },
+      {
+        "objectId": "0-2563",
+        "propertyKey": 14,
+        "propertyName": "y",
+        "frame": 348,
+        "type": "double",
+        "value": 316.0,
+        "keyframeId": "0-2590",
+        "interpolationType": "hold"
+      },
+      {
+        "objectId": "0-2563",
+        "propertyKey": 14,
+        "propertyName": "y",
+        "frame": 360,
+        "type": "double",
+        "value": 316.0,
+        "keyframeId": "0-2591",
+        "interpolationType": "linear"
+      },
+      {
+        "objectId": "0-2547",
+        "propertyKey": 18,
+        "propertyName": "opacity",
+        "frame": 0,
+        "type": "double",
+        "value": 0.0,
+        "keyframeId": "0-2618",
+        "interpolationType": "hold"
+      },
+      {
+        "objectId": "0-2547",
+        "propertyKey": 18,
+        "propertyName": "opacity",
+        "frame": 58,
+        "type": "double",
+        "value": 0.0,
+        "keyframeId": "0-2619",
+        "interpolationType": "cubic",
+        "interpolatorId": "0-2620"
+      },
+      {
+        "objectId": "0-2547",
+        "propertyKey": 18,
+        "propertyName": "opacity",
+        "frame": 82,
+        "type": "double",
+        "value": 100.0,
+        "keyframeId": "0-2621",
+        "interpolationType": "hold"
+      },
+      {
+        "objectId": "0-2547",
+        "propertyKey": 18,
+        "propertyName": "opacity",
+        "frame": 278,
+        "type": "double",
+        "value": 100.0,
+        "keyframeId": "0-2622",
+        "interpolationType": "cubic",
+        "interpolatorId": "0-2623"
+      },
+      {
+        "objectId": "0-2547",
+        "propertyKey": 18,
+        "propertyName": "opacity",
+        "frame": 296,
+        "type": "double",
+        "value": 0.0,
+        "keyframeId": "0-2624",
+        "interpolationType": "hold"
+      },
+      {
+        "objectId": "0-2547",
+        "propertyKey": 18,
+        "propertyName": "opacity",
+        "frame": 360,
+        "type": "double",
+        "value": 0.0,
+        "keyframeId": "0-2625",
+        "interpolationType": "linear"
+      },
+      {
+        "objectId": "0-2547",
+        "propertyKey": 14,
+        "propertyName": "y",
+        "frame": 0,
+        "type": "double",
+        "value": 12.0,
+        "keyframeId": "0-2627",
+        "interpolationType": "hold"
+      },
+      {
+        "objectId": "0-2547",
+        "propertyKey": 14,
+        "propertyName": "y",
+        "frame": 58,
+        "type": "double",
+        "value": 12.0,
+        "keyframeId": "0-2628",
+        "interpolationType": "cubic",
+        "interpolatorId": "0-2629"
+      },
+      {
+        "objectId": "0-2547",
+        "propertyKey": 14,
+        "propertyName": "y",
+        "frame": 82,
+        "type": "double",
+        "value": 0.0,
+        "keyframeId": "0-2630",
+        "interpolationType": "hold"
+      },
+      {
+        "objectId": "0-2547",
+        "propertyKey": 14,
+        "propertyName": "y",
+        "frame": 278,
+        "type": "double",
+        "value": 0.0,
+        "keyframeId": "0-2631",
+        "interpolationType": "cubic",
+        "interpolatorId": "0-2632"
+      },
+      {
+        "objectId": "0-2547",
+        "propertyKey": 14,
+        "propertyName": "y",
+        "frame": 296,
+        "type": "double",
+        "value": -7.0,
+        "keyframeId": "0-2633",
+        "interpolationType": "hold"
+      },
+      {
+        "objectId": "0-2547",
+        "propertyKey": 14,
+        "propertyName": "y",
+        "frame": 348,
+        "type": "double",
+        "value": -7.0,
+        "keyframeId": "0-2634",
+        "interpolationType": "hold"
+      },
+      {
+        "objectId": "0-2547",
+        "propertyKey": 14,
+        "propertyName": "y",
+        "frame": 360,
+        "type": "double",
+        "value": 12.0,
+        "keyframeId": "0-2635",
+        "interpolationType": "linear"
+      },
+      {
+        "objectId": "0-2523",
+        "propertyKey": 15,
+        "propertyName": "r",
+        "frame": 0,
+        "type": "double",
+        "value": 0.0,
+        "keyframeId": "0-2658",
+        "interpolationType": "hold"
+      },
+      {
+        "objectId": "0-2523",
+        "propertyKey": 15,
+        "propertyName": "r",
+        "frame": 24,
+        "type": "double",
+        "value": 0.0,
+        "keyframeId": "0-2659",
+        "interpolationType": "cubic",
+        "interpolatorId": "0-2660"
+      },
+      {
+        "objectId": "0-2523",
+        "propertyKey": 15,
+        "propertyName": "r",
+        "frame": 70,
+        "type": "double",
+        "value": 180.0,
+        "keyframeId": "0-2661",
+        "interpolationType": "hold"
+      },
+      {
+        "objectId": "0-2523",
+        "propertyKey": 15,
+        "propertyName": "r",
+        "frame": 306,
+        "type": "double",
+        "value": 180.0,
+        "keyframeId": "0-2662",
+        "interpolationType": "cubic",
+        "interpolatorId": "0-2663"
+      },
+      {
+        "objectId": "0-2523",
+        "propertyKey": 15,
+        "propertyName": "r",
+        "frame": 348,
+        "type": "double",
+        "value": 0.0,
+        "keyframeId": "0-2664",
+        "interpolationType": "hold"
+      },
+      {
+        "objectId": "0-2523",
+        "propertyKey": 15,
+        "propertyName": "r",
+        "frame": 360,
+        "type": "double",
+        "value": 0.0,
+        "keyframeId": "0-2665",
+        "interpolationType": "linear"
+      }
+    ]
+  }
+}

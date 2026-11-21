@@ -1,5 +1,6 @@
-import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
+import { ArrowRight } from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
 import { GoogleCtaContent } from "./google-cta-content";
 import styles from "./product-headspace-cta.module.css";
@@ -17,19 +18,21 @@ export function ProductHeadspaceCta() {
       />
       <div className={styles.content}>
         <span className={styles.eyebrow}>A LITTLE MORE HEADSPACE</span>
-        <h2>
-          Make room for life
-          <br />
-          around your properties.
+        <h2 data-mixed-heading>
+          <MixedHeadingText>
+            Make room for life
+            <br />
+            around your properties.
+          </MixedHeadingText>
         </h2>
         <p>
           Bring your team, your information, and your next steps into one flow.
         </p>
         <div className={styles.actions}>
-          <a href={siteConfig.googleAuthUrl}>
+          <a href={siteConfig.signupUrl}>
             <GoogleCtaContent />
           </a>
-          <a href={siteConfig.demoUrl} className={styles.demo}>
+          <a data-site-cta="secondary" href={siteConfig.demoUrl} className={styles.demo}>
             See demo <ArrowRight size={18} aria-hidden="true" />
           </a>
         </div>

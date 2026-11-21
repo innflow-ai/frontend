@@ -1,11 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { ChevronRight } from "@/components/chevron-right";
 import { GoogleCtaContent } from "@/components/google-cta-content";
+import {
+  ArrowRight as MageArrowRight,
+  Plus as MagePlus,
+} from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
-import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-partners.module.css";
+import { InnerPageShell } from "./inner-page-shell";
 
 const audience = [
   [
@@ -96,10 +102,12 @@ function Photo({
   name,
   alt,
   hero = false,
+  sizes = "(max-width: 700px) calc(100vw - 48px), (max-width: 1440px) calc((100vw - 120px) / 3), 440px",
 }: {
   name: string;
   alt: string;
   hero?: boolean;
+  sizes?: string;
 }) {
   return (
     <Image
@@ -108,6 +116,7 @@ function Photo({
       alt={alt}
       width={1164}
       height={840}
+      sizes={sizes}
       priority={hero}
     />
   );
@@ -125,10 +134,12 @@ function Workflow() {
       </div>
       <div className={styles.workflowBody}>
         <span className={styles.eyebrow}>PROPERTY OPERATIONS</span>
-        <h3>
-          A clear next step.
-          <br />
-          For everyone.
+        <h3 data-mixed-heading>
+          <MixedHeadingText>
+            A clear next step.
+            <br />
+            For everyone.
+          </MixedHeadingText>
         </h3>
         <div className={styles.nodes}>
           {[
@@ -136,11 +147,12 @@ function Workflow() {
             "Review context and assign",
             "Approve the next action",
             "Keep the team informed",
-          ].map((text, index) => (
+          ].map((text) => (
             <div key={text}>
-              <span>{String(index + 1).padStart(2, "0")}</span>
               {text}
-              <span aria-hidden="true">↗</span>
+              <span aria-hidden="true">
+                <ChevronRight />
+              </span>
             </div>
           ))}
         </div>
@@ -150,6 +162,7 @@ function Workflow() {
 }
 export function BaselanePartners({ referral = false }: { referral?: boolean }) {
   const [shareStatus, setShareStatus] = useState("");
+  const shareInput = useRef<HTMLInputElement>(null);
   const shareUrl = `${siteConfig.marketingOrigin.replace(/\/$/, "")}/`;
   const inquiry = `mailto:${siteConfig.supportEmail}?subject=${encodeURIComponent("Partner with innflow")}`;
   async function copyLink() {
@@ -157,7 +170,9 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
       await navigator.clipboard.writeText(shareUrl);
       setShareStatus("Link copied. Ready to share.");
     } catch {
-      setShareStatus("Copy the address below to share innflow.");
+      setShareStatus("Copy the selected public page link to share innflow.");
+      shareInput.current?.focus();
+      shareInput.current?.select();
     }
   }
   const action = referral ? (
@@ -165,19 +180,21 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
       Copy link to share
     </button>
   ) : (
-    <a className={styles.button} href="#partner-inquiry">
+    <a data-site-cta="primary" className={styles.button} href="#partner-inquiry">
       Explore a partnership
     </a>
   );
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={styles.page}>
         <section className={styles.hero}>
           <div className={styles.heroCopy}>
-            <h1>
-              {referral
-                ? "Good work is worth sharing."
-                : "Partner and build something useful."}
+            <h1 data-mixed-heading>
+              <MixedHeadingText>
+                {referral
+                  ? "Good work is worth sharing."
+                  : "Partner and build something useful."}
+              </MixedHeadingText>
             </h1>
             <p>
               {referral
@@ -190,6 +207,7 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
                 <label htmlFor="share-address">Public page link</label>
                 <input
                   id="share-address"
+                  ref={shareInput}
                   readOnly
                   value={shareUrl}
                   onFocus={(event) => event.currentTarget.select()}
@@ -205,6 +223,7 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
             )}
           </div>
           <Photo
+            sizes="(max-width: 700px) calc(100vw - 48px), (max-width: 900px) calc((100vw - 100px) * 1.1 / 2.1), (max-width: 1440px) calc((100vw - 134px) * 1.1 / 2.1), 685px"
             name={referral ? "referral-hero" : "partner-hero"}
             alt={
               referral
@@ -217,25 +236,15 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
         {!referral && (
           <>
             <section className={styles.section}>
-              <h2>Who can we work with?</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>Who can we work with?</MixedHeadingText>
+              </h2>
               <div className={styles.cards}>
                 {audience.map(([name, title, text, alt]) => (
                   <article key={name}>
                     <Photo name={name} alt={alt} />
-                    <h3>{title}</h3>
-                    <p>{text}</p>
-                  </article>
-                ))}
-              </div>
-            </section>
-            <section className={styles.section}>
-              <h2>What we can explore</h2>
-              <div className={styles.topics}>
-                {topics.map(([number, title, text]) => (
-                  <article key={title}>
-                    <h3>
-                      <span>{number}</span>
-                      {title}
+                    <h3 data-mixed-heading>
+                      <MixedHeadingText>{title}</MixedHeadingText>
                     </h3>
                     <p>{text}</p>
                   </article>
@@ -243,19 +252,44 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
               </div>
             </section>
             <section className={styles.section}>
-              <h2>Start with the work people do.</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>What we can explore</MixedHeadingText>
+              </h2>
+              <div className={styles.topics}>
+                {topics.map(([number, title, text]) => (
+                  <article key={title}>
+                    <h3 data-mixed-heading>
+                      <MixedHeadingText>
+                        <span>{number}</span>
+                        {title}
+                      </MixedHeadingText>
+                    </h3>
+                    <p>{text}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
+            <section className={styles.section}>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>
+                  Start with the work people do.
+                </MixedHeadingText>
+              </h2>
               <p className={styles.centerCopy}>
                 A useful introduction starts with a real problem. Explore how
                 requests, context, and approvals can come together in one
                 workflow.
               </p>
               <a className={styles.textLink} href={siteConfig.demoUrl}>
-                Explore innflow →
+                Explore innflow <MageArrowRight size="1em" />
               </a>
               <div className={styles.demo}>
                 <Workflow />
                 <a className={styles.demoLink} href={siteConfig.demoUrl}>
-                  Open the demo page <span aria-hidden="true">↗</span>
+                  Open the demo page{" "}
+                  <span aria-hidden="true">
+                    <ChevronRight />
+                  </span>
                 </a>
               </div>
             </section>
@@ -266,7 +300,11 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
           id={referral ? "how-it-works" : "partner-inquiry"}
         >
           <div className={styles.stepsCopy}>
-            <h2>{referral ? "How it works" : "Let's start a conversation."}</h2>
+            <h2 data-mixed-heading>
+              <MixedHeadingText>
+                {referral ? "How it works" : "Let's start a conversation."}
+              </MixedHeadingText>
+            </h2>
             <p>
               {referral
                 ? "A simple introduction can be the start of a better workflow. Copy the link, add a little context, and let your colleague explore."
@@ -277,10 +315,9 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
                 ([title, text], index) => (
                   <details key={title} open={index === 0}>
                     <summary>
-                      <span>{String(index + 1).padStart(2, "0")}</span>
                       {title}
                       <span className={styles.plus} aria-hidden="true">
-                        +
+                        <MagePlus size="1em" />
                       </span>
                     </summary>
                     <p>{text}</p>
@@ -289,7 +326,7 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
               )}
             </div>
             {!referral && (
-              <a className={styles.button} href={inquiry}>
+              <a data-site-cta="primary" className={styles.button} href={inquiry}>
                 Email a partnership inquiry
               </a>
             )}
@@ -297,24 +334,36 @@ export function BaselanePartners({ referral = false }: { referral?: boolean }) {
           {referral ? (
             <Workflow />
           ) : (
-            <Photo name="join" alt="A man smiling while looking at his phone" />
+            <Photo
+              name="join"
+              alt="A man smiling while looking at his phone"
+              sizes="(max-width: 700px) calc(100vw - 48px), (max-width: 900px) calc((100vw - 100px) * 1.1 / 2.1), (max-width: 1440px) calc((100vw - 154px) * 1.1 / 2.1), 674px"
+            />
           )}
         </section>
         {referral && (
           <section className={styles.closing}>
             <div>
-              <h2>Know someone who could use innflow?</h2>
+              <h2 data-mixed-heading>
+                <MixedHeadingText>
+                  Know someone who could use innflow?
+                </MixedHeadingText>
+              </h2>
               <p>Share a starting point for clearer, more connected work.</p>
-              <a className={styles.button} href={siteConfig.googleAuthUrl}>
+              <a
+                data-site-cta="primary"
+                className={styles.button}
+                href={siteConfig.signupUrl}
+              >
                 <GoogleCtaContent />
               </a>
               <a className={styles.textLink} href="/partner-with-us">
-                Explore partnerships →
+                Explore partnerships <MageArrowRight size="1em" />
               </a>
             </div>
           </section>
         )}
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

@@ -36,7 +36,7 @@ export default function ConicGradientAnimation({
   textColor = "#000000",
   fontSize = 16,
   fontWeight = 400,
-  fontFamily = "Inter",
+  fontFamily = "var(--font-sans)",
   letterSpacing = 0,
   children,
 }: ConicGradientProps) {

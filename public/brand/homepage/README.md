@@ -1,0 +1,1 @@
+All 18 numbered homepage Rive exports. See docs/HOMEPAGE_RIVE_ANIMATIONS.md and manifest.json for source links and exact runtime names. File 02 was rebuilt from the contacts storyboard's original motion tracks.

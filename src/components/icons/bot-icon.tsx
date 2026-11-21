@@ -1,0 +1,49 @@
+import type { MageIconProps } from "./mage/types";
+
+/**
+ * Round-head bot mark from the Innflow brand kit (Figma `TI7hq816ZzDMvvTd3HjyIS`, node `446:1929`).
+ * Fills use `currentColor` so the same paths stay visible on light and dark surfaces.
+ * The dome is a cutout in the head path; the two eye paths sit inside that opening.
+ */
+const headPath =
+  "M10 0C15.5228 7.00954e-06 20 4.47716 20 10C20 15.5228 15.5228 20 10 20C4.47716 20 4.1238e-06 15.5228 0 10C0 4.47716 4.47716 0 10 0ZM10 2.3295C7.96292 2.3295 6.00918 3.13866 4.56876 4.5791C3.60456 5.5433 2.92328 6.7376 2.57812 8.03282C2.29374 9.1001 3.2146 10.0103 4.31914 10.0104H15.6809C16.7854 10.0103 17.7062 9.1001 17.4219 8.03282C17.0767 6.73758 16.3953 5.54332 15.4311 4.5791C13.9906 3.13872 12.037 2.3295 10 2.3295Z";
+const leftEyePath =
+  "M8.00896 6.00936C8.01155 5.45708 7.56594 5.00728 7.01366 5.00469C6.46138 5.0021 6.01157 5.44771 6.00898 5.99999L6.00475 6.90393C6.00216 7.45621 6.44777 7.90602 7.00005 7.90861C7.55233 7.91119 8.00214 7.46558 8.00472 6.9133L8.00896 6.00936Z";
+const rightEyePath =
+  "M14.009 6.00936C14.0116 5.45708 13.566 5.00728 13.0137 5.00469C12.4614 5.0021 12.0116 5.44771 12.009 5.99999L12.0048 6.90393C12.0022 7.45621 12.4478 7.90602 13.0001 7.90861C13.5524 7.91119 14.0022 7.46558 14.0048 6.9133L14.009 6.00936Z";
+
+/**
+ * Universal AI-agent icon. Accepts the shared Mage icon props so it can replace
+ * those components in menus and feature rows without changing their size API.
+ */
+export function BotIcon({
+  size = 20,
+  weight: _weight,
+  mirrored = false,
+  style,
+  ...props
+}: MageIconProps) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 20 20"
+      fill="none"
+      aria-hidden="true"
+      focusable="false"
+      style={{
+        display: "inline-block",
+        verticalAlign: "-0.125em",
+        flexShrink: 0,
+        ...(mirrored ? { transform: "scaleX(-1)" } : {}),
+        ...style,
+      }}
+      {...props}
+    >
+      <path d={headPath} fill="currentColor" />
+      <path d={leftEyePath} fill="currentColor" />
+      <path d={rightEyePath} fill="currentColor" />
+    </svg>
+  );
+}

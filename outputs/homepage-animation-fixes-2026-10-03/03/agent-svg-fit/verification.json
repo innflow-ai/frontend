@@ -1,0 +1,19 @@
+{
+  "sourceFileId": 2626295,
+  "duration": 27.6,
+  "menuWidth": 320,
+  "menuHeight": 344,
+  "canonicalDropboxIcons": 7,
+  "selectedAgent": "Research Riley",
+  "iconSize": 24,
+  "expandedFieldAlignmentVerified": true,
+  "headerAndDownChevronVisible": true,
+  "allSevenRowsInsideMenu": true,
+  "fullPlaybackLoopCompleted": true,
+  "openingClosingPixelsIdentical": true,
+  "runtimeSha256": "b0ed3650acc7e4c4b87de01003324511ac3b709fb8c6f37962b9301ffbb205e7",
+  "runtimeBytes": 905739,
+  "editableBytes": 4930960,
+  "testsPassed": 8,
+  "deployed": false
+}

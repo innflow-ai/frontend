@@ -1,17 +1,18 @@
-import {
-  ArrowRight,
-  Buildings,
-  Files,
-  FlowArrow,
-  ShieldCheck,
-  Users,
-} from "@phosphor-icons/react/dist/ssr";
 import Image from "next/image";
 import { GoogleCtaContent } from "@/components/google-cta-content";
+import {
+  ArrowRight,
+  BuildingB as Buildings,
+  FileRecords as Files,
+  Share as FlowArrow,
+  ShieldCheck,
+  Users,
+} from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
-import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-multi-property.module.css";
 import { type RentalAudience, rentalContent } from "./baselane-rental-content";
+import { InnerPageShell } from "./inner-page-shell";
 
 const asset = "/brand/baselane-inspired/multi-property/";
 function Photo({
@@ -93,28 +94,38 @@ export function BaselaneMultiProperty({
       }))
     : defaultTools;
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <section className={styles.hero}>
         <Photo root={assetRoot} name="hero" responsive priority />
         <div className={styles.heroCopy}>
-          <h1>
-            {content?.title ?? (
-              <>
-                Property clarity that
-                <br />
-                grows with your portfolio.
-              </>
-            )}
+          <h1 data-mixed-heading>
+            <MixedHeadingText>
+              {content?.title ?? (
+                <>
+                  Property clarity that
+                  <br />
+                  grows with your portfolio.
+                </>
+              )}
+            </MixedHeadingText>
           </h1>
           <p>
             {content?.description ??
               "Connected workflows and knowledge for multi-property teams who want more control and room to grow."}
           </p>
           <div className={styles.actions}>
-            <a className={styles.googleButton} href={siteConfig.googleAuthUrl}>
+            <a
+              data-site-cta="primary"
+              className={styles.googleButton}
+              href={siteConfig.signupUrl}
+            >
               <GoogleCtaContent />
             </a>
-            <a className={styles.outline} href={siteConfig.demoUrl}>
+            <a
+              data-site-cta="secondary"
+              className={styles.outline}
+              href={siteConfig.demoUrl}
+            >
               See demo <ArrowRight size={18} />
             </a>
           </div>
@@ -133,7 +144,11 @@ export function BaselaneMultiProperty({
       )}
       <section className={styles.section}>
         <div className={styles.intro}>
-          <h2>{content?.intro ?? "Make room for the bigger picture."}</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              {content?.intro ?? "Make room for the bigger picture."}
+            </MixedHeadingText>
+          </h2>
           <p>
             {content?.introText ??
               "Bring the work behind every property together, so your next move is easier to see."}
@@ -143,13 +158,15 @@ export function BaselaneMultiProperty({
           <Photo root={assetRoot} name="portfolio" responsive />
           <div className={styles.glass}>
             <span>CONNECTED PROPERTY OPERATIONS</span>
-            <h3>
-              {content?.panoramaTitle ?? (
-                <>
-                  A portfolio view.
-                  <br />A property-level understanding.
-                </>
-              )}
+            <h3 data-mixed-heading>
+              <MixedHeadingText>
+                {content?.panoramaTitle ?? (
+                  <>
+                    A portfolio view.
+                    <br />A property-level understanding.
+                  </>
+                )}
+              </MixedHeadingText>
             </h3>
             <p>
               {content?.panoramaText ??
@@ -163,14 +180,16 @@ export function BaselaneMultiProperty({
       </section>
       <section className={styles.section}>
         <div className={styles.intro}>
-          <h2>
-            {content?.toolsTitle ?? (
-              <>
-                Tools that work together.
-                <br />
-                For properties that run together.
-              </>
-            )}
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              {content?.toolsTitle ?? (
+                <>
+                  Tools that work together.
+                  <br />
+                  For properties that run together.
+                </>
+              )}
+            </MixedHeadingText>
           </h2>
         </div>
         <div className={styles.tools}>
@@ -185,7 +204,9 @@ export function BaselaneMultiProperty({
                   </span>
                 </div>
                 <div className={styles.toolCopy}>
-                  <h3>{title}</h3>
+                  <h3 data-mixed-heading>
+                    <MixedHeadingText>{title}</MixedHeadingText>
+                  </h3>
                   <p>{description}</p>
                 </div>
                 <div className={styles.preview}>
@@ -206,7 +227,9 @@ export function BaselaneMultiProperty({
       </section>
       <section className={styles.section}>
         <div className={styles.intro}>
-          <h2>Confidence in the details.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>Confidence in the details.</MixedHeadingText>
+          </h2>
         </div>
         <div className={styles.controls}>
           {[
@@ -229,9 +252,9 @@ export function BaselaneMultiProperty({
             const Mark = Icon as typeof ShieldCheck;
             return (
               <article key={String(title)}>
-                <h3>
+                <h3 data-mixed-heading>
                   <Mark size={23} />
-                  {String(title)}
+                  <MixedHeadingText>{String(title)}</MixedHeadingText>
                 </h3>
                 <p>{String(text)}</p>
               </article>
@@ -248,16 +271,22 @@ export function BaselaneMultiProperty({
             sizes="100vw"
           />
           <div>
-            <h2>
-              More headspace.
-              <br />
-              For the work and life ahead.
+            <h2 data-mixed-heading>
+              <MixedHeadingText>
+                More headspace.
+                <br />
+                For the work and life ahead.
+              </MixedHeadingText>
             </h2>
             <p>
               Bring your properties, your team, and your next steps into one
               flow.
             </p>
-            <a className={styles.button} href={siteConfig.demoUrl}>
+            <a
+              data-site-cta="primary"
+              className={styles.button}
+              href={siteConfig.demoUrl}
+            >
               Explore innflow <ArrowRight size={18} />
             </a>
           </div>
@@ -265,7 +294,9 @@ export function BaselaneMultiProperty({
       )}
       <section className={styles.section}>
         <div className={styles.intro}>
-          <h2>Support for your next chapter.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>Support for your next chapter.</MixedHeadingText>
+          </h2>
         </div>
         <div className={styles.resources}>
           <article className={styles.featured}>
@@ -276,15 +307,21 @@ export function BaselaneMultiProperty({
               PRODUCT DEMO
             </span>
             <div>
-              <h3>
-                {content?.resourceTitle ??
-                  "See a more connected property operation."}
+              <h3 data-mixed-heading>
+                <MixedHeadingText>
+                  {content?.resourceTitle ??
+                    "See a more connected property operation."}
+                </MixedHeadingText>
               </h3>
               <p>
                 {content?.resourceText ??
                   "Explore the workflows, knowledge, and approvals behind innflow."}
               </p>
-              <a className={styles.button} href={siteConfig.demoUrl}>
+              <a
+                data-site-cta="primary"
+                className={styles.button}
+                href={siteConfig.demoUrl}
+              >
                 Book a demo <ArrowRight size={18} />
               </a>
             </div>
@@ -310,7 +347,9 @@ export function BaselaneMultiProperty({
               <a href={href} key={label}>
                 <span>
                   <small>{label}</small>
-                  <h3>{title}</h3>
+                  <h3 data-mixed-heading>
+                    <MixedHeadingText>{title}</MixedHeadingText>
+                  </h3>
                 </span>
                 <ArrowRight size={22} />
               </a>
@@ -320,7 +359,11 @@ export function BaselaneMultiProperty({
       </section>
       <section className={styles.section}>
         <div className={styles.intro}>
-          <h2>{content?.storyTitle ?? "One portfolio. Many moving parts."}</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>
+              {content?.storyTitle ?? "One portfolio. Many moving parts."}
+            </MixedHeadingText>
+          </h2>
           <p>A clearer way to connect the work behind every property.</p>
         </div>
         <div className={styles.stories}>
@@ -338,10 +381,14 @@ export function BaselaneMultiProperty({
               "resources-desktop",
             ],
           ].map(([title, text, photo], i) => (
-            <a href="/products/agentic-workflows" key={title}>
+            <a href="/features/workflows" key={title}>
               <Photo root={assetRoot} name={photo} />
               <small>{title}</small>
-              <h3>{content?.stories[i] ?? text}</h3>
+              <h3 data-mixed-heading>
+                <MixedHeadingText>
+                  {content?.stories[i] ?? text}
+                </MixedHeadingText>
+              </h3>
               <span>
                 Explore workflows <ArrowRight size={18} />
               </span>
@@ -349,6 +396,6 @@ export function BaselaneMultiProperty({
           ))}
         </div>
       </section>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

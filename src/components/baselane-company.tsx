@@ -1,8 +1,15 @@
 import Image from "next/image";
+import { ChevronRight } from "@/components/chevron-right";
 import { GoogleCtaContent } from "@/components/google-cta-content";
+import {
+  ArrowDown as MageArrowDown,
+  ArrowRight as MageArrowRight,
+  Check as MageCheck,
+} from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
 import { siteConfig } from "@/config/site";
 import styles from "./baselane-company.module.css";
-import { BaselaneHomepage } from "./baselane-homepage";
+import { InnerPageShell } from "./inner-page-shell";
 
 const values = [
   [
@@ -31,9 +38,11 @@ function Workspace() {
       </div>
       <div className={styles.workspaceBody}>
         <span className={styles.label}>PROPERTY OPERATIONS</span>
-        <h3>
-          One request.
-          <br />A clear path forward.
+        <h3 data-mixed-heading>
+          <MixedHeadingText>
+            One request.
+            <br />A clear path forward.
+          </MixedHeadingText>
         </h3>
         <div className={styles.request}>
           <span>01</span>
@@ -43,7 +52,9 @@ function Workspace() {
           </div>
           <b>Received</b>
         </div>
-        <div className={styles.connector}>↓</div>
+        <div className={styles.connector}>
+          <MageArrowDown size="1em" />
+        </div>
         <div className={styles.request}>
           <span>02</span>
           <div>
@@ -52,7 +63,9 @@ function Workspace() {
           </div>
           <b>Review</b>
         </div>
-        <div className={styles.connector}>↓</div>
+        <div className={styles.connector}>
+          <MageArrowDown size="1em" />
+        </div>
         <div className={styles.request}>
           <span>03</span>
           <div>
@@ -69,7 +82,7 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
   const variant = careers ? "careers" : "about";
   const careerUrl = `mailto:${siteConfig.supportEmail}?subject=Careers%20at%20Innflow`;
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={styles.page}>
         <section
           className={`${styles.hero} ${careers ? styles.careerHero : ""}`}
@@ -88,10 +101,12 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
             />
           </picture>
           <div>
-            <h1>
-              {careers
-                ? "Build what comes next for property operations."
-                : "Property operations, connected by innflow."}
+            <h1 data-mixed-heading>
+              <MixedHeadingText>
+                {careers
+                  ? "Build what comes next for property operations."
+                  : "Property operations, connected by innflow."}
+              </MixedHeadingText>
             </h1>
             <p>
               {careers
@@ -100,18 +115,25 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
             </p>
             <div className={styles.actions}>
               <a
+                data-site-cta="primary"
                 className={styles.button}
-                href={careers ? careerUrl : siteConfig.googleAuthUrl}
+                href={careers ? careerUrl : siteConfig.signupUrl}
               >
                 {careers ? (
-                  <>Explore working together ↗</>
+                  <>
+                    Explore working together <ChevronRight />
+                  </>
                 ) : (
                   <GoogleCtaContent />
                 )}
               </a>
               {!careers && (
-                <a className={styles.outline} href={siteConfig.demoUrl}>
-                  See demo →
+                <a
+                  data-site-cta="secondary"
+                  className={styles.outline}
+                  href={siteConfig.demoUrl}
+                >
+                  See demo <MageArrowRight size="1em" />
                 </a>
               )}
             </div>
@@ -129,7 +151,9 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
               ["History", "Visible execution"],
             ].map(([title, text]) => (
               <div key={title}>
-                <h2>{title}</h2>
+                <h2 data-mixed-heading>
+                  <MixedHeadingText>{title}</MixedHeadingText>
+                </h2>
                 <p>{text}</p>
               </div>
             ))}
@@ -140,26 +164,32 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
             <span className={styles.label}>
               {careers ? "THE PROBLEM WORTH SOLVING" : "WHY WE BUILD"}
             </span>
-            <h2>
-              {careers
-                ? "Behind every property is a team keeping things moving."
-                : "The work between your tools deserves a clearer home."}
+            <h2 data-mixed-heading>
+              <MixedHeadingText>
+                {careers
+                  ? "Behind every property is a team keeping things moving."
+                  : "The work between your tools deserves a clearer home."}
+              </MixedHeadingText>
             </h2>
             <p>
               {careers
                 ? "The next request rarely arrives with every detail in place. We’re interested in the practical work of connecting context, decisions, and follow-through."
                 : "A request starts in one place. Its context lives in another. innflow brings those pieces together so your team can focus on the decision and the next action."}
             </p>
-            <a href={siteConfig.demoUrl}>Explore the product →</a>
+            <a href={siteConfig.demoUrl}>
+              Explore the product <MageArrowRight size="1em" />
+            </a>
           </div>
           <Workspace />
         </section>
         {careers ? (
           <section className={styles.careerIntro}>
-            <h2>
-              Build around the people
-              <br />
-              doing the work.
+            <h2 data-mixed-heading>
+              <MixedHeadingText>
+                Build around the people
+                <br />
+                doing the work.
+              </MixedHeadingText>
             </h2>
             <p>Explore the product and the problems we’re working on.</p>
             <div className={styles.panorama}>
@@ -186,7 +216,9 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
                 ],
               ].map(([title, text]) => (
                 <article key={title}>
-                  <h3>{title}</h3>
+                  <h3 data-mixed-heading>
+                    <MixedHeadingText>{title}</MixedHeadingText>
+                  </h3>
                   <p>{text}</p>
                 </article>
               ))}
@@ -203,23 +235,38 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
             />
             <div className={styles.context}>
               <span className={styles.label}>EXAMPLE PROPERTY CONTEXT</span>
-              <h3>Everything for the next step.</h3>
+              <h3 data-mixed-heading>
+                <MixedHeadingText>
+                  Everything for the next step.
+                </MixedHeadingText>
+              </h3>
               <p>
-                Property details <b>✓</b>
+                Property details{" "}
+                <b>
+                  <MageCheck size="1em" />
+                </b>
               </p>
               <p>
-                Operating procedure <b>✓</b>
+                Operating procedure{" "}
+                <b>
+                  <MageCheck size="1em" />
+                </b>
               </p>
               <p>
-                Review owner <b>✓</b>
+                Review owner{" "}
+                <b>
+                  <MageCheck size="1em" />
+                </b>
               </p>
             </div>
           </div>
           <div className={styles.values}>
-            <h2>
-              {careers
-                ? "Principles worth building around."
-                : "Designed around everyday operations."}
+            <h2 data-mixed-heading>
+              <MixedHeadingText>
+                {careers
+                  ? "Principles worth building around."
+                  : "Designed around everyday operations."}
+              </MixedHeadingText>
             </h2>
             <p>
               {careers
@@ -246,43 +293,49 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
         </section>
         {!careers && (
           <section className={styles.pillars}>
-            <h2>Explore what connects the work.</h2>
+            <h2 data-mixed-heading>
+              <MixedHeadingText>
+                Explore what connects the work.
+              </MixedHeadingText>
+            </h2>
             <div>
               {[
                 [
-                  "01",
                   "Workflows",
                   "Give recurring requests a repeatable path.",
-                  "/products/agentic-workflows",
+                  "/features/workflows",
                 ],
                 [
-                  "02",
                   "Knowledge",
                   "Keep useful context available to your team.",
                   "/platform",
                 ],
                 [
-                  "03",
                   "Approvals",
                   "Bring human review into consequential steps.",
                   "/platform/security-and-compliance",
                 ],
-              ].map(([number, title, text, href]) => (
+              ].map(([title, text, href]) => (
                 <a href={href} key={title}>
-                  <span>{number}</span>
-                  <h3>{title}</h3>
+                  <h3 data-mixed-heading>
+                    <MixedHeadingText>{title}</MixedHeadingText>
+                  </h3>
                   <p>{text}</p>
-                  <b>Explore →</b>
+                  <b>
+                    Explore <MageArrowRight size="1em" />
+                  </b>
                 </a>
               ))}
             </div>
-            <a className={styles.button} href="/careers">
-              Explore working with us ↗
+            <a data-site-cta="primary" className={styles.button} href="/careers">
+              Explore working with us <ChevronRight />
             </a>
           </section>
         )}
         <section className={styles.linkBand}>
-          <h2>Get to know innflow.</h2>
+          <h2 data-mixed-heading>
+            <MixedHeadingText>Get to know innflow.</MixedHeadingText>
+          </h2>
           <div>
             <a href="/about">Our approach</a>
             <a href="/resources">Resources</a>
@@ -291,6 +344,6 @@ export function BaselaneCompany({ careers = false }: { careers?: boolean }) {
           </div>
         </section>
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

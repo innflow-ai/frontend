@@ -1,11 +1,28 @@
 "use client";
+import Image from "next/image";
+
+const root = "/preview/homepage/agent-demos/building-blocks-";
 
 import { type MotionValue, motion, useTransform } from "motion/react";
-import Image from "next/image";
+import {
+  FileRecords,
+  Globe,
+  Goals,
+  Laptop,
+  Link,
+} from "@/components/icons/mage";
+
+const buildingIcons = {
+  book: FileRecords,
+  globe: Globe,
+  laptop: Laptop,
+  link: Link,
+  target: Goals,
+};
+
 import styles from "./api-building-blocks.module.css";
 import { useDemoPlayback } from "./use-demo-playback";
 
-const root = "/preview/homepage/agent-demos/building-blocks-";
 const icons = [
   { name: "book", left: "25%", top: "23%" },
   { name: "globe", left: "62%", top: "29%" },
@@ -24,6 +41,7 @@ function OrbitIcon({
   playing: boolean;
 }) {
   const icon = icons[index];
+  const BuildingIcon = buildingIcons[icon.name as keyof typeof buildingIcons];
   const start = 0.18 + index * 0.065;
   const opacity = useTransform(progress, [start, start + 0.15], [0, 1]);
   const rotate = useTransform(progress, [start, 0.85], [-9, 0]);
@@ -42,7 +60,7 @@ function OrbitIcon({
         className={styles.icon}
         style={{ left: icon.left, top: icon.top, rotate: counterRotate }}
       >
-        <Image src={`${root}${icon.name}.png`} alt="" width={20} height={20} />
+        <BuildingIcon size={20} />
       </motion.div>
     </motion.div>
   );

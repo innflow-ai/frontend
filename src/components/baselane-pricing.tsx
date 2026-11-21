@@ -1,21 +1,37 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
-import { GoogleCtaContent } from "@/components/google-cta-content";
-import { pricingCatalog } from "@/config/pricing";
+import {
+  Database,
+  ArrowDown as MageArrowDown,
+  Minus as MageMinus,
+  Plus as MagePlus,
+  Share,
+  StarsA,
+} from "@/components/icons/mage";
+import { MixedHeadingText } from "@/components/mixed-heading-text";
+import { TrackedLink } from "@/components/tracked-link";
+import {
+  annualSavingsPercent,
+  maxAnnualSavingsPercent,
+  pricingCatalog,
+} from "@/config/pricing";
 import { siteConfig } from "@/config/site";
-import { faqs as homepageFaqs } from "@/content/home";
-import { BaselaneHomepage } from "./baselane-homepage";
 import styles from "./baselane-pricing.module.css";
+import { InnerPageShell } from "./inner-page-shell";
+import { SectionHeading } from "./section-heading";
 
 const plans = Object.values(pricingCatalog.plans);
-const { free, pro, business } = pricingCatalog.plans;
+const { pro, business } = pricingCatalog.plans;
 const money = (value: number | null) =>
-  value === null ? "Custom" : `$${value.toFixed(value % 1 ? 2 : 0)}`;
+  value === null
+    ? "Custom"
+    : `$${value.toLocaleString("en-US", { minimumFractionDigits: value % 1 ? 2 : 0, maximumFractionDigits: 2 })}`;
 const groups = [
   {
     title: "WORKFLOW CAPACITY",
+    label: "Workflow capacity",
+    icon: Share,
     rows: [
       ["Monthly credits", "monthlyCredits"],
       ["Workspaces", "workspaces"],
@@ -24,6 +40,8 @@ const groups = [
   },
   {
     title: "DATA AND HISTORY",
+    label: "Data and history",
+    icon: Database,
     rows: [
       ["Tables", "tables"],
       ["Rows per table", "rowsPerTable"],
@@ -32,318 +50,579 @@ const groups = [
   },
   {
     title: "ADVANCED CAPABILITIES",
+    label: "Advanced capabilities",
+    icon: StarsA,
     rows: [
       ["Premium workflow nodes", "premiumWorkflowNodes"],
-      ["Exclusive AI models", "exclusiveAiModels"],
+      ["Code node", "codeNode"],
+      ["Analytics", "analytics"],
     ],
   },
 ] as const;
+const enterpriseNote = "Enterprise limits can be tailored by agreement.";
+const toolGroups = [
+  {
+    title: "KNOWLEDGE, AGENTS AND CONNECTED WORK",
+    label: "Knowledge, agents and connected work",
+    note: "With setup: sign-in, permissions and supporting services are required. Rollout: availability depends on your workspace and permissions.",
+    rows: [
+      ["Files", "With setup", "With setup"],
+      ["Knowledge bases", "With setup", "With setup"],
+      ["Reusable skills", "With setup", "With setup"],
+      ["Scheduled tasks", "With setup + credits", "With setup + credits"],
+      ["Workspace agents", "Rollout", "Rollout"],
+      ["Channels & personal agent", "Rollout", "Rollout"],
+      ["Agent delegation", "Rollout", "Rollout"],
+      ["Connected apps", "With permissions", "With permissions"],
+    ],
+  },
+  {
+    title: "COMPUTER TOOLS AND COMMUNICATION",
+    label: "Computer tools and communication",
+    note: "Eligible means a paid plan can qualify, subject to rollout and access approval. It does not mean unlimited computer or AI usage.",
+    rows: [
+      ["Dedicated cloud computers", "Not included", "Eligible"],
+      ["Local computer access", "Approval + desktop", "Approval + desktop"],
+      ["Browser sign-in vault", "Beta + authorization", "Beta + authorization"],
+      ["Create & send from own mailbox", "Not included", "Eligible + setup"],
+      ["Voice input & output", "Rollout + setup", "Rollout + setup"],
+      ["Sensitive action approvals", "Requester review", "Requester review"],
+    ],
+  },
+] as const;
+const allGroupTitles = [...groups, ...toolGroups].map((group) => group.title);
 const questions = [
   [
-    "What are innflow credits?",
-    "Credits measure usage across supported workflow and AI actions. Usage depends on the action and model involved, so consider both run volume and workflow complexity.",
+    "What are Innflow credits?",
+    "AI and workflow activity consume credits. Basic includes 500 credits per month, Pro 10,000 and Business 140,000. Credits are not a fixed number of messages.",
   ],
   [
     "How does annual pricing work?",
-    `Annual plans are billed monthly at the lower annual rate: ${money(pro.commitmentMonthlyPrice)} for Pro or ${money(business.commitmentMonthlyPrice)} for Business. Monthly plans remain available at the standard rate. Prices are in USD.`,
+    `Pay once upfront for 12 months: ${money(pro.commitmentValue)} for Pro or ${money(business.commitmentValue)} for Business. The displayed monthly equivalents are ${money(pro.commitmentMonthlyPrice)} and ${money(business.commitmentMonthlyPrice)}. Monthly plans are ${money(pro.monthlyPrice)} and ${money(business.monthlyPrice)} respectively. Prices are in USD.`,
   ],
   [
-    "Can I change plans later?",
-    "You can move between Free, Pro, and Business as your usage changes. Contact the team if your requirements extend beyond the published plans.",
+    "Are all workspace tools available immediately?",
+    "Access to files, knowledge, skills and connected apps depends on account setup and permissions. Agents, channels, delegation and voice also depend on rollout. Computer tools require additional authorization.",
   ],
   [
     "When should I choose Business?",
-    `Business includes ${business.monthlyCredits} monthly credits, unlimited workspaces, workflows, and tables, plus exclusive AI models. Compare this with the capacity your team needs.`,
+    "Choose Business for 140,000 monthly credits, unlimited tables, 50,000 rows per table and 90-day run history. Premium workflow nodes, code nodes and analytics support more demanding workflows.",
   ],
   [
     "What is included with Enterprise?",
-    "Enterprise plans are scoped around custom credit volume, rate limits, seats, security requirements, deployment needs, onboarding, and service levels.",
+    "Enterprise uses a custom agreement. Discuss credit capacity and commercial limits with our team. The current starting defaults include 10,000 rows per table and 90-day run history; your agreement can tailor those limits.",
   ],
-  ...homepageFaqs.map(({ question, answer }) => [question, answer]),
 ];
+type Plan = (typeof plans)[number];
+
+function PlanLink({
+  plan,
+  compact = false,
+}: {
+  plan: Plan;
+  compact?: boolean;
+}) {
+  const enterprise = plan.name === "Enterprise";
+  return (
+    <TrackedLink
+      data-site-cta="primary"
+      className={compact ? `${styles.button} ${styles.compactButton}` : styles.button}
+      destination={
+        enterprise ? siteConfig.contactUrl : siteConfig.signupUrl
+      }
+      eventLabel={`pricing_${plan.name === "Basic" ? "free" : plan.name.toLowerCase()}_${enterprise ? "contact" : "signup"}`}
+      aria-label={
+        enterprise
+          ? "Talk to sales about Enterprise"
+          : `Get started with ${plan.name}`
+      }
+    >
+      {enterprise ? "Talk to sales" : "Get started"}
+      {!compact && (
+        // biome-ignore lint/performance/noImgElement: Exact, local Figma control asset.
+        <img
+          src="/pricing/figma/arrow-right.svg"
+          alt=""
+          width={24}
+          height={24}
+        />
+      )}
+    </TrackedLink>
+  );
+}
+
+function FeatureValue({ value }: { value: string }) {
+  if (value === "Yes")
+    return (
+      <>
+        {/* biome-ignore lint/performance/noImgElement: Exact local 20px comparison icon. */}
+        <img
+          className={styles.includedIcon}
+          src="/pricing/figma/included.svg"
+          alt=""
+          width={20}
+          height={20}
+        />
+        <span className={styles.srOnly}>Included</span>
+      </>
+    );
+  if (value === "No")
+    return (
+      <>
+        <span aria-hidden="true">·</span>
+        <span className={styles.srOnly}>Not included</span>
+      </>
+    );
+  return value;
+}
+
 export function BaselanePricing() {
-  const [annual, setAnnual] = useState(false);
-  const [expanded, setExpanded] = useState<string[]>([groups[0].title]);
-  const allOpen = expanded.length === groups.length;
-  const value = (plan: (typeof plans)[number]) =>
+  const [annual, setAnnual] = useState(true);
+  const [expanded, setExpanded] = useState<string[]>(allGroupTitles);
+  const allOpen = expanded.length === allGroupTitles.length;
+  const value = (plan: Plan) =>
     money(annual ? plan.commitmentMonthlyPrice : plan.monthlyPrice);
   return (
-    <BaselaneHomepage>
+    <InnerPageShell>
       <div className={styles.page}>
-        <section className={styles.hero}>
-          <picture>
-            <source
-              media="(max-width:700px)"
-              srcSet="/brand/baselane-inspired/pricing/hero-mobile.webp"
-            />
-            <Image
-              src="/brand/baselane-inspired/pricing/hero-desktop.webp"
-              alt="House rooftops beneath a blue sky"
-              fill
-              preload
-              sizes="100vw"
-            />
-          </picture>
-          <div className={styles.heroGrid}>
-            <div className={styles.intro}>
-              <h1>
-                Clearer work.
-                <br />
-                Room to grow.
-              </h1>
-              <p>
-                Choose the workflow capacity you need, with a clear view of
-                what’s included.
-              </p>
-              <fieldset className={styles.billing}>
-                <legend>Billing term</legend>
-                {[false, true].map((option) => (
-                  <label key={String(option)}>
-                    <input
-                      type="radio"
-                      name="billing"
-                      checked={annual === option}
-                      onChange={() => setAnnual(option)}
-                    />
-                    {option ? "Annual plan" : "Monthly plan"}
-                  </label>
-                ))}
-              </fieldset>
-              <div className={styles.note}>
-                <strong>Start with your next workflow.</strong>
-                <p>
-                  Compare the volume, context, and history your team needs. Move
-                  to more capacity as your operations grow.
-                </p>
-              </div>
-            </div>
-            {[free, pro].map((plan, index) => (
-              <article
-                className={`${styles.plan} ${index ? styles.featured : ""}`}
-                key={plan.name}
-              >
-                <span className={styles.eyebrow}>
-                  {index ? "MORE ROOM TO AUTOMATE" : "YOUR FIRST WORKFLOWS"}
+        <section className={styles.hero} aria-labelledby="pricing-title">
+          <SectionHeading
+            id="pricing-title"
+            as="h1"
+            size="hero"
+            title="Pick a plan."
+            emphasis="Your AI team is waiting."
+            subtitle={
+              <>
+                Agents, workflows and knowledge. <strong>One workspace.</strong>
+              </>
+            }
+          >
+            <fieldset
+              className={styles.billing}
+              data-annual={annual}
+              aria-describedby="billing-note"
+            >
+              <legend className={styles.srOnly}>Billing term</legend>
+              <label>
+                <input
+                  type="radio"
+                  name="billing"
+                  value="monthly"
+                  checked={!annual}
+                  onChange={() => setAnnual(false)}
+                />
+                Monthly
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  name="billing"
+                  value="annual"
+                  checked={annual}
+                  onChange={() => setAnnual(true)}
+                />
+                Yearly{" "}
+                <span className={styles.savings}>
+                  (up to {maxAnnualSavingsPercent}% off)
                 </span>
-                <h2>{plan.name}</h2>
-                <div className={styles.price}>
-                  {value(plan)}
-                  <span>/mo.</span>
+              </label>
+            </fieldset>
+            <p
+              id="billing-note"
+              className={styles.billingNote}
+              aria-live="polite"
+            >
+              {annual
+                ? "Billed yearly upfront. Monthly equivalents shown. All prices in USD."
+                : "No annual commitment. All prices in USD."}
+            </p>
+          </SectionHeading>
+          <nav className={styles.planNav} aria-label="Jump to a plan">
+            {plans.map((plan) => (
+              <a key={plan.name} href={`#plan-${plan.name.toLowerCase()}`}>
+                {plan.name}
+              </a>
+            ))}
+          </nav>
+          <div className={styles.planGrid}>
+            {plans.map((plan, index) => (
+              <article
+                id={`plan-${plan.name.toLowerCase()}`}
+                className={`${styles.plan} ${index === 1 ? styles.featured : ""}`}
+                key={plan.name}
+                aria-label={`${plan.name} plan`}
+              >
+                {index === 1 && (
+                  <div className={styles.popular}>POPULAR PLAN</div>
+                )}
+                <div className={styles.planTop}>
+                  <div>
+                    <div className={styles.planTitle}>
+                      <h2 data-mixed-heading>
+                        <MixedHeadingText>{plan.name}</MixedHeadingText>
+                      </h2>
+                      {annual &&
+                        plan.monthlyPrice !== null &&
+                        plan.monthlyPrice > 0 && (
+                          <span className={styles.discountTag}>
+                            {annualSavingsPercent(
+                              plan.monthlyPrice,
+                              plan.commitmentMonthlyPrice ?? 0,
+                            )}
+                            % OFF
+                          </span>
+                        )}
+                    </div>
+                    <p className={styles.planDescription}>
+                      {
+                        [
+                          "Explore your AI workspace and build your first workflows.",
+                          "Bring more capacity to your agents, knowledge and workflows.",
+                          "Scale team automation with higher credit and data limits.",
+                          "Shape your workspace and commercial terms around your team.",
+                        ][index]
+                      }
+                    </p>
+                  </div>
+                  <div>
+                    <div
+                      className={styles.price}
+                      data-custom={index === 3}
+                      data-business={index === 2}
+                      aria-live="polite"
+                      aria-atomic="true"
+                    >
+                      <strong>
+                        {value(plan).split(".")[0]}
+                        {value(plan).includes(".") && (
+                          <span className={styles.cents}>
+                            .{value(plan).split(".")[1]}
+                          </span>
+                        )}
+                      </strong>
+                      {index > 0 && index < 3 && (
+                        <span className={styles.priceAside}>
+                          {annual && (
+                            <>
+                              <span className={styles.srOnly}>
+                                Regular monthly price{" "}
+                              </span>
+                              <del>
+                                {money(plan.monthlyPrice).split(".")[0]}
+                                <span className={styles.oldCents}>
+                                  .{money(plan.monthlyPrice).split(".")[1]}
+                                </span>
+                                <svg
+                                  className={styles.priceStrike}
+                                  viewBox="0 0 100 28"
+                                  preserveAspectRatio="none"
+                                  aria-hidden="true"
+                                  focusable="false"
+                                >
+                                  <path d="M1 26 L99 4" />
+                                </svg>
+                              </del>
+                            </>
+                          )}
+                          <span>/month</span>
+                        </span>
+                      )}
+                    </div>
+                    <p className={styles.planNote}>
+                      {index === 0
+                        ? "No payment required"
+                        : index === 3
+                          ? "Custom agreement"
+                          : annual
+                            ? `${money("commitmentValue" in plan ? plan.commitmentValue : null)} billed yearly`
+                            : `${money(plan.monthlyPrice)} billed monthly`}
+                    </p>
+                    <PlanLink plan={plan} />
+                  </div>
                 </div>
-                <p className={styles.planDescription}>
-                  {index
-                    ? "More capacity for connected operations"
-                    : "The essentials to get started"}
-                </p>
-                <a className={styles.button} href={siteConfig.googleAuthUrl}>
-                  <GoogleCtaContent />
-                </a>
-                <span className={styles.eyebrow}>INCLUDED CAPACITY</span>
-                <ul>
-                  <li>{plan.monthlyCredits} monthly credits</li>
-                  <li>
-                    {plan.workspaces} {index ? "workspaces" : "workspace"}
-                  </li>
-                  <li>{plan.deployedWorkflows} deployed workflows</li>
-                  <li>{plan.tables} tables</li>
-                  <li>{plan.rowsPerTable} rows per table</li>
-                  <li>{plan.runHistory} of run history</li>
-                  {index === 1 && <li>Premium workflow nodes</li>}
-                </ul>
-                <small>
-                  {annual && index
-                    ? "Annual commitment, billed monthly."
-                    : "Monthly plan."}{" "}
-                  Prices in USD.
-                </small>
+                <div className={styles.planFeatures}>
+                  <p className={styles.includes}>
+                    {
+                      [
+                        "Includes:",
+                        "More capacity, plus premium nodes:",
+                        "More room for your team:",
+                        "A plan built around your team:",
+                      ][index]
+                    }
+                  </p>
+                  {groups.map((group, groupIndex) => (
+                    <div className={styles.featureSection} key={group.title}>
+                      <h3 data-mixed-heading>
+                        <span
+                          className={styles.featureIcon}
+                          data-category={groupIndex}
+                          aria-hidden="true"
+                        >
+                          <group.icon size={16} />
+                        </span>
+                        <MixedHeadingText>
+                          {
+                            [
+                              "Workflows",
+                              "Data & history",
+                              "AI & capabilities",
+                            ][groupIndex]
+                          }
+                        </MixedHeadingText>
+                      </h3>
+                      <ul>
+                        {group.rows.map(([label, key]) => (
+                          <li key={key} data-unavailable={plan[key] === "No"}>
+                            {plan[key] === "Yes" || plan[key] === "No" ? (
+                              label
+                            ) : (
+                              <>
+                                <strong>{plan[key]}</strong>{" "}
+                                {key === "workspaces" && plan[key] === "1"
+                                  ? "workspace"
+                                  : label.toLowerCase()}
+                              </>
+                            )}
+                            {plan[key] === "No" && (
+                              <span className={styles.srOnly}>
+                                {" "}
+                                (not included)
+                              </span>
+                            )}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                  {index === 3 && (
+                    <p className={styles.enterpriseNote}>
+                      Talk with us about security, deployment, onboarding, and
+                      service levels.
+                    </p>
+                  )}
+                </div>
               </article>
             ))}
           </div>
-        </section>
-        <section className={styles.growth}>
-          <div>
-            <span className={styles.eyebrow}>FOR YOUR WHOLE OPERATION</span>
-            <h2>Growing beyond Pro?</h2>
-            <p>
-              Business starts at {value(business)}/month with{" "}
-              {business.monthlyCredits} monthly credits. Enterprise brings
-              custom capacity for your team.
-            </p>
-          </div>
-          <a className={styles.outline} href={siteConfig.contactUrl}>
-            Talk to the team ↗
+          <p className={styles.capacityNote}>
+            AI and workflow activity consume credits. Credits are not a fixed
+            message count.
+            <br />
+            {enterpriseNote}
+          </p>
+          <a className={styles.compareLink} href="#compare-features">
+            Compare all features <MageArrowDown size={18} />
           </a>
         </section>
-        <section className={styles.comparison}>
-          <h2>Compare features</h2>
+        <section
+          id="compare-features"
+          className={styles.comparison}
+          aria-labelledby="comparison-title"
+        >
+          <h2 id="comparison-title" data-mixed-heading>
+            <MixedHeadingText>Compare features</MixedHeadingText>
+          </h2>
           <div className={styles.compareControls}>
             <button
               className={styles.outline}
               type="button"
-              onClick={() =>
-                setExpanded(allOpen ? [] : groups.map((g) => g.title))
-              }
+              onClick={() => setExpanded(allOpen ? [] : allGroupTitles)}
             >
               {allOpen ? "Collapse all features" : "Expand all features"}
+              {allOpen ? <MageMinus size={16} /> : <MagePlus size={16} />}
             </button>
-            <p>Scroll across on smaller screens to compare all four plans.</p>
+            <p>
+              All plans in USD.
+              <span className={styles.scrollHint}>
+                {" "}
+                Scroll across to compare on smaller screens.
+              </span>
+            </p>
           </div>
-          {groups.map((group) => (
-            <div className={styles.group} key={group.title}>
-              <button
-                type="button"
-                className={styles.groupToggle}
-                aria-expanded={expanded.includes(group.title)}
-                aria-controls={group.title.replaceAll(" ", "-")}
-                onClick={() =>
-                  setExpanded((old) =>
-                    old.includes(group.title)
-                      ? old.filter((t) => t !== group.title)
-                      : [...old, group.title],
-                  )
-                }
-              >
-                {group.title}
-                <span>{expanded.includes(group.title) ? "−" : "+"}</span>
-              </button>
-              <div
-                id={group.title.replaceAll(" ", "-")}
-                hidden={!expanded.includes(group.title)}
-              >
-                {/* Keyboard access to the horizontally scrollable comparison. */}
-                <section
-                  className={styles.tableScroll}
-                  aria-label={`${group.title.toLowerCase()} comparison`} // biome-ignore lint/a11y/noNoninteractiveTabindex: keyboard access to horizontal scrolling
-                  tabIndex={0}
-                >
-                  <table>
-                    <caption className={styles.srOnly}>
-                      {group.title} by innflow plan
-                    </caption>
-                    <thead>
-                      <tr>
-                        <th scope="col">Feature</th>
-                        {plans.map((plan) => (
-                          <th key={plan.name} scope="col">
-                            {plan.name}
-                            <small>
-                              {value(plan)}
-                              {plan.monthlyPrice !== null ? "/mo." : ""}
-                            </small>
-                          </th>
-                        ))}
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {group.rows.map(([label, key]) => (
-                        <tr key={key}>
-                          <th scope="row">{label}</th>
+          <section
+            className={styles.tableScroll}
+            aria-label="Plan feature comparison"
+            // biome-ignore lint/a11y/noNoninteractiveTabindex: Keyboard access to horizontal comparison scrolling.
+            tabIndex={0}
+          >
+            <div className={styles.comparisonInner}>
+              <div className={styles.comparePlans}>
+                <span className={styles.comparePlanLabel}>Find your fit</span>
+                {plans.map((plan) => (
+                  <div key={plan.name}>
+                    <h3 data-mixed-heading>
+                      <MixedHeadingText>{plan.name}</MixedHeadingText>
+                    </h3>
+                    <p>
+                      {value(plan)}
+                      {plan.monthlyPrice !== null ? "/mo." : ""}
+                    </p>
+                    <PlanLink plan={plan} compact />
+                  </div>
+                ))}
+              </div>
+              {groups.map((group) => (
+                <div className={styles.group} key={group.title}>
+                  <button
+                    type="button"
+                    className={styles.groupToggle}
+                    aria-label={group.title}
+                    aria-expanded={expanded.includes(group.title)}
+                    aria-controls={group.title.replaceAll(" ", "-")}
+                    onClick={() =>
+                      setExpanded((old) =>
+                        old.includes(group.title)
+                          ? old.filter((t) => t !== group.title)
+                          : [...old, group.title],
+                      )
+                    }
+                  >
+                    <span>
+                      <group.icon size={28} />
+                      {group.label}
+                    </span>
+                    {expanded.includes(group.title) ? (
+                      <MageMinus size={18} />
+                    ) : (
+                      <MagePlus size={18} />
+                    )}
+                  </button>
+                  <div
+                    id={group.title.replaceAll(" ", "-")}
+                    hidden={!expanded.includes(group.title)}
+                  >
+                    <table>
+                      <caption className={styles.srOnly}>
+                        {group.title} by Innflow plan
+                      </caption>
+                      <colgroup>
+                        <col />
+                        <col span={plans.length} />
+                      </colgroup>
+                      <thead className={styles.srOnly}>
+                        <tr>
+                          <th scope="col">Feature</th>
                           {plans.map((plan) => (
-                            <td key={plan.name}>{plan[key]}</td>
+                            <th key={plan.name} scope="col">
+                              {plan.name}
+                            </th>
                           ))}
                         </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </section>
-              </div>
+                      </thead>
+                      <tbody>
+                        {group.rows.map(([label, key]) => (
+                          <tr key={key}>
+                            <th scope="row">{label}</th>
+                            {plans.map((plan) => (
+                              <td key={plan.name}>
+                                <FeatureValue value={plan[key]} />
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              ))}
+              {toolGroups.map((group) => (
+                <div className={styles.group} key={group.title}>
+                  <button
+                    type="button"
+                    className={styles.groupToggle}
+                    aria-label={group.title}
+                    aria-expanded={expanded.includes(group.title)}
+                    aria-controls={group.title.replaceAll(" ", "-")}
+                    onClick={() =>
+                      setExpanded((old) =>
+                        old.includes(group.title)
+                          ? old.filter((title) => title !== group.title)
+                          : [...old, group.title],
+                      )
+                    }
+                  >
+                    <span>{group.label}</span>
+                    {expanded.includes(group.title) ? (
+                      <MageMinus size={18} />
+                    ) : (
+                      <MagePlus size={18} />
+                    )}
+                  </button>
+                  <div
+                    id={group.title.replaceAll(" ", "-")}
+                    hidden={!expanded.includes(group.title)}
+                  >
+                    <p className={styles.groupNote}>{group.note}</p>
+                    <table>
+                      <caption className={styles.srOnly}>
+                        {group.label} by Innflow plan
+                      </caption>
+                      <colgroup>
+                        <col />
+                        <col span={plans.length} />
+                      </colgroup>
+                      <thead>
+                        <tr>
+                          <th scope="col">
+                            <span className={styles.srOnly}>Feature</span>
+                          </th>
+                          {plans.map((plan) => (
+                            <th scope="col" key={plan.name}>
+                              {plan.name}
+                            </th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {group.rows.map(([label, basic, paid]) => (
+                          <tr key={label}>
+                            <th scope="row">{label}</th>
+                            {plans.map((plan, index) => (
+                              <td key={plan.name}>
+                                {index === 0 ? basic : paid}
+                              </td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </section>
+          <p className={styles.capacityNote}>
+            {enterpriseNote}
+            <br />
+            Connected tools require the relevant account permissions. Local
+            computer access needs owner approval and the desktop app. Voice
+            requires provider setup.
+          </p>
         </section>
-        <section className={styles.terms}>
-          <h2>Simple, transparent choices.</h2>
-          <p>Know what your plan covers before you start.</p>
-          <div>
-            {[
-              [
-                "Monthly plans",
-                "Pay the standard monthly rate without choosing an annual plan.",
-              ],
-              [
-                "Annual plans",
-                "Choose an annual commitment, billed monthly at the lower annual rate.",
-              ],
-              [
-                "Usage",
-                "Credits reflect workflow and AI actions. Different actions can use different amounts.",
-              ],
-              [
-                "Enterprise",
-                "Discuss custom requirements and service levels directly with the team.",
-              ],
-            ].map(([title, text]) => (
-              <article key={title}>
-                <h3>{title}</h3>
-                <p>{text}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-        <section className={styles.ocean}>
-          <Image
-            src="/brand/baselane-inspired/hero.webp"
-            alt="A calm coastal bay"
-            fill
-            sizes="100vw"
-          />
-          <div>
-            <h2>
-              Make room for
-              <br />
-              what’s next.
-            </h2>
-            <p>Connect the work behind your properties.</p>
-            <a className={styles.button} href={siteConfig.demoUrl}>
-              Explore a demo ↗
-            </a>
-          </div>
-        </section>
-        <section className={styles.useCases}>
-          <h2>Find your starting point.</h2>
-          <p>Explore the workflows behind different rental operations.</p>
-          <div>
-            {[
-              [
-                "Long-term rentals",
-                "Keep recurring work moving.",
-                "/long-term-rentals",
-              ],
-              [
-                "Mid-term rentals",
-                "Give each handoff a clear next step.",
-                "/mid-term-rentals",
-              ],
-              [
-                "Short-term rentals",
-                "Connect fast-moving operations.",
-                "/short-term-rentals",
-              ],
-              [
-                "Multi-property teams",
-                "Keep property context close.",
-                "/multi-property-investors",
-              ],
-            ].map(([title, text, href]) => (
-              <a key={href} href={href}>
-                <h3>{title}</h3>
-                <p>{text}</p>
-                <span>Explore →</span>
-              </a>
-            ))}
-          </div>
-        </section>
-        <section className={styles.faq}>
-          <h2>FAQs</h2>
-          <div>
+        <section className={styles.faq} aria-labelledby="faq-title">
+          <h2 id="faq-title" data-mixed-heading>
+            <MixedHeadingText>Frequently asked questions</MixedHeadingText>
+          </h2>
+          <div className={styles.questions}>
             {questions.map(([question, answer]) => (
               <details key={question}>
-                <summary>{question}</summary>
+                <summary>
+                  <span className={styles.faqSymbol} aria-hidden="true" />
+                  {question}
+                </summary>
                 <p>{answer}</p>
               </details>
             ))}
           </div>
+          <p className={styles.faqIntro}>
+            Need help choosing?{" "}
+            <a href={siteConfig.contactUrl}>Talk to our team.</a>
+          </p>
         </section>
       </div>
-    </BaselaneHomepage>
+    </InnerPageShell>
   );
 }

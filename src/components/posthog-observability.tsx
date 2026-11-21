@@ -22,11 +22,17 @@ function isSiteOwnedScript(filename: unknown): boolean {
     return false;
   }
   // The site serves its own scripts from this origin, so a site-owned frame is
-  // either an absolute URL on this origin or a root-relative path.
-  return (
-    filename.startsWith(`${window.location.origin}/`) ||
-    (filename.startsWith("/") && !filename.startsWith("//"))
-  );
+  // either an absolute URL on this origin or a root-relative path. It must also
+  // point to a script file. On iOS, scripts that an in-app browser injects
+  // report the page URL as their filename, so a page URL is not site-owned.
+  if (
+    !filename.startsWith(`${window.location.origin}/`) &&
+    !(filename.startsWith("/") && !filename.startsWith("//"))
+  ) {
+    return false;
+  }
+  const { pathname } = new URL(filename, window.location.origin);
+  return pathname.startsWith("/_next/") || /\.m?js$/.test(pathname);
 }
 
 function hasSiteOwnedFrame(event: CaptureResult): boolean {

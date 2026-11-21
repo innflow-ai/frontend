@@ -6,7 +6,7 @@ the task; the user's newer instructions take precedence.
 
 ## Visual direction
 
-- Warm cream canvas (`#fffbf4`), deep navy text (`#012232`), muted supporting text
+- White canvas (`--marketing-paper`, `#ffffff`), deep navy text (`#012232`), muted supporting text
   (`#586567`), restrained dividers (`#d8ddd8`). Follow the current site typography.
 - Image-led editorial layouts. Show the supplied cover artwork clearly, retaining
   its composition. Put page titles and descriptions below the cover, never behind
@@ -68,8 +68,8 @@ Implementation: `src/components/blog/author-card.tsx` and
   display strings or omit available fields.
 - Keep the card borderless, including on hover. Remove bright inset rim shadows;
   retain the keyboard-only focus indicator.
-- Almost see-through warm glass: gradient `rgb(255 251 244 / 40%)` to
-  `rgb(255 251 244 / 28%)`; `backdrop-filter: blur(6px) saturate(115%)` and its
+- Almost see-through neutral glass: gradient `rgb(255 255 255 / 40%)` to
+  `rgb(255 255 255 / 28%)`; `backdrop-filter: blur(6px) saturate(115%)` and its
   WebKit equivalent; 12px corners; soft outer shadow. A stronger opaque fallback
   is used when backdrop filtering is unsupported.
 - Do not revert to the earlier 60–78% tint, 27px blur, or solid cream card. Those

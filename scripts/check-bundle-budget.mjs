@@ -1,29 +1,36 @@
 import { gzipSync } from "node:zlib";
 import { writeFile } from "node:fs/promises";
+import { initialPageAssets } from "./lib/initial-page-assets.mjs";
 
 const origin = (process.env.SITE_AUDIT_ORIGIN ?? "http://localhost:3000").replace(/\/$/, "");
-const html = await fetch(origin).then((response) => {
-  if (!response.ok) throw new Error(`Unable to fetch ${origin}: ${response.status}`);
+const route = process.env.SITE_AUDIT_PATH ?? "/";
+const url = new URL(route, origin);
+if (url.origin !== new URL(origin).origin) throw new Error("Audit path must stay on the configured site");
+const html = await fetch(url, { signal: AbortSignal.timeout(30000) }).then((response) => {
+  if (!response.ok) throw new Error(`Unable to fetch ${url}: ${response.status}`);
   return response.text();
 });
 
-const assets = new Set();
-for (const match of html.matchAll(/(?:src|href)="(\/_next\/static\/[^"]+\.(?:js|css))"/g)) {
-  assets.add(match[1]);
-}
+const { assets, legacyOnly, thirdPartyScripts } = initialPageAssets(html);
 
 let javascriptGzipBytes = 0;
+let legacyJavascriptGzipBytes = 0;
 let cssGzipBytes = 0;
 const files = [];
 for (const path of assets) {
-  const body = Buffer.from(await fetch(`${origin}${path}`).then((response) => response.arrayBuffer()));
+  const body = Buffer.from(await fetch(new URL(path, origin), { signal: AbortSignal.timeout(30000) }).then((response) => {
+    if (!response.ok) throw new Error(`Asset ${path}: HTTP ${response.status}`);
+    return response.arrayBuffer();
+  }));
   const gzipBytes = gzipSync(body).byteLength;
-  if (path.endsWith(".js")) javascriptGzipBytes += gzipBytes;
-  if (path.endsWith(".css")) cssGzipBytes += gzipBytes;
-  files.push({ path, rawBytes: body.byteLength, gzipBytes });
+  if (new URL(path, origin).pathname.endsWith(".js")) {
+    if (legacyOnly.has(path)) legacyJavascriptGzipBytes += gzipBytes;
+    else javascriptGzipBytes += gzipBytes;
+  }
+  if (new URL(path, origin).pathname.endsWith(".css")) cssGzipBytes += gzipBytes;
+  files.push({ path, rawBytes: body.byteLength, gzipBytes, legacyOnly: legacyOnly.has(path) });
 }
 
-const thirdPartyScripts = [...html.matchAll(/<script[^>]+src="(https?:\/\/[^"]+)"/g)].map((match) => match[1]);
 const budgets = {
   javascriptGzipBytes: 120 * 1024,
   javascriptExceptionCeilingBytes: 180 * 1024,
@@ -41,8 +48,12 @@ if (thirdPartyScripts.length > budgets.thirdPartyScriptsBeforeConsent) failures.
 
 const report = {
   origin,
+  route,
   measuredAt: new Date().toISOString(),
   javascriptGzipBytes,
+  legacyJavascriptGzipBytes,
+  totalJavascriptGzipBytes: javascriptGzipBytes + legacyJavascriptGzipBytes,
+  measurement: "SSR-declared modern-browser assets; legacy nomodule scripts reported separately. Runtime network checks are still required for consent and deferred assets.",
   cssGzipBytes,
   thirdPartyScripts,
   budgets,

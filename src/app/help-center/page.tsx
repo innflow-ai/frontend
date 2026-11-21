@@ -1,9 +1,11 @@
-import type { Metadata } from "next";
 import { BaselaneHelp } from "@/components/baselane-help";
-export const metadata: Metadata = {
-  title: "innflow help center",
-  alternates: { canonical: "/help-center" },
-};
+import { createPageMetadata } from "@/lib/metadata";
+export const metadata = createPageMetadata({
+  title: "Help Center | Innflow",
+  description:
+    "Get help with Innflow, from getting started and connecting tools to managing property operations, resident requests, and security.",
+  path: "/help-center",
+});
 export default function Page() {
   return <BaselaneHelp />;
 }

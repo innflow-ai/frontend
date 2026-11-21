@@ -1,3 +1,5 @@
+
+import { ArrowRight as MageArrowRight } from '@/components/icons/mage';
 import Image from "next/image";
 
 function FrameHeader({ label, status }: { label: string; status?: string }) {
@@ -170,7 +172,7 @@ export function FeatureMedia({ type }: { type: string }) {
             </div>
             <div className="approval-banner">
               <span>Approval requested</span>
-              <strong>Review next action →</strong>
+              <strong>Review next action <MageArrowRight size="1em" /></strong>
             </div>
           </div>
         </div>
@@ -186,12 +188,12 @@ export function FeatureMedia({ type }: { type: string }) {
           <small>Trigger</small>
           <strong>Request received</strong>
         </div>
-        <span aria-hidden="true">→</span>
+        <span aria-hidden="true"><MageArrowRight size="1em" /></span>
         <div>
           <small>Condition</small>
           <strong>Classify urgency</strong>
         </div>
-        <span aria-hidden="true">→</span>
+        <span aria-hidden="true"><MageArrowRight size="1em" /></span>
         <div>
           <small>Control</small>
           <strong>Manager review</strong>

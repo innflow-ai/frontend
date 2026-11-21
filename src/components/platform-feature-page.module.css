@@ -109,7 +109,7 @@
   flex: 1;
 }
 
-.number {
+.label {
   color: var(--ink-muted);
   font-size: 12px;
   letter-spacing: 0.04em;

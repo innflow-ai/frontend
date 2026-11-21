@@ -3,7 +3,7 @@
   position: relative;
   background: var(--marketing-paper);
   --preview-announcement-height: 40px;
-  --site-header-height: 54px;
+  --site-header-height: 68px;
 }
 .previewScope[data-announcement-dismissed="true"] {
   --preview-announcement-height: 0px;
@@ -87,9 +87,6 @@
   padding-inline: 32px;
 }
 @media (max-width: 1180px) {
-  .previewScope {
-    --site-header-height: 56px;
-  }
   .previewScope .flatHeader[data-home-navigation="true"] {
     inset-inline: 20px;
     padding-inline: 14px;

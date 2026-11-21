@@ -3,7 +3,7 @@
    Recheck these scoped selectors after Termly changes its preference markup. */
 html [data-termly-part="consent-banner"],
 html dialog[aria-label="Cookie Consent Preferences"] > div {
-  background: rgb(255 255 255 / 82%) !important;
+  background: var(--consent-surface, rgb(255 255 255 / 82%)) !important;
   border: 0.1px solid rgb(255 255 255 / 90%);
   border-radius: 20px;
   box-shadow:
@@ -16,9 +16,61 @@ html dialog[aria-label="Cookie Consent Preferences"] > div {
 }
 
 html [data-termly-part="consent-banner"][data-termly-variant="tooltip"] {
+  --consent-surface: linear-gradient(
+    145deg,
+    rgb(255 255 255 / 78%),
+    rgb(229 243 255 / 60%)
+  );
   width: min(384px, calc(100vw - 32px));
   max-width: calc(100vw - 32px);
-  padding: 24px;
+  padding: 14px;
+}
+
+html
+  [data-termly-part="consent-banner"][data-termly-variant="tooltip"]
+  [data-termly-part="banner-message"] {
+  font-size: 0.6875rem;
+  line-height: 1.45;
+  letter-spacing: normal;
+}
+
+html
+  [data-termly-part="consent-banner"][data-termly-variant="tooltip"]
+  [data-termly-part="banner-message"]
+  [role="button"][aria-haspopup="dialog"] {
+  text-decoration: underline;
+}
+
+html
+  [data-termly-part="consent-banner"][data-termly-variant="tooltip"]
+  [data-termly-part="banner-actions"] {
+  flex-flow: row wrap;
+  reading-flow: flex-visual;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 0;
+}
+
+html
+  [data-termly-part="consent-banner"][data-termly-variant="tooltip"]
+  [data-termly-part="banner-actions"]
+  button {
+  flex: 1 1 0;
+  width: auto;
+  min-width: max-content;
+  min-height: 32px;
+  padding: 4px 8px;
+  line-height: 1.2;
+}
+
+/* Hide the duplicate Preferences button only when Termly provides an inline trigger. */
+html
+  [data-termly-part="consent-banner"][data-termly-variant="tooltip"]:has(
+    [data-termly-part="banner-message"] [role="button"][aria-haspopup="dialog"]
+  )
+  [data-termly-part="banner-actions"]
+  button[aria-haspopup="dialog"] {
+  display: none;
 }
 
 html [data-termly-part="banner-message"],
@@ -42,9 +94,23 @@ html
 }
 
 html
+  [data-termly-part="consent-banner"][data-termly-variant="tooltip"]
+  [data-termly-part="banner-actions"]
+  [data-tid="banner-accept"] {
+  order: -1;
+}
+
+html
+  [data-termly-part="consent-banner"][data-termly-variant="tooltip"]
+  [data-termly-part="banner-actions"]
+  [data-tid="banner-decline"] {
+  border: 0 !important;
+}
+
+html
   [data-termly-part="consent-banner"]
   [data-termly-part="banner-actions"]
-  button:hover {
+  button:hover:not(:where([data-termly-variant="tooltip"] [data-tid="banner-accept"])) {
   text-decoration: underline;
   text-underline-offset: 3px;
 }

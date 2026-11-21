@@ -333,16 +333,18 @@ export function MobileNavigation({
             <div className={styles.mobileCtaRow}>
               <a
                 href={loginHref}
+                data-site-cta="primary"
                 className={`${styles.button} ${styles.mobileLoginButton}`}
                 onClick={closeMobile}
               >
-                Login
+                Sign in
               </a>
               <GoogleSignInButton
                 className={`${styles.button} ${styles.mobileCta}`}
                 eventLabel="mobile_continue_google"
                 label="Continue with Google"
                 variant="brand"
+                tone="secondary"
                 iconSize={20}
               />
             </div>

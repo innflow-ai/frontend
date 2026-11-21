@@ -13,6 +13,7 @@ type GoogleSignInButtonProps = Omit<
   eventLabel?: string;
   iconSize?: number;
   variant?: "inline" | "brand";
+  tone?: "primary" | "secondary";
 };
 
 export function GoogleSignInButton({
@@ -20,13 +21,14 @@ export function GoogleSignInButton({
   eventLabel = "google_sign_in",
   iconSize = 16,
   variant = "inline",
+  tone = "primary",
   className,
   ...props
 }: GoogleSignInButtonProps) {
   return (
     <TrackedLink
       {...props}
-      data-site-cta="primary"
+      data-site-cta={tone}
       className={`${styles.signInButton} ${ctaStyles.button}${variant === "brand" ? ` ${styles.brandButton}` : ""}${className ? ` ${className}` : ""}`}
       destination={siteConfig.signupUrl}
       eventLabel={eventLabel}

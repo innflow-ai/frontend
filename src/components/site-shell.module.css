@@ -55,12 +55,12 @@
   z-index: 90;
   /* 1440px is a slight step up from the previous 1320px bar. */
   inset: 16px max(40px, calc((100vw - 1440px) / 2)) auto;
-  min-height: var(--site-header-height, 54px);
+  min-height: var(--site-header-height, 68px);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: 5px 32px;
+  padding: 14px 32px;
   border-radius: 45px;
   color: var(--ink);
   isolation: isolate;
@@ -227,7 +227,9 @@
   flex-shrink: 0;
 }
 .headerActions > .login {
-  padding: 6px 18px;
+  min-height: 36px;
+  padding: 6px 14px;
+  font-size: 14px;
 }
 .header .headerActions > .darkButton {
   padding: 6px 18px !important;
@@ -535,7 +537,7 @@
 @media (max-width: 1180px) {
   .header {
     inset-inline: 20px;
-    padding: 6px 14px;
+    padding: 12px 14px;
   }
   .header .headerActions > .darkButton {
     font-size: 12px;
@@ -877,8 +879,9 @@
 
   .header.mobileOpen {
     inset: 0 0 auto;
+    min-height: var(--mobile-open-header-height);
     height: var(--mobile-open-header-height);
-    padding-top: calc(8px + env(safe-area-inset-top));
+    padding-block: calc(8px + env(safe-area-inset-top)) 8px;
     border-radius: 0;
     background: var(--paper);
   }
@@ -918,13 +921,6 @@
     font-size: 22px;
     line-height: 1.15;
     font-weight: 500;
-  }
-
-  /* White text is only for the filled primary action in this row
-     (Continue with Google). The outlined login control is the sibling
-     anchor and keeps the menu ink color from the header module. */
-  .mobileMenu nav > div > button {
-    color: var(--button-primary-text, #fff);
   }
 }
 

@@ -2820,7 +2820,12 @@ p {
 /* Marketing actions opt in. Both tones use the sign-in pill's rim,
    upper highlight and drop shadow. */
 @layer site-buttons {
-  :where([data-site-cta], a.button, a:has(> [data-google-cta])) {
+  :where(
+    [data-site-cta],
+    a.button,
+    a:has(> [data-google-cta]),
+    [data-termly-part="consent-banner"][data-termly-variant="tooltip"] [data-tid="banner-accept"]
+  ) {
     --cta-fill: var(--button-primary);
     --cta-hover: var(--button-primary-hover);
     --cta-rim: var(--button-primary-border);
@@ -2840,13 +2845,22 @@ p {
     line-height: 20px !important;
   }
 
-  :is([data-site-cta="secondary"], a.button-secondary) {
+  :is(
+    [data-site-cta="secondary"],
+    a.button-secondary,
+    :where([data-termly-part="consent-banner"][data-termly-variant="tooltip"] [data-tid="banner-accept"])
+  ) {
     --cta-fill: linear-gradient(180deg, #363636, #191919);
     --cta-hover: linear-gradient(180deg, #454545, #252525);
     --cta-rim: #111;
   }
 
-  :is([data-site-cta], a.button, a:has(> [data-google-cta])):hover:not(:disabled):not([aria-disabled="true"]) {
+  :is(
+    [data-site-cta],
+    a.button,
+    a:has(> [data-google-cta]),
+    :where([data-termly-part="consent-banner"][data-termly-variant="tooltip"] [data-tid="banner-accept"])
+  ):hover:not(:disabled):not([aria-disabled="true"]) {
     background: var(--cta-hover) !important;
   }
 }

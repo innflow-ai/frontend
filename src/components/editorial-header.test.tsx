@@ -60,7 +60,7 @@ describe("EditorialHeader navigation", () => {
       within(navigation).getByRole("link", { name: "Pricing" }),
     ).toHaveAttribute("href", "/pricing");
     expect(
-      within(navigation).getByRole("link", { name: "Login" }),
+      within(navigation).getByRole("link", { name: "Sign in" }),
     ).toHaveAttribute("href", siteConfig.loginUrl);
     expect(
       screen.queryByRole("link", { name: "Book a demo" }),

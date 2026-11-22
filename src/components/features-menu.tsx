@@ -6,7 +6,7 @@ import styles from "./features-menu.module.css";
 
 const features = [
   {
-    name: "Flow",
+    name: "Flows",
     slug: "flow",
     body: "Plan multi-agent work with visible ownership, gates, and progress.",
     href: "/features/workflows",
@@ -45,6 +45,10 @@ const features = [
     body: "Mention Codex or Claude Code in a channel and run tasks on your Mac.",
   },
 ];
+
+const heroButtons: Record<string, string> = {
+  botmode: "bot", flow: "flow", channels: "channels", computer: "computer",
+};
 
 const assetRoot = "/brand/navigation/features/";
 
@@ -145,8 +149,10 @@ export function FeaturesMenu({ closeMenu }: { closeMenu: () => void }) {
               onFocus={() => select(index)}
               onClick={() => select(index)}
             >
-              <span className={styles.icon}>
-                <img alt="" src={assetRoot + item.slug + "-glyph.png"} />
+              <span className={styles.heroIcon}>
+                <img alt="" src={heroButtons[item.slug]
+                  ? "/preview/scroll-showcase/" + heroButtons[item.slug] + "-button.svg"
+                  : "/brand/navigation/outline-buttons/" + item.slug + ".svg"} />
               </span>
               {item.name}
             </button>

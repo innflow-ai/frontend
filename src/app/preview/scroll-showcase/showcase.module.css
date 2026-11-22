@@ -150,18 +150,23 @@
   height: 56px;
   border: 4px solid white;
   border-radius: 24px;
-  background: color-mix(in srgb, var(--accent) 55%, white);
+  background: transparent;
   display: grid;
   place-items: center;
-  transition: background 0.25s;
+
 }
 .tabs :where(button) img {
-  width: 28px;
-  height: 28px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
 }
+@media (hover: hover) {
+  .tabs button[aria-selected="false"]:hover img {
+    content: var(--hover-face);
+  }
+}
 .tabs button[aria-selected="true"] {
-  background: var(--accent);
+  border-color: white;
 }
 .tabs button[aria-selected="true"]::after {
   content: "";
@@ -200,9 +205,9 @@
 .copy {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  align-self: start;
-  text-align: center;
+  align-items: flex-start;
+  align-self: center;
+  text-align: left;
 }
 .label {
   display: flex;
@@ -216,12 +221,6 @@
   width: 24px;
   height: 24px;
   object-fit: contain;
-  background: var(--accent);
-  border-radius: 9px;
-  padding: 3px;
-}
-.label[data-demo-label="bot"] img {
-  padding: 5px;
 }
 .label small {
   line-height: 16px;
@@ -783,8 +782,8 @@
     border-radius: 20px;
   }
   .tabs :where(button) img {
-    width: 25px;
-    height: 25px;
+    width: 100%;
+    height: 100%;
   }
   .tabs button[aria-selected="true"]::after {
     top: 42px;

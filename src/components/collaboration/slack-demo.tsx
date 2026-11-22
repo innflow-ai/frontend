@@ -30,7 +30,6 @@ export function SlackDemo() {
       <div
         className={styles.layer1}
         data-node-id="39:3872"
-        data-name="InnflowBrandStickyShowcase.MediaBlock"
       >
         <div
           className={styles.layer2}
@@ -45,7 +44,6 @@ export function SlackDemo() {
             <div
               className={styles.layer4}
               data-node-id="39:3875"
-              data-name="InnflowBrandAppWindow.Header"
             >
               <div
                 className={styles.layer5}
@@ -55,17 +53,14 @@ export function SlackDemo() {
                 <div
                   className={styles.layer6}
                   data-node-id="39:3877"
-                  data-name="Text"
                 />
                 <div
                   className={styles.layer7}
                   data-node-id="39:3878"
-                  data-name="Text"
                 />
                 <div
                   className={styles.layer8}
                   data-node-id="39:3879"
-                  data-name="Text"
                 />
               </div>
               <div
@@ -76,7 +71,6 @@ export function SlackDemo() {
                 <div
                   className={styles.layer10}
                   data-node-id="39:3881"
-                  data-name="CentralIconBase"
                 >
                   <img
                     loading="lazy"
@@ -88,7 +82,6 @@ export function SlackDemo() {
                 <div
                   className={styles.layer10}
                   data-node-id="39:3888"
-                  data-name="CentralIconBase"
                 >
                   <img
                     loading="lazy"
@@ -100,7 +93,6 @@ export function SlackDemo() {
                 <div
                   className={styles.layer12}
                   data-node-id="39:3895"
-                  data-name="CentralIconBase"
                 >
                   <img
                     loading="lazy"
@@ -123,7 +115,6 @@ export function SlackDemo() {
                   <div
                     className={styles.layer12}
                     data-node-id="39:3904"
-                    data-name="CentralIconBase"
                   >
                     <img
                       loading="lazy"
@@ -135,7 +126,6 @@ export function SlackDemo() {
                   <div
                     className={styles.layer15}
                     data-node-id="39:3911"
-                    data-name="Text"
                   >
                     <p className={styles.layer16} data-node-id="39:8347">
                       Search Slack
@@ -146,7 +136,6 @@ export function SlackDemo() {
               <div
                 className={styles.layer17}
                 data-node-id="39:3913"
-                data-name="Text"
               >
                 <p className={styles.layer16} data-node-id="39:8348">
                   ?
@@ -156,7 +145,6 @@ export function SlackDemo() {
             <div
               className={styles.layer18}
               data-node-id="39:3915"
-              data-name="InnflowBrandAppWindow.Body"
             >
               <div
                 className={styles.layer19}
@@ -181,7 +169,6 @@ export function SlackDemo() {
                       <div
                         className={styles.layer23}
                         data-node-id="39:3920"
-                        data-name="Text"
                       >
                         <p className={styles.layer24} data-node-id="39:8349">
                           📊
@@ -190,7 +177,6 @@ export function SlackDemo() {
                       <div
                         className={styles.layer25}
                         data-node-id="39:3922"
-                        data-name="Text"
                       >
                         <p className={styles.layer24} data-node-id="39:8350">
                           GTM
@@ -200,13 +186,11 @@ export function SlackDemo() {
                     <ChannelButton
                       className={styles.layer26}
                       data-node-id="39:3924"
-                      data-name="Button"
                       channel="data-analysis"
                     >
                       <div
                         className={styles.layer27}
                         data-node-id="39:3925"
-                        data-name="CentralIconBase"
                       >
                         <img
                           loading="lazy"
@@ -218,7 +202,6 @@ export function SlackDemo() {
                       <div
                         className={styles.layer28}
                         data-node-id="39:3932"
-                        data-name="Text"
                       >
                         <p className={styles.layer29} data-node-id="39:8351">
                           data-analysis
@@ -228,13 +211,11 @@ export function SlackDemo() {
                     <ChannelButton
                       className={styles.layer30}
                       data-node-id="39:3934"
-                      data-name="Button"
                       channel="sales-discussion"
                     >
                       <div
                         className={styles.layer27}
                         data-node-id="39:3935"
-                        data-name="CentralIconBase"
                       >
                         <img
                           loading="lazy"
@@ -246,7 +227,6 @@ export function SlackDemo() {
                       <div
                         className={styles.layer31}
                         data-node-id="39:3942"
-                        data-name="Text"
                       >
                         <p className={styles.layer32} data-node-id="39:8352">
                           sales-discussion
@@ -256,12 +236,10 @@ export function SlackDemo() {
                     <div
                       className={styles.layer30}
                       data-node-id="39:3944"
-                      data-name="Button"
                     >
                       <div
                         className={styles.layer27}
                         data-node-id="39:3945"
-                        data-name="CentralIconBase"
                       >
                         <img
                           loading="lazy"
@@ -273,7 +251,6 @@ export function SlackDemo() {
                       <div
                         className={styles.layer33}
                         data-node-id="39:3954"
-                        data-name="Text"
                       >
                         <p className={styles.layer34} data-node-id="39:8353">
                           pipeline-reviews
@@ -283,12 +260,10 @@ export function SlackDemo() {
                     <div
                       className={styles.layer30}
                       data-node-id="39:3956"
-                      data-name="Button"
                     >
                       <div
                         className={styles.layer27}
                         data-node-id="39:3957"
-                        data-name="CentralIconBase"
                       >
                         <img
                           loading="lazy"
@@ -300,7 +275,6 @@ export function SlackDemo() {
                       <div
                         className={styles.layer35}
                         data-node-id="39:3966"
-                        data-name="Text"
                       >
                         <p className={styles.layer34} data-node-id="39:8354">
                           competitive-intel
@@ -310,12 +284,10 @@ export function SlackDemo() {
                     <div
                       className={styles.layer30}
                       data-node-id="39:3968"
-                      data-name="Button"
                     >
                       <div
                         className={styles.layer27}
                         data-node-id="39:3969"
-                        data-name="CentralIconBase"
                       >
                         <img
                           loading="lazy"
@@ -327,7 +299,6 @@ export function SlackDemo() {
                       <div
                         className={styles.layer36}
                         data-node-id="39:3978"
-                        data-name="Text"
                       >
                         <p className={styles.layer34} data-node-id="39:8355">
                           forecast
@@ -348,7 +319,6 @@ export function SlackDemo() {
                       <div
                         className={styles.layer23}
                         data-node-id="39:3982"
-                        data-name="Text"
                       >
                         <p className={styles.layer24} data-node-id="39:8356">
                           🎯
@@ -357,7 +327,6 @@ export function SlackDemo() {
                       <div
                         className={styles.layer25}
                         data-node-id="39:3984"
-                        data-name="Text"
                       >
                         <p className={styles.layer24} data-node-id="39:8357">
                           Marketing
@@ -367,12 +336,10 @@ export function SlackDemo() {
                     <div
                       className={styles.layer30}
                       data-node-id="39:3986"
-                      data-name="Button"
                     >
                       <div
                         className={styles.layer27}
                         data-node-id="39:3987"
-                        data-name="CentralIconBase"
                       >
                         <img
                           loading="lazy"
@@ -384,7 +351,6 @@ export function SlackDemo() {
                       <div
                         className={styles.layer37}
                         data-node-id="39:3994"
-                        data-name="Text"
                       >
                         <p className={styles.layer32} data-node-id="39:8358">
                           content
@@ -394,12 +360,10 @@ export function SlackDemo() {
                     <div
                       className={styles.layer30}
                       data-node-id="39:3996"
-                      data-name="Button"
                     >
                       <div
                         className={styles.layer27}
                         data-node-id="39:3997"
-                        data-name="CentralIconBase"
                       >
                         <img
                           loading="lazy"
@@ -411,7 +375,6 @@ export function SlackDemo() {
                       <div
                         className={styles.layer38}
                         data-node-id="39:4004"
-                        data-name="Text"
                       >
                         <p className={styles.layer34} data-node-id="39:8359">
                           social
@@ -421,12 +384,10 @@ export function SlackDemo() {
                     <div
                       className={styles.layer30}
                       data-node-id="39:4006"
-                      data-name="Button"
                     >
                       <div
                         className={styles.layer27}
                         data-node-id="39:4007"
-                        data-name="CentralIconBase"
                       >
                         <img
                           loading="lazy"
@@ -438,7 +399,6 @@ export function SlackDemo() {
                       <div
                         className={styles.layer39}
                         data-node-id="39:4014"
-                        data-name="Text"
                       >
                         <p className={styles.layer34} data-node-id="39:8360">
                           brand
@@ -459,7 +419,6 @@ export function SlackDemo() {
                       <div
                         className={styles.layer23}
                         data-node-id="39:4018"
-                        data-name="Text"
                       >
                         <p className={styles.layer24} data-node-id="39:8361">
                           🎧
@@ -468,7 +427,6 @@ export function SlackDemo() {
                       <div
                         className={styles.layer25}
                         data-node-id="39:4020"
-                        data-name="Text"
                       >
                         <p className={styles.layer24} data-node-id="39:8362">
                           Support
@@ -478,12 +436,10 @@ export function SlackDemo() {
                     <div
                       className={styles.layer30}
                       data-node-id="39:4022"
-                      data-name="Button"
                     >
                       <div
                         className={styles.layer27}
                         data-node-id="39:4023"
-                        data-name="CentralIconBase"
                       >
                         <img
                           loading="lazy"
@@ -495,7 +451,6 @@ export function SlackDemo() {
                       <div
                         className={styles.layer40}
                         data-node-id="39:4030"
-                        data-name="Text"
                       >
                         <p className={styles.layer32} data-node-id="39:8363">
                           customer-feedback
@@ -505,12 +460,10 @@ export function SlackDemo() {
                     <div
                       className={styles.layer30}
                       data-node-id="39:4032"
-                      data-name="Button"
                     >
                       <div
                         className={styles.layer27}
                         data-node-id="39:4033"
-                        data-name="CentralIconBase"
                       >
                         <img
                           loading="lazy"
@@ -522,7 +475,6 @@ export function SlackDemo() {
                       <div
                         className={styles.layer41}
                         data-node-id="39:4040"
-                        data-name="Text"
                       >
                         <p className={styles.layer34} data-node-id="39:8364">
                           escalations
@@ -532,12 +484,10 @@ export function SlackDemo() {
                     <div
                       className={styles.layer30}
                       data-node-id="39:4042"
-                      data-name="Button"
                     >
                       <div
                         className={styles.layer27}
                         data-node-id="39:4043"
-                        data-name="CentralIconBase"
                       >
                         <img
                           loading="lazy"
@@ -549,7 +499,6 @@ export function SlackDemo() {
                       <div
                         className={styles.layer42}
                         data-node-id="39:4050"
-                        data-name="Text"
                       >
                         <p className={styles.layer34} data-node-id="39:8365">
                           bug-reports
@@ -570,7 +519,6 @@ export function SlackDemo() {
                       <div
                         className={styles.layer23}
                         data-node-id="39:4054"
-                        data-name="Text"
                       >
                         <p className={styles.layer24} data-node-id="39:8366">
                           👥
@@ -579,7 +527,6 @@ export function SlackDemo() {
                       <div
                         className={styles.layer25}
                         data-node-id="39:4056"
-                        data-name="Text"
                       >
                         <p className={styles.layer24} data-node-id="39:8367">
                           Recruiting
@@ -589,12 +536,10 @@ export function SlackDemo() {
                     <div
                       className={styles.layer30}
                       data-node-id="39:4058"
-                      data-name="Button"
                     >
                       <div
                         className={styles.layer27}
                         data-node-id="39:4059"
-                        data-name="CentralIconBase"
                       >
                         <img
                           loading="lazy"
@@ -606,7 +551,6 @@ export function SlackDemo() {
                       <div
                         className={styles.layer43}
                         data-node-id="39:4066"
-                        data-name="Text"
                       >
                         <p className={styles.layer32} data-node-id="39:8368">
                           recruiting
@@ -643,7 +587,6 @@ export function SlackDemo() {
                     <div
                       className={styles.layer49}
                       data-node-id="39:4073"
-                      data-name="Text"
                     >
                       <p className={styles.layer24} data-node-id="39:8370">
                         Messages
@@ -652,7 +595,6 @@ export function SlackDemo() {
                     <div
                       className={styles.layer50}
                       data-node-id="39:4075"
-                      data-name="Text"
                     >
                       <p className={styles.layer51} data-node-id="39:8371">
                         Add canvas
@@ -661,7 +603,6 @@ export function SlackDemo() {
                     <div
                       className={styles.layer50}
                       data-node-id="39:4077"
-                      data-name="Text"
                     >
                       <p className={styles.layer51} data-node-id="39:8372">
                         Files
@@ -683,12 +624,10 @@ export function SlackDemo() {
                       <div
                         className={styles.layer54}
                         data-node-id="39:4081"
-                        data-name="LandingAvatarImage"
                       >
                         <div
                           className={styles.layer55}
                           data-node-id="39:4082"
-                          data-name="Image (Max)"
                         >
                           <img
                             loading="lazy"
@@ -711,7 +650,6 @@ export function SlackDemo() {
                           <div
                             className={styles.layer25}
                             data-node-id="39:4085"
-                            data-name="Text"
                           >
                             <p
                               className={styles.layer47}
@@ -723,7 +661,6 @@ export function SlackDemo() {
                           <div
                             className={styles.layer25}
                             data-node-id="39:4087"
-                            data-name="Text"
                           >
                             <p
                               className={styles.layer51}
@@ -748,12 +685,10 @@ export function SlackDemo() {
                           <div
                             className={styles.layer64}
                             data-node-id="39:4094"
-                            data-name="Text"
                           >
                             <div
                               className={styles.layer25}
                               data-node-id="39:4095"
-                              data-name="Text"
                             >
                               <p
                                 className={styles.layer65}
@@ -765,7 +700,6 @@ export function SlackDemo() {
                             <div
                               className={styles.layer25}
                               data-node-id="39:4097"
-                              data-name="Text"
                             >
                               <p
                                 className={styles.layer51}
@@ -778,12 +712,10 @@ export function SlackDemo() {
                           <div
                             className={styles.layer64}
                             data-node-id="39:4099"
-                            data-name="Text"
                           >
                             <div
                               className={styles.layer25}
                               data-node-id="39:4100"
-                              data-name="Text"
                             >
                               <p
                                 className={styles.layer65}
@@ -795,7 +727,6 @@ export function SlackDemo() {
                             <div
                               className={styles.layer25}
                               data-node-id="39:4102"
-                              data-name="Text"
                             >
                               <p
                                 className={styles.layer51}
@@ -809,7 +740,6 @@ export function SlackDemo() {
                         <DemoThread
                           className={styles.layer66}
                           data-node-id="39:4104"
-                          data-name="Button"
                           label="Open sales comparison thread"
                           reply="The example comparison includes total sales, new customers, and average order value for the same month in each year."
                         >
@@ -821,7 +751,6 @@ export function SlackDemo() {
                             <div
                               className={styles.layer12}
                               data-node-id="39:4106"
-                              data-name="Icon"
                             >
                               <img
                                 loading="lazy"
@@ -834,7 +763,6 @@ export function SlackDemo() {
                           <div
                             className={styles.layer68}
                             data-node-id="39:4110"
-                            data-name="Text"
                           >
                             <p
                               className={styles.layer69}
@@ -846,7 +774,6 @@ export function SlackDemo() {
                           <div
                             className={styles.layer68}
                             data-node-id="39:4112"
-                            data-name="Text"
                           >
                             <p
                               className={styles.layer70}
@@ -866,12 +793,10 @@ export function SlackDemo() {
                       <div
                         className={styles.layer54}
                         data-node-id="39:4115"
-                        data-name="LandingAvatarImage"
                       >
                         <div
                           className={styles.layer55}
                           data-node-id="39:4116"
-                          data-name="Image (Gabriela)"
                         >
                           <img
                             loading="lazy"
@@ -894,7 +819,6 @@ export function SlackDemo() {
                           <div
                             className={styles.layer25}
                             data-node-id="39:4119"
-                            data-name="Text"
                           >
                             <p
                               className={styles.layer47}
@@ -906,7 +830,6 @@ export function SlackDemo() {
                           <div
                             className={styles.layer25}
                             data-node-id="39:4121"
-                            data-name="Text"
                           >
                             <p
                               className={styles.layer51}
@@ -931,12 +854,10 @@ export function SlackDemo() {
                           <div
                             className={styles.layer64}
                             data-node-id="39:4128"
-                            data-name="Text"
                           >
                             <div
                               className={styles.layer25}
                               data-node-id="39:4129"
-                              data-name="Text"
                             >
                               <p
                                 className={styles.layer65}
@@ -948,7 +869,6 @@ export function SlackDemo() {
                             <div
                               className={styles.layer25}
                               data-node-id="39:4131"
-                              data-name="Text"
                             >
                               <p
                                 className={styles.layer51}
@@ -961,12 +881,10 @@ export function SlackDemo() {
                           <div
                             className={styles.layer64}
                             data-node-id="39:4133"
-                            data-name="Text"
                           >
                             <div
                               className={styles.layer25}
                               data-node-id="39:4134"
-                              data-name="Text"
                             >
                               <p
                                 className={styles.layer65}
@@ -978,7 +896,6 @@ export function SlackDemo() {
                             <div
                               className={styles.layer25}
                               data-node-id="39:4136"
-                              data-name="Text"
                             >
                               <p
                                 className={styles.layer51}
@@ -992,7 +909,6 @@ export function SlackDemo() {
                         <DemoThread
                           className={styles.layer66}
                           data-node-id="39:4138"
-                          data-name="Button"
                           label="Open user activity thread"
                           reply="The example report ranks users by activity and includes their recent sessions and account usage."
                         >
@@ -1004,7 +920,6 @@ export function SlackDemo() {
                             <div
                               className={styles.layer12}
                               data-node-id="39:4140"
-                              data-name="Icon"
                             >
                               <img
                                 loading="lazy"
@@ -1017,7 +932,6 @@ export function SlackDemo() {
                           <div
                             className={styles.layer68}
                             data-node-id="39:4144"
-                            data-name="Text"
                           >
                             <p
                               className={styles.layer69}
@@ -1029,7 +943,6 @@ export function SlackDemo() {
                           <div
                             className={styles.layer68}
                             data-node-id="39:4146"
-                            data-name="Text"
                           >
                             <p
                               className={styles.layer70}
@@ -1049,12 +962,10 @@ export function SlackDemo() {
                       <div
                         className={styles.layer54}
                         data-node-id="39:4149"
-                        data-name="LandingAvatarImage"
                       >
                         <div
                           className={styles.layer55}
                           data-node-id="39:4150"
-                          data-name="Image (Marcelo)"
                         >
                           <img
                             loading="lazy"
@@ -1077,7 +988,6 @@ export function SlackDemo() {
                           <div
                             className={styles.layer25}
                             data-node-id="39:4153"
-                            data-name="Text"
                           >
                             <p
                               className={styles.layer47}
@@ -1089,7 +999,6 @@ export function SlackDemo() {
                           <div
                             className={styles.layer25}
                             data-node-id="39:4155"
-                            data-name="Text"
                           >
                             <p
                               className={styles.layer51}
@@ -1114,12 +1023,10 @@ export function SlackDemo() {
                           <div
                             className={styles.layer64}
                             data-node-id="39:4162"
-                            data-name="Text"
                           >
                             <div
                               className={styles.layer25}
                               data-node-id="39:4163"
-                              data-name="Text"
                             >
                               <p
                                 className={styles.layer65}
@@ -1131,7 +1038,6 @@ export function SlackDemo() {
                             <div
                               className={styles.layer25}
                               data-node-id="39:4165"
-                              data-name="Text"
                             >
                               <p
                                 className={styles.layer51}
@@ -1144,12 +1050,10 @@ export function SlackDemo() {
                           <div
                             className={styles.layer64}
                             data-node-id="39:4167"
-                            data-name="Text"
                           >
                             <div
                               className={styles.layer25}
                               data-node-id="39:4168"
-                              data-name="Text"
                             >
                               <p
                                 className={styles.layer65}
@@ -1161,7 +1065,6 @@ export function SlackDemo() {
                             <div
                               className={styles.layer25}
                               data-node-id="39:4170"
-                              data-name="Text"
                             >
                               <p
                                 className={styles.layer51}
@@ -1175,7 +1078,6 @@ export function SlackDemo() {
                         <DemoThread
                           className={styles.layer66}
                           data-node-id="39:4172"
-                          data-name="Button"
                           label="Open onboarding thread"
                           reply="The example funnel highlights the handoff between account setup and the first completed workflow."
                         >
@@ -1187,7 +1089,6 @@ export function SlackDemo() {
                             <div
                               className={styles.layer12}
                               data-node-id="39:4174"
-                              data-name="Icon"
                             >
                               <img
                                 loading="lazy"
@@ -1200,7 +1101,6 @@ export function SlackDemo() {
                           <div
                             className={styles.layer68}
                             data-node-id="39:4178"
-                            data-name="Text"
                           >
                             <p
                               className={styles.layer69}
@@ -1212,7 +1112,6 @@ export function SlackDemo() {
                           <div
                             className={styles.layer68}
                             data-node-id="39:4180"
-                            data-name="Text"
                           >
                             <p
                               className={styles.layer70}

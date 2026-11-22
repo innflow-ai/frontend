@@ -1,0 +1,51 @@
+.controls {
+  border: 0;
+  padding: 0;
+  min-width: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  margin: 48px auto 0;
+}
+.controls button {
+  border: 0;
+  background: transparent;
+  min-width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  color: #071a31;
+}
+.controls :where(button) span {
+  display: block;
+  transition: width 180ms ease, background-color 180ms ease;
+  width: 8px;
+  height: 2px;
+  border-radius: 1px;
+  background: #071a3126;
+}
+.controls :where(button[aria-pressed="true"]) span {
+  width: 40px;
+  background: currentColor;
+}
+
+.controls button:focus-visible {
+  outline: 3px solid #4890e3;
+  outline-offset: 4px;
+}
+@media (max-width: 800px) {
+  .controls:not(:focus-within) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    margin: 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .controls button span { transition: none; }
+}

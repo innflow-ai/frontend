@@ -7,10 +7,7 @@ import {
   useReducedMotion,
 } from "motion/react";
 import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useId, useRef, useState } from "react";
-import { ChevronRight } from "@/components/chevron-right";
-import { ArrowRight as MageArrowRight } from "@/components/icons/mage";
 import {
   MixedHeadingContent,
   SectionHeading,
@@ -20,6 +17,8 @@ import {
 import { SHOW_TESTIMONIAL } from "./testimonial-visibility";
 import type { Testimonial } from "@/lib/testimonials";
 import styles from "./baseline-lower-sections.module.css";
+import pager from "@/components/carousel-pagination.module.css";
+import { AgentCapabilities } from "@/components/agent-capabilities";
 import { IntegrationPillars } from "./integration-pillars";
 
 const assets = "/preview/homepage";
@@ -144,7 +143,7 @@ function CustomerStoryLayoutPreview() {
                   src={photo}
                   alt=""
                   fill
-                  sizes="(max-width: 700px) 85vw, 361px"
+                  sizes="(max-width: 628px) calc(100vw - 80px), (max-width: 800px) 548px, 361px"
                   loading="lazy"
                 />
                 {selected && (
@@ -208,6 +207,7 @@ export function BaselineCustomerStories({
   previewFallback?: boolean;
 }) {
   const [active, setActive] = useState(0);
+  const swipeStart = useRef<{ x: number; y: number } | null>(null);
   const headingRuns = splitHeading(
     heading,
     headingSplitAfter ??
@@ -261,7 +261,25 @@ export function BaselineCustomerStories({
             <Image src={item.portrait.url} alt="" fill sizes="105px" />
           </button>
         ))}
-        <article className={styles.storyCard}>
+        <article
+          className={styles.storyCard}
+          aria-live="polite"
+          onTouchStart={(event) => {
+            const touch = event.touches[0];
+            swipeStart.current = event.touches.length === 1 ? { x: touch.clientX, y: touch.clientY } : null;
+          }}
+          onTouchCancel={() => { swipeStart.current = null; }}
+          onTouchEnd={(event) => {
+            const start = swipeStart.current;
+            swipeStart.current = null;
+            if (!start || event.touches.length) return;
+            const touch = event.changedTouches[0];
+            const dx = touch.clientX - start.x;
+            const dy = touch.clientY - start.y;
+            if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+            setActive((index) => (index + (dx < 0 ? 1 : -1) + testimonials.length) % testimonials.length);
+          }}
+        >
           <div className={styles.storyCopy}>
             {selected.statistic && (
               <h3>
@@ -281,14 +299,14 @@ export function BaselineCustomerStories({
               src={selected.portrait.url}
               alt={selected.portrait.alt}
               fill
-              sizes="(max-width: 700px) 85vw, 361px"
+              sizes="(max-width: 628px) calc(100vw - 80px), (max-width: 800px) 548px, 361px"
             />
           </div>
         </article>
       </div>
       {testimonials.length > 1 && (
         <fieldset
-          className={styles.controls}
+          className={pager.controls}
           aria-label="Choose a customer story"
         >
           {testimonials.map((item, i) => (
@@ -309,20 +327,6 @@ export function BaselineCustomerStories({
 }
 
 export function BaselineConnectedInfrastructure() {
-  const cards = [
-    {
-      title: "Support channels",
-      body: "Bring messages from your connected channels into one place, so your team can follow the conversation and respond with context.",
-      icon: "card-google.png",
-      href: "/integrations",
-    },
-    {
-      title: "Your tools. Your workflows.",
-      body: "Keep conversation details connected to the tools your team uses. Pass context into your CRM, issue tracker or own APIs.",
-      icon: "card-microsoft.png",
-      href: "/integrations",
-    },
-  ];
   return (
     <section
       className={styles.infrastructure}
@@ -332,53 +336,14 @@ export function BaselineConnectedInfrastructure() {
       <header className={styles.heading}>
         <SectionHeading
           variant="mixed-italic"
+          align="start"
           id="baseline-infrastructure-heading"
           title={<strong>Connect the tools</strong>}
           emphasis="behind your work."
-          subtitle={
-            <>
-              Bring relevant information into the{" "}
-              <strong>tools your team already uses</strong>. Explore supported
-              connections to find the right fit for your workflow.
-            </>
-          }
         />
-        <Link
-          data-site-cta="primary"
-          data-cta-compact
-          className={styles.directory}
-          href="/integrations"
-        >
-          View all integrations{" "}
-          <span aria-hidden="true">
-            <MageArrowRight size="1em" />
-          </span>
-        </Link>
+        <AgentCapabilities />
       </header>
       <IntegrationPillars />
-      <div className={styles.infrastructureCards}>
-        {cards.map((card) => (
-          <Link key={card.title} href={card.href}>
-            <div className={styles.cardTop}>
-              <Image
-                src={`${lower}/${card.icon}`}
-                width={24}
-                height={24}
-                alt=""
-              />
-              <span aria-hidden="true">
-                <ChevronRight />
-              </span>
-            </div>
-            <h3>{card.title}</h3>
-            <p data-home-copy>{card.body}</p>
-          </Link>
-        ))}
-      </div>
-      <p className={styles.referenceNote}>
-        Connection examples from the design. Check the directory for
-        availability.
-      </p>
     </section>
   );
 }

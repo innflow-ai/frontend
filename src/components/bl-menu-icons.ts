@@ -7,7 +7,7 @@ export const blMenuIcons: Record<string, string> = {
   "Agent Skills": "/brand/navigation/bl-stroke/06-settings.svg",
   "AI Website Builder": "/brand/navigation/bl-stroke/07-screencast.svg",
   Databases: "/brand/navigation/bl-stroke/08-database.svg",
-  Templates: "/brand/navigation/bl-stroke/09-file-records.svg",
+  Templates: "/brand/navigation/outline-buttons/templates.svg",
   Advertising: "/brand/navigation/bl-stroke/11-megaphone-a.svg",
   "Application & eSign": "/brand/navigation/bl-stroke/12-edit-pen.svg",
   CRM: "/brand/navigation/bl-stroke/13-contact-book.svg",

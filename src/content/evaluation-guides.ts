@@ -11,6 +11,25 @@ type Guide = {
 
 export const evaluationGuides: Guide[] = [
   {
+    slug: "model-presets",
+    title: "Choose a model for a workflow decision",
+    question:
+      "A support request can belong in billing, technical support or a manual review queue. Here’s how to choose the model that makes that call.",
+    headings: [
+      "Start with a preset",
+      "Check where requests land",
+      "Choose what happens if the model fails",
+    ],
+    trial:
+      "Add a Condition step and choose LLM-based under Condition Type. In Model, select Default to use Innflow’s configured model. Fastest, Balanced and Smartest are also presets. Each selects a configured model for the step. Choose a named model when you need to compare two specific candidates.",
+    check:
+      "Describe the billing and technical support branches and add an Else branch for other requests. Run a duplicate-charge report, a sign-in error and a request for office hours. Check that the first two reach the intended owners and the last reaches Else.",
+    tradeoff:
+      "On Pro, Fallback models lets the step try additional models in order if a model call fails. A successful decision to use Else is already a result. If every configured model fails, the step reports an error. Review failed runs separately from requests sent for manual review.",
+    next: { label: "Browse model workflow guides", href: "/models" },
+  },
+
+  {
     slug: "ai-agents",
     title: "Choosing an AI agent",
     question:
@@ -205,6 +224,108 @@ export const evaluationGuides: Guide[] = [
     next: {
       label: "Check DeepSeek’s current concurrency limits",
       href: "https://api-docs.deepseek.com/quick_start/rate_limit/",
+    },
+  },
+  {
+    slug: "qwen4-max-workflow-cost",
+    title: "Estimate the cost of a finished task with Qwen4-Max",
+    question:
+      "How much does it cost to get one answer your team can actually use?",
+    headings: [
+      "Build a small test set",
+      "Count the retries",
+      "Compare cost per accepted result",
+    ],
+    trial:
+      "Choose ten customer requests with known resolutions. Include one that needs clarification. Ask for a proposed resolution and its supporting evidence. Save the prompt, model version and response for each request.",
+    check:
+      "Have a reviewer mark each result accepted, needs revision or unsafe to send. Record the input and output usage for every attempt, including discarded answers. Apply the rates for your account on the date of the test.",
+    tradeoff:
+      "Divide total run cost by accepted resolutions. Track review time alongside that figure. A cheaper first draft can still cost the team more if every response needs editing.",
+    next: {
+      label: "Compare against a saved preview run",
+      href: "/resources/guides/qwen4-max-preview-comparison",
+    },
+  },
+  {
+    slug: "seedream-product-edit",
+    title: "Test Seedream 5.5 on a product photograph",
+    question:
+      "Can you change the setting of a product photo while keeping the product recognizable?",
+    headings: [
+      "Choose one controlled edit",
+      "Inspect the details at delivery size",
+      "Price an approved image",
+    ],
+    trial:
+      "Use a product photo you own. Ask for a pale background and a soft contact shadow. Specify which lettering, proportions and colors must stay intact. Keep the original beside each candidate.",
+    check:
+      "Compare the label character by character, inspect reflections and check the silhouette. Crop the best candidate to the intended listing size and have someone familiar with the product review it.",
+    tradeoff:
+      "Record the attempts and retouching needed for one approved image. Use the price and output resolution available in your account to estimate the cost of a whole catalog.",
+    next: {
+      label: "Compare two image models on the same edit",
+      href: "/resources/guides/seedream-5-5-vs-gpt-image-2-6",
+    },
+  },
+  {
+    slug: "keeping-launch-plans-current",
+    title: "Keep a product launch plan current when the date moves",
+    question:
+      "If release day moves to Friday, who needs to change what before the launch can proceed?",
+    headings: [
+      "Start at the release decision",
+      "Follow a date change through the plan",
+      "Give the final call to an owner",
+    ],
+    trial:
+      "List the launch announcement, support brief and release check. Assign an owner to each, note which can run in parallel and identify the release evidence that the announcement depends on.",
+    check:
+      "Move the release date after the announcement draft is approved. Trace which work still stands, which approval needs reopening and where the writer sees the revised date before publishing.",
+    tradeoff:
+      "Give the release owner a single place to see open dependencies and record a decision. Keep routine updates with the people doing the work so a minor copy edit does not reopen every approval.",
+    next: {
+      label: "Use the launch readiness flow",
+      href: "/templates/flows/product-launch-automation",
+    },
+  },
+  {
+    slug: "getting-started-with-innflow",
+    title: "Take a request from conversation to completed work in Innflow",
+    question:
+      "A customer asks for a weekly report. How does the team turn that message into a report someone has checked?",
+    headings: [
+      "Put the request in a channel",
+      "Give the bot a bounded task",
+      "Close the loop with a review",
+    ],
+    trial:
+      "Post the reporting period, the records to use and a prior report in the channel. Name the person who can resolve a missing figure and the person responsible for sending the final report.",
+    check:
+      "Ask the bot to draft the report and flag missing data. The reviewer can check each figure against its source and request a correction in the same conversation.",
+    tradeoff:
+      "Once the team agrees on the steps, capture the repeatable handoffs in a flow. Keep the approval with a named teammate when the result will leave the workspace.",
+    next: { label: "Explore Bot mode", href: "/products/ai-agents" },
+  },
+  {
+    slug: "deepseek-app-capabilities",
+    title: "Check which DeepSeek app capabilities your workflow needs",
+    question:
+      "A teammate can find an answer in chat. What does your integration need to give the same answer from the same evidence?",
+    headings: [
+      "Trace one answer back to its inputs",
+      "Test each capability separately",
+      "Choose the smallest setup that works",
+    ],
+    trial:
+      "Start with a question about a policy document. Give the app the document and ask for the applicable clause. Record whether the answer depended on uploaded text, a web search or a linked page.",
+    check:
+      "Repeat the task with the interface your integration will use. Test a scanned page, a corrected document and a link the account cannot open. Check that the answer quotes the current clause and tells the reviewer when a source is unavailable.",
+    tradeoff:
+      "If every answer comes from a known document, passing the reviewed text into the request may be enough. Add retrieval when the task needs it, then measure how often the reviewer can trace the response to the right source.",
+    next: {
+      label: "Move a chat task into an API workflow",
+      href: "/resources/guides/deepseek-app-api",
     },
   },
   {

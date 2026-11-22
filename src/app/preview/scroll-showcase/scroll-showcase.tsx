@@ -25,7 +25,7 @@ const states = [
         the next step while <strong>your team stays in control</strong>.
       </>
     ),
-    accent: "#cc9435",
+    accent: "#429bf0",
     surface: "#d3e5ff",
   },
   {
@@ -41,7 +41,7 @@ const states = [
         spot work waiting for approval.
       </>
     ),
-    accent: "#a173a0",
+    accent: "#cc9435",
     surface: "#f1f8dc",
   },
   {
@@ -57,7 +57,7 @@ const states = [
         teammates and agents can pick up where you left off.
       </>
     ),
-    accent: "#c68150",
+    accent: "#a173a0",
     surface: "#eae3f9",
   },
   {
@@ -73,7 +73,7 @@ const states = [
         up and fill out forms.
       </>
     ),
-    accent: "#688c9b",
+    accent: "#63958c",
     surface: "#e5f9f9",
   },
 ] as const;
@@ -148,6 +148,9 @@ export function ScrollShowcase() {
   return (
     <div className={styles.page}>
       <header className={styles.intro}>
+        <p className={styles.heroTagline}>
+          <span>New</span> Cloud computers for your agents
+        </p>
         <h1 data-reference-heading data-mixed-heading>
           <MixedHeadingContent
             title="Turn conversations"
@@ -176,6 +179,14 @@ export function ScrollShowcase() {
           >
             <span className={googleButtonStyles.content}>Learn more</span>
           </TrackedLink>
+        </div>
+        <div className={styles.operatorTrust}>
+          <div className={styles.operatorAvatars} aria-hidden="true">
+            {[1, 2, 3, 4].map((id) => (
+              <Image key={id} src={`/aeline/avatars/user-${id}.avif`} width={28} height={28} alt="" unoptimized />
+            ))}
+          </div>
+          <span>Trusted by <strong>29,353+</strong> operators</span>
         </div>
       </header>
       <section

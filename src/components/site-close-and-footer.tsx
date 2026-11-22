@@ -1,5 +1,6 @@
 "use client";
 
+import { BaselineClosing } from "@/app/preview/scroll-showcase/baseline-closing";
 import { usePathname } from "next/navigation";
 import { LaunchDirectoryMarquee } from "./launch-directory-marquee";
 import { SiteFooter } from "./site-footer";
@@ -14,9 +15,9 @@ export function SiteCloseAndFooter() {
   const home = pathname === "/";
   return (
     <>
-      {!home && <LaunchDirectoryMarquee />}
+      <BaselineClosing />
       <SiteFooter home={home} />
-      {home && <LaunchDirectoryMarquee />}
+      <LaunchDirectoryMarquee />
     </>
   );
 }

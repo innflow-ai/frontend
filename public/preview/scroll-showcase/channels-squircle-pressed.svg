@@ -1,6 +1,6 @@
 <svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_i_763_3240)">
-<rect width="52" height="52" rx="22" fill="#B47549"/>
+<rect width="52" height="52" rx="22" fill="#936992"/>
 <path d="M25.956 16.9028C19.0419 16.9028 16.334 18.5386 16.334 24.5592V25.1777C16.334 29.9269 18.3065 31.7894 21.8598 31.9406V34.5386C21.8598 35.0678 22.2378 35.2602 22.6501 34.9441L26.8495 31.9338C27.9423 31.9062 29.0351 31.9406 30.1209 31.8513C33.8048 31.5352 35.6604 29.5489 35.6673 25.274V24.5592C35.6673 18.5317 32.9525 16.9028 25.956 16.9028Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="white"/>
 </g>
 <defs>
@@ -10,7 +10,7 @@
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
 <feOffset dx="2" dy="2"/>
 <feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.341647 0 0 0 0 0.222588 0 0 0 0 0.138039 0 0 0 0.26 0"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.277804 0 0 0 0 0.198431 0 0 0 0 0.276078 0 0 0 0.26 0"/>
 <feBlend mode="normal" in2="shape" result="effect1_innerShadow_763_3240"/>
 </filter>
 </defs>

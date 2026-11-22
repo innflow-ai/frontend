@@ -19,6 +19,7 @@ export default function Page() {
           Choose a question, run a small trial and compare what your team can
           actually use.
         </p>
+        <Link href="/learn">Explore model and workflow lessons</Link>
       </header>
       <div className={styles.groups}>
         {evaluationGuides.map((g) => (

@@ -30,6 +30,15 @@
   position: relative;
   padding: 152px 24px 120px;
   overflow: hidden;
+  isolation: isolate;
+}
+.stories::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  mask-image: linear-gradient(to bottom, black 72%, transparent 100%);
   background:
     #b7bce8 url("/preview/homepage/baseline-lower/stories-background.webp")
     center / cover no-repeat;
@@ -413,33 +422,32 @@
   background: rgb(72 144 227 / 18%);
 }
 .closing {
-  position: relative;
-  overflow: hidden;
-  padding: 120px 0;
-  background: var(--marketing-paper);
+  background: white;
+  padding: 24px clamp(24px, 5vw, 64px);
 }
-.closingEyebrow {
-  display: block;
-  font-size: 12px;
-  font-weight: 600;
-  line-height: 12px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-.closing .cta {
-  display: inline-flex;
-  background: var(--button-primary);
-  color: white;
+.signupRow {
+  max-width: 1248px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(272px, 400px);
   align-items: center;
-  justify-content: center;
-  min-width: 141px;
-  min-height: 50px;
-  padding: 12px 20px;
-  border: 2px solid transparent;
-  border-radius: 20px;
-  margin-top: 32px;
-  text-decoration: none;
-  font-size: 16px;
+  gap: 32px;
+}
+.signupRow h2 {
+  margin: 0;
+  font-size: clamp(20px, 2vw, 26px);
+  line-height: 1.2;
+}
+.signupRow p {
+  margin: 4px 0 0;
+  font-size: 15px;
+  color: #53636a;
+}
+@media (max-width: 700px) {
+  .signupRow {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
 }
 .closingViewport {
   --w: 656px;
@@ -583,8 +591,7 @@
     font-size: 16px;
   }
   .stories,
-  .infrastructure,
-  .closing {
+  .infrastructure {
     padding-top: 72px;
     padding-bottom: 72px;
   }

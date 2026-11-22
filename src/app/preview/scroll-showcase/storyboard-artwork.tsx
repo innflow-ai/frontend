@@ -4,6 +4,7 @@ import { useInView, useReducedMotion } from "motion/react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { LottieArtwork } from "./lottie-artwork";
 import styles from "./storyboard-artwork.module.css";
 
 export type Storyboard = {
@@ -38,6 +39,25 @@ export function StoryboardArtwork({ storyboard }: { storyboard: Storyboard }) {
     document.addEventListener("visibilitychange", sync);
     return () => document.removeEventListener("visibilitychange", sync);
   }, []);
+
+  if (storyboard.src?.endsWith(".json")) {
+    return (
+      <div
+        ref={container}
+        className={styles.lottie}
+        data-storyboard={storyboard.number}
+        data-storyboard-source="lottie"
+        aria-hidden="true"
+      >
+        <LottieArtwork
+          artwork={storyboard.src.slice(0, -5)}
+          width={640}
+          height={640}
+          play={inView && visible && reducedMotion === false}
+        />
+      </div>
+    );
+  }
 
   return (
     <div

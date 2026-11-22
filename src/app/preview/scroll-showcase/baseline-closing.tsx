@@ -2,9 +2,7 @@
 
 import Image from "next/image";
 import { type CSSProperties, useEffect, useRef, useState } from "react";
-import { SectionHeading } from "@/components/section-heading";
-import { TrackedLink } from "@/components/tracked-link";
-import { siteConfig } from "@/config/site";
+import { FooterNewsletter } from "@/components/footer-newsletter";
 import styles from "./baseline-lower-sections.module.css";
 import { CalendarCheck, Chart, Share, StarsA } from "@/components/icons/mage";
 
@@ -81,34 +79,13 @@ export function BaselineClosing() {
       id="get-started"
       data-source-node="1:991"
     >
-      <header className={styles.heading}>
-        <SectionHeading
-          variant="mixed-italic"
-          id="baseline-closing-heading"
-          eyebrow="Get started"
-          title="From the first meeting"
-          emphasis={
-            <>
-              to the <strong>follow-up</strong>
-            </>
-          }
-          subtitle={
-            <>
-              All of the work around meetings, handled{" "}
-              <strong>in one place</strong>. Book time, capture every
-              discussion, and keep next steps moving without the manual work.
-            </>
-          }
-        />
-        <TrackedLink
-          data-site-cta="primary"
-          className={styles.cta}
-          destination={siteConfig.signupUrl}
-          eventLabel="closing_signup"
-        >
-          Start for free
-        </TrackedLink>
-      </header>
+      <div className={styles.signupRow}>
+        <div>
+          <h2 id="baseline-closing-heading">From the first meeting to the follow-up</h2>
+          <p>Get workflow tips and product updates by email.</p>
+        </div>
+        <FooterNewsletter />
+      </div>
       {SHOW_PHOTO_CARDS ? (
         <section
           ref={viewport}

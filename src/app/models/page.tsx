@@ -18,9 +18,21 @@ export default function ModelsPage() {
           Choose a model to see a sample task, a brief and a way to check its
           work.
         </p>
-        <Link href="/features/multi-model-agents">How multi-model workflows work</Link>
+        <Link href="/features/multi-model-agents">
+          How multi-model workflows work
+        </Link>
       </header>
       <div className={styles.groups}>
+        <section className={styles.group}>
+          <h2>Innflow model presets</h2>
+          <ul>
+            <li>
+              <Link href="/resources/guides/model-presets">
+                Choose a model for a workflow decision
+              </Link>
+            </li>
+          </ul>
+        </section>
         {directoryProviders.map((provider) => (
           <section key={provider.name} className={styles.group}>
             <h2>{provider.name}</h2>

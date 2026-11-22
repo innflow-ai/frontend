@@ -55,12 +55,12 @@
   z-index: 90;
   /* 1440px is a slight step up from the previous 1320px bar. */
   inset: 16px max(40px, calc((100vw - 1440px) / 2)) auto;
-  min-height: var(--site-header-height, 68px);
+  min-height: var(--site-header-height, 54px);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding: 14px 32px;
+  padding: 5px 32px;
   border-radius: 45px;
   color: var(--ink);
   isolation: isolate;
@@ -537,7 +537,7 @@
 @media (max-width: 1180px) {
   .header {
     inset-inline: 20px;
-    padding: 12px 14px;
+    padding: 6px 14px;
   }
   .header .headerActions > .darkButton {
     font-size: 12px;

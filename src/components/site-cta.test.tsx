@@ -17,17 +17,15 @@ it.each(["/", "/blog", "/products/ai-agents", "/legal/privacy-policy"])(
     const featured = screen.getByRole("heading", { name: "Featured on" });
     expect(featured).toHaveAttribute("data-mixed-heading", "true");
     expect(footer.compareDocumentPosition(featured)).toBe(
-      pathname === "/" ? Node.DOCUMENT_POSITION_FOLLOWING : Node.DOCUMENT_POSITION_PRECEDING,
+      Node.DOCUMENT_POSITION_FOLLOWING,
     );
     expect(screen.getAllByRole("form")).toHaveLength(1);
 
-    const signup = within(footer).getByRole("form", {
-      name: "A little more, just for members.",
+    const signup = screen.getByRole("form", {
+      name: "Innflow newsletter",
     });
-    const navigation = within(footer).getByRole("navigation", {
-      name: "Footer navigation",
-    });
-    expect(signup.compareDocumentPosition(navigation)).toBe(
+    expect(footer).not.toContainElement(signup);
+    expect(signup.compareDocumentPosition(footer)).toBe(
       Node.DOCUMENT_POSITION_FOLLOWING,
     );
     expect(within(signup).getByLabelText("Email address")).toBeVisible();
@@ -44,9 +42,9 @@ it("uses the same cross-industry footer navigation on homepage and inner pages",
   route.pathname = "/";
   const view = render(<SiteCloseAndFooter />);
   expect(screen.getByRole("heading", { name: "Product" })).toBeVisible();
-  expect(screen.getByRole("heading", { name: "Industries" })).toBeVisible();
+  expect(screen.getByRole("heading", { name: "Solutions" })).toBeVisible();
   expect(
-    screen.getByRole("link", { name: "Browse all industries" }),
+    screen.getByRole("link", { name: "View all solutions" }),
   ).toHaveAttribute("href", "/solutions");
   expect(screen.queryByRole("heading", { name: "Property teams" })).toBeNull();
   expect(
@@ -56,7 +54,7 @@ it("uses the same cross-industry footer navigation on homepage and inner pages",
   route.pathname = "/blog";
   view.rerender(<SiteCloseAndFooter />);
   expect(screen.getByRole("heading", { name: "Product" })).toBeVisible();
-  expect(screen.getByRole("heading", { name: "Industries" })).toBeVisible();
+  expect(screen.getByRole("heading", { name: "Solutions" })).toBeVisible();
   expect(screen.queryByRole("heading", { name: "Property teams" })).toBeNull();
 });
 

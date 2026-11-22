@@ -3,63 +3,7 @@ import { FeaturesMenu } from "./features-menu";
 import styles from "./navigation-menus.module.css";
 import type { NavigationLabel } from "./navigation-labels";
 
-type Item = { name: string; href?: string };
-
-const resources = [
-  {
-    name: "Learn",
-    more: "/resources",
-    items: [
-      { name: "Docs", href: "https://docs.innflow.ai" },
-      { name: "Blog", href: "/blog" },
-      { name: "Resource Library", href: "/resources" },
-      { name: "Templates", href: "/templates" },
-    ],
-  },
-  {
-    name: "Explore",
-    more: "/resources",
-    items: [
-      { name: "Customer Stories", href: "/our-customers" },
-      { name: "Product Updates", href: "/product-updates" },
-      { name: "Webinars", href: "/webinars" },
-    ],
-  },
-  {
-    name: "Get help",
-    more: "/help",
-    items: [
-      { name: "Help Center", href: "/help" },
-      { name: "Contact", href: "/contact" },
-      { name: "Partnerships", href: "/partner-with-us" },
-    ],
-  },
-];
-
-const departments: Item[][] = [
-  [
-    { name: "Marketing", href: "/solutions/marketing" },
-    { name: "IT & Engineering", href: "/solutions/it-engineering" },
-    { name: "Customer Service", href: "/industries/customer-service" },
-  ],
-  [
-    { name: "Sales", href: "/solutions/sales" },
-    { name: "Operations", href: "/operations" },
-    { name: "Finance", href: "/industries/finance" },
-  ],
-  [
-    { name: "HR & Recruitment", href: "/industries/hr-recruitment" },
-    { name: "Productivity", href: "/solutions/productivity" },
-  ],
-];
-
-const integrations: Item[] = [
-  { name: "Salesforce", href: "/integrations/salesforce" },
-  { name: "HubSpot", href: "/integrations/hubspot" },
-  { name: "Slack", href: "/integrations/slack" },
-  { name: "Google Calendar", href: "/integrations/google-calendar" },
-  { name: "OpenAI", href: "/integrations/openai" },
-];
+import { departments, integrations, resources, type Item } from "@/config/menu-links";
 
 function iconPath(section: string, name: string) {
   const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, "-");

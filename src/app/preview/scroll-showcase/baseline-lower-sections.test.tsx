@@ -268,13 +268,11 @@ it("shows the integration pillar poster before playback", () => {
 });
 it("keeps the closing invite and gates the photo-card strip with SHOW_PHOTO_CARDS", () => {
   render(<BaselineClosing />);
-  expect(screen.getByText("Get started")).toBeVisible();
+  expect(screen.getByRole("form", { name: "Innflow newsletter" })).toBeVisible();
   expect(
     screen.getByRole("heading", { name: /From the first meeting/i }),
   ).toBeVisible();
-  expect(screen.getByRole("link", { name: "Start for free" })).toHaveAttribute(
-    "href",
-  );
+  expect(screen.getByRole("button", { name: "Sign up" })).toBeVisible();
   const strip = screen.queryByRole("region", {
     name: "Product highlights. Scroll horizontally to explore.",
   });

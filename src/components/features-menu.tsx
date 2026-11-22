@@ -14,18 +14,20 @@ const features = [
   {
     name: "Botmode",
     slug: "botmode",
+    href: "/products/ai-agents",
     body: "Delegate outcomes while keeping execution visible and reviewable.",
   },
   {
     name: "Channels",
     slug: "channels",
+    href: "/features/communications",
     body: "Keep people, agents, files, and decisions in one shared workspace.",
   },
   {
     name: "Connectors",
     slug: "connectors",
     body: "Give agents scoped access to the tools and data your team uses.",
-    href: "/integrations",
+    href: "/platform/integrations",
   },
   {
     name: "Agent Memory",
@@ -42,6 +44,7 @@ const features = [
   {
     name: "Computer",
     slug: "computer",
+    href: "/features/computer",
     body: "Mention Codex or Claude Code in a channel and run tasks on your Mac.",
   },
 ];

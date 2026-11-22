@@ -1,0 +1,56 @@
+.section {
+  max-width: 960px;
+  margin-bottom: 48px;
+}
+.section h2 {
+  font-size: clamp(24px, 4vw, 36px);
+  margin: 0 0 16px;
+}
+.section p,
+.section li,
+.section td,
+.section th {
+  line-height: 1.55;
+}
+.section table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+.section th,
+.section td {
+  text-align: start;
+  vertical-align: top;
+  padding: 12px;
+  border-bottom: 1px solid #ccd5d8;
+  overflow-wrap: anywhere;
+}
+.section th:first-child {
+  width: 21%;
+}
+.section thead {
+  background: #f1f5f5;
+}
+.section ol,
+.section ul {
+  padding-inline-start: 1.4em;
+  list-style: revert;
+}
+.section li {
+  margin-block: 8px;
+}
+.section a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.caption {
+  text-align: start;
+  margin-bottom: 12px;
+}
+@media (max-width: 600px) {
+  .section th,
+  .section td {
+    padding: 8px 5px;
+    font-size: 14px;
+  }
+}

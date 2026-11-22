@@ -49,7 +49,7 @@ const states = [
     id: "notetaker",
     label: "Channels",
     heading: "Bring your bot into the conversation.",
-    href: "#workflows",
+    href: "/features/communications",
     badge: "New",
     body: (
       <>
@@ -65,7 +65,7 @@ const states = [
     id: "payments",
     label: "Computer",
     heading: "Let your bot handle the clicks.",
-    href: "#insights",
+    href: "/features/computer",
     badge: "New",
     body: (
       <>

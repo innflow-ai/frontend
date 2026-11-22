@@ -1,3 +1,4 @@
+import { modelProviders, modelSlug } from "@/content/model-directory";
 import { FeaturesMenu } from "./features-menu";
 import styles from "./navigation-menus.module.css";
 import type { NavigationLabel } from "./navigation-labels";
@@ -12,6 +13,7 @@ const resources = [
       { name: "Docs", href: "https://docs.innflow.ai" },
       { name: "Blog", href: "/blog" },
       { name: "Resource Library", href: "/resources" },
+      { name: "Templates", href: "/templates" },
     ],
   },
   {
@@ -36,18 +38,18 @@ const resources = [
 
 const departments: Item[][] = [
   [
-    { name: "Marketing" },
-    { name: "IT & Engineering" },
+    { name: "Marketing", href: "/solutions/marketing" },
+    { name: "IT & Engineering", href: "/solutions/it-engineering" },
     { name: "Customer Service", href: "/industries/customer-service" },
   ],
   [
-    { name: "Sales" },
+    { name: "Sales", href: "/solutions/sales" },
     { name: "Operations", href: "/operations" },
     { name: "Finance", href: "/industries/finance" },
   ],
   [
     { name: "HR & Recruitment", href: "/industries/hr-recruitment" },
-    { name: "Productivity" },
+    { name: "Productivity", href: "/solutions/productivity" },
   ],
 ];
 
@@ -57,38 +59,6 @@ const integrations: Item[] = [
   { name: "Slack", href: "/integrations/slack" },
   { name: "Google Calendar", href: "/integrations/google-calendar" },
   { name: "OpenAI", href: "/integrations/openai" },
-];
-
-const providers = [
-  {
-    name: "OpenAI",
-    models: [
-      "GPT-6.2 Astra",
-      "GPT-6.2 Sol",
-      "GPT-6 Astra",
-      "GPT-6.1 Sol",
-      "GPT-6 Sol",
-    ],
-  },
-  {
-    name: "Google",
-    models: [
-      "Gemini 4 Neon",
-      "Gemini Omni 1.2 Flash",
-      "Gemini 4 Carbon",
-      "Gemini 4 Argon",
-    ],
-  },
-  { name: "xAI", models: ["Grok 4.7", "Grok 4.6"] },
-  {
-    name: "Anthropic",
-    models: ["Claude Fable 5.2", "Claude Opus 5.5", "Claude Sonnet 5.5", "Claude Haiku 5.5"],
-  },
-  { name: "Moonshot AI", models: ["Kimi K3.1 Pro"] },
-  { name: "DeepSeek", models: ["DeepSeek V4.1 Flash 1017", "DeepSeek V4 Pro 0813"] },
-  { name: "Z.ai", models: ["GLM-5.3", "GLM-5.3-Flash", "GLM-5.3-FlashX"] },
-  { name: "Tencent", models: ["Hunyuan 4"] },
-  { name: "Alibaba Cloud", models: ["Qwen4-Max"] },
 ];
 
 function iconPath(section: string, name: string) {
@@ -137,7 +107,7 @@ export function NavigationMenu({
     return (
       <div className={styles.directory}>
         <div className={styles.providers}>
-          {providers.map((provider, index) => (
+          {modelProviders.map((provider, index) => (
             <section
               className={styles.provider}
               key={provider.name}
@@ -156,7 +126,9 @@ export function NavigationMenu({
               </h3>
               <ul>
                 {provider.models.map((name) => (
-                  <li className={styles.model} key={name}>{name}</li>
+                  <li key={name}>
+                    <a className={styles.model} href={`/models/${modelSlug(name)}`} onClick={close}>{name}</a>
+                  </li>
                 ))}
               </ul>
             </section>

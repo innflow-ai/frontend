@@ -1,4 +1,3 @@
-import { BaselineClosing } from "@/app/preview/scroll-showcase/baseline-closing";
 import { BaselineFeatures } from "@/app/preview/scroll-showcase/baseline-features";
 import {
   BaselineConnectedInfrastructure,
@@ -14,6 +13,7 @@ import { SectionHeading } from "@/components/section-heading";
 import { coverImageUrl, formatPostDate, getLatestBlogPosts, humanizeCategory } from "@/lib/sanity";
 import { ShowcaseTheme } from "@/components/showcase-theme";
 import { getPageTestimonials } from "@/lib/testimonials";
+import { TrustedByMarquee } from "./trusted-by-marquee";
 import typography from "./homepage-typography.module.css";
 
 export async function ShowcaseHomepage({
@@ -28,10 +28,10 @@ export async function ShowcaseHomepage({
   return (
     <main id="main-content" className={`${styles.page} ${typography.headings}`}>
       <ScrollShowcase />
+      <TrustedByMarquee />
       <ShowcaseTheme>
         <WorkspaceOverview />
         <BaselineConnectedInfrastructure />
-        <HomepageCollaboration />
         <BaselineFeatures />
         {stories && (
           <BaselineCustomerStories
@@ -40,6 +40,7 @@ export async function ShowcaseHomepage({
             previewFallback={previewFallback}
           />
         )}
+        <HomepageCollaboration />
         {posts.length > 0 && (
           <div className={styles.recentPosts}>
             <SectionHeading title="Recent blog posts" align="start" />
@@ -55,7 +56,6 @@ export async function ShowcaseHomepage({
             }))} />
           </div>
         )}
-        <BaselineClosing />
       </ShowcaseTheme>
     </main>
   );

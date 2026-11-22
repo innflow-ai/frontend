@@ -135,8 +135,8 @@ it("offers Google, email and the general sign-in page", () => {
   const destinations = [
     ["Bot mode", "/products/ai-agents", "Teach your bot a task."],
     ["Flows", "/features/workflows", "Track every handoff."],
-    ["Channels", "#workflows", "Bring your bot into the conversation."],
-    ["Computer", "#insights", "Let your bot handle the clicks."],
+    ["Channels", "/features/communications", "Bring your bot into the conversation."],
+    ["Computer", "/features/computer", "Let your bot handle the clicks."],
   ];
   for (const [label, href, heading] of destinations) {
     fireEvent.click(screen.getByRole("tab", { name: label }));

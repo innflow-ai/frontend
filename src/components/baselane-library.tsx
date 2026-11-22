@@ -135,6 +135,7 @@ export function BaselaneLibrary({ kind }: { kind: "articles" | "webinars" }) {
             : "practical tools and workflow guides"}{" "}
           for your property team. Start with the process you want to improve.
         </p>
+        {!isWebinar && <a href="/resources/guides">Browse software evaluation guides</a>}
         <div className={styles.featureGrid}>
           <article
             className={`${styles.heroCard} ${isWebinar ? styles.webinarHero : ""}`}

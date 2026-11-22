@@ -59,14 +59,10 @@ export const baselineFeatures: Feature[] = [
     id: "channels",
     node: "350:11199",
     label: "Bot mode",
-    title: "Get more done\nwith AI agents.",
+    title: "Give your bot\na job to finish.",
     heading: {
-      title: "Get more done",
-      emphasis: (
-        <>
-          with <strong>AI agents.</strong>
-        </>
-      ),
+      title: "Give your bot",
+      emphasis: <strong>a job to finish.</strong>,
     },
     items: storyboards.slice(0, 6),
   },
@@ -74,14 +70,10 @@ export const baselineFeatures: Feature[] = [
     id: "agents",
     node: "350:11344",
     label: "Flows",
-    title: "Move work forward\nwith less effort.",
+    title: "Give every step\na clear owner.",
     heading: {
-      title: "Move work forward",
-      emphasis: (
-        <>
-          with <strong>less effort.</strong>
-        </>
-      ),
+      title: "Give every step",
+      emphasis: <strong>a clear owner.</strong>,
     },
     reverse: true,
     items: storyboards.slice(6, 10),
@@ -90,14 +82,10 @@ export const baselineFeatures: Feature[] = [
     id: "workflows",
     node: "350:11402",
     label: "Channels",
-    title: "Spend less time\nmanaging requests.",
+    title: "Work with agents\nin one conversation.",
     heading: {
-      title: (
-        <>
-          Spend <strong>less time</strong>
-        </>
-      ),
-      emphasis: "managing requests.",
+      title: "Work with agents",
+      emphasis: <strong>in one conversation.</strong>,
     },
     items: storyboards.slice(10, 14),
   },
@@ -105,14 +93,10 @@ export const baselineFeatures: Feature[] = [
     id: "insights",
     node: "350:11485",
     label: "Computer",
-    title: "Know where\nto focus next.",
+    title: "Put your agent\nto work in the browser.",
     heading: {
-      title: "Know where",
-      emphasis: (
-        <>
-          to <strong>focus next.</strong>
-        </>
-      ),
+      title: "Put your agent",
+      emphasis: <strong>to work in the browser.</strong>,
     },
     reverse: true,
     items: storyboards.slice(14, 18),
@@ -131,10 +115,10 @@ function BaselineFeature({ feature }: { feature: Feature }) {
   }, []);
   const buttons = useRef<(HTMLButtonElement | null)[]>([]);
   const channels = feature.id === "channels";
-  const mobileStory = channels && mobile;
   const channelScroll = useChannelsScroll(channels, setSelected);
+  const naturalScroll = channels && !channelScroll.enabled;
   useEffect(() => {
-    if (!mobileStory) return;
+    if (!naturalScroll) return;
     let frame = 0;
     const update = () => {
       frame = 0;
@@ -168,12 +152,12 @@ function BaselineFeature({ feature }: { feature: Feature }) {
       window.removeEventListener("scroll", requestUpdate);
       window.removeEventListener("resize", requestUpdate);
     };
-  }, [mobileStory, channelScroll.rowsRef]);
+  }, [naturalScroll, channelScroll.rowsRef]);
   function select(index: number) {
-    if (mobileStory) {
+    if (naturalScroll) {
       setSelected(index);
-      channelScroll.rowsRef.current?.children[index]?.scrollIntoView({
-        block: "start",
+      channelScroll.rowsRef.current?.children[index]?.scrollIntoView?.({
+        block: "center",
         behavior: "instant",
       });
     } else if (channels) channelScroll.select(index);
@@ -196,16 +180,15 @@ function BaselineFeature({ feature }: { feature: Feature }) {
     select(next);
     buttons.current[next]?.focus({ preventScroll: channelScroll.enabled });
   }
+  const artwork = feature.items[selected];
   const visual = (
     <div
       ref={channelScroll.visualRef}
-      className={`${styles.visual} ${feature.id === "agents" ? styles.workflowVisual : ""}`}
+      className={styles.visual}
+      data-feature={featureIcons[feature.id]}
       id={`${feature.id}-baseline-visual`}
     >
-      <StoryboardArtwork
-        key={feature.items[selected].number}
-        storyboard={feature.items[selected]}
-      />
+      <StoryboardArtwork key={artwork.number} storyboard={artwork} />
     </div>
   );
   return (
@@ -252,10 +235,10 @@ function BaselineFeature({ feature }: { feature: Feature }) {
                       }}
                       id={`${feature.id}-baseline-trigger-${index}`}
                       aria-expanded={
-                        !channels && item.body ? selected === index : undefined
+                        item.body ? selected === index : undefined
                       }
                       aria-pressed={
-                        channels || !item.body ? selected === index : undefined
+                        !item.body ? selected === index : undefined
                       }
                       aria-controls={
                         item.body
@@ -264,7 +247,7 @@ function BaselineFeature({ feature }: { feature: Feature }) {
                       }
                       onClick={() => select(index)}
                       onFocus={() => {
-                        if (channelScroll.enabled || mobileStory) select(index);
+                        if (channelScroll.enabled) select(index);
                       }}
                       onKeyDown={(event) => navigate(event, index)}
                     >
@@ -280,7 +263,7 @@ function BaselineFeature({ feature }: { feature: Feature }) {
                         className={styles.mobileIndicator}
                         aria-hidden="true"
                       >
-                        {mobileStory || selected === index ? (
+                        {selected === index ? (
                           <MageMinus size="1em" />
                         ) : (
                           <MagePlus size="1em" />
@@ -291,7 +274,7 @@ function BaselineFeature({ feature }: { feature: Feature }) {
                   <section
                     id={`${feature.id}-baseline-panel-${index}`}
                     aria-labelledby={`${feature.id}-baseline-trigger-${index}`}
-                    hidden={!item.body || (!channels && selected !== index)}
+                    hidden={!item.body || selected !== index}
                     className={styles.description}
                   >
                     {item.body && <p data-home-copy>{item.body}</p>}
@@ -301,7 +284,7 @@ function BaselineFeature({ feature }: { feature: Feature }) {
                         className={styles.arrow}
                         aria-label={`Show ${item.title}`}
                         onFocus={() => {
-                          if (channelScroll.enabled || mobileStory)
+                          if (channelScroll.enabled)
                             select(index);
                         }}
                         onClick={() => {
@@ -315,16 +298,7 @@ function BaselineFeature({ feature }: { feature: Feature }) {
                       </button>
                     )}
                   </section>
-                  {mobileStory ? (
-                    <div
-                      className={styles.visual}
-                      id={`${feature.id}-baseline-visual-${index}`}
-                    >
-                      <StoryboardArtwork storyboard={item} />
-                    </div>
-                  ) : (
-                    mobile && selected === index && visual
-                  )}
+                  {mobile && selected === index && visual}
                 </div>
               ))}
             </motion.div>

@@ -2859,6 +2859,13 @@ p {
     --cta-rim: #111;
   }
 
+  [data-site-cta][data-cta-tone="white"] {
+    --cta-fill: linear-gradient(180deg, #fff, #efefef);
+    --cta-hover: linear-gradient(180deg, #fff, #e5e5e5);
+    --cta-rim: #d0d0d0;
+    --site-button-ink: #000;
+  }
+
   :is(
     [data-site-cta],
     a.button,

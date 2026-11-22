@@ -1,0 +1,33 @@
+.section {
+  width: min(100%, 1120px);
+  margin-inline: auto;
+  padding: clamp(32px, calc(4vw + 8px), 56px) 16px;
+}
+.section .title {
+  margin: 0 0 20px;
+  text-align: center;
+  font:
+    500 14px / 1.4 var(--font-host-grotesk),
+    sans-serif;
+  color: #626975;
+}
+.track {
+  animation-duration: 64s;
+}
+.section .group {
+  --logo-gap: clamp(36px, 4.5vw, 64px);
+  justify-content: flex-start;
+  gap: var(--logo-gap);
+  padding: 8px var(--logo-gap) 8px 0;
+}
+.logo {
+  flex: none;
+  object-fit: contain;
+}
+@media (prefers-reduced-motion: reduce) {
+  .section .group {
+    justify-content: center;
+    padding-inline: 0;
+    gap: var(--logo-gap);
+  }
+}

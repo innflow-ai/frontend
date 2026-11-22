@@ -1,128 +1,70 @@
+"use client";
+
+import { useState } from "react";
+import { departments, features, resources } from "@/config/menu-links";
+import { modelProviders, modelSlug } from "@/content/model-directory";
 import Image from "next/image";
 import { siteConfig } from "@/config/site";
 import { CustomerSupportHours } from "./customer-support-hours";
+import { FooterWorkspace } from "./footer-workspace";
 import { FooterLegalLinks } from "./footer-legal-links";
-import { FooterNewsletter } from "./footer-newsletter";
+import googleButtonStyles from "./google-cta.module.css";
 import { GoogleCtaContent } from "./google-cta-content";
 import styles from "./site-footer.module.css";
 
-/** Shared sitewide footer — cross-industry agent platform, not PM-niche. */
-const footerMenus = [
-  {
-    label: "Why innflow",
-    links: [
-      ["About innflow", "/about"],
-      ["Careers", "/careers"],
-      ["Industry coverage", "/in-the-news"],
-      ["Who we help", "/our-customers"],
-      ["Security", "/security"],
-      ["Partnerships", "/partner-with-us"],
-      ["Advisor partnerships", "/advisor-partner-program"],
-      ["Workflows", "/features/workflows"],
-      ["AI agents", "/products/ai-agents"],
-      ["Knowledge", "/platform"],
-      ["Approvals", "/platform/security-and-compliance"],
-    ],
-  },
-  {
-    label: "Product",
-    links: [
-      ["Platform", "/platform"],
-      ["Agent OS", "/products/agent-os"],
-      ["Agent Studio", "/products/agent-studio"],
-      ["AI Agents", "/products/ai-agents"],
-      ["Agentic Workflows", "/features/workflows"],
-      ["Databases", "/products/databases"],
-      ["AI Website Builder", "/features/website"],
-      ["Integrations", "/integrations"],
-      ["Agent Skills", "/skills"],
-    ],
-  },
-  {
-    label: "Resources",
-    links: [
-      ["Resource library", "/resources"],
-      ["Workflow learning", "/webinars"],
-      ["Product updates", "/product-updates"],
-      ["Blog", "/blog"],
-      ["Help center", "/help-center"],
-      ["Legal agreements", "/legal-agreements"],
-      ["FAQ", "/faq"],
-      ["Contact", "/contact"],
-    ],
-  },
-];
-
-const getStarted = {
-  label: "Get started",
-  links: [
-    ["Book a demo", siteConfig.demoUrl],
-    ["Pricing", "/pricing"],
-    ["Log in", siteConfig.loginUrl],
-  ],
-};
-
-/** Industries as one vertical among many — not a property-only site niche. */
-const industries = {
-  label: "Industries",
-  links: [
-    ["Financial services", "/industries/financial-services-banking"],
-    ["Healthcare", "/industries/healthcare"],
-    ["Property & real estate", "/industries/property-real-estate"],
-    ["Technology & software", "/industries/technology-software"],
-    ["Customer service", "/industries/customer-service"],
-    ["Browse all industries", "/solutions"],
-  ],
-};
-
 const columns = [
-  [footerMenus[0]],
-  [footerMenus[1], industries],
-  [footerMenus[2], getStarted],
+  { label: "Product", links: features },
+  {
+    label: "Models",
+    links: modelProviders.map(({ models: [name] }) => ({ name, href: `/models/${modelSlug(name)}` })),
+  },
+  { label: "Solutions", links: [...departments.flat(), { name: "View all solutions", href: "/solutions" }] },
+  { label: "Resources", links: resources.flatMap(({ items }) => items) },
 ];
 
 export function SiteFooter({ home: _home = true }: { home?: boolean }) {
   // `home` kept for callers; chrome is the same sitewide so we don't niche the homepage.
   void _home;
+  const [openGroup, setOpenGroup] = useState<string | null>(null);
 
   return (
     <div className={styles.shell}>
       <footer className={styles.footer}>
-        <div className={styles.newsletterPanel}>
-          <FooterNewsletter />
-        </div>
+        <FooterWorkspace />
         <div className={styles.body}>
           <div className={styles.upper}>
             <div className={styles.brand}>
               <a href="/" aria-label="Innflow home">
                 <Image
-                  src="/brand/innflow-wordmark.svg"
-                  width={132}
-                  height={38}
+                  src="/brand/innflow-nav-wordmark.svg"
+                  width={299}
+                  height={80}
                   alt="Innflow"
                 />
               </a>
               <p>
-                The AI agent platform for
-                <br />
-                agentic process automation.
+                A shared workspace for your team and AI agents.
               </p>
             </div>
             <nav className={styles.columns} aria-label="Footer navigation">
-              {columns.map((column) => (
-                <div key={column[0].label}>
-                  {column.map((group) => (
-                    <div className={styles.group} key={group.label}>
-                      <h3>{group.label}</h3>
-                      <ul>
-                        {group.links.map(([label, href]) => (
-                          <li key={label}>
-                            <a href={href}>{label}</a>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
+              {columns.map(({ label, links }) => (
+                <div className={styles.group} data-open={openGroup === label} key={label}>
+                  <div className={styles.groupHeading}>
+                    <h3 id={`footer-heading-${label}`}>{label}</h3>
+                    <button
+                      className={styles.groupToggle}
+                      type="button"
+                      aria-labelledby={`footer-heading-${label}`}
+                      aria-controls={`footer-links-${label}`}
+                      aria-expanded={openGroup === label}
+                      onClick={() => setOpenGroup(current => current === label ? null : label)}
+                    />
+                  </div>
+                  <ul id={`footer-links-${label}`}>
+                    {links.map(({ name, href }) => (
+                      <li key={href}><a href={href}>{name === "Botmode" ? "Bot mode" : name}</a></li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </nav>
@@ -134,8 +76,14 @@ export function SiteFooter({ home: _home = true }: { home?: boolean }) {
               </a>
               <CustomerSupportHours />
             </div>
+            <div className={styles.accountLinks}>
+              <a href={siteConfig.demoUrl}>Book a demo</a>
+              <a href="/pricing">Pricing</a>
+              <a href={siteConfig.loginUrl}>Log in</a>
+            </div>
             <a
-              className={styles.googleCta}
+              className={`${googleButtonStyles.button} ${googleButtonStyles.raisedSignIn}`}
+              data-cta-tone="white"
               data-site-cta="primary"
               href={siteConfig.signupUrl}
             >

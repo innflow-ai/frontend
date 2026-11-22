@@ -1,4 +1,3 @@
-import { BaselineClosing } from "@/app/preview/scroll-showcase/baseline-closing";
 import { BaselanePricing } from "@/components/baselane-pricing";
 import { ShowcaseTheme } from "@/components/showcase-theme";
 import { createPageMetadata } from "@/lib/metadata";
@@ -14,7 +13,6 @@ export default function PricingPage() {
   return (
     <ShowcaseTheme>
       <BaselanePricing />
-      <BaselineClosing />
     </ShowcaseTheme>
   );
 }

@@ -4,47 +4,7 @@ import type { AnimationItem } from "lottie-web";
 import { useEffect, useId, useRef, useState } from "react";
 import styles from "./features-menu.module.css";
 
-const features = [
-  {
-    name: "Flows",
-    slug: "flow",
-    body: "Plan multi-agent work with visible ownership, gates, and progress.",
-    href: "/features/workflows",
-  },
-  {
-    name: "Botmode",
-    slug: "botmode",
-    body: "Delegate outcomes while keeping execution visible and reviewable.",
-  },
-  {
-    name: "Channels",
-    slug: "channels",
-    body: "Keep people, agents, files, and decisions in one shared workspace.",
-  },
-  {
-    name: "Connectors",
-    slug: "connectors",
-    body: "Give agents scoped access to the tools and data your team uses.",
-    href: "/integrations",
-  },
-  {
-    name: "Agent Memory",
-    slug: "agent-memory",
-    body: "Carry relevant goals, decisions, and context across ongoing work.",
-    href: "/features/agent-memory",
-  },
-  {
-    name: "Teammates",
-    slug: "teammates",
-    body: "Agents that work in your Channels like colleagues.",
-    href: "/features/teammates",
-  },
-  {
-    name: "Computer",
-    slug: "computer",
-    body: "Mention Codex or Claude Code in a channel and run tasks on your Mac.",
-  },
-];
+import { features } from "@/config/menu-links";
 
 const heroButtons: Record<string, string> = {
   botmode: "bot", flow: "flow", channels: "channels", computer: "computer",

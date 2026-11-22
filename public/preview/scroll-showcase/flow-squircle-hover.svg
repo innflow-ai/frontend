@@ -1,6 +1,6 @@
-<svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="52" height="52" viewBox="2 1 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g filter="url(#filter0_d_763_3273)">
-<rect x="2" y="1" width="52" height="52" rx="22" fill="#A173A0"/>
+<rect x="2" y="1" width="52" height="52" rx="22" fill="#CC9435"/>
 <path d="M21.5194 32.3066C21.5194 33.8162 20.2956 35.0399 18.7861 35.0399C17.2765 35.0399 16.0527 33.8162 16.0527 32.3066C16.0527 30.797 17.2765 29.5732 18.7861 29.5732C20.2956 29.5732 21.5194 30.797 21.5194 32.3066Z" stroke-width="1.5" stroke="white"/>
 <path d="M19.9336 29.8L21.8003 21.9466C22.0508 21.1584 22.5957 20.4971 23.3215 20.1005C24.0472 19.7038 24.898 19.6022 25.6968 19.817C26.4955 20.0317 27.1807 20.5461 27.6098 21.2532C28.0388 21.9603 28.1787 22.8057 28.0003 23.6133L26.2403 30.3333C26.0157 31.1714 26.1333 32.0643 26.5671 32.8157C27.001 33.5671 27.7155 34.1154 28.5536 34.34C29.3917 34.5645 30.2846 34.4469 31.036 34.0131C31.7874 33.5793 32.3357 32.8647 32.5603 32.0266L34.5203 24.72" stroke-width="1.5" stroke="white"/>
 <path d="M37.9471 21.1867C37.9471 22.6963 36.7234 23.92 35.2138 23.92C33.7042 23.92 32.4805 22.6963 32.4805 21.1867C32.4805 19.6771 33.7042 18.4534 35.2138 18.4534C36.7234 18.4534 37.9471 19.6771 37.9471 21.1867Z" stroke-width="1.5" stroke="white"/>
@@ -12,7 +12,7 @@
 <feOffset dy="1"/>
 <feGaussianBlur stdDeviation="1"/>
 <feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.347255 0 0 0 0 0.248039 0 0 0 0 0.345098 0 0 0 0.05 0"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.44 0 0 0 0 0.319216 0 0 0 0 0.114314 0 0 0 0.05 0"/>
 <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_763_3273"/>
 <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_763_3273" result="shape"/>
 </filter>

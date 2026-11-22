@@ -16,7 +16,13 @@ const groups = [
   {
     heading: "Get started",
     links: [
+      { href: "/download", label: "Innflow for macOS" },
       { href: "/products", label: "Browse all products" },
+      { href: "/models", label: "Model workflow guides" },
+      { href: "/features/multi-model-agents", label: "Multi-model agents" },
+      { href: "/templates", label: "Workflow templates" },
+      { href: "/tools", label: "Planning tools" },
+      { href: "/compare", label: "Product comparisons" },
       { href: "/solutions", label: "Browse all solutions" },
       {
         href: "/",

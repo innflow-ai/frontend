@@ -48,19 +48,13 @@ export function FooterNewsletter() {
   return (
     <form
       className={styles.membershipSignup}
-      aria-labelledby="membership-signup-heading"
+      aria-label="Innflow newsletter"
       aria-describedby="membership-signup-status"
       onSubmit={subscribe}
       aria-busy={signupState === "pending"}
     >
-      <h2 id="membership-signup-heading">
-        {signupState === "success"
-          ? "Welcome to the Innflow family!"
-          : "A little more, just for members."}
-      </h2>
       {signupState !== "success" && (
         <>
-          <p>Get Innflow updates and member offers by email.</p>
           <div hidden aria-hidden="true">
             <label htmlFor="membership-website">Website</label>
             <input

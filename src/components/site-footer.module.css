@@ -1,45 +1,26 @@
 .shell {
+  padding-inline: 24px;
   background: var(--marketing-paper);
-  padding: 24px;
-  color: var(--marketing-paper);
+  color: white;
 }
 .footer {
-  color: var(--marketing-paper);
-  background: #071a31;
   border-radius: 64px;
+  overflow: clip;
+  color: var(--marketing-paper);
+  background: #0c0c0c;
 }
 .body {
-  padding: 96px max(40px, calc((100vw - 1248px) / 2)) 64px;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding: 64px 36px 32px;
   font-family: var(--font-host-grotesk), sans-serif;
 }
-.newsletterPanel {
-  --signup-ink: #012232;
-  padding: 48px 24px;
-  border-start-start-radius: inherit;
-  border-start-end-radius: inherit;
-  background:
-    #c7e3fc url("/brand/blog/apartment-sky-cta.png") center 65% / cover;
-  color: var(--signup-ink);
-}
 .membershipSignup {
-  max-width: 620px;
-  margin-inline: auto;
-  padding: 28px;
-  border: 1px solid rgb(1 34 50 / 24%);
-  border-radius: 20px;
-  background: rgb(255 255 255 / 84%);
-  backdrop-filter: blur(16px);
+  --signup-ink: #012232;
+  width: 100%;
+  margin: 0;
+  color: var(--signup-ink);
   text-align: left;
-}
-.membershipSignup h2 {
-  font-size: 24px;
-  line-height: 1.2;
-  color: inherit;
-}
-.membershipSignup p {
-  margin: 10px 0 22px;
-  font-size: 16px;
-  line-height: 1.5;
 }
 .membershipFields {
   min-width: 0;
@@ -48,9 +29,11 @@
   border: 0;
 }
 .membershipFields label {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 14px;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip-path: inset(50%);
+  overflow: hidden;
 }
 .membershipInputRow {
   display: flex;
@@ -69,11 +52,11 @@
 .membershipInputRow input {
   flex: 1;
   min-width: 0;
-  min-height: 48px;
+  min-height: 36px;
   border: 0;
   border-radius: 999px;
   background: transparent;
-  padding: 12px 14px;
+  padding: 6px 14px;
   outline: none;
   color: var(--signup-ink);
   font: inherit;
@@ -89,8 +72,8 @@
   justify-content: center;
   gap: 8px;
   flex-shrink: 0;
-  min-height: 48px;
-  padding: 12px 20px;
+  min-height: 36px;
+  padding: 6px 16px;
   border: 0;
   border-radius: 999px;
 }
@@ -106,27 +89,8 @@
   font-size: 16px;
   line-height: 1.5;
 }
-@media (max-width: 600px) {
-  .newsletterPanel {
-    padding: 24px 16px;
-  }
-  .membershipSignup {
-    padding: 20px 16px;
-  }
-}
 @media (max-width: 420px) {
-  .membershipInputRow {
-    flex-direction: column;
-    align-items: stretch;
-    padding: 0;
-    border: 0;
-    border-radius: 0;
-    background: transparent;
-    gap: 8px;
-  }
   .membershipInputRow input {
-    border: 1px solid rgb(1 34 50 / 35%);
-    background: white;
     font-size: 16px;
   }
 }
@@ -143,23 +107,47 @@
   outline-offset: 5px;
   border-radius: 4px;
 }
-.upper {
-  display: grid;
-  grid-template-columns: minmax(240px, 1fr) minmax(0, 664px);
-  gap: 64px;
+.workspace {
+  background: black;
 }
-.brand {
+.workspaceScene {
+  position: relative;
+  width: min(100%, 1280px);
+  aspect-ratio: 1440 / 926;
+  margin-inline: auto;
+  overflow: hidden;
+  background: #cccdcf url("/brand/footer-workspace-backdrop.webp") center / cover;
+}
+.workspaceWindow {
+  position: absolute;
+  top: 9.611%;
+  left: 7.5%;
+  width: 85%;
+  height: auto;
+  pointer-events: none;
+}
+.workspaceLandscape {
+  position: absolute;
+  inset: -5%;
+  transform: translate(var(--workspace-pan-x, 0%), var(--workspace-pan-y, 0%));
+  transition: transform 650ms cubic-bezier(.2, .7, .2, 1);
+  pointer-events: none;
+}
+.workspaceTrail {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.brand, .accountLinks {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 20px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px 40px;
 }
 .brand p {
-  color: var(--marketing-paper);
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 1.4;
-  max-width: 240px;
+  color: #bdbdbd;
   margin: 0;
 }
 .brand img {
@@ -169,11 +157,12 @@
 }
 .columns {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 32px;
+  margin-top: 56px;
 }
-.group {
-  padding: 32px 0 0;
+.groupToggle {
+  display: none;
 }
 .group h3 {
   color: var(--marketing-paper);
@@ -205,15 +194,7 @@
 .contact a {
   font-size: 16px;
 }
-.googleCta {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  min-height: 48px;
-  padding: 12px 20px;
-}
-.googleCta:hover {
+.footer a[data-site-cta]:hover {
   text-decoration: none;
 }
 .legal {
@@ -230,17 +211,63 @@
   gap: 12px 24px;
 }
 @media (max-width: 1100px) {
+  .columns {
+    grid-template-columns: 1fr;
+    gap: 0;
+    margin-top: 32px;
+  }
+  .group {
+    border-bottom: 1px solid #ffffff33;
+  }
+  .groupHeading {
+    position: relative;
+    padding: 14px 32px 14px 0;
+  }
+  .groupHeading h3 {
+    margin: 0;
+  }
+  .groupToggle {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 0 8px;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+  }
+  .groupToggle::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    border: solid currentColor;
+    border-width: 0 1.5px 1.5px 0;
+    transform: rotate(45deg);
+  }
+  .groupToggle[aria-expanded="true"]::after {
+    transform: rotate(225deg);
+  }
+  .groupToggle:focus-visible {
+    outline: 2px solid #6bb0ff;
+    outline-offset: -2px;
+  }
+  .group[data-open="false"] ul {
+    display: none;
+  }
+  .group ul {
+    padding-bottom: 8px;
+  }
   .body {
     padding: 48px 32px;
   }
-  .upper {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
+
 }
 @media (max-width: 600px) {
   .shell {
-    padding: 12px;
+    padding-inline: 12px;
   }
   .footer {
     border-radius: 32px;
@@ -248,16 +275,7 @@
   .body {
     padding: 40px 24px;
   }
-  .columns {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
-  }
-  .columns > div:last-child {
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
-  }
+
   .contact {
     margin-top: 48px;
     padding: 32px 0;

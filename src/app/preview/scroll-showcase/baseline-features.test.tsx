@@ -68,13 +68,13 @@ describe("numbered homepage storyboards", () => {
     expect(screen.getAllByRole("heading", { level: 2 })).toHaveLength(4);
     expect(
       within(element("agents")).getAllByRole("heading", { level: 3 })[0],
-    ).toHaveTextContent("Get work done across your tools");
+    ).toHaveTextContent("Map the route from start to finish");
     expect(
       within(element("workflows")).getAllByRole("heading", { level: 3 })[1],
-    ).toHaveTextContent("Get requests to the right team");
+    ).toHaveTextContent("Bring an agent into the thread");
     expect(
       within(element("insights")).getAllByRole("heading", { level: 3 })[3],
-    ).toHaveTextContent("Turn insights into action");
+    ).toHaveTextContent("Check what came back");
   });
 
   it.each(baselineFeatures)(
@@ -87,20 +87,17 @@ describe("numbered homepage storyboards", () => {
           name: item.title,
         });
         fireEvent.click(trigger);
-        expect(section.querySelectorAll("[data-storyboard]")).toHaveLength(1);
-        expect(section.querySelector("[data-storyboard]")).toHaveAttribute(
-          "data-storyboard",
-          String(item.number),
-        );
-        expect(section.querySelector("[data-storyboard]")).toHaveAttribute(
-          "data-source",
-          `/brand/homepage/${String(item.number).padStart(2, "0")}.riv`,
-        );
+        const artwork = section.querySelector("[data-storyboard]");
+        expect(artwork).toHaveAttribute("data-storyboard", String(item.number));
+        expect(artwork).toHaveAttribute("data-source", item.src);
+        expect(artwork?.parentElement).toHaveAttribute("data-feature", {
+          channels: "bot", agents: "flow", workflows: "channels", insights: "computer",
+        }[feature.id]);
         expect(
           element(`${feature.id}-baseline-panel-${index}`),
         ).toHaveTextContent(item.body);
         expect(trigger).toHaveAttribute(
-          feature.id === "channels" ? "aria-pressed" : "aria-expanded",
+          "aria-expanded",
           "true",
         );
       }
@@ -124,17 +121,12 @@ describe("numbered homepage storyboards", () => {
       ] as const) {
         fireEvent.keyDown(document.activeElement ?? triggers[0], { key });
         expect(triggers[index]).toHaveFocus();
-        expect(
-          element(feature.id).querySelector("[data-storyboard]"),
-        ).toHaveAttribute(
-          "data-storyboard",
-          String(feature.items[index].number),
-        );
+        expect(triggers[index]).toHaveAttribute("aria-expanded", "true");
       }
     }
   });
 
-  it("keeps every AI agent story open on mobile and other sections selectable", () => {
+  it("shows one Bot mode story at a time on mobile and keeps other sections selectable", () => {
     vi.stubGlobal("matchMedia", (query: string) => ({
       matches: query === "(max-width: 800px)",
       addEventListener: vi.fn(),
@@ -143,13 +135,12 @@ describe("numbered homepage storyboards", () => {
     render(<BaselineFeatures />);
     expect(
       element("channels").querySelectorAll("[data-storyboard]"),
-    ).toHaveLength(6);
+    ).toHaveLength(1);
     for (let index = 0; index < 6; index++) {
+      fireEvent.click(element(`channels-baseline-trigger-${index}`));
       expect(element(`channels-baseline-panel-${index}`)).toBeVisible();
-      expect(
-        element(`channels-baseline-trigger-${index}`).closest("h3")
-          ?.parentElement,
-      ).toContainElement(element(`channels-baseline-visual-${index}`));
+      expect(element("channels").querySelectorAll("section:not([hidden])")).toHaveLength(1);
+      expect(element("channels").querySelectorAll("[data-storyboard]")).toHaveLength(1);
     }
     const first = element("agents-baseline-trigger-0");
     const next = element("agents-baseline-trigger-1");
@@ -162,14 +153,18 @@ describe("numbered homepage storyboards", () => {
     );
   });
 
-  it("ships matching artboard/timeline names rather than a blank default artboard", () => {
+  it("ships playable Lottie compositions and named Rive timelines", () => {
     for (const item of baselineFeatures.flatMap((feature) => feature.items)) {
       expect(existsSync(`public${item.poster}`)).toBe(true);
-      if (!item.src) {
-        expect(item.number).toBe(2);
+      const bytes = readFileSync(`public${item.src}`);
+      if (item.status === "lottie") {
+        const animation = JSON.parse(bytes.toString());
+        expect(animation.nm).toBe(item.title);
+        expect(animation.op - animation.ip).toBe(item.duration * animation.fr);
+        expect(animation.layers.length).toBeGreaterThan(1);
         continue;
       }
-      const bytes = readFileSync(`public${item.src}`);
+      if (!item.artboard || !item.animation) throw new Error(item.title);
       expect(bytes.subarray(0, 4).toString()).toBe("RIVE");
       expect(bytes.includes(Buffer.from(item.artboard))).toBe(true);
       expect(bytes.includes(Buffer.from(item.animation))).toBe(true);

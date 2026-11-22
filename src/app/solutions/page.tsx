@@ -1,4 +1,3 @@
-import { BaselineClosing } from "@/app/preview/scroll-showcase/baseline-closing";
 import { IndustryDirectory } from "@/components/industry-pages/industry-directory";
 import styles from "@/components/industry-pages/industry-pages.module.css";
 import { MixedHeadingText } from "@/components/mixed-heading-text";
@@ -30,7 +29,6 @@ export default function SolutionsPage() {
           </p>
         </header>
         <IndustryDirectory />
-        <BaselineClosing />
       </main>
     </ShowcaseTheme>
   );

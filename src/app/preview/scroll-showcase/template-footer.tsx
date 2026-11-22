@@ -50,16 +50,15 @@ export function TemplateFooter({
 }) {
   return (
     <div className={styles.shell}>
-      {featuredOn && <LaunchDirectoryMarquee />}
       <footer className={styles.footer} data-source-node="350:11986">
         <div className={styles.upper}>
           <div className={styles.brand}>
             <a href="/" aria-label="Innflow home">
               <Image
-                src="/brand/innflow-wordmark.svg"
+                src="/brand/innflow-nav-wordmark.svg"
                 alt="Innflow"
-                width={132}
-                height={38}
+                width={299}
+                height={80}
               />
             </a>
             <p>Bring your work together.</p>
@@ -107,6 +106,7 @@ export function TemplateFooter({
           <span>© {new Date().getFullYear()} Innflow</span>
         </div>
       </footer>
+      {featuredOn && <LaunchDirectoryMarquee />}
     </div>
   );
 }

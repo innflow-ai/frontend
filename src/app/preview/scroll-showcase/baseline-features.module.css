@@ -133,7 +133,8 @@
 }
 .visual {
   position: relative;
-  aspect-ratio: 771 / 830;
+  aspect-ratio: 1;
+  align-self: start;
   width: 100%;
   border-radius: 7.241% / 6.726%;
   overflow: hidden;
@@ -156,10 +157,6 @@
 .imageFrame[data-pending="true"] {
   filter: blur(24px);
   opacity: 0.35;
-}
-.workflowVisual {
-  aspect-ratio: 771 / 830;
-  border-radius: 7.241% / 6.726%;
 }
 .workflowFrame {
   --agent-storyboard-background: transparent;
@@ -227,8 +224,6 @@
   color: #071a31;
 }
 .section[data-channels="true"] .visual {
-  aspect-ratio: 771 / 830;
-  border-radius: 7.241% / 6.726%;
   position: sticky;
   top: 110px;
 }
@@ -481,6 +476,26 @@
   }
 }
 
-.visual {
-  background: transparent;
+.visual[data-feature="flow"] {
+  background: linear-gradient(180deg, #f5f7df, #f4f1d5 13.793%, #f4dcb6 25%, #efb7a3 34.483%, #dd8fa9 51.724%, #d896ba 68.966%, #7a94d5 86.207%, #5b8edd);
+}
+
+.visual[data-feature="flow"]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #f6e0b7, #f7daad 13.793%, #f8d5a4 25%, #f8d5a4 34.483%, #f8d6a4 51.724%, #f0caa1 68.966%, #cab2ba 86.207%, #335f9c);
+  mask-image: linear-gradient(to right, transparent, black);
+}
+
+.visual[data-feature="bot"] {
+  background: linear-gradient(181.487deg, #4fb2ff 6.4541%, #69bbff 18.736%, #b0e5ff 32.655%, #aee9f1 49.441%, #7acced 67.381%, #2184cf 84.293%, #004077 98.856%);
+}
+
+.visual[data-feature="channels"] {
+  background: linear-gradient(180deg, #315fa5, #8295da 15%, #f4c2e5 36%, #ffe1df 48%, #ffc9e7 65%, #e4a9ee 82%, #cba8f3);
+}
+
+.visual[data-feature="computer"] {
+  background: linear-gradient(180deg, #badbff, #e8f5e8 42%, #3dcfad 68%, #051f29);
 }

@@ -1,8 +1,13 @@
 import type { MetadataRoute } from "next";
 import { siteConfig } from "@/config/site";
+import { departmentSolutions } from "@/content/department-solutions";
 import { featurePageDesigns } from "@/content/feature-pages";
 import { industryHref, industryPages } from "@/content/industries";
 import { allFeatureSlugs } from "@/content/marketing";
+import { evaluationGuides } from "@/content/evaluation-guides";
+import { planningTools } from "@/content/planning-tools";
+import { templateCollections, workflowTemplates } from "@/content/workflow-templates";
+import { modelDirectory } from "@/content/model-directory";
 import { platformPages } from "@/content/platform";
 import { getIntegrations } from "@/lib/integrations";
 import { productSlugs } from "@/lib/product-pages";
@@ -16,8 +21,12 @@ const staticRoutes: Array<{
 }> = [
   { path: "", changeFrequency: "weekly", priority: 1 },
   { path: "/property-management", changeFrequency: "weekly", priority: 0.9 },
+  { path: "/download", changeFrequency: "weekly", priority: 0.6 },
   { path: "/platform", changeFrequency: "monthly", priority: 0.9 },
   { path: "/products", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/compare", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/compare/innflow-vs-slack", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/solutions/social-media-scheduling", changeFrequency: "monthly", priority: 0.7 },
   { path: "/solutions", changeFrequency: "monthly", priority: 0.8 },
   { path: "/integrations", changeFrequency: "monthly", priority: 0.8 },
   { path: "/skills", changeFrequency: "weekly", priority: 0.8 },
@@ -26,6 +35,7 @@ const staticRoutes: Array<{
   { path: "/demo", changeFrequency: "monthly", priority: 0.8 },
   { path: "/contact", changeFrequency: "monthly", priority: 0.8 },
   { path: "/faq", changeFrequency: "monthly", priority: 0.7 },
+  { path: "/learn", changeFrequency: "weekly", priority: 0.7 },
   { path: "/blog", changeFrequency: "daily", priority: 0.8 },
   { path: "/legal/privacy-policy", changeFrequency: "yearly", priority: 0.3 },
   {
@@ -114,6 +124,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "weekly" as const,
       priority: 0.6,
     })),
+    ...["/resources/guides", ...evaluationGuides.map(g => `/resources/guides/${g.slug}`), "/tools", ...planningTools.map(tool => `/tools/${tool.slug}`), "/features/multi-model-agents", "/templates", ...templateCollections.map(c => `/templates/${c.slug}`), ...workflowTemplates.map(t => `/templates/${t.collection}/${t.slug}`)].map(path => ({
+      url: `${siteConfig.marketingOrigin}${path}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+    ...["/models", ...modelDirectory.map(({ slug }) => `/models/${slug}`)].map((path) => ({
+      url: `${siteConfig.marketingOrigin}${path}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })),
+    ...departmentSolutions.map(({ slug }) => ({
+      url: `${siteConfig.marketingOrigin}/solutions/${slug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
     ...industryPages.map((page) => ({
       url: `${siteConfig.marketingOrigin}${industryHref(page.slug)}`,
       changeFrequency: "monthly" as const,
@@ -136,7 +161,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),
-    ...["/features/agent-memory", "/features/teammates"].map((path) => ({
+    ...["/features/agent-memory", "/features/teammates", "/features/computer", "/features/local-agents"].map((path) => ({
       url: `${siteConfig.marketingOrigin}${path}`,
       lastModified: siteLastModified,
       changeFrequency: "weekly" as const,

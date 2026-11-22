@@ -1,6 +1,5 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
-import { BaselineClosing } from "@/app/preview/scroll-showcase/baseline-closing";
 import { ChevronRight } from "@/components/chevron-right";
 import { ArrowDown as MageArrowDown } from "@/components/icons/mage";
 import { MixedHeadingText } from "@/components/mixed-heading-text";
@@ -224,7 +223,6 @@ export function IndustryPage({ page }: { page: IndustryPageContent }) {
             </details>
           </div>
         </section>
-        <BaselineClosing />
       </main>
     </ShowcaseTheme>
   );

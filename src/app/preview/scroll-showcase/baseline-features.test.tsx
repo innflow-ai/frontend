@@ -60,10 +60,10 @@ describe("numbered homepage storyboards", () => {
         feature.items.map((item) => item.number),
       ]),
     ).toEqual([
-      ["AI agent", [3, 2, 1, 4, 5, 6]],
-      ["Workflows", [7, 8, 9, 10]],
-      ["Assistant", [11, 12, 13, 14]],
-      ["Insights", [15, 16, 17, 18]],
+      ["Bot mode", [3, 2, 1, 4, 5, 6]],
+      ["Flows", [7, 8, 9, 10]],
+      ["Channels", [11, 12, 13, 14]],
+      ["Computer", [15, 16, 17, 18]],
     ]);
     expect(screen.getAllByRole("heading", { level: 2 })).toHaveLength(4);
     expect(

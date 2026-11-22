@@ -35,7 +35,6 @@ export function EmailDemo() {
     <div
       className={styles.layer1}
       data-node-id="39:4655"
-      data-name="InnflowBrandStickyShowcase.MediaBlock"
     >
       <div
         className={styles.layer71}
@@ -50,7 +49,6 @@ export function EmailDemo() {
           <div
             className={styles.layer142}
             data-node-id="39:4658"
-            data-name="InnflowBrandAppWindow.Header"
           >
             <div
               className={styles.layer5}
@@ -60,17 +58,14 @@ export function EmailDemo() {
               <div
                 className={styles.layer6}
                 data-node-id="39:4660"
-                data-name="Text"
               />
               <div
                 className={styles.layer7}
                 data-node-id="39:4661"
-                data-name="Text"
               />
               <div
                 className={styles.layer8}
                 data-node-id="39:4662"
-                data-name="Text"
               />
             </div>
             <div
@@ -81,12 +76,10 @@ export function EmailDemo() {
               <div
                 className={styles.layer12}
                 data-node-id="39:4664"
-                data-name="Icon"
               >
                 <div
                   className={styles.layer144}
                   data-node-id="39:4665"
-                  data-name="Group"
                 >
                   <img
                     loading="lazy"
@@ -99,7 +92,6 @@ export function EmailDemo() {
               <div
                 className={styles.layer25}
                 data-node-id="39:4669"
-                data-name="Text"
               >
                 <p className={styles.layer145} data-node-id="39:8471">
                   Gmail
@@ -119,7 +111,6 @@ export function EmailDemo() {
                 <div
                   className={styles.layer12}
                   data-node-id="39:4673"
-                  data-name="CentralIconBase"
                 >
                   <img
                     loading="lazy"
@@ -131,7 +122,6 @@ export function EmailDemo() {
                 <div
                   className={styles.layer147}
                   data-node-id="39:4680"
-                  data-name="Text"
                 >
                   <p className={styles.layer51} data-node-id="39:8472">
                     Search mail
@@ -142,12 +132,10 @@ export function EmailDemo() {
             <div
               className={styles.layer148}
               data-node-id="39:4682"
-              data-name="InnflowBrandAppWindow.HeaderTrailing"
             >
               <div
                 className={styles.layer10}
                 data-node-id="39:4683"
-                data-name="CentralIconBase"
               >
                 <img
                   loading="lazy"
@@ -159,7 +147,6 @@ export function EmailDemo() {
               <div
                 className={styles.layer10}
                 data-node-id="39:4691"
-                data-name="CentralIconBase"
               >
                 <img
                   loading="lazy"
@@ -171,12 +158,10 @@ export function EmailDemo() {
               <div
                 className={styles.layer76}
                 data-node-id="39:4701"
-                data-name="LandingAvatarImage"
               >
                 <div
                   className={styles.layer77}
                   data-node-id="39:4702"
-                  data-name="Image (Max headshot)"
                 >
                   <img
                     loading="lazy"
@@ -191,7 +176,6 @@ export function EmailDemo() {
           <div
             className={styles.layer78}
             data-node-id="39:4703"
-            data-name="InnflowBrandAppWindow.Body"
           >
             <div
               className={styles.layer79}
@@ -206,17 +190,14 @@ export function EmailDemo() {
                 <div
                   className={styles.layer150}
                   data-node-id="39:4706"
-                  data-name="Button:margin"
                 >
                   <div
                     className={styles.layer151}
                     data-node-id="39:4707"
-                    data-name="Button"
                   >
                     <div
                       className={styles.layer10}
                       data-node-id="39:4708"
-                      data-name="CentralIconBase"
                     >
                       <img
                         loading="lazy"
@@ -238,7 +219,6 @@ export function EmailDemo() {
                   <div
                     className={styles.layer10}
                     data-node-id="39:4718"
-                    data-name="CentralIconBase"
                   >
                     <img
                       loading="lazy"
@@ -250,7 +230,6 @@ export function EmailDemo() {
                   <div
                     className={styles.layer154}
                     data-node-id="39:4725"
-                    data-name="Text"
                   >
                     <p className={styles.layer155} data-node-id="39:8474">
                       Inbox
@@ -259,7 +238,6 @@ export function EmailDemo() {
                   <div
                     className={styles.layer25}
                     data-node-id="39:4727"
-                    data-name="Text"
                   >
                     <p className={styles.layer155} data-node-id="39:8475">
                       24
@@ -274,7 +252,6 @@ export function EmailDemo() {
                   <div
                     className={styles.layer10}
                     data-node-id="39:4730"
-                    data-name="CentralIconBase"
                   >
                     <img
                       loading="lazy"
@@ -286,7 +263,6 @@ export function EmailDemo() {
                   <div
                     className={styles.layer157}
                     data-node-id="39:4737"
-                    data-name="Text"
                   >
                     <p className={styles.layer65} data-node-id="39:8476">
                       Starred
@@ -301,7 +277,6 @@ export function EmailDemo() {
                   <div
                     className={styles.layer10}
                     data-node-id="39:4740"
-                    data-name="CentralIconBase"
                   >
                     <img
                       loading="lazy"
@@ -313,7 +288,6 @@ export function EmailDemo() {
                   <div
                     className={styles.layer157}
                     data-node-id="39:4747"
-                    data-name="Text"
                   >
                     <p className={styles.layer65} data-node-id="39:8477">
                       Snoozed
@@ -328,7 +302,6 @@ export function EmailDemo() {
                   <div
                     className={styles.layer10}
                     data-node-id="39:4750"
-                    data-name="CentralIconBase"
                   >
                     <img
                       loading="lazy"
@@ -340,7 +313,6 @@ export function EmailDemo() {
                   <div
                     className={styles.layer157}
                     data-node-id="39:4757"
-                    data-name="Text"
                   >
                     <p className={styles.layer65} data-node-id="39:8478">
                       Sent
@@ -355,7 +327,6 @@ export function EmailDemo() {
                   <div
                     className={styles.layer10}
                     data-node-id="39:4760"
-                    data-name="CentralIconBase"
                   >
                     <img
                       loading="lazy"
@@ -367,7 +338,6 @@ export function EmailDemo() {
                   <div
                     className={styles.layer158}
                     data-node-id="39:4770"
-                    data-name="Text"
                   >
                     <p className={styles.layer65} data-node-id="39:8479">
                       Drafts
@@ -376,7 +346,6 @@ export function EmailDemo() {
                   <div
                     className={styles.layer25}
                     data-node-id="39:4772"
-                    data-name="Text"
                   >
                     <p className={styles.layer65} data-node-id="39:8480">
                       3
@@ -398,7 +367,6 @@ export function EmailDemo() {
                 <div
                   className={styles.layer10}
                   data-node-id="39:4776"
-                  data-name="CentralIconBase"
                 >
                   <img
                     loading="lazy"
@@ -410,18 +378,15 @@ export function EmailDemo() {
                 <div
                   className={styles.layer161}
                   data-node-id="39:4784"
-                  data-name="Text:margin"
                 >
                   <div
                     className={styles.layer162}
                     data-node-id="39:4785"
-                    data-name="Text"
                   />
                 </div>
                 <div
                   className={styles.layer10}
                   data-node-id="39:4786"
-                  data-name="CentralIconBase"
                 >
                   <img
                     loading="lazy"
@@ -433,7 +398,6 @@ export function EmailDemo() {
                 <div
                   className={styles.layer10}
                   data-node-id="39:4795"
-                  data-name="CentralIconBase"
                 >
                   <img
                     loading="lazy"
@@ -445,7 +409,6 @@ export function EmailDemo() {
                 <div
                   className={styles.layer10}
                   data-node-id="39:4806"
-                  data-name="CentralIconBase"
                 >
                   <img
                     loading="lazy"
@@ -457,7 +420,6 @@ export function EmailDemo() {
                 <div
                   className={styles.layer10}
                   data-node-id="39:4813"
-                  data-name="CentralIconBase"
                 >
                   <img
                     loading="lazy"
@@ -484,7 +446,6 @@ export function EmailDemo() {
                 <div
                   className={styles.layer165}
                   data-node-id="39:4828"
-                  data-name="Text"
                 >
                   <p className={styles.layer51} data-node-id="39:8482">
                     Inbox
@@ -493,12 +454,10 @@ export function EmailDemo() {
                 <div
                   className={styles.layer123}
                   data-node-id="39:4830"
-                  data-name="CentralIconBase:align"
                 >
                   <div
                     className={styles.layer10}
                     data-node-id="39:4831"
-                    data-name="CentralIconBase"
                   >
                     <img
                       loading="lazy"
@@ -517,19 +476,16 @@ export function EmailDemo() {
                 <EmailPreview
                   className={styles.layer167}
                   data-node-id="39:4839"
-                  data-name="Button"
                   label="Read sourcing request"
                   body="We are looking for video producers in the San Francisco area with B2B experience. Can you source leads and update Ashby?"
                 >
                   <div
                     className={styles.layer76}
                     data-node-id="39:4840"
-                    data-name="LandingAvatarImage"
                   >
                     <div
                       className={styles.layer77}
                       data-node-id="39:4841"
-                      data-name="Image (Aron)"
                     >
                       <img
                         loading="lazy"
@@ -542,7 +498,6 @@ export function EmailDemo() {
                   <div
                     className={styles.layer25}
                     data-node-id="39:4842"
-                    data-name="Text"
                   >
                     <p className={styles.layer24} data-node-id="39:8483">
                       Aron
@@ -551,7 +506,6 @@ export function EmailDemo() {
                   <div
                     className={styles.layer168}
                     data-node-id="39:4844"
-                    data-name="Text"
                   >
                     <p
                       className={styles.layer169}
@@ -561,7 +515,6 @@ export function EmailDemo() {
                   <div
                     className={styles.layer25}
                     data-node-id="39:4846"
-                    data-name="Text"
                   >
                     <p className={styles.layer51} data-node-id="39:8485">
                       2:34 PM
@@ -571,19 +524,16 @@ export function EmailDemo() {
                 <EmailPreview
                   className={styles.layer167}
                   data-node-id="39:4848"
-                  data-name="Button"
                   label="Read candidate results"
                   body="Found four matches with B2B experience: Maya Tran, Tess Holloway, Nate Fuentes, and Ryan Park. The example shortlist includes their experience and availability."
                 >
                   <div
                     className={styles.layer170}
                     data-node-id="39:4849"
-                    data-name="InnflowLandingMockAvatar"
                   >
                     <div
                       className={styles.layer171}
                       data-node-id="39:4850"
-                      data-name="Icon"
                     >
                       <img
                         loading="lazy"
@@ -596,7 +546,6 @@ export function EmailDemo() {
                   <div
                     className={styles.layer25}
                     data-node-id="39:4854"
-                    data-name="Text"
                   >
                     <p className={styles.layer24} data-node-id="39:8486">
                       Innflow
@@ -605,7 +554,6 @@ export function EmailDemo() {
                   <div
                     className={styles.layer172}
                     data-node-id="39:4856"
-                    data-name="Text"
                   >
                     <p
                       className={styles.layer173}
@@ -615,7 +563,6 @@ export function EmailDemo() {
                   <div
                     className={styles.layer25}
                     data-node-id="39:4858"
-                    data-name="Text"
                   >
                     <p className={styles.layer51} data-node-id="39:8488">
                       2:35 PM
@@ -625,19 +572,16 @@ export function EmailDemo() {
                 <EmailPreview
                   className={styles.layer167}
                   data-node-id="39:4860"
-                  data-name="Button"
                   label="Read drafting request"
                   body="Draft outreach to the top two and save to my Gmail drafts."
                 >
                   <div
                     className={styles.layer76}
                     data-node-id="39:4861"
-                    data-name="LandingAvatarImage"
                   >
                     <div
                       className={styles.layer77}
                       data-node-id="39:4862"
-                      data-name="Image (Aron)"
                     >
                       <img
                         loading="lazy"
@@ -650,7 +594,6 @@ export function EmailDemo() {
                   <div
                     className={styles.layer25}
                     data-node-id="39:4863"
-                    data-name="Text"
                   >
                     <p className={styles.layer24} data-node-id="39:8489">
                       Aron
@@ -659,7 +602,6 @@ export function EmailDemo() {
                   <div
                     className={styles.layer174}
                     data-node-id="39:4865"
-                    data-name="Text"
                   >
                     <p className={styles.layer51} data-node-id="39:8490">
                       Draft outreach to the top two and save to my Gmail drafts.
@@ -668,7 +610,6 @@ export function EmailDemo() {
                   <div
                     className={styles.layer25}
                     data-node-id="39:4867"
-                    data-name="Text"
                   >
                     <p className={styles.layer51} data-node-id="39:8491">
                       2:37 PM
@@ -688,12 +629,10 @@ export function EmailDemo() {
                     <div
                       className={styles.layer177}
                       data-node-id="39:4871"
-                      data-name="InnflowLandingMockAvatar"
                     >
                       <div
                         className={styles.layer178}
                         data-node-id="39:4872"
-                        data-name="Icon"
                       >
                         <img
                           loading="lazy"
@@ -716,7 +655,6 @@ export function EmailDemo() {
                         <div
                           className={styles.layer25}
                           data-node-id="39:4878"
-                          data-name="Text"
                         >
                           <p className={styles.layer47} data-node-id="39:8492">
                             Innflow
@@ -725,7 +663,6 @@ export function EmailDemo() {
                         <div
                           className={styles.layer25}
                           data-node-id="39:4880"
-                          data-name="Text"
                         >
                           <p
                             className={styles.layer51}
@@ -735,17 +672,14 @@ export function EmailDemo() {
                         <div
                           className={styles.layer123}
                           data-node-id="39:4882"
-                          data-name="Text:align"
                         >
                           <div
                             className={styles.layer143}
                             data-node-id="39:4883"
-                            data-name="Text"
                           >
                             <div
                               className={styles.layer25}
                               data-node-id="39:4884"
-                              data-name="Text"
                             >
                               <p
                                 className={styles.layer51}
@@ -757,7 +691,6 @@ export function EmailDemo() {
                             <div
                               className={styles.layer10}
                               data-node-id="39:4886"
-                              data-name="CentralIconBase"
                             >
                               <img
                                 loading="lazy"
@@ -769,7 +702,6 @@ export function EmailDemo() {
                             <div
                               className={styles.layer10}
                               data-node-id="39:4893"
-                              data-name="CentralIconBase"
                             >
                               <img
                                 loading="lazy"
@@ -792,7 +724,6 @@ export function EmailDemo() {
                         <div
                           className={styles.layer27}
                           data-node-id="39:4902"
-                          data-name="CentralIconBase"
                         >
                           <img
                             loading="lazy"
@@ -824,13 +755,11 @@ export function EmailDemo() {
                 <EmailAction
                   className={styles.layer184}
                   data-node-id="39:4912"
-                  data-name="Button"
                   action="Reply"
                 >
                   <div
                     className={styles.layer10}
                     data-node-id="39:4913"
-                    data-name="CentralIconBase"
                   >
                     <img
                       loading="lazy"
@@ -846,13 +775,11 @@ export function EmailDemo() {
                 <EmailAction
                   className={styles.layer184}
                   data-node-id="39:4921"
-                  data-name="Button"
                   action="Forward"
                 >
                   <div
                     className={styles.layer10}
                     data-node-id="39:4922"
-                    data-name="CentralIconBase"
                   >
                     <img
                       loading="lazy"

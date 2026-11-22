@@ -989,3 +989,9 @@
     height: 30px;
   }
 }
+
+.recentPosts {
+  max-width: 1160px;
+  margin-inline: auto;
+  padding: clamp(64px, 8vw, 120px) 24px;
+}

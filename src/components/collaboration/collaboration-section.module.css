@@ -120,6 +120,7 @@
   }
 }
 .viewport {
+  content-visibility: auto;
   position: relative;
   aspect-ratio: 900 / 587.5;
 }
@@ -217,6 +218,7 @@
   }
   .viewport {
     aspect-ratio: auto;
+    contain-intrinsic-block-size: auto 588px;
   }
   .stage {
     width: 100%;

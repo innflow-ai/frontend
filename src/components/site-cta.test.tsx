@@ -16,7 +16,9 @@ it.each(["/", "/blog", "/products/ai-agents", "/legal/privacy-policy"])(
     const footer = screen.getByRole("contentinfo");
     const featured = screen.getByRole("heading", { name: "Featured on" });
     expect(featured).toHaveAttribute("data-mixed-heading", "true");
-    expect(footer).not.toContainElement(featured);
+    expect(footer.compareDocumentPosition(featured)).toBe(
+      pathname === "/" ? Node.DOCUMENT_POSITION_FOLLOWING : Node.DOCUMENT_POSITION_PRECEDING,
+    );
     expect(screen.getAllByRole("form")).toHaveLength(1);
 
     const signup = within(footer).getByRole("form", {

@@ -17,7 +17,6 @@ const states = [
     id: "scheduling",
     label: "Bot mode",
     heading: "Teach your bot a task.",
-    icon: "bot-mode-head.svg",
     href: "/products/ai-agents",
     badge: "",
     body: (
@@ -32,9 +31,8 @@ const states = [
   {
     demo: "flow",
     id: "callie",
-    label: "Flow",
+    label: "Flows",
     heading: "Track every handoff.",
-    icon: "flow.svg",
     href: "/features/workflows",
     badge: "",
     body: (
@@ -51,7 +49,6 @@ const states = [
     id: "notetaker",
     label: "Channels",
     heading: "Bring your bot into the conversation.",
-    icon: "channels.svg",
     href: "#workflows",
     badge: "New",
     body: (
@@ -68,7 +65,6 @@ const states = [
     id: "payments",
     label: "Computer",
     heading: "Let your bot handle the clicks.",
-    icon: "computer.svg",
     href: "#insights",
     badge: "New",
     body: (
@@ -220,7 +216,7 @@ export function ScrollShowcase() {
                     aria-controls={`panel-${state.id}`}
                     aria-label={state.label}
                     tabIndex={active === index ? 0 : -1}
-                    style={{ "--accent": state.accent } as CSSProperties}
+                    style={{ "--accent": state.accent, "--hover-face": `url("${assets}/${state.demo}-squircle-hover.svg")` } as CSSProperties}
                     onClick={() => select(index)}
                     onKeyDown={(event) => {
                       let next = index;
@@ -236,7 +232,7 @@ export function ScrollShowcase() {
                     }}
                   >
                     <Image
-                      src={`${assets}/${state.icon}`}
+                      src={`${assets}/${state.demo}-squircle${active === index ? "-pressed" : "-rest"}.svg`}
                       alt=""
                       width={28}
                       height={28}
@@ -265,7 +261,7 @@ export function ScrollShowcase() {
                     <div className={styles.copy}>
                       <div className={styles.label} data-demo-label={state.demo}>
                         <Image
-                          src={`${assets}/${state.icon}`}
+                          src={`${assets}/${state.demo}-button.svg`}
                           alt=""
                           width={24}
                           height={24}

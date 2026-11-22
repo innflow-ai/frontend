@@ -92,13 +92,12 @@ const providers = [
 ];
 
 function iconPath(section: string, name: string) {
-  return (
-    "/brand/navigation/menu/" +
-    section +
-    "-" +
-    name.toLowerCase().replace(/[^a-z0-9]+/g, "-") +
-    ".png"
-  );
+  const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+  if (section === "models" || section === "integrations") {
+    const prefix = section === "models" ? "models" : "solutions";
+    return `/brand/navigation/menu/${prefix}-${slug}.png`;
+  }
+  return `/brand/navigation/outline-buttons/${slug}.svg`;
 }
 
 function MenuItem({
@@ -222,7 +221,7 @@ export function NavigationMenu({
         <div className={styles.chips}>
           {integrations.map((item) => (
             <MenuItem
-              section="solutions"
+              section="integrations"
               key={item.name}
               item={item}
               close={close}

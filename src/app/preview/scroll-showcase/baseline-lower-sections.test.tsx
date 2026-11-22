@@ -253,16 +253,13 @@ itWhenStoriesShown(
     expect(screen.getByText("Second Person")).toBeVisible();
   },
 );
-it("shows the integration pillar poster and both infrastructure cards before playback", () => {
+it("shows the integration pillar poster before playback", () => {
   render(<BaselineConnectedInfrastructure />);
   expect(screen.queryByText("Connected infrastructure")).toBeNull();
   expect(screen.getByRole("heading", { level: 2 })).toHaveTextContent(
     "Connect the tools behind your work.",
   );
-  expect(screen.getAllByRole("heading", { level: 3 })).toHaveLength(2);
-  expect(
-    screen.getByRole("heading", { name: "Support channels" }),
-  ).toBeVisible();
+  expect(screen.queryByRole("heading", { level: 3 })).toBeNull();
   expect(screen.getByRole("group", { name: "Integration pillars" })).toBeVisible();
   expect(screen.getByRole("img", { name: /^Integrations:/ })).toHaveAttribute(
     "src", expect.stringContaining("integration-pillars"),

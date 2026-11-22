@@ -69,15 +69,15 @@ it.each([false, true])(
     scroll(100);
     expect(pan() > initial).toBe(!reduced);
     const afterScroll = pan();
-    fireEvent.click(screen.getByRole("tab", { name: "Flow" }));
-    expect(screen.getByRole("tab", { name: "Flow" })).toHaveAttribute(
+    fireEvent.click(screen.getByRole("tab", { name: "Flows" }));
+    expect(screen.getByRole("tab", { name: "Flows" })).toHaveAttribute(
       "aria-selected",
       "true",
     );
     expect(pan() > afterScroll).toBe(!reduced);
     expect(window.scrollTo).not.toHaveBeenCalled();
     scroll(-100);
-    expect(screen.getByRole("tab", { name: "Flow" })).toHaveAttribute(
+    expect(screen.getByRole("tab", { name: "Flows" })).toHaveAttribute(
       "aria-selected",
       "true",
     );
@@ -134,7 +134,7 @@ it("offers Google, email and the general sign-in page", () => {
   expect(screen.queryByText(/01 \/ 04/)).not.toBeInTheDocument();
   const destinations = [
     ["Bot mode", "/products/ai-agents", "Teach your bot a task."],
-    ["Flow", "/features/workflows", "Track every handoff."],
+    ["Flows", "/features/workflows", "Track every handoff."],
     ["Channels", "#workflows", "Bring your bot into the conversation."],
     ["Computer", "#insights", "Let your bot handle the clicks."],
   ];
@@ -156,7 +156,7 @@ it("offers Google, email and the general sign-in page", () => {
   expect(
     within(bot).getByRole("img", { name: /records a weekly analytics report/ }),
   ).toBeInTheDocument();
-  fireEvent.click(screen.getByRole("tab", { name: "Flow" }));
+  fireEvent.click(screen.getByRole("tab", { name: "Flows" }));
   expect(
     screen.getByRole("img", {
       name: /influencer outreach workflow/,

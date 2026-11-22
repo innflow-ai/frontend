@@ -46,11 +46,15 @@ export function useCollaborationScroll(onSelect: (index: number) => void) {
     let frame = 0;
     let disposed = false;
     const requestUpdate = () => {
-      if (!frame)
-        frame = requestAnimationFrame(() => {
-          frame = 0;
-          update();
-        });
+      const { start, span, ready } = geometry.current;
+      if (!ready || frame) return;
+      const y = window.scrollY;
+      if ((y <= start && selected.current === 0) ||
+          (y >= start + span && selected.current === stops.length - 1)) return;
+      frame = requestAnimationFrame(() => {
+        frame = 0;
+        update();
+      });
     };
     const measure = () => {
       if (disposed) return;

@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useCallback, useEffect, useRef, useState } from "react";
-import { ChevronLeft as ArrowLeft, ArrowRight } from "@/components/icons/mage";
+import { useEffect, useRef, useState } from "react";
+import pager from "./carousel-pagination.module.css";
 import { TrackedLink } from "@/components/tracked-link";
 import styles from "./blog-carousel.module.css";
 
@@ -21,51 +21,47 @@ export function BlogCarousel({ posts }: { posts: BlogCarouselPost[] }) {
   const trackRef = useRef<HTMLUListElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [visibleCount, setVisibleCount] = useState(1);
-  const [canScrollBack, setCanScrollBack] = useState(false);
-  const [canScrollForward, setCanScrollForward] = useState(posts.length > 1);
-
-  const updatePosition = useCallback(() => {
-    const track = trackRef.current;
-    const firstSlide = track?.firstElementChild as HTMLElement | null;
-    if (!track || !firstSlide) return;
-
-    const gap = Number.parseFloat(getComputedStyle(track).columnGap) || 0;
-    const step = firstSlide.getBoundingClientRect().width + gap;
-    const maxScroll = track.scrollWidth - track.clientWidth;
-    setVisibleCount(
-      Math.max(1, Math.floor((track.clientWidth + gap + 1) / step)),
-    );
-
-    setActiveIndex(
-      Math.min(posts.length - 1, Math.round(track.scrollLeft / step)),
-    );
-    setCanScrollBack(track.scrollLeft > 2);
-    setCanScrollForward(track.scrollLeft < maxScroll - 2);
-  }, [posts.length]);
+  const slideStep = useRef(0);
 
   useEffect(() => {
     const track = trackRef.current;
-    if (!track) return;
-
-    updatePosition();
-    track.addEventListener("scroll", updatePosition, { passive: true });
-    const observer = new ResizeObserver(updatePosition);
-    observer.observe(track);
-
-    return () => {
-      track.removeEventListener("scroll", updatePosition);
-      observer.disconnect();
-    };
-  }, [updatePosition]);
-
-  const scroll = (direction: -1 | 1, keyboard: boolean) => {
-    const track = trackRef.current;
-    const firstSlide = track?.firstElementChild as HTMLElement | null;
+    const firstSlide = track?.firstElementChild;
     if (!track || !firstSlide) return;
 
-    const gap = Number.parseFloat(getComputedStyle(track).columnGap) || 0;
-    track.scrollBy({
-      left: direction * (firstSlide.getBoundingClientRect().width + gap),
+    let frame = 0;
+    function updatePosition() {
+      frame = 0;
+      if (!track || !slideStep.current) return;
+      const left = Math.max(0, track.scrollLeft);
+      setActiveIndex(Math.min(posts.length - 1, Math.round(left / slideStep.current)));
+    }
+    function onScroll() {
+      if (!frame) frame = requestAnimationFrame(updatePosition);
+    }
+    const measure = () => {
+      const gap = Number.parseFloat(getComputedStyle(track).columnGap) || 0;
+      slideStep.current = firstSlide.getBoundingClientRect().width + gap;
+      if (!slideStep.current) return;
+      setVisibleCount(Math.max(1, Math.floor((track.clientWidth + gap + 1) / slideStep.current)));
+      onScroll();
+    };
+    measure();
+    track.addEventListener("scroll", onScroll, { passive: true });
+    const observer = new ResizeObserver(measure);
+    observer.observe(track);
+    observer.observe(firstSlide);
+    return () => {
+      cancelAnimationFrame(frame);
+      track.removeEventListener("scroll", onScroll);
+      observer.disconnect();
+    };
+  }, [posts.length]);
+
+  const scroll = (index: number, keyboard: boolean) => {
+    const track = trackRef.current;
+    if (!track || !slideStep.current) return;
+    track.scrollTo({
+      left: index * slideStep.current,
       behavior:
         keyboard ||
         window.matchMedia("(prefers-reduced-motion: reduce)").matches
@@ -80,36 +76,6 @@ export function BlogCarousel({ posts }: { posts: BlogCarouselPost[] }) {
       aria-label="Recent blog posts"
       aria-roledescription="carousel"
     >
-      <div className={styles.controls}>
-        <span className={styles.status} aria-live="polite">
-          {String(activeIndex + 1).padStart(2, "0")}
-          {visibleCount > 1
-            ? `–${String(Math.min(posts.length, activeIndex + visibleCount)).padStart(2, "0")}`
-            : ""}{" "}
-          / {String(posts.length).padStart(2, "0")}
-        </span>
-        <div className={styles.buttons}>
-          <button
-            aria-label="Show previous blog post"
-            className={styles.button}
-            disabled={!canScrollBack}
-            onClick={(event) => scroll(-1, event.detail === 0)}
-            type="button"
-          >
-            <ArrowLeft aria-hidden="true" size={18} />
-          </button>
-          <button
-            aria-label="Show next blog post"
-            className={styles.button}
-            disabled={!canScrollForward}
-            onClick={(event) => scroll(1, event.detail === 0)}
-            type="button"
-          >
-            <ArrowRight aria-hidden="true" size={18} />
-          </button>
-        </div>
-      </div>
-
       <ul className={styles.track} ref={trackRef}>
         {posts.map((post) => (
           <li className={styles.slide} key={post.slug}>
@@ -124,7 +90,7 @@ export function BlogCarousel({ posts }: { posts: BlogCarouselPost[] }) {
                     alt={post.coverImageAlt}
                     className={styles.image}
                     fill
-                    sizes="(max-width: 720px) 84vw, (max-width: 980px) 48vw, 31vw"
+                    sizes="(max-width: 720px) min(84vw, 350px), (max-width: 980px) 48vw, (max-width: 1160px) 31vw, 360px"
                     src={post.coverImageUrl}
                   />
                 ) : (
@@ -149,6 +115,21 @@ export function BlogCarousel({ posts }: { posts: BlogCarouselPost[] }) {
           </li>
         ))}
       </ul>
+      {posts.length > visibleCount && (
+        <fieldset className={pager.controls} aria-label="Choose blog posts">
+          {posts.slice(0, posts.length - visibleCount + 1).map((post, index) => (
+            <button
+              type="button"
+              key={post.slug}
+              aria-label={`Show posts starting with ${post.title}`}
+              aria-pressed={activeIndex === index}
+              onClick={(event) => scroll(index, event.detail === 0)}
+            >
+              <span />
+            </button>
+          ))}
+        </fieldset>
+      )}
     </section>
   );
 }

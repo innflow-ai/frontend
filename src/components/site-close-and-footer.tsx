@@ -11,10 +11,12 @@ import { SiteFooter } from "./site-footer";
 export function SiteCloseAndFooter() {
   const pathname = usePathname();
   if (pathname === "/help") return null;
+  const home = pathname === "/";
   return (
     <>
-      <LaunchDirectoryMarquee />
-      <SiteFooter home={pathname === "/"} />
+      {!home && <LaunchDirectoryMarquee />}
+      <SiteFooter home={home} />
+      {home && <LaunchDirectoryMarquee />}
     </>
   );
 }

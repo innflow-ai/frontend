@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-360 -36.5 1440 438">
+  <view id="mobile" viewBox="-360 -125 1440 615"/>
+  <defs>
+    <pattern id="floor" patternUnits="userSpaceOnUse" x="234" y="48" width="126" height="56">
+      <path d="M0 28 63 0l63 28-63 28Z" fill="none" stroke="#a6adb7" stroke-opacity=".55" stroke-width=".85"/>
+    </pattern>
+    <radialGradient id="fade">
+      <stop offset=".48" stop-color="white"/>
+      <stop offset="1" stop-color="black"/>
+    </radialGradient>
+    <clipPath id="artboard"><rect width="720" height="365"/></clipPath>
+    <mask id="extension" maskUnits="userSpaceOnUse" x="-360" y="-125" width="1440" height="615">
+      <rect x="-360" y="-125" width="1440" height="615" fill="url(#fade)"/>
+      <!-- The original floor spans eight columns and six rows inside the artboard. -->
+      <path d="M297 -8 801 216 423 384 -81 160Z" fill="black" clip-path="url(#artboard)"/>
+    </mask>
+  </defs>
+  <rect x="-360" y="-125" width="1440" height="615" fill="url(#floor)" mask="url(#extension)"/>
+</svg>

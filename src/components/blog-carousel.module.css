@@ -3,55 +3,6 @@
   margin-top: 56px;
 }
 
-.controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  margin-bottom: 20px;
-}
-
-.status {
-  color: var(--sky-muted);
-  font-size: 0.82rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-}
-
-.buttons {
-  display: flex;
-  gap: 10px;
-}
-
-.button {
-  display: inline-grid;
-  width: 44px;
-  height: 44px;
-  place-items: center;
-  border: 1px solid var(--sky-line);
-  border-radius: 50%;
-  background: #fff;
-  color: var(--sky-ink);
-  cursor: pointer;
-  transition:
-    border-color 180ms ease,
-    background-color 180ms ease,
-    color 180ms ease,
-    transform 180ms ease;
-}
-
-.button:hover:not(:disabled) {
-  border-color: var(--sky-blue);
-  background: var(--sky-blue);
-  color: #fff;
-  transform: translateY(-1px);
-}
-
-.button:disabled {
-  cursor: default;
-  opacity: 0.32;
-}
-
 .track {
   display: grid;
   grid-auto-columns: calc((100% - (var(--carousel-gap) * 2)) / 3);
@@ -63,6 +14,26 @@
   overscroll-behavior-inline: contain;
   scroll-behavior: smooth;
   scroll-snap-type: inline mandatory;
+}
+
+/* The app uses a transparent track and a narrow, rounded thumb. */
+.track {
+  --scroll-thumb: color-mix(in srgb, #798692 54%, transparent);
+  scrollbar-color: var(--scroll-thumb) transparent;
+  scrollbar-width: thin;
+}
+@supports selector(::-webkit-scrollbar) {
+  .track {
+    scrollbar-color: auto;
+    scrollbar-width: auto;
+  }
+  .track::-webkit-scrollbar { height: 2px; }
+  .track::-webkit-scrollbar-track { background: transparent; }
+  .track::-webkit-scrollbar-thumb {
+    background: var(--scroll-thumb);
+    border-radius: 999px;
+  }
+  .track::-webkit-scrollbar-thumb:hover { background: #798692; }
 }
 
 .slide {
@@ -183,10 +154,6 @@
     margin-top: 40px;
   }
 
-  .controls {
-    margin-bottom: 16px;
-  }
-
   .track {
     grid-auto-columns: min(84vw, 350px);
   }
@@ -197,7 +164,6 @@
     scroll-behavior: auto;
   }
 
-  .button,
   .card,
   .image {
     transition: none;

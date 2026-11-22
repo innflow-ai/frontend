@@ -9,7 +9,7 @@ import {
   useState,
 } from "react";
 import { ChevronRight } from "@/components/chevron-right";
-import { BotIcon } from "@/components/icons/bot-icon";
+import Image from "next/image";
 import {
   Chart,
   ChartUp,
@@ -32,10 +32,10 @@ import { StoryboardArtwork } from "./storyboard-artwork";
 import { useChannelsScroll } from "./use-channels-scroll";
 
 const featureIcons = {
-  channels: BotIcon,
-  agents: Share,
-  workflows: StarsA,
-  insights: Chart,
+  channels: "bot",
+  agents: "flow",
+  workflows: "channels",
+  insights: "computer",
 };
 const itemIcons = {
   channels: [MessageConversation, Users, Settings, Link, Inbox, ChartUp],
@@ -58,7 +58,7 @@ export const baselineFeatures: Feature[] = [
   {
     id: "channels",
     node: "350:11199",
-    label: "AI agent",
+    label: "Bot mode",
     title: "Get more done\nwith AI agents.",
     heading: {
       title: "Get more done",
@@ -73,7 +73,7 @@ export const baselineFeatures: Feature[] = [
   {
     id: "agents",
     node: "350:11344",
-    label: "Workflows",
+    label: "Flows",
     title: "Move work forward\nwith less effort.",
     heading: {
       title: "Move work forward",
@@ -89,7 +89,7 @@ export const baselineFeatures: Feature[] = [
   {
     id: "workflows",
     node: "350:11402",
-    label: "Assistant",
+    label: "Channels",
     title: "Spend less time\nmanaging requests.",
     heading: {
       title: (
@@ -104,7 +104,7 @@ export const baselineFeatures: Feature[] = [
   {
     id: "insights",
     node: "350:11485",
-    label: "Insights",
+    label: "Computer",
     title: "Know where\nto focus next.",
     heading: {
       title: "Know where",
@@ -196,7 +196,6 @@ function BaselineFeature({ feature }: { feature: Feature }) {
     select(next);
     buttons.current[next]?.focus({ preventScroll: channelScroll.enabled });
   }
-  const FeatureIcon = featureIcons[feature.id as keyof typeof featureIcons];
   const visual = (
     <div
       ref={channelScroll.visualRef}
@@ -226,7 +225,7 @@ function BaselineFeature({ feature }: { feature: Feature }) {
         <div className={styles.copy}>
           <header className={styles.heading}>
             <div className={styles.sectionTag}>
-              <FeatureIcon size={24} />
+              <Image src={`/preview/scroll-showcase/${featureIcons[feature.id]}-squircle.svg`} width={24} height={24} alt="" />
               <span>{feature.label}</span>
             </div>
             <h2 id={`${feature.id}-baseline-heading`} data-mixed-heading>

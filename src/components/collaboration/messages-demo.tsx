@@ -22,7 +22,6 @@ export function MessagesDemo() {
     <div
       className={styles.layer185}
       data-node-id="39:4930"
-      data-name="InnflowBrandStickyShowcase.MediaBlock"
     >
       <div
         className={styles.layer71}
@@ -57,33 +56,27 @@ export function MessagesDemo() {
                   <div
                     className={styles.layer5}
                     data-node-id="39:4937"
-                    data-name="Text"
                   >
                     <div
                       className={styles.layer191}
                       data-node-id="39:4938"
-                      data-name="Text"
                     />
                     <div
                       className={styles.layer192}
                       data-node-id="39:4939"
-                      data-name="Text"
                     />
                     <div
                       className={styles.layer193}
                       data-node-id="39:4940"
-                      data-name="Text"
                     />
                   </div>
                   <div
                     className={styles.layer194}
                     data-node-id="39:4941"
-                    data-name="Text"
                   >
                     <div
                       className={styles.layer195}
                       data-node-id="39:4942"
-                      data-name="CentralIconBase"
                     >
                       <img
                         loading="lazy"
@@ -107,7 +100,6 @@ export function MessagesDemo() {
                     <div
                       className={styles.layer195}
                       data-node-id="39:4951"
-                      data-name="CentralIconBase"
                     >
                       <img
                         loading="lazy"
@@ -134,22 +126,18 @@ export function MessagesDemo() {
                     <div
                       className={styles.layer200}
                       data-node-id="39:4961"
-                      data-name="Button"
                     >
                       <div
                         className={styles.layer201}
                         data-node-id="39:4962"
-                        data-name="Text"
                       >
                         <div
                           className={styles.layer202}
                           data-node-id="39:4963"
-                          data-name="Icon"
                         >
                           <div
                             className={styles.layer203}
                             data-node-id="39:4964"
-                            data-name="Group"
                           >
                             <img
                               loading="lazy"
@@ -173,7 +161,6 @@ export function MessagesDemo() {
                           <div
                             className={styles.layer206}
                             data-node-id="39:4968"
-                            data-name="Text"
                           >
                             <p
                               className={styles.layer207}
@@ -206,22 +193,18 @@ export function MessagesDemo() {
                     <div
                       className={styles.layer211}
                       data-node-id="39:4974"
-                      data-name="Button"
                     >
                       <div
                         className={styles.layer212}
                         data-node-id="39:4975"
-                        data-name="Text"
                       >
                         <div
                           className={styles.layer202}
                           data-node-id="39:4976"
-                          data-name="Icon"
                         >
                           <div
                             className={styles.layer213}
                             data-node-id="39:4977"
-                            data-name="Group"
                           >
                             <img
                               loading="lazy"
@@ -245,7 +228,6 @@ export function MessagesDemo() {
                           <div
                             className={styles.layer214}
                             data-node-id="39:4981"
-                            data-name="Text"
                           >
                             <p
                               className={styles.layer215}
@@ -272,18 +254,15 @@ export function MessagesDemo() {
                     <div
                       className={styles.layer218}
                       data-node-id="39:4986"
-                      data-name="Text"
                     />
                   </div>
                   <div
                     className={styles.layer219}
                     data-node-id="39:4987"
-                    data-name="Text:margin"
                   >
                     <div
                       className={styles.layer220}
                       data-node-id="39:4988"
-                      data-name="Text"
                     />
                   </div>
                   <div
@@ -294,22 +273,18 @@ export function MessagesDemo() {
                     <div
                       className={styles.layer211}
                       data-node-id="39:4990"
-                      data-name="Button"
                     >
                       <div
                         className={styles.layer221}
                         data-node-id="39:4991"
-                        data-name="Text"
                       >
                         <div
                           className={styles.layer202}
                           data-node-id="39:4992"
-                          data-name="Icon"
                         >
                           <div
                             className={styles.layer222}
                             data-node-id="39:4993"
-                            data-name="Group"
                           >
                             <img
                               loading="lazy"
@@ -333,7 +308,6 @@ export function MessagesDemo() {
                           <div
                             className={styles.layer223}
                             data-node-id="39:4997"
-                            data-name="Text"
                           >
                             <p
                               className={styles.layer215}
@@ -362,12 +336,10 @@ export function MessagesDemo() {
                   <div
                     className={styles.layer219}
                     data-node-id="39:5002"
-                    data-name="Text:margin"
                   >
                     <div
                       className={styles.layer220}
                       data-node-id="39:5003"
-                      data-name="Text"
                     />
                   </div>
                   <div
@@ -378,22 +350,18 @@ export function MessagesDemo() {
                     <div
                       className={styles.layer211}
                       data-node-id="39:5005"
-                      data-name="Button"
                     >
                       <div
                         className={styles.layer227}
                         data-node-id="39:5006"
-                        data-name="Text"
                       >
                         <div
                           className={styles.layer202}
                           data-node-id="39:5007"
-                          data-name="Icon"
                         >
                           <div
                             className={styles.layer228}
                             data-node-id="39:5008"
-                            data-name="Group"
                           >
                             <img
                               loading="lazy"
@@ -417,7 +385,6 @@ export function MessagesDemo() {
                           <div
                             className={styles.layer229}
                             data-node-id="39:5012"
-                            data-name="Text"
                           >
                             <p
                               className={styles.layer215}
@@ -459,12 +426,10 @@ export function MessagesDemo() {
                 <div
                   className={styles.layer233}
                   data-node-id="39:5019"
-                  data-name="Text"
                 >
                   <div
                     className={styles.layer195}
                     data-node-id="39:5020"
-                    data-name="CentralIconBase"
                   >
                     <img
                       loading="lazy"
@@ -477,12 +442,10 @@ export function MessagesDemo() {
                 <div
                   className={styles.layer233}
                   data-node-id="39:5028"
-                  data-name="Text"
                 >
                   <div
                     className={styles.layer195}
                     data-node-id="39:5029"
-                    data-name="CentralIconBase"
                   >
                     <img
                       loading="lazy"
@@ -500,22 +463,18 @@ export function MessagesDemo() {
                   <div
                     className={styles.layer235}
                     data-node-id="39:5038"
-                    data-name="Placeholder for InnflowBrandAppWindow.Main"
                   />
                   <div
                     className={styles.layer236}
                     data-node-id="39:5039"
-                    data-name="Text:margin"
                   >
                     <div
                       className={styles.layer237}
                       data-node-id="39:5040"
-                      data-name="Text"
                     >
                       <div
                         className={styles.layer238}
                         data-node-id="39:5041"
-                        data-name="Text"
                       >
                         <p className={styles.layer239} data-node-id="39:8512">
                           Assistant
@@ -523,7 +482,6 @@ export function MessagesDemo() {
                         <div
                           className={styles.layer240}
                           data-node-id="39:5043"
-                          data-name="CentralIconBase"
                         >
                           <img
                             loading="lazy"
@@ -541,17 +499,14 @@ export function MessagesDemo() {
                   <div
                     className={styles.layer242}
                     data-node-id="39:5051"
-                    data-name="Text"
                   >
                     <div
                       className={styles.layer243}
                       data-node-id="39:5052"
-                      data-name="Icon"
                     >
                       <div
                         className={styles.layer203}
                         data-node-id="39:5053"
-                        data-name="Group"
                       >
                         <img
                           loading="lazy"
@@ -600,12 +555,10 @@ export function MessagesDemo() {
                       <div
                         className={styles.layer253}
                         data-node-id="39:5062"
-                        data-name="Text"
                       />
                       <div
                         className={styles.layer254}
                         data-node-id="39:5063"
-                        data-name="Text"
                       />
                     </div>
                   </div>
@@ -627,12 +580,10 @@ export function MessagesDemo() {
                       <div
                         className={styles.layer258}
                         data-node-id="39:5067"
-                        data-name="Text"
                       />
                       <div
                         className={styles.layer259}
                         data-node-id="39:5068"
-                        data-name="Text"
                       />
                     </div>
                   </div>
@@ -657,12 +608,10 @@ export function MessagesDemo() {
                         <div
                           className={styles.layer262}
                           data-node-id="39:5073"
-                          data-name="Text"
                         />
                         <div
                           className={styles.layer263}
                           data-node-id="39:5074"
-                          data-name="Text"
                         >
                           <p className={styles.layer264} data-node-id="39:8518">
                             👀
@@ -671,7 +620,6 @@ export function MessagesDemo() {
                         <div
                           className={styles.layer265}
                           data-node-id="39:5076"
-                          data-name="Text"
                         />
                       </div>
                     </div>
@@ -714,7 +662,6 @@ export function MessagesDemo() {
                       <div
                         className={styles.layer270}
                         data-node-id="39:5084"
-                        data-name="Image (Apple Union Square store page showing hours and in-store order pickup)"
                       >
                         <img
                           loading="lazy"
@@ -728,7 +675,6 @@ export function MessagesDemo() {
                       <div
                         className={styles.layer272}
                         data-node-id="39:5085"
-                        data-name="Text"
                       >
                         <p className={styles.layer273} data-node-id="39:8521">
                           👍

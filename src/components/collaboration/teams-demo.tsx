@@ -37,7 +37,6 @@ export function TeamsDemo() {
       <div
         className={styles.layer1}
         data-node-id="39:4182"
-        data-name="InnflowBrandStickyShowcase.MediaBlock"
       >
         <div
           className={styles.layer71}
@@ -52,7 +51,6 @@ export function TeamsDemo() {
             <div
               className={styles.layer73}
               data-node-id="39:4185"
-              data-name="InnflowBrandAppWindow.Header"
             >
               <div
                 className={styles.layer5}
@@ -62,17 +60,14 @@ export function TeamsDemo() {
                 <div
                   className={styles.layer6}
                   data-node-id="39:4187"
-                  data-name="Text"
                 />
                 <div
                   className={styles.layer7}
                   data-node-id="39:4188"
-                  data-name="Text"
                 />
                 <div
                   className={styles.layer8}
                   data-node-id="39:4189"
-                  data-name="Text"
                 />
               </div>
               <div
@@ -83,7 +78,6 @@ export function TeamsDemo() {
                 <div
                   className={styles.layer10}
                   data-node-id="39:4191"
-                  data-name="CentralIconBase"
                 >
                   <img
                     loading="lazy"
@@ -95,7 +89,6 @@ export function TeamsDemo() {
                 <div
                   className={styles.layer10}
                   data-node-id="39:4198"
-                  data-name="CentralIconBase"
                 >
                   <img
                     loading="lazy"
@@ -107,7 +100,6 @@ export function TeamsDemo() {
                 <div
                   className={styles.layer12}
                   data-node-id="39:4205"
-                  data-name="CentralIconBase"
                 >
                   <img
                     loading="lazy"
@@ -130,7 +122,6 @@ export function TeamsDemo() {
                   <div
                     className={styles.layer12}
                     data-node-id="39:4214"
-                    data-name="CentralIconBase"
                   >
                     <img
                       loading="lazy"
@@ -142,7 +133,6 @@ export function TeamsDemo() {
                   <div
                     className={styles.layer74}
                     data-node-id="39:4221"
-                    data-name="Text"
                   >
                     <p className={styles.layer16} data-node-id="39:8403">
                       Search
@@ -153,12 +143,10 @@ export function TeamsDemo() {
               <div
                 className={styles.layer75}
                 data-node-id="39:4223"
-                data-name="InnflowBrandAppWindow.HeaderTrailing"
               >
                 <div
                   className={styles.layer10}
                   data-node-id="39:4224"
-                  data-name="CentralIconBase"
                 >
                   <img
                     loading="lazy"
@@ -170,12 +158,10 @@ export function TeamsDemo() {
                 <div
                   className={styles.layer76}
                   data-node-id="39:4236"
-                  data-name="LandingAvatarImage"
                 >
                   <div
                     className={styles.layer77}
                     data-node-id="39:4237"
-                    data-name="Image (Max headshot)"
                   >
                     <img
                       loading="lazy"
@@ -190,7 +176,6 @@ export function TeamsDemo() {
             <div
               className={styles.layer78}
               data-node-id="39:4238"
-              data-name="InnflowBrandAppWindow.Body"
             >
               <div
                 className={styles.layer79}
@@ -210,7 +195,6 @@ export function TeamsDemo() {
                     <div
                       className={styles.layer25}
                       data-node-id="39:4242"
-                      data-name="Text"
                     >
                       <p className={styles.layer47} data-node-id="39:8404">
                         Chat
@@ -224,7 +208,6 @@ export function TeamsDemo() {
                       <div
                         className={styles.layer10}
                         data-node-id="39:4245"
-                        data-name="CentralIconBase"
                       >
                         <img
                           loading="lazy"
@@ -236,7 +219,6 @@ export function TeamsDemo() {
                       <div
                         className={styles.layer10}
                         data-node-id="39:4254"
-                        data-name="CentralIconBase"
                       >
                         <img
                           loading="lazy"
@@ -255,7 +237,6 @@ export function TeamsDemo() {
                     <div
                       className={styles.layer84}
                       data-node-id="39:4263"
-                      data-name="Text"
                     >
                       <p className={styles.layer65} data-node-id="39:8405">
                         Unread
@@ -264,7 +245,6 @@ export function TeamsDemo() {
                     <div
                       className={styles.layer84}
                       data-node-id="39:4265"
-                      data-name="Text"
                     >
                       <p className={styles.layer65} data-node-id="39:8406">
                         Chats
@@ -273,7 +253,6 @@ export function TeamsDemo() {
                     <div
                       className={styles.layer85}
                       data-node-id="39:4267"
-                      data-name="Text"
                     >
                       <p className={styles.layer86} data-node-id="39:8407">
                         Channels
@@ -293,7 +272,6 @@ export function TeamsDemo() {
                       <div
                         className={styles.layer89}
                         data-node-id="39:4271"
-                        data-name="CentralIconBase"
                       >
                         <img
                           loading="lazy"
@@ -305,7 +283,6 @@ export function TeamsDemo() {
                       <div
                         className={styles.layer25}
                         data-node-id="39:4278"
-                        data-name="Text"
                       >
                         <p className={styles.layer65} data-node-id="39:8408">
                           Mentions
@@ -320,12 +297,10 @@ export function TeamsDemo() {
                       <div
                         className={styles.layer91}
                         data-node-id="39:4281"
-                        data-name="Text"
                       >
                         <div
                           className={styles.layer92}
                           data-node-id="39:4282"
-                          data-name="Icon"
                         >
                           <img
                             loading="lazy"
@@ -377,12 +352,10 @@ export function TeamsDemo() {
                       <div
                         className={styles.layer97}
                         data-node-id="39:4294"
-                        data-name="Text"
                       >
                         <div
                           className={styles.layer98}
                           data-node-id="39:4295"
-                          data-name="Text"
                         />
                       </div>
                       <div
@@ -418,12 +391,10 @@ export function TeamsDemo() {
                       <div
                         className={styles.layer97}
                         data-node-id="39:4302"
-                        data-name="Text"
                       >
                         <div
                           className={styles.layer98}
                           data-node-id="39:4303"
-                          data-name="Text"
                         />
                       </div>
                       <div
@@ -459,12 +430,10 @@ export function TeamsDemo() {
                       <div
                         className={styles.layer97}
                         data-node-id="39:4310"
-                        data-name="Text"
                       >
                         <div
                           className={styles.layer98}
                           data-node-id="39:4311"
-                          data-name="Text"
                         />
                       </div>
                       <div
@@ -514,7 +483,6 @@ export function TeamsDemo() {
                         <div
                           className={styles.layer101}
                           data-node-id="39:4321"
-                          data-name="Text"
                         >
                           <p className={styles.layer102} data-node-id="39:8419">
                             📊
@@ -523,7 +491,6 @@ export function TeamsDemo() {
                         <div
                           className={styles.layer103}
                           data-node-id="39:4323"
-                          data-name="Text"
                         >
                           <p className={styles.layer24} data-node-id="39:8420">
                             GTM
@@ -538,18 +505,15 @@ export function TeamsDemo() {
                         <div
                           className={styles.layer104}
                           data-node-id="39:4326"
-                          data-name="Button:margin"
                         >
                           <ChannelButton
                             className={styles.layer105}
                             data-node-id="39:4327"
-                            data-name="Button"
                             channel="data-analysis"
                           >
                             <div
                               className={styles.layer27}
                               data-node-id="39:4328"
-                              data-name="CentralIconBase"
                             >
                               <img
                                 loading="lazy"
@@ -561,7 +525,6 @@ export function TeamsDemo() {
                             <div
                               className={styles.layer28}
                               data-node-id="39:4335"
-                              data-name="Text"
                             >
                               <p
                                 className={styles.layer106}
@@ -573,20 +536,17 @@ export function TeamsDemo() {
                             <div
                               className={styles.layer107}
                               data-node-id="39:4337"
-                              data-name="Text"
                             />
                           </ChannelButton>
                         </div>
                         <ChannelButton
                           className={styles.layer108}
                           data-node-id="39:4338"
-                          data-name="Button"
                           channel="sales-discussion"
                         >
                           <div
                             className={styles.layer27}
                             data-node-id="39:4339"
-                            data-name="CentralIconBase"
                           >
                             <img
                               loading="lazy"
@@ -598,7 +558,6 @@ export function TeamsDemo() {
                           <div
                             className={styles.layer31}
                             data-node-id="39:4346"
-                            data-name="Text"
                           >
                             <p
                               className={styles.layer32}
@@ -611,12 +570,10 @@ export function TeamsDemo() {
                         <div
                           className={styles.layer108}
                           data-node-id="39:4348"
-                          data-name="Button"
                         >
                           <div
                             className={styles.layer27}
                             data-node-id="39:4349"
-                            data-name="CentralIconBase"
                           >
                             <img
                               loading="lazy"
@@ -628,7 +585,6 @@ export function TeamsDemo() {
                           <div
                             className={styles.layer33}
                             data-node-id="39:4358"
-                            data-name="Text"
                           >
                             <p
                               className={styles.layer70}
@@ -641,12 +597,10 @@ export function TeamsDemo() {
                         <div
                           className={styles.layer108}
                           data-node-id="39:4360"
-                          data-name="Button"
                         >
                           <div
                             className={styles.layer27}
                             data-node-id="39:4361"
-                            data-name="CentralIconBase"
                           >
                             <img
                               loading="lazy"
@@ -658,7 +612,6 @@ export function TeamsDemo() {
                           <div
                             className={styles.layer35}
                             data-node-id="39:4370"
-                            data-name="Text"
                           >
                             <p
                               className={styles.layer70}
@@ -671,12 +624,10 @@ export function TeamsDemo() {
                         <div
                           className={styles.layer108}
                           data-node-id="39:4372"
-                          data-name="Button"
                         >
                           <div
                             className={styles.layer27}
                             data-node-id="39:4373"
-                            data-name="CentralIconBase"
                           >
                             <img
                               loading="lazy"
@@ -688,7 +639,6 @@ export function TeamsDemo() {
                           <div
                             className={styles.layer36}
                             data-node-id="39:4382"
-                            data-name="Text"
                           >
                             <p
                               className={styles.layer70}
@@ -713,7 +663,6 @@ export function TeamsDemo() {
                         <div
                           className={styles.layer101}
                           data-node-id="39:4386"
-                          data-name="Text"
                         >
                           <p className={styles.layer110} data-node-id="39:8426">
                             🎯
@@ -722,7 +671,6 @@ export function TeamsDemo() {
                         <div
                           className={styles.layer111}
                           data-node-id="39:4388"
-                          data-name="Text"
                         >
                           <p className={styles.layer24} data-node-id="39:8427">
                             Marketing
@@ -737,12 +685,10 @@ export function TeamsDemo() {
                         <div
                           className={styles.layer108}
                           data-node-id="39:4391"
-                          data-name="Button"
                         >
                           <div
                             className={styles.layer27}
                             data-node-id="39:4392"
-                            data-name="CentralIconBase"
                           >
                             <img
                               loading="lazy"
@@ -754,7 +700,6 @@ export function TeamsDemo() {
                           <div
                             className={styles.layer37}
                             data-node-id="39:4399"
-                            data-name="Text"
                           >
                             <p
                               className={styles.layer32}
@@ -767,12 +712,10 @@ export function TeamsDemo() {
                         <div
                           className={styles.layer108}
                           data-node-id="39:4401"
-                          data-name="Button"
                         >
                           <div
                             className={styles.layer27}
                             data-node-id="39:4402"
-                            data-name="CentralIconBase"
                           >
                             <img
                               loading="lazy"
@@ -784,7 +727,6 @@ export function TeamsDemo() {
                           <div
                             className={styles.layer38}
                             data-node-id="39:4409"
-                            data-name="Text"
                           >
                             <p
                               className={styles.layer70}
@@ -797,12 +739,10 @@ export function TeamsDemo() {
                         <div
                           className={styles.layer108}
                           data-node-id="39:4411"
-                          data-name="Button"
                         >
                           <div
                             className={styles.layer27}
                             data-node-id="39:4412"
-                            data-name="CentralIconBase"
                           >
                             <img
                               loading="lazy"
@@ -814,7 +754,6 @@ export function TeamsDemo() {
                           <div
                             className={styles.layer39}
                             data-node-id="39:4419"
-                            data-name="Text"
                           >
                             <p
                               className={styles.layer70}
@@ -839,7 +778,6 @@ export function TeamsDemo() {
                         <div
                           className={styles.layer101}
                           data-node-id="39:4423"
-                          data-name="Text"
                         >
                           <p className={styles.layer112} data-node-id="39:8431">
                             🎧
@@ -848,7 +786,6 @@ export function TeamsDemo() {
                         <div
                           className={styles.layer113}
                           data-node-id="39:4425"
-                          data-name="Text"
                         >
                           <p className={styles.layer24} data-node-id="39:8432">
                             Support
@@ -863,12 +800,10 @@ export function TeamsDemo() {
                         <div
                           className={styles.layer108}
                           data-node-id="39:4428"
-                          data-name="Button"
                         >
                           <div
                             className={styles.layer27}
                             data-node-id="39:4429"
-                            data-name="CentralIconBase"
                           >
                             <img
                               loading="lazy"
@@ -880,7 +815,6 @@ export function TeamsDemo() {
                           <div
                             className={styles.layer40}
                             data-node-id="39:4436"
-                            data-name="Text"
                           >
                             <p
                               className={styles.layer32}
@@ -893,12 +827,10 @@ export function TeamsDemo() {
                         <div
                           className={styles.layer108}
                           data-node-id="39:4438"
-                          data-name="Button"
                         >
                           <div
                             className={styles.layer27}
                             data-node-id="39:4439"
-                            data-name="CentralIconBase"
                           >
                             <img
                               loading="lazy"
@@ -910,7 +842,6 @@ export function TeamsDemo() {
                           <div
                             className={styles.layer41}
                             data-node-id="39:4446"
-                            data-name="Text"
                           >
                             <p
                               className={styles.layer70}
@@ -923,12 +854,10 @@ export function TeamsDemo() {
                         <div
                           className={styles.layer108}
                           data-node-id="39:4448"
-                          data-name="Button"
                         >
                           <div
                             className={styles.layer27}
                             data-node-id="39:4449"
-                            data-name="CentralIconBase"
                           >
                             <img
                               loading="lazy"
@@ -940,7 +869,6 @@ export function TeamsDemo() {
                           <div
                             className={styles.layer42}
                             data-node-id="39:4456"
-                            data-name="Text"
                           >
                             <p
                               className={styles.layer70}
@@ -965,7 +893,6 @@ export function TeamsDemo() {
                         <div
                           className={styles.layer101}
                           data-node-id="39:4460"
-                          data-name="Text"
                         >
                           <p className={styles.layer115} data-node-id="39:8436">
                             👥
@@ -974,7 +901,6 @@ export function TeamsDemo() {
                         <div
                           className={styles.layer116}
                           data-node-id="39:4462"
-                          data-name="Text"
                         >
                           <p className={styles.layer24} data-node-id="39:8437">
                             Recruiting
@@ -984,12 +910,10 @@ export function TeamsDemo() {
                       <div
                         className={styles.layer117}
                         data-node-id="39:4464"
-                        data-name="Button"
                       >
                         <div
                           className={styles.layer27}
                           data-node-id="39:4465"
-                          data-name="CentralIconBase"
                         >
                           <img
                             loading="lazy"
@@ -1001,7 +925,6 @@ export function TeamsDemo() {
                         <div
                           className={styles.layer43}
                           data-node-id="39:4472"
-                          data-name="Text"
                         >
                           <p className={styles.layer32} data-node-id="39:8438">
                             recruiting
@@ -1025,7 +948,6 @@ export function TeamsDemo() {
                   <div
                     className={styles.layer120}
                     data-node-id="39:4476"
-                    data-name="Text"
                   >
                     <p className={styles.layer102} data-node-id="39:8439">
                       📊
@@ -1058,7 +980,6 @@ export function TeamsDemo() {
                   <div
                     className={styles.layer123}
                     data-node-id="39:4483"
-                    data-name="Container:align"
                   >
                     <div
                       className={styles.layer82}
@@ -1068,7 +989,6 @@ export function TeamsDemo() {
                       <div
                         className={styles.layer10}
                         data-node-id="39:4485"
-                        data-name="CentralIconBase"
                       >
                         <img
                           loading="lazy"
@@ -1080,7 +1000,6 @@ export function TeamsDemo() {
                       <div
                         className={styles.layer124}
                         data-node-id="39:4493"
-                        data-name="Text"
                       >
                         <p className={styles.layer24} data-node-id="39:8442">
                           Meet
@@ -1108,12 +1027,10 @@ export function TeamsDemo() {
                         <div
                           className={styles.layer128}
                           data-node-id="39:4498"
-                          data-name="LandingAvatarImage"
                         >
                           <div
                             className={styles.layer55}
                             data-node-id="39:4499"
-                            data-name="Image (Max)"
                           >
                             <img
                               loading="lazy"
@@ -1136,7 +1053,6 @@ export function TeamsDemo() {
                             <div
                               className={styles.layer25}
                               data-node-id="39:4502"
-                              data-name="Text"
                             >
                               <p
                                 className={styles.layer47}
@@ -1148,7 +1064,6 @@ export function TeamsDemo() {
                             <div
                               className={styles.layer25}
                               data-node-id="39:4504"
-                              data-name="Text"
                             >
                               <p
                                 className={styles.layer51}
@@ -1181,12 +1096,10 @@ export function TeamsDemo() {
                             <div
                               className={styles.layer135}
                               data-node-id="39:4509"
-                              data-name="Text"
                             >
                               <div
                                 className={styles.layer25}
                                 data-node-id="39:4510"
-                                data-name="Text"
                               >
                                 <p
                                   className={styles.layer65}
@@ -1198,7 +1111,6 @@ export function TeamsDemo() {
                               <div
                                 className={styles.layer25}
                                 data-node-id="39:4512"
-                                data-name="Text"
                               >
                                 <p
                                   className={styles.layer51}
@@ -1211,12 +1123,10 @@ export function TeamsDemo() {
                             <div
                               className={styles.layer135}
                               data-node-id="39:4514"
-                              data-name="Text"
                             >
                               <div
                                 className={styles.layer25}
                                 data-node-id="39:4515"
-                                data-name="Text"
                               >
                                 <p
                                   className={styles.layer65}
@@ -1228,7 +1138,6 @@ export function TeamsDemo() {
                               <div
                                 className={styles.layer25}
                                 data-node-id="39:4517"
-                                data-name="Text"
                               >
                                 <p
                                   className={styles.layer51}
@@ -1244,7 +1153,6 @@ export function TeamsDemo() {
                       <div
                         className={styles.layer136}
                         data-node-id="39:4519"
-                        data-name="Container:margin"
                       >
                         <DemoThread
                           className={styles.layer137}
@@ -1256,12 +1164,10 @@ export function TeamsDemo() {
                           <div
                             className={styles.layer5}
                             data-node-id="39:4521"
-                            data-name="Button"
                           >
                             <div
                               className={styles.layer12}
                               data-node-id="39:4522"
-                              data-name="CentralIconBase"
                             >
                               <img
                                 loading="lazy"
@@ -1279,7 +1185,6 @@ export function TeamsDemo() {
                             <div
                               className={styles.layer68}
                               data-node-id="39:4530"
-                              data-name="Text"
                             >
                               <p
                                 className={styles.layer70}
@@ -1305,12 +1210,10 @@ export function TeamsDemo() {
                         <div
                           className={styles.layer128}
                           data-node-id="39:4534"
-                          data-name="LandingAvatarImage"
                         >
                           <div
                             className={styles.layer55}
                             data-node-id="39:4535"
-                            data-name="Image (Gabriela)"
                           >
                             <img
                               loading="lazy"
@@ -1333,7 +1236,6 @@ export function TeamsDemo() {
                             <div
                               className={styles.layer25}
                               data-node-id="39:4538"
-                              data-name="Text"
                             >
                               <p
                                 className={styles.layer47}
@@ -1345,7 +1247,6 @@ export function TeamsDemo() {
                             <div
                               className={styles.layer25}
                               data-node-id="39:4540"
-                              data-name="Text"
                             >
                               <p
                                 className={styles.layer51}
@@ -1378,12 +1279,10 @@ export function TeamsDemo() {
                             <div
                               className={styles.layer135}
                               data-node-id="39:4545"
-                              data-name="Text"
                             >
                               <div
                                 className={styles.layer25}
                                 data-node-id="39:4546"
-                                data-name="Text"
                               >
                                 <p
                                   className={styles.layer65}
@@ -1395,7 +1294,6 @@ export function TeamsDemo() {
                               <div
                                 className={styles.layer25}
                                 data-node-id="39:4548"
-                                data-name="Text"
                               >
                                 <p
                                   className={styles.layer51}
@@ -1408,12 +1306,10 @@ export function TeamsDemo() {
                             <div
                               className={styles.layer135}
                               data-node-id="39:4550"
-                              data-name="Text"
                             >
                               <div
                                 className={styles.layer25}
                                 data-node-id="39:4551"
-                                data-name="Text"
                               >
                                 <p
                                   className={styles.layer65}
@@ -1425,7 +1321,6 @@ export function TeamsDemo() {
                               <div
                                 className={styles.layer25}
                                 data-node-id="39:4553"
-                                data-name="Text"
                               >
                                 <p
                                   className={styles.layer51}
@@ -1441,7 +1336,6 @@ export function TeamsDemo() {
                       <div
                         className={styles.layer136}
                         data-node-id="39:4555"
-                        data-name="Container:margin"
                       >
                         <DemoThread
                           className={styles.layer137}
@@ -1453,12 +1347,10 @@ export function TeamsDemo() {
                           <div
                             className={styles.layer5}
                             data-node-id="39:4557"
-                            data-name="Button"
                           >
                             <div
                               className={styles.layer12}
                               data-node-id="39:4558"
-                              data-name="CentralIconBase"
                             >
                               <img
                                 loading="lazy"
@@ -1476,7 +1368,6 @@ export function TeamsDemo() {
                             <div
                               className={styles.layer68}
                               data-node-id="39:4566"
-                              data-name="Text"
                             >
                               <p
                                 className={styles.layer70}
@@ -1502,12 +1393,10 @@ export function TeamsDemo() {
                         <div
                           className={styles.layer128}
                           data-node-id="39:4570"
-                          data-name="LandingAvatarImage"
                         >
                           <div
                             className={styles.layer55}
                             data-node-id="39:4571"
-                            data-name="Image (Marcelo)"
                           >
                             <img
                               loading="lazy"
@@ -1530,7 +1419,6 @@ export function TeamsDemo() {
                             <div
                               className={styles.layer25}
                               data-node-id="39:4574"
-                              data-name="Text"
                             >
                               <p
                                 className={styles.layer47}
@@ -1542,7 +1430,6 @@ export function TeamsDemo() {
                             <div
                               className={styles.layer25}
                               data-node-id="39:4576"
-                              data-name="Text"
                             >
                               <p
                                 className={styles.layer51}
@@ -1575,12 +1462,10 @@ export function TeamsDemo() {
                             <div
                               className={styles.layer135}
                               data-node-id="39:4581"
-                              data-name="Text"
                             >
                               <div
                                 className={styles.layer25}
                                 data-node-id="39:4582"
-                                data-name="Text"
                               >
                                 <p
                                   className={styles.layer65}
@@ -1592,7 +1477,6 @@ export function TeamsDemo() {
                               <div
                                 className={styles.layer25}
                                 data-node-id="39:4584"
-                                data-name="Text"
                               >
                                 <p
                                   className={styles.layer51}
@@ -1605,12 +1489,10 @@ export function TeamsDemo() {
                             <div
                               className={styles.layer135}
                               data-node-id="39:4586"
-                              data-name="Text"
                             >
                               <div
                                 className={styles.layer25}
                                 data-node-id="39:4587"
-                                data-name="Text"
                               >
                                 <p
                                   className={styles.layer65}
@@ -1622,7 +1504,6 @@ export function TeamsDemo() {
                               <div
                                 className={styles.layer25}
                                 data-node-id="39:4589"
-                                data-name="Text"
                               >
                                 <p
                                   className={styles.layer51}
@@ -1638,7 +1519,6 @@ export function TeamsDemo() {
                       <div
                         className={styles.layer136}
                         data-node-id="39:4591"
-                        data-name="Container:margin"
                       >
                         <DemoThread
                           className={styles.layer137}
@@ -1650,12 +1530,10 @@ export function TeamsDemo() {
                           <div
                             className={styles.layer5}
                             data-node-id="39:4593"
-                            data-name="Button"
                           >
                             <div
                               className={styles.layer12}
                               data-node-id="39:4594"
-                              data-name="CentralIconBase"
                             >
                               <img
                                 loading="lazy"
@@ -1673,7 +1551,6 @@ export function TeamsDemo() {
                             <div
                               className={styles.layer68}
                               data-node-id="39:4602"
-                              data-name="Text"
                             >
                               <p
                                 className={styles.layer70}

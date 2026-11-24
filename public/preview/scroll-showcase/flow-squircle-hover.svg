@@ -1,20 +1,5 @@
-<svg width="52" height="52" viewBox="2 1 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_d_763_3273)">
-<rect x="2" y="1" width="52" height="52" rx="22" fill="#CC9435"/>
-<path d="M21.5194 32.3066C21.5194 33.8162 20.2956 35.0399 18.7861 35.0399C17.2765 35.0399 16.0527 33.8162 16.0527 32.3066C16.0527 30.797 17.2765 29.5732 18.7861 29.5732C20.2956 29.5732 21.5194 30.797 21.5194 32.3066Z" stroke-width="1.5" stroke="white"/>
-<path d="M19.9336 29.8L21.8003 21.9466C22.0508 21.1584 22.5957 20.4971 23.3215 20.1005C24.0472 19.7038 24.898 19.6022 25.6968 19.817C26.4955 20.0317 27.1807 20.5461 27.6098 21.2532C28.0388 21.9603 28.1787 22.8057 28.0003 23.6133L26.2403 30.3333C26.0157 31.1714 26.1333 32.0643 26.5671 32.8157C27.001 33.5671 27.7155 34.1154 28.5536 34.34C29.3917 34.5645 30.2846 34.4469 31.036 34.0131C31.7874 33.5793 32.3357 32.8647 32.5603 32.0266L34.5203 24.72" stroke-width="1.5" stroke="white"/>
-<path d="M37.9471 21.1867C37.9471 22.6963 36.7234 23.92 35.2138 23.92C33.7042 23.92 32.4805 22.6963 32.4805 21.1867C32.4805 19.6771 33.7042 18.4534 35.2138 18.4534C36.7234 18.4534 37.9471 19.6771 37.9471 21.1867Z" stroke-width="1.5" stroke="white"/>
-</g>
-<defs>
-<filter id="filter0_d_763_3273" x="0" y="0" width="56" height="56" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dy="1"/>
-<feGaussianBlur stdDeviation="1"/>
-<feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.44 0 0 0 0 0.319216 0 0 0 0 0.114314 0 0 0 0.05 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_763_3273"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_763_3273" result="shape"/>
-</filter>
-</defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 60 60" fill="none">
+  <defs><linearGradient id="face" x2="0" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#dab16c"/><stop offset="1" stop-color="#c08b32"/></linearGradient></defs>
+  <path fill="url(#face)" d="M20 0H40C47.3 0 50.9 0 54.1 1.9C55.8 2.9 57.1 4.2 58.1 5.9C60 9.1 60 12.7 60 20V40C60 47.3 60 50.9 58.1 54.1C57.1 55.8 55.8 57.1 54.1 58.1C50.9 60 47.3 60 40 60H20C12.7 60 9.1 60 5.9 58.1C4.2 57.1 2.9 55.8 1.9 54.1C0 50.9 0 47.3 0 40V20C0 12.7 0 9.1 1.9 5.9C2.9 4.2 4.2 2.9 5.9 1.9C9.1 0 12.7 0 20 0Z"/>
+  <g transform="translate(-1 0)"><g stroke="white" stroke-width="3.1" stroke-linecap="round"><path d="M17 40v-8c0-5 3-7 7-7h11c5 0 8 3 8 8v3M30 25v-8"/></g><g fill="white"><circle cx="30" cy="16" r="5.6"/><circle cx="17" cy="41" r="5.6"/><circle cx="43" cy="39" r="5.6"/></g></g>
 </svg>

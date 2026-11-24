@@ -68,7 +68,7 @@ describe("numbered homepage storyboards", () => {
     expect(screen.getAllByRole("heading", { level: 2 })).toHaveLength(4);
     expect(
       within(element("agents")).getAllByRole("heading", { level: 3 })[0],
-    ).toHaveTextContent("Map the route from start to finish");
+    ).toHaveTextContent("Schedule");
     expect(
       within(element("workflows")).getAllByRole("heading", { level: 3 })[1],
     ).toHaveTextContent("Bring an agent into the thread");
@@ -153,22 +153,21 @@ describe("numbered homepage storyboards", () => {
     );
   });
 
-  it("ships playable Lottie compositions and named Rive timelines", () => {
+  it("ships the assigned loop and a poster for every feature", () => {
     for (const item of baselineFeatures.flatMap((feature) => feature.items)) {
       expect(existsSync(`public${item.poster}`)).toBe(true);
-      const bytes = readFileSync(`public${item.src}`);
-      if (item.status === "lottie") {
-        const animation = JSON.parse(bytes.toString());
-        expect(animation.nm).toBe(item.title);
-        expect(animation.op - animation.ip).toBe(item.duration * animation.fr);
-        expect(animation.layers.length).toBeGreaterThan(1);
+      if ([7, 8, 9].includes(item.number)) {
+        expect(item.status).toBe("video");
+        expect(item.duration).toBe(5);
+        expect(readFileSync(`public${item.src}`).toString("ascii", 4, 8)).toBe("ftyp");
         continue;
       }
-      if (!item.artboard || !item.animation) throw new Error(item.title);
-      expect(bytes.subarray(0, 4).toString()).toBe("RIVE");
-      expect(bytes.includes(Buffer.from(item.artboard))).toBe(true);
-      expect(bytes.includes(Buffer.from(item.animation))).toBe(true);
-      expect(bytes.includes(Buffer.from(item.stateMachine ?? ""))).toBe(true);
+      expect(item.status).toBe("lottie");
+      expect(item.duration).toBe(6);
+      const animation = JSON.parse(readFileSync(`public${item.src}`, "utf8"));
+      expect(animation.nm).toBe(item.title);
+      expect(animation.op - animation.ip).toBe(6 * animation.fr);
+      expect(animation.layers.length).toBeGreaterThan(1);
     }
   });
 });

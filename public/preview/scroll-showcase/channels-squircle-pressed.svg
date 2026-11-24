@@ -1,17 +1,5 @@
-<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_i_763_3240)">
-<rect width="52" height="52" rx="22" fill="#936992"/>
-<path d="M25.956 16.9028C19.0419 16.9028 16.334 18.5386 16.334 24.5592V25.1777C16.334 29.9269 18.3065 31.7894 21.8598 31.9406V34.5386C21.8598 35.0678 22.2378 35.2602 22.6501 34.9441L26.8495 31.9338C27.9423 31.9062 29.0351 31.9406 30.1209 31.8513C33.8048 31.5352 35.6604 29.5489 35.6673 25.274V24.5592C35.6673 18.5317 32.9525 16.9028 25.956 16.9028Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="white"/>
-</g>
-<defs>
-<filter id="filter0_i_763_3240" x="0" y="0" width="52" height="52" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dx="2" dy="2"/>
-<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.277804 0 0 0 0 0.198431 0 0 0 0 0.276078 0 0 0 0.26 0"/>
-<feBlend mode="normal" in2="shape" result="effect1_innerShadow_763_3240"/>
-</filter>
-</defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 60 60" fill="none">
+  <defs><linearGradient id="face" x2="0" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#825d82"/><stop offset="1" stop-color="#976c96"/></linearGradient></defs>
+  <path fill="url(#face)" d="M20 0H40C47.3 0 50.9 0 54.1 1.9C55.8 2.9 57.1 4.2 58.1 5.9C60 9.1 60 12.7 60 20V40C60 47.3 60 50.9 58.1 54.1C57.1 55.8 55.8 57.1 54.1 58.1C50.9 60 47.3 60 40 60H20C12.7 60 9.1 60 5.9 58.1C4.2 57.1 2.9 55.8 1.9 54.1C0 50.9 0 47.3 0 40V20C0 12.7 0 9.1 1.9 5.9C2.9 4.2 4.2 2.9 5.9 1.9C9.1 0 12.7 0 20 0Z"/>
+  <g transform="translate(0 0)"><g stroke="white" stroke-width="5.4" stroke-linecap="round"><path d="m27 15-6 30m18-30-6 30M16 24h28M14 36h28"/></g></g>
 </svg>

@@ -363,15 +363,10 @@
   margin: auto;
   background: var(--marketing-paper);
 }
-.infrastructure .heading,
-.directoryRow {
+.infrastructure .heading {
   max-width: 900px;
   margin-inline: auto;
   padding-inline: 0;
-  text-align: left;
-}
-.infrastructure .heading h2 {
-  margin-inline: 0;
 }
 .infrastructure .heading [data-align] h2 + div {
   max-width: 560px;

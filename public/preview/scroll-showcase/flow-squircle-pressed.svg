@@ -1,19 +1,5 @@
-<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_i_763_3227)">
-<rect width="52" height="52" rx="22" fill="#BA8730"/>
-<path d="M20.5194 31.3066C20.5194 32.8162 19.2956 34.0399 17.7861 34.0399C16.2765 34.0399 15.0527 32.8162 15.0527 31.3066C15.0527 29.797 16.2765 28.5732 17.7861 28.5732C19.2956 28.5732 20.5194 29.797 20.5194 31.3066Z" stroke-width="1.5" stroke="white"/>
-<path d="M18.9336 28.8L20.8003 20.9466C21.0508 20.1584 21.5957 19.4971 22.3215 19.1005C23.0472 18.7038 23.898 18.6022 24.6968 18.817C25.4955 19.0317 26.1807 19.5461 26.6098 20.2532C27.0388 20.9603 27.1787 21.8057 27.0003 22.6133L25.2403 29.3333C25.0157 30.1714 25.1333 31.0643 25.5671 31.8157C26.001 32.5671 26.7155 33.1154 27.5536 33.34C28.3917 33.5645 29.2846 33.4469 30.036 33.0131C30.7874 32.5793 31.3357 31.8647 31.5603 31.0266L33.5203 23.72" stroke-width="1.5" stroke="white"/>
-<path d="M36.9471 20.1867C36.9471 21.6963 35.7234 22.92 34.2138 22.92C32.7042 22.92 31.4805 21.6963 31.4805 20.1867C31.4805 18.6771 32.7042 17.4534 34.2138 17.4534C35.7234 17.4534 36.9471 18.6771 36.9471 20.1867Z" stroke-width="1.5" stroke="white"/>
-</g>
-<defs>
-<filter id="filter0_i_763_3227" x="0" y="0" width="52" height="52" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dx="2" dy="2"/>
-<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.352 0 0 0 0 0.255373 0 0 0 0 0.091451 0 0 0 0.26 0"/>
-<feBlend mode="normal" in2="shape" result="effect1_innerShadow_763_3227"/>
-</filter>
-</defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 60 60" fill="none">
+  <defs><linearGradient id="face" x2="0" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#a5782b"/><stop offset="1" stop-color="#c08b32"/></linearGradient></defs>
+  <path fill="url(#face)" d="M20 0H40C47.3 0 50.9 0 54.1 1.9C55.8 2.9 57.1 4.2 58.1 5.9C60 9.1 60 12.7 60 20V40C60 47.3 60 50.9 58.1 54.1C57.1 55.8 55.8 57.1 54.1 58.1C50.9 60 47.3 60 40 60H20C12.7 60 9.1 60 5.9 58.1C4.2 57.1 2.9 55.8 1.9 54.1C0 50.9 0 47.3 0 40V20C0 12.7 0 9.1 1.9 5.9C2.9 4.2 4.2 2.9 5.9 1.9C9.1 0 12.7 0 20 0Z"/>
+  <g transform="translate(0 0)"><g stroke="white" stroke-width="3.1" stroke-linecap="round"><path d="M17 40v-8c0-5 3-7 7-7h11c5 0 8 3 8 8v3M30 25v-8"/></g><g fill="white"><circle cx="30" cy="16" r="5.6"/><circle cx="17" cy="41" r="5.6"/><circle cx="43" cy="39" r="5.6"/></g></g>
 </svg>

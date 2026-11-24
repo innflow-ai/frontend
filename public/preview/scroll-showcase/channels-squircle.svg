@@ -1,28 +1,5 @@
-<svg width="52" height="52" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_di_763_3234)">
-<g clip-path="url(#clip0_763_3234)">
-<rect width="52" height="52" rx="22" fill="#A173A0"/>
-<path d="M24.956 16.9028C18.0419 16.9028 15.334 18.5386 15.334 24.5592V25.1777C15.334 29.9269 17.3065 31.7894 20.8598 31.9406V34.5386C20.8598 35.0678 21.2378 35.2602 21.6501 34.9441L25.8495 31.9338C26.9423 31.9062 28.0351 31.9406 29.1209 31.8513C32.8048 31.5352 34.6604 29.5489 34.6673 25.274V24.5592C34.6673 18.5317 31.9525 16.9028 24.956 16.9028Z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke="white"/>
-</g>
-</g>
-<defs>
-<filter id="filter0_di_763_3234" x="-2" y="-1" width="56" height="56" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dy="1"/>
-<feGaussianBlur stdDeviation="1"/>
-<feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.347255 0 0 0 0 0.248039 0 0 0 0 0.345098 0 0 0 0.05 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_763_3234"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_763_3234" result="shape"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dx="-2" dy="-2"/>
-<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0.277804 0 0 0 0 0.198431 0 0 0 0 0.276078 0 0 0 0.55 0"/>
-<feBlend mode="normal" in2="shape" result="effect2_innerShadow_763_3234"/>
-</filter>
-<clipPath id="clip0_763_3234">
-<rect width="52" height="52" rx="22" fill="white"/>
-</clipPath>
-</defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="52" height="52" viewBox="0 0 60 60" fill="none">
+  <defs><linearGradient id="face" x2="0" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#b18bb0"/><stop offset="1" stop-color="#8a638a"/></linearGradient></defs>
+  <path fill="url(#face)" d="M20 0H40C47.3 0 50.9 0 54.1 1.9C55.8 2.9 57.1 4.2 58.1 5.9C60 9.1 60 12.7 60 20V40C60 47.3 60 50.9 58.1 54.1C57.1 55.8 55.8 57.1 54.1 58.1C50.9 60 47.3 60 40 60H20C12.7 60 9.1 60 5.9 58.1C4.2 57.1 2.9 55.8 1.9 54.1C0 50.9 0 47.3 0 40V20C0 12.7 0 9.1 1.9 5.9C2.9 4.2 4.2 2.9 5.9 1.9C9.1 0 12.7 0 20 0Z"/>
+  <g transform="translate(-1 0)"><g stroke="white" stroke-width="5.4" stroke-linecap="round"><path d="m27 15-6 30m18-30-6 30M16 24h28M14 36h28"/></g></g>
 </svg>

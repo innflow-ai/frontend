@@ -336,7 +336,6 @@ export function BaselineConnectedInfrastructure() {
       <header className={styles.heading}>
         <SectionHeading
           variant="mixed-italic"
-          align="start"
           id="baseline-infrastructure-heading"
           title={<strong>Connect the tools</strong>}
           emphasis="behind your work."

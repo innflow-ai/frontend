@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" fill="none">
-  <path d="M15 1C26 1 29 4 29 15s-3 14-14 14S1 26 1 15 4 1 15 1Z" fill="#999354"/>
-  <path d="M15 28c8.5 0 12-2 13.2-8.3C27.5 26.9 24.1 29 15 29S2.5 26.9 1.8 19.7C3 26 6.5 28 15 28Z" fill="#000" opacity=".18"/>
-  <g transform="translate(4.5 4.5) scale(.875)" stroke="white" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 60 60" fill="none">
+  <defs><linearGradient id="face" x2="0" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#aaa571"/><stop offset="1" stop-color="#847e48"/></linearGradient></defs>
+  <path fill="url(#face)" d="M20 0H40C47.3 0 50.9 0 54.1 1.9C55.8 2.9 57.1 4.2 58.1 5.9C60 9.1 60 12.7 60 20V40C60 47.3 60 50.9 58.1 54.1C57.1 55.8 55.8 57.1 54.1 58.1C50.9 60 47.3 60 40 60H20C12.7 60 9.1 60 5.9 58.1C4.2 57.1 2.9 55.8 1.9 54.1C0 50.9 0 47.3 0 40V20C0 12.7 0 9.1 1.9 5.9C2.9 4.2 4.2 2.9 5.9 1.9C9.1 0 12.7 0 20 0Z"/>
+  <g transform="scale(2)"><g transform="translate(4.5 4.5) scale(.875)" stroke="white" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
     <path d="M4.6 20.325C4.6 19.834 4.405 19.364 4.058 19.017C3.711 18.67 3.241 18.475 2.75 18.475"/>
     <path d="M7.565 20.325C7.565 19.693 7.441 19.067 7.199 18.482C6.957 17.898 6.602 17.367 6.155 16.92C5.708 16.473 5.177 16.118 4.593 15.876C4.008 15.634 3.382 15.51 2.75 15.51"/>
     <path d="M10.699 20.325C10.699 18.217 9.861 16.195 8.371 14.704C6.88 13.214 4.858 12.376 2.75 12.376"/>
     <path d="M13.925 20.325H17.55C18.531 20.325 19.472 19.935 20.166 19.241C20.86 18.547 21.25 17.606 21.25 16.625V7.375C21.25 6.394 20.86 5.453 20.166 4.759C19.472 4.065 18.531 3.675 17.55 3.675H6.45C5.469 3.675 4.528 4.065 3.834 4.759C3.14 5.453 2.75 6.394 2.75 7.375V9.15"/>
-  </g>
+  </g></g>
 </svg>

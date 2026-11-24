@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" fill="none">
-  <path d="M15 1C26 1 29 4 29 15s-3 14-14 14S1 26 1 15 4 1 15 1Z" fill="#798cb0"/>
-  <path d="M15 28c8.5 0 12-2 13.2-8.3C27.5 26.9 24.1 29 15 29S2.5 26.9 1.8 19.7C3 26 6.5 28 15 28Z" fill="#000" opacity=".18"/>
-  <g transform="translate(4.5 4.5) scale(.875)" stroke="white" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 60 60" fill="none">
+  <defs><linearGradient id="face" x2="0" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#90a0bd"/><stop offset="1" stop-color="#687897"/></linearGradient></defs>
+  <path fill="url(#face)" d="M20 0H40C47.3 0 50.9 0 54.1 1.9C55.8 2.9 57.1 4.2 58.1 5.9C60 9.1 60 12.7 60 20V40C60 47.3 60 50.9 58.1 54.1C57.1 55.8 55.8 57.1 54.1 58.1C50.9 60 47.3 60 40 60H20C12.7 60 9.1 60 5.9 58.1C4.2 57.1 2.9 55.8 1.9 54.1C0 50.9 0 47.3 0 40V20C0 12.7 0 9.1 1.9 5.9C2.9 4.2 4.2 2.9 5.9 1.9C9.1 0 12.7 0 20 0Z"/>
+  <g transform="scale(2)"><g transform="translate(4.5 4.5) scale(.875)" stroke="white" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
     <path d="M19.922 12.005V17.286C19.919 17.747 19.796 18.199 19.564 18.598C19.332 18.996 19.001 19.327 18.602 19.557C16.596 20.711 14.313 21.295 12 21.247C9.685 21.291 7.403 20.702 5.399 19.544C5.001 19.315 4.671 18.986 4.439 18.59C4.208 18.194 4.083 17.745 4.078 17.286V12.005C6.298 13.841 9.123 14.783 12 14.646C14.877 14.783 17.702 13.841 19.922 12.005Z"/>
     <path d="M19.922 5.404C17.702 7.24 14.877 8.181 12 8.044C9.123 8.181 6.298 7.24 4.078 5.404C6.298 3.568 9.123 2.626 12 2.763C14.877 2.626 17.702 3.568 19.922 5.404Z"/>
     <path d="M19.922 5.404V12.005M4.078 12.005V5.404"/>
-  </g>
+  </g></g>
 </svg>

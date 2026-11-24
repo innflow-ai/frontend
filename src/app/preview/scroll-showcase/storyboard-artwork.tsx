@@ -28,6 +28,15 @@ export function StoryboardArtwork({ storyboard }: { storyboard: Storyboard }) {
   const reducedMotion = useReducedMotion();
   const [entered, setEntered] = useState(false);
   const [visible, setVisible] = useState(false);
+  const video = useRef<HTMLVideoElement>(null);
+  const playVideo = inView && visible && reducedMotion === false;
+
+  useEffect(() => {
+    const player = video.current;
+    if (!player) return;
+    if (playVideo) void player.play().catch(() => {});
+    else player.pause();
+  }, [playVideo, entered]);
 
   useEffect(() => {
     if (inView && reducedMotion === false) setEntered(true);
@@ -55,6 +64,18 @@ export function StoryboardArtwork({ storyboard }: { storyboard: Storyboard }) {
           height={640}
           play={inView && visible && reducedMotion === false}
         />
+      </div>
+    );
+  }
+
+  if (storyboard.src?.endsWith(".mp4")) {
+    return (
+      <div ref={container} className={styles.artwork} data-storyboard={storyboard.number} aria-hidden="true">
+        <Image src={storyboard.poster} alt="" fill sizes="(max-width: 800px) 100vw, 580px" />
+        {entered && reducedMotion === false && (
+          <video ref={video} className={styles.canvas} src={storyboard.src}
+            poster={storyboard.poster} muted playsInline loop preload="metadata" />
+        )}
       </div>
     );
   }

@@ -1,0 +1,10 @@
+/* The colored face inside the hero tab's 4px white border. */
+.face {
+  border-radius: 41.6667%; /* 20px on a 48px face */
+}
+
+@media (max-width: 800px) {
+  .face {
+    border-radius: 42.5%; /* 17px on a 40px face */
+  }
+}

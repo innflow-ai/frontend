@@ -4,13 +4,15 @@ import { useInView, useReducedMotion } from "motion/react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { FlowScene } from "./flow-scene";
 import { LottieArtwork } from "./lottie-artwork";
 import styles from "./storyboard-artwork.module.css";
 
 export type Storyboard = {
   number: number;
   title: string;
-  poster: string;
+  poster?: string;
+  scene?: string;
   src?: string;
   artboard?: string;
   animation?: string;
@@ -29,14 +31,14 @@ export function StoryboardArtwork({ storyboard }: { storyboard: Storyboard }) {
   const [entered, setEntered] = useState(false);
   const [visible, setVisible] = useState(false);
   const video = useRef<HTMLVideoElement>(null);
-  const playVideo = inView && visible && reducedMotion === false;
+  const playing = inView && visible && reducedMotion === false;
 
   useEffect(() => {
     const player = video.current;
     if (!player) return;
-    if (playVideo) void player.play().catch(() => {});
+    if (playing) void player.play().catch(() => {});
     else player.pause();
-  }, [playVideo, entered]);
+  }, [playing, entered]);
 
   useEffect(() => {
     if (inView && reducedMotion === false) setEntered(true);
@@ -48,6 +50,23 @@ export function StoryboardArtwork({ storyboard }: { storyboard: Storyboard }) {
     document.addEventListener("visibilitychange", sync);
     return () => document.removeEventListener("visibilitychange", sync);
   }, []);
+
+  if (storyboard.scene) {
+    return (
+      <div
+        ref={container}
+        className={styles.artwork}
+        data-storyboard={storyboard.number}
+        data-storyboard-source="native"
+        data-motion={entered && reducedMotion === false}
+        aria-hidden="true"
+      >
+        <FlowScene scene={storyboard.scene} playing={playing} />
+      </div>
+    );
+  }
+
+  if (!storyboard.poster) return null;
 
   if (storyboard.src?.endsWith(".json")) {
     return (

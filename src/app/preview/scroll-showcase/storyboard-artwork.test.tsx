@@ -1,4 +1,10 @@
-import { act, cleanup, render, screen } from "@testing-library/react";
+import {
+  act,
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+} from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { StoryboardArtwork } from "./storyboard-artwork";
 
@@ -75,3 +81,33 @@ it("uses still artwork for reduced motion and missing exports", () => {
   );
   expect(screen.queryByTestId("runtime")).not.toBeInTheDocument();
 });
+
+it.each(["schedule", "trigger", "automation", "approval"])(
+  "uses the correct artwork for %s and gates motion on visibility",
+  (name) => {
+    const storyboard = { number: 7, title: name, scene: name };
+    const view = render(<StoryboardArtwork storyboard={storyboard} />);
+    const stage = view.container.querySelector("[data-flow-scene]");
+    if (name === "approval") {
+      expect(stage).toHaveTextContent("Delivered to Sales");
+    } else {
+      const surface = stage?.querySelector('[data-card-layer="surface"]');
+      expect(surface?.querySelector("use")).toHaveAttribute(
+        "href",
+        `/brand/homepage/flows/cards/${name}.svg#frame-0-surface`,
+      );
+      fireEvent.animationIteration(surface!);
+      expect(surface?.querySelector("use")).toHaveAttribute(
+        "href",
+        `/brand/homepage/flows/cards/${name}.svg#frame-1-surface`,
+      );
+    }
+    expect(stage).toHaveAttribute("data-playing", "false");
+    controls.inView = true;
+    view.rerender(<StoryboardArtwork storyboard={storyboard} />);
+    expect(stage).toHaveAttribute("data-playing", "true");
+    controls.reduced = true;
+    view.rerender(<StoryboardArtwork storyboard={storyboard} />);
+    expect(stage?.parentElement).toHaveAttribute("data-motion", "false");
+  },
+);

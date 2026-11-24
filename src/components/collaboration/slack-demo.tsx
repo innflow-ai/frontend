@@ -1,5 +1,6 @@
 // biome-ignore-all lint/performance/noImgElement: Small local source SVGs retain their intrinsic Figma geometry; raster artwork is lazy loaded.
 
+import { agentAvatars } from "@/config/agent-avatars";
 import {
   ChannelButton,
   ChannelHeading,
@@ -22,7 +23,6 @@ const imgCentralIconBase3 = `${assetPathPrefix}/2a708.svg`;
 const imgCentralIconBase4 = `${assetPathPrefix}/e5515.svg`;
 const imgCentralIconBase5 = `${assetPathPrefix}/561b9.svg`;
 const imgCentralIconBase6 = `${assetPathPrefix}/3af9f.svg`;
-const imgIcon = `${assetPathPrefix}/0d157.svg`;
 
 export function SlackDemo() {
   return (
@@ -744,21 +744,11 @@ export function SlackDemo() {
                           reply="The example comparison includes total sales, new customers, and average order value for the same month in each year."
                         >
                           <div
-                            className={styles.layer67}
+                            className={`${styles.layer67} ${styles.agentAvatar}`}
                             data-node-id="39:4105"
                             data-name="Container"
                           >
-                            <div
-                              className={styles.layer12}
-                              data-node-id="39:4106"
-                            >
-                              <img
-                                loading="lazy"
-                                alt=""
-                                className={styles.svg}
-                                src={imgIcon}
-                              />
-                            </div>
+                            <img loading="lazy" alt="" src={agentAvatars.databot} />
                           </div>
                           <div
                             className={styles.layer68}
@@ -913,21 +903,11 @@ export function SlackDemo() {
                           reply="The example report ranks users by activity and includes their recent sessions and account usage."
                         >
                           <div
-                            className={styles.layer67}
+                            className={`${styles.layer67} ${styles.agentAvatar}`}
                             data-node-id="39:4139"
                             data-name="Container"
                           >
-                            <div
-                              className={styles.layer12}
-                              data-node-id="39:4140"
-                            >
-                              <img
-                                loading="lazy"
-                                alt=""
-                                className={styles.svg}
-                                src={imgIcon}
-                              />
-                            </div>
+                            <img loading="lazy" alt="" src={agentAvatars.databot} />
                           </div>
                           <div
                             className={styles.layer68}
@@ -1082,21 +1062,11 @@ export function SlackDemo() {
                           reply="The example funnel highlights the handoff between account setup and the first completed workflow."
                         >
                           <div
-                            className={styles.layer67}
+                            className={`${styles.layer67} ${styles.agentAvatar}`}
                             data-node-id="39:4173"
                             data-name="Container"
                           >
-                            <div
-                              className={styles.layer12}
-                              data-node-id="39:4174"
-                            >
-                              <img
-                                loading="lazy"
-                                alt=""
-                                className={styles.svg}
-                                src={imgIcon}
-                              />
-                            </div>
+                            <img loading="lazy" alt="" src={agentAvatars.databot} />
                           </div>
                           <div
                             className={styles.layer68}

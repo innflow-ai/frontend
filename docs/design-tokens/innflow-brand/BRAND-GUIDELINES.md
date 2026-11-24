@@ -27,6 +27,18 @@ On the web, opt in with `data-site-cta="primary"` or `data-site-cta="secondary"`
 
 ## Semantic palette
 
+### Feature icons
+
+Use the same SVG for each feature’s hero tab, panel label, section heading, and Product menu item. The background colors come from the [editable feature icon palette](https://www.figma.com/design/TI7hq816ZzDMvvTd3HjyIS/INNFLOW_BRAND_KIT?node-id=594-4718).
+
+| Bot mode | Flows | Channels | Computer |
+| --- | --- | --- | --- |
+| Sky blue `#81E0FF` | Peach `#FFD8B1` | Purple `#BA9DFF` | Teal `#5ADED7` |
+
+The alternate Flows icon uses pale lime `#F0F9D3`.
+
+### Workspace themes
+
 Source: workspace themes `329:49`, dialogs `409:133`, current color variables `VariableID:406:6` through `406:46`. Alpha is part of the token; do not silently convert translucent paints to opaque colors.
 
 | Role | Light | Dark |

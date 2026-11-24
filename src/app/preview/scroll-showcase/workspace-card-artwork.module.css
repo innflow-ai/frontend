@@ -270,7 +270,7 @@
   width: 100%;
 }
 .agentLogo {
-  border-radius: 15.935px;
+  border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
 }

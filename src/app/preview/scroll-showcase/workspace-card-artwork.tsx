@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Check, ChevronDown as MageChevronDown } from "@/components/icons/mage";
+import { agentAvatars } from "@/config/agent-avatars";
 import styles from "./workspace-card-artwork.module.css";
 import { WorkspaceConnectArtwork } from "./workspace-connect-artwork";
 
@@ -87,7 +88,7 @@ function AssignArtwork() {
       <div className={styles.message}>
         <div className={styles.sender}>
           <Image
-            src={`${assets}/d9cdd.svg`}
+            src={agentAvatars.quinn}
             alt=""
             width={36.5238}
             height={36.5238}
@@ -120,7 +121,7 @@ function DeployArtwork() {
       <div className={styles.agentIdentity}>
         <Image
           className={styles.agentLogo}
-          src={`${assets}/21fd6.png`}
+          src={agentAvatars.deploy}
           alt=""
           width={38}
           height={38}

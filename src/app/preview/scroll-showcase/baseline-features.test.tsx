@@ -14,7 +14,7 @@ vi.mock("./storyboard-artwork", () => ({
   StoryboardArtwork: ({ storyboard }: { storyboard: Storyboard }) => (
     <div
       data-storyboard={storyboard.number}
-      data-source={storyboard.src ?? "poster-only"}
+      data-source={storyboard.scene ?? storyboard.src ?? "poster-only"}
     />
   ),
 }));
@@ -89,7 +89,7 @@ describe("numbered homepage storyboards", () => {
         fireEvent.click(trigger);
         const artwork = section.querySelector("[data-storyboard]");
         expect(artwork).toHaveAttribute("data-storyboard", String(item.number));
-        expect(artwork).toHaveAttribute("data-source", item.src);
+        expect(artwork).toHaveAttribute("data-source", item.scene ?? item.src);
         expect(artwork?.parentElement).toHaveAttribute("data-feature", {
           channels: "bot", agents: "flow", workflows: "channels", insights: "computer",
         }[feature.id]);
@@ -153,15 +153,16 @@ describe("numbered homepage storyboards", () => {
     );
   });
 
-  it("ships the assigned loop and a poster for every feature", () => {
+  it("ships native Flows scenes and the assigned loops and posters for other features", () => {
     for (const item of baselineFeatures.flatMap((feature) => feature.items)) {
-      expect(existsSync(`public${item.poster}`)).toBe(true);
-      if ([7, 8, 9].includes(item.number)) {
-        expect(item.status).toBe("video");
+      if (item.section === "Flows") {
+        expect(item.status).toBe("native");
+        expect(item.scene).toBe(["schedule", "trigger", "automation", "approval"][item.number - 7]);
         expect(item.duration).toBe(5);
-        expect(readFileSync(`public${item.src}`).toString("ascii", 4, 8)).toBe("ftyp");
+        expect(item.src).toBeUndefined();
         continue;
       }
+      expect(existsSync(`public${item.poster}`)).toBe(true);
       expect(item.status).toBe("lottie");
       expect(item.duration).toBe(6);
       const animation = JSON.parse(readFileSync(`public${item.src}`, "utf8"));

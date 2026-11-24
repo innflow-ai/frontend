@@ -1,0 +1,436 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 264 270"><defs><filter id="f0-filter0_d_9_8" x="0" y="0" width="264" height="125" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset dy="5" />
+<feGaussianBlur stdDeviation="6" />
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.14 0" />
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_9_8" />
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_9_8" result="shape" />
+</filter>
+<filter id="f0-filter1_d_9_8" x="0" y="127" width="264" height="143" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset dy="5" />
+<feGaussianBlur stdDeviation="6" />
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.14 0" />
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_9_8" />
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_9_8" result="shape" />
+</filter>
+<clipPath id="f0-clip0_9_8">
+<rect width="10.6562" height="11.4844" fill="white" transform="translate(126.672 115.258)" />
+</clipPath>
+<clipPath id="f0-clip1_9_8">
+<rect width="20" height="20" fill="white" transform="translate(25 146)" />
+</clipPath>
+<clipPath id="f0-clip2_9_8">
+<rect width="214" height="36" fill="white" transform="translate(25 172)" />
+</clipPath>
+<clipPath id="f0-clip3_9_8">
+<rect width="10.8828" height="12.25" fill="white" transform="translate(33.0586 222.375)" />
+</clipPath>
+<clipPath id="f0-clip4_9_8">
+<rect width="152.648" height="16" fill="white" transform="translate(49.5 220.5)" />
+</clipPath>
+<filter id="f1-filter0_d_9_82" x="0" y="0" width="264" height="125" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset dy="5" />
+<feGaussianBlur stdDeviation="6" />
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.14 0" />
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_9_82" />
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_9_82" result="shape" />
+</filter>
+<filter id="f1-filter1_d_9_82" x="0" y="127" width="264" height="143" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset dy="5" />
+<feGaussianBlur stdDeviation="6" />
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.14 0" />
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_9_82" />
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_9_82" result="shape" />
+</filter>
+<clipPath id="f1-clip0_9_82">
+<rect width="10.6562" height="11.4844" fill="white" transform="translate(126.672 115.258)" />
+</clipPath>
+<clipPath id="f1-clip1_9_82">
+<rect width="20" height="20" fill="white" transform="translate(25 146)" />
+</clipPath>
+<clipPath id="f1-clip2_9_82">
+<rect width="214" height="36" fill="white" transform="translate(25 172)" />
+</clipPath>
+<clipPath id="f1-clip3_9_82">
+<rect width="10.8828" height="12.25" fill="white" transform="translate(33.0586 222.375)" />
+</clipPath>
+<clipPath id="f1-clip4_9_82">
+<rect width="152.32" height="16" fill="white" transform="translate(49.5 220.5)" />
+</clipPath>
+<filter id="f2-filter0_d_9_156" x="0" y="0" width="264" height="125" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset dy="5" />
+<feGaussianBlur stdDeviation="6" />
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.14 0" />
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_9_156" />
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_9_156" result="shape" />
+</filter>
+<filter id="f2-filter1_d_9_156" x="0" y="127" width="264" height="143" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix" />
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+<feOffset dy="5" />
+<feGaussianBlur stdDeviation="6" />
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.14 0" />
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_9_156" />
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_9_156" result="shape" />
+</filter>
+<clipPath id="f2-clip0_9_156">
+<rect width="10.6562" height="11.4844" fill="white" transform="translate(126.672 115.258)" />
+</clipPath>
+<clipPath id="f2-clip1_9_156">
+<rect width="20" height="20" fill="white" transform="translate(25 146)" />
+</clipPath>
+<clipPath id="f2-clip2_9_156">
+<rect width="214" height="36" fill="white" transform="translate(25 172)" />
+</clipPath>
+<clipPath id="f2-clip3_9_156">
+<rect width="10.8828" height="12.25" fill="white" transform="translate(33.0586 222.375)" />
+</clipPath>
+<clipPath id="f2-clip4_9_156">
+<rect width="151.359" height="16" fill="white" transform="translate(49.5 220.5)" />
+</clipPath>
+</defs><g id="frame-0-input">
+<text fill="#B3B3B3" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="9" letter-spacing="0.166992px"><tspan x="25.7231" y="59.7727">Mon</tspan></text>
+<g>
+<path d="M22.7109 78.5C22.7109 71.5964 28.3074 66 35.2109 66V66C42.1145 66 47.7109 71.5964 47.7109 78.5V78.5C47.7109 85.4036 42.1145 91 35.2109 91V91C28.3074 91 22.7109 85.4036 22.7109 78.5V78.5Z" fill="#E6E6E6" />
+<text fill="black" fill-opacity="0.9" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0px"><tspan x="27.5762" y="82.8636">23</tspan></text>
+</g>
+<g>
+<path d="M32.7109 96.5C32.7109 95.1193 33.8302 94 35.2109 94V94C36.5916 94 37.7109 95.1193 37.7109 96.5V96.5C37.7109 97.8807 36.5916 99 35.2109 99V99C33.8302 99 32.7109 97.8807 32.7109 96.5V96.5Z" fill="white" fill-opacity="0.08" />
+</g>
+</g>
+<g filter="url(#f0-filter0_d_9_8)" id="frame-0-top">
+<rect x="12" y="7" width="240" height="101" rx="16" fill="#1C1C1E" />
+<rect x="12.5" y="7.5" width="239" height="100" rx="15.5" stroke="#3A3A3C" />
+<g>
+<text fill="#E6E6E6" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="14" font-weight="600" letter-spacing="-0.150391px"><tspan x="27" y="35.0909">November</tspan></text>
+<g>
+<g>
+<path d="M101.646 28.8535C101.451 28.6583 101.451 28.3418 101.646 28.1465C101.842 27.9512 102.158 27.9512 102.353 28.1465L105 30.793L107.646 28.1465C107.842 27.9512 108.158 27.9512 108.353 28.1465C108.549 28.3418 108.549 28.6583 108.353 28.8535L105.353 31.8535C105.158 32.0488 104.842 32.0488 104.646 31.8535L101.646 28.8535Z" fill="#8C8C8C" />
+</g>
+</g>
+</g>
+<g>
+<g>
+<text fill="#B3B3B3" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="9" letter-spacing="0.166992px"><tspan x="59.6826" y="59.7727">Tue</tspan></text>
+<g>
+<text fill="#E6E6E6" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0px"><tspan x="60.0078" y="82.8636">24</tspan></text>
+</g>
+<g>
+<path d="M65.1367 96.5C65.1367 95.1193 66.256 94 67.6367 94V94C69.0174 94 70.1367 95.1193 70.1367 96.5V96.5C70.1367 97.8807 69.0174 99 67.6367 99V99C66.256 99 65.1367 97.8807 65.1367 96.5V96.5Z" fill="white" fill-opacity="0.08" />
+</g>
+</g>
+<g>
+<text fill="#B3B3B3" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="9" letter-spacing="0.166992px"><tspan x="90.4424" y="59.7727">Wed</tspan></text>
+<g>
+<text fill="#E6E6E6" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0px"><tspan x="92.543" y="82.8636">25</tspan></text>
+</g>
+</g>
+<g>
+<text fill="#B3B3B3" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="9" letter-spacing="0.166992px"><tspan x="124.168" y="59.7727">Thu</tspan></text>
+<g>
+<text fill="#E6E6E6" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0px"><tspan x="124.879" y="82.8636">26</tspan></text>
+</g>
+<g>
+<path d="M129.996 96.5C129.996 95.1193 131.115 94 132.496 94V94C133.877 94 134.996 95.1193 134.996 96.5V96.5C134.996 97.8807 133.877 99 132.496 99V99C131.115 99 129.996 97.8807 129.996 96.5V96.5Z" fill="white" fill-opacity="0.08" />
+</g>
+</g>
+<g>
+<text fill="#B3B3B3" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="9" letter-spacing="0.166992px"><tspan x="159.402" y="59.7727">Fri</tspan></text>
+<g>
+<text fill="#E6E6E6" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0px"><tspan x="157.678" y="82.8636">27</tspan></text>
+</g>
+<g>
+<path d="M162.426 96.5C162.426 95.1193 163.545 94 164.926 94V94C166.306 94 167.426 95.1193 167.426 96.5V96.5C167.426 97.8807 166.306 99 164.926 99V99C163.545 99 162.426 97.8807 162.426 96.5V96.5Z" fill="white" fill-opacity="0.08" />
+</g>
+</g>
+<g>
+<text fill="#B3B3B3" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="9" letter-spacing="0.166992px"><tspan x="190.149" y="59.7727">Sat</tspan></text>
+<g>
+<text fill="#E6E6E6" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0px"><tspan x="189.756" y="82.8636">28</tspan></text>
+</g>
+</g>
+<g>
+<text fill="#B3B3B3" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="9" letter-spacing="0.166992px"><tspan x="221.498" y="59.7727">Sun</tspan></text>
+<g>
+<text fill="#E6E6E6" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0px"><tspan x="222.164" y="82.8636">29</tspan></text>
+</g>
+<g>
+<path d="M227.281 96.5C227.281 95.1193 228.401 94 229.781 94V94C231.162 94 232.281 95.1193 232.281 96.5V96.5C232.281 97.8807 231.162 99 229.781 99V99C228.401 99 227.281 97.8807 227.281 96.5V96.5Z" fill="white" fill-opacity="0.08" />
+</g>
+</g>
+</g>
+</g>
+<g id="frame-0-arrow">
+<g clip-path="url(#f0-clip0_9_8)">
+<path opacity="0.5" d="M127.417 116.003L132 120.586L136.583 116.003" stroke-width="1.48958" stroke-linecap="round" stroke-linejoin="round" stroke="#595959" />
+<path d="M127.417 121.414L132 125.997L136.583 121.414" stroke-width="1.48958" stroke-linecap="round" stroke-linejoin="round" stroke="#595959" />
+</g>
+</g>
+<g id="frame-0-mark">
+<g clip-path="url(#f0-clip1_9_8)">
+<path d="M41.1898 146.095C38.8112 146.354 36.1577 147.171 33.8918 147.829C31.8713 148.416 29.1201 149.252 27.327 150.031C26.2824 150.485 25.5499 151.461 25.3973 152.601C25.2311 153.843 25.0739 155.987 25.0739 157.94C25.0739 160.454 25.2289 162.466 25.4151 163.597C25.5701 164.477 26.0664 165.357 26.9616 165.755C27.352 165.896 27.4 165.898 29.7721 165.898H32.1855L32.461 165.735C32.6321 165.633 32.7926 165.47 32.8842 165.305C33.014 165.072 33.0366 164.934 33.0697 164.173C33.1121 163.196 33.1525 163.075 33.5981 162.594C34.3393 161.793 35.6299 161.724 36.4215 162.444C36.8904 162.87 36.9973 163.183 37.0404 164.262C37.0607 164.768 37.1079 165.214 37.1488 165.288C37.1885 165.36 37.3169 165.503 37.4337 165.607C37.7784 165.913 38.0668 165.942 40.5116 165.915C42.5527 165.893 42.7198 165.883 43.0937 165.758C43.3136 165.684 43.6224 165.537 43.78 165.432C44.1477 165.185 44.4603 164.728 44.5844 163.723C44.7084 162.717 44.9255 159.511 44.9255 156.054C44.9255 153.174 44.861 150.512 44.7498 149.086C44.6068 147.251 42.9964 145.898 41.1898 146.095ZM30.8841 153.642C30.1503 153.811 29.5319 154.207 29.0852 154.794C28.8619 155.087 28.6351 155.545 28.5293 155.918C28.4686 156.131 28.4412 156.359 28.4267 156.773C28.4104 157.238 28.4202 157.401 28.4828 157.706C28.6923 158.727 29.2775 159.542 30.0879 159.942C30.2783 160.036 30.5552 160.141 30.7033 160.176C31.0529 160.258 31.6676 160.259 32.0012 160.179C32.8983 159.963 33.5997 159.392 34.0286 158.527C34.1633 158.256 34.2998 157.769 34.2998 157.559C34.2998 157.447 34.289 157.43 34.2325 157.453C33.8713 157.605 33.3919 157.66 33.0497 157.59C32.9227 157.564 32.7106 157.491 32.5782 157.428C32.3349 157.311 31.9535 156.971 31.9535 156.87C31.9535 156.84 32.0876 156.638 32.2515 156.422C32.6309 155.921 32.6598 155.88 32.6415 155.861C32.6332 155.853 32.36 155.832 32.0343 155.814C31.5424 155.787 31.4353 155.77 31.4013 155.716C31.3723 155.669 31.3735 155.545 31.4054 155.289C31.4402 155.011 31.4834 154.861 31.5926 154.637C31.753 154.309 31.9994 154.04 32.2708 153.896C32.3713 153.843 32.4534 153.787 32.4534 153.772C32.4534 153.756 32.3626 153.716 32.2515 153.681C31.9661 153.593 31.1936 153.571 30.8841 153.642ZM39.2963 153.655C38.892 153.742 38.4222 153.964 38.0642 154.238C37.5569 154.627 37.0968 155.353 36.9187 156.046C36.8059 156.485 36.7794 157.189 36.8585 157.646C37.0414 158.703 37.5977 159.531 38.4048 159.945C38.8489 160.172 39.4928 160.282 40.0249 160.222C40.3915 160.18 40.859 160.022 41.1779 159.833C41.4652 159.663 42.0568 159.066 42.2239 158.778C42.2947 158.656 42.3962 158.447 42.4492 158.315C42.5543 158.052 42.6832 157.483 42.6461 157.446C42.6334 157.433 42.5129 157.461 42.3781 157.508C42.1846 157.576 42.0445 157.594 41.7101 157.595C41.367 157.596 41.2434 157.58 41.0562 157.51C40.7715 157.405 40.4594 157.192 40.3229 157.011C40.2395 156.901 40.2274 156.859 40.2591 156.791C40.2807 156.745 40.4391 156.525 40.6111 156.303C40.7833 156.08 40.9178 155.879 40.91 155.856C40.9009 155.828 40.696 155.809 40.3249 155.802C39.9524 155.795 39.7344 155.775 39.6982 155.745C39.6545 155.708 39.6479 155.636 39.6671 155.406C39.7135 154.854 39.8558 154.531 40.2128 154.171C40.3484 154.034 40.5366 153.889 40.6403 153.843L40.8254 153.76L40.7043 153.709C40.5349 153.639 40.1374 153.578 39.8638 153.581C39.7368 153.583 39.4816 153.616 39.2963 153.655Z" fill-rule="evenodd" clip-rule="evenodd" fill="white" />
+</g>
+</g>
+<g clip-path="url(#f0-clip2_9_8)" id="frame-0-copy">
+<text fill="#E6E6E6" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="-0.0761719px"><tspan x="25" y="185.727">Innflow is collecting the data for </tspan><tspan x="25" y="203.727">this week’s report.</tspan></text>
+</g>
+<g id="frame-0-result">
+<g>
+<mask id="f0-path-37-inside-1_9_8" fill="white">
+<path d="M25 220C25 217.791 26.7909 216 29 216H204.648C206.858 216 208.648 217.791 208.648 220V237C208.648 239.209 206.858 241 204.648 241H29C26.7909 241 25 239.209 25 237V220Z" />
+</mask>
+<path d="M25 220C25 217.791 26.7909 216 29 216H204.648C206.858 216 208.648 217.791 208.648 220V237C208.648 239.209 206.858 241 204.648 241H29C26.7909 241 25 239.209 25 237V220Z" fill="white" fill-opacity="0.06" />
+<path d="M29 216V216.5H204.648V216V215.5H29V216ZM208.648 220H208.148V237H208.648H209.148V220H208.648ZM204.648 241V240.5H29V241V241.5H204.648V241ZM25 237H25.5V220H25H24.5V237H25ZM29 241V240.5C27.067 240.5 25.5 238.933 25.5 237H25H24.5C24.5 239.485 26.5147 241.5 29 241.5V241ZM208.648 237H208.148C208.148 238.933 206.581 240.5 204.648 240.5V241V241.5C207.134 241.5 209.148 239.485 209.148 237H208.648ZM204.648 216V216.5C206.581 216.5 208.148 218.067 208.148 220H208.648H209.148C209.148 217.515 207.134 215.5 204.648 215.5V216ZM29 216V215.5C26.5147 215.5 24.5 217.515 24.5 220H25H25.5C25.5 218.067 27.067 216.5 29 216.5V216Z" fill="white" fill-opacity="0.06" mask="url(#f0-path-37-inside-1_9_8)" />
+<g>
+<g clip-path="url(#f0-clip3_9_8)">
+<path d="M33.0586 233.261C33.0586 234.012 33.6676 234.621 34.4189 234.621H42.5806C43.3318 234.621 43.9409 234.012 43.9409 233.261V225.779L40.5402 222.379H34.4189C33.6676 222.379 33.0586 222.988 33.0586 223.739V233.261Z" fill="#4876D3" />
+<path opacity="0.8" d="M40.5406 224.419C40.5406 225.17 41.1497 225.779 41.9009 225.779H43.9414L40.5406 222.379V224.419Z" fill="#9CC3F4" />
+<path opacity="0.9" d="M35.9497 229.478H41.0508" stroke-width="0.765161" stroke-linecap="square" stroke-linejoin="round" stroke="white" />
+<path opacity="0.9" d="M35.9497 227.777H36.8004" stroke-width="0.765161" stroke-linecap="square" stroke-linejoin="round" stroke="white" />
+<path opacity="0.9" d="M38.0748 227.777H38.9255" stroke-width="0.765161" stroke-linecap="square" stroke-linejoin="round" stroke="white" />
+<path opacity="0.9" d="M35.9497 231.051H41.0508" stroke-width="0.765161" stroke-linecap="square" stroke-linejoin="round" stroke="white" />
+</g>
+</g>
+<g clip-path="url(#f0-clip4_9_8)">
+<text fill="#8C8C8C" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="12" letter-spacing="0px"><tspan x="49.5" y="232.864">Weekly_report_Nov_23.md</tspan></text>
+</g>
+</g>
+</g>
+<g filter="url(#f0-filter1_d_9_8)" id="frame-0-surface">
+<rect x="12" y="134" width="240" height="119" rx="16" fill="#1C1C1E" />
+<rect x="12.5" y="134.5" width="239" height="118" rx="15.5" stroke="#3A3A3C" />
+</g>
+<g id="frame-1-input">
+<text fill="#B3B3B3" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="9" letter-spacing="0.166992px"><tspan x="25.7231" y="59.7727">Mon</tspan></text>
+<g>
+<path d="M22.7109 78.5C22.7109 71.5964 28.3074 66 35.2109 66V66C42.1145 66 47.7109 71.5964 47.7109 78.5V78.5C47.7109 85.4036 42.1145 91 35.2109 91V91C28.3074 91 22.7109 85.4036 22.7109 78.5V78.5Z" fill="#E6E6E6" />
+<text fill="black" fill-opacity="0.9" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0px"><tspan x="27.3008" y="82.8636">30</tspan></text>
+</g>
+<g>
+<path d="M32.7109 96.5C32.7109 95.1193 33.8302 94 35.2109 94V94C36.5916 94 37.7109 95.1193 37.7109 96.5V96.5C37.7109 97.8807 36.5916 99 35.2109 99V99C33.8302 99 32.7109 97.8807 32.7109 96.5V96.5Z" fill="white" fill-opacity="0.08" />
+</g>
+</g>
+<g filter="url(#f1-filter0_d_9_82)" id="frame-1-top">
+<rect x="12" y="7" width="240" height="101" rx="16" fill="#1C1C1E" />
+<rect x="12.5" y="7.5" width="239" height="100" rx="15.5" stroke="#3A3A3C" />
+<g>
+<text fill="#E6E6E6" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="14" font-weight="600" letter-spacing="-0.150391px"><tspan x="27" y="35.0909">November</tspan></text>
+<g>
+<g>
+<path d="M101.646 28.8535C101.451 28.6583 101.451 28.3418 101.646 28.1465C101.842 27.9512 102.158 27.9512 102.353 28.1465L105 30.793L107.646 28.1465C107.842 27.9512 108.158 27.9512 108.353 28.1465C108.549 28.3418 108.549 28.6583 108.353 28.8535L105.353 31.8535C105.158 32.0488 104.842 32.0488 104.646 31.8535L101.646 28.8535Z" fill="#8C8C8C" />
+</g>
+</g>
+</g>
+<g>
+<g>
+<text fill="#B3B3B3" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="9" letter-spacing="0.166992px"><tspan x="59.6826" y="59.7727">Tue</tspan></text>
+<g>
+<text fill="#E6E6E6" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0px"><tspan x="64.7539" y="82.8636">1</tspan></text>
+</g>
+<g>
+<path d="M65.1367 96.5C65.1367 95.1193 66.256 94 67.6367 94V94C69.0174 94 70.1367 95.1193 70.1367 96.5V96.5C70.1367 97.8807 69.0174 99 67.6367 99V99C66.256 99 65.1367 97.8807 65.1367 96.5V96.5Z" fill="white" fill-opacity="0.08" />
+</g>
+</g>
+<g>
+<text fill="#B3B3B3" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="9" letter-spacing="0.166992px"><tspan x="90.4424" y="59.7727">Wed</tspan></text>
+<g>
+<text fill="#E6E6E6" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0px"><tspan x="96.3398" y="82.8636">2</tspan></text>
+</g>
+</g>
+<g>
+<text fill="#B3B3B3" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="9" letter-spacing="0.166992px"><tspan x="124.168" y="59.7727">Thu</tspan></text>
+<g>
+<text fill="#E6E6E6" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0px"><tspan x="128.588" y="82.8636">3</tspan></text>
+</g>
+<g>
+<path d="M129.996 96.5C129.996 95.1193 131.115 94 132.496 94V94C133.877 94 134.996 95.1193 134.996 96.5V96.5C134.996 97.8807 133.877 99 132.496 99V99C131.115 99 129.996 97.8807 129.996 96.5V96.5Z" fill="white" fill-opacity="0.08" />
+</g>
+</g>
+<g>
+<text fill="#B3B3B3" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="9" letter-spacing="0.166992px"><tspan x="159.402" y="59.7727">Fri</tspan></text>
+<g>
+<text fill="#E6E6E6" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0px"><tspan x="160.93" y="82.8636">4</tspan></text>
+</g>
+<g>
+<path d="M162.426 96.5C162.426 95.1193 163.545 94 164.926 94V94C166.306 94 167.426 95.1193 167.426 96.5V96.5C167.426 97.8807 166.306 99 164.926 99V99C163.545 99 162.426 97.8807 162.426 96.5V96.5Z" fill="white" fill-opacity="0.08" />
+</g>
+</g>
+<g>
+<text fill="#B3B3B3" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="9" letter-spacing="0.166992px"><tspan x="190.149" y="59.7727">Sat</tspan></text>
+<g>
+<text fill="#E6E6E6" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0px"><tspan x="193.559" y="82.8636">5</tspan></text>
+</g>
+</g>
+<g>
+<text fill="#B3B3B3" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="9" letter-spacing="0.166992px"><tspan x="221.498" y="59.7727">Sun</tspan></text>
+<g>
+<text fill="#E6E6E6" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0px"><tspan x="225.891" y="82.8636">6</tspan></text>
+</g>
+<g>
+<path d="M227.281 96.5C227.281 95.1193 228.401 94 229.781 94V94C231.162 94 232.281 95.1193 232.281 96.5V96.5C232.281 97.8807 231.162 99 229.781 99V99C228.401 99 227.281 97.8807 227.281 96.5V96.5Z" fill="white" fill-opacity="0.08" />
+</g>
+</g>
+</g>
+</g>
+<g id="frame-1-arrow">
+<g clip-path="url(#f1-clip0_9_82)">
+<path opacity="0.5" d="M127.417 116.003L132 120.586L136.583 116.003" stroke-width="1.48958" stroke-linecap="round" stroke-linejoin="round" stroke="#595959" />
+<path d="M127.417 121.414L132 125.997L136.583 121.414" stroke-width="1.48958" stroke-linecap="round" stroke-linejoin="round" stroke="#595959" />
+</g>
+</g>
+<g id="frame-1-mark">
+<g clip-path="url(#f1-clip1_9_82)">
+<path d="M41.1898 146.095C38.8112 146.354 36.1577 147.171 33.8918 147.829C31.8713 148.416 29.1201 149.252 27.327 150.031C26.2824 150.485 25.5499 151.461 25.3973 152.601C25.2311 153.843 25.0739 155.987 25.0739 157.94C25.0739 160.454 25.2289 162.466 25.4151 163.597C25.5701 164.477 26.0664 165.357 26.9616 165.755C27.352 165.896 27.4 165.898 29.7721 165.898H32.1855L32.461 165.735C32.6321 165.633 32.7926 165.47 32.8842 165.305C33.014 165.072 33.0366 164.934 33.0697 164.173C33.1121 163.196 33.1525 163.075 33.5981 162.594C34.3393 161.793 35.6299 161.724 36.4215 162.444C36.8904 162.87 36.9973 163.183 37.0404 164.262C37.0607 164.768 37.1079 165.214 37.1488 165.288C37.1885 165.36 37.3169 165.503 37.4337 165.607C37.7784 165.913 38.0668 165.942 40.5116 165.915C42.5527 165.893 42.7198 165.883 43.0937 165.758C43.3136 165.684 43.6224 165.537 43.78 165.432C44.1477 165.185 44.4603 164.728 44.5844 163.723C44.7084 162.717 44.9255 159.511 44.9255 156.054C44.9255 153.174 44.861 150.512 44.7498 149.086C44.6068 147.251 42.9964 145.898 41.1898 146.095ZM30.8841 153.642C30.1503 153.811 29.5319 154.207 29.0852 154.794C28.8619 155.087 28.6351 155.545 28.5293 155.918C28.4686 156.131 28.4412 156.359 28.4267 156.773C28.4104 157.238 28.4202 157.401 28.4828 157.706C28.6923 158.727 29.2775 159.542 30.0879 159.942C30.2783 160.036 30.5552 160.141 30.7033 160.176C31.0529 160.258 31.6676 160.259 32.0012 160.179C32.8983 159.963 33.5997 159.392 34.0286 158.527C34.1633 158.256 34.2998 157.769 34.2998 157.559C34.2998 157.447 34.289 157.43 34.2325 157.453C33.8713 157.605 33.3919 157.66 33.0497 157.59C32.9227 157.564 32.7106 157.491 32.5782 157.428C32.3349 157.311 31.9535 156.971 31.9535 156.87C31.9535 156.84 32.0876 156.638 32.2515 156.422C32.6309 155.921 32.6598 155.88 32.6415 155.861C32.6332 155.853 32.36 155.832 32.0343 155.814C31.5424 155.787 31.4353 155.77 31.4013 155.716C31.3723 155.669 31.3735 155.545 31.4054 155.289C31.4402 155.011 31.4834 154.861 31.5926 154.637C31.753 154.309 31.9994 154.04 32.2708 153.896C32.3713 153.843 32.4534 153.787 32.4534 153.772C32.4534 153.756 32.3626 153.716 32.2515 153.681C31.9661 153.593 31.1936 153.571 30.8841 153.642ZM39.2963 153.655C38.892 153.742 38.4222 153.964 38.0642 154.238C37.5569 154.627 37.0968 155.353 36.9187 156.046C36.8059 156.485 36.7794 157.189 36.8585 157.646C37.0414 158.703 37.5977 159.531 38.4048 159.945C38.8489 160.172 39.4928 160.282 40.0249 160.222C40.3915 160.18 40.859 160.022 41.1779 159.833C41.4652 159.663 42.0568 159.066 42.2239 158.778C42.2947 158.656 42.3962 158.447 42.4492 158.315C42.5543 158.052 42.6832 157.483 42.6461 157.446C42.6334 157.433 42.5129 157.461 42.3781 157.508C42.1846 157.576 42.0445 157.594 41.7101 157.595C41.367 157.596 41.2434 157.58 41.0562 157.51C40.7715 157.405 40.4594 157.192 40.3229 157.011C40.2395 156.901 40.2274 156.859 40.2591 156.791C40.2807 156.745 40.4391 156.525 40.6111 156.303C40.7833 156.08 40.9178 155.879 40.91 155.856C40.9009 155.828 40.696 155.809 40.3249 155.802C39.9524 155.795 39.7344 155.775 39.6982 155.745C39.6545 155.708 39.6479 155.636 39.6671 155.406C39.7135 154.854 39.8558 154.531 40.2128 154.171C40.3484 154.034 40.5366 153.889 40.6403 153.843L40.8254 153.76L40.7043 153.709C40.5349 153.639 40.1374 153.578 39.8638 153.581C39.7368 153.583 39.4816 153.616 39.2963 153.655Z" fill-rule="evenodd" clip-rule="evenodd" fill="white" />
+</g>
+</g>
+<g clip-path="url(#f1-clip2_9_82)" id="frame-1-copy">
+<text fill="#E6E6E6" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="-0.0761719px"><tspan x="25" y="185.727">Innflow is comparing this week’s </tspan><tspan x="25" y="203.727">results with the previous week.</tspan></text>
+</g>
+<g id="frame-1-result">
+<g>
+<mask id="f1-path-37-inside-1_9_82" fill="white">
+<path d="M25 220C25 217.791 26.7909 216 29 216H204.32C206.529 216 208.32 217.791 208.32 220V237C208.32 239.209 206.529 241 204.32 241H29C26.7909 241 25 239.209 25 237V220Z" />
+</mask>
+<path d="M25 220C25 217.791 26.7909 216 29 216H204.32C206.529 216 208.32 217.791 208.32 220V237C208.32 239.209 206.529 241 204.32 241H29C26.7909 241 25 239.209 25 237V220Z" fill="white" fill-opacity="0.06" />
+<path d="M29 216V216.5H204.32V216V215.5H29V216ZM208.32 220H207.82V237H208.32H208.82V220H208.32ZM204.32 241V240.5H29V241V241.5H204.32V241ZM25 237H25.5V220H25H24.5V237H25ZM29 241V240.5C27.067 240.5 25.5 238.933 25.5 237H25H24.5C24.5 239.485 26.5147 241.5 29 241.5V241ZM208.32 237H207.82C207.82 238.933 206.253 240.5 204.32 240.5V241V241.5C206.806 241.5 208.82 239.485 208.82 237H208.32ZM204.32 216V216.5C206.253 216.5 207.82 218.067 207.82 220H208.32H208.82C208.82 217.515 206.806 215.5 204.32 215.5V216ZM29 216V215.5C26.5147 215.5 24.5 217.515 24.5 220H25H25.5C25.5 218.067 27.067 216.5 29 216.5V216Z" fill="white" fill-opacity="0.06" mask="url(#f1-path-37-inside-1_9_82)" />
+<g>
+<g clip-path="url(#f1-clip3_9_82)">
+<path d="M33.0586 233.261C33.0586 234.012 33.6676 234.621 34.4189 234.621H42.5806C43.3318 234.621 43.9409 234.012 43.9409 233.261V225.779L40.5402 222.379H34.4189C33.6676 222.379 33.0586 222.988 33.0586 223.739V233.261Z" fill="#4876D3" />
+<path opacity="0.8" d="M40.5406 224.419C40.5406 225.17 41.1497 225.779 41.9009 225.779H43.9414L40.5406 222.379V224.419Z" fill="#9CC3F4" />
+<path opacity="0.9" d="M35.9497 229.478H41.0508" stroke-width="0.765161" stroke-linecap="square" stroke-linejoin="round" stroke="white" />
+<path opacity="0.9" d="M35.9497 227.777H36.8004" stroke-width="0.765161" stroke-linecap="square" stroke-linejoin="round" stroke="white" />
+<path opacity="0.9" d="M38.0748 227.777H38.9255" stroke-width="0.765161" stroke-linecap="square" stroke-linejoin="round" stroke="white" />
+<path opacity="0.9" d="M35.9497 231.051H41.0508" stroke-width="0.765161" stroke-linecap="square" stroke-linejoin="round" stroke="white" />
+</g>
+</g>
+<g clip-path="url(#f1-clip4_9_82)">
+<text fill="#8C8C8C" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="12" letter-spacing="0px"><tspan x="49.5" y="232.864">Weekly_report_Nov_30.md</tspan></text>
+</g>
+</g>
+</g>
+<g filter="url(#f1-filter1_d_9_82)" id="frame-1-surface">
+<rect x="12" y="134" width="240" height="119" rx="16" fill="#1C1C1E" />
+<rect x="12.5" y="134.5" width="239" height="118" rx="15.5" stroke="#3A3A3C" />
+</g>
+<g id="frame-2-input">
+<text fill="#B3B3B3" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="9" letter-spacing="0.166992px"><tspan x="25.7231" y="59.7727">Mon</tspan></text>
+<g>
+<path d="M22.7109 78.5C22.7109 71.5964 28.3074 66 35.2109 66V66C42.1145 66 47.7109 71.5964 47.7109 78.5V78.5C47.7109 85.4036 42.1145 91 35.2109 91V91C28.3074 91 22.7109 85.4036 22.7109 78.5V78.5Z" fill="#E6E6E6" />
+<text fill="black" fill-opacity="0.9" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0px"><tspan x="31.6895" y="82.8636">7</tspan></text>
+</g>
+<g>
+<path d="M32.7109 96.5C32.7109 95.1193 33.8302 94 35.2109 94V94C36.5916 94 37.7109 95.1193 37.7109 96.5V96.5C37.7109 97.8807 36.5916 99 35.2109 99V99C33.8302 99 32.7109 97.8807 32.7109 96.5V96.5Z" fill="white" fill-opacity="0.08" />
+</g>
+</g>
+<g filter="url(#f2-filter0_d_9_156)" id="frame-2-top">
+<rect x="12" y="7" width="240" height="101" rx="16" fill="#1C1C1E" />
+<rect x="12.5" y="7.5" width="239" height="100" rx="15.5" stroke="#3A3A3C" />
+<g>
+<text fill="#E6E6E6" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="14" font-weight="600" letter-spacing="-0.150391px"><tspan x="27" y="35.0909">December</tspan></text>
+<g>
+<g>
+<path d="M102.646 28.8535C102.451 28.6583 102.451 28.3418 102.646 28.1465C102.842 27.9512 103.158 27.9512 103.353 28.1465L106 30.793L108.646 28.1465C108.842 27.9512 109.158 27.9512 109.353 28.1465C109.549 28.3418 109.549 28.6583 109.353 28.8535L106.353 31.8535C106.158 32.0488 105.842 32.0488 105.646 31.8535L102.646 28.8535Z" fill="#8C8C8C" />
+</g>
+</g>
+</g>
+<g>
+<g>
+<text fill="#B3B3B3" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="9" letter-spacing="0.166992px"><tspan x="59.6826" y="59.7727">Tue</tspan></text>
+<g>
+<text fill="#E6E6E6" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0px"><tspan x="63.7637" y="82.8636">8</tspan></text>
+</g>
+<g>
+<path d="M65.1367 96.5C65.1367 95.1193 66.256 94 67.6367 94V94C69.0174 94 70.1367 95.1193 70.1367 96.5V96.5C70.1367 97.8807 69.0174 99 67.6367 99V99C66.256 99 65.1367 97.8807 65.1367 96.5V96.5Z" fill="white" fill-opacity="0.08" />
+</g>
+</g>
+<g>
+<text fill="#B3B3B3" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="9" letter-spacing="0.166992px"><tspan x="90.4424" y="59.7727">Wed</tspan></text>
+<g>
+<text fill="#E6E6E6" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0px"><tspan x="96.1758" y="82.8636">9</tspan></text>
+</g>
+</g>
+<g>
+<text fill="#B3B3B3" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="9" letter-spacing="0.166992px"><tspan x="124.168" y="59.7727">Thu</tspan></text>
+<g>
+<text fill="#E6E6E6" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0px"><tspan x="125.611" y="82.8636">10</tspan></text>
+</g>
+<g>
+<path d="M129.996 96.5C129.996 95.1193 131.115 94 132.496 94V94C133.877 94 134.996 95.1193 134.996 96.5V96.5C134.996 97.8807 133.877 99 132.496 99V99C131.115 99 129.996 97.8807 129.996 96.5V96.5Z" fill="white" fill-opacity="0.08" />
+</g>
+</g>
+<g>
+<text fill="#B3B3B3" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="9" letter-spacing="0.166992px"><tspan x="159.402" y="59.7727">Fri</tspan></text>
+<g>
+<text fill="#E6E6E6" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0px"><tspan x="159.16" y="82.8636">11</tspan></text>
+</g>
+<g>
+<path d="M162.426 96.5C162.426 95.1193 163.545 94 164.926 94V94C166.306 94 167.426 95.1193 167.426 96.5V96.5C167.426 97.8807 166.306 99 164.926 99V99C163.545 99 162.426 97.8807 162.426 96.5V96.5Z" fill="white" fill-opacity="0.08" />
+</g>
+</g>
+<g>
+<text fill="#B3B3B3" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="9" letter-spacing="0.166992px"><tspan x="190.149" y="59.7727">Sat</tspan></text>
+<g>
+<text fill="#E6E6E6" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0px"><tspan x="190.746" y="82.8636">12</tspan></text>
+</g>
+</g>
+<g>
+<text fill="#B3B3B3" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="9" letter-spacing="0.166992px"><tspan x="221.498" y="59.7727">Sun</tspan></text>
+<g>
+<text fill="#E6E6E6" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="12" font-weight="600" letter-spacing="0px"><tspan x="222.99" y="82.8636">13</tspan></text>
+</g>
+<g>
+<path d="M227.281 96.5C227.281 95.1193 228.401 94 229.781 94V94C231.162 94 232.281 95.1193 232.281 96.5V96.5C232.281 97.8807 231.162 99 229.781 99V99C228.401 99 227.281 97.8807 227.281 96.5V96.5Z" fill="white" fill-opacity="0.08" />
+</g>
+</g>
+</g>
+</g>
+<g id="frame-2-arrow">
+<g clip-path="url(#f2-clip0_9_156)">
+<path opacity="0.5" d="M127.417 116.003L132 120.586L136.583 116.003" stroke-width="1.48958" stroke-linecap="round" stroke-linejoin="round" stroke="#595959" />
+<path d="M127.417 121.414L132 125.997L136.583 121.414" stroke-width="1.48958" stroke-linecap="round" stroke-linejoin="round" stroke="#595959" />
+</g>
+</g>
+<g id="frame-2-mark">
+<g clip-path="url(#f2-clip1_9_156)">
+<path d="M41.1898 146.095C38.8112 146.354 36.1577 147.171 33.8918 147.829C31.8713 148.416 29.1201 149.252 27.327 150.031C26.2824 150.485 25.5499 151.461 25.3973 152.601C25.2311 153.843 25.0739 155.987 25.0739 157.94C25.0739 160.454 25.2289 162.466 25.4151 163.597C25.5701 164.477 26.0664 165.357 26.9616 165.755C27.352 165.896 27.4 165.898 29.7721 165.898H32.1855L32.461 165.735C32.6321 165.633 32.7926 165.47 32.8842 165.305C33.014 165.072 33.0366 164.934 33.0697 164.173C33.1121 163.196 33.1525 163.075 33.5981 162.594C34.3393 161.793 35.6299 161.724 36.4215 162.444C36.8904 162.87 36.9973 163.183 37.0404 164.262C37.0607 164.768 37.1079 165.214 37.1488 165.288C37.1885 165.36 37.3169 165.503 37.4337 165.607C37.7784 165.913 38.0668 165.942 40.5116 165.915C42.5527 165.893 42.7198 165.883 43.0937 165.758C43.3136 165.684 43.6224 165.537 43.78 165.432C44.1477 165.185 44.4603 164.728 44.5844 163.723C44.7084 162.717 44.9255 159.511 44.9255 156.054C44.9255 153.174 44.861 150.512 44.7498 149.086C44.6068 147.251 42.9964 145.898 41.1898 146.095ZM30.8841 153.642C30.1503 153.811 29.5319 154.207 29.0852 154.794C28.8619 155.087 28.6351 155.545 28.5293 155.918C28.4686 156.131 28.4412 156.359 28.4267 156.773C28.4104 157.238 28.4202 157.401 28.4828 157.706C28.6923 158.727 29.2775 159.542 30.0879 159.942C30.2783 160.036 30.5552 160.141 30.7033 160.176C31.0529 160.258 31.6676 160.259 32.0012 160.179C32.8983 159.963 33.5997 159.392 34.0286 158.527C34.1633 158.256 34.2998 157.769 34.2998 157.559C34.2998 157.447 34.289 157.43 34.2325 157.453C33.8713 157.605 33.3919 157.66 33.0497 157.59C32.9227 157.564 32.7106 157.491 32.5782 157.428C32.3349 157.311 31.9535 156.971 31.9535 156.87C31.9535 156.84 32.0876 156.638 32.2515 156.422C32.6309 155.921 32.6598 155.88 32.6415 155.861C32.6332 155.853 32.36 155.832 32.0343 155.814C31.5424 155.787 31.4353 155.77 31.4013 155.716C31.3723 155.669 31.3735 155.545 31.4054 155.289C31.4402 155.011 31.4834 154.861 31.5926 154.637C31.753 154.309 31.9994 154.04 32.2708 153.896C32.3713 153.843 32.4534 153.787 32.4534 153.772C32.4534 153.756 32.3626 153.716 32.2515 153.681C31.9661 153.593 31.1936 153.571 30.8841 153.642ZM39.2963 153.655C38.892 153.742 38.4222 153.964 38.0642 154.238C37.5569 154.627 37.0968 155.353 36.9187 156.046C36.8059 156.485 36.7794 157.189 36.8585 157.646C37.0414 158.703 37.5977 159.531 38.4048 159.945C38.8489 160.172 39.4928 160.282 40.0249 160.222C40.3915 160.18 40.859 160.022 41.1779 159.833C41.4652 159.663 42.0568 159.066 42.2239 158.778C42.2947 158.656 42.3962 158.447 42.4492 158.315C42.5543 158.052 42.6832 157.483 42.6461 157.446C42.6334 157.433 42.5129 157.461 42.3781 157.508C42.1846 157.576 42.0445 157.594 41.7101 157.595C41.367 157.596 41.2434 157.58 41.0562 157.51C40.7715 157.405 40.4594 157.192 40.3229 157.011C40.2395 156.901 40.2274 156.859 40.2591 156.791C40.2807 156.745 40.4391 156.525 40.6111 156.303C40.7833 156.08 40.9178 155.879 40.91 155.856C40.9009 155.828 40.696 155.809 40.3249 155.802C39.9524 155.795 39.7344 155.775 39.6982 155.745C39.6545 155.708 39.6479 155.636 39.6671 155.406C39.7135 154.854 39.8558 154.531 40.2128 154.171C40.3484 154.034 40.5366 153.889 40.6403 153.843L40.8254 153.76L40.7043 153.709C40.5349 153.639 40.1374 153.578 39.8638 153.581C39.7368 153.583 39.4816 153.616 39.2963 153.655Z" fill-rule="evenodd" clip-rule="evenodd" fill="white" />
+</g>
+</g>
+<g clip-path="url(#f2-clip2_9_156)" id="frame-2-copy">
+<text fill="#E6E6E6" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="13" font-weight="600" letter-spacing="-0.0761719px"><tspan x="25" y="185.727">Innflow is consolidating the latest </tspan><tspan x="25" y="203.727">weekly results.</tspan></text>
+</g>
+<g id="frame-2-result">
+<g>
+<mask id="f2-path-37-inside-1_9_156" fill="white">
+<path d="M25 220C25 217.791 26.7909 216 29 216H203.359C205.569 216 207.359 217.791 207.359 220V237C207.359 239.209 205.569 241 203.359 241H29C26.7909 241 25 239.209 25 237V220Z" />
+</mask>
+<path d="M25 220C25 217.791 26.7909 216 29 216H203.359C205.569 216 207.359 217.791 207.359 220V237C207.359 239.209 205.569 241 203.359 241H29C26.7909 241 25 239.209 25 237V220Z" fill="white" fill-opacity="0.06" />
+<path d="M29 216V216.5H203.359V216V215.5H29V216ZM207.359 220H206.859V237H207.359H207.859V220H207.359ZM203.359 241V240.5H29V241V241.5H203.359V241ZM25 237H25.5V220H25H24.5V237H25ZM29 241V240.5C27.067 240.5 25.5 238.933 25.5 237H25H24.5C24.5 239.485 26.5147 241.5 29 241.5V241ZM207.359 237H206.859C206.859 238.933 205.292 240.5 203.359 240.5V241V241.5C205.845 241.5 207.859 239.485 207.859 237H207.359ZM203.359 216V216.5C205.292 216.5 206.859 218.067 206.859 220H207.359H207.859C207.859 217.515 205.845 215.5 203.359 215.5V216ZM29 216V215.5C26.5147 215.5 24.5 217.515 24.5 220H25H25.5C25.5 218.067 27.067 216.5 29 216.5V216Z" fill="white" fill-opacity="0.06" mask="url(#f2-path-37-inside-1_9_156)" />
+<g>
+<g clip-path="url(#f2-clip3_9_156)">
+<path d="M33.0586 233.261C33.0586 234.012 33.6676 234.621 34.4189 234.621H42.5806C43.3318 234.621 43.9409 234.012 43.9409 233.261V225.779L40.5402 222.379H34.4189C33.6676 222.379 33.0586 222.988 33.0586 223.739V233.261Z" fill="#4876D3" />
+<path opacity="0.8" d="M40.5406 224.419C40.5406 225.17 41.1497 225.779 41.9009 225.779H43.9414L40.5406 222.379V224.419Z" fill="#9CC3F4" />
+<path opacity="0.9" d="M35.9497 229.478H41.0508" stroke-width="0.765161" stroke-linecap="square" stroke-linejoin="round" stroke="white" />
+<path opacity="0.9" d="M35.9497 227.777H36.8004" stroke-width="0.765161" stroke-linecap="square" stroke-linejoin="round" stroke="white" />
+<path opacity="0.9" d="M38.0748 227.777H38.9255" stroke-width="0.765161" stroke-linecap="square" stroke-linejoin="round" stroke="white" />
+<path opacity="0.9" d="M35.9497 231.051H41.0508" stroke-width="0.765161" stroke-linecap="square" stroke-linejoin="round" stroke="white" />
+</g>
+</g>
+<g clip-path="url(#f2-clip4_9_156)">
+<text fill="#8C8C8C" style="white-space: pre" xml:space="preserve" font-family="Inter, -apple-system, Arial, sans-serif" font-size="12" letter-spacing="0px"><tspan x="49.5" y="232.864">Weekly_report_Dec_07.md</tspan></text>
+</g>
+</g>
+</g>
+<g filter="url(#f2-filter1_d_9_156)" id="frame-2-surface">
+<rect x="12" y="134" width="240" height="119" rx="16" fill="#1C1C1E" />
+<rect x="12.5" y="134.5" width="239" height="118" rx="15.5" stroke="#3A3A3C" />
+</g>
+</svg>

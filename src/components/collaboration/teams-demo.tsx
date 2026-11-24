@@ -1,5 +1,6 @@
 // biome-ignore-all lint/performance/noImgElement: Small local source SVGs retain their intrinsic Figma geometry; raster artwork is lazy loaded.
 
+import { agentAvatars } from "@/config/agent-avatars";
 import {
   ChannelButton,
   ChannelHeading,
@@ -23,7 +24,6 @@ const imgCentralIconBase4 = `${assetPathPrefix}/580f9.svg`;
 const imgCentralIconBase5 = `${assetPathPrefix}/1ff14.svg`;
 const imgCentralIconBase6 = `${assetPathPrefix}/a57f3.svg`;
 const imgCentralIconBase7 = `${assetPathPrefix}/286a9.svg`;
-const imgIcon = `${assetPathPrefix}/7367c.svg`;
 const imgCentralIconBase8 = `${assetPathPrefix}/a1161.svg`;
 const imgCentralIconBase9 = `${assetPathPrefix}/e5515.svg`;
 const imgCentralIconBase10 = `${assetPathPrefix}/c5e8b.svg`;
@@ -295,20 +295,10 @@ export function TeamsDemo() {
                       data-name="Container"
                     >
                       <div
-                        className={styles.layer91}
+                        className={`${styles.layer91} ${styles.agentAvatar}`}
                         data-node-id="39:4281"
                       >
-                        <div
-                          className={styles.layer92}
-                          data-node-id="39:4282"
-                        >
-                          <img
-                            loading="lazy"
-                            alt=""
-                            className={styles.svg}
-                            src={imgIcon}
-                          />
-                        </div>
+                        <img loading="lazy" alt="" src={agentAvatars.innflow} />
                       </div>
                       <div
                         className={styles.layer93}

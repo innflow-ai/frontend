@@ -28,9 +28,7 @@ beforeEach(() => {
     "matchMedia",
     vi.fn((query: string) => ({
       matches:
-        query === "(min-width: 761px) and (max-width: 1100px)" &&
-        viewportWidth >= 761 &&
-        viewportWidth <= 1100,
+        query === "(max-width: 760px)" && viewportWidth <= 760,
       addEventListener: (_event: string, listener: () => void) =>
         mediaListeners.add(listener),
       removeEventListener: (_event: string, listener: () => void) =>
@@ -44,72 +42,47 @@ afterEach(() => {
 });
 
 describe("Workspace overview", () => {
-  it.each([390, 760, 1101, 1440, 1920])(
-    "shows all details at %ipx and restores the selected tablet card on resize",
-    (width) => {
-      render(<WorkspaceOverview />);
-      fireEvent.click(screen.getByRole("button", { name: "Train" }));
-      act(() => {
-        viewportWidth = width;
-        for (const notify of mediaListeners) notify();
-      });
-      for (const card of workspaceCards) {
-        expect(screen.getByRole("heading", { name: card.title })).toBeVisible();
-        expect(
-          screen.queryByRole("button", { name: card.title }),
-        ).not.toBeInTheDocument();
-        expect(
-          document.getElementById(`workspace-${card.id}-details`),
-        ).toHaveAttribute("aria-hidden", "false");
-      }
-      act(() => {
-        viewportWidth = 900;
-        for (const notify of mediaListeners) notify();
-      });
-      expect(screen.getByRole("button", { name: "Train" })).toHaveAttribute(
-        "aria-expanded",
-        "true",
-      );
-      expect(screen.getByRole("button", { name: "Teach a task" })).toHaveAttribute(
-        "aria-expanded",
-        "false",
-      );
-    },
-  );
-
-  it.each([761, 1100])(
-    "starts with Teach a task expanded at the %ipx tablet boundary",
-    (width) => {
-      viewportWidth = width;
-      render(<WorkspaceOverview />);
-      expect(
-        screen.queryByText("Support infrastructure"),
-      ).not.toBeInTheDocument();
-      for (const [index, card] of workspaceCards.entries()) {
-        expect(
-          screen.getByRole("button", { name: card.title }),
-        ).toHaveAttribute("aria-expanded", String(index === 0));
-      }
-      expect(
-        screen.getByRole("heading", {
-          name: "Move everyday work forward.",
-        }),
-      ).toBeVisible();
-    },
-  );
-
-  it("keeps desktop cards fully expanded when hovered and exposes the signup link", () => {
-    viewportWidth = 1440;
+  it("starts with only Handle supplier paperwork expanded", () => {
     render(<WorkspaceOverview />);
-    const cards = screen.getAllByRole("article");
-    fireEvent.pointerEnter(cards[2], { pointerType: "mouse" });
-    for (const card of cards) {
-      expect(card).toHaveAttribute("data-active", "true");
+    for (const [index, card] of workspaceCards.entries()) {
+      expect(screen.getByRole("button", { name: card.title })).toHaveAttribute(
+        "aria-expanded",
+        String(index === 0),
+      );
     }
-    expect(screen.queryByRole("button")).not.toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Get started" })).toHaveAttribute(
       "href",
       "https://app.innflow.ai/signup?callbackURL=%2Fworkflows",
+    );
+  });
+
+  it("expands the hovered panel and collapses the previous one", () => {
+    render(<WorkspaceOverview />);
+    for (const panel of screen.getAllByRole("article").reverse()) {
+      const event = new MouseEvent("pointerover", { bubbles: true });
+      Object.defineProperty(event, "pointerType", { value: "mouse" });
+      fireEvent(panel, event);
+      expect(panel).toHaveAttribute("data-active", "true");
+      expect(screen.getAllByRole("button", { expanded: true })).toHaveLength(1);
+    }
+  });
+
+  it("shows all four complete cards on phones and restores selection when resized", () => {
+    render(<WorkspaceOverview />);
+    fireEvent.click(screen.getByRole("button", { name: "Train" }));
+    act(() => {
+      viewportWidth = 390;
+      for (const notify of mediaListeners) notify();
+    });
+    expect(screen.queryByRole("button")).not.toBeInTheDocument();
+    expect(document.querySelectorAll('[data-active="true"]')).toHaveLength(4);
+    act(() => {
+      viewportWidth = 1440;
+      for (const notify of mediaListeners) notify();
+    });
+    expect(screen.getByRole("button", { name: "Train" })).toHaveAttribute(
+      "aria-expanded",
+      "true",
     );
   });
 
@@ -130,7 +103,7 @@ describe("Workspace overview", () => {
 
   it("supports arrow, Home and End navigation without losing focus", () => {
     render(<WorkspaceOverview />);
-    const connect = screen.getByRole("button", { name: "Teach a task" });
+    const connect = screen.getByRole("button", { name: "Handle supplier paperwork" });
     const deploy = screen.getByRole("button", { name: "Deploy" });
     fireEvent.keyDown(connect, { key: "End" });
     expect(deploy).toHaveFocus();

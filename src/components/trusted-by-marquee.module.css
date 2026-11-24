@@ -1,7 +1,8 @@
 .section {
   width: min(100%, 1120px);
   margin-inline: auto;
-  padding: clamp(32px, calc(4vw + 8px), 56px) 16px;
+  --marquee-padding: clamp(32px, calc(4vw + 8px), 56px);
+  padding: var(--marquee-padding) 16px calc(var(--marquee-padding) + 16px);
 }
 .section .title {
   margin: 0 0 20px;

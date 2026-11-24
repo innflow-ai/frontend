@@ -1,0 +1,236 @@
+/* Five-second input, handoff, result hold, and return on the Innflow storyboard. */
+@media (prefers-reduced-motion: no-preference) {
+  :where([data-motion="true"]) .scheduleSurface {
+    animation: scheduleSurface 5s cubic-bezier(.22, 1, .36, 1) infinite;
+    animation-play-state: var(--flow-play, paused);
+  }
+  :where([data-motion="true"]) .scheduleInput {
+    animation: scheduleInput 5s cubic-bezier(.22, 1, .36, 1) infinite;
+    animation-play-state: var(--flow-play, paused);
+  }
+  :where([data-motion="true"]) .scheduleArrow {
+    animation: scheduleArrow 5s cubic-bezier(.22, 1, .36, 1) infinite;
+    animation-play-state: var(--flow-play, paused);
+  }
+  :where([data-motion="true"]) .scheduleCopy {
+    animation: scheduleCopy 5s cubic-bezier(.22, 1, .36, 1) infinite;
+    animation-play-state: var(--flow-play, paused);
+  }
+  :where([data-motion="true"]) .scheduleResult {
+    animation: scheduleResult 5s cubic-bezier(.22, 1, .36, 1) infinite;
+    animation-play-state: var(--flow-play, paused);
+  }
+  :where([data-motion="true"]) .scheduleSignal {
+    animation: scheduleSignalOpacity 5s cubic-bezier(.22, 1, .36, 1) infinite, scheduleSignalTravel 5s cubic-bezier(.22, 1, .36, 1) infinite;
+    animation-play-state: var(--flow-play, paused);
+  }
+  :where([data-motion="true"]) .triggerSurface {
+    animation: triggerSurface 5s cubic-bezier(.22, 1, .36, 1) infinite;
+    animation-play-state: var(--flow-play, paused);
+  }
+  :where([data-motion="true"]) .triggerInput {
+    animation: triggerInput 5s cubic-bezier(.22, 1, .36, 1) infinite;
+    animation-play-state: var(--flow-play, paused);
+  }
+  :where([data-motion="true"]) .triggerArrow {
+    animation: triggerArrow 5s cubic-bezier(.22, 1, .36, 1) infinite;
+    animation-play-state: var(--flow-play, paused);
+  }
+  :where([data-motion="true"]) .triggerCopy {
+    animation: triggerCopy 5s cubic-bezier(.22, 1, .36, 1) infinite;
+    animation-play-state: var(--flow-play, paused);
+  }
+  :where([data-motion="true"]) .triggerResult {
+    animation: triggerResult 5s cubic-bezier(.22, 1, .36, 1) infinite;
+    animation-play-state: var(--flow-play, paused);
+  }
+  :where([data-motion="true"]) .triggerSignal {
+    animation: triggerSignalOpacity 5s cubic-bezier(.22, 1, .36, 1) infinite, triggerSignalTravel 5s cubic-bezier(.22, 1, .36, 1) infinite;
+    animation-play-state: var(--flow-play, paused);
+  }
+  :where([data-motion="true"]) .automationSurface {
+    animation: automationSurface 5s cubic-bezier(.22, 1, .36, 1) infinite;
+    animation-play-state: var(--flow-play, paused);
+  }
+  :where([data-motion="true"]) .automationInput {
+    animation: automationInput 5s cubic-bezier(.22, 1, .36, 1) infinite;
+    animation-play-state: var(--flow-play, paused);
+  }
+  :where([data-motion="true"]) .automationArrow {
+    animation: automationArrow 5s cubic-bezier(.22, 1, .36, 1) infinite;
+    animation-play-state: var(--flow-play, paused);
+  }
+  :where([data-motion="true"]) .automationStep1 {
+    animation: automationStep1 5s cubic-bezier(.22, 1, .36, 1) infinite;
+    animation-play-state: var(--flow-play, paused);
+  }
+  :where([data-motion="true"]) .automationArrow1 {
+    animation: automationArrow1 5s cubic-bezier(.22, 1, .36, 1) infinite;
+    animation-play-state: var(--flow-play, paused);
+  }
+  :where([data-motion="true"]) .automationStep2 {
+    animation: automationStep2 5s cubic-bezier(.22, 1, .36, 1) infinite;
+    animation-play-state: var(--flow-play, paused);
+  }
+  :where([data-motion="true"]) .automationStep4 {
+    animation: automationStep4 5s cubic-bezier(.22, 1, .36, 1) infinite;
+    animation-play-state: var(--flow-play, paused);
+  }
+  :where([data-motion="true"]) .automationArrow3 {
+    animation: automationArrow3 5s cubic-bezier(.22, 1, .36, 1) infinite;
+    animation-play-state: var(--flow-play, paused);
+  }
+  :where([data-motion="true"]) .automationStep3 {
+    animation: automationStep3 5s cubic-bezier(.22, 1, .36, 1) infinite;
+    animation-play-state: var(--flow-play, paused);
+  }
+}
+
+@keyframes scheduleSurface {
+  0%, 22%, 98.8%, 100% { transform: translateY(-38px) scaleY(.36); }
+  32%, 87% { transform: none; }
+}
+
+@keyframes scheduleInput {
+  0%, 16.8%, 99%, 100% { opacity: 0.44; }
+  22.6%, 88% { opacity: 1; }
+}
+
+@keyframes scheduleArrow {
+  0%, 14.4%, 97.2%, 100% { opacity: 0; transform: translateY(3px); }
+  20%, 87% { opacity: 1; transform: none; }
+}
+
+@keyframes scheduleCopy {
+  0%, 31.4%, 97.2%, 100% { opacity: 0; transform: translateY(5px); }
+  38.2%, 87% { opacity: 1; transform: none; }
+}
+
+@keyframes scheduleResult {
+  0%, 40%, 97.2%, 100% { opacity: 0; transform: translateY(6px); }
+  47%, 87% { opacity: 1; transform: none; }
+}
+
+@keyframes scheduleSignalOpacity {
+  0%, 2.4%, 29.6%, 100% { opacity: 0; }
+  5.6%, 24.4% { opacity: 1; }
+}
+
+@keyframes scheduleSignalTravel {
+  0%, 3.6%, 98.8%, 100% { transform: translateX(193px); }
+  19.8%, 87.6% { transform: translateX(0px); }
+}
+
+@keyframes triggerSurface {
+  0%, 25%, 98.8%, 100% { transform: translateY(-38px) scaleY(.36); }
+  35%, 87% { transform: none; }
+}
+
+@keyframes triggerInput {
+  0%, 5.8%, 97.8%, 100% { opacity: 0; transform: translateY(4px); }
+  12.4%, 87.4% { opacity: 1; transform: translateY(0px); }
+}
+
+@keyframes triggerArrow {
+  0%, 17.4%, 97.2%, 100% { opacity: 0; transform: translateY(3px); }
+  23%, 87% { opacity: 1; transform: none; }
+}
+
+@keyframes triggerCopy {
+  0%, 34.4%, 97.2%, 100% { opacity: 0; transform: translateY(5px); }
+  41.2%, 87% { opacity: 1; transform: none; }
+}
+
+@keyframes triggerResult {
+  0%, 43%, 97.2%, 100% { opacity: 0; transform: translateY(6px); }
+  50%, 87% { opacity: 1; transform: none; }
+}
+
+@keyframes triggerSignalOpacity {
+  0%, 18.4%, 33.2%, 100% { opacity: 0; }
+  20.8%, 30.6% { opacity: 1; }
+}
+
+@keyframes triggerSignalTravel {
+  0%, 18.6% { transform: translateY(0px); }
+  32%, 100% { transform: translateY(41px); }
+}
+
+@keyframes automationSurface {
+  0%, 17%, 98.8%, 100% { transform: translateY(-38px) scaleY(.36); }
+  27%, 87% { transform: none; }
+}
+
+@keyframes automationInput {
+  0%, 3.2%, 99%, 100% { opacity: 0.55; }
+  15%, 87.6% { opacity: 1; }
+}
+
+@keyframes automationArrow {
+  0%, 9.4%, 97.2%, 100% { opacity: 0; transform: translateY(3px); }
+  15%, 87% { opacity: 1; transform: none; }
+}
+
+@keyframes automationStep1 {
+  0%, 25.6%, 97.2%, 100% { opacity: 0; transform: translateY(4px); }
+  31.2%, 87% { opacity: 1; transform: none; }
+}
+
+@keyframes automationArrow1 {
+  0%, 30.2%, 97.2%, 100% { opacity: 0; }
+  35.8%, 87% { opacity: 1; }
+}
+
+@keyframes automationStep2 {
+  0%, 34.8%, 97.2%, 100% { opacity: 0; transform: translateY(4px); }
+  40.4%, 87% { opacity: 1; transform: none; }
+}
+
+@keyframes automationStep4 {
+  0%, 48.6%, 97.2%, 100% { opacity: 0; transform: translateY(4px); }
+  54.2%, 87% { opacity: 1; transform: none; }
+}
+
+@keyframes automationArrow3 {
+  0%, 44.0%, 97.2%, 100% { opacity: 0; }
+  49.6%, 87% { opacity: 1; }
+}
+
+@keyframes automationStep3 {
+  0%, 39.4%, 97.2%, 100% { opacity: 0; transform: translateY(4px); }
+  45.0%, 87% { opacity: 1; transform: none; }
+}
+
+/* During the return, the next input covers the current one. The surrounding
+   gradient and Innflow mark stay visible while the example changes. */
+.loadingLines, .upcoming { opacity: 0; }
+.upcomingInput { opacity: .44; }
+[data-flow-scene="trigger"] .upcomingInput { opacity: 0; }
+[data-flow-scene="automation"] .upcomingInput { opacity: .55; }
+
+@media (prefers-reduced-motion: no-preference) {
+  :where([data-motion="true"]) [data-flow-scene] .upcoming {
+    animation: nextInput 5s ease-in-out infinite;
+    animation-play-state: var(--flow-play, paused);
+  }
+  :where([data-motion="true"]) [data-flow-scene="schedule"] .loadingLines {
+    animation: scheduleLoading 5s ease-out infinite;
+    animation-play-state: var(--flow-play, paused);
+  }
+  :where([data-motion="true"]) [data-flow-scene="trigger"] .loadingLines {
+    animation: triggerLoading 5s ease-out infinite;
+    animation-play-state: var(--flow-play, paused);
+  }
+}
+@keyframes nextInput {
+  0%, 90% { opacity: 0; }
+  99%, 100% { opacity: 1; }
+}
+@keyframes scheduleLoading {
+  0%, 25%, 36.4%, 100% { opacity: 0; }
+  30%, 32% { opacity: 1; }
+}
+@keyframes triggerLoading {
+  0%, 28%, 39.4%, 100% { opacity: 0; }
+  33%, 35% { opacity: 1; }
+}

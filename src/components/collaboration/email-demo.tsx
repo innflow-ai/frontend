@@ -1,5 +1,6 @@
 // biome-ignore-all lint/performance/noImgElement: Small local source SVGs retain their intrinsic Figma geometry; raster artwork is lazy loaded.
 
+import { agentAvatars } from "@/config/agent-avatars";
 import { EmailAction, EmailPreview } from "./demo-interactions";
 import styles from "./reference-demos.module.css";
 
@@ -23,8 +24,6 @@ const imgCentralIconBase11 = `${assetPathPrefix}/bd5cd.svg`;
 const imgCentralIconBase12 = `${assetPathPrefix}/e58c4.svg`;
 const imgCentralIconBase13 = `${assetPathPrefix}/a63f5.svg`;
 const imgCentralIconBase14 = `${assetPathPrefix}/27ee9.svg`;
-const imgIcon = `${assetPathPrefix}/86a6f.svg`;
-const imgIcon1 = `${assetPathPrefix}/696ba.svg`;
 const imgCentralIconBase15 = `${assetPathPrefix}/fd9de.svg`;
 const imgCentralIconBase16 = `${assetPathPrefix}/e0da8.svg`;
 const imgCentralIconBase17 = `${assetPathPrefix}/9c84e.svg`;
@@ -528,20 +527,10 @@ export function EmailDemo() {
                   body="Found four matches with B2B experience: Maya Tran, Tess Holloway, Nate Fuentes, and Ryan Park. The example shortlist includes their experience and availability."
                 >
                   <div
-                    className={styles.layer170}
+                    className={`${styles.layer170} ${styles.agentAvatar}`}
                     data-node-id="39:4849"
                   >
-                    <div
-                      className={styles.layer171}
-                      data-node-id="39:4850"
-                    >
-                      <img
-                        loading="lazy"
-                        alt=""
-                        className={styles.svg}
-                        src={imgIcon}
-                      />
-                    </div>
+                    <img loading="lazy" alt="" src={agentAvatars.innflow} />
                   </div>
                   <div
                     className={styles.layer25}
@@ -627,20 +616,10 @@ export function EmailDemo() {
                     data-name="Container"
                   >
                     <div
-                      className={styles.layer177}
+                      className={`${styles.layer177} ${styles.agentAvatar}`}
                       data-node-id="39:4871"
                     >
-                      <div
-                        className={styles.layer178}
-                        data-node-id="39:4872"
-                      >
-                        <img
-                          loading="lazy"
-                          alt=""
-                          className={styles.svg}
-                          src={imgIcon1}
-                        />
-                      </div>
+                      <img loading="lazy" alt="" src={agentAvatars.innflow} />
                     </div>
                     <div
                       className={styles.layer179}

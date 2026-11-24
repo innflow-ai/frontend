@@ -52,17 +52,6 @@
   height: 100%;
   object-fit: cover;
 }
-.avatar[data-agent="true"] {
-  border-radius: 1.55cqw;
-  background: linear-gradient(#5aaaf8, #00aeff);
-  display: grid;
-  place-items: center;
-}
-.avatar[data-agent="true"] img {
-  width: 79%;
-  height: 87%;
-  object-fit: contain;
-}
 .content {
   flex: 1;
   min-width: 0;

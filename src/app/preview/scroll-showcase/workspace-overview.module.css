@@ -25,6 +25,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
+  padding-inline: clamp(12px, 2vw, 24px);
 }
 .heading h2 {
   margin: 0;
@@ -35,6 +36,7 @@
   letter-spacing: -0.029em;
 }
 .introduction {
+  --homepage-body-size: 14px;
   max-width: 560px;
   margin: 16px 0 32px;
   font-size: var(--homepage-body-size, var(--marketing-body));
@@ -100,7 +102,7 @@
 }
 .cardCopy {
   height: 263px;
-  padding: 32px 32px 0;
+  padding: 32px 36px 0;
 }
 .cardCopy h3 {
   margin: 0 0 12px;
@@ -227,35 +229,62 @@
 .card[data-active="true"] .inactiveArt {
   opacity: 0;
 }
-@media (max-width: 1100px) {
-  /* Keep the white edge of the gradient when the artwork changes aspect ratio. */
-  .activeArt > img {
-    object-fit: fill;
+@media (min-width: 761px) {
+  .cardSurface {
+    display: flex;
+    flex-direction: column;
   }
+  .cardCopy {
+    flex-shrink: 0;
+    height: auto;
+    min-height: 263px;
+    padding-bottom: 16px;
+  }
+  .description {
+    min-height: 0;
+  }
+  .card[data-active="true"] .details {
+    position: relative;
+  }
+  .artwork {
+    position: relative;
+    flex: 1;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 1100px) {
   .content {
-    padding: 80px 32px;
+    padding: 80px 16px;
   }
   .cards {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .card[data-active="true"] {
+    flex-grow: 2;
   }
   .bridge {
-    display: none;
+    left: -12px;
+    width: 12px;
   }
-  .details {
-    width: 100%;
+  .cardCopy {
+    padding: 24px 20px 16px;
+  }
+  .cardCopy h3 {
+    font-size: 24px;
   }
 }
 
 /* Mobile shows every full card as the visitor scrolls. */
 @media (max-width: 760px) {
   .activeArt > img {
+    object-fit: fill;
     mask-image: linear-gradient(to bottom, transparent, black 30%);
   }
   .content {
     padding-inline: 16px;
   }
   .cards {
+    display: grid;
     grid-template-columns: 1fr;
     gap: 24px;
     margin-top: 48px;
@@ -285,6 +314,7 @@
     display: none;
   }
   .details {
+    width: 100%;
     position: static;
     opacity: 1;
     visibility: visible;
@@ -309,71 +339,6 @@
   }
 }
 
-@media (min-width: 761px) and (max-width: 1100px) {
-  .card[data-active="true"] .activeArt > img {
-    mask-image: linear-gradient(to bottom, transparent, black 30%);
-  }
-  .content {
-    padding: 64px 16px;
-  }
-  .heading h2 {
-    font-size: clamp(32px, 8vw, 44px);
-  }
-  .cards {
-    grid-template-columns: 1fr;
-    gap: 16px;
-    margin-top: 40px;
-  }
-  .card {
-    height: 148px;
-    transition: height 400ms ease;
-  }
-  .card[data-active="true"] {
-    height: 600px;
-  }
-  .cardSurface {
-    border-radius: 32px;
-  }
-  .cardCopy {
-    padding: 24px 24px 0;
-  }
-  .cardCopy h3 {
-    font-size: 26px;
-  }
-  .summary {
-    max-width: 100%;
-  }
-  .artwork {
-    opacity: 1;
-    transition: opacity 240ms ease;
-  }
-  .card[data-active="false"] .artwork {
-    left: auto;
-    right: 0;
-    width: 58%;
-    height: 100%;
-    pointer-events: none;
-    mask-image: linear-gradient(to right, transparent 5%, black 100%);
-  }
-  .card[data-active="false"] .activeArt {
-    opacity: 1;
-  }
-  .card[data-active="false"] .cardCopy {
-    position: relative;
-    z-index: 1;
-  }
-  .card[data-active="false"] .activeArt > img {
-    object-fit: fill;
-  }
-  .card[data-active="false"] .inactiveArt,
-  .card[data-active="false"] [data-workspace-artwork] {
-    display: none;
-  }
-  .details li {
-    gap: 8px;
-  }
-}
-
 @media (max-width: 760px) {
   .section {
     padding: 12px;
@@ -392,91 +357,6 @@
   }
 }
 
-/* Desktop tells the whole story in connected, fully expanded rows. */
-@media (min-width: 1101px) {
-  .cards {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 32px;
-  }
-  .card {
-    height: auto;
-    min-height: 380px;
-    transition: none;
-  }
-  .cardSurface {
-    display: grid;
-    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-    min-height: 380px;
-  }
-  .card[data-active="true"] .cardSurface {
-    box-shadow: none;
-  }
-  .cardCopy {
-    height: auto;
-    padding: 40px;
-  }
-  .cardCopy h3 {
-    font-size: 36px;
-    letter-spacing: -0.025em;
-    margin-bottom: 20px;
-  }
-  .description {
-    min-height: 0;
-    font-size: var(--marketing-body);
-    line-height: 1.5;
-  }
-  .summary {
-    display: none;
-  }
-  .details {
-    position: static;
-    width: auto;
-    opacity: 1;
-    visibility: visible;
-  }
-  .details ul {
-    margin-top: 24px;
-    gap: 16px;
-  }
-  .details li {
-    align-items: flex-start;
-  }
-  .stepIcon {
-    margin-top: 3px;
-  }
-  .details li:not(:last-child)::after {
-    top: 27px;
-    bottom: -13px;
-    height: auto;
-  }
-  .artwork {
-    --workspace-artwork-max-scale: 1.2;
-    --workspace-train-offset: 0px;
-    --workspace-train-scale: 0.9;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    min-height: 380px;
-  }
-  .activeArt {
-    opacity: 1;
-  }
-  .activeArt > img {
-    mask-image: linear-gradient(to right, transparent, black 28%);
-  }
-  .inactiveArt {
-    display: none;
-  }
-  .bridge {
-    top: -38.5px;
-    left: 48px;
-    width: 32px;
-    height: 45px;
-    transform: rotate(90deg);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .card,
   .cardSurface,
@@ -492,19 +372,78 @@
 .teachingPanel {
   display: grid;
   place-items: center;
-  padding: 16px;
   background: white;
 }
-.teachingDemo {
+.supplierRecording {
   position: relative;
-  transform: scale(1.05);
-  width: 100%;
-  aspect-ratio: 580 / 294;
+  display: block;
+  width: 88%;
+  margin-left: 8%;
+  max-height: 96%;
+  font-family: var(--font-geist), sans-serif;
+  filter: drop-shadow(0 6px 12px rgb(11 53 88 / 10%));
 }
-.teachingDemo img,
-.teachingDemo > div {
+@media (prefers-reduced-motion: no-preference) {
+  .supplierRecording[data-expanded="true"] .recordingRows {
+    animation: recordSupplierSteps 5s ease-in-out both;
+  }
+  .supplierRecording[data-expanded="true"] .recordingLight {
+    animation: recordingPulse 1s ease-in-out 5;
+  }
+  .supplierRecording[data-visible="false"]
+    :is(.recordingRows, .recordingLight) {
+    animation-play-state: paused;
+  }
+}
+@keyframes recordSupplierSteps {
+  0%,
+  11% {
+    transform: translateY(-200px);
+  }
+  17%,
+  28% {
+    transform: translateY(-160px);
+  }
+  34%,
+  45% {
+    transform: translateY(-120px);
+  }
+  51%,
+  62% {
+    transform: translateY(-80px);
+  }
+  68%,
+  79% {
+    transform: translateY(-40px);
+  }
+  85%,
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes recordingPulse {
+  50% {
+    opacity: 0.45;
+  }
+}
+
+.agentOverlay {
+  position: absolute;
+  z-index: 1;
+  left: 2%;
+  bottom: 9%;
+  width: clamp(104px, 40cqw, 172px);
+  aspect-ratio: 800 / 680;
+  pointer-events: none;
+}
+.agentOverlay > img,
+.agentCanvas {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+}
+.agentOverlay:has(.agentCanvas canvas[data-ready="true"]) > img,
+.agentCanvas canvas[data-ready="false"] {
+  visibility: hidden;
 }

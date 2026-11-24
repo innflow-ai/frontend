@@ -264,6 +264,8 @@ def build(n):
 def main():
     rows = json.loads(MANIFEST.read_text())
     for row in rows:
+        if row.get("status") == "native":
+            continue
         stem = Path(row["src"]).stem
         dest = OUT / (stem + ".json")
         if row["number"] in (3, 6, 9):

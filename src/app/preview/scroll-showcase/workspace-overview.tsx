@@ -2,6 +2,8 @@
 
 import dynamic from "next/dynamic";
 import Image from "next/image";
+import featureIcon from "@/components/feature-icon.module.css";
+import { featureIconSrc } from "@/config/feature-identity";
 import { Checklist, Share, StarsA } from "@/components/icons/mage";
 import { MixedHeadingContent } from "@/components/section-heading";
 
@@ -15,8 +17,6 @@ import {
   useSyncExternalStore,
 } from "react";
 import { siteConfig } from "@/config/site";
-import { SupplierRecording } from "./supplier-recording";
-import { WorkspaceCardArtwork } from "./workspace-card-artwork";
 import styles from "./workspace-overview.module.css";
 
 const assets = "/preview/homepage/workspace-overview";
@@ -24,17 +24,47 @@ const AgentAnimation = dynamic(() => import("./workspace-agent-animation"), {
   ssr: false,
 });
 
-function WorkspaceAgent({
-  name,
-  eyeY,
-  face,
-  rim,
-}: {
-  name: string;
-  eyeY: number;
-  face: number;
-  rim: number;
-}) {
+const RecordingPlayer = dynamic(
+  () => import("./storyboard-rive").then((module) => module.StoryboardRive),
+  { ssr: false },
+);
+const recordings = {
+  connect: {
+    className: styles.supplierRecording,
+    src: `${assets}/supplier-recording.riv`,
+    poster: `${assets}/supplier-recording.webp`,
+    artboard: "Admin supplier recording",
+    animation: "Record and hold",
+    description:
+      "Supplier paperwork recording. The agent finds the company, downloads its annual return, and fills the supplier form.",
+  },
+  assist: {
+    className: styles.contactsScene,
+    src: `${assets}/contacts.riv`,
+    poster: `${assets}/contacts-preview.webp`,
+    artboard: "02 / Let AI manage your contacts / Final cut",
+    animation: "02 / Contacts and activity filter / 7.6s loop",
+    description: "",
+  },
+  learn: {
+    className: styles.managementRecording,
+    src: `${assets}/management-toggle.riv`,
+    poster: `${assets}/weekly-report-delivered.webp`,
+    artboard: "Management toggle",
+    animation: "Switch on",
+    description: "Acorn turns on Management, prepares the weekly report, and delivers it to the team. A checkmark confirms delivery and the switch turns off automatically.",
+  },
+  automate: {
+    className: styles.salesRecording,
+    src: `${assets}/sales-scheduling.riv`,
+    poster: `${assets}/sales-email-selected.webp`,
+    artboard: "Sales scheduling email",
+    animation: "Compose scheduling request",
+    description: "An email to luke@acme.com copies sales@innflow.ai to schedule a meeting next week. Gmail and Outlook stay highlighted after the cursor selects each one.",
+  },
+} as const;
+
+function useVisibleMotion() {
   const host = useRef<HTMLDivElement>(null);
   const [play, setPlay] = useState(false);
 
@@ -58,6 +88,50 @@ function WorkspaceAgent({
     };
   }, []);
 
+  return { host, play };
+}
+
+function WorkspaceRecording({
+  id,
+  expanded,
+}: {
+  id: keyof typeof recordings;
+  expanded: boolean;
+}) {
+  const scene = recordings[id];
+  const { host, play } = useVisibleMotion();
+  return (
+    <div
+      ref={host}
+      className={scene.className}
+      data-workspace-artwork={id}
+      role={scene.description ? "img" : undefined}
+      aria-label={scene.description || undefined}
+      aria-hidden={!scene.description}
+    >
+      <Image
+        src={scene.poster}
+        alt=""
+        fill
+        sizes="(max-width: 760px) 90vw, 400px"
+      />
+      {expanded && play && <RecordingPlayer storyboard={scene} playing />}
+    </div>
+  );
+}
+
+function WorkspaceAgent({
+  name,
+  eyeY,
+  face,
+  rim,
+}: {
+  name: string;
+  eyeY: number;
+  face: number;
+  rim: number;
+}) {
+  const { host, play } = useVisibleMotion();
   const path = `/brand/agents/workspace/${name}`;
   return (
     <div
@@ -89,57 +163,69 @@ const getServerMobileSnapshot = () => false;
 export const workspaceCards = [
   {
     id: "connect",
-    title: "Handle supplier paperwork",
+    title: "Admin",
     agent: { name: "head", eyeY: 364, face: 0xff83dfd2, rim: 0xff368fa1 },
     summary: "Gather filings and fill supplier forms.",
     description:
       "Give your agent a supplier name. It finds the company filing and uses it to fill out the onboarding form.",
     steps: [
-      "Look up the supplier",
-      "Download the annual return",
-      "Fill the supplier form",
+      {
+        label: "Route purchase requests",
+        icon: "flow",
+        product: "Flows",
+      },
+      {
+        label: "Download supplier invoices",
+        icon: "computer",
+        product: "Computer",
+      },
+      {
+        label: "Request missing paperwork",
+        icon: "bot",
+        product: "Bot Mode",
+      },
     ],
     source: "39:3785",
   },
   {
     id: "assist",
-    title: "Train",
+    title: "Ops",
     agent: { name: "leaf", eyeY: 345, face: 0xffffcf88, rim: 0xffbe813d },
-    summary: "Show your agents how you work.",
+    summary: "Find contacts due for a follow-up.",
     description:
-      "Share your preferences, processes, and instructions so your agents know how you want the work handled.",
+      "Filter contacts by their last activity to see who you haven’t heard from in a while.",
     steps: [
-      "Share your preferences",
-      "Define your processes",
-      "Give clear instructions",
+      "Open your contacts",
+      "Filter by last activity",
+      "Choose who to contact",
     ],
     source: "53:725",
   },
   {
     id: "automate",
-    title: "Assign",
+    title: "Sales",
     agent: { name: "droplet", eyeY: 395, face: 0xffc9aff4, rim: 0xff8c6ab8 },
-    summary: "Hand off the work.",
+    summary: "Schedule meetings by email.",
     description:
-      "Give your agents a focused task, with clear responsibilities and review points for your team.",
+      "Copy your sales agent on an email and ask it to find a time to meet next week.",
     steps: [
-      "Assign a focused task",
-      "Set clear responsibilities",
-      "Choose where approval is needed",
+      "Email your contact",
+      "Copy your sales agent",
+      "Suggest a time frame",
     ],
     source: "53:842",
   },
   {
     id: "learn",
-    title: "Deploy",
+    title: "Mgmt",
     agent: { name: "acorn", eyeY: 377, face: 0xffaacdf3, rim: 0xff648ab9 },
-    summary: "Put your agents to work. Review progress.",
+    summary: "Deliver the weekly report.",
     description:
-      "Put your agents to work and follow their progress from one workspace.",
+      "Acorn gathers the week’s project updates and sends a report to your team. Once it’s delivered, Acorn switches off.",
     steps: [
-      "Put your agents to work",
-      "Follow their progress",
-      "Manage work from one workspace",
+      "Gather project updates",
+      "Prepare the report",
+      "Send to the team",
     ],
     source: "53:959",
   },
@@ -273,63 +359,60 @@ export function WorkspaceOverview() {
                       >
                         <p>{card.description}</p>
                         <ul>
-                          {card.steps.map((step, stepIndex) => (
-                            <li key={step}>
-                              <span
-                                className={styles.stepIcon}
-                                aria-hidden="true"
-                              >
-                                {(() => {
-                                  const StepIcon = stepIcons[stepIndex];
-                                  return <StepIcon size={20} />;
-                                })()}
-                              </span>
-                              {step}
-                            </li>
-                          ))}
+                          {card.steps.map((step, index) => {
+                            const label =
+                              typeof step === "string" ? step : step.label;
+                            const StepIcon = stepIcons[index];
+                            return (
+                              <li key={label}>
+                                <span className={styles.stepIcon}>
+                                  {typeof step === "string" ? (
+                                    <StepIcon size={20} aria-hidden="true" />
+                                  ) : (
+                                    <Image
+                                      className={featureIcon.face}
+                                      src={featureIconSrc(step.icon)}
+                                      width={20}
+                                      height={20}
+                                      alt={step.product}
+                                    />
+                                  )}
+                                </span>
+                                {label}
+                              </li>
+                            );
+                          })}
                         </ul>
                       </div>
                     </div>
                   </div>
-                  <div
-                    className={
-                      index === 0
-                        ? `${styles.artwork} ${styles.teachingPanel}`
-                        : styles.artwork
-                    }
-                  >
-                    {index === 0 ? (
-                      <>
-                        <Image
-                          src={`${assets}/connect-background.png`}
-                          alt=""
-                          fill
-                          sizes="(max-width: 760px) 90vw, 40vw"
-                        />
-                        <SupplierRecording
-                          expanded={mobile || active === index}
-                        />
-                      </>
-                    ) : (
-                      <>
-                        <Image
-                          className={styles.inactiveArt}
-                          src={`${assets}/${card.id}-inactive.png`}
-                          alt=""
-                          fill
-                          sizes="(max-width: 1100px) 90vw, (max-width: 1328px) 40vw, 480px"
-                        />
-                        <div className={styles.activeArt} aria-hidden="true">
-                          <Image
-                            src={`${assets}/${card.id}-background.png`}
-                            alt=""
-                            fill
-                            sizes="(max-width: 1100px) 90vw, (max-width: 1328px) 40vw, 480px"
-                          />
-                          <WorkspaceCardArtwork id={card.id} />
-                        </div>
-                      </>
-                    )}
+                  <div className={styles.artwork}>
+                    <Image
+                      className={styles.inactiveArt}
+                      src={`${assets}/${card.id}-inactive.png`}
+                      alt=""
+                      fill
+                      sizes="(max-width: 1100px) 90vw, (max-width: 1328px) 40vw, 480px"
+                    />
+                    <div
+                      className={
+                        card.id === "connect"
+                          ? `${styles.activeArt} ${styles.teachingPanel}`
+                          : styles.activeArt
+                      }
+                      aria-hidden={!mobile && active !== index}
+                    >
+                      <Image
+                        src={`${assets}/${card.id}-background.png`}
+                        alt=""
+                        fill
+                        sizes="(max-width: 1100px) 90vw, (max-width: 1328px) 40vw, 480px"
+                      />
+                      <WorkspaceRecording
+                        id={card.id}
+                        expanded={mobile || active === index}
+                      />
+                    </div>
                     <WorkspaceAgent {...card.agent} />
                   </div>
                 </div>

@@ -42,7 +42,7 @@ afterEach(() => {
 });
 
 describe("Workspace overview", () => {
-  it("starts with only Handle supplier paperwork expanded", () => {
+  it("starts with only Admin expanded", () => {
     render(<WorkspaceOverview />);
     for (const [index, card] of workspaceCards.entries()) {
       expect(screen.getByRole("button", { name: card.title })).toHaveAttribute(
@@ -69,7 +69,7 @@ describe("Workspace overview", () => {
 
   it("shows all four complete cards on phones and restores selection when resized", () => {
     render(<WorkspaceOverview />);
-    fireEvent.click(screen.getByRole("button", { name: "Train" }));
+    fireEvent.click(screen.getByRole("button", { name: "Ops" }));
     act(() => {
       viewportWidth = 390;
       for (const notify of mediaListeners) notify();
@@ -80,7 +80,7 @@ describe("Workspace overview", () => {
       viewportWidth = 1440;
       for (const notify of mediaListeners) notify();
     });
-    expect(screen.getByRole("button", { name: "Train" })).toHaveAttribute(
+    expect(screen.getByRole("button", { name: "Ops" })).toHaveAttribute(
       "aria-expanded",
       "true",
     );
@@ -103,8 +103,8 @@ describe("Workspace overview", () => {
 
   it("supports arrow, Home and End navigation without losing focus", () => {
     render(<WorkspaceOverview />);
-    const connect = screen.getByRole("button", { name: "Handle supplier paperwork" });
-    const deploy = screen.getByRole("button", { name: "Deploy" });
+    const connect = screen.getByRole("button", { name: "Admin" });
+    const deploy = screen.getByRole("button", { name: "Mgmt" });
     fireEvent.keyDown(connect, { key: "End" });
     expect(deploy).toHaveFocus();
     expect(deploy).toHaveAttribute("aria-expanded", "true");

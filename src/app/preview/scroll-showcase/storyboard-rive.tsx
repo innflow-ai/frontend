@@ -20,7 +20,10 @@ export function StoryboardRive({
   storyboard,
   playing,
 }: {
-  storyboard: Storyboard;
+  storyboard: Pick<
+    Storyboard,
+    "src" | "artboard" | "animation" | "stateMachine"
+  >;
   playing: boolean;
 }) {
   const [ready, setReady] = useState(false);
@@ -29,6 +32,7 @@ export function StoryboardRive({
     src: storyboard.src,
     artboard: storyboard.artboard,
     stateMachine: storyboard.stateMachine ?? undefined,
+    animations: storyboard.stateMachine ? undefined : storyboard.animation,
     autoplay: false,
     layout,
     shouldDisableRiveListeners: true,
@@ -36,7 +40,8 @@ export function StoryboardRive({
     onRiveReady: (instance) => {
       const valid =
         instance.animationNames.includes(storyboard.animation ?? "") &&
-        instance.stateMachineNames.includes(storyboard.stateMachine ?? "");
+        (!storyboard.stateMachine ||
+          instance.stateMachineNames.includes(storyboard.stateMachine));
       setFailed(!valid);
       setReady(valid);
     },

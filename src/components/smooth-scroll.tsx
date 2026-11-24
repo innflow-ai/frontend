@@ -9,6 +9,8 @@ export function SmoothScroll() {
 
   // Recreate on navigation so momentum cannot carry into the next page.
   useEffect(() => {
+    // Keep the homepage's scroll-driven sections in sync with wheel input.
+    if (pathname === "/" || pathname === "/preview/scroll-showcase") return;
     // Help navigation uses native scrolling for its fixed shell and dialogs.
     if (pathname === "/help") return;
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");

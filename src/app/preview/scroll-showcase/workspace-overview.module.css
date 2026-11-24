@@ -131,9 +131,10 @@
   outline: none;
 }
 .description {
+  --homepage-body-size: 13px;
   position: relative;
   min-height: 185px;
-  font-size: 14px;
+  font-size: var(--homepage-body-size);
   line-height: 1.4;
   color: #5f6d77;
 }
@@ -166,9 +167,10 @@
   visibility: visible;
 }
 .details ul {
+  --step-gap: 14px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: var(--step-gap);
   margin: 16px 0 0;
   padding: 0;
   list-style: none;
@@ -182,14 +184,18 @@
 .details li:not(:last-child)::after {
   position: absolute;
   top: 22px;
-  left: 9px;
-  width: 2px;
-  height: 8px;
-  background: #d8dce0;
+  left: 9.5px;
+  width: 1px;
+  bottom: calc(2px - var(--step-gap));
+  border-radius: 1px;
+  background: #c2c8ce;
   content: "";
 }
 .stepIcon {
   position: relative;
+  align-self: flex-start;
+  display: grid;
+  place-items: center;
   width: 20px;
   height: 20px;
   flex: 0 0 20px;
@@ -212,6 +218,39 @@
 .artwork > img,
 .activeArt > img {
   object-fit: cover;
+}
+.contactsScene {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* Enlarge the portrait artboard while keeping its controls inside narrow cards. */
+  width: 116%;
+  height: 130.8%;
+  translate: -51% -49%;
+  pointer-events: none;
+}
+.salesRecording {
+  position: absolute;
+  inset: 0 0 8%;
+  pointer-events: none;
+}
+.managementRecording {
+  position: absolute;
+  inset: 0;
+  translate: 0 3%;
+  pointer-events: none;
+}
+.managementRecording > img,
+.salesRecording > img,
+.contactsScene > img,
+.supplierRecording > img {
+  object-fit: contain;
+}
+.managementRecording:has([data-rive-ready="true"]) > img,
+.salesRecording:has([data-rive-ready="true"]) > img,
+.contactsScene:has([data-rive-ready="true"]) > img,
+.supplierRecording:has([data-rive-ready="true"]) > img {
+  visibility: hidden;
 }
 .inactiveArt {
   opacity: 1;
@@ -377,54 +416,11 @@
 .supplierRecording {
   position: relative;
   display: block;
-  width: 88%;
-  margin-left: 8%;
+  width: 96%;
   max-height: 96%;
-  font-family: var(--font-geist), sans-serif;
+  aspect-ratio: 407 / 272;
+  pointer-events: none;
   filter: drop-shadow(0 6px 12px rgb(11 53 88 / 10%));
-}
-@media (prefers-reduced-motion: no-preference) {
-  .supplierRecording[data-expanded="true"] .recordingRows {
-    animation: recordSupplierSteps 5s ease-in-out both;
-  }
-  .supplierRecording[data-expanded="true"] .recordingLight {
-    animation: recordingPulse 1s ease-in-out 5;
-  }
-  .supplierRecording[data-visible="false"]
-    :is(.recordingRows, .recordingLight) {
-    animation-play-state: paused;
-  }
-}
-@keyframes recordSupplierSteps {
-  0%,
-  11% {
-    transform: translateY(-200px);
-  }
-  17%,
-  28% {
-    transform: translateY(-160px);
-  }
-  34%,
-  45% {
-    transform: translateY(-120px);
-  }
-  51%,
-  62% {
-    transform: translateY(-80px);
-  }
-  68%,
-  79% {
-    transform: translateY(-40px);
-  }
-  85%,
-  100% {
-    transform: translateY(0);
-  }
-}
-@keyframes recordingPulse {
-  50% {
-    opacity: 0.45;
-  }
 }
 
 .agentOverlay {

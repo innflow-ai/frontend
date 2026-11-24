@@ -6,8 +6,7 @@ const capabilities = [
   ["recurring-tasks", "Recurring tasks"],
   ["connectors", "400+ Connectors"],
   ["skills", "Skills"],
-  ["artifact-building", "Artifact building"],
-  ["image-generation", "Image generation"],
+  ["artifact-building", "Artifacts & images"],
   ["self-improvement", "Self-improvement"],
 ] as const;
 

@@ -83,12 +83,9 @@
     "body": "Automate recurring work by choosing when and how often Innflow should run.",
     "section": "Flows",
     "heading": "Give every step a clear owner.",
-    "poster": "/brand/homepage/flows/schedule.webp",
-    "src": "/brand/homepage/flows/schedule.mp4",
     "duration": 5,
-    "status": "video",
-    "bytes": 134186,
-    "sha256": "47eb864f82dbc9a8f1e9a53d898343ab4ceff6e319a1bf9937d9eea101cb6ac2"
+    "status": "native",
+    "scene": "schedule"
   },
   {
     "number": 8,
@@ -96,12 +93,9 @@
     "body": "Choose an event and define what Innflow should do when it happens.",
     "section": "Flows",
     "heading": "Give every step a clear owner.",
-    "poster": "/brand/homepage/flows/trigger.webp",
-    "src": "/brand/homepage/flows/trigger.mp4",
     "duration": 5,
-    "status": "video",
-    "bytes": 136603,
-    "sha256": "d0b714164ab1d4dd2189ed9348b25662768e7af26bc1b11070670eadbd61acc2"
+    "status": "native",
+    "scene": "trigger"
   },
   {
     "number": 9,
@@ -109,12 +103,9 @@
     "body": "Describe when Innflow should act and what it should do in your own words.",
     "section": "Flows",
     "heading": "Give every step a clear owner.",
-    "poster": "/brand/homepage/flows/advanced-automation.webp",
-    "src": "/brand/homepage/flows/advanced-automation.mp4",
     "duration": 5,
-    "status": "video",
-    "bytes": 149507,
-    "sha256": "60c35bc537914df4bb6d2c931cdf861d4486e8e4f017d445a692c35a65c75cf2"
+    "status": "native",
+    "scene": "automation"
   },
   {
     "number": 10,
@@ -122,12 +113,9 @@
     "body": "Pause at a review step. Once the owner approves, carry the decision into the next action.",
     "section": "Flows",
     "heading": "Give every step a clear owner.",
-    "poster": "/brand/homepage/feature-lotties/resume-after-approval.png",
-    "src": "/brand/homepage/feature-lotties/resume-after-approval.json",
-    "duration": 6,
-    "status": "lottie",
-    "bytes": 47624,
-    "sha256": "1de9a6de4c58bed053e9375b572b0551cfe91570027723d9d48eda4c0b085043"
+    "duration": 5,
+    "status": "native",
+    "scene": "approval"
   },
   {
     "number": 11,

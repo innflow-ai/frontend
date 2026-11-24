@@ -10,7 +10,7 @@ Styling follows these frames and the supplied Calendly_variables token files, wi
 
 ## Motion
 
-- The hero card sits in normal document flow. Page scrolling does not pin it, hide the navigation, or change the active chapter.
+- On larger screens, the card stays pinned while native page scrolling advances through the four chapters. Selecting a tab moves to its chapter on the scroll track.
 - On screens up to 800px wide or 650px tall, scrolling through the hero shifts its backdrop. Choosing a tab still selects the chapter and shifts the backdrop further.
 - Content crossfades over 280ms inside one shared card. Choosing a tab shifts the background.
 - Each newly activated illustration restarts its own animation.

@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import {
   createContext,
   type ReactNode,
@@ -8,6 +9,7 @@ import {
   useRef,
   useState,
 } from "react";
+import { agentAvatars } from "@/config/agent-avatars";
 import styles from "./demo-interactions.module.css";
 
 type Channel = "data-analysis" | "sales-discussion";
@@ -61,6 +63,15 @@ export function ChannelHeading({ prefix = "" }: { prefix?: string }) {
   );
 }
 
+function DatabotAuthor({ time }: { time?: string }) {
+  return (
+    <strong className={styles.agentAuthor}>
+      <Image src={agentAvatars.databot} width={20} height={20} alt="" />
+      Databot {time && <small>{time}</small>}
+    </strong>
+  );
+}
+
 export function ChannelMessages({ children }: { children: ReactNode }) {
   const { channel } = useContext(ChatContext);
   if (channel === "data-analysis") return children;
@@ -75,9 +86,7 @@ export function ChannelMessages({ children }: { children: ReactNode }) {
         </p>
       </div>
       <div className={styles.sampleMessage}>
-        <strong>
-          Databot <small>3:13 PM</small>
-        </strong>
+        <DatabotAuthor time="3:13 PM" />
         <p>
           Three opportunities have no next step. Start with the two proposals
           awaiting feedback, then follow up on the new demo request.
@@ -121,7 +130,7 @@ export function DemoThread({
           className={styles.threadPanel}
           aria-label="Example conversation thread"
         >
-          <strong>Databot</strong>
+          <DatabotAuthor />
           <p>{reply}</p>
           <DemoComposer label="Thread reply" />
         </section>

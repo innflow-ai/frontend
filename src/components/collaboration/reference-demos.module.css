@@ -3021,3 +3021,18 @@
   position: absolute;
   max-width: none;
 }
+
+.agentAvatar {
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+}
+
+.agentAvatar > img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}

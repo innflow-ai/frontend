@@ -267,7 +267,7 @@ For new industry and cross-industry pages, adapt the homepage's typography, pale
 
 Breakpoints are literal CSS query values. Custom properties cannot be substituted directly into media-query conditions. Responsive values in the kit do not apply their own queries.
 
-The homepage hero is a normal-height tabbed card. Scrolling the page does not pin the card, advance its chapters, or hide the navigation. Tabs select the chapter. At widths up to 800px or heights up to 650px, the stage stays in normal flow with automatic height, and scrolling through the hero shifts its backdrop. Reduced motion keeps that stage in normal flow and does not move the backdrop. Preserve controls and content reachability in those modes.
+The homepage hero pins on larger screens as scrolling advances through four chapters. Tabs jump to the corresponding scroll position. At widths up to 800px or heights up to 650px, the stage stays in normal flow with automatic height, and scrolling through the hero shifts its backdrop. Reduced motion keeps that stage in normal flow and does not move the backdrop. Preserve controls and content reachability in those modes.
 
 Use 150ms tooltip fades, 250ms tab changes, 280ms panel crossfades, 300ms feature-art fades, and 160ms signup transitions where those source components use them. Story layout-preview transitions use 600ms, reduced to zero for reduced motion. The workspace's old 400ms expansion rule is not a current desktop default; desktop rows override it.
 

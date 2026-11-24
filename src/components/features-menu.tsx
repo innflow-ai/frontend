@@ -1,12 +1,15 @@
 "use client";
 
+import featureIcon from "@/components/feature-icon.module.css";
+
 import type { AnimationItem } from "lottie-web";
 import { useEffect, useId, useRef, useState } from "react";
 import styles from "./features-menu.module.css";
 
+import { featureIconSrc, type FeatureIconName } from "@/config/feature-identity";
 import { features } from "@/config/menu-links";
 
-const heroButtons: Record<string, string> = {
+const heroButtons: Record<string, FeatureIconName | undefined> = {
   botmode: "bot", flow: "flow", channels: "channels", computer: "computer",
 };
 
@@ -80,43 +83,46 @@ export function FeaturesMenu({ closeMenu }: { closeMenu: () => void }) {
       <div className={styles.list}>
         <h3>Features</h3>
         <div role="tablist" aria-label="Feature previews">
-          {features.map((item, index) => (
-            <button
-              type="button"
-              key={item.slug}
-              className={styles.featureOption}
-              role="tab"
-              id={id + "-" + index}
-              tabIndex={index === selected ? 0 : -1}
-              aria-selected={index === selected}
-              aria-controls={id}
-              onKeyDown={(event) => {
-                const next = {
-                  ArrowDown: (index + 1) % features.length,
-                  ArrowRight: (index + 1) % features.length,
-                  ArrowUp: (index + features.length - 1) % features.length,
-                  ArrowLeft: (index + features.length - 1) % features.length,
-                  Home: 0,
-                  End: features.length - 1,
-                }[event.key];
-                if (next === undefined) return;
-                event.preventDefault();
-                document.getElementById(id + "-" + next)?.focus();
-              }}
-              onPointerEnter={(event) => {
-                if (event.pointerType === "mouse") select(index);
-              }}
-              onFocus={() => select(index)}
-              onClick={() => select(index)}
-            >
-              <span className={styles.heroIcon}>
-                <img alt="" src={heroButtons[item.slug]
-                  ? "/preview/scroll-showcase/" + heroButtons[item.slug] + "-button.svg"
-                  : "/brand/navigation/outline-buttons/" + item.slug + ".svg"} />
-              </span>
-              {item.name}
-            </button>
-          ))}
+          {features.map((item, index) => {
+            const iconName = heroButtons[item.slug];
+            return (
+              <button
+                type="button"
+                key={item.slug}
+                className={styles.featureOption}
+                role="tab"
+                id={id + "-" + index}
+                tabIndex={index === selected ? 0 : -1}
+                aria-selected={index === selected}
+                aria-controls={id}
+                onKeyDown={(event) => {
+                  const next = {
+                    ArrowDown: (index + 1) % features.length,
+                    ArrowRight: (index + 1) % features.length,
+                    ArrowUp: (index + features.length - 1) % features.length,
+                    ArrowLeft: (index + features.length - 1) % features.length,
+                    Home: 0,
+                    End: features.length - 1,
+                  }[event.key];
+                  if (next === undefined) return;
+                  event.preventDefault();
+                  document.getElementById(id + "-" + next)?.focus();
+                }}
+                onPointerEnter={(event) => {
+                  if (event.pointerType === "mouse") select(index);
+                }}
+                onFocus={() => select(index)}
+                onClick={() => select(index)}
+              >
+                <span className={styles.heroIcon}>
+                  <img className={iconName ? featureIcon.face : undefined} alt="" src={iconName
+                    ? featureIconSrc(iconName)
+                    : "/brand/navigation/outline-buttons/" + item.slug + ".svg"} />
+                </span>
+                {item.name}
+              </button>
+            );
+          })}
         </div>
       </div>
       <section

@@ -1,5 +1,8 @@
 "use client";
 
+import { featureIconSrc } from "@/config/feature-identity";
+import featureIcon from "@/components/feature-icon.module.css";
+
 import { motion } from "motion/react";
 import {
   type KeyboardEvent,
@@ -36,7 +39,7 @@ const featureIcons = {
   agents: "flow",
   workflows: "channels",
   insights: "computer",
-};
+} as const;
 const itemIcons = {
   channels: [MessageConversation, Users, Settings, Link, Inbox, ChartUp],
   agents: [Share, StarsA, Inbox, CheckCircle],
@@ -208,7 +211,7 @@ function BaselineFeature({ feature }: { feature: Feature }) {
         <div className={styles.copy}>
           <header className={styles.heading}>
             <div className={styles.sectionTag}>
-              <Image src={`/preview/scroll-showcase/${featureIcons[feature.id]}-squircle.svg`} width={24} height={24} alt="" />
+              <Image className={featureIcon.face} src={featureIconSrc(featureIcons[feature.id])} width={24} height={24} alt="" />
               <span>{feature.label}</span>
             </div>
             <h2 id={`${feature.id}-baseline-heading`} data-mixed-heading>

@@ -1,5 +1,7 @@
 "use client";
 
+import featureIcon from "@/components/feature-icon.module.css";
+
 import Image from "next/image";
 import { type CSSProperties, useEffect, useRef, useState } from "react";
 import googleButtonStyles from "@/components/google-cta.module.css";
@@ -8,9 +10,11 @@ import { MixedHeadingContent } from "@/components/section-heading";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
 import { HeroRiveDemo } from "./hero-rive-demo";
+import { chapterScrollProgress, showcaseMotion } from "./scroll-showcase-motion";
 import styles from "./showcase.module.css";
 
-const assets = "/preview/scroll-showcase";
+import { featureAccents, featureIconSrc } from "@/config/feature-identity";
+
 const states = [
   {
     demo: "bot",
@@ -25,8 +29,6 @@ const states = [
         the next step while <strong>your team stays in control</strong>.
       </>
     ),
-    accent: "#429bf0",
-    surface: "#d3e5ff",
   },
   {
     demo: "flow",
@@ -41,8 +43,6 @@ const states = [
         spot work waiting for approval.
       </>
     ),
-    accent: "#cc9435",
-    surface: "#f1f8dc",
   },
   {
     demo: "channels",
@@ -57,8 +57,6 @@ const states = [
         teammates and agents can pick up where you left off.
       </>
     ),
-    accent: "#a173a0",
-    surface: "#eae3f9",
   },
   {
     demo: "computer",
@@ -73,16 +71,8 @@ const states = [
         up and fill out forms.
       </>
     ),
-    accent: "#63958c",
-    surface: "#e5f9f9",
   },
 ] as const;
-/**
- * Feature introduction on the homepage.
- * Chapters change from the tabs. The section stays in normal document flow
- * so scrolling the page does not pin the card or hide the navigation.
- * On a phone or short screen, scrolling through the hero shifts its backdrop.
- */
 export function ScrollShowcase() {
   const section = useRef<HTMLElement>(null);
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
@@ -100,11 +90,18 @@ export function ScrollShowcase() {
     const update = () => {
       frame = 0;
       const element = section.current;
-      if (!element || media.matches || !compact.matches) {
+      if (!element || media.matches) {
         setProgress(0);
         return;
       }
       const top = element.getBoundingClientRect().top;
+      if (!compact.matches) {
+        const range = element.offsetHeight - window.innerHeight;
+        const motion = showcaseMotion(-top / Math.max(1, range));
+        setActive(motion.chapter);
+        setProgress(motion.chapterProgress);
+        return;
+      }
       // The unpinned hero travels through the viewport. Scroll shifts its
       // backdrop only; it does not pin the page or change the chapter.
       setProgress(
@@ -143,6 +140,16 @@ export function ScrollShowcase() {
 
   function select(index: number) {
     setActive(index);
+    const element = section.current;
+    if (!element || reduced || isCompact) return;
+    const start = window.scrollY + element.getBoundingClientRect().top;
+    const range = element.offsetHeight - window.innerHeight;
+    if (range > 0) {
+      window.scrollTo({
+        top: start + range * chapterScrollProgress(index),
+        behavior: "instant",
+      });
+    }
   }
 
   return (
@@ -186,7 +193,7 @@ export function ScrollShowcase() {
               <Image key={id} src={`/aeline/avatars/user-${id}.avif`} width={28} height={28} alt="" unoptimized />
             ))}
           </div>
-          <span>Trusted by <strong>29,353+</strong> operators</span>
+          <span>Trusted by <strong>14,353</strong> operators</span>
         </div>
       </header>
       <section
@@ -206,7 +213,7 @@ export function ScrollShowcase() {
                   ? 0
                   : isCompact
                     ? (active + progress) / states.length
-                    : (active + 0.5) / states.length,
+                    : progress,
                 "--expansion": 1,
               } as CSSProperties
             }
@@ -227,7 +234,6 @@ export function ScrollShowcase() {
                     aria-controls={`panel-${state.id}`}
                     aria-label={state.label}
                     tabIndex={active === index ? 0 : -1}
-                    style={{ "--accent": state.accent, "--hover-face": `url("${assets}/${state.demo}-squircle-hover.svg")` } as CSSProperties}
                     onClick={() => select(index)}
                     onKeyDown={(event) => {
                       let next = index;
@@ -243,7 +249,8 @@ export function ScrollShowcase() {
                     }}
                   >
                     <Image
-                      src={`${assets}/${state.demo}-squircle${active === index ? "-pressed" : "-rest"}.svg`}
+                      className={featureIcon.face}
+                      src={featureIconSrc(state.demo)}
                       alt=""
                       width={28}
                       height={28}
@@ -264,15 +271,16 @@ export function ScrollShowcase() {
                     data-active={active === index}
                     style={
                       {
-                        "--accent": state.accent,
-                        "--surface": state.surface,
+                        "--accent": featureAccents[state.demo],
+                        "--surface": "color-mix(in srgb, var(--accent) 25%, white)",
                       } as CSSProperties
                     }
                   >
                     <div className={styles.copy}>
                       <div className={styles.label} data-demo-label={state.demo}>
                         <Image
-                          src={`${assets}/${state.demo}-button.svg`}
+                          className={featureIcon.face}
+                          src={featureIconSrc(state.demo)}
                           alt=""
                           width={24}
                           height={24}

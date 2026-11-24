@@ -1,5 +1,6 @@
 // biome-ignore-all lint/performance/noImgElement: Small local source SVGs retain their intrinsic Figma geometry; raster artwork is lazy loaded.
 
+import { agentAvatars } from "@/config/agent-avatars";
 import { DemoComposer } from "./demo-interactions";
 import styles from "./reference-demos.module.css";
 
@@ -8,14 +9,9 @@ const assetPathPrefix = "/brand/collaboration";
 const imgImageAppleUnionSquareStorePageShowingHoursAndInStoreOrderPickup = `${assetPathPrefix}/3b869.png`;
 const imgCentralIconBase = `${assetPathPrefix}/29c3f.svg`;
 const imgCentralIconBase1 = `${assetPathPrefix}/7200d.svg`;
-const imgGroup = `${assetPathPrefix}/37529.svg`;
-const imgGroup1 = `${assetPathPrefix}/21989.svg`;
-const imgGroup2 = `${assetPathPrefix}/8cd45.svg`;
-const imgGroup3 = `${assetPathPrefix}/b18d4.svg`;
 const imgCentralIconBase2 = `${assetPathPrefix}/f97b3.svg`;
 const imgCentralIconBase3 = `${assetPathPrefix}/0b540.svg`;
 const imgCentralIconBase4 = `${assetPathPrefix}/a2804.svg`;
-const imgGroup4 = `${assetPathPrefix}/f7078.svg`;
 
 export function MessagesDemo() {
   return (
@@ -128,25 +124,10 @@ export function MessagesDemo() {
                       data-node-id="39:4961"
                     >
                       <div
-                        className={styles.layer201}
+                        className={`${styles.layer201} ${styles.agentAvatar}`}
                         data-node-id="39:4962"
                       >
-                        <div
-                          className={styles.layer202}
-                          data-node-id="39:4963"
-                        >
-                          <div
-                            className={styles.layer203}
-                            data-node-id="39:4964"
-                          >
-                            <img
-                              loading="lazy"
-                              alt=""
-                              className={styles.svg}
-                              src={imgGroup}
-                            />
-                          </div>
-                        </div>
+                        <img loading="lazy" alt="" src={agentAvatars.innflow} />
                       </div>
                       <div
                         className={styles.layer204}
@@ -195,25 +176,10 @@ export function MessagesDemo() {
                       data-node-id="39:4974"
                     >
                       <div
-                        className={styles.layer212}
+                        className={`${styles.layer212} ${styles.agentAvatar}`}
                         data-node-id="39:4975"
                       >
-                        <div
-                          className={styles.layer202}
-                          data-node-id="39:4976"
-                        >
-                          <div
-                            className={styles.layer213}
-                            data-node-id="39:4977"
-                          >
-                            <img
-                              loading="lazy"
-                              alt=""
-                              className={styles.svg}
-                              src={imgGroup1}
-                            />
-                          </div>
-                        </div>
+                        <img loading="lazy" alt="" src={agentAvatars.onboarding} />
                       </div>
                       <div
                         className={styles.layer204}
@@ -275,25 +241,10 @@ export function MessagesDemo() {
                       data-node-id="39:4990"
                     >
                       <div
-                        className={styles.layer221}
+                        className={`${styles.layer221} ${styles.agentAvatar}`}
                         data-node-id="39:4991"
                       >
-                        <div
-                          className={styles.layer202}
-                          data-node-id="39:4992"
-                        >
-                          <div
-                            className={styles.layer222}
-                            data-node-id="39:4993"
-                          >
-                            <img
-                              loading="lazy"
-                              alt=""
-                              className={styles.svg}
-                              src={imgGroup2}
-                            />
-                          </div>
-                        </div>
+                        <img loading="lazy" alt="" src={agentAvatars.inventory} />
                       </div>
                       <div
                         className={styles.layer204}
@@ -352,25 +303,10 @@ export function MessagesDemo() {
                       data-node-id="39:5005"
                     >
                       <div
-                        className={styles.layer227}
+                        className={`${styles.layer227} ${styles.agentAvatar}`}
                         data-node-id="39:5006"
                       >
-                        <div
-                          className={styles.layer202}
-                          data-node-id="39:5007"
-                        >
-                          <div
-                            className={styles.layer228}
-                            data-node-id="39:5008"
-                          >
-                            <img
-                              loading="lazy"
-                              alt=""
-                              className={styles.svg}
-                              src={imgGroup3}
-                            />
-                          </div>
-                        </div>
+                        <img loading="lazy" alt="" src={agentAvatars.vendor} />
                       </div>
                       <div
                         className={styles.layer204}
@@ -497,25 +433,10 @@ export function MessagesDemo() {
                     </div>
                   </div>
                   <div
-                    className={styles.layer242}
+                    className={`${styles.layer242} ${styles.agentAvatar}`}
                     data-node-id="39:5051"
                   >
-                    <div
-                      className={styles.layer243}
-                      data-node-id="39:5052"
-                    >
-                      <div
-                        className={styles.layer203}
-                        data-node-id="39:5053"
-                      >
-                        <img
-                          loading="lazy"
-                          alt=""
-                          className={styles.svg}
-                          src={imgGroup4}
-                        />
-                      </div>
-                    </div>
+                    <img loading="lazy" alt="" src={agentAvatars.innflow} />
                   </div>
                 </div>
               </div>

@@ -3,48 +3,49 @@
 import { type MotionValue, motion, useTransform } from "motion/react";
 import Image from "next/image";
 import { useState } from "react";
+import { agentAvatars } from "@/config/agent-avatars";
 import styles from "./delegate-conversation.module.css";
 import { useDemoPlayback } from "./use-demo-playback";
 
 const messages = [
   {
     name: "Joseph Myers",
-    avatar: "joseph.png",
+    avatar: "/preview/homepage/delegate-conversation/joseph.png",
     body: "I'm stuck with onboarding. Can you help?",
   },
   {
     name: "Quinn",
-    avatar: "innflow.svg",
+    avatar: agentAvatars.quinn,
     body: "Of course. Which step are you on?",
   },
   {
     name: "Joseph Myers",
-    avatar: "joseph.png",
+    avatar: "/preview/homepage/delegate-conversation/joseph.png",
     body: "Connecting our shared support inbox.",
   },
   {
     name: "Maya Chen",
-    avatar: "maya.png",
+    avatar: "/preview/homepage/delegate-conversation/maya.png",
     body: "I've invited the team. What comes next?",
   },
   {
     name: "Quinn",
-    avatar: "innflow.svg",
+    avatar: agentAvatars.quinn,
     body: "Connect the inbox, then assign your team and choose a default owner.",
   },
   {
     name: "Maya Chen",
-    avatar: "maya.png",
+    avatar: "/preview/homepage/delegate-conversation/maya.png",
     body: "Connected. Joseph, can you see it now?",
   },
   {
     name: "Joseph Myers",
-    avatar: "joseph.png",
+    avatar: "/preview/homepage/delegate-conversation/joseph.png",
     body: "Yes, all set. Thanks, Quinn!",
   },
   {
     name: "Quinn",
-    avatar: "innflow.svg",
+    avatar: agentAvatars.quinn,
     body: "You're ready. I'll help with the next step.",
   },
 ];
@@ -68,9 +69,9 @@ function Message({
       style={reduced ? undefined : { opacity, y }}
     >
       <div className={styles.surface}>
-        <div className={styles.avatar} data-agent={message.name === "Quinn"}>
+        <div className={styles.avatar}>
           <Image
-            src={`/preview/homepage/delegate-conversation/${message.avatar}`}
+            src={message.avatar}
             alt=""
             width={56}
             height={56}

@@ -310,6 +310,8 @@ def main():
     fonts = font_asset(400) + font_asset(600)
     rows = json.loads(MANIFEST.read_text())
     for row in rows:
+        if row.get("status") == "native":
+            continue
         if row.get("status") == "lottie":
             continue
         scene = build(row["number"])

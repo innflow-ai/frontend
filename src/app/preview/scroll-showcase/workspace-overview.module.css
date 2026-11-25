@@ -254,11 +254,13 @@
 .supplierRecording > img {
   object-fit: contain;
 }
-.managementRecording:has([data-rive-ready="true"]) > img,
-.salesRecording:has([data-rive-ready="true"]) > img,
-.contactsScene:has([data-rive-ready="true"]) > img,
-.supplierRecording:has([data-rive-ready="true"]) > img {
+.artwork [data-workspace-artwork]:has(> [data-workspace-demo], [data-rive-ready="true"]) > img {
   visibility: hidden;
+}
+.artwork [data-workspace-artwork] > svg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
 }
 .inactiveArt {
   opacity: 1;

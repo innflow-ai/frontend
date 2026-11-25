@@ -133,7 +133,7 @@ it("offers Google, email and the general sign-in page", () => {
   expect(screen.queryByText("Scroll to explore ↓")).not.toBeInTheDocument();
   expect(screen.queryByText(/01 \/ 04/)).not.toBeInTheDocument();
   const destinations = [
-    ["Bot mode", "/products/ai-agents", "Teach your bot a task."],
+    ["Bot mode", "/products/ai-agents", "AI Agents are now part of your team."],
     ["Flows", "/features/workflows", "Track every handoff."],
     ["Channels", "/features/communications", "Bring your bot into the conversation."],
     ["Computer", "/features/computer", "Let your bot handle the clicks."],
@@ -154,7 +154,7 @@ it("offers Google, email and the general sign-in page", () => {
   fireEvent.click(screen.getByRole("tab", { name: "Bot mode" }));
   const bot = screen.getByRole("tabpanel", { name: "Bot mode" });
   expect(
-    within(bot).getByRole("img", { name: /records a weekly analytics report/ }),
+    within(bot).getByRole("img", { name: /monitor the fundraising inbox/ }),
   ).toBeInTheDocument();
   fireEvent.click(screen.getByRole("tab", { name: "Flows" }));
   expect(

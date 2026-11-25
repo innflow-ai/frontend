@@ -1,0 +1,263 @@
+.viewport {
+  position: absolute;
+  inset: 0;
+  container-type: size;
+  display: grid;
+  place-items: center;
+}
+.desktop {
+  position: relative;
+  overflow: hidden;
+  width: 45.132em;
+  height: 35.233em;
+  border-radius: 1.174em;
+  background:
+    #181827 url("/preview/scroll-showcase/computer-desktop/wallpaper.jpg")
+    center / cover;
+  box-shadow:
+    inset 0 0 0 1px #ffffff20,
+    0 0 1.4em #9aa0ff38;
+  font:
+    400 min(2.14cqw, 2.72cqh) / 1.2 "Inbox Inter",
+    Inter,
+    sans-serif;
+  letter-spacing: normal;
+  color: #1d1d1f;
+  text-align: left;
+  pointer-events: none;
+}
+.menu {
+  height: 1.846em;
+  background: #0006;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.7em;
+}
+.menu span {
+  font-size: 0.88em;
+}
+.menu span:last-child {
+  background: #ffffff24;
+  border-radius: 2em;
+  padding: 0.15em 0.6em;
+}
+.menu span:last-child::before,
+.agents i {
+  content: "";
+  display: inline-block;
+  width: 0.6em;
+  height: 0.6em;
+  border-radius: 50%;
+  background: #34d399;
+  margin-right: 0.45em;
+}
+.finder,
+.terminal,
+.connections {
+  position: absolute;
+  border-radius: 0.84em;
+  box-shadow: 0 0.67em 1.68em #0006;
+  overflow: hidden;
+}
+.lights {
+  display: flex;
+  position: absolute;
+  top: 0.84em;
+  left: 0.84em;
+  gap: 0.34em;
+}
+.lights i {
+  width: 0.59em;
+  height: 0.59em;
+  background: #ff5f57;
+  border-radius: 50%;
+}
+.lights i:nth-child(2) {
+  background: #febc2e;
+}
+.lights i:nth-child(3) {
+  background: #28c840;
+}
+.finder {
+  left: 1.51em;
+  top: 3.188em;
+  width: 17.28em;
+  height: 11.073em;
+  background: #f5f5f7;
+  padding: 0.48em 0.5em;
+}
+.finder strong {
+  display: block;
+  text-align: center;
+  font-size: 0.88em;
+}
+.finder small {
+  display: block;
+  font-size: 0.8em;
+  color: #6e6e73;
+  margin: 0.85em 0.65em 0.7em;
+}
+.file {
+  font-size: 0.88em;
+  height: 2.1em;
+  margin-bottom: 0.19em;
+  border-radius: 0.47em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.45em 0 0.55em;
+}
+.file span:last-child {
+  opacity: 0.68;
+}
+.file:nth-last-child(2) {
+  background: #e3ebf6;
+}
+.file:last-child {
+  background: #208fff;
+  color: white;
+}
+.terminal {
+  top: 15.77em;
+  left: 1.51em;
+  width: 19.8em;
+  height: 9.9em;
+  background: #0b0b0ceb;
+  border: 1px solid #ffffff18;
+  padding: 2.1em 0.91em 0;
+  color: white;
+}
+.terminal div {
+  white-space: pre;
+  font:
+    400 0.755em / 1.89 "JetBrains Mono",
+    monospace;
+}
+.terminal div:nth-of-type(even) {
+  color: #a1a1aa;
+}
+.terminal div:last-child {
+  color: #34d399;
+}
+.connections {
+  left: 25.838em;
+  top: 7.718em;
+  width: 17.784em;
+  height: 12.583em;
+  background: white;
+}
+.agents {
+  position: absolute;
+  inset: 2.18em auto 0 0;
+  width: 8.05em;
+  background: #f4f4f5;
+  padding: 0.5em 0.34em;
+}
+.agents div {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  position: relative;
+  height: 2.1em;
+  margin-bottom: 0.42em;
+  padding: 0 0.5em;
+  font-size: 0.797em;
+  border-radius: 0.5em;
+}
+.agents div:nth-child(2) {
+  background: #13428f14;
+}
+.agents img {
+  width: 0.95em;
+  height: 0.95em;
+}
+.agents i {
+  margin-left: auto;
+  margin-right: 0;
+}
+.details {
+  position: absolute;
+  top: 3em;
+  left: 8.89em;
+  display: grid;
+  gap: 0.32em;
+}
+.details b {
+  font-size: 0.88em;
+}
+.details span {
+  color: #15803d;
+  font-size: 0.8em;
+}
+.details small {
+  color: #71717a;
+  font-size: 0.755em;
+}
+.dock {
+  position: absolute;
+  bottom: 0.84em;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  padding: 0.4em 0.59em;
+  gap: 0.336em;
+  background: #ffffff2e;
+  border: 1px solid #ffffff33;
+  border-radius: 1em;
+}
+.dock img {
+  width: 2.01em;
+  height: 2.01em;
+}
+.light {
+  position: absolute;
+  inset: 0;
+  background:
+    url("/preview/scroll-showcase/computer-desktop/light.png") center / contain
+    no-repeat;
+}
+.cursor {
+  position: absolute;
+  width: max-content;
+}
+.cursor img {
+  width: 1.34em;
+  height: 1.68em;
+  display: block;
+}
+.cursor span {
+  display: block;
+  margin: -0.3em 0 0 1.18em;
+  padding: 0.2em 0.6em;
+  border-radius: 0.6em;
+  font-size: 0.839em;
+  font-weight: 600;
+  box-shadow: 0 0.2em 0.4em #0005;
+}
+.cursor[data-cursor="Innflow"] {
+  left: 17.99em;
+  top: 31.04em;
+}
+.cursor[data-cursor="Innflow"] span {
+  background: #0a84ff;
+  color: white;
+}
+.cursor[data-cursor="Claude Code"] {
+  left: 8.17em;
+  top: 11.61em;
+}
+.cursor[data-cursor="Claude Code"] span {
+  background: #d97757;
+  color: white;
+}
+.cursor[data-cursor="Codex"] {
+  left: 30.98em;
+  top: 12.63em;
+}
+.cursor[data-cursor="Codex"] span {
+  background: #111;
+  color: white;
+}

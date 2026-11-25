@@ -13,6 +13,7 @@ import { SectionHeading } from "@/components/section-heading";
 import { coverImageUrl, formatPostDate, getLatestBlogPosts, humanizeCategory } from "@/lib/sanity";
 import { ShowcaseTheme } from "@/components/showcase-theme";
 import { getPageTestimonials } from "@/lib/testimonials";
+import { HomepageEntrances } from "./homepage-entrances";
 import { TrustedByMarquee } from "./trusted-by-marquee";
 import typography from "./homepage-typography.module.css";
 
@@ -27,6 +28,7 @@ export async function ShowcaseHomepage({
   ]);
   return (
     <main id="main-content" className={`${styles.page} ${typography.headings}`}>
+      <HomepageEntrances />
       <ScrollShowcase />
       <TrustedByMarquee />
       <ShowcaseTheme>
@@ -42,7 +44,7 @@ export async function ShowcaseHomepage({
         )}
         <HomepageCollaboration />
         {posts.length > 0 && (
-          <div className={styles.recentPosts}>
+          <div className={styles.recentPosts} data-home-reveal>
             <SectionHeading title="Recent blog posts" align="start" />
             <BlogCarousel posts={posts.map((post) => ({
               slug: post.slug,

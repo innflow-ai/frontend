@@ -87,7 +87,7 @@ it.each([false, true])(
     if (reduced) expect(pan()).toBe(0);
   },
 );
-it("offers Google, email and the general sign-in page", () => {
+it("links every hero Learn more button to the login page", () => {
   vi.stubGlobal("matchMedia", () => ({
     matches: true,
     addEventListener: vi.fn(),
@@ -121,7 +121,7 @@ it("offers Google, email and the general sign-in page", () => {
   ).toHaveAttribute("href", siteConfig.signupUrl);
   expect(screen.getByRole("link", { name: "Learn more" })).toHaveAttribute(
     "href",
-    "#feature-showcase",
+    siteConfig.loginUrl,
   );
   expect(screen.queryByRole("dialog", { hidden: true })).toBeNull();
   expect(
@@ -132,13 +132,13 @@ it("offers Google, email and the general sign-in page", () => {
   ).not.toBeInTheDocument();
   expect(screen.queryByText("Scroll to explore ↓")).not.toBeInTheDocument();
   expect(screen.queryByText(/01 \/ 04/)).not.toBeInTheDocument();
-  const destinations = [
-    ["Bot mode", "/products/ai-agents", "AI Agents are now part of your team."],
-    ["Flows", "/features/workflows", "Track every handoff."],
-    ["Channels", "/features/communications", "Bring your bot into the conversation."],
-    ["Computer", "/features/computer", "Let your bot handle the clicks."],
+  const tabs = [
+    ["Bot mode", "AI Agents are now part of your team."],
+    ["Flows", "AI Agents that keep work moving."],
+    ["Channels", "A channel for every team."],
+    ["Computer", "Let your bot handle the clicks."],
   ];
-  for (const [label, href, heading] of destinations) {
+  for (const [label, heading] of tabs) {
     fireEvent.click(screen.getByRole("tab", { name: label }));
     const panel = screen.getByRole("tabpanel", { name: label });
     expect(
@@ -149,7 +149,7 @@ it("offers Google, email and the general sign-in page", () => {
     ).toBeVisible();
     expect(
       screen.getByRole("link", { name: `Learn more about ${label}` }),
-    ).toHaveAttribute("href", href);
+    ).toHaveAttribute("href", siteConfig.loginUrl);
   }
   fireEvent.click(screen.getByRole("tab", { name: "Bot mode" }));
   const bot = screen.getByRole("tabpanel", { name: "Bot mode" });
@@ -159,7 +159,7 @@ it("offers Google, email and the general sign-in page", () => {
   fireEvent.click(screen.getByRole("tab", { name: "Flows" }));
   expect(
     screen.getByRole("img", {
-      name: /influencer outreach workflow/,
+      name: /creator outreach workflow expands/,
     }),
   ).toBeInTheDocument();
 });

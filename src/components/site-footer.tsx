@@ -22,10 +22,30 @@ const columns = [
   { label: "Resources", links: resources.flatMap(({ items }) => items) },
 ];
 
+function GroupHeading({ groupLabel, open, onToggle }: { groupLabel: string; open: boolean; onToggle: () => void }) {
+  return (
+<div className={styles.groupHeading}>
+                    <h3 id={`footer-heading-${groupLabel}`}>{groupLabel}</h3>
+                    <button
+                      className={styles.groupToggle}
+                      type="button"
+                      aria-labelledby={`footer-heading-${groupLabel}`}
+                      aria-controls={`footer-links-${groupLabel}`}
+                      aria-expanded={open}
+                      onClick={() => onToggle()}
+                    />
+                  </div>
+  );
+}
+
 export function SiteFooter({ home: _home = true }: { home?: boolean }) {
   // `home` kept for callers; chrome is the same sitewide so we don't niche the homepage.
   void _home;
   const [openGroup, setOpenGroup] = useState<string | null>(null);
+
+  function toggleGroup(label: string) {
+    setOpenGroup(current => current === label ? null : label);
+  }
 
   return (
     <div className={styles.shell}>
@@ -49,17 +69,7 @@ export function SiteFooter({ home: _home = true }: { home?: boolean }) {
             <nav className={styles.columns} aria-label="Footer navigation">
               {columns.map(({ label, links }) => (
                 <div className={styles.group} data-open={openGroup === label} key={label}>
-                  <div className={styles.groupHeading}>
-                    <h3 id={`footer-heading-${label}`}>{label}</h3>
-                    <button
-                      className={styles.groupToggle}
-                      type="button"
-                      aria-labelledby={`footer-heading-${label}`}
-                      aria-controls={`footer-links-${label}`}
-                      aria-expanded={openGroup === label}
-                      onClick={() => setOpenGroup(current => current === label ? null : label)}
-                    />
-                  </div>
+                    <GroupHeading groupLabel={label} open={openGroup === label} onToggle={() => toggleGroup(label)} />
                   <ul id={`footer-links-${label}`}>
                     {links.map(({ name, href }) => (
                       <li key={href}><a href={href}>{name === "Botmode" ? "Bot mode" : name}</a></li>
@@ -68,6 +78,18 @@ export function SiteFooter({ home: _home = true }: { home?: boolean }) {
                 </div>
               ))}
             </nav>
+          </div>
+          <div className={styles.legal}>
+            <div className={styles.policy} data-open={openGroup === "Policy"}>
+              <GroupHeading groupLabel="Policy" open={openGroup === "Policy"} onToggle={() => toggleGroup("Policy")} />
+              <nav id="footer-links-Policy" aria-label="Legal"><FooterLegalLinks /></nav>
+            </div>
+            <span className={styles.copyright}>
+              © {new Date().getFullYear()} Innflow, Flow State Inc. All rights reserved.{" "}
+              <span className={styles.privacyNote}>
+                See Policy above to manage consent or submit a privacy request.
+              </span>
+            </span>
           </div>
           <div className={styles.contact}>
             <div>
@@ -90,14 +112,7 @@ export function SiteFooter({ home: _home = true }: { home?: boolean }) {
               <GoogleCtaContent />
             </a>
           </div>
-          <div className={styles.legal}>
-            <nav aria-label="Legal">
-              <FooterLegalLinks />
-            </nav>
-            <span>
-              © {new Date().getFullYear()} Innflow. All rights reserved.
-            </span>
-          </div>
+
         </div>
       </footer>
     </div>

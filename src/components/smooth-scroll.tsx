@@ -3,14 +3,14 @@
 import type Lenis from "lenis";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
+import { isShowcaseHome } from "@/lib/showcase-routes";
 
 export function SmoothScroll() {
   const pathname = usePathname();
 
   // Recreate on navigation so momentum cannot carry into the next page.
   useEffect(() => {
-    // Keep the homepage's scroll-driven sections in sync with wheel input.
-    if (pathname === "/" || pathname === "/preview/scroll-showcase") return;
+    const home = isShowcaseHome(pathname);
     // Help navigation uses native scrolling for its fixed shell and dialogs.
     if (pathname === "/help") return;
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -38,10 +38,12 @@ export function SmoothScroll() {
         lenis?.destroy();
         lenis = new LenisRuntime({
           autoRaf: true,
-          lerp: 0.12,
+          // Short easing keeps the hero responsive while trimming wheel travel.
+          lerp: home ? 0.48 : 0.12,
+          wheelMultiplier: home ? 0.8 : 1,
           smoothWheel: true,
           syncTouch: false,
-          anchors: true,
+          anchors: !home,
           allowNestedScroll: true,
           stopInertiaOnNavigate: true,
         });

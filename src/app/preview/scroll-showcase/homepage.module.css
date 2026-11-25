@@ -995,3 +995,20 @@
   margin-inline: auto;
   padding: clamp(64px, 8vw, 120px) 24px;
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  .page [data-home-intro] > *,
+  .page [data-home-entered] {
+    animation: homeEntrance 480ms cubic-bezier(.2,.65,.3,1) backwards;
+  }
+  .page [data-home-intro] > :nth-child(2) { animation-delay: 50ms; }
+  .page [data-home-intro] > :nth-child(3) { animation-delay: 100ms; }
+  .page [data-home-intro] > :nth-child(4) { animation-delay: 150ms; }
+  .page [data-home-intro] > :nth-child(5) { animation-delay: 200ms; }
+  .page [data-home-entered]:focus-within,
+  .page [data-home-intro] > :focus-within { animation: none; }
+}
+
+@keyframes homeEntrance {
+  from { opacity: 0; filter: blur(4px); translate: 0 12px; }
+}

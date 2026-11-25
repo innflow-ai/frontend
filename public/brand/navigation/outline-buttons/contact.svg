@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 60 60" fill="none">
-  <defs><linearGradient id="face" x2="0" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#c58d7f"/><stop offset="1" stop-color="#9f6557"/></linearGradient></defs>
-  <path fill="url(#face)" d="M20 0H40C47.3 0 50.9 0 54.1 1.9C55.8 2.9 57.1 4.2 58.1 5.9C60 9.1 60 12.7 60 20V40C60 47.3 60 50.9 58.1 54.1C57.1 55.8 55.8 57.1 54.1 58.1C50.9 60 47.3 60 40 60H20C12.7 60 9.1 60 5.9 58.1C4.2 57.1 2.9 55.8 1.9 54.1C0 50.9 0 47.3 0 40V20C0 12.7 0 9.1 1.9 5.9C2.9 4.2 4.2 2.9 5.9 1.9C9.1 0 12.7 0 20 0Z"/>
-  <g transform="scale(2)"><g transform="translate(4.5 4.5) scale(.875)" stroke="white" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M3 5h18v14H3z M3 6l9 7 9-7"/>
-  </g></g>
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <rect width="48" height="48" rx="20" fill="#FFB6A3"/>
+  <svg x="10" y="10" width="28" height="28" viewBox="0 0 24 24" fill="none">
+    <path d="M6.68164 3.5H17.1816C19.3908 3.5 21.1816 5.29086 21.1816 7.5V16.5C21.1816 18.7091 19.3908 20.5 17.1816 20.5H6.68164C4.4725 20.5 2.68164 18.7091 2.68164 16.5V7.5C2.68164 5.29086 4.4725 3.5 6.68164 3.5Z" stroke-width="2" stroke="#0E1837"/>
+    <path d="M2.72876 7.58972L9.934 11.7197C10.5383 12.0708 11.2238 12.2556 11.9216 12.2556C12.6195 12.2556 13.305 12.0708 13.9093 11.7197L21.1344 7.58972" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="#0E1837"/>
+  </svg>
 </svg>

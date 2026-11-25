@@ -1,0 +1,148 @@
+.viewport {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  align-items: stretch;
+  padding: 6px;
+  overflow: hidden;
+  container-type: inline-size;
+}
+.stage {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  font:
+    12px/1.35 "Inbox Inter",
+    Inter,
+    sans-serif;
+  color: #24272c;
+  text-align: left;
+}
+.card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  gap: 7px;
+  border: 1px solid #e2e3e6;
+  border-radius: 17px;
+  background: white;
+  box-shadow: 0 4px 16px #181a2310;
+  overflow: hidden;
+}
+.card header,
+.card footer,
+.owner,
+.label,
+.expand {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.card header {
+  padding-inline: 3px;
+  font-size: clamp(11px, 3cqw, 15px);
+}
+.card header img:last-child,
+.card footer b {
+  margin-left: auto;
+}
+.card footer {
+  font-size: 10px;
+  color: #676c72;
+  padding-inline: 5px;
+}
+.card footer span {
+  font-size: 8px;
+  color: #299965;
+}
+.map {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  border-radius: 11px;
+  background: #f6f6f8;
+}
+.node {
+  position: absolute;
+  width: 44%;
+  box-sizing: border-box;
+}
+.label {
+  position: relative;
+  background: white;
+  border: 1px solid #e5e6e8;
+  border-radius: 8px;
+  padding: 5px;
+  font-size: clamp(10px, 2.6cqw, 13px);
+  font-weight: 550;
+}
+.label b {
+  display: grid;
+  place-items: center;
+  color: white;
+  background: #239256;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  flex: none;
+  font-size: 8px;
+}
+.node:nth-child(odd) .label::after {
+  position: absolute;
+  content: "";
+  left: 100%;
+  top: 50%;
+  width: 10cqw;
+  border-top: 1px solid #92cba7;
+}
+.owner {
+  margin: 4px 2px;
+  color: #596169;
+  font-size: clamp(9px, 2.1cqw, 11px);
+}
+.expand {
+  position: absolute;
+  bottom: 4px;
+  left: 5px;
+  border-radius: 7px;
+  background: white;
+  border: 1px solid #e4e6e9;
+  padding: 3px 6px;
+  font-size: 9px;
+  opacity: 0;
+}
+.pointer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform-origin: 1px 1px;
+  pointer-events: none;
+}
+
+.attachment {
+  margin-left: 34px;
+  height: 146px;
+}
+.stage [data-thread][data-playing="false"] {
+  visibility: hidden;
+}
+.stage [data-thread][data-playing="true"] [data-dots] i {
+  animation: flowTyping 1s ease-in-out infinite alternate;
+}
+@keyframes flowTyping {
+  to {
+    opacity: 0.45;
+    transform: translateY(-2px);
+  }
+}
+.stage [data-thread] {
+  position: absolute;
+  inset: 0 0 auto;
+}

@@ -4,14 +4,17 @@ import { useInView } from "motion/react";
 import { useEffect, useRef, useState } from "react";
 import { BotInboxChat } from "./bot-inbox-chat";
 import chatStyles from "./bot-inbox-chat.module.css";
-import { ChannelsHero, ComputerHero, FlowHero } from "./hero-scenes";
+import { ComputerHero } from "./computer-hero";
+import { FlowHero } from "./flow-hero";
+import { ChannelsHero } from "./hero-scenes";
 
 const labels = {
   bot: "Fred asks Innflow to monitor the fundraising inbox. After Fred grants Google Workspace access, Innflow confirms it will summarize new investor emails in the channel.",
-  flow: "Jessie asks for verified creator emails and an intro to review. The influencer outreach workflow shows who researches, approves, sends, and updates the CRM.",
+  flow: "Jessie asks Influencer Manager for verified emails and intro drafts. The creator outreach workflow expands from the conversation to show each step and its owner.",
   channels:
-    "In general-chat, Quinn flags an investor reply and Melody takes the follow-up.",
-  computer: "A cursor enters credentials and selects Continue in Zendesk.",
+    "Channel workspace previews",
+  computer:
+    "Innflow, Claude Code, and Codex share a Mac desktop as pricing files are updated and the mobile layout is checked.",
 };
 
 export function HeroDemo({
@@ -38,7 +41,7 @@ export function HeroDemo({
       ref={ref}
       className={chatStyles.slot}
       data-demo={demo}
-      role="img"
+      role={demo === "channels" ? "group" : "img"}
       aria-label={labels[demo]}
     >
       {demo === "bot" && <BotInboxChat play={playing} />}

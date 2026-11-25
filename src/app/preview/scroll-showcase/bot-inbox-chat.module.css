@@ -172,13 +172,31 @@
   .slot::before { margin-block-start: 0; }
 }
 
-.slot[data-demo="computer"] { min-height: 185px; }
+.slot:is([data-demo="computer"], [data-demo="channels"]) { min-height: 185px; }
+.slot[data-demo="channels"] { min-height: 278px; }
 
 @media (prefers-reduced-motion: reduce) {
-  .slot:is([data-demo="channels"], [data-demo="flow"]) .transcript > :not([data-still]) { display: none; }
+  .slot[data-demo="flow"] .transcript > :not([data-still]) { display: none; }
 }
 
 @media (max-width: 800px) and (prefers-reduced-motion: reduce) {
-  .slot:is([data-demo="flow"], [data-demo="channels"])::before { display: none; }
-  .slot:is([data-demo="flow"], [data-demo="channels"]) .viewport { position: relative; }
+  .slot[data-demo="flow"]::before { display: none; }
+  .slot[data-demo="flow"] .viewport { position: relative; }
+}
+
+.slot[data-demo="flow"] { min-height: 278px; }
+
+/* Inside the compact Channels window, the header and composer stay fixed. */
+.slot[data-demo="channels"] .transcript { padding: 8px; gap: 8px; font-size: clamp(9px, 2.2cqw, 12px); line-height: 1.45; }
+.slot[data-demo="channels"] .row { gap: 4px; }
+.slot[data-demo="channels"] .row > img { width: 1.8em; height: 1.8em; }
+.slot[data-demo="channels"] .bubble, .slot[data-demo="channels"] .grant { border-radius: 1em; background: white; padding: .65em .9em; }
+.slot[data-demo="channels"] .sender, .slot[data-demo="channels"] .members,
+.slot[data-demo="channels"] .bubble small { font-size: .85em; line-height: 1.35; }
+.slot[data-demo="channels"] .grant { margin-inline-start: 0; gap: .5em; }
+.slot[data-demo="channels"] .grantTitle, .slot[data-demo="channels"] .account { font-size: .95em; }
+.slot[data-demo="channels"] .account { flex-wrap: wrap; }
+
+@media (prefers-reduced-motion: reduce) {
+  .slot[data-demo="channels"] .transcript > :not([data-still]) { display: none; }
 }

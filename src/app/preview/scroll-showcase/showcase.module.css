@@ -124,7 +124,7 @@
   place-items: start center;
 }
 .stage {
-  width: calc(69% + var(--expansion, 0) * 31%);
+  width: calc(82% + var(--expansion, 0) * 18%);
   height: calc(min(686px, 78svh) + var(--expansion, 0) * (100% - min(686px, 78svh)));
   min-height: min-content;
   max-width: none;

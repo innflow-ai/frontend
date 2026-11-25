@@ -60,25 +60,59 @@ export function SiteHeader() {
     announcementDismissed ||
     (!INNER_PAGE_ANNOUNCEMENTS_ENABLED && !isShowcaseHome(pathname));
   const [previewShowcasePassed, setPreviewShowcasePassed] = useState(false);
+  const [scrollHidden, setScrollHidden] = useState(false);
   const header = useRef<HTMLElement>(null);
   const toggle = useRef<HTMLButtonElement>(null);
   const hoverClose = useRef<ReturnType<typeof setTimeout> | null>(null);
   // biome-ignore lint/correctness/useExhaustiveDependencies: Recheck a restored scroll offset after navigation.
   useEffect(() => {
-    const update = () => {
-      // The flat bar sits in the page. Pin the floating bar as soon as that
-      // bar would scroll away, including on the homepage.
+    const bar = header.current;
+    if (!bar) return;
+    let hidden = false;
+    let anchor = Math.max(0, window.scrollY);
+    let hideDistance = bar.offsetHeight || 54;
+    const reveal = () => {
+      hidden = false;
+      anchor = Math.max(0, window.scrollY);
+      setScrollHidden(false);
+    };
+    const resize = () => {
+      hideDistance = bar.offsetHeight || 54;
       setPreviewShowcasePassed(window.scrollY > 16);
     };
-    update();
-    window.addEventListener("scroll", update, { passive: true });
-    window.addEventListener("resize", update);
-    return () => {
-      window.removeEventListener("scroll", update);
-      window.removeEventListener("resize", update);
+    const update = () => {
+      const y = Math.max(0, window.scrollY);
+      setPreviewShowcasePassed(y > 16);
+      if (y <= 16 || menu || mobile || bar.contains(document.activeElement)) {
+        reveal();
+        return;
+      }
+
+      // Measure from the most recent high or low point so tiny reversals
+      // don't toggle the bar, even during a long trackpad gesture.
+      if (hidden) {
+        anchor = Math.max(anchor, y);
+        if (anchor - y >= 12) reveal();
+      } else {
+        anchor = Math.min(anchor, y);
+        if (y - anchor >= hideDistance) {
+          hidden = true;
+          anchor = y;
+          setScrollHidden(true);
+        }
+      }
     };
-    // Recheck after navigation in case the browser restores a scroll offset.
-  }, [pathname]);
+    reveal();
+    resize();
+    bar.addEventListener("focusin", reveal);
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", resize);
+    return () => {
+      bar.removeEventListener("focusin", reveal);
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", resize);
+    };
+  }, [pathname, menu, mobile]);
   const cancelHoverClose = () => {
     if (hoverClose.current) clearTimeout(hoverClose.current);
     hoverClose.current = null;
@@ -239,6 +273,7 @@ export function SiteHeader() {
       <header
         ref={header}
         data-home-navigation
+        data-scroll-hidden={scrollHidden && !menu && !mobile}
         data-preview-navigation={
           previewShowcasePassed || mobile ? "floating" : "flat"
         }

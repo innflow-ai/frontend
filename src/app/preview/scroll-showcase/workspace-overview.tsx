@@ -4,13 +4,12 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 import featureIcon from "@/components/feature-icon.module.css";
 import { featureIconSrc } from "@/config/feature-identity";
-import { Checklist, Share, StarsA } from "@/components/icons/mage";
 import { MixedHeadingContent } from "@/components/section-heading";
-
-const stepIcons = [StarsA, Share, Checklist];
 
 import {
   type KeyboardEvent,
+  type PointerEvent,
+  type RefObject,
   useEffect,
   useRef,
   useState,
@@ -121,11 +120,15 @@ function WorkspaceRecording({
 }
 
 function WorkspaceAgent({
+  expanded,
+  pointer,
   name,
   eyeY,
   face,
   rim,
 }: {
+  expanded: boolean;
+  pointer: RefObject<{ x: number; y: number } | null>;
   name: string;
   eyeY: number;
   face: number;
@@ -141,8 +144,14 @@ function WorkspaceAgent({
       data-workspace-agent={name}
     >
       <Image src={`${path}.webp`} width={240} height={204} alt="" unoptimized />
-      {play && (
-        <AgentAnimation src={`${path}.riv`} face={face} rim={rim} eyeY={eyeY} />
+      {expanded && play && (
+        <AgentAnimation
+          pointer={pointer}
+          src={`${path}.riv`}
+          face={face}
+          rim={rim}
+          eyeY={eyeY}
+        />
       )}
     </div>
   );
@@ -168,7 +177,7 @@ export const workspaceCards = [
     summary: "Gather filings and fill supplier forms.",
     description:
       "Give your agent a supplier name. It finds the company filing and uses it to fill out the onboarding form.",
-    steps: [
+    useCases: [
       {
         label: "Route purchase requests",
         icon: "flow",
@@ -194,10 +203,10 @@ export const workspaceCards = [
     summary: "Find contacts due for a follow-up.",
     description:
       "Filter contacts by their last activity to see who you haven’t heard from in a while.",
-    steps: [
-      "Open your contacts",
-      "Filter by last activity",
-      "Choose who to contact",
+    useCases: [
+      { label: "Find inactive contacts", icon: "computer", product: "Computer" },
+      { label: "Assign overdue follow-ups", icon: "flow", product: "Flows" },
+      { label: "Flag incomplete records", icon: "bot", product: "Bot Mode" },
     ],
     source: "53:725",
   },
@@ -205,13 +214,13 @@ export const workspaceCards = [
     id: "automate",
     title: "Sales",
     agent: { name: "droplet", eyeY: 395, face: 0xffc9aff4, rim: 0xff8c6ab8 },
-    summary: "Schedule meetings by email.",
+    summary: "Turn prospect lists into meetings.",
     description:
-      "Copy your sales agent on an email and ask it to find a time to meet next week.",
-    steps: [
-      "Email your contact",
-      "Copy your sales agent",
-      "Suggest a time frame",
+      "Build a prospect list from a trade show directory. Your agent drafts outreach and helps book a meeting when someone replies.",
+    useCases: [
+      { label: "Outbound sales agent", icon: "bot", product: "Bot Mode" },
+      { label: "Build prospect lists", icon: "computer", product: "Computer" },
+      { label: "Lead nurture and follow-up", icon: "channels", product: "Channels" },
     ],
     source: "53:842",
   },
@@ -222,10 +231,10 @@ export const workspaceCards = [
     summary: "Deliver the weekly report.",
     description:
       "Acorn gathers the week’s project updates and sends a report to your team. Once it’s delivered, Acorn switches off.",
-    steps: [
-      "Gather project updates",
-      "Prepare the report",
-      "Send to the team",
+    useCases: [
+      { label: "Draft weekly reports", icon: "bot", product: "Bot Mode" },
+      { label: "Escalate overdue approvals", icon: "flow", product: "Flows" },
+      { label: "Share project blockers", icon: "channels", product: "Channels" },
     ],
     source: "53:959",
   },
@@ -238,6 +247,16 @@ export function WorkspaceOverview() {
     getMobileSnapshot,
     getServerMobileSnapshot,
   );
+
+  const pointer = useRef<{ x: number; y: number } | null>(null);
+  function rememberPointer(event: PointerEvent<HTMLDivElement>) {
+    pointer.current =
+      event.pointerType === "touch" ? null : { x: event.clientX, y: event.clientY };
+  }
+
+  function clearPointer() {
+    pointer.current = null;
+  }
 
   function navigate(event: KeyboardEvent<HTMLButtonElement>, index: number) {
     const last = workspaceCards.length - 1;
@@ -296,11 +315,18 @@ export function WorkspaceOverview() {
             </a>
           </header>
 
-          <div className={styles.cards}>
+          <div
+            className={styles.cards}
+            onPointerOverCapture={rememberPointer}
+            onPointerMoveCapture={rememberPointer}
+            onPointerLeave={clearPointer}
+            onPointerCancel={clearPointer}
+          >
             {workspaceCards.map((card, index) => (
               <article
                 key={card.id}
                 className={styles.card}
+                data-workspace-card={card.id}
                 data-active={mobile || active === index}
                 data-source-node={card.source}
                 onPointerEnter={(event) => {
@@ -327,24 +353,31 @@ export function WorkspaceOverview() {
                 )}
                 <div className={styles.cardSurface}>
                   <div className={styles.cardCopy}>
-                    <h3>
-                      {mobile ? (
-                        card.title
-                      ) : (
-                        <button
-                          className={styles.cardButton}
-                          id={`workspace-${card.id}-button`}
-                          type="button"
-                          aria-expanded={active === index}
-                          aria-controls={`workspace-${card.id}-details`}
-                          onClick={() => setActive(index)}
-                          onFocus={() => setActive(index)}
-                          onKeyDown={(event) => navigate(event, index)}
-                        >
-                          {card.title}
-                        </button>
-                      )}
-                    </h3>
+                    <div className={styles.cardHeader}>
+                      <h3>
+                        {mobile ? (
+                          card.title
+                        ) : (
+                          <button
+                            className={styles.cardButton}
+                            id={`workspace-${card.id}-button`}
+                            type="button"
+                            aria-expanded={active === index}
+                            aria-controls={`workspace-${card.id}-details`}
+                            onClick={() => setActive(index)}
+                            onFocus={() => setActive(index)}
+                            onKeyDown={(event) => navigate(event, index)}
+                          >
+                            {card.title}
+                          </button>
+                        )}
+                      </h3>
+                      <WorkspaceAgent
+                        {...card.agent}
+                        expanded={mobile || active === index}
+                        pointer={pointer}
+                      />
+                    </div>
                     <div data-home-copy className={styles.description}>
                       <p
                         className={styles.summary}
@@ -359,29 +392,20 @@ export function WorkspaceOverview() {
                       >
                         <p>{card.description}</p>
                         <ul>
-                          {card.steps.map((step, index) => {
-                            const label =
-                              typeof step === "string" ? step : step.label;
-                            const StepIcon = stepIcons[index];
-                            return (
-                              <li key={label}>
-                                <span className={styles.stepIcon}>
-                                  {typeof step === "string" ? (
-                                    <StepIcon size={20} aria-hidden="true" />
-                                  ) : (
-                                    <Image
-                                      className={featureIcon.face}
-                                      src={featureIconSrc(step.icon)}
-                                      width={20}
-                                      height={20}
-                                      alt={step.product}
-                                    />
-                                  )}
-                                </span>
-                                {label}
-                              </li>
-                            );
-                          })}
+                          {card.useCases.map(({ label, icon, product }) => (
+                            <li key={label}>
+                              <span className={styles.stepIcon}>
+                                <Image
+                                  className={featureIcon.face}
+                                  src={featureIconSrc(icon)}
+                                  width={20}
+                                  height={20}
+                                  alt={product}
+                                />
+                              </span>
+                              {label}
+                            </li>
+                          ))}
                         </ul>
                       </div>
                     </div>
@@ -413,7 +437,6 @@ export function WorkspaceOverview() {
                         expanded={mobile || active === index}
                       />
                     </div>
-                    <WorkspaceAgent {...card.agent} />
                   </div>
                 </div>
               </article>

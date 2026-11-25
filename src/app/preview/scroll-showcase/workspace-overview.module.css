@@ -101,11 +101,19 @@
   z-index: 1;
 }
 .cardCopy {
+  --copy-top: 32px;
+  --copy-side: 36px;
   height: 263px;
-  padding: 32px 36px 0;
+  padding: var(--copy-top) var(--copy-side) 0;
+}
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 0 4px;
+  margin-bottom: 12px;
 }
 .cardCopy h3 {
-  margin: 0 0 12px;
+  margin: 0;
   font-family: var(--font-manrope), sans-serif;
   font-size: 28px;
   font-weight: 500;
@@ -306,7 +314,9 @@
     width: 12px;
   }
   .cardCopy {
-    padding: 24px 20px 16px;
+    --copy-top: 24px;
+    --copy-side: 20px;
+    padding: var(--copy-top) var(--copy-side) 16px;
   }
   .cardCopy h3 {
     font-size: 24px;
@@ -344,7 +354,9 @@
   }
   .cardCopy {
     height: auto;
-    padding: 24px;
+    --copy-top: 24px;
+    --copy-side: 24px;
+    padding: var(--copy-top) var(--copy-side);
   }
   .description {
     min-height: 0;
@@ -424,11 +436,10 @@
 }
 
 .agentOverlay {
-  position: absolute;
-  z-index: 1;
-  left: 2%;
-  bottom: 9%;
-  width: clamp(104px, 40cqw, 172px);
+  position: relative;
+  width: clamp(48px, 5.5vw, 78px);
+  min-width: 0;
+  margin-left: auto;
   aspect-ratio: 800 / 680;
   pointer-events: none;
 }
@@ -442,4 +453,12 @@
 .agentOverlay:has(.agentCanvas canvas[data-ready="true"]) > img,
 .agentCanvas canvas[data-ready="false"] {
   visibility: hidden;
+}
+
+.card[data-active="true"] .agentOverlay {
+  position: absolute;
+  z-index: 1;
+  left: 2%;
+  bottom: 24px;
+  width: clamp(104px, 40%, 172px);
 }

@@ -80,14 +80,14 @@ export function SiteFooter({ home: _home = true }: { home?: boolean }) {
             </nav>
           </div>
           <div className={styles.legal}>
-            <div className={styles.policy} data-open={openGroup === "Policy"}>
-              <GroupHeading groupLabel="Policy" open={openGroup === "Policy"} onToggle={() => toggleGroup("Policy")} />
-              <nav id="footer-links-Policy" aria-label="Legal"><FooterLegalLinks /></nav>
+            <div className={styles.policy} data-open={openGroup === "Company"}>
+              <GroupHeading groupLabel="Company" open={openGroup === "Company"} onToggle={() => toggleGroup("Company")} />
+              <nav id="footer-links-Company" aria-label="Legal"><FooterLegalLinks /></nav>
             </div>
             <span className={styles.copyright}>
               © {new Date().getFullYear()} Innflow, Flow State Inc. All rights reserved.{" "}
               <span className={styles.privacyNote}>
-                See Policy above to manage consent or submit a privacy request.
+                Open Company to manage consent or submit a privacy request.
               </span>
             </span>
           </div>

@@ -164,7 +164,7 @@
 .groupToggle {
   display: none;
 }
-.group h3 {
+.groupHeading h3 {
   color: var(--marketing-paper);
   font-size: 18px;
   line-height: 26px;
@@ -302,7 +302,6 @@
   .legal { display: contents; }
   .policy { border-bottom: 1px solid #ffffff33; }
   .policy > .groupHeading { display: block; }
-  .policy h3 { font-size: 18px; line-height: 26px; font-weight: 500; }
   .policy[data-open="false"] nav { display: none; }
   .policy nav { flex-direction: column; align-items: flex-start; padding-bottom: 14px; font-size: 14px; }
   .accountLinks { display: none; }

@@ -127,7 +127,7 @@ export function IntegrationPillars() {
   return (
     <div
       ref={stage}
-      className={styles.pillars}
+      data-home-reveal className={styles.pillars}
       role="group"
       aria-label="Integration pillars"
     >

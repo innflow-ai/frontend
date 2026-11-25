@@ -67,7 +67,7 @@ function CustomerStoryLayoutPreview() {
       data-story-layout-preview="true"
       data-motion={reducedMotion ? "reduced" : "shared-layout"}
     >
-      <header className={styles.heading}>
+      <header data-home-reveal className={styles.heading}>
         <h2 id="baseline-stories-heading" data-mixed-heading>
           <MixedHeadingContent
             title="Real customers."
@@ -232,7 +232,7 @@ export function BaselineCustomerStories({
       aria-labelledby="baseline-stories-heading"
       data-source-node="350:11559"
     >
-      <header className={styles.heading}>
+      <header data-home-reveal className={styles.heading}>
         <h2
           id="baseline-stories-heading"
           data-mixed-heading={!!headingRuns || undefined}
@@ -248,7 +248,7 @@ export function BaselineCustomerStories({
           )}
         </h2>
       </header>
-      <div className={styles.storyStage}>
+      <div data-home-reveal className={styles.storyStage}>
         {neighbors.map((item, i) => (
           <button
             type="button"
@@ -333,7 +333,7 @@ export function BaselineConnectedInfrastructure() {
       aria-labelledby="baseline-infrastructure-heading"
       data-source-node="350:11630"
     >
-      <header className={styles.heading}>
+      <header data-home-reveal className={styles.heading}>
         <SectionHeading
           variant="mixed-italic"
           id="baseline-infrastructure-heading"

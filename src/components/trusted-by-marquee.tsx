@@ -19,7 +19,7 @@ const companies = [
 
 export function TrustedByMarquee() {
   return (
-    <section className={styles.section} aria-labelledby="trusted-by-heading">
+    <section data-home-reveal className={styles.section} aria-labelledby="trusted-by-heading">
       <h2 id="trusted-by-heading" className={styles.title}>
         Trusted by
       </h2>

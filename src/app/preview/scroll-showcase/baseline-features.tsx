@@ -187,7 +187,7 @@ function BaselineFeature({ feature }: { feature: Feature }) {
   const visual = (
     <div
       ref={channelScroll.visualRef}
-      className={styles.visual}
+      data-home-reveal className={styles.visual}
       data-feature={featureIcons[feature.id]}
       id={`${feature.id}-baseline-visual`}
     >
@@ -209,7 +209,7 @@ function BaselineFeature({ feature }: { feature: Feature }) {
         data-reverse={feature.reverse}
       >
         <div className={styles.copy}>
-          <header className={styles.heading}>
+          <header data-home-reveal className={styles.heading}>
             <div className={styles.sectionTag}>
               <Image className={featureIcon.face} src={featureIconSrc(featureIcons[feature.id])} width={24} height={24} alt="" />
               <span>{feature.label}</span>
@@ -218,7 +218,7 @@ function BaselineFeature({ feature }: { feature: Feature }) {
               <MixedHeadingContent {...feature.heading} />
             </h2>
           </header>
-          <div ref={channelScroll.windowRef} className={styles.readingWindow}>
+          <div ref={channelScroll.windowRef} data-home-reveal className={styles.readingWindow}>
             <motion.div
               ref={channelScroll.rowsRef}
               className={styles.rows}

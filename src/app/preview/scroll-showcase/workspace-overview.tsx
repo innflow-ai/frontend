@@ -299,7 +299,7 @@ export function WorkspaceOverview() {
     >
       <div className={styles.surface}>
         <div className={styles.content}>
-          <header className={styles.heading}>
+          <header data-home-reveal className={styles.heading}>
             <h2 id="workspace-heading" data-mixed-heading>
               <MixedHeadingContent
                 title="Move everyday"
@@ -320,7 +320,7 @@ export function WorkspaceOverview() {
           </header>
 
           <div
-            className={styles.cards}
+            data-home-reveal className={styles.cards}
             onPointerOverCapture={rememberPointer}
             onPointerMoveCapture={rememberPointer}
             onPointerLeave={clearPointer}

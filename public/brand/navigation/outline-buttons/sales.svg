@@ -1,7 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 60 60" fill="none">
-  <defs><linearGradient id="face" x2="0" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#82a0ac"/><stop offset="1" stop-color="#597885"/></linearGradient></defs>
-  <path fill="url(#face)" d="M20 0H40C47.3 0 50.9 0 54.1 1.9C55.8 2.9 57.1 4.2 58.1 5.9C60 9.1 60 12.7 60 20V40C60 47.3 60 50.9 58.1 54.1C57.1 55.8 55.8 57.1 54.1 58.1C50.9 60 47.3 60 40 60H20C12.7 60 9.1 60 5.9 58.1C4.2 57.1 2.9 55.8 1.9 54.1C0 50.9 0 47.3 0 40V20C0 12.7 0 9.1 1.9 5.9C2.9 4.2 4.2 2.9 5.9 1.9C9.1 0 12.7 0 20 0Z"/>
-  <g transform="scale(2)"><g transform="translate(4.5 4.5) scale(.875)" stroke="white" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M3 20h18 M5 16l5-6 4 3 6-8 M15 5h5v5"/>
-  </g></g>
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <rect width="48" height="48" rx="20" fill="#99DBF0"/>
+  <svg x="10" y="10" width="28" height="28" viewBox="0 0 24 24" fill="none">
+    <path d="M3 6L4 7L6 5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="#0E1837"/>
+    <path d="M3 12L4 13L6 11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="#0E1837"/>
+    <path d="M3 18L4 19L6 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="#0E1837"/>
+    <path d="M9 6H21" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="#0E1837"/>
+    <path d="M9 12H21" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="#0E1837"/>
+    <path d="M9 18H21" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="#0E1837"/>
+  </svg>
 </svg>

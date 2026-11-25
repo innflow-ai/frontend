@@ -81,7 +81,7 @@ export function CollaborationSection({ demos }: { demos: ReactNode[] }) {
       aria-labelledby="collaboration-heading"
     >
       <div ref={scroll.layoutRef} className={styles.layout}>
-        <aside className={styles.copy}>
+        <aside data-home-reveal className={styles.copy}>
           <p className={styles.eyebrow}>Collaborate</p>
           <h2 id="collaboration-heading" data-mixed-heading>
             <MixedHeadingContent

@@ -64,7 +64,7 @@ export function ChatMessage({
   );
 }
 
-function drawChat(
+export function drawChat(
   chat: HTMLElement,
   pane: HTMLElement,
   { animate, at, duration }: HeroTimeline,
@@ -180,6 +180,7 @@ function drawChat(
       graphAt(duration, 1),
     ]);
   }
+  return shift;
 }
 
 export function HeroChat({

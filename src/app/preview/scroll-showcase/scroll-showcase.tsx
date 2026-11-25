@@ -21,7 +21,6 @@ const states = [
     id: "scheduling",
     label: "Bot mode",
     heading: <><strong>AI Agents</strong> are now part of your team.</>,
-    href: "/products/ai-agents",
     badge: "",
     body: "Mention an agent to delegate work and get updates in the same chat.",
   },
@@ -29,36 +28,23 @@ const states = [
     demo: "flow",
     id: "callie",
     label: "Flows",
-    heading: "Track every handoff.",
-    href: "/features/workflows",
+    heading: "AI Agents that keep work moving.",
     badge: "",
-    body: (
-      <>
-        Follow each handoff, see <strong>who owns the next step</strong>, and
-        spot work waiting for approval.
-      </>
-    ),
+    body: "AI Agents take on work, follow up, and ask the team when a decision is needed. Results come back ready to review and use.",
   },
   {
     demo: "channels",
     id: "notetaker",
     label: "Channels",
-    heading: "Bring your bot into the conversation.",
-    href: "/features/communications",
+    heading: "A channel for every team.",
     badge: "New",
-    body: (
-      <>
-        Keep <strong>files and decisions</strong> in the conversation so
-        teammates and agents can pick up where you left off.
-      </>
-    ),
+    body: "Give people and AI agents a shared place to work.",
   },
   {
     demo: "computer",
     id: "payments",
     label: "Computer",
     heading: "Let your bot handle the clicks.",
-    href: "/features/computer",
     badge: "New",
     body: (
       <>
@@ -151,7 +137,7 @@ export function ScrollShowcase() {
 
   return (
     <div className={styles.page}>
-      <header className={styles.intro}>
+      <header className={styles.intro} data-home-intro>
         <p className={styles.heroTagline}>
           <span>New</span> Cloud computers for your agents
         </p>
@@ -178,7 +164,7 @@ export function ScrollShowcase() {
           <TrackedLink
             data-site-cta="primary"
             className={`${googleButtonStyles.button} ${googleButtonStyles.raisedSignIn}`}
-            destination="#feature-showcase"
+            destination={siteConfig.loginUrl}
             eventLabel="homepage_hero_learn_more"
           >
             <span className={googleButtonStyles.content}>Learn more</span>
@@ -217,7 +203,7 @@ export function ScrollShowcase() {
           >
             <div className={styles.gradient} aria-hidden="true" />
             <div className={styles.showcase}>
-              <div className={styles.tabs} role="tablist" aria-label="Features">
+              <div className={styles.tabs} data-home-reveal role="tablist" aria-label="Features">
                 {states.map((state, index) => (
                   <button
                     key={state.id}
@@ -255,7 +241,7 @@ export function ScrollShowcase() {
                   </button>
                 ))}
               </div>
-              <div className={styles.card}>
+              <div className={styles.card} data-home-reveal>
                 {states.map((state, index) => (
                   <section
                     key={state.id}
@@ -288,7 +274,7 @@ export function ScrollShowcase() {
                       <h2 data-reference-heading>{state.heading}</h2>
                       <p data-home-copy>{state.body}</p>
                       <a
-                        href={state.href}
+                        href={siteConfig.loginUrl}
                         data-site-cta="secondary"
                         data-cta-compact
                         aria-label={`Learn more about ${state.label}`}

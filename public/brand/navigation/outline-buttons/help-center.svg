@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 60 60" fill="none">
-  <defs><linearGradient id="face" x2="0" y2="1" gradientUnits="objectBoundingBox"><stop stop-color="#d5a657"/><stop offset="1" stop-color="#af7f2e"/></linearGradient></defs>
-  <path fill="url(#face)" d="M20 0H40C47.3 0 50.9 0 54.1 1.9C55.8 2.9 57.1 4.2 58.1 5.9C60 9.1 60 12.7 60 20V40C60 47.3 60 50.9 58.1 54.1C57.1 55.8 55.8 57.1 54.1 58.1C50.9 60 47.3 60 40 60H20C12.7 60 9.1 60 5.9 58.1C4.2 57.1 2.9 55.8 1.9 54.1C0 50.9 0 47.3 0 40V20C0 12.7 0 9.1 1.9 5.9C2.9 4.2 4.2 2.9 5.9 1.9C9.1 0 12.7 0 20 0Z"/>
-  <g transform="scale(2)"><g transform="translate(4.5 4.5) scale(.875)" stroke="white" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0 M9 9a3 3 0 1 1 5 2.3c-1.5.9-2 1.5-2 3 M12 17h.01"/>
-  </g></g>
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <rect width="48" height="48" rx="20" fill="#FFE195"/>
+  <svg x="10" y="10" width="28" height="28" viewBox="0 0 24 24" fill="none">
+    <path d="M12 21.5C17.2467 21.5 21.5 17.2467 21.5 12C21.5 6.75329 17.2467 2.5 12 2.5C6.75329 2.5 2.5 6.75329 2.5 12C2.5 17.2467 6.75329 21.5 12 21.5Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="#0E1837"/>
+    <path d="M7.77783 16.2221L9.72005 10.3849C9.77301 10.2291 9.86168 10.0878 9.97898 9.97233C10.0963 9.85687 10.239 9.77043 10.3956 9.71993L16.2223 7.77771L14.2801 13.6149C14.2282 13.7696 14.1411 13.9102 14.0257 14.0255C13.9104 14.1409 13.7698 14.228 13.6151 14.2799L7.77783 16.2221Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" stroke="#0E1837"/>
+  </svg>
 </svg>

@@ -115,19 +115,18 @@
   transform: translateY(-1px);
 }
 .sticky {
-  min-height: 100svh;
+  height: 100svh;
   position: sticky;
   top: 0;
-  padding: 64px 16px 16px;
+  padding: 0 16px 16px;
   display: grid;
-  place-items: center;
+  grid-template-columns: minmax(0, 1fr);
+  place-items: start center;
 }
 .stage {
-  width: min(1120px, 100%);
-  height: auto;
-  min-height: 0;
-  /* Room above the tabs so hover labels clear the clipped stage edge. */
-  padding: 64px 0 36px;
+  width: calc(69% + var(--expansion, 0) * 31%);
+  height: calc(min(686px, 78svh) + var(--expansion, 0) * (100% - min(686px, 78svh)));
+  min-height: min-content;
   max-width: none;
   margin: 0 auto;
   border-radius: 40px;
@@ -207,6 +206,13 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+.tabs button[aria-selected="false"] {
+  background: #dfe3e7;
+}
+.tabs button[aria-selected="false"] img {
+  filter: grayscale(1);
+  opacity: 0.55;
 }
 .tabs button::before {
   content: "";

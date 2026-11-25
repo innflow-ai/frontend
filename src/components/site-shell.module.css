@@ -75,6 +75,14 @@
 .header[data-preview-navigation="floating"] {
   top: calc(16px + var(--announcement-h, 0px));
 }
+.header[data-scroll-hidden="true"]:not(:focus-within) {
+  transform: translateY(calc(-100% - 24px - var(--announcement-h, 0px)));
+  opacity: 0;
+  pointer-events: none;
+}
+.header:focus-within {
+  transition: none;
+}
 .header::before {
   content: "";
   position: absolute;

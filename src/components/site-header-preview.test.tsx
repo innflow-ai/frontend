@@ -119,3 +119,23 @@ it("keeps the mobile navigation and Escape focus behavior intact", () => {
   expect(toggle).toHaveFocus();
   expect(document.body.style.overflow).not.toBe("hidden");
 });
+it("hides after deliberate downward travel and reveals on a short upward scroll", () => {
+  render(<SiteHeader />);
+  const header = screen.getByRole("banner");
+  function scroll(y: number, hidden: boolean) {
+    window.scrollY = y;
+    fireEvent.scroll(window);
+    expect(header).toHaveAttribute("data-scroll-hidden", String(hidden));
+  }
+  scroll(30, false);
+  scroll(80, true);
+  scroll(115, true);
+  scroll(109, true);
+  scroll(103, false);
+  scroll(100, false);
+  scroll(160, true);
+  fireEvent.focusIn(screen.getByRole("link", { name: "innflow home" }));
+  expect(header).toHaveAttribute("data-scroll-hidden", "false");
+  fireEvent.click(screen.getByRole("button", { name: "Open navigation" }));
+  scroll(400, false);
+});

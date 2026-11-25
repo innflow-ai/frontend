@@ -80,6 +80,7 @@ export function ScrollShowcase() {
   const [reduced, setReduced] = useState(false);
   const [isCompact, setIsCompact] = useState(false);
   const [progress, setProgress] = useState(0);
+  const [expansion, setExpansion] = useState(0);
 
   useEffect(() => {
     const media = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -100,6 +101,7 @@ export function ScrollShowcase() {
         const motion = showcaseMotion(-top / Math.max(1, range));
         setActive(motion.chapter);
         setProgress(motion.chapterProgress);
+        setExpansion(motion.expansion);
         return;
       }
       // The unpinned hero travels through the viewport. Scroll shifts its
@@ -214,7 +216,7 @@ export function ScrollShowcase() {
                   : isCompact
                     ? (active + progress) / states.length
                     : progress,
-                "--expansion": 1,
+                "--expansion": reduced || isCompact ? 1 : expansion,
               } as CSSProperties
             }
           >

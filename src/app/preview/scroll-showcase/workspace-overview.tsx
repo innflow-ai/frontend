@@ -23,6 +23,10 @@ const AgentAnimation = dynamic(() => import("./workspace-agent-animation"), {
   ssr: false,
 });
 
+const WorkspaceDemo = dynamic(
+  () => import("./workspace-demos").then((module) => module.WorkspaceDemo),
+  { ssr: false },
+);
 const RecordingPlayer = dynamic(
   () => import("./storyboard-rive").then((module) => module.StoryboardRive),
   { ssr: false },
@@ -30,35 +34,32 @@ const RecordingPlayer = dynamic(
 const recordings = {
   connect: {
     className: styles.supplierRecording,
-    src: `${assets}/supplier-recording.riv`,
     poster: `${assets}/supplier-recording.webp`,
-    artboard: "Admin supplier recording",
-    animation: "Record and hold",
     description:
       "Supplier paperwork recording. The agent finds the company, downloads its annual return, and fills the supplier form.",
   },
   assist: {
     className: styles.contactsScene,
     src: `${assets}/contacts.riv`,
-    poster: `${assets}/contacts-preview.webp`,
     artboard: "02 / Let AI manage your contacts / Final cut",
     animation: "02 / Contacts and activity filter / 7.6s loop",
-    description: "",
+    poster: `${assets}/contacts-rive-preview.webp`,
+    description: "The Leaf agent filters contacts by last activity to find people who need a follow-up.",
   },
   learn: {
     className: styles.managementRecording,
     src: `${assets}/management-toggle.riv`,
-    poster: `${assets}/weekly-report-delivered.webp`,
     artboard: "Management toggle",
     animation: "Switch on",
+    poster: `${assets}/weekly-report-delivered.webp`,
     description: "Acorn turns on Management, prepares the weekly report, and delivers it to the team. A checkmark confirms delivery and the switch turns off automatically.",
   },
   automate: {
     className: styles.salesRecording,
     src: `${assets}/sales-scheduling.riv`,
-    poster: `${assets}/sales-email-selected.webp`,
     artboard: "Sales scheduling email",
     animation: "Compose scheduling request",
+    poster: `${assets}/sales-email-selected.webp`,
     description: "An email to luke@acme.com copies sales@innflow.ai to schedule a meeting next week. Gmail and Outlook stay highlighted after the cursor selects each one.",
   },
 } as const;
@@ -104,9 +105,8 @@ function WorkspaceRecording({
       ref={host}
       className={scene.className}
       data-workspace-artwork={id}
-      role={scene.description ? "img" : undefined}
-      aria-label={scene.description || undefined}
-      aria-hidden={!scene.description}
+      role="img"
+      aria-label={scene.description}
     >
       <Image
         src={scene.poster}
@@ -114,7 +114,11 @@ function WorkspaceRecording({
         fill
         sizes="(max-width: 760px) 90vw, 400px"
       />
-      {expanded && play && <RecordingPlayer storyboard={scene} playing />}
+      {expanded && play && (
+        "src" in scene
+          ? <RecordingPlayer storyboard={scene} playing />
+          : <WorkspaceDemo id="connect" />
+      )}
     </div>
   );
 }

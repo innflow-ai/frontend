@@ -9,7 +9,7 @@ import { GoogleCtaContent } from "@/components/google-cta-content";
 import { MixedHeadingContent } from "@/components/section-heading";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
-import { HeroRiveDemo } from "./hero-rive-demo";
+import { HeroDemo } from "./hero-demo";
 import { chapterScrollProgress, showcaseMotion } from "./scroll-showcase-motion";
 import styles from "./showcase.module.css";
 
@@ -20,15 +20,10 @@ const states = [
     demo: "bot",
     id: "scheduling",
     label: "Bot mode",
-    heading: "Teach your bot a task.",
+    heading: <><strong>AI Agents</strong> are now part of your team.</>,
     href: "/products/ai-agents",
     badge: "",
-    body: (
-      <>
-        Give your agent a focused task and the context it needs. Let it prepare
-        the next step while <strong>your team stays in control</strong>.
-      </>
-    ),
+    body: "Mention an agent to delegate work and get updates in the same chat.",
   },
   {
     demo: "flow",
@@ -301,9 +296,8 @@ export function ScrollShowcase() {
                         Learn more
                       </a>
                     </div>
-                    <HeroRiveDemo
+                    <HeroDemo
                       demo={state.demo}
-                      artboard={state.label}
                       active={active === index}
                       play={active === index && !reduced}
                     />

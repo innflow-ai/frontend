@@ -5,12 +5,12 @@ import { useState, type CSSProperties } from "react";
 import styles from "./hero-scenes.module.css";
 
 const workspaces = [
-  { name: "Hospitality", channels: ["front-desk", "arrivals", "housekeeping"], request: "Which rooms need early check-in?", reply: "Two early arrivals today. I shared the room list with housekeeping.", agent: "cloud-amber", surface: "#ffe8bb" },
-  { name: "Retail", channels: ["stockroom", "store-orders", "returns"], request: "What needs a restock before Friday?", reply: "The navy totes are running low. I drafted a reorder for review.", agent: "leaf-green", surface: "#cce9d9" },
+  { name: "Hospitality", channels: ["front-desk", "arrivals", "housekeeping"], request: "Which rooms need early check-in?", reply: "Two early arrivals today. I shared the room list with housekeeping.", agent: "cloud-amber-flat", surface: "#ffe8bb" },
+  { name: "Retail", channels: ["stockroom", "store-orders", "returns"], request: "What needs a restock before Friday?", reply: "The navy totes are running low. I drafted a reorder for review.", agent: "leaf-green-fill-only", surface: "#cce9d9" },
   { name: "Healthcare", channels: ["front-office", "scheduling", "intake"], request: "Any openings at the clinic tomorrow?", reply: "Two afternoon slots opened up. The scheduling team has the list.", agent: "head-sky", surface: "#cae5ff" },
   { name: "Finance", channels: ["invoices", "month-end", "vendors"], request: "Which invoices are waiting on receipts?", reply: "Three are missing receipts. I drafted a reminder for each owner.", agent: "droplet-indigo", surface: "#e3d8ff" },
   { name: "Construction", channels: ["site-updates", "deliveries", "permits"], request: "When is the framing delivery due?", reply: "The supplier confirmed Thursday at 8. I updated the site schedule.", agent: "acorn-sky", surface: "#ffd7bd" },
-  { name: "Logistics", channels: ["dispatch", "shipments", "exceptions"], request: "Did the pickup time change for load 42?", reply: "Pickup moved to 3 PM. Dispatch and the warehouse have the update.", agent: "cloud-teal", surface: "#c1e8eb" },
+  { name: "Logistics", channels: ["dispatch", "shipments", "exceptions"], request: "Did the pickup time change for load 42?", reply: "Pickup moved to 3 PM. Dispatch and the warehouse have the update.", agent: "cloud-teal-no-shadow", surface: "#c1e8eb" },
 ] as const;
 
 export function ChannelsHero({ play }: { play: boolean }) {

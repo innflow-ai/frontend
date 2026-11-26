@@ -101,18 +101,9 @@
   padding: 24px;
 }
 
-.category {
-  color: var(--sky-blue);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
 .copy > strong {
   display: -webkit-box;
   overflow: hidden;
-  margin-top: 14px;
   color: var(--sky-ink);
   font-size: 1.25rem;
   letter-spacing: -0.025em;
@@ -121,24 +112,8 @@
   -webkit-line-clamp: 2;
 }
 
-.excerpt {
-  display: -webkit-box;
-  overflow: hidden;
-  margin-top: 12px;
-  color: var(--sky-muted);
-  font-size: 0.9rem;
-  line-height: 1.55;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-}
-
 .meta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 7px;
-  margin-top: auto;
-  padding-top: 22px;
+  margin-top: 8px;
   color: var(--sky-muted);
   font-size: 0.78rem;
 }

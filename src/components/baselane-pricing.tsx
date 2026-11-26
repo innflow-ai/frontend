@@ -176,7 +176,70 @@ function FeatureValue({ value }: { value: string }) {
   return value;
 }
 
-export function BaselanePricing() {
+const selfServePlans = [pricingCatalog.plans.free, pro, business] as const;
+type SelfServePlan = (typeof selfServePlans)[number];
+
+function previewHighlights(plan: SelfServePlan) {
+  switch (plan.name) {
+    case "Basic":
+      return {
+        heading: "Included with Basic",
+        items: [`${plan.workspaces} workspace`, `${plan.deployedWorkflows} deployed workflows`, `${plan.tables} data tables`],
+      };
+    case "Pro":
+      return {
+        heading: "Everything in Basic, plus",
+        items: [`${plan.workspaces} workspaces`, `${plan.deployedWorkflows} deployed workflows`, "Premium workflow nodes"],
+      };
+    case "Business":
+      return {
+        heading: "Everything in Pro, plus",
+        items: [`${plan.workspaces} workspaces`, `${plan.rowsPerTable} rows per table`, `${plan.runHistory} run history`],
+      };
+  }
+}
+
+function PreviewPlanCard({ plan, annual }: { plan: SelfServePlan; annual: boolean }) {
+  const paid = "commitmentValue" in plan;
+  const highlights = previewHighlights(plan);
+  return (
+    <article
+      id={`plan-${plan.name.toLowerCase()}`}
+      className={styles.previewCard}
+      aria-label={`${plan.name} plan`}
+    >
+      <div className={styles.previewTitle}>
+        <h2>{plan.name}</h2>
+        {paid && annual && (
+          <span>{annualSavingsPercent(plan.monthlyPrice, plan.commitmentMonthlyPrice)}% off</span>
+        )}
+      </div>
+      <div className={styles.previewPrice}>
+        <strong>{money(annual ? plan.commitmentMonthlyPrice : plan.monthlyPrice)}</strong>
+        {paid && <span>/ month</span>}
+      </div>
+      <p className={styles.paymentTerm}>
+        {paid
+          ? annual ? `${money(plan.commitmentValue)} billed yearly` : "Billed monthly"
+          : "No payment required"}
+      </p>
+      <PlanLink plan={plan} compact />
+      <details className={styles.creditDetails}>
+        <summary>
+          <span>{plan.monthlyCredits} monthly credits</span>
+          <span className={styles.srOnly}>What uses credits?</span>
+        </summary>
+        <p>AI and workflow steps use credits. A weekly report can use credits to gather updates and draft a summary. Usage depends on the steps it runs.</p>
+      </details>
+      <h3 className={styles.previewIncludes}>{highlights.heading}</h3>
+      <ul className={styles.highlights}>
+        {highlights.items.map((item) => <li key={item}>{item}</li>)}
+      </ul>
+    </article>
+  );
+}
+
+export function BaselanePricing({ preview = false }: { preview?: boolean } = {}) {
   const [annual, setAnnual] = useState(true);
   const [expanded, setExpanded] = useState<string[]>(allGroupTitles);
   const allOpen = expanded.length === allGroupTitles.length;
@@ -185,18 +248,18 @@ export function BaselanePricing() {
   return (
     <InnerPageShell>
       <div className={styles.page}>
-        <section className={styles.hero} aria-labelledby="pricing-title">
+        <section className={preview ? `${styles.hero} ${styles.previewHero}` : styles.hero} aria-labelledby="pricing-title">
           <SectionHeading
             id="pricing-title"
             as="h1"
             size="hero"
-            title="Pick a plan."
-            emphasis="Your AI team is waiting."
-            subtitle={
+            title={preview ? "Plans for your AI team" : "Pick a plan."}
+            emphasis={preview ? undefined : "Your AI team is waiting."}
+            subtitle={preview ? "Start with a single workflow. Add capacity as more of your team’s work runs in Innflow." : (
               <>
                 Agents, workflows and knowledge. <strong>One workspace.</strong>
               </>
-            }
+            )}
           >
             <fieldset
               className={styles.billing}
@@ -246,8 +309,10 @@ export function BaselanePricing() {
               </a>
             ))}
           </nav>
-          <div className={styles.planGrid}>
-            {plans.map((plan, index) => (
+          <div className={preview ? styles.previewGrid : styles.planGrid}>
+            {preview ? selfServePlans.map((plan) => (
+              <PreviewPlanCard key={plan.name} plan={plan} annual={annual} />
+            )) : plans.map((plan, index) => (
               <article
                 id={`plan-${plan.name.toLowerCase()}`}
                 className={`${styles.plan} ${index === 1 ? styles.featured : ""}`}
@@ -407,12 +472,23 @@ export function BaselanePricing() {
               </article>
             ))}
           </div>
-          <p className={styles.capacityNote}>
+          {preview && (
+            <div className={styles.enterpriseStrip} id="plan-enterprise">
+              <div>
+                <h2>Enterprise</h2>
+                <p>Talk with us about custom capacity, deployment, and support.</p>
+              </div>
+              <TrackedLink destination={siteConfig.demoUrl} eventLabel="pricing_enterprise_demo" data-site-cta="secondary">
+                Book a demo
+              </TrackedLink>
+            </div>
+          )}
+          {!preview && <p className={styles.capacityNote}>
             AI and workflow activity consume credits. Credits are not a fixed
             message count.
             <br />
             {enterpriseNote}
-          </p>
+          </p>}
           <a className={styles.compareLink} href="#compare-features">
             Compare all features <MageArrowDown size={18} />
           </a>

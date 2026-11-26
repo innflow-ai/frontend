@@ -7,12 +7,10 @@ import { TrackedLink } from "@/components/tracked-link";
 import styles from "./blog-carousel.module.css";
 
 export type BlogCarouselPost = {
-  category: string;
   coverImageAlt: string;
   coverImageUrl: string | null;
   date: string;
-  excerpt: string | null;
-  readTime: number | null;
+  publishedAt: string;
   slug: string;
   title: string;
 };
@@ -98,18 +96,8 @@ export function BlogCarousel({ posts }: { posts: BlogCarouselPost[] }) {
                 )}
               </span>
               <span className={styles.copy}>
-                <span className={styles.category}>{post.category}</span>
                 <strong>{post.title}</strong>
-                {post.excerpt ? (
-                  <span className={styles.excerpt}>{post.excerpt}</span>
-                ) : null}
-                <span className={styles.meta}>
-                  {post.date ? <time>{post.date}</time> : null}
-                  {post.date && post.readTime ? (
-                    <span aria-hidden="true">·</span>
-                  ) : null}
-                  {post.readTime ? <span>{post.readTime} min read</span> : null}
-                </span>
+                {post.date && <time className={styles.meta} dateTime={post.publishedAt}>{post.date}</time>}
               </span>
             </TrackedLink>
           </li>

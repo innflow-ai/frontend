@@ -291,6 +291,13 @@
     padding: 22px 24px 36px;
   }
 
+  @media (min-width: 600px) {
+    .mobileLinks {
+      width: 100%;
+      padding-inline: 32px;
+    }
+  }
+
   .mobileGroup {
     border-bottom: 0;
   }
@@ -495,7 +502,7 @@
     display: block;
   }
 
-  .mobileLinks > a:not(.mobileCta) {
+  .mobileLinks > a {
     display: block;
     border-bottom: 0;
     color: var(--sky-ink);
@@ -535,11 +542,6 @@
     padding: 6px 16px;
   }
 
-  .mobileCta {
-    width: 100%;
-    min-width: 0;
-    padding-inline: 16px;
-  }
 
   @media (max-width: 420px) {
     .mobileSectionLinks {
@@ -624,8 +626,7 @@
     height: 21px;
   }
 
-  .headerCta,
-  .mobileCta {
+  .headerCta {
     --gradient-cta: var(--button-primary);
     --gradient-cta-hover: var(--button-primary-hover);
     box-shadow:

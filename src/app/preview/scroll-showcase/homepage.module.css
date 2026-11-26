@@ -990,6 +990,15 @@
   }
 }
 
+.homeFaq {
+  max-width: 840px;
+  margin-inline: auto;
+  padding: clamp(48px, 7vw, 96px) 24px;
+}
+.homeFaq :global(.faq-list) {
+  margin-top: clamp(24px, 4vw, 48px);
+}
+
 .recentPosts {
   max-width: 1160px;
   margin-inline: auto;

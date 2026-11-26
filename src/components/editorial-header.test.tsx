@@ -198,8 +198,11 @@ describe("EditorialHeader navigation", () => {
     expect(mobile.getByRole("link", { name: "Pricing" })).toBeInTheDocument();
     expect(mobile.queryByRole("link", { name: "Blog" })).toBeNull();
     expect(
-      mobile.getByRole("link", { name: "Continue with Google" }),
-    ).toHaveClass(styles.mobileCta);
+      mobile.queryByRole("link", { name: "Continue with Google" }),
+    ).not.toBeInTheDocument();
+    expect(mobile.getByRole("link", { name: "Sign in" })).toHaveAttribute(
+      "href", siteConfig.loginUrl,
+    );
     expect(
       mobile.queryByRole("link", { name: "Sign Up" }),
     ).not.toBeInTheDocument();

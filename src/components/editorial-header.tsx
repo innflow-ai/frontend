@@ -242,7 +242,7 @@ export function MobileNavigation({
   id = "editorial-mobile-overlay",
   className = "",
   pricingHref = "/pricing",
-  loginHref = siteConfig.signupUrl,
+  loginHref = siteConfig.loginUrl,
 }: {
   open: boolean;
   onClose: () => void;
@@ -339,14 +339,6 @@ export function MobileNavigation({
               >
                 Sign in
               </a>
-              <GoogleSignInButton
-                className={`${styles.button} ${styles.mobileCta}`}
-                eventLabel="mobile_continue_google"
-                label="Continue with Google"
-                variant="brand"
-                tone="secondary"
-                iconSize={20}
-              />
             </div>
           </motion.nav>
         </motion.div>

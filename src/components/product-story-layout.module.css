@@ -1,0 +1,253 @@
+@font-face {
+  font-family: "Product Source Serif";
+  src: url("../app/fonts/source-serif-4-normal.woff2") format("woff2");
+  font-weight: 200 900;
+  font-display: swap;
+}
+
+.page {
+  --page-gutter: clamp(20px, 6vw, 96px);
+  --wash: #e0eaf4;
+  color: #191919;
+  background: white;
+  font-family: var(--font-sans);
+}
+.page[data-product-layout="flows"] {
+  --wash: #ffe5d1;
+}
+.page[data-product-layout="channels"] {
+  --wash: #e8e0f8;
+}
+.page[data-product-layout="computer"] {
+  --wash: #d3ede8;
+}
+.page[data-product-layout="teammates"] {
+  --wash: #e0e3f4;
+}
+.page[data-product-layout="memory"] {
+  --wash: #e4e9df;
+}
+.page :is(h1, h2, h3, p, figure) {
+  margin: 0;
+}
+.page
+  :is(.hero, .spotlight, .showcase, .capabilities, .comparison, .close)
+  :is(h1, h2) {
+  font-family: "Product Source Serif", Georgia, serif;
+  font-weight: 450;
+  line-height: 1.03;
+  letter-spacing: -0.052em;
+  text-wrap: balance;
+}
+.hero h1 {
+  max-width: 16ch;
+  font-size: clamp(44px, 5.9vw, 86px);
+}
+.page :is(.spotlight, .showcase, .capabilities, .comparison, .close) h2 {
+  font-size: clamp(35px, 4vw, 60px);
+}
+.page :is(.hero, .spotlight, .showcase, .capabilities, .close) p {
+  color: #52565c;
+  line-height: 1.5;
+  font-size: 16px;
+  max-width: 60ch;
+  margin-top: 16px;
+}
+.hero,
+.close {
+  padding: clamp(80px, 8vw, 128px) var(--page-gutter);
+  text-align: center;
+}
+.hero {
+  padding-bottom: 0;
+}
+.hero > :is(h1, p),
+.close > :is(h2, p) {
+  margin-inline: auto;
+}
+.heroMedia,
+.spotlight,
+.capabilities {
+  max-width: 1200px;
+  margin-inline: auto;
+}
+.heroMedia {
+  margin-top: 48px;
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+.actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 0 20px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.art,
+.brief {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 20px;
+  height: clamp(220px, 26vw, 374px);
+}
+.art {
+  background: #f5f5f5;
+}
+.art img,
+.art video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.heroMedia > figure {
+  height: clamp(280px, 43vw, 600px);
+}
+.heroMedia > .art {
+  background: linear-gradient(135deg, var(--wash), #f6f5f3 78%);
+}
+.brief {
+  display: grid;
+  place-items: center;
+  padding: clamp(18px, 3vw, 40px);
+  background: #dceeff;
+  border: 1px solid #a7cdec;
+  color: #183d61;
+}
+.brief figcaption {
+  max-width: 45ch;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.spotlight,
+.capabilities {
+  width: calc(100% - 2 * var(--page-gutter));
+  padding-block: clamp(68px, 8vw, 120px);
+}
+.spotlight {
+  display: grid;
+  grid-template-columns: 0.83fr 1.17fr;
+  align-items: center;
+  gap: clamp(32px, 7vw, 110px);
+}
+.showcase {
+  padding: clamp(44px, 5vw, 76px) var(--page-gutter);
+  background: linear-gradient(150deg, var(--wash), #f6efea);
+}
+.showcaseCopy {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+.showcaseCopy p {
+  margin-inline: auto;
+}
+.showcase > figure {
+  max-width: 1200px;
+  margin: auto;
+  height: clamp(290px, 37vw, 540px);
+}
+.capabilities header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  gap: 48px;
+  margin-bottom: 32px;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.cards article {
+  padding: clamp(20px, 2.3vw, 36px);
+  border-radius: 18px;
+  background: #f5f5f5;
+}
+.cards h3,
+.comparison h3 {
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+.cards article p {
+  font-size: 14px;
+  margin-top: 8px;
+}
+.cards figure {
+  margin-top: 20px;
+  height: clamp(180px, 19vw, 268px);
+}
+.cards article:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+.comparison {
+  padding: clamp(56px, 7vw, 104px) var(--page-gutter);
+  color: white;
+  background: #202020;
+}
+.comparison > div {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: clamp(32px, 4vw, 64px);
+  max-width: 1200px;
+  margin: auto;
+}
+.comparison h3 {
+  font-size: 16px;
+}
+.comparison ul {
+  color: #dedede;
+  line-height: 1.5;
+  margin: 16px 0 0;
+  padding-left: 18px;
+}
+.comparison li + li {
+  margin-top: 8px;
+}
+.close h2 {
+  max-width: 22ch;
+}
+@media (max-width: 720px) {
+  .hero,
+  .close {
+    padding-top: 72px;
+  }
+  .heroMedia {
+    margin-top: 28px;
+  }
+  .spotlight,
+  .capabilities header,
+  .cards,
+  .comparison > div {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .capabilities header p {
+    margin-top: 0;
+  }
+  .spotlight,
+  .capabilities {
+    padding-block: 60px;
+  }
+  .cards figure {
+    height: 210px;
+  }
+  .showcaseCopy {
+    text-align: left;
+  }
+  .comparison > div {
+    gap: 30px;
+  }
+}

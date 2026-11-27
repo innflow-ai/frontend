@@ -62,10 +62,10 @@ export const baselineFeatures: Feature[] = [
     id: "channels",
     node: "350:11199",
     label: "Bot mode",
-    title: "Give your bot\na job to finish.",
+    title: "Your team and your AI Agents.\nOne place to get work done.",
     heading: {
-      title: "Give your bot",
-      emphasis: <strong>a job to finish.</strong>,
+      title: "Your team and your AI Agents.",
+      emphasis: <strong>One place to get work done.</strong>,
     },
     items: storyboards.slice(0, 6),
   },
@@ -189,6 +189,7 @@ function BaselineFeature({ feature }: { feature: Feature }) {
       ref={channelScroll.visualRef}
       data-home-reveal className={styles.visual}
       data-feature={featureIcons[feature.id]}
+      data-presentation={artwork.presentation}
       id={`${feature.id}-baseline-visual`}
     >
       <StoryboardArtwork key={artwork.number} storyboard={artwork} />

@@ -163,6 +163,14 @@ describe("numbered homepage storyboards", () => {
         continue;
       }
       expect(existsSync(`public${item.poster}`)).toBe(true);
+      if (item.number === 3) {
+        expect(item.title).toBe("Give your team a task to finish.");
+        expect(item.presentation).toBe("unframed");
+        expect(item.duration).toBe(11.2);
+        expect(item.src).toMatch(/\.mp4$/);
+        expect(existsSync(`public${item.src}`)).toBe(true);
+        continue;
+      }
       expect(item.status).toBe("lottie");
       expect(item.duration).toBe(6);
       const animation = JSON.parse(readFileSync(`public${item.src}`, "utf8"));

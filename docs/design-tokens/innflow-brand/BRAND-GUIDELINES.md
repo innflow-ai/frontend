@@ -18,7 +18,7 @@ Approved November 17, 2026 for the Innflow marketing website. Use a raised pill 
 | Surface | Primary | Secondary |
 | --- | --- | --- |
 | Fill, top to bottom | `#5aaaf8` to `#0c99ff` | `#363636` to `#191919` |
-| Hover, top to bottom | `#429bf0` to `#008bec` | `#454545` to `#252525` |
+| Hover, top to bottom | `#429bf0` to `#008bec` | `#606060` to `#393939` |
 | 1px rim | `#0680c2f2` | `#111` |
 
 Both tones use white text, a 999px radius, and the same highlight and shadow, `inset 0 1px 2px #ffffff70, 0 3px 7px #00000021`. Keep component-specific sizing and visible keyboard focus. In the homepage hero, “Continue with Google” is secondary and “Learn more” is primary. Use the black pill for the header Google CTA and the blue pill for the popup Subscribe button.

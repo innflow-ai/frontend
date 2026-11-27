@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { type ReactNode, useEffect, useRef, useState } from "react";
 import {
   announcementIdentity,
   announcementState,
@@ -8,7 +8,43 @@ import {
   type WebsiteAnnouncement,
 } from "@/config/website-announcement";
 import { captureMarketingEvent } from "@/lib/analytics";
+import { ChevronRight } from "./icons/mage/ChevronRight";
+import { PromoCodeButton } from "./promo-code-button";
+import { SaleBadge } from "./sale-badge";
 import styles from "./website-announcement.module.css";
+
+function PromotionMarquee({ children }: { children: ReactNode }) {
+  const viewportRef = useRef<HTMLDivElement>(null);
+  const rowRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const viewport = viewportRef.current;
+    const row = rowRef.current;
+    if (!viewport || !row || typeof ResizeObserver === "undefined") return;
+
+    const measure = () => {
+      const available = viewport.clientWidth;
+      const width = row.getBoundingClientRect().width;
+      const pixelsPerSecond = 42;
+      row.style.setProperty("--travel-time", `${(available + width) / pixelsPerSecond}s`);
+      // Start with the offer visible on the first pass.
+      row.style.setProperty("--start-offset", `${-available / pixelsPerSecond}s`);
+      viewport.toggleAttribute("data-overflow", width > available + 1);
+    };
+    const observer = new ResizeObserver(measure);
+    observer.observe(viewport);
+    observer.observe(row);
+    measure();
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={viewportRef} className={styles.promoViewport}>
+      <div ref={rowRef} className={styles.promotion}>{children}</div>
+    </div>
+  );
+}
+
 export function WebsiteAnnouncementBar({
   config,
   initialNow,
@@ -28,7 +64,7 @@ export function WebsiteAnnouncementBar({
   useEffect(() => {
     let closed = false;
     try {
-      closed = localStorage.getItem(key) === "1";
+      closed = !config.pinned && localStorage.getItem(key) === "1";
     } catch {}
     setDismissed(closed);
     setReady(true);
@@ -68,7 +104,7 @@ export function WebsiteAnnouncementBar({
         ? new ResizeObserver(sync)
         : undefined;
     if (bar.current) observer?.observe(bar.current);
-    window.addEventListener("scroll", sync, { passive: true });
+    if (!config.pinned) window.addEventListener("scroll", sync, { passive: true });
     window.addEventListener("resize", sync);
     return () => {
       observer?.disconnect();
@@ -78,7 +114,7 @@ export function WebsiteAnnouncementBar({
       delete root.dataset.websiteAnnouncement;
       delete root.dataset.websiteOffer;
     };
-  }, [visible, state.offer]);
+  }, [visible, state.offer, config.pinned]);
   const previouslyFocused = useRef(false);
   useEffect(() => {
     if (!visible && previouslyFocused.current)
@@ -116,6 +152,9 @@ export function WebsiteAnnouncementBar({
     <aside
       ref={bar}
       className={styles.bar}
+      data-pinned={config.pinned || undefined}
+      data-promo={offer?.promoCode ? "" : undefined}
+      data-pink-promo={offer?.badgeLabel ? "" : undefined}
       aria-label="Innflow announcement"
       data-website-announcement-slot=""
       onFocusCapture={() => {
@@ -127,7 +166,37 @@ export function WebsiteAnnouncementBar({
           event.currentTarget.contains(event.relatedTarget as Node);
       }}
     >
-      {offer && (
+      {offer?.promoCode && (
+        <PromotionMarquee>
+          <a href={offer.action.href} onClick={() => trackAction(offer.action.href)}>
+            {offer.badgeLabel ? <SaleBadge label={offer.badgeLabel} /> : (
+              <Image src="/brand/announcement/tag.svg" width={13} height={13} alt="" />
+            )}
+            <strong>{offer.qualifier && <><small>{offer.qualifier}</small>{" "}</>}{offer.message}</strong>
+          </a>
+          <span className={styles.codeGroup}>
+            <small>{offer.planScope && `${offer.planScope} `}with code</small>{" "}
+            <PromoCodeButton code={offer.promoCode} />
+          </span>
+          <span className={styles.ends} role="timer" aria-label={`Offer ends ${deadline}`}>
+            <small>expires:</small>
+            <strong className={styles.countdownValue}>
+              {ready
+                ? ["d", "h", "m", "s"].map((suffix, i) => (
+                    <span key={suffix}>
+                      {i > 0 && " "}{String(units[i]).padStart(i === 0 ? 1 : 2, "0")}
+                      <span className={styles.countdownUnit}>{suffix}</span>
+                    </span>
+                  ))
+                : "…"}
+            </strong>
+          </span>
+          <a href={offer.action.href} aria-label={offer.action.label} onClick={() => trackAction(offer.action.href)}>
+            <ChevronRight size={16} />
+          </a>
+        </PromotionMarquee>
+      )}
+      {offer && !offer.promoCode && (
         <div className={styles.offer}>
           <a
             href={offer.action.href}
@@ -246,19 +315,21 @@ export function WebsiteAnnouncementBar({
       {config.supportingCopy && (
         <span className={styles.supporting}>{config.supportingCopy}</span>
       )}
-      <button
-        className={styles.dismiss}
-        type="button"
-        aria-label="Dismiss announcement"
-        onClick={() => {
-          try {
-            localStorage.setItem(key, "1");
-          } catch {}
-          setDismissed(true);
-        }}
-      >
-        ×
-      </button>
+      {!config.pinned && (
+        <button
+          className={styles.dismiss}
+          type="button"
+          aria-label="Dismiss announcement"
+          onClick={() => {
+            try {
+              localStorage.setItem(key, "1");
+            } catch {}
+            setDismissed(true);
+          }}
+        >
+          ×
+        </button>
+      )}
     </aside>
   );
 }

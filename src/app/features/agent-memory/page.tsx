@@ -9,5 +9,5 @@ export const metadata = createPageMetadata({
 });
 
 export default function Page() {
-  return <FeatureStoryPage sections={agentMemoryPage.sections} />;
+  return <FeatureStoryPage product="memory" sections={agentMemoryPage.sections} />;
 }

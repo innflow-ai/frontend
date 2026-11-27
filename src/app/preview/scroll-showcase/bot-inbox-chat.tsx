@@ -187,13 +187,15 @@ export function HeroChat({
   play,
   children,
   fadeAt = fadeStart,
+  playbackRate = 1,
 }: {
   play: boolean;
   children: ReactNode;
   fadeAt?: number;
+  playbackRate?: number;
 }) {
   const transcript = useRef<HTMLDivElement>(null);
-  useHeroLoop(transcript, play, fadeAt, drawChat);
+  useHeroLoop(transcript, play, fadeAt, drawChat, playbackRate);
   return (
     <div className={styles.viewport} data-playing={play} aria-hidden="true">
       <div className={styles.transcript} ref={transcript}>
@@ -220,7 +222,11 @@ export function BotInboxChat({
     role: channel ? "Channel assistant" : "🔑 Your workspace coordinator",
   };
   return (
-    <HeroChat play={play} fadeAt={channel ? 22400 : fadeStart}>
+    <HeroChat
+      play={play}
+      fadeAt={channel ? 22400 : fadeStart}
+      playbackRate={channel ? 1 : 1.5}
+    >
       <ChatMessage
         sender="Fred"
         time={0}

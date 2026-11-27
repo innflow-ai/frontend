@@ -40,20 +40,36 @@
   width: fit-content;
   max-width: 100%;
   margin: 0 auto clamp(24px, 3vw, 32px);
-  padding: 2px 9px 2px 2px;
-  border: 1px solid #dedede;
   border-radius: 999px;
-  background: white;
   color: #171717;
+  text-decoration: none;
   font-size: 12px;
   font-weight: 500;
   line-height: 16px;
 }
-.heroTagline span {
-  padding: 1px 6px;
+.tagBadge,
+.tagDetail {
+  padding: 4px 10px;
   border-radius: inherit;
-  background: #111;
-  color: white;
+}
+.tagDetail {
+  border: 1px solid #dedede;
+  background: white;
+}
+.holidayTag {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+:global(html[data-announcement-campaign="black-friday-2026"][data-website-offer="active"]) p.heroTagline {
+  display: none;
+}
+:global(html[data-announcement-campaign="black-friday-2026"][data-website-offer="active"]) .holidayTag {
+  display: flex;
+}
+.holidayTag:focus-visible {
+  outline: 2px solid #006bff;
+  outline-offset: 3px;
 }
 .intro h1 {
   font-weight: 500;
@@ -110,9 +126,6 @@
 .oauthActions > a[data-site-cta] {
   min-height: 36px;
   padding: 6px 18px !important;
-}
-.oauthActions :is(a, button):hover {
-  transform: translateY(-1px);
 }
 .sticky {
   height: 100svh;

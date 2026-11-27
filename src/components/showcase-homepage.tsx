@@ -64,13 +64,13 @@ export async function ShowcaseHomepage({
             previewFallback={previewFallback}
           />
         )}
+        <HomepageCollaboration />
         {faq.items.length > 0 && (
           <section className={styles.homeFaq} aria-labelledby="home-faq-title" data-home-reveal>
             <SectionHeading id="home-faq-title" title={faq.heading || "Frequently asked questions"} />
             <FaqList items={faq.items} />
           </section>
         )}
-        <HomepageCollaboration />
         {posts.length > 0 && (
           <div className={styles.recentPosts} data-home-reveal>
             <SectionHeading title="Recent blog posts" align="start" />

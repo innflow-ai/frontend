@@ -122,8 +122,13 @@ html[data-theme="dark"] {
   }
 }
 
+html {
+  scrollbar-color: white black;
+}
+
 /* Pixel sizing in Chromium/Safari; Firefox uses the thin fallback above. */
 @supports selector(::-webkit-scrollbar) {
+  html,
   * {
     scrollbar-width: auto;
     scrollbar-color: auto;
@@ -146,6 +151,16 @@ html[data-theme="dark"] {
 
   *::-webkit-scrollbar-thumb:hover {
     background: var(--page-scrollbar-hover);
+  }
+
+  html::-webkit-scrollbar-track,
+  html::-webkit-scrollbar-corner {
+    background: black;
+  }
+
+  html::-webkit-scrollbar-thumb,
+  html::-webkit-scrollbar-thumb:hover {
+    background: white;
   }
 }
 
@@ -307,16 +322,7 @@ p {
     background 180ms var(--ease-out),
     border-color 180ms var(--ease-out),
     color 180ms var(--ease-out),
-    transform 180ms var(--ease-out),
     box-shadow 180ms var(--ease-out);
-}
-
-.button:hover {
-  transform: translateY(-1px);
-}
-
-.button:active {
-  transform: translateY(0);
 }
 
 .button-primary {
@@ -2855,7 +2861,7 @@ p {
     :where([data-termly-part="consent-banner"][data-termly-variant="tooltip"] [data-tid="banner-accept"])
   ) {
     --cta-fill: linear-gradient(180deg, #363636, #191919);
-    --cta-hover: linear-gradient(180deg, #454545, #252525);
+    --cta-hover: linear-gradient(180deg, #606060, #393939);
     --cta-rim: #111;
   }
 
@@ -2873,6 +2879,7 @@ p {
     :where([data-termly-part="consent-banner"][data-termly-variant="tooltip"] [data-tid="banner-accept"])
   ):hover:not(:disabled):not([aria-disabled="true"]) {
     background: var(--cta-hover) !important;
+    box-shadow: inset 0 1px 2px #ffffff70, 0 1px 3px #0000001a !important;
   }
 }
 
@@ -2888,11 +2895,6 @@ p {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
-  }
-
-  .button:hover,
-  .button:active {
-    transform: none;
   }
 
   .status-pulse {

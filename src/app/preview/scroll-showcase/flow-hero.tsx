@@ -96,7 +96,7 @@ function expandFlow(
 
 export function FlowHero({ play }: { play: boolean }) {
   const ref = useRef<HTMLDivElement>(null);
-  useHeroLoop(ref, play, 13800, expandFlow);
+  useHeroLoop(ref, play, 13800, expandFlow, 1.5);
   return (
     <div className={styles.viewport}>
       <div ref={ref} className={styles.stage} aria-hidden="true">

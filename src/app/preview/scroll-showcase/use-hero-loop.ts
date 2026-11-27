@@ -21,6 +21,7 @@ export function useHeroLoop(
   play: boolean,
   fadeStart: number,
   drawScene: Draw,
+  playbackRate = 1,
 ) {
   useLayoutEffect(() => {
     const scene = sceneRef.current;
@@ -39,7 +40,7 @@ export function useHeroLoop(
       });
       const animate: HeroTimeline["animate"] = (target, frames) => {
         const animation = target.animate(frames, {
-          duration,
+          duration: duration / playbackRate,
           iterations: Infinity,
           fill: "both",
         });
@@ -63,5 +64,5 @@ export function useHeroLoop(
       observer.disconnect();
       for (const animation of animations) animation.cancel();
     };
-  }, [sceneRef, play, fadeStart, drawScene]);
+  }, [sceneRef, play, fadeStart, drawScene, playbackRate]);
 }

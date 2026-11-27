@@ -26,13 +26,10 @@
   font-size: 13px;
   font-weight: 650;
   line-height: 1;
-  transition:
-    transform 160ms ease,
-    background 160ms ease;
+  transition: background 160ms ease;
 }
 
 .signInButton.brandButton:hover {
   background: var(--gradient-cta-hover);
   opacity: 1;
-  transform: translateY(-1px);
 }

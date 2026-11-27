@@ -4,6 +4,8 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import styles from "./site-footer.module.css";
 
+const entryTiltDegrees = 65;
+
 export function FooterWorkspace() {
   const frame = useRef<HTMLDivElement>(null);
 
@@ -19,7 +21,7 @@ export function FooterWorkspace() {
       const { top, height } = scene.getBoundingClientRect();
       const travel = Math.min(height, window.innerHeight * 0.75);
       const progress = Math.max(0, Math.min(1, (window.innerHeight - top) / Math.max(1, travel)));
-      scene.style.setProperty("--workspace-angle", `${40 * (1 - progress)}deg`);
+      scene.style.setProperty("--workspace-angle", `${entryTiltDegrees * (1 - progress)}deg`);
     }
     function queueUpdate() {
       if (!request) request = requestAnimationFrame(update);

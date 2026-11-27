@@ -188,14 +188,9 @@
   font-weight: 650;
   line-height: 1;
   transition:
-    transform 160ms ease,
     background 160ms ease,
     border-color 160ms ease,
     color 160ms ease;
-}
-
-.button:hover {
-  transform: translateY(-1px);
 }
 
 .buttonBrand {
@@ -319,16 +314,6 @@
     letter-spacing: -0.035em;
     line-height: 1.15;
     text-align: left;
-  }
-
-  .mobileGroupTrigger svg {
-    flex: 0 0 auto;
-    color: var(--sky-ink);
-    transition: transform 180ms ease;
-  }
-
-  .mobileGroupTrigger[aria-expanded="true"] svg {
-    transform: rotate(180deg);
   }
 
   .mobileGroupPanel {
@@ -535,11 +520,11 @@
   }
 
   .mobileCtaRow > .mobileLoginButton {
-    align-self: center;
-    width: 100%;
+    justify-self: center;
+    width: fit-content;
     min-width: 0;
     min-height: 36px;
-    padding: 6px 16px;
+    padding: 6px 14px;
   }
 
 
@@ -563,7 +548,6 @@
   .articleFade,
   .button,
   .desktopNav a,
-  .mobileGroupTrigger svg,
   .actions > a {
     transition: none;
   }

@@ -3,9 +3,14 @@ export type WebsiteAnnouncement = {
   enabled: boolean;
   id: string;
   supportingCopy?: string;
+  pinned?: boolean;
   offer?: {
     message: string;
+    badgeLabel?: string;
+    qualifier?: string;
+    planScope?: string;
     mobileMessage?: string;
+    promoCode?: string;
     startsAt?: string;
     targetTime: string;
     displayTimeZone: string;
@@ -17,6 +22,22 @@ export type WebsiteAnnouncement = {
     iconSrc: string;
     action?: AnnouncementAction;
   };
+};
+export const blackFridayCampaign: WebsiteAnnouncement = {
+  enabled: true,
+  id: "black-friday-2026",
+  pinned: true,
+  offer: {
+    badgeLabel: "BLACK FRIDAY",
+    qualifier: "Up to",
+    message: "64% OFF",
+    planScope: "selected plans",
+    promoCode: "BLACKFRIDAY",
+    startsAt: "2026-11-27T14:30:00-05:00",
+    targetTime: "2026-12-05T14:30:00-05:00",
+    displayTimeZone: "America/New_York",
+    action: { label: "View Black Friday pricing", href: "/pricing" },
+  },
 };
 const text = (v: unknown) => (typeof v === "string" ? v.trim() : "");
 export function safeAnnouncementHref(v: unknown) {
@@ -110,9 +131,10 @@ export function websiteAnnouncementBootScript(config: WebsiteAnnouncement) {
   const payload = JSON.stringify({
     key: `innflow:announcement:dismissed:${announcementIdentity(config)}`,
     enabled: config.enabled,
+    pinned: Boolean(config.pinned),
     model: Boolean(config.modelRelease),
     start: config.offer?.startsAt ? Date.parse(config.offer.startsAt) : 0,
     end: config.offer ? Date.parse(config.offer.targetTime) : 0,
   }).replaceAll("<", "\\u003c");
-  return `(()=>{var c=${payload},n=Date.now(),d=false;try{d=localStorage.getItem(c.key)==="1"}catch(e){}var o=c.enabled&&n>=c.start&&n<c.end;document.documentElement.dataset.websiteOffer=o?"active":"inactive";document.documentElement.dataset.websiteAnnouncement=c.enabled&&!d&&(o||c.model)?"visible":"hidden"})()`;
+  return `(()=>{var c=${payload},n=Date.now(),d=false;try{d=!c.pinned&&localStorage.getItem(c.key)==="1"}catch(e){}var o=c.enabled&&n>=c.start&&n<c.end;document.documentElement.dataset.websiteOffer=o?"active":"inactive";document.documentElement.dataset.websiteAnnouncement=c.enabled&&!d&&(o||c.model)?"visible":"hidden"})()`;
 }

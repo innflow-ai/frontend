@@ -1,5 +1,6 @@
 "use client";
 
+import { GiftIcon } from "@phosphor-icons/react/dist/ssr";
 import { type FormEvent, useState } from "react";
 import styles from "./site-footer.module.css";
 
@@ -69,9 +70,14 @@ export function FooterNewsletter() {
             className={styles.membershipFields}
           >
             <label htmlFor="membership-email">Email address</label>
+            <p id="footer-newsletter-tip" className={styles.newsletterTag}>
+              <GiftIcon size={14} aria-hidden="true" />
+              Sign up for loyalty rewards and exclusive giveaways.
+            </p>
             <div className={styles.membershipInputRow}>
               <input
                 id="membership-email"
+                aria-describedby="footer-newsletter-tip"
                 name="email"
                 type="email"
                 autoComplete="email"
@@ -80,7 +86,7 @@ export function FooterNewsletter() {
                 required
                 maxLength={254}
               />
-              <button data-site-cta="primary" type="submit">
+              <button data-site-cta="secondary" data-cta-compact type="submit">
                 {signupState === "pending" ? "Signing up…" : "Sign up"}
               </button>
             </div>

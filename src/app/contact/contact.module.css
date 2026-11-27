@@ -87,14 +87,11 @@
   background: rgba(5, 18, 32, 0.48);
   box-shadow: 0 16px 36px rgba(3, 13, 24, 0.2);
   backdrop-filter: blur(16px);
-  transition:
-    transform 160ms ease,
-    background 160ms ease;
+  transition: background 160ms ease;
 }
 
 .emailLink:hover {
   background: rgba(5, 18, 32, 0.72);
-  transform: translateY(-2px);
 }
 
 .emailLink > span:nth-child(2) {
@@ -265,14 +262,11 @@
   font-size: 14px;
   font-weight: 700;
   cursor: pointer;
-  transition:
-    transform 160ms ease,
-    box-shadow 160ms ease;
+  transition: background 160ms ease;
 }
 
 .formFooter button:hover {
-  box-shadow: 0 16px 34px rgba(0, 174, 255, 0.3);
-  transform: translateY(-2px);
+  background: var(--gradient-cta-hover);
 }
 
 .support {

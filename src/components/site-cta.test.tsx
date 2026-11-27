@@ -24,8 +24,8 @@ it.each(["/", "/blog", "/products/ai-agents", "/legal/privacy-policy"])(
     const signup = screen.getByRole("form", {
       name: "Innflow newsletter",
     });
-    expect(footer).not.toContainElement(signup);
-    expect(signup.compareDocumentPosition(footer)).toBe(
+    expect(footer).toContainElement(signup);
+    expect(within(footer).getByText("A shared workspace for your team and AI agents.").compareDocumentPosition(signup)).toBe(
       Node.DOCUMENT_POSITION_FOLLOWING,
     );
     expect(within(signup).getByLabelText("Email address")).toBeVisible();

@@ -1,3 +1,5 @@
+import { ProductStoryLayout } from "./product-story-layout";
+import type { ProductLayoutKey } from "@/content/product-story-layouts";
 import { ConnectorCatalog } from "@/components/connector-catalog";
 import { FeaturePageInk } from "@/components/feature-page-ink";
 import { BotIcon } from "@/components/icons/bot-icon";
@@ -13,10 +15,32 @@ import type {
 import { connectorGroups } from "@/content/wired-connectors";
 import styles from "./feature-story-page.module.css";
 
-export function FeatureStoryPage({ sections }: { sections: StorySection[] }) {
+export function FeatureStoryPage({
+  sections,
+  product,
+}: {
+  sections: StorySection[];
+  product?: ProductLayoutKey;
+}) {
   const visible = sections.filter(
     (section) => showFeatureItem(section) && sectionHasContent(section),
   );
+  if (product) {
+    const hero = visible.find((section) => section.type === "hero");
+    const close = visible.find((section) => section.type === "close");
+    if (hero && close)
+      return (
+        <ProductStoryLayout
+          product={product}
+          hero={hero}
+          close={close}
+          renderSupporting={(id) => {
+            const section = visible.find((entry) => entry.id === id);
+            return section ? <SectionView key={id} section={section} /> : null;
+          }}
+        />
+      );
+  }
   return (
     <main className={styles.page} id="main-content">
       <FeaturePageInk />
@@ -233,7 +257,7 @@ function Features({ section }: { section: StorySection }) {
     return (
       <section
         className={styles.canvasBand}
-        id={section.anchor === section.id ? undefined : section.anchor}
+        id={section.anchor}
         aria-label={section.title}
       >
         <NodeBoard title={items[0].title} nodes={items[0].nodes} />

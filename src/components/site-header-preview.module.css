@@ -11,6 +11,15 @@
 .navSpace {
   height: var(--site-header-height);
 }
+/* Reserve the top-of-page space in flow so entering the floating state
+   does not shift the hero underneath the pointer. */
+.previewScope[data-homepage="true"] {
+  --home-nav-space: clamp(12px, 1.25vw, 20px);
+}
+.previewScope[data-homepage="true"] .navSpace,
+.previewScope[data-homepage="true"] .flatHeader {
+  min-height: calc(var(--site-header-height) + var(--home-nav-space));
+}
 .announcement {
   height: 40px;
   box-sizing: border-box;
@@ -122,14 +131,6 @@
   }
 }
 
-/* Local backing: the page-colored header surface reveals blue at its corners. */
-:global(html[data-website-announcement="visible"]) .previewScope {
-  background: var(--announcement-background);
-}
-:global(html[data-website-announcement="visible"]) .navSpace {
-  background: var(--marketing-paper);
-  border-radius: var(--announcement-radius) var(--announcement-radius) 0 0;
-}
 :global(html[data-website-announcement="visible"]) .flatHeader,
 :global(html[data-website-announcement="visible"]) .flatHeader::before {
   background: transparent;

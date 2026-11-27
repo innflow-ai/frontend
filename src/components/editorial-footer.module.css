@@ -127,14 +127,11 @@
   font: inherit;
   font-size: 14px;
   font-weight: 700;
-  transition:
-    transform 160ms ease,
-    background 160ms ease;
+  transition: background 160ms ease;
 }
 
 .signupForm button:hover {
   background: var(--gradient-cta-hover);
-  transform: translateY(-1px);
 }
 
 .signupForm button:focus-visible {

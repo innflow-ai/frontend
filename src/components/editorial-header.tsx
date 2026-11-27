@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import { type ReactNode, useEffect, useId, useRef, useState } from "react";
 import { GoogleSignInButton } from "@/components/google-sign-in";
 import {
-  ChevronDown as CaretDown,
   DashMenu,
   Multiply,
 } from "@/components/icons/mage";
@@ -299,7 +298,6 @@ export function MobileNavigation({
                     onClick={() => setOpenMobileGroup(expanded ? null : label)}
                   >
                     {label}
-                    <CaretDown size={18} weight="bold" aria-hidden="true" />
                   </button>
                   <AnimatePresence initial={false}>
                     {expanded ? (
@@ -333,7 +331,8 @@ export function MobileNavigation({
             <div className={styles.mobileCtaRow}>
               <a
                 href={loginHref}
-                data-site-cta="primary"
+                data-site-cta="secondary"
+                data-cta-tone="white"
                 className={`${styles.button} ${styles.mobileLoginButton}`}
                 onClick={closeMobile}
               >

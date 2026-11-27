@@ -6,7 +6,6 @@ import { useEffect, useRef, useState } from "react";
 import googleButtonStyles from "./google-cta.module.css";
 import { GoogleCtaContent } from "@/components/google-cta-content";
 import { ArrowRight } from "@/components/icons/mage/ArrowRight";
-import { ChevronDown as CaretDown } from "@/components/icons/mage/ChevronDown";
 import { DashMenu as List } from "@/components/icons/mage/DashMenu";
 import { MegaphoneA as Megaphone } from "@/components/icons/mage/MegaphoneA";
 import { Multiply as X } from "@/components/icons/mage/Multiply";
@@ -228,6 +227,7 @@ export function SiteHeader() {
     <div
       className={`${styles.page} ${styles.chromeScope} ${previewStyles.previewScope}`}
       data-preview-chrome
+      data-homepage={isShowcaseHome(pathname)}
       data-announcement-dismissed={announcementHidden}
     >
       {!announcementHidden && (
@@ -281,10 +281,10 @@ export function SiteHeader() {
       >
         <a href="/" className={styles.logo} aria-label="innflow home">
           <Image
-            src="/brand/innflow-nav-wordmark.svg"
+            src="/brand/navigation/innflow-nav-wordmark.svg"
             alt="innflow"
-            width={110}
-            height={29}
+            width={299}
+            height={80}
             preload
           />
         </a>
@@ -336,7 +336,6 @@ export function SiteHeader() {
                 }}
               >
                 {label}
-                <CaretDown size={13} />
               </button>
               {menu === label && Dropdown ? (
                 <Dropdown
@@ -352,7 +351,12 @@ export function SiteHeader() {
           </a>
         </nav>
         <div className={styles.headerActions}>
-          <a className={styles.login} href={siteConfig.loginUrl}>
+          <a
+            className={styles.login}
+            data-site-cta="secondary"
+            data-cta-tone="white"
+            href={siteConfig.loginUrl}
+          >
             Log in
           </a>
           <TrackedLink

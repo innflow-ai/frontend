@@ -1,0 +1,42 @@
+.lime, .blackFriday {
+  flex-shrink: 0;
+  border-radius: 999px;
+}
+.lime {
+  background: #d6fa53 linear-gradient(110deg, #d6fa53 20%, #eefca2 40%, #c2f68d 58%, #d6fa53 80%);
+  background-size: 250% 100%;
+  color: #171717;
+}
+.blackFriday {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #fff;
+  color: #ad175e;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+  white-space: nowrap;
+}
+.tagIcon {
+  width: 13px;
+  height: 13px;
+  background: currentColor;
+  mask: url("/brand/announcement/tag.svg") center / contain no-repeat;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .lime {
+    animation: tagGradient 4s ease-in-out infinite alternate;
+  }
+}
+@media (forced-colors: active) {
+  .tagIcon {
+    forced-color-adjust: none;
+    background: LinkText;
+  }
+}
+@keyframes tagGradient {
+  from { background-position: 0% 50%; }
+  to { background-position: 100% 50%; }
+}

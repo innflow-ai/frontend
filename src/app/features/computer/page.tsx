@@ -14,6 +14,7 @@ export const metadata = createPageMetadata({
 export default function Page() {
   return (
     <FeatureStoryPage
+      product="computer"
       sections={[
         {
           type: "hero",
@@ -57,7 +58,8 @@ export default function Page() {
           type: "close",
           id: "local-agents",
           title: "Does the task live in your codebase?",
-          subtitle: "Give a local agent the project and the checks you want it to run. Your team can review its findings in the channel.",
+          subtitle:
+            "Give a local agent the project and the checks you want it to run. Your team can review its findings in the channel.",
           links: [
             { label: "Explore local agents", href: "/features/local-agents" },
           ],

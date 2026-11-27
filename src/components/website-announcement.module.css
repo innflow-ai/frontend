@@ -1,6 +1,8 @@
 /* Approved announcement strip: Figma 354:5613. Content remains CMS-driven. */
 .bar {
+  --announcement-edge: #0095ff;
   position: relative;
+  z-index: 1;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -14,6 +16,27 @@
   font-weight: 600;
   font-size: 13px;
   line-height: 20px;
+}
+/* Draw the page's rounded shoulders below the strip without reserving space
+   or covering interactive content between the corners. */
+.bar::after {
+  content: "";
+  position: absolute;
+  inset: 100% 0 auto;
+  height: var(--announcement-radius);
+  pointer-events: none;
+  --corner-stops: transparent calc(var(--announcement-radius) - 0.5px),
+    var(--announcement-edge) calc(var(--announcement-radius) + 0.5px);
+  background:
+    radial-gradient(circle at bottom right, var(--corner-stops)) left top,
+    radial-gradient(circle at bottom left, var(--corner-stops)) right top;
+  background-size: var(--announcement-radius) 100%;
+  background-repeat: no-repeat;
+}
+.bar[data-pinned] {
+  position: sticky;
+  top: 0;
+  z-index: 91;
 }
 :global(html[data-website-announcement="hidden"]) .bar {
   display: none;
@@ -176,4 +199,149 @@
   .model {
     min-width: 338px;
   }
+}
+
+.bar[data-promo] {
+  --announcement-edge: #071412;
+  isolation: isolate;
+  min-height: 44px;
+  padding: 6px 36px;
+  inline-size: 100%;
+  background: var(--announcement-edge);
+  font: 400 14px/20px var(--font-innflow-ui, Inter), sans-serif;
+  letter-spacing: -.084px;
+}
+.bar[data-promo]::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  mask-image: linear-gradient(to right, transparent 5%, black 22%, black 88%, transparent 99%);
+  background-image:
+    radial-gradient(ellipse 50% 115% at 50% 120%, #83e8ae, #28885d 16%, #134b36 44%, transparent),
+    radial-gradient(ellipse 48% 100% at 16% 145%, #19513b, transparent);
+  background-repeat: no-repeat;
+  background-size: 70% 100%, 100% 100%;
+  background-position: 73% bottom, center;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .bar[data-promo]::before {
+    animation: fridaySweep 6s cubic-bezier(.18,.65,.28,1) infinite;
+  }
+}
+@keyframes fridaySweep {
+  0%, 100% { background-position: -120% bottom, center; opacity: 0; }
+  9% { opacity: 1; }
+  38%, 42% { background-position: 143% bottom, center; opacity: 1; }
+  62%, 88% { background-position: 73% bottom, center; opacity: 1; }
+  98% { background-position: 73% bottom, center; opacity: 0; }
+}
+.bar[data-pink-promo] {
+  --announcement-edge: #42102f;
+  background: linear-gradient(90deg, var(--announcement-edge), #821c55 48%, var(--announcement-edge));
+}
+.bar[data-pink-promo]::before {
+  background-image:
+    radial-gradient(ellipse 50% 115% at 50% 120%, #ffadd9, #be417f 22%, transparent 77%),
+    radial-gradient(ellipse 48% 100% at 16% 145%, #a42b6d, transparent);
+}
+.bar[data-pink-promo] a { gap: 8px; }
+.promotion a > svg { flex-shrink: 0; }
+.promotion, .promotion a, .codeGroup, .codeButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+.promoViewport {
+  width: 100%;
+  min-width: 0;
+  container-type: inline-size;
+  overflow-x: auto;
+}
+.promotion {
+  display: flex;
+  width: max-content;
+  margin-inline: auto;
+  column-gap: 6px;
+  white-space: nowrap;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .promoViewport[data-overflow] { overflow: clip; }
+  .promoViewport[data-overflow] .promotion {
+    animation: promoMarquee var(--travel-time) linear var(--start-offset) infinite;
+  }
+  @media (hover: hover) {
+    .promoViewport:hover .promotion { animation-play-state: paused; }
+  }
+  .promoViewport:active .promotion { animation-play-state: paused; }
+}
+@keyframes promoMarquee {
+  from { transform: translateX(100cqw); }
+  to { transform: translateX(-100%); }
+}
+.promoViewport:has(:focus-visible) .promotion {
+  animation: none;
+  width: 100%;
+  flex-wrap: wrap;
+  white-space: normal;
+}
+@media (prefers-reduced-motion: reduce) {
+  .promotion {
+    width: 100%;
+    flex-wrap: wrap;
+    white-space: normal;
+  }
+}
+.codeGroup { color: #fffD; }
+.ends {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #fff;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.countdownValue {
+  padding: 3px 10px;
+  border-radius: 8px;
+  background: linear-gradient(to bottom, #ffedf5, #ffcce3);
+  color: #831343;
+  font-size: 1em;
+  font-weight: 800;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+.bar[data-pink-promo] .countdownValue {
+  color: #634109;
+  background: #f6d579 linear-gradient(110deg, #e8bf60 5%, #f6d579 32%, #fff1ba 50%, #f6d579 68%, #e8bf60 95%) center / 200% 100%;
+}
+.countdownUnit {
+  font-weight: 400;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .bar[data-pink-promo] .countdownValue {
+    animation: countdownShine 4s ease-in-out infinite alternate;
+  }
+}
+@keyframes countdownShine {
+  from { background-position: 0% 50%; }
+  to { background-position: 100% 50%; }
+}
+.codeButton { border: 0; background: transparent; font: inherit; font-weight: 600; color: white; padding: 2px 0; cursor: pointer; user-select: all; }
+.codeButton:is(:hover, :focus-visible) .codeLabel {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.codeButton[data-copied="true"] { color: #b5fbd1; }
+.copyAnnouncement, .codeButton [role="status"]:empty {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+@media (max-width: 600px) {
+  .bar[data-promo] { padding: 6px 30px; font-size: 12px; }
+  .promotion { row-gap: 4px; }
 }

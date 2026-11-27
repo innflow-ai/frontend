@@ -71,7 +71,20 @@
     opacity 360ms ease-out,
     visibility 0s;
 }
-/* The offer bar scrolls away. While any of it is still on screen, the floating nav sits below it. */
+@media (min-width: 1181px) {
+  .header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  }
+  .header > .logo {
+    justify-self: start;
+  }
+  .header > .headerActions {
+    justify-self: end;
+    gap: 12px;
+  }
+}
+/* Keep floating navigation below the visible announcement. */
 .header[data-preview-navigation="floating"] {
   top: calc(16px + var(--announcement-h, 0px));
 }
@@ -119,9 +132,6 @@
   background: none;
   padding: 8px 0;
   color: inherit;
-}
-.menuGroup > button[aria-expanded="true"] svg {
-  transform: rotate(180deg);
 }
 .dropdown {
   position: absolute;
@@ -225,9 +235,7 @@
   white-space: nowrap;
   min-height: 48px;
   border: 1px solid transparent;
-  transition:
-    background 0.18s,
-    transform 0.18s;
+  transition: background 0.18s;
 }
 .headerActions > :is(.login, .darkButton) {
   min-height: 44px;
@@ -235,9 +243,7 @@
   flex-shrink: 0;
 }
 .headerActions > .login {
-  min-height: 36px;
-  padding: 6px 14px;
-  font-size: 14px;
+  padding-inline: 14px;
 }
 .header .headerActions > .darkButton {
   padding: 6px 18px !important;
@@ -262,7 +268,6 @@
   background: transparent;
 }
 .page :is(.darkButton, .blueButton, .lightButton, .outlineButton):hover {
-  transform: translateY(-1px);
   background: var(--bl-green);
   color: var(--bl-navy);
 }
@@ -885,8 +890,12 @@
     --mobile-open-header-height: calc(64px + env(safe-area-inset-top));
   }
 
+  :global([data-pinned][data-website-announcement-slot]) + .chromeScope {
+    --mobile-banner-height: var(--announcement-h, 0px);
+  }
+
   .header.mobileOpen {
-    inset: 0 0 auto;
+    inset: var(--mobile-banner-height, 0px) 0 auto;
     min-height: var(--mobile-open-header-height);
     height: var(--mobile-open-header-height);
     padding-block: calc(8px + env(safe-area-inset-top)) 8px;
@@ -904,7 +913,7 @@
     --sky-ink: var(--ink);
     --sky-muted: #53636a;
     --sky-line: #d8dcda;
-    inset: 0;
+    inset: var(--mobile-banner-height, 0px) 0 0;
     padding-top: var(--mobile-open-header-height);
     background: var(--paper);
     color: var(--ink);
@@ -912,7 +921,7 @@
   }
 
   .mobileMenu nav {
-    min-height: calc(100dvh - var(--mobile-open-header-height));
+    min-height: calc(100dvh - var(--mobile-open-header-height) - var(--mobile-banner-height, 0px));
     padding-bottom: calc(36px + env(safe-area-inset-bottom));
   }
 

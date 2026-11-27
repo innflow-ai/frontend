@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { type CSSProperties, useEffect, useRef, useState } from "react";
-import { FooterNewsletter } from "@/components/footer-newsletter";
 import styles from "./baseline-lower-sections.module.css";
 import { CalendarCheck, Chart, Share, StarsA } from "@/components/icons/mage";
 
@@ -72,135 +71,122 @@ export function BaselineClosing() {
     const frame = requestAnimationFrame(centerDiscovery);
     return () => cancelAnimationFrame(frame);
   }, []);
+  if (!SHOW_PHOTO_CARDS) return null;
   return (
-    <section
-      className={styles.closing}
-      aria-labelledby="baseline-closing-heading"
-      id="get-started"
-      data-source-node="1:991"
-    >
-      <div className={styles.signupRow}>
-        <div>
-          <h2 id="baseline-closing-heading">From the first meeting to the follow-up</h2>
-          <p>Get workflow tips and product updates by email.</p>
-        </div>
-        <FooterNewsletter />
-      </div>
-      {SHOW_PHOTO_CARDS ? (
-        <section
-          ref={viewport}
-          className={styles.closingViewport}
-          aria-label="Product highlights. Scroll horizontally to explore."
-          // biome-ignore lint/a11y/noNoninteractiveTabindex: Allow keyboard scrolling of the horizontal region.
-          tabIndex={0}
-          data-lenis-prevent
-          onScroll={(event) => {
-            const element = event.currentTarget;
-            const center = element.scrollLeft + element.clientWidth / 2;
-            const cards = [
-              ...element.querySelectorAll<HTMLElement>("[data-scene-index]"),
-            ];
-            const closest = cards.reduce(
-              (best, card) =>
-                Math.abs(card.offsetLeft + card.offsetWidth / 2 - center) <
-                Math.abs(best.offsetLeft + best.offsetWidth / 2 - center)
-                  ? card
-                  : best,
-              cards[0],
-            );
-            if (closest) setActive(Number(closest.dataset.sceneIndex));
-          }}
-          onKeyDown={(event) => {
-            if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
-            event.preventDefault();
-            const element = event.currentTarget;
-            const next = Math.max(
-              0,
-              Math.min(3, active + (event.key === "ArrowRight" ? 1 : -1)),
-            );
-            const card = element.querySelector<HTMLElement>(
-              `[data-scene-index='${next}']`,
-            );
-            if (card)
-              element.scrollTo({
-                left:
-                  card.offsetLeft +
-                  card.offsetWidth / 2 -
-                  element.clientWidth / 2,
-                behavior: "instant",
-              });
-          }}
-        >
-          <div className={styles.closingTrack}>
-            {orderedScenes.map((scene, index) => {
-              return (
-                <div
-                  key={scene.label}
-                  className={styles.scene}
-                  data-active={active === index}
-                  data-scene-index={index}
-                  style={{ "--stripe": scene.stripe } as CSSProperties}
-                >
-                  <div className={styles.sceneBackdrop}>
-                    <Image src={scene.background} alt="" fill sizes="656px" />
-                    <div />
-                  </div>
-                  <Image
-                    className={styles.scenePerson}
-                    src={scene.person}
-                    alt=""
-                    fill
-                    sizes="(max-width: 700px) 85vw, 593px"
-                  />
-                  {
-                    <div className={styles.sceneBadge}>
-                      <div className={styles.badgeBase} aria-hidden="true">
-                        <Image
-                          src={`${closingAssets}/fd6d2.svg`}
-                          alt=""
-                          width={56}
-                          height={56}
-                        />
-                        <Image
-                          src={`${closingAssets}/3ebbd.svg`}
-                          alt=""
-                          width={16}
-                          height={28}
-                        />
-                        <span>{scene.subject}</span>
-                        <Image
-                          src={`${closingAssets}/3ebbd.svg`}
-                          alt=""
-                          width={16}
-                          height={28}
-                        />
-                        <strong>{scene.outcome}</strong>
-                      </div>
-                      <div className={styles.badgeForeground}>
-                        <div className={styles.badgeIcon}>
-                          <i style={{ background: scene.stripe }} />
-                          <Image
-                            src={`${closingAssets}/360d7.svg`}
-                            alt=""
-                            width={47.9844}
-                            height={47.9844}
-                          />
-                          {(() => {
-                            const SceneIcon = closingIcons[index];
-                            return <SceneIcon size={34.2969} />;
-                          })()}
-                        </div>
-                        <span>{scene.subject}</span>
-                        <strong>{scene.outcome}</strong>
-                      </div>
-                    </div>
-                  }
+    <div className={styles.closing} data-source-node="1:991">
+      <section
+        ref={viewport}
+        className={styles.closingViewport}
+        aria-label="Product highlights. Scroll horizontally to explore."
+        // biome-ignore lint/a11y/noNoninteractiveTabindex: Allow keyboard scrolling of the horizontal region.
+        tabIndex={0}
+        data-lenis-prevent
+        onScroll={(event) => {
+          const element = event.currentTarget;
+          const center = element.scrollLeft + element.clientWidth / 2;
+          const cards = [
+            ...element.querySelectorAll<HTMLElement>("[data-scene-index]"),
+          ];
+          const closest = cards.reduce(
+            (best, card) =>
+              Math.abs(card.offsetLeft + card.offsetWidth / 2 - center) <
+              Math.abs(best.offsetLeft + best.offsetWidth / 2 - center)
+                ? card
+                : best,
+            cards[0],
+          );
+          if (closest) setActive(Number(closest.dataset.sceneIndex));
+        }}
+        onKeyDown={(event) => {
+          if (event.key !== "ArrowLeft" && event.key !== "ArrowRight") return;
+          event.preventDefault();
+          const element = event.currentTarget;
+          const next = Math.max(
+            0,
+            Math.min(3, active + (event.key === "ArrowRight" ? 1 : -1)),
+          );
+          const card = element.querySelector<HTMLElement>(
+            `[data-scene-index='${next}']`,
+          );
+          if (card)
+            element.scrollTo({
+              left:
+                card.offsetLeft +
+                card.offsetWidth / 2 -
+                element.clientWidth / 2,
+              behavior: "instant",
+            });
+        }}
+      >
+        <div className={styles.closingTrack}>
+          {orderedScenes.map((scene, index) => {
+            return (
+              <div
+                key={scene.label}
+                className={styles.scene}
+                data-active={active === index}
+                data-scene-index={index}
+                style={{ "--stripe": scene.stripe } as CSSProperties}
+              >
+                <div className={styles.sceneBackdrop}>
+                  <Image src={scene.background} alt="" fill sizes="656px" />
+                  <div />
                 </div>
-              );
-            })}
-          </div>
-        </section>
-      ) : null}
-    </section>
+                <Image
+                  className={styles.scenePerson}
+                  src={scene.person}
+                  alt=""
+                  fill
+                  sizes="(max-width: 700px) 85vw, 593px"
+                />
+                {
+                  <div className={styles.sceneBadge}>
+                    <div className={styles.badgeBase} aria-hidden="true">
+                      <Image
+                        src={`${closingAssets}/fd6d2.svg`}
+                        alt=""
+                        width={56}
+                        height={56}
+                      />
+                      <Image
+                        src={`${closingAssets}/3ebbd.svg`}
+                        alt=""
+                        width={16}
+                        height={28}
+                      />
+                      <span>{scene.subject}</span>
+                      <Image
+                        src={`${closingAssets}/3ebbd.svg`}
+                        alt=""
+                        width={16}
+                        height={28}
+                      />
+                      <strong>{scene.outcome}</strong>
+                    </div>
+                    <div className={styles.badgeForeground}>
+                      <div className={styles.badgeIcon}>
+                        <i style={{ background: scene.stripe }} />
+                        <Image
+                          src={`${closingAssets}/360d7.svg`}
+                          alt=""
+                          width={47.9844}
+                          height={47.9844}
+                        />
+                        {(() => {
+                          const SceneIcon = closingIcons[index];
+                          return <SceneIcon size={34.2969} />;
+                        })()}
+                      </div>
+                      <span>{scene.subject}</span>
+                      <strong>{scene.outcome}</strong>
+                    </div>
+                  </div>
+                }
+              </div>
+            );
+          })}
+        </div>
+      </section>
+    </div>
   );
 }

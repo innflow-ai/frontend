@@ -15,6 +15,7 @@ import { SmoothScroll } from "@/components/smooth-scroll";
 import { WebsiteAnnouncementBar } from "@/components/website-announcement";
 import { siteConfig } from "@/config/site";
 import {
+  blackFridayCampaign,
   announcementIdentity,
   announcementState,
   websiteAnnouncementBootScript,
@@ -58,13 +59,24 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/favicon.ico?v=20261030",
+        url: "/favicon.ico?v=20261127c",
         sizes: "16x16 24x24 32x32 48x48 64x64 96x96 128x128 256x256",
         type: "image/x-icon",
       },
-      { url: "/icon.png?v=20261030", sizes: "96x96", type: "image/png" },
+      {
+        url: "/favicon-light.svg?v=20261127c",
+        type: "image/svg+xml",
+        sizes: "any",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/favicon-dark.svg?v=20261127c",
+        type: "image/svg+xml",
+        sizes: "any",
+        media: "(prefers-color-scheme: dark)",
+      },
     ],
-    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+    apple: [{ url: "/apple-icon.png?v=20261127c", sizes: "180x180", type: "image/png" }],
   },
   authors: [{ name: "Innflow" }],
   creator: "Innflow",
@@ -123,7 +135,7 @@ export default async function RootLayout({
   children: ReactNode;
 }) {
   const experience = { variant: null, measure: false } as const;
-  const [latestPosts, appUpdate, navigationTestimonial, announcement] =
+  const [latestPosts, appUpdate, navigationTestimonial, cmsAnnouncement] =
     await Promise.all([
       getLatestBlogPosts(),
       getLatestAppUpdate(),
@@ -131,6 +143,9 @@ export default async function RootLayout({
       getWebsiteAnnouncement(),
     ]);
   const announcementNow = Date.now();
+  const announcement = announcementState(blackFridayCampaign, announcementNow).visible
+    ? blackFridayCampaign
+    : cmsAnnouncement;
   const announcementVisible = announcement
     ? announcementState(announcement, announcementNow).visible
     : false;
@@ -169,6 +184,7 @@ export default async function RootLayout({
     // root attribute is intentionally different from the static HTML.
     <html
       lang="en"
+      data-announcement-campaign={announcement?.id}
       data-website-announcement={announcementVisible ? "visible" : "hidden"}
       data-scroll-behavior="smooth"
       className={satoshi.variable}

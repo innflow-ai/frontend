@@ -84,9 +84,6 @@
   outline: 3px solid #0756bc;
   outline-offset: 3px;
 }
-.button:active {
-  transform: translateY(1px);
-}
 .button:disabled,
 .button[aria-disabled="true"] {
   opacity: 0.55;

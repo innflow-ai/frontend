@@ -9,5 +9,5 @@ export const metadata = createPageMetadata({
 });
 
 export default function Page() {
-  return <FeatureStoryPage sections={channelsPage.sections} />;
+  return <FeatureStoryPage product="channels" sections={channelsPage.sections} />;
 }

@@ -306,14 +306,11 @@
   border-radius: 16px;
   background: #061321;
   box-shadow: 0 18px 42px rgba(6, 19, 33, 0.16);
-  transition:
-    transform 180ms ease,
-    box-shadow 180ms ease;
+  transition: box-shadow 180ms ease;
 }
 
 .promotionalBanner:hover {
   box-shadow: 0 22px 52px rgba(6, 19, 33, 0.22);
-  transform: translateY(-2px);
 }
 
 .promotionalBannerImage {

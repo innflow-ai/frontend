@@ -6,6 +6,7 @@ import { modelProviders, modelSlug } from "@/content/model-directory";
 import Image from "next/image";
 import { siteConfig } from "@/config/site";
 import { CustomerSupportHours } from "./customer-support-hours";
+import { FooterNewsletter } from "./footer-newsletter";
 import { FooterWorkspace } from "./footer-workspace";
 import { FooterLegalLinks } from "./footer-legal-links";
 import googleButtonStyles from "./google-cta.module.css";
@@ -49,36 +50,34 @@ export function SiteFooter({ home: _home = true }: { home?: boolean }) {
 
   return (
     <div className={styles.shell}>
+      <FooterWorkspace />
       <footer className={styles.footer}>
-        <FooterWorkspace />
         <div className={styles.body}>
-          <div className={styles.upper}>
-            <div className={styles.brand}>
-              <a href="/" aria-label="Innflow home">
-                <Image
-                  src="/brand/innflow-nav-wordmark.svg"
-                  width={299}
-                  height={80}
-                  alt="Innflow"
-                />
-              </a>
-              <p>
-                A shared workspace for your team and AI agents.
-              </p>
-            </div>
-            <nav className={styles.columns} aria-label="Footer navigation">
-              {columns.map(({ label, links }) => (
-                <div className={styles.group} data-open={openGroup === label} key={label}>
-                    <GroupHeading groupLabel={label} open={openGroup === label} onToggle={() => toggleGroup(label)} />
-                  <ul id={`footer-links-${label}`}>
-                    {links.map(({ name, href }) => (
-                      <li key={href}><a href={href}>{name === "Botmode" ? "Bot mode" : name}</a></li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </nav>
+          <div className={styles.brand}>
+            <a href="/" aria-label="Innflow home">
+              <Image
+                src="/brand/innflow-nav-wordmark.svg"
+                width={299}
+                height={80}
+                alt="Innflow"
+              />
+            </a>
+            <p>
+              A shared workspace for your team and AI agents.
+            </p>
           </div>
+          <nav className={styles.columns} aria-label="Footer navigation">
+            {columns.map(({ label, links }) => (
+              <div className={styles.group} data-open={openGroup === label} key={label}>
+                  <GroupHeading groupLabel={label} open={openGroup === label} onToggle={() => toggleGroup(label)} />
+                <ul id={`footer-links-${label}`}>
+                  {links.map(({ name, href }) => (
+                    <li key={href}><a href={href}>{name === "Botmode" ? "Bot mode" : name}</a></li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </nav>
           <div className={styles.legal}>
             <div className={styles.policy} data-open={openGroup === "Company"}>
               <GroupHeading groupLabel="Company" open={openGroup === "Company"} onToggle={() => toggleGroup("Company")} />
@@ -91,6 +90,10 @@ export function SiteFooter({ home: _home = true }: { home?: boolean }) {
               </span>
             </span>
           </div>
+          <section className={styles.newsletter} id="get-started" aria-labelledby="footer-newsletter-heading">
+            <h2 id="footer-newsletter-heading">From the first meeting to the follow-up</h2>
+            <FooterNewsletter />
+          </section>
           <div className={styles.contact}>
             <div>
               <a href={`mailto:${siteConfig.supportEmail}`}>

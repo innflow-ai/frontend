@@ -9,6 +9,9 @@ import { GoogleCtaContent } from "@/components/google-cta-content";
 import { MixedHeadingContent } from "@/components/section-heading";
 import { TrackedLink } from "@/components/tracked-link";
 import { siteConfig } from "@/config/site";
+import badgeStyles from "@/components/promo-badge.module.css";
+import { SaleBadge } from "@/components/sale-badge";
+import { blackFridayCampaign } from "@/config/website-announcement";
 import { HeroDemo } from "./hero-demo";
 import { chapterScrollProgress, showcaseMotion } from "./scroll-showcase-motion";
 import styles from "./showcase.module.css";
@@ -139,8 +142,20 @@ export function ScrollShowcase() {
     <div className={styles.page}>
       <header className={styles.intro} data-home-intro>
         <p className={styles.heroTagline}>
-          <span>New</span> Cloud computers for your agents
+          <span className={`${styles.tagBadge} ${badgeStyles.lime}`}>New</span>
+          <span className={styles.tagDetail}>Cloud computers for your agents</span>
         </p>
+        {blackFridayCampaign.offer && (
+          <a className={`${styles.heroTagline} ${styles.holidayTag}`} href={blackFridayCampaign.offer.action.href}>
+            {blackFridayCampaign.offer.badgeLabel && <SaleBadge label={blackFridayCampaign.offer.badgeLabel} />}
+            <span className={styles.tagDetail}>
+              <small>{blackFridayCampaign.offer.qualifier}</small>{" "}
+              {blackFridayCampaign.offer.message}{" "}
+              <small>{blackFridayCampaign.offer.planScope} with code</small>{" "}
+              {blackFridayCampaign.offer.promoCode}
+            </span>
+          </a>
+        )}
         <h1 data-reference-heading data-mixed-heading>
           <MixedHeadingContent
             title="Turn conversations"
@@ -176,7 +191,7 @@ export function ScrollShowcase() {
               <Image key={id} src={`/aeline/avatars/user-${id}.avif`} width={28} height={28} alt="" unoptimized />
             ))}
           </div>
-          <span>Trusted by <strong>14,353</strong> operators</span>
+          <span>Trusted by <strong>14,353+</strong> operators</span>
         </div>
       </header>
       <section

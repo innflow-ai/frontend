@@ -1,5 +1,7 @@
+import { connection } from "next/server";
 import { BaselanePricing } from "@/components/baselane-pricing";
 import { ShowcaseTheme } from "@/components/showcase-theme";
+import { announcementState, blackFridayCampaign } from "@/config/website-announcement";
 import { createPageMetadata } from "@/lib/metadata";
 
 export const metadata = createPageMetadata({
@@ -9,10 +11,12 @@ export const metadata = createPageMetadata({
   path: "/pricing",
 });
 
-export default function PricingPage() {
+export default async function PricingPage() {
+  await connection();
+  const { offer } = announcementState(blackFridayCampaign, Date.now());
   return (
     <ShowcaseTheme>
-      <BaselanePricing />
+      <BaselanePricing offer={offer} />
     </ShowcaseTheme>
   );
 }

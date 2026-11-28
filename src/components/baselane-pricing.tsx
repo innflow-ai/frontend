@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Database,
   ArrowDown as MageArrowDown,
@@ -17,6 +17,7 @@ import {
   pricingCatalog,
 } from "@/config/pricing";
 import { siteConfig } from "@/config/site";
+import { blackFridayDiscountPercent, type WebsiteAnnouncement } from "@/config/website-announcement";
 import styles from "./baselane-pricing.module.css";
 import { InnerPageShell } from "./inner-page-shell";
 import { SectionHeading } from "./section-heading";
@@ -27,6 +28,16 @@ const money = (value: number | null) =>
   value === null
     ? "Custom"
     : `$${value.toLocaleString("en-US", { minimumFractionDigits: value % 1 ? 2 : 0, maximumFractionDigits: 2 })}`;
+// Discount the billed amount first, then round its monthly equivalent for display.
+const discounted = (price: number) =>
+  Math.round(price * (100 - blackFridayDiscountPercent)) / 100;
+const discountedYear = discounted(pro.commitmentValue);
+const blackFridayProRates = {
+  monthlyPrice: discounted(pro.monthlyPrice),
+  commitmentValue: discountedYear,
+  commitmentMonthlyPrice: Math.round(discountedYear * 100 / 12) / 100,
+};
+
 const groups = [
   {
     title: "WORKFLOW CAPACITY",
@@ -91,14 +102,14 @@ const toolGroups = [
   },
 ] as const;
 const allGroupTitles = [...groups, ...toolGroups].map((group) => group.title);
-const questions = [
+const questionsFor = (proRates: typeof blackFridayProRates) => [
   [
     "What are Innflow credits?",
     "AI and workflow activity consume credits. Basic includes 500 credits per month, Pro 10,000 and Business 140,000. Credits are not a fixed number of messages.",
   ],
   [
     "How does annual pricing work?",
-    `Pay once upfront for 12 months: ${money(pro.commitmentValue)} for Pro or ${money(business.commitmentValue)} for Business. The displayed monthly equivalents are ${money(pro.commitmentMonthlyPrice)} and ${money(business.commitmentMonthlyPrice)}. Monthly plans are ${money(pro.monthlyPrice)} and ${money(business.monthlyPrice)} respectively. Prices are in USD.`,
+    `Pay once upfront for 12 months: ${money(proRates.commitmentValue)} for Pro or ${money(business.commitmentValue)} for Business. The displayed monthly equivalents are ${money(proRates.commitmentMonthlyPrice)} and ${money(business.commitmentMonthlyPrice)}. Monthly plans are ${money(proRates.monthlyPrice)} and ${money(business.monthlyPrice)} respectively. Prices are in USD.`,
   ],
   [
     "Are all workspace tools available immediately?",
@@ -239,12 +250,47 @@ function PreviewPlanCard({ plan, annual }: { plan: SelfServePlan; annual: boolea
   );
 }
 
-export function BaselanePricing({ preview = false }: { preview?: boolean } = {}) {
+export function BaselanePricing({ preview = false, offer }: {
+  preview?: boolean;
+  offer?: WebsiteAnnouncement["offer"];
+} = {}) {
+  const [expiredAt, setExpiredAt] = useState<string>();
+  useEffect(() => {
+    if (!offer) return;
+    const end = Date.parse(offer.targetTime);
+    const expire = () => {
+      if (Date.now() >= end) setExpiredAt(offer.targetTime);
+    };
+    const timer = window.setTimeout(expire, Math.max(0, end - Date.now()));
+    window.addEventListener("pageshow", expire);
+    document.addEventListener("visibilitychange", expire);
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener("pageshow", expire);
+      document.removeEventListener("visibilitychange", expire);
+    };
+  }, [offer]);
+  const promotion = offer && offer.targetTime !== expiredAt ? offer : undefined;
+  const proRates = promotion ? blackFridayProRates : pro;
+  const questions = questionsFor(proRates);
   const [annual, setAnnual] = useState(true);
   const [expanded, setExpanded] = useState<string[]>(allGroupTitles);
   const allOpen = expanded.length === allGroupTitles.length;
-  const value = (plan: Plan) =>
-    money(annual ? plan.commitmentMonthlyPrice : plan.monthlyPrice);
+  const value = (plan: Plan) => {
+    const rates = plan === pro ? proRates : plan;
+    return money(annual ? rates.commitmentMonthlyPrice : rates.monthlyPrice);
+  };
+  const referencePrice = (plan: Plan) => money(
+    promotion && plan === pro && annual ? pro.commitmentMonthlyPrice : plan.monthlyPrice,
+  );
+  function billingNote(plan: Plan) {
+    if (plan.name === "Basic") return "No payment required";
+    if (plan.name === "Enterprise") return "Custom agreement";
+    const rates = plan === pro ? proRates : plan;
+    return annual
+      ? `${money(rates.commitmentValue)} billed yearly`
+      : `${money(rates.monthlyPrice)} billed monthly`;
+  }
   return (
     <InnerPageShell>
       <div className={styles.page}>
@@ -328,11 +374,11 @@ export function BaselanePricing({ preview = false }: { preview?: boolean } = {})
                       <h2 data-mixed-heading>
                         <MixedHeadingText>{plan.name}</MixedHeadingText>
                       </h2>
-                      {annual &&
+                      {(annual || (promotion && plan === pro)) &&
                         plan.monthlyPrice !== null &&
                         plan.monthlyPrice > 0 && (
                           <span className={styles.discountTag}>
-                            {annualSavingsPercent(
+                            {promotion && plan === pro ? blackFridayDiscountPercent : annualSavingsPercent(
                               plan.monthlyPrice,
                               plan.commitmentMonthlyPrice ?? 0,
                             )}
@@ -369,15 +415,15 @@ export function BaselanePricing({ preview = false }: { preview?: boolean } = {})
                       </strong>
                       {index > 0 && index < 3 && (
                         <span className={styles.priceAside}>
-                          {annual && (
+                          {(annual || (promotion && plan === pro)) && (
                             <>
                               <span className={styles.srOnly}>
-                                Regular monthly price{" "}
+                                {promotion && plan === pro ? "Standard rate after the offer" : "Regular monthly price"}{" "}
                               </span>
                               <del>
-                                {money(plan.monthlyPrice).split(".")[0]}
+                                {referencePrice(plan).split(".")[0]}
                                 <span className={styles.oldCents}>
-                                  .{money(plan.monthlyPrice).split(".")[1]}
+                                  .{referencePrice(plan).split(".")[1]}
                                 </span>
                                 <svg
                                   className={styles.priceStrike}
@@ -396,14 +442,13 @@ export function BaselanePricing({ preview = false }: { preview?: boolean } = {})
                       )}
                     </div>
                     <p className={styles.planNote}>
-                      {index === 0
-                        ? "No payment required"
-                        : index === 3
-                          ? "Custom agreement"
-                          : annual
-                            ? `${money("commitmentValue" in plan ? plan.commitmentValue : null)} billed yearly`
-                            : `${money(plan.monthlyPrice)} billed monthly`}
+                      {billingNote(plan)}
                     </p>
+                    {promotion && plan === pro && (
+                      <p className={styles.planNote}>
+                        Use code <strong>{promotion.promoCode}</strong>. After the offer, {annual ? `${money(pro.commitmentValue)}/year` : `${money(pro.monthlyPrice)}/month`}.
+                      </p>
+                    )}
                     <PlanLink plan={plan} />
                   </div>
                 </div>

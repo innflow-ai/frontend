@@ -18,21 +18,21 @@ describe("PricingConfigurator", () => {
     expect(screen.getByText("500")).toBeInTheDocument();
     expect(screen.getByText("10,000")).toBeInTheDocument();
     expect(screen.getByText("140,000")).toBeInTheDocument();
-    expect(screen.getByText("$14.99")).toBeInTheDocument();
+    expect(screen.getByText("$36.08")).toBeInTheDocument();
     expect(screen.getByText("$149.99")).toBeInTheDocument();
 
     await user.click(screen.getByRole("button", { name: "Monthly" }));
 
-    expect(screen.getByText("$19.99")).toBeInTheDocument();
+    expect(screen.getByText("$41.64")).toBeInTheDocument();
     expect(screen.getByText("$197.99")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: "Monthly" })).toHaveAttribute(
       "aria-pressed",
       "true",
     );
-    expect(screen.queryByText("$14.99")).not.toBeInTheDocument();
+    expect(screen.queryByText("$36.08")).not.toBeInTheDocument();
 
     await user.click(screen.getByRole("button", { name: /Annual plan/ }));
-    expect(screen.getByText("$14.99")).toBeInTheDocument();
+    expect(screen.getByText("$36.08")).toBeInTheDocument();
     expect(screen.getByText("$149.99")).toBeInTheDocument();
     expect(
       screen.getAllByText("Annual plan, billed yearly upfront"),

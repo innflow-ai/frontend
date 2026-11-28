@@ -23,6 +23,7 @@ export type WebsiteAnnouncement = {
     action?: AnnouncementAction;
   };
 };
+export const blackFridayDiscountPercent = 64;
 export const blackFridayCampaign: WebsiteAnnouncement = {
   enabled: true,
   id: "black-friday-2026",
@@ -30,7 +31,7 @@ export const blackFridayCampaign: WebsiteAnnouncement = {
   offer: {
     badgeLabel: "BLACK FRIDAY",
     qualifier: "Up to",
-    message: "64% OFF",
+    message: `${blackFridayDiscountPercent}% OFF`,
     planScope: "selected plans",
     promoCode: "BLACKFRIDAY",
     startsAt: "2026-11-27T14:30:00-05:00",

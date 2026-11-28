@@ -1,5 +1,5 @@
 export const pricingCatalog = {
-  version: "2026-09-18",
+  version: "2026-11-28",
   plans: {
     free: {
       name: "Basic",
@@ -18,9 +18,9 @@ export const pricingCatalog = {
     },
     pro: {
       name: "Pro",
-      monthlyPrice: 19.99,
-      commitmentMonthlyPrice: 14.99,
-      commitmentValue: 179.88,
+      monthlyPrice: 41.64,
+      commitmentMonthlyPrice: 36.08,
+      commitmentValue: 433,
       monthlyCredits: "10,000",
       workspaces: "3",
       deployedWorkflows: "Unlimited",
